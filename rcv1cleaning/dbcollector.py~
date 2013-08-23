@@ -15,11 +15,11 @@ def load_dom_ids():
 def execute_query(dom_id):
     user = ''
     password = ''
-    db = ''
-    host = 'e'
+    db = 'test1'
+    host = 'localhost'
     conn = MySQLdb.Connection(user=user, passwd=password, db=db, host=host)
     cursor = conn.cursor()
-    cursor.execute("""SELECT id, domain_id, content from `picad_parser`.`pub_articles` WHERE domain_id=%s LIMIT 500""" % dom_id)
+    cursor.execute("""SELECT * from table1 where id=%s LIMIT 500""" % dom_id)
     results = cursor.fetchall()
     conn.close()
     return results
