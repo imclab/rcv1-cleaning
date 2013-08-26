@@ -1,0 +1,351 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8" /><meta http-equiv="content-type" content="text/html; charset=utf-8" /><meta name="description" content="TodayRICHARD PRINCE, Whitney Museum of American Art, 945 Madison Avenue, at 75th Street, Manhattan. From cool-handed photographs of fashion spreads and magazine advertisements to beautiful white" /><meta name="keywords" content="ART SHOWS, ART" /><meta name="articleid" content="613492"/><meta name="CG" content=""/><meta name="PT" content="Article"/><meta name="PST" content="News"/><meta name="PC" content="PerfectMarket"/><meta name="pdate" content="19920607"/><meta name="TimesPeople" content="disallow"><title>ARTS AND ENTERTAINMENT; ART - New York Times</title><link rel="shortcut icon" type="image/x-icon" href="http://nytimes.perfectmarket.com/pm/favicon.ico" /><link rel="canonical" href="http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html" /><script src="http://nytimes.perfectmarket.com/pm/tracker.js.php?d3d5a2037c3902aa31bc2e96680f5d2f480d9300" type="text/javascript"></script>
+        <script type="text/javascript">
+                    setCookie("pmk_tn", "ap-NYT2-G02", 3600);
+                    var sessId = getCookie("sessid");
+                    if (!sessId) {
+                        sessId = guid();
+                        setCookie("sessid", sessId, (30*60));
+                    }
+                    var uuId = getCookie("uuid");
+                    if (!uuId) {
+                        uuId = sessId;
+                        setCookie("uuid", uuId, (60*60*24*30*12*24));
+                    }
+                    var traffic_provider = getParamFromPMCookie("s");
+                    if(!traffic_provider) {
+                        traffic_provider = derive_traffic_provider();
+                        putParamIntoPMCookie("s", traffic_provider);
+                    }
+                    var traffic_type = getParamFromPMCookie("n");
+                    if(!traffic_type) {
+                        traffic_type = derive_traffic_type();
+                        putParamIntoPMCookie("n", traffic_type);
+                    }
+                    referring_domain = get_referring_domain();
+
+                    var tracSessParams = "sessid="+sessId+"&uuid="+uuId+"&s="+traffic_provider+"&n="+traffic_type+"&rd="+referring_domain;
+
+                    var query = get_query();
+                    if(query) {
+                        tracSessParams = tracSessParams + "&q=" + query;
+                    }
+                    var referring_url = get_referring_url();
+                    if(referring_url) {
+                        tracSessParams = tracSessParams + "&ru=" + encode(referring_url);
+                    }
+                    var user_agent = navigator.userAgent;
+                    if(user_agent) {
+                        tracSessParams = tracSessParams + "&ua=" + encode(user_agent);
+                    }
+
+function google_ad_request_done_internal(ads, borderColor, border, header, adUnitFormat, adUnitFormatOverride,
+                                          backgroundColor, tracParams, titleFontColor, titleFontSize,
+                                         bodyFontColor, bodyFontSize, urlFontSize, template_version, property_name,
+                                         headerColor) {
+    /*
+    * If no ads are returned then dont build the ad block
+    */
+    if (ads.length == 0) { adOverride = 1; return; }
+    adOverride = 0;
+    var textAlign = "";
+    var extraClass = "";
+    if (ads[0].type == "text") {
+        extraClass = adUnitFormat + ads.length + " " + adUnitFormatOverride;
+    } else {
+        borderColor = "FFFFFF";
+        border = "";
+        textAlign = "center";
+        extraClass = adUnitFormat + "_google_img";
+    }
+    if (header != "") {
+        document.write("<div class='ad_header'><a style='color: #" + headerColor + ";' href='" + google_info.feedback_url + "'>Ads by Google</a>");
+        document.write("</div>");
+    }
+    var mainDiv = "<div class='" + adUnitFormat+ " "+extraClass+"' style='";
+    if (float != "") {
+        mainDiv += " float:" + float + ";";
+    }
+    if (textAlign != "") {
+        mainDiv += " text-align:" + textAlign + ";";
+    }
+    mainDiv += " background-color: #" + backgroundColor + "; ";
+    if ("" + border + "" != "") {
+        mainDiv += "border: " + border + ";";
+    }
+    mainDiv += "'>";
+    document.write("" + mainDiv + "");
+    if (tracSessParams) {
+        tracParams += "&"+tracSessParams;
+    }
+    var i = 0;
+    if (ads[0].type == "image") {
+        var destUrl = new String(ads[i].url);
+        document.write("<a href=\"" + destUrl + "\" target=\"_blank\" onclick=\"params='" + tracParams + "&pos=1';tracker();params='';\">");
+        document.write("<img border=\"0\" src=\"" + ads[0].image_url + "\" width=\"" + ads[0].image_width + "\" height=\"" + ads[0].image_height + "\">");
+        document.write("</a>");
+        i++;
+    } else if (ads[0].type == "html" || (ads[0].type == "flash" && ads[0].snippet)) {
+        document.write(""+ads[0].snippet);
+    } else if (ads[0].type == "flash") {
+        document.write("<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\"" +
+        " codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0\" WIDTH=\"" +
+        ads[0].image_width + "\" HEIGHT=\"" +
+        ads[0].image_height + "\"> <PARAM NAME=\"movie\" VALUE=\"" +
+        ads[0].image_url + "\">" +
+        "<PARAM NAME=\"quality\" VALUE=\"high\">" +
+        "<PARAM NAME=\"AllowScriptAccess\" VALUE=\"never\">" +
+        "<EMBED src=\"" +
+        ads[0].image_url + "\" WIDTH=\"" +
+        ads[0].image_width + "\" HEIGHT=\"" +
+        ads[0].image_height +
+        "\" TYPE=\"application/x-shockwave-flash\"" +
+        " AllowScriptAccess=\"never\" " +
+        " PLUGINSPAGE=\"http://www.macromedia.com/go/getflashplayer\"></EMBED></OBJECT>");
+    } else {
+        document.write("<ul>");
+        for (; i < ads.length; i++) {
+            var ad = ads[i];
+            var adline1 = new String(ad.line1);
+            var destUrl = new String(ad.url);
+            document.write("<li style=\"cursor: default;\">");
+            document.write("<a href=\"" + destUrl + "\" target=\"_blank\" onclick=\"params='" + tracParams + "&pos=" + (i+1) + "';tracker();params='';\">");
+            var titleDisplayLine = "<span class=\"headline\" style=\"cursor: pointer; display:inline; color: #" + titleFontColor + ";";
+            if (titleFontSize != "") {
+                titleDisplayLine += "font-size: " + titleFontSize + ";";
+            }
+            titleDisplayLine += "\">" +  adline1+ "</span>";
+            document.write("" + titleDisplayLine + "");
+            document.write("</a>");
+
+            var text = "";
+            for (var n = 2; ad["line" + n]; n++)
+            text += ad["line" + n] + " ";
+            var adtext = new String(text);
+            var bodyDisplayLine = "<span class=\"desc\" style=\"cursor: default; color: #" + bodyFontColor + ";";
+            if (bodyFontSize != "") {
+                bodyDisplayLine += "font-size: " + bodyFontSize + ";";
+            }
+            bodyDisplayLine += "\">" + adtext + "</span>";
+            document.write("" + bodyDisplayLine + "");
+
+            var dispurl = new String(ad.visible_url);
+            document.write("<a href=\"" + destUrl + "\" target=\"_blank\" onclick=\"params='" + tracParams + "&pos=" + (i+1) + "';tracker();params='';\">");
+            var urlDisplayLine = "<span class=\"dispurl\" style=\"cursor: pointer; display:inline; color: #;";
+            if (urlFontSize != "") {
+                urlDisplayLine += "font-size: " + urlFontSize + ";";
+            }
+            urlDisplayLine += "\">" + dispurl + "</span>";
+            document.write("" + urlDisplayLine + "");
+            document.write("</a>");
+
+            document.write("</a>");
+            document.write("</li>");
+        }
+        document.write("</ul>");
+    }
+    document.write("</div>");
+}
+                </script>
+                <link rel="stylesheet" type="text/css" href="http://nytimes.perfectmarket.com/pm/css/ap-NYT2-G02.css?d3d5a2037c3902aa31bc2e96680f5d2f480d9300" media="all" /><meta property="og:site_name" content="New York Times" /><script type="text/javascript">function downloadJSAtOnload(){var element, js;}if (window.addEventListener){window.addEventListener("load", downloadJSAtOnload, false);}else if (window.attachEvent){window.attachEvent("onload", downloadJSAtOnload);}else window.onload = downloadJSAtOnload;</script></head><body><!-- Layout starts --><div id="layout"><div id="area-top" class="area"><div id="mod-nav" style="float:left;" class="mod-nytimesnav"><ul><li class="first"><a style="width:px;"  target="_new"   onclick="parent.recordOutboundLink(this, 'ap-NYT2-G02 section', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;" href="http://www.nytimes.com/?src=hp1-0-H" title="Home Page" class="home">Home Page</a></li><li ><a style="width:px;"  target="_new"   onclick="parent.recordOutboundLink(this, 'ap-NYT2-G02 section', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;" href="http://www.nytimes.com/pages/todayspaper/index.html?src=hp1-0-P" title="Today's Paper" class="alt">Today's Paper</a></li><li ><a style="width:px;"  target="_new"   onclick="parent.recordOutboundLink(this, 'ap-NYT2-G02 section', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;" href="http://video.nytimes.com/?src=hp1-0-V" title="Video" class="alt">Video</a></li><li ><a style="width:px;"  target="_new"   onclick="parent.recordOutboundLink(this, 'ap-NYT2-G02 section', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;" href="http://www.nytimes.com/gst/mostpopular.html?src=hp1-0-M" title="Most Popular">Most Popular</a></li><li ><a style="width:px;"  target="_new"   onclick="parent.recordOutboundLink(this, 'ap-NYT2-G02 section', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;" href="http://topics.nytimes.com/topics/reference/timestopics/index.html?src=hp1-0-T" title="Times Topics">Times Topics</a></li><li ><a style="width:px;"  target="_new"   onclick="parent.recordOutboundLink(this, 'ap-NYT2-G02 section', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;" href="http://www.nytimes.com/timeswire/index.html?src=hp1-0-R" title="Most Recent">Most Recent</a></li></ul></div><div id="mod-site-help" style="float:right;" class="mod-nytimestext mod-text"><a  href="http://www.nytimes.com/membercenter/sitehelp.html" target="_new" >Help</a></div><div id="mod-register" style="float:right;" class="mod-nytimestext mod-text"><a  href="http://www.nytimes.com/gst/regi.html" target="_new" >Register Now</a></div><div id="mod-login" style="float:right;" class="mod-nytimestext mod-text"><a  href="http://www.nytimes.com/auth/login?URI=http://" target="_new" >Login</a></div></div><div id="area-main" class="area"><div id="area-main-top" class="area"><div id="mod-logo" style="float:left;" class="mod-nytimesimage"><a href="http://www.nytimes.com"><img  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 homepage', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  src="http://nytimes.perfectmarket.com/pm/images/header-logo.gif" width="152" height="23" alt="New York Times Articles"/></a></div><div id="mod-rt-top" style="float:right;" class="mod-nytimesadnytimes"><center><!-- format: Middle1C (88x31) --><iframe src="http://nytimes.perfectmarket.com/pm/ad-nytimes.php?f=Middle1C&slug=news/arts-and-entertainment-art.html&dimension=88x31" width="88" height="31" scrolling="no" frameborder="0"></iframe></center></div><div id="mod-search-box" style="float:right;" class="mod-nytimessearchbox mod-searchbox">
+        <form id="searchForm" name="searchForm" method="get" action="http://query.nytimes.com/search/sitesearch" enctype="application/x-www-form-urlencoded">
+			<input type="hidden" name="date_select" value="full">
+			<label>Search All NYTimes.com</label>
+			<input type="text" name="query" value="" class="text">
+			<input type="hidden" value="nyt" name="type">
+			<input onclick="this.form.target='_blank';return true;" width="22" height="19" class="go" type="image" src="http://nytimes.perfectmarket.com/pm/images/go.gif" alt="Go" title="Search">
+        </form></div><div id="mod-article-section" class="mod-nytimesarticlesection"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 section', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  target="_new"  href="http://www.nytimes.com/">Archives</a></div><div class="float" style="clear:both;height:1px;line-height:1px;"><img src="http://nytimes.perfectmarket.com/pm/images/pixel.gif" height="1" width="1" alt="" /></div><div id="mod-breadcrumb" class="mod-nytimesarticlepagebreadcrumb mod-articlepagebreadcrumb mod-breadcrumb"> <span class="archive-link"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 breadcrumb', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="/articles.html">COLLECTIONS</a></span><span class="bread-crumb-separator">></span><span class="keyword"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 bottom_bar', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="/keyword/modern-art"><strong>MODERN ART</strong></a></span></div></div><div id="area-main-center-w-left" class="area" style="float:right;"><div id="mod-article-header" class="mod-nytimesarticleheader mod-articleheader"><h1>ARTS AND ENTERTAINMENT; ART</h1></div><div id="mod-article-byline" class="mod-nytimesarticlebyline mod-articlebyline"><span>By ROBERTA SMITH</span><br/><span class="pubdate">Published: June 07, 1992</span></div><div id="area-main-center-right" class="area" style="float:right;"><div id="mod-sm-badge-top-right" class="mod-nytimessocialmedia mod-socialmedia"><script type="text/javascript">
+                var articleToolsShareData = {"url":"http:\/\/www.nytimes.com\/2010\/09\/01\/world\/middleeast\/01settlers.html","headline":"4 Israeli Settlers Killed in West Bank","description":"The Israelis were killed on Tuesday evening when their car was fired on near the settlement of Kiryat Arba.","keywords":"Israeli Settlements,Murders and Attempted Murders,West Bank","section":"world","sub_section":"middleeast","section_display":"World","sub_section_display":"Middle East","byline":"By ISABEL KERSHNER and <a href=\"http:\/\/topics.nytimes.com\/top\/reference\/timestopics\/people\/l\/mark_landler\/index.html?inline=nyt-per\" title=\"More Articles by Mark Landler\" class=\"meta-per\">MARK LANDLER<\/a>","pubdate":"August 31, 2010","passkey":null};
+				function getShareURL() {
+				    return encodeURIComponent(articleToolsShareData.url);
+				}
+				function getShareHeadline() {
+				    return encodeURIComponent(articleToolsShareData.headline);
+				}
+				function getShareDescription() {
+				    return encodeURIComponent(articleToolsShareData.description);
+				}
+				function getShareKeywords() {
+				    return encodeURIComponent(articleToolsShareData.keywords);
+				}
+				function getShareSection() {
+				    return encodeURIComponent(articleToolsShareData.section);
+				}
+				function getShareSubSection() {
+				    return encodeURIComponent(articleToolsShareData.sub_section);
+				}
+				function getShareSectionDisplay() {
+				    return encodeURIComponent(articleToolsShareData.section_display);
+				}
+				function getShareSubSectionDisplay() {
+				    return encodeURIComponent(articleToolsShareData.sub_section_display);
+				}
+				function getShareByline() {
+				    return encodeURIComponent(articleToolsShareData.byline);
+				}
+				function getSharePubdate() {
+				    return encodeURIComponent(articleToolsShareData.pubdate);
+				}
+				function getSharePasskey() {
+				    return encodeURIComponent(articleToolsShareData.passkey);
+				}
+        </script><div class="articleTools">
+				<div class="box">
+				<div class="inset">
+    				<ul id="toolsList" class="toolsList wrap">    
+					<li class="email">
+					    <a target="_new" id="emailThis" onclick="s_code_linktrack('Article-Tool-EmailSignIn');" href="http://www.nytimes.com/auth/login?URI=http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm">Sign In to E-Mail</a>
+					</li>
+					<li class="print">
+					    <a href="/1992/06/07/news/arts-and-entertainment-art.html?pagewanted=print&src=pm" target="_new">Print</a>
+					</li><li class="singlePage">
+                        <a href="/1992/06/07/news/arts-and-entertainment-art.html?pagewanted=all&src=pm" target="_new">Single-Page</a>
+                    </li>  </ul>
+            </div>
+            </div>
+        </div></div><div id="mod-ctr-rt-top" class="mod-nytimesadnytimes"><center><!-- format: Frame4A (120x60) --><iframe src="http://nytimes.perfectmarket.com/pm/ad-nytimes.php?f=Frame4A&slug=news/arts-and-entertainment-art.html&dimension=120x60" width="120" height="60" scrolling="no" frameborder="0"></iframe></center></div></div><div id="mod-a-body-first-para" class="mod-nytimesarticletext mod-articletext"><p><Strong></Strong>Today</p><p>RICHARD PRINCE, Whitney Museum of American Art, 945 Madison Avenue, at 75th Street, Manhattan. From cool-handed photographs of fashion spreads and magazine advertisements to beautiful white paintings that incorporate jokes and cartoons, this exhibition traces the career of a prominent 1980's appropriation artist, and gets better as it goes along. Through July 12. Also at the Whitney: "THE PAINTINGS OF GEORGE BELLOWS." Best known for his action-packed paintings of boxers, this early-20th-century American modernist painted landscapes, seascapes, portraits and New York street scenes with often astounding flair, in styles ranging from realistic to nearly visionary. This exhibition is the first thorough examination of his work in more than 35 years. Through Aug. 30. Hours: Thursdays, 1 to 8 P.M.; Wednesdays, Fridays, Saturdays and Sundays, 11 A.M. to 6 P.M.; closed Mondays and Tuesdays and July 4. Admission: $5; $3 for the elderly and students; free for children under 12; free for everyone on Thursdays, 6 to 8 P.M. Starting July 1, admission is $6 ($4 for the elderly and students). Information: (212) 570-3676.</p></div><div class="float" style="clear:both;height:1px;line-height:1px;"><img src="http://nytimes.perfectmarket.com/pm/images/pixel.gif" height="1" width="1" alt="" /></div><div id="mod-ln-ctr-top" class="mod-nytimesline mod-line"><center><div style="border-top:1px solid #cccccc; height:1px; width:350px;"></div></center></center></div><div id="area-main-center-center" class="area"><div class="float" style="clear:both;height:1px;line-height:1px;"><img src="http://nytimes.perfectmarket.com/pm/images/pixel.gif" height="1" width="1" alt="" /></div><div id="mod-ctr-lt-in-top" style="float:left;" class="mod-adcpc"><script type="text/javascript"> var adSkipCounter = 0; var adOverride = 0; </script>
+            <script type="text/javascript"> //<![CDATA[
+              if ("0" == "1" && adOverride == 0) {} else {
+              var loc = window.location.href + "";
+              var float = "";
+              google_hints = "white paintings whitney museum museum of american art";google_ad_client="pub-6956526235946485";
+google_ad_output="js";
+google_ad_channel="6740388458,1643899359,2545247772,9154867477";
+google_ad_type="text,image";
+google_image_size="300x250";
+google_feedback="on";
+google_max_num_ads="4";
+google_skip="" + adSkipCounter + "";
+google_adtest="off";
+google_page_url=document.URL;
+}
+                function google_ad_request_done(ads) {
+                  if (ads.length == 0) { adOverride = 1; return; } // If no ads are returned then dont build the ad block
+                  adOverride = 0;
+                  if (ads[0].bidtype == "CPC") { adSkipCounter += ads.length; } // Increment ad skip counter when cpc
+                  google_ad_request_done_internal(ads, "", "", "true", "medium_rectangle", "", "", "pgtp=article&uri=%2F1992%2F06%2F07%2Fnews%2Farts-and-entertainment-art.html&ci=23380480&pi=60&cat=unknown&pe_id=23380480&tv=ap-NYT2-G02&rna=pub-6956526235946485&rn=g&rnrci=6740388458&rnrcn=NYT_Property&rncci=1643899359&rnccn=NYT+Other&rnpci=&rnpcn=&rntci=&rntcn=&rnlci=9154867477&rnlcn=9154867477&rnp=c&rt=cpc&paidClick=1&placement_id=ctr-lt-in-top", "", "", "", "", "", "ap-NYT2-G02", "New York Times", "");
+                }
+            //]]></script><script type="text/javascript">if ("0" == "1" && adOverride == 0) {}else{document.write("<scr"+"ipt type='text/javascript' src='http://pagead2.googlesyndication.com/pagead/show_ads.js'>"+"</scr"+"ipt>");}</script></div><div id="mod-ctr-rt-in-top" style="float:right;" class="mod-nytimesadnytimes"><!-- format: MiddleRight (300x250) --><iframe src="http://nytimes.perfectmarket.com/pm/ad-nytimes.php?f=MiddleRight&slug=news/arts-and-entertainment-art.html&dimension=300x250" width="300" height="250" scrolling="no" frameborder="0"></iframe></div></div><div class="float" style="clear:both;height:1px;line-height:1px;"><img src="http://nytimes.perfectmarket.com/pm/images/pixel.gif" height="1" width="1" alt="" /></div><div id="mod-ln-ctr-bt" class="mod-nytimesline mod-line"><center><div style="border-top:1px solid #cccccc; height:1px; width:350px;"></div></center></center></div><div class="float" style="clear:both;height:1px;line-height:1px;"><img src="http://nytimes.perfectmarket.com/pm/images/pixel.gif" height="1" width="1" alt="" /></div><div id="mod-a-body-after-first-para" class="mod-nytimesarticletextwithadcpc mod-nytimesarticletext mod-articletext"><p>"ADRIAAN LUBBERS IN NEW YORK," Museum of the City of New York, Fifth Avenue at 103d Street, Manhattan. A Dutch artist who fell in love with New York and made it the central theme of his career, Lubbers (1892-1954) captured the spatial grandeur and the street-level tumult of the city in elegant lithographs and endearingly scruffy paintings. Through July 26. Hours: Wednesdays through Saturdays, 10 A.M. to 5 P.M.; Sundays, 1 to 5 P.M.; closed Mondays, Tuesdays and July 4. Open July 4. Admission: $5; $3 for children, students and the elderly; $8 for families. Information: (212) 534-1672.</p><p>"STEP LIVELY: THE ART OF THE FOLK CANE," Museum of American Folk Art, Columbus Avenue at 66th Street, Manhattan. Exhibitions that concentrate exclusively on one kind of object can have a wonderful intensity, as this show of 175 imaginatively hand-carved 19th- and 20th-century canes and walking sticks should easily demonstrate. Through Sept. 13. Hours: Tuesdays through Sundays, 11:30 A.M. to 7:30 P.M.; closed Mondays. Open July 4. Free. Information: (212) 977-7298. June 14</p><p>"LOUIS I. KAHN: IN THE REALM OF ARCHITECTURE," Museum of Modern Art, 11 West 53d Street, Manhattan. The first full-scale retrospective of one of America's greatest 20th-century architects will feature drawings, sketches, models and photographs of more than 60 projects. June 14 through Aug. 18. Hours: Thursdays, 11 A.M. to 8:45 P.M.; Fridays through Tuesdays, 11 A.M. to 5:45 P.M.; closed Wednesdays. Open July 4 and Labor Day. Admission: $7; $4 for students and the elderly; free for those under 16. Information: (212) 708-9500. June 26</p><p>"AN ENDURING INTEREST: THE PHOTOGRAPHS OF ALEXANDER GARDNER," International Center of Photography, 1130 Fifth Avenue, at 94th Street, Manhattan. The first retrospective of the Scottish-born photographer, known for his images of the Civil War, his portraits of Lincoln and his pictures of the hanging of the Lincoln conspirators (the only ones taken, and perhaps the world's first news photographs). He went on to take some of the earliest photographs of American Indians and of the building of the Union Pacific Railroad. June 26 through Sept. 6. Hours: Tuesdays, 11 A.M. to 8 P.M.; Wednesdays through Sundays, 11 A.M. to 6 P.M.; closed Mondays. Admission: $3.50; $2 for students and the elderly. Information: (212) 860-1777.</p></div><div id="mod-a-body-after-first-para-ad-cpc" class="mod-adcpc">
+            <script type="text/javascript"> //<![CDATA[
+              if ("0" == "1" && adOverride == 0) {} else {
+              var loc = window.location.href + "";
+              var float = "";
+              google_hints = "white paintings whitney museum museum of american art";google_ad_client="pub-6956526235946485";
+google_ad_output="js";
+google_ad_channel="6740388458,1643899359,6912240138,9154867477";
+google_ad_type="text,image";
+google_image_size="728x90";
+google_feedback="on";
+google_max_num_ads="4";
+google_skip="" + adSkipCounter + "";
+google_adtest="off";
+google_page_url=document.URL;
+}
+                function google_ad_request_done(ads) {
+                  if (ads.length == 0) { adOverride = 1; return; } // If no ads are returned then dont build the ad block
+                  adOverride = 0;
+                  if (ads[0].bidtype == "CPC") { adSkipCounter += ads.length; } // Increment ad skip counter when cpc
+                  google_ad_request_done_internal(ads, "", "", "true", "leaderboard", "", "", "pgtp=article&uri=%2F1992%2F06%2F07%2Fnews%2Farts-and-entertainment-art.html&ci=23380480&pi=60&cat=unknown&pe_id=23380480&tv=ap-NYT2-G02&rna=pub-6956526235946485&rn=g&rnrci=6740388458&rnrcn=NYT_Property&rncci=1643899359&rnccn=NYT+Other&rnpci=&rnpcn=&rntci=&rntcn=&rnlci=9154867477&rnlcn=9154867477&rnp=c&rt=cpc&paidClick=1&placement_id=a-body-after-first-para-ad-cpc", "", "", "", "", "", "ap-NYT2-G02", "New York Times", "");
+                }
+            //]]></script><script type="text/javascript">if ("0" == "1" && adOverride == 0) {}else{document.write("<scr"+"ipt type='text/javascript' src='http://pagead2.googlesyndication.com/pagead/show_ads.js'>"+"</scr"+"ipt>");}</script></div><div id="mod-pagination" class="mod-pagination"><ul><li class="selected"><span class="next_url" >1</span></li><li ><span class="next_url" ><a href="/1992/06/07/news/arts-and-entertainment-art.html?pagewanted=2&src=pm">2</a></span></li><li ><span class="next_url" ><a href="/1992/06/07/news/arts-and-entertainment-art.html?pagewanted=3&src=pm">3</a></span></li><li class="next"><span class="next_url" ><a href="/1992/06/07/news/arts-and-entertainment-art.html?pagewanted=2&src=pm">NEXT PAGE ></a></span></li></ul><div class="float" style="clear:both;height:1px;line-height:1px;"><img src="http://nytimes.perfectmarket.com/pm/images/pixel.gif" height="1" width="1" alt="" /></div></div></div><div id="area-main-center-left" class="area" style="float:left;"><div id="mod-left-sky" class="mod-adcpc">
+            <script type="text/javascript"> //<![CDATA[
+              if ("0" == "1" && adOverride == 0) {} else {
+              var loc = window.location.href + "";
+              var float = "";
+              google_hints = "white paintings whitney museum museum of american art";google_ad_client="pub-6956526235946485";
+google_ad_output="js";
+google_ad_channel="6740388458,1643899359,2527437195,9154867477";
+google_ad_type="text,image";
+google_image_size="160x600";
+google_feedback="on";
+google_max_num_ads="5";
+google_skip="" + adSkipCounter + "";
+google_adtest="off";
+google_page_url=document.URL;
+}
+                function google_ad_request_done(ads) {
+                  if (ads.length == 0) { adOverride = 1; return; } // If no ads are returned then dont build the ad block
+                  adOverride = 0;
+                  if (ads[0].bidtype == "CPC") { adSkipCounter += ads.length; } // Increment ad skip counter when cpc
+                  google_ad_request_done_internal(ads, "", "", "true", "wide_skyscraper", "", "", "pgtp=article&uri=%2F1992%2F06%2F07%2Fnews%2Farts-and-entertainment-art.html&ci=23380480&pi=60&cat=unknown&pe_id=23380480&tv=ap-NYT2-G02&rna=pub-6956526235946485&rn=g&rnrci=6740388458&rnrcn=NYT_Property&rncci=1643899359&rnccn=NYT+Other&rnpci=&rnpcn=&rntci=&rntcn=&rnlci=9154867477&rnlcn=9154867477&rnp=c&rt=cpc&paidClick=1&placement_id=left-sky", "", "", "", "", "", "ap-NYT2-G02", "New York Times", "");
+                }
+            //]]></script><script type="text/javascript">if ("0" == "1" && adOverride == 0) {}else{document.write("<scr"+"ipt type='text/javascript' src='http://pagead2.googlesyndication.com/pagead/show_ads.js'>"+"</scr"+"ipt>");}</script></div>
+<div id="mod-related-articles" class="mod-nytimesrelatedarticlessimplelist mod-relatedarticlessimplelist mod-relatedarticles"><div class="header">More Like This</div><ul><li><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 from_the_archives', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  title="David Solinger, 90, Art Collector And Whitney Museum..." href="/1996/10/30/arts/david-solinger-90-art-collector-and-whitney-museum-president.html?src=pm">
+			     <style>div.mod-relatedarticlessimplelist li a span:hover{*text-decoration:underline}
+			     </style>
+			     <span class="title">David Solinger, 90, Art Collector And Whitney Museum...</span></a><br /></li><li><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 from_the_archives', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  title="Considering the Once and Future Whitney Museum" href="/1996/11/17/arts/considering-the-once-and-future-whitney-museum.html?src=pm">
+			     <style>div.mod-relatedarticlessimplelist li a span:hover{*text-decoration:underline}
+			     </style>
+			     <span class="title">Considering the Once and Future Whitney Museum</span></a><br /></li><li><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 from_the_archives', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  title="In Prague, Modern Art Meets Modern Problems" href="/1996/03/06/arts/in-prague-modern-art-meets-modern-problems.html?src=pm">
+			     <style>div.mod-relatedarticlessimplelist li a span:hover{*text-decoration:underline}
+			     </style>
+			     <span class="title">In Prague, Modern Art Meets Modern Problems</span></a><br /></li></ul></div><div id="mod-related-keywords" class="mod-relatedkeywordssimplelist mod-relatedkeywords"><div class="header">Find More Stories</div><ul><li><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 more_stories_about', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="/keyword/modern-art">Modern Art</a></li><li><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 more_stories_about', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="/keyword/labor-day">Labor Day</a></li></ul></div></div><div class="float" style="clear:both;"><img src="http://nytimes.perfectmarket.com/pm/images/pixel.gif" height="1" width="1" alt="" /></div><div id="area-main-bottom" class="area"><div id="area-main-bottom-top" class="area"><div id="mod-home" style="float:left;" class="mod-nytimestext mod-text"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 bottom_bar', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="http://www.nytimes.com" target="_new"  rel="nofollow" >Home</a></div><div id="mod-topics" style="float:left;" class="mod-nytimestext mod-text"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 bottom_bar', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="http://topics.nytimes.com/topics/reference/timestopics/index.html" target="_new"  rel="nofollow" >Times topics</a></div><div id="mod-member-center" style="float:left;" class="mod-nytimestext mod-text"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 bottom_bar', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="http://www.nytimes.com/membercenter" target="_new"  rel="nofollow" >Member Center</a></div></div><div class="float" style="clear:both;"><img src="http://nytimes.perfectmarket.com/pm/images/pixel.gif" height="1" width="1" alt="" /></div><div id="area-main-bottom-bt" class="area"><div id="mod-copyright" style="float:left;" class="mod-nytimestext mod-text"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 bottom_bar', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="http://www.nytimes.com/ref/membercenter/help/copyright.html" target="_new"  rel="nofollow" >Copyright 2013 </a></div><div id="mod-nytco" style="float:left;" class="mod-nytimestext mod-text"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 bottom_bar', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="http://www.nytco.com/" target="_new"  rel="nofollow" >The New York Times Company</a></div><div id="mod-privacy" style="float:left;" class="mod-nytimestext mod-text"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 bottom_bar', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="http://www.nytimes.com/ref/membercenter/help/privacysummary.html" target="_new"  rel="nofollow" >Privacy Policy</a></div><div id="mod-help" style="float:left;" class="mod-nytimestext mod-text"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 bottom_bar', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="http://www.nytimes.com/membercenter/sitehelp.html" target="_new"  rel="nofollow" >Help</a></div><div id="mod-contact-us" style="float:left;" class="mod-nytimestext mod-text"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 bottom_bar', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="http://www.nytimes.com/ref/membercenter/help/infoservdirectory.html" target="_new"  rel="nofollow" >Contact Us</a></div><div id="mod-work-4-us" style="float:left;" class="mod-nytimestext mod-text"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 bottom_bar', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="http://www.nytco.com/careers/" target="_new"  rel="nofollow" >Work for Us</a></div><div id="mod-site-map" style="float:left;" class="mod-nytimestext mod-text"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 bottom_bar', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="http://spiderbites.nytimes.com/" target="_new"  rel="nofollow" >Site Map</a></div><div id="mod-kw-index" style="float:left;" class="mod-nytimestext mod-text"><a  onClick="parent.recordOutboundLink(this, 'ap-NYT2-G02 bottom_bar', 'http://www.nytimes.com/1992/06/07/news/arts-and-entertainment-art.html?src=pm');return false;"  href="/keywords/" target="_new" >Index by Keyword</a></div></div>
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try {
+    var pageTracker = _gat._getTracker("UA-18310227-1");
+    pageTracker._setVar('Template-ap-NYT2-G02');
+    pageTracker._setCustomVar(1, 'Template', 'Template-ap-NYT2-G02', 3);
+    pageTracker._trackPageview();
+  } catch(err) {}
+</script>
+
+<script type="text/javascript">
+function recordOutboundLink(link, category, action) {
+  try {
+    var pageTracker=_gat._getTracker("UA-18310227-1");
+    pageTracker._trackEvent(category, action);
+    if (link != null) setTimeout('document.location = "' + link.href + '"', 100);
+  } catch(err){}
+}
+</script><script language="JavaScript">
+                <!--
+                var dcsvid="non-registered"; 
+                var regstatus="non-registered";
+
+                //-->
+              </script>
+                <script src="http://graphics8.nytimes.com/js/common.js" type="text/javascript"></script>               
+                <script src="http://graphics8.nytimes.com/js/app/analytics/trackingTags_v1.1.js" type="text/javascript"></script>
+              
+              <noscript>
+                <div>
+                    <img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://wt.o.nytimes.com/dcsym57yw10000s1s8g0boozt_9t1x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=1.0.7"/>
+                </div>
+              </noscript></div><div class="float" style="clear:both;"><img src="http://nytimes.perfectmarket.com/pm/images/pixel.gif" height="1" width="1" alt="" /></div>
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" :
+"http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-e16aPraesolw6",
+labels:"The New York Times Company.New York Times"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-e16aPraesolw6.gif" border="0"
+height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+        </div></div><!-- Layout ends --><script type="text/javascript">
+                      //<![CDATA[
+                      document.write("<iframe id=\"pm-tracker\" src=\"http://nytimes.perfectmarket.com/pm/track?"+window.tracSessParams+"&pgtp=article&uri=%2F1992%2F06%2F07%2Fnews%2Farts-and-entertainment-art.html&ci=23380480&pi=60&cat=unknown&pe_id=23380480&tv=ap-NYT2-G02&rna=pub-6956526235946485&rn=g&rnrci=6740388458&rnrcn=NYT_Property&rncci=1643899359&rnccn=NYT+Other&rnpci=&rnpcn=&rntci=&rntcn=&rnlci=9154867477&rnlcn=9154867477&rnp=c&rt=cpc&pageLoad=1\" frameborder=\"0\" width=\"0\" height=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"position:absolute;display:none;overflow-x:hidden;overflow-y:scroll;\"></iframe>");
+                      //]]>
+                    </script></body></html>
