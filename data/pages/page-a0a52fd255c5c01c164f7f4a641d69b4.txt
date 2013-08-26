@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Arts and Entertainment, UNCG</title>
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css">
+<link rel="stylesheet" href="//fast.fonts.com/cssapi/7860d9f9-615c-442e-ab9b-bd4fe7794024.css">
+<link rel="stylesheet" href="/incuncg/css/common.css">
+<link rel="stylesheet" href="/incuncg/css/secondary.css">
+<link rel="stylesheet" href="/inc/css/top.css">
+<style>
+div#va-gallery> div.first,
+div#va-gallery> div.last 
+{
+	background: url(/images/common/sprites.png) no-repeat;
+}
+
+#main, #visual {
+	background: url(/images/common/main-top.png) no-repeat 0% 0%;
+}
+#main>div, #visual>div {
+	background: url(/images/common/main-bottom.png) no-repeat 0% 100%;
+	overflow: hidden;
+	padding-left: 34px;
+	min-height: 265px
+}
+#links {
+	width: 201px;
+	padding-top: 24px;
+	font-size: 1.1em;
+}
+#links h2 {
+	margin: 23px 0 0 0;
+	border-bottom: 1px solid #CCCCCC;
+	font-size: 1.4em;
+	line-height: 1.4;
+	padding: 0;
+	font-family: "TradeGothicW01-BoldCn20 675334",Sans-serif;
+	text-transform: uppercase;
+}
+#links h2.first {
+	margin-top: 0
+}
+#links ul {
+	margin: 0;
+	padding-left: 0;
+}
+#links li {
+	list-style: none;
+	margin: 0;
+	padding: 1px 0 1px 0;
+	line-height: 1.1;
+	font-size: 1.1em;
+	border-bottom: 1px solid #ccc;
+}
+#links li a:link, #links li a:visited {
+	background-image: url(images/arrow-links.png);
+	background-repeat: no-repeat;
+	background-position: 2px 11px;
+	color: #000;
+	font-weight: bold;
+	display: block;
+	padding: 4px 0 3px 9px;
+	text-decoration: none
+}
+#links li a:hover {
+	background-image: url(images/arrow-links-hov.png);
+	color: #369;
+	background-color: #eaeaea
+}
+#about {
+	padding: 24px 34px 36px 0;
+	width: 661px;
+	float: right;
+	font-size: 14px
+}
+#about h1 {
+	line-height: 1;
+	margin-bottom: 6px;
+	margin-top: 0
+}
+#channel {
+	height: 228px;
+	float: right
+}
+#channel ul {
+	display: inline-block;
+	margin: 0 auto 0 auto;
+	padding: 0
+}
+#channel li {
+	float: left;
+	position: relative;
+	display: block;
+	width: 320px;
+	height: 185px;
+	background-color: #CCC;
+	margin: 0 12px 0 0;
+	list-style: none;
+	padding: 0
+}
+#channel li.first {
+	background: url(images/bg-box-office.png) no-repeat 0% 0%
+}
+#channel li.second {
+	margin-right: 40px;
+	background: url(images/bg-venues.png) no-repeat 0% 0%
+}
+#channel span {
+	display: block;
+	bottom: 0;
+	left: 20px;
+	margin-bottom: 16px;
+	position: absolute;
+	text-align: left;
+}
+#channel a {
+	color: #fff;
+	background: url(/images/common/arrow-channel.png) no-repeat scroll 100% 63%;
+	text-decoration: none;
+	text-shadow: 0 0 7px #000000;
+	line-height: 1;
+	padding-right: 28px;
+	font-size: 29px
+}
+#channel a:hover {
+	background: url(/images/common/arrow-channel-hover.png) no-repeat scroll 100% 63%;
+	color: #f9b800;
+	text-decoration: underline;
+}
+#performance {
+	background: url(images/bg-performance.png) no-repeat 0 0;
+	height: 416px;
+	overflow: hidden;
+	color: #fff;
+	font-size: 14px;
+	padding: 0 34px 30px 0px
+}
+#performance h1
+{
+
+}
+#performance h1, #performance h2 {
+	color: #CC6633;
+	text-transform: uppercase;
+	font-family: "TradeGothicW01-BoldCn20 675334",Sans-serif;
+	line-height: 1;
+	padding-left:34px;	
+}
+#performance>p
+{
+	padding-left:34px;	
+}
+#performance h1, #literary h1{
+	font-size: 26px;
+	margin: 22px 0 12px 0
+}
+#performance h2, #literary h2 {
+	font-size: 19px;
+	margin: 22px 0 6px 0
+}
+#performance p, #literary p {
+	line-height: 1.4;
+	margin-top: 0
+}
+#performance>div {
+	min-height: 240px
+}
+#performance div.first {
+	clear: left;
+	height: 240px;
+	width: 513px;
+	margin-right: 5px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	position:relative;
+}
+#performance div.first>div
+{
+	float:left;	
+}
+#performance div.first img
+{
+	position:absolute;	
+	top:0px;
+	left:34px;
+	width:445px;
+	height:240px;
+	display:none;
+}
+#performance div.first img.selected
+{
+	display:inline;	
+}
+
+#performance div.first div.larrow, #performance div.first div.rarrow
+{
+	height:240px;
+	min-width:34px;
+	width:34px;
+}
+#performance div.first div.larrow
+{
+	background:url('/images/home/arrow-callout-left.png') no-repeat scroll -7px 20px transparent;
+}
+
+#performance div.first div.rarrow
+{
+	background:url('/images/home/arrow-callout-right.png') no-repeat scroll 2px 20px transparent;	
+}
+#performance div.first div.larrow:hover
+{
+	background:url('/images/home/arrow-callout-left-hov.png') no-repeat scroll -7px 20px transparent;
+}
+
+#performance div.first div.rarrow:hover
+{
+	background:url('/images/home/arrow-callout-right-hov.png') no-repeat scroll 2px 20px transparent;	
+}
+
+#performanceImages
+{
+	width:445px;
+	height:240px;	
+}
+
+#performance div.first a:hover, #performance div.last a:hover {
+	background-image: url(images/arrow-performance-hov.png);
+	text-decoration: underline;
+	color: #fc0
+}
+#performance div.last a {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	padding-right: 15px;
+	color: #fff;
+	background: url(images/arrow-performance.png) no-repeat scroll 100% 80%;
+	font-size: 17px;
+	line-height: 1.1;
+	text-decoration: none
+}
+#performance div.last p {
+	color: #ccc;
+	font-size: 12px;
+}
+#performance>div div.last {
+	width: 405px;
+	clear: right;
+	max-height: 247px;
+	overflow: hidden;
+}
+
+
+
+#performance>ul {
+	margin: 0;
+	padding: 0 0 0 34px;
+}
+#performance>ul li {
+	background: url(images/arrow-performance-calendar-links.png) no-repeat 99% 50%;
+	padding-right: 70px;
+	display: inline;
+	list-stye: none;
+	padding: 0;
+	margin: 0;
+	line-height: 1;
+}
+#performance>ul a {
+	padding: 1px 12px 1px 6px;
+	font-size: 12px;
+	font-weight: 700;
+	color: #CC6633;
+	line-height: 1;
+	text-decoration: none;
+}
+#performance>ul li.first a {
+	padding-left: 0
+}
+#performance>ul li.last a {
+	padding-right: 0
+}
+#performance>ul li.last {
+	background-image: none
+}
+#performance>ul a:hover {
+	text-decoration: underline;
+	color: #fc0
+}
+#visual>div h1,#visual>div h2{
+	font-weight:500;
+	margin:0;
+	padding:24px 34px 0 34px;
+	color:#369;
+	line-height:1;
+	font-size:24px;
+	font-family:"TradeGothicW01-BoldCn20 675334",Sans-serif;
+	text-transform: uppercase
+}
+#visual>div h2{font-size:18px}
+#visual p, #visual li{
+	font-size:14px
+}
+div.slideWindow{
+	margin-left:0;
+	height:auto;
+	width:892px
+}
+div.slideWindow ul.slides{
+	overflow:hidden;
+	margin:0;
+	padding:0;
+}
+ul.slides li{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	white-space:normal;
+	float:left;
+	width:215px;
+	line-height:1.3;
+	margin-right: 9px
+}
+ul.slides li a{
+	text-decoration:none;
+	color:#000;
+}
+ul.slides li a:hover{
+	text-decoration:underline;
+	color:#369;
+}
+ul.slides li img{margin-bottom:11px}
+div#va-gallery> div.first {
+		width:34px;
+		height:120px;
+   background-position: -177px -289px ;
+    clear: left;
+}
+div#va-gallery> div.last {
+		width:34px;
+		height:120px;
+    background-position: -252px -291px ;
+    clear:right;
+}
+div#va-gallery> div.first:hover {
+   background-position: -289px -291px ;
+
+}
+div#va-gallery> div.last:hover {
+    background-position: -214px -290px ;
+}
+#visual>div h2{padding-left:34px}
+#visual>div p{padding:0 34px 0 34px}
+#visual>div{min-height:auto;padding-left:0;}
+#visual>div>ul{margin:0;padding:0 0 24px 34px;}
+#visual>div>ul li{
+	background: url("images/arrow-visual-calendar-links.png") no-repeat 99% 50% transparent;
+   display: inline;
+	margin:0;
+	padding:0;
+	list-style:none}
+#visual>div>ul li a{
+	font-size:12px;
+	font-weight:700;
+	text-decoration:none;
+	color:#369;
+	padding: 1px 12px 1px 6px
+}
+#visual>div>ul li a:hover{
+	text-decoration:underline;
+	color:#036;
+}
+#visual>div>ul li.first a{padding-left:0;}
+#visual>div>ul li.last{background: url("images/arrow-visual-calendar-nks.png") } 
+#literary{
+	padding:0 34px 0 34px;
+	overflow:hidden;
+	height:330px;
+	position:relative;
+	background: url("images/bg-literary.png") no-repeat 0% 0% transparent
+}
+#literary h1, #literary h2 {
+	color: #ba9a2f;
+	text-transform: uppercase;
+	font-family: "TradeGothicW01-BoldCn20 675334",Sans-serif;
+	line-height: 1;
+	font-weight:500
+}
+#literary p{font-size:14px;color:#fff}
+#literary p a:link, #literary p a:visited{
+	color: #FFFFFF;
+}
+#literary>div{
+    bottom: 28px;
+    position: absolute
+}
+#literary>div ul {
+	margin: 0;
+	padding: 0;
+}
+#literary>div ul li {
+	background: url(images/arrow-literary-calendar-links.png) no-repeat 99% 50%;
+	padding-right: 70px;
+	display: inline;
+	list-stye: none;
+	padding: 0;
+	margin: 0;
+	line-height: 1;
+}
+#literary>div ul a {
+	padding: 1px 12px 1px 6px;
+	font-size: 12px;
+	font-weight: 700;
+	color: #ba9a2f;
+	line-height: 1;
+	text-decoration: none;
+}
+#literary>div ul li.first a {
+	padding-left: 0
+}
+#literary>div ul li.last a {
+	padding-right: 0
+}
+#literary>div ul li.last {
+	background-image: none
+}
+#literary>div ul a:hover {
+	text-decoration: underline;
+	color: #fff
+}
+#va-gallery div.slideWindow ul.slides li a img
+{
+	height:120px;
+	width:215px;
+}
+
+</style>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script src="/incuncg/js/common.js"></script>
+<script src="/inc/js/top.js"></script>
+<!--[if IE]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+
+var paFadePrev = function()
+{
+	var currentImg = $("#performanceImages img.selected");
+	var fadeTo = $(currentImg).prev();
+
+	if ( $("#performanceImages img").index(currentImg) == 0 )
+	{
+		fadeTo = $("#performanceImages img").last();			
+	}
+
+	$(currentImg).stop().fadeOut(500).removeClass("selected");
+	$(fadeTo).fadeIn(500).addClass("selected");
+}
+
+var paFadeNext = function()
+{
+	var currentImg = $("#performanceImages img.selected");
+	var fadeTo = $(currentImg).next();
+
+	if ( $("#performanceImages img").index(currentImg) == $("#performanceImages img").length - 1 )
+	{
+		fadeTo = $("#performanceImages img").first();
+	}
+
+	$(currentImg).stop().fadeOut(1000).removeClass("selected");
+	$(fadeTo).fadeIn(1000).addClass("selected");
+}
+
+
+
+$(document).ready(function()
+{
+	$("div.larrow").click(function()
+		{
+			paFadePrev();
+		});
+	$("div.rarrow").click(function()
+		{
+			paFadeNext();
+		});
+});
+
+</script>
+
+</head>
+
+<body>
+<ul id="uncgAccessNav">
+  <li><a href="#startcontent" tabindex="1">Skip to Main Content</a></li>
+</ul>
+<div id="container">
+  <div id="header-wrapper">
+    <div id="header">
+      <!--Secondary Heading Version 2.1.0 -->
+
+<div id="header-content">
+   <div id="header-top">
+      <h1 id="header-left"><a href="http://www.uncg.edu/" title="The University of North Carolina at Greensboro">The University of North Carolina at Greensboro</a></h1>
+      <div id="header-right">
+         <div id="header-extras">
+               <div id="tools-nav">
+                  <ul id="navlist-tools">
+                     <li><a href="http://ispartan.uncg.edu/" title="iSpartan Email Services"><img src="/incuncg/images/icon-iSpartan.png"
+                      width="19" height="19" alt="iSpartan Email Services" /></a></li>
+                     <li><a href="https://banweb.uncg.edu/" title="UNCGenie System"><img src="/incuncg/images/icon-uncgenie.png"
+                      width="20" height="20" alt="UNCGenie System" /></a></li>
+                     <li><a href="https://blackboard.uncg.edu/" title="Blackboard @ UNCG" class="noBorder"><img src="/incuncg/images/icon-blackboard.png"
+                      width="27" height="21" alt="Blackboard @ UNCG" /></a></li>
+                  </ul>
+            </div>
+            <form id="uncgSearch" action="http://search.uncg.edu/search" method="get"><div>
+               <label class="hidden" for="q">Search UNCG</label>
+               <input id="q" name="q" type="text" value="Search UNCG" title="Search UNCG's web site with Google" />
+               <input id="searchSub" type="submit" value="Submit" title="Search" />
+               <input name="site" type="hidden" value="default_collection" />
+               <input name="client" value="default_frontend" type="hidden" />
+               <input name="output" value="xml_no_dtd" type="hidden" />
+               <input name="proxystylesheet" value="default_frontend" type="hidden" />
+               </div>
+            </form>
+         </div>
+         <div id="header-audience-nav">
+            <ul id="navlist-audience">
+               <li><a href="http://www.uncg.edu/prospective-students/">Prospective Students</a></li>
+               <li><a href="http://www.uncg.edu/current-students/">Current Students</a></li>
+               <li><a href="http://www.uncg.edu/faculty-staff/">Faculty &amp; Staff</a></li>
+               <li><a href="http://alumni.uncg.edu/">Alumni</a></li>
+               <li class="noBorder"><a href="http://communityengagement.uncg.edu/">Community &amp; Friends</a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+<div id="header-bottom">
+   <div id="header-yellow-nav">
+      <ul id="navlist-yellow">
+         <li class="yellow-nav-administration"><a href="http://www.uncg.edu/administration/">ADMINISTRATION</a></li>
+         <li class="yellow-nav-academics"><a href="http://www.uncg.edu/academics/">ACADEMICS</a></li>
+         <li class="yellow-nav-research"><a href="http://research.uncg.edu/">RESEARCH</a></li>
+         <li class="yellow-nav-admissions"><a href="http://www.uncg.edu/admissions/">ADMISSIONS</a></li>
+         <li class="yellow-nav-arts"><a href="http://www.uncg.edu/arts-entertainment/">ARTS</a></li>
+         <li class="yellow-nav-global"><a href="http://www.uncg.edu/ipg/">GLOBAL</a></li>
+         <li class="yellow-nav-athletics"><a href="http://uncgspartans.com/">ATHLETICS</a></li>
+         <li class="yellow-nav-giving"><a href="http://giving.uncg.edu/">GIVING</a></li>
+         <li id="cl" class="noBorder current"><a id="campusLinks" href="http://www.uncg.edu/campus-links/">CAMPUS LINKS</a>
+            <ul class="subitems">
+               <li><a href="http://www.uncg.edu/inside-uncg/" title="Learn About UNCG">Inside <abbr title="The University of North Carolina at Greensboro">UNCG</abbr></a></li>
+               <li><a href="http://www.uncg.edu/academics/">Academics</a></li>
+               <li><a href="http://www.uncg.edu/administration/">Administration</a></li>
+               <li><a href="http://www.uncg.edu/admissions/">Admissions</a></li>
+               <li><a href="http://www.uncg.edu/arts-entertainment/">Arts &amp; Entertainment</a></li>
+               <li><a href="http://www.uncg.edu/employment/">Employment</a></li>
+               <li><a href="http://oedi.uncg.edu/">Equity, Diversity  &amp; Inclusion</a> </li>
+               <li><a href="http://giving.uncg.edu">Giving to UNCG</a></li>
+               <li><a href="http://www.uncg.edu/ipg/" title="International Programs">International Programs</a></li>
+               <li><a href="http://library.uncg.edu/" title="Jackson Library">Libraries</a></li>
+               <li><a href="http://online.uncg.edu/" title="Online Courses &amp; Degrees">Online Courses &amp; Degrees</a></li>
+               <li><a href="http://research.uncg.edu/">Research</a></li>
+               <li><a href="http://its.uncg.edu/">Technology</a></li>
+               <li><a href="http://newsandfeatures.uncg.edu/">University News</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</div>    </div>
+  </div>
+  <a id="startcontent"></a>
+  <div id="content-wrapper">
+    <div id="content">
+      <section id="feature">
+        <div id="dsbaRibbon" ></div>
+        <article style="background-image:url(
+				/inc.ure/images/arts/StringsSing-17244-TT.jpg
+			)">
+<div>
+<h1>
+				Making strings sing
+			</h1>
+<p>
+				Oriana plays the violin on her porch
+			</p>
+<p class="learn"><a href="
+				http://newsandfeatures.uncg.edu/violin-oriana-ealy/
+			">Learn More <span>&gt;</span></a></p>
+></div>
+</article>
+      </section>
+      <section id="main">
+        <div>
+          <div id="crumbs">
+            <ul>
+              <li><a title="UNCG Homepage" href="/">Home</a> &gt;</li>
+              <li title="Your current location">Arts</li>
+            </ul>
+          </div>
+          <div id="about">
+            <h1>Arts and Entertainment</h1>
+            <p>We see the arts as a unique opportunity to reflect and enrich the human experience. To bridge cultures 
+              and to share a common language. And to inspire people of all ages and backgrounds to dream big. Weâre also 
+              not afraid to take risks in order to bring new art to the world. Students and faculty explore their craft
+              here, honing it and pushing it to new levels of award-winning and thought-provoking expression that 
+              visitors from all over the state and nation come to experience. From literary to visual to performing, <abbr title="The University of North Carolina at Greensboro">UNCG</abbr> offers some of the best arts and entertainment available. Explore and be inspired. </p>
+          </div>
+          <div id="channel">
+            <ul>
+              <li class="first"><span><a title="Box Office & Arts Information Center" href="http://euc.uncg.edu/box-office/">Box Office</a></span></li>
+              <li class="second"><span><a title="Learn more about the venues used by the School of Music Theatre and Dance" href="http://performingarts.uncg.edu/events/venues">Performance Venues</a></span></li>
+            </ul>
+          </div>
+          <div id="links">
+            <h2 class="first">Performing Arts</h2>
+            <ul>
+              <li><a href="http://performingarts.uncg.edu/">School of Music, Theatre and Dance</a></li>
+              <li><a href="http://performingarts.uncg.edu/upas/">University Performing<br />
+                Arts Series</a></li>
+            </ul>
+            <h2>Visual Arts</h2>
+            <ul>
+              <li><a href="http://www.uncg.edu/art/">Department of Art</a></li>
+              <li><a href="http://www.uncg.edu/iar/">Department of Interior Architecture</a></li>
+              <li><a href="http://www.uncg.edu/bcn/">Department of Media Studies</a></li>
+              <li><a href="http://www.uncg.edu/art/exhibitions/elliot.html"><abbr title="Elliot University Center">EUC</abbr> Art Gallery</a></li>
+              <li><a href="http://weatherspoon.uncg.edu/">Weatherspoon Art Museum</a></li>
+            </ul>
+            <h2>Literary Arts</h2>
+            <ul>
+              <li><a href="http://www.uncg.edu/aas/ccwa/">Center for Creative Writing in the Arts</a></li>
+              <li><a href="http://mfagreensboro.org/">Department of English MFA Writing Program</a></li>
+            </ul>
+          </div>
+          <br class="clear" />
+        </div>
+      </section>
+      <section id="performance">
+        <h1>Performing Arts</h1>
+        <p>Dance, theatre, music and more - choose your passion and experience it live in UNCG&#39;s beautiful venues.</p>
+        <div>
+            <div class="first">
+            	<div class="larrow"></div>
+                <div id="performanceImages">
+					<img alt="Performing Art 3" src="/inc.ure/images/arts/performing/bg-perform-feature-3.jpg" class="selected">
+<img alt="Performing Art 4" src="/inc.ure/images/arts/performing/bg-perform-feature-4.jpg" >
+<img alt="Performing Art 1" src="/inc.ure/images/arts/performing/bg-perform-feature.jpg" >
+<img alt="Performing Art 2" src="/inc.ure/images/arts/performing/bg-perform-feature-2.jpg" >
+				</div>
+            	<div class="rarrow"></div>
+            </div>
+            <div class="last">
+				<p><a href="http://performingarts.uncg.edu/news/article?a=2013-08-19">Student receives research award to study ...</a><br />
+Music student Holly Riley, under the supervision of Dr. Rebecca MacLeod, Associate Professor of Music Education, received ...</p>
+<p><a href="http://performingarts.uncg.edu/news/article?a=2013-08-13">Meet the Dean - Q&amp;A with Peter Alexander</a><br />
+Q: Prior to coming to UNCG, you were the dean emeritus of the Jordan College of the Arts at Butler University in Indiana. Tell ...</p>
+<p><a href="http://performingarts.uncg.edu/news/article?a=2013-05-16">Horn Student Mayton Named 2013 Presser ...</a><br />
+Click to enlarge
+	(photo credit: Brian Speice)
+
+
+The 2013 Presser Undergraduate Scholar Award winner for the University of ...</p>
+<p><a href="http://performingarts.uncg.edu/news/article?a=2013-05-12">2013 New York Theatre Showcase Launches ...</a><br />
+Click to enlarge
+
+The Annual New York Showcase offers UNCG Theatre students an opportunity to perform in front of 500 ...</p>
+			</div>
+        </div>
+        <h2>Calendar Links</h2>
+        <ul>
+          <li class="first"><a href="http://performingarts.uncg.edu/events/calendar?discipline=Music">Music Concerts and Events</a></li>
+          <li><a href="http://performingarts.uncg.edu/events/calendar?discipline=Theatre">Theatre Performance</a></li>
+          <li><a href="http://performingarts.uncg.edu/events/calendar?discipline=Dance">Dance Performance</a></li>
+          <li class="last"><a href="http://performingarts.uncg.edu/events/calendar?category=University%20Performing%20Arts%20Series">Performing Arts Series</a></li>
+        </ul>
+      </section>
+      <section id="visual">
+			<div>
+          <h1>Visual Arts</h1>
+          <p>If thought-provoking art inspires you, <abbr title="The Univeristy of North Carolina at Greensboro">UNCG</abbr> has three main venues (<a href="http://weatherspoon.uncg.edu/">Weatherspoon Art Museum</a>, <a href="http://www.uncg.edu/art/exhibitions/gatewood.html">Gatewood Gallery</a> and <a href="http://www.uncg.edu/art/exhibitions/elliot.html"><abbr title="Elliot University Center">EUC</abbr> Gallery</a>) that exhibit distinguished permanent collections, visiting exhibitions and outstanding student work.</p>
+          <div id="va-gallery">
+            <div class="first">&nbsp;</div>
+            <div class="slideWindow">
+              <ul class="slides">
+					<li>
+<a href="http://weatherspoon.uncg.edu/exhibitions/show?title=arlene-shechet-that-time"><img src="http://weatherspoon.uncg.edu/uploads/exhibitions/2012/177/ShechetFeatured.jpg" alt="Arlene Shechet: That Time" />
+This exhibition of sculptures by Arlene Shechet offers an up-to-the-minute look at her ...</a>
+</li>
+<li>
+<a href="http://weatherspoon.uncg.edu/exhibitions/show?title=nira-pereg-abraham-abraham-sarah-sarah"><img src="http://weatherspoon.uncg.edu/uploads/exhibitions/2013/187/NiraFeatured.jpg" alt="Nira Pereg: Abraham Abraham / Sarah Sarah" />
+Nira Pereg's films, "Abraham Abraham" and "Sarah Sarah" (both 2012), follow the temporary ...</a>
+</li>
+<li>
+<a href="http://weatherspoon.uncg.edu/exhibitions/show?title=art-history-redux"><img src="http://weatherspoon.uncg.edu/uploads/exhibitions/2013/182/ReduxFeatured2.jpg" alt="Art History: Redux" />
+This journey through the history of art will explore the nuanced distinctions between ...</a>
+</li>
+<li>
+<a href="http://weatherspoon.uncg.edu/exhibitions/show?title=resolutely-matisse"><img src="http://weatherspoon.uncg.edu/uploads/exhibitions/2013/184/Matisse2007Featured.jpg" alt="Resolutely Matisse" />
+Known for his use of bright colors, flat patterns, simplified forms, and graceful lines, ...</a>
+</li>
+<li>
+<a href="http://weatherspoon.uncg.edu/exhibitions/show?title=complex-conversations-willie-cole-sculptures-and-wall-works"><img src="http://weatherspoon.uncg.edu/uploads/exhibitions/2013/185/WillieColeFeatured2.jpg" alt="Complex Conversations: Willie Cole Sculptures and Wall Works" />
+"Complex Conversations: Willie Cole" covers more than thirty years of the artist's work, ...</a>
+</li>
+<li>
+<a href="http://weatherspoon.uncg.edu/exhibitions/show?title=2013-uncg-art-department-faculty-biennial"><img src="http://weatherspoon.uncg.edu/uploads/exhibitions/2013/178/FacBi2013_02.jpg" alt="2013 UNCG Art Department Faculty Biennial" />
+The Weatherspoon is pleased to present the 2013 biennial exhibition of recent work by ...</a>
+</li>
+               </ul>
+            </div>
+            <div class="last">&nbsp;</div>
+            <br class="clear" />
+          </div>
+          <h2>Calendar Links</h2>
+        <ul>
+          <li class="first"><a href="http://weatherspoon.uncg.edu/eventcalendar/">Weatherspoon Museum</a></li>
+          <li><a href="http://gatewoodgallery.com/exhibitions_events.html">Gatewood Gallery</a></li>
+          <li class="last"><a href="http://www.uncg.edu/art/exhibitions/elliot.html">EUC Gallery</a></li>
+
+        </ul>
+        </div>
+
+      </section>
+      <section id="literary">
+      	<h1>Literary Arts</h1>
+         <p><abbr title="The University of North Carolina at Greensboro">UNCG</abbr> brings some of contemporary literatureâs most respected writers and poets
+         	to Greensboro. Opportunities to learn and engage in the literary arts are available through the <a href="http://mfagreensboro.org/">Master of Fine Arts in creative writing program</a>,
+         	the <a href="http://www.uncg.edu/aas/ccwa/">Center for Creative Writing in the Arts</a>, <a href="http://library.uncg.edu/giving/friends_of_the_libraries/index.aspx">Friends of the Libraries</a> and <a href="http://tgronline.net/">The Greensboro Review</a>, a local literary magazine with an international
+            reputation.</p>
+        <div>
+        <h2>Calendar Links</h2>
+        <ul>
+          <li class="first"><a href="http://www.uncg.edu/aas/ccwa/events.html">Center for Creative Writing in the Arts</a></li>
+          <li class="last"><a href="http://library.uncg.edu/calendar/events/">Friends of the UNCG Libraries</a></li>
+        </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div id="footer">
+    <div id="footer-content">
+      <div id="footer-left">
+            <dl title="University Contact Information">
+      <dt>The University of North Carolina at Greensboro</dt>
+      <dd><strong>Location</strong> 1400 Spring Garden Street Greensboro, NC 27412</dd>
+      <dd><strong>Mailing Address</strong> PO Box 26170, Greensboro, NC 27402-6170</dd>
+      <dd><strong>Telephone</strong> 336.334.5000</dd>
+      <dd><strong><a href="/comments/">Comments</a></strong></dd>
+    </dl>
+	<p> Copyright &copy; 2013. The University of North Carolina at Greensboro. All rights reserved.</p>      </div>
+      <div id="footer-right">
+            <!-- Footer Version 1.6 -->
+    <div id="footer-nav">
+      <ul id="navlist-footer">
+        <li class="li-box"><a href="http://ioc.uncg.edu/policies/"
+          >Web Standards &amp; Policies</a></li>
+        <li class="li-box noBorder"><a 
+          href="http://spartanalert.uncg.edu/">Emergency Info</a></li>
+        <li class="img-connect"><a href="http://connect.uncg.edu/"
+          class="noBorder" title="UNCG Connect Social Media Hub" ><img 
+          src="/incuncg/images/connect_03.jpg" width="143" height="41" 
+          alt="UNCG Connect Social Media Hub" /></a></li>
+      </ul>
+      <div id="google_translate_element"></div>
+    </div>      </div>
+    </div>
+  </div>
+  <div id="shadow-bottom"></div>
+</div>
+</body>
+</html>

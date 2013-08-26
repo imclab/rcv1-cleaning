@@ -1,0 +1,705 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<link rel="shortcut icon" href="/sites/artshound.com/icons/favicon.ico" type="image/x-icon" />
+<title>Arts, Culture & Entertainment Events in Houston, Texas | ArtsHound.com</title>
+<meta name="description" content="Find art and culture in the Houston, Texas area.  Get times and locations for theatre, music, dance, visual arts & museums, film & videos, poetry & literature, kid & family events, comedy, special & free events, local guides and more. ArtsHound.com is the leading online resource for Arts and Cultural information in Houston and Galveston Texas." />
+<meta name="keywords" content="houston arts and cultural information, houston theatre, special and free events in galveston, music dance and museums in greater houston, houston comedy clubs, houston arts events, houston events, arts, houston, events calendar, calendar, events, arts events, art events, art events Houston, theatre, theatre Houston, theater, theater Houston, music Houston, music, dance, dance Houston, visual arts, visual arts in Houston, museum, museums, museums Houston, film & videos, poetry & literature, kids and family, kid & family events, kid & family events in Houston, comedy, festivals, Houston festivals, special events, free events, local guide, Art Houston, online calendar resource, online arts calendar, arts calendar, Arts and Cultural Information, Arts and Cultural Information Houston, Houston events" />
+
+<link rel="stylesheet" href="/css/reset.css" type="text/css" media="screen, projection, print"/>
+<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection"/>
+<link rel="stylesheet" href="/css/jquery-ui-1.8.18.custom.css" type="text/css" media="screen, projection"/>
+<link rel="stylesheet" href="/css/jquery.qtip.min.css" type="text/css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="/js/fancybox/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/js/fancybox/fancybox/style.css" />
+<link rel="stylesheet" type="text/css" href="/sites/artshound.com/css/custom/dynamic_css_file.css" media="screen, projection"/>
+<link rel="stylesheet" href="/sites/artshound.com/css/custom/screen-override.css" type="text/css" media="screen, projection"/>
+
+<link rel="stylesheet" href="/css/print.css" type="text/css" media="print"/>
+<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="/js/scripts.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/fancybox/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="/site/spotlight_box/spotlight.css" /><link rel="stylesheet" type="text/css" href="/sites/artshound.com/spotlight_box/spotlight.css" /><script type="text/javascript" src="/site/spotlight_box/spotlight.js"></script><script> $.getScript("/sites/artshound.com/spotlight_box/spotlight_box.js"); </script>
+<script type="text/javascript" src="/js/jquery.semantictabs.js"></script>
+<script type="text/javascript" src="/js/jquery.qtip.min.js"></script>
+<!-- DAMON: Updated paths to js and css files in IE conditionals. Now point to specific versions of IE instead of using "lte" versions. -->
+<!--[if IE]>
+<script type="text/javascript" src="/js/ie.js"></script>
+<link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen, projection"/>
+<![endif]-->
+<!--[if IE 8]>
+<script type="text/javascript" src="/js/ie8.js"></script>
+<link rel="stylesheet" href="/css/ie8.css" type="text/css" media="screen, projection"/>
+<![endif]-->
+<!--[if IE 7]>
+<script type="text/javascript" src="/js/ie7.js"></script>
+<link rel="stylesheet" href="/css/ie7.css" type="text/css" media="screen, projection"/>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="/js/DD_belatedPNG_0.0.7a-min.js"></script>
+<script type="text/javascript" src="/js/ie6.js"></script>
+<link rel="stylesheet" href="/css/ie6.css" type="text/css" media="screen, projection"/>
+<![endif]-->
+	<script src="/js/jquery.corner.src.js" type="text/javascript" charset="utf-8"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			$("a.various3").fancybox({
+
+				'width'				: 960,
+
+				'height'			: 850,
+
+				'autoScale'			: false,
+
+				'transitionIn'		: 'elastic',
+
+				'transitionOut'		: 'elastic',
+
+				'scrolling'			: 'no',
+
+				'type'				: 'iframe'
+
+			});
+
+			$("a.photo_up").fancybox({
+
+				'width'				: 960,
+
+				'height'			: 850,
+
+				'autoScale'			: false,
+
+				'transitionIn'		: 'elastic',
+
+				'transitionOut'		: 'elastic',
+
+				'scrolling'			: 'no',
+
+				'type'				: 'iframe',
+
+				onClosed: function () {
+				            window.location.reload(true);
+        		}
+
+			});
+
+			$("a.video_up").fancybox({
+
+				'width'				: 960,
+
+				'height'			: 850,
+
+				'autoScale'			: false,
+
+				'transitionIn'		: 'elastic',
+
+				'transitionOut'		: 'elastic',
+
+				'scrolling'			: 'no',
+
+				'type'				: 'iframe',
+
+				onClosed: function () {
+				            window.location.reload(true);
+        		}
+
+			});
+
+
+$('a.login-photo').click(function() {
+  next_window = 'a.photo_up';
+    window.after_login = function() {
+
+        //window.location.reload(true);
+        $('#login').hide();
+        $(next_window).trigger('click');
+
+    }
+});
+
+$('a.login-video').click(function() {
+  next_window = 'a.video_up';
+});
+
+    $('a.login-photo').fancybox({
+        type: 'inline',
+        href: '#login',
+        autoDimensions: true,
+        autoResize: true,
+        transitionOut: 'none',
+        onClosed: function () {
+            $('#login').hide();
+        },
+        onStart: function() {
+            $('#fancybox-content').addClass('no-border');
+            $('#login').width(605);
+            $('#login').show();
+        }
+
+     });
+
+    $('a.login-video').fancybox({
+        type: 'inline',
+        href: '#login',
+        autoDimensions: true,
+        autoResize: true,
+        transitionOut: 'none',
+        onClosed: function () {
+            $('#login').hide();
+        },
+        onStart: function() {
+            $('#fancybox-content').addClass('no-border');
+            $('#login').width(605);
+            $('#login').show();
+        }
+
+
+    });
+
+
+		});
+
+	</script>
+
+
+<script type="text/javascript" src="/js/roundedno.js"></script>
+
+</head>
+<body id="home" class=""  style=" background-position: top center; background-repeat: no-repeat;">
+<script language="JavaScript">
+
+ function openNewWindow() {
+ popupWin = window.open('http://www.artshound.com/fbconnect',
+ 'open_window',
+ 'location,status,dependent,width=400,height=660, left=0, top=0')
+ }
+ </script>
+<!-- Member login section -->
+<div id="member_login_bar">
+<div id="member_login_bar_inner" class="">
+<span id="member_login_todays_date">
+<!-- <table height=30><tr><td>
+Monday, Aug 26, 2013</td></tr></table> -->
+</span>
+
+
+<a onclick="javascript:openNewWindow();  return false" href="http://www.artshound.com/fbconnect"><img id='facelogo_id' src="/images/icon-fb_signin.gif" width="15" height="15" border="0" align="top" /> &nbsp;<b>Sign in with Facebook</b></a>
+
+ &nbsp; | &nbsp;<a href="/user/login"><b>Login</b></a> &nbsp; | &nbsp;
+																			<a href="/index.php/user/login"><b>Create Account</b></a>
+						
+</div></div>
+
+
+<div id="main">
+  <div id="masthead">
+  <div id='inner_masthead'><div style="position:relative">
+<div>
+<a href="/"><img src="http://artshound.com/sites/artshound.com/templates/header/header.jpg" border="0" usemap="#Map">
+</a>
+<map name="Map">
+  <area shape="rect" coords="876,8,905,38" href="https://www.facebook.com/artshound" target="_new" alt="Facebook">
+  <area shape="rect" coords="912,8,946,38" href="https://www.twitter.com/#!/artshounddotcom" target="_new" alt="Twitter">
+</map>
+  </div>
+  <div style="position:absolute; left:0px; top:0px;"><a href="/">
+<img id=imgdog src='/images/artshound.gif?121212'
+onmouseover="document.getElementById('imgdog').src='/images/artshound2.gif?232323'" 
+onmouseout="document.getElementById('imgdog').src='/images/artshound.gif?242424'">
+</a>
+ 
+  </div>
+</div>
+
+
+</div>
+  
+  <div id='alternate_inner_masthead' style='display:none'></div>
+  <div id='alternate_infobar' style='display:none'></div>
+  </div>
+
+
+  <div id="header" class=" events_only ">
+      <ul id="main_nav" class="events_only">
+       
+       <li><a href="#" onClick="location.href='/categories/index/2/0/THEATRE_+_COMEDY';">THEATRE + COMEDY</a></li><li><a href="#" onClick="location.href='/categories/index/3/0/MUSIC';">MUSIC</a><ul><li><a href="/categories/index/3/1557/MUSIC_CLASSICAL">- CLASSICAL</a></li><li><a href="/categories/index/3/1581/MUSIC_BROADWAY_|_STANDARDS">- BROADWAY | STANDARDS</a></li><li><a href="/categories/index/3/1559/MUSIC_BLUES_|_JAZZ">- BLUES | JAZZ</a></li><li><a href="/categories/index/3/1561/MUSIC_POP_|_ROCK">- POP | ROCK</a></li><li><a href="/categories/index/3/1563/MUSIC_COUNTRY">- COUNTRY</a></li><li><a href="/categories/index/3/1565/MUSIC_ACOUSTIC_|_FOLK_|_WORLD">- ACOUSTIC | FOLK | WORLD</a></li><li><a href="/categories/index/3/1567/MUSIC_DANCE_|_LATIN_|_URBAN">- DANCE | LATIN | URBAN</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/4/0/DANCE';">DANCE</a></li><li><a href="#" onClick="location.href='/categories/index/13/0/VISUAL_ARTS_+_MUSEUMS';">VISUAL ARTS + MUSEUMS</a></li><li><a href="#" onClick="location.href='/categories/index/5/0/FILM';">FILM</a></li><li><a href="#" onClick="location.href='/categories/index/6/0/LITERATURE_+_LECTURES';">LITERATURE + LECTURES</a></li><li><a href="#" onClick="location.href='/categories/index/7/0/KIDS_+_FAMILIES';">KIDS + FAMILIES</a></li><li><a href="#" onClick="location.href='/categories/index/9/0/FESTIVALS';">FESTIVALS</a></li><li><a href="#" onClick="location.href='/categories/index/8/0/SPECIAL_EVENTS';">SPECIAL EVENTS</a><ul><li><a href="/categories/index/8/1573/SPECIAL_EVENTS_FOOD_+_WINE">- FOOD + WINE</a></li><li><a href="/categories/index/8/1571/SPECIAL_EVENTS_FUNDRAISERS_+_GALAS">- FUNDRAISERS + GALAS</a></li><li><a href="/categories/index/8/1575/SPECIAL_EVENTS_SEASONAL">- SEASONAL</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/10/0/SPORTS_+_OUTDOORS';">SPORTS + OUTDOORS</a></li><li><a href="#" onClick="location.href='/categories/index/12/0/FREE_EVENTS';">FREE EVENTS</a></li><li><a href="#" onClick="location.href='/categories/index/11/0/CLASSES_+_WORKSHOPS';">CLASSES + WORKSHOPS</a></li>
+       
+    </ul>
+    <!-- End #main_nav -->
+    <!-- End #search_section -->
+  </div>
+	
+  <!-- End #header -->
+  <div id="content">
+          <div id="search_section">
+<h2>Find an <strong>Event</strong></h2>    
+<script type="text/javascript">
+<!--
+//create the dates for search links
+var myDate = new Date();
+day0 = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+//add a day to the date
+var myDate = new Date();
+myDate.setDate(myDate.getDate() + 1);
+day1 = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+//add 7
+var myDate = new Date();
+myDate.setDate(myDate.getDate() + 7);
+day7 = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+//add 14
+var myDate = new Date();
+myDate.setDate(myDate.getDate() + 14);
+day14 = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+//add 30
+var myDate = new Date();
+myDate.setDate(myDate.getDate() + 30);
+day30 = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+var myDate = new Date();
+
+// Find Friday
+diff = 5 - myDate.getDay();
+
+myDate.setDate(myDate.getDate() + diff);
+we_start = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+// ...and end on Sunday
+myDate.setDate(myDate.getDate() + 2);
+we_end = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+var month = myDate.getMonth() + 1
+var day = myDate.getDate()
+var year = myDate.getFullYear()
+//document.write(day14);
+//document.write(year + "-" + month + "-" + day)
+//-->
+</script>
+<div class="search_wrapper">
+<style>
+	.ui-autocomplete-loading { background: white url('/images/ui-anim_basic_16x16.gif') right center no-repeat; }
+	.ui-autocomplete { background:#FFF; border: 1px solid #B0B1B3; }
+	.ui-autocomplete-type {
+		border-top: 1px solid #CCCCCC;
+		clear:both;
+		color:#999;
+		text-transform: capitalize;
+		padding: .2em .4em;
+		line-height: 1.5;
+		text-align:right;
+	}
+	.ui-autocomplete-type:first-child { border: 0; }
+	.ui-menu .ui-menu-item a { text-align: left; }
+</style>
+<div class="search_section_inner search_section_keyword">
+    <form action="/search/results/keyword/1/events/none/up/" method="post" id="form_search_keywords">
+        <input type="hidden" name="submitted_search" value="true" />
+        <input type="hidden" name="search_type" value="keyword" />
+        <input type="hidden" name="item_type" value="events" />
+        <label>Search by keyword, organization or venue:</label>
+        <input name="keywords" id="keywords" type="text" title="" style="position: relative; z-index: 10;"  />
+
+<input src="/images/go-button_49.png" type="image" class="button" />
+
+
+        <p class="advanced_search_link"><a href="/advanced_search/">Advanced Search &raquo;</a></p>
+    </form>
+</div>
+
+
+<div class="search_section_inner search_section_date">
+    <form action="/search/results/keyword/1/events/date/up/none/none/none/" method="post" id="form_search_dates">
+        <input type="hidden" name="submitted_search" value="true" />
+        <input type="hidden" name="search_type" value="keyword" />
+        <input type="hidden" name="item_type" value="events" />
+        <label>Search by date:</label>
+        <input name="dateBegin" id="start" type="text" title="Start date" style="position: relative; z-index: 10;" />
+        <input name="dateEnd" id="end" type="text" title="End date" style="position: relative; z-index: 10;" />
+
+<input src="/images/go-button_49.png" type="image" class="button" />
+    </form>
+</div>
+<script type="text/javascript">
+// Add the Type over the menu items
+$.widget( "custom.catcomplete", $.ui.autocomplete, {
+	_renderMenu: function( ul, items ) {
+		var self = this,
+			currentType = "";
+		$.each( items, function( index, item ) {
+			if ( item.type != currentType ) {
+				ul.append( "<li class='ui-autocomplete-type'>" + item.type + "</li>" );
+				currentType = item.type;
+			}
+			self._renderItem( ul, item );
+		});
+	}
+});
+
+function keywords_go(href, search) {
+	if(search == 1) {
+		var action = $('#form_search_keywords').attr('action');
+		href = action + href;
+	}
+	document.location.href = href;
+	return false;
+}
+
+$(function() {
+	$( "#keywords").catcomplete({
+		source: "/search/suggest/",
+		minLength: 2,
+		select: function( event, ui ) {
+			if(ui.item.href) {
+				keywords_go( ui.item.href );
+			} else {
+				keywords_go( ui.item.label, 1 );
+			}
+		},
+		delay: 300
+	});
+});
+	
+<!-- // Submit the search form with Get
+$('#form_search_keywords').submit(function(e){
+	var keywords = $('#keywords').val();
+	var action = $('#form_search_keywords').attr('action');
+	document.location.href = action + keywords;
+	e.preventDefault();
+	return false;
+});
+//-->
+
+<!-- // Submit the search form with Get
+$('#form_search_dates').submit(function(e){
+	var dateBegin = $('#start').val();
+	dateBegin = $.datepicker.formatDate('yy-mm-dd', new Date(dateBegin));
+	var dateEnd = $('#end').val();
+	dateEnd = $.datepicker.formatDate('yy-mm-dd', new Date(dateEnd));
+	if(dateEnd	 == 'NaN-NaN-NaN') { dateEnd   = 'none'; }
+	if(dateBegin == 'NaN-NaN-NaN') { dateBegin = 'none'; }
+	var action = $('#form_search_dates').attr('action');
+	document.location.href = action + dateBegin + "/" + dateEnd;
+	e.preventDefault();
+	return false;
+});
+//-->
+</script>
+<div class="search_section_inner search_section_date_range">
+    <label>Search by date range:</label>
+    <script type="text/javascript">
+        document.write("<a href='/search/results/keyword/1/events/date/up/none/none/none/" + day0 +"/" + day0 +"/none/none/none/none'>Today</a>");
+        document.write("<a href='/search/results/keyword/1/events/date/up/none/none/none/" + day1 +"/" + day1 +"/none/none/none/none'>Tomorrow</a>");
+        document.write("<a href='/search/results/keyword/1/events/date/up/none/none/none/" + we_start +"/" + we_end +"/none/none/none/none'>Weekend</a>");
+    </script>
+				Next:
+    <script>
+        document.write("<a href='/search/results/keyword/1/events/date/up/none/none/none/" + day0 +"/" + day7 +"/none/none/none/none'>7</a>");
+        document.write("<a href='/search/results/keyword/1/events/date/up/none/none/none/" + day0 +"/" + day14 +"/none/none/none/none'>14</a>");
+        document.write("<a href='/search/results/keyword/1/events/date/up/none/none/none/" + day0 +"/" + day30 +"/none/none/none/none'>30</a>");
+    </script> days
+</div>
+
+<div class="search_section_inner search_section_filters"><!--{searchFilters}--></div>
+
+<p class="list-event">
+    Do you have an event you'd like to have listed?
+</p>
+<a href="/page/submit_event/" class="submit-listing" ><img src="/images/submit_listing_49.png" /></a>
+
+</div>
+</div>
+
+  <div id="content_main_container">
+  	<ul id="maincolumnlistA" class="sortable maincolumn"></ul>
+    <div id="content_main">
+	  
+      <div id="home_spotlight" style="height:250px"><div id="spotlight-1"></div></div>
+<!-- End #home_spotlight -->
+    <ul id="maincolumnlistC" class="sortable maincolumn"></ul>
+<div id="home_featured_events"><ul><li id="column_one"><h3><a href="/categories/index/2/0/">Theatre</a></h3><ul>      <li><a href="/event/detail/441787168/Foxfinder"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441787168/foxfinder2_medium.jpg" width="120" height="174"  alt="Foxfinder" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441787168/Foxfinder">Foxfinder</a></h4>        <p>Presented by <a href="/org/detail/531/Mildreds_Umbrella_Theater_Company">Mildred's Umbrella Theater Company</a> at <a href="/venue/detail/330264278/Studio_101_at_Spring_Street_Studios_formerly_Divergence_Music_Arts_Space">Studio 101 at Spring Street Studios (formerly Divergence Music & Arts Space)</a><br />          08/15/13 - 08/31/13</p>      </li>      <li><a href="/event/detail/441788834/South_Pacific"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441788834/southpacificagain_medium.jpg" width="120" height="173"  alt="South Pacific" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441788834/South_Pacific">South Pacific</a></h4>        <p>Presented by <a href="/org/detail/616/The_Players_Theatre_Company_formerly_Crighton_Players">The Players Theatre Company (formerly Crighton Players)</a> at <a href="/venue/detail/1799/The_Owen_Theatre">The Owen Theatre</a><br />          08/30/13 - 09/21/13</p>      </li>      <li><a href="/event/detail/441795543/The_Nerd"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441795543/nerdofer_medium.jpg" width="120" height="175"  alt="The Nerd" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441795543/The_Nerd">The Nerd</a></h4>        <p>Presented by <a href="/org/detail/448/Texas_Repertory_Theatre_Company">Texas Repertory Theatre Company</a> at <a href="/venue/detail/325/Texas_Repertory_Theatre_Company">Texas Repertory Theatre Company</a><br />          08/29/13 - 09/22/13</p>      </li>      <li><a href="/event/detail/441791747/The_Real_Thing_"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441791747/henry_annie_1_medium.jpg" width="120" height="174"  alt="The Real Thing " style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441791747/The_Real_Thing_">The Real Thing </a></h4>        <p>Presented by <a href="/org/detail/63/Main_Street_Theater">Main Street Theater</a> at <a href="/venue/detail/248/Main_Street_Theater_Rice_Village">Main Street Theater - Rice Village</a><br />          08/31/13 - 09/29/13</p>      </li></ul></li><li id="column_two"><h3><a href="/categories/index/3/0/">Music</a></h3><ul>      <li><a href="/event/detail/441792821/The_Red_Eye_Tour_2013_with_Young_Roddy_Corner_Boy_P_Fiend"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441792821/redeye2013_medium.jpg" width="120" height="78"  alt="The Red Eye Tour 2013 with Young Roddy, Corner Boy P, Fiend" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441792821/The_Red_Eye_Tour_2013_with_Young_Roddy_Corner_Boy_P_Fiend">The Red Eye Tour 2013 with Young Roddy, Corner Boy P, Fiend</a></h4>        <p>Presented by <a href="/org/detail/378/Warehouse_Live">Warehouse Live</a> at <a href="/venue/detail/280/Warehouse_Live">Warehouse Live</a><br />          08/26/13</p>      </li>      <li><a href="/event/detail/441784293/Shawn_Phillips"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441784293/shawn-phillips_medium.jpg" width="120" height="174"  alt="Shawn Phillips" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441784293/Shawn_Phillips">Shawn Phillips</a></h4>        <p>Presented by <a href="/org/detail/512/McGonigels_Mucky_Duck">McGonigel's Mucky Duck</a> at <a href="/venue/detail/379/McGonigels_Mucky_Duck">McGonigel's Mucky Duck</a><br />          08/27/13</p>      </li>      <li><a href="/event/detail/441792082/Donna_Dean"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441792082/donnadean_medium.jpg" width="120" height="175"  alt="Donna Dean" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441792082/Donna_Dean">Donna Dean</a></h4>        <p>Presented by <a href="/org/detail/1178/Under_The_Volcano">Under The Volcano</a> at <a href="/venue/detail/229/Under_The_Volcano">Under The Volcano</a><br />          08/28/13</p>      </li>      <li><a href="/event/detail/441793687/Eugene_Moody_the_Blues_Back_Band"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441793687/moody_may27-thumb-560x373_medium.jpg" width="120" height="174"  alt="Eugene Moody &amp; the Blues Back Band" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441793687/Eugene_Moody_the_Blues_Back_Band">Eugene Moody & the Blues Back Band</a></h4>        <p>Presented by <a href="/org/detail/1432/Shakespeare_Pub">Shakespeare Pub</a> at <a href="/venue/detail/861/Shakespeare_Pub">Shakespeare Pub</a><br />          08/28/13</p>      </li></ul></li><li id="column_three"><h3><a href="/categories/index/4/0/">Dance</a></h3><ul>      <li><a href="/event/detail/441792279/Golden_Dragon_Acrobats_at_Miller_Outdoor_Theatre"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441792279/golden_dragon_acrobats(1)_medium.jpg" width="120" height="169"  alt="Golden Dragon Acrobats (at Miller Outdoor Theatre)" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441792279/Golden_Dragon_Acrobats_at_Miller_Outdoor_Theatre">Golden Dragon Acrobats (at Miller Outdoor Theatre)</a></h4>        <p>Presented by <a href="/org/detail/308/Miller_Theatre_Advisory_Board">Miller Theatre Advisory Board</a> at <a href="/venue/detail/11/Miller_Outdoor_Theatre">Miller Outdoor Theatre</a><br />          08/30/13</p>      </li>      <li><a href="/event/detail/441791541/The_Rite_of_Summer"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441791541/the_rite_of_summer_medium.jpg" width="120" height="173"  alt="The Rite of Summer" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441791541/The_Rite_of_Summer">The Rite of Summer</a></h4>        <p>Presented by <a href="/org/detail/582/FrenetiCore">FrenetiCore</a> at <a href="/venue/detail/446/Frenetic_Theater">Frenetic Theater</a><br />          08/29/13 - 09/01/13</p>      </li>      <li><a href="/event/detail/441789883/Collide"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441789883/noble_motion_medium.jpg" width="120" height="174"  alt="Collide" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441789883/Collide">Collide</a></h4>        <p>Presented by <a href="/org/detail/220144306/NobleMotion_Dance_NMD">NobleMotion Dance (NMD)</a> at <a href="/venue/detail/286/Hobby_Center_Zilkha_Hall">Hobby Center - Zilkha Hall</a><br />          09/06/13 - 09/07/13</p>      </li>      <li><a href="/event/detail/441795710/Four_Premieres_"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441795710/jim_nowakowski_amitava_sarkar_medium.jpg" width="120" height="174"  alt="Four Premieres " style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441795710/Four_Premieres_">Four Premieres </a></h4>        <p>Presented by <a href="/org/detail/255/Houston_Ballet">Houston Ballet</a> at <a href="/venue/detail/3/Wortham_Theater_Center_Brown_Theater">Wortham Theater Center - Brown Theater</a><br />          09/05/13 - 09/15/13</p>      </li></ul></li><li id="column_four"><h3><a href="/categories/index/13/0/">Visual Arts</a></h3><ul>      <li><a href="/event/detail/441794965/Breaking_the_Boundaries_Illustration_and_Paintings_from_Tokyo"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441794965/yumie_iino_medium.jpg" width="120" height="175"  alt="Breaking the Boundaries: Illustration and Paintings from Tokyo" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441794965/Breaking_the_Boundaries_Illustration_and_Paintings_from_Tokyo">Breaking the Boundaries: Illustration and Paintings from Tokyo</a></h4>        <p>Presented by <a href="/org/detail/1355/College_of_the_Mainland">College of the Mainland</a> at <a href="/venue/detail/2727/College_of_the_Mainland_COM_Art_Gallery">College of the Mainland (COM) Art Gallery</a><br />          08/26/13 - 09/19/13</p>      </li>      <li><a href="/event/detail/441795978/Lone_Star_CollegeKingwood_2014_Faculty_Show"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441795978/shirtless_young_medium.jpg" width="120" height="169"  alt="Lone Star College-Kingwood 2014 Faculty Show" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441795978/Lone_Star_CollegeKingwood_2014_Faculty_Show">Lone Star College-Kingwood 2014 Faculty Show</a></h4>        <p>Presented by <a href="/org/detail/220183841/Lone_Star_CollegeKingwood_Art_Gallery">Lone Star College-Kingwood Art Gallery</a> at <a href="/venue/detail/859/Lone_Star_CollegeKingwood_Performing_Arts_Center_PAC_">Lone Star College-Kingwood, Performing Arts Center (PAC) </a><br />          08/28/13 - 09/25/13</p>      </li>      <li><a href="/event/detail/441796016/Michael_Bise_Life_and_Death_Lawrence_Lee_Into_the_Light"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441796016/gac2a_medium.jpg" width="120" height="174"  alt="Michael Bise: Life and Death &amp; Lawrence Lee: Into the Light" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441796016/Michael_Bise_Life_and_Death_Lawrence_Lee_Into_the_Light">Michael Bise: Life and Death & Lawrence Lee: Into the Light</a></h4>        <p>Presented by <a href="/org/detail/339/Galveston_Arts_Center">Galveston Arts Center</a><br />          08/24/13 - 09/29/13</p>      </li>      <li><a href="/event/detail/441796209/A_Stitch_in_Jewish_Time_Provocative_Textiles"><div id="event_image"><img class="event_image" src="http://www.artshound.com/sites/artshound.com/images/event/441796209/feministartchainedae+_500_600_medium.jpg" width="120" height="174"  alt="A Stitch in Jewish Time: Provocative Textiles" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441796209/A_Stitch_in_Jewish_Time_Provocative_Textiles">A Stitch in Jewish Time: Provocative Textiles</a></h4>        <p>Presented by <a href="/org/detail/336/Jewish_Communitiy_Center_of_Houston_Evelyn_Rubenstein_Jewish_Community_Center_of_Houston">Jewish Communitiy Center of Houston (Evelyn Rubenstein Jewish Community Center of Houston)</a> at <a href="/venue/detail/254/Jewish_Community_Center_of_Houston_Evelyn_Rubenstein_Jewish_Community_Center">Jewish Community Center of Houston (Evelyn Rubenstein Jewish Community Center)</a><br />          08/25/13 - 10/18/13</p>      </li></ul></li></ul></div>
+<!-- End #home_featured_events -->
+    </div>
+    <!-- End #content_main -->
+    <ul id="maincolumnlistB" class="sortable maincolumn"></ul>
+	</div>
+    <div id="content_sub">
+      <ul id="sidecolumnlist" class="sortable">
+	<li id="sidecolumnitem_10729" class="borderless" >
+        <p><a href="/page/goldstar"><img src="/sites/artshound.com/images/local/Goldstar-Ticket-Banner-v2.jpg" width="300" height="143" alt="" /></a></p></li>
+
+<li id="sidecolumnitem_11158" class="borderless" >
+        <p><a href="http://eepurl.com/DrdCX"><img src="/sites/artshound.com/images/local/Subscribe-Button-v1.jpg" width="300" height="247" alt="" /></a>&nbsp;</p></li>
+
+<!-- DAMON: Removed class="window" from this LI as it is not really needed. -->
+<li id="sidecolumnitem_9917" class="window">
+        <h2 class="handle">Follow Us</h2>
+    <p><p style="text-align: center; ">&nbsp;<a href="https://www.facebook.com/Artshound"><img width="75" height="75" alt="" src="/sites/artshound.com/images/local/Artshound%20-%20Facebook-Icon%20(Teal)%20Large.png" /></a>&nbsp; &nbsp;&nbsp;<a href="https://twitter.com/#!/ARTSHOUNDDOTCOM"><img width="75" height="75" src="/sites/artshound.com/images/local/Artshound%20-%20Twitter%20Icon%20(Large).png" alt="" /></a></p></p>
+</li>
+
+<li id="sidecolumnitem_9925" class="borderless" >
+        <p style="text-align: center;"><script type="text/javascript" src="http://voap.weather.com/weather/oap/USTX0617?template=GENXH&par=3000000007&unit=0&key=twciweatherwidget"></script></p></li>
+
+<li id="sidecolumnitem_9929" class="advertisement" >
+        <!--/* Openads Javascript Tag v2.4.2 */-->
+    <!--/*
+      * The backup image section of this tag has been generated for use on a
+      * non-SSL page. If this tag is to be placed on an SSL page, change the
+      *   'http://ads.artsopolis.com/www/delivery/...'
+      * to
+      *   'https://ads.artsopolis.com/www/delivery/...'
+      *
+      * This noscript section of this tag only shows image banners. There
+      * is no width or height in these banners, so if you want these tags to
+      * allocate space for the ad before it shows, you will need to add this
+      * information to the <img> tag.
+      *
+      * If you do not want to deal with the intricities of the noscript
+      * section, delete the tag (from <noscript>... to </noscript>). On
+      * average, the noscript tag is called from less than 1% of internet
+      * users.
+      */-->
+
+    <script type='text/javascript'><!--//<![CDATA[
+       var m3_u = (location.protocol=='https:'?'https://ads.artsopolis.com/www/delivery/ajs.php':'http://ads.artsopolis.com/www/delivery/ajs.php');
+       var m3_r = Math.floor(Math.random()*99999999999);
+       if (!document.MAX_used) document.MAX_used = ',';
+       document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+       document.write ("?zoneid=717&amp;block=1");
+       document.write ('&amp;cb=' + m3_r);
+       if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+       document.write ("&amp;loc=" + escape(window.location));
+       if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+       if (document.context) document.write ("&context=" + escape(document.context));
+       if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+       document.write ("'><\/scr"+"ipt>");
+    //]]>--></script><noscript><a href='http://ads.artsopolis.com/www/delivery/ck.php?n=ac0184cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=5&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ac0184cc' border='0' alt='' /></a></noscript>
+</li>
+ 
+
+<li id="sidecolumnitem_10566" class="advertisement" >
+        <!--/* Openads Javascript Tag v2.4.2 */-->
+    <!--/*
+      * The backup image section of this tag has been generated for use on a
+      * non-SSL page. If this tag is to be placed on an SSL page, change the
+      *   'http://ads.artsopolis.com/www/delivery/...'
+      * to
+      *   'https://ads.artsopolis.com/www/delivery/...'
+      *
+      * This noscript section of this tag only shows image banners. There
+      * is no width or height in these banners, so if you want these tags to
+      * allocate space for the ad before it shows, you will need to add this
+      * information to the <img> tag.
+      *
+      * If you do not want to deal with the intricities of the noscript
+      * section, delete the tag (from <noscript>... to </noscript>). On
+      * average, the noscript tag is called from less than 1% of internet
+      * users.
+      */-->
+
+    <script type='text/javascript'><!--//<![CDATA[
+       var m3_u = (location.protocol=='https:'?'https://ads.artsopolis.com/www/delivery/ajs.php':'http://ads.artsopolis.com/www/delivery/ajs.php');
+       var m3_r = Math.floor(Math.random()*99999999999);
+       if (!document.MAX_used) document.MAX_used = ',';
+       document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+       document.write ("?zoneid=551&amp;block=1");
+       document.write ('&amp;cb=' + m3_r);
+       if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+       document.write ("&amp;loc=" + escape(window.location));
+       if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+       if (document.context) document.write ("&context=" + escape(document.context));
+       if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+       document.write ("'><\/scr"+"ipt>");
+    //]]>--></script><noscript><a href='http://ads.artsopolis.com/www/delivery/ck.php?n=ac0184cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=5&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ac0184cc' border='0' alt='' /></a></noscript>
+</li>
+ 
+
+
+<li id="sidecolumnitem_10728" class="advertisement" >
+        <!--/* Openads Javascript Tag v2.4.2 */-->
+    <!--/*
+      * The backup image section of this tag has been generated for use on a
+      * non-SSL page. If this tag is to be placed on an SSL page, change the
+      *   'http://ads.artsopolis.com/www/delivery/...'
+      * to
+      *   'https://ads.artsopolis.com/www/delivery/...'
+      *
+      * This noscript section of this tag only shows image banners. There
+      * is no width or height in these banners, so if you want these tags to
+      * allocate space for the ad before it shows, you will need to add this
+      * information to the <img> tag.
+      *
+      * If you do not want to deal with the intricities of the noscript
+      * section, delete the tag (from <noscript>... to </noscript>). On
+      * average, the noscript tag is called from less than 1% of internet
+      * users.
+      */-->
+
+    <script type='text/javascript'><!--//<![CDATA[
+       var m3_u = (location.protocol=='https:'?'https://ads.artsopolis.com/www/delivery/ajs.php':'http://ads.artsopolis.com/www/delivery/ajs.php');
+       var m3_r = Math.floor(Math.random()*99999999999);
+       if (!document.MAX_used) document.MAX_used = ',';
+       document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+       document.write ("?zoneid=goldstar_banner&amp;block=1");
+       document.write ('&amp;cb=' + m3_r);
+       if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+       document.write ("&amp;loc=" + escape(window.location));
+       if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+       if (document.context) document.write ("&context=" + escape(document.context));
+       if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+       document.write ("'><\/scr"+"ipt>");
+    //]]>--></script><noscript><a href='http://ads.artsopolis.com/www/delivery/ck.php?n=ac0184cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=5&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ac0184cc' border='0' alt='' /></a></noscript>
+</li>
+ 
+
+
+
+      </ul>
+    </div>
+    <!-- End #content_sub -->
+    <div id="site_info">
+      <ul id="footerlist" class="sortable">
+	<li id="footeritem_9913"
+class="borderless" >
+        <p style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 11px;"><span style="color: rgb(128, 128, 128);"><b><a href="http://artsopolisnetwork.com" target="_blank"><span style="color: rgb(0, 0, 0); ">Artsopolis Network Members</span></a></b></span><span style="color: rgb(218, 128, 32);"><b>:</b></span><span style="color: rgb(128, 128, 128);"><b>&nbsp;</b></span><a href="http://www.nowplayingaustin.com/" target="_blank"><span style="color: rgb(128, 128, 128);">  Austin TX   </span></a><span style="color: rgb(128, 128, 128);">  | <a href="http://birmingham365.org/" target="_blank"><span style="color: rgb(128, 128, 128);"> Birmingham AL  </span></a> | <a href="http://myndarts.com" target="_blank"><span style="color: rgb(128, 128, 128);">Bismarck ND  </span></a> | <a href="http://artsboston.org" target="_blank"><span style="color: rgb(128, 128, 128);">Boston MA</span></a> | <a href="http://www.charlottecultureguide.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Charlotte NC</span></a> | <a href="http://www.peakradar.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Colorado Springs CO</span></a> | <a href="http://onecolumbiasc.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Columbia SC</span></a> | <a href="http://myndarts.com" target="_blank"><span style="color: rgb(128, 128, 128);">Fargo ND</span></a> | <a href="http://flagstaff.showup.com" target="_blank"><span style="color: rgb(128, 128, 128);">Flagstaff AZ</span></a> | <a href="http://www.geneseefun.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Flint MI</span></a> | <a href="http://www.artscalendar.com" target="_blank"><span style="color: rgb(128, 128, 128);">Ft Lauderdale FL</span></a> |&nbsp;</span><br />
+<span style="color: rgb(128, 128, 128);"> <a href="http://www.worthgoing.com" target="_blank"><span style="color: rgb(128, 128, 128);">Fort Worth TX</span></a> | <a href="http://myndarts.com" target="_blank"><span style="color: rgb(128, 128, 128);">Grand Forks ND</span></a> | <a href="http://www.gotriadscene.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Greensboro NC</span></a> | <a href="http://www.artshound.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Houston TX</span></a> |&nbsp;<a href="http://www.kalamazooarts.org" target="_blank"><span style="color: rgb(128, 128, 128);">Kalamazoo MI</span></a> | <a href="http://www.ovations365.com" target="_blank"><span style="color: rgb(128, 128, 128);">Macon GA</span></a> | <a href="http://events.artsmemphis.org/" target="_blank"><span style="color: rgb(128, 128, 128);">Memphis TN</span></a> | <a href="http://milwaukee365.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Milwaukee WI</span></a> | <a href="http://myndarts.com" target="_blank"><span style="color: rgb(128, 128, 128);">Minot ND</span></a> | <a href="http://www.montereybay365.com" target="_blank"><span style="color: rgb(128, 128, 128);">Monterey CA</span></a> | <a href="http://www.nowplayingnashville.com" target="_blank"><span style="color: rgb(128, 128, 128);">Nashville TN</span></a> | <a href="http://www.your757.com" target="_blank"><span style="color: rgb(128, 128, 128);">Norfolk VA</span></a> |&nbsp;<a href="http://www.sparkoc.com" target="_blank"><span style="color: rgb(128, 128, 128);">Orange County CA</span></a> | <br />
+<a href="http://palmbeachcounty.artscalendar.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Palm Beach County FL </span></a> | <a href="http://phillyfunguide.com" target="_blank"><span style="color: rgb(128, 128, 128);">Philadelphia PA </span></a> | <a href="http://www.arttixri.com" target="_blank"><span style="color: rgb(128, 128, 128);">Providence RI</span></a> | <a href="http://www.inlandarts.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Riverside CA</span></a> | <a href="http://www.sacramento365.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Sacramento CA</span></a> | <a href="http://aroundthecloud.org/" target="_blank"><span style="color: rgb(128, 128, 128);"> Saint Cloud MN</span></a> | <a href="http://www.sahearts.com" target="_blank"><span style="color: rgb(128, 128, 128);">San Antonio TX</span></a> | <a href="http://www.artsopolis.com/" target="_blank"><span style="color: rgb(128, 128, 128);">San Jose CA</span></a> |&nbsp;<a href="http://www.stcroixsplash.org" target="_blank"><span style="color: rgb(128, 128, 128);">St. Croix Valley MN/WI</span></a>  | <a href="http://www.seattleperforms.com" target="_blank"><span style="color: rgb(128, 128, 128);">Seattle WA</span></a> | <a href="http://www.artstampabay.com" target="_blank"><span style="color: rgb(128, 128, 128);">Tampa Bay FL</span></a> | <a href="http://www.nowplayingutah.com" target="_blank"><span style="color: rgb(128, 128, 128);">Utah</span></a></span></p></li>
+
+<li id="footeritem_9919"
+class="borderless" >
+        <p style="text-align: left;"><span style="font-size: small;"><strong>&nbsp; &nbsp;</strong></span></p>
+<hr />
+<p style="text-align: left;"><span style="font-size: small;"><strong> Brought to you by &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Partners + Sponsors</strong></span></p>
+<p style="text-align: left; ">&nbsp;<a target="_blank" href="http://www.houstonartsalliance.com/"><img width="200" hspace="15" height="30" border="0" align="middle" alt="" src="/sites/artshound.com/images/local/logo_haa.jpg" /></a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a target="_blank" href="http://www.houstontx.gov/"><img width="100" height="100" border="0" align="middle" alt="" src="/sites/artshound.com/images/local/logo_city_of_houston125.jpg" /></a></p>
+<hr /></li>
+
+<li id="footeritem_9921"
+class="borderless footer" >
+        <ul>
+    <li><span style="font-family: Arial;"><strong><span style="font-size: small;">Directories</span></strong></span></li>
+    <li><a href="/profile/listing/">Artist Profiles</a></li>
+    <li><a href="/org/listing/">Organizations</a></li>
+    <li><a href="/business/listing/">Businesses</a></li>
+    <li><a href="/advanced_search/facilities">Rental Facilities</a></li>
+    <li><a href="/venue/listing/">Venues</a></li>
+    <li><a href="/public_art/listing">Public Art</a></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+    <li><span style="font-family: Arial;"><strong><span style="font-size: small;">Resources</span></strong></span></li>
+    <li><a href="/page/artist_resources">Artist Resources</a></li>
+    <li><a href="/categories/index/11/0">Classes + Workshops</a></li>
+    <li><a href="/page/news_reviews">News + Reviews</a></li>
+    <li><a href="/page/plan_experience">Plan Your Experience</a></li>
+    <li><a href="http://houstonmuseumdistrict.org/houston-loves-museums/">HoustonLovesMuseums.com</a></li>
+    <li><a href="/page/weather_page">Weather</a></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+    <li><span style="font-family: Arial;"><strong><span style="font-size: small;">Classifieds</span></strong></span></li>
+    <li><a href="/classifieds/listing/4/1">Auditions</a></li>
+    <li><a href="/classifieds/listing/4/2">Call for Artists</a></li>
+    <li><a href="/classifieds/listing/4/3">For Rent</a></li>
+    <li><a href="/classifieds/listing/4/4">For Sale/Free</a></li>
+    <li><a href="/classifieds/listing/4/9">Grant Opportunities</a></li>
+    <li><a href="/classifieds/listing/4/5">Jobs</a></li>
+    <li><a href="/classifieds/listing/4/6">Volunteers</a></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+    <li><span style="font-family: Arial;"><strong><span style="font-size: small;">Submit<br />
+    </span></strong></span></li>
+    <li><a href="/user/login">Artist Profile Login</a></li>
+    <li><a href="/user/login">Organization Login</a></li>
+    <li><a href="/page/submit_event">Submit Event</a></li>
+    <li><a href="/submit/org">Submit Organization</a></li>
+    <li><a href="/submit/classified">Submit Classified</a></li>
+    <li><a onclick="openReportWindow()" href="#">Submit Listing Change</a></li>
+    <li><a href="/page/faqs">FAQs</a></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+    <li><span style="font-family: Arial;"><strong><span style="font-size: small;">Support Us</span></strong></span></li>
+    <li><a href="/page/support">Support Us</a></li>
+    <li><a href="http://www.houstonartsalliance.com/donate/">Donate</a></li>
+    <li><a href="/page/syndication">Syndication</a></li>
+    <li><a href="/page/underwriters">Underwriters</a></li>
+    <li><a href="/page/partners_sponsors">Partners + Sponsors</a></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+    <li><span style="font-family: Arial;"><strong><span style="font-size: small;">About Us</span></strong></span></li>
+    <li><a href="/page/about">About Artshound.com</a></li>
+    <li><a href="/page/contact_us">Contact Us</a></li>
+    <li><a href="/page/overview">Site Services</a></li>
+    <li><a href="/page/privacy">Privacy Policy</a></li>
+    <li><a href="http://www.houstonartsalliance.com/">Houston Arts Alliance</a></li>
+</ul></li>
+
+<li id="footeritem_9927"
+class="borderless" >
+        <p style="text-align: right; "><a href="http://www.facebook.com/Artshound"><img width="30" height="30" align="absMiddle" alt="" src="/sites/artshound.com/images/local/icon_facebook_sm.jpg" /></a>&nbsp; <a href="https://twitter.com/#!/ARTSHOUNDDOTCOM" target="_blank"><img width="30" height="30" align="absMiddle" alt="" src="/sites/artshound.com/images/local/icon_twitter_sm.jpg" /></a></p>
+<p style="text-align: center;"><span style="color: rgb(201, 202, 204); font-size: smaller;">&copy; 2012 - Houston Arts Alliance | 3201 Allen Parkway, Suite 250 | Houston, TX 77019-1800 | 713.527.9330 | <a href="javascript:location.href='mailto:'+String.fromCharCode(115,117,112,112,111,114,116,64,97,114,116,115,104,111,117,110,100,46,99,111,109)+'?'">email us</a></span></p></li>
+
+      </ul>
+    </div>
+    <!-- End #site_info -->
+  </div>
+  <!-- End #content -->
+</div>
+<!-- End #main -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4035645-20']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<div class="footercode">
+    
+</div>
+<script type="text/javascript" src="/js/fancybox/fancybox/jquery.fancybox-1.3.4.pack.js"></script><script type="text/javascript" src="/js/featured_events.js"></script><link rel="stylesheet" type="text/css" href="/js/fancybox/fancybox/jquery.fancybox-1.3.4.css" media="screen" /><link rel="stylesheet" type="text/css" href="/js/fancybox/fancybox/style.css" /><div id="welcome" style="display:none;"><p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><span style="font-size: x-large;">Artshound needs YOU!</span><br />
+<img width="250" height="192" src="/sites/artshound.com/images/local/Artshound_Dog.jpg" alt="" /><br />
+Did you know that Artshound.com is 100% non-profit?</p>
+<p style="text-align: center;">Did you know that just a handful of hard-working arts lovers are responsible for everything you see on the site?</p>
+<p style="text-align: center;">Did you know that <span style="font-size: medium;"><strong>YOU</strong></span><strong> </strong>can keep Artshound alive and help us grow?</p>
+<p style="text-align: center;"><a href="/submit/donation" target="_parent"><span style="font-size: medium;"><strong>DONATE NOW</strong></span></a></p></div>
+<script> 
+jQuery(document).ready(function() {
+
+    $.fancybox({
+        type: 'inline',
+        href: '#welcome',
+        autoDimensions: false,
+               width: 800,
+               height: 400,
+        transitionOut: 'none',
+        onClosed: function () {
+            $('#welcome').hide();
+        },
+        onStart: function() {
+            $('#fancybox-content').addClass('no-border');
+            $('#welcome').show();
+        }
+ 
+     });
+});
+</script> </body>
+
+</html>
