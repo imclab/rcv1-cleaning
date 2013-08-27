@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"></html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	<title>Fine Arts Theatre - Asheville, NC</title>
+	
+	<meta name="description" content="Asheville, North Carolina's Home for Art and Independent Film." /> 
+	
+	<link rel="stylesheet" href="css/styles.css" type="text/css" />
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+	<script src="com/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="com/jquery.scrollTo-min.js"></script>
+	<script type="text/javascript" src="com/jquery.localscroll-min.js"></script>
+	<script type="text/javascript" src="com/init.js"></script>
+	<script src="com/jquery.fat-films.js" type="text/javascript"></script>
+	<script src="com/jquery.fat-comingsoon.js" type="text/javascript"></script>
+	<script src="com/jquery.fat-nextweek.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+
+		/*if (navigator.userAgent.indexOf('iPhone') != -1)
+		{
+			if(!window.location.hash)
+			{
+				window.location = "iphone.html";
+			}
+		}*/
+		
+		var overlayapi = null;
+		
+		$(document).ready(function(){
+		
+			$.localScroll();
+			
+			$.films.overlayapi = $('#overlay').overlay({
+				api : true,
+		        expose: { 
+		            color: 'black', 
+		            opacity: 0.9, 
+ 		            closeSpeed: 1000 
+		        }
+			});
+						
+			// Set Film Data
+			
+			$('#templates').load("templates.html", function(){
+				$.films.loadFilmData();
+				$.comingsoon.loadComingSoonData();
+				$.nextweek.loadNextWeekData();
+				
+				// TUMBLR
+				$.getJSON("http://fineartstheatre.tumblr.com/api/read/json?callback=?", function(data) {
+					$.each(data.posts, function(i, post) {
+						var p = $('#post-template > div').clone();
+						$('#news-targ').append(p);
+						$(p).find('h3.post-title').text(post["regular-title"]);
+						$(p).find('p.post-date').text(post["date"]);
+						$(p).find('a').attr('href', post["url"]);
+						
+						$(p).bind('mouseenter', function(e) {
+							$(this).addClass('hover');
+						});
+						
+						$(p).bind('mouseleave', function(e) {
+							$(this).removeClass('hover');
+						});
+					});
+				});
+				
+			});
+			
+		});
+	</script>
+</head>
+
+<body>
+
+	  <!--[if lt IE 7]>
+	  <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+	    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+	    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+	      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+	      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+	        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+	        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+	      </div>
+	      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+	      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+	      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+	      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+	    </div>
+	  </div>
+	  <![endif]--> 
+	
+	<div id='top-alert'>36 Biltmore Avenue, Asheville, NC 28801 &nbsp; Movie Line: <strong>828.232.1536</strong></div>
+	
+	<a name="anchor0" id="anchor0"></a>
+	
+	<div class="overlay" id="overlay"> 
+	    <div id="vid-targ"></div>
+	</div>
+	
+	<div id="page">
+		
+		<div id="localLogoTop">
+			<img src=""/>
+		</div>
+		
+		<div id="header">
+			<img src="images/header3.png" />
+		</div>
+		
+		<div class="content">
+			<div id="alert" class="content-box rounded-10 red" style="margin-top:0px; margin-bottom:20px; display:none">
+				<p><img src="images/error.png" style="float:left; margin-right:15px" /><p> CLOSED July 27 - Aug 2 Due to Bele Chere and Digital Conversion <br/> We re-open Aug 3rd wth BEASTS OF THE SOUTHERN WILD &AMP; MOONRISE KINGDOM</p>
+			</div>
+			
+			<div class="content-box section-head" style="margin-top:0px">
+				<h1 style="float:left"><span>Now Showing</span> <span class='goodthru'></span></h1>
+				<div class="sub-nav"><a href="#anchor1" class="rounded-5">Coming Soon</a><a class="rounded-5" href="#anchor2">Special Events</a><div class="clearer"</div></div>
+				<div class="clearer"></div>
+			</div>
+			
+			<div class="clearer"></div>
+			
+			<!--// FILMS \\-->
+			<div id="films"></div>
+			
+			<!--// NEXT WEEK \\-->
+			<div id="nw-head" class="content-box section-head">
+				<h1><span>Next Week <span class="nw-goodthru"></span></span></h1>
+			</div>
+			
+			<div id="next-week"></div>
+			
+			<!--// EMAIL LIST SIGN UP \\-->
+			<div class="content-box section-head">
+				<h1><span>Stay Connected</span></h1>
+			</div>
+			<div id="email-list" class="content-box rounded-10 dark">
+				<div class="box-left">
+					<h3>Join our Email List</h3>
+					<div style="padding-bottom:10px;"><p>Sign up for our email list to receive weekly movie schedules, news and events directly to your inbox.  Just type your email address in the field below and hit <strong>GO</strong>!</p><p style="margin-top:10px">Your email address is safe with us. We will never give it out to any third parties.</p></div>
+					<div>
+	                	<form name="ccoptin" action="http://ui.constantcontact.com/d.jsp" target="_blank" method="post">
+	                		<label for="ea">Email:</label> &nbsp;
+	                		<input class="email-input" type="text" name="ea" size="15" />
+							<input type="hidden" name="m" value="1100707674375">
+							<input type="hidden" name="p" value="oi"> &nbsp;<input class="go-button" type="submit" name="go" value="Go">
+						</form>
+	                </div>
+	        	</div>
+	        	<div class="box-right">
+	        		<h3 style="text-align:left">Other Ways to Stay Connected</h3>
+	        		<div class="social rounded-5">
+	        			<div><a href="http://fineartstheatre.tumblr.com/" target="_blank"><img src="images/tumblr_logo2.png" /></a><a href="http://twitter.com/FineArtsTheatre" target="_blank"><img src="images/twitter_logo2.png" /></a></div>
+	        			<div><a href="http://www.facebook.com/pages/Fine-Arts-Theatre/168481583204554" target="_blank"><img src="images/facebook_logo2.png" /></a><a href="http://fineartstheatre.tumblr.com/rss" target="_blank"><img src="images/rss_logo2.png" /></a></div>
+	        		</div>
+	        		<p style="margin-top:15px">And be sure to check out our website on your <a href="http://fineartstheatre.com/iphone.html">iPhone</a> to stay up-to-date while you're on the go.</p>
+	        	</div>
+	        	<div class="clearer"></div>
+			</div>
+			
+			
+			<!--// COMING SOON \\-->
+			<div id="anchor1" class="content-box section-head">
+				<h1><span>Coming Soon</span></h1>
+			</div>
+			
+			<div id="coming-soon" class="content-box rounded-10 turquoise"></div>
+			
+			<!-- SPECIAL EVENTS -->
+			
+			<div id="anchor2" class="content-box section-head">
+				<h1><span>Special Events</span></h1>
+			</div>
+			
+			<div id="special-events" class="content-box rounded-10 dark" style="padding-bottom:10px; padding-top:25px">
+			
+			<!--// PUT SPECIAL EVENTS HERE \\-->
+				
+				<!--// IF NO EVENTS \\-->
+				<div class='event'>
+					<p style="margin-left:10px; display:block>"Watch this space for upcoming special events.</p>
+				</div>
+				<!--// ===== \\-->
+				
+				<!--// START EVENT \\-->
+				
+				
+	 			
+				
+				<div class='event' style="display:none">
+					<div class="event-head rounded-5">
+						<h3 class="event-title" style='padding-top:3px'>Ringside Rosary - Film Premier </h3>
+						<h3 class="event-date rounded-5" style="margin-top:0">August 15th.</h3>
+						<div class="clearer"></div>
+					</div>
+					
+					<div class="event-info">
+						<img src="images/films/rr.jpg" style="float:right; margin-left:10px; margin-bottom:10px; display:block; width:350px" />
+						<p><strong>When:</strong> <br/>August 15th 7:00 &amp; 10:00pm</h3>
+						</p>
+						<!-- <p><strong>Price:</strong> $8.75</p> -->
+						<p> 
+						
+					
+					<p>Event:<br/>
+					The premiere &amp; after party for Ringside Rosary, the first independent feature by local production company Down Poor Pictures. </p>
+					
+					<p>Where:<br/>
+					Movie Screening Location- The Fine Arts Theatre 36 Biltmore Ave, Asheville, NC 28801
+					After Party Location- Adam Dalton Distillery. 251 Biltmore Ave.</p>
+					
+					<p>When:<br/>
+					Come out to the Fine Arts Theatre at 7:00pm &amp; 10:00pm on August 15th for a Premiere Event to remember!</p>
+					
+					<p>Cost:<br/>
+					Everything Included in your $7.00 movie ticket.</p>
+					
+					<p>Highlights:<br/>
+					* Enjoy refreshments as the actors arrive<br/>
+					* Live Music<br/>
+					* Trailers from DPP and other NC filmmakers<br/>
+					* View premiere screening<br/>
+					* Stay as the Director takes stage for open Q&amp;A<br/>
+					* After Party!</p>
+					
+					
+					<p>The Movie:<br/>
+					RINGSIDE ROSARY<br/>
+					Action/Drama<br/>
+					An orphaned underground boxer, Tommy (Tom Stadnicki) seems destined to relive his family's violent and tragic pattern, until he becomes a father. In a desperate attempt to save his deaf son (Jakob English) from the curse, Tommy and his wife Lizzy (Mara Breindel) decide to abandon their criminal lives. Despite their determination, Lizzy's addiction and debt drag the past closely behind them.</p>
+					
+					
+					<p>The AFTER-PARTY:<br/>
+					The celebration will be held at Adam Dalton Distillery, a couple of blocks down from the Fine Arts Theatre.
+					There will be Live Music, drinks, FREE games (Pool, Foosball, Ping-pong, Darts, etc.) and time to socialize with the cast and crew!</p>
+					
+						<p>Tickets are now available at the Fine Arts Theatre Box Office.</p>
+					<p>To Purchase advance tickets for the 7:00 show Online go to -  <a href="http://www.brownpapertickets.com/event/436944" target="_blank"> Online Tickets</a></p>
+						<div class="clearer"></div>
+					</div>
+				</div>
+				
+				
+				<div class='event' style="display:none">
+					<div class="event-head rounded-5">
+						<h3 class="event-title" style='padding-top:3px'>Big Star: Nothing Can Hurt Me</h3>
+						<h3 class="event-date rounded-5" style="margin-top:0">August 22nd. 7:00</h3>
+						<div class="clearer"></div>
+					</div>
+					
+					<div class="event-info">
+						<img src="images/films/star.jpg" style="float:right; margin-left:10px; margin-bottom:10px; display:block; width:350px" />
+						<p><strong>When:</strong> <br/>August 22nd. 7:00</h3>
+						</p>
+						<!-- <p><strong>Price:</strong> $8.75</p> -->
+						<p> BIG STAR: NOTHING CAN HURT ME is a feature-length documentary about legendary Memphis band Big Star. While mainstream success eluded them, Big Starâs three albums have become critically lauded touchstones of the rock music canon. A seminal band in the history of alternative music, Big Star has been cited as an influence by artists including REM, The Replacements, Belle &amp; Sebastian, Elliot Smith and Flaming Lips, to name just a few. With never-before-seen footage and photos of the band, in-depth interviews and a rousing musical tribute by the bands they inspired, BIG STAR: NOTHING CAN HURT ME is a story of artistic and musical salvation.</p>
+						 
+						
+						
+						
+						
+						<p>All Tickets $10.00</p>
+						
+					<p>Tickets are on sale now at the Fine Arts Theatre Box Office</p>	
+					<p>To Purchase advance tickets Online go to -  <a href="http://www.brownpapertickets.com/event/446551" target="_blank"> Online Tickets</a></p>
+						
+					<p>Learn more at <a href="http://www.bigstarstory.com" target="_blank"> Big Star Story</a></p>
+					
+					
+						<div class="clearer"></div>
+					</div>
+				</div>
+				<div class='event' style="display:none">
+					<div class="event-head rounded-5">
+						<h3 class="event-title" style='padding-top:3px'>TO SPRING FROM THE HAND</h3>
+						<h3 class="event-date rounded-5" style="margin-top:0">May 23, 2013</h3>
+						<div class="clearer"></div>
+					</div>
+					
+					<div class="event-info">
+						<img src="images/films/spring.jpg" style="float:right; margin-left:10px; margin-bottom:10px; display:block; width:350px" />
+						<p><strong>When:</strong> <br/>May 23, 7:00 pm</h3>
+						</p>
+						<!-- <p><strong>Price:</strong> $8.75</p> -->
+						<p>TO SPRING FROM THE HAND</p>
+						<br/>
+						<p>"Itâs not a way of making a living, itâs a way of making a life."</p>
+						<br/>
+						
+						<p>
+						
+						This film examines the life and philosophy of an acclaimed artist who, for the last 40 years, has chosen not to sell his work.</p>
+						
+						<p>Paulus Berensohn was born to Jewish Ã©migrÃ© parents in Brooklyn NY and, despite family opposition, became a dancer who studied with greats Merce Cunningham and Martha Graham and appeared in major Broadway productions.</p>
+						
+						<p>Then Paulus found clay, and has spent the past forty-five years discovering his relationship with this living substance. Along the way he has taught countless workshops at Penland School of Crafts and numerous other places both nationally and internationally.</p>
+						
+						<p>In the film he discusses his life, philosophy, views on the art world and his fairy godchildren, his love of movement and ongoing practice of Qigong and the Alexander Technique, and death and dying.</p>
+						
+						<p>British reviewer Keith Howes wrote: âSee this film, breathe it in, use it as a journal, a way of moving forward. Paulus believes that "Everybody is an artist", whether that art is embodied in decorating an envelope or creating a miracle on a potter's wheel. This elegant, endlessly insightful film is a call to touch, to feel to enrich our world from a universal palette.â</p>
+						
+						
+						<br/>
+						<p>For more information about the film visit- <a href="http://www.springfromthehand.com" target="_blank"> springfromthehand.com</a></p> </p>
+						<p>No Admission Fee -  Donations to Penland School of Crafts will be taken at the door. Reserve your seat today! <br></p> <a href="http://www.brownpapertickets.com/event/381227" target="_blank"> <p>Reserve Seats Here</a></p> </p>
+										
+					
+						<div class="clearer"></div>
+					</div>
+				</div>
+				
+				<div class='event' style="display:none">
+					<div class="event-head rounded-5">
+						<h3 class="event-title" style='padding-top:3px'>Sign Painters</h3>
+						<h3 class="event-date rounded-5" style="margin-top:0">June 13, 2013</h3>
+						<div class="clearer"></div>
+					</div>
+					
+					<div class="event-info">
+						<img src="images/films/sign.jpg" style="float:right; margin-left:10px; margin-bottom:10px; display:block; width:350px" />
+						<p><strong>When:</strong> <br/>June 13, 7:00 pm</h3>
+						</p>
+						<!-- <p><strong>Price:</strong> $8.75</p> -->
+						<p>Presented by The Center for Craft Creativity and Design</p>
+						<br/>
+						<p>There was a time, as recently as the 1980s, when storefronts, murals, banners, barn signs, billboards, and even street signs were all hand-lettered with brush and paint. But, like many skilled trades, the sign industry has been overrun by the techno-fueled promise of quicker and cheaper. The resulting proliferation of computer-designed, die-cut vinyl lettering and inkjet printers has ushered a creeping sameness into our landscape. Fortunately, there is a growing trend to seek out traditional sign painters and a renaissance in the trade.</p>
+						
+						<p>In 2010 filmmakers Faythe Levine and Sam Macon began documenting these dedicated practitioners, their time-honored methods, and their appreciation for quality and craftsmanship. Sign Painters, the first anecdotal history of the craft, features the stories of more than two dozen sign painters working in cities throughout the United States. The documentary and book profiles sign painters young and old, from the new vanguard working solo to collaborative shops such as San Franciscoâs New Bohemia Signs and New Yorkâs Colossal Mediaâs Sky High Murals.</p>
+						
+						
+						<br/>
+						<p>For more information about the film visit- <a href="http://signpaintermovie.blogspot.com" target="_blank"> signpaintermovie.com</a></p> </p>
+						<p>All Tickets are $10, and are available at the Fine Arts Boxoffice or Online Here-<br></p> <a href="http://www.brownpapertickets.com/event/390098" target="_blank"> <p>Online Tickets</a></p> </p>
+																
+					
+						<div class="clearer"></div>
+					</div>
+				</div>
+				
+				<div class='event' style="display:none">
+					<div class="event-head rounded-5">
+						<h3 class="event-title" style='padding-top:3px'>AIN'T IN IT FOR MY HEALTH</h3>
+						<h3 class="event-date rounded-5" style="margin-top:0">June 27, 2013</h3>
+						<div class="clearer"></div>
+					</div>
+					
+					<div class="event-info">
+						<img src="images/films/levon.jpg" style="float:right; margin-left:10px; margin-bottom:10px; display:block; width:350px" />
+						<p><strong>When:</strong> <br/>June 27, 7:00 &amp; 9:30pm</h3>
+						</p>
+						<!-- <p><strong>Price:</strong> $8.75</p> -->
+						<p>One Night Only! - 9:30 pm Late Show Added due to demand! All tickets for the late show sold at the door.</p>
+						<br/>
+					
+						
+						<p>Director Jacob Hatley's intimate documentary finds Mr. Helm at home in Woodstock, NY, in the midst of creating his first studio album in 25 years. Shot during the course of two-plus years, this highly anticipated film focuses in on the four-time Grammy winner and Rock and Roll Hall of Fame member after his 2007 comeback album, Dirt Farmer, brought him back to the spotlight. </p>
+						
+					
+						
+						
+						<br/>
+						<p>All Tickets are $10</p>
+						
+						
+						<p>Tickets are now available at the Fine Arts Theatre Box Office.</p>
+					<p>To Purchase advance tickets for the 7:00 show Online go to -  <a href="http://www.brownpapertickets.com/event/390107" target="_blank"> Online Tickets</a></p>
+						
+					<p>Learn more about the film and watch the trailer at-  <a href="http://levonhelmfilm.com" target="_blank"> http://levonhelmfilm.com</a></p>
+										
+					
+						<div class="clearer"></div>
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class='event' style="display:none">
+					<div class="event-head rounded-5">
+						<h3 class="event-title" style='padding-top:3px'>The Israeli-Palestinian Conflict Film Series </h3>
+						<h3 class="event-date rounded-5" style="margin-top:0">April 4 &amp; 18</h3>
+						<div class="clearer"></div>
+					</div>
+					
+					<div class="event-info">
+						<img src="images/films/arnon2.jpg" style=" margin-left:10px; margin-bottom:10px; display:block; width:720px" />
+						
+																	
+						
+					
+					
+					
+						<div class="clearer"></div>
+					</div>
+				</div>
+				
+				
+				<!--// END EVENT \\-->
+			
+									
+			
+			<!--// NO SPECIAL EVENTS PAST THIS POINT \\-->
+				
+			</div>
+			
+			<!--// ABOUT \\-->
+			<div id="about" class="content-box rounded-10">
+				<h3 class="movie-line"><span>Movie Line:</span> 828.232.1536</h3>
+				<div class="theatre-info">
+					<div class="admission">
+						<h2 class="blue-head">Admission Prices:</h2>
+						<p><span>$7.00</span> Seniors &amp; Matinees</p>
+						<p style="margin-bottom:20px;"><span>$9.00</span> Adults</p>
+						<p style="margin-bottom:15px">We accept Cash, Visa &amp; Mastercard - Sorry, no checks.</p>
+						<p><span>No advance tickets are sold for regularly scheduled films, Some Special Events will offer advance tickets.</span> <br/>Tickets for regularly scheduled films are sold 30 minutes before showtimes. Sorry, no exceptions.</p>
+					</div>
+					
+					<div class="loc">
+						<h2 class="blue-head">Location:</h2>
+						<p>We are located in downtown Asheville, NC at <span>36 Biltmore Avenue</span> next to Blue Spiral 1.</p>
+						<p style="margin-top:10px"><a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=fine+arts+theatre+asheville,+nc&sll=37.0625,-95.677068&sspn=175.051128,360&ie=UTF8&ei=rll2SvvsEpWg9ASx3pDDBQ&sig2=7LRLQZ8ZuTEa5MHnamCQPg&cd=1&usq=fine+arts+theatre&cid=8116050402640468741&li=lmd&t=h&z=16&iwloc=A" target="_blank">View Map</a></p>
+						<h2>Contact Us:</h2>
+						<p>Tell us what you think. Email us at <a href="mailto:info@fineartstheatre.com">info@fineartstheatre.com</a></p>
+					</div>
+					<div class="clearer"></div>
+				</div>
+			</div>
+			
+			<!--// FOOTER STUFF \\-->
+			<div id="junk" class="content-box">
+				<div class="footer-columns">
+					<div class="footer-column left">
+						<h3 class="rounded-5">Friends</h3>
+						<ul class="link-list">
+							<li><a href="http://theorangepeel.net/" target="_blank">The Orange Peel</a></li>
+							<li><a href="http://bluespiral1.com/" target="_blank">Blue Spiral 1</a></li>
+							<li><a href="http://www.newmorninggallerync.com/" target="_blank">New Morning Gallery</a></li>
+							<li><a href="http://www.bellagioarttowear.com/" target="_blank">Bellagio - Art to Wear Gallery</a></li>
+							<li><a href="http://asheville.com/" target="_blank">Asheville.com</a></li>
+							<li><a href="http://www.ashevillejewishfilmfestival.com/" target="_blank">Asheville Jewish Film Festival</a></li>
+							<li><a href="http://www.themap.org/map/" target="_blank">Media Arts Project</a></li>
+						</ul>
+					</div>
+					<div class="footer-column right">
+						<h3 class="rounded-5">Films Shown Since 1996</h3>
+						<div id="news-targ"></div>
+					</div>
+					<div class="clearer"></div>
+				</div>
+			</div>
+			
+			
+			
+			<div id="footer" class="rounded-10"></div>
+			
+			<div id="sub-footer" class="content-box" style="margin-bottom:0">
+				<img style="display:block; width:200px; margin:0 auto; margin-top:25px" src="images/fat_logo2.png" />
+				<div id="localLogoBottom"><img src="" /></div>
+				<div style="margin-top:15px"><p style="font-size:12px; margin-bottom:0">Site Designed By:</p><a href="http://revdevbrand.com" target="_blank"><img style="width:210px" src="images/rdb_logo.png" /></a></div>
+			</div>
+			
+		</div>
+	
+	</div>
+	
+	<div id="templates"></div>
+	
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-403721-8");
+			pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+</body>
+</html>

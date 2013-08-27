@@ -6,7 +6,9 @@ import os
 from urllib import urlopen
 import hashlib
 import chardet
-
+import requests
+from requests.exceptions import HTTPError, ConnectionError
+from requests.packages.urllib3.exceptions import DecodeError
 
 def main():
     hashesList = []
@@ -16,9 +18,27 @@ def main():
         with open('/home/ghackeling/nsp/rcv1-cleaning/data/urls/%s' % file) as f:
             urls = f.read().splitlines()
             for url in urls:
-                print '**** Starting URL', url
-                hash = writeOut(url, urlopen(url).read())
-                hashesList.append((url, hash))
+                print '**** Starting URL', url, 'in file', file
+                try:
+                    r = requests.get(url)
+                    r.raise_for_status()
+                except HTTPError:
+                    print 'Could not download resource', url
+                except ConnectionError:
+                    print 'Connection error for', url
+                except DecodeError:
+                    print 'Decode error for', url
+                except Exception:
+                    print 'An exception occured on', url
+                else:
+                    print r.url, 'downloaded successfully'
+                    hash = writeOut(url, r.text)
+                    hashesList.append((url, hash))
+
+    out = open('/home/ghackeling/nsp/rcv1-cleaning/data/pages/urls-hashes.txt', 'w')
+    for hash in hashesList:
+        out.write("%s\n" % hash)
+    out.close()
 
 
 def writeOut(url, document):
@@ -27,9 +47,14 @@ def writeOut(url, document):
         encoding = 'utf-8'
     hash = hashlib.md5(url).hexdigest()
     out = open('/home/ghackeling/nsp/rcv1-cleaning/data/pages/page-%s.txt' % hash, 'w')
-    document = document.decode(encoding, 'ignore')
-    out.write(document.encode('utf-8', 'ignore'))
-    out.close()
+    try:
+        # document = document.decode(encoding, 'replace')
+        out.write(document.encode('utf-8', 'replace'))
+        out.close()
+    except UnicodeDecodeError:
+        print 'Could not decode document'
+    except UnicodeEncodeError:
+        print 'Could not encode document'
     return hash
 
 

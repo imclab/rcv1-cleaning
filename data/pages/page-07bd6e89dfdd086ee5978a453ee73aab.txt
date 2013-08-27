@@ -1,0 +1,596 @@
+  <!doctype html>
+<head>
+  <title>
+      Fine Arts Center | University of Rhode Island
+  </title>
+
+  <!-- stylesheets -->
+  <link href="http://images-cf.localist.com/assets/base.css?1377291015" media="all" rel="stylesheet" type="text/css" />
+  <link href="http://images-cf.localist.com/assets/mobile.css?1377291015" media="all" rel="stylesheet" type="text/css" />
+
+  <!-- URI custom styles -->
+  <style type="text/css">
+  #logo {
+      background-color : #002147 ;
+      padding : 10px ;
+  }
+
+  #logo p {
+       float : right ;
+       padding : 20px ;
+       color : #d0a247 ;
+  }
+
+
+  ul.action_menu {
+      float : left ;
+      background-color : #002147 ;
+
+  }
+
+  .action_button a {
+      background-color : #002147 ;
+      color : #d0a247 ;
+  }
+
+  .action_button a:active, .action_button a:hover {
+      background-color : #d0a247 ;
+      color : #002147 ;
+  }
+
+  a.dark_colorfive {
+      background-color : #d0a247 ;
+      color : #002147 ;
+  }
+
+  a.dark_colorfive:active, a.dark_colorfive:hover {
+      background-color : #002147 ;
+      color : #d0a247 ;
+  }
+
+  #menu {
+    background-color: #002147;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -webkit-border-top-left-radius:0px;
+  }
+
+  #minicalendar {
+    width: 300px;
+  }
+  </style>
+  <!-- end URI custom styles -->
+
+  <!-- for IOS home icon -->
+  <!--
+  <link rel="apple-touch-icon" href="" />
+   -->
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <!-- javascripts -->
+  <script src="http://images-cf.localist.com/assets/main.js?1377291015" type="text/javascript"></script>
+  <script src="http://images-cf.localist.com/assets/mobile.js?1377291015" type="text/javascript"></script>
+
+  
+  <!-- Facebook "Like" Button Meta tags -->
+  <meta property="og:title" content="Fine Arts Center"/>
+  <meta property="og:site_name" content="University of Rhode Island"/>
+  <meta property="og:image" content="http://images-cf.localist.com/photos/20009/medium/b9732ba85be3a06fdc1ea787ab76df4ccc87dadb.jpg?1313601232"/>
+  <meta property="og:description" content="Art, Music, Theater"/>
+
+    <script src="//maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script><script type="text/javascript">jQuery(function($) {
+      var el;
+
+      if(el = $("#map")[0]) {
+        map = new Slzr.Maps.Map({
+          element: el,
+          zoom: 15,
+          satellite: false,
+          points: [[41.4881,-71.5242,"http://maps.google.com/maps?f=d&hl=en&saddr=&daddr=105%20Upper%20College%20Rd,%20University%20of%20Rhode%20Island,%20Kingston,%20RI%2002881,%20USA@41.4881,-71.5242&ie=UTF8&z=15"]],
+          overlays: []
+        });
+      }
+    });</script>
+
+  <script type="text/javascript">
+  // directions/parking text collapsing
+  jQuery(function($) {
+    var EXTRA_NUM = 3;
+    var SHOW_NUM = 2;
+
+    $('#x-directions-text, #x-parking-text').each(function() {
+      var div = $(this);
+      var paragraphs = div.find('p');
+      if(paragraphs.length >= EXTRA_NUM) {
+        var i = 0;
+        // hide extra paragraphs
+        paragraphs.slice(SHOW_NUM).hide();
+
+        // add more link
+        var new_el = $('<a/>', {href: '#'});
+        new_el.html('Show more...');
+        new_el.click(function() {
+          $(this).parent().remove();
+          paragraphs.show();
+          return false;
+        });
+
+        var newp = $('<p>');
+        newp.append(new_el).appendTo(div);
+      } // end if length >= extra_num
+    }); // end each
+  }); // end onready
+  </script>
+
+
+  
+</head>
+
+<body onload="preloadImages();">
+
+<!-- HEADER -->
+
+<!-- URI custom header -->
+<div id="logo">
+  <a href="http://www.uri.edu/"><img src="http://www.uri.edu/home/includes/img/uri-logo_nm.png" alt="The University of Rhode Island" /></a>
+  <p>
+    EVENTS
+  </p>
+</div>
+<!-- end URI custom header -->
+
+<!-- END HEADER -->
+
+    <div class="grid_container">
+
+      <div class="grid_12 alpha">
+
+            <div id="breadcrumbs"><ul><li class="first_crumb"><a href="http://events.uri.edu/">University of Rhode Island Events</a></li><li class="breadcrumb_separator">&raquo;</li><li class=""><a href="http://events.uri.edu/kingston">Kingston</a></li><li class="breadcrumb_separator">&raquo;</li><li class="last_crumb">Fine Arts Center</li></ul></div>
+
+
+         <div id="menu">
+  <a href="#" class="nav-button visible-phone" data-action="toggle-class" data-class="expanded" data-target="#menu .action_menu">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </a>
+
+  <ul class="action_menu">
+
+
+        <li class="login"><a href="http://events.uri.edu/auth/login" rel="ibox;url=#login-lightbox">Login</a></li>
+
+
+
+    <li class="search_action">
+
+      <form accept-charset="UTF-8" action="http://events.uri.edu/search" id="topsearch" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input id="search" name="search" placeholder="Search places, events, groups" type="text" value="" />
+        <button id="top-submit" type="submit">Search</button>
+</form>    </li>
+  </ul>
+
+</div>
+
+      </div>
+
+      
+
+
+
+<div id="message-response" class="alertmessage" style="display: none;">
+	<h3><span id="message-response-message"></span><a href="#" onclick="hideNotice(); return false;">&times;</a></h3>
+</div>
+
+
+  <div class="grid_8 alpha">
+    <div class="box_header">
+      <h1>
+        <span>Fine Arts Center</span>
+      </h1>
+
+      <h3 class="location">
+        <span>105 Upper College Rd, University of Rhode Island, Kingston, RI 02881, USA</span>
+      </h3>
+
+      <p class="description"><a href="http://events.uri.edu/photo/20009" rel="ibox;url=#login-lightbox"><img alt="Fine Arts Center" height="150" src="http://images-cf.localist.com/photos/20009/big/b9732ba85be3a06fdc1ea787ab76df4ccc87dadb.jpg?1313601232" title="Fine Arts Center" width="200" /></a>Art, Music, Theater</p>
+
+      <div class="extra_details">
+        <dl>
+          <dt>Share</dt>
+          <dd>
+            <p>
+<iframe src="http://www.facebook.com/plugins/like.php?href=&amp;layout=button_count&amp;show_faces=false&amp;width=50&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=20" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:20px;" allowTransparency="true"></iframe>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="TBD">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<div class="action_button">
+  <a href="http://www.addthis.com/bookmark.php" class="addthis_button">Share</a>
+</div>
+</p>
+          </dd>
+
+            <dt>Place Type</dt>
+            <dd>
+              <p>Academic and Service</p>
+  			    </dd>
+  			</dl>
+			  <dl>
+          <!-- custom fields -->
+				</dl>
+      </div>
+    </div>
+
+
+      <div class="sectionheader section_dark_colorfive">
+    		<h3>
+    		  <span>Upcoming Events</span>
+
+    		</h3>
+    	</div>
+    	<div id="x-future-plans">
+          <div id="x-plan-list">
+            <div class="item event_item vevent" id="event_instance_443298">
+  <a href="http://events.uri.edu/event/on_stage_be_aggressive_7268"><img alt="On Stage: Be Aggressive" class="img_small" height="50" src="http://images-cf.localist.com/photos/36660/small/0667a4bdfe8744d4da58fb4ca9686680498cd5f0.jpg?1343408830" width="50" /></a>
+  <div class="item_content_small">
+    <h3>
+      <span class="summary"><a href="http://events.uri.edu/event/on_stage_be_aggressive_7268">On Stage: Be Aggressive</a></span>
+      <span class="dateright"><abbr title="2013-10-10T19:30:00-04:00" class="dtstart">7:30pm 10/10</abbr></span>
+    </h3>
+    
+    <h4 class="description">URI Theatre presents this drama by Annie Weisman that was published in Smith and Kraus&#x27; Best Plays of 2001 and by Dramatists Play Service.
+
+It is the offbeat...</h4>
+  </div>
+</div>
+<div class="item event_item vevent" id="event_instance_443297">
+  <a href="http://events.uri.edu/event/on_stage_be_aggressive_7268"><img alt="On Stage: Be Aggressive" class="img_small" height="50" src="http://images-cf.localist.com/photos/36660/small/0667a4bdfe8744d4da58fb4ca9686680498cd5f0.jpg?1343408830" width="50" /></a>
+  <div class="item_content_small">
+    <h3>
+      <span class="summary"><a href="http://events.uri.edu/event/on_stage_be_aggressive_7268">On Stage: Be Aggressive</a></span>
+      <span class="dateright"><abbr title="2013-10-11T19:30:00-04:00" class="dtstart">7:30pm 10/11</abbr></span>
+    </h3>
+    
+    <h4 class="description">URI Theatre presents this drama by Annie Weisman that was published in Smith and Kraus&#x27; Best Plays of 2001 and by Dramatists Play Service.
+
+It is the offbeat...</h4>
+  </div>
+</div>
+<div class="item event_item vevent" id="event_instance_440324">
+  <a href="http://events.uri.edu/event/on_stage_be_aggressive_6839"><img alt="On Stage: Be Aggressive" class="img_small" height="50" src="http://images-cf.localist.com/photos/36660/small/0667a4bdfe8744d4da58fb4ca9686680498cd5f0.jpg?1343408830" width="50" /></a>
+  <div class="item_content_small">
+    <h3>
+      <span class="summary"><a href="http://events.uri.edu/event/on_stage_be_aggressive_6839">On Stage: Be Aggressive</a></span>
+      <span class="dateright"><abbr title="2013-10-11T19:30:00-04:00" class="dtstart">7:30pm 10/11</abbr></span>
+    </h3>
+    
+    <h4 class="description">URI Theatre presents this drama by Annie Weisman that was published in Smith and Kraus&#x27; Best Plays of 2001 and by Dramatists Play Service.
+
+It is the offbeat...</h4>
+  </div>
+</div>
+<div class="item event_item vevent" id="event_instance_440325">
+  <a href="http://events.uri.edu/event/on_stage_be_aggressive_7268"><img alt="On Stage: Be Aggressive" class="img_small" height="50" src="http://images-cf.localist.com/photos/36660/small/0667a4bdfe8744d4da58fb4ca9686680498cd5f0.jpg?1343408830" width="50" /></a>
+  <div class="item_content_small">
+    <h3>
+      <span class="summary"><a href="http://events.uri.edu/event/on_stage_be_aggressive_7268">On Stage: Be Aggressive</a></span>
+      <span class="dateright"><abbr title="2013-10-12T19:30:00-04:00" class="dtstart">7:30pm 10/12</abbr></span>
+    </h3>
+    
+    <h4 class="description">URI Theatre presents this drama by Annie Weisman that was published in Smith and Kraus&#x27; Best Plays of 2001 and by Dramatists Play Service.
+
+It is the offbeat...</h4>
+  </div>
+</div>
+<div class="item event_item vevent" id="event_instance_440331">
+  <a href="http://events.uri.edu/event/on_stage_be_aggressive_4352"><img alt="On Stage: Be Aggressive " class="img_small" height="50" src="http://images-cf.localist.com/photos/36660/small/0667a4bdfe8744d4da58fb4ca9686680498cd5f0.jpg?1343408830" width="50" /></a>
+  <div class="item_content_small">
+    <h3>
+      <span class="summary"><a href="http://events.uri.edu/event/on_stage_be_aggressive_4352">On Stage: Be Aggressive </a></span>
+      <span class="dateright"><abbr title="2013-10-13T15:00:00-04:00" class="dtstart">3pm 10/13</abbr></span>
+    </h3>
+    
+    <h4 class="description">URI Theatre presents this drama by Annie Weisman that was published in Smith and Kraus&#x27; Best Plays of 2001 and by Dramatists Play Service.
+
+It is the offbeat...</h4>
+  </div>
+</div>
+
+          </div>
+
+
+        <div class="pagination_container">
+          <div class="page_link">
+            <h5><a href="http://events.uri.edu/fine_arts_center/calendar">View full calendar...</a></h5>
+          </div>
+        </div>
+
+    	</div>
+
+    	<div class="list_break">
+    		<h3>Recent Events</h3>
+    	</div>
+
+    			<div class="item event_item">
+            <h3><span><a href="http://events.uri.edu/event/uri_theatre_auditions_-_marvins_room">URI Theatre Auditions: Marvin&#x27;s Room</a></span><span class="dateright">9/5/2012</span></h3>
+    			</div>
+    			<div class="item event_item">
+            <h3><span><a href="http://events.uri.edu/event/annual_art_faculty_exhibition">Annual Art Faculty Exhibition</a></span><span class="dateright">9/10/2012</span></h3>
+    			</div>
+    			<div class="item event_item">
+            <h3><span><a href="http://events.uri.edu/event/annual_art_faculty_exhibition">Annual Art Faculty Exhibition</a></span><span class="dateright">9/11/2012</span></h3>
+    			</div>
+    			<div class="item event_item">
+            <h3><span><a href="http://events.uri.edu/event/annual_art_faculty_exhibition">Annual Art Faculty Exhibition</a></span><span class="dateright">9/12/2012</span></h3>
+    			</div>
+    			<div class="item event_item">
+            <h3><span><a href="http://events.uri.edu/event/annual_art_faculty_exhibition">Annual Art Faculty Exhibition</a></span><span class="dateright">9/13/2012</span></h3>
+    			</div>
+    
+
+
+
+  	<div class="sectionheader section_dark_colorone" id="comments">
+    	<h3 class="space"><span>Recent Activity</span></h3>
+    </div>
+	  <!-- recent activity list and buttons -->
+<div id="recent_activity_business_12959" class="recent_activity_list" data-recent-activity="wrapper">
+  <div class="link_action">
+    <a href="#" class="add_comment_button" rel="ibox;url=#login-lightbox">Comment</a>
+    <a href="#" class="add_review_button" rel="ibox;url=#login-lightbox">Review</a>
+    <a href="#" class="add_photo_button" rel="ibox;url=#login-lightbox">Photo</a>
+  </div>
+
+
+
+
+
+  <div id="recent_activity_business_12959_list" data-recent-activity="list">
+      <div class="nocontent">
+        <p>No recent activity</p>
+      </div>
+  </div>
+
+</div>
+
+
+  </div>
+
+
+
+  <div class="grid_4 omega">
+
+     <div class="user_action">
+    <a href="/fine_arts_center/add_friend?id=fine_arts_center" rel="ibox;url=#login-lightbox" title="Add to My Places">Follow</a>
+	<a href="/fine_arts_center" rel="ibox;url=#login-lightbox">Add to Calendar</a>
+</div>
+
+
+
+      <div class="sectionheader section_dark_colortwo">
+        <h3 class="space">
+          <span>Fans</span>
+            3 people
+        </h3>
+      </div>
+
+      <div id="x-friendslist">
+    		<table class="icon_item">
+  <tr>
+    <td>
+<a href="http://events.uri.edu/doconnors_209" rel="tooltip" title="Drew O&#x27;Connors"><img alt="Drew O&#x27;Connors" height="50" src="http://images-cf.localist.com/photos/18631/small/46c7cdbc0bb97cc4397496c76af7285a21438ba5.jpg?1307284176" title="Drew O&#x27;Connors" width="50" /></a>    </td>
+    <td>
+<a href="http://events.uri.edu/justin_kisch_885" rel="tooltip" title="Justin Kisch"><img alt="Justin Kisch" height="50" src="http://images-cf.localist.com/images/main/person_small.png?1377533225" title="Justin Kisch" width="50" /></a>    </td>
+    <td>
+<a href="http://events.uri.edu/zhu_zhenghan_495" rel="tooltip" title="Zhenghan Zhu"><img alt="Zhenghan Zhu" height="50" src="http://images-cf.localist.com/images/main/person_small.png?1377533225" title="Zhenghan Zhu" width="50" /></a>    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
+</table>
+
+
+  		</div>
+
+ 	  <div id="map-address" style="display: none;">
+      <p><strong>Address:</strong></p>
+      <p>105 Upper College Rd, University of Rhode Island, Kingston, RI 02881, USA</p>
+      <a href="http://maps.google.com/maps?f=d&amp;hl=en&amp;saddr=&amp;daddr=105%20Upper%20College%20Rd,%20University%20of%20Rhode%20Island,%20Kingston,%20RI%2002881,%20USA@41.4881,-71.5242&amp;ie=UTF8&amp;z=15" target="_blank">Enlarge Map</a>
+    </div>
+
+  		<div class="sectionheader section_dark_colorfour">
+  			<h3 class="space">
+  			  <span>Getting Here</span>
+  			</h3>
+  		</div>
+
+  			<div id="map"></div>
+
+
+    
+
+
+  </div>
+
+
+
+  <div style="display: none;">
+    <!-- send message form -->
+    <div id="send-message-form">
+        <div class="modal_container light_colorone">
+  <h2><span>Login to University of Rhode Island</span></h2>
+  <div class="modal_content">
+
+
+
+
+
+
+
+
+      <div class="container-login-localist">
+        <div class="modalgrid_2">
+          <form accept-charset="UTF-8" action="http://events.uri.edu/auth/login" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="aA14aDHmRxa/FCJXzmyAZW66FKVsOnUKGx8SuVWiIgM=" /></div>
+              <input name="previous_url" type="hidden" value="http://events.uri.edu/fine_arts_center" />
+
+           <fieldset>
+             <label>Username</label>
+             <input class="full" id="" name="username" type="text" />
+
+             <label>Password</label>
+             <input class="full" id="" name="password" type="password" />
+
+             
+           </fieldset>
+
+           <div class="action_button">
+             <a class="link" href="#" onclick="hideIbox(); return false;">Cancel</a>
+             <input data-disable-with="Logging in..." name="commit" type="submit" value="Login" />
+           </div>
+
+</form>        </div>
+        <div class="modalgrid_2 login_message_text">
+          <h4>Current students, faculty and staff, your login credentials are:</h4>
+<p>username: your URI eCampus username</p>
+<p>password: your URI Email, Sakai or Wireless password</p>
+<p>If you experience problems, please contact the Help Desk at 874-HELP.</p>
+
+<h4>Why Login?</h4>
+<p>URI Events helps you to make plans with friends, get event reminders, and more! Only logged-in users can submit events.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+    </div>
+
+    <!-- add friend form -->
+    <div id="add-friend-form">
+        <div class="modal_container light_colorone">
+  <h2><span>Login to University of Rhode Island</span></h2>
+  <div class="modal_content">
+
+
+
+
+
+
+
+
+      <div class="container-login-localist">
+        <div class="modalgrid_2">
+          <form accept-charset="UTF-8" action="http://events.uri.edu/auth/login" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="aA14aDHmRxa/FCJXzmyAZW66FKVsOnUKGx8SuVWiIgM=" /></div>
+              <input name="previous_url" type="hidden" value="http://events.uri.edu/fine_arts_center" />
+
+           <fieldset>
+             <label>Username</label>
+             <input class="full" id="" name="username" type="text" />
+
+             <label>Password</label>
+             <input class="full" id="" name="password" type="password" />
+
+             
+           </fieldset>
+
+           <div class="action_button">
+             <a class="link" href="#" onclick="hideIbox(); return false;">Cancel</a>
+             <input data-disable-with="Logging in..." name="commit" type="submit" value="Login" />
+           </div>
+
+</form>        </div>
+        <div class="modalgrid_2 login_message_text">
+          <h4>Current students, faculty and staff, your login credentials are:</h4>
+<p>username: your URI eCampus username</p>
+<p>password: your URI Email, Sakai or Wireless password</p>
+<p>If you experience problems, please contact the Help Desk at 874-HELP.</p>
+
+<h4>Why Login?</h4>
+<p>URI Events helps you to make plans with friends, get event reminders, and more! Only logged-in users can submit events.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+
+    </div>
+
+<!-- URI custom footer -->
+<!-- end URI custom footer -->
+
+    <div style="display: none;" id="login-lightbox-container">
+      <div id="login-lightbox">
+        <div class="modal_container light_colorone">
+  <h2><span>Login to University of Rhode Island</span></h2>
+  <div class="modal_content">
+
+
+
+
+
+
+
+
+      <div class="container-login-localist">
+        <div class="modalgrid_2">
+          <form accept-charset="UTF-8" action="http://events.uri.edu/auth/login" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="aA14aDHmRxa/FCJXzmyAZW66FKVsOnUKGx8SuVWiIgM=" /></div>
+              <input name="previous_url" type="hidden" value="http://events.uri.edu/fine_arts_center" />
+
+           <fieldset>
+             <label>Username</label>
+             <input class="full" id="" name="username" type="text" />
+
+             <label>Password</label>
+             <input class="full" id="" name="password" type="password" />
+
+             
+           </fieldset>
+
+           <div class="action_button">
+             <a class="link" href="#" onclick="hideIbox(); return false;">Cancel</a>
+             <input data-disable-with="Logging in..." name="commit" type="submit" value="Login" />
+           </div>
+
+</form>        </div>
+        <div class="modalgrid_2 login_message_text">
+          <h4>Current students, faculty and staff, your login credentials are:</h4>
+<p>username: your URI eCampus username</p>
+<p>password: your URI Email, Sakai or Wireless password</p>
+<p>If you experience problems, please contact the Help Desk at 874-HELP.</p>
+
+<h4>Why Login?</h4>
+<p>URI Events helps you to make plans with friends, get event reminders, and more! Only logged-in users can submit events.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+  <div id="fb-root"></div>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript">
+  FB.init({
+    appId: "200065743363387",
+    status: true,
+    cookie: true,
+    xfbml: true,
+    channelUrl: document.location.protocol + '//' + document.location.host + '/channel.html',
+    oauth: true
+  });
+
+</script>
+
+
+
+
+</body>
+</html>
+

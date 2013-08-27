@@ -1,0 +1,662 @@
+ 
+   
+   
+
+	
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+
+
+ 
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>ClassZone - The Language of Literature, Grade 7</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+
+<LINK href="../../cz_style_ns.css" type=text/css rel=stylesheet>
+
+	
+<SCRIPT language=JavaScript>
+//Browsercheck:
+//Safari Check added 06/03/2005 PCC
+var safari = false;
+var agent = navigator.userAgent.toLowerCase();
+if (agent.indexOf("safari") != -1)
+	safari = true;
+
+//Firefox Check added 01/17/2006 FL
+var ff15 = false;
+if (agent.indexOf("firefox/1.5") != -1)
+	ff15 = true;
+
+//Firefox Check added 11/15/2006
+var ff2 = false;
+if (agent.indexOf("firefox/2.0") != -1)
+	ff2 = true;
+	
+
+ie=document.all?1:0
+n=document.layers?1:0
+ns7=navigator.vendorSub?1:0
+ns6=document.getElementById&&!document.all&&!ns7?1:0
+
+function jumpTo(form_num)  {
+        var loc = document.menu.elements[form_num].options[document.menu.elements[form_num].selectedIndex].value;
+        if (loc != "") {
+                document.location= loc;
+        }
+}
+
+//Object constructor
+function makeMenu(obj,nest){
+    nest=(!nest) ? '':'document.'+nest+'.'
+    if (n) this.css=eval(nest+'document.'+obj)
+    else if (ns6||ns7) this.css=document.getElementById(obj).style
+    else if (ie) this.css=eval(obj+'.style')						
+	this.state=1
+	this.go=0
+    this.obj = obj + "Object"; 	eval(this.obj + "=this")	
+}
+
+function menuInit(){
+	
+	
+	
+	//Loop for dynamic function calls 10/13/04 LJS
+		osubMenu1= new makeMenu('submenu1')
+		
+	//Loop for dynamic function calls 10/13/04 LJS
+		osubMenu2= new makeMenu('submenu2')
+		
+	
+	
+	
+	//Loop for dynamic function calls 10/13/04 LJS
+		oMenu1= new makeMenu('menu1')
+		
+	//Loop for dynamic function calls 10/13/04 LJS
+		oMenu2= new makeMenu('menu2')
+		
+	//Loop for dynamic function calls 10/13/04 LJS
+		oMenu3= new makeMenu('menu3')
+		
+	
+	
+	//osubMenu1=new makeMenu('submenu1')
+	//osubMenu2=new makeMenu('submenu2')
+	//osubMenu3=new makeMenu('submenu3')	Old Hard coded function calls.
+	//oMenu1=new makeMenu('menu1')
+	//oMenu2=new makeMenu('menu2')
+	//oMenu3=new makeMenu('menu3')
+	//oMenu4=new makeMenu('menu4')
+}
+
+function newWindow(page_url, new_width, new_height, new_menubar){
+	new_window = window.open(page_url, "pop_up", "width=new_width,height=new_height,menubar=new_menubar,resize=yes");
+	new_window.focus();
+	}
+
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_preloadImages() { //v3.0
+	menuInit();
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_showHideLayers() { //v3.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+
+// determine browser
+var IE=false;
+if (navigator.appName=="Microsoft Internet Explorer")
+	IE=true;
+
+// preload arrow images
+var arrowupimg = new Image();
+var arrowdownimg = new Image();
+arrowdownimg.src = "../../images/arrow_down.gif";
+arrowupimg.src = "../../images/arrow_up.gif";
+
+// INITIALIZE VARIABLES (initiallize arrays as one size higher and ignore the 0 index
+var nmenus1 = 2; // ArrayLen(menu_array)of expandable menus - always 3 *****CHANGED TO  OF DROP DOWNS IN MENU ARRAY 10/13/04 - LJS
+var nrows = new Array(nmenus1+1); // array of rows in each menu
+//enter nrows values here: 
+// 
+
+
+//CHANGED 3 TO VARIABLE LIMIT 10/13/04 LJS
+	
+	nrows[1]=4;
+	
+//CHANGED 3 TO VARIABLE LIMIT 10/13/04 LJS
+	
+	nrows[2]=6;
+	
+
+
+
+var arrowdown = new Array(nmenus1+1); // array of booleans for expandable menu status.
+for (var i=1; i<(nmenus1+1); i++)
+	arrowdown[i] = false;
+
+var menuheight = new Array(nmenus1+1); // array of height in pixels of menu which is dependant on browser
+for (var i=1; i<(nmenus1+1); i++) {
+	if (ie && nrows[i]>0)
+		menuheight[i]=nrows[i]*25+8;
+	else if (!ie && nrows[i]>0)
+		menuheight[i]=nrows[i]*26+5;
+	else
+		menuheight[i]=0;
+}
+
+// this expands and contracts all drop down navs (including the Region dropdown)
+// Safari Check Added 06032005 PCC
+
+function changenav(intmenu){
+	if (!arrowdown[intmenu]) {
+		if (!ff15&&!ff2&&!ie&&!ns7&&!safari)
+			document.eval("menu" + intmenu).document.images["arrow" + intmenu].src = eval("arrowdownimg.src");
+		else
+			document.images["arrow" + intmenu].src = eval("arrowdownimg.src");
+		eval("osubMenu" + intmenu).css.visibility='visible'
+		for (i=1; i<=(nmenus1+1); i++) {
+			if (i>intmenu) {
+				eval("oMenu" + i).css.top=parseInt(eval("oMenu" + i).css.top)+menuheight[intmenu];
+			}
+		}
+		for (i=1; i<=(nmenus1); i++) {
+			if (i>intmenu) {
+				eval("osubMenu" + i).css.top=parseInt(eval("osubMenu" + i).css.top)+menuheight[intmenu];
+			}
+		}
+	} else {
+		if (!ff15&&!ff2&&!ie&&!ns7&&!safari)
+			document.eval("menu" + intmenu).document.images["arrow" + intmenu].src = eval("arrowupimg.src");
+		else
+			document.images["arrow" + intmenu].src = eval("arrowupimg.src");
+		eval("osubMenu" + intmenu).css.visibility='hidden'
+		for (i=1; i<=(nmenus1+1); i++) {
+			if (i>intmenu) {
+				eval("oMenu" + i).css.top=parseInt(eval("oMenu" + i).css.top)-menuheight[intmenu];
+			}
+		}
+		for (i=1; i<=(nmenus1); i++) {
+			if (i>intmenu) {
+				eval("osubMenu" + i).css.top=parseInt(eval("osubMenu" + i).css.top)-menuheight[intmenu];
+			}
+		}
+	}
+	arrowdown[intmenu]=!arrowdown[intmenu];
+}
+
+
+//*************************NEW NAV ENDS HERE******************************//
+</SCRIPT>
+
+
+
+
+
+
+
+
+<SCRIPT language=JavaScript>
+if (IE)
+	menuheight[2]=191;
+else
+	menuheight[2]=200;
+</SCRIPT>
+
+
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY text=#000000 bgColor=#ffffff leftMargin=0 background=../../images/back.gif 
+topMargin=0 marginheight="0" marginwidth="0" onload="MM_preloadImages()">
+
+
+ 
+<div id="search" style="position:absolute; left:501px; top:190px; width:180px; height:30px; z-index:2; visibility: visible">
+<form name="seek1" method="GET" accept-charset="iso-8859-1" action="http://search.hmco.com/classzone/language_of_lit_gr07_query.html">
+<table width="180" border="0" cellspacing="0" cellpadding="1" bgcolor="#CCCCCC">
+<tr> 
+	<td> 
+		<table width="100%" border="0" cellspacing="0" cellpadding="1" bgcolor="#FFFFFF">
+		<tr> 
+			<td bgcolor="#EFEFEF"><p class="menuheads">Search within this Book:</p></td>
+			<td bgcolor="#EFEFEF" align="right">&nbsp;</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr> 
+	<td>
+		
+		<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="1" bgcolor="#FFFFFF">
+		<tr> 
+			<td align="left" valign="top" bgcolor="#FFFFFF"> 
+				<table width="170" border="0" cellspacing="5" cellpadding="0">
+				<tr>
+				
+				   <td width="150"><input type=text name="qt" size=15 value="" maxlength=200></td>
+				   <td align="right" width="50">
+				   <input type="image" height=23 src="../../images/button_go.gif" width="28" height="23" alt="Go" border="0" value="search">
+				   <input type=hidden name=col value="czbooks">
+   				   <input type=hidden name=qc value="czbooks">
+				   
+				   	 <input type=hidden name=qp value="url:books/language_of_lit_gr07/">
+				   
+				  
+				   <input type=hidden name=nh value="10">
+				   <input type=hidden name=si value="0"> 
+				   <input type=hidden name=rf value="0">  
+				 			
+					</td>
+				</tr>
+				</table>
+				
+			</td>
+		</tr>
+		</table>
+		
+	</td>
+</tr>
+</table>
+</form>
+</div>
+
+	<div id="menu1" style="position:absolute; left:501px; top:255px; width:180px; height:25px; z-index:2; visibility: visible">
+	
+	<table width="180" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td colspan="4" bgcolor="#CCCCCC" width="180"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC" width="1"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+			<td width="158" bgcolor="#EFEFEF"><p class="menuheads">Student Tools:</p></td>
+			<td width="20" bgcolor="#EFEFEF"><img src="../../images/arrow_up.gif" alt="" name="arrow1" width="19" height="21" onMouseDown="changenav(1);"><img src="../../images/1x1.gif" alt="" width="1" height="23"></td>
+			<td bgcolor="#CCCCCC" width="1"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+		</tr>
+		<tr>
+			<td colspan="4" bgcolor="#CCCCCC" width="180"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+		</tr>
+	</table>
+</div>
+
+	<div id="submenu1" style="position:absolute; left:501px; top:280px; width:180px; z-index:2; visibility: hidden">
+	
+	<table width="180" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td colspan="3" bgcolor="#CCCCCC" width="180"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC" width="1"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+			<td width="178" bgcolor="#FFFFFF"><p class="menulinks">
+	<a href="page_build.cfm?content=oltp_map_select&state=none">Test Practice</a><br>
+					
+						<IMG src="../../images/line_menu.gif" alt="" width=144 height=5> <BR>
+					
+					<a href="page_build.cfm?content=spelling&state=none">Spelling</a><br>
+					
+						<IMG src="../../images/line_menu.gif" alt="" width=144 height=5> <BR>
+					
+					<a href="page_build.cfm?content=reference&state=none">Online Reference Sites</a><br>
+					
+						<IMG src="../../images/line_menu.gif" alt="" width=144 height=5> <BR>
+					
+					<a href="page_build.cfm?content=write_link&state=none">Writing Links</a><br>
+					
+					
+				</p>
+			</td>
+			<td bgcolor="#CCCCCC" width="1"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+		</tr>
+		<tr>
+			<td colspan="3" bgcolor="#CCCCCC" width="180"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+		</tr>
+</table>
+</div>
+	
+	<div id="menu2" style="position:absolute; left:501px; top:285px; width:180px; height:25px; z-index:2; visibility: visible">
+	
+	<table width="180" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td colspan="4" bgcolor="#CCCCCC" width="180"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC" width="1"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+			<td width="158" bgcolor="#EFEFEF"><p class="menuheads">Teacher Resources:</p></td>
+			<td width="20" bgcolor="#EFEFEF"><img src="../../images/arrow_up.gif" alt="" name="arrow2" width="19" height="21" onMouseDown="changenav(2);"><img src="../../images/1x1.gif" alt="" width="1" height="23"></td>
+			<td bgcolor="#CCCCCC" width="1"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+		</tr>
+		<tr>
+			<td colspan="4" bgcolor="#CCCCCC" width="180"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+		</tr>
+	</table>
+</div>
+
+	<div id="submenu2" style="position:absolute; left:501px; top:310px; width:180px; z-index:2; visibility: hidden">
+	
+	<table width="180" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td colspan="3" bgcolor="#CCCCCC" width="180"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC" width="1"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+			<td width="178" bgcolor="#FFFFFF"><p class="menulinks">
+	<a href="../../sw/content_driver/c_teach_check.cfm?book=language_of_lit_gr07&content=spelling_answers&state=none">Spelling Answers</a><br>
+					
+						<IMG src="../../images/line_menu.gif" alt="" width=144 height=5> <BR>
+					
+					<a href="../../sw/content_driver/c_teach_check.cfm?book=language_of_lit_gr07&content=selection_links&state=none">Selection Background Links</a><br>
+					
+						<IMG src="../../images/line_menu.gif" alt="" width=144 height=5> <BR>
+					
+					<a href="../../sw/content_driver/c_teach_check.cfm?book=language_of_lit_gr07&content=wl_guide&state=none">Guide to <i>Language of Literature</i> ClassZone</a><br>
+					
+						<IMG src="../../images/line_menu.gif" alt="" width=144 height=5> <BR>
+					
+					<a href="../../sw/content_driver/c_teach_check.cfm?book=language_of_lit_gr07&content=prof_development&state=none">Professional Development Articles</a><br>
+					
+						<IMG src="../../images/line_menu.gif" alt="" width=144 height=5> <BR>
+					
+					<a href="../../sw/content_driver/c_teach_check.cfm?book=language_of_lit_gr07&content=lesson_plans&state=none">Literature Guides and Lesson Plans</a><br>
+					
+						<IMG src="../../images/line_menu.gif" alt="" width=144 height=5> <BR>
+					
+					<a href="../../sw/content_driver/c_teach_check.cfm?book=language_of_lit_gr07&content=choose_year&state=none">Online Lesson Planner</a><br>
+					
+					
+				</p>
+			</td>
+			<td bgcolor="#CCCCCC" width="1"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+		</tr>
+		<tr>
+			<td colspan="3" bgcolor="#CCCCCC" width="180"><img src="../../images/1x1.gif" alt="" width="1" height="1"></td>
+		</tr>
+</table>
+</div>
+	
+
+
+	<div id="menu3" style="position:absolute; left:501px; top:345px; width:180px; z-index:2; visibility: visible">
+	</div>
+	
+
+
+
+
+
+<a name="top"></a>
+<div id="Layer1" style="position:absolute; left:30px; top:43px; width:164px; height:68px; z-index:1">
+
+
+</div>
+<table width="710" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td height="27" colspan="4"> 
+      <div align="right"><a href="../../about.cfm" class="headerb">About ClassZone</a><span class="headerbtext">&nbsp;&nbsp;|&nbsp;&nbsp;</span><a href="/eservices" class="headerb">eServices</a><span class="headerbtext">&nbsp;&nbsp;|&nbsp;&nbsp;</span><a href="../../books/research_guide/index.cfm" class="headerb">Web Research Guide</a><span class="headerbtext">&nbsp;&nbsp;|&nbsp;&nbsp;</span><a href="/cz/contact_us.htm" class="headerb">Contact Us</a><span class="headerbtext">&nbsp;&nbsp;|&nbsp;&nbsp;</span><a href="http://www.mcdougallittell.com/store/ProductCatalogController?cmd=LaunchPage&nextPage=McDougal/html/index.html&division=M01" class="headerb">Online Store</a><img src="../../images/1x1.gif" width="28" height="1" alt="" border="0">
+	  </div>
+    </td>
+  </tr>
+  <tr> 
+    <td height="81" colspan="4" background="../../images/mast_back.gif"> 
+      <div align="right"><a href="/"><img src="../../images/logotype_1.gif" width="217" height="48" border="0" alt="ClassZone Home"></a><br>
+      <a href="http://www.mcdougallittell.com/"><img src="../../images/logotype_2.gif" width="217" height="33" border="0" alt="McDougal Littell Home"></a><br>
+	  </div>
+    </td>
+  </tr>
+
+
+
+
+  <TR align="left">
+    <TD width=30 height=37>&nbsp;</TD>
+      <TD width=450 height=37 align="left">
+		
+
+
+
+<TABLE cellSpacing=0 cellPadding=0 width=450 border=0 align="left">
+        <TBODY>
+        <TR>
+          <TD width=47 align="left">
+		  	<IMG src="../../images/icon_lit.gif">
+		  </TD>
+          <TD class=header width=403 align="left">
+		  	The Language of Literature, Grade 7
+		  </TD>
+		 </TR>
+		</TBODY>
+</TABLE>
+
+	</TD>
+	</TD>
+    <TD align=right width=200 height=37>&nbsp; </TD>
+    <TD width=30 height=37></TD>
+  </TR>
+  <TR>
+    <TD class=bcrumbs colSpan=4 height=20>
+		<img src="../../images/1x1.gif" alt="" width="30" height="1"><a href="/">Home</a> &gt; The Language of Literature, Grade 7
+
+	  </TD>
+    
+  </TR>
+  <TR>
+    <TD width=30 height=20>&nbsp;</TD>
+    <TD class=bcrumbs vAlign=top align=left colSpan=2 height=20>
+	
+      <TABLE cellSpacing=0 cellPadding=0 width=650 border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=left width=470 colSpan=2 height=30>&nbsp;</TD>
+          <TD width=180 height=30>&nbsp; </TD></TR>
+        <TR>
+          <TD vAlign=top align=left width=470 colSpan=2 height=30>
+				
+						 <TABLE cellSpacing=0 cellPadding=0 width=450 border=0>
+              <TBODY>
+              <TR>
+                <TD width=125 valign="top">
+					<a href="index.cfm"><IMG src="../../images/cvr_language_of_lit_gr07_sm.gif" border="0" alt="Return to book index"></a>
+
+				</TD>
+                <TD vAlign=top align=left width=325>
+                  <P class=specialsubheads>Welcome to The Language of Literature, Grade 7</P>
+				  
+				  <p><I>The Language of Literature</I> ClassZone is your gateway to the literature and authors featured in your textbook. Find links to help you with your research projects, explore the literature and history of different cultures, play interactive spelling and vocabulary games, or get your own writing published&#151;all within ClassZone. Begin your journey by selecting a unit from the menu below. A wealth of information awaits you!<br><br></p>
+				</TD></TR>
+ <!--Add this section-->
+			  </TBODY>
+			  </TABLE>
+			  <TABLE cellSpacing=0 cellPadding=0 width=450 border=0>
+			  <TBODY>
+<!--End-->
+			  <TR>
+                <TD width=450 colSpan=2><IMG height=5 
+                  src="../../images/line_450p.gif" width=450></TD></TR>
+              <TR>
+                <TD width=125 height=30><IMG height=1 src="../../images/1x1.gif" width=125></TD>
+                <TD valign=top align=left width=325 height=30>
+                  <P class=specialbody>Choose a unit to begin your exploration.</P>
+				 </TD>
+				 </TR>
+
+              <TR>
+                <TD width=125 height=30><IMG height=1 src="../../images/1x1.gif" width=125></TD>
+                <TD align=left width=325 height=30>
+				  <table width="325" border="0" align="left">
+				   		<tr bgcolor="#FFFFFF">
+			            <td width="96%"> 
+						<p>
+						
+							
+							
+							
+							
+						<a href="page_build.cfm?id=none&u=1">Unit 1: Learning from Experience</a>
+						</p>
+						</td>
+			            <td width="4%">&nbsp;</td>
+			            </tr>
+						
+				   		<tr bgcolor="#FFFFFF">
+			            <td width="96%"> 
+						<p>
+						
+							
+							
+							
+							
+						<a href="page_build.cfm?id=none&u=2">Unit 2: Relationships</a>
+						</p>
+						</td>
+			            <td width="4%">&nbsp;</td>
+			            </tr>
+						
+				   		<tr bgcolor="#FFFFFF">
+			            <td width="96%"> 
+						<p>
+						
+							
+							
+							
+							
+						<a href="page_build.cfm?id=none&u=3">Unit 3: Flights of Imagination</a>
+						</p>
+						</td>
+			            <td width="4%">&nbsp;</td>
+			            </tr>
+						
+				   		<tr bgcolor="#FFFFFF">
+			            <td width="96%"> 
+						<p>
+						
+							
+							
+							
+							
+						<a href="page_build.cfm?id=none&u=4">Unit 4: Nothing Stays the Same</a>
+						</p>
+						</td>
+			            <td width="4%">&nbsp;</td>
+			            </tr>
+						
+				   		<tr bgcolor="#FFFFFF">
+			            <td width="96%"> 
+						<p>
+						
+							
+							
+							
+							
+						<a href="page_build.cfm?id=none&u=5">Unit 5: Personal Challenges</a>
+						</p>
+						</td>
+			            <td width="4%">&nbsp;</td>
+			            </tr>
+						
+				   		<tr bgcolor="#FFFFFF">
+			            <td width="96%"> 
+						<p>
+						
+							
+							
+							
+							
+						<a href="page_build.cfm?id=none&u=6">Unit 6: The Oral Tradition</a>
+						</p>
+						</td>
+			            <td width="4%">&nbsp;</td>
+			            </tr>
+						</table>
+
+				 </TD>
+				 </TR>
+				 </TBODY>
+				 </TABLE>	
+			 <P>&nbsp;</P>
+            <P>&nbsp;</P>
+		  </TD>
+          <TD vAlign=top align=left width=180 height=30>&nbsp; </TD></TR>
+        <TR>
+          <TD width=470 colSpan=2>
+		  
+			
+	<table width="450" align="center">
+		<tr>
+			<td align="center">
+				<p class="copyright">
+					Copyright &copy;&nbsp;1995-2008 Houghton Mifflin Harcourt Publishing Company. <br>All rights reserved.<br>
+			        <a href="/credits.html">Art and Photography Credits</a>, <a href="http://www.hmco.com/terms_and_conditions.html">Terms and Conditions of Use</a> and <a href="http://www.hmco.com/privacy_policy.html"><strong>Privacy Policy</strong></a>
+					
+				</p>
+			</td>
+		</tr>
+	</table>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1008971-1";
+urchinTracker();
+</script>
+</BODY>
+</HTML>
+
+		  
+          </TD>
+          <TD width=180>&nbsp;</TD>
+		 </TR>
+		 </TBODY>
+		</TABLE>
+	</TD>
+    <TD width=30 height=20>&nbsp;</TD>
+  </TR>
+  <TR>
+    <TD class=copyright colSpan=4 height=30>&nbsp;</TD>
+  </TR>
+  </TBODY>
+ </TABLE>
+</BODY></HTML>
+

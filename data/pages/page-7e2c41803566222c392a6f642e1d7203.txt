@@ -1,0 +1,765 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Central Penn Art Guide | Family Kids Entertainment | Harrisburg Events</title>
+<meta name="description" content="Harrisburg, York, Gettysburg, Lancaster, Central Penn cultural events, news and Arts guide." />
+<meta name="keywords" content="Arts Guide, Central Penn Arts Guide, Harrisburg Events, Cultural Events" />
+<meta name="robots" content="noodp,noydir" />
+<link rel="Shortcut Icon" href="http://centralpennartguide.com/wp-content/themes/lifestyle/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" type="application/rss+xml" title="Central Penn Art Guide | Family Kids Entertainment | Harrisburg Events &raquo; Feed" href="http://centralpennartguide.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="Central Penn Art Guide | Family Kids Entertainment | Harrisburg Events &raquo; Comments Feed" href="http://centralpennartguide.com/comments/feed" />
+<link rel="canonical" href="http://centralpennartguide.com/" />
+<link rel='stylesheet' id='lifestyle-theme-css'  href='http://centralpennartguide.com/wp-content/themes/lifestyle/style.css?ver=1.9.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp125style-css'  href='http://centralpennartguide.com/wp-content/plugins/wp125/wp125.css?ver=3.5.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://centralpennartguide.com/wp-content/plugins/business-directory//main.js?ver=3.5.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://centralpennartguide.com/xmlrpc.php?rsd" />
+<script type='text/javascript' src='http://centralpennartguide.com/wp-includes/js/tw-sack.min.js?ver=1.6.1'></script>
+		<script>
+			function bizdir_add_listing(name,email,cName,description,keywords,website,cEmail,phone) { //Add Form Ajax Call
+				//Deactivate submit button and display processing message
+				document.getElementById('bizdir_submit').disabled = true;
+				var submit_message = document.getElementById('bizdir_submit_message');
+				submit_message.className = "bizdir_message";
+				submit_message.innerHTML = "Submitting Form, Please Wait...";
+				//Clear inputs with Auto Text
+				bizdir_clearAllAutoFill();
+				//Build SACK Call
+				var mysack = new sack("http://centralpennartguide.com/wp-content/plugins/business-directory/requests.php");
+				mysack.execute = 1;
+				mysack.method = 'POST';
+				mysack.setVar("action","AddListing");
+				mysack.setVar("category_id", document.getElementById("bizdir_category_id").value);
+				mysack.setVar("name",document.getElementById("bizdir_name").value);
+				mysack.setVar("email",document.getElementById("bizdir_email").value);
+				mysack.setVar("cName",document.getElementById("bizdir_cName").value);
+				mysack.setVar("description",document.getElementById("bizdir_description").value);
+				mysack.setVar("keywords",document.getElementById("bizdir_keywords").value);
+				mysack.setVar("website",document.getElementById("bizdir_website").value);
+				mysack.setVar("cEmail",document.getElementById("bizdir_cEmail").value);
+				mysack.setVar("phone",document.getElementById("bizdir_phone").value);
+				mysack.setVar("street1",document.getElementById("bizdir_street1").value);
+				mysack.setVar("street2",document.getElementById("bizdir_street2").value);
+				mysack.setVar("city",document.getElementById("bizdir_city").value);
+				mysack.setVar("state",document.getElementById("bizdir_state").value);
+				mysack.setVar("zip",document.getElementById("bizdir_zip").value);
+				mysack.setVar("country",document.getElementById("bizdir_country").value);
+				mysack.onError = function() { alert('An ajax error occured while adding your listing. Please reload the page and try again.') };
+				mysack.runAJAX();//excecute
+				return true;
+			}
+			
+			function bizdir_search_listings() { //Search Ajax Call
+				var search_term = document.getElementById('bizdir_search_term');
+				if(search_term.value == "" || search_term.value == null)
+					return;
+				//Deactivate submit button and display processing message
+				document.getElementById('bizdir_search').disabled = true;
+				var submit_message = document.getElementById('bizdir_messages');
+				submit_message.className = "bizdir_message";
+				submit_message.innerHTML = "Searching Listings, Please Wait...";
+				//Build SACK Call
+				var mysack = new sack("http://centralpennartguide.com/wp-content/plugins/business-directory/requests.php");
+				mysack.execute = 1;
+				mysack.method = 'POST';
+				mysack.setVar("action","SearchListings");
+				mysack.setVar("searchTerms",search_term.value);
+				mysack.onError = function() { alert('An ajax error occured while searching. Please reload the page and try again.') };
+				mysack.runAJAX();//excecute
+				return true;
+			}
+			
+			function bizdir_change_listings_page(offset) { //Jump to the appropriate page in the directory Ajax Call
+				//Build SACK Call
+				var mysack = new sack("http://centralpennartguide.com/wp-content/plugins/business-directory/requests.php");
+				mysack.execute = 1;
+				mysack.method = 'POST';
+				mysack.setVar("action","ChangePage");
+				mysack.setVar("offset",offset);
+				mysack.onError = function() { alert('An ajax error occured. Please reload the page and try again.') };
+				mysack.runAJAX();//excecute
+				return true;
+			}
+
+            function bizdir_sort_categories(category) { //Jump to the appropriate page in the directory Ajax Call
+				//Build SACK Call
+                var category = category.value;
+                var mysack = new sack("http://centralpennartguide.com/wp-content/plugins/business-directory/requests.php");
+				mysack.execute = 1;
+				mysack.method = 'POST';
+				mysack.setVar("action","SearchListings");
+                mysack.setVar('category',category);
+				mysack.onError = function() { alert('An ajax error occured. Please reload the page and try again.') };
+				mysack.runAJAX();//excecute
+				return true;
+			}
+		</script>
+	<style type="text/css">
+    .calnk a:hover {
+        background-position:0 0;
+        text-decoration:none;  
+        color:#000000;
+        border-bottom:1px dotted #000000;
+     }
+    .calnk a:visited {
+        text-decoration:none;
+        color:#000000;
+        border-bottom:1px dotted #000000;
+    }
+    .calnk a {
+        text-decoration:none; 
+        color:#000000; 
+        border-bottom:1px dotted #000000;
+    }
+    .calnk a span { 
+        display:none; 
+    }
+    .calnk a:hover span {
+        color:#333333; 
+        background:#F6F79B; 
+        display:block;
+        position:absolute; 
+        margin-top:1px; 
+        padding:5px; 
+        width:150px; 
+        z-index:100;
+        line-height:1.2em;
+    }
+    .calendar-table {
+        border:0 !important;
+        width:100% !important;
+        border-collapse:separate !important;
+        border-spacing:2px !important;
+    }
+    .calendar-heading {
+        height:25px;
+        text-align:center;
+        border:1px solid #D6DED5;
+        background-color:#E4EBE3;
+    }
+    .calendar-next {
+        width:25%;
+        text-align:center;
+    }
+    .calendar-prev {
+        width:25%;
+        text-align:center;
+    }
+    .calendar-month {
+        width:50%;
+        text-align:center;
+        font-weight:bold;
+    }
+    .normal-day-heading {
+        text-align:center;
+        width:25px;
+        height:25px;
+        font-size:0.8em;
+        border:1px solid #DFE6DE;
+        background-color:#EBF2EA;
+    }
+    .weekend-heading {
+        text-align:center;
+        width:25px;
+        height:25px;
+        font-size:0.8em;
+        border:1px solid #DFE6DE;
+        background-color:#EBF2EA;
+        color:#FF0000;
+    }
+    .day-with-date {
+        vertical-align:text-top;
+        text-align:left;
+        width:60px;
+        height:60px;
+        border:1px solid #DFE6DE;
+    }
+    .no-events {
+
+    }
+    .day-without-date {
+        width:60px;
+        height:60px;
+        border:1px solid #E9F0E8;
+    }
+    span.weekend {
+        color:#FF0000;
+    }
+    .current-day {
+        vertical-align:text-top;
+        text-align:left;
+        width:60px;
+        height:60px;
+        border:1px solid #BFBFBF;
+        background-color:#E4EBE3;
+    }
+    span.event {
+        font-size:0.75em;
+    }
+    .kjo-link {
+        font-size:0.75em;
+        text-align:center;
+    }
+    .calendar-date-switcher {
+        height:25px;
+        text-align:center;
+        border:1px solid #D6DED5;
+        background-color:#E4EBE3;
+    }
+    .calendar-date-switcher form {
+        margin:2px;
+    }
+    .calendar-date-switcher input {
+        border:1px #D6DED5 solid;
+        margin:0;
+    }
+    .calendar-date-switcher select {
+        border:1px #D6DED5 solid;
+        margin:0;
+    }
+    .calnk a:hover span span.event-title {
+        padding:0;
+        text-align:center;
+        font-weight:bold;
+        font-size:1.2em;
+        margin-left:0px;
+    }
+    .calnk a:hover span span.event-title-break {
+        width:96%;
+        text-align:center;
+        height:1px;
+        margin-top:5px;
+        margin-right:2%;
+        padding:0;
+        background-color:#000000;
+        margin-left:0px;
+    }
+    .calnk a:hover span span.event-content-break {
+        width:96%;
+        text-align:center;
+        height:1px;
+        margin-top:5px;
+        margin-right:2%;
+        padding:0;
+        background-color:#000000;
+        margin-left:0px;
+    }
+    .page-upcoming-events {
+        font-size:80%;
+    }
+    .page-todays-events {
+        font-size:80%;
+    }
+    .calendar-table table,tbody,tr,td {
+        margin:0 !important;
+        padding:0 !important;
+    }
+    table.calendar-table {
+        margin-bottom:5px !important;
+    }
+    .cat-key {
+        width:100%;
+        margin-top:30px;
+        padding:5px;
+        border:0 !important;
+    }
+    .cal-separate {
+       border:0 !important;
+       margin-top:10px;
+    }
+    table.cat-key {
+       margin-top:5px !important;
+       border:1px solid #DFE6DE !important;
+       border-collapse:separate !important;
+       border-spacing:4px !important;
+       margin-left:2px !important;
+       width:99.5% !important;
+       margin-bottom:5px !important;
+    }
+    .cat-key td {
+       border:0 !important;
+    }
+</style>
+
+<!-- Dynamic Content Gallery plugin version 3.3.5 www.studiograsshopper.ch  Begin scripts -->
+<link type="text/css" rel="stylesheet" href="http://centralpennartguide.com/wp-content/plugins/dynamic-content-gallery-plugin/js-mootools/css/jd.gallery.css" />
+<script type="text/javascript" src="http://centralpennartguide.com/wp-content/plugins/dynamic-content-gallery-plugin/js-mootools/scripts/mootools-1.2.4-core-jm.js"></script>
+<script type="text/javascript" src="http://centralpennartguide.com/wp-content/plugins/dynamic-content-gallery-plugin/js-mootools/scripts/mootools-1.2.4.4-more.js"></script>
+<script type="text/javascript" src="http://centralpennartguide.com/wp-content/plugins/dynamic-content-gallery-plugin/js-mootools/scripts/jd.gallery_1_2_4_4.js"></script>
+<script type="text/javascript" src="http://centralpennartguide.com/wp-content/plugins/dynamic-content-gallery-plugin/js-mootools/scripts/jd.gallery.transitions_1_2_4_4.js"></script>
+<script type="text/javascript">
+   function startGallery() {
+      var myGallery = new gallery($("myGallery"), {
+	  showArrows: true,
+	  showCarousel: false,
+	  showInfopane: true,
+	  timed: true,
+	  delay: 9000,
+	  defaultTransition: "fade",
+	  slideInfoZoneOpacity: 0.7,
+	  slideInfoZoneSlide: true,
+	  textShowCarousel: "Featured Articles"
+      });
+   }
+   window.addEvent("domready",startGallery);
+</script>
+
+
+
+<style type="text/css">
+.imageElement {
+	visibility: hidden;
+	}
+	
+#myGallery, #myGallerySet, #flickrGallery {
+	background: #000 url('http://centralpennartguide.com/wp-content/plugins/dynamic-content-gallery-plugin/js-mootools/css/img/loading-bar-black.gif') no-repeat center;
+	border: 0px solid #000000;
+	height: 248px;
+	width: 588px;
+	}
+
+.jdGallery .slideInfoZone {
+	background-color: #000000 !important;
+	height: 75px;
+	}
+
+.jdGallery .slideInfoZone h2 {
+	color: #FFFFFF !important;
+	font-size: 14px !important;
+	font-weight: bold !important;
+	margin: 2px 5px !important;
+	padding: 0px 0px !important; 
+	}
+
+.jdGallery .slideInfoZone p {
+	color: #FFFFFF !important;
+	font-size: 11px !important;
+	line-height: 14px !important;
+	margin: 2px 5px !important;
+	padding: 0px 0px !important;
+	}
+
+.jdGallery .slideInfoZone p a, .jdGallery .slideInfoZone p a:link, .jdGallery .slideInfoZone p a:visited {
+	color: #FFFFFF !important;
+	font-weight:normal !important;
+	}
+
+.jdGallery .slideInfoZone p a:hover {
+	color: #FFFFFF !important;
+	font-weight:bold !important;
+	}
+	
+.jdGallery .slideElement {
+	background-color: #000000;
+	}
+
+</style><!-- End of Dynamic Content Gallery scripts -->
+
+
+
+<!-- Plugin: Open external links a new window. Plugin by Kristian Risager Larsen, http://kristianrisagerlarsen.dk . Download it at http://wordpress.org/extend/plugins/open-external-links-in-a-new-window/ -->
+<script type="text/javascript">//<![CDATA[
+	function external_links_in_new_windows_loop() {
+		if (!document.links) {
+			document.links = document.getElementsByTagName('a');
+		}
+		var change_link = false;
+		var force = '';
+		var ignore = '';
+
+		for (var t=0; t<document.links.length; t++) {
+			var all_links = document.links[t];
+			change_link = false;
+			
+			if(document.links[t].hasAttribute('onClick') == false) {
+				// forced if the address starts with http (or also https), but does not link to the current domain
+				if(all_links.href.search(/^http/) != -1 && all_links.href.search('centralpennartguide.com') == -1) {
+					// alert('Changeda '+all_links.href);
+					change_link = true;
+				}
+					
+				if(force != '' && all_links.href.search(force) != -1) {
+					// forced
+					// alert('force '+all_links.href);
+					change_link = true;
+				}
+				
+				if(ignore != '' && all_links.href.search(ignore) != -1) {
+					// alert('ignore '+all_links.href);
+					// ignored
+					change_link = false;
+				}
+
+				if(change_link == true) {
+					// alert('Changed '+all_links.href);
+					document.links[t].setAttribute('onClick', 'javascript:window.open(\''+all_links.href+'\'); return false;');
+					document.links[t].removeAttribute('target');
+				}
+			}
+		}
+	}
+	
+	// Load
+	function external_links_in_new_windows_load(func)
+	{	
+		var oldonload = window.onload;
+		if (typeof window.onload != 'function'){
+			window.onload = func;
+		} else {
+			window.onload = function(){
+				oldonload();
+				func();
+			}
+		}
+	}
+
+	external_links_in_new_windows_load(external_links_in_new_windows_loop);
+	//]]></script>
+
+<link rel="pingback" href="http://centralpennartguide.com/xmlrpc.php" />
+<meta name="10129638905546" content="4ec46e65cc8794ec46e65cc8" /> 
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12259496-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</head>
+<body class="home blog header-image header-full-width content-sidebar">
+<div id="wrap">
+<div id="header"><div class="wrap"><div id="title-area"><h1 id="title"><a href="http://centralpennartguide.com/" title="Central Penn Art Guide | Family Kids Entertainment | Harrisburg Events">Central Penn Art Guide | Family Kids Entertainment | Harrisburg Events</a></h1><p id="description">The Artist Network of Central PA</p></div><!-- end #title-area --></div><!-- end .wrap --></div><!--end #header--><div id="nav"><div class="wrap"><ul id="menu-information" class="menu genesis-nav-menu menu-primary"><li id="menu-item-5635" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5635"><a href="http://centralpennartguide.com/category/performing-arts">Performing Arts</a></li>
+<li id="menu-item-5638" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5638"><a href="http://centralpennartguide.com/category/visual-arts">Visual Arts</a></li>
+<li id="menu-item-5637" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5637"><a href="http://centralpennartguide.com/category/theatre">Theatre</a></li>
+<li id="menu-item-5633" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5633"><a href="http://centralpennartguide.com/category/music">Music</a></li>
+<li id="menu-item-5630" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5630"><a href="http://centralpennartguide.com/category/film-video">Film &#038; Video</a></li>
+<li id="menu-item-5632" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5632"><a href="http://centralpennartguide.com/category/museums">Museum</a></li>
+<li id="menu-item-5629" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5629"><a href="http://centralpennartguide.com/category/events">Events</a>
+<ul class="sub-menu">
+	<li id="menu-item-5634" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5634"><a href="http://centralpennartguide.com/category/news">News</a></li>
+</ul>
+</li>
+<li id="menu-item-5938" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5938"><a href="http://centralpennartguide.com/category/kids-culture">KidZ Culture</a>
+<ul class="sub-menu">
+	<li id="menu-item-6315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6315"><a href="http://centralpennartguide.com/category/family-fun">Family Fun</a></li>
+	<li id="menu-item-6314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6314"><a href="http://centralpennartguide.com/category/kidz-classes">KidZ Classes</a></li>
+</ul>
+</li>
+<li id="menu-item-5631" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5631"><a href="http://centralpennartguide.com/category/interviews">Interviews</a>
+<ul class="sub-menu">
+	<li id="menu-item-7242" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7242"><a href="http://centralpennartguide.com/category/artslink">ArtsLink</a></li>
+	<li id="menu-item-7274" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7274"><a href="http://centralpennartguide.com/category/articles">Articles</a></li>
+	<li id="menu-item-5636" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5636"><a href="http://centralpennartguide.com/category/profiles">Profiles</a></li>
+</ul>
+</li>
+<li id="menu-item-6323" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6323"><a href="http://centralpennartguide.com/category/bulletin-board">Bulletin Board</a>
+<ul class="sub-menu">
+	<li id="menu-item-5628" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5628"><a href="http://centralpennartguide.com/category/arts-marketing">Arts Marketing</a></li>
+	<li id="menu-item-6321" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6321"><a href="http://centralpennartguide.com/category/auditions-and-jobs">Auditions &#038; Jobs</a></li>
+	<li id="menu-item-6322" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6322"><a href="http://centralpennartguide.com/category/classes">Classes</a></li>
+</ul>
+</li>
+</ul></div><!-- end .wrap --></div><div id="subnav"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-secondary"><li id="menu-item-5617" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-5617"><a href="http://centralpennartguide.com">Home</a></li>
+<li id="menu-item-5613" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5613"><a href="http://centralpennartguide.com/calendar-of-events">Events Calendar</a></li>
+<li id="menu-item-7225" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7225"><a href="http://centralpennartguide.com/artslink">ArtsLink</a></li>
+<li id="menu-item-5616" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5616"><a href="http://centralpennartguide.com/art-directory">Directory</a></li>
+<li id="menu-item-5615" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5615"><a href="http://centralpennartguide.com/join-now">Join Now</a></li>
+<li id="menu-item-5614" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5614"><a href="http://centralpennartguide.com/contact-us">Contact Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-5611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5611"><a href="http://centralpennartguide.com/privacy-policy">Privacy Policy</a></li>
+	<li id="menu-item-5612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5612"><a href="http://centralpennartguide.com/terms-of-use">Terms of Use</a></li>
+	<li id="menu-item-5610" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5610"><a href="http://centralpennartguide.com/advertising-submissions-calendar-events-editorials">Ads &#038; Submissions</a></li>
+</ul>
+</li>
+</ul></div><!-- end .wrap --></div><div id="inner">
+<div id="content-sidebar-wrap">
+
+		<div id="content" class="hfeed">
+	
+		            <div class="dcg">
+				
+<div id="myGallery"><!-- Start of Dynamic Content Gallery -->
+
+<div class="imageElement"><!-- DCG Image #1 -->
+	<h3>SHREK THE MUSICAL COMES TO NEW OXFORD</h3>
+	<p>Family Blockbuster Musical Comedy presented by ACTS of Kindness Theatre Company 
+ACTS of Kindness Theatre Company proudly presents Shrek the Musical July 26, 27, 28 and August 2, 3, 4 on the New Oxford&hellip; <a href="http://centralpennartguide.com/shrek-the-musical-comes-to-new-oxford" rel="nofollow">[more]</a></p>
+	<a href="http://centralpennartguide.com/shrek-the-musical-comes-to-new-oxford" title="Read More" class="open"></a>
+	<img src="http://centralpennartguide.com/wp-content/uploads/2013/06/Shrek-logo.jpg" alt="SHREK THE MUSICAL COMES TO NEW OXFORD" class="dfcg-metabox full" />
+	<img class="dfcg-thumb-legacy thumbnail" src="http://centralpennartguide.com/wp-content/uploads/2013/06/Shrek-logo.jpg" alt="SHREK THE MUSICAL COMES TO NEW OXFORD" />
+</div>
+
+<div class="imageElement"><!-- DCG Image #2 -->
+	<h3>‘Clouds, Smoke and Vapors’ at HACC’s Rose Lehrman Art Gallery</h3>
+	<p>Reception – Thursday, Aug. 29
+The work of artist Ward Davenny, in several media, will be on display in the Rose Lehrman Art Gallery on the Harrisburg Campus of HACC, Central Pennsylvania’s Community&hellip; <a href="http://centralpennartguide.com/clouds-smoke-and-vapors-at-haccs-rose-lehrman-art-gallery" rel="nofollow">[more]</a></p>
+	<a href="http://centralpennartguide.com/clouds-smoke-and-vapors-at-haccs-rose-lehrman-art-gallery" title="Read More" class="open"></a>
+	<img src="http://centralpennartguide.com/wp-content/uploads/2013/07/RakingCloudbyWardDavenny_4x.jpg" alt="‘Clouds, Smoke and Vapors’ at HACC’s Rose Lehrman Art Gallery" class="dfcg-metabox full" />
+	<img class="dfcg-thumb-legacy thumbnail" src="http://centralpennartguide.com/wp-content/uploads/2013/07/RakingCloudbyWardDavenny_4x.jpg" alt="‘Clouds, Smoke and Vapors’ at HACC’s Rose Lehrman Art Gallery" />
+</div>
+
+<div class="imageElement"><!-- DCG Image #3 -->
+	<h3>Gettysburg artist Wendy Allen</h3>
+	<p>Gettysburg artist Wendy Allen to exhibit Lincoln paintings 
+at Adams County Arts Council in June
+ 
+Gettysburg artist Wendy Allen is known internationally for her paintings depicting the likeness of&hellip; <a href="http://centralpennartguide.com/gettysburg-artist-wendy-allen" rel="nofollow">[more]</a></p>
+	<a href="http://centralpennartguide.com/gettysburg-artist-wendy-allen" title="Read More" class="open"></a>
+	<img src="http://centralpennartguide.com/wp-content/uploads/2013/05/WAllen_Lincoln-199-e1369085942617.jpg" alt="Gettysburg artist Wendy Allen" class="dfcg-metabox full" />
+	<img class="dfcg-thumb-legacy thumbnail" src="http://centralpennartguide.com/wp-content/uploads/2013/05/WAllen_Lincoln-199-e1369085942617.jpg" alt="Gettysburg artist Wendy Allen " />
+</div>
+
+<div class="imageElement"><!-- DCG Image #4 -->
+	<h3>The Stray Birds</h3>
+	<p>The Stray Birds, a young acoustic trio from Lancaster, will bring their rootsy sound to Harrisburg on Friday, July 26 when they play a concert at the Appalachian Brewery located at 50 N. Cameron Street&hellip; <a href="http://centralpennartguide.com/the-stray-birds" rel="nofollow">[more]</a></p>
+	<a href="http://centralpennartguide.com/the-stray-birds" title="Read More" class="open"></a>
+	<img src="http://centralpennartguide.com/wp-content/uploads/2013/06/Stray-Birds.jpg" alt="The Stray Birds" class="dfcg-metabox full" />
+	<img class="dfcg-thumb-legacy thumbnail" src="http://centralpennartguide.com/wp-content/uploads/2013/06/Stray-Birds.jpg" alt="The Stray Birds" />
+</div>
+
+<div class="imageElement"><!-- DCG Image #5 -->
+	<h3>“Reality Revisited: Paintings and Drawings by Chris Mcdonel and Elizabeth Stempien”</h3>
+	<p>The Council for the Arts of Chambersburg will present “Reality Revisited: Paintings and Drawings by Chris Mcdonel and Elizabeth Stempien” from May 31 - July 12 at its 159 South Main Street location. &hellip; <a href="http://centralpennartguide.com/reality-revisited-paintings-and-drawings-by-chris-mcdonel-and-elizabeth-stempien" rel="nofollow">[more]</a></p>
+	<a href="http://centralpennartguide.com/reality-revisited-paintings-and-drawings-by-chris-mcdonel-and-elizabeth-stempien" title="Read More" class="open"></a>
+	<img src="http://centralpennartguide.com/wp-content/uploads/2013/06/reality.revisited.jpg" alt="“Reality Revisited: Paintings and Drawings by Chris Mcdonel and Elizabeth Stempien”" class="dfcg-metabox full" />
+	<img class="dfcg-thumb-legacy thumbnail" src="http://centralpennartguide.com/wp-content/uploads/2013/06/reality.revisited.jpg" alt="“Reality Revisited: Paintings and Drawings by Chris Mcdonel and Elizabeth Stempien” " />
+</div>
+
+</div><!-- End of Dynamic Content Gallery output -->
+
+			</div><!-- end .dcg -->
+						
+		<div id="featured-top">
+			<div class="featured-top-left">
+				<div id="upcoming_events_calendar" class="widget widget_calendar_upcoming"><div class="widget-wrap"><h4 class="widgettitle">Upcoming Events</h4><ul><li>August 28, 2013<ul><li><span class="calnk"><a href="http://centralpennartguide.com/lets-see" >“Let’s See…” <span ><span class="event-title" >“Let’s See…” </span><br />
+<span class="event-title-break"></span><br />First Friday open house on August 2nd from 5-7</span></a></span> all day</li><li><span class="calnk"><a href="http://centralpennartguide.com/dino-adventure" >Dino Adventure<span ><span class="event-title" >Dino Adventure</span><br />
+<span class="event-title-break"></span><br />Whitaker Center Located in Gloria M. Olewine Gallery 
+</span></a></span> all day</li></ul></li><li>August 29, 2013<ul><li><span class="calnk"><a href="http://centralpennartguide.com/dino-adventure" >Dino Adventure<span ><span class="event-title" >Dino Adventure</span><br />
+<span class="event-title-break"></span><br />Whitaker Center Located in Gloria M. Olewine Gallery 
+</span></a></span> all day</li><li><span class="calnk"><a href="http://centralpennartguide.com/lets-see" >“Let’s See…” <span ><span class="event-title" >“Let’s See…” </span><br />
+<span class="event-title-break"></span><br />First Friday open house on August 2nd from 5-7</span></a></span> all day</li><li><span class="calnk"><a href="http://centralpennartguide.com/clouds-smoke-and-vapors-at-haccs-rose-lehrman-art-gallery" >Clouds, Smoke and Vapors<span ><span class="event-title" >Clouds, Smoke and Vapors</span><br />
+<span class="event-title-break"></span><br /><strong>Time:</strong> 6:30 pm<br /><span class="event-content-break"></span><br /></span></a></span> at 6:30 pm</li></ul></li><li>August 30, 2013<ul><li><span class="calnk"><a href="http://centralpennartguide.com/lets-see" >“Let’s See…” <span ><span class="event-title" >“Let’s See…” </span><br />
+<span class="event-title-break"></span><br />First Friday open house on August 2nd from 5-7</span></a></span> all day</li><li><span class="calnk"><a href="http://centralpennartguide.com/jazz-is-back-at-the-hotel-hershey" >Wave<span ><span class="event-title" >Wave</span><br />
+<span class="event-title-break"></span><br /></span></a></span> all day</li><li><span class="calnk"><a href="http://centralpennartguide.com/dino-adventure" >Dino Adventure<span ><span class="event-title" >Dino Adventure</span><br />
+<span class="event-title-break"></span><br />Whitaker Center Located in Gloria M. Olewine Gallery 
+</span></a></span> all day</li></ul></li></ul></div></div>
+<div id="featured-post-11" class="widget featuredpost"><div class="widget-wrap"><h4 class="widgettitle">Events</h4><div class="post-10200 post type-post status-publish format-standard hentry category-events entry"><h2><a href="http://centralpennartguide.com/chambersfest-to-feature-dance-performance" title="ChambersFest to Feature Dance Performance">ChambersFest to Feature Dance Performance</a></h2><p>The Chambersburg Ballet Theatre (CBT) School will present its annual ChambersFest “Old Market Day” performance onstage at the Capitol Theatre on Saturday, June 16th, at 1:30 p.m. The program is entitled “Celebrate With Dance!” to reflect the joyful and eclectic tone of the dance repertoire to be presented. Several CBT Guest Faculty members will present [...]</p>
+</div><!--end post_class()-->
+
+<div class="post-10157 post type-post status-publish format-standard hentry category-events entry"><a href="http://centralpennartguide.com/abstracts-plein-air-art-patrick-gorman-gettysburg-festival" title="Casteel’s farmhouses, General Pickett collection, abstracts, plein air art and Patrick Gorman at Arts Council’s First Friday July 5" class="alignleft"><img width="110" height="110" src="http://centralpennartguide.com/wp-content/uploads/2013/06/Billie-Earnest-110x110.jpg" class="attachment-Square" alt="Billie-Earnest" /></a><h2><a href="http://centralpennartguide.com/abstracts-plein-air-art-patrick-gorman-gettysburg-festival" title="Casteel’s farmhouses, General Pickett collection, abstracts, plein air art and Patrick Gorman at Arts Council’s First Friday July 5">Casteel’s farmhouses, General Pickett collection, abstracts, plein air art and Patrick Gorman at Arts Council’s First Friday July 5</a></h2><p>“The Farmsteads of the Gettysburg Battlefield,” a series of new watercolors by renowned sculptor, artist and Cashtown resident Gary Casteel, opens at the Adams County Arts Council’s Arts Education Center, 125 S. Washington St., Gettysburg, on First Friday July 5 with a public reception from 5 p.m. to 7:30 p.m. Casteel is best known for [...]</p>
+</div><!--end post_class()-->
+
+</div></div>
+<div id="text-14" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div align="center"><a href="http://resourcecollaborative.com" target="_blank"><img class="aligncenter size-medium wp-image-925" title="Harrisburg Artist" src="http://centralpennartguide.com/wp-content/uploads/2010/07/Resource-Ad-resized.jpg" alt="Resource Collaborative"  width="290" height="134" /></a></div>
+</div>
+		</div></div>
+<div id="featured-post-3" class="widget featuredpost"><div class="widget-wrap"><h4 class="widgettitle">Music</h4><div class="post-10194 post type-post status-publish format-standard hentry category-music entry"><h2><a href="http://centralpennartguide.com/coco-coleman" title="CoCo Coleman">CoCo Coleman</a></h2><p>CoCo Coleman to Release New CD
+Release Party and Jam Session at the Ware Center
+Saturday, July 20, 2013 – 6 -9 PM
+                         
+
+The Ware Center | Millersville University in downtown Lancaster, PA continues &#x02026; <a href="http://centralpennartguide.com/coco-coleman" class="more-link">[Read More...]</a></p></div><!--end post_class()-->
+
+<div class="post-10177 post type-post status-publish format-standard hentry category-music entry"><h2><a href="http://centralpennartguide.com/hershey-symphony-orchestra-july-4-concert-penn-state-hershey-medical-center-2" title="Hershey Symphony Orchestra Presents Free July 4 Concert at Penn State Hershey Medical Center">Hershey Symphony Orchestra Presents Free July 4 Concert at Penn State Hershey Medical Center</a></h2><p>The Hershey Symphony Orchestra invites the community to celebrate the Fourth of July with the 8th annual free concert and fireworks on the lawn of Penn State Milton S. Hershey Medical Center.
+
+The orchestra’s performance entitled, “An American &#x02026; <a href="http://centralpennartguide.com/hershey-symphony-orchestra-july-4-concert-penn-state-hershey-medical-center-2" class="more-link">[Read More...]</a></p></div><!--end post_class()-->
+
+</div></div>
+<div id="text-7" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div align="center"><a href="http://1111editions.com" target="_blank"><img class="aligncenter size-medium wp-image-925" title="Harrisburg Artist" src="/wp-content/uploads/2010/10/ElevenEleven_CPAGAd.jpg" alt="Snizik"  width="300" height="125" /></a></div></div>
+		</div></div>
+<div id="featured-post-5" class="widget featuredpost"><div class="widget-wrap"><h4 class="widgettitle">Performing Arts</h4><div class="post-10166 post type-post status-publish format-standard hentry category-performing-arts category-theatre entry"><a href="http://centralpennartguide.com/shrek-the-musical-comes-to-new-oxford" title="SHREK THE MUSICAL COMES TO NEW OXFORD" class="alignleft"><img width="110" height="110" src="http://centralpennartguide.com/wp-content/uploads/2013/06/Shrek-logo-110x110.jpg" class="attachment-Square" alt="Shrek-logo" /></a><h2><a href="http://centralpennartguide.com/shrek-the-musical-comes-to-new-oxford" title="SHREK THE MUSICAL COMES TO NEW OXFORD">SHREK THE MUSICAL COMES TO NEW OXFORD</a></h2><p>Family Blockbuster Musical Comedy presented by ACTS of Kindness Theatre Company 
+ACTS of Kindness Theatre Company proudly presents Shrek the Musical July 26, 27, 28 and August 2, 3, 4 on the New Oxford High School stage, Berlin Road. The creative team of directors Rene and Jessica Staub, musical &#x02026; <a href="http://centralpennartguide.com/shrek-the-musical-comes-to-new-oxford" class="more-link">[Read More...]</a></p></div><!--end post_class()-->
+
+<div class="post-10163 post type-post status-publish format-standard hentry category-performing-arts entry"><h2><a href="http://centralpennartguide.com/the-secret-of-my-unsuccess-comedy-tour" title="The Secret Of My Unsuccess Comedy Tour">The Secret Of My Unsuccess Comedy Tour</a></h2><p>Harrisburg’s Own Earl David Reed Brings
+“The Secret Of My Unsuccess Comedy Tour” to Hershey Theatre
+Tickets on Sale Friday, July 12 at 10:00 AM 
+&nbsp;
+
+Earl David Reed is a trendsetter in the comedy world, with no two shows being alike. He’ll bring his “The Secret Of My Unsuccess” &#x02026; <a href="http://centralpennartguide.com/the-secret-of-my-unsuccess-comedy-tour" class="more-link">[Read More...]</a></p></div><!--end post_class()-->
+
+</div></div>
+			</div><!-- end .featured-top-left -->
+			<div class="featured-top-right">
+				<div id="featured-post-9" class="widget featuredpost"><div class="widget-wrap"><h4 class="widgettitle">News</h4><div class="post-10145 post type-post status-publish format-standard hentry category-news entry"><h2><a href="http://centralpennartguide.com/the-wiggles-taking-off-world-tour-to-visit-hershey-theatre" title="The Wiggles! “Taking Off!” World Tour to Visit Hershey Theatre">The Wiggles! “Taking Off!” World Tour to Visit Hershey Theatre</a></h2><p>After 21 years of entertaining children around the globe, The Wiggles will introduce three new cast members including the first-ever female member, &#x02026; <a href="http://centralpennartguide.com/the-wiggles-taking-off-world-tour-to-visit-hershey-theatre" class="more-link">[Read More...]</a></p></div><!--end post_class()-->
+
+<div class="post-10121 post type-post status-publish format-standard hentry category-music category-news entry"><h2><a href="http://centralpennartguide.com/sweet-honey-in-the-rock-2" title="Sweet Honey In The Rock®">Sweet Honey In The Rock®</a></h2><p>Founded by Bernice Johnson Reagon in 1973 at the D.C. Black Repertory Theater Company, Sweet Honey In The Rock®, internationally renowned a cappella &#x02026; <a href="http://centralpennartguide.com/sweet-honey-in-the-rock-2" class="more-link">[Read More...]</a></p></div><!--end post_class()-->
+
+</div></div>
+<div id="featured-post-2" class="widget featuredpost"><div class="widget-wrap"><h4 class="widgettitle">Visual Arts</h4><div class="post-10209 post type-post status-publish format-standard hentry category-visual-arts entry"><h2><a href="http://centralpennartguide.com/clouds-smoke-and-vapors-at-haccs-rose-lehrman-art-gallery" title="‘Clouds, Smoke and Vapors’ at HACC’s Rose Lehrman Art Gallery">‘Clouds, Smoke and Vapors’ at HACC’s Rose Lehrman Art Gallery</a></h2><p>Reception – Thursday, Aug. 29 The work of artist Ward Davenny, in several media, will be on display in the Rose Lehrman Art Gallery on the Harrisburg Campus of HACC, Central Pennsylvania’s Community College, beginning Wednesday, July 17 through Thursday, Aug. 29, 2013. A closing reception will be held on Thursday, Aug. 29 at 6:30 [...]</p>
+</div><!--end post_class()-->
+
+<div class="post-10198 post type-post status-publish format-standard hentry category-visual-arts entry"><h2><a href="http://centralpennartguide.com/lets-see" title="“Let’s See…”">“Let’s See…”</a></h2><p>Council for the Arts Presents “Let’s See…” Paintings by Council for the Arts Students   The Council for the Arts of Chambersburg will present “Let’s See…” Paintings by Council for the Arts Students” from July 19 &#8211; August 30 at its 159 South Main   Street location.  Sponsored by David Rahauser, Attorney at Law, the [...]</p>
+</div><!--end post_class()-->
+
+</div></div>
+<div id="featured-post-10" class="widget featuredpost"><div class="widget-wrap"><h4 class="widgettitle">Film &amp; Video</h4><div class="post-10063 post type-post status-publish format-standard hentry category-film-video category-music entry"><h2><a href="http://centralpennartguide.com/desoto-film-and-music-series" title="DeSoto Film and Music Series">DeSoto Film and Music Series</a></h2><p>DESOTO FILM AND MUSIC SERIES: 
+JAQUES TATI’S “MR. HULOT’S HOLIDAY” WITH LIVE ORIGINAL SCORE BY CUDDLE MAGIC
+&nbsp;
+
+WHAT: “Mr. Hulot’s Holiday” with live &#x02026; <a href="http://centralpennartguide.com/desoto-film-and-music-series" class="more-link">[Read More...]</a></p></div><!--end post_class()-->
+
+<div class="post-10035 post type-post status-publish format-standard hentry category-film-video entry"><h2><a href="http://centralpennartguide.com/majestic-theater-the-company-you-keep" title="Majestic Theater &#8211; The Company You Keep">Majestic Theater &#8211; The Company You Keep</a></h2><p>The Company You Keep (R)
+
+Robert Redford &amp; Shia LeBeouf star in a thriller about a former Weather Underground activist who goes on the run. With Susan Sarandon &amp; &#x02026; <a href="http://centralpennartguide.com/majestic-theater-the-company-you-keep" class="more-link">[Read More...]</a></p></div><!--end post_class()-->
+
+</div></div>
+<div id="text-13" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div align="center"><a href="http://www.paartisantrails.com/" target="_blank"><img class="aligncenter size-medium wp-image-925" title="Harrisburg Artist" src="http://centralpennartguide.com/wp-content/uploads/2010/07/PAATLogo.jpg" alt="" width="290" height="134"  /></a></div>
+</div>
+		</div></div>
+<div id="featured-post-7" class="widget featuredpost"><div class="widget-wrap"><h4 class="widgettitle">Theatre</h4><div class="post-10202 post type-post status-publish format-standard hentry category-theatre entry"><h2><a href="http://centralpennartguide.com/hershey-area-playhouse-2014-season" title="Hershey Area Playhouse Announces 2014 Season">Hershey Area Playhouse Announces 2014 Season</a></h2><p>Classic musicals, comedy and drama are all on the lineup for the 2014 Hershey Area Playhouse season including: The &#x02026; <a href="http://centralpennartguide.com/hershey-area-playhouse-2014-season" class="more-link">[Read More...]</a></p></div><!--end post_class()-->
+
+<div class="post-10181 post type-post status-publish format-standard hentry category-theatre entry"><h2><a href="http://centralpennartguide.com/the-music-man-hershey-area-playhouse" title="Tickets on Sale for The Music Man at Hershey Area Playhouse">Tickets on Sale for The Music Man at Hershey Area Playhouse</a></h2><p>The Wells Fargo train is coming to Hershey Area Playhouse in July with a 50-member cast in The Music Man. The show runs &#x02026; <a href="http://centralpennartguide.com/the-music-man-hershey-area-playhouse" class="more-link">[Read More...]</a></p></div><!--end post_class()-->
+
+</div></div>
+<div id="text-11" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div align="center"><a href="http://artassocofhbg.com" target="_blank"><img class="aligncenter size-medium wp-image-925" title="Harrisburg Artist" src="http://centralpennartguide.com/wp-content/uploads/2010/03/AAH_CPAGAd_300x250.jpg" alt="" width="290" height="250"  /></a></div>
+
+
+
+</div>
+		</div></div>
+			</div><!-- end .featured-top-right -->
+		</div><!-- end #featured-top -->		
+		
+		<div id="featured-bottom">
+			<div id="featured-post-8" class="widget featuredpost"><div class="widget-wrap"><h4 class="widgettitle">Kids Culture and Fun</h4><div class="post-10184 post type-post status-publish format-standard hentry category-family-fun category-kids-culture entry"><h2><a href="http://centralpennartguide.com/free-summer-performances-at-chocolatetown-square" title="Free Summer Performances at ChocolateTown Square">Free Summer Performances at ChocolateTown Square</a></h2><p>This summer, ChocolateTown Square hosts family performances on Wednesdays in July beginning July 10. Presented by The Hershey Story, The Museum on Chocolate Avenue, this summer’s free series includes:
+
+Meg’s &#x02026; <a href="http://centralpennartguide.com/free-summer-performances-at-chocolatetown-square" class="more-link">[Read More...]</a></p></div><!--end post_class()-->
+
+<div class="post-10133 post type-post status-publish format-standard hentry category-family-fun category-kids-culture entry"><h2><a href="http://centralpennartguide.com/20th-annual-ned-smith-center-nature-and-arts-festival" title="20th ANNUAL NED SMITH CENTER NATURE AND ARTS FESTIVAL">20th ANNUAL NED SMITH CENTER NATURE AND ARTS FESTIVAL</a></h2><p>The Ned Smith Center for Nature and Art will host its 20th annual Nature and Arts Festival along the banks of the scenic Susquehanna River at MYO Park in Millersburg, PA.  The festival will take place on Saturday, July 27 &#x02026; <a href="http://centralpennartguide.com/20th-annual-ned-smith-center-nature-and-arts-festival" class="more-link">[Read More...]</a></p></div><!--end post_class()-->
+
+</div></div>
+		</div><!-- end #featured-bottom -->	
+		
+	</div><!-- end #content -->
+	<div id="sidebar" class="sidebar widget-area">
+<div id="search-3" class="widget widget_search"><div class="widget-wrap">
+		<form method="get" class="searchform search-form" action="http://centralpennartguide.com/" >
+			
+			<input type="text" value="Search this website&#x2026;" name="s" class="s search-input" onfocus="if (this.value == 'Search this website&#x02026;') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search this website&#x02026;';}" />
+			<input type="submit" class="searchsubmit search-submit" value="Search" />
+		</form>
+	</div></div>
+<div id="text-24" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><a href="https://twitter.com/CPAGArts" class="twitter-follow-button">Follow @CPAGArts</a>
+<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
+<!-- Place this tag where you want the +1 button to render -->
+<g:plusone annotation="inline"></g:plusone>
+
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script></div>
+		</div></div>
+<div id="text-29" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div align="center"><a href="http://cpyb.org/" target="_blank"><img class="aligncenter size-medium wp-image-925" title="Central Pennsylvania Youth Ballet" src="http://centralpennartguide.com/wp-content/uploads/2012/05/CPYB_Logo-300.jpg" alt="" width="300" height="125"  /></a></div></div>
+		</div></div>
+<div id="text-26" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div align="center"><a href="http://www.gettysburgmajestic.org/" target="_blank"><img class="aligncenter size-medium wp-image-925" title="Gettysburg Theatres" src="http://centralpennartguide.com/wp-content/uploads/2012/02/Majestic-Ad.jpg" alt="" width="300" height="250"  /></a></div></div>
+		</div></div>
+<div id="text-17" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div align="center"><a href="http://www.culturalenrichmentfund.org/" target="_blank"><img class="aligncenter size-medium wp-image-925" title="Harrisburg Artist" src="http://centralpennartguide.com/wp-content/uploads/2010/09/CEFLogo_CPAG.jpg" alt="" width="290" height="134"  /></a></div></div>
+		</div></div>
+<div id="text-28" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div align="center"><a href="http://www.travelsimplicity.net/" target="_blank"><img class="aligncenter size-medium wp-image-925" title="Travel Simplicity" src="http://centralpennartguide.com/wp-content/uploads/2012/05/Travel-Simplicity.jpg" alt="" width="290" height="134"  /></a></div></div>
+		</div></div>
+<div id="text-2" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div align="center"><a href="http://tianshiacupuncture.com" target="_blank"><img class="aligncenter size-medium wp-image-925" title="Harrisburg Artist" src="/wp-content/uploads/2011/01/TianShi_CPAGAd.jpg" alt=""  width="300" height="125" /></a></div></div>
+		</div></div>
+<div id="text-22" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div align="center"><a href="http://centralpennartguide.com/advertising-submissions-calendar-events-editorials" target="_blank"><img class="aligncenter size-medium wp-image-925" title="Harrisburg Artist" src="http://centralpennartguide.com/wp-content/uploads/2011/04/CPAG_AdvertisingAd.jpg" alt="Advertise with Us"  width="300" height="125" /></a></div></div>
+		</div></div>
+<div id="text-20" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div align="center"><a href="http://www.whitakercenter.org/" target="_blank"><img class="aligncenter size-medium wp-image-925" title="Guide to the Arts" src="http://centralpennartguide.com/wp-content/uploads/2011/01/125-WC_lg.jpg" alt="" width="290" height="134"  /></a></div></div>
+		</div></div>
+<div id="text-19" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><ul id="banner125" class="clearfix">
+
+    <li class="ad1"><a target="_blank" href="http://www.craftreunion.org/"><img src="http://centralpennartguide.com/wp-content/uploads/2012/12/Craft-Reunion-Logo.jpg"  width="125" height="125" border="0"></a></li>
+  <li class="ad2"><a href = "http://www.harrisburgsymphony.org/"><img border="0" src="http://centralpennartguide.com/wp-content/uploads/2010/10/125-Harrisburg-Symphony.jpg" width="125" height="125"></a></li>
+  <li class="ad3"><a  href=http://www.reynoldsenergyservices.com/ " target="_blank">
+<img src="http://centralpennartguide.com/wp-content/uploads/2010/11/125-RES-ad.jpg" 
+width="125" height="125"alt="Link to Reynolds Energy Services" border="0"/></a></li>
+  <li class="ad4"><a target="_blank" href="http://troegs.com/"><img src="http://centralpennartguide.com/wp-content/uploads/2010/10/125-Troegs-Distressed-Brewe.jpg" alt="Troegs supports the Arts" width="125" height="125" border="0"></a></li>
+</ul>
+</div>
+		</div></div>
+<div id="text-18" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div align="center"><a href="http://www.musictogethersusquehanna.com/" target="_blank"><img class="aligncenter size-medium wp-image-925" title="Music Together in Susquehanna Valley " src="http://centralpennartguide.com/wp-content/uploads/2010/10/BannerAd-MTSusquehannaValley.jpg" alt="" width="290" height="134"  /></a></div></div>
+		</div></div>
+<div id="text-9" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><ul id="banner125" class="clearfix">
+
+  <li class="ad1"><a target="_blank" href="http://www.craftreunion.org/"><img src="http://centralpennartguide.com/wp-content/uploads/2012/12/Craft-Reunion-Logo.jpg"  width="125" height="125" border="0"></a></li>
+  <li class="ad2"><a href = "http://www.harrisburgsymphony.org/"><img border="0" src="http://centralpennartguide.com/wp-content/uploads/2010/10/125-Harrisburg-Symphony.jpg" width="125" height="125"></a></li>
+  <li class="ad3"><a  href="http://www.mymonavie.com/monavokie" target="_blank">
+<img src="http://centralpennartguide.com/wp-content/uploads/2011/06/MonavieFruit-Brochure.jpg" 
+width="125" height="125"alt="Link to Ann Brinkerhoff Mona Vie" border="0"/></a></li>
+  <li class="ad4"><a target="_blank" href="http://www.musicforeveryone.net/"><img src="http://centralpennartguide.com/wp-content/uploads/2011/08/MFE_ad_125x125.jpg" alt="MFE supports the Arts" width="125" height="125" border="0"></a></li>
+</ul>
+</div>
+		</div></div>
+<div id="text-10" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget">Central Penn Arts Guide<br>
+Patrick(@)Centralpennartguide.com<br>
+(717)648-9741<br>
+
+Rick(@)Centralpennartsguide.com<br>
+(717)-343-6062<br>
+
+
+<a href="http://www.facebook.com/home.php?#!/pages/Central-Penn-Arts-Guide/123907124290404?ref=sgm" >
+          <img src="http://centralpennartguide.com/wp-content/themes/lifestyle/images/facebook.png" width="64" height="64" border="0" alt="View Central Penn Arts Guide profile on Facebook"> <a href="http://feeds.feedburner.com/cpag"><img src="http://centralpennartguide.com/wp-content/themes/lifestyle/images/rss_copy.png" alt="RSS Feed" /> <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="CPAGArts">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script></a>
+</div>
+		</div></div>
+<div id="categories-3" class="widget widget_categories"><div class="widget-wrap"><h4 class="widgettitle">Categories</h4>
+<select name='cat' id='cat' class='postform' >
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="28">Articles</option>
+	<option class="level-0" value="12">Arts Marketing</option>
+	<option class="level-0" value="27">ArtsLink</option>
+	<option class="level-0" value="25">Auditions &amp; Jobs</option>
+	<option class="level-0" value="23">Bulletin Board</option>
+	<option class="level-0" value="24">Classes</option>
+	<option class="level-0" value="10">Events</option>
+	<option class="level-0" value="22">Family Fun</option>
+	<option class="level-0" value="9">Film &amp; Video</option>
+	<option class="level-0" value="17">Interviews</option>
+	<option class="level-0" value="21">KidZ Classes</option>
+	<option class="level-0" value="20">KidZ Culture</option>
+	<option class="level-0" value="11">Museums</option>
+	<option class="level-0" value="6">Music</option>
+	<option class="level-0" value="13">News</option>
+	<option class="level-0" value="3">Performing Arts</option>
+	<option class="level-0" value="16">Profiles</option>
+	<option class="level-0" value="15">Theatre</option>
+	<option class="level-0" value="1">Visual Arts</option>
+</select>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "http://centralpennartguide.com/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</div></div>
+<div id="sidebar-bottom">
+
+	<div id="sidebar-bottom-left">
+					</div><!-- end #sidebar-bottom-left -->
+	
+	<div id="sidebar-bottom-right">
+					</div><!-- end #sidebar-bottom-right -->
+
+</div><!-- end #sidebar-bottom --></div>
+
+</div><!-- end #content-sidebar-wrap -->
+
+</div><!-- end #inner --><div id="footer" class="footer"><div class="wrap">        <div class="creds">
+        <p>Copyright &copy; 2013 <a href="http://centralpennartguide.com/">Central Penn Arts Guide</a></p>
+        <a href="http://www.stratusdesign.com/" target="_blank">Website Design by Snizik Marketing & Design, LLC.</a>  
+<div class="credit"><a href="http://www.excelnetmedia.com/" target="_blank">Web Development by Excelnet Media</a></div>    </div><!--end .creds-->
+</div><!-- end .wrap --></div><!-- end #footer -->
+</div><!-- end #wrap -->
+		<!-- Advertising Manager v3.4.19 (1.436 seconds.) -->
+</body>
+</html>

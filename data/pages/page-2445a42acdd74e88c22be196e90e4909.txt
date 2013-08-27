@@ -1,0 +1,768 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
+
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="/templates/mcc-alt/js/jquery.cookie.js"></script>
+<script type="text/javascript">jQuery.noConflict();</script>
+  <base href="http://www2.middlesexcc.edu/academics/academic-departments/visual-performing-and-media-arts/fine-arts-art.html" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Middlesex County College, Education, community college, middlesex, county college, new jersey, middlesex county, computers, computer science, technology, financial aid, associates degree, technical certificates, education, post-secondary education, transfer students, summer courses" />
+  <meta name="title" content="Fine Arts - Art" />
+  <meta name="author" content="Jenna Nichols" />
+  <meta name="description" content="Middlesex County College in Edison, NJ is the perfect choice if you are looking to explore different fields of study, jump-start your career, or make your own path to a Bachelors Degree and beyond. Success Starts Here." />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>Fine Arts - Art</title>
+  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="stylesheet" href="/modules/mod_media_rotator/mod.css" type="text/css" />
+  <style type="text/css">
+    <!--
+
+    -->
+  </style>
+  <script type="text/javascript" src="/media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="/media/system/js/caption.js"></script>
+  <script type="text/javascript">
+jQuery(document).ready(function($) {
+	var cur = 0;
+	var next = 1;
+	var max = $("ul#rotator li").size();
+
+	// $("ul#rotatorNav").css({ opacity: 0.5 });
+	$("ul#rotatorNav li").click(function() {
+		var thisClass = $(this).attr("class");
+		if (parseInt(thisClass)!=cur) { // only do it if not clicking the same one it's already on
+			$("li.img"+cur).fadeOut(300);
+			$("li.img"+thisClass).fadeIn(300);
+			cur = parseInt(thisClass);
+			next = cur+1;
+			if (next==max)
+				next = 0;
+		}
+		// to stop the rotation once a nav button is clicked
+		clearInterval(intervalID);
+	});
+	
+	function crossfade() {
+		$("li.img"+cur).fadeOut(1000);
+		++cur;
+		if (cur==max)
+			cur = 0;
+
+		$("li.img"+next).fadeIn(1000);
+		++next;
+		if (next==max)
+			next = 0;
+	}
+	
+	var intervalID = setInterval(crossfade,5000);
+
+	function slide() {
+		setTimeout(function() {
+			$("li.img"+cur).animate({
+				left: "-667px"
+			}, 1500 );
+			slide();
+		},5000);
+	}
+});
+
+  </script>
+
+<link rel="stylesheet" href="/templates/mcc-alt/css/template.css" type="text/css" />
+<link rel="stylesheet" href="/templates/mcc-alt/css/template-alt3.css" type="text/css" />
+<script type="text/javascript" src="/templates/mcc-alt/js/template.js"></script>
+<script type="text/javascript">
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-162447-1']);
+ _gaq.push(['_setDomainName', '.middlesexcc.edu']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+
+<script src="http://www.smartsite.tv/remote/smart.php?oid=B7xzQQ34" type="text/javascript"></script>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+
+
+<!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  
+  <script>
+  (function( $ ) {
+    $.widget( "ui.combobox", {
+      _create: function() {
+        this.wrapper = $( "<span>" )
+          .addClass( "ui-combobox" )
+          .insertAfter( this.element );
+ 
+        this._createAutocomplete();
+        this._createShowAllButton();
+      },
+ 
+      _createAutocomplete: function() {
+        var selected = this.element.children( ":selected" ),
+          value = selected.val() ? selected.text() : "";
+ 
+        this.input = $( "<input>" )
+          .appendTo( this.wrapper )
+          .val( "Search Your Menu"  )
+          .attr( "title", "" )
+          .addClass( "ui-state-default ui-combobox-input ui-widget ui-widget-content ui-corner-left" )
+          .autocomplete({
+            delay: 0,
+            minLength: 0,
+            source: $.proxy( this, "_source" )
+          })
+		  .click(function() {
+          this.value='';
+		  })
+          .tooltip({
+            tooltipClass: "ui-state-highlight"
+          });
+ 
+        this._on( this.input, {
+          autocompleteselect: function( event, ui ) {
+            ui.item.option.selected = true;
+            this._trigger( "select", event, {
+              item: ui.item.option
+            });
+          },
+ 
+          autocompletechange: "_removeIfInvalid"
+        });
+      },
+ 
+      _createShowAllButton: function() {
+        var wasOpen = false;
+ 
+        $( "<a>" )
+          .attr( "tabIndex", -1 )
+          .attr( "title", "Show All Items" )
+          .tooltip()
+          .appendTo( this.wrapper )
+          .button({
+            icons: {
+              primary: "ui-icon-triangle-1-s"
+            },
+            text: false
+          })
+          .removeClass( "ui-corner-all" )
+          .addClass( "ui-corner-right ui-combobox-toggle" )
+          .mousedown(function() {
+            wasOpen = input.autocomplete( "widget" ).is( ":visible" );
+          })
+          .click(function() {
+            input.focus();
+ 
+            // Close if already visible
+            if ( wasOpen ) {
+              return;
+            }
+ 
+            // Pass empty string as value to search for, displaying all results
+            input.autocomplete( "search", "" );
+          });
+      },
+ 
+      _source: function( request, response ) {
+        var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
+        response( this.element.children( "option" ).map(function() {
+          var text = $( this ).text();
+          if ( this.value && ( !request.term || matcher.test(text) ) )
+            return {
+              label: text,
+              value: text,
+              option: this
+            };
+        }) );
+      },
+ 
+      _removeIfInvalid: function( event, ui ) {
+ 
+        // Selected an item, nothing to do
+        if ( ui.item ) {
+          return;
+        }
+ 
+        // Search for a match (case-insensitive)
+        var value = this.input.val(),
+          valueLowerCase = value.toLowerCase(),
+          valid = false;
+        this.element.children( "option" ).each(function() {
+          if ( $( this ).text().toLowerCase() === valueLowerCase ) {
+            this.selected = valid = true;
+            return false;
+          }
+        });
+ 
+        // Found a match, nothing to do
+        if ( valid ) {
+          return;
+        }
+ 
+        // Remove invalid value
+        this.input
+          .val( "" )
+          .attr( "title", value + " didn't match any item" )
+          .tooltip( "open" );
+        this.element.val( "" );
+        this._delay(function() {
+          this.input.tooltip( "close" ).attr( "title", "" );
+        }, 2500 );
+        this.input.data( "ui-autocomplete" ).term = "";
+      },
+ 
+      _destroy: function() {
+        this.wrapper.remove();
+        this.element.show();
+      }
+    });
+  })( jQuery );
+ 
+  $(function() {
+ 
+    $( "#combobox" ).combobox();
+   // $( "#toggle" ).click(function() {
+    
+    //  $( "#combobox" ).toggle();
+   // });
+   
+   $('#gotourll').click(function() {
+		
+		//alert(document.getElementById('tinynav1').value);
+		window.location.href = document.getElementById('combobox').value;
+	});
+  });
+  </script>-->
+  
+  
+  
+  
+  
+  
+  
+  
+
+</head>
+
+<body>
+
+<div class="social-media"><a href="/social-media.html"><img src="/images/stories/sidebar_socialmedia.png" border="0"></a></div>
+
+<div style="width:100%; margin:0 auto; padding:0px; background-color:#FFF;">
+    <div id="header">
+    	<div class="responsive-top">
+	        <div class="responsive-top-left">
+    	    	<div id="logo"><a href="/"><img class="logo" src="/templates/mcc/images/logo.gif" border="0" alt="MCC Home" /></a></div>
+        	</div>
+<div class="responsive-top-center"></div>
+	        <div class="responsive-top-right">
+    	    	<ul class="menu"><li class="item104"><a href="http://www2.middlesexcc.edu/"><span>Home</span></a></li><li class="item105"><a href="/apply"><span>Apply Now</span></a></li><li class="item106" /><li class="item107"><a href="http://www2.middlesexcc.edu/calendar" target="_blank"><span>Calendar</span></a></li><li class="item108"><a href="/about/locations.html"><span>Locations</span></a></li><li class="item109"><a href="/academics/library.html"><span>Library</span></a></li><li class="item1428"><a href="http://prod.campuscruiser.com/PageServlet?pg=home_welcome&amp;cp=154"><span>Campus Cruiser</span></a></li><li class="item3355"><a href="/map.html"><span>Map</span></a></li></ul><script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">// <![CDATA[
+      google.load('search', '1');
+
+      function inputFocus() {
+        document.getElementById('query-input').style['background'] = '';
+      }
+	  function check_form(e)
+	  {
+		  var unicode=e.charCode? e.charCode : e.keyCode
+		  if(unicode==13)
+		  {
+			  submitQuery();
+		  }
+	  }
+      function inputBlur() {
+        var queryInput = document.getElementById('query-input');
+        if (!queryInput.value) {
+          queryInput.style['background'] =
+              'white url(http://www.google.com/coop/images/'
+              + 'google_custom_search_watermark.gif) no-repeat 0% 50%';
+        }
+      }
+
+      function init() {
+		   var customSearchOptions = {};
+        google.search.CustomSearchControl.attachAutoCompletion(
+            '016018838785170738189:pojawakctxs',
+            document.getElementById('query-input'),
+            'new-search');
+        inputBlur();
+      }
+
+      function submitQuery() {
+        if(document.f1.q.value=='')
+        {
+            alert('Enter Value for Search');
+            document.f1.q.focus();
+            return false;
+        }
+        window.location = 'http://www2.middlesexcc.edu/search?q='
+            + encodeURIComponent(
+                document.getElementById('query-input').value);
+        return false;
+      }
+
+      google.setOnLoadCallback(init);
+// ]]></script>
+<div id="cse" class="tsm"><form action="http://www2.middlesexcc.edu/search">
+<div class="top_search_main">
+<div class="search_input"><input id="query-input" onclick="inputFocus();" onkeypress="check_form(event);" name="q" size="25" /></div>
+<div class="search_btn"><input style="border: none; vertical-align:bottom;" title="Submit" alt="Submit" src="/images/M_images/searchButton.gif" type="image" /></div>
+</div>
+</form></div><div id="quick"><select><option>Quick Links</option><option value="http://www2.middlesexcc.edu/academics/academic-calendar.html">Academic Calendar</option><option value="http://www2.middlesexcc.edu/admissions.html">Admissions</option><option value="https://www2.middlesexcc.edu/apply">Apply Online</option><option value="http://www2.middlesexcc.edu/campus-life/athletics-and-recreation.html">Athletics</option><option value="http://www.bluecoltbookstore.com/home.aspx">Bookstore</option><option value="http://www2.middlesexcc.edu/wp/campmcc">Camp Middlesex</option><option value="http://prod.campuscruiser.com/PageServlet?pg=home_welcome&amp;cp=154">Campus Cruiser</option><option value="http://www2.middlesexcc.edu/services-and-support/care-homepage.html">C.A.R.E.</option><option value="http://www2.middlesexcc.edu/services-and-support/career-services.html">Career Services</option><option value="http://www2.middlesexcc.edu/info-for-faculty-and-staff/celt-homepage.html">CELT</option><option value="http://www2.middlesexcc.edu/wp/childcare">Child Care Center</option><option value="http://www2.middlesexcc.edu/corporate-and-community.html">Corporate &amp; Community</option><option value="http://www2.middlesexcc.edu/about/catalog/catalog-2009-2012.html">Course Catalog</option><option value="http://www2.middlesexcc.edu/directory.html">Directory</option><option value="http://www2.middlesexcc.edu/hr">Employment Opportunities</option><option value="http://www2.middlesexcc.edu/financial-aid.html">Financial Aid</option><option value="http://www2.middlesexcc.edu/corporate-and-community/the-institute.html">Institute</option><option value="http://www2.middlesexcc.edu/academics/library.html">Library</option><option value="http://www2.middlesexcc.edu/about/locations.html">Maps &amp; Directions</option><option value="http://www2.middlesexcc.edu/academics/online-courses.html">Online Classes</option><option value="http://prod.campuscruiser.com/q?pg=home_welcome&amp;cp=154">Pay Tuition Online</option><option value="http://www2.middlesexcc.edu/corporate-and-community.html">Reemployment and Eligibility Assessment</option><option value="http://prod.campuscruiser.com/PageServlet?pg=WebAdvisorIFrameProxy&amp;a_ppl=ST&amp;f_ormMnemonic=XSEI&amp;cmp=F22.154_272&amp;cx=22.154">Search for Credit Courses</option><option value="http://prod.campuscruiser.com/PageServlet?pg=WebAdvisorIFrameProxy&amp;a_ppl=ST&amp;f_ormMnemonic=XSCE&amp;cmp=F22.154_323&amp;cx=22.154">Search for Non-Credit Courses</option><option value="http://www2.middlesexcc.edu/services-and-support/registrar/transcripts.html">Transcript Requests</option></select>
+</div>
+        	</div>
+    	</div>
+    </div>
+    
+        
+    <div id="nav">
+    <ul class="menu-nav"><li class="parent item60"><a href="/about.html"><span>About Us</span></a><ul><li class="parent item650"><a href="/about.html"><span>About MCC</span></a><ul><li class="item3020"><a href="/marketing/mcc-publications.html"><span>MCC Publications</span></a></li><li class="item654"><a href="/mcc-news.html"><span>News &amp; Events</span></a></li><li class="item117"><a href="/about/presidents-welcome.html"><span>President's Welcome</span></a></li><li class="item3809"><a href="http://www2.middlesexcc.edu/images/PDFs/middlestates/Self-Study_2011.pdf" target="_blank"><span>Self-Study Report</span></a></li><li class="item3808"><a href="/about-us/about-mcc/strategic-plan-goals-2012-2015.html"><span>Strategic Plan Goals 2012-15</span></a></li><li class="item112"><a href="/about/vision-and-mission.html"><span>Vision &amp; Mission</span></a></li><li class="item113"><a href="/about/why-middlesex.html"><span>Why Middlesex?</span></a></li></ul></li><li class="item261"><a href="/about/middle-states-accreditation.html"><span>Accreditation</span></a></li><li class="item258"><a href="/about/alumni.html"><span>Alumni Relations</span></a></li><li class="item154"><a href="/about/board-of-trustees.html"><span>Board of Trustees</span></a></li><li class="item153"><a href="/about/catalog.html"><span>College Catalogs</span></a></li><li class="item271"><a href="/directory.html"><span>Directory</span></a></li><li class="item651"><a href="/about/doing-business-with-mcc.html"><span>Doing Business with MCC</span></a></li><li class="item152"><a href="http://www2.middlesexcc.edu/map"><span>Edison Campus Map</span></a></li><li class="item158"><a href="http://www2.middlesexcc.edu/hr/"><span>Employment</span></a></li><li class="item2683"><a href="/about/gainful-employment.html"><span>Gainful Employment</span></a></li><li class="parent item114"><a href="/about/locations.html"><span>Locations</span></a><ul><li class="item282"><a href="http://www2.middlesexcc.edu/map"><span>Edison Campus</span></a></li><li class="item115"><a href="/about/locations/new-brunswick-center.html"><span>New Brunswick Center</span></a></li><li class="item116"><a href="/about/locations/perth-amboy-center.html"><span>Perth Amboy Center</span></a></li></ul></li><li class="item1609"><a href="/about/opra-request-form.html"><span>OPRA Request Form</span></a></li><li class="item2586"><a href="/campus-life/campus-resources/campus-police/parking.html"><span>Parking</span></a></li><li class="item3648"><a href="/support-middlesex.html"><span>Support Middlesex</span></a></li></ul></li><li class="parent item61"><a href="/admissions.html"><span>Admissions</span></a><ul><li class="item131"><a href="http://www2.middlesexcc.edu/apply" target="_blank"><span>Apply Online</span></a></li><li class="parent item129"><a href="/admissions.html"><span>How to Apply</span></a><ul><li class="item1173"><a href="/admissions/freshman-applicants.html"><span>Freshman and Transfer</span></a></li><li class="item1170"><a href="/admissions/visiting-and-non-degree.html"><span>Visiting and Non Degree</span></a></li><li class="item1165"><a href="/admissions/health-technology-applicants.html"><span>Health Technology</span></a></li><li class="item1169"><a href="/admissions/international-students.html"><span>International Applicants</span></a></li><li class="item1462"><a href="/admissions/enrollment-hours.html"><span>Enrollment Hours</span></a></li></ul></li><li class="item134"><a href="/financial-aid.html"><span>Financial Aid</span></a></li><li class="item132"><a href="/services-and-support/registrar.html"><span>Office of the Registrar</span></a></li><li class="item3327"><a href="/scholarships.html"><span>Scholarships</span></a></li><li class="item1362"><a href="/services-and-support/student-account-services.html"><span>Student Account Services</span></a></li><li class="item136"><a href="/admissions/testing-center.html"><span>Testing Center</span></a></li><li class="item133"><a href="/admissions/tuition-and-fees.html"><span>Tuition &amp; Fees</span></a></li></ul></li><li class="parent active item62"><a href="/academics.html"><span>Academics</span></a><ul><li class="item138"><a href="/services-and-support/academic-advising.html"><span>Academic Advising</span></a></li><li class="item262"><a href="/academics/academic-calendar.html"><span>Academic Calendar</span></a></li><li class="active item159"><a href="/academics/academic-departments.html"><span>Academic Departments</span></a></li><li class="item1487"><a href="/about/catalog.html"><span>College Catalogs</span></a></li><li class="item1803"><a href="/commencement-general-information/application-information.html"><span>Commencement</span></a></li><li class="item140"><a href="/corporate-and-community.html"><span>Continuing Education</span></a></li><li class="item2615"><a href="/academics/degree-and-certificate-programs.html"><span>Degree/Certificate Programs</span></a></li><li class="item135"><a href="/academics/honors-program.html"><span>Honors Program</span></a></li><li class="item2589"><a href="/johnson-commons-learning-center.html"><span>J.C. Learning Center</span></a></li><li class="item149"><a href="/academics/library.html"><span>Library</span></a></li></ul></li><li class="parent item63"><a href="/services-and-support.html"><span>Services &amp; Support</span></a><ul><li class="item120"><a href="/services-and-support/academic-advising.html"><span>Academic Advising</span></a></li><li class="item123"><a href="/services-and-support/career-services.html"><span>Career Services</span></a></li><li class="item124"><a href="/services-and-support/counseling-services.html"><span>Counseling Services</span></a></li><li class="item128"><a href="/services-and-support/disability-services.html"><span>Disability Services</span></a></li><li class="item125"><a href="/services-and-support/education-opportunity-fund.html"><span>Educational Opp. Fund</span></a></li><li class="item1278"><a href="/services-and-support/health-and-safety.html"><span>Health &amp; Safety</span></a></li><li class="item2584"><a href="/johnson-commons-learning-center.html"><span>J.C. Learning Center</span></a></li><li class="item127"><a href="/services-and-support/minority-student-affairs.html"><span>Minority Student Affairs</span></a></li><li class="item1532"><a href="/services-and-support/registrar.html"><span>Office of the Registrar</span></a></li><li class="item1531"><a href="/services-and-support/student-account-services.html"><span>Student Account Services</span></a></li><li class="item1823"><a href="/admissions/testing-center.html"><span>Testing Center</span></a></li><li class="item263"><a href="/services-and-support/transfer-center.html"><span>Transfer Services</span></a></li><li class="item126"><a href="/services-and-support/tutoring-services.html"><span>Tutoring Services</span></a></li><li class="item1438"><a href="/services-and-support/veterans-services.html"><span>Veterans Services</span></a></li></ul></li><li class="parent item64"><a href="/campus-life.html"><span>Campus Life</span></a><ul><li class="item657"><a href="/campus-life/arts.html"><span>Art Exhibitions</span></a></li><li class="item142"><a href="/campus-life/athletics-and-recreation.html"><span>Athletics</span></a></li><li class="item2569"><a href="/campus-life/wmcc-homepage.html"><span>Blue Colt Radio</span></a></li><li class="item147"><a href="http://www.bluecoltbookstore.com/Home.aspx" target="_blank"><span>Bookstore</span></a></li><li class="item151"><a href="/campus-life/campus-resources/campus-police.html"><span>Campus Police</span></a></li><li class="item267"><a href="http://www2.middlesexcc.edu/wp/childcare"><span>Child Care Center</span></a></li><li class="item148"><a href="/campus-life/campus-resources/computer-labs.html"><span>Computer Labs</span></a></li><li class="item1599"><a href="/campus-life/democracy-house-homepage.html"><span>Democracy House</span></a></li><li class="item2264"><a href="/campus-life/dining-services.html"><span>Dining Services</span></a></li><li class="item266"><a href="http://www2.middlesexcc.edu/calendar"><span>Events Calendar</span></a></li><li class="item150"><a href="/campus-life/athletics-and-recreation/pe-center-recreation-information.html"><span>Recreation</span></a></li><li class="item2585"><a href="/campus-life/student-activities-homepage.html"><span>Student Activities</span></a></li><li class="item144"><a href="/campus-life/campus-resources/quo-vadis.html"><span>Student Newspaper</span></a></li><li class="item2568"><a href="/campus-life/theatre-homepage.html"><span>Theatre</span></a></li></ul></li><li class="parent item65"><a href="http://prod.campuscruiser.com/PageServlet?pg=home_welcome&amp;cp=154" target="_blank"><span>MCC Online</span></a><ul><li class="item268"><a href="http://prod.campuscruiser.com/PageServlet?pg=home_welcome&amp;cp=154" target="_blank"><span>Campus Cruiser</span></a></li><li class="item655"><a href="http://eportfolio.middlesexcc.edu/control.cfm/ID/2942/" target="_blank"><span>ePortfolio</span></a></li><li class="item269"><a href="https://infonet.middlesexcc.edu/" target="_blank"><span>InfoNet</span></a></li><li class="item270"><a href="/academics/online-courses.html"><span>Online &amp; Hybrid Courses</span></a></li></ul></li><li class="item3608"><a href="http://www2.middlesexcc.edu/support-middlesex.html"><span>Support Middlesex</span></a></li></ul><select id="tinynav1" class="tinynav tinynav1" >
+                  
+    <option  value="/about.html">About Us</option>
+                              
+    <option  value="/about.html">&nbsp;&nbsp;-&nbsp;About MCC</option>
+                              
+    <option  value="/marketing/mcc-publications.html">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;MCC Publications</option>
+                
+                                  
+    <option  value="/mcc-news.html">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;News &amp; Events</option>
+                
+                                  
+    <option  value="/about/presidents-welcome.html">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;President&#039;s Welcome</option>
+                
+                                  
+    <option  value="http://www2.middlesexcc.edu/images/PDFs/middlestates/Self-Study_2011.pdf">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;Self-Study Report</option>
+                
+                                  
+    <option  value="/about-us/about-mcc/strategic-plan-goals-2012-2015.html">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;Strategic Plan Goals 2012-15</option>
+                
+                                  
+    <option  value="/about/vision-and-mission.html">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;Vision &amp; Mission</option>
+                
+                                  
+    <option  value="/about/why-middlesex.html">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;Why Middlesex?</option>
+                
+                    
+            
+                                  
+    <option  value="/about/middle-states-accreditation.html">&nbsp;&nbsp;-&nbsp;Accreditation</option>
+                
+                                  
+    <option  value="/about/alumni.html">&nbsp;&nbsp;-&nbsp;Alumni Relations</option>
+                
+                                  
+    <option  value="/about/board-of-trustees.html">&nbsp;&nbsp;-&nbsp;Board of Trustees</option>
+                
+                                  
+    <option  value="/about/catalog.html">&nbsp;&nbsp;-&nbsp;College Catalogs</option>
+                
+                                  
+    <option  value="/directory.html">&nbsp;&nbsp;-&nbsp;Directory</option>
+                
+                                  
+    <option  value="/about/doing-business-with-mcc.html">&nbsp;&nbsp;-&nbsp;Doing Business with MCC</option>
+                
+                                  
+    <option  value="http://www2.middlesexcc.edu/map">&nbsp;&nbsp;-&nbsp;Edison Campus Map</option>
+                
+                                  
+    <option  value="/index.php?Itemid=237&amp;option=">&nbsp;&nbsp;-&nbsp;Employment</option>
+                
+                                  
+    <option  value="/about/gainful-employment.html">&nbsp;&nbsp;-&nbsp;Gainful Employment</option>
+                
+                                  
+    <option  value="/about/locations.html">&nbsp;&nbsp;-&nbsp;Locations</option>
+                              
+    <option  value="http://www2.middlesexcc.edu/map">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;Edison Campus</option>
+                
+                                  
+    <option  value="/about/locations/new-brunswick-center.html">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;New Brunswick Center</option>
+                
+                                  
+    <option  value="/about/locations/perth-amboy-center.html">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;Perth Amboy Center</option>
+                
+                    
+            
+                                  
+    <option  value="/about/opra-request-form.html">&nbsp;&nbsp;-&nbsp;OPRA Request Form</option>
+                
+                                  
+    <option  value="/campus-life/campus-resources/campus-police/parking.html">&nbsp;&nbsp;-&nbsp;Parking</option>
+                
+                                  
+    <option  value="/support-middlesex.html">&nbsp;&nbsp;-&nbsp;Support Middlesex</option>
+                
+                    
+            
+                          
+    <option  value="/admissions.html">Admissions</option>
+                              
+    <option  value="http://www2.middlesexcc.edu/apply">&nbsp;&nbsp;-&nbsp;Apply Online</option>
+                
+                                  
+    <option  value="/admissions.html">&nbsp;&nbsp;-&nbsp;How to Apply</option>
+                              
+    <option  value="/admissions/freshman-applicants.html">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;Freshman and Transfer</option>
+                
+                                  
+    <option  value="/admissions/visiting-and-non-degree.html">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;Visiting and Non Degree</option>
+                
+                                  
+    <option  value="/admissions/health-technology-applicants.html">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;Health Technology</option>
+                
+                                  
+    <option  value="/admissions/international-students.html">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;International Applicants</option>
+                
+                                  
+    <option  value="/admissions/enrollment-hours.html">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;Enrollment Hours</option>
+                
+                    
+            
+                                  
+    <option  value="/financial-aid.html">&nbsp;&nbsp;-&nbsp;Financial Aid</option>
+                
+                                  
+    <option  value="/services-and-support/registrar.html">&nbsp;&nbsp;-&nbsp;Office of the Registrar</option>
+                
+                                  
+    <option  value="/scholarships.html">&nbsp;&nbsp;-&nbsp;Scholarships</option>
+                
+                                  
+    <option  value="/services-and-support/student-account-services.html">&nbsp;&nbsp;-&nbsp;Student Account Services</option>
+                
+                                  
+    <option  value="/admissions/testing-center.html">&nbsp;&nbsp;-&nbsp;Testing Center</option>
+                
+                                  
+    <option  value="/admissions/tuition-and-fees.html">&nbsp;&nbsp;-&nbsp;Tuition &amp; Fees</option>
+                
+                    
+            
+                          
+    <option  value="/academics.html">Academics</option>
+                              
+    <option  value="/services-and-support/academic-advising.html">&nbsp;&nbsp;-&nbsp;Academic Advising</option>
+                
+                                  
+    <option  value="/academics/academic-calendar.html">&nbsp;&nbsp;-&nbsp;Academic Calendar</option>
+                
+                                  
+    <option  value="/academics/academic-departments.html">&nbsp;&nbsp;-&nbsp;Academic Departments</option>
+                
+                                  
+    <option  value="/about/catalog.html">&nbsp;&nbsp;-&nbsp;College Catalogs</option>
+                
+                                  
+    <option  value="/commencement-general-information/application-information.html">&nbsp;&nbsp;-&nbsp;Commencement</option>
+                
+                                  
+    <option  value="/corporate-and-community.html">&nbsp;&nbsp;-&nbsp;Continuing Education</option>
+                
+                                  
+    <option  value="/academics/degree-and-certificate-programs.html">&nbsp;&nbsp;-&nbsp;Degree/Certificate Programs</option>
+                
+                                  
+    <option  value="/academics/honors-program.html">&nbsp;&nbsp;-&nbsp;Honors Program</option>
+                
+                                  
+    <option  value="/johnson-commons-learning-center.html">&nbsp;&nbsp;-&nbsp;J.C. Learning Center</option>
+                
+                                  
+    <option  value="/academics/library.html">&nbsp;&nbsp;-&nbsp;Library</option>
+                
+                    
+            
+                          
+    <option  value="/services-and-support.html">Services &amp; Support</option>
+                              
+    <option  value="/services-and-support/academic-advising.html">&nbsp;&nbsp;-&nbsp;Academic Advising</option>
+                
+                                  
+    <option  value="/services-and-support/career-services.html">&nbsp;&nbsp;-&nbsp;Career Services</option>
+                
+                                  
+    <option  value="/services-and-support/counseling-services.html">&nbsp;&nbsp;-&nbsp;Counseling Services</option>
+                
+                                  
+    <option  value="/services-and-support/disability-services.html">&nbsp;&nbsp;-&nbsp;Disability Services</option>
+                
+                                  
+    <option  value="/services-and-support/education-opportunity-fund.html">&nbsp;&nbsp;-&nbsp;Educational Opp. Fund</option>
+                
+                                  
+    <option  value="/services-and-support/health-and-safety.html">&nbsp;&nbsp;-&nbsp;Health &amp; Safety</option>
+                
+                                  
+    <option  value="/johnson-commons-learning-center.html">&nbsp;&nbsp;-&nbsp;J.C. Learning Center</option>
+                
+                                  
+    <option  value="/services-and-support/minority-student-affairs.html">&nbsp;&nbsp;-&nbsp;Minority Student Affairs</option>
+                
+                                  
+    <option  value="/services-and-support/registrar.html">&nbsp;&nbsp;-&nbsp;Office of the Registrar</option>
+                
+                                  
+    <option  value="/services-and-support/student-account-services.html">&nbsp;&nbsp;-&nbsp;Student Account Services</option>
+                
+                                  
+    <option  value="/admissions/testing-center.html">&nbsp;&nbsp;-&nbsp;Testing Center</option>
+                
+                                  
+    <option  value="/services-and-support/transfer-center.html">&nbsp;&nbsp;-&nbsp;Transfer Services</option>
+                
+                                  
+    <option  value="/services-and-support/tutoring-services.html">&nbsp;&nbsp;-&nbsp;Tutoring Services</option>
+                
+                                  
+    <option  value="/services-and-support/veterans-services.html">&nbsp;&nbsp;-&nbsp;Veterans Services</option>
+                
+                    
+            
+                          
+    <option  value="/campus-life.html">Campus Life</option>
+                              
+    <option  value="/campus-life/arts.html">&nbsp;&nbsp;-&nbsp;Art Exhibitions</option>
+                
+                                  
+    <option  value="/campus-life/athletics-and-recreation.html">&nbsp;&nbsp;-&nbsp;Athletics</option>
+                
+                                  
+    <option  value="/campus-life/wmcc-homepage.html">&nbsp;&nbsp;-&nbsp;Blue Colt Radio</option>
+                
+                                  
+    <option  value="http://www.bluecoltbookstore.com/Home.aspx">&nbsp;&nbsp;-&nbsp;Bookstore</option>
+                
+                                  
+    <option  value="/campus-life/campus-resources/campus-police.html">&nbsp;&nbsp;-&nbsp;Campus Police</option>
+                
+                                  
+    <option  value="http://www2.middlesexcc.edu/wp/childcare">&nbsp;&nbsp;-&nbsp;Child Care Center</option>
+                
+                                  
+    <option  value="/campus-life/campus-resources/computer-labs.html">&nbsp;&nbsp;-&nbsp;Computer Labs</option>
+                
+                                  
+    <option  value="/campus-life/democracy-house-homepage.html">&nbsp;&nbsp;-&nbsp;Democracy House</option>
+                
+                                  
+    <option  value="/campus-life/dining-services.html">&nbsp;&nbsp;-&nbsp;Dining Services</option>
+                
+                                  
+    <option  value="http://www2.middlesexcc.edu/calendar">&nbsp;&nbsp;-&nbsp;Events Calendar</option>
+                
+                                  
+    <option  value="/campus-life/athletics-and-recreation/pe-center-recreation-information.html">&nbsp;&nbsp;-&nbsp;Recreation</option>
+                
+                                  
+    <option  value="/campus-life/student-activities-homepage.html">&nbsp;&nbsp;-&nbsp;Student Activities</option>
+                
+                                  
+    <option  value="/campus-life/campus-resources/quo-vadis.html">&nbsp;&nbsp;-&nbsp;Student Newspaper</option>
+                
+                                  
+    <option  value="/campus-life/theatre-homepage.html">&nbsp;&nbsp;-&nbsp;Theatre</option>
+                
+                    
+            
+                          
+    <option  value="http://prod.campuscruiser.com/PageServlet?pg=home_welcome&amp;cp=154">MCC Online</option>
+                              
+    <option  value="http://prod.campuscruiser.com/PageServlet?pg=home_welcome&amp;cp=154">&nbsp;&nbsp;-&nbsp;Campus Cruiser</option>
+                
+                                  
+    <option  value="http://eportfolio.middlesexcc.edu/control.cfm/ID/2942/">&nbsp;&nbsp;-&nbsp;ePortfolio</option>
+                
+                                  
+    <option  value="https://infonet.middlesexcc.edu/">&nbsp;&nbsp;-&nbsp;InfoNet</option>
+                
+                                  
+    <option  value="/academics/online-courses.html">&nbsp;&nbsp;-&nbsp;Online &amp; Hybrid Courses</option>
+                
+                    
+            
+                          
+    <option  value="http://www2.middlesexcc.edu/support-middlesex.html">Support Middlesex</option>
+                
+        </select>
+
+     
+     </div>
+</div>
+<div id="subnav">
+	<div id="subnav-frame">
+			<div class="moduletable">
+					
+<ul id="rotator" style="height: 228px; width: 957px; ">
+<li class="img0 first"><img src="/images/media_rotator/Art/banner1.jpg" /></li>
+<li class="img1"><img src="/images/media_rotator/Art/banner2.jpg" /></li>
+<li class="img2"><img src="/images/media_rotator/Art/banner3.jpg" /></li>
+<li class="img3"><img src="/images/media_rotator/Art/banner4.jpg" /></li>
+</ul>
+		</div>
+	
+	</div>
+</div>
+
+
+<div id="newsubnav">
+<div id="main">
+
+<div id="rail">
+	<div class="res-left">
+    	
+    </div>
+    <div class="res-hide">
+			<div class="moduletable">
+					<h3>Visual, Performing & Media Arts</h3>
+					<ul class="menu"><li class="active item2312"><a href="/academics/academic-departments/visual-performing-and-media-arts.html"><span>Department Homepage</span></a></li><li class="item2325"><a href="/academics/academic-departments/visual-performing-and-media-arts/faculty-and-staff.html"><span>Faculty &amp; Staff</span></a></li><li class="item2324"><a href="/academics/academic-departments/visual-performing-and-media-arts/communication.html"><span>Liberal Arts - Communication</span></a></li><li class="parent item2314"><a><span>Media Arts</span></a><ul><li class="item2313"><a href="/academics/academic-departments/visual-performing-and-media-arts/advertising-graphic-design.html"><span>Advertising Graphic Design</span></a></li><li class="item2315"><a href="/academics/academic-departments/visual-performing-and-media-arts/commercial-photography.html"><span>Commercial Photography</span></a></li></ul></li><li class="parent item2317"><a><span>Performing Arts</span></a><ul><li class="item2321"><a href="/academics/academic-departments/visual-performing-and-media-arts/fine-arts-music.html"><span>Fine Arts - Music</span></a></li><li class="item2322"><a href="/academics/academic-departments/visual-performing-and-media-arts/fine-arts-theatre.html"><span>Fine Arts - Theatre</span></a></li><li class="item2319"><a href="/academics/academic-departments/visual-performing-and-media-arts/liberal-arts-music.html"><span>Liberal Arts - Music</span></a></li><li class="item2316"><a href="/academics/academic-departments/visual-performing-and-media-arts/liberal-arts-theatre.html"><span>Liberal Arts - Theatre</span></a></li></ul></li><li class="parent item2318"><a><span>Visual Arts</span></a><ul><li class="active item2323"><a href="/academics/academic-departments/visual-performing-and-media-arts/fine-arts-art.html"><span>Fine Arts - Visual Arts</span></a></li><li class="item2320"><a href="/academics/academic-departments/visual-performing-and-media-arts/liberal-arts-visual-arts.html"><span>Liberal Arts - Visual Arts</span></a></li></ul></li><li class="item2762"><a href="/academics/festival-arts-sciences-2011.html"><span>Festival of Arts and Sciences 2011 (videos)</span></a></li></ul>		</div>
+			<div class="moduletable res-hide-too">
+					<h3>Information For</h3>
+					<ul class="menu res-hide-too" id="info"><li class="item1022"><a href="/prospective-students.html"><span>Prospective Students</span></a></li><li class="item1023"><a href="/current-students.html"><span>Current Students</span></a></li><li class="item1024"><a href="/info-for-faculty-and-staff.html"><span>Faculty &amp; Staff</span></a></li><li class="item1025"><a href="http://www.middlesexcc.edu/families/control.cfm" target="_blank"><span>Parents &amp; Family</span></a></li><li class="item1026"><a href="http://www.middlesexcc.edu/profcom/control.cfm" target="_blank"><span>Community &amp; Visitors</span></a></li><li class="item1027"><a href="http://www.middlesexcc.edu/alumfriends/control.cfm" target="_blank"><span>Alumni</span></a></li><li class="item1028"><a href="http://www2.middlesexcc.edu/corporate-and-community.html" target="_blank"><span>Business &amp; Community</span></a></li><li class="item1439"><a href="http://www.middlesexcc.edu/osr/control.cfm" target="_blank"><span>K-12 Community</span></a></li></ul>		</div>
+	
+    </div>
+    
+</div> <!-- end rail -->
+
+<div id="content">
+	<span class="breadcrumbs pathway">
+<a href="http://www2.middlesexcc.edu/" class="pathway">Home</a> <img src="/images/M_images/arrow.png" alt=""  /> <a href="/academics.html" class="pathway">Academics</a> <img src="/images/M_images/arrow.png" alt=""  /> <a href="/academics/academic-departments.html" class="pathway">Academic Departments</a> <img src="/images/M_images/arrow.png" alt=""  /> <a href="/academics/academic-departments/visual-performing-and-media-arts.html" class="pathway">Visual, Performing &amp; Media Arts</a> <img src="/images/M_images/arrow.png" alt=""  /> Fine Arts - Art</span>
+
+	
+	
+	<table class="contentpaneopen">
+<tr>
+						<td align="right" width="100%" class="buttonheading">
+		<a href="/academics/academic-departments/visual-performing-and-media-arts/fine-arts-art.pdf" title="PDF" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/images/M_images/pdf_button.png" alt="PDF"  /></a>		</td>
+		
+				<td align="right" width="100%" class="buttonheading">
+		<a href="/academics/academic-departments/visual-performing-and-media-arts/fine-arts-art.html?tmpl=component&amp;print=1&amp;page=" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/images/M_images/printButton.png" alt="Print"  /></a>		</td>
+		
+				<td align="right" width="100%" class="buttonheading">
+		<a href="/component/mailto/?tmpl=component&amp;link=fe3280765cbfc919662d35547e49961f65fbefb1" title="E-mail" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><img src="/images/M_images/emailButton.png" alt="E-mail"  /></a>		</td>
+					</tr>
+</table>
+
+<table class="contentpaneopen">
+
+
+
+<tr>
+<td valign="top">
+<h1>Fine Arts - Visual Arts&nbsp;<br /><strong style="color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">Associate in Fine Arts (A.F.A.) Degree</strong></h1>
+<ul>
+<li>Contact:&nbsp;
+ <script language='JavaScript' type='text/javascript'>
+ <!--
+ var prefix = 'm&#97;&#105;lt&#111;:';
+ var suffix = '';
+ var attribs = '';
+ var path = 'hr' + 'ef' + '=';
+ var addy99577 = 'NH&#101;ll&#101;r' + '&#64;';
+ addy99577 = addy99577 + 'm&#105;ddl&#101;s&#101;xcc' + '&#46;' + '&#101;d&#117;';
+ var addy_text99577 = 'Nadine Heller';
+ document.write( '<a ' + path + '\'' + prefix + addy99577 + suffix + '\'' + attribs + '>' );
+ document.write( addy_text99577 );
+ document.write( '<\/a>' );
+ //-->
+ </script><script language='JavaScript' type='text/javascript'>
+ <!--
+ document.write( '<span style=\'display: none;\'>' );
+ //-->
+ </script>This e-mail address is being protected from spambots. You need JavaScript enabled to view it
+ <script language='JavaScript' type='text/javascript'>
+ <!--
+ document.write( '</' );
+ document.write( 'span>' );
+ //-->
+ </script></li>
+<li>Phone: 732-906-2589</li>
+<li><a title="Course Outline (PDF)" target="_blank" href="http://www.middlesexcc.edu/academics/programs/09/Fine_Arts.pdf">Course Outline (PDF)</a></li>
+<li><a target="_blank" title="Course Outline 2012-2013 (PDF)		" href="/catalog/MCC2012-2013CourseOutlines.pdf#page=64">Course Outline 2012-2013 (PDF)</a></li>
+</ul>
+<p>The Associate in Fine Arts (A.F.A.) offers the first two years of concentrated study in studio courses for students planning to transfer to a&nbsp;visual arts, theatre, or music baccalaureate program. As a fine arts major, the student may choose to concentrate in either theater, art or&nbsp;music.&nbsp;</p>
+<p><strong>What will students learn if they study Fine Arts?&nbsp;<br /></strong>The Associate of Fine Arts Degree (AFA) prepares students for transfer to Bachelor of Fine Arts (BFA) programs at four-year institutions. Just as the Associates in Arts (AA) degree is composed of the first two years of study toward the Bachelor of Arts (BA) degree, the Associate of Fine Arts (AFA) is composed of the first two years of concentrated study in studio courses appropriate to the BFA in art. This includes coursework in drawing, design, painting, sculpture, printmaking, ceramics, and mixed media.</p>
+<p>The Associate of Fine Arts degree (AFA) will provide a well –rounded education with a generous range of liberal arts courses required by four-year BFA programs. Specifically, the AFA degree contains a series of general education “core” requirements, which all AFA students must complete.<span style="text-decoration: underline;">&nbsp;</span><span style="text-decoration: underline;">&nbsp;</span></p>
+<p>In terms of academic requirements, the major difference between the AA degree and the AFA is that the AFA requires more “hands-on” studio courses while reducing the number of courses in math and science.&nbsp; The AA degree requires&nbsp;<b>four </b>courses in math&nbsp;<b>and/or </b>science. The AFA degree, however, requires only&nbsp;<b>two </b>courses in math&nbsp;<b>and/or</b> science for graduation.</p>
+<p><strong>Are there any requirements that must be satisfied&nbsp;before taking courses in the major? </strong><br />Algebra I is a prerequisite for all majors. Algebra I competency may&nbsp;be verified with a passing score on the College’s placement test or&nbsp;completion of the appropriate course.</p>
+<p><strong>How long will it take to complete this degree? </strong><br />Once students complete developmental coursework (if needed), the&nbsp;degree can be completed in two years of full-time study. They can&nbsp;shorten the amount of time by taking courses in the summer and&nbsp;winter sessions.</p>
+<p> </p>
+<p>For further details contact Nadine Heller, Chair of the Visual, Performing and Media Arts Department at&nbsp;<a target="_blank" value="+17329062589" href="tel:%28732%29%20906-2589">(732) 906-2589</a> or&nbsp;
+ <script language='JavaScript' type='text/javascript'>
+ <!--
+ var prefix = 'm&#97;&#105;lt&#111;:';
+ var suffix = '';
+ var attribs = '';
+ var path = 'hr' + 'ef' + '=';
+ var addy78890 = 'NH&#101;ll&#101;r' + '&#64;';
+ addy78890 = addy78890 + 'm&#105;ddl&#101;s&#101;xcc' + '&#46;' + '&#101;d&#117;';
+ document.write( '<a ' + path + '\'' + prefix + addy78890 + suffix + '\'' + attribs + '>' );
+ document.write( addy78890 );
+ document.write( '<\/a>' );
+ //-->
+ </script><script language='JavaScript' type='text/javascript'>
+ <!--
+ document.write( '<span style=\'display: none;\'>' );
+ //-->
+ </script>This e-mail address is being protected from spambots. You need JavaScript enabled to view it
+ <script language='JavaScript' type='text/javascript'>
+ <!--
+ document.write( '</' );
+ document.write( 'span>' );
+ //-->
+ </script>.</p></td>
+</tr>
+
+</table>
+<span class="article_separator">&nbsp;</span>
+
+</div> <!-- end content -->
+
+<div id="rail2">
+	
+    <div class="res-right">
+    		<div class="moduletable">
+					<h3>Information For</h3>
+					<ul class="menu" id="info"><li class="item1022"><a href="/prospective-students.html"><span>Prospective Students</span></a></li><li class="item1023"><a href="/current-students.html"><span>Current Students</span></a></li><li class="item1024"><a href="/info-for-faculty-and-staff.html"><span>Faculty &amp; Staff</span></a></li><li class="item1025"><a href="http://www.middlesexcc.edu/families/control.cfm" target="_blank"><span>Parents &amp; Family</span></a></li><li class="item1026"><a href="http://www.middlesexcc.edu/profcom/control.cfm" target="_blank"><span>Community &amp; Visitors</span></a></li><li class="item1027"><a href="http://www.middlesexcc.edu/alumfriends/control.cfm" target="_blank"><span>Alumni</span></a></li><li class="item1028"><a href="http://www2.middlesexcc.edu/corporate-and-community.html" target="_blank"><span>Business &amp; Community</span></a></li><li class="item1439"><a href="http://www.middlesexcc.edu/osr/control.cfm" target="_blank"><span>K-12 Community</span></a></li></ul>		</div>
+	
+    </div>
+</div> <!-- end rail2 -->
+
+<br style="clear: both" />
+</div> <!-- end main -->
+<div align="center">
+	<div id="user2_footer" align="center">
+    	
+    </div>
+</div>
+
+
+<div id="footer"><div id="footer-inside">
+<p id="meta">&copy; 2013 Middlesex County College. All Rights Reserved<br />
+<br />
+2600 Woodbridge Avenue, Edison, NJ 08818-3050<br />
+Phone: 732.548.6000<br />
+<a href="/website-disclaimer.html">Website Disclaimer</a>
+</p>
+<p id="social">
+<smartobject type='smartavatar_next' icon_url='http://vid.hellonetcdn.com/smartconnectfiles/37911/a_icon_3065.png' icon_over_url='http://vid.hellonetcdn.com/smartconnectfiles/37911/a_icon_h_3065.png' icon_close_url='http://vid.hellonetcdn.com/smartconnectfiles/37911/a_icon_c_3065.png' auto_center='true' open_x='0' open_y='0' auto_open='true'  avatar_code='y6apN4' open_direction='left'></smartobject><br />
+<p id="social">
+<a href="http://www.facebook.com/pages/Edison-NJ/Middlesex-County-College-Official-FB-Page/101456486572435" target="_blank"><img src="/templates/mcc-alt/images/icon-facebook.jpg" alt="Facebook Icon" border="0" /></a> Become a Fan on Facebook<br />
+</p>
+<br style="clear: both" />
+</div></div>
+</div>
+
+</body>
+</html>

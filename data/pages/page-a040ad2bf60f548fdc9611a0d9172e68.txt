@@ -1,0 +1,1158 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="ctl00_ctl00_Html1" xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_ctl00_Head1"><title>
+	New Hampshire Calendar : Events
+</title><meta http-equiv="X-UA-Compatible" content="IE=8" />
+	<script type="text/javascript" language="javascript">
+		// placeholder
+		function init() {}
+		function unload() {}
+	</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/library/shared/javascript/adServer.js"></script>
+    <script type="text/javascript">
+
+        function stopRKey(evt) {
+            var evt = (evt) ? evt : ((event) ? event : null);
+            var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+            if ((evt.keyCode == 13) && (node.type == "text" || node.type == "password" || node.type == "select-one")) {
+                if (node.getAttribute("submitButtonID") != null) {
+                    var submitButtonID = node.getAttribute("submitButtonID");
+                    if ((submitButtonID != null) && (submitButtonID != "")) {
+                        $("#" + submitButtonID).click();
+                    }
+                }
+                return false;
+            }
+        }
+
+        document.onkeypress = stopRKey; 
+
+    </script> 
+		<link rel="stylesheet" type="text/css" href="/library/shared/styles/master.css" />
+	<link rel="stylesheet" type="text/css" href="/library/shared/styles/newstote.css" />
+	<link rel="stylesheet" type="text/css" href="/library/shared/styles/transmenu.css" />
+    <link rel="stylesheet" type="text/css" href="/library/shared/styles/print.css" media='print' />
+    <link rel="stylesheet" type="text/css" href="/library/shared/styles/screen.css" media='screen' />
+	<link rel="stylesheet" type="text/css" href="/library/custom/styles/custom.css.aspx" />
+	<link rel="stylesheet" type="text/css" href="/library/shared/styles/widget.css" />
+    <link rel="stylesheet" type="text/css" href="/library/shared/styles/custom-theme/jquery-ui-1.8.6.custom.css" />
+	<link rel="shortcut icon" href="/library/shared/images/common/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/library/shared/images/common/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="/library/shared/javascript/popup.js" defer='defer'></script>
+	<script type="text/javascript" src="/library/shared/javascript/mm.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+    <script src="/library/shared/javascript/jquery-ui-1.8.6.custom.2.js" type="text/javascript"></script>
+    <!--script src="/library/shared/javascript/jquery-ui-1.8.5.custom.min.js" type="text/javascript"></script-->
+    <!--script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js" type="text/javascript"></script-->
+	<script type="text/javascript" src="/library/shared/javascript/jquery.swfobject.1-1-1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.1/swfobject.js" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript">
+        function searchClearMe(formfield) {
+            if ($(formfield).attr('defaultVal') == $(formfield).val())
+                $(formfield).val("");
+        }
+        function searchRestoreMe(formfield) {
+            if ($(formfield).val().replace(/^\s+|\s+$/g, "") == "")
+                $(formfield).val($(formfield).attr('defaultVal'));
+        }
+
+	    function clearMe(formfield) {
+		    if (formfield.defaultValue == formfield.value)
+			    formfield.value = "";
+	    }
+	    function restoreMe(formfield) {
+		    if (formfield.value.replace(/^\s+|\s+$/g, "") == "")
+			    formfield.value = formfield.defaultValue;
+	    }
+    </script><meta name="keywords" content="New Hampshire Calendar " /><meta name="description" content="New Hampshire Calendar " /><script type="text/javascript">
+
+	    $(function () {
+	        $("#ctl00_ctl00_SearchBar1_RegionAndTownBox").autocomplete({
+	            source: function (request, response) {
+	                $.ajax({
+	                    type: "GET",
+	                    url: "/library/shared/Tools/locations-ac.ashx",
+	                    dataType: "xml",
+	                    data: {
+	                        term: request.term
+	                    },
+	                    success: function (data) {
+	                        response($("Location", data).map(function (item) {
+                                return {
+                                    value: $(this).attr("name"),
+                                    label: $(this).attr("name")
+                                };
+                            }).get());
+	                    }
+	                });
+	            },
+	            minLength: 0,
+                click: function() {
+                    alert('clicked');
+                },
+	            open: function () {
+	                $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+	            },
+	            close: function () {
+	                $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+	            }
+	        });
+	    });
+
+</script><link rel="stylesheet" type="text/css" media="all" href="/zcal/themes/winxp.css" ><script type="text/javascript" src="/zcal/src/utils.js"></script><script type="text/javascript" src="/zcal/src/calendar.js"></script></head>
+
+<body onLoad="init();" onunload="unload()">
+	<form name="aspnetForm" method="post" action="/calendar/events/art.aspx" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTY1OTU5MTQxNg9kFgJmD2QWAmYPZBYCAgEPZBYCAgMPFgIeBmFjdGlvbgUZL2NhbGVuZGFyL2V2ZW50cy9hcnQuYXNweBYIAgMPZBYMAgEPDxYEHghDc3NDbGFzcwUJaXAtc2VhcmNoHgRfIVNCAgIWCh4Fc3R5bGUFDHdpZHRoOjE4MHB4Ox4Hb25mb2N1cwUUc2VhcmNoQ2xlYXJNZSh0aGlzKTseBm9uYmx1cgUWc2VhcmNoUmVzdG9yZU1lKHRoaXMpOx4KZGVmYXVsdFZhbAUcU2VhcmNoOiBFdmVudHMsIE9yZ3MsIFZlbnVlcx4Oc3VibWl0QnV0dG9uSUQFJmN0bDAwX2N0bDAwX1NlYXJjaEJhcjFfU2VhcmNoU3VibWl0QnRuZAIDDw8WBB8BBQlpcC1zZWFyY2gfAgICFgofAwUMd2lkdGg6MTQwcHg7HwQFFHNlYXJjaENsZWFyTWUodGhpcyk7HwUFFnNlYXJjaFJlc3RvcmVNZSh0aGlzKTsfBgUTVHlwZSBUb3duIG9yIFJlZ2lvbh8HBSZjdGwwMF9jdGwwMF9TZWFyY2hCYXIxX1NlYXJjaFN1Ym1pdEJ0bmQCBQ8QDxYEHwEFCWlwLXNlYXJjaB8CAgIWBB8DBQx3aWR0aDoxNDVweDsfBwUmY3RsMDBfY3RsMDBfU2VhcmNoQmFyMV9TZWFyY2hTdWJtaXRCdG4QFTwOQWxsIENhdGVnb3JpZXMLQWdyaWN1bHR1cmUMQW5pbWFscy9QZXRzCEFudGlxdWVzA0FydAhBdWN0aW9ucwlBdWRpdGlvbnMIQmVuZWZpdHMMQnJpZGFsIFNob3dzCEJ1c2luZXNzCUNhciBTaG93cw5DaGFtYmVyL1JvdGFyeQZDb21lZHkJQ29tbXVuaXR5CENvbmNlcnRzD0NvdXJzZS9Xb3Jrc2hvcAhDdWx0dXJhbAVEYW5jZQhFeGhpYml0cwRFeHBvBUZhaXJzDkZhcm1lcnMgTWFya2V0CUZlc3RpdmFscwRGaWxtFEZpbmUgQXJ0cyBhbmQgQ3JhZnRzDUZvb2QgYW5kIFdpbmUERnJlZQRHb2xmEkhlYWx0aCBhbmQgRml0bmVzcwdIaXN0b3J5B0hvbGlkYXkPSG9tZSBhbmQgR2FyZGVuCUpvYiBGYWlycwdLYXJhb2tlD0tpZHMgYW5kIEZhbWlseQhMZWN0dXJlcwhMaXRlcmFyeQhNZWV0aW5ncw1NaXNjZWxsYW5lb3VzDk11c2V1bS9HYWxsZXJ5BU11c2ljCk5ldHdvcmtpbmcJTmlnaHRsaWZlDU5vcmRpYyBTa2lpbmcOT3BlbiBNaWMgTmlnaHQFT3BlcmEIT3V0ZG9vcnMGUGFyYWRlCVBvbGl0aWNhbAlSZWxpZ2lvdXMIUmV1bmlvbnMNU2Nob29sIGV2ZW50cwhTZW1pbmFycwdTZW5pb3JzBVNob3dzBlNwb3J0cwVUZWVucwdUaGVhdGVyBVRvdXJzCllhcmQgU2FsZXMVPAALQWdyaWN1bHR1cmUMQW5pbWFscy9QZXRzCEFudGlxdWVzA0FydAhBdWN0aW9ucwlBdWRpdGlvbnMIQmVuZWZpdHMMQnJpZGFsIFNob3dzCEJ1c2luZXNzCUNhciBTaG93cw5DaGFtYmVyL1JvdGFyeQZDb21lZHkJQ29tbXVuaXR5CENvbmNlcnRzD0NvdXJzZS9Xb3Jrc2hvcAhDdWx0dXJhbAVEYW5jZQhFeGhpYml0cwRFeHBvBUZhaXJzDkZhcm1lcnMgTWFya2V0CUZlc3RpdmFscwRGaWxtFEZpbmUgQXJ0cyBhbmQgQ3JhZnRzDUZvb2QgYW5kIFdpbmUERnJlZQRHb2xmEkhlYWx0aCBhbmQgRml0bmVzcwdIaXN0b3J5B0hvbGlkYXkPSG9tZSBhbmQgR2FyZGVuCUpvYiBGYWlycwdLYXJhb2tlD0tpZHMgYW5kIEZhbWlseQhMZWN0dXJlcwhMaXRlcmFyeQhNZWV0aW5ncw1NaXNjZWxsYW5lb3VzDk11c2V1bS9HYWxsZXJ5BU11c2ljCk5ldHdvcmtpbmcJTmlnaHRsaWZlDU5vcmRpYyBTa2lpbmcOT3BlbiBNaWMgTmlnaHQFT3BlcmEIT3V0ZG9vcnMGUGFyYWRlCVBvbGl0aWNhbAlSZWxpZ2lvdXMIUmV1bmlvbnMNU2Nob29sIGV2ZW50cwhTZW1pbmFycwdTZW5pb3JzBVNob3dzBlNwb3J0cwVUZWVucwdUaGVhdGVyBVRvdXJzCllhcmQgU2FsZXMUKwM8Z2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZGQCBw8PFgQfAQUJaXAtc2VhcmNoHwICAhYKHwMFC3dpZHRoOjkwcHg7HwQFFHNlYXJjaENsZWFyTWUodGhpcyk7HwUFFnNlYXJjaFJlc3RvcmVNZSh0aGlzKTsfBgUKbW0vZGQveXl5eR8HBSZjdGwwMF9jdGwwMF9TZWFyY2hCYXIxX1NlYXJjaFN1Ym1pdEJ0bmQCCQ8PFgQeC0JvcmRlcldpZHRoGwAAAAAAAAAAAQAAAB8CAiBkZAILDw8WCB8IGwAAAAAAAAAAAQAAAB4QQ2F1c2VzVmFsaWRhdGlvbmgeDU9uQ2xpZW50Q2xpY2sFE05vU3VibWl0UG9zdEJhY2soKTsfAgIgZGQCBQ9kFgJmDw8WAh4HVmlzaWJsZWdkZAIHD2QWAmYPFgIfC2dkAhcPZBYCAgEPZBYCAgEPZBYCZg9kFgJmD2QWAmYPZBYCAgEPZBYCAgEPZBYSAgEPZBYCAgUPZBYCZg9kFgYCAg9kFgICAQ8QZA8WBWYCAQICAgMCBBYFEAUHU29ydCBCeQUGbm9zb3J0ZxAFCkV2ZW50IE5hbWUFCUV2ZW50TmFtZWcQBQxPcmdhbml6YXRpb24FB09yZ05hbWVnEAUEQ2l0eQUEQ2l0eWcQBQREYXRlBQ1TdGFydERhdGVUaW1lZxYBZmQCAw8WAh8LaGQCBA8WAh8LaBYCAgEPEGRkFgBkAgMPFgIfC2hkAgUPDxYEHg9Db21tYW5kQXJndW1lbnQFBHByZXYfC2hkZAIHDxYCHgtfIUl0ZW1Db3VudAIHFg5mD2QWAgIBDw8WCB8BBRhwYWdpbmF0aW9uX2xpbmtfc2VsZWN0ZWQfDAUBMR4EVGV4dAUBMR8CAgJkZAICD2QWAgIBDw8WCB8BBQ9wYWdpbmF0aW9uX2xpbmsfDAUBMh8OBQEyHwICAmRkAgQPZBYCAgEPDxYIHwEFD3BhZ2luYXRpb25fbGluax8MBQEzHw4FATMfAgICZGQCBg9kFgICAQ8PFggfAQUPcGFnaW5hdGlvbl9saW5rHwwFATQfDgUBNB8CAgJkZAIID2QWAgIBDw8WCB8BBQ9wYWdpbmF0aW9uX2xpbmsfDAUBNR8OBQE1HwICAmRkAgoPZBYCAgEPDxYIHwEFD3BhZ2luYXRpb25fbGluax8MBQE2Hw4FATYfAgICZGQCDA9kFgICAQ8PFggfAQUPcGFnaW5hdGlvbl9saW5rHwwFATcfDgUBNx8CAgJkZAIJDw8WAh8MBQRuZXh0ZGQCDQ8WAh8NAgpkAg8PDxYEHwwFBHByZXYfC2hkZAIRDxYCHw0CBxYOZg9kFgICAQ8PFggfAQUYcGFnaW5hdGlvbl9saW5rX3NlbGVjdGVkHwwFATEfDgUBMR8CAgJkZAICD2QWAgIBDw8WCB8BBQ9wYWdpbmF0aW9uX2xpbmsfDAUBMh8OBQEyHwICAmRkAgQPZBYCAgEPDxYIHwEFD3BhZ2luYXRpb25fbGluax8MBQEzHw4FATMfAgICZGQCBg9kFgICAQ8PFggfAQUPcGFnaW5hdGlvbl9saW5rHwwFATQfDgUBNB8CAgJkZAIID2QWAgIBDw8WCB8BBQ9wYWdpbmF0aW9uX2xpbmsfDAUBNR8OBQE1HwICAmRkAgoPZBYCAgEPDxYIHwEFD3BhZ2luYXRpb25fbGluax8MBQE2Hw4FATYfAgICZGQCDA9kFgICAQ8PFggfAQUPcGFnaW5hdGlvbl9saW5rHwwFATcfDgUBNx8CAgJkZAITDw8WAh8MBQRuZXh0ZGQYAgUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFggFJmN0bDAwJGN0bDAwJFNlYXJjaEJhcjEkRnJvbUNhbGVuZGFyQnRuBSZjdGwwMCRjdGwwMCRTZWFyY2hCYXIxJFNlYXJjaFN1Ym1pdEJ0bgVTY3RsMDAkY3RsMDAkcGFnZUNvbnRlbnQkcGFnZUNvbnRlbnQkY3RsMDAkY3RsMDAkY3RsMDAkZXZlbnRSZXBlYXRlciRFdmVudE5hbWVIZWFkZXIFU2N0bDAwJGN0bDAwJHBhZ2VDb250ZW50JHBhZ2VDb250ZW50JGN0bDAwJGN0bDAwJGN0bDAwJGV2ZW50UmVwZWF0ZXIkVmVudWVDaXR5SGVhZGVyBU9jdGwwMCRjdGwwMCRwYWdlQ29udGVudCRwYWdlQ29udGVudCRjdGwwMCRjdGwwMCRjdGwwMCRldmVudFJlcGVhdGVyJERhdGVzSGVhZGVyBVJjdGwwMCRjdGwwMCRwYWdlQ29udGVudCRwYWdlQ29udGVudCRjdGwwMCRjdGwwMCRjdGwwMCRldmVudFJlcGVhdGVyJFNlYXJjaEZpbHRlckdvBUxjdGwwMCRjdGwwMCRwYWdlQ29udGVudCRwYWdlQ29udGVudCRjdGwwMCRjdGwwMCRjdGwwMCRldmVudFJlcGVhdGVyJGxua19OZXh0BU1jdGwwMCRjdGwwMCRwYWdlQ29udGVudCRwYWdlQ29udGVudCRjdGwwMCRjdGwwMCRjdGwwMCRldmVudFJlcGVhdGVyJGxua19OZXh0MgVIY3RsMDAkY3RsMDAkcGFnZUNvbnRlbnQkcGFnZUNvbnRlbnQkY3RsMDAkY3RsMDAkY3RsMDAkRXZlbnRQYWdlTXVsdGlWaWV3Dw9kAgFky4SYIc3OgJD0CTt7Q8Byhkgkf+g=" />
+
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWXQK976u+DQLxxbKcAwKZxOslAoawrbQFAsjdrpYFAszz15YJAu+5iZUGAqO2pfYMAp+c9wECldzAzAgCktmepgoCmL3QhAQClOebjwEC35GRkA8C+tLfwgIC9oHe0A4C1O+HhQUCsNnSpwUCgtOe2gwC6ZyZ6wUCr6u4hAIC6aWNUwKz0eGZBQLMu/nnDQKXmJaZDAKJzvH1DQL+/7vWDgLjkdGjCQKL2OvaAgLtsrL8BALx/+eZCALdlYuwDALP4YixAQLf4s3RDQLP+sIIAr2nyxcClbXA+QcCqsGYrAQCqZeLCQKc0MWMBQKCoJkeAuC51YoHAv+e+7YDAuGn6NYLAvv5/oAHAp7TYQLq0bqECgKBysSKDgLPzNDXBwKe74m4DQK0ge7eCwKSvdrMBgLWm8TDBAKm7smECQKDu6O3CQL4k7iaDgLns7OTCAKHuOqgDwKAuKpQAsLPlLwPAqmDiwkCktzJtAUCsKSangsCy/vZ/QMChL6j9AQCi5OQrwYCucKvtgMCs42U6gsCvLGfngsCvZ3zgQ4CkIzK6AUCkrz/zAkCz5We5QwC0PTz5g8C+cbi4AwChKKmtwQC7LOBrQUC7LOJ8QUC7LOxrQQC7LO58QQC7LPhywcC66uBrQUC66uJ8QUC8PaK5gYC9YGHHwKg8qCZAgLuy4WlBwKM976oAgLq1OjzBALYn4/SDwKg8qQxAu7Lib0FAt2AmvwMIgz3auXmoSQLcbodoBQwh+ePpJg=" />
+	<input type="hidden" id="formName" name="formName" value="this-form"/>
+       
+	   
+	   
+<div class="MainTemplateContainer">   
+<table cellpadding="0" cellspacing="0" width="980" align="center" class="HeaderTable">
+<tr><td><table cellpadding="0" cellspacing="0" width="980" align="center">
+<tr>
+    <td style="height:10px;"></td>
+    <td style="padding:15px 15px 30px 0; vertical-align: top;" class="top-nav no-print" align="right" rowspan="2"><a href="/advertising.aspx">ADVERTISING</a> &nbsp;|&nbsp; <a href="/media-participation.aspx">MEDIA PARTICIPATION</a> &nbsp;|&nbsp; <a href="/about-nh365.aspx">ABOUT NH365</a></td>
+</tr>
+<tr>
+	<td width="236" valign="top"><a href="http://www.newhampshire.com"><img src="/library/custom/images/logo.jpg" border="0" alt="NewHampshire.com - The homepage for New Hampshire" /></a></td>
+</td>
+</tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" width="980" align="center" style="padding-top:12px;" class="no-print">
+<tr>
+	<td><a href="/"><img id="HomeNav" onmouseover="MM_swapImage('HomeNav','','/library/shared/images/nav/home-1.gif',0)" onmouseout="MM_swapImgRestore()" alt="Home" src="/library/shared/images/nav/home-0.gif" 
+
+border="0"></a><a href="/calendar/search-events.aspx?category=Theater"><img id="TheatreNav" onmouseover="MM_swapImage('TheatreNav','','/library/shared/images/nav/theatre-1.gif',0)" onmouseout="MM_swapImgRestore()" 
+
+alt="Theatre" src="/library/shared/images/nav/theatre-0.gif" border="0"></a><a href="/calendar/search-events.aspx?category=Music"><img id="MusicNav" onmouseover="MM_swapImage('MusicNav','','/library/shared/images/nav/music-
+
+1.gif',0)" onmouseout="MM_swapImgRestore()" alt="Music" src="/library/shared/images/nav/music-0.gif" border="0"></a><a href="/calendar/search-events.aspx?category=Food+and+Wine"><img id="FoodWineNav" 
+
+onmouseover="MM_swapImage('FoodWineNav','','/library/shared/images/nav/food-and-wine-1.gif',0)" onmouseout="MM_swapImgRestore()" alt="Food &amp; Wine" src="/library/shared/images/nav/food-and-wine-0.gif" border="0"></a><a 
+
+href="/calendar/search-events.aspx?category=Art"><img id="FineArtsNav" onmouseover="MM_swapImage('FineArtsNav','','/library/shared/images/nav/fine-arts-and-crafts-1.gif',0)" onmouseout="MM_swapImgRestore()" alt="Fine Arts 
+
+&amp; Crafts" src="/library/shared/images/nav/fine-arts-and-crafts-0.gif" border="0"></a><a href="/calendar/search-events.aspx?category=Film"><img id="FilmNav" onmouseover="MM_swapImage
+
+('FilmNav','','/library/shared/images/nav/film-1.gif',0)" onmouseout="MM_swapImgRestore()" alt="Film" src="/library/shared/images/nav/film-0.gif" border="0"></a><a href="/calendar/search-events.aspx?category=Kids+and+Family"><img 
+
+id="KidsFamilyNav" onmouseover="MM_swapImage('KidsFamilyNav','','/library/shared/images/nav/kids-and-family-1.gif',0)" onmouseout="MM_swapImgRestore()" alt="Kids &amp; Family" src="/library/shared/images/nav/kids-and-family-
+
+0.gif" border="0"></a></td>
+</tr>
+</table></td></tr>
+</table>
+
+
+
+<table cellpadding="0" cellspacing="0" width="980" align="center" class="BodyTable">
+<tr><td colspan="10">
+
+<table cellpadding="0" cellspacing="0" width="980" align="center" class="no-print SearchBar">
+    <tr>
+        <td width="14" valign="top"></td>
+        <td width="952" valign="top">
+			<table border="0" cellpadding="0" cellspacing="0" width="952" height="39" style="background:url(/library/shared/images/common/search-bg.gif); background-repeat:repeat-x;">
+			<tr>
+				<td width="16"></td>
+				<td width="190"><input name="ctl00$ctl00$SearchBar1$KeywordBox" type="text" value="Search: Events, Orgs, Venues" id="ctl00_ctl00_SearchBar1_KeywordBox" class="ip-search" onfocus="searchClearMe(this);" onblur="searchRestoreMe(this);" defaultVal="Search: Events, Orgs, Venues" submitButtonID="ctl00_ctl00_SearchBar1_SearchSubmitBtn" style="width:180px;" /></td>
+				<td width="10"></td>
+                <td width="16"><img src="/library/shared/images/common/in.gif" border="0" alt="IN" /></td>
+                <td width="15"></td>
+				<td width="145"><input name="ctl00$ctl00$SearchBar1$RegionAndTownBox" type="text" value="Type Town or Region" id="ctl00_ctl00_SearchBar1_RegionAndTownBox" class="ip-search" onfocus="searchClearMe(this);" onblur="searchRestoreMe(this);" defaultVal="Type Town or Region" submitButtonID="ctl00_ctl00_SearchBar1_SearchSubmitBtn" style="width:140px;" /></td>
+                <td width="20"></td>
+				<td width="145"><select name="ctl00$ctl00$SearchBar1$CategoryList" id="ctl00_ctl00_SearchBar1_CategoryList" class="ip-search" submitButtonID="ctl00_ctl00_SearchBar1_SearchSubmitBtn" style="width:145px;">
+	<option selected="selected" value="">All Categories</option>
+	<option value="Agriculture">Agriculture</option>
+	<option value="Animals/Pets">Animals/Pets</option>
+	<option value="Antiques">Antiques</option>
+	<option value="Art">Art</option>
+	<option value="Auctions">Auctions</option>
+	<option value="Auditions">Auditions</option>
+	<option value="Benefits">Benefits</option>
+	<option value="Bridal Shows">Bridal Shows</option>
+	<option value="Business">Business</option>
+	<option value="Car Shows">Car Shows</option>
+	<option value="Chamber/Rotary">Chamber/Rotary</option>
+	<option value="Comedy">Comedy</option>
+	<option value="Community">Community</option>
+	<option value="Concerts">Concerts</option>
+	<option value="Course/Workshop">Course/Workshop</option>
+	<option value="Cultural">Cultural</option>
+	<option value="Dance">Dance</option>
+	<option value="Exhibits">Exhibits</option>
+	<option value="Expo">Expo</option>
+	<option value="Fairs">Fairs</option>
+	<option value="Farmers Market">Farmers Market</option>
+	<option value="Festivals">Festivals</option>
+	<option value="Film">Film</option>
+	<option value="Fine Arts and Crafts">Fine Arts and Crafts</option>
+	<option value="Food and Wine">Food and Wine</option>
+	<option value="Free">Free</option>
+	<option value="Golf">Golf</option>
+	<option value="Health and Fitness">Health and Fitness</option>
+	<option value="History">History</option>
+	<option value="Holiday">Holiday</option>
+	<option value="Home and Garden">Home and Garden</option>
+	<option value="Job Fairs">Job Fairs</option>
+	<option value="Karaoke">Karaoke</option>
+	<option value="Kids and Family">Kids and Family</option>
+	<option value="Lectures">Lectures</option>
+	<option value="Literary">Literary</option>
+	<option value="Meetings">Meetings</option>
+	<option value="Miscellaneous">Miscellaneous</option>
+	<option value="Museum/Gallery">Museum/Gallery</option>
+	<option value="Music">Music</option>
+	<option value="Networking">Networking</option>
+	<option value="Nightlife">Nightlife</option>
+	<option value="Nordic Skiing">Nordic Skiing</option>
+	<option value="Open Mic Night">Open Mic Night</option>
+	<option value="Opera">Opera</option>
+	<option value="Outdoors">Outdoors</option>
+	<option value="Parade">Parade</option>
+	<option value="Political">Political</option>
+	<option value="Religious">Religious</option>
+	<option value="Reunions">Reunions</option>
+	<option value="School events">School events</option>
+	<option value="Seminars">Seminars</option>
+	<option value="Seniors">Seniors</option>
+	<option value="Shows">Shows</option>
+	<option value="Sports">Sports</option>
+	<option value="Teens">Teens</option>
+	<option value="Theater">Theater</option>
+	<option value="Tours">Tours</option>
+	<option value="Yard Sales">Yard Sales</option>
+
+</select></td>
+                <td width="17"></td>
+                <td width="130" align="center"><img src="/library/shared/images/common/search-event-by-date.gif" alt="Search Event By Date" border="0" /></td>
+				<td width="105"><input name="ctl00$ctl00$SearchBar1$FromDateBox" type="text" value="mm/dd/yyyy" id="ctl00_ctl00_SearchBar1_FromDateBox" class="ip-search" onfocus="searchClearMe(this);" onblur="searchRestoreMe(this);" defaultVal="mm/dd/yyyy" submitButtonID="ctl00_ctl00_SearchBar1_SearchSubmitBtn" style="width:90px;" /></td>
+				<td width="17"><input type="image" name="ctl00$ctl00$SearchBar1$FromCalendarBtn" id="ctl00_ctl00_SearchBar1_FromCalendarBtn" src="/library/shared/images/common/calendar.gif" alt="Calendar" border="0" /></td>
+				<td width="15"></td>
+                <td width="90" align="right"><input type="image" name="ctl00$ctl00$SearchBar1$SearchSubmitBtn" id="ctl00_ctl00_SearchBar1_SearchSubmitBtn" src="/library/shared/images/common/search.gif" alt="Search" onclick="NoSubmitPostBack();" border="0" /></td>
+				<td width="16"></td>
+			</tr>
+			</table>
+        </td>
+	    <td width="14" valign="top"></td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    function NoSubmitPostBack() {
+        document.getElementById('formName').value = 'NoSubmitPostBack';
+    }
+</script>
+<script type="text/javascript" src="/zcal/src/calendar-setup.js"></script><script type="text/javascript" src="/zcal/lang/calendar-en.js"></script><script type="text/javascript">
+    Zapatec.Calendar.setup({
+        inputField: "ctl00_ctl00_SearchBar1_FromDateBox",
+        button: "ctl00_ctl00_SearchBar1_FromCalendarBtn",
+        weekNumbers: true,
+        showOthers: false,
+        electric: false,
+        singleClick: true,
+        ifFormat: "%m/%d/%Y",
+        timeInterval: 5,
+        showsTime: false,
+        align: "BL"
+        //position : [300,300]
+    }); 
+
+</script></td></tr>
+<tr>
+	<td width="191" valign="top">
+		<div id="ctl00_ctl00_ctl01_UnknownUser">
+	
+	<table cellpadding="0" cellspacing="0" width="191" >
+	<tr>
+		<td width="14"></td>
+		<td width="160" valign="top">
+			<table cellpadding="0" cellspacing="0" width="160">
+			<tr>
+				<td height="13"></td>
+			</tr>
+			<tr>
+				<td class="greeting">Welcome!</td>
+			</tr>
+			<tr>
+				<td height="3"></td>
+			</tr>
+			<tr>
+				<td class="user-account"><a href="/member/">Sign In</a>  | <a href="/member/registration.aspx">New User</a></td>
+			</tr>
+			</table>
+		</td>
+		<td width="17"></td>
+	</tr>
+	</table>
+
+</div>
+
+
+
+
+
+
+		<table cellpadding="0" cellspacing="0" width="191">
+		<tr>
+		<td width="8"></td>
+		<td width="183" valign="top">
+				<table cellpadding="0" cellspacing="0" width="183">
+				<tr>
+					<td height="13"></td>
+				</tr>
+				<tr>
+					<td>
+
+	<table cellpadding="0" cellspacing="0" width="183">
+	<tbody style="visibility:hidden; display:none;">
+	    <tr>
+		    <td height="13" colspan="2"></td>
+	    </tr>
+	    <tr>
+		    <td colspan="2"><img src="/library/shared/images/common/my-totes-temp.gif" border="0" alt="My Totes" /></td>
+	    </tr>
+	    <tr>
+		    <td height="13" colspan="2"></td>
+	    </tr>
+	    <tr>
+		    <td width="143"><a href="/my-totes/events.aspx"><img src="/library/shared/images/buttons/blue-events.gif" border="0" alt="Add a new event" title="Add a new event" id="btn_events" onmouseover="MM_swapImage('btn_events','','/library/shared/images/buttons/blue-events-1.gif',0)" onmouseout="MM_swapImgRestore()" /></a></td>
+		    <td width="40" style="background:url(/library/shared/images/common/blue-button-bg.gif); background-repeat:no-repeat; width:40px; height:37px;" align="center" class="blue-button-content">
+		    <div style="padding-top:6px; width:40px;"><a href="/my-totes/events.aspx"></a></div></td>
+	    </tr>
+	    <tr><td colspan="2" height="5"></td></tr>
+	    <tr>
+		    <td><a href="/my-totes/venues.aspx"><img src="/library/shared/images/buttons/blue-venues.gif" border="0" alt="Register your venue" title="Register your venue" id="btn_venues" onmouseover="MM_swapImage('btn_venues','','/library/shared/images/buttons/blue-venues-1.gif',0)" onmouseout="MM_swapImgRestore()" /></a></td>
+		    <td style="background:url(/library/shared/images/common/blue-button-bg.gif); background-repeat:no-repeat; width:40px; height:37px;" align="center" class="blue-button-content">
+		    <div style="padding-top:6px; width:40px;"><a href="/my-totes/venues.aspx"></a></div></td>
+	    </tr>
+	    <tr><td colspan="2" height="5"></td></tr>
+	    <tr>
+		    <td><a href="/my-totes/organizations.aspx"><img src="/library/shared/images/buttons/blue-organizations.gif" border="0" alt="Create an organization" title="Create an Organization" id="btn_organizations" onmouseover="MM_swapImage('btn_organizations','','/library/shared/images/buttons/blue-organizations-1.gif',0)" onmouseout="MM_swapImgRestore()" /></a></td>
+		    <td style="background:url(/library/shared/images/common/blue-button-bg.gif); background-repeat:no-repeat; width:40px; height:37px;" align="center" class="blue-button-content">
+		    <div style="padding-top:6px; width:40px;"><a href="/my-totes/organizations.aspx"></a></div></td>
+	    </tr>
+	</tbody>
+	<tr>
+		<td height="13" colspan="2"></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="description" style="padding:0 15px 0 6px;">
+		    NH365 is a different approach to a community calendar for New Hampshire. <a href="/member/registration.aspx">Free registration</a> allows you to:
+			<ul style="margin:8px 0 8px 20px; padding:0px;">
+				<li style="padding-bottom:10px;"><a href="/member/default.aspx?redir=/my-totes/events.aspx">POST AN EVENT</a></li>
+				<li style="padding-bottom:10px;"><a href="/member/default.aspx?redir=/my-totes/organizations.aspx">REGISTER AN ORGANIZATION</a></li>
+				<li style="padding-bottom:10px;"><a href="/member/default.aspx?redir=/my-totes/venues.aspx">REGISTER YOUR VENUE</a></li>
+			</ul>
+			Events will be shared among a growing number of media participants, such as newspapers and radio stations. <a href="/media-participation.aspx">more...</a>
+			<br /><br />
+			The goal of the public-private partnership is to create a comprehensive, shared database of happenings in the Granite State and beyond. <a href="/about-nh365.aspx">more...</a>
+		</td>
+	</tr>
+	<tr>
+		<td height="13" colspan="2"></td>
+	</tr>
+</table>
+<br />
+
+
+</td>
+				</tr>
+				<tr>
+					<td height="13"></td>
+				</tr>
+				<tr>
+					<td align='center'><!-- Begin -  Site: NH365 Zone: NewHampshire.com Skyscraper -->
+<script language="javascript"  type="text/javascript">
+<!--
+var browName = navigator.appName;
+var SiteID = 1;
+var ZoneID = 8;
+var browDateTime = (new Date()).getTime();
+if (browName=='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://stats.nh365.org/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;Browser=NETSCAPE4&amp;PageID=79354&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+if (browName!='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://stats.nh365.org/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;PageID=79354&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+// --> 
+</script>
+<noscript>
+    <a href="http://stats.nh365.org/a.aspx?ZoneID=8&amp;Task=Click&amp;Mode=HTML&amp;SiteID=1&amp;PageID=79354" target="_blank">
+    <img src="http://stats.nh365.org/a.aspx?ZoneID=8&amp;Task=Get&amp;Mode=HTML&amp;SiteID=1&amp;PageID=79354" width="160" height="600" border="0"  alt=""></a>
+</noscript>
+<!-- End -  Site: NH365 Zone: NewHampshire.com Skyscraper -->
+
+
+</td>
+				</tr>
+				<tr>
+					<td height="20"></td>
+				</tr>
+				<tr>
+					<td align='center'>
+</td>
+				</tr>
+				<tr>
+					<td height="15"></td>
+				</tr>
+				<tr>
+					<td align='center'>
+</td>
+				</tr>
+				<tr>
+					<td height="15"></td>
+				</tr>
+				<tr>
+					<td align='center'>
+</td>
+				</tr>
+				<tr>
+					<td height="15"></td>
+				</tr>
+				</table>
+			</td>
+	
+		</tr>
+		</table>
+	</td>
+	<td width="775" valign="top">
+		<table cellpadding="0" cellspacing="0" width="775">
+		<tr>
+			<td height='7'></td>
+		</tr>
+		<tr>
+			<td valign="top" style='padding-left:33px'><!-- Begin -  Site: NH365 Zone: NewHampshire.com Leaderboard -->
+<script language="javascript"  type="text/javascript">
+<!--
+var browName = navigator.appName;
+var SiteID = 1;
+var ZoneID = 5;
+var browDateTime = (new Date()).getTime();
+if (browName=='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://stats.nh365.org/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;Browser=NETSCAPE4&amp;PageID=99850&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+if (browName!='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://stats.nh365.org/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;PageID=99850&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+// --> 
+</script>
+<noscript>
+    <a href="http://stats.nh365.org/a.aspx?ZoneID=5&amp;Task=Click&amp;Mode=HTML&amp;SiteID=1&amp;PageID=99850" target="_blank">
+    <img src="http://stats.nh365.org/a.aspx?ZoneID=5&amp;Task=Get&amp;Mode=HTML&amp;SiteID=1&amp;PageID=99850" width="728" height="90" border="0"  alt=""></a>
+</noscript>
+<!-- End -  Site: NH365 Zone: NewHampshire.com Leaderboard -->
+
+
+</td>
+        </tr>
+		<tr><td height="15"</td></tr>
+		<tr><td>
+</td></tr>
+        </table>
+		
+		
+        
+    <table cellpadding="0" cellspacing="0" width="775">
+    <tr>
+	    <td width="32"></td>
+	    <td width="432" valign="top">
+            
+	
+		<table cellpadding="0" cellspacing="0" width="430" style="border: solid 1px #e0e0e0; background-color:#FFFFFF;" class="no-print">
+		<tr>
+			<td colspan="3"><img src="/library/shared/images/headers/event-listings.gif" border="0" alt="Event Listings" /></td>
+		</tr>
+		<tr>
+			<td width="8"></td>
+			<td width="416" valign="top">
+                
+
+<table cellpadding="0" cellspacing="0" width="414" style="background:url(/library/shared/images/common/event-listings-bg.gif); background-repeat:repeat-y; border: solid 1px #e0e0e0; background-color:#ffffff;">
+<tbody id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_HeaderSectionRows">
+    <tr>
+        <td><input type="image" name="ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$EventNameHeader" id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_EventNameHeader" src="/library/shared/images/common/event-name.gif" alt="Event Name" border="0" /><input type="image" name="ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$VenueCityHeader" id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_VenueCityHeader" src="/library/shared/images/common/venue-city.gif" alt="Venue/City" border="0" /><input type="image" name="ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$DatesHeader" id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_DatesHeader" src="/library/shared/images/common/dates.gif" alt="Dates" border="0" /></td>
+    </tr>
+    <tr>
+        <td height="16"></td>
+    </tr>
+    <tr>
+        <td>
+            <table id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_SortByTable" cellpadding="0" cellspacing="0" align="center" class="featured-events">
+	<tr>
+		<td valign="top">Sort by: Event Name, Date etc:</td>
+		<td style="width:10px;"></td>
+		<td valign="top">
+	                <select name="ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$SortBy" id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_SortBy" class="ip-search">
+			<option selected="selected" value="nosort">Sort By</option>
+			<option value="EventName">Event Name</option>
+			<option value="OrgName">Organization</option>
+			<option value="City">City</option>
+			<option value="StartDateTime">Date</option>
+
+		</select>
+	            </td>
+	</tr>
+	<tr>
+		<td colspan="5">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="5">
+                    <input name="ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$SearchFilterBox" type="text" id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_SearchFilterBox" class="SearchBox" /> <input type="image" name="ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$SearchFilterGo" id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_SearchFilterGo" src="../../library/shared/images/buttons/go-green.gif" alt="GO" align="absbottom" border="0" />
+                </td>
+	</tr>
+</table>
+
+        </td>
+    </tr>
+</tbody>
+<tr>
+    <td>
+        
+    </td>
+</tr>
+<tr>
+    <td height="20"></td>
+</tr>
+<tr>
+    <td align="center">
+        <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+	        <td width="33%" align="left" valign="top" style="padding-left:10px;">
+	            
+	        </td>
+	        <td width="33%" align="center" valign="top" class="pagination">
+		        
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages_ctl00_btnPage" class="pagination_link_selected" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages$ctl00$btnPage','')">1</a>
+		             | 
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages_ctl02_btnPage" class="pagination_link" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages$ctl02$btnPage','')">2</a>
+		             | 
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages_ctl04_btnPage" class="pagination_link" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages$ctl04$btnPage','')">3</a>
+		             | 
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages_ctl06_btnPage" class="pagination_link" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages$ctl06$btnPage','')">4</a>
+		             | 
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages_ctl08_btnPage" class="pagination_link" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages$ctl08$btnPage','')">5</a>
+		             | 
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages_ctl10_btnPage" class="pagination_link" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages$ctl10$btnPage','')">6</a>
+		             | 
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages_ctl12_btnPage" class="pagination_link" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages$ctl12$btnPage','')">7</a>
+		            
+	        </td>
+            <td width="33%" align="right" valign="top" style="padding-right:10px;">
+                <input type="image" name="ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$lnk_Next" id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_lnk_Next" src="/library/shared/images/common/next.gif" border="0" /> 
+                <input type="hidden" name="ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$HiddenPageNum" id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_HiddenPageNum" value="1" />
+            </td>
+        </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td height="20"></td>
+</tr>
+<tr>
+    <td>
+    <table cellpadding="0" cellspacing="0" width="414">
+    
+            <tr>
+	            <td>
+                    <table class="event-listing" cellspacing="0" cellpadding="4" border="0">
+	<tr>
+		<td class="featured-events" valign="top" colspan="6" width="200"><div style="margin-left:15px;"><strong><a href="/calendar/events/art/Exhibit_Mark_Hopkins_A_New_Look_at_Old_Work/62733/dt/241221.aspx" class='eventItem'>Exhibit: Mark Hopkins: A New Look at Old Work</a></strong></div></td>
+	</tr><tr>
+		<td valign="top" colspan="1" rowspan="2" width="14"></td><td valign="top" colspan="1" rowspan="2" width="105"><a href="/calendar/events/art/Exhibit_Mark_Hopkins_A_New_Look_at_Old_Work/62733/dt/241221.aspx"><img src="http://calendar.newhampshire.com/M1/2/9/1/6/4/thumb.png" border="0" alt="Exhibit: Mark Hopkins: A New Look at Old Work" /></a><br /></td><td valign="top" colspan="1" rowspan="2" width="35"></td><td class="featured-events" valign="top" width="120"><a href="/calendar/events/art/Exhibit_Mark_Hopkins_A_New_Look_at_Old_Work/62733/dt/241221.aspx" class='eventItem'>NH Furniture Masters Gallery / Concord</a></td><td valign="top" width="15"></td><td class="featured-events" valign="top" width="115"><a href="/calendar/events/art/Exhibit_Mark_Hopkins_A_New_Look_at_Old_Work/62733/dt/241221.aspx" title="8:30 a.m. to 5 p.m.">Aug. 27, 2013</a></td><td valign="top" width="10"></td>
+	</tr><tr>
+		<td class="featured-events" valign="top" colspan="3" width="200"><a href="/calendar/events/art/Exhibit_Mark_Hopkins_A_New_Look_at_Old_Work/62733/dt/241221.aspx" class='eventItem'>An examination of 20 works created by Canterbury, NH-based furniture maker Mark Hopkins.</a></td>
+	</tr><tr>
+		<td valign="top" height="10"></td>
+	</tr>
+</table>
+                </td>
+            </tr>
+        
+            <tr>
+	            <td>
+                    <table class="event-listing-alt" cellspacing="0" cellpadding="4" border="0">
+	<tr>
+		<td class="featured-events" valign="top" colspan="6" width="200"><div style="margin-left:15px;"><strong><a href="/calendar/events/art/Birds_Birds_and_More_Birds_Photography_Exhibit_by_Udo_Rauter/64019/dt/248978.aspx" class='eventItem'>Birds, Birds and More Birds: Photography Exhibit by Udo Rauter</a></strong></div></td>
+	</tr><tr>
+		<td valign="top" colspan="1" rowspan="2" width="14"></td><td valign="top" colspan="1" rowspan="2" width="105"><a href="/calendar/events/art/Birds_Birds_and_More_Birds_Photography_Exhibit_by_Udo_Rauter/64019/dt/248978.aspx"><img src="http://calendar.newhampshire.com/M1/3/0/2/0/1/thumb.png" border="0" alt="Birds, Birds and More Birds: Photography Exhibit by Udo Rauter" /></a><br /></td><td valign="top" colspan="1" rowspan="2" width="35"></td><td class="featured-events" valign="top" width="120"><a href="/calendar/events/art/Birds_Birds_and_More_Birds_Photography_Exhibit_by_Udo_Rauter/64019/dt/248978.aspx" class='eventItem'>Conservation Center / Concord</a></td><td valign="top" width="15"></td><td class="featured-events" valign="top" width="115"><a href="/calendar/events/art/Birds_Birds_and_More_Birds_Photography_Exhibit_by_Udo_Rauter/64019/dt/248978.aspx" title="9 a.m. to 5 p.m.">Aug. 27, 2013</a></td><td valign="top" width="10"></td>
+	</tr><tr>
+		<td class="featured-events" valign="top" colspan="3" width="200"><a href="/calendar/events/art/Birds_Birds_and_More_Birds_Photography_Exhibit_by_Udo_Rauter/64019/dt/248978.aspx" class='eventItem'>Photographs of the birds of N.E. and beyond by N.H. Soc. of Photographic Artists member Udo Rauter.</a></td>
+	</tr><tr>
+		<td valign="top" height="10"></td>
+	</tr>
+</table>
+                </td>
+            </tr>
+        
+            <tr>
+	            <td>
+                    <table class="event-listing" cellspacing="0" cellpadding="4" border="0">
+	<tr>
+		<td class="featured-events" valign="top" colspan="6" width="200"><div style="margin-left:15px;"><strong><a href="/calendar/events/art/Architecture_and_Design_Morocco_Turkey_and_India/63623/dt/251675.aspx" class='eventItem'>Architecture & Design: Morocco, Turkey and India</a></strong></div></td>
+	</tr><tr>
+		<td valign="top" colspan="1" rowspan="2" width="14"></td><td valign="top" colspan="1" rowspan="2" width="105"><a href="/calendar/events/art/Architecture_and_Design_Morocco_Turkey_and_India/63623/dt/251675.aspx"><img src="http://calendar.newhampshire.com/M1/2/9/8/8/2/thumb.png" border="0" alt="Architecture & Design: Morocco, Turkey and India" /></a><br /></td><td valign="top" colspan="1" rowspan="2" width="35"></td><td class="featured-events" valign="top" width="120"><a href="/calendar/events/art/Architecture_and_Design_Morocco_Turkey_and_India/63623/dt/251675.aspx" class='eventItem'>Hall-McGee Realtors, LLC, Buyers Brokers of the Seacoast Office / Portsmouth</a></td><td valign="top" width="15"></td><td class="featured-events" valign="top" width="115"><a href="/calendar/events/art/Architecture_and_Design_Morocco_Turkey_and_India/63623/dt/251675.aspx" title="9:30 a.m. to 5:30 p.m.">Aug. 27, 2013</a></td><td valign="top" width="10"></td>
+	</tr><tr>
+		<td class="featured-events" valign="top" colspan="3" width="200"><a href="/calendar/events/art/Architecture_and_Design_Morocco_Turkey_and_India/63623/dt/251675.aspx" class='eventItem'>A glimpse of lands afar including Morocco, Turkey and India with Photographer Michael Sterling.</a></td>
+	</tr><tr>
+		<td valign="top" height="10"></td>
+	</tr>
+</table>
+                </td>
+            </tr>
+        
+            <tr>
+	            <td>
+                    <table class="event-listing-alt" cellspacing="0" cellpadding="4" border="0">
+	<tr>
+		<td class="featured-events" valign="top" colspan="6" width="200"><div style="margin-left:15px;"><strong><a href="/calendar/events/art/The_Road_Not_Taken_exhibit/64390/dt/251003.aspx" class='eventItem'>The Road Not Taken exhibit</a></strong></div></td>
+	</tr><tr>
+		<td valign="top" colspan="1" rowspan="2" width="14"></td><td valign="top" colspan="1" rowspan="2" width="105"><a href="/calendar/events/art/The_Road_Not_Taken_exhibit/64390/dt/251003.aspx"><img src="http://calendar.newhampshire.com/M1/3/0/5/2/0/thumb.png" border="0" alt="The Road Not Taken exhibit" /></a><br /></td><td valign="top" colspan="1" rowspan="2" width="35"></td><td class="featured-events" valign="top" width="120"><a href="/calendar/events/art/The_Road_Not_Taken_exhibit/64390/dt/251003.aspx" class='eventItem'>Pembroke Town Library / Pembroke</a></td><td valign="top" width="15"></td><td class="featured-events" valign="top" width="115"><a href="/calendar/events/art/The_Road_Not_Taken_exhibit/64390/dt/251003.aspx" title="10 a.m. to 5 p.m.">Aug. 27, 2013</a></td><td valign="top" width="10"></td>
+	</tr><tr>
+		<td class="featured-events" valign="top" colspan="3" width="200"><a href="/calendar/events/art/The_Road_Not_Taken_exhibit/64390/dt/251003.aspx" class='eventItem'>The Road Not Taken is an art exhibit inspired by the poetry of Robert Frost.</a></td>
+	</tr><tr>
+		<td valign="top" height="10"></td>
+	</tr>
+</table>
+                </td>
+            </tr>
+        
+            <tr>
+	            <td>
+                    <table class="event-listing" cellspacing="0" cellpadding="4" border="0">
+	<tr>
+		<td class="featured-events" valign="top" colspan="6" width="200"><div style="margin-left:15px;"><strong><a href="/calendar/events/art/Melissa_Anne_Miller__Recent_Works/63016/dt/242860.aspx" class='eventItem'>Melissa Anne Miller - Recent Works</a></strong></div></td>
+	</tr><tr>
+		<td valign="top" colspan="1" rowspan="2" width="14"></td><td valign="top" colspan="1" rowspan="2" width="105"><a href="/calendar/events/art/Melissa_Anne_Miller__Recent_Works/63016/dt/242860.aspx"><img src="http://calendar.newhampshire.com/M1/2/9/3/8/9/thumb.png" border="0" alt="Melissa Anne Miller - Recent Works" /></a><br /></td><td valign="top" colspan="1" rowspan="2" width="35"></td><td class="featured-events" valign="top" width="120"><a href="/calendar/events/art/Melissa_Anne_Miller__Recent_Works/63016/dt/242860.aspx" class='eventItem'>McGowan Fine Art / Concord</a></td><td valign="top" width="15"></td><td class="featured-events" valign="top" width="115"><a href="/calendar/events/art/Melissa_Anne_Miller__Recent_Works/63016/dt/242860.aspx" title="10 a.m. to 6 p.m.">Aug. 27, 2013</a></td><td valign="top" width="10"></td>
+	</tr><tr>
+		<td class="featured-events" valign="top" colspan="3" width="200"><a href="/calendar/events/art/Melissa_Anne_Miller__Recent_Works/63016/dt/242860.aspx" class='eventItem'>Recent Works, featuring the paintings of Melissa Anne Miller.</a></td>
+	</tr><tr>
+		<td valign="top" height="10"></td>
+	</tr>
+</table>
+                </td>
+            </tr>
+        
+            <tr>
+	            <td>
+                    <table class="event-listing-alt" cellspacing="0" cellpadding="4" border="0">
+	<tr>
+		<td class="featured-events" valign="top" colspan="6" width="200"><div style="margin-left:15px;"><strong><a href="/calendar/events/art/Bridging_the_Piscataqua_Construction__Community/61364/dt/238099.aspx" class='eventItem'>Bridging the Piscataqua: Construction + Community</a></strong></div></td>
+	</tr><tr>
+		<td valign="top" colspan="1" rowspan="2" width="14"></td><td valign="top" colspan="1" rowspan="2" width="105"><a href="/calendar/events/art/Bridging_the_Piscataqua_Construction__Community/61364/dt/238099.aspx"><img src="http://calendar.newhampshire.com/M1/2/8/1/9/4/thumb.png" border="0" alt="Bridging the Piscataqua: Construction + Community" /></a><br /></td><td valign="top" colspan="1" rowspan="2" width="35"></td><td class="featured-events" valign="top" width="120"><a href="/calendar/events/art/Bridging_the_Piscataqua_Construction__Community/61364/dt/238099.aspx" class='eventItem'>Discover Portsmouth Center / Portsmouth</a></td><td valign="top" width="15"></td><td class="featured-events" valign="top" width="115"><a href="/calendar/events/art/Bridging_the_Piscataqua_Construction__Community/61364/dt/238099.aspx" title="10 a.m. to 5 p.m.">Aug. 27, 2013</a></td><td valign="top" width="10"></td>
+	</tr><tr>
+		<td class="featured-events" valign="top" colspan="3" width="200"><a href="/calendar/events/art/Bridging_the_Piscataqua_Construction__Community/61364/dt/238099.aspx" class='eventItem'>2013 Portsmouth Historical Society presents Bridging the Piscataqua: Construction + Community.</a></td>
+	</tr><tr>
+		<td valign="top" height="10"></td>
+	</tr>
+</table>
+                </td>
+            </tr>
+        
+            <tr>
+	            <td>
+                    <table class="event-listing" cellspacing="0" cellpadding="4" border="0">
+	<tr>
+		<td class="featured-events" valign="top" colspan="6" width="200"><div style="margin-left:15px;"><strong><a href="/calendar/events/art/A_Slice_of_Cheddar__A_Selection_of_Antique_Pennsylvania_Quilts/64466/dt/251910.aspx" class='eventItem'>A Slice of Cheddar - A Selection of Antique Pennsylvania Quilts</a></strong></div></td>
+	</tr><tr>
+		<td valign="top" colspan="1" rowspan="2" width="14"></td><td valign="top" colspan="1" rowspan="2" width="105"><a href="/calendar/events/art/A_Slice_of_Cheddar__A_Selection_of_Antique_Pennsylvania_Quilts/64466/dt/251910.aspx"><img src="http://calendar.newhampshire.com/M1/3/0/5/8/5/thumb.png" border="0" alt="A Slice of Cheddar - A Selection of Antique Pennsylvania Quilts" /></a><br /></td><td valign="top" colspan="1" rowspan="2" width="35"></td><td class="featured-events" valign="top" width="120"><a href="/calendar/events/art/A_Slice_of_Cheddar__A_Selection_of_Antique_Pennsylvania_Quilts/64466/dt/251910.aspx" class='eventItem'>New England Quilt Museum / Lowell</a></td><td valign="top" width="15"></td><td class="featured-events" valign="top" width="115"><a href="/calendar/events/art/A_Slice_of_Cheddar__A_Selection_of_Antique_Pennsylvania_Quilts/64466/dt/251910.aspx" title="10 a.m. to 4 p.m.">Aug. 27, 2013</a></td><td valign="top" width="10"></td>
+	</tr><tr>
+		<td class="featured-events" valign="top" colspan="3" width="200"><a href="/calendar/events/art/A_Slice_of_Cheddar__A_Selection_of_Antique_Pennsylvania_Quilts/64466/dt/251910.aspx" class='eventItem'>A Slice of Cheddar - A Selection of Antique Pennsylvania Quilts</a></td>
+	</tr><tr>
+		<td valign="top" height="10"></td>
+	</tr>
+</table>
+                </td>
+            </tr>
+        
+            <tr>
+	            <td>
+                    <table class="event-listing-alt" cellspacing="0" cellpadding="4" border="0">
+	<tr>
+		<td class="featured-events" valign="top" colspan="6" width="200"><div style="margin-left:15px;"><strong><a href="/calendar/events/art/Barns_by_Carol_VanLoon/64719/dt/253280.aspx" class='eventItem'>Barns by Carol VanLoon</a></strong></div></td>
+	</tr><tr>
+		<td valign="top" colspan="1" rowspan="2" width="14"></td><td valign="top" colspan="1" rowspan="2" width="105"><a href="/calendar/events/art/Barns_by_Carol_VanLoon/64719/dt/253280.aspx"><img src="http://calendar.newhampshire.com/M1/3/0/7/9/6/thumb.png" border="0" alt="Barns by Carol VanLoon" /></a><br /></td><td valign="top" colspan="1" rowspan="2" width="35"></td><td class="featured-events" valign="top" width="120"><a href="/calendar/events/art/Barns_by_Carol_VanLoon/64719/dt/253280.aspx" class='eventItem'>Robert Lincoln Levy Gallery / Portsmouth</a></td><td valign="top" width="15"></td><td class="featured-events" valign="top" width="115"><a href="/calendar/events/art/Barns_by_Carol_VanLoon/64719/dt/253280.aspx" title="10 a.m. to 5 p.m.">Aug. 27, 2013</a></td><td valign="top" width="10"></td>
+	</tr><tr>
+		<td class="featured-events" valign="top" colspan="3" width="200"><a href="/calendar/events/art/Barns_by_Carol_VanLoon/64719/dt/253280.aspx" class='eventItem'>Barns by Carol VanLoon, black & white photographs of barns in NY, NH and ME.</a></td>
+	</tr><tr>
+		<td valign="top" height="10"></td>
+	</tr>
+</table>
+                </td>
+            </tr>
+        
+            <tr>
+	            <td>
+                    <table class="event-listing" cellspacing="0" cellpadding="4" border="0">
+	<tr>
+		<td class="featured-events" valign="top" colspan="6" width="200"><div style="margin-left:15px;"><strong><a href="/calendar/events/art/Open_Studio_Week_FREE_movement_and_art_Classes_all_week/64517/dt/252480.aspx" class='eventItem'>Open Studio Week: FREE movement and art Classes all week</a></strong></div></td>
+	</tr><tr>
+		<td valign="top" colspan="1" rowspan="2" width="14"></td><td valign="top" colspan="1" rowspan="2" width="105"><a href="/calendar/events/art/Open_Studio_Week_FREE_movement_and_art_Classes_all_week/64517/dt/252480.aspx"><img src="http://calendar.newhampshire.com/M1/3/0/6/3/3/thumb.png" border="0" alt="Open Studio Week: FREE movement and art Classes all week" /></a><br /></td><td valign="top" colspan="1" rowspan="2" width="35"></td><td class="featured-events" valign="top" width="120"><a href="/calendar/events/art/Open_Studio_Week_FREE_movement_and_art_Classes_all_week/64517/dt/252480.aspx" class='eventItem'>Studio 550 Community Art Center and Gallery / Manchester</a></td><td valign="top" width="15"></td><td class="featured-events" valign="top" width="115"><a href="/calendar/events/art/Open_Studio_Week_FREE_movement_and_art_Classes_all_week/64517/dt/252480.aspx" title="5 p.m. to 9 p.m.">Aug. 27, 2013</a></td><td valign="top" width="10"></td>
+	</tr><tr>
+		<td class="featured-events" valign="top" colspan="3" width="200"><a href="/calendar/events/art/Open_Studio_Week_FREE_movement_and_art_Classes_all_week/64517/dt/252480.aspx" class='eventItem'>Summer Open Studio Days: FREE Classes all week long.</a></td>
+	</tr><tr>
+		<td valign="top" height="10"></td>
+	</tr>
+</table>
+                </td>
+            </tr>
+        
+            <tr>
+	            <td>
+                    <table class="event-listing-alt" cellspacing="0" cellpadding="4" border="0">
+	<tr>
+		<td class="featured-events" valign="top" colspan="6" width="200"><div style="margin-left:15px;"><strong><a href="/calendar/events/art/Tai_Chi_Bagua_I_Liq_Chuan_Class/59518/dt/252365.aspx" class='eventItem'>Tai Chi, Bagua, I Liq Chuan Class</a></strong></div></td>
+	</tr><tr>
+		<td valign="top" colspan="1" rowspan="2" width="14"></td><td valign="top" colspan="1" rowspan="2" width="105"><a href="/calendar/events/art/Tai_Chi_Bagua_I_Liq_Chuan_Class/59518/dt/252365.aspx"><img src="http://calendar.newhampshire.com/M1/2/6/8/4/3/thumb.png" border="0" alt="Tai Chi, Bagua, I Liq Chuan Class" /></a><br /></td><td valign="top" colspan="1" rowspan="2" width="35"></td><td class="featured-events" valign="top" width="120"><a href="/calendar/events/art/Tai_Chi_Bagua_I_Liq_Chuan_Class/59518/dt/252365.aspx" class='eventItem'>Studio 550 Community Art Center and Gallery / Manchester</a></td><td valign="top" width="15"></td><td class="featured-events" valign="top" width="115"><a href="/calendar/events/art/Tai_Chi_Bagua_I_Liq_Chuan_Class/59518/dt/252365.aspx" title="6 p.m. to 8 p.m.">Aug. 27, 2013</a></td><td valign="top" width="10"></td>
+	</tr><tr>
+		<td class="featured-events" valign="top" colspan="3" width="200"><a href="/calendar/events/art/Tai_Chi_Bagua_I_Liq_Chuan_Class/59518/dt/252365.aspx" class='eventItem'>Learn the basics: Proper body mechanics, martial arts, and full body awareness.</a></td>
+	</tr><tr>
+		<td valign="top" height="10"></td>
+	</tr>
+</table>
+                </td>
+            </tr>
+        
+    <tr>
+        <td height="20"></td>
+    </tr>
+    <tr>
+        <td align="center">
+        <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+	        <td width="33%" align="left" valign="top" style="padding-left:10px;">
+	            
+	        </td>
+	        <td width="33%" align="center" valign="top" class="pagination">
+		        
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages2_ctl00_btnPage" class="pagination_link_selected" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages2$ctl00$btnPage','')">1</a>
+		             | 
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages2_ctl02_btnPage" class="pagination_link" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages2$ctl02$btnPage','')">2</a>
+		             | 
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages2_ctl04_btnPage" class="pagination_link" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages2$ctl04$btnPage','')">3</a>
+		             | 
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages2_ctl06_btnPage" class="pagination_link" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages2$ctl06$btnPage','')">4</a>
+		             | 
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages2_ctl08_btnPage" class="pagination_link" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages2$ctl08$btnPage','')">5</a>
+		             | 
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages2_ctl10_btnPage" class="pagination_link" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages2$ctl10$btnPage','')">6</a>
+		             | 
+		                <a id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_rptPages2_ctl12_btnPage" class="pagination_link" href="javascript:__doPostBack('ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$rptPages2$ctl12$btnPage','')">7</a>
+		            
+	        </td>
+            <td width="33%" align="right" valign="top" style="padding-right:10px;">
+                <input type="image" name="ctl00$ctl00$pageContent$pageContent$ctl00$ctl00$ctl00$eventRepeater$lnk_Next2" id="ctl00_ctl00_pageContent_pageContent_ctl00_ctl00_ctl00_eventRepeater_lnk_Next2" src="/library/shared/images/common/next.gif" border="0" /> 
+            </td>
+        </tr>
+        </table>
+        </td>
+    </tr>
+    <tr>
+        <td height="25"></td>
+    </tr>
+    </table>
+</td>
+</tr>
+</table>
+			</td>
+			<td width="8"></td>
+		</tr>
+		<tr>
+			<td colspan="3" height="5"></td>
+		</tr>
+		</table>
+    
+	
+
+    				
+		    <table cellpadding="0" cellspacing="0" width="432">
+		    <tr>
+			    <td height="25"></td>
+		    </tr>
+		    <tr>
+			    <td><img src="/library/shared/images/common/powered-by-newstote.gif" border="0" alt="Powered by NewsTote" /></td>
+		    </tr>
+		    <tr>
+			    <td height="8"></td>
+		    </tr>
+		    </table>
+	    </td>
+	    <td width="4"></td>
+	    <td width="307" valign="top">
+		    <table cellpadding="0" cellspacing="0" width="300" style='margin-left:7px;'>
+		    <tr>
+			    <td align="right"><!-- Begin -  Site: NH365 Zone: NewHampshire.com Big Square -->
+<script language="javascript"  type="text/javascript">
+<!--
+var browName = navigator.appName;
+var SiteID = 1;
+var ZoneID = 6;
+var browDateTime = (new Date()).getTime();
+if (browName=='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://stats.nh365.org/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;Browser=NETSCAPE4&amp;PageID=31081&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+if (browName!='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://stats.nh365.org/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;PageID=31081&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+// --> 
+</script>
+<noscript>
+    <a href="http://stats.nh365.org/a.aspx?ZoneID=6&amp;Task=Click&amp;Mode=HTML&amp;SiteID=1&amp;PageID=31081" target="_blank">
+    <img src="http://stats.nh365.org/a.aspx?ZoneID=6&amp;Task=Get&amp;Mode=HTML&amp;SiteID=1&amp;PageID=31081" width="300" height="250" border="0"  alt=""></a>
+</noscript>
+<!-- End -  Site: NH365 Zone: NewHampshire.com Big Square -->
+<br />
+
+<!-- Begin -  Site: NH365 Zone: NewHampshire.com Big Square2 -->
+<script language="javascript"  type="text/javascript">
+<!--
+var browName = navigator.appName;
+var SiteID = 1;
+var ZoneID = 53;
+var browDateTime = (new Date()).getTime();
+if (browName=='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://stats.nh365.org/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;Browser=NETSCAPE4&amp;PageID=61005&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+if (browName!='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://stats.nh365.org/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;PageID=61005&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+// --> 
+</script>
+<noscript>
+    <a href="http://stats.nh365.org/a.aspx?ZoneID=53&amp;Task=Click&amp;Mode=HTML&amp;SiteID=1&amp;PageID=61005" target="_blank">
+    <img src="http://stats.nh365.org/a.aspx?ZoneID=53&amp;Task=Get&amp;Mode=HTML&amp;SiteID=1&amp;PageID=61005" width="300" height="250" border="0"  alt=""></a>
+</noscript>
+<!-- End -  Site: NH365 Zone: NewHampshire.com Big Square2 -->
+
+
+
+</td>
+		    </tr>
+		    <tr>
+			    <td height="10"></td>
+		    </tr>
+		    <tr>
+			    <td align="right"><!-- Begin -  Site: NH365 Zone: NewHampshire.com RECT -->
+<script language="javascript"  type="text/javascript">
+<!--
+var browName = navigator.appName;
+var SiteID = 1;
+var ZoneID = 7;
+var browDateTime = (new Date()).getTime();
+if (browName=='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://stats.nh365.org/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;Browser=NETSCAPE4&amp;PageID=6211&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+if (browName!='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://stats.nh365.org/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;PageID=6211&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+// --> 
+</script>
+<noscript>
+    <a href="http://stats.nh365.org/a.aspx?ZoneID=7&amp;Task=Click&amp;Mode=HTML&amp;SiteID=1&amp;PageID=6211" target="_blank">
+    <img src="http://stats.nh365.org/a.aspx?ZoneID=7&amp;Task=Get&amp;Mode=HTML&amp;SiteID=1&amp;PageID=6211" width="300" height="100" border="0"  alt=""></a>
+</noscript>
+<!-- End -  Site: NH365 Zone: NewHampshire.com RECT -->
+
+ <div style="width:300px;height:10px"></div>
+<!-- Begin -  Site: NH365 Zone: NewHampshire.com RECT -->
+<script language="javascript"  type="text/javascript">
+<!--
+var browName = navigator.appName;
+var SiteID = 1;
+var ZoneID = 51;
+var browDateTime = (new Date()).getTime();
+if (browName=='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://stats.nh365.org/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;Browser=NETSCAPE4&amp;PageID=81548&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+if (browName!='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://stats.nh365.org/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;PageID=81548&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+// -->
+</script>
+<noscript>
+    <a href="http://stats.nh365.org/a.aspx?ZoneID=51&Task=Click&Mode=HTML&SiteID=1&PageID=81548" target="_blank">
+
+    <img src="http://stats.nh365.org/a.aspx?ZoneID=51&Task=Get&Mode=HTML&SiteID=1&PageID=81548" width="300" height="100" border="0"  alt=""></a>
+</noscript>
+<!-- End -  Site: NH365 Zone: NewHampshire.com RECT --> 
+</td>
+		    </tr>
+		   <tr><td height="10"></td></tr>
+		    <tr>
+			    <td>
+					<table style="background-color: rgb(255, 255, 255);" class="event-detail-regular" cellspacing="0" cellpadding="0" width="300" align="center">
+    <tbody>
+        <tr>
+            <td colspan="3">
+            <img border="0" alt="Arts &amp; Entertainment Headlines" src="/library/shared/images/headers/morefeaturedevents.jpg" />  </td>
+        </tr>
+        <tr>
+            <td height="20" colspan="3"><br />
+            </td>
+        </tr>
+        <tr>
+            <td width="20"><br />
+            </td>
+            </tr>
+        <tr>
+            <td width="10"><br />
+            </td>
+            <td width="285">
+<script type="text/javascript" language="javascript" src="http://calendar.newhampshire.com/shared/Tools/WidgetGenerator.aspx?guid=ed6330e4-ee60-4041-b471-59e0b8809c2c"></script></td>
+<td width="10"><br />
+</td>
+</tr>
+<tr>
+    <td height="20" colspan="3"><br />
+    </td>
+</tr>
+</tbody>
+</table>
+			    </td>
+		    </tr>	
+		    <tr>
+			    <td height="10"></td>
+		    </tr>
+		
+		    </table>
+	    </td>
+    </tr>
+    </table>
+
+	</td>
+	<td width="14" valign="top"></td>
+</tr>
+<tr><td colspan="10"><table style="background: #798e0d url(/library/shared/images/common/footer-bg.gif) repeat-x scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" class="footer" width="980" align="center" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td colspan="9" valign="top" height="20"><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center"><strong>CATEGORIES</strong></td>
+            <td colspan="3" align="center"><strong>COMMUNITIES</strong></td>
+            <td><br />
+            </td>
+            <td><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9" valign="top" height="15"><br />
+            </td>
+        </tr>
+        <tr valign="top">
+            <td valign="top" width="25"><br />
+            </td>
+            <td valign="top" width="110">
+            <a href="/calendar/search-events.aspx?category=antiques">Antiques</a><br />
+            <a href="/calendar/search-events.aspx?category=Art+Exhibits">Art Exhibits</a><br />
+            <a href="/calendar/search-events.aspx?category=Auctions">Auctions</a><br />
+            <a href="/calendar/search-events.aspx?category=Benefits">Benefits</a><br />
+            <a href="/calendar/search-events.aspx?category=Bridal Shows">Bridal Shows</a><br />
+               <a href="/calendar/search-events.aspx?category=Business">Business</a><br />
+            <a href="/calendar/search-events.aspx?category=Car+Shows">Car Shows</a><br />
+            <a href="/calendar/search-events.aspx?category=Comedy">Comedy</a><br />
+            <a href="/calendar/search-events.aspx?category=Community">Community</a><br />
+            <a href="/calendar/search-events.aspx?category=Concerts">Concerts</a><br />
+            <a href="/calendar/search-events.aspx?category=Cultural+Events">Cultural Events</a><br />
+            <a href="/calendar/search-events.aspx?category=Dance">Dance</a><br />
+            <a href="/calendar/search-events.aspx?category=Fairs">Fairs</a><br />
+            <a href="/calendar/search-events.aspx?category=Films">Films</a><br />
+            <a href="/calendar/search-events.aspx?category=Food+&amp;+Wine">Food &amp; Wine</a><br />
+            </td>
+            <td valign="top" width="130">
+            <a href="/calendar/search-events.aspx?category=Free">Free</a><br />
+            <a href="/calendar/search-events.aspx?category=Gardening">Gardening</a><br />
+            <a href="/calendar/search-events.aspx?category=Golf">Golf</a><br />
+            <a href="/calendar/search-events.aspx?keyword=&amp;category=health+and+fitness">Health &amp; Fitness</a><br />
+            <a href="/calendar/search-events.aspx?category=Job Fairs">Job Fairs</a><br />
+            <a href="/calendar/search-events.aspx?category=kids+and+family">Kids &amp; Families</a><br />
+            <a href="/calendar/search-events.aspx?category=Lectures">Lectures</a><br />
+            <a href="/calendar/search-events.aspx?category=Literary">Literary</a><br />
+            <a href="/calendar/search-events.aspx?category=Meetings">Meetings</a><br />
+            <a href="/calendar/search-events.aspx?category=Miscellaneous">Miscellaneous</a><br />
+            <a href="/calendar/search-events.aspx?keyword=&amp;category=museums+and+galleries">Museums &amp; Galleries</a><br />
+            <a href="/calendar/search-events.aspx?category=Music">Music</a><br />
+            <a href="/calendar/search-events.aspx?category=Networking+Events">Networking Events</a><br />
+            <a href="/calendar/search-events.aspx?category=Open Mic Night">Open Mic Night</a><br />
+            </td>
+            <td valign="top" width="140">
+            <a href="/calendar/search-events.aspx?category=Opera">Opera</a><br />
+            <a href="/calendar/search-events.aspx?category=Outdoors">Outdoors</a><br />
+            <a href="/calendar/search-events.aspx?category=Parade">Parade</a><br />
+            <a href="/calendar/search-events.aspx?category=Political">Political</a><br />
+            <a href="/calendar/search-events.aspx?category=Religious">Religious</a><br />
+            <a href="/calendar/search-events.aspx?category=Reunions">Reunions</a><br />
+            <a href="/calendar/search-events.aspx?category=School+Events">School Events</a><br />
+            <a href="/calendar/search-events.aspx?category=Seminars">Seminars</a><br />
+            <a href="/calendar/search-events.aspx?category=Shows">Shows</a><br />
+            <a href="/calendar/search-events.aspx?category=Sports">Sports</a><br />
+            <a href="/calendar/search-events.aspx?category=Theater">Theatre</a><br />
+            <a href="/calendar/search-events.aspx?category=Tours">Tours</a><br />
+            <a href="/calendar/search-events.aspx?category=Workshops">Workshops</a><br />
+            <a href="/calendar/search-events.aspx?category=yard+sales">Yard Sales</a>
+            </td>
+            <td valign="top" width="100">
+            <a href="http://www.nh365.org/calendar/search-events.aspx?keyword=Bedford">Bedford</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Berlin">Berlin</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Bow">Bow</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Claremont">Claremont</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Concord"><strong>Concord</strong></a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Conway">Conway</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Derry"><strong>Derry</strong></a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Dover"><strong>Dover</strong></a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Durham">Durham</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Epping">Epping</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Exeter">Exeter</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Farmington">Farmington</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Goffstown">Goffstown</a>
+             <br />
+            <a href="/calendar/search-events.aspx?keyword=Greenland">Greenland</a>
+            </td>
+            <td valign="top" width="100">
+            <a href="http://www.nh365.org/calendar/search-events.aspx?keyword=Hampton">Hampton</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Hanover">Hanover</a>
+            <br />
+              <a href="/calendar/search-events.aspx?keyword=Hillsborough">Hillsborough</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Hooksett">Hooksett</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Hudson">Hudson</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Keene">Keene</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Laconia"><strong>Laconia</strong></a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Lancaster">Lancaster</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Littleton">Littleton</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Londonderry">Londonderry</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Loudon">Loudon</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Manchester"><strong>Manchester</strong>
+            <br />
+            </a><a href="/calendar/search-events.aspx?keyword=Merrimack">Merrimack</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Milford">Milford</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Nashua"><strong>Nashua</strong></a>
+            </td>
+            <td valign="top" width="100">
+            <a href="/calendar/search-events.aspx?keyword=New+Boston">New Boston</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Newmarket">Newmarket</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Plaistow">Plaistow</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Plymouth">Plymouth</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Portsmouth"><strong>Portsmouth</strong></a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Raymond">Raymond</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Rochester"><strong>Rochester</strong></a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Rye">Rye</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Salem">Salem</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Somersworth">Somersworth</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Sunapee">Sunapee</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Suncook">Suncook</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Tilton">Tilton</a>
+            <br />
+            <a href="/calendar/search-events.aspx?keyword=Windham">Windham</a>
+            </td>
+            <td valign="top" width="155" align="right">
+            <strong>Sarah Neveu<br />100 William Loeb Drive<br />
+            Manchester, NH 03109<br />
+            tel. 603.206.1596<br />
+           sarah@newstote.com
+</strong>
+            <br />
+            <br />
+            <a href="/about-nh365.aspx">About NH365</a><br />
+            <a href="/advertising.aspx">Advertising</a><br />
+            <a href="/media-participation.aspx">Media Participation</a><br />
+             <a href="/faq.aspx">NH365 FAQ</a><br />
+            <a href="/user-agreement.aspx">User Agreement</a><br />
+            <a href="/privacy-policy.aspx">Privacy Policy</a><br />
+            <br />
+            <a href="http://www.newstote.com"><img src="/library/shared/images/common/footer-graphic.gif" alt="NewsTote" border="0" /></a>
+            </td>
+            <td valign="top" width="30"><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9" valign="top" height="25"><br />
+            </td>
+        </tr>
+    </tbody>
+</table></td></tr>
+</table>
+
+
+</div>
+
+</form>
+
+<script type="text/javascript">
+    function NoSubmitPostBack()
+    {
+        document.getElementById('formName').value = 'NoSubmitPostBack';
+    }
+</script>
+
+
+
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker('UA-10016770-4');
+        pageTracker._trackPageview();
+    } catch(err) {}
+</script>
+</body>
+</html>

@@ -1,0 +1,3484 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" lang="en" xml:lang="en">
+<!--DateBased Archives-->
+<head>
+<title>Celebrity Illness - Ministry of Gossip - latimes.com</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="Celebrities, celebrity gossip, celebrity pictures, Hollywood, scandals" />
+<meta name="description" content="The gospel on celebrity news, gossip and pop culture from the Los Angeles Times" />
+
+
+<link rel="alternate" type="application/atom+xml" title="Ministry of Gossip Atom 1.0" href="http://latimesblogs.latimes.com/gossip/atom.xml" />
+<link rel="alternate" type="application/rss+xml" title="Ministry of Gossip RSS 2.0" href="http://feeds.latimes.com/MinistryOfGossip?format=xml" />
+
+<!--FACEBOOK-->
+<meta property="og:image" content="http://latimesblogs.latimes.com/fb.jpg" />
+<meta property="fb:admins" content="100000786395051" /> 
+<meta property="fb:app_id" content="166941536699790" />
+<link rel="shortcut icon" type="image/x-icon" href="http://theenvelope.latimes.com/favicon.ico" />
+<link href="http://latimesblogs.latimes.com/common/hive-reset.css" media="all" rel="stylesheet" type="text/css" />
+<link href="http://www.latimes.com/includes/css/latblogscompressed.css" media="all" rel="stylesheet" type="text/css" />
+<link href="http://latimesblogs.latimes.com/common/common-flex.css" media="all" rel="stylesheet" type="text/css" />
+<link type="text/css" href="http://latimesblogs.latimes.com/common/adv_search.css" media="all" rel="stylesheet" />
+<link type="text/css" href="http://latimesblogs.latimes.com/common/print.css" media="print" rel="stylesheet" />
+<link href="http://latimesblogs.latimes.com/common/photogallery.css" media="all" rel="stylesheet" type="text/css" />
+
+<!--SSOR Start CSS -->
+
+<link href="http://www.latimes.com/hive/stylesheets/ssor.css" media="all" rel="stylesheet" type="text/css" />
+<link href="http://www.latimes.com/hive/stylesheets/registration_signin/registration.css" media="all" rel="stylesheet" type="text/css" />
+
+<!-- Additional SSOR styles -->
+<style type="text/css">
+	#ssorNavHeader {background-color:transparent !important; color:#000; height: 23px !important; zoom:1;}
+	div#classBarNav #ssorNavSignIn span.link, div#classBarNav #ssorNavSignIn a, div#classBarNav #ssorNavSignIn span {color:#000 !important;}
+	#ssorMiniModal {background-color:#fff !important; border:1px solid #000; padding:3px 3px 3px 10px;}
+	#ssorNavSignIn.loggedIn .userName {background:url("http://www.latimes.com/extras/ssor_down_arrow.png") no-repeat 0 2px;}
+	#ssorNavSignIn.loggedIn #ssorNavHeader {padding-top:0px !important;}
+</style>
+
+<!--[if lt IE 9]>
+<style type="text/css">
+	#ssorNavHeader {padding-top:10px !important;}
+	#ssorNavSignIn.loggedIn #ssorNavHeader {padding-top:10px !important;}
+</style>
+<![endif]-->
+	
+<!--SSOR End CSS -->
+
+<!--[if lte IE 6]>
+		<link href="http://latimesblogs.latimes.com/common/ie6-styles-ben.css" media="all" rel="stylesheet" type="text/css" />
+	<![endif]-->
+
+<script type="text/javascript" src="http://www.latimes.com/includes/projects//js/jquery/jquery-1.4.2.min.js"></script>
+
+<script type="text/javascript">
+jQuery.noConflict();
+        
+/******************************************
+Ad Refresh
+******************************************/
+	ad_swapper = {
+		init : function () {
+			// Grab the container divs for the iframes		
+			this.bannerCont = document.getElementById('leaderContainer');
+			this.cubeCont = document.getElementById('cubeContainer');
+			this.skyCont = document.getElementById('skyContainer');
+			// Now, we have to make a copy of what's in the container divs so we can wipe them on refresh
+			// This is necessary because friendly iframes allow the expandable ads to write code in the DOM of the parent document. When we refresh, we have to wipe any extra code outside of the iframes to make way for the new ad
+			this.bannerHTML = this.bannerCont.innerHTML;
+			this.cubeHTML = this.cubeCont.innerHTML;
+			this.skyHTML = this.skyCont.innerHTML;
+			return this.load();
+		},
+		clear : function () {
+			this.bannerCont.innerHTML = this.bannerHTML;
+			this.cubeCont.innerHTML = this.cubeHTML;
+			this.skyCont.innerHTML = this.skyHTML;
+		},
+		load : function () {
+			document.getElementById("BannerAd").src = 'http://latimesblogs.latimes.com/gossip/leaderboard.html';
+			document.getElementById("CubeAd").src = 'http://latimesblogs.latimes.com/gossip/cubead.html';
+			document.getElementById("SkyAd").src = 'http://latimesblogs.latimes.com/gossip/skyad.html';
+		},
+		swap : function () {
+			this.clear();
+			this.load();
+		}
+	};
+
+    jQuery(document).ready(function(){
+		// Finally, we can actually wait until document.ready to set the SRC of the ad frames (there is no SRC by default), making the ads the last thing loaded on the page.
+        ad_swapper.init();
+
+        function get_twitter_count(url){
+
+        }
+
+        jQuery('div.tweet_container').each(function(){
+        	var url = jQuery(this).attr('data-url');
+        	var that = this;
+        	jQuery.ajax({
+			    url: "http://urls.api.twitter.com/1/urls/count.json?url=" + url,
+			    dataType: 'jsonp',
+			    success: function(data){
+				    jQuery('div.tweet_count', that).html(data.count);
+				},
+				error: function(){
+
+				}
+			});        	
+        });
+    });
+
+function count_increase(element) {
+    var eso = jQuery(element);
+    var count_div = jQuery("div.tweet_count", eso.parent());
+    if(!count_div.data("has_clicked")) {
+        var count = count_div.html();
+        if(count) {
+            count = parseInt(count, 10) + 1;
+        }
+        else {
+            count = 1;
+        }
+        count_div.html(count);
+        count_div.data("has_clicked", true);
+    }
+}
+
+function font_size(toggle) {
+	var post_body_selector = jQuery('.entry-content');
+	var current_size = parseInt(post_body_selector.css('font-size').replace('px', ''));
+	if (toggle === 'up'){
+		post_body_selector.css({'font-size': (current_size + 1) + 'px'})
+	}
+	else if (toggle === 'down'){
+		post_body_selector.css({'font-size': (current_size - 1) + 'px'})
+	}
+}
+
+</script>
+
+
+<!-- new share this -->
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'36650b5b-75ed-4ed7-9d8c-0d19a44309a5', onhover: false});</script>
+
+<script src="http://latimesblogs.latimes.com/common/adv_search.js" type="text/javascript"></script> 
+
+<!-- GOOGLE FEED API -->
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAHIAK-cNeRHqEa2rZN_8ojRR_JaWt-qqAK1ijXjq80nxiBFAzoRQ5cVR_J40prGXzcVU9JpeOU-01dA"></script>
+
+<script type="text/javascript">
+google.load("feeds", "1")
+</script>
+
+<script src="http://latimesblogs.latimes.com/common/cookies.js" type="text/javascript"></script>
+<script src="http://latimesblogs.latimes.com/common/menu.js" type="text/javascript"></script>
+
+<script language="javascript" type="text/javascript" src="http://latimesblogs.latimes.com/common/Tacoda_AMS_DDC_Header.js"></script>
+
+<script type="text/javascript" src="http://latimesblogs.latimes.com/gossip/photogallery.js">
+</script>
+
+<!--SSOR Start-->
+
+	    <script src="http://www.latimes.com/hive/javascripts/jquery.cookies.2.1.0.min.js"></script>
+	    <script src="http://www.latimes.com/hive/javascripts/xd/xd.core.js"></script>
+	    <script src="http://www.latimes.com/hive/javascripts/xd/xd.ajax.js"></script>
+	
+ 		<script>
+            xd.configure({
+                 'https://latimes.signon.trb.com':{ 
+                     sender : 'https://latimes.signon.trb.com/registration/xd/xd_sender.htm',
+                     receiver : '/common/xd_receiver.html'
+                 },
+                 'http://www.latimes.com':{ 
+                     sender : 'http://www.latimes.com/hive/common/includes/xd_sender.html',
+                     receiver : '/common/xd_receiver.html'
+                 }
+             });
+        </script>
+
+	    <script src="http://www.latimes.com/hive/javascripts/signon/carnival.js?v=2011s5"></script>
+  		<script>
+        carnival.init({"hostname":"https://latimes.signon.trb.com","apiKey":"","product":"lanews", "xd":"1", "activateMessages":"true",
+         "ssorNavBackgroundColor":"#000000", "ssorModalTextColor":"", "skipNewsletters":"0"
+          , "captchaType" : "reCaptcha", "ssorSignInLinkUrl":"", "ssorSignUpLinkUrl":"", "originHost":"http://www.latimes.com" });
+        </script>
+
+
+	    <script src="http://www.latimes.com/hive/javascripts/signon/ssor.js?v=2011s5"></script>
+	    
+    <script>
+    	jQuery( function(){
+        	var a = new memberNav( '#memberLoginInfo'
+    		,null,
+    		function(){
+    		    
+ 
+    			var backgroundColor = carnival.configuration( 'ssorNavBackgroundColor' ) || "";
+    			var navLocation = jQuery( '#memberLoginInfo' );
+    			navLocation.html('');
+    		    
+    		    var navLocation = jQuery( '#memberLoginInfo' );
+    			navLocation.html('');
+                var navTemplate = '<div id="ssorNavSignIn">'+
+    									'<div id="ssorNavHeader">'+
+    										'<a id="signInLink" href="/common/modal.html" class="link">Sign In</a>'+
+    										'<span> or </span>'+
+    										'<span id="signUpLink" class="link" >Sign Up</span>'+
+    									'</div>'+
+    								'</div>';
+
+    			navLocation.append( navTemplate );
+    			
+    			if( backgroundColor ){
+    				jQuery( '#ssorNavHeader' ).css( 'background-color', backgroundColor );	
+    			}
+
+    			carnival.utils.changeTextColor();
+    			
+    			jQuery('#signInLink').click(function(){
+                	//carnival.modal.popit launches the modal window - 'this' allows the element href target to be passed into the modal by the method
+                	return carnival.modal.popit(this);
+                });
+                
+                jQuery("#signUpLink").click( function(){
+                      carnival.utils.listener.fire("registration");
+                });
+            
+		    }).writeNav();
+	    });
+    </script>
+	<script src="http://www.latimes.com/hive/javascripts/registration_signin/registration-global.js"></script>
+	<script>
+	  registration.manager.config.initialize({
+	     productCode: "lanews",
+	     brandingSiteName: "latimes.com",
+	     registrationHostname: "https://latimes.signon.trb.com"
+	   });
+	</script>
+<!--SSOR End-->
+<!--Meter Start-->
+ 	<script>
+        jQuery.ajax({
+            url: '//' + (location.protocol=='https:' ? 's' : 'www') + '.tribdss.com/meter/latweb.js',
+            dataType: 'script',
+            cache: true,
+            success: function() {                
+                trb.meteringService.modalCloseUrl = 'http://latimesblogs.latimes.com/common/reg-modal-close.html?';
+            }
+        });
+    </script>
+
+<!--Meter End-->
+
+</head>
+
+<body>
+<div id="container" class="">
+<div id="branding">
+	<!-- TOPPER -->
+	<div id="classified-bar" class="clearfix">
+		<div id="classBarNav">
+			<ul class="classBarNavMember">
+				<li id="memberLoginInfo">
+					<!-- Hello Visitor -->
+				</li>
+			</ul>
+			<ul class="classBarNavLink">
+<li id="tooltipPlace"><a class="toolTip" rel="Follow us on Facebook. Click Like, and we&#39;ll send top stories and features to your News Feed."><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Flatimes&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px; z-index: 2137483604;  position: relative; top: -4px; left: -10px; margin-bottom: -6px;" allowTransparency="true"></iframe></a></li>
+				<li> <a href="http://www.latimes.com/services/site/self-service/">Subscribe/Manage Account</a> </li>
+				<li> <a href="https://advertise.latimes.com/portal/page/portal/LA%2520Times">Place Ad</a> </li>
+				<li> <a href="http://store.latimes.com/">LAT Store</a> </li>
+				<li> <a href="http://www.latimes.com/classified/jobs">Jobs</a> </li>
+				<li> <a href="http://www.latimes.com/classified/automotive/">Cars</a> </li>
+				<li> <a href="http://www.latimes.com/classified/realestate">Real Estate</a> </li>
+				<li> <a href="http://www.latimes.com/classified/realestate/rentals">Rentals</a> </li>
+				<li> <a href="http://www.latimes.com/classified">Classifieds</a> </li>
+				<li> <a href="http://www.latimes.com/custompublishing/">Custom Publishing</a> </li>
+			</ul>
+		</div>
+		<!-- close #classBarNav -->
+	</div>
+	<!-- close #classified-bar -->
+	<!-- HEADER -->
+	<div id="header" class="   smallLogo clearfix">
+		<!-- <div id="headerAd" id="headerAdHolder1"></div> -->
+		<div id="logo"> <a href="http://www.latimes.com" alt="Home" title="latimes.com"> <img src="http://latimesblogs.latimes.com/lat_header_logo.gif" alt="latimes.com" /> </a> </div>
+		<!-- close #logo -->
+		<span id="sectionBreadcrumb"><a href="http://www.latimes.com/entertainment/news/">Entertainment</a></span></div>
+	<!-- close #header -->
+	<!-- NAVBAR -->
+	<div id="navigation" class="clearfix">
+		<div id="layerOne">
+			<!-- root -->
+<ul id="root">
+    <!--ccc-->
+    <li class="navLink hideMainNav">
+        <a href="/" 
+
+class="mainNav"  >
+            <span>HOME</span>
+        </a>
+        <ul class="level2">
+            <li>
+                <a href="#"  > <b></b>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="navLink ">
+        <a href="http://www.latimes.com/news/local/" class="mainNav"  >
+            <span>LOCAL</span>
+        </a>
+        <ul class="level2">
+            <li>
+                <a href="http://www.latimes.com/local/lanow/"  >L.A. Now</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/local/politics/"  >Politics</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/local/crime/"  >Crime</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/local/education/"  >Education</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/local/orange/"  >O.C.</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/local/westside/" >Westside</a>
+            </li>
+            <li>
+                <a href="http://projects.latimes.com/mapping-la/neighborhoods/" >Neighborhoods</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/science/">Environment</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/obituaries/"  >Obituaries</a>
+            </li>
+            <li>
+                <a href="http://datadesk.latimes.com/"  >Data &amp; Maps</a>
+            </li>            
+        </ul>
+    </li>
+
+    <li class="navLink ">
+        <a href="http://www.latimes.com/news/nationworld/nation/" class="mainNav"  >
+            <span>U.S.</span>
+        </a>
+        <ul class="level2">
+
+            <li>
+                <a href="http://www.latimes.com/news/nationworld/nation/politics">Politics</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/nation/nationnow/">Nation Now</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/politics/">Politics Now</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/politics/topoftheticket">Top of the Ticket</a>
+            </li>
+
+            <li>
+                <a href="http://www.latimes.com/news/science/"  >Science</a>
+            </li>
+
+            <li>
+                <a href="http://www.latimes.com/news/science/sciencenow/"  >Science Now</a>
+            </li>
+
+            <li>
+                <a href="http://www.latimes.com/news/obituaries/"  >Obituaries</a>
+            </li>
+
+            <li>
+                <a href="http://www.latimes.com/news/local/religion/"  >Religion</a>
+            </li>
+
+        </ul>
+    </li>
+
+    <li class="navLink ">
+        <a href="http://www.latimes.com/news/nationworld/world/" class="mainNav"  >
+            <span>WORLD</span>
+        </a>
+        <ul class="level2">
+
+            <li>
+                <a href="http://www.latimes.com/news/world/worldnow/"  >World Now</a>
+            </li>
+
+            <li>
+                <a href="http://www.latimes.com/news/nationworld/world/afghanistan/"  >Afghanistan war</a>
+            </li>
+
+            <li>
+                <a href="http://www.latimes.com/news/nationworld/world/africa/"  >Africa</a>
+            </li>
+
+            <li>
+                <a href="http://www.latimes.com/news/nationworld/world/latinamerica/"  >Americas</a>
+            </li>
+
+            <li>
+                <a href="http://www.latimes.com/news/nationworld/world/asia/"  >Asia</a>
+            </li>
+
+            <li>
+                <a href="http://www.latimes.com/news/nationworld/world/europe/"  >Europe</a>
+            </li>
+
+            <li>
+                <a href="http://www.latimes.com/news/nationworld/world/middleeast/"  >Middle East</a>
+            </li>
+
+        </ul>
+    </li>
+
+    <li class="navLink ">
+        <a href="http://www.latimes.com/business/" class="mainNav"  >
+            <span>Business</span>
+        </a>
+        <ul class="level2">
+
+            <li>
+                <a href="http://www.latimes.com/business/money/"  >Money & Co.</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/business/technology/"  >Technology</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/business/autos/"  >Highway 1</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/entertainment/envelope/cotown/"  >Company Town</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/business/personalfinance/"  >Personal Finance</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/classified/jobs/"  >Jobs</a>
+
+            </li>
+            <li>
+                <a href="http://www.latimes.com/classified/realestate/"  >Real Estate</a>
+            </li>
+            <li class="shop">
+                <a href="http://www.latimes.com/classified/automotive/">Cars</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="navLink ">
+        <a href="http://www.latimes.com/sports/" class="mainNav"  >
+            <span>SPORTS</span>
+        </a>
+        <ul class="level2">
+
+            <li>
+                <a href="http://www.latimes.com/sports/sportsnow/"  >Sports Now</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/sports/basketball/nba/lakers/"  >Lakers</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/sports/basketball/nba/clippers/"  >Clippers</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/sports/baseball/mlb/dodgers/"  >Dodgers</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/sports/baseball/mlb/angels/"  >Angels</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/sports/football/nfl/"  >NFL</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/sports/hockey/nhl/kings/"  >Kings</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/sports/hockey/nhl/"  >NHL/Ducks</a>
+            </li>
+
+            <li>
+                <a href="http://www.latimes.com/sports/college/usc/"  >USC</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/sports/college/ucla/"  >UCLA</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/sports/highschool/"  >Preps</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/sports/scores/"  >Scores</a>
+            </li>
+
+        </ul>
+    </li>
+
+    <li class="navLink ">
+        <a href="http://www.latimes.com/entertainment/news/" class="mainNav"  >
+            <span>ENTERTAINMENT</span>
+        </a>
+        <ul class="level2">
+            <li>
+                <a href="http://www.latimes.com/entertainment/news/movies"  >Movies</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/entertainment/news/tv/"  >Television</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/entertainment/news/music/"  >Music</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/entertainment/gossip/"  >Celebrity</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/entertainment/news/arts/"  >Arts & Culture</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/entertainment/envelope/cotown/">Industry</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/entertainment/envelope/"  >Awards: The Envelope</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/entertainment/news/calendar/"  >Calendar</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/features/books/"  >Books</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/entertainment/funstuff/comics/"  >Comics</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="navLink ">
+        <a href="http://www.latimes.com/health/" class="mainNav"  >
+            <span>Health</span>
+        </a>
+        <ul class="level2">
+            <li>
+                <a href="http://www.latimes.com/health/boostershots/"  >Booster Shots</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/science/sciencenow/"  >Science Now</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/health/medicine/"  >Medicine</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/health/"  >Fitness & Nutrition</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/health/mentalhealth/"  >Mental Health</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/health/healthcare/"  >Health Reform</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/health/cancer"  >Cancer</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="navLink ">
+        <a href="http://www.latimes.com/features/" class="mainNav"  >
+            <span>Living</span>
+        </a>
+        <ul class="level2">
+
+            <li>
+                <a href="http://latimesblogs.latimes.com/home_blog/"  >Home</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/features/food/"  >Food</a>
+            </li>
+            <li>
+                <a href="http://latimesblogs.latimes.com/alltherage/"  >Image</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/features/books/"  >Books</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/features/home/la-hm-affairs-sg,0,674991.storygallery"  >L.A. Affairs</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/features/summer"  >Summer Guide</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/entertainment/funstuff/comics/"  >Comics</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/yourscene/"  >Reader Photos</a>
+            </li>
+        </ul>
+    </li>
+    <li class="navLink ">
+        <a href="http://www.latimes.com/travel/" class="mainNav"  >
+            <span>Travel</span>
+        </a>
+        <ul class="level2">
+            <li>
+                <a href="http://www.latimes.com/travel/destinations/california/"  >California</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/travel/destinations/hawaii/"  >Hawaii</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/travel/destinations/mexico/"  >Mexico</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/travel/destinations/lasvegas/" >Las Vegas</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/travel/destinations/europe/"  >Europe</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/travel/destinations/asia/">Asia</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/travel/destinations/australiasouthpacific/">Australia</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/travel/deals/"  >Travel & Deal Blog</a>
+            </li>
+
+        </ul>
+    </li>
+    <li class="navLink ">
+        <a href="http://www.latimes.com/news/opinion/" class="mainNav"  >
+            <span>Opinion</span>
+        </a>
+        <ul class="level2">
+            <li>
+                <a href="http://www.latimes.com/news/opinion/editorials/"  >Editorials</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/opinion/op-ed/"  >Op-Ed</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/opinion/letters/"  >Letters</a>
+            </li>
+            <li>
+                <a href="http://www.latimes.com/news/opinion/opinion-la/"  >Opinion L.A.</a>
+            </li>
+            <li>
+                <a href="http://latimesblogs.latimes.com/readers/"  >Reader's Rep</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="navLink shop ">
+
+        <a href="http://www.latimes.com/shopping/theLShop/" class="mainNav" name="&lpos=Main&lid=Shop"  ><span>Shop</span></a>
+
+        <ul class="level2">
+
+            <li class="shop">                                         
+                <a href="http://dailydeals.latimes.com" name="&lpos=Sub&lid=Daily Deals"  >Daily Deals</a>
+             </li>
+             <li class="TomPetty">                                       
+                <a href="http://www.latimes.com/shopping/traveloffers" name="&lpos=Sub&lid=Travel Offers"  >Travel Offers</a>
+            </li>                     
+            <li class="TomPetty">                                        
+                <a href="http://www.latimes.com/shopping/savings-center/" name="&lpos=Sub&lid=Coupons"  >Coupons</a>
+            </li>                                 
+             <li class="shop">
+                 <a href="http://circulars.latimes.com" name="&lpos=Sub&lid=Weekly Circulars"  >Weekly Circulars</a>
+            </li>                               
+            <li class="TomPetty">                                           
+                <a href="http://offersanddeals.latimes.com/" name="&lpos=Sub&lid=Offers & Deals"  >Offers & Deals</a>
+            </li>                                     
+            <li class="shop">                                          
+                <a href="http://fanshop.latimes.com/?sourceid=LATHomepage" name="&lpos=Sub&lid=Sports Gear"  >Sports Gear</a>
+            </li>                            
+            <li class="shop">                                       
+                <a href="http://store.latimes.com" name="&lpos=Sub&lid=LA Times Product"  >LA Times Product</a>
+            </li>                              
+            <li class="shop">
+                                            
+                <a href="http://www.latimes.com/shopping/theLShop/" name="&lpos=Sub&lid=See More"  >See More</a>
+            </li>
+
+        </ul>
+
+    </li>
+
+    <li class="navLink hideMainNav">
+        <a href="http://mobile.latimes.com/wap/pda/stations/3/" class="mainNav"  >Mobile Site</a>
+    </li>
+    <li class="navLink hideMainNav">
+        <a href="https://myaccount.latimes.com/index.jsp" class="mainNav"  >Subscribe / Manage Account</a>
+    </li>
+    <li class="navLink hideMainNav">
+        <a href="http://latimes.p2ionline.com/shoppingchannel/splash.aspx" class="mainNav"  >Print Ads</a>
+    </li>
+    <li class="navLink hideMainNav">
+        <a href="https://advertise.latimes.com/portal/page/portal/LA%2520Times" class="mainNav"  >Place an Ad</a>
+    </li>
+    <li class="navLink hideMainNav">
+        <a href="http://store.latimes.com/" class="mainNav"  >LAT Store</a>
+    </li>
+    <li class="navLink hideMainNav">
+        <a href="http://www.latimes.com/classified/jobs/" class="mainNav"  >Jobs</a>
+    </li>
+    <li class="navLink hideMainNav">
+        <a href="http://www.latimes.com/classified/automotive/" class="mainNav">Cars</a>
+    </li>
+    <li class="navLink hideMainNav">
+        <a href="http://www.latimes.com/classified/realestate/" class="mainNav"  >Real Estate</a>
+    </li>
+    <li class="navLink hideMainNav">
+        <a href="http://www.latimes.com/classified/realestate/rentals/" class="mainNav"  >Rentals</a>
+    </li>
+    <li class="navLink hideMainNav">
+        <a href="http://www.latimes.com/classified/" class="mainNav"  >More Classifieds</a>
+    </li>
+
+</ul>
+
+<!--CHARTBEAT-->
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>			
+			<!-- close root -->
+<!-- NAV BAR AD BOX -->
+<div id="targetWeeklyAd" onclick="window.location.href='http://www.latimes.com/shopping/circular/target';">
+
+<a href="http://www.latimes.com/shopping/circular/target"><img src="http://www.latimes.com/hive/images/target-logo.png"/></a>
+<a class="targetText" href="http://www.latimes.com/shopping/circular/target">Weekly Ad</a>
+	</div>
+
+			<!-- close #targetWeeklyAd -->
+		</div>
+		<!-- close #LayerOne -->
+	</div>
+<div><style type="text/css">
+#inTheNews {min-height:20px;}
+</style>
+
+<div id="inTheNews">
+
+<div class="rssBody"><ul id="hotLinks"></ul>
+
+<div id="basicsearch"> 
+	<form class="tribForm" method="get" action="http://www.latimes.com/search/dispatcher.front" onSubmit="javascript:return checkForm(this,'Query')">	
+		<ul> 
+		    <li class="horiz"> 
+		        <input type="text" id="searchText" class="adv_search_input" onblur="if (this.value=='') this.value = 'Search'" onfocus="if (this.value=='Search') this.value = ''" name="Query" value="Search" /> 
+		        <input name="target" value="adv_article" type="hidden" /> 
+		        
+		        <input type="submit" class="adv_submit" alt="Search" value="" /> 
+		    </li> 
+		</ul> 
+	</form> 
+</div> 
+<div id="search_overlay"> 
+    <form class="tribForm" method="get" action="http://www.latimes.com/search/dispatcher.front" onSubmit="javascript:return checkForm(this,'Query')"> 
+        <ul> 
+            <li class="horiz"> 
+		        <input type="text" id="searchText" maxlength="100" class="adv_search_input" name="Query" /> 
+		        <input name="target" value="adv_article" type="hidden" />
+		        <input type="submit" class="adv_submit" alt="Search" value=""/> 
+		    </li> 
+		</ul> 
+    </form> 
+    <a id="adv_search_open" href="/">Advanced Search</a> 
+</div> 
+ 
+<div id="adv_search"> 
+    <div class="adv_search_head"> 
+    	<h3>Advanced Search</h3> 
+    	<a href="/" id="adv_search_close">X</a> 
+    </div> 
+    <form class="tribForm" method="get" name="adv_search_form" action="http://www.latimes.com/search/dispatcher.front" onSubmit="return advSearch.checkAdvForm(this);"> 
+		<input type="hidden" id="Query" name="Query" value=""/> 
+		<input type="hidden" id="date" name="date" value=""/> 
+		<input type="hidden" id="target" name="target" value="adv_article"/> 
+		<input type="hidden" name="srchType" value="advSearch"/> 
+		
+	    <ul> 
+	        <li class="adv_list"><label for="include_all">include all of these words: <input type="text" id="include_all" maxlength="100"/></label></li> 
+	        <li class="adv_list"><label for="include_any">include any of these words: <input type="text" id="include_any" maxlength="100"/></label></li> 
+	        <li class="adv_list"><label for="include_exact">include this exact phrase: <input type="text" id="include_exact" maxlength="100"/></label></li> 
+	        <li class="adv_list"><label for="exclude">exclude: <input type="text" id="exclude" maxlength="100"/></label></li> 
+            
+            <li class="fixed_date"> 
+            	<label class="inline"><input type="radio" id="top_date_range_pre" name="range" value="pre" checked="checked"> Select a date range</label> 
+				<div id="top_date_range_pre_div"> 
+	            	<select id="date_range_predefined"> 
+	                    <option value="">this week</option> 
+	                    <option value="" selected="selected">past 30 days</option> 
+	                    <option value="">past 3 months</option> 
+	                    <option value="">past year</option> 
+	                    
+	            	</select> 
+            	</div> 
+			</li> 
+            <li class="custom_date"> 
+            	<label><input type="radio" id="top_date_range_cust" name="range" value="cust"> Create a custom date range</label> 
+	            <div id="top_date_range_cust_div"> 
+					<label class="inline custom_from">From: <input type="text" id="date_range_custom_from" disabled="disabled" class="inline disabled" /></label> 
+	            	<label class="inline">To: <input type="text" id="date_range_custom_to" disabled="disabled" class="inline disabled" /></label> 
+				</div> 
+            </li> 
+            <li class="submit"> 
+            	<input class="submit" type="submit" value="Search"/> 
+            </li> 
+        </ul> 
+    </form> 
+</div> 
+			    
+
+</div></div>
+<script type="text/javascript">
+var feedcontainer=document.getElementById("hotLinks")
+var feedurl="http://www.latimes.com/mynews/entertainmentrss/rss2.0.xml"
+var feedlimit=6
+var rssoutput=""
+
+
+function rssfeedsetup(){
+var feedpointer=new google.feeds.Feed(feedurl)
+feedpointer.setNumEntries(feedlimit)
+feedpointer.load(displayfeed)//check here
+}
+
+function displayfeed(result){
+if (!result.error){
+var thefeeds=result.feed.entries
+rssoutput+='<span class="hotLinkBegin">In the News:</span>'
+for (var i=0; i<thefeeds.length; i++)
+rssoutput+="<li class='row" + i + "'><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
+feedcontainer.innerHTML=rssoutput
+}
+else{
+rssoutput+=" "
+}
+}
+
+
+rssfeedsetup();
+
+</script>	
+
+	<div class="slidingbillboard" style="padding:20px 0px;"><div id="leaderContainer">
+	<iframe id="BannerAd" name="BannerAd" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" width="980" height="95"></iframe>
+</div>
+
+<noscript><a href="http://ad.doubleclick.net/jump/trb.theenvelope/ent/blog/gossip;ptype=sf;pos=t;tile=1;sz=728x90;ord=123456789?" target="_blank"><img src="http://ad.doubleclick.net/ad/trb.theenvelope/ent/blog/gossip;ptype=sf;pos=t;tile=1;sz=728x90;ord=123456789?" width="728" height="90" border="0" alt=""></a></noscript>
+
+<!-- End ad tag --></div>
+	<div></div>
+	<!-- close #navigation -->
+	
+				<script type="text/javascript">
+			var sectionNamePath=document.getElementById('sectionBreadcrumb');
+			var defaultTabPath = sectionNamePath.getElementsByTagName("a")[0].href;
+			if (defaultTabPath.charAt(defaultTabPath.length-1)=="/"){defaultTabPath=defaultTabPath.substring(0, defaultTabPath.length-1);}
+			var lowerTabPath = "null";
+		</script>
+		<script type="text/javascript">
+defaultTabPath="http://www.latimes.com/entertainment/news/";
+lowerTabPath="http://www.latimes.com/entertainment/gossip/";
+</script>
+		<script type="text/javascript">
+			var t=jQuery("#root li a[href="+lowerTabPath+"]");
+			if(t.length==0){t=jQuery("#root li a[href="+lowerTabPath+"/]");}
+			if(t.length!=0){
+				t=t.slice(0, 1);
+				t.parent().attr("class", "highlight");
+				t.parent().parent().attr("class", "level2 subStay");
+				t.parent().parent().parent().attr("class", "navLink highlight");
+			} else {
+				t=jQuery("#root li a[href="+defaultTabPath+"]");
+				if(t.length==0){t=jQuery("#root li a[href="+defaultTabPath+"/]");}				
+				if(t.length!=0){
+					t.parent().attr("class", "navLink highlight");
+					t.parent().children("ul.level2").attr("class", "level2 subStay");
+				}
+			}
+			tribHover();
+			document.getElementById('root').style.visibility = 'visible';
+	</script>
+		
+		
+	<!-- BANNER AD <div class="slidingbillboard"></div>-->
+</div>
+<!-- close #branding -->
+
+<div id="ent-skybox">
+	<h2>Celebrity</h2>
+<div class="clear"></div>
+</div>
+
+	<div id="entsky_tripledog">
+
+
+
+</div>
+
+<script type="text/javascript">
+jQuery(document).ready(function(){	
+	function skybox(){
+		var skyboxfeedcontainer = document.getElementById('entsky_tripledog');
+		var skyboxfeedurl = "http://www.latimes.com/entertainment/news/celebrity/more/rss2.0.xml?d5s";
+		var skyboxfeedlimit = 3;
+		var skyboxrssoutput = "";
+		
+		function skyboxsetup(){
+			var feedpointer = new google.feeds.Feed(skyboxfeedurl);
+			feedpointer.setNumEntries(skyboxfeedlimit);
+			feedpointer.load(displayfeed);
+		}
+
+		function displayfeed(result){
+			if (!result.error) {
+				var skyboxfeeds = result.feed.entries;
+				skyboxrssoutput += "<ul class='skybox-list'>";
+				for (var i = 0; i < skyboxfeeds.length; i++) {
+					if (skyboxfeeds[i].mediaGroups != null){
+					skyboxrssoutput += "<li class='skybox-headline'><a href='" + skyboxfeeds[i].link + "'><img src='" + skyboxfeeds[i].mediaGroups[0].contents[0].url + "' /></a><h3><a href='" + skyboxfeeds[i].link + "'>" + skyboxfeeds[i].title + "</a></h3></li>";
+					}
+					else {
+					skyboxrssoutput += "<li class='skybox-headline'><h3><a href='" + skyboxfeeds[i].link + "'>" + skyboxfeeds[i].title + "</a></h3></li>";
+					}
+				}
+				skyboxrssoutput += "<div class='clear'></div></ul>";
+				skyboxfeedcontainer.innerHTML = skyboxrssoutput;
+			}
+		}
+		skyboxsetup();
+		
+		
+		}
+		skybox();
+	});
+</script>
+
+<div id="section">
+<div id="topLeftWide">
+
+
+<div id="content">
+
+<div style="padding-bottom:20px;">
+
+<a href="http://latimesblogs.latimes.com/gossip/">
+<img src="http://latimesblogs.latimes.com/ministryofgossip.gif"  />
+</a>
+</div>
+
+<div id="hdr-categ-label">Category: Celebrity Illness</div>
+
+
+	<!--BLOG POSTS BEGIN HERE-->
+	
+
+	
+	
+	
+	
+	<!-- entries -->
+	
+	
+	
+	<div class="entry" id="entry-6a00d8341c630a53ef01630429a9af970d">
+	
+	<h1 class="entry-header"><a href="http://latimesblogs.latimes.com/gossip/2012/04/robin-gibb-coma-near-death-titanic-requiem.html" rel="bookmark" title="Robin Gibb of the Bee Gees reportedly in a coma">Robin Gibb of the Bee Gees reportedly in a coma</a></h1>
+	
+
+	<div class="social-media-container">
+	<div class="time">
+		April 14, 2012&nbsp;|&nbsp;<span style="color:#8b0412;font-size:130%">12:47</span>
+		<span style="color:#8b0412">pm</span>
+	</div>
+	<div class="social_media_container">
+
+		<div style="float:left; width:100px; height:22px; margin-right:10px; margin-top:4px;">
+			<span style="float:left; margin-right:5px;" st_url="http://latimesblogs.latimes.com/gossip/2012/04/robin-gibb-coma-near-death-titanic-requiem.html" st_title="Robin Gibb of the Bee Gees reportedly in a coma" st_summary="Robin Gibb reportedly in a coma: Robin Gibb is gravely ill with pneumonia, reportedly in a coma, on the very week that his first classical work, "The Titanic Requiem," debuted in London. The former member of the Bee Gees has been battling illness for years. " class="st_email"></span>
+
+			<div class="print_page" onclick="window.print(); return false;"></div>
+
+			<span class="nextgen-font-size"></span>
+
+			<a style="float:left;" href="#" onclick="font_size('up'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-uparrow.gif" alt="increase text size" class="arrow-img" />
+			</a>
+
+			<a style="float:left;" href="#" onclick="font_size('down'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-downarrow.gif" alt="decrease text size" class="arrow-img" />
+			</a>
+		</div>
+
+		<div>
+<div style="float:right; min-width:90px; max-width:120px; margin-top:2px; margin-left:22px;" class="facebook_badge">
+<div id="fb-root"></div>
+<fb:like href="http://latimesblogs.latimes.com/gossip/2012/04/robin-gibb-coma-near-death-titanic-requiem.html" layout="button_count" show_faces="false" width="120" height="21" action="recommend" colorscheme="light" allowtransparency="false"></fb:like>
+
+</div>
+
+			<div data-url="http://latimesblogs.latimes.com/gossip/2012/04/robin-gibb-coma-near-death-titanic-requiem.html" class="tweet_container">
+				<a class="twitter_link" title="Share on Twitter" onclick="count_increase(this); window.open(this.href, 'Twitter', 'height=370,width=550'); return false;" href="http://twitter.com/share?url=http://latimesblogs.latimes.com/gossip/2012/04/robin-gibb-coma-near-death-titanic-requiem.html&text=Robin%20Gibb%20of%20the%20Bee%20Gees%20reportedly%20in%20a%20coma&via=LATcelebs">
+					<div class="tweet_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center tweet_count"></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+			<div class="plus_1_container">
+				<g:plusone size="medium" href="http://latimesblogs.latimes.com/gossip/2012/04/robin-gibb-coma-near-death-titanic-requiem.html" callback="plusone_vote"></g:plusone>
+			</div>
+			
+			<div class="comment_button_container">
+				<a href="http://latimesblogs.latimes.com/gossip/2012/04/robin-gibb-coma-near-death-titanic-requiem.html#comments" rel="nofollow" style="float:left;">
+					<div class="comment_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center"><fb:comments-count href="http://latimesblogs.latimes.com/gossip/2012/04/robin-gibb-coma-near-death-titanic-requiem.html"></fb:comments-count></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="clear:both"></div>
+	</div>
+</div>
+
+
+
+<!--VIDEO EMBED-->
+<div class="video-embed" style="margin-top: 12px;">
+
+
+
+
+</div>
+<!--VIDEO SCRIPT-->
+
+
+	<div class="entry-content">
+	<div class="entry-body"><p><a class="asset-img-link" href="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef0168ea1f6ea1970c-pi" style="display: inline;"><img alt="Robin Gibb" class="asset  asset-image at-xid-6a00d8341c630a53ef0168ea1f6ea1970c" src="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef0168ea1f6ea1970c-600wi" style="width: 600px;" title="Robin Gibb" /></a></p>
+<p>Robin Gibb is gravely ill with pneumonia, reportedly in a coma, on the very week that his first classical work, &quot;The Titanic Requiem,&quot; debuted in London.</p>
+<p>At the 62-year-old singer-songwriter&#39;s hospital bedside Saturday, according to the Sun newspaper, were his wife, daughter and two sons, plus his brother Barry Gibb, who&#39;d famously been with Robin and Maurice Gibb in the Grammy-winning Bee Gees.</p>
+<p>“Our prayers are with Robin,&quot; a family friend told the <a href="http://www.thesun.co.uk/sol/homepage/news/4256284/Coma-vigil-for-Bee-Gee-Robin-Gibb.html" target="_blank">Sun</a>. &quot;He has kept so positive and  always believed he could beat this.&quot; Though the paper reported the coma and possibly a second tumor, publicist Doug Wright has given no details beyond saying Gibb was hospitalized in stable condition.</p>
+<p><strong><a href="http://www.latimes.com/entertainment/news/la-robin-gibb-20120414,0,4025356.photogallery" target="_self">PHOTOS: Robin Gibb</a></strong></p>
+<p>Gibb as recently as February was reveling in what he called a <a href="http://latimesblogs.latimes.com/gossip/2012/02/robin-gibb-colon-cancer-spectacular-recovery.html" target="_blank">&quot;spectacular&quot; recovery</a> after having a growth removed from his colon and undergoing chemotherapy. Though it has been reported that he was battling cancer, and that it involved his liver as well, Gibb has not confirmed that publicly.</p>
+<p>He had intestinal surgery last month, and was <a href="http://latimesblogs.latimes.com/gossip/2011/11/robin-gibb-liver-cancer-bee-gees.html" target="_blank">hospitalized</a> late last  year for stomach and colon problems.</p>
+<p>In 2010, Robin had surgery for a twisted small intestine, repairing the same congenital condition that had resulted in the death at age 53 of his twin brother Maurice.</p>
+<p>&quot;He sends all his love,&quot; Robin-John said ahead of the  performance his  father missed on Tuesday. &quot;We are all praying for him and hoping he has a   speedy recovery.&quot;</p>
+<p>&quot;The Titanic Requiem,&quot; which Robin Gibb composed with son Robin-John to comemmorate the 100th anniversary of the legendary ship&#39;s sinking on April 15, 1912, is a far cry from the disco-era hits that brought the Bee Gees to fame in the 1970s.</p>
+<p>Hear a taste of the non-disco side of Robin Gibb, below. &quot;It&#39;s a serious subject and it’s not a rock opera,&quot; he said in a recent <a href="http://www.telegraph.co.uk/culture/music/classicalconcertreviews/9198105/Titanic-Requiem-Central-Hall-Westminster-review.html" target="_blank">interview</a>. &quot;There are no backbeats.    This could have been written 300 years ago.&quot;</p>
+<p><iframe frameborder="0" height="315" src="http://www.youtube.com/embed/6I8Q-maVZyo?rel=0" width="560"></iframe>&#0160;</p>
+<p><strong>RELATED: </strong></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2011/11/robin-gibb-liver-cancer-bee-gees.html" target="_blank">Robin Gibb of the Bee Gees reportedly fighting cancer</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/03/robin-gibb-surgery-intestinal-surgery-cancer.html" target="_blank">Robin Gibb of the Bee Gees hospitalized for intestinal surgery</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/02/robin-gibb-colon-cancer-spectacular-recovery.html" target="_blank">Robin Gibb announces &#39;spectacular&#39; recovery after growth removed from colon</a></p>
+<p>— Christie D&#39;Zurilla<br /><a href="http://www.twitter.com/dzurillaville" target="_blank">Twitter.com/dzurillaville</a><br /><a href="https://plus.google.com/u/0/103235279581330577114/posts" target="_blank">Christie D&#39;Zurilla on Google+</a></p>
+<p>The Associated Press contributed to this report.</p>
+<p><em>Photo: Robin Gibb onstage in May 2011 in Warsaw. Credit: Jacek Turczyk / EPA </em></p>
+<p>&#0160;</p>
+<p>&#0160;</p></div>
+	
+	</div>
+	<br clear="all"/>
+	<div class="entry-footer">
+<div class="entry-footer-left">
+
+<div style="float: left; padding-right: 5px; padding-bottom: 10px;"><img src="http://www.latimes.com/media/photo/2010-04/53138230.gif"></div>
+
+
+<div>Twitter: <a href="http://twitter.com/LATcelebs">@LATcelebs</a></div>
+<div>Facebook: <a href="http://www.facebook.com/ministryofgossip">Ministry of Gossip</a></div>
+
+</div>
+
+
+<div class="entry-footer-right">
+	
+
+More in: <a href="http://latimesblogs.latimes.com/gossip/celebrity-illness/" rel="section">Celebrity Illness</a>, <a href="http://latimesblogs.latimes.com/gossip/christie-dzurilla/" rel="section">Christie D'Zurilla</a>
+
+
+</div>
+</div>
+
+	</div>
+
+	
+	
+	
+	<div class="entry" id="entry-6a00d8341c630a53ef0167645978b4970b">
+	
+	<h1 class="entry-header"><a href="http://latimesblogs.latimes.com/gossip/2012/03/robin-gibb-surgery-intestinal-surgery-cancer.html" rel="bookmark" title="Robin Gibb of the Bee Gees hospitalized for intestinal surgery">Robin Gibb of the Bee Gees hospitalized for intestinal surgery</a></h1>
+	
+
+	<div class="social-media-container">
+	<div class="time">
+		March 28, 2012&nbsp;|&nbsp;<span style="color:#8b0412;font-size:130%"> 1:21</span>
+		<span style="color:#8b0412">pm</span>
+	</div>
+	<div class="social_media_container">
+
+		<div style="float:left; width:100px; height:22px; margin-right:10px; margin-top:4px;">
+			<span style="float:left; margin-right:5px;" st_url="http://latimesblogs.latimes.com/gossip/2012/03/robin-gibb-surgery-intestinal-surgery-cancer.html" st_title="Robin Gibb of the Bee Gees hospitalized for intestinal surgery" st_summary="Robin Gibb's "spectacular" recovery has taken a turn for the worse, with the singer hospitalized following intestinal surgery over the weekend. Robin Gibb had surgery on Sunday, his rep said. " class="st_email"></span>
+
+			<div class="print_page" onclick="window.print(); return false;"></div>
+
+			<span class="nextgen-font-size"></span>
+
+			<a style="float:left;" href="#" onclick="font_size('up'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-uparrow.gif" alt="increase text size" class="arrow-img" />
+			</a>
+
+			<a style="float:left;" href="#" onclick="font_size('down'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-downarrow.gif" alt="decrease text size" class="arrow-img" />
+			</a>
+		</div>
+
+		<div>
+<div style="float:right; min-width:90px; max-width:120px; margin-top:2px; margin-left:22px;" class="facebook_badge">
+<div id="fb-root"></div>
+<fb:like href="http://latimesblogs.latimes.com/gossip/2012/03/robin-gibb-surgery-intestinal-surgery-cancer.html" layout="button_count" show_faces="false" width="120" height="21" action="recommend" colorscheme="light" allowtransparency="false"></fb:like>
+
+</div>
+
+			<div data-url="http://latimesblogs.latimes.com/gossip/2012/03/robin-gibb-surgery-intestinal-surgery-cancer.html" class="tweet_container">
+				<a class="twitter_link" title="Share on Twitter" onclick="count_increase(this); window.open(this.href, 'Twitter', 'height=370,width=550'); return false;" href="http://twitter.com/share?url=http://latimesblogs.latimes.com/gossip/2012/03/robin-gibb-surgery-intestinal-surgery-cancer.html&text=Robin%20Gibb%20of%20the%20Bee%20Gees%20hospitalized%20for%20intestinal%20surgery&via=LATcelebs">
+					<div class="tweet_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center tweet_count"></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+			<div class="plus_1_container">
+				<g:plusone size="medium" href="http://latimesblogs.latimes.com/gossip/2012/03/robin-gibb-surgery-intestinal-surgery-cancer.html" callback="plusone_vote"></g:plusone>
+			</div>
+			
+			<div class="comment_button_container">
+				<a href="http://latimesblogs.latimes.com/gossip/2012/03/robin-gibb-surgery-intestinal-surgery-cancer.html#comments" rel="nofollow" style="float:left;">
+					<div class="comment_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center"><fb:comments-count href="http://latimesblogs.latimes.com/gossip/2012/03/robin-gibb-surgery-intestinal-surgery-cancer.html"></fb:comments-count></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="clear:both"></div>
+	</div>
+</div>
+
+
+
+<!--VIDEO EMBED-->
+<div class="video-embed" style="margin-top: 12px;">
+
+
+
+
+</div>
+<!--VIDEO SCRIPT-->
+
+
+	<div class="entry-content">
+	<div class="entry-body"><p><img alt="Robin Gibb" class="asset  asset-image at-xid-6a00d8341c630a53ef01676459ace6970b" src="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef01676459ace6970b-600wi" style="width: 600px;" title="Robin Gibb" /></p>
+<p>Robin Gibb&#39;s &quot;spectacular&quot; recovery has taken a turn for the worse, with the singer hospitalized following intestinal surgery over the weekend.</p>
+<p>Gibb, whose twin brother Maurice died at 53 of twisted intestine caused by a congenital defect shared by Robin, <a href="http://latimesblogs.latimes.com/gossip/2012/02/robin-gibb-colon-cancer-spectacular-recovery.html" target="_blank">announced</a> in February that a growth on his colon had been removed and his health was looking up.</p>
+<p>On Wednesday, however, his publicist said the 62-year-old singer and songwriter was recovering in the hospital after intestinal surgery Sunday and had been forced to cancel a number of commitments.</p>
+<p>Still on the schedule, at least for now, is Gibb&#39;s classical music concert debut in April. He&#39;ll lead a performance of &quot;The Titanic Requiem,&quot; a new work composed by  him and his son, RJ, in honor of the 100th anniversary of the ship&#39;s sinking.</p>
+<p>The illness, widely reported to be cancer, has dogged the onetime Bee Gees member and required chemotherapy as recently as January, his spokesman told the BBC at the time.</p>
+<p>&quot;It&#39;s all simple,&quot; Gibb told BBC Radio 2 back in February. &quot;I  was diagnosed with a  growth in my colon. It was removed. And I&#39;ve been  treated for that by a  brilliant doctor, and in their own words &#39;the  results have been  spectacular.&#39; &quot;</p>
+<p>Gibb had been reveling in the notion of gaining some weight.</p>
+<p>&quot;I love food, I love eating,&quot; he told the BBC, adding: &quot;I&#39;ve  always been thin. If you go back to when we first started I&#39;ve always  been skinny. It&#39;s hard for me to put on weight.&quot;</p>
+<p><strong>RELATED:</strong></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2011/11/robin-gibb-liver-cancer-bee-gees.html" target="_blank">Robin Gibb of the Bee Gees is fighting cancer</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/02/robin-gibb-colon-cancer-spectacular-recovery.html" target="_blank">Robin Gibb announces &#39;spectacular&#39; recovery from colon cancer</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/03/george-michael-concert-dates-pneumonia.html" target="_blank">George Michael reschedules shows canceled during pneumonia scare </a></p>
+<p>— Christie D&#39;Zurilla<br /><a href="http://www.twitter.com/dzurillaville" target="_blank">Twitter.com/dzurillaville</a><br /><a href="https://plus.google.com/u/0/103235279581330577114/posts" target="_blank">Christie D&#39;Zurilla on Google+</a></p>
+<p>The Associated Press contributed to this report.</p>
+<p><em>Photo: Robin Gibb on &quot;American Idol&quot; in May 2010. Credit: Vince Bucci / Fox</em></p></div>
+	
+	</div>
+	<br clear="all"/>
+	<div class="entry-footer">
+<div class="entry-footer-left">
+
+<div style="float: left; padding-right: 5px; padding-bottom: 10px;"><img src="http://www.latimes.com/media/photo/2010-04/53138230.gif"></div>
+
+
+<div>Twitter: <a href="http://twitter.com/LATcelebs">@LATcelebs</a></div>
+<div>Facebook: <a href="http://www.facebook.com/ministryofgossip">Ministry of Gossip</a></div>
+
+</div>
+
+
+<div class="entry-footer-right">
+	
+
+More in: <a href="http://latimesblogs.latimes.com/gossip/celebrity-health/" rel="section">Celebrity Health</a>, <a href="http://latimesblogs.latimes.com/gossip/celebrity-illness/" rel="section">Celebrity Illness</a>, <a href="http://latimesblogs.latimes.com/gossip/christie-dzurilla/" rel="section">Christie D'Zurilla</a>, <a href="http://latimesblogs.latimes.com/gossip/the-1970s/" rel="section">The 1970s</a>
+
+
+</div>
+</div>
+
+	</div>
+
+	
+	
+	
+	<div class="entry" id="entry-6a00d8341c630a53ef0168e909b2f4970c">
+	
+	<h1 class="entry-header"><a href="http://latimesblogs.latimes.com/gossip/2012/03/zsa-zsa-gabor-conservatorship-daughter-francesa-hilton.html" rel="bookmark" title="Zsa Zsa Gabor's daughter Francesca Hilton seeks conservatorship">Zsa Zsa Gabor's daughter Francesca Hilton seeks conservatorship</a></h1>
+	
+
+	<div class="social-media-container">
+	<div class="time">
+		March 20, 2012&nbsp;|&nbsp;<span style="color:#8b0412;font-size:130%"> 2:42</span>
+		<span style="color:#8b0412">pm</span>
+	</div>
+	<div class="social_media_container">
+
+		<div style="float:left; width:100px; height:22px; margin-right:10px; margin-top:4px;">
+			<span style="float:left; margin-right:5px;" st_url="http://latimesblogs.latimes.com/gossip/2012/03/zsa-zsa-gabor-conservatorship-daughter-francesa-hilton.html" st_title="Zsa Zsa Gabor's daughter Francesca Hilton seeks conservatorship" st_summary="Zsa Zsa Gabor's daughter Constance Francesca Hilton on Tuesday filed a petition requesting an independent conservatorship be set up to watch out for the health and money interests of her mother. Zsa Zsa Gabor's affairs have been tended to in recent years by her husband Frederic Von Anhalt." class="st_email"></span>
+
+			<div class="print_page" onclick="window.print(); return false;"></div>
+
+			<span class="nextgen-font-size"></span>
+
+			<a style="float:left;" href="#" onclick="font_size('up'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-uparrow.gif" alt="increase text size" class="arrow-img" />
+			</a>
+
+			<a style="float:left;" href="#" onclick="font_size('down'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-downarrow.gif" alt="decrease text size" class="arrow-img" />
+			</a>
+		</div>
+
+		<div>
+<div style="float:right; min-width:90px; max-width:120px; margin-top:2px; margin-left:22px;" class="facebook_badge">
+<div id="fb-root"></div>
+<fb:like href="http://latimesblogs.latimes.com/gossip/2012/03/zsa-zsa-gabor-conservatorship-daughter-francesa-hilton.html" layout="button_count" show_faces="false" width="120" height="21" action="recommend" colorscheme="light" allowtransparency="false"></fb:like>
+
+</div>
+
+			<div data-url="http://latimesblogs.latimes.com/gossip/2012/03/zsa-zsa-gabor-conservatorship-daughter-francesa-hilton.html" class="tweet_container">
+				<a class="twitter_link" title="Share on Twitter" onclick="count_increase(this); window.open(this.href, 'Twitter', 'height=370,width=550'); return false;" href="http://twitter.com/share?url=http://latimesblogs.latimes.com/gossip/2012/03/zsa-zsa-gabor-conservatorship-daughter-francesa-hilton.html&text=Zsa%20Zsa%20Gabor's%20daughter%20Francesca%20Hilton%20seeks%20conservatorship&via=LATcelebs">
+					<div class="tweet_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center tweet_count"></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+			<div class="plus_1_container">
+				<g:plusone size="medium" href="http://latimesblogs.latimes.com/gossip/2012/03/zsa-zsa-gabor-conservatorship-daughter-francesa-hilton.html" callback="plusone_vote"></g:plusone>
+			</div>
+			
+			<div class="comment_button_container">
+				<a href="http://latimesblogs.latimes.com/gossip/2012/03/zsa-zsa-gabor-conservatorship-daughter-francesa-hilton.html#comments" rel="nofollow" style="float:left;">
+					<div class="comment_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center"><fb:comments-count href="http://latimesblogs.latimes.com/gossip/2012/03/zsa-zsa-gabor-conservatorship-daughter-francesa-hilton.html"></fb:comments-count></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="clear:both"></div>
+	</div>
+</div>
+
+
+
+<!--VIDEO EMBED-->
+<div class="video-embed" style="margin-top: 12px;">
+
+
+
+
+</div>
+<!--VIDEO SCRIPT-->
+
+
+	<div class="entry-content">
+	<div class="entry-body"><p><a style="display: inline;"><img alt="Zsa Zsa Gabor in 1962" class="asset  asset-image at-xid-6a00d8341c630a53ef016764095643970b" src="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef016764095643970b-600wi" style="width: 600px;" title="Zsa Zsa Gabor in 1962" /></a></p>
+<p>Zsa Zsa Gabor&#39;s daughter on Tuesday filed a petition requesting an independent conservatorship be set up to watch out for the health and money interests of her mother.</p>
+<p>Currently, the onetime glamour girl&#39;s affairs are tended to by her husband, Frederic Von Anhalt, who for years has been at odds with his wife&#39;s daughter, Constance Francesca Gabor Hilton.</p>
+<p>&quot;What Ms. Hilton is seeking here is for the court to make sure that Zsa Zsa’s best interests are not being sacrificed for the selfish interests of anyone involved in Zsa Zsa’s life,&quot; her attorney Kenneth W. Kossoff said Tuesday in a statement.</p>
+<p><a href="http://timelines.latimes.com/zsa-zsa-gabor/" target="_blank"><strong>TIMELINE: The love life of Zsa Zsa Gabor</strong></a></p>
+<p>&quot;Having the court supervise Zsa Zsa&#39;s care and finances will serve to  ensure that Zsa Zsa&#39;s interests are being protected by whoever is in  charge of her person and estate –- whether Ms. Hilton, von Anhalt or an  independent third party appointed by the court,&quot; Kossoff said.</p>
+<p>According to a statement released by Hilton&#39;s rep, she has been waiting  for more than a year for reports pertaining to her   mother&#39;s physical  and financial health, hoping Van Anhalt &quot;had Zsa Zsa’s interests at heart.&quot;</p>
+<p>However, &quot;having just recently learned that he took out a $700,000 loan, and that there was a notice of default recorded against the property in late February 2012 because he apparently has not been paying Zsa Zsa’s mortgage payment, it became clear to Francesca that if she did not seek to protect her mother, no one else would.&quot;</p>
+<p>Von Anhalt recently made headlines when he threw a 95th birthday party for his ailing wife, whose health has been in decline in recent years, especially since a July 2010 fall from bed in which she broke her right hip; after a hip replacement, that injury ultimately resulted in partial amputation of her right leg.</p>
+<p>&quot;He&#39;s basically taken my mother away from me,&quot; Hilton told <a href="http://www.cnn.com/2012/03/20/showbiz/gabor-conservatorship/index.html" target="_blank">CNN</a> last year. Von Anhalt is Gabor&#39;s ninth husband.</p>
+<p><strong>RELATED: </strong></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2011/10/zsa-zsa-gabor-surgery-zsa-zsa-gabor-feeding-tube.html" target="_blank">Zsa Zsa Gabor: More surgery may be needed, rep says</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/02/zsa-zsa-gabor-95-birthday-prince-frederick-von-anhalt.html" target="_blank">Zsa Zsa Gabor&#39;s husband throws her a 95th birthday party</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2011/05/zsa-zsa-gabor-pneumonia-prince-frederic-von-anhalt-hasselhoff-baby.html" target="_blank">Zsa Zsa Gabor hit with pneumonia, new rumor about husband&#39;s baby plan</a></p>
+<p>— Christie D&#39;Zurilla<br /><a href="http://www.twitter.com/dzurillaville" target="_blank">twitter.com/dzurillaville</a><br /><a href="https://plus.google.com/u/0/103235279581330577114/posts" target="_blank">Christie D&#39;Zurilla on Google+</a></p>
+<p><em>Photo: Zsa Zsa Gabor in 1962. Credit: Associated Press</em></p></div>
+	
+	</div>
+	<br clear="all"/>
+	<div class="entry-footer">
+<div class="entry-footer-left">
+
+<div style="float: left; padding-right: 5px; padding-bottom: 10px;"><img src="http://www.latimes.com/media/photo/2010-04/53138230.gif"></div>
+
+
+<div>Twitter: <a href="http://twitter.com/LATcelebs">@LATcelebs</a></div>
+<div>Facebook: <a href="http://www.facebook.com/ministryofgossip">Ministry of Gossip</a></div>
+
+</div>
+
+
+<div class="entry-footer-right">
+	
+
+More in: <a href="http://latimesblogs.latimes.com/gossip/celebrity-health/" rel="section">Celebrity Health</a>, <a href="http://latimesblogs.latimes.com/gossip/celebrity-illness/" rel="section">Celebrity Illness</a>, <a href="http://latimesblogs.latimes.com/gossip/christie-dzurilla/" rel="section">Christie D'Zurilla</a>, <a href="http://latimesblogs.latimes.com/gossip/zsa-zsa-gabor/" rel="section">Zsa Zsa Gabor</a>
+
+
+</div>
+</div>
+
+	</div>
+
+	
+	
+	
+	<div class="entry" id="entry-6a00d8341c630a53ef0168e9089274970c">
+	
+	<h1 class="entry-header"><a href="http://latimesblogs.latimes.com/gossip/2012/03/george-michael-concert-dates-pneumonia.html" rel="bookmark" title="George Michael reschedules shows canceled during pneumonia scare">George Michael reschedules shows canceled during pneumonia scare</a></h1>
+	
+
+	<div class="social-media-container">
+	<div class="time">
+		March 20, 2012&nbsp;|&nbsp;<span style="color:#8b0412;font-size:130%">11:51</span>
+		<span style="color:#8b0412">am</span>
+	</div>
+	<div class="social_media_container">
+
+		<div style="float:left; width:100px; height:22px; margin-right:10px; margin-top:4px;">
+			<span style="float:left; margin-right:5px;" st_url="http://latimesblogs.latimes.com/gossip/2012/03/george-michael-concert-dates-pneumonia.html" st_title="George Michael reschedules shows canceled during pneumonia scare" st_summary="George Michael is healthy enough to think about going back on tour, rescheduling the Symphonica dates he had to cancel. George Michael was hospitalized with pneumonia at the end of last year." class="st_email"></span>
+
+			<div class="print_page" onclick="window.print(); return false;"></div>
+
+			<span class="nextgen-font-size"></span>
+
+			<a style="float:left;" href="#" onclick="font_size('up'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-uparrow.gif" alt="increase text size" class="arrow-img" />
+			</a>
+
+			<a style="float:left;" href="#" onclick="font_size('down'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-downarrow.gif" alt="decrease text size" class="arrow-img" />
+			</a>
+		</div>
+
+		<div>
+<div style="float:right; min-width:90px; max-width:120px; margin-top:2px; margin-left:22px;" class="facebook_badge">
+<div id="fb-root"></div>
+<fb:like href="http://latimesblogs.latimes.com/gossip/2012/03/george-michael-concert-dates-pneumonia.html" layout="button_count" show_faces="false" width="120" height="21" action="recommend" colorscheme="light" allowtransparency="false"></fb:like>
+
+</div>
+
+			<div data-url="http://latimesblogs.latimes.com/gossip/2012/03/george-michael-concert-dates-pneumonia.html" class="tweet_container">
+				<a class="twitter_link" title="Share on Twitter" onclick="count_increase(this); window.open(this.href, 'Twitter', 'height=370,width=550'); return false;" href="http://twitter.com/share?url=http://latimesblogs.latimes.com/gossip/2012/03/george-michael-concert-dates-pneumonia.html&text=George%20Michael%20reschedules%20shows%20canceled%20during%20pneumonia%20scare&via=LATcelebs">
+					<div class="tweet_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center tweet_count"></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+			<div class="plus_1_container">
+				<g:plusone size="medium" href="http://latimesblogs.latimes.com/gossip/2012/03/george-michael-concert-dates-pneumonia.html" callback="plusone_vote"></g:plusone>
+			</div>
+			
+			<div class="comment_button_container">
+				<a href="http://latimesblogs.latimes.com/gossip/2012/03/george-michael-concert-dates-pneumonia.html#comments" rel="nofollow" style="float:left;">
+					<div class="comment_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center"><fb:comments-count href="http://latimesblogs.latimes.com/gossip/2012/03/george-michael-concert-dates-pneumonia.html"></fb:comments-count></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="clear:both"></div>
+	</div>
+</div>
+
+
+
+<!--VIDEO EMBED-->
+<div class="video-embed" style="margin-top: 12px;">
+
+
+
+
+</div>
+<!--VIDEO SCRIPT-->
+
+
+	<div class="entry-content">
+	<div class="entry-body"><p><a href="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef01676407f055970b-pi" style="display: inline;"><img alt="George Michael reschedules shows" class="asset  asset-image at-xid-6a00d8341c630a53ef01676407f055970b" src="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef01676407f055970b-600wi" style="width: 600px;" title="George Michael reschedules shows" /></a></p>
+<p>George Michael is healthy enough to think about going back on tour, rescheduling the Symphonica concert dates he had to cancel when he was hospitalized with pneumonia at the end of last year and adding a couple of shows for good measure.</p>
+<p>Michael revealed in December that he&#39;d been near death for several weeks after <a href="http://latimesblogs.latimes.com/gossip/2011/11/george-michael-hospitalized-pneumonia-vienna.html" target="_blank">falling ill</a> in November, and on Tuesday he once again expressed his gratitude.</p>
+<p>&quot;I would like to take this opportunity to say thank you first to the   doctors and nurses who saved my life and took such great care of me and   to all my fans, family and friends for their love and support,&quot; the singer said on his official <a href="http://www.georgemichael.com/news/news_items.aspx?PostId=324810" target="_blank">website</a>. &quot;I&#39;m   looking forward to seeing everyone.&quot;</p>
+<p>Michael was so thankful, as a matter of fact, that he donated 1,000 tickets to the medical staff at AKH Hospital for the Sept. 4 kickoff show -- an addition to the tour -- in Vienna, Austria.</p>
+<p>He&#39;ll also hit dates in the  Netherlands and France before returning to Britain for shows in Birmingham, Manchester,  Glasgow, Sheffield, Newcastle, Cardiff and Liverpool, ending with three nights in London in October. See the tour specifics <a href="http://www.georgemichael.com/tour/" target="_blank">here</a>.</p>
+<p><strong>RELATED:</strong></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2010/10/george-michael-free-released-from-prison-jail.html" target="_blank">George Michael a free man after four weeks in prison</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2011/12/george-michael-nearly-died-streptococcus-pneumonia.html" target="_blank">George Michael thanks Vienna doctors for saving his life [Video]</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2011/08/george-michael-single-kenny-goss-breakup.html" target="_blank">George Michael says &#39;turbulent&#39; relationship with Kenny Goss is finally over</a></p>
+<p>— Christie D&#39;Zurilla<br /><a href="http://www.twitter.com/dzurillaville" target="_blank">twitter.com/dzurillaville</a><br /><a href="https://plus.google.com/u/0/103235279581330577114/posts" target="_blank">Christie D&#39;Zurilla on Google+</a></p>
+<p><em>Photo: George Michael at the BRIT Awards 2012  in London on Feb. 21. Credit: Leon Neal / AFP/Getty Images</em></p></div>
+	
+	</div>
+	<br clear="all"/>
+	<div class="entry-footer">
+<div class="entry-footer-left">
+
+<div style="float: left; padding-right: 5px; padding-bottom: 10px;"><img src="http://www.latimes.com/media/photo/2010-04/53138230.gif"></div>
+
+
+<div>Twitter: <a href="http://twitter.com/LATcelebs">@LATcelebs</a></div>
+<div>Facebook: <a href="http://www.facebook.com/ministryofgossip">Ministry of Gossip</a></div>
+
+</div>
+
+
+<div class="entry-footer-right">
+	
+
+More in: <a href="http://latimesblogs.latimes.com/gossip/celebrity-health/" rel="section">Celebrity Health</a>, <a href="http://latimesblogs.latimes.com/gossip/celebrity-illness/" rel="section">Celebrity Illness</a>, <a href="http://latimesblogs.latimes.com/gossip/christie-dzurilla/" rel="section">Christie D'Zurilla</a>, <a href="http://latimesblogs.latimes.com/gossip/george-michael/" rel="section">George Michael</a>
+
+
+</div>
+</div>
+
+	</div>
+
+	
+	
+	
+	<div class="entry" id="entry-6a00d8341c630a53ef016302ec50cc970d">
+	
+	<h1 class="entry-header"><a href="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-medically-induced-coma.html" rel="bookmark" title="Gallagher heart attack: Comic has been in medically induced coma">Gallagher heart attack: Comic has been in medically induced coma</a></h1>
+	
+
+	<div class="social-media-container">
+	<div class="time">
+		March 16, 2012&nbsp;|&nbsp;<span style="color:#8b0412;font-size:130%"> 5:05</span>
+		<span style="color:#8b0412">pm</span>
+	</div>
+	<div class="social_media_container">
+
+		<div style="float:left; width:100px; height:22px; margin-right:10px; margin-top:4px;">
+			<span style="float:left; margin-right:5px;" st_url="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-medically-induced-coma.html" st_title="Gallagher heart attack: Comic has been in medically induced coma" st_summary="Gallagher recovering from heart attack: Comedian Gallagher was expected to be out of a medically induced coma by Saturday, according to his promotional manager, who said all signs were good." class="st_email"></span>
+
+			<div class="print_page" onclick="window.print(); return false;"></div>
+
+			<span class="nextgen-font-size"></span>
+
+			<a style="float:left;" href="#" onclick="font_size('up'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-uparrow.gif" alt="increase text size" class="arrow-img" />
+			</a>
+
+			<a style="float:left;" href="#" onclick="font_size('down'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-downarrow.gif" alt="decrease text size" class="arrow-img" />
+			</a>
+		</div>
+
+		<div>
+<div style="float:right; min-width:90px; max-width:120px; margin-top:2px; margin-left:22px;" class="facebook_badge">
+<div id="fb-root"></div>
+<fb:like href="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-medically-induced-coma.html" layout="button_count" show_faces="false" width="120" height="21" action="recommend" colorscheme="light" allowtransparency="false"></fb:like>
+
+</div>
+
+			<div data-url="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-medically-induced-coma.html" class="tweet_container">
+				<a class="twitter_link" title="Share on Twitter" onclick="count_increase(this); window.open(this.href, 'Twitter', 'height=370,width=550'); return false;" href="http://twitter.com/share?url=http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-medically-induced-coma.html&text=Gallagher%20heart%20attack%3A%20Comic%20has%20been%20in%20medically%20induced%20coma&via=LATcelebs">
+					<div class="tweet_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center tweet_count"></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+			<div class="plus_1_container">
+				<g:plusone size="medium" href="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-medically-induced-coma.html" callback="plusone_vote"></g:plusone>
+			</div>
+			
+			<div class="comment_button_container">
+				<a href="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-medically-induced-coma.html#comments" rel="nofollow" style="float:left;">
+					<div class="comment_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center"><fb:comments-count href="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-medically-induced-coma.html"></fb:comments-count></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="clear:both"></div>
+	</div>
+</div>
+
+
+
+<!--VIDEO EMBED-->
+<div class="video-embed" style="margin-top: 12px;">
+
+
+
+
+</div>
+<!--VIDEO SCRIPT-->
+
+
+	<div class="entry-content">
+	<div class="entry-body"><p><a href="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef016763e24f42970b-pi" style="display: inline;"><img alt="Gallagher in action with the Sledge-O-Matic" class="asset  asset-image at-xid-6a00d8341c630a53ef016763e24f42970b" src="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef016763e24f42970b-600wi" style="width: 600px;" title="Gallagher in action with the Sledge-O-Matic" /></a><br /><br />Comedian Gallagher, who is recovering from a heart attack, was expected to be out of a medically induced coma by Saturday, according to his promotional manager.</p>
+<p>The 65-year-old prop comic Gallagher was put into the coma after suffering a heart attack Wednesday that required him to have two stents replaced.</p>
+<p>All signs are good, Christine Sherrer told the Huffington <a href="http://www.huffingtonpost.com/2012/03/15/gallagher-suffers-heart-a_n_1347484.html" target="_blank">Post</a> on Thursday afternoon, explaining that her client would be slowly awakened over the course of 24 hours or so.</p>
+<p>The heart attack came Wednesday while Gallagher was in the green room about 20 minutes before a 9 p.m. show, after doing a meet-and-greet with fans in Lewisville, Texas, outside of Dallas.</p>
+<p>Gallagher <a href="http://www.tmz.com/2011/03/11/gallagher-collapse-comedian-mallet-whiskey-bones-sledgehammer-saint-marys-video/" target="_blank">collapsed last year</a> on stage after suffering a minor heart attack while smashing stuff during a show in Minnesota. The comic, whose full name is Leo Anthony Gallagher, also <a href="http://splitsider.com/2011/08/8-memorable-political-campaigns-by-comedians" target="_blank">ran for governor</a> of California in the 2003 recall election, finishing 16th out of 135 candidates.</p>
+<p><strong>ALSO: </strong></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2010/09/greg-giraldo-dead.html" target="_blank">&#39;Last Comic Standing&#39; judge Greg Giraldo dead at 44</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-comedian.html" target="_blank">Comedian Gallagher suffers a heart attack before Texas show</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2011/11/patrice-oneal-dead-comedian-opie-anthony-comedy-central.html" target="_blank">Patrice O&#39;Neal dead at 41; comic had suffered a stroke previously</a></p>
+<p>— Christie D&#39;Zurilla<br /><a href="http://www.twitter.com/dzurillaville" target="_blank">Twitter.com/dzurillaville</a><br /><a href="https://plus.google.com/u/0/103235279581330577114/posts" target="_blank">Christie D&#39;Zurilla on Google+</a></p>
+<p>The Associated Press contributed to this report.</p>
+<p><em>Photo: Gallagher smashes strawberry syrup and flour at the end of a performance in Dubuque, Iowa, in November 2006. Jeremy Portje / Telegraph Herald</em></p>
+<p><em><br /></em></p></div>
+	
+	</div>
+	<br clear="all"/>
+	<div class="entry-footer">
+<div class="entry-footer-left">
+
+<div style="float: left; padding-right: 5px; padding-bottom: 10px;"><img src="http://www.latimes.com/media/photo/2010-04/53138230.gif"></div>
+
+
+<div>Twitter: <a href="http://twitter.com/LATcelebs">@LATcelebs</a></div>
+<div>Facebook: <a href="http://www.facebook.com/ministryofgossip">Ministry of Gossip</a></div>
+
+</div>
+
+
+<div class="entry-footer-right">
+	
+
+More in: <a href="http://latimesblogs.latimes.com/gossip/celebrity-health/" rel="section">Celebrity Health</a>, <a href="http://latimesblogs.latimes.com/gossip/celebrity-illness/" rel="section">Celebrity Illness</a>, <a href="http://latimesblogs.latimes.com/gossip/christie-dzurilla/" rel="section">Christie D'Zurilla</a>, <a href="http://latimesblogs.latimes.com/gossip/comedians/" rel="section">Comedians</a>, <a href="http://latimesblogs.latimes.com/gossip/comedy/" rel="section">Comedy</a>, <a href="http://latimesblogs.latimes.com/gossip/standup-comedy/" rel="section">Standup Comedy</a>
+
+
+</div>
+</div>
+
+	</div>
+
+	
+	
+	
+	<div class="entry" id="entry-6a00d8341c630a53ef016763d5a139970b">
+	
+	<h1 class="entry-header"><a href="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-comedian.html" rel="bookmark" title="Comedian Gallagher suffers a heart attack before Texas show">Comedian Gallagher suffers a heart attack before Texas show</a></h1>
+	
+
+	<div class="social-media-container">
+	<div class="time">
+		March 15, 2012&nbsp;|&nbsp;<span style="color:#8b0412;font-size:130%">12:54</span>
+		<span style="color:#8b0412">pm</span>
+	</div>
+	<div class="social_media_container">
+
+		<div style="float:left; width:100px; height:22px; margin-right:10px; margin-top:4px;">
+			<span style="float:left; margin-right:5px;" st_url="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-comedian.html" st_title="Comedian Gallagher suffers a heart attack before Texas show" st_summary="Comedian Gallagher recovering from a heart attack: The comedian Gallagher is hospitalized and "slowly recovering" after suffering a heart attack -- not his first -- just before he was to go onstage at a Texas club Wednesday night." class="st_email"></span>
+
+			<div class="print_page" onclick="window.print(); return false;"></div>
+
+			<span class="nextgen-font-size"></span>
+
+			<a style="float:left;" href="#" onclick="font_size('up'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-uparrow.gif" alt="increase text size" class="arrow-img" />
+			</a>
+
+			<a style="float:left;" href="#" onclick="font_size('down'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-downarrow.gif" alt="decrease text size" class="arrow-img" />
+			</a>
+		</div>
+
+		<div>
+<div style="float:right; min-width:90px; max-width:120px; margin-top:2px; margin-left:22px;" class="facebook_badge">
+<div id="fb-root"></div>
+<fb:like href="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-comedian.html" layout="button_count" show_faces="false" width="120" height="21" action="recommend" colorscheme="light" allowtransparency="false"></fb:like>
+
+</div>
+
+			<div data-url="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-comedian.html" class="tweet_container">
+				<a class="twitter_link" title="Share on Twitter" onclick="count_increase(this); window.open(this.href, 'Twitter', 'height=370,width=550'); return false;" href="http://twitter.com/share?url=http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-comedian.html&text=Comedian%20Gallagher%20suffers%20a%20heart%20attack%20before%20Texas%20show&via=LATcelebs">
+					<div class="tweet_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center tweet_count"></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+			<div class="plus_1_container">
+				<g:plusone size="medium" href="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-comedian.html" callback="plusone_vote"></g:plusone>
+			</div>
+			
+			<div class="comment_button_container">
+				<a href="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-comedian.html#comments" rel="nofollow" style="float:left;">
+					<div class="comment_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center"><fb:comments-count href="http://latimesblogs.latimes.com/gossip/2012/03/gallagher-heart-attack-comedian.html"></fb:comments-count></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="clear:both"></div>
+	</div>
+</div>
+
+
+
+<!--VIDEO EMBED-->
+<div class="video-embed" style="margin-top: 12px;">
+
+
+
+
+</div>
+<!--VIDEO SCRIPT-->
+
+
+	<div class="entry-content">
+	<div class="entry-body"><p><a style="display: inline;"><img alt="Gallagher" class="asset  asset-image at-xid-6a00d8341c630a53ef0168e8d67b90970c" src="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef0168e8d67b90970c-600wi" style="width: 600px;" title="Gallagher" /></a></p>
+<p>The comedian Gallagher is hospitalized and &quot;slowly recovering&quot; after suffering a heart attack -- not his first -- just before he was to go onstage at a Texas club Wednesday night.</p>
+<p>His promotional manager Christine Scherrer said the 65-year-old prop comic, known for smashing watermelons and whatnot on stage with the &quot;<a href="http://www.youtube.com/watch?v=7yGv-XSklig" target="_blank">Sledge-o-Matic</a>,&quot; was sedated and stable in the Dallas area, telling <a href="http://www.cnn.com/2012/03/15/showbiz/gallagher-hospitalized/index.html" target="_blank">CNN</a> on Thursday, &quot;We will not know the outcome until sometime tomorrow.&quot;</p>
+<p>Before paramedics arrived, CPR was performed on Gallagher by an employee of the club, Coach Joe&#39;s Hat Tricks in Lewisville, manager Marc Cummins told the Associated Press.&#0160;</p>
+<p>The comic <a href="http://www.tmz.com/2011/03/11/gallagher-collapse-comedian-mallet-whiskey-bones-sledgehammer-saint-marys-video/" target="_blank">collapsed last year</a> while smashing stuff during a show in Minnesota; the incident was later determined to be caused by a heart attack, <a href="http://www.usmagazine.com/celebrity-news/news/gallagher-hospitalized-after-suffering-a-heart-attack-2012153" target="_blank">Us Weekly</a> said.</p>
+<p>The comic, whose full name is Leo Anthony Gallagher, also <a href="http://splitsider.com/2011/08/8-memorable-political-campaigns-by-comedians" target="_blank">ran for governor</a> of California in the 2003 recall election, finishing 16th out of 135 candidates.</p>
+<p><strong>ALSO: </strong></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2010/09/greg-giraldo-dead.html" target="_blank">&#39;Last Comic Standing&#39; judge Greg Giraldo dead at 44</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2011/11/patrice-oneal-dead-comedian-opie-anthony-comedy-central.html" target="_blank">Patrice O&#39;Neal dead at 41; comic had suffered a stroke in October</a><br /><br />— Christie D&#39;Zurilla<br /><a href="http://www.twitter.com/dzurillaville" target="_blank">Twitter.com/dzurillaville</a><br /><a href="https://plus.google.com/u/0/103235279581330577114/posts" target="_blank">Christie D&#39;Zurilla on Google+</a></p>
+<p>The Associated Press contributed to this report.</p>
+<p><em>Photo: Gallagher in 2003. Credit: file.</em></p></div>
+	
+	</div>
+	<br clear="all"/>
+	<div class="entry-footer">
+<div class="entry-footer-left">
+
+<div style="float: left; padding-right: 5px; padding-bottom: 10px;"><img src="http://www.latimes.com/media/photo/2010-04/53138230.gif"></div>
+
+
+<div>Twitter: <a href="http://twitter.com/LATcelebs">@LATcelebs</a></div>
+<div>Facebook: <a href="http://www.facebook.com/ministryofgossip">Ministry of Gossip</a></div>
+
+</div>
+
+
+<div class="entry-footer-right">
+	
+
+More in: <a href="http://latimesblogs.latimes.com/gossip/celebrity-health/" rel="section">Celebrity Health</a>, <a href="http://latimesblogs.latimes.com/gossip/celebrity-illness/" rel="section">Celebrity Illness</a>, <a href="http://latimesblogs.latimes.com/gossip/christie-dzurilla/" rel="section">Christie D'Zurilla</a>, <a href="http://latimesblogs.latimes.com/gossip/comedians/" rel="section">Comedians</a>, <a href="http://latimesblogs.latimes.com/gossip/comedy/" rel="section">Comedy</a>, <a href="http://latimesblogs.latimes.com/gossip/standup-comedy/" rel="section">Standup Comedy</a>
+
+
+</div>
+</div>
+
+	</div>
+
+	
+	
+	
+	<div class="entry" id="entry-6a00d8341c630a53ef0167634848bb970b">
+	
+	<h1 class="entry-header"><a href="http://latimesblogs.latimes.com/gossip/2012/03/nick-cannon-health-autoimmune-lupus-kidneys.html" rel="bookmark" title="Nick Cannon: Health woes due to 'lupus type' autoimmune disease">Nick Cannon: Health woes due to 'lupus type' autoimmune disease</a></h1>
+	
+
+	<div class="social-media-container">
+	<div class="time">
+		March  2, 2012&nbsp;|&nbsp;<span style="color:#8b0412;font-size:130%">10:43</span>
+		<span style="color:#8b0412">am</span>
+	</div>
+	<div class="social_media_container">
+
+		<div style="float:left; width:100px; height:22px; margin-right:10px; margin-top:4px;">
+			<span style="float:left; margin-right:5px;" st_url="http://latimesblogs.latimes.com/gossip/2012/03/nick-cannon-health-autoimmune-lupus-kidneys.html" st_title="Nick Cannon: Health woes due to 'lupus type' autoimmune disease" st_summary="Nick Cannon health: Nick Cannon shared a bit more about his health struggles at a deejay gig Wednesday, telling People that his kidney problems and more recent blood clots in his lungs stem from a "lupus type" autoimmune condition." class="st_email"></span>
+
+			<div class="print_page" onclick="window.print(); return false;"></div>
+
+			<span class="nextgen-font-size"></span>
+
+			<a style="float:left;" href="#" onclick="font_size('up'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-uparrow.gif" alt="increase text size" class="arrow-img" />
+			</a>
+
+			<a style="float:left;" href="#" onclick="font_size('down'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-downarrow.gif" alt="decrease text size" class="arrow-img" />
+			</a>
+		</div>
+
+		<div>
+<div style="float:right; min-width:90px; max-width:120px; margin-top:2px; margin-left:22px;" class="facebook_badge">
+<div id="fb-root"></div>
+<fb:like href="http://latimesblogs.latimes.com/gossip/2012/03/nick-cannon-health-autoimmune-lupus-kidneys.html" layout="button_count" show_faces="false" width="120" height="21" action="recommend" colorscheme="light" allowtransparency="false"></fb:like>
+
+</div>
+
+			<div data-url="http://latimesblogs.latimes.com/gossip/2012/03/nick-cannon-health-autoimmune-lupus-kidneys.html" class="tweet_container">
+				<a class="twitter_link" title="Share on Twitter" onclick="count_increase(this); window.open(this.href, 'Twitter', 'height=370,width=550'); return false;" href="http://twitter.com/share?url=http://latimesblogs.latimes.com/gossip/2012/03/nick-cannon-health-autoimmune-lupus-kidneys.html&text=Nick%20Cannon%3A%20Health%20woes%20due%20to%20'lupus%20type'%20autoimmune%20disease&via=LATcelebs">
+					<div class="tweet_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center tweet_count"></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+			<div class="plus_1_container">
+				<g:plusone size="medium" href="http://latimesblogs.latimes.com/gossip/2012/03/nick-cannon-health-autoimmune-lupus-kidneys.html" callback="plusone_vote"></g:plusone>
+			</div>
+			
+			<div class="comment_button_container">
+				<a href="http://latimesblogs.latimes.com/gossip/2012/03/nick-cannon-health-autoimmune-lupus-kidneys.html#comments" rel="nofollow" style="float:left;">
+					<div class="comment_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center"><fb:comments-count href="http://latimesblogs.latimes.com/gossip/2012/03/nick-cannon-health-autoimmune-lupus-kidneys.html"></fb:comments-count></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="clear:both"></div>
+	</div>
+</div>
+
+
+
+<!--VIDEO EMBED-->
+<div class="video-embed" style="margin-top: 12px;">
+
+
+
+
+</div>
+<!--VIDEO SCRIPT-->
+
+
+	<div class="entry-content">
+	<div class="entry-body"><p><a href="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef01630254012c970d-pi" style="display: inline;"><img alt="Nick Cannon, Mariah Carey and Morrocan" class="asset  asset-image at-xid-6a00d8341c630a53ef01630254012c970d" src="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef01630254012c970d-600wi" style="width: 600px;" title="Nick Cannon, Mariah Carey and Morrocan" /></a></p>
+<p>Nick Cannon shared a bit more about his health struggles at a DJ gig Wednesday, explaining that his kidney problems and more recent blood clots in his lungs stem from a &quot;lupus type&quot; autoimmune condition.</p>
+<p>&quot;The blood clot thing was probably the scariest,&quot; Mr. Mariah Carey told <a href="http://www.people.com/people/article/0,,20575275,00.html" target="_blank">People</a>, referring to his mid-February hospitalization, which followed kidney problems over the holidays. &quot;I thought I was getting better, and then that happened, so that kind of came out of nowhere.&quot;</p>
+<p>No one else in his family, he said, has the condition, which he described to the mag as &quot;like a lupus type of thing.&quot;</p>
+<p>(Lupus itself is a <a href="http://www.lupus.org/webmodules/webarticlesnet/templates/new_learnunderstanding.aspx?articleid=2232&amp;zoneid=523" target="_blank">chronic inflammatory disease</a> that can affect various parts of  the body, especially the skin, joints, blood and kidneys, according to the Lupus Foundation of America. Symptoms can range from mild to life-threatening.)</p>
+<p>Cannon, who quit his daily morning radio show last month, says he&#39;s now trying to get six hours of sleep a night and is taking it easy at home.&#0160;&#0160;&#0160;</p>
+<p>At the end of January, the father of twins and &quot;America&#39;s Got Talent&quot; host posted the video below on his personal <a href="http://www.nickcannon.com/" target="_blank">website</a>, explaining what he&#39;d been through during the Christmas holidays and up to that point. In mid-February, he was hospitalized again but managed to keep the situation quiet until he was back home.</p>
+<p><iframe frameborder="0" height="315" src="http://www.youtube.com/embed/O0nI_eBOIc0" width="560"></iframe>&#0160;</p>
+<p><strong>RELATED:</strong></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/02/nick-cannon-health-quits-radio-show-cannons-countdown.html" target="_blank">Nick Cannon: New health concerns take him off morning radio show</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/01/nick-cannon-mariah-carey-mild-kidney-failure-aspen-holiday.html" target="_blank">Nick Cannon hospitalized for kidney issues after family&#39;s Aspen holiday</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/01/nick-cannon-stable-condition-mariah-carey.html" target="_blank">Nick Cannon has &quot;good prognosis,&quot; may be home soon, wife Mariah Carey says</a></p>
+<p>-- Christie D&#39;Zurilla<br /> <a href="http://www.twitter.com/dzurillaville" target="_blank">twitter.com/dzurillaville</a><br /><a href="https://plus.google.com/u/0/103235279581330577114/posts" target="_blank">Christie D&#39;Zurilla on Google+</a></p>
+<p><em>Photo: Mariah Carey, Nick Cannon and their son  Moroccan at the BET Honors in Washington, D.C., on Jan. 14. Credit: Jose Luis Magana / Associated Press</em></p></div>
+	
+	</div>
+	<br clear="all"/>
+	<div class="entry-footer">
+<div class="entry-footer-left">
+
+<div style="float: left; padding-right: 5px; padding-bottom: 10px;"><img src="http://www.latimes.com/media/photo/2010-04/53138230.gif"></div>
+
+
+<div>Twitter: <a href="http://twitter.com/LATcelebs">@LATcelebs</a></div>
+<div>Facebook: <a href="http://www.facebook.com/ministryofgossip">Ministry of Gossip</a></div>
+
+</div>
+
+
+<div class="entry-footer-right">
+	
+
+More in: <a href="http://latimesblogs.latimes.com/gossip/celebrity-health/" rel="section">Celebrity Health</a>, <a href="http://latimesblogs.latimes.com/gossip/celebrity-illness/" rel="section">Celebrity Illness</a>, <a href="http://latimesblogs.latimes.com/gossip/christie-dzurilla/" rel="section">Christie D'Zurilla</a>, <a href="http://latimesblogs.latimes.com/gossip/mariah-carey/" rel="section">Mariah Carey</a>, <a href="http://latimesblogs.latimes.com/gossip/nick-cannon/" rel="section">Nick Cannon</a>
+
+
+</div>
+</div>
+
+	</div>
+
+	
+	
+	
+	<div class="entry" id="entry-6a00d8341c630a53ef016301bc6de2970d">
+	
+	<h1 class="entry-header"><a href="http://latimesblogs.latimes.com/gossip/2012/02/dame-judi-dench-eyesight-macular-degeneration-not-going-blind.html" rel="bookmark" title="Dame Judi Dench: Vision problems, yes; going blind, not so much">Dame Judi Dench: Vision problems, yes; going blind, not so much</a></h1>
+	
+
+	<div class="social-media-container">
+	<div class="time">
+		February 20, 2012&nbsp;|&nbsp;<span style="color:#8b0412;font-size:130%"> 4:19</span>
+		<span style="color:#8b0412">pm</span>
+	</div>
+	<div class="social_media_container">
+
+		<div style="float:left; width:100px; height:22px; margin-right:10px; margin-top:4px;">
+			<span style="float:left; margin-right:5px;" st_url="http://latimesblogs.latimes.com/gossip/2012/02/dame-judi-dench-eyesight-macular-degeneration-not-going-blind.html" st_title="Dame Judi Dench: Vision problems, yes; going blind, not so much" st_summary="Dame Judi Dench is not going blind, she says. Dame Judi Dench revealed over the weekend that she has age-related macular degeneration. " class="st_email"></span>
+
+			<div class="print_page" onclick="window.print(); return false;"></div>
+
+			<span class="nextgen-font-size"></span>
+
+			<a style="float:left;" href="#" onclick="font_size('up'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-uparrow.gif" alt="increase text size" class="arrow-img" />
+			</a>
+
+			<a style="float:left;" href="#" onclick="font_size('down'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-downarrow.gif" alt="decrease text size" class="arrow-img" />
+			</a>
+		</div>
+
+		<div>
+<div style="float:right; min-width:90px; max-width:120px; margin-top:2px; margin-left:22px;" class="facebook_badge">
+<div id="fb-root"></div>
+<fb:like href="http://latimesblogs.latimes.com/gossip/2012/02/dame-judi-dench-eyesight-macular-degeneration-not-going-blind.html" layout="button_count" show_faces="false" width="120" height="21" action="recommend" colorscheme="light" allowtransparency="false"></fb:like>
+
+</div>
+
+			<div data-url="http://latimesblogs.latimes.com/gossip/2012/02/dame-judi-dench-eyesight-macular-degeneration-not-going-blind.html" class="tweet_container">
+				<a class="twitter_link" title="Share on Twitter" onclick="count_increase(this); window.open(this.href, 'Twitter', 'height=370,width=550'); return false;" href="http://twitter.com/share?url=http://latimesblogs.latimes.com/gossip/2012/02/dame-judi-dench-eyesight-macular-degeneration-not-going-blind.html&text=Dame%20Judi%20Dench%3A%20Vision%20problems%2C%20yes%3B%20going%20blind%2C%20not%20so%20much&via=LATcelebs">
+					<div class="tweet_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center tweet_count"></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+			<div class="plus_1_container">
+				<g:plusone size="medium" href="http://latimesblogs.latimes.com/gossip/2012/02/dame-judi-dench-eyesight-macular-degeneration-not-going-blind.html" callback="plusone_vote"></g:plusone>
+			</div>
+			
+			<div class="comment_button_container">
+				<a href="http://latimesblogs.latimes.com/gossip/2012/02/dame-judi-dench-eyesight-macular-degeneration-not-going-blind.html#comments" rel="nofollow" style="float:left;">
+					<div class="comment_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center"><fb:comments-count href="http://latimesblogs.latimes.com/gossip/2012/02/dame-judi-dench-eyesight-macular-degeneration-not-going-blind.html"></fb:comments-count></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="clear:both"></div>
+	</div>
+</div>
+
+
+
+<!--VIDEO EMBED-->
+<div class="video-embed" style="margin-top: 12px;">
+
+
+
+
+</div>
+<!--VIDEO SCRIPT-->
+
+
+	<div class="entry-content">
+	<div class="entry-body"><p><a href="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef016301bca998970d-pi" style="display: inline;"><img alt="Dame Judi Dench says she&#39;s not going blind" class="asset  asset-image at-xid-6a00d8341c630a53ef016301bca998970d" src="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef016301bca998970d-600wi" style="width: 600px;" title="Dame Judi Dench says she&#39;s not going blind" /></a></p>
+<p>Dame Judi Dench is suffering from age-related macular degeneration, yes, and it has affected her vision significantly, she said recently, but she also clarified Monday that no, she&#39;s not going blind.</p>
+<p>Dench, 77, revealed her condition Saturday to the Daily Mirror.</p>
+<p>&quot;I can’t read scripts anymore because of the trouble with my eyes. And so somebody comes in and reads them to me, like telling me a story,&quot; she told the <a href="http://www.mirror.co.uk/news/uk-news/dame-judi-denchs-eyesight-battle-689976" target="_blank">Mirror</a>. &quot;It&#39;s  usually my daughter or my agent or a friend and actually I like that,  because I sit there and imagine the story in my mind.&quot;</p>
+<p>It&#39;s a condition her mother had before her, she said, and she has lenses and glasses to help — those things plus good old bright light.</p>
+<p>&quot;I do not wish for this to be overblown ...&quot; Dench said Monday in a <a href="http://www.reuters.com/article/2012/02/20/us-judidench-eyesight-idUSTRE81J0X720120220" target="_blank">statement</a> sent to Reuters. &quot;It&#39;s something that I have learnt to cope with and adapt to — and it will not lead to blindness.&quot;</p>
+<p>To the Mirror, the James Bond-franchise actress and Oscar winner described a particularly irritating facet of the condition, however. &quot;The most distressing thing is in a restaurant in the evening I can’t see the person I’m having dinner with,&quot; she said, after explaining to the interviewer that while she could see his outline, his face remained a mystery.</p>
+<p>The National Institutes of Health, in its <a href="http://www.nei.nih.gov/health/maculardegen/armd_facts.asp" target="_blank">explanation</a> of age-related macular degeneration as a disease that over time destroys sharp, clear central vision, includes pictures of how <a href="http://www.nei.nih.gov/health/images/normal_vision_color.jpg" target="_blank">normal vision</a> compares to the <a href="http://www.nei.nih.gov/health/images/armd_color.jpg" target="_blank">vision of someone with AMD</a>.</p>
+<p><strong>ALSO:</strong></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2011/10/javier-bardem-daniel-craig-james-bond-villain.html" target="_blank">Javier Bardem inked as villain to Daniel Craig&#39;s James Bond</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/02/robin-gibb-colon-cancer-spectacular-recovery.html" target="_blank">Robin Gibb announces &#39;spectacular&#39; recovery from colon cancer</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/02/nick-cannon-health-quits-radio-show-cannons-countdown.html" target="_blank">Health concerns take Nick Cannon off his daily morning radio show</a></p>
+<p>— Christie D&#39;Zurilla<br /><a href="http://www.twitter.com/dzurillaville" target="_blank">Twitter.com/dzurillaville</a><br /><a href="https://plus.google.com/u/0/103235279581330577114/posts" target="_blank">Christie D&#39;Zurilla on Google+</a></p>
+<p><em>Photo: Judi Dench in July 2011. Credit: Michal Cizek / AFP / Getty Images.</em></p>
+<p>&#0160;</p></div>
+	
+	</div>
+	<br clear="all"/>
+	<div class="entry-footer">
+<div class="entry-footer-left">
+
+<div style="float: left; padding-right: 5px; padding-bottom: 10px;"><img src="http://www.latimes.com/media/photo/2010-04/53138230.gif"></div>
+
+
+<div>Twitter: <a href="http://twitter.com/LATcelebs">@LATcelebs</a></div>
+<div>Facebook: <a href="http://www.facebook.com/ministryofgossip">Ministry of Gossip</a></div>
+
+</div>
+
+
+<div class="entry-footer-right">
+	
+
+More in: <a href="http://latimesblogs.latimes.com/gossip/celebrity-health/" rel="section">Celebrity Health</a>, <a href="http://latimesblogs.latimes.com/gossip/celebrity-illness/" rel="section">Celebrity Illness</a>, <a href="http://latimesblogs.latimes.com/gossip/christie-dzurilla/" rel="section">Christie D'Zurilla</a>, <a href="http://latimesblogs.latimes.com/gossip/judi-dench/" rel="section">Judi Dench</a>
+
+
+</div>
+</div>
+
+	</div>
+
+	
+	
+	
+	<div class="entry" id="entry-6a00d8341c630a53ef0168e7853b16970c">
+	
+	<h1 class="entry-header"><a href="http://latimesblogs.latimes.com/gossip/2012/02/nick-cannon-health-quits-radio-show-cannons-countdown.html" rel="bookmark" title="Nick Cannon: Health concerns take him off morning radio show">Nick Cannon: Health concerns take him off morning radio show</a></h1>
+	
+
+	<div class="social-media-container">
+	<div class="time">
+		February 17, 2012&nbsp;|&nbsp;<span style="color:#8b0412;font-size:130%">10:25</span>
+		<span style="color:#8b0412">am</span>
+	</div>
+	<div class="social_media_container">
+
+		<div style="float:left; width:100px; height:22px; margin-right:10px; margin-top:4px;">
+			<span style="float:left; margin-right:5px;" st_url="http://latimesblogs.latimes.com/gossip/2012/02/nick-cannon-health-quits-radio-show-cannons-countdown.html" st_title="Nick Cannon: Health concerns take him off morning radio show" st_summary="Nick Cannon: Health concerns take him off his Rollin' 92.3 FM radio show. Nick Cannon's health is once again in the spotlight, with doctors ordering him off the radio after finding blood clots in his lungs. " class="st_email"></span>
+
+			<div class="print_page" onclick="window.print(); return false;"></div>
+
+			<span class="nextgen-font-size"></span>
+
+			<a style="float:left;" href="#" onclick="font_size('up'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-uparrow.gif" alt="increase text size" class="arrow-img" />
+			</a>
+
+			<a style="float:left;" href="#" onclick="font_size('down'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-downarrow.gif" alt="decrease text size" class="arrow-img" />
+			</a>
+		</div>
+
+		<div>
+<div style="float:right; min-width:90px; max-width:120px; margin-top:2px; margin-left:22px;" class="facebook_badge">
+<div id="fb-root"></div>
+<fb:like href="http://latimesblogs.latimes.com/gossip/2012/02/nick-cannon-health-quits-radio-show-cannons-countdown.html" layout="button_count" show_faces="false" width="120" height="21" action="recommend" colorscheme="light" allowtransparency="false"></fb:like>
+
+</div>
+
+			<div data-url="http://latimesblogs.latimes.com/gossip/2012/02/nick-cannon-health-quits-radio-show-cannons-countdown.html" class="tweet_container">
+				<a class="twitter_link" title="Share on Twitter" onclick="count_increase(this); window.open(this.href, 'Twitter', 'height=370,width=550'); return false;" href="http://twitter.com/share?url=http://latimesblogs.latimes.com/gossip/2012/02/nick-cannon-health-quits-radio-show-cannons-countdown.html&text=Nick%20Cannon%3A%20Health%20concerns%20take%20him%20off%20morning%20radio%20show&via=LATcelebs">
+					<div class="tweet_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center tweet_count"></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+			<div class="plus_1_container">
+				<g:plusone size="medium" href="http://latimesblogs.latimes.com/gossip/2012/02/nick-cannon-health-quits-radio-show-cannons-countdown.html" callback="plusone_vote"></g:plusone>
+			</div>
+			
+			<div class="comment_button_container">
+				<a href="http://latimesblogs.latimes.com/gossip/2012/02/nick-cannon-health-quits-radio-show-cannons-countdown.html#comments" rel="nofollow" style="float:left;">
+					<div class="comment_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center"><fb:comments-count href="http://latimesblogs.latimes.com/gossip/2012/02/nick-cannon-health-quits-radio-show-cannons-countdown.html"></fb:comments-count></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="clear:both"></div>
+	</div>
+</div>
+
+
+
+<!--VIDEO EMBED-->
+<div class="video-embed" style="margin-top: 12px;">
+
+
+
+
+</div>
+<!--VIDEO SCRIPT-->
+
+
+	<div class="entry-content">
+	<div class="entry-body"><p><a href="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef01676283c90e970b-pi" style="display: inline;"><img alt="Nick Cannon: Health concerns dog him once again" class="asset  asset-image at-xid-6a00d8341c630a53ef01676283c90e970b" src="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef01676283c90e970b-600wi" style="width: 600px;" title="Nick Cannon: Health concerns dog him once again" /></a><br />Nick Cannon, whose health was a major concern for him over the Christmas and New Year&#39;s holidays, has quit his weekday morning FM radio show on doctors&#39; orders.</p>
+<p>&quot;Under doctors&#39; orders, I have been asked to put my health  first and cut  back on some of my professional commitments in order to  allow my body  to get the rest that it needs to keep up with the demands  of my  multi-tasking schedule,&quot; Cannon said in a statement Friday, the day he hosted his final 92.3 NOW morning show.</p>
+<p>On Twitter, he called it &quot;a bitter sweet morning,&quot; noting that doctors had &quot;found blood clots in my lungs and said if I don&#39;t slow down and stop working so hard then it&#39;s a wrap!&quot;</p>
+<p>Cannon has had more than work to keep him busy in recent months: He and wife Mariah Carey <a href="http://latimesblogs.latimes.com/gossip/2011/04/mariah-carey-twins-nick-cannon-dembabies.html" target="_blank">welcomed twins</a> last April. He was hospitalized in high-altitude Aspen, Colo., over the holidays, then moved to Los Angeles for further treatment, reportedly for kidney issues.</p>
+<p>He had given a few details about his current situation <a href="http://923now.radio.com/2012/02/15/nick-cannon-updates-listeners-on-health-status-is-he-going-to-be-o/" target="_blank">Wednesday</a> on the show: &quot;It&#39;s my first day back since Friday, and not many people have known  this but, uh ... I’ve been in the  hospital since Friday. I was having a  lot of pain in my back. ... I learned  that I had blood clots in my lung ... an  enlarged ventricle in the  right side of my heart.&quot;</p>
+<p>The &quot;America&#39;s Got Talent&quot; host -- he&#39;s slated to return to that job this summer -- said Friday that he&#39;ll continue to host his syndicated &quot;Cannon&#39;s Countdown&quot; weekend program.</p>
+<p>&quot;I guess I can&#39;t drive at 200 mph for the whole road trip, Time to put the car in cruise control,&quot; he said on Twitter, adding, &quot;Even Super Man had to sleep!&quot;</p>
+<p><strong>RELATED:</strong></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/01/nick-cannon-minor-kidney-failure-mariah-carey.html" target="_blank">Nick Cannon moved from Aspen to an L.A. hospital for treatment</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/01/nick-cannon-mariah-carey-mild-kidney-failure-aspen-holiday.html" target="_blank">Nick Cannon hospitalized for kidney issues after family&#39;s Aspen holiday</a></p>
+<p><a href="http://latimesblogs.latimes.com/gossip/2012/01/nick-cannon-stable-condition-mariah-carey.html" target="_blank">Nick Cannon has &quot;good prognosis,&quot; may be home soon, wife Mariah Carey says</a></p>
+<p>-- Christie D&#39;Zurilla<br /><a href="http://www.twitter.com/dzurillaville" target="_blank">twitter.com/dzurillaville</a><br /><a href="https://plus.google.com/u/0/103235279581330577114/posts" target="_blank">Christie D&#39;Zurilla on Google+</a></p>
+<p><em>Photo: Nick Cannon in Hollywood in October. Credit: Frederick M. Brown / Getty Images</em></p></div>
+	
+	</div>
+	<br clear="all"/>
+	<div class="entry-footer">
+<div class="entry-footer-left">
+
+<div style="float: left; padding-right: 5px; padding-bottom: 10px;"><img src="http://www.latimes.com/media/photo/2010-04/53138230.gif"></div>
+
+
+<div>Twitter: <a href="http://twitter.com/LATcelebs">@LATcelebs</a></div>
+<div>Facebook: <a href="http://www.facebook.com/ministryofgossip">Ministry of Gossip</a></div>
+
+</div>
+
+
+<div class="entry-footer-right">
+	
+
+More in: <a href="http://latimesblogs.latimes.com/gossip/celebrity-health/" rel="section">Celebrity Health</a>, <a href="http://latimesblogs.latimes.com/gossip/celebrity-illness/" rel="section">Celebrity Illness</a>, <a href="http://latimesblogs.latimes.com/gossip/christie-dzurilla/" rel="section">Christie D'Zurilla</a>, <a href="http://latimesblogs.latimes.com/gossip/mariah-carey/" rel="section">Mariah Carey</a>, <a href="http://latimesblogs.latimes.com/gossip/nick-cannon/" rel="section">Nick Cannon</a>
+
+
+</div>
+</div>
+
+	</div>
+
+	
+	
+	
+	<div class="entry" id="entry-6a00d8341c630a53ef0168e6d4cbff970c">
+	
+	<h1 class="entry-header"><a href="http://latimesblogs.latimes.com/gossip/2012/02/demi-moore-rehab-utah-cirque-lodge-bruce-willis-ashton-kutcher.html" rel="bookmark" title="Demi Moore reportedly in rehab at luxe Cirque Lodge in Sundance">Demi Moore reportedly in rehab at luxe Cirque Lodge in Sundance</a></h1>
+	
+
+	<div class="social-media-container">
+	<div class="time">
+		February  6, 2012&nbsp;|&nbsp;<span style="color:#8b0412;font-size:130%"> 2:47</span>
+		<span style="color:#8b0412">pm</span>
+	</div>
+	<div class="social_media_container">
+
+		<div style="float:left; width:100px; height:22px; margin-right:10px; margin-top:4px;">
+			<span style="float:left; margin-right:5px;" st_url="http://latimesblogs.latimes.com/gossip/2012/02/demi-moore-rehab-utah-cirque-lodge-bruce-willis-ashton-kutcher.html" st_title="Demi Moore reportedly in rehab at luxe Cirque Lodge in Sundance" st_summary="Demi Moore reportedly has been in rehab at the Cirque Lodge in Utah. Demi Moore is reportedly being treated for addiction issues and an eating disorder." class="st_email"></span>
+
+			<div class="print_page" onclick="window.print(); return false;"></div>
+
+			<span class="nextgen-font-size"></span>
+
+			<a style="float:left;" href="#" onclick="font_size('up'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-uparrow.gif" alt="increase text size" class="arrow-img" />
+			</a>
+
+			<a style="float:left;" href="#" onclick="font_size('down'); return false;" rel="nofollow">
+				<img src="http://www.latimes.com/hive/images/icons/atools-downarrow.gif" alt="decrease text size" class="arrow-img" />
+			</a>
+		</div>
+
+		<div>
+<div style="float:right; min-width:90px; max-width:120px; margin-top:2px; margin-left:22px;" class="facebook_badge">
+<div id="fb-root"></div>
+<fb:like href="http://latimesblogs.latimes.com/gossip/2012/02/demi-moore-rehab-utah-cirque-lodge-bruce-willis-ashton-kutcher.html" layout="button_count" show_faces="false" width="120" height="21" action="recommend" colorscheme="light" allowtransparency="false"></fb:like>
+
+</div>
+
+			<div data-url="http://latimesblogs.latimes.com/gossip/2012/02/demi-moore-rehab-utah-cirque-lodge-bruce-willis-ashton-kutcher.html" class="tweet_container">
+				<a class="twitter_link" title="Share on Twitter" onclick="count_increase(this); window.open(this.href, 'Twitter', 'height=370,width=550'); return false;" href="http://twitter.com/share?url=http://latimesblogs.latimes.com/gossip/2012/02/demi-moore-rehab-utah-cirque-lodge-bruce-willis-ashton-kutcher.html&text=Demi%20Moore%20reportedly%20in%20rehab%20at%20luxe%20Cirque%20Lodge%20in%20Sundance&via=LATcelebs">
+					<div class="tweet_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center tweet_count"></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+			<div class="plus_1_container">
+				<g:plusone size="medium" href="http://latimesblogs.latimes.com/gossip/2012/02/demi-moore-rehab-utah-cirque-lodge-bruce-willis-ashton-kutcher.html" callback="plusone_vote"></g:plusone>
+			</div>
+			
+			<div class="comment_button_container">
+				<a href="http://latimesblogs.latimes.com/gossip/2012/02/demi-moore-rehab-utah-cirque-lodge-bruce-willis-ashton-kutcher.html#comments" rel="nofollow" style="float:left;">
+					<div class="comment_button"></div>
+				</a>
+				<div class="social_count_container">
+					<div class="social_count_left"></div>
+					<div class="social_count_center"><fb:comments-count href="http://latimesblogs.latimes.com/gossip/2012/02/demi-moore-rehab-utah-cirque-lodge-bruce-willis-ashton-kutcher.html"></fb:comments-count></div>
+					<div class="social_count_right"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="clear:both"></div>
+	</div>
+</div>
+
+
+
+<!--VIDEO EMBED-->
+<div class="video-embed" style="margin-top: 12px;">
+
+
+
+
+</div>
+<!--VIDEO SCRIPT-->
+
+
+	<div class="entry-content">
+	<div class="entry-body"><p><a href="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef016300dee70d970d-pi" style="display: inline;"><img alt="Demi Moore" class="asset  asset-image at-xid-6a00d8341c630a53ef016300dee70d970d" src="http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef016300dee70d970d-600wi" style="width: 600px;" title="Demi Moore" /></a></p>
+<p><em>This post has been updated, as indicated below. </em></p>
+<p>Demi Moore reportedly has been getting help for addiction and an eating disorder at a luxe Utah rehab since shortly after her hospitalization last month.</p>
+<p>After being hospitalized Jan. 23, she grabbed some things and headed to get help at the Cirque Lodge in Sundance, Utah, a rehab source told E! Online.</p>
+<p>&quot;She&#39;s on total lockdown and only talking to a small group of people,&quot;  the source <a href="http://www.eonline.com/news/demi_moore_checks_into_utah_rehab/291779" target="_blank">said</a>. Other celebs treated at Cirque include Lindsay Lohan, Kirsten Dunst and, possibly <a href="http://www.x17online.com/celebrities/brooke_mueller/brooke_mueller_rehab_cirque_lodge_utah_demi_moore_020612.php" target="_blank">concurrent</a> with Demi, Brooke Mueller.<strong> [Updated, 6:45 p.m. Jan. 6:</strong> <a href="http://www.eonline.com/news/true_false_brooke_mueller_in_rehab_with/292124" target="_blank">Or not</a>.<strong>]</strong></p>
+<p>The timing of her check-in is in conflict with earlier reports that she&#39;d been visited at home last week by ex-husband Bruce Willis and estranged husband Ashton Kutcher, the latter of whom had been in Brazil when the 49-year-old actress &quot;smoked something&quot; and went into &quot;convulsions,&quot; as described on <a href="http://latimesblogs.latimes.com/gossip/2012/01/rumer-willis-demi-moore-911-call-sag-awards.html" target="_blank">a 911 call</a> made on her behalf.</p>
+<p>Those <a href="http://www.eonline.com/news/demi_moore_bruce_willis_ashton_kutcher/290370" target="_blank">reports</a>, however, said only that separate cars carrying the men had gone to Moore&#39;s home last Wednesday. Perhaps they visited the house, and not Demi?</p>
+</div>
+	
+	<div align="right" class="entry-more-link"><a href="http://latimesblogs.latimes.com/gossip/2012/02/demi-moore-rehab-utah-cirque-lodge-bruce-willis-ashton-kutcher.html#more" rel="nofollow">Continue reading&nbsp;&raquo;</a></div>
+	
+	</div>
+	<br clear="all"/>
+	<div class="entry-footer">
+<div class="entry-footer-left">
+
+<div style="float: left; padding-right: 5px; padding-bottom: 10px;"><img src="http://www.latimes.com/media/photo/2010-04/53138230.gif"></div>
+
+
+<div>Twitter: <a href="http://twitter.com/LATcelebs">@LATcelebs</a></div>
+<div>Facebook: <a href="http://www.facebook.com/ministryofgossip">Ministry of Gossip</a></div>
+
+</div>
+
+
+<div class="entry-footer-right">
+	
+
+More in: <a href="http://latimesblogs.latimes.com/gossip/ashton-kutcher/" rel="section">Ashton Kutcher</a>, <a href="http://latimesblogs.latimes.com/gossip/bruce-willis/" rel="section">Bruce Willis</a>, <a href="http://latimesblogs.latimes.com/gossip/celebrity-health/" rel="section">Celebrity Health</a>, <a href="http://latimesblogs.latimes.com/gossip/celebrity-illness/" rel="section">Celebrity Illness</a>, <a href="http://latimesblogs.latimes.com/gossip/christie-dzurilla/" rel="section">Christie D'Zurilla</a>, <a href="http://latimesblogs.latimes.com/gossip/demi-moore/" rel="section">Demi Moore</a>, <a href="http://latimesblogs.latimes.com/gossip/rehab/" rel="section">Rehab</a>
+
+
+</div>
+</div>
+
+	</div>
+
+	
+
+	<div id="mainindexpager">
+	
+
+<div class="pager-bottom pager-entries pager content-nav">
+	<p class="pager-inner">
+	
+		
+			<span class="pager-left">
+				<a href="http://latimesblogs.latimes.com/gossip/celebrity-illness/page/2/">
+					<span class="pager-label">&#171; Older</span>
+				</a>
+			</span>
+		
+		
+		
+		
+		
+			
+	</p>
+</div>
+
+
+	</div>
+
+	<!--BLOG POSTS END HERE-->
+
+</div>
+<script language="javascript" type="text/javascript">
+omniture_blog_entrytitle="The Envelope:entertainment:ministryofgossip:Celebrity Illness:cat.";
+</script>
+<script type="text/javascript">
+<!--
+var extra_happy = Math.floor(1000000000 * Math.random());
+document.write('<img src="http://www.typepad.com/t/stats?blog_id=81247383703688971&amp;user_id=816965&amp;page=' + escape(location.href) + '&amp;referrer=' + escape(document.referrer) + '&amp;i=' + extra_happy + '" width="1" height="1" alt="" style="position: absolute; top: 0; left: 0;" />');
+// -->
+</script>
+
+
+	</div>
+
+	<div id="topRightNarrow">
+		<!-- Righ Rail -->
+		<table class="cubeAd">
+	<tr>
+		<td class="adLabel">Advertisement</td>
+	</tr>
+	<tr>
+		<td valign="middle">
+			<div class="miscAd cube">	
+				
+				<div id="cubeContainer">
+					<iframe id="CubeAd" name="CubeAd" align="center" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" width="300" height="250"></iframe>
+				</div>
+				
+				<noscript><a href="http://ad.doubleclick.net/jump/trb.theenvelope/ent/blog/gossip;ptype=sf;pos=1;tile=2;sz=300x250;ord=123456789?" target="_blank"><img src="http://ad.doubleclick.net/ad/trb.theenvelope/ent/blog/gossip;ptype=sf;pos=1;tile=2;sz=300x250;ord=123456789?" width="300" height="250" border="0" alt=""></a></noscript>
+				
+				<!-- End ad tag -->
+			
+			</div>
+		</td>
+	</tr>
+</table>
+
+
+<div id="social-header" style="margin-top:20px;">
+        <img class="social-logo" src="http://www.latimes.com/media/graphic/2012-03/68914434.png" /><span>Connect</span>
+        <img id="connect-facebook" data-tooltip="fb" class="social-icon" src="http://www.latimes.com/media/thumbnails/graphic/2010-10/57077505-26140120.gif" />
+        <img id="connect-twitter" data-tooltip="twitter" class="social-icon" src="http://www.latimes.com/media/thumbnails/graphic/2010-10/57073722-26135930.gif" />
+        <img id="connect-googleplus" data-tooltip="googleplus" class="social-icon" src="http://www.latimes.com/media/graphic/2012-03/68914452.jpg" />
+        <a href="http://www.latimes.com/about/rss/"><img id="connect-rss" src="http://www.latimes.com/media/graphic/2010-10/57073722.gif"/></a>
+</div>
+<div class="rr-box-thin" id="fbrecommend">
+
+<h3><a href="http://www.facebook.com/latimes">Recommended on Facebook</a></h3>
+<div class="fb_numberholder">
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com/latimes&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe></div>
+
+
+<div style="width: 292px; height: 130px; overflow-y: scroll; overflow-x: hidden;">
+
+<div style="width: 290px; height: 410px; ">
+
+
+
+<!-- <iframe src="http://www.facebook.com/plugins/recommendations.php?site=http%3A%2F%2Fwww.latimes.com%2C+http%3A%2F%2Flatimesblogs.latimes.com&amp;width=280&amp;height=450&amp;header=false&amp;colorscheme=light&amp;font=verdana&amp;border_color=%23ffffff&amp;max_age=3&amp;action=recommend&amp;ref=fb_widget" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:280px; height:410px;" allowTransparency="true"></iframe> -->
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=121694484590917";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div id="recommendations-frame" style="overflow:hidden; width:280px; height:450px;">
+        <div class="fb-recommendations" style="left:-1px; top:-1px;" data-site="www.latimes.com, latimesblogs.latimes.com" data-app-id="121694484590917" data-width="284" data-height="454" data-header="false"></div>  
+    </div>  
+
+
+</div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+/* Sticky Tooltip script (v1.0)
+* Created: Nov 25th, 2009. This notice must stay intact for usage 
+* Author: Dynamic Drive at http://www.dynamicdrive.com/
+* Visit http://www.dynamicdrive.com/ for full source code
+*/
+
+var stickytooltip={
+    tooltipoffsets: [0, -20], //additional x and y offset from mouse cursor for tooltips
+    fadeinspeed: 250, //duration of fade effect in milliseconds
+    positiontooltip:function($, $tooltip, e){
+        var x=e.pageX+this.tooltipoffsets[0], y=e.pageY+this.tooltipoffsets[1]
+        var tipw=$tooltip.outerWidth(), tiph=$tooltip.outerHeight(),
+        x=x-(tipw/2)
+        //x=(x+tipw>$(document).scrollLeft()+$(window).width())? x-tipw-(stickytooltip.tooltipoffsets[0]*2) : x
+        y=y-tiph
+        $tooltip.css({left:x, top:y})
+    },  
+    
+    showbox:function($, $tooltip, e){
+        $tooltip.show()
+        this.positiontooltip($, $tooltip, e)
+    },
+
+    hidebox:function($, $tooltip){
+        if (jQuery('#googleplus').css('display') == 'block') {
+            $tooltip.fadeOut(2000)
+        }
+        else {
+            $tooltip.fadeOut(500)
+        }
+    },
+
+    init:function(targetselector, tipid){
+        jQuery(document).ready(function($){
+            var $targets=$(targetselector)
+            var $tooltip=$('#'+tipid).appendTo(document.body)
+            if ($targets.length==0)
+                return
+            var $alltips=$tooltip.find('div.newtip')
+
+            stickytooltip.hidebox($, $tooltip)
+            
+            $targets.hover(function(e){
+                $alltips.hide().filter('#'+$(this).attr('data-tooltip')).show()
+                $tooltip.stop(true, true)
+                stickytooltip.showbox($, $tooltip, e)
+            }, function(e){
+                stickytooltip.hidebox($, $tooltip)
+            })
+
+            $tooltip.hover(function(){
+                jQuery(this).stop(true, true)
+                stickytooltip.showbox($, $tooltip)              
+            }, function(){
+                stickytooltip.hidebox($, $tooltip)                              
+            })
+
+            $(this).bind("click", function(e){
+                if (e.button==0){
+                    stickytooltip.hidebox($, $tooltip)
+                }
+            })
+
+        }) //end dom ready
+    }
+}
+
+stickytooltip.init("*[data-tooltip]", "mystickytooltip")
+</script>
+
+<div id="mystickytooltip" class="stickytooltip">
+    <div style="padding:5px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;">
+
+        <div id="fb" class="newtip">
+            <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Flatimes&amp;width=292&amp;height=179&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:179px; z-index:99999999; zoom:1; display:block;"></iframe>
+        </div>
+
+        <div id="twitter" class="newtip">
+            <a href="https://twitter.com/latimes" class="twitter-follow-button" data-show-count="false" data-show-screen-name="true">Follow @latimes</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
+        <div id="googleplus" class="newtip">
+            <div style="height:90px; overflow:hidden;"><g:plus href="https://plus.google.com/112727226361732924638" rel="author" width="100" height="131"></g:plus></div>
+        </div>  
+
+    </div>
+</div>
+<br/>
+<div class="rr-box-thin">
+<h3 class="rr-hdr noborder"><a href="http://theenvelope.latimes.com/galleries/photo/redcarpet/">Red Carpet »</a></h3> <a href="http://theenvelope.latimes.com/galleries/photo/redcarpet/"><img style="width:302px;" class="rr_promo-span" src="http://www.latimes.com/media/photo/2012-04/69293095.jpg" /></a> <p class="rr_promo-text"><a href="http://theenvelope.latimes.com/galleries/photo/redcarpet/">Photos: Stars strut their stuff.</a></p> </div>
+<br/>
+<div class="rr-box-thin">
+<h3 class="rr-hdr noborder"><a href="http://projects.latimes.com/hollywood/star-walk/">Hollywood Star Walk »</a></h3> <a href="http://projects.latimes.com/hollywood/star-walk/"><img style="width:302px;" class="rr_promo-span" src="http://www.latimes.com/media/alternatethumbnails/blurb/2011-10/65275755-07152314.jpg" /></a> <p class="rr_promo-text"><a href="http://projects.latimes.com/hollywood/star-walk/">A virtual tour of Hollywood's star-studded sidewalks.</a></p> </div>
+
+<br/>
+<div id="incase-box-new">
+	<h2 class="title-new">In Case You Missed It...</h2>
+	<div id="incase-holder"></div>
+</div>		
+
+
+<div style="width: 336px;">
+
+		<div style="background-color: #FFFFFF;
+    color: #888888;
+    font: 10px/10px Arial,Helvetica,sans-serif;
+    letter-spacing: 1px;
+    padding-bottom: 3px;
+    padding-top: 0;
+    text-transform: lowercase; text-align: center;">Advertisement</div>
+
+			<div style="text-align: center;">	
+				<script language="JavaScript" type="text/javascript">
+ord=Math.random()*10000000000000000;url_script=window.location.href;
+document.write('<iframe id="dclk' + ord+'" src="" width="336" height="90" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling=no borderCOLOR="#000000">');
+if (navigator.userAgent.indexOf("Gecko")==-1) {
+document.write('<script language="JavaScript" src="http://ad.doubleclick.net/adj/trb.theenvelope/ent/blog/gossip;!category=net;pos=1;tile=4;sz=234x60;abr=!ie;ord=' + ord + '?" type="text/javascript"><\/script>');
+}
+document.write('</iframe>');
+if (document.getElementById('dclk'+ord+'' )) {
+document.getElementById('dclk'+ord+'').src = 'http://ad.doubleclick.net/adi/trb.theenvelope/ent/blog/gossip;!category=net;pos=1;tile=4;sz=234x60;ord=' + ord + '?';
+}
+</script><noscript>
+<a href="http://ad.doubleclick.net/jump/trb.theenvelope/ent/blog/gossip;sz=234x60;ord='+ ord + '?';target="_blank"><img src="http://ad.doubleclick.net/ad/trb.theenvelope/ent/blog/gossip;sz=234x60;ord='ord + ?'; width="336" height="90" border="0" alt=""></a>
+</noscript>
+
+			
+			</div>
+
+</div>
+<style type="text/css">
+#hot-prop-box {margin-bottom:10px;}
+#hot-prop-box h2.rr-hdr {border-top:3px solid black;}
+#hot-prop-holder img {float:left; margin-right:10px; height:56px; width:101px; margin-bottom:10px;}
+#hot-prop-holder h3 {padding:0px 0px 10px 0px;} 
+</style>
+
+<div id="hot-prop-box">
+	<h2 class="rr-hdr">Hot Property</h2>
+	<div id="hot-prop-holder"></div>
+</div>
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+
+function hotproperty(){
+		var hotpropfeedcontainer = document.getElementById('hot-prop-holder')
+		var hotpropfeedurl = "http://www.latimes.com/business/realestate/rss2.0.xml"
+		var hotpropfeedlimit = 3
+		var hotproprssoutput = ""
+
+		function hotpropsetup(){
+			var feedpointer = new google.feeds.Feed(hotpropfeedurl)
+			feedpointer.setNumEntries(hotpropfeedlimit)
+			feedpointer.load(displayfeed)
+		}
+
+		function displayfeed(result){
+			if (!result.error) {
+				var hotpropfeeds = result.feed.entries
+				hotproprssoutput += "<ul class='feed-list'>"
+				for (var i = 0; i < hotpropfeeds.length; i++) {
+				if (hotpropfeeds[i].mediaGroups != null) {
+					hotproprssoutput += "<h3><a href=" + hotpropfeeds[i].link + "><img src='" + hotpropfeeds[i].mediaGroups[0].contents[0].url + "'/></a><a href=" + hotpropfeeds[i].link + ">" + hotpropfeeds[i].title + "</a></h3><div class='clear'></div>"
+					}
+				else{
+					hotproprssoutput += "<h3><a href=" + hotpropfeeds[i].link + ">" + hotpropfeeds[i].title + "</a></h3><div class='clear'></div>"
+				}
+				}
+				hotproprssoutput += "</ul>"
+				hotpropfeedcontainer.innerHTML = hotproprssoutput;
+			}
+		}
+		hotpropsetup();
+	}
+	
+	hotproperty();
+});
+</script>
+<div class="three-tabs">
+
+<div class="tab-holder">
+	<ul>
+		<li class="tab curTab"><a href="" name="most-viewed">Most Viewed</a></li>
+		<!-- <li class="tab"><a href="" name="most-emailed">Most Emailed</a></li> -->
+		<li class="tab"><a href="" name="latest">The Latest</a></li>
+	</ul>
+	<div class="clear"></div>
+</div>
+
+<div class="list-holder">
+
+<div id="most-viewed-container" class="tab-content">
+</div>
+
+<div id="most-emailed-container" class="tab-content">
+</div>
+
+<div id="latest-container" class="tab-content">
+</div>
+
+</div>
+
+</div>
+
+<div class="tab-footer">
+	
+</div>
+
+	<script type="text/javascript">
+	function dailyDealsFeed(obj) {
+	    var x;
+	    var y =1;
+		document.write('<h2 class="daily-deals-head"><a href="http://www.latimes.com/shopping/dailydeal/signup/"><img src="http://www.latimes.com/includes/dailydeals/deals150px.png" /></a></h2>');
+	    document.write("<div id='daily-deals'>");
+
+		for (x = 0; x < obj.count ; x++) {
+		//var photo = jQuery(this).find('[nodeName=media:thumbnail]').attr("url");	
+		var buildstring = "<div class='deals-item'>";
+		buildstring +="<a href=" + obj.value.items[x].link + "><img class='deal-pic' src=" + obj.value.items[x]['media:thumbnail'].url + " /></a><a href=" + obj.value.items[x].link + "><h3>" + obj.value.items[x].title + "</h3></a></div>";
+		document.write(buildstring);
+
+		buildstring = null;
+		y++;
+	}
+		document.write("<div class='clear'></div>")
+		document.write("</div>");
+	}
+	</script>
+
+
+	 <div class="feedContent1">
+
+	   <script type="text/javascript" src="http://pipes.yahoo.com/pipes/pipe.run?_id=f2332d346e257ae1fb4625f833b81d97&_render=json&_callback=dailyDealsFeed"></script>
+
+
+	</div>
+
+
+
+<div style="margin-bottom:20px;">
+<h2 class="rr-hdr" style="border-top:3px solid #000; margin-bottom:10px;">
+Video
+</h2>
+
+<script language='JavaScript' type='text/javascript' src='http://admin.brightcove.com/js/BrightcoveExperiences.js'></script>
+
+<object id='myExperience3373897902' class='BrightcoveExperience'>
+  <param name='bgcolor' value='#FFFFFF' />
+  <param name='wmode' value='transparent' />
+  <param name='autoStart' value='false' />
+  <param name='sectionName' value ='/entertainment/news/movies' />
+  <param name='contentItemType' value ='embed' />
+  <param name='omnitureServer' value='latimes.com' />
+  <param name='omnitureAcct' value='tribglobal' />
+  <param name='width' value='336' />
+  <param name='height' value='300' />
+  <param name='playerID' value='946332753001' />
+  <param name='playerKey' value='AQ~~,AAAAzBrvjDk~,lkvwD7-67YDXDspCsssMW0sbp21tz1JO' />
+  <param name='adServerURL' value='http://ad.doubleclick.net/pfadx/trb.theenvelope/ent/blog/gossip' />
+  <param name='additionalAdTargetingParams' value=';player=bc;pos=pre;vc=Entertainment;clip=62801261;sz=3x3;tile=13;ord=2977866182' />
+  <param name='externalAds' value='true' />
+  <param name='linkBaseURL' value='http://www.latimes.com/videogallery/67631195/Entertainment/Betsy-Sharkeys-Critics-pick-of-the-week-Coriolanus-and-We-Need-To-Talk-About-Kevin#pl-62801261' />
+  <param name='isVid' value='true' />
+  <param name='isUI' value='true' />
+  <param name='dynamicStreaming' value='true' />
+  <param name='showNoContentMessage' value='true' />
+
+  <param name='@videoList' value='ref:62801261' />
+</object>
+
+<script type='text/javascript'>brightcove.createExperiences();</script>
+
+
+
+</div>
+<br/>
+<!-- START BLOGGER -->
+<div id="about-bloggers" style="border-bottom:4px solid #000; padding-bottom:12px;">
+<div class="rr-hdr">About the Bloggers</div>
+<div class="rr-bloggers">
+
+<div style="padding:15px 0px 5px 0px;">
+<a href="http://latimesblogs.latimes.com/gossip/2009/10/christie-dzurillas-bio.html">Christie D'Zurilla</a><br/>
+<a href="http://latimesblogs.latimes.com/gossip/2009/10/matt-donnellys-bio.html">Matt Donnelly</a><br/>
+<a href="http://latimesblogs.latimes.com/gossip/2009/10/leslie-gornsteins-bio.html">Leslie Gornstein</a><br/>
+<a href="http://latimesblogs.latimes.com/gossip/2009/10/amy-kaufmans-bio.html">Amy Kaufman</a><br/>
+<a href="http://latimesblogs.latimes.com/gossip/2009/10/nardine-saad.html">Nardine Saad</a>
+</div>
+
+</div>
+
+<!-- END BLOGGER -->		
+		
+<!--SOCIAL FEEDS MODULE-->
+<a href="http://feeds.feedburner.com/latimes/MinistryofGossip?format=xml" style="float:left; padding-left:10px;">
+<img src="http://www.latimes.com/images/blogs/rss.gif" border="0"/></a>
+
+<a href="http://www.facebook.com/pages/Ministry-of-Gossip/212768689866" style="float:right;">
+<img src="http://www.latimes.com/images/blogs/facebook.gif" border="0" style="padding-right:10px;"/></a>
+
+<a href="http://twitter.com/LATcelebs">
+<img src="http://www.latimes.com/images/blogs/twitter.gif" style="display:inline; padding-left:40px;" border="0"/></a>
+
+
+
+<br clear="all"/>
+</div>
+<!--END SOCIAL FEEDS MODULE-->		
+<br/>
+<!-- START RECENT POSTS -->
+
+<div id="recent-comments">
+<div class="rr-box-thin">
+<div class="rr-hdr" style="border-bottom:2px solid #000;">Recent Posts</div>	
+
+<div class="module-content" style="font-size:12px">
+
+<div style="padding:5px 0;border-bottom:1px dotted #000;">
+<a href="http://latimesblogs.latimes.com/gossip/2012/04/ministry-of-gossip-is-moving-new-address.html" style="font-size:14px">The Ministry of Gossip is moving! </a>&nbsp;|&nbsp;
+<span style="color:#8B0412;font-style:italic;">April 17, 2012, 10:27 <span id="ampmstamp">am</span></span>&nbsp;<a href="http://latimesblogs.latimes.com/gossip/2012/04/ministry-of-gossip-is-moving-new-address.html">&raquo;</a>
+</div>
+
+<div style="padding:5px 0;border-bottom:1px dotted #000;">
+<a href="http://latimesblogs.latimes.com/gossip/2012/04/jennifer-aniston-brad-pitt-angelina-jolie-engagement.html" style="font-size:14px">Jennifer Aniston reportedly cares, or doesn't, about engagement</a>&nbsp;|&nbsp;
+<span style="color:#8B0412;font-style:italic;">April 16, 2012,  3:02 <span id="ampmstamp">pm</span></span>&nbsp;<a href="http://latimesblogs.latimes.com/gossip/2012/04/jennifer-aniston-brad-pitt-angelina-jolie-engagement.html">&raquo;</a>
+</div>
+
+<div style="padding:5px 0;border-bottom:1px dotted #000;">
+<a href="http://latimesblogs.latimes.com/gossip/2012/04/bill-cosby-gun-trayvon-martin-cnn.html" style="font-size:14px">Bill Cosby blames 'that gun' in Trayvon Martin's death</a>&nbsp;|&nbsp;
+<span style="color:#8B0412;font-style:italic;">April 16, 2012,  1:57 <span id="ampmstamp">pm</span></span>&nbsp;<a href="http://latimesblogs.latimes.com/gossip/2012/04/bill-cosby-gun-trayvon-martin-cnn.html">&raquo;</a>
+</div>
+
+<div style="padding:5px 0;border-bottom:1px dotted #000;">
+<a href="http://latimesblogs.latimes.com/gossip/2012/04/kelsey-grammer-tattoo-kayte-walsh.html" style="font-size:14px">Kelsey Grammer commits to a tattoo -- his first</a>&nbsp;|&nbsp;
+<span style="color:#8B0412;font-style:italic;">April 16, 2012,  1:05 <span id="ampmstamp">pm</span></span>&nbsp;<a href="http://latimesblogs.latimes.com/gossip/2012/04/kelsey-grammer-tattoo-kayte-walsh.html">&raquo;</a>
+</div>
+
+<div style="padding:5px 0;border-bottom:1px dotted #000;">
+<a href="http://latimesblogs.latimes.com/gossip/2012/04/pippa-middleton-gun-france-photographers-paparazzi.html" style="font-size:14px">Pippa Middleton caught up in Paris gun-wielding incident</a>&nbsp;|&nbsp;
+<span style="color:#8B0412;font-style:italic;">April 16, 2012, 11:42 <span id="ampmstamp">am</span></span>&nbsp;<a href="http://latimesblogs.latimes.com/gossip/2012/04/pippa-middleton-gun-france-photographers-paparazzi.html">&raquo;</a>
+</div>
+
+<div style="height:2px;line-height:2px;margin-top:-1px;background-color:white;"></div>
+</div>
+</div>
+</div>
+
+<!-- END RECENT POSTS -->
+<br/>
+
+<div class="blogs-category-box">
+	<h2 class="rr-hdr" style="border-bottom:0px;margin-bottom:0px; padding-top:0px;" >Categories</h2>
+
+<script language="javascript" type="text/javascript">
+<!--
+function sendPromoLink(tform)
+{
+	tform.action=tform["collectionItem"].value;
+	window.location=tform["collectionItem"].value;
+	return false;
+}
+// -->
+</script>
+
+<div id="textarea">
+<form onsubmit="if (this.validator &amp;&amp; this.validator.submit) { return this.validator.submit(); } else { return true; }" target="" enctype="" action="" method="post" name="collectionpromo">
+<select id="list-item" title="collectionItem" accesskey="" onfocus="" onblur="" onchange="if (this.form.validator) { this.form.validator.changed(this); }" tabindex="" size="1" name="collectionItem">
+
+
+<option value="http://latimesblogs.latimes.com/gossip/awards/">Awards</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/babies/">Babies</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/beefcake-cheesecake/">Beefcake and Cheesecake</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/breakups/">Breakups</option>	
+
+<option value="http://latimesblogs.latimes.com/gossip/classic-hollywood/">Classic Hollywood</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/celebrity-health/">Celebrity Health</option>
+	
+<option value="http://latimesblogs.latimes.com/gossip/charity/">Charity</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/comedy/">Comedy</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/couples/">Couples</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/cops-courts/">Cops and Courts</option>
+	 
+<option value="http://latimesblogs.latimes.com/gossip/deaths/">Deaths</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/lgbt/">LGBT</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/musicians/">Musicians</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/must-read/">Must-read</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/parties/">Parties</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/politics/">Politics</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/pro-athletes/">Pro Athletes</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/reality-stars/">Reality Stars</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/red-carpet/">Red Carpet</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/rehab/">Rehab</option>		
+		
+<option value="http://latimesblogs.latimes.com/gossip/scandal/">Scandal</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/weddings-engagements/">Weddings and Engagements</option>	
+
+		</select>
+		
+			<input onclick="sendPromoLink(this.form);" value="GO" type="submit">
+		
+	<input value="collectionItem" name="_fields" type="hidden"></form>
+</div>
+
+</div>
+<br/>
+<!-- START MONTHLY ARCHIVES-->
+
+<div id="monthly-archives">
+<div class="rr-box-thin" style="height:40px">
+<div class="rr-hdr" style="border:none;padding:5px 0 0 0;margin:0;"><div style="display:inline;">Archives</div>
+
+<div class="module-content" style="display:inline;margin-left:40px;font-size:15px;">
+<select onchange="window.location.href=this.options[this.selectedIndex].value;">
+
+<option value="http://latimesblogs.latimes.com/gossip/2012/04/index.html">April 2012</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2012/03/index.html">March 2012</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2012/02/index.html">February 2012</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2012/01/index.html">January 2012</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2011/12/index.html">December 2011</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2011/11/index.html">November 2011</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2011/10/index.html">October 2011</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2011/09/index.html">September 2011</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2011/08/index.html">August 2011</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2011/07/index.html">July 2011</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2011/06/index.html">June 2011</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2011/05/index.html">May 2011</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2011/04/index.html">April 2011</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2011/03/index.html">March 2011</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2011/02/index.html">February 2011</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2011/01/index.html">January 2011</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2010/12/index.html">December 2010</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2010/11/index.html">November 2010</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2010/10/index.html">October 2010</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2010/09/index.html">September 2010</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2010/08/index.html">August 2010</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2010/07/index.html">July 2010</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2010/06/index.html">June 2010</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2010/05/index.html">May 2010</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2010/04/index.html">April 2010</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2010/03/index.html">March 2010</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2010/02/index.html">February 2010</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2010/01/index.html">January 2010</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2009/12/index.html">December 2009</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2009/11/index.html">November 2009</option>
+
+<option value="http://latimesblogs.latimes.com/gossip/2009/10/index.html">October 2009</option>
+
+</select>
+</div></div>
+</div>
+<div style="height:6px;line-height:6px">&nbsp;</div>
+</div>
+ 
+<!-- /MONTHLY ARCHIVES--> 
+<br/>
+
+
+<!-- START BLOG ROLL
+<div id="blog-roll">
+<div class="rr-hdr"><a href="http://www.latimes.com/blogs" target="_blank">More from The Times</a></div>
+<div class="rr-bloggers">
+
+
+<div><a href="http://latimesblogs.latimes.com/movies/" target="_blank">24 Frames</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/alltherage/" target="_blank">All The Rage</a></div>
+
+<div><a href="http://www.latimes.com/news/health/boostershots/" target="_blank">Booster Shots</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/entertainmentnewsbuzz/" target="_blank">Company Town</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/culturemonster/" target="_blank">Culture Monster</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/dailydish/" target="_blank">Daily Dish</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/dodgers/" target="_blank">Dodgers Now</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/sports_blog/" target="_blank">Sports Now</a></div>
+
+<div><a href="http://framework.latimes.com/" target="_blank">Framework</a></div>
+
+<div><a href="http://www.latimes.com/news/local/environment/" target="_blank">Greenspace</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/herocomplex/" target="_blank">Hero Complex</a></div>
+
+<div><a href="http://projects.latimes.com/homicide-report/blog/page/1/" target="_blank">Homicide Report</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/jacketcopy/" target="_blank">Jacket Copy</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/home_blog/" target="_blank">L.A. at Home</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/lanow/" target="_blank">L.A. Now</a></div>
+
+<div><a href="http://latimes.tumblr.com" target="_blank">L.A. Times on Tumblr</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/unleashed/" target="_blank">L.A. Unleashed</a></div>
+
+<div><a href="http://lakersblog.latimes.com/" target="_blank">Lakers Now</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/gossip/" target="_blank">Ministry of Gossip</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/money_co/" target="_blank">Money &amp; Co.</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/nationnow/" target="_blank">Nation Now</a></div>
+
+<div><a href="http://opinion.latimes.com/opinionla/" target="_blank">Opinion L.A.</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/california-politics/" target="_blank">PolitiCal</a></div>
+
+<div><a href="http://www.latimes.com/news/politics/" target="_blank">Politics Now</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/music_blog/" target="_blank">Pop & Hiss</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/readers/" target="_blank">Readers' Representative</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/showtracker/" target="_blank">Show Tracker</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/technology/" target="_blank">Technology</a></div>
+
+<div><a href="http://www.latimes.com/travel/deals/" target="_blank">Travel News & Deals</a></div>
+
+<div><a href="http://latimesblogs.latimes.com/varsitytimesinsider/" target="_blank">Varsity Times Insider </a></div>
+
+<div><a href="http://latimesblogs.latimes.com/world_now/" target="_blank">World Now</a></div>
+
+<br clear="all"/><br/>
+
+</div>
+</div>
+END BLOG ROLL -->
+
+<br/>
+<!-- <div class="rr-box-thin" style="padding:10px; line-height:1.5em;">
+
+<div style="margin-bottom: 10px;">
+<h3 style="font-size: 20px;"><a href="http://www.latimes.com/services/site/joinus-gallery/" style="font-weight:normal;">Get the Entertainment Newsletter</a></h3>
+</div>
+
+<a href="http://www.latimes.com/services/site/joinus-gallery/"><img src="http://www.latimes.com/media/alternatethumbnails/blurb/2010-03/48526405-10132343.jpg" align="left" style="margin-right: 10px; border: none;" /></a>From screen to stage, music to art.<br/>
+
+<a href="http://www.latimes.com/entertainment/news/newsletter/" target="newwindow">See a sample</a> | <a href="http://www.latimes.com/services/site/joinus-gallery/" target="_carnival_popup" onclick="carnival.utils.popUp()">Sign up</a><br clear="all"/>
+
+</div>
+<br/> -->
+
+<div align="center">
+
+<div id="skyContainer">
+	<iframe id="SkyAd" name="SkyAd" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" height="600"></iframe>
+</div>
+
+<noscript><a href="http://ad.doubleclick.net/jump/trb.theenvelope/ent/blog/gossip;ptype=sf;pos=1;tile=3;sz=160x600;ord=123456789?" target="_blank"><img src="http://ad.doubleclick.net/ad/trb.theenvelope/ent/blog/gossip;ptype=sf;pos=1;tile=3;sz=160x600;ord=123456789?" width="160" height="600" border="0" alt=""></a></noscript>
+<!-- End ad tag -->
+
+</div>
+<br/>
+<div class="rr-box-thin" id="alertSignUp">
+<h3 class="rr-header">Get Alerts on Your Mobile Phone</h3>
+
+
+<form action="http://www.vibescm.com/forms/subscribe" method="post" onsubmit="return validateFormOnSubmit(this)" target="_blank">
+<input type="hidden" name="a" value="145"/>
+<input type="hidden" name="c" value="30310,32139,109779,133011"/>
+
+<input id="user_id" name="user[id]" type="hidden" value="" />
+<p class="mobilePhone">
+<label for="mobile_phone">Mobile Phone <small>(required)</small></label>
+<input id="user_mobile_phone" name="user[mobile_phone]" size="27" type="text"/>
+</p>
+<p class="alertListHead"><em>Sign me up for the following lists:</em></p>
+<ul id="campaignSignUp">
+<li><input id="campaigns_" name="campaigns[]" type="checkbox" value="30310" /><label>BREAKING - News as it happens</label></li>
+<li><input id="campaigns_" name="campaigns[]" type="checkbox" value="32139" /><label>ENVELOPE - The awards insider</label></li>
+<li><input id="campaigns_" name="campaigns[]" type="checkbox" value="109779" /><label>ENTERTAINMENT - Hollywood news and buzz</label></li>
+<li><input id="campaigns_" name="campaigns[]" type="checkbox" value="133011" /><label>SPORTS - Alerts and scores</label></li>
+</ul>
+
+<input id="alertSignUpSubmit" type="submit" value="Submit">
+</form>
+
+</div>
+<br clear="all" />
+
+	</div>
+</div>
+<div style="clear: both;" />
+	<div id="icymi-bottom">
+	<h3 class="icymi-bottom-head">In Case You Missed It...</h3>
+	<ul id="icymi-bottom-list"></ul>
+</div>
+
+</div>
+
+
+	<div style="clear: both;" />
+	<div id="footer">
+	<div id="siteOverview">
+		
+		<ul>
+			<li> <a href="http://www.latimes.com/news/custom/corrections/" class="mainNav"	 >Corrections</a>
+
+
+			</li>
+		</ul>
+		<ul>
+			<li> <a href="http://www.latimes.com/entertainment/envelope/" class="mainNav"	 >The Envelope </a>
+
+
+			</li>
+		</ul>
+		<ul>
+
+			<li> <a href="http://mediakit.latimes.com/" class="mainNav"	 >Media Kit</a>
+				
+			</li>
+		</ul>
+		<ul>
+
+			<li> <a href="http://www.latimes.com/about/mediagroup/" class="mainNav">About Us</a>
+				
+			</li>
+		</ul>
+		<ul>
+			<li> <a href="http://www.latimes.com/about/mediagroup/la-mediagroup-contactus,0,7698150.htmlstory" class="mainNav">Contact Us</a>
+
+
+			</li>
+		</ul>
+		<ul>
+			<li> <a href="http://www.latimes.com/about/sitemap/" class="mainNav">Site Map</a>
+			
+			</li>
+		</ul>		
+		<div class="clear"></div>
+
+	</div>
+	<!-- close #siteOverview -->
+	<div id="footerContainerb">
+		<div id="footerlogo"><a href="http://www.latimes.com"><img src="http://www.latimes.com/media/graphic/2010-02/52101671.png"></a></div>
+		<div id="footertext">
+			<ul>
+				<li class="nav">
+					
+
+<ul class="links">
+
+
+					<ul class="links">
+<li id="footer-item-3"><a href="http://www.burbankleader.com/">Burbank Leader</a> | </li> 
+<li id="footer-item-3"><a href="http://www.coastlinepilot.com/">Coastline Pilot</a> | </li>
+<li id="footer-item-3"><a href="http://www.dailypilot.com/">Daily Pilot</a> |</li>
+<li id="footer-item-3"><a href="http://www.hbindependent.com/">Huntington Beach Independent</a> |</li>  
+<li id="footer-item-3"><a href="http://lacanadaonline.com/">Valley Sun</a> |</li> <li id="footer-item-3"><a href="http://www.glendalenewspress.com/">News Press</a> |</li>
+<li id="footer-item-3"><a href="http://www.ktla.com/">KTLA</a> |</li>
+<li id="footer-item-3"><a href="http://www.hoylosangeles.com/">Hoy</a></li> 
+<br/>
+
+						<li id="footer-item-3"><a href="http://www.baltimoresun.com" >Baltimore Sun</a> |</li>
+						<li id="footer-item-4"><a href="http://www.chicagotribune.com" >Chicago Tribune</a> |</li>
+
+						<li id="footer-item-5"><a href="http://www.dailypress.com" >Daily Press</a> |</li>
+						<li id="footer-item-6"><a href="http://www.courant.com" >Hartford Courant</a> |</li>
+						<li id="footer-item-7"><a href="http://www.latimes.com" >LA Times</a> |</li>
+						<li id="footer-item-8"><a href="http://www.orlandosentinel.com" >Orlando Sentinel</a> |</li>
+
+						<li id="footer-item-9"><a href="http://www.sun-sentinel.com" >Sun Sentinel</a> |</li>
+						<li id="footer-item-10"><a href="http://www.mcall.com" >The Morning Call</a></li>
+						
+					</ul>
+				</li>
+
+				<li>
+			
+
+						<li id="footer-item-2"></li>
+					</ul><p><a href="http://www.latimes.com/terms" >Terms of Service</a> | <a href="http://privacy.tribune.com">Privacy Policy</a> | Los Angeles Times, 202 West 1st Street, Los Angeles, California, 90012 | Copyright 2013</p>
+				</li>
+			</ul>
+		</div>
+</div>
+		<!-- close #footerText -->
+		<div class="clear"></div>
+		<div class="family" style="padding: 5px;"> <i> <a href="http://www.tribune.com">A Tribune Web site</a> </i> </div>
+
+	</div>
+</div>
+</div>
+
+<script type="text/javascript">
+var _sf_async_config={uid:3908,domain:"latimesblogs.latimes.com"};
+(function(){
+function loadChartbeat() { window._sf_endpt=(new Date()).getTime(); var e = document.createElement('script'); e.setAttribute('language', 'javascript'); e.setAttribute('type', 'text/javascript'); e.setAttribute('src', (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") + "static.chartbeat.com/js/chartbeat.js"); document.body.appendChild(e); }
+var oldonload = window.onload;
+window.onload = (typeof window.onload != 'function') ?
+loadChartbeat : function() { oldonload(); loadChartbeat(); }; })(); 
+
+</script>
+</div>
+</div>
+<div style="height:1px; line-height:1px">
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script type="text/javascript">
+<!--
+var extra_happy = Math.floor(1000000000 * Math.random());
+document.write('<img src="http://www.typepad.com/t/stats?blog_id=81247383703688971&amp;user_id=816965&amp;page=' + escape(location.href) + '&amp;referrer=' + escape(document.referrer) + '&amp;i=' + extra_happy + '" width="1" height="1" alt="" style="position: absolute; top: 0; left: 0;" />');
+// -->
+</script>
+
+
+<!-- SiteCatalyst code version: H.1.
+Copyright 1997-2005 Omniture, Inc. More info available at
+http://www.omniture.com -->
+
+<script type="text/javascript" src="http://www.latimes.com/hive/javascripts/metrics/s_code_trb.js"></script>
+<script language="JavaScript">
+<!--
+
+s.pageName="The Envelope / Ministry of Gossip - blogs.";
+s.server="theenvelope.latimes.com"; 
+s.channel="The Envelope:entertainment:ministryofgossip";
+var omniture_blog_entrytitle;
+if (omniture_blog_entrytitle) { s.prop31=omniture_blog_entrytitle; }
+
+s.prop38="Blog";
+s.eVar21="Blog";
+s.prop20=""
+	
+/* E-commerce Variables */
+s.events=""; 
+s.eVar20="";
+
+s.hier1="The Envelope:entertainment:ministryofgossip"; 
+s.hier2="entertainment:ministryofgossip";
+s.hier4="entertainment:ministryofgossip";
+	
+
+//AD Block Detection
+//Description: 	Check if any IMG, IFRAME, or SCRIPT elements are ad blocked (set to not display).
+//		Also check for the occurance of any Norton installed code to block popups or ads ( ie.)SymError ).
+//		Only need to find 1 occurrance of any of the above to confirm ad blocking is used. 
+//		No need to continue searching through other portions of the page.
+
+var imgArray = document.images;
+var iframeArray = document.getElementsByTagName("iframe");
+var scriptArray = document.getElementsByTagName("script");
+var isAdBlocked = 0;
+
+
+if(window.SymError || window.SymWinOpen || window.SymRealWinOpen)
+{	isAdBlocked=1; }
+
+if (!isAdBlocked)
+{	for (var i=0; i<imgArray.length; i++)
+	{		if(imgArray[i].style.display == 'none')
+		{			isAdBlocked=1;			break;} }	}
+
+if (!isAdBlocked)
+{	for (var j=0; j<iframeArray.length; j++)
+	{	if (iframeArray[j].style.display == 'none')
+		{			isAdBlocked=1;			break;} }	}
+
+if (!isAdBlocked)
+{	for (var j=0; j<scriptArray.length; j++)
+	{		if (scriptArray[j].style.display == 'none')
+		{			isAdBlocked=1;			break;} }	}
+
+if(isAdBlocked)
+{	s.prop50="ad blocking";}
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//-->  </script>
+<script language="JavaScript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.1. -->
+
+</div>
+<script type="text/javascript">	
+
+function mouseoverActiontooltip(event)
+{
+jQuery(".toolTip").before("<p id='toolTip'>"+ this.rel + "</p>");
+jQuery("#toolTip").css("z-index", "2137483608");
+jQuery("#toolTip").css("_margin-left", "-60px");
+jQuery("#toolTip").css("margin-left", "-10px");
+jQuery("#toolTip").css("margin-top", "21px");
+}
+
+function mouseoutActiontooltip(event)
+{
+jQuery("#toolTip").remove();
+}
+
+jQuery('.toolTip').bind('mouseover', mouseoverActiontooltip);
+jQuery('.toolTip').bind('mouseout', mouseoutActiontooltip);
+
+</script>
+<script type="text/javascript">
+  // prevent jQuery from appending cache busting string to the end of the FeatureLoader URL
+  var cache = jQuery.ajaxSettings.cache;
+  jQuery.ajaxSettings.cache = true;
+  // Load FeatureLoader asynchronously. Once loaded, we execute Facebook init 
+
+  jQuery.getScript('http://connect.facebook.net/en_US/all.js#xfbml=1', function() {
+    FB.init({appId: '166941536699790', status: true, cookie: true, xfbml: true});
+  });
+  // just Restore jQuery caching setting
+  jQuery.ajaxSettings.cache = cache;
+</script>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		
+		function dateparse(pubDate){
+				date = new Date(pubDate);
+				m = date.getMonth() + 1; 
+				d = date.getDate();
+				y = date.getFullYear();
+				h = date.getHours();
+				if (h > 12){
+				h -= 12;
+					var ampm =  "p.m.";
+				}
+				else if (h == 12) {
+					var ampm =  "p.m.";
+				}
+				else {
+					var ampm = "a.m.";
+				}
+				mm = date.getMinutes();
+				if (mm < 10) {
+					mm = "0" + mm; 
+				}
+				hhmm = ", " + h + ":" + mm + " " +ampm;
+				if (h == 0){
+					hhmm = "";
+				}
+				var timestamp = m + "/" + d + "/" + y + hhmm;
+				return timestamp;
+		}
+		
+		
+		function latest(){
+		var latestfeedcontainer = document.getElementById('latest-container')
+		var latestfeedurl = "http://feeds.feedburner.com/latimes/thelatest"
+		var latestfeedlimit = 5
+		var latestrssoutput = ""
+
+		function latestsetup(){
+			var feedpointer = new google.feeds.Feed(latestfeedurl)
+			feedpointer.setNumEntries(latestfeedlimit)
+			feedpointer.load(displayfeed)
+		}
+
+		function displayfeed(result){
+			if (!result.error) {
+				var latestfeeds = result.feed.entries
+				latestrssoutput += "<ul class='feed-list'>"
+				for (var i = 0; i < latestfeeds.length; i++) {
+					var pubDate = latestfeeds[i].publishedDate;
+					var timestamp = dateparse(pubDate);
+					latestrssoutput += "<li class='tabs-headlines'><h3><a href=" + latestfeeds[i].link + ">" + latestfeeds[i].title + "</a></h3><span>" + timestamp + "</span></li>"
+				}
+				latestrssoutput += "</ul>"
+				latestfeedcontainer.innerHTML = latestrssoutput;
+			}
+		}
+		latestsetup();
+		
+		
+		}
+		
+		function mviewed(){
+			var mviewedfeedcontainer = document.getElementById('most-viewed-container')
+			var mviewedfeedurl = "http://xml.latimes.com/news/mostviewed_rss2.0.xml"
+			var mviewedfeedlimit = 5
+			var mviewedfeedoutput = ""
+			
+			function mviewedsetup(){
+				var feedpointer = new google.feeds.Feed(mviewedfeedurl)
+				feedpointer.setNumEntries(mviewedfeedlimit)
+				feedpointer.load(displayfeed)
+			}
+			
+			function displayfeed(result){
+				if (!result.error) {
+					var mviewedfeeds = result.feed.entries
+					mviewedfeedoutput += "<ul class='feed-list'>"
+					for (var i = 0; i < mviewedfeeds.length; i++) {
+						var pubDate = mviewedfeeds[i].publishedDate;
+						var timestamp = dateparse(pubDate);
+							mviewedfeedoutput += "<li class='tabs-headlines'><h3><a href=" + mviewedfeeds[i].link + ">" + mviewedfeeds[i].title + "</a></h3><span>" + timestamp + "</span></li>"
+					}
+					mviewedfeedoutput += "</ul>"
+					mviewedfeedcontainer.innerHTML = mviewedfeedoutput;
+				}
+			}
+			mviewedsetup();
+		}
+		
+		function memailed(){
+			var memailedfeedcontainer = document.getElementById('most-emailed-container')
+			var memailedfeedurl = "http://www.latimes.com/news/mostemailed_rss2.0.xml"
+			var memailedfeedlimit = 5
+			var memailedfeedoutput = ""
+			
+			function memailedsetup(){
+				var feedpointer = new google.feeds.Feed(memailedfeedurl)
+				feedpointer.setNumEntries(memailedfeedlimit)
+				feedpointer.load(displayfeed)
+			}
+			
+			function displayfeed(result){
+				if (!result.error) {
+					var memailedfeeds = result.feed.entries
+					memailedfeedoutput += "<ul class='feed-list'>"
+					for (var i = 0; i < memailedfeeds.length; i++) {
+							var pubDate = memailedfeeds[i].publishedDate;
+							var timestamp = dateparse(pubDate);
+							memailedfeedoutput += "<li class='tabs-headlines'><h3><a href=" + memailedfeeds[i].link + ">" + memailedfeeds[i].title + "</a></h3><span>" + timestamp + "</span></li>"
+					}
+					memailedfeedoutput += "</ul>"
+					memailedfeedcontainer.innerHTML = memailedfeedoutput;
+				}
+			}
+			memailedsetup();
+		}
+		
+		
+		
+		jQuery('div.tab-content:first').show()
+		
+		jQuery('li.tab a').bind('click', function(){
+			jQuery('li.tab.curTab').removeClass('curTab');
+			jQuery(this).parent().addClass('curTab');
+			var activeTab = jQuery(this).attr('name');
+			jQuery('div.tab-content').hide();
+			jQuery('#' + activeTab + '-container').show();
+			return false;
+		});
+	
+	latest();
+	mviewed();
+	memailed();
+	});
+
+	var icymifeedcontainer = document.getElementById("incase-holder")
+    	var icymifeedurl = "http://www.latimes.com/mynews/emamdt35t/sandbox1/rss2.0.xml?39";
+	var icymifeedlimit = 4
+	var icymirssoutput = ""
+	
+	function icymisetup(){
+		var feedpointer = new google.feeds.Feed(icymifeedurl)
+		feedpointer.setNumEntries(icymifeedlimit)
+		feedpointer.load(displayfeed)
+	}
+	
+	function displayfeed(result){
+		if (!result.error) {
+			var icymifeeds = result.feed.entries
+			for (var i = 0; i < icymifeeds.length; i++) {
+				var headline = icymifeeds[i].title;
+				var icymipatt = new RegExp(/\s\|/);
+				
+				if(icymipatt.test(headline) == true) {
+					headline = headline.substring(0, headline.indexOf(icymipatt.exec(headline)));
+				}		
+								
+				if (icymifeeds[i].mediaGroups != null) {
+					icymirssoutput += "<div class='incase-box-main'><a href=" + icymifeeds[i].link + "><img src='" + icymifeeds[i].mediaGroups[0].contents[0].url + "'/></a><h3><a href=" + icymifeeds[i].link + ">" + headline + "</a></h3><div class='clear'></div></div>"
+				}
+				else {
+					icymirssoutput += "<div class='incase-box-main'><h3><a href=" + icymifeeds[i].link + ">" + icymifeeds[i].title + "</a></h3><div class='clear'></div></div>"	
+				}
+			}
+			icymifeedcontainer.innerHTML = icymirssoutput
+		}
+		else {
+			icymirssoutput += " "
+		}
+	}
+	icymisetup();
+</script>
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+    jQuery('#most-viewed-container').delegate('a', 'click', function(){
+        s.tl(this, 'o', 'latimes.com: MV Box: Most Viewed');
+    });
+    jQuery('#most-emailed-container').delegate('a', 'click', function(){
+        s.tl(this, 'o', 'latimes.com: MV Box: Most Emailed');
+    });
+    jQuery('#latest-container').delegate('a', 'click', function(){
+        s.tl(this, 'o', 'latimes.com: MV Box: Latest News');
+    });
+});
+</script>
+
+<script type="text/javascript">
+
+/* Sticky Tooltip script (v1.0)
+* Created: Nov 25th, 2009. This notice must stay intact for usage 
+* Author: Dynamic Drive at http://www.dynamicdrive.com/
+* Visit http://www.dynamicdrive.com/ for full source code
+*/
+
+var stickytooltip={
+	tooltipoffsets: [0, -20], //additional x and y offset from mouse cursor for tooltips
+	fadeinspeed: 250, //duration of fade effect in milliseconds
+
+	//***** NO NEED TO EDIT BEYOND HERE
+
+	isdocked: false,
+
+	positiontooltip:function($, $tooltip, e){
+		var x=e.pageX+this.tooltipoffsets[0], y=e.pageY+this.tooltipoffsets[1]
+		var tipw=$tooltip.outerWidth(), tiph=$tooltip.outerHeight(),
+		x=x-(tipw/2)
+		//x=(x+tipw>$(document).scrollLeft()+$(window).width())? x-tipw-(stickytooltip.tooltipoffsets[0]*2) : x
+		y=y-tiph
+		$tooltip.css({left:x, top:y})
+	},	
+	
+	showbox:function($, $tooltip, e){
+		$tooltip.show()
+		this.positiontooltip($, $tooltip, e)
+	},
+
+	hidebox:function($, $tooltip){
+		if (jQuery('#googleplus').css('display') == 'block') {
+			$tooltip.fadeOut(2000)
+		}
+		else {
+			$tooltip.fadeOut(500)
+		}
+	},
+
+	init:function(targetselector, tipid){
+		jQuery(document).ready(function($){
+			var $targets=$(targetselector)
+			var $tooltip=$('#'+tipid).appendTo(document.body)
+			if ($targets.length==0)
+				return
+			var $alltips=$tooltip.find('div.newtip')
+
+			stickytooltip.hidebox($, $tooltip)
+			
+			$targets.hover(function(e){
+				$alltips.hide().filter('#'+$(this).attr('data-tooltip')).show()
+				$tooltip.stop(true, true)
+				stickytooltip.showbox($, $tooltip, e)
+			}, function(e){
+				stickytooltip.hidebox($, $tooltip)
+			})
+
+			$tooltip.hover(function(){
+				jQuery(this).stop(true, true)
+				stickytooltip.showbox($, $tooltip)				
+			}, function(){
+				stickytooltip.hidebox($, $tooltip)								
+			})
+
+			$(this).bind("click", function(e){
+				if (e.button==0){
+					stickytooltip.hidebox($, $tooltip)
+				}
+			})
+
+		}) //end dom ready
+	}
+}
+stickytooltip.init("*[data-tooltip]", "mystickytooltip")
+
+</script>
+<script type="text/javascript">
+function vidfix(){
+	var myobject = jQuery('object[id^="myExperience"][class!="BrightcoveExperience"]');
+	for(i=0; i<myobject.length; i++) {
+	  var placeholder = document.createElement("div");
+	  placeholder.appendChild(myobject[i].cloneNode(true));
+	  var objs = placeholder.getElementsByTagName("object");
+	  obj = objs[0];
+	  obj.removeAttribute("type");
+	  obj.removeAttribute("data");
+	  obj.removeAttribute("width");
+	  obj.removeAttribute("height");
+	  var widthItem = document.createElement('param');
+    	widthItem.setAttribute('name','width');
+    	widthItem.setAttribute('value','620');
+
+	  var heightItem = document.createElement('param');
+    	heightItem.setAttribute('name','height');
+    	heightItem.setAttribute('value','349');
+
+    var itemType = document.createElement('param');
+      itemType.setAttribute('name', 'contentItemType');
+      itemType.setAttribute('value', 'embed')
+
+    var itemPath = document.createElement('param');
+    var windowPath = window.location.pathname;
+    var regExPath = /\/\w+\//;
+    var blogPath = windowPath.match(regExPath);
+      itemPath.setAttribute('name', 'sectionName');
+      itemPath.setAttribute('value', blogPath);
+      
+	  jQuery(obj).append(widthItem).append(heightItem).append(itemType).append(itemPath).addClass('BrightcoveExperience');
+	  myobject[i].parentNode.replaceChild(placeholder.firstChild, myobject[i]);
+	  placeholder = null;
+	}
+
+	brightcove.createExperiences();
+	
+}
+
+vidfix();
+</script>
+
+</body>
+</html>
+
+
+<!-- ph=1 -->

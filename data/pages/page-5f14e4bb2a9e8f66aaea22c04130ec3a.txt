@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width,user-scalable = yes,minimum-scale=0.10,initial-scale = 1.0" />
+<meta name="language" content="english" />
+<!-- Turn off MSBS -->
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta http-equiv="imagetoolbar" content="no" />
+<title>Cerritos College Fine Arts and Communications</title>
+<meta name="author" content="schavez" />
+<meta name="keywords" content="Cerritos College, Fine Arts, Communications" />
+<meta name="description" content="Cerritos College Fine Arts and Communications" />
+<meta name="ROBOTS" content="ALL" />
+<meta http-equiv="Content-Script-Type"  content="text/JavaScript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<script language="javascript" type="text/javascript" src="/browse/includes/jquery-1.7.1.min.js"></script>
+<script language="javascript" type="text/javascript" src="/browse/includes/top_level3.js"></script>
+<script type="text/javascript" src="/browse/includes/swfobject/swfobject.js"></script>
+<script type="text/javascript" src="/scripts/calendar/calendar.js"></script>
+<script type="text/javascript" src="/scripts/calendar/calendar_condensed.js"></script>
+<script type="text/javascript" src="/scripts/calendar/academic_calendar.js"></script>
+<link href="/browse/styles/editor_min.css" media="all" rel="stylesheet" type="text/css" />
+<link href="/browse/styles/css2_tables_min.css" media="all" rel="stylesheet" type="text/css" />
+<!--[if gte IE 8]>
+<link href="/browse/styles/css3_tables_min.css" media="all" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+<link href="/fac/css/dept_e_all_fine_arts.css" media="all and (min-width:960px)" rel="stylesheet" type="text/css" />
+<!--[if lte IE 8]>
+<link href="/fac/css/dept_e_all_fine_arts.css" media="all" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="/browse/styles/dept_e_mobile.css" media="all and (max-width:959px)" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+<!--
+var viewportWidth;
+var startWidth;
+// onload call
+$(document).ready(function () {reformatPage();});
+// onresize call
+$(window).resize(function () {viewportWidth = $(window).width();
+if ((viewportWidth > 959 && startWidth < 960)||(viewportWidth < 960 && startWidth > 959)) {reformatPage();}});
+// reformat function
+function reformatPage() {
+viewportWidth = $(window).width(), startWidth = $(window).width();
+var c_name = getCookie("defaultWebView");
+//if cookie, use the cookie value
+if (c_name != null && c_name != "") {
+// full web css
+if (c_name == "full") {
+if (document.getElementById("TopMenuLinksBtnDiv") != 'undefined' && document.getElementById("TopMenuLinksBtnDiv") != null && document.getElementById("TopMenuLinksDiv") != 'undefined' && document.getElementById("TopMenuLinksDiv") != null) {
+$("#TopMenuLinksBtnDiv").css('display', 'none');
+$("#TopMenuLinksDiv").css('display', 'block');}
+if (document.getElementById("LeftMenuLinksBtnDiv") != 'undefined' && document.getElementById("LeftMenuLinksBtnDiv") != null && document.getElementById("LeftMenuLinksDiv") != 'undefined' && document.getElementById("LeftMenuLinksDiv") != null) {
+$("#LeftMenuLinksBtnDiv").css('display', 'none');
+$("#LeftMenuLinksDiv").css('display', 'block');}
+if (document.getElementById("RightMenuLinksBtnDiv") != 'undefined' && document.getElementById("RightMenuLinksBtnDiv") != null && document.getElementById("RightMenuLinksDiv") != 'undefined' && document.getElementById("RightMenuLinksDiv") != null) {
+$("#RightMenuLinksBtnDiv").css('display', 'none');
+$("#RightMenuLinksDiv").css('display', 'block');}
+$("link[rel=stylesheet]").attr({ href: "/fac/css/dept_e_all_fine_arts.css" });
+document.getElementById("defaultWebViewLink").innerHTML = "Mobile View";
+}
+// shared mobile css
+else {
+if (document.getElementById("TopMenuLinksBtnDiv") != 'undefined' && document.getElementById("TopMenuLinksBtnDiv") != null && document.getElementById("TopMenuLinksDiv") != 'undefined' && document.getElementById("TopMenuLinksDiv") != null) {
+$("#TopMenuLinksBtnDiv").css('display', 'block');
+$("#TopMenuLinksDiv").css('display', 'none');}
+if (document.getElementById("LeftMenuLinksBtnDiv") != 'undefined' && document.getElementById("LeftMenuLinksBtnDiv") != null && document.getElementById("LeftMenuLinksDiv") != 'undefined' && document.getElementById("LeftMenuLinksDiv") != null) {
+$("#LeftMenuLinksBtnDiv").css('display', 'block');
+$("#LeftMenuLinksDiv").css('display', 'none');}
+if (document.getElementById("RightMenuLinksBtnDiv") != 'undefined' && document.getElementById("RightMenuLinksBtnDiv") != null && document.getElementById("RightMenuLinksDiv") != 'undefined' && document.getElementById("RightMenuLinksDiv") != null) {
+$("#RightMenuLinksBtnDiv").css('display', 'none');
+$("#RightMenuLinksDiv").css('display', 'block');}
+$("link[rel=stylesheet]").attr({ href: "/browse/styles/dept_e_mobile.css" });
+document.getElementById("defaultWebViewLink").innerHTML = "Full Web View";
+}}
+//if no cookie, use the viewportWidth and set the cookie
+else {
+// full web page 960+
+if (viewportWidth > 959) {
+if (document.getElementById("TopMenuLinksBtnDiv") != 'undefined' && document.getElementById("TopMenuLinksBtnDiv") != null && document.getElementById("TopMenuLinksDiv") != 'undefined' && document.getElementById("TopMenuLinksDiv") != null) {
+$("#TopMenuLinksBtnDiv").css('display', 'none');
+$("#TopMenuLinksDiv").css('display', 'block');}
+if (document.getElementById("LeftMenuLinksBtnDiv") != 'undefined' && document.getElementById("LeftMenuLinksBtnDiv") != null && document.getElementById("LeftMenuLinksDiv") != 'undefined' && document.getElementById("LeftMenuLinksDiv") != null) {
+$("#LeftMenuLinksBtnDiv").css('display', 'none');
+$("#LeftMenuLinksDiv").css('display', 'block');}
+if (document.getElementById("RightMenuLinksBtnDiv") != 'undefined' && document.getElementById("RightMenuLinksBtnDiv") != null && document.getElementById("RightMenuLinksDiv") != 'undefined' && document.getElementById("RightMenuLinksDiv") != null) {
+$("#RightMenuLinksBtnDiv").css('display', 'none');
+$("#RightMenuLinksDiv").css('display', 'block');}
+$("link[rel=stylesheet]").attr({ href: "/fac/css/dept_e_all_fine_arts.css" });
+document.getElementById("defaultWebViewLink").innerHTML = "Mobile View";
+}
+// < 960 shared mobile css
+else {
+if (document.getElementById("TopMenuLinksBtnDiv") != 'undefined' && document.getElementById("TopMenuLinksBtnDiv") != null && document.getElementById("TopMenuLinksDiv") != 'undefined' && document.getElementById("TopMenuLinksDiv") != null) {
+$("#TopMenuLinksBtnDiv").css('display', 'block');
+$("#TopMenuLinksDiv").css('display', 'none');}
+if (document.getElementById("LeftMenuLinksBtnDiv") != 'undefined' && document.getElementById("LeftMenuLinksBtnDiv") != null && document.getElementById("LeftMenuLinksDiv") != 'undefined' && document.getElementById("LeftMenuLinksDiv") != null) {
+$("#LeftMenuLinksBtnDiv").css('display', 'block');
+$("#LeftMenuLinksDiv").css('display', 'none');}
+if (document.getElementById("RightMenuLinksBtnDiv") != 'undefined' && document.getElementById("RightMenuLinksBtnDiv") != null && document.getElementById("RightMenuLinksDiv") != 'undefined' && document.getElementById("RightMenuLinksDiv") != null) {
+$("#RightMenuLinksBtnDiv").css('display', 'none');
+$("#RightMenuLinksDiv").css('display', 'block');}
+$("link[rel=stylesheet]").attr({ href: "/browse/styles/dept_e_mobile.css" });
+document.getElementById("defaultWebViewLink").innerHTML = "Full Web View";
+}}}
+//--> 
+</script>
+<!--[if lte IE 8]>
+<link href="/browse/styles/dept_e_mobile.css" media="all" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!-- new google asynchronous tracking code with custom allow all subdomains -->
+<script type="text/javascript">//<![CDATA[
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1422354-1']);
+_gaq.push(['_setDomainName', '.cerritos.edu']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+//]]></script>
+
+</head>
+<body>
+<!-- mobile header -->
+<div id="MobileHeader">
+<a href="http://www.cerritos.edu/"><img alt="Cerritos College with tower in yellow, white and navy" src="/browse/images/cc-logo-yel-44h.png" /></a>
+<span id="MobileHeaderLink"><a href="http://www.cerritos.edu/">Cerritos College</a></span>
+</div>
+<!-- page container -->
+<div id="pageContainerDiv">
+<!-- nav 1 -->
+<div id="FullHeader">
+<div id="SkipNavigation">
+<a href="#content">Skip Navigation</a> |
+</div>
+<div id="searchBoxDiv">
+<form  name="KeyWordSearch" method="get" action="http://search.cerritos.edu/search" >
+<label for="q"><strong>Search</strong> <input name="q" type="text" id="q" title="Search" class="FormField" /></label>
+<input type="hidden" name="site" value="All-Web-Pages" />
+<input type="hidden" name="output" value="xml_no_dtd" />
+<input type="hidden" name="client" value="mobile_frontend" />
+<input type="hidden" name="proxystylesheet" value="mobile_frontend" />
+<input type="hidden" name="numgm" value="5" />
+<input type="image" name="searchButton" id="searchButton" title="Search" class="goButton" src="/browse/images/go_btn_17x20.gif" alt="Go" style="border-width:0px;vertical-align:middle;" />
+</form>
+</div>
+<div id="searchTextDiv">
+| <a href="http://www.cerritos.edu/">Cerritos</a> |
+<a href="http://www.cerritos.edu/default/quicklinks.aspx">Quick Links</a> | 
+<a href="http://translate.google.com/translate?%3Fhl%3Den&amp;hl=en&amp;langpair=en|es&amp;tbb=1&amp;ie=utf-8&amp;u=http://cms.cerritos.edu/fac/default.htm" class="translateLink">EspaÃ±ol</a>
+|<a href="http://translate.google.com/translate?%3Fhl%3Den&amp;hl=en&amp;langpair=en|ko&amp;tbb=1&amp;ie=utf-8&amp;u=http://cms.cerritos.edu/fac/default.htm" class="translateLink">íêµ­</a>
+|<a href="http://translate.google.com/translate?%3Fhl%3Den&amp;hl=en&amp;langpair=en|zh-CN&amp;tbb=1&amp;ie=utf-8&amp;u=http://cms.cerritos.edu/fac/default.htm" class="translateLink">ä¸­å½ç</a>
+|<a href="http://translate.google.com/translate?%3Fhl%3Den&amp;hl=en&amp;langpair=en|ar&amp;tbb=1&amp;ie=utf-8&amp;u=http://cms.cerritos.edu/fac/default.htm" class="translateLink">Ø§ÙØ¹Ø±Ø¨ÙØ©</a>
+| <span class="ImageLink"><a href="/dsps/"><img src="/browse/images/handicap_15x.gif" hspace="0" alt="wheelchair" title="Disabled Student Programs &amp; Services" width="14" height="15" style="border-width:0px;vertical-align:middle;" /></a></span>
+</div>
+<div id="logoNavDiv" ><a href="http://www.cerritos.edu/">
+<img id="logoNavImg" alt="Cerritos College and the Learning Resource Center tower" src="/browse/images/1x1t.gif" /></a>
+<a href="/fac/"><img id="logoNavImgWeb" alt="FAC" src="/browse/images/1x1t.gif" /></a></div>
+</div>
+<!-- column wrapper -->
+<div id="columnWrapperDiv">
+<!-- col 1 wrapper -->
+<div id="colLeftDiv_LeftCenterRight">
+<!-- left menu -->
+<div class="pageletDropShadowTop"></div>
+<div id="LeftMenuDivWrapper" class="smallPageletShadowLftRt">
+<div id="LeftMenuLinksBtnDiv" class="menuButton"><input id="LeftMenuLinksBtn" class="menuButton" type="button" value="Top Menu (+)" onclick="javascript:ShowHideLayer2('LeftMenuLinksDiv','LeftMenuLinksBtn','Top Menu ',300);" /></div>
+<div id="LeftMenuLinksDiv">
+<p class="smallPageletH2"> &nbsp;</p>
+<div class="smallPagelet">
+<div class="tabH4_Main">Department Links</div><ul class="pageletLinks"><li><a href="/fac/">Fine Arts Home</a></li><li><a href="/art/">Art &amp; Design</a></li><li><a href="/entertainment-technology/">Entertainment Technology</a></li><li><a href="/journalism/">Journalism</a></li><li><a href="/music/">Music</a></li><li><a href="/photography/">Photography</a></li><li><a href="/theater/">Theatre &amp; Film</a></li></ul><div class="tabH4_Main_25x35">Student Media &amp; Performances</div><ul class="pageletLinks"><li><a href="/art-gallery/">Art Gallery</a></li><li><a href="/entertainment-technology/">Entertainment Technology</a></li><li><a href="/music/">Music</a></li><li><a href="http://www.talonmarks.com/">Talon Marks</a></li><li><a href="/theater/">Theatre &amp; Film</a></li><li><a href="/WPMD/">WPMD Radio</a></li></ul><div class="tabH4_Main_25x35">Fine Arts Full-Time Faculty</div><ul class="pageletLinks"><li><a href="/theater/fineartsfaculty.htm">Faculty Contacts</a></li></ul>
+</div>
+</div>
+</div>
+<div class="pageletDropShadowBottom"></div>
+<!-- end col 1 wrapper -->
+</div>
+<!-- col 2 wrapper -->
+<div id="colCenterDiv_LeftCenterRight">
+<!-- content -->
+<div class="centerShadowTop"></div>
+<div id="ContentWrapperDiv" class="centerContentWrapper">
+<div id="centerContentDiv" class="centerContent">
+<a id="content"></a>
+<h1 class="tabH4_LeftCenterRight">Cerritos College Fine Arts and Communications</h1>
+<div id="ContentDiv">
+<script src="/scripts/youtube_508/js/ytp.js" type="text/javascript"><![CDATA[]]></script><script src="/scripts/flexslider/jquery.flexslider.js" type="text/javascript"><![CDATA[]]></script><script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.1/swfobject.js" type="text/javascript"><![CDATA[]]></script><div id="slidedesc"><a href="slider-descriptions.htm">Slide Description</a></div><div class="flex-container"><div class="flexslider"><ul class="slides"><li><img alt="2013 Student Art Exhibit" src="/uploads/FAC/slider/2013_Student_Art_Exhibit.JPG" /></li></ul></div></div><script charset="utf-8" type="text/javascript">//<![CDATA[
+
+$(window).load(function() {
+$('.flexslider').flexslider(
+{
+pausePlay: true,
+slideshow: false,
+slideshowSpeed: 5000,
+animationDuration: 800,
+controlsContainer: ".flex-container"
+}
+);
+});
+
+//]]></script><p>Welcome to the Fine Arts Division home page.</p><p>Whether you are completing your general education requirements, taking a fine arts class for transfer credit,or considering a major in one of our five academic programs, we're here to help you recognize your academic goals and achieve success in the completionof an A.A. degree or professional certificate, or in transfer to a four-year university. Check out the links to the left for information about classes in:</p><ul><li>Art &amp; Design</li><li>Mass Communications</li><li>Music</li><li>Photography</li><li>Theatre and Film Arts</li></ul><p><a href="/fac/faculty.htm">Fine Arts Full-Time faculty Contact Info</a></p><p>Instructional Dean: Gary Pritchard</p><p>Office: FA - 64<br />Phone: 562-860-2451, ext. 2602</p><p><img alt="Architectural Committee Meeting with some of the Fine Arts Faculty" src="/uploads/FAC/ArchitectMeeting.jpg" title="Committee Meeting for the planning of the new Fine Arts building project" /><br />Some Fine Arts faculty meeting with Architects for the new Fine Arts building project</p><p>Please consider making a donation to support the <a href="http://www.teamworkfundraising.net/cerritos/donation/cerritos_donation.html" title="Cerritos College Foundation ">Fine Arts and Communication Division</a>.</p>
+</div>
+</div>
+</div>
+<div class="centerShadowBottom"></div>
+<!-- end col 2 wrapper -->
+</div>
+<!-- col 3 wrapper -->
+<div id="colRightDiv_LeftCenterRight">
+<!-- left menu -->
+<div class="pageletDropShadowTop"></div>
+<div id="RightMenuDivWrapper" class="smallPageletShadowLftRt">
+<div id="RightMenuLinksBtnDiv" class="menuButton"><input id="RightMenuLinksBtn" class="menuButton" type="button" value="Bottom Menu (+)" onclick="javascript:ShowHideLayer2('RightMenuLinksDiv','RightMenuLinksBtn','Bottom Menu ',300);" /></div>
+<div id="RightMenuLinksDiv">
+<p class="smallPageletH2"> &nbsp;</p>
+<div class="smallPagelet">
+<div id="IncludePageDivLM"><script language="javascript" type="text/javascript">//<![CDATA[
+      $(document).ready(function(){
+      $("#IncludePageDivLM").load("/ifalcon/E-left-menu-content.htm");
+      });
+      //]]></script></div>
+</div>
+</div>
+</div>
+<div class="pageletDropShadowBottom"></div>
+<!-- end col 1 wrapper -->
+</div>
+
+<!-- end column wrapper -->
+</div>
+<div id="footerDiv">
+<span class="MissionStatement">The Cerritos College mission is to serve the community by building futures through learning.</span><br />
+Cerritos College, 11110 Alondra Blvd., Norwalk, CA 90650, (562) 860-2451
+<a href="/web-administrator/">Web Administrator</a>
+</div>
+<!-- end page container -->
+</div>
+<div id="footerGlowDiv"></div>
+<!-- disclaimer div -->
+<div id="DisclaimerDiv">
+Web Author(s) cmayfield, gpritchard, rbloch<br /><br />
+<a class="DisclaimerLink" href="/web-administrator/">Web Administrator</a> 
+| <a class="DisclaimerLink" href="/web-handbook/disclaimer.htm">Disclaimer</a> 
+| <a class="DisclaimerLink" href="http://www.cerritos.edu/sitemap">Site Map</a> 
+| <a class="DisclaimerLink" id="defaultWebViewLink" href="javascript:void(0);" onclick="toggleDefaultWebView()">Mobile View</a>
+<br /><br />Last Update: 6/11/2013
+</div>
+</body>
+</html>
+

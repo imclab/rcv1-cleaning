@@ -1,0 +1,2292 @@
+
+<!DOCTYPE html>
+<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+  <title> Entertainment News - Mattters: Where is everything?</title>
+  <meta name="description" content="Entertainment news and headlines. Read, collect and discuss news about Entertainment on Mattters, the fun Google Reader alternative. Follow Your Interests."/>
+  <meta name="keywords" content="News, Videos, Music, Photos, Images, Sports, Fashion, Technology,Entertainment"/>
+  <meta http-equiv="content-script-type" content="text/javascript"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="robots" content="">
+  <meta name="author" content="Mattters.com">
+    <meta name="google-site-verification" content="JDJtTn-nQuQaIr2Bhxt8IusIKauaWcdciQpYPtTYt_Q" />
+  <meta name="HandheldFriendly" content="true"/>
+<!--   <meta content="initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, target-densitydpi=high-dpi, user-scalable=0" name="viewport"> -->
+  <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+  
+  <link rel="canonical" href="http://mattters.com/entertainment"/>
+<meta property="og:title" content="Mattters" />
+<meta property="og:type" content="company" />
+<!-- <meta property="og:url" content="http://mattters.com" /> -->
+<meta property="og:image" content="http://mattters.com/images/logo.png" />
+<meta property="og:site_name" content="Mattters" />
+<meta property="fb:app_id" content="533052026759249" />
+<!--
+<meta content='314378232012840' property='fb:page_id'>
+<meta name="msvalidate.01" content="7E221B8F01A50AF3CFDB09AD2697D165" />
+-->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&lang=en' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+
+
+  <link href="/assets/application-2c0ec988ee59d665b8515f4e95010c4d.css" media="screen" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" media="screen and (max-device-width: 600px)" href="/stylesheets/mobile.css" />
+  <link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio: 1.5)" href="/stylesheets/mobile.css" />
+
+  
+</head>
+<body>
+
+<div id="topbar" class="Sticky">
+	<div id="top_bar_content">
+
+
+
+		<div class="FloatRight"><span id="signinup"><span class="Top_Bar_Button" style="padding: 10px;" onclick="Workflow.open('must_sign_in_popup');"><img style="margin-top: -4px;" src="/images/profile.png"/></span></span></div>
+
+		<div class="FloatRight"><span class="Top_Bar_Button" id="social_pulldown_button" onclick="pulldown_menu('social_pulldown_button', 'social_pulldown_menu'); return false;"><img src="/images/social_page_buttons.png" /></span></div>
+		<div class="FloatRight"><span class="Top_Bar_Button" id="add_favorite" onclick="toggleFavorite('entertainment'); return false;" title="add/remove this as a favorite channel"><img id="topbar_favorite_icon" src="/images/favorite.png" /></span></div>
+
+
+
+
+		<div id="mobile_menu"><span class="Top_Bar_Button" id="mattters_pulldown_button" onclick="pulldown_menu('mattters_pulldown_button', 'mattters_pulldown_menu'); return false;"><span class="MobileMenu"></span></span></div>
+		<div><span id="previous_favorite" data-url="/" class="TopBarPreviousButton"><img src="/images/previous.png"/></span></div>
+		<div><span id="next_favorite" data-url="/" class="TopBarNextButton"><img src="/images/next.png"/></span></div>
+		<div><a href="/"><img id="topbar_logo" src="/images/topbar_logo.png" /></a></div>
+
+
+
+		<div id="topbar_searchmenu_container">
+		<span class="Top_Bar_Field" id="topbar_searchmenu" ><h1>Entertainment</h1></span>
+		</div>
+
+
+
+	</div>
+
+<div id="topbar_menu_dock"></div>
+
+</div>
+<div id="flash_alert"></div>
+<div id="flash_notice"></div>
+
+
+
+
+
+<style type="text/css">
+
+body { background-color: #FAFAFA; }
+body { background-color: #F8f8fA; }
+
+.Header_Message_Area
+	{
+	margin-top: 60px;
+	margin-bottom: -80px;
+	display:inline-block;
+/*	text-align: left; */
+	}
+.Header_Message
+	{
+	float: right;
+	padding: 10px;
+	display: inline-block;
+	}
+.Header_Payload p
+	{
+	margin: 0;
+	padding: 0;
+	}
+.Header_Message h3
+	{
+	cursor: pointer;
+	color: #aaaabb;
+	font-weight: normal;
+	font-family: oswald;
+	}
+.Header_Message_Container
+	{
+	text-align: right;
+	}
+#add_feed_field
+	{
+    border: 1px solid #CCCCCC;
+    padding: 3px 5px;
+	}
+.Header_Payload
+	{
+	width: 350px;
+	padding: 1px 10px;
+	float: right;
+	}
+
+#add_feed_to_interest_btn
+	{
+    border: 2px solid #BBBBAA;
+    border-radius: 6px 6px 6px 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 5px;
+	background-color: #BBBBAA;
+	color: #ffffff;
+	}
+#add_feed_to_interest_btn:hover
+	{
+    background-color: #FFFFFF;
+    color: #888899;
+	}
+
+</style>
+
+<div class="Header_Message_Container">
+<div class="Header_Message_Area">
+<div class="Header_Message">
+	<h3 onclick="$('#add_feed_to_interest').toggle(); $('#add_story_to_interest').hide();">add news feed</h3>
+</div>
+<div class="Header_Message">
+	<h3 onclick="$('#add_story_to_interest').toggle(); $('#add_feed_to_interest').hide();" >tweet a story</h3>
+</div>
+<div class="Clear"></div>
+<div class="Header_Payload">
+	<form accept-charset="UTF-8" action="/" id="add_feed_to_interest" method="post" onsubmit="return Formie.validateForm(this);" style="display:none"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="JvGEYF7qB8Vc3e4OsG//iR4qqS3VFALURhwxUs4BW3g=" /></div>		<input type="Hidden" name="interest" value="entertainment" />
+		<input data-required="true" id="add_feed_field" name="feed[feed]" placeholder="http://coolness.blogspot.com/feeds/posts/default?alt=rss" size="50" type="text" />
+		<input id="add_feed_to_interest_btn" name="commit" type="submit" value="add" />
+</form>	<p id="add_story_to_interest" style="display:none">tweet to @_mattters_ using hashtag #entertainment and include a photo and a link</p>
+</div>
+<div class="Clear"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div id="sidebar" style="display:none">
+	<div class="Sidebar_Filter Sidebar_Filter_Selected"><a href="/entertainment">news</a></div>
+	<div class="Sidebar_Filter"><a href="/entertainment/videos">videos</a></div>
+	<div class="Sidebar_Filter"><a href="/entertainment/photos">photos</a></div>
+
+
+<div class="Sidebar_Header">Forums</div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://messageboards.4tnz.com/" title="4TNZ">4TNZ</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://artforum.com/" title="Artforum">Artforum</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.bscreview.com/forum/" title="BSC Review">BSC Review</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.comicon.com/ubb/ubbthreads.php" title="COMICCON">COMICCON</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.cinemablend.com/forum/" title="Cinema Blend">Cinema Blend</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://maritzacampos.com/forums/viewforum.php?f=2" title="College Roomies From Hell">College Roomies From Hell</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.comicboards.com/" title="Comic Boards">Comic Boards</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://forums.comingsoon.net/" title="Coming soon">Coming soon</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://forums.cosmicbooknews.com/" title="Cosmicbook News">Cosmicbook News</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://forum.dvdtalk.com/index.php" title="DVD Talk">DVD Talk</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.darkhorse.com/Help/Boards/" title="Dark Horse Comics">Dark Horse Comics</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://donewaiting.com/board/" title="Donewaiting Concert Forums">Donewaiting Concert Forums</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://forums.explosm.net/" title="Explosm">Explosm</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://forums.fourtitude.com/zeroforum?id=983" title="Fourtitude Toy Forum">Fourtitude Toy Forum</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.herorealm.com/hrboards/index.php" title="Hero Realm">Hero Realm</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://horrordrive-in.com/" title="Horror Drive-in">Horror Drive-in</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://horrorhollow.proboards.com/index.cgi" title="Horror Hollow">Horror Hollow</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://horrorworld.org/phpBB3/index.php" title="Horror World">Horror World</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.musicbanter.com/music-forums/" title="Music Banter">Music Banter</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://myanimelist.net/forum/" title="My Anime List Forums">My Anime List Forums</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://forums.myspace.com/s/4.aspx?fuseaction=forums.viewsubforum" title="MySpace">MySpace</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.nightshadebooks.com/cgi-bin/discus/discus.cgi" title="Nightshade Books">Nightshade Books</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.retroist.com/forum/" title="Retroist">Retroist</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.rottentomatoes.com/vine/" title="Rotten Tomatoes Forum">Rotten Tomatoes Forum</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.sffworld.com/forums/" title="SFF World">SFF World</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.sfx.co.uk/sfx-forum/" title="SFX">SFX</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://shocklinesforum.yuku.com/" title="Shocklines">Shocklines</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://forums.somethingawful.com/forumdisplay.php?forumid=182" title="Something Awful">Something Awful</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://forum.superdickery.com" title="Superdickery">Superdickery</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.tvloop.com/" title="TVLoop">TVLoop</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://forums.terrybrooks.net/" title="Terry Brooks">Terry Brooks</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://thelatarniaforums.yuku.com/bthelatarniaforums" title="The Latarnia Forums">The Latarnia Forums</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://www.toycollector.com/index.php?option=com_fireboard&amp;Itemid=824" title="Toy Collector">Toy Collector</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://asoiaf.westeros.org/" title="Westeros">Westeros</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://forums.yojoe.com/" title="YoJoe">YoJoe</a></div>
+	<div class="Sidebar_Forum"><a target="_blank" class="External_Link" href="http://tvbb.zap2it.com/" title="ZapToIt Forums">ZapToIt Forums</a></div>
+
+<div class="Sidebar_Header">Links</div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.atcq.com" title="A Tribe Called Quest">A Tribe Called Quest</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.algreenmusic.com" title="Al Green">Al Green</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.allmanbrothersband.com/" title="Allman Brothers Band">Allman Brothers Band</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.myspace.com/ambulanceltd" title="Ambulance LTD">Ambulance LTD</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.aycyas.com/" title="And You Call Yourself A Scientist">And You Call Yourself A Scientist</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.myanimalhome.net" title="Animal Collective">Animal Collective</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://xltronic.com/nostalgia/aphextwin.nu/v4" title="Aphex Twin">Aphex Twin</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.arcadefire.com" title="Arcade Fire">Arcade Fire</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.armandvanhelden.com" title="Armand Van Helden">Armand Van Helden</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.artnet.com/" title="ArtNet">ArtNet</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.artvalue.com/" title="ArtValue.com">ArtValue.com</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.artcyclopedia.com/" title="Artcyclopedia">Artcyclopedia</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.autechre.ws" title="Autechre">Autechre</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.bbking.com/" title="B.B. King">B.B. King</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.bandnews.org/" title="Band News.org">Band News.org</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.bandofhorses.com/" title="Band of Horses">Band of Horses</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.barbrastreisand.com/us" title="Barbra Streisand">Barbra Streisand</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.basementjaxx.co.uk" title="Basement Jaxx">Basement Jaxx</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.batforlashes.com" title="Bat For Lashes">Bat For Lashes</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.bearshare.com/" title="Bear Share">Bear Share</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.beastieboys.com" title="Beastie Boys">Beastie Boys</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.beck.com" title="Beck">Beck</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://beemp3.com/" title="Beemp3">Beemp3</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.flecktones.com/" title="Bela Fleck">Bela Fleck</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.belleandsebastian.com" title="Belle &amp; Sebastian">Belle &amp; Sebastian</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.bjork.com" title="Bjork">Bjork</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.blondie.net" title="Blondie">Blondie</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.boardsofcanada.com" title="Boards of Canada">Boards of Canada</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.bobdylan.com" title="Bob Dylan">Bob Dylan</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://music.hyperreal.org/artists/brian_eno" title="Brian Eno">Brian Eno</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.arts-crafts.ca/bss" title="Broken Social Scene">Broken Social Scene</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.brucecockburn.com/" title="Bruce Cockburn">Bruce Cockburn</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.brucespringsteen.net/" title="Bruce Springsteen">Bruce Springsteen</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://ape-law.com/jonmorris/comics.php" title="Calamity Jon">Calamity Jon</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.camera-obscura.net" title="Camera Obscura">Camera Obscura</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.spoonrecords.com" title="Can">Can</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.matadorrecords.com/cat_power" title="Cat Power">Cat Power</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.challengersoftheunknown.com/" title="Challengers of the Unknown">Challengers of the Unknown</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://ctva.biz/index.htm" title="Classic TV Archive">Classic TV Archive</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://classics.jameswallaceharris.com/" title="Classics of Science Fiction">Classics of Science Fiction</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://colorradio.com/" title="ColorRadio">ColorRadio</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.comicsrecommended.com/" title="Comic Recommended">Comic Recommended</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.comicspace.com/comicsxp/" title="Comic Space">Comic Space</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.common-music.com" title="Common">Common</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.poobala.com/crossoverlist.html" title="Crossovers and Spinoffs">Crossovers and Spinoffs</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.cyndilauper.com" title="Cyndi Lauper">Cyndi Lauper</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.djshadow.com" title="DJ Shadow">DJ Shadow</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.daftpunk.com" title="Daft Punk">Daft Punk</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.davidbowie.com" title="David Bowie">David Bowie</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.davidbyrne.com/" title="David Byrne">David Byrne</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.myspace.com/delasoul" title="De La Soul">De La Soul</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.deepdish.com" title="Deep Dish">Deep Dish</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://deerhoof.killrockstars.com" title="Deerhoof">Deerhoof</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://dialbforblog.com/" title="Dial B For Blog">Dial B For Blog</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="link:http://www.discogs.com/" title="Discogs">Discogs</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.doves.net" title="Doves">Doves</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.drjohn.org/" title="Dr. John">Dr. John</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.dragoncon.org/index.php" title="Dragon*Con">Dragon*Con</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.dusty-springfield.com" title="Dusty Springfield">Dusty Springfield</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://epguides.com/menu/" title="EPGuides: TV Episodes Lists">EPGuides: TV Episodes Lists</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.ellafitzgerald.com" title="Ella Fitzgerald">Ella Fitzgerald</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://ellen.warnerbros.com/" title="Ellen">Ellen</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.sweetadeline.net" title="Elliott Smith">Elliott Smith</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.elviscostello.com" title="Elvis Costello">Elvis Costello</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.elvis.com/" title="Elvis Presley">Elvis Presley</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.ericclapton.com/" title="Eric Clapton">Eric Clapton</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.listentofeist.com" title="Feist">Feist</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.filmsite.org/" title="Filmsite">Filmsite</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.subpop.com/artists/fleet_foxes" title="Fleet Foxes">Fleet Foxes</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.funnyjunksite.com/" title="Funny Junk Site">Funny Junk Site</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.gocomics.com/" title="Go Comics">Go Comics</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.comics.org/" title="Grand Comics Database">Grand Comics Database</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.greatfunnypictures.com" title="Great Funny Pictures">Great Funny Pictures</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.guysread.com/" title="Guys Read">Guys Read</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://harlanellison.com" title="Harlan Ellison">Harlan Ellison</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.horrormovies.org/" title="Horror Movies">Horror Movies</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.horrorworld.org/links.htm" title="Horror World: Links">Horror World: Links</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.hybridized.org/" title="Hybridized">Hybridized</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.icanteachyouhowtodoit.com/" title="I can teach you how to do it">I can teach you how to do it</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.imdb.com/" title="IMDb">IMDb</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.iggypop.com" title="Iggy Pop">Iggy Pop</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.nga.gov/collection/iad/tour_index/index.shtm" title="Index of American Design">Index of American Design</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.ironandwine.com" title="Iron &amp; Wine">Iron &amp; Wine</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.islandsareforever.com" title="Islands">Islands</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.jackiechan.com/" title="Jackie Chan">Jackie Chan</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://en.wikipedia.org/wiki/James_Brown" title="James Brown">James Brown</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.chachich.com/mdchachi/jpizza.html" title="Japanese Pizza">Japanese Pizza</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.jeffbuckley.com" title="Jeff Buckley">Jeff Buckley</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.jennylewis.com" title="Jenny Lewis">Jenny Lewis</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.jethrotull.com/" title="Jethro Tull">Jethro Tull</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.jimi-hendrix.com" title="Jimi Hendrix">Jimi Hendrix</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.joanarmatrading.com/" title="Joan Armatrading">Joan Armatrading</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.joanbaez.com/" title="Joan Baez">Joan Baez</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.john-cale.com" title="John Cale">John Cale</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.johnprine.net/" title="John Prine">John Prine</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.johnnycash.com" title="Johnny Cash">Johnny Cash</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://jonimitchell.com/" title="Joni Mitchell">Joni Mitchell</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://members.aol.com/lwtua/joydiv.htm" title="Joy Division">Joy Division</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.kanyeuniversecity.com" title="Kanye West">Kanye West</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.kathygriffin.net/" title="Kathy Griffin">Kathy Griffin</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.kiddierecords.com/" title="Kiddie Records">Kiddie Records</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.genesimmons.com/news.html" title="Kiss:Gene Simmons">Kiss:Gene Simmons</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.lauracantrell.com" title="Laura Cantrell">Laura Cantrell</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.ledzeppelin.com" title="Led Zeppelin">Led Zeppelin</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.legaltorrents.com" title="Legal Torrents">Legal Torrents</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.librarything.com/" title="Library Thing">Library Thing</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.archive.org/details/etree" title="Live Music Archive">Live Music Archive</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://collectionsonline.lacma.org/" title="Los Angeles County Musuem of art">Los Angeles County Musuem of art</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.loslobos.org/" title="Los Lobos">Los Lobos</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.loureed.org" title="Lou Reed">Lou Reed</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.lucindawilliams.com" title="Lucinda Williams">Lucinda Williams</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.lupefiasco.com" title="Lupe Fiasco">Lupe Fiasco</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.curve.demon.co.uk/lush" title="Lush">Lush</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.miauk.com" title="M.I.A.">M.I.A.</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://mog.com" title="MOG">MOG</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.moma.org/" title="MOMA">MOMA</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.mahalo.com/how-to-download-free-music" title="Mahalo: How to Download Free Music">Mahalo: How to Download Free Music</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.manga4kids.com/" title="Manga For Kids Reviews">Manga For Kids Reviews</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.mangaupdates.com/releases.html" title="Manga Updates: New Releases">Manga Updates: New Releases</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://marvel.com/motion_comics" title="Marvel Motion Comics">Marvel Motion Comics</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://en.wikipedia.org/wiki/Marvin_Gaye" title="Marvin Gaye">Marvin Gaye</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.massiveattack.co.uk" title="Massive Attack">Massive Attack</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.mediafire.com" title="MediaFire">MediaFire</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.megaupload.com" title="MegaUpload">MegaUpload</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.melissaetheridge.com/" title="Melissa Etheridge">Melissa Etheridge</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.ilovemetric.com" title="Metric">Metric</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.michaeljackson.com" title="Michael Jackson">Michael Jackson</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.mickeyhart.net/home/" title="Mickey Hart">Mickey Hart</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.mikebloomfield.com/" title="Mike Bloomfield">Mike Bloomfield</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.mixcloud.com/" title="Mixcloud">Mixcloud</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.filmtracks.com/" title="Modern Soundtrack Reviews">Modern Soundtrack Reviews</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.artsmia.org/modernism/" title="Modernism">Modernism</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.mosdefmusic.com" title="Mos Def">Mos Def</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.moviemistakes.com" title="Movie Mistakes">Movie Mistakes</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.muddywaters.com/home.html" title="Muddy Waters">Muddy Waters</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.mybloodyvalentine.net" title="My Bloody Valentine">My Bloody Valentine</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.defjam.com/site/artist_home.php?artist_id=608" title="Nas">Nas</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.neilyoung.com" title="Neil Young">Neil Young</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.nekocase.com" title="Neko Case">Neko Case</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://neutralmilkhotel.net" title="Neutral Milk Hotel">Neutral Milk Hotel</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.neworderonline.com" title="New Order">New Order</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.nick-cave.com" title="Nick Cave">Nick Cave</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://smironne.free.fr/NICO" title="Nico">Nico</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.nirvanaclub.com" title="Nirvana">Nirvana</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.notoriousonline.com" title="Notorious B.I.G.">Notorious B.I.G.</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.origami-kids.com/" title="Oragmi Kids">Oragmi Kids</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.loopz.co.uk" title="Orbital">Orbital</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.outkast.com" title="Outkast">Outkast</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.weirdwildrealm.com/filmindex.html" title="Paghat the Ratgirl">Paghat the Ratgirl</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.paperbackswap.com/" title="Paperback Swap">Paperback Swap</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.phish.com/" title="Phish">Phish</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.wearephoenix.com" title="Phoenix">Phoenix</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.pinkfloyd.com" title="Pink Floyd">Pink Floyd</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.pixiesmusic.com" title="Pixies">Pixies</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.portishead.co.uk" title="Portishead">Portishead</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.prince.org" title="Prince">Prince</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://puzzle.suchfun.net/" title="Puzzling Music Archive">Puzzling Music Archive</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.radiohead.com" title="Radiohead">Radiohead</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://rapidshare.com" title="RapidShare">RapidShare</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.ravishankar.org" title="Ravi Shankar">Ravi Shankar</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.reverbnation.com/" title="Reverbnation">Reverbnation</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.rilokiley.com" title="Rilo Kiley">Rilo Kiley</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.rupaul.com/news/" title="Rupaul">Rupaul</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.sfsite.com/" title="SF Site">SF Site</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.saintetienne.com" title="Saint Etienne">Saint Etienne</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.samcooke.com" title="Sam Cooke">Sam Cooke</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.scifimovies.com/" title="SciFiMovies.com">SciFiMovies.com</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://forums.sciflicks.com/" title="SciFlicks Forums">SciFlicks Forums</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.sfbc.com/" title="Science Fiction Book Club">Science Fiction Book Club</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://scottmccloud.com/" title="Scott McCloud">Scott McCloud</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.sendspace.com" title="SendSpace">SendSpace</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.sigur-ros.co.uk" title="Sigur Ros">Sigur Ros</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.slushfactory.com/" title="Slush Facotry">Slush Facotry</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.somethingpositive.net/" title="Something Positive">Something Positive</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.sonicyouth.com" title="Sonic Youth">Sonic Youth</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.sonnyboy.com/" title="Sonny Boy Williamson">Sonny Boy Williamson</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.sothebys.com/" title="Sothebys">Sothebys</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://isfdb.org" title="Speculative Fiction Database">Speculative Fiction Database</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.spoontheband.com" title="Spoon">Spoon</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.ilovestvincent.com" title="St. Vincent">St. Vincent</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.stereolab.co.uk" title="Stereolab">Stereolab</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://stringcheeseincident.com/" title="String Cheese Incident">String Cheese Incident</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.sufjan.com" title="Sufjan Stevens">Sufjan Stevens</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.supermasterpiece.com/comics.html" title="Super Masterpiece">Super Masterpiece</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.tvparty.com/" title="TV Party">TV Party</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://twiztv.com/" title="TV Scripts Database">TV Scripts Database</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.tvontheradio.com" title="TV on the Radio">TV on the Radio</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.tv.com" title="TV.com">TV.com</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.talibkweli.com" title="Talib Kweli">Talib Kweli</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.thewonder.co.uk" title="Television">Television</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.televisiontunes.com/" title="Television Tunes">Television Tunes</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://tellingjokes.com/j/index.htm" title="Telling Jokes.com">Telling Jokes.com</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.beatles.com" title="The Beatles">The Beatles</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.theclashonline.com" title="The Clash">The Clash</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.thecure.com" title="The Cure">The Cure</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.decemberists.com" title="The Decemberists">The Decemberists</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.thegoteam.co.uk" title="The Go! Team">The Go! Team</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.go-betweens.net" title="The Go-Betweens">The Go-Betweens</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://thehotspotonline.com/" title="The Hot Spot Online">The Hot Spot Online</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.houseoftomorrow.com" title="The Magnetic Fields">The Magnetic Fields</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.thenewpornographers.com" title="The New Pornographers">The New Pornographers</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.theorb.com" title="The Orb">The Orb</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.ramones.com" title="The Ramones">The Ramones</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.rollingstones.com" title="The Rolling Stones">The Rolling Stones</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.theroots.com" title="The Roots">The Roots</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.theshins.com" title="The Shins">The Shins</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.askmeaskmeaskme.com" title="The Smiths">The Smiths</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.thestrokes.com" title="The Strokes">The Strokes</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://en.wikipedia.org/wiki/The_Supremes" title="The Supremes">The Supremes</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://members.aol.com/olandem/vu.html" title="The Velvet Underground">The Velvet Underground</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.marcata.net/walkmen" title="The Walkmen">The Walkmen</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://zom.thefondfarewells.com" title="The Zombies">The Zombies</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.thieverycorporation.com" title="Thievery Corporation">Thievery Corporation</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.tokyopop.com/" title="Tokyopop">Tokyopop</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.bittorrent.com" title="Torrent">Torrent</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.trickyonline.com" title="Tricky">Tricky</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.trouserpress.com/reviews.php" title="Trouser Press">Trouser Press</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.u2.com" title="U2">U2</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.myspace.com/underworld" title="Underworld">Underworld</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.viz.com/" title="Viz Media">Viz Media</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://mlb.mlb.com/blogs/" title="Where the Baseball Pros Blog">Where the Baseball Pros Blog</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.whoisdoctorwho.co.uk/" title="Who is Dr. Who">Who is Dr. Who</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.widespreadpanic.com/" title="Widespread Panic">Widespread Panic</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.wilcoworld.net" title="Wilco">Wilco</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.wizardworld.com/" title="Wizard World: Comic Con">Wizard World: Comic Con</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.subpop.com/artists/wolf_parade" title="Wolf Parade">Wolf Parade</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.pjfarmer.com/woldnewton/Pulp.htm" title="World Newton Universe">World Newton Universe</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.wowio.com/" title="Wowio">Wowio</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.yeahyeahyeahs.com" title="Yeah Yeah Yeahs">Yeah Yeah Yeahs</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.yolatengo.com" title="Yo La Tengo">Yo La Tengo</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.yousendit.com" title="YouSendIt">YouSendIt</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://ytayta.com/" title="YtaYta">YtaYta</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.artslant.com/" title="artslant">artslant</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.clickwheel.net/" title="clickwheel">clickwheel</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://bt.etree.org" title="etree">etree</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://iheartquotes.com/" title="i heart quotes">i heart quotes</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.iversecomics.com/" title="iVerse Comics">iVerse Comics</a></div>
+	<div class="Sidebar_Link"><a target="_blank" class="External_Link" href="http://www.interestmix.com/movies" title="interestMIX: Movies">interestMIX: Movies</a></div>
+</div>
+<div id="fullpage_content" class="FloatLeft">
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+.Comment_Button { margin-bottom: -4px; }
+.Matrix_Story { padding-bottom: 0; }
+</style>
+
+<div id="matrix">
+<div id="column1" class="MatrixColumn MatrixColumnLast">
+
+	<div class="Widget Relative" id="WStory_7901664" data-position="7901664" data-storyid="7901664">
+		<div class="Tweeted_Story_Decoration"></div>
+		<div class="Matrix_Widget_Decoration">
+		<div class="Matrix_Story">
+			<div class="Matrix_Photo">
+				<span class="StoryAffordance"><img class="LazyImg" style="width:189px;height: 116px;" data-width="897" data-height="550" src="/images/transparent.gif" data-src="http://cdn.hiphopwired.com/wp-content/uploads/2013/08/billoreillysmug1.jpg" /></span>
+			</div>
+			<div class="Matrix_Category">
+				<a class="Matrix_Category_Link_Photo" href="/music">Music</a>
+			</div>
+			<div class="Matrix_Payload">
+				<div class="Matrix_Title">
+					<span class="Titled StoryAffordance" data-titled="Bill O'Reilly Attacks Rev. Al Sharpton, Black Families &amp; More [VIDEO] | Hip-Hop Wired"></span>
+				</div>
+				<div class="Matrix_Author"><a href="/blogs/hip-hop-wired">Hip-Hop Wired</a></div>
+					<div class="Matrix_Widget_Star_Rating"><img class="Matrix_Widget_Stars"  data-id="7901664" data-rating="0" src="/images/0-stars.png" /></div>
+				<div class="Matrix_Body">
+                                	Bill O'Reilly has another case of diarrhea mouth, this time attacking black families and Rev. Sharpton. 
+				</div>
+				<div class="Matrix_Body_Full" id="story_body_7901664">
+                                	Bill O'Reilly has another case of diarrhea mouth, this time attacking black families and Rev. Sharpton. 
+				</div>
+				<div class="Matrix_Details">
+					<div class="Matrix_Details_Default">
+						<span class="Matrix_Score"><span class="Matrix_Score_Value" style="display:none">1</span></span>
+						<span class="Matrix_Published_At Datetime" id="widget_pubdate_7901664" data-datetime="1377627142000" style="padding-left:0px;">3 minutes ago</span>
+					</div>
+					<div class="Matrix_Details_Social" style="display:none;">
+						<a class="Trackable" data-track="storypin-7901664" href="http://pinterest.com/pin/create/button/?url=http://fb.me/2SwaDmOuk&media=http://cdn.hiphopwired.com/wp-content/uploads/2013/08/billoreillysmug1.jpg&description=Bill%20O'Reilly%20Attacks%20Rev.%20Al%20Sharpton,%20Black%20Families%20&amp;%20More%20[VIDEO]%20%7C%20Hip-Hop%20Wired via Mattters" data-pin-do="buttonPin" data-pin-config="none" title='Share photo on Pinterest'><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+						<a class="Trackable" data-track="storytweet-7901664" href='http://twitter.com/share?url=http://fb.me/2SwaDmOuk&text=Bill%20O'Reilly%20Attacks%20Rev.%20Al%20Sharpton,%20Black%20Families%20&amp;%20More%20[VIDEO]%20%7C%20Hip-Hop%20Wired%20http://cdn.hiphopwired.com/wp-content/uploads/2013/08/billoreillysmug1.jpg&via=_mattters_' target='_blank' title='Share story on Twitter'><img src="/images/tweety.png" /></a>
+						<a class="Trackable" data-track="storyfacebook-7901664" target='_blank' href='http://www.facebook.com/sharer.php?u=http://fb.me/2SwaDmOuk&amp;title=Bill%20O'Reilly%20Attacks%20Rev.%20Al%20Sharpton,%20Black%20Families%20&amp;%20More%20[VIDEO]%20%7C%20Hip-Hop%20Wired' title="Share story on Facebook"><img alt='Facebook' src='/images/fb.png' /></a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="Widget Relative" id="WStory_7901637" data-position="7901637" data-storyid="7901637">
+		<div class="Tweeted_Story_Decoration"></div>
+		<div class="Matrix_Widget_Decoration">
+		<div class="Matrix_Story">
+			<div class="Matrix_Photo">
+				<span class="StoryAffordance"><img class="LazyImg" style="width:189px;height: 126px;" data-width="326" data-height="217" src="/images/transparent.gif" data-src="http://cdn.hitfix.com/photos/3864379/underthedome_082613_652_article_story_main.jpg" /></span>
+			</div>
+			<div class="Matrix_Payload">
+				<div class="Matrix_Title">
+					<span class="Titled StoryAffordance" data-titled="TV Ratings: Rising Under the Dome helps CBS cruise on Monday"></span>
+				</div>
+				<div class="Matrix_Author"><a href="javascript:void(0)">Daniel Fienberg</a></div>
+					<div class="Matrix_Widget_Star_Rating"><img class="Matrix_Widget_Stars"  data-id="7901637" data-rating="0" src="/images/0-stars.png" /></div>
+				<div class="Matrix_Body">
+                                	Monday Ratings: "Under the Dome" rises - 
+				</div>
+				<div class="Matrix_Body_Full" id="story_body_7901637">
+                                	Monday Ratings: "Under the Dome" rises - 
+				</div>
+				<div class="Matrix_Details">
+					<div class="Matrix_Details_Default">
+						<span class="Matrix_Score"><span class="Matrix_Score_Value" style="display:none">1</span></span>
+						<span class="Matrix_Published_At Datetime" id="widget_pubdate_7901637" data-datetime="1377627107000" style="padding-left:0px;">4 minutes ago</span>
+					</div>
+					<div class="Matrix_Details_Social" style="display:none;">
+						<a class="Trackable" data-track="storypin-7901637" href="http://pinterest.com/pin/create/button/?url=http://www.hitfix.com/news/tv-ratings-rising-under-the-dome-helps-cbs-cruise-on-monday&media=http://cdn.hitfix.com/photos/3864379/underthedome_082613_652_article_story_main.jpg&description=TV%20Ratings:%20Rising%20Under%20the%20Dome%20helps%20CBS%20cruise%20on%20Monday via Mattters" data-pin-do="buttonPin" data-pin-config="none" title='Share photo on Pinterest'><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+						<a class="Trackable" data-track="storytweet-7901637" href='http://twitter.com/share?url=http://www.hitfix.com/news/tv-ratings-rising-under-the-dome-helps-cbs-cruise-on-monday&text=TV%20Ratings:%20Rising%20Under%20the%20Dome%20helps%20CBS%20cruise%20on%20Monday%20http://cdn.hitfix.com/photos/3864379/underthedome_082613_652_article_story_main.jpg&via=_mattters_' target='_blank' title='Share story on Twitter'><img src="/images/tweety.png" /></a>
+						<a class="Trackable" data-track="storyfacebook-7901637" target='_blank' href='http://www.facebook.com/sharer.php?u=http://www.hitfix.com/news/tv-ratings-rising-under-the-dome-helps-cbs-cruise-on-monday&amp;title=TV%20Ratings:%20Rising%20Under%20the%20Dome%20helps%20CBS%20cruise%20on%20Monday' title="Share story on Facebook"><img alt='Facebook' src='/images/fb.png' /></a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="Widget Relative" id="WStory_7901668" data-position="7901668" data-storyid="7901668">
+		<div class="Tweeted_Story_Decoration"></div>
+		<div class="Matrix_Widget_Decoration">
+		<div class="Matrix_Story">
+			<div class="Matrix_Photo">
+				<span class="StoryAffordance"><img class="LazyImg" style="width:189px;height: 133px;" data-width="680" data-height="478" src="/images/transparent.gif" data-src="http://d1oi7t5trwfj5d.cloudfront.net/16/43/4db06cf84006baded330d8d8bd43/greatest-fight.jpg" /></span>
+			</div>
+			<div class="Matrix_Category">
+				<a class="Matrix_Category_Link_Photo" href="/music">Music</a>
+			</div>
+			<div class="Matrix_Payload">
+				<div class="Matrix_Title">
+					<span class="Titled StoryAffordance" data-titled="Watch: Christopher Plummer and Frank Langella Debate a Boxing Legend's Fate in the Trailer for 'Muhammad Ali's Greatest Fight' | Filmmakers, Film Industry, Film Festivals, Awards &amp; Movie Reviews | Indiewire"></span>
+				</div>
+				<div class="Matrix_Author"><a href="javascript:void(0)">DotFilm (Dot.FILM)</a></div>
+					<div class="Matrix_Widget_Star_Rating"><img class="Matrix_Widget_Stars"  data-id="7901668" data-rating="0" src="/images/0-stars.png" /></div>
+				<div class="Matrix_Body">
+                                	Watch: Christopher Plummer and Frank Langella Debate a Boxing Legend's Fate in the Trailer for 'Muhammad Ali's... 
+				</div>
+				<div class="Matrix_Body_Full" id="story_body_7901668">
+                                	Watch: Christopher Plummer and Frank Langella Debate a Boxing Legend's Fate in the Trailer for 'Muhammad Ali's... 
+				</div>
+				<div class="Matrix_Details">
+					<div class="Matrix_Details_Default">
+						<span class="Matrix_Score"><span class="Matrix_Score_Value" style="display:none">1</span></span>
+						<span class="Matrix_Published_At Datetime" id="widget_pubdate_7901668" data-datetime="1377627099000" style="padding-left:0px;">4 minutes ago</span>
+					</div>
+					<div class="Matrix_Details_Social" style="display:none;">
+						<a class="Trackable" data-track="storypin-7901668" href="http://pinterest.com/pin/create/button/?url=http://dlvr.it/3sg9pz&media=http://d1oi7t5trwfj5d.cloudfront.net/16/43/4db06cf84006baded330d8d8bd43/greatest-fight.jpg&description=Watch:%20Christopher%20Plummer%20and%20Frank%20Langella%20Debate%20a%20Boxing%20Legend's%20Fate%20in%20the%20Trailer%20for%20'Muhammad%20Ali's%20Greatest%20Fight'%20%7C%20Filmmakers,%20Film%20Industry,%20Film%20Festivals,%20Awards%20&amp;%20Movie%20Reviews%20%7C%20Indiewire via Mattters" data-pin-do="buttonPin" data-pin-config="none" title='Share photo on Pinterest'><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+						<a class="Trackable" data-track="storytweet-7901668" href='http://twitter.com/share?url=http://dlvr.it/3sg9pz&text=Watch:%20Christopher%20Plummer%20and%20Frank%20Langella%20Debate%20a%20Boxing%20Legend's%20Fate%20in%20the%20Trailer%20for%20'Muhammad%20Ali's%20Greatest%20Fight'%20%7C%20Filmmakers,%20Film%20Industry,%20Film%20Festivals,%20Awards%20&amp;%20Movie%20Reviews%20%7C%20Indiewire%20http://d1oi7t5trwfj5d.cloudfront.net/16/43/4db06cf84006baded330d8d8bd43/greatest-fight.jpg&via=_mattters_' target='_blank' title='Share story on Twitter'><img src="/images/tweety.png" /></a>
+						<a class="Trackable" data-track="storyfacebook-7901668" target='_blank' href='http://www.facebook.com/sharer.php?u=http://dlvr.it/3sg9pz&amp;title=Watch:%20Christopher%20Plummer%20and%20Frank%20Langella%20Debate%20a%20Boxing%20Legend's%20Fate%20in%20the%20Trailer%20for%20'Muhammad%20Ali's%20Greatest%20Fight'%20%7C%20Filmmakers,%20Film%20Industry,%20Film%20Festivals,%20Awards%20&amp;%20Movie%20Reviews%20%7C%20Indiewire' title="Share story on Facebook"><img alt='Facebook' src='/images/fb.png' /></a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="Widget Relative" id="WStory_7901638" data-position="7901638" data-storyid="7901638">
+		<div class="Tweeted_Story_Decoration"></div>
+		<div class="Matrix_Widget_Decoration">
+		<div class="Matrix_Story">
+			<div class="Matrix_Photo">
+				<span class="StoryAffordance"><img class="LazyImg" style="width:189px;height: 193px;" data-width="1536" data-height="1568" src="/images/transparent.gif" data-src="http://i.huffpost.com/gen/1320476/thumbs/o-TAYLOR-SWIFT-JUSTIN-TIMBERLAKE-facebook.jpg" /></span>
+			</div>
+			<div class="Matrix_Payload">
+				<div class="Matrix_Title">
+					<span class="Titled StoryAffordance" data-titled="Taylor Swift And Justin Timberlake Share An Intimate VMA Moment, Are Definitely Not Dating"></span>
+				</div>
+				<div class="Matrix_Author"><a href="javascript:void(0)">HuffPost Celebrity</a></div>
+					<div class="Matrix_Widget_Star_Rating"><img class="Matrix_Widget_Stars"  data-id="7901638" data-rating="0" src="/images/0-stars.png" /></div>
+				<div class="Matrix_Body">
+                                	Justin Timberlake and Taylor Swift share an intimate moment at the VMAS, what could it POSSIBLY mean?! 
+				</div>
+				<div class="Matrix_Body_Full" id="story_body_7901638">
+                                	Justin Timberlake and Taylor Swift share an intimate moment at the VMAS, what could it POSSIBLY mean?! 
+				</div>
+				<div class="Matrix_Relateds">
+					<a href="/justin-timberlake">Justin Timberlake</a>
+					<a href="/taylor-swift">Taylor Swift</a>
+				</div>
+				<div class="Matrix_Details">
+					<div class="Matrix_Details_Default">
+						<span class="Matrix_Score"><span class="Matrix_Score_Value" style="display:none">1</span></span>
+						<span class="Matrix_Published_At Datetime" id="widget_pubdate_7901638" data-datetime="1377627021000" style="padding-left:0px;">5 minutes ago</span>
+					</div>
+					<div class="Matrix_Details_Social" style="display:none;">
+						<a class="Trackable" data-track="storypin-7901638" href="http://pinterest.com/pin/create/button/?url=http://huff.to/1djUDE7&media=http://i.huffpost.com/gen/1320476/thumbs/o-TAYLOR-SWIFT-JUSTIN-TIMBERLAKE-facebook.jpg&description=Taylor%20Swift%20And%20Justin%20Timberlake%20Share%20An%20Intimate%20VMA%20Moment,%20Are%20Definitely%20Not%20Dating via Mattters" data-pin-do="buttonPin" data-pin-config="none" title='Share photo on Pinterest'><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+						<a class="Trackable" data-track="storytweet-7901638" href='http://twitter.com/share?url=http://huff.to/1djUDE7&text=Taylor%20Swift%20And%20Justin%20Timberlake%20Share%20An%20Intimate%20VMA%20Moment,%20Are%20Definitely%20Not%20Dating%20http://i.huffpost.com/gen/1320476/thumbs/o-TAYLOR-SWIFT-JUSTIN-TIMBERLAKE-facebook.jpg&via=_mattters_' target='_blank' title='Share story on Twitter'><img src="/images/tweety.png" /></a>
+						<a class="Trackable" data-track="storyfacebook-7901638" target='_blank' href='http://www.facebook.com/sharer.php?u=http://huff.to/1djUDE7&amp;title=Taylor%20Swift%20And%20Justin%20Timberlake%20Share%20An%20Intimate%20VMA%20Moment,%20Are%20Definitely%20Not%20Dating' title="Share story on Facebook"><img alt='Facebook' src='/images/fb.png' /></a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="Widget Relative" id="WStory_7901639" data-position="7901639" data-storyid="7901639">
+		<div class="Tweeted_Story_Decoration"></div>
+		<div class="Matrix_Widget_Decoration">
+		<div class="Matrix_Story">
+			<div class="Matrix_Photo">
+				<span class="StoryAffordance"><img class="LazyImg" style="width:189px;height: 190px;" data-width="200" data-height="200" src="/images/transparent.gif" data-src="http://media.avclub.com/images/436/436984/1x1-small/200.jpg?7454" /></span>
+			</div>
+			<div class="Matrix_Payload">
+				<div class="Matrix_Title">
+					<span class="Titled StoryAffordance" data-titled="
+    
+    Joshua Jackson and Maura Tierney join Dominic West in Showtime&#39;s The Affair | TV | Newswire |
+    The A.V. Club
+    
+
+"></span>
+				</div>
+				<div class="Matrix_Author"><a href="javascript:void(0)">The AV Club</a></div>
+					<div class="Matrix_Widget_Star_Rating"><img class="Matrix_Widget_Stars"  data-id="7901639" data-rating="0" src="/images/0-stars.png" /></div>
+				<div class="Matrix_Body">
+                                	Joshua Jackson and Maura Tierney join Dominic West in Showtime's The Affair 
+				</div>
+				<div class="Matrix_Body_Full" id="story_body_7901639">
+                                	Joshua Jackson and Maura Tierney join Dominic West in Showtime's The Affair 
+				</div>
+				<div class="Matrix_Details">
+					<div class="Matrix_Details_Default">
+						<span class="Matrix_Score"><span class="Matrix_Score_Value" style="display:none">1</span></span>
+						<span class="Matrix_Published_At Datetime" id="widget_pubdate_7901639" data-datetime="1377626691000" style="padding-left:0px;">11 minutes ago</span>
+					</div>
+					<div class="Matrix_Details_Social" style="display:none;">
+						<a class="Trackable" data-track="storypin-7901639" href="http://pinterest.com/pin/create/button/?url=http://avc.lu/1822f88&media=http://media.avclub.com/images/436/436984/1x1-small/200.jpg?7454&description=%0A%20%20%20%20%0A%20%20%20%20Joshua%20Jackson%20and%20Maura%20Tierney%20join%20Dominic%20West%20in%20Showtime&amp;%2339;s%C2%A0The%20Affair%20%7C%20TV%20%7C%20Newswire%20%7C%0A%20%20%20%20The%20A.V.%20Club%0A%20%20%20%20%0A%0A via Mattters" data-pin-do="buttonPin" data-pin-config="none" title='Share photo on Pinterest'><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+						<a class="Trackable" data-track="storytweet-7901639" href='http://twitter.com/share?url=http://avc.lu/1822f88&text=%0A%20%20%20%20%0A%20%20%20%20Joshua%20Jackson%20and%20Maura%20Tierney%20join%20Dominic%20West%20in%20Showtime&amp;%2339;s%C2%A0The%20Affair%20%7C%20TV%20%7C%20Newswire%20%7C%0A%20%20%20%20The%20A.V.%20Club%0A%20%20%20%20%0A%0A%20http://media.avclub.com/images/436/436984/1x1-small/200.jpg?7454&via=_mattters_' target='_blank' title='Share story on Twitter'><img src="/images/tweety.png" /></a>
+						<a class="Trackable" data-track="storyfacebook-7901639" target='_blank' href='http://www.facebook.com/sharer.php?u=http://avc.lu/1822f88&amp;title=%0A%20%20%20%20%0A%20%20%20%20Joshua%20Jackson%20and%20Maura%20Tierney%20join%20Dominic%20West%20in%20Showtime&amp;%2339;s%C2%A0The%20Affair%20%7C%20TV%20%7C%20Newswire%20%7C%0A%20%20%20%20The%20A.V.%20Club%0A%20%20%20%20%0A%0A' title="Share story on Facebook"><img alt='Facebook' src='/images/fb.png' /></a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="Widget Relative" id="WStory_7901640" data-position="7901640" data-storyid="7901640">
+		<div class="Tweeted_Story_Decoration"></div>
+		<div class="Matrix_Widget_Decoration">
+		<div class="Matrix_Story">
+			<div class="Matrix_Photo">
+				<span class="StoryAffordance"><img class="LazyImg" style="width:189px;height: 106px;" data-width="480" data-height="270" src="/images/transparent.gif" data-src="http://t.fod4.com/t/bc5f676260/c480x270_58.jpg" /></span>
+			</div>
+			<div class="Matrix_Payload">
+				<div class="Matrix_Title">
+					<span class="Titled StoryAffordance" data-titled="Tony Hale&#x27;s Acting Process  from Tony Hale, Emily Strachan, Dan Klein, Andy Bush, Jack &amp;amp; Justin, Funny Or Die, Jonathan Hall, Betsy Koch, and Bette Bentley"></span>
+				</div>
+				<div class="Matrix_Author"><a href="javascript:void(0)">Funny Or Die</a></div>
+					<div class="Matrix_Widget_Star_Rating"><img class="Matrix_Widget_Stars"  data-id="7901640" data-rating="0" src="/images/0-stars.png" /></div>
+				<div class="Matrix_Body">
+                                	Subtle thespian @MrTonyHale pulls the curtain back on his acting process: 
+				</div>
+				<div class="Matrix_Body_Full" id="story_body_7901640">
+                                	Subtle thespian @MrTonyHale pulls the curtain back on his acting process: 
+				</div>
+				<div class="Matrix_Details">
+					<div class="Matrix_Details_Default">
+						<span class="Matrix_Score"><span class="Matrix_Score_Value" style="display:none">1</span></span>
+						<span class="Matrix_Published_At Datetime" id="widget_pubdate_7901640" data-datetime="1377626528000" style="padding-left:0px;">14 minutes ago</span>
+					</div>
+					<div class="Matrix_Details_Social" style="display:none;">
+						<a class="Trackable" data-track="storypin-7901640" href="http://pinterest.com/pin/create/button/?url=http://ow.ly/ojjct&media=http://t.fod4.com/t/bc5f676260/c480x270_58.jpg&description=Tony%20Hale&amp;%23x27;s%20Acting%20Process%20%20from%20Tony%20Hale,%20Emily%20Strachan,%20Dan%20Klein,%20Andy%20Bush,%20Jack%20&amp;amp;%20Justin,%20Funny%20Or%20Die,%20Jonathan%20Hall,%20Betsy%20Koch,%20and%20Bette%20Bentley via Mattters" data-pin-do="buttonPin" data-pin-config="none" title='Share photo on Pinterest'><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+						<a class="Trackable" data-track="storytweet-7901640" href='http://twitter.com/share?url=http://ow.ly/ojjct&text=Tony%20Hale&amp;%23x27;s%20Acting%20Process%20%20from%20Tony%20Hale,%20Emily%20Strachan,%20Dan%20Klein,%20Andy%20Bush,%20Jack%20&amp;amp;%20Justin,%20Funny%20Or%20Die,%20Jonathan%20Hall,%20Betsy%20Koch,%20and%20Bette%20Bentley%20http://t.fod4.com/t/bc5f676260/c480x270_58.jpg&via=_mattters_' target='_blank' title='Share story on Twitter'><img src="/images/tweety.png" /></a>
+						<a class="Trackable" data-track="storyfacebook-7901640" target='_blank' href='http://www.facebook.com/sharer.php?u=http://ow.ly/ojjct&amp;title=Tony%20Hale&amp;%23x27;s%20Acting%20Process%20%20from%20Tony%20Hale,%20Emily%20Strachan,%20Dan%20Klein,%20Andy%20Bush,%20Jack%20&amp;amp;%20Justin,%20Funny%20Or%20Die,%20Jonathan%20Hall,%20Betsy%20Koch,%20and%20Bette%20Bentley' title="Share story on Facebook"><img alt='Facebook' src='/images/fb.png' /></a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="Widget Relative" id="WStory_7901641" data-position="7901641" data-storyid="7901641">
+		<div class="Tweeted_Story_Decoration"></div>
+		<div class="Matrix_Widget_Decoration">
+		<div class="Matrix_Story">
+			<div class="Matrix_Photo">
+				<span class="StoryAffordance"><img class="LazyImg" style="width:189px;height: 158px;" data-width="120" data-height="100" src="/images/transparent.gif" data-src="http://gossipgirl.alloyentertainment.com/files/2013/08/wenn20603271-120x100.jpg" /></span>
+			</div>
+			<div class="Matrix_Payload">
+				<div class="Matrix_Title">
+					<span class="Titled StoryAffordance" data-titled="Hot Mess: Selena Gomez at the Getaway Premiere | Gossip Girl"></span>
+				</div>
+				<div class="Matrix_Author"><a href="javascript:void(0)">Gossip Girl</a></div>
+					<div class="Matrix_Widget_Star_Rating"><img class="Matrix_Widget_Stars"  data-id="7901641" data-rating="0" src="/images/0-stars.png" /></div>
+				<div class="Matrix_Body">
+                                	Selena Gomez is caught in a forest of fugly thanks to this too-floral dress! 
+				</div>
+				<div class="Matrix_Body_Full" id="story_body_7901641">
+                                	Selena Gomez is caught in a forest of fugly thanks to this too-floral dress! 
+				</div>
+				<div class="Matrix_Relateds">
+					<a href="/selena">Selena</a>
+					<a href="/gossip-girl">Gossip Girl</a>
+					<a href="/selena-gomez">Selena Gomez</a>
+				</div>
+				<div class="Matrix_Details">
+					<div class="Matrix_Details_Default">
+						<span class="Matrix_Score"><span class="Matrix_Score_Value" style="display:none">1</span></span>
+						<span class="Matrix_Published_At Datetime" id="widget_pubdate_7901641" data-datetime="1377626515000" style="padding-left:0px;">14 minutes ago</span>
+					</div>
+					<div class="Matrix_Details_Social" style="display:none;">
+						<a class="Trackable" data-track="storypin-7901641" href="http://pinterest.com/pin/create/button/?url=http://bit.ly/12I5sd4&media=http://gossipgirl.alloyentertainment.com/files/2013/08/wenn20603271-120x100.jpg&description=Hot%20Mess:%20Selena%20Gomez%20at%20the%20Getaway%20Premiere%20%7C%20Gossip%20Girl via Mattters" data-pin-do="buttonPin" data-pin-config="none" title='Share photo on Pinterest'><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+						<a class="Trackable" data-track="storytweet-7901641" href='http://twitter.com/share?url=http://bit.ly/12I5sd4&text=Hot%20Mess:%20Selena%20Gomez%20at%20the%20Getaway%20Premiere%20%7C%20Gossip%20Girl%20http://gossipgirl.alloyentertainment.com/files/2013/08/wenn20603271-120x100.jpg&via=_mattters_' target='_blank' title='Share story on Twitter'><img src="/images/tweety.png" /></a>
+						<a class="Trackable" data-track="storyfacebook-7901641" target='_blank' href='http://www.facebook.com/sharer.php?u=http://bit.ly/12I5sd4&amp;title=Hot%20Mess:%20Selena%20Gomez%20at%20the%20Getaway%20Premiere%20%7C%20Gossip%20Girl' title="Share story on Facebook"><img alt='Facebook' src='/images/fb.png' /></a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="Widget Relative" id="WStory_7901642" data-position="7901642" data-storyid="7901642">
+		<div class="Tweeted_Story_Decoration"></div>
+		<div class="Matrix_Widget_Decoration">
+		<div class="Matrix_Story">
+			<div class="Matrix_Photo">
+				<span class="StoryAffordance"><img class="LazyImg" style="width:189px;height: 84px;" data-width="989" data-height="439" src="/images/transparent.gif" data-src="http://visualwebsiteoptimizer.com/split-testing-blog/wp-content/uploads/2013/08/Directionalcue_mindvalleyinsights_1.png" /></span>
+			</div>
+			<div class="Matrix_Payload">
+				<div class="Matrix_Title">
+					<span class="Titled StoryAffordance" data-titled="5 Commandments for Designing Sign-Up Forms that Convert Like Crazy - Visual Website Optimizer Blog"></span>
+				</div>
+				<div class="Matrix_Author"><a href="javascript:void(0)">UX Feeder</a></div>
+					<div class="Matrix_Widget_Star_Rating"><img class="Matrix_Widget_Stars"  data-id="7901642" data-rating="0" src="/images/0-stars.png" /></div>
+				<div class="Matrix_Body">
+                                	I ? Split Testing: 5 Commandments for Designing Sign-Up Forms that Convert Like Crazy: Sign-up forms — It’s ok... 
+				</div>
+				<div class="Matrix_Body_Full" id="story_body_7901642">
+                                	I ? Split Testing: 5 Commandments for Designing Sign-Up Forms that Convert Like Crazy: Sign-up forms — It’s ok... 
+				</div>
+				<div class="Matrix_Details">
+					<div class="Matrix_Details_Default">
+						<span class="Matrix_Score"><span class="Matrix_Score_Value" style="display:none">1</span></span>
+						<span class="Matrix_Published_At Datetime" id="widget_pubdate_7901642" data-datetime="1377626459000" style="padding-left:0px;">15 minutes ago</span>
+					</div>
+					<div class="Matrix_Details_Social" style="display:none;">
+						<a class="Trackable" data-track="storypin-7901642" href="http://pinterest.com/pin/create/button/?url=http://bit.ly/17cD2vm&media=http://visualwebsiteoptimizer.com/split-testing-blog/wp-content/uploads/2013/08/Directionalcue_mindvalleyinsights_1.png&description=5%20Commandments%20for%20Designing%20Sign-Up%20Forms%20that%20Convert%20Like%20Crazy%20-%20Visual%20Website%20Optimizer%20Blog via Mattters" data-pin-do="buttonPin" data-pin-config="none" title='Share photo on Pinterest'><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+						<a class="Trackable" data-track="storytweet-7901642" href='http://twitter.com/share?url=http://bit.ly/17cD2vm&text=5%20Commandments%20for%20Designing%20Sign-Up%20Forms%20that%20Convert%20Like%20Crazy%20-%20Visual%20Website%20Optimizer%20Blog%20http://visualwebsiteoptimizer.com/split-testing-blog/wp-content/uploads/2013/08/Directionalcue_mindvalleyinsights_1.png&via=_mattters_' target='_blank' title='Share story on Twitter'><img src="/images/tweety.png" /></a>
+						<a class="Trackable" data-track="storyfacebook-7901642" target='_blank' href='http://www.facebook.com/sharer.php?u=http://bit.ly/17cD2vm&amp;title=5%20Commandments%20for%20Designing%20Sign-Up%20Forms%20that%20Convert%20Like%20Crazy%20-%20Visual%20Website%20Optimizer%20Blog' title="Share story on Facebook"><img alt='Facebook' src='/images/fb.png' /></a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="Widget Relative" id="WStory_7901097" data-position="7901097" data-storyid="7901097">
+		<div class="Tweeted_Story_Decoration"></div>
+		<div class="Matrix_Widget_Decoration">
+		<div class="Matrix_Story">
+			<div class="Matrix_Photo">
+				<span class="StoryAffordance"><img class="LazyImg" style="width:189px;height: 190px;" data-width="130" data-height="130" src="/images/transparent.gif" data-src="http://i.crackedcdn.com/phpimages/quickfix/7/3/4/203734.jpg?v=1" /></span>
+			</div>
+			<div class="Matrix_Payload">
+				<div class="Matrix_Title">
+					<span class="Titled StoryAffordance" data-titled="4 Reasons Not to Use Stolen Images to Make a Political Point | Cracked.com"></span>
+				</div>
+				<div class="Matrix_Author"><a href="javascript:void(0)">Cracked.com</a></div>
+					<div class="Matrix_Widget_Star_Rating"><img class="Matrix_Widget_Stars"  data-id="7901097" data-rating="0" src="/images/0-stars.png" /></div>
+				<div class="Matrix_Body">
+                                	Curb Your Enthusiasm as Egyptian propaganda. 4 Reasons Not to Use Stolen Images to Make a Political Point - 
+				</div>
+				<div class="Matrix_Body_Full" id="story_body_7901097">
+                                	Curb Your Enthusiasm as Egyptian propaganda. 4 Reasons Not to Use Stolen Images to Make a Political Point - 
+				</div>
+				<div class="Matrix_Relateds">
+					<a href="/curb-your-enthusiasm">Curb Your Enthusiasm</a>
+				</div>
+				<div class="Matrix_Details">
+					<div class="Matrix_Details_Default">
+						<span class="Matrix_Score"><span class="Matrix_Score_Value" style="display:none">1</span></span>
+						<span class="Matrix_Published_At Datetime" id="widget_pubdate_7901097" data-datetime="1377626438000" style="padding-left:0px;">15 minutes ago</span>
+					</div>
+					<div class="Matrix_Details_Social" style="display:none;">
+						<a class="Trackable" data-track="storypin-7901097" href="http://pinterest.com/pin/create/button/?url=http://bit.ly/17cgQS3&media=http://i.crackedcdn.com/phpimages/quickfix/7/3/4/203734.jpg?v=1&description=4%20Reasons%20Not%20to%20Use%20Stolen%20Images%20to%20Make%20a%20Political%20Point%20%7C%20Cracked.com via Mattters" data-pin-do="buttonPin" data-pin-config="none" title='Share photo on Pinterest'><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+						<a class="Trackable" data-track="storytweet-7901097" href='http://twitter.com/share?url=http://bit.ly/17cgQS3&text=4%20Reasons%20Not%20to%20Use%20Stolen%20Images%20to%20Make%20a%20Political%20Point%20%7C%20Cracked.com%20http://i.crackedcdn.com/phpimages/quickfix/7/3/4/203734.jpg?v=1&via=_mattters_' target='_blank' title='Share story on Twitter'><img src="/images/tweety.png" /></a>
+						<a class="Trackable" data-track="storyfacebook-7901097" target='_blank' href='http://www.facebook.com/sharer.php?u=http://bit.ly/17cgQS3&amp;title=4%20Reasons%20Not%20to%20Use%20Stolen%20Images%20to%20Make%20a%20Political%20Point%20%7C%20Cracked.com' title="Share story on Facebook"><img alt='Facebook' src='/images/fb.png' /></a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="Widget Relative" id="WStory_7901115" data-position="7901115" data-storyid="7901115">
+		<div class="Tweeted_Story_Decoration"></div>
+		<div class="Matrix_Widget_Decoration">
+		<div class="Matrix_Story">
+			<div class="Matrix_Photo">
+				<span class="StoryAffordance"><img class="LazyImg" style="width:189px;height: 106px;" data-width="1280" data-height="720" src="/images/transparent.gif" data-src="http://i1.ytimg.com/vi/5N4TsNgllH0/maxresdefault.jpg" /></span>
+			</div>
+			<div class="Matrix_Category">
+				<a class="Matrix_Category_Link_Photo" href="/music">Music</a>
+			</div>
+			<div class="Matrix_Payload">
+				<div class="Matrix_Title">
+					<span class="Titled StoryAffordance" data-titled="Bootsy Collins Jam Cruise 12 - YouTube"></span>
+				</div>
+				<div class="Matrix_Author"><a href="javascript:void(0)">Bootsy Collins</a></div>
+					<div class="Matrix_Widget_Star_Rating"><img class="Matrix_Widget_Stars"  data-id="7901115" data-rating="0" src="/images/0-stars.png" /></div>
+				<div class="Matrix_Body">
+                                	The FunkShip is in OverDrive! THE Jam Cruise SAID THEY'RE GONNA LET US GIVE Y'ALL THE P LIKE ONLY WE CAN! CLICK... 
+				</div>
+				<div class="Matrix_Body_Full" id="story_body_7901115">
+                                	The FunkShip is in OverDrive! THE Jam Cruise SAID THEY'RE GONNA LET US GIVE Y'ALL THE P LIKE ONLY WE CAN! CLICK... 
+				</div>
+				<div class="Matrix_Relateds">
+					<a href="/bootsy-collins">Bootsy Collins</a>
+					<a href="/click">Click</a>
+					<a href="/the-pjs">The PJs</a>
+				</div>
+				<div class="Matrix_Details">
+					<div class="Matrix_Details_Default">
+						<span class="Matrix_Score"><span class="Matrix_Score_Value" style="display:none">1</span></span>
+						<span class="Matrix_Published_At Datetime" id="widget_pubdate_7901115" data-datetime="1377626437000" style="padding-left:0px;">15 minutes ago</span>
+					</div>
+					<div class="Matrix_Details_Social" style="display:none;">
+						<a class="Trackable" data-track="storypin-7901115" href="http://pinterest.com/pin/create/button/?url=http://fb.me/LrHfA5vM&media=http://i1.ytimg.com/vi/5N4TsNgllH0/maxresdefault.jpg&description=Bootsy%20Collins%20Jam%20Cruise%2012%20-%20YouTube via Mattters" data-pin-do="buttonPin" data-pin-config="none" title='Share photo on Pinterest'><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+						<a class="Trackable" data-track="storytweet-7901115" href='http://twitter.com/share?url=http://fb.me/LrHfA5vM&text=Bootsy%20Collins%20Jam%20Cruise%2012%20-%20YouTube%20http://i1.ytimg.com/vi/5N4TsNgllH0/maxresdefault.jpg&via=_mattters_' target='_blank' title='Share story on Twitter'><img src="/images/tweety.png" /></a>
+						<a class="Trackable" data-track="storyfacebook-7901115" target='_blank' href='http://www.facebook.com/sharer.php?u=http://fb.me/LrHfA5vM&amp;title=Bootsy%20Collins%20Jam%20Cruise%2012%20-%20YouTube' title="Share story on Facebook"><img alt='Facebook' src='/images/fb.png' /></a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+
+	</div>
+
+
+
+</div>
+
+
+
+
+<div class="Clear"></div>
+
+</div>
+
+
+<script type='text/javascript'>
+
+var visited_page = "interest-21";
+
+function iz_start3() {
+	if ($('#add_feed_to_interest')[0]) {
+		$('#add_feed_to_interest')[0].action = $SURL + '/iz' + '/ad' + 'd_fee' + 'd';
+	}
+}
+
+</script>
+
+
+
+
+
+
+<div class="Clear"></div>
+
+
+
+<div class="Mattters_Menu" id="mattters_pulldown_menu" style="display:none">
+<div id="mattters_pulldown_inner_menu">
+	<div class="DoubleWideMenuItem"><a href="/">Home</a></div>
+		<div class="YouAreHereMenuItem"><a href="/entertainment">Entertainment</a></div>
+	<div class="DoubleWideMenuItem"><a href="/living">Living</a></div>
+	<div class="DoubleWideMenuItem"><a href="/learning">Learning</a></div>
+	<div class="DoubleWideMenuItem"><a href="/sports">Sports</a></div>
+	<div class="DoubleWideMenuItem"><a href="/technology">Technology</a></div>
+	<div class="DoubleWideMenuItem"><a href="/entertainment">Entertainment</a></div>
+	<div class="DoubleWideMenuItem"><a href="/food">Food</a></div>
+	<div class="DoubleWideMenuItem"><a href="/money">Money</a></div>
+	<div class="DoubleWideMenuItem"><a href="/places">Places</a></div>
+	<div class="DoubleWideMenuItem"><a href="/events">Events</a></div>
+	<div class="DoubleWideMenuItem"><a href="/all">1000 More Channels >></a></div>
+	<div class="DoubleWideMenuItem"><a href="/help">Help</a></div>
+</div>
+    <div class="Overlay" id="matters_menu_overlay" style="background: transparent;z-index: -1;" onclick="$('#mattters_pulldown_inner_menu')[0].style.marginLeft = '-1000px'; this.style.display='none'; iz_open_menu = null; return false;" ></div>
+</div>
+
+
+<style type="text/css">
+
+.SigninPopup_Form_Separator {
+    border-left: 1px solid #CCCCCC;
+    display: inline-block;
+    float: left;
+    height: 200px;
+    margin: 0 40px;
+}
+.SigninPopupDialog
+	{
+	width: auto;
+	display: inline-block;
+	border-radius: 15px;
+	top: 100px;
+	}
+.SigninPopupDialog p 	{
+	margin: 20px 0 0;
+	padding: 0;
+	}
+
+.SigninPopupDialog h3	{
+	margin: 20px 0 0 0;
+	}
+
+.SigninPopupPanel
+	{
+	padding: 20px 40px;
+	}
+
+.SigninPopupDialog h2	{
+	margin: 20px 0 -10px 40px;
+	}
+</style>
+
+<div id="must_sign_in_popup" class="PopupDialogWorkFlow Modal" style="display:none">
+<div id="must_sign_in_start" class="PopupDialog PopupDialogStart SigninPopupDialog">
+        <div class="PopupDialogHeader">
+          <a href="#" class="PopupDialogClose" id="popup_close" onclick="Workflow.close('must_sign_in_popup'); return false"></a>
+          <h2>awesome!...</h2>
+        </div>
+	<div class="SigninPopupPanel">
+	<div class="FloatLeft">
+		<h3>Already a member?</h3>
+		<div id="signin_with_facebook" onclick="window.location.href='/auth/facebook'">
+			<div class="Facebook_Signin">
+				<span class="Facebook_Icon"></span>
+				<span class="Facebook_Signup_Text">Sign In with Facebook</span>
+			</div>
+		</div>
+
+		<p>Or sign in using email address</p>
+		<div class="Signin_Page_Join_Now"><a class="Signin_With_Target" onclick="Workflow.next('must_sign_in_popup', 'signin_with_email_popup'); return false;" href="javascript:void(0)">sign in with email &#187;</a></div>
+	</div>
+
+	<div class="SigninPopup_Form_Separator"></div>
+
+	<div class="FloatLeft">
+		<h3>Not a member?</h3>
+		<div id="signin_with_facebook" onclick="window.location.href='/auth/facebook'">
+			<div class="Facebook_Signin">
+				<span class="Facebook_Icon"></span>
+				<span class="Facebook_Signup_Text">Sign Up with Facebook</span>
+			</div>
+		</div>
+
+		<p>Or sign up with email</p>
+		<div class="Signin_Page_Join_Now"><a href="/iz/signup">sign up with email &#187;</a></div>
+	</div>
+	<div class="Clear"></div>
+	</div>
+</div>
+
+    <div class="Overlay" onclick="Workflow.closeAll(); return false;" ></div>
+
+</div>
+
+
+<div id="signin_with_email_popup" class="PopupDialogWorkFlow Modal" style="display:none">
+<div id="signin_with_email_start" class="PopupDialog PopupDialogStart SigninPopupDialog">
+        <div class="PopupDialogHeader">
+          <a href="#" class="PopupDialogClose" id="popup_close" onclick="Workflow.close('signin_with_email_popup'); return false"><strong></strong><span></span></a>
+          <h2>sign in using email</h2>
+        </div>
+	<div class="SigninPopupPanel">
+        <div class="PopupDialogForm Form">
+		<form accept-charset="UTF-8" action="/" autocomplete="off" id="sign_in_form" method="post" onsubmit="return Formie.validateForm(this);"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="JvGEYF7qB8Vc3e4OsG//iR4qqS3VFALURhwxUs4BW3g=" /></div> 
+  			<input id="target" name="target" type="hidden" />
+			<div class="Form_Field">
+				<label autocomplete="off" class="Label" for="user_username">Email address / username</label><br />
+				<input class="Required" data-required="true" id="user_username" name="user[username]" size="30" type="text" />
+			</div>
+			<div class="Form_Field">
+				<label class="Label" for="user_password">Password</label><br />
+				<input autocomplete="off" class="Required" data-required="true" id="user_password" name="user[password]" size="30" type="password" /><br/>
+				<span class="Small">(<a href="/iz/account/recover">Forgot your password?</a>)</span>
+			</div>
+			<div class="Form_Field">
+				<input name="user[remember]" type="hidden" value="0" /><input checked="checked" id="user_remember" name="user[remember]" type="checkbox" value="1" /> <label class="Label">remember me</label>
+			</div>
+
+  			<input class="Button" id="sign_in_button" name="commit" type="submit" value="sign in" />
+</form>	</div>
+	</div>
+</div>
+    <div class="Overlay" onclick="Workflow.closeAll(); return false;" ></div>
+</div>
+
+<script type='text/javascript'>
+function iz_start2() {
+	$('#sign_in_form')[0].action = 'http' + 's://mattters.com' + '/' + 'iz/acc' + 'ount/nauthe' + 'nticate';
+}
+</script>
+
+
+
+
+<div class="Social_Pulldown_Menu" id="social_pulldown_menu" style="display:none">
+	<ul>
+		<li><span id="google_plusone_button"><g:plusone size="medium"></g:plusone></span></li>
+		<li><script async="true" src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script></li>
+		<li><iframe id="facebook_like_button" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Fmatttersdotcom&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" allowTransparency="true"></iframe></li>
+    		<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="_mattters_" data-lang="en">Tweet</a></li>
+	</ul>
+</div>
+
+
+
+<div id="story_viewer" style="display:none;">
+<div id="story_viewer_bar">
+	<div class="BackButton" id="story_viewer_back_btn"><img src="/images/back.png"/></div>
+	<div class="PreviousButton" id="story_viewer_previous_btn"><img src="/images/previous.png"/></div>
+	<div class="NextButton" id="story_viewer_next_btn"><img src="/images/next.png"/></div>
+	<a class="LogoButton" href="/"><img id="story_viewer_bar_logo" src="/images/topbar_logo.png" /></a>
+	<div id="story_viewer_news_source">
+		<a id="story_viewer_news_source_url" class="External_Link Visit_Website_Link" target="_blank" href="#" ><span id="story_viewer_news_source_name"></span></a>
+	</div>
+	<div class="Story_Viewer_Rating_Button"><img class="Matrix_Widget_Stars" style="display:block;" id="story_viewer_rating" data-id="1" data-rating="0" src="/images/0-stars.png" /></div>
+	<div class="Story_Viewer_Clip_Widget"><img id="story_viewer_clip_widget" src="/images/snip.png" title="Snip a copy of this story and plop it down on your home page"/></div>
+
+	<div id="story_social_pulldown_button" onclick="$('#story_social_pulldown_menu').toggle(); return false;"><img src="/images/social_page_buttons.png" /></div>
+</div>
+<div class="Story_Social_Pulldown_Menu" id="story_social_pulldown_menu" style="display:none">
+</div>
+
+<div id="cruiser_frame_container">
+<div id="cruiser_frame_scroller">
+<iframe class="Cruiser_Frame" id="cruiser_frame" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" border="0" ></iframe>
+<div class="Cruiser_Widget_Frame" id="cruiser_widget_frame" style="display:none" ></div>
+</div>
+</div>
+
+</div>
+
+
+
+<script defer="defer" src="/assets/application-5d1db8b20e7f4780cfb155b1bfeb83db.js" type="text/javascript"></script>
+
+
+
+<script type='text/javascript'>
+var iz_matters_toolbar_height = 57;
+
+
+var iz_target_uri = 'make_news_show/21';
+var iz_channel_name_selector = null;
+
+var iz_story_data_list = [ 
+
+"7901664","7901637","7901668","7901638","7901639","7901640","7901641","7901642","7901097","7901115","7901114","7901117","7901126","7901127","7900810","7900592","7900596","7900556","7900703","7900606","7901183","7901330","7900615","7900820","7900818","7900809","7900566","7900573","7900624","7900304","7900278","7901209","7900514","7900512","7900415","7900285","7900345","7900343","7900305","7900465","7901189","7900131","7900309","7900994","7901188","7900631","7900291","7900022","7899948","7900796","7900549","7900349","7900357","7899839","7899884","7899872","7899840","7901461","7900435","7899951","7899890","7900370","7900209","7899961","7900627","7900807","7899841","7901190","7899892","7899927","7899909","7901208","7899842","7900899","7899894","7901329","7899896","7901184","7901181","7899809","7899897","7899834","7899832","7900413","7899522","7899807","7899534","7900369","7899754","7899976","7900253","7899541","7899538","7900993","7899543","7900342","7899546","7899547","7899549","7900866","7900123","7901207","7899524","7900037","7899553","7900127","7901328","7900377","7900374","7899004","7899088","7900578","7899957","7900546","7899956","7900748","7900033","7900122","7901327","7899725","7899975","7899008","7901383","7900341","7899797","7900125","7899744","7899120","7900984","7901206","7900792","7900307","7899723","7898325","7899878","7899666","7900412","7900232","7900432","7899724","7898307","7898093","7899949","7899657","7900450","7900353","7900124","7898839","7899738","7898252","7900141",
+
+
+];
+
+var iz_story_data = 
+{"7901664":{"url":"http://fb.me/2SwaDmOuk","title":"Bill O'Reilly Attacks Rev. Al Sharpton, Black Families & More [VIDEO] | Hip-Hop Wired","name":"Hip-Hop Wired","photo":"http://cdn.hiphopwired.com/wp-content/uploads/2013/08/billoreillysmug1.jpg","video":null,"rating":0},"7901637":{"url":"http://www.hitfix.com/news/tv-ratings-rising-under-the-dome-helps-cbs-cruise-on-monday","title":"TV Ratings: Rising Under the Dome helps CBS cruise on Monday","name":"Daniel Fienberg","photo":"http://cdn.hitfix.com/photos/3864379/underthedome_082613_652_article_story_main.jpg","video":null,"rating":0},"7901668":{"url":"http://dlvr.it/3sg9pz","title":"Watch: Christopher Plummer and Frank Langella Debate a Boxing Legend's Fate in the Trailer for 'Muhammad Ali's Greatest Fight' | Filmmakers, Film Industry, Film Festivals, Awards & Movie Reviews | Indiewire","name":"DotFilm (Dot.FILM)","photo":"http://d1oi7t5trwfj5d.cloudfront.net/16/43/4db06cf84006baded330d8d8bd43/greatest-fight.jpg","video":null,"rating":0},"7901638":{"url":"http://huff.to/1djUDE7","title":"Taylor Swift And Justin Timberlake Share An Intimate VMA Moment, Are Definitely Not Dating","name":"HuffPost Celebrity","photo":"http://i.huffpost.com/gen/1320476/thumbs/o-TAYLOR-SWIFT-JUSTIN-TIMBERLAKE-facebook.jpg","video":null,"rating":0},"7901639":{"url":"http://avc.lu/1822f88","title":"\n    \n    Joshua Jackson and Maura Tierney join Dominic West in Showtime&#39;s\u00a0The Affair | TV | Newswire |\n    The A.V. Club\n    \n\n","name":"The AV Club","photo":"http://media.avclub.com/images/436/436984/1x1-small/200.jpg?7454","video":null,"rating":0},"7901640":{"url":"http://ow.ly/ojjct","title":"Tony Hale&#x27;s Acting Process  from Tony Hale, Emily Strachan, Dan Klein, Andy Bush, Jack &amp; Justin, Funny Or Die, Jonathan Hall, Betsy Koch, and Bette Bentley","name":"Funny Or Die","photo":"http://t.fod4.com/t/bc5f676260/c480x270_58.jpg","video":null,"rating":0},"7901641":{"url":"http://bit.ly/12I5sd4","title":"Hot Mess: Selena Gomez at the Getaway Premiere | Gossip Girl","name":"Gossip Girl","photo":"http://gossipgirl.alloyentertainment.com/files/2013/08/wenn20603271-120x100.jpg","video":null,"rating":0},"7901642":{"url":"http://bit.ly/17cD2vm","title":"5 Commandments for Designing Sign-Up Forms that Convert Like Crazy - Visual Website Optimizer Blog","name":"UX Feeder","photo":"http://visualwebsiteoptimizer.com/split-testing-blog/wp-content/uploads/2013/08/Directionalcue_mindvalleyinsights_1.png","video":null,"rating":0},"7901097":{"url":"http://bit.ly/17cgQS3","title":"4 Reasons Not to Use Stolen Images to Make a Political Point | Cracked.com","name":"Cracked.com","photo":"http://i.crackedcdn.com/phpimages/quickfix/7/3/4/203734.jpg?v=1","video":null,"rating":0},"7901115":{"url":"http://fb.me/LrHfA5vM","title":"Bootsy Collins Jam Cruise 12 - YouTube","name":"Bootsy Collins","photo":"http://i1.ytimg.com/vi/5N4TsNgllH0/maxresdefault.jpg","video":null,"rating":0},"7901114":{"url":"http://prevuze.blogspot.com/2013/08/one-of-those-60s-british-invasion-rock.html","title":"One Of Those '60s British Invasion Rock Groups","name":"Prevuze","photo":null,"video":null,"rating":0},"7901117":{"url":"http://j.mp/1cdHpWt","title":"JumpOff.TV &mdash; Busta Rhymes Is Growing His Dreads Back","name":"Jump Off TV Hip Hop","photo":"http://jumpoff.tv/assets/images/made/assets/images/posts/20130827_bigsean_halloffame_293_182.jpg","video":null,"rating":0},"7901126":{"url":"http://twitter.com/DJInfamousATL/status/372416713570394112","title":"\nInstagram\n","name":"IG: ITSINFAMOUS","photo":"http://distilleryimage1.ak.instagram.com/7be374740f4111e39dbc22000a1f9e59_7.jpg","video":null,"rating":0},"7901127":{"url":"http://spoti.fi/18YqMfi","title":"It&#039;s Not Love (But It&#039;s Not Bad) by Merle Haggard And The Strangers on Spotify","name":"Americana Music","photo":"http://o.scdn.co/image/38188ac545c716b288e66781489897b3e92f4fb8","video":null,"rating":0},"7900810":{"url":"http://www.artistdirect.com/entertainment-news/article/dean-deleo-of-stone-temple-pilots-talks-out-of-time-new-ep-and-looks-back-on-purple/10722578","title":"Dean DeLeo of Stone Temple Pilots Talks \"Out of Time\", New EP, and Looks Back on \"Purple\"","name":"ARTISTdirect","photo":"http://images.artistdirect.com/Images/a3/news/240/10722578_stonetemplepilots2013_240.jpg","video":null,"rating":0},"7900592":{"url":"http://tmz.me/17am2Ww","title":"Justin Bieber HAS BEEN BEHAVING ... Says NFL Star Neighbor | TMZ.com ","name":"Justin Bieber Army","photo":"http://ll-media.tmz.com/2013/08/27/082613-willie-mcginest-primary.jpg","video":null,"rating":0},"7900596":{"url":"http://bit.ly/16NInq8","title":"Season 7: Episode 7 &quot;The Real Finale&quot; | WeKnowTheDj.com | DJ Tay James","name":"Justin Bieber Army","photo":"http://weknowthedj.com/wp-content/uploads/2013/04/Untitled-12.jpg","video":null,"rating":0},"7900556":{"url":"http://huff.to/1fgsrP0","title":"Miley Cyrus And Wiz Khalifa Hang Out","name":"HuffPost Celebrity","photo":"http://i.huffpost.com/gen/1320392/thumbs/o-WM-facebook.jpg","video":null,"rating":0},"7900703":{"url":"http://feedproxy.google.com/~r/typepad/ZSjz/~3/z6UsUGMV0V8/new-and-newly-discounted-cameras.html","title":"New and Newly Discounted Cameras","name":"The Online Photographer","photo":"http://theonlinephotographer.typepad.com/.a/6a00df351e888f88340192acc80628970d-800wi","video":null,"rating":0},"7900606":{"url":"http://bit.ly/14ZTVDH","title":"Tickets | KiSS 92.5 Wham Bam - Toronto ON at Ticketmaster","name":"Live Nation Ontario","photo":"http://media.ticketmaster.com/tmimages/TM_GenCatImgs_Music_BW.jpg","video":null,"rating":0},"7901183":{"url":"http://www.doddiblog.com/2013/08/lauer-august-mix-2013.html","title":"Lauer - August Mix 2013","name":"All-kinds-of music blog","photo":null,"video":null,"rating":0},"7901330":{"url":"http://www.rickey.org/scandal-season-2-deleted-scene-video/?utm_source=rss&utm_medium=rss&utm_campaign=scandal-season-2-deleted-scene-video","title":"Scandal \u2013 Season 2 \u2013 Deleted Scene \u2013 Video","name":"Rickey.org","photo":"http://www.rickey.org/wp-content/uploads/2013/08/Darby+Stanchfield+Scandal+Season+2+Episode+w4r5XU2Ga4gl.jpg","video":null,"rating":0},"7900615":{"url":"http://twitter.com/nashvillesymph/status/372414484109078528","title":"\nInstagram\n","name":"Nashville Symphony","photo":"http://distilleryimage5.ak.instagram.com/a2966c500f3e11e38c7c22000a1fb876_7.jpg","video":null,"rating":0},"7900820":{"url":"http://www.billboard.com/node/5672717","title":"San Cisco Studio Session: Watch Two Performances and Q&A","name":"Billboard","photo":"http://www.billboard.com/files/media/17-san-cisco-billboard-studio-650-430.jpg","video":null,"rating":0},"7900818":{"url":"http://www.billboard.com/node/5672726","title":"Emoment: Big Sean Shares How He Knows When It&#039;s Real Love","name":"Billboard","photo":"http://www.billboard.com/files/media/12-big-sean-billboard-studio-650-430.jpg","video":null,"rating":0},"7900809":{"url":"http://www.artistdirect.com/entertainment-news/article/feature-why-wax-is-super-dope/10722580","title":"Feature: Why Wax is Super Dope","name":"ARTISTdirect","photo":"http://images.artistdirect.com/Images/a3/news/240/10722580_wax_240.jpg","video":null,"rating":0},"7900566":{"url":"http://onion.com/1dMfQVJ","title":"9 Inconsistencies In The Mysterious Disappearance Of The Countess Wellington | The Onion - America's Finest News Source","name":"The Onion","photo":"http://o.onionstatic.com/images/23/23283/1x1-small/200.jpg?7889","video":null,"rating":0},"7900573":{"url":"http://huff.to/1fgvtCK","title":"The Stages Of Getting Hit On At A Bar, Told With Celebrity GIFs","name":"HuffPost Celebrity","photo":"http://i.huffpost.com/gen/1319629/thumbs/o-CELEBRITIES-THUMBS-UP-facebook.jpg","video":null,"rating":0},"7900624":{"url":"http://j.mp/1cdHs4n","title":"JumpOff.TV &mdash; A$AP Rocky Almost Gets Into Fight With Security At VMAs","name":"Jump Off TV Hip Hop","photo":"http://jumpoff.tv/assets/images/made/assets/images/posts/20130827_rocky_fight_293_182.jpg","video":null,"rating":0},"7900304":{"url":"http://youtu.be/Yy2uHAS-el0?a","title":"Bach: Air / Koopman \u00b7 Berliner Philharmoniker - YouTube","name":"Berlin Philharmonic","photo":"http://i1.ytimg.com/vi/Yy2uHAS-el0/maxresdefault.jpg","video":null,"rating":0},"7900278":{"url":"http://avc.lu/181XxY5","title":"\n    \n    Old Mr. Warner Bros. plans new animated\u00a0Scooby-Doo movie to trap your meddling kids | Film | Newswire |\n    The A.V. Club\n    \n\n","name":"The AV Club","photo":"http://media.avclub.com/images/437/437004/1x1-small/200.jpg?5104","video":null,"rating":0},"7901209":{"url":"http://inevil.com/deetron-count-on-me-aus1350/","title":"Deetron &#8211; Count On Me [AUS1350]","name":"inevil","photo":"http://inevil.com/wp-content/uploads/2013/08/7974926-220x220.jpg","video":null,"rating":0},"7900514":{"url":"http://filtermagazine.com/index.php/media/entry/watch_lights_and_sheets_aplenty_in_night_riots_new_video_for_remedy_filter_/","title":"Media : WATCH: Lights And Sheets Aplenty In Night Riots&#8217; New Video For &#8220;Remedy&#8221; (FILTER Premiere)","name":"FILTER Magazine","photo":null,"video":null,"rating":0},"7900512":{"url":"http://filtermagazine.com/index.php/news/entry/disc_cover_glasser_interiors/","title":"News : DISC COVER: Glasser, &#8220;Interiors&#8221;","name":"FILTER Magazine","photo":"http://filtermagazine.com/images/sized/images/uploads/glasser_interiors-200x200.jpg","video":null,"rating":0},"7900415":{"url":"http://www.karencivil.com/2013/08/27/uk-spin-new-video-gfrsh-mic-righteous-fem-fel-english-frank-and-goldielocks-wings/","title":"UK SPIN: New Video &#8211; GFrSH, Mic Righteous, Fem Fel, English Frank and Goldielocks &#8211; Wings","name":"KarenCivil.com","photo":"http://www.karencivil.com/wp-content/uploads/2013/08/g-frsh.jpg","video":null,"rating":0},"7900285":{"url":"http://www.comicbooktherapy.com/hayley-atwell-talks-agent-carter-and-peggys-future-158086","title":"Hayley Atwell Talks AGENT CARTER And Peggy&#039;s Future - Comic Book Therapy","name":"Comic Canuck","photo":"http://i2.wp.com/www.comicbooktherapy.com/wp-content/uploads/2013/04/Captain-America-Peggy-Carter-Hayley-Atwell.jpg?fit=500%2C500","video":null,"rating":0},"7900345":{"url":"http://www.2dopeboyz.com/2013/08/27/the-lox-summers-too-hot-prod-scram-jones/","title":"The Lox \u2013 Summers Too Hot (prod. Scram Jones)","name":"2dopeboyz","photo":null,"video":null,"rating":0},"7900343":{"url":"http://www.2dopeboyz.com/2013/08/27/asap-ferg-on-therapy-and-spiritual-guidance/","title":"A$AP Ferg On Therapy & Spiritual Guidance (Video)","name":"2dopeboyz","photo":null,"video":null,"rating":0},"7900305":{"url":"http://twitter.com/nashvillesymph/status/372412307214970881","title":"\nInstagram\n","name":"Nashville Symphony","photo":"http://distilleryimage8.ak.instagram.com/4feb399e0f3a11e393e422000a1fbe78_7.jpg","video":null,"rating":0},"7900465":{"url":"http://smokingsection.uproxx.com/TSS/2013/08/download-fat-joe-the-darkside-3-mixtape","title":"Fat Joe \u2013 The Darkside 3 Mixtape","name":"The Smoking Section","photo":"http://cdn.tss.uproxx.com/TSS/wp-content/uploads/2013/08/fat-joe-darkside-front.jpg","video":null,"rating":0},"7901189":{"url":"http://www.addicted2bass.net/2013/08/piscosquito-techno-boys-dod.html","title":"PISCOSQUITO \u2013 Techno Boys (DOD)","name":"Addicted2Bass","photo":null,"video":null,"rating":0},"7900131":{"url":"http://variety.com/2013/tv/news/fox-sports-promotes-marketing-guru-robert-gottlieb-1200589894/","title":"Fox Sports Promotes Marketing Guru Robert Gottlieb","name":"Variety.com","photo":"http://pmcvariety.files.wordpress.com/2013/08/gottlieb-robert.jpg?w=112","video":null,"rating":0},"7900309":{"url":"http://www.myfavoriteandmybest.com/mfamb-home/2013/8/27/the-art-o-display.html","title":"the art o' display","name":"My Favorite and my Best","photo":"http://www.myfavoriteandmybest.com/storage/7e46014f2bb7b4f92d2c3d83d557fb1f.jpg","video":null,"rating":0},"7900994":{"url":"http://www.efestivals.co.uk/news/13/130827d.shtml","title":"Creamfields early bird tickets go on sale Friday","name":"eFestivals.co.uk News","photo":null,"video":null,"rating":0},"7901188":{"url":"http://www.addicted2bass.net/2013/08/dj-rem-cclear-beats-wtf-housefactorya.html","title":"DJ REM C/CLEAR BEATS \u2013 WTF (HouseFactorya)","name":"Addicted2Bass","photo":null,"video":null,"rating":0},"7900631":{"url":"http://www.spoilersguide.com/glee/season-5-beatles-promo/","title":"Glee Season 5 &#8211; &#8220;Beatles&#8221; Promo","name":"Spoilers Guide","photo":null,"video":null,"rating":0},"7900291":{"url":"http://omgf.ac/ts/AIM","title":"16 Horrifyingly Creepy \"When You See It\" Pics - When You See It ...","name":"OMG Facts","photo":"http://cdn.whenuseeit.com/2012/10/7/whenuseeit.com_90_1349823600.jpg","video":null,"rating":0},"7900022":{"url":"http://the700level.com/top-posts/phils-prospect-maikel-franco-hits-30th-home-run-on-21st-birthday/","title":"Phils Prospect Maikel Franco Hits 30th Home Run on 21st Birthday","name":"The700Level.com","photo":null,"video":null,"rating":0},"7899948":{"url":"http://celiasue.com/2013/08/27/dogs-just-wanna-eat/","title":"Dogs just wanna eat","name":"Have dog blog will travel","photo":"http://celiasue.files.wordpress.com/2013/08/dsc03280w.jpg","video":null,"rating":0},"7900796":{"url":"http://blogs.indiewire.com/theplaylist/viola-davis-octavia-spencer-eyed-to-reteam-with-the-help-director-tate-taylor-for-james-brown-biopic-20130827","title":"Viola Davis & Octavia Spencer Eyed To Reteam With 'The Help' Director Tate Taylor For James Brown Biopic","name":"The Playlist","photo":"http://d1oi7t5trwfj5d.cloudfront.net/bc/0a79c02c0411e197b6123138165f92/file/2011_the_help_007.jpg","video":null,"rating":0},"7900549":{"url":"http://idolator.com/7480908/miley-cyrus-mike-will-made-it-23-video-shoot","title":"Miley Cyrus Sports Cut-Up Michael Jordan Jersey For Mike WiLL Made It&#8217;s &#8220;23&#8243; Video Shoot","name":"Idolator","photo":"http://cdn.idolator.com/wp-content/uploads/2013/08/27/miley-cyrus-23-600x450.jpg","video":"http://youtube.com/watch?v=O5Z6m_hoINA","rating":0},"7900349":{"url":"http://blogs.riverfronttimes.com/rftmusic/2013/08/springsteen_soul_blues_museum.php","title":"Bruce Springsteen's Soul: A Presentation from the National Blues Museum","name":"A to Z","photo":"http://blogs.riverfronttimes.com/common/assets/722186.120x120.jpg","video":null,"rating":0},"7900357":{"url":"http://realtalkny.uproxx.com/2013/08/topic/topic/videos/video-barry-sanders-challenges-fans-to-run-for-madden-25/","title":"Video: Barry Sanders Challenges Fans To Run For Madden 25","name":"RealTalkNY","photo":"http://realtalkny.uproxx.com/wp-content/uploads/2013/08/video-barry-sanders-challenges-fans-to-run-for-madden-25-realtalkny-300x225.jpg","video":null,"rating":0},"7899839":{"url":"http://huff.to/1djSWGy","title":"Selena Gomez Opts For A Lace Look At 'Getaway' Premiere","name":"HuffPost Celebrity","photo":"http://i.huffpost.com/gen/1320396/thumbs/o-SELENA-facebook.jpg","video":null,"rating":0},"7899884":{"url":"http://ow.ly/2zqE8q","title":"#FreshHeat: Young A.C. &#8220;Still Do It&#8221; | AllHipHop.com","name":"Hip Hop Official","photo":"http://i2.wp.com/allhiphop.files.wordpress.com/2013/08/young-a-c-still-do-it.png?fit=1000%2C1000","video":null,"rating":0},"7899872":{"url":"http://ow.ly/2zqE8p","title":"PREMIERE: Roscoe Dash 2.0 &#8220;USTA/KIKIT&#8221; | AllHipHop.com","name":"Hip Hop Official","photo":"http://i2.wp.com/allhiphop.files.wordpress.com/2011/12/roscoe-dash-617x409.jpg?fit=1000%2C1000","video":null,"rating":0},"7899840":{"url":"http://bit.ly/1dn4BW4","title":"5 Mental Tricks for Getting Over Yourself | Cracked.com","name":"Cracked.com","photo":"http://i.crackedcdn.com/phpimages/article/7/4/3/203743_v1.jpg","video":null,"rating":0},"7901461":{"url":"http://www.progarchives.com/Review.asp?id=1024608","title":"KNIFEWORLD Clairvoyant Fortnight (Crossover Prog, 2012)","name":"ProgArchives: Reviews","photo":"http://www.progarchives.com/progressive_rock_discography_covers/4800/cover_19017162012_r.jpg","video":null,"rating":0},"7900435":{"url":"http://www.metalsucks.net/2013/08/27/which-one-is-eyes-set-to-kill-again/","title":"Which One is Eyes Set to Kill Again?","name":"MetalSucks","photo":"http://www.metalsucks.net/wp-content/uploads/2013/08/Eyes-Set-to-Kill-Masks-300x300.jpg","video":null,"rating":0},"7899951":{"url":"http://www.uproxx.com/tv/2013/08/bryan-cranston-lex-luthor-man-of-steel-2-breaking-bad-mashup/?utm_source=rss&utm_medium=rss&utm_campaign=bryan-cranston-lex-luthor-man-of-steel-2-breaking-bad-mashup","title":"Bryan Cranston Plays Lex Luthor And Ben Affleck Plays Batman In \u2018Man of Steel 2? Fan-Made Video","name":"Warming Glow","photo":"http://cdn.uproxx.com/wp-content/uploads/2013/08/bryan-cranston-man-of-steel-2-batman-vs-superman-mashup.jpg","video":"http://youtube.com/watch?v=U4U4he3GgC4","rating":0},"7899890":{"url":"http://kck.st/1azJqOw","title":"Nashville Symphony Records Joan Tower by Nashville Symphony &mdash; Kickstarter","name":"Nashville Symphony","photo":"https://s3.amazonaws.com/ksr/projects/640118/photo-main.jpg?1375738562","video":null,"rating":0},"7900370":{"url":"http://rapradar.com/2013/08/27/behind-the-scenes-omarion-ft-fabolous-x-pusha-t-know-you-better/","title":"Omarion - 'Know You Better' (Behind The Scenes)","name":"Rap Radar","photo":"http://b2.ultimist.com/stories/videothumbs/youtube/7E8N9apcgOY/large.jpg","video":"http://www.youtube.com/embed/7E8N9apcgOY?version=3&#038;rel=1&#038;fs=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent","rating":0},"7900209":{"url":"http://www.brainyquote.com/quotes/authors/c/carl_sandburg.html","title":"Carl Sandburg","name":"BrainyQuote","photo":"http://i.brainyquote.com/i/fbl.jpg","video":null,"rating":0},"7899961":{"url":"http://www.tvovermind.com/tv-news/nbc-developing-autobiographical-adam-levine-show-220824","title":"NBC Developing Autobiographical Adam Levine Show","name":"TVOvermind","photo":"http://Netdna.tvovermind.com/wp-content/uploads/2013/08/Adam-Levine-Tatto-630x401.jpg","video":null,"rating":0},"7900627":{"url":"http://www.spoilersguide.com/bones/season-9-first-promo/","title":"Bones Season 9 &#8211; First Promo","name":"Spoilers Guide","photo":null,"video":null,"rating":0},"7900807":{"url":"http://www.artistdirect.com/entertainment-news/article/exclusive-video-premiere-eklipse-titanium/10722576","title":"Exclusive Video Premiere: Eklipse, \"Titanium\"","name":"ARTISTdirect","photo":"http://images.artistdirect.com/Images/a3/artist/240/9958127_eklipse_240.jpg","video":null,"rating":0},"7899841":{"url":"http://onion.com/181VBPl","title":"9 Inconsistencies In The Mysterious Disappearance Of The Countess Wellington | The Onion - America's Finest News Source","name":"The Onion","photo":"http://o.onionstatic.com/images/23/23283/1x1-small/200.jpg?7889","video":null,"rating":0},"7901190":{"url":"http://daytimeconfidential.zap2it.com/2013/08/27/scandal-star-dishes-emmy-nod-with-zap2it-video","title":"Scandal Star Dishes Emmy Nod With Zap2it (VIDEO)","name":"Daytime Confidential","photo":"http://img.tvfanonline.com/data/500/medium/dan-bucatinsky-scandal-ftr.jpg","video":null,"rating":0},"7899892":{"url":"http://youtu.be/F5QrzqhzNvk","title":"REESE - REESE MANE LA FLARE - YouTube","name":"Don Cannon","photo":"http://i1.ytimg.com/vi/F5QrzqhzNvk/maxresdefault.jpg","video":null,"rating":0},"7899927":{"url":"http://feedproxy.google.com/~r/SpoilerTv/~3/IR-yat6I6IQ/siberia-episode-110-strange-bedfellows_27.html","title":"Siberia - Episode 1.10 - Strange Bedfellows - Promotional Photos","name":"Spoiler TV","photo":null,"video":null,"rating":0},"7899909":{"url":"http://feedproxy.google.com/~r/SpoilerTv/~3/jCNe3kXFX1o/scandal-season-2-deleted-scene.html","title":"Scandal - Season 2 - Deleted Scene","name":"Spoiler TV","photo":null,"video":null,"rating":0},"7901208":{"url":"http://inevil.com/vondelpark-california-analog-dream-robag-wruhme-remixes-rs1314b/","title":"Vondelpark &#8211; California Analog Dream (Robag Wruhme Remixes) [RS1314B]","name":"inevil","photo":"http://inevil.com/wp-content/uploads/2013/08/7948661-220x220.jpg","video":null,"rating":0},"7899842":{"url":"http://avc.lu/1dMd174","title":"\n    \n    Showrunner Loren Bouchard on sympathetic leg hair and Bob\u2019s Burgers\u2019 third season (2 of 5) | TV | The Walkthrough |\n    The A.V. Club\n    \n\n","name":"The AV Club","photo":"http://media.avclub.com/images/436/436967/1x1-small/200.jpg?7277","video":null,"rating":0},"7900899":{"url":"http://www.rollingstone.com/music/news/listen-to-the-replacements-first-show-in-22-years-20130827","title":"Listen to the Replacements' First Show in 22 Years","name":"Rolling Stone","photo":"http://assets-s3.rollingstone.com/assets/images/story/listen-to-the-replacements-first-show-in-22-years-20130827/154x154/20130827-replacements-x624-1377620978.jpg","video":null,"rating":0},"7899894":{"url":"http://bit.ly/181UAqh","title":"Zappa Plays Zappa - ROXY &amp; Elsewhere Tour - 2013-2014 - YouTube","name":"Live Nation Ontario","photo":"http://i1.ytimg.com/vi/LePxOFWzDMQ/maxresdefault.jpg","video":null,"rating":0},"7901329":{"url":"http://www.rickey.org/mary-lambert-keeps-warm-music-video/?utm_source=rss&utm_medium=rss&utm_campaign=mary-lambert-keeps-warm-music-video","title":"Mary Lambert \u2013 She Keeps Me Warm \u2013 Music Video","name":"Rickey.org","photo":"http://www.rickey.org/wp-content/uploads/2013/08/Mary-Lambert.jpg","video":null,"rating":0},"7899896":{"url":"http://bit.ly/19WODk4","title":"Jeff Beck and Brian Wilson Announce Co-Headlining Tour | Daily News","name":"Premier Guitar","photo":"http://www.premierguitar.com/ext/resources/images/content/2103_08/Latest-News/Aug13_LNU_BeckWilson_FEATURED.jpg?1377620184","video":null,"rating":0},"7901184":{"url":"http://www.addicted2bass.net/2013/08/anderas-invention-jill-recordings.html","title":"ANDERAS \u2013 Invention (Jill Recordings)","name":"Addicted2Bass","photo":null,"video":null,"rating":0},"7901181":{"url":"http://www.addicted2bass.net/2013/08/alterace-feat-sabina-aliyeva-horizon-remixes-alt-production-recordings.html","title":"ALTERACE feat SABINA ALIYEVA \u2013 Horizon (remixes) (ALT Production Recordings)","name":"Addicted2Bass","photo":null,"video":null,"rating":0},"7899809":{"url":"http://lumberjocks.com/projects/88831","title":"Bandsaw jewellery box","name":"LumberJocks","photo":"http://lumberjocks.com/assets/pictures/projects/419810-196x130.jpg","video":null,"rating":0},"7899897":{"url":"http://shar.es/zJjxQ","title":"Bail Hearing Set For Mendeecees Harris, Hopes To Return To Love & Hip Hop | Hip-Hop Wired","name":"Hip-Hop Wired","photo":"http://cdn.hiphopwired.com/wp-content/uploads/2013/08/mendeecees.jpg","video":null,"rating":0},"7899834":{"url":"http://kingdomofstyle.typepad.co.uk/my_weblog/2013/08/crown-of-thorns.html","title":"Guys with fancy lady hair...","name":"Kingdom Of Style","photo":"http://kingdomofstyle.typepad.co.uk/.a/6a00d8341c2f0953ef01901f05d9e6970b-200pi","video":null,"rating":0},"7899832":{"url":"http://apartmenttherapy.com.feedsportal.com/c/35092/f/648554/s/3075fb4c/sc/4/l/0L0Sapartmenttherapy0N0Cthe0Ebest0Ebasics0Egood0Echeap0Eduvet0Ecovers0E1939390Dutm0Isource0FRSS0Gutm0Imedium0Ffeed0Gutm0Icampaign0FCategory0J2FChannel0J3A0KMain/story01.htm","title":"The Best Basics: Good, Cheap Duvet Covers","name":"Apartment Therapy","photo":"http://p-ec2.staticat.com/5218f19b697ab049ba005cdb._w.540_s.fit_.jpg","video":null,"rating":0},"7900413":{"url":"http://www.karencivil.com/2013/08/27/uk-spin-new-video-daley-daleymusic-broken/","title":"UK SPIN &#8211; New Video &#8211; Daley (@DaleyMusic) &#8211; Broken","name":"KarenCivil.com","photo":"http://www.karencivil.com/wp-content/uploads/2013/08/daley-broken.jpg","video":null,"rating":0},"7899522":{"url":"http://huff.to/1djSd8v","title":"In Defense of Miley Cyrus: Use Your Hate to Love Taylor Swift, or Back Off | Jessica Kane","name":"HuffPost Celebrity","photo":"http://s.huffpost.com/contributors/jessica-kane/headshot.jpg","video":null,"rating":0},"7899807":{"url":"http://lumberjocks.com/topics/52786","title":"Kind of a Router Lathe, but works as a Leg maker with a hand plane Too!","name":"LumberJocks","photo":"https://s3.amazonaws.com/ljimg/ms79bdq.jpg","video":null,"rating":0},"7899534":{"url":"http://bit.ly/SM3tracklist","title":"&quot;Self Made 3&quot; Official Artwork &amp; Tracklist Trailer - YouTube","name":"Diddy","photo":"http://i1.ytimg.com/vi/xYRgbkIxiW0/maxresdefault.jpg","video":null,"rating":0},"7900369":{"url":"http://rapradar.com/2013/08/27/new-music-the-lox-summers-too-hot/","title":"New Music: The Lox &#8220;Summers Too Hot&#8221;","name":"Rap Radar","photo":"http://rapradar.files.wordpress.com/2010/10/sheek-styles-jada.jpg","video":null,"rating":0},"7899754":{"url":"http://www.darkhorse.com/Features/Desktops/1262/itty-bitty-Hellboy","title":"itty bitty Hellboy","name":"Dark Horse Comics","photo":null,"video":null,"rating":0},"7899976":{"url":"http://tvbythenumbers.zap2it.com/2013/08/27/syndicated-tv-ratings-judge-judy-number-1-in-households-big-bang-theory-wins-with-total-viewers-live-with-kelly-and-michael-tops-talk-shows-for-week-ending-august-18-2013/199642/","title":"Syndicated TV Ratings: 'Judge Judy' Number 1 in Households, 'Big Bang Theory' Wins With Total Viewers, & 'Live With Kelly and Michael' Tops Talk Shows for Week Ending August 18, 2013","name":"TVbytheNumbers","photo":"http://tvbythenumbers.zap2it.com/wp-content/uploads/2009/12/Judge-Judy-350x262.jpg","video":null,"rating":0},"7900253":{"url":"http://www.annesage.com/blog/2013/08/goodbye-fast-fashion-meet-zady.html","title":"Goodbye Fast Fashion: Meet Zady","name":"The City Sage","photo":"http://www.annesage.com/.a/6a00e55225716d8833019104ffdd8d970c-800wi","video":null,"rating":0},"7899541":{"url":"http://gu.com/p/3tay2","title":" New band of the day: FTSE (No 1,583) | Music | theguardian.com ","name":"Guardian music","photo":"https://static-secure.guim.co.uk/sys-images/Music/Pix/pictures/2013/8/27/1377616887768/FTSE-008.jpg","video":null,"rating":0},"7899538":{"url":"http://gu.com/p/3taz2","title":" Lady Gaga and Jay-Z help Marina Abramovic reach Kickstarter goal | Art and design | theguardian.com ","name":"Guardian music","photo":"http://static-secure.guim.co.uk/icons/social/og/gu-logo-fallback.png","video":null,"rating":0},"7900993":{"url":"http://www.efestivals.co.uk/news/13/130827c.shtml","title":"Gatecrasher to return to its roots","name":"eFestivals.co.uk News","photo":null,"video":null,"rating":0},"7899543":{"url":"http://twitter.com/JBSource/status/372407175517192194","title":"\nInstagram\n","name":"Justin Bieber Source","photo":"http://distilleryimage10.ak.instagram.com/2aab4f400ecf11e3941e22000ab592b4_7.jpg","video":null,"rating":0},"7900342":{"url":"http://www.2dopeboyz.com/2013/08/27/hus-kingpin-strive-f-roc-marciano-smoovth/","title":"Hus Kingpin \u2013 Strive f. Roc Marciano & Smoovth","name":"2dopeboyz","photo":null,"video":null,"rating":0},"7899546":{"url":"http://ow.ly/ojzcr","title":"Interview: EDUBB- Performing @ Smith's Olde Bar with Bubba Sparxxx","name":"Atlanta Music Guide","photo":"http://i.ytimg.com/vi/TdH5jl-vM3U/default.jpg","video":null,"rating":0},"7899547":{"url":"http://twitter.com/KRTNYC/status/372406983477198848","title":"\nInstagram\n","name":"Kritikal","photo":"http://distilleryimage1.ak.instagram.com/cf36538c0f2111e391bd22000a1fbf1d_7.jpg","video":null,"rating":0},"7899549":{"url":"http://ChainlessEntertainment.com/K100Radio","title":"CHAINLESS ENTERTAINMENT | K-100 RADIO  | K100RADIO","name":"Kritikal","photo":"http://chainlessentertainment.com/img/K100_REVISE_LOGO1.jpg","video":null,"rating":0},"7900866":{"url":"http://www.hitfix.com/news/new-scotty-mccreery-album-see-you-tonight-out-oct-15","title":"New Scotty McCreery album, 'See You Tonight,' out Oct. 15","name":"Hitfix","photo":"http://cdn.hitfix.com/photos/3864136/Album-art-for-Scotty-McCreerys-See-You-Tonight_article_story_main.jpg","video":null,"rating":0},"7900123":{"url":"http://screenrant.com/eric-bana-hulk-avengers-interview/","title":"\u2018Hulk\u2019 Star Eric Bana Is Happy He\u2019s Not A Franchise Hulk","name":"Screen Rant","photo":"http://cdn.screenrant.com/wp-content/uploads/Hulk-Marvel-Movie-Universe-Avengers-Eric-Bana-Interview.jpg","video":null,"rating":0},"7901207":{"url":"http://inevil.com/tensnake-fiora-see-right-through-0060253/","title":"Tensnake & Fiora &#8211; See Right Through [0060253]","name":"inevil","photo":"http://inevil.com/wp-content/uploads/2013/08/7789945-220x220.jpg","video":null,"rating":0},"7899524":{"url":"http://avc.lu/1dMaYA9","title":"\n    \n    Here&#39;s what you&#39;ll be eating and drinking at the A.V. Fest/Hideout Block Party September 6-7. Also: win tickets! | Summer In The City | Newswire |\n    The A.V. Club\n    \n\n","name":"The AV Club","photo":"http://media.avclub.com/images/436/436983/1x1-small/200.jpg?7357","video":null,"rating":0},"7900037":{"url":"http://www.cinemablend.com/television/Tina-Fey-Amy-Poehler-Asked-Host-Golden-Globes-Again-58622.html","title":"Tina Fey And Amy Poehler Asked To Host Golden Globes Again","name":"Cinema Blend: Television","photo":"http://www.cinemablend.com/images/sections/58622/golden_globes_58622.jpg","video":null,"rating":0},"7899553":{"url":"http://j.mp/1cdBT5Y","title":"JumpOff.TV &mdash; Lamar Odom Resurfaces After Alleged Days-Long Drug Binge","name":"Jump Off TV Hip Hop","photo":"http://jumpoff.tv/assets/images/made/assets/images/posts/20130827_lamar_drugs_293_182.jpg","video":null,"rating":0},"7900127":{"url":"http://variety.com/2013/film/news/matthew-mcconaughey-dallas-buyers-club-1200589850/","title":"Matthew McConaughey Saves Lives in First Trailer for \u2018Dallas Buyers Club\u2019 (VIDEO)","name":"Variety.com","photo":"http://pmcvariety.files.wordpress.com/2013/08/dallas-buyers-club.jpg?w=150","video":null,"rating":0},"7901328":{"url":"http://www.rickey.org/whats-tv-tonight-8272013/?utm_source=rss&utm_medium=rss&utm_campaign=whats-tv-tonight-8272013","title":"What\u2019s On TV Tonight? \u2013 8/27/2013","name":"Rickey.org","photo":"http://www.rickey.org/wp-content/uploads/2013/08/Americas-Got-Talent-Season-8.jpg","video":null,"rating":0},"7900377":{"url":"http://www.ddotomen.com/2013/08/27/the-lox-summers-too-hot/","title":"The LOX \u2013 Summers Too Hot (Prod. Scram Jones)","name":"DDotOmen.com","photo":"http://www.ddotomen.com/wp-content/uploads/2013/05/the-lox-ddotomen-350x210.png","video":null,"rating":0},"7900374":{"url":"http://www.ddotomen.com/2013/08/27/scram-jones-wild-style/","title":"New Music: Scram Jones \u201cWild Style\u201d","name":"DDotOmen.com","photo":"http://www.ddotomen.com/wp-content/uploads/2013/08/scram-jones-wild-style-ddotomen-348x350.png","video":null,"rating":0},"7899004":{"url":"http://huff.to/1fgpWfq","title":"Paula Patton, Robin Thicke's Wife, Was Fine With Miley Cyrus' Twerking, But His Mom Wasn't","name":"HuffPost Celebrity","photo":"http://i.huffpost.com/gen/1320463/thumbs/o-ROBIN-THICKE-facebook.jpg","video":null,"rating":0},"7899088":{"url":"http://spoti.fi/1dManOU","title":"Four Wheels by Austin Lucas on Spotify","name":"Americana Music","photo":"http://o.scdn.co/image/6c448ee7fe49061ce2ccca61966ba8fa492557bf","video":null,"rating":0},"7900578":{"url":"http://crafterholic.blogspot.com/2013/08/water-bokeh-photo-technique.html","title":"Water Bokeh Photo Technique","name":"Crafter-holic","photo":"http://2.bp.blogspot.com/-7FJsfht-_FQ/UgAkEfQzcrI/AAAAAAAAIXo/JpOmmy_91VM/s400/DIY+water+bokeh.png","video":null,"rating":0},"7899957":{"url":"http://mc-3596-1705542522.us-west-2.elb.amazonaws.com/movies/article/voice-over-making-longbird-until-quiet-comes-among-shortlist-film-festival-finalists-113371","title":"'Voice Over,' 'Making of Longbird,' 'Until the Quiet Comes' Among ShortList Film Festival Finalists","name":"The Wrap","photo":null,"video":null,"rating":0},"7900546":{"url":"http://idolator.com/7480885/eminem-berzerk-review-revue","title":"Eminem&#8217;s &#8220;Berzerk&#8221;: Review Revue","name":"Idolator","photo":"http://cdn.idolator.com/wp-content/uploads/2013/08/26/eminem-the-marshall-mathers-LP-2-400x470.jpg","video":null,"rating":0},"7899956":{"url":"http://mc-3596-1705542522.us-west-2.elb.amazonaws.com/tv/article/miley-cyrus-vmas-performance-defended-adam-lambert-cut-her-some-slack-113541","title":"Miley Cyrus' VMAs Performance Defended by Adam Lambert: 'Cut Her Some Slack'","name":"The Wrap","photo":null,"video":null,"rating":0},"7900748":{"url":"http://www.facebook.com/Voicesofmusic/posts/10151632765178391","title":"Today we commemorate one of the greatest #composers of the #renaissance: Josquin...","name":"Voices of Music","photo":null,"video":null,"rating":0},"7900033":{"url":"http://www.philebrity.com/2013/08/27/readers-fwd-the-vick-family-is-really-just-no-good-at-social-media/","title":"Readers Fwd: The Vick Family Is Really Just No Good At Social Media","name":"Philebrity","photo":"http://www.philebrity.com/wp-content/uploads/2013/08/vick-mom.png","video":null,"rating":0},"7900122":{"url":"http://www.superherohype.com/news/articles/178943-vin-diesel-fights-a-monster-in-first-clip-from-riddick","title":"Vin Diesel Fights a Monster in First Clip From Riddick","name":"SuperHero Hype","photo":null,"video":null,"rating":0},"7901327":{"url":"http://www.rickey.org/syfy-fall-programming-lineup/?utm_source=rss&utm_medium=rss&utm_campaign=syfy-fall-programming-lineup","title":"SyFy Fall Programming Lineup","name":"Rickey.org","photo":"http://www.rickey.org/wp-content/uploads/2013/08/SYFY.jpg","video":null,"rating":0},"7899725":{"url":"http://robot6.comicbookresources.com/2013/08/after-13-years-dragoncon-co-founder-ed-kramer-gets-a-trial-date/","title":"After 13 years, DragonCon co-founder Ed Kramer gets a trial date","name":"Robot 6","photo":"http://robot6.comicbookresources.com/wp-content/uploads/2013/01/ed-kramer-240x300.jpg","video":null,"rating":0},"7899975":{"url":"http://tvbythenumbers.zap2it.com/2013/08/27/hulu-announces-10-episode-order-for-deadbeat-from-lionsgate-and-plan-b/199639/","title":"Hulu Announces 10-Episode Order for 'Deadbeat' from Lionsgate and Plan B","name":"TVbytheNumbers","photo":"http://tvbythenumbers.zap2it.com/wp-content/uploads/2008/09/hulu_logo.jpg","video":null,"rating":0},"7899008":{"url":"http://live.huffingtonpost.com/r/segment/second-gen-asian-not-just-your-model-minority/5216897002a7600dbf000492","title":"HuffPost Live","name":"HuffPost Celebrity","photo":"http://live.huffingtonpost.com/images/huffpost-live.jpg","video":null,"rating":0},"7901383":{"url":"http://www.mjsbigblog.com/adam-lambert-defends-miley-cyrus-kelly-clarkson-called-fat-old.htm","title":"Adam Lambert Defends Miley Cyrus, Kelly Clarkson Called Fat and Old","name":"MJ's Big Blog","photo":"http://3888.voxcdn.com/wp-content/uploads/2013/08/adamlambert-vma.jpg","video":null,"rating":0},"7900341":{"url":"http://www.2dopeboyz.com/2013/08/27/dizzy-wright-speaks-on-wiz-khalifa-krayzie-bone-more-video/","title":"Dizzy Wright Speaks On Wiz Khalifa, Krayzie Bone, & More (Video)","name":"2dopeboyz","photo":null,"video":null,"rating":0},"7899797":{"url":"http://lumberjocks.com/projects/88830","title":"Ford 1936","name":"LumberJocks","photo":"http://lumberjocks.com/assets/pictures/projects/419796-196x130.jpg","video":null,"rating":0},"7900125":{"url":"http://variety.com/2013/film/international/two-lives-to-rep-germany-in-oscar-race-1200589870/","title":"\u2018Two Lives\u2019 to Rep Germany in Oscar Race","name":"Variety.com","photo":"http://pmcvariety.files.wordpress.com/2013/08/two-lives1.jpg?w=150","video":null,"rating":0},"7899744":{"url":"http://www.abeautifulmess.com/2013/08/emmas-diy-wedding-dress.html","title":"Emma's DIY Wedding Dress","name":"A Beautiful Mess","photo":"http://abeautifulmess.typepad.com/.a/6a00d8358081ff69e201901f0612a4970b-800wi","video":null,"rating":0},"7899120":{"url":"http://bit.ly/1dn2a5Z","title":"Review: Fuzzrocious Heliotropic Bass Fuzz | 2013-08-26 | Premier Guitar","name":"Premier Guitar","photo":"http://www.premierguitar.com/ext/resources/images/content/2103_08/Reviews/DSC02166_FEAT2.jpg?1377618116","video":null,"rating":0},"7900984":{"url":"http://exystence.net/blog/2013/08/27/eros-and-the-eschaton-home-address-for-civil-war-2013/","title":"Eros and the Eschaton &#8211; Home Address for Civil War (2013)","name":"exystence","photo":"http://exystence.net/wp-content/uploads/2013/08/Eschaton-300x270.jpg","video":null,"rating":0},"7901206":{"url":"http://inevil.com/groove-armada-mr-doris-el-chiringuito-ibiza-beach-house-sessions-volume-one-meercd035a/","title":"Groove Armada, Mr Doris &#8211; El Chiringuito Ibiza Beach House Sessions Volume One [MEERCD035A]","name":"inevil","photo":"http://inevil.com/wp-content/uploads/2013/08/1377329311_va-el-chiringuito-ibiza-beach-house-sessions-volume-one-220x212.jpg","video":null,"rating":0},"7900792":{"url":"http://blogs.indiewire.com/theplaylist/10-films-that-are-potential-dark-horses-in-the-coming-awards-season-20130823","title":"10 Awards Season Movies That Could Be Surprise Contenders","name":"The Playlist","photo":"http://d1oi7t5trwfj5d.cloudfront.net/42/95/0069333c43efb84b3b4d475f124e/oscar-dark-horses-2013.jpg","video":null,"rating":0},"7900307":{"url":"http://contraband.tumblr.com/post/59500520361","title":"Kembe X - Rap Game","name":"contraband","photo":"http://b2.ultimist.com/stories/videothumbs/youtube/RCiuAL6IaP8/large.jpg","video":"http://www.youtube.com/embed/RCiuAL6IaP8?wmode=transparent&autohide=1&egm=0&hd=1&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&showsearch=0","rating":0},"7899723":{"url":"http://blog.woodworkingtooltips.com/2013/08/show-us-your-shop-update-temple-blackwood/","title":"Show Us Your Shop Update: Temple Blackwood","name":"Highland Woodworking","photo":"http://blog.woodworkingtooltips.com/wp-content/uploads/2013/08/templebeginning-300x225.jpg","video":null,"rating":0},"7898325":{"url":"http://www.okayplayer.com/news/the-foreign-exchange-call-it-home-pity-mp3.html?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=the-foreign-exchange-call-it-home-pity-mp3","title":"The Foreign Exchange &#8211; &#8220;Call It Home&#8221; + &#8220;Pity&#8221; [Stream]","name":"Okay Player","photo":"http://www.okayplayer.com/wp-content/uploads/2013/08/the-foreign-exchange-call-pity-single-lead.jpg","video":null,"rating":0},"7899878":{"url":"http://sfciviccenter.blogspot.com/2013/08/tropical-storm-ivo-in-palm-springs.html","title":"Tropical Storm Ivo in Palm Springs","name":"SF Civic Center","photo":"http://dl.dropbox.com/u/49377893/130812/08121383.jpg","video":null,"rating":0},"7899666":{"url":"http://www.archdaily.com/420867/top-firms-compete-to-design-kazakhstan-s-world-expo-in-2017/","title":"Top Firms Compete to Design Kazakhstan&#8217;s World Expo in 2017","name":"ArchDaily","photo":"http://ad009cdnb.archdaily.net/wp-content/uploads/2013/08/521cce61e8e44effd400008c_top-firms-compete-to-design-kazakhstan-s-world-expo-in-2017_9-528x362.jpg","video":null,"rating":0},"7900412":{"url":"http://www.karencivil.com/2013/08/27/new-music-tyga-throw-it-up/","title":"New Music: Tyga &#8211; &#8216;Throw It Up&#8217;","name":"KarenCivil.com","photo":"http://thumbs.hh.ulximg.com/public/img/song/500_1377612515_e32193fa46aef73694dadcc5e3b023a0.jpg","video":null,"rating":0},"7900232":{"url":"http://weburbanist.feedsportal.com/c/34699/f/637598/s/30764834/sc/4/l/0Lweburbanist0N0C20A130C0A80C270C150Eyear0Ephoto0Eproject0Econstruction0Eof0Ea0E150A0Eyear0Ebridge0C0J3Futm0Isource0J3Dmediafed0J26utm0Imedium0J3Dfeed0J26utm0Icampaign0J3Dfeed0Emain0J26","title":"15-Year Photo Project: Construction of a 150-Year Bridge","name":"WebUrbanist","photo":"http://img.weburbanist.com/wp-content/uploads/2013/08/joseph-blum-bridge-photo.jpg","video":null,"rating":0},"7900432":{"url":"http://www.metalsucks.net/2013/08/27/opeths-mikael-akerfeldt-to-curate-roadburn-2014/","title":"Opeth\u2019s Mikael \u00c5kerfeldt to Curate Roadburn 2014","name":"MetalSucks","photo":"http://www.metalsucks.net/wp-content/uploads/2013/08/Mikael-\u00c5kerfeldt-Curates-Roadburn-2014-300x154.jpg","video":null,"rating":0},"7899724":{"url":"http://robot6.comicbookresources.com/2013/08/warner-bros-and-lauren-moshi-team-up-for-fashion-collections/","title":"Warner Bros. and Lauren Moshi team up for fashion collections","name":"Robot 6","photo":"http://robot6.comicbookresources.com/wp-content/uploads/2013/08/moshi-wonder-woman2-200x300.jpg","video":null,"rating":0},"7898307":{"url":"http://twitchfilm.com/2013/08/dark-bridges-2013-maniac-eega-and-sightseers-part-of-final-wave-of-films.html","title":"Dark Bridges 2013: MANIAC, EEGA and SIGHTSEERS Part Of Final Wave Of Films!","name":"Twitch","photo":"http://twitchfilm.com/assets_c/2013/08/maniac_ver9-thumb-200x200-41467.jpg","video":null,"rating":0},"7898093":{"url":"http://bit.ly/15eEa1C","title":"4 Ways Rock Stars and Teen Pop Stars Are Exactly the Same | Cracked.com","name":"Cracked.com","photo":"http://i.crackedcdn.com/phpimages/article/7/2/4/203724_v2.jpg","video":null,"rating":0},"7899949":{"url":"http://www.uproxx.com/tv/2013/08/taco-league-wrote-song-miley-cyrus/?utm_source=rss&utm_medium=rss&utm_campaign=taco-league-wrote-song-miley-cyrus","title":"Taco From \u2018The League\u2019 Wrote The Perfect Reaction Song To Miley Cyrus\u2019s VMAs Performance","name":"Warming Glow","photo":"http://cdn.uproxx.com/wp-content/uploads/2013/08/jon-lajoie.jpg","video":null,"rating":0},"7899657":{"url":"http://www.bleedingcool.com/2013/08/27/speculator-corner-catwoman-23-spoilers/","title":"Speculator Corner: Catwoman #23 (Spoilers)","name":"Bleeding Cool","photo":"http://cdn.bleedingcool.net/wp-content/uploads/2013/08/catwoman-323x350.png","video":null,"rating":0},"7900450":{"url":"http://countrymusictattletale.com/2013/08/27/randy-travis-set-to-release-21st-studio-album/","title":"Randy Travis Set to Release 21st Studio Album","name":"Country Music Tattle Tale","photo":"http://countrymusictattletale.com/wp-content/uploads/2013/08/click.jpg","video":null,"rating":0},"7900353":{"url":"http://buzzworthy.mtv.com/2013/08/27/jason-derulo-marry-me/","title":"New Song: Jason Derulo, &#039;Marry Me&#039;","name":"MTV Buzzworthy Blog","photo":"http://buzzworthy.mtv.com//wp-content/uploads/buzz/2013/08/image002.jpeg","video":null,"rating":0},"7900124":{"url":"http://variety.com/2013/tv/news/walton-goggins-developing-mexican-drug-cartel-project-for-fox-1200589433/","title":"Walton Goggins Developing Mexican Drug Cartel Project for Fox","name":"Variety.com","photo":"http://pmcvariety.files.wordpress.com/2013/08/walton-goggins.jpg?w=150","video":null,"rating":0},"7898839":{"url":"http://www.sfgirlbybay.com/2013/08/27/make-mine-white/","title":"make mine white.","name":"sfgirlbybay","photo":"http://sfgirlbybayadm.wpengine.netdna-cdn.com/wp-content/uploads/2013/08/white-vintage-desk.jpg","video":null,"rating":0},"7899738":{"url":"http://www.comicmix.com/columns/2013/08/27/michael-davis-cowards/","title":"Michael Davis: Cowards","name":"ComicMix","photo":"http://www.comicmix.com/wp-content/uploads/2013/08/Gold-Art-130828-150x179.jpg","video":null,"rating":0},"7898252":{"url":"http://www.djbooth.net/index/tracks/review/pell-never-let-go","title":"[Listen] Pell ft. Flywalker &#45; Never Let Go","name":"DJBooth.net","photo":"http://static.djbooth.net/pics-tracks/pell-neverletgo.jpg","video":null,"rating":0},"7900141":{"url":"http://www.sporcle.com/games/slipkid/50-book-titles","title":"Matching Books II","name":"Sporcle","photo":"http://diqwtzmiudmjz.cloudfront.net/small/506778.png","video":null,"rating":0}}
+;
+
+
+var iz_visited_page = "interest-21";
+var iz_target_interest_channel = 21;
+var iz_target_interest_uri = 'entertainment';
+var iz_target_interest_name = 'Entertainment';
+var iz_default_previous_interest = 'photoshop';
+var iz_default_next_interest = 'fashion';
+var iz_names_by_channel = {
+	"272": ".net",
+	"285": "Accessibility",
+	"13610": "Accounting",
+	"13611": "Acting",
+	"263": "ActionScript",
+	"13612": "Activism",
+	"836": "Advanced Investing",
+	"163": "Advertising",
+	"13794": "Advice",
+	"12": "Africa",
+	"436": "African Music",
+	"497": "Aging",
+	"13614": "Agriculture",
+	"13609": "AIDS",
+	"797": "Aikido",
+	"13615": "Alternative Energy",
+	"13617": "Alternative Health",
+	"13618": "Amateur Radio",
+	"234": "American Idol",
+	"409": "Americana",
+	"236": "Americas Got Talent",
+	"624": "Anaheim",
+	"582": "Anaheim Angels",
+	"746": "Anaheim Ducks",
+	"13619": "Anarchism",
+	"13620": "Anatomy",
+	"13621": "Ancient History",
+	"152": "Android",
+	"252": "Android Development",
+	"13622": "Animals",
+	"308": "Animation",
+	"173": "Anime And Manga",
+	"371": "Anthropology",
+	"13623": "Antiaging",
+	"309": "Antiques",
+	"115": "Apple",
+	"372": "Archaeology",
+	"321": "Architecture",
+	"638": "Arizona",
+	"713": "Arizona Cardinals",
+	"637": "Arizona Diamondbacks",
+	"17": "Art",
+	"361": "Art History",
+	"13624": "Arthritis",
+	"13608": "Artificial Intelligence",
+	"11": "Asia",
+	"228": "Asian Cinema",
+	"95": "Asian Food",
+	"275": "ASP",
+	"13625": "Asthma",
+	"13627": "Astrology/Psychics",
+	"394": "Astronomy",
+	"13628": "Atheist/Agnostic",
+	"475": "Athletic Shoes",
+	"564": "Atlanta",
+	"568": "Atlanta Braves",
+	"565": "Atlanta Falcons",
+	"567": "Atlanta Hawks",
+	"566": "Atlanta Thrashers",
+	"337": "Audi",
+	"10": "Australia",
+	"606": "Australian News",
+	"824": "Auto Repair",
+	"345": "Auto Technology",
+	"332": "Autos",
+	"133": "AV",
+	"13630": "Aviation/Aerospace",
+	"482": "Babies",
+	"13631": "Badminton",
+	"13632": "Ballet",
+	"636": "Baltimore",
+	"635": "Baltimore Orioles",
+	"725": "Baltimore Ravens",
+	"13633": "Banking",
+	"313": "Baseball",
+	"314": "Baseball Cards",
+	"318": "Basketball",
+	"317": "Basketball Cards",
+	"72": "Bay Area Cooking",
+	"65": "Bay Area Restaurants",
+	"45": "BBQ",
+	"303": "Beading",
+	"466": "Beauty",
+	"47": "Beer",
+	"175": "Bibliophile",
+	"198": "Billiards",
+	"13634": "Biographies",
+	"387": "Bioinformatics",
+	"385": "Biology",
+	"13635": "Biomechanics",
+	"13636": "Biotech",
+	"13637": "Birds",
+	"13317": "Bisexual",
+	"13639": "Bizarre/Oddities",
+	"172": "Blogging",
+	"406": "Bluegrass",
+	"413": "Blues",
+	"344": "BMW",
+	"13640": "Board Games",
+	"494": "Body Art",
+	"13641": "Bodybuilding",
+	"603": "Bollywood",
+	"403": "Bonnaroo",
+	"174": "Books",
+	"549": "Boston",
+	"551": "Boston Bruins",
+	"552": "Boston Celtics",
+	"550": "Boston Red Sox",
+	"13642": "Botany",
+	"589": "Boulder",
+	"51": "Bourbon",
+	"779": "Bowling",
+	"737": "Boxing",
+	"37": "Boys",
+	"13643": "Brain Disorders",
+	"2776": "Brazil",
+	"789": "Brazilian Jiu-jitsu BJJ",
+	"83": "Bread",
+	"420": "Britney Spears",
+	"578": "Brooklyn",
+	"13646": "Buddhism",
+	"709": "Buffalo Bills",
+	"769": "Buffalo Sabres",
+	"1392": "Bullwinkle",
+	"81": "Burgers",
+	"121": "Business",
+	"104": "Cake",
+	"764": "Calgary Flames",
+	"57": "California",
+	"18": "Cameras",
+	"15": "Canada",
+	"13647": "Cancer",
+	"7": "Candy",
+	"224": "Cannes",
+	"13648": "Canoeing/Kayaking",
+	"13649": "Car Parts",
+	"13650": "Card Games",
+	"499": "Career",
+	"13651": "Career planning",
+	"13652": "Caribbean",
+	"754": "Carolina Hurricanes",
+	"704": "Carolina Panthers",
+	"828": "Cartooning",
+	"827": "Cartoons",
+	"13653": "Catholic",
+	"485": "Cats",
+	"238": "Celebrities",
+	"239": "Celebrity Babies",
+	"459": "Celebrity Fashion",
+	"240": "Celebrity Gossip",
+	"13654": "Celtic Music",
+	"13655": "Central America",
+	"13656": "Chaos/Complexity",
+	"668": "Charlotte Bobcats",
+	"13657": "Cheerleading",
+	"55": "Cheese",
+	"13658": "Chemical Engineering",
+	"377": "Chemistry",
+	"199": "Chess",
+	"556": "Chicago",
+	"558": "Chicago Bears",
+	"557": "Chicago Blackhawks",
+	"559": "Chicago Bulls",
+	"560": "Chicago Cubs",
+	"561": "Chicago White Sox",
+	"177": "Chick Lit",
+	"179": "Childrens Books",
+	"520": "Chile",
+	"97": "China",
+	"613": "China Business",
+	"96": "Chinese Food",
+	"105": "Chocolate",
+	"13659": "Christian Music",
+	"13660": "Christianity",
+	"8": "Christmas",
+	"159": "Chrome",
+	"457": "Cigars",
+	"652": "Cincinnati",
+	"708": "Cincinnati Bengals",
+	"651": "Cincinnati Reds",
+	"13661": "Civil Engineering",
+	"346": "Classic Cars",
+	"13662": "Classic Films",
+	"137": "Classical Music",
+	"13663": "Classical Studies",
+	"541": "Cleveland",
+	"542": "Cleveland Browns",
+	"543": "Cleveland Cavaliers",
+	"544": "Cleveland Indians",
+	"378": "Climate",
+	"809": "Climbing",
+	"404": "Coachella",
+	"106": "Coffee",
+	"13665": "Cognitive Science",
+	"266": "ColdFusion",
+	"310": "Collectables",
+	"700": "College Basketball",
+	"699": "College Football",
+	"698": "College Sports",
+	"590": "Colorado",
+	"768": "Colorado Avalanche",
+	"616": "Colorado Rockies",
+	"753": "Columbus",
+	"752": "Columbus Blue Jackets",
+	"206": "Comedy",
+	"13666": "Comedy Movies",
+	"188": "Comic Book History",
+	"186": "Comic Books",
+	"207": "Comic Strips",
+	"838": "Commodities",
+	"117": "Communications Technology",
+	"13667": "Communism",
+	"13668": "Computer Graphics",
+	"243": "Computer Science",
+	"112": "Computers",
+	"13669": "Consumer Info",
+	"841": "Consumerism",
+	"13670": "Continuing Education",
+	"13671": "Counterculture",
+	"408": "Country Music",
+	"470": "Cowboy Boots",
+	"283": "Cpp",
+	"205": "Crafts",
+	"831": "Creating Graphic Novels",
+	"93": "Cricket",
+	"294": "Crochet",
+	"208": "Crude Humor",
+	"44": "Cuisine",
+	"226": "Cult Movies",
+	"777": "Curling",
+	"782": "Cycling",
+	"480": "Dads",
+	"667": "Dallas",
+	"735": "Dallas Cowboys",
+	"666": "Dallas Mavericks",
+	"757": "Dallas Stars",
+	"13672": "Dance Music",
+	"13673": "Dancing",
+	"407": "Dark Cabaret",
+	"815": "Darts",
+	"397": "Data Visualization",
+	"287": "Databases",
+	"13674": "Daytrading",
+	"190": "DC Comics",
+	"453": "Deals",
+	"13675": "Dentistry",
+	"591": "Denver",
+	"710": "Denver Broncos",
+	"681": "Denver Nuggets",
+	"322": "Design",
+	"13676": "Desktop Publishing",
+	"100": "Desserts",
+	"536": "Detroit",
+	"539": "Detroit Lions",
+	"538": "Detroit Pistons",
+	"540": "Detroit Red Wings",
+	"537": "Detroit Tigers",
+	"13677": "Diabetes",
+	"203": "Diecast Cars",
+	"129": "Digital Home",
+	"13678": "Disabilities",
+	"444": "Disco",
+	"445": "Disco House",
+	"13679": "Divorce",
+	"282": "Django",
+	"486": "Dogs",
+	"298": "Doll Making",
+	"830": "Drawing Characters",
+	"829": "Drawing Comics",
+	"333": "Dream Cars",
+	"2": "Drink",
+	"13680": "Drugs",
+	"261": "Drupal",
+	"431": "Early Music",
+	"379": "Earth Science",
+	"13681": "Eating Disorders",
+	"438": "Eclectic Music",
+	"279": "Eclipse",
+	"13682": "Ecology",
+	"13683": "Ecommerce",
+	"13684": "Economics",
+	"771": "Edmonton Oilers",
+	"356": "Education",
+	"368": "Elections",
+	"391": "Electrical Engineering",
+	"446": "Electronic Music",
+	"13685": "Electronic Parts",
+	"128": "Electronics",
+	"13686": "Embedded Systems",
+	"443": "Eminem",
+	"13687": "Encryption",
+	"13689": "Energy Industry",
+	"13607": "Engineering",
+	"526": "England",
+	"528": "England Art And Culture",
+	"364": "English Language",
+	"21": "Entertainment",
+	"842": "Entrepreneur",
+	"13616": "Environment",
+	"13690": "Equestrian/Horses",
+	"13691": "Ergonomics",
+	"13692": "Erotic Literature",
+	"13693": "Ethics",
+	"13694": "Ethnic Music",
+	"13": "Europe",
+	"5": "Events",
+	"460": "Everyday Fashion",
+	"13695": "Evolution",
+	"339": "Exotic Cars",
+	"13696": "Exotic Pets",
+	"433": "Experimental Music",
+	"800": "Extreme Sports",
+	"472": "Eyewear",
+	"168": "Facebook",
+	"248": "Facebook Development",
+	"35": "Family",
+	"659": "Fantasy Baseball",
+	"697": "Fantasy Basketball",
+	"781": "Fantasy Cricket",
+	"736": "Fantasy Football",
+	"776": "Fantasy Hockey",
+	"661": "Fantasy Soccer",
+	"23": "Fashion",
+	"464": "Fashion Industry",
+	"463": "Fashion Shopping",
+	"82": "Fast Food",
+	"13324": "Feminism",
+	"340": "Ferrari",
+	"222": "Festivals",
+	"13697": "Figure Skating",
+	"221": "Film",
+	"223": "Film Festivals",
+	"330": "Film Photography",
+	"326": "Fine Art",
+	"156": "Firefox",
+	"487": "Fish",
+	"802": "Fishing",
+	"490": "Fitness",
+	"265": "Flash",
+	"264": "Flex",
+	"628": "Florida",
+	"627": "Florida Marlins",
+	"744": "Florida Panthers",
+	"518": "Flowers",
+	"13698": "Flyfishing",
+	"410": "Folk Music",
+	"3": "Food",
+	"316": "Football",
+	"315": "Football Cards",
+	"13059": "Foreign Films",
+	"13700": "Forestry",
+	"353": "Formula One",
+	"13701": "Forums",
+	"56": "France",
+	"89": "French Cuisine",
+	"778": "Frisbee",
+	"512": "Frugal Living",
+	"448": "Funk",
+	"209": "Funny Pictures",
+	"210": "Funny Video",
+	"13702": "Futurism",
+	"146": "Gadgets",
+	"13703": "Gambling",
+	"256": "Game Development",
+	"182": "Games",
+	"130": "Gaming",
+	"517": "Gardening",
+	"502": "Gay",
+	"119": "Geeking Out",
+	"13704": "Genealogy",
+	"386": "Genetics",
+	"380": "Geography",
+	"382": "Geology",
+	"562": "Georgia",
+	"13706": "Geoscience",
+	"36": "Girls",
+	"402": "Glastonbury",
+	"13707": "Glaucoma",
+	"235": "Glee",
+	"87": "Gluten Free",
+	"676": "Golden State Warriors",
+	"740": "Golf",
+	"741": "Golfing",
+	"116": "Google",
+	"13708": "Gospel music",
+	"13709": "Goth Culture",
+	"42": "Gourmet",
+	"13710": "Government",
+	"365": "Grammar",
+	"323": "Graphic Design",
+	"427": "Grateful Dead",
+	"507": "Green",
+	"721": "Green Bay",
+	"722": "Green Bay Packers",
+	"521": "Green Communities",
+	"508": "Green Environment",
+	"111": "Green Tea",
+	"509": "Green Technology",
+	"109": "Grocery Reviews",
+	"13712": "Guitar",
+	"302": "Guitar Making",
+	"13713": "Gymnastics",
+	"13714": "Hacking",
+	"4": "Halloween",
+	"184": "Harry Potter",
+	"462": "Haute Couture",
+	"584": "Hawaii",
+	"489": "Health",
+	"389": "Health Informatics",
+	"73": "Healthy Recipes",
+	"13715": "Heart Conditions",
+	"417": "Heavy Metal",
+	"13716": "Hedonism",
+	"13717": "Hentai Anime",
+	"135": "High End Audio",
+	"813": "Hiking",
+	"440": "Hip Hop",
+	"529": "Historic England",
+	"360": "History",
+	"320": "Hockey",
+	"319": "Hockey Cards",
+	"134": "Home Audio",
+	"13718": "Home Business",
+	"817": "Home Improvement",
+	"477": "Home Making",
+	"142": "Home Theater",
+	"13719": "Homebrewing",
+	"13720": "Homeschooling",
+	"6": "Horror",
+	"218": "Horror Movies",
+	"46": "Hot Sauce",
+	"13721": "Hotels",
+	"633": "Houston",
+	"632": "Houston Astros",
+	"671": "Houston Rockets",
+	"729": "Houston Texans",
+	"816": "How-To",
+	"284": "HTML",
+	"13664": "Humanities",
+	"38": "Humor",
+	"13723": "Hunting",
+	"347": "Hybrid Cars",
+	"103": "Ice Cream",
+	"329": "Illustration",
+	"13725": "Independent Film",
+	"91": "India",
+	"604": "India Business",
+	"92": "India Music",
+	"90": "Indian Food",
+	"439": "Indian Music",
+	"692": "Indiana Pacers",
+	"693": "Indianapolis",
+	"726": "Indianapolis Colts",
+	"13726": "Industrial Design",
+	"13688": "Industry",
+	"13727": "Instant Messaging",
+	"13728": "Insurance",
+	"324": "Interior Design",
+	"839": "International Investing",
+	"153": "Internet",
+	"450": "Internet Radio",
+	"834": "Investing",
+	"125": "iPad",
+	"124": "iPhone",
+	"249": "iPhone Development",
+	"126": "iPod",
+	"53": "Irish Whiskey",
+	"2838": "Israel",
+	"13724": "IT",
+	"99": "Italian Food",
+	"79": "Italy",
+	"715": "Jacksonville Jaguars",
+	"60": "Japan",
+	"608": "Japan Business",
+	"59": "Japan Restaurants",
+	"230": "Japanese Cinema",
+	"98": "Japanese Food",
+	"278": "Java",
+	"262": "Javascript",
+	"138": "Jazz",
+	"9716": "Jazz Fusion",
+	"305": "Jewelry",
+	"304": "Jewelry Making",
+	"13730": "Journalism",
+	"788": "Judo",
+	"423": "Justin Bieber",
+	"642": "Kansas City",
+	"734": "Kansas City Chiefs",
+	"641": "Kansas City Royals",
+	"13731": "Karaoke",
+	"787": "Karate And Taekwondo",
+	"796": "Kenpo",
+	"180": "Kids",
+	"13732": "Kinesiology",
+	"295": "Knitting",
+	"791": "Kung Fu",
+	"424": "Lady Gaga",
+	"341": "Lamborghini",
+	"13734": "Landscaping",
+	"569": "Las Vegas",
+	"14": "Latin America",
+	"437": "Latin Music",
+	"359": "Law",
+	"355": "Learning",
+	"13735": "Learning Disorders",
+	"503": "Lesbian",
+	"336": "Lexus",
+	"31": "LGBT",
+	"384": "Life Science",
+	"32": "Lifestyle",
+	"13736": "Linguistics",
+	"246": "Linux",
+	"13737": "Literature",
+	"405": "Live Music",
+	"24": "Living",
+	"511": "Localism",
+	"13738": "Logic",
+	"530": "London",
+	"527": "London Restaurants",
+	"62": "Los Angeles",
+	"674": "Los Angeles Clippers",
+	"634": "Los Angeles Dodgers",
+	"767": "Los Angeles Kings",
+	"684": "Los Angeles Lakers",
+	"61": "Los Angeles Restaurants",
+	"342": "Lotus",
+	"13739": "Lounge Music",
+	"454": "Luxury",
+	"335": "Luxury Cars",
+	"13740": "MacOS",
+	"421": "Madonna",
+	"13741": "Magic/Illusions",
+	"468": "Makeup And Perfume",
+	"840": "Management",
+	"13742": "Manufacturing",
+	"381": "Maps",
+	"39": "Mardi Gras",
+	"13743": "Marine Biology",
+	"161": "Marketing",
+	"13744": "Married Life",
+	"785": "Martial Arts",
+	"189": "Marvel Comics",
+	"13745": "Matchmaking",
+	"395": "Mathematics",
+	"1": "Mattters",
+	"13746": "Mechanical Engneering",
+	"170": "Media",
+	"388": "Medical",
+	"13747": "Medieval History",
+	"13748": "Memorabilia",
+	"669": "Memphis Grizzlies",
+	"505": "Men",
+	"473": "Mens Fashion",
+	"476": "Mens Hats",
+	"13749": "Mental Health",
+	"343": "Mercedes-Benz",
+	"13750": "Meteorology",
+	"2871": "Mexico",
+	"717": "Miami Dolphins",
+	"675": "Miami Heat",
+	"422": "Michael Jackson",
+	"13752": "Microbiology",
+	"114": "Microsoft",
+	"13753": "Middle East",
+	"13754": "Military",
+	"553": "Milwaukee",
+	"555": "Milwaukee Brewers",
+	"554": "Milwaukee Bucks",
+	"13755": "Mining/Metallurgy",
+	"658": "Minnesota",
+	"682": "Minnesota Timberwolves",
+	"657": "Minnesota Twins",
+	"731": "Minnesota Vikings",
+	"747": "Minnesota Wild",
+	"786": "Mixed Martial Arts",
+	"306": "Mixed Media",
+	"49": "Mixology",
+	"187": "Mobile Comics",
+	"250": "Mobile Software",
+	"204": "Model Railroads",
+	"481": "Moms",
+	"162": "Money",
+	"217": "Monsters",
+	"762": "Montreal",
+	"761": "Montreal Canadiens",
+	"354": "Motorcycle Racing",
+	"348": "Motorcycles",
+	"351": "Motorsports",
+	"823": "Movie Making",
+	"185": "Movies",
+	"155": "Mozilla",
+	"801": "MTB",
+	"349": "Muscle Cars",
+	"26": "Music",
+	"13756": "Music Composition",
+	"401": "Music Festivals",
+	"13757": "Music Theory",
+	"13711": "Musical Instruments",
+	"13758": "Musicals",
+	"13759": "Mutual Funds",
+	"254": "MySQL",
+	"183": "Mystery Novels",
+	"352": "NASCAR",
+	"745": "Nashville Predators",
+	"516": "Nature",
+	"13760": "Netherlands",
+	"13761": "Network Security",
+	"375": "Neuroscience",
+	"411": "New Age",
+	"334": "New Cars",
+	"705": "New England Patriots",
+	"774": "New Jersey Devils",
+	"673": "New Jersey Nets",
+	"593": "New Mexico",
+	"40": "New Orleans",
+	"672": "New Orleans Hornets",
+	"727": "New Orleans Saints",
+	"571": "New York",
+	"64": "New York City",
+	"573": "New York Giants",
+	"577": "New York Islanders",
+	"572": "New York Jets",
+	"574": "New York Knicks",
+	"654": "New York Mets",
+	"576": "New York Rangers",
+	"63": "New York Restaurants",
+	"575": "New York Yankees",
+	"532": "New Zealand",
+	"13828": "News",
+	"13762": "Nightlife",
+	"244": "NLP",
+	"13763": "Nonprofit/Charity",
+	"291": "NoSQL",
+	"13764": "Nuclear Science",
+	"13765": "Nursing",
+	"491": "Nutrition",
+	"644": "Oakland",
+	"643": "Oakland Athletics",
+	"724": "Oakland Raiders",
+	"13626": "Occult",
+	"13766": "Oceania",
+	"665": "Oklahoma Thunderballs",
+	"13767": "Oldies Music",
+	"13768": "Online Games",
+	"247": "Open Source",
+	"429": "Opera Music",
+	"13769": "Operating Systems",
+	"13826": "Operations Research",
+	"13770": "Options/Futures",
+	"290": "Oracle",
+	"467": "Organic Beauty Care",
+	"677": "Orlando Magic",
+	"770": "Ottawa Senators",
+	"811": "Outdoors",
+	"13771": "P2P",
+	"307": "Painting",
+	"601": "Pakistan",
+	"383": "Paleontology",
+	"293": "Paper Crafts",
+	"13773": "Paranormal",
+	"13811": "parent:Industy",
+	"479": "Parenting",
+	"68": "Paris",
+	"237": "Paris Hilton",
+	"67": "Paris Restaurants",
+	"447": "Paul Oakenfold",
+	"267": "Perl",
+	"94": "Persian Food",
+	"844": "Personal Finance",
+	"484": "Pets",
+	"13774": "Pharmacology",
+	"585": "Philadelphia",
+	"588": "Philadelphia 76ers",
+	"586": "Philadelphia Eagles",
+	"763": "Philadelphia Flyers",
+	"587": "Philadelphia Phillies",
+	"13775": "Philosophy",
+	"688": "Phoenix",
+	"759": "Phoenix Coyotes",
+	"687": "Phoenix Suns",
+	"147": "Phones",
+	"16": "Photography",
+	"822": "Photography Tips And Tutorials",
+	"13829": "Photos",
+	"19": "Photoshop",
+	"260": "PHP",
+	"9808": "Physical Therapy",
+	"392": "Physics",
+	"13777": "Physiology",
+	"200": "Pinball",
+	"13003": "Pinterest",
+	"545": "Pittsburgh",
+	"548": "Pittsburgh Penguins",
+	"546": "Pittsburgh Pirates",
+	"547": "Pittsburgh Steelers",
+	"48": "Pizza",
+	"9": "Places",
+	"140": "Playing Guitar",
+	"232": "Poetry",
+	"197": "Poker",
+	"369": "Political Law",
+	"367": "Political Science",
+	"29": "Politics",
+	"33": "Pop Culture",
+	"419": "Pop Music",
+	"694": "Portland Trail Blazers",
+	"13778": "Pregnancy/Birth",
+	"139": "Pro Audio",
+	"255": "Programming",
+	"144": "Projectors",
+	"13779": "Psychiatry",
+	"374": "Psychology",
+	"416": "Punk Music",
+	"13780": "Punk Rock",
+	"471": "Purses And Bags",
+	"13781": "Puzzles",
+	"281": "Python",
+	"794": "Qigong",
+	"77": "Quick And Easy Recipes",
+	"297": "Quilting",
+	"13782": "Quizzes",
+	"212": "Quotes",
+	"13783": "Racquetball",
+	"428": "Radiohead",
+	"441": "Rap",
+	"399": "Rarities",
+	"76": "Raw Food",
+	"13784": "Real Estate",
+	"71": "Recipes",
+	"398": "Record Collecting",
+	"434": "Reggae",
+	"143": "relatedsTVs",
+	"504": "Relationships",
+	"13629": "Religious Studies",
+	"325": "Remodeling",
+	"13785": "Research Methods",
+	"58": "Restaurants",
+	"495": "Retirement",
+	"201": "Retro",
+	"818": "Retro Remodeling",
+	"414": "Rhythm And Blues",
+	"118": "Robotics",
+	"425": "Rock Music",
+	"13786": "Rodeo",
+	"13787": "Roleplaying Games",
+	"614": "Roller Derby",
+	"426": "Rolling Stones",
+	"176": "Romance Novels",
+	"258": "Ruby",
+	"259": "Ruby On Rails",
+	"662": "Rugby",
+	"805": "Running",
+	"2904": "Russia",
+	"680": "Sacramento Kings",
+	"151": "Samsung Galaxy",
+	"696": "San Antonio Spurs",
+	"596": "San Diego",
+	"733": "San Diego Chargers",
+	"656": "San Diego Padres",
+	"66": "San Francisco",
+	"600": "San Francisco 49ers",
+	"647": "San Francisco Giants",
+	"599": "San Francsico Giants",
+	"751": "San Jose",
+	"750": "San Jose Sharks",
+	"597": "Santa Cruz",
+	"592": "Santa Fe",
+	"451": "Satellite Radio",
+	"211": "Satirical News",
+	"280": "Scala",
+	"366": "Science",
+	"213": "Science Fiction",
+	"390": "Science Projects",
+	"370": "Scientists",
+	"52": "Scotch",
+	"13790": "Scouting",
+	"300": "Scrapbooking",
+	"807": "Scuba Diving",
+	"13793": "Sculpting",
+	"13792": "Sculpture",
+	"579": "Seattle",
+	"622": "Seattle Mariners",
+	"580": "Seattle Seahawks",
+	"127": "Security Technology",
+	"819": "Self Improvement",
+	"790": "Self-defense",
+	"13795": "Semiconductors",
+	"496": "Seniors",
+	"171": "SEO",
+	"299": "Sewing",
+	"277": "Sharepoint",
+	"469": "Shoes",
+	"452": "Shopping",
+	"274": "Silverlight",
+	"806": "Skateboarding",
+	"331": "Sketching",
+	"812": "Skiing",
+	"13796": "Skydiving",
+	"474": "Sneakers",
+	"810": "Snowboarding",
+	"13797": "Soap Operas",
+	"660": "Soccer",
+	"131": "Social Gaming",
+	"166": "Social Media",
+	"13002": "Social Networks",
+	"13798": "Socialism",
+	"373": "Sociology",
+	"113": "Software",
+	"245": "Software Celebrities",
+	"13800": "Songwriting",
+	"449": "Soul Music",
+	"400": "Soundtracks",
+	"523": "South Africa",
+	"13801": "South America",
+	"393": "Space Science",
+	"2927": "Spain",
+	"13803": "Spas",
+	"191": "Spider-Man",
+	"296": "Spinning",
+	"13804": "Spirituality",
+	"28": "Sports",
+	"312": "Sports Cards",
+	"350": "Sports Cars",
+	"799": "Sports Fitness",
+	"798": "Sports Nutrition",
+	"289": "SQL Server",
+	"13805": "Squash",
+	"743": "St. Louis Blues",
+	"639": "St. Louis Cardinals",
+	"716": "St. Louis Rams",
+	"640": "St.louis",
+	"311": "Stamps",
+	"214": "Star Trek",
+	"215": "Star Wars",
+	"843": "Startups",
+	"396": "Statistics",
+	"835": "Stock Trading",
+	"461": "Street Fashion",
+	"358": "Students",
+	"13806": "Substance Abuse",
+	"195": "Sudoku",
+	"13807": "Supercomputing",
+	"193": "Superman",
+	"808": "Surfing",
+	"13808": "Survivalism",
+	"513": "Sustainabile Living",
+	"804": "Swimming",
+	"415": "Swing Music",
+	"41": "SXSW",
+	"814": "Table Tennis",
+	"149": "Tablets",
+	"792": "Tai Chi Chuan/Taijiquan",
+	"650": "Tampa Bay",
+	"712": "Tampa Bay Buccaneers",
+	"758": "Tampa Bay Lightning",
+	"649": "Tampa Bay Rays",
+	"594": "Taos",
+	"13809": "Taxation",
+	"107": "Tea",
+	"357": "Teachers",
+	"412": "Techno",
+	"30": "Technology",
+	"34": "Teens",
+	"13810": "Telecom",
+	"233": "Television",
+	"706": "Tennessee Titans",
+	"738": "Tennis",
+	"646": "Texas",
+	"645": "Texas Rangers",
+	"231": "Thai Cinema",
+	"229": "Thailand",
+	"1377": "The Flintstones",
+	"1372": "The Jetsons",
+	"327": "Theater",
+	"376": "Therapy",
+	"514": "Tiny Farms",
+	"534": "Toronto",
+	"618": "Toronto Blue Jays",
+	"775": "Toronto Maple Leafs",
+	"695": "Toronto Raptors",
+	"338": "Toyota",
+	"181": "Toys",
+	"13812": "Trains/Railroads",
+	"13318": "Transgender",
+	"13815": "Transhumanism",
+	"13813": "Transportation",
+	"25": "Travel",
+	"522": "Travel Adventures",
+	"837": "Trend Analysis",
+	"803": "Triathlon",
+	"141": "TVs",
+	"167": "Twitter",
+	"363": "U.S History",
+	"13817": "UFOs",
+	"500": "Unemployment",
+	"13818": "University/College",
+	"510": "Urban Farming",
+	"515": "Urban Forest",
+	"458": "Urban Lifestyle",
+	"535": "USA",
+	"670": "Utah Jazz",
+	"102": "Valentine's Day",
+	"219": "Vampires",
+	"70": "Vancouver",
+	"755": "Vancouver Canucks",
+	"69": "Vancouver Restaurants",
+	"846": "VC",
+	"75": "Vegan",
+	"519": "Vegetable Gardens",
+	"74": "Vegetarian",
+	"13827": "Videos",
+	"465": "Vintage Fashion",
+	"13819": "Virtual Reality",
+	"286": "Virtualization",
+	"276": "Visual Basic",
+	"271": "Visual Studio",
+	"13820": "Vocal Music",
+	"13821": "Volleyball",
+	"626": "Washington",
+	"765": "Washington Capitals",
+	"583": "Washington D.C.",
+	"625": "Washington Nationals",
+	"732": "Washington Redskins",
+	"664": "Washington Wizards",
+	"456": "Watches",
+	"157": "Web Browsers",
+	"165": "Web Business",
+	"194": "Web Comics",
+	"160": "Web Design",
+	"257": "Web Development",
+	"268": "Web Servers",
+	"13822": "Webhosting",
+	"478": "Weddings",
+	"493": "Weed",
+	"13823": "Weight Loss",
+	"50": "Whiskey",
+	"122": "Windows",
+	"270": "Windows Phone",
+	"13824": "Windsurfing",
+	"43": "Wine",
+	"1426": "Winnie the Pooh",
+	"720": "Wisconsin",
+	"506": "Women",
+	"301": "Woodworking",
+	"362": "World History",
+	"435": "World Music",
+	"273": "WPF",
+	"739": "Wrestling",
+	"825": "Writing",
+	"795": "Wujifa",
+	"793": "Wushu",
+	"132": "Xbox",
+	"783": "Yachting",
+	"784": "Yoga",
+	"1390": "Yogi Bear",
+	"178": "Young Adult Books",
+	"13004": "YouTube",
+	"13825": "Zoology",
+};
+
+
+
+var iz_favorite_index = -1;
+var iz_like_index = -1;
+function iz_start_last() {
+
+
+bootstrap_typeahead();
+
+	$('#topbar_searchmenu').click(function(event) {
+		var editor = $('<input id="topbar_channel_editor" type="text"  autocomplete="off" class="Top_Bar_Field" value="Entertainment" size="12" />');	
+		var topbar_searchmenu = $('#topbar_searchmenu')[0];
+		insertAfter(editor[0], topbar_searchmenu)
+		topbar_searchmenu.style.display = 'none';
+		editor.focus();
+		editor.select();
+		var names = [];
+		for (var num in iz_names_by_channel) {
+			names.push(iz_names_by_channel[num]);
+		}
+		var menu = '<ul class="Typeahead_Popup_Menu"></ul>';
+		var typeahead = editor.typeahead({ source: names, menu: menu, highlighter: function(value) { return value; }, updater: function(value) {
+			window.location.href = '/' + urlify(value);
+			editor[0].disabled = true;
+			return 'loading ...';
+		} });
+		typeahead.focus();
+		$(editor).keyup(function(event) {
+			if (event.which == 27) {
+				topbar_searchmenu.style.display = 'inline-block';
+				editor.replaceWith(topbar_searchmenu);
+			}
+			return true;
+		});
+	});
+
+	if (UTM.uid) {
+		iz_favorite_index = UTM.favorites.indexOf('Entertainment');
+		if (iz_favorite_index != -1) {
+			$('#topbar_favorite_icon')[0].src = '/images/favorited.png';
+		}
+	}
+	if (UTM.uid && UTM.favorites.length > 0) {
+		$('#previous_favorite').click(function(event) {
+log("prev fave click");
+			if (iz_favorite_index == -1) {
+				iz_favorite_index = 0;
+			}
+			window.location.href = '/' + urlify(iz_favorite_index > 0 ? UTM.favorites[iz_favorite_index - 1] : UTM.favorites[UTM.favorites.length - 1]);
+			event.stopImmediatePropagation();
+			event.preventDefault();
+		});
+		$('#next_favorite').click(function(event) {
+log("next fave click");
+			if (iz_favorite_index == -1) {
+				iz_favorite_index = 0;
+			}
+			window.location.href = '/' + urlify(iz_favorite_index < UTM.favorites.length - 1 ? UTM.favorites[iz_favorite_index + 1] : UTM.favorites[0]);
+			event.stopImmediatePropagation();
+			event.preventDefault();
+		});
+	} else {
+		$('#previous_favorite').click(function(event) {
+log("click");
+			window.location.href = $URL + '/' + iz_default_previous_interest;
+			event.stopImmediatePropagation();
+			event.preventDefault();
+		});
+		$('#next_favorite').click(function(event) {
+log("click");
+			window.location.href = $URL + '/' + iz_default_next_interest;
+			event.stopImmediatePropagation();
+			event.preventDefault();
+		});
+	}
+
+
+
+	
+
+}
+function toggleFavorite() {
+	iz_toggle_favorite($('#topbar_favorite_icon')[0], 'Entertainment', 21);
+}
+
+var iz_bank_url = "/entertainment";
+
+var iz_buttons = ['relateds_pulldown_button', 'user_pulldown_button', 'mattters_pulldown_button', 'social_pulldown_button', 'story_social_pulldown_menu'];
+var iz_menus = ['relateds_pulldown_menu', 'user_pulldown_menu', 'mattters_pulldown_menu', 'social_pulldown_menu', 'story_social_pulldown_menu'];
+var iz_open_menu = null;
+function pulldown_menu(button_id, menu_id) {
+	var wwidth = $(window).width();
+	for (var i = 0, len = iz_buttons.length; i < len; ++i) {
+		if ($('#' + iz_menus[i])[0]) {
+			$('#' + iz_buttons[i]).removeClass('Topbar_Menu_Button_Selected');
+			if (iz_buttons[i] != 'mattters_pulldown_button') { 
+				$('#' + iz_menus[i])[0].style.display = 'none';
+			} else {
+				var innermenu = $('#mattters_pulldown_inner_menu')[0];
+				innermenu.style.marginLeft = (iz_small_screen ? -wwidth : -320) + "px";
+				$('#matters_menu_overlay')[0].style.display = 'none';
+			}
+		}
+	}
+	if (menu_id != iz_open_menu) {
+		if (button_id != 'mattters_pulldown_button') { 
+			$('#topbar_menu_dock')[0].appendChild($('#' + menu_id)[0]);
+			$('#' + menu_id)[0].style.display = 'block';
+			$('#' + button_id).addClass('Topbar_Menu_Button_Selected');
+			if (menu_id == 'relateds_pulldown_menu') {
+// widescreen			iz_channel_name_selector.style.left = ($('#relateds_pulldown_button')[0].offsetLeft + $('#relateds_pulldown_button')[0].offsetWidth - iz_channel_name_selector.offsetWidth) + "px"
+			}
+			iz_open_menu = menu_id;
+		} else {
+			var menu = $('#' + menu_id)[0];
+			$('#topbar_menu_dock')[0].appendChild(menu);
+			var innermenu = $('#mattters_pulldown_inner_menu')[0];
+			innermenu.style.marginLeft = -wwidth + "px";
+			if (!iz_small_screen) {
+				innermenu.style.marginLeft = -320 + "px";
+				$('#matters_menu_overlay')[0].style.display = 'block';
+				var TOOLBAR_HEIGHT = 55
+				var max_height = $(window).height() - TOOLBAR_HEIGHT;
+				if (innermenu.offsetHeight > max_height) {
+					innermenu.style.width = '320px';
+				}
+				innermenu.style.height = max_height + "px";
+			} else {
+				innermenu.style.marginLeft = -wwidth + "px";
+				innermenu.style.width = '100%';
+			}
+			menu.style.display = 'block';
+			setTimeout(function() { innermenu.style.marginLeft = 0; }, 10);
+			iz_open_menu = menu_id;
+		}
+	} else {
+		iz_open_menu = null;
+	}
+}
+
+</script>
+<noscript>
+<p>This site requires JavaScript to be enabled in order to work</p>
+</noscript>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async = true;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<script type="text/javascript"> 
+  (function() { 
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; 
+    po.src = 'https://apis.google.com/js/plusone.js'; 
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); 
+  })(); 
+</script> 
+
+<script type="text/javascript">
+(function(d){
+  var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
+  p.type = 'text/javascript';
+  p.async = true;
+  p.src = '//assets.pinterest.com/js/pinit.js';
+  f.parentNode.insertBefore(p, f);
+}(document));
+</script>
+
+
+
+<!-- Start Quantcast tag -->
+<script type="text/javascript">
+_qoptions={ qacct:"p-47HhcjRMJXYgs" };
+</script>
+<script type="text/javascript" defer="defer" src="http://edge.quantserve.com/quant.js"></script>
+<noscript>
+<img src="http://pixel.quantserve.com/pixel/p-47HhcjRMJXYgs.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+</noscript>
+<!-- End Quantcast tag -->
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Find Celebrities, Fan Sites and Links - Celebhoo.com</title>
+<meta name="description" content="Find fan site links for all your favorite celebrities as well as birthdays, trivia and gossip." />
+<meta name="keywords" content="celebrities, fan sites, fan pages, tribute, directory, links, celebretes, famous people, stars, hollywood, gossip, actresses, actors, movies, fame" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="/templates/RednBlack/style/main.css" />
+<script type="text/javascript">
+        var valid_obj = new Object();
+    </script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17827729-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<script type="text/javascript">
+
+
+function increase_height() {
+   height = parseInt(document.getElementById('slide').style.marginTop);
+   if (height<110) {
+      document.getElementById('slide').style.marginTop = eval(height+2)+"px";
+      setTimeout("increase_height()",0.0001);
+   } else {
+      document.getElementById('panel').style.zIndex = 200;
+   }
+}
+
+function decrease_height() {
+   height = parseInt(document.getElementById('slide').style.marginTop);
+   document.getElementById('panel').style.zIndex = -1;
+   if (height>0) {
+      document.getElementById('slide').style.marginTop = eval(height-2)+"px";
+      setTimeout("decrease_height()",0.0001);
+   }
+}
+
+function show_panel() {
+  
+   height = parseInt(document.getElementById('slide').style.marginTop);
+   if (height>0) {
+      decrease_height();
+   } else {
+      increase_height();
+   }
+   return false;
+}
+
+function ajaxFunction()
+{
+
+var xmlHttp;
+
+try
+  {
+  // Firefox, Opera 8.0+, Safari
+  xmlHttp=new XMLHttpRequest();
+  }
+catch (e)
+  {
+  // Internet Explorer
+  try
+    {
+    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+    }
+  catch (e)
+    {
+    try
+      {
+      xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    catch (e)
+      {
+      alert("Your browser does not support AJAX!");
+      return false;
+      }
+    }
+  }
+  xmlHttp.onreadystatechange=function()
+    {
+    if(xmlHttp.readyState==4)
+      {
+      }
+    }
+   var url = "http://www.celebhoo.com/update_session.php";
+
+   xmlHttp.open("POST", url, false);
+   xmlHttp.setRequestHeader( 
+    'Content-Type', 
+    'application/x-www-form-urlencoded; charset=UTF-8' 
+); 
+   xmlHttp.send('url='+window.location);
+  }
+</script>
+</script>
+<script type="text/javascript">
+jQuery(function($) {
+	$(document).ready(function(){
+		
+									jQuery.validator.messages.required = "This field is required.";
+												jQuery.validator.messages.remote = "Please fix this field.";
+												jQuery.validator.messages.email = "Invalid email address format.";
+												jQuery.validator.messages.url = "Invalid URL.";
+												jQuery.validator.messages.date = "Invalid date format.";
+												jQuery.validator.messages.dateISO = "Please enter a valid date (ISO).";
+												jQuery.validator.messages.dateDE = "Bitte geben Sie ein gültiges Datum ein.";
+												jQuery.validator.messages.number = "Required numeric field.";
+												jQuery.validator.messages.numberDE = "Bitte geben Sie eine Nummer ein.";
+												jQuery.validator.messages.digits = "Required integer field.";
+												jQuery.validator.messages.creditcard = "Please enter a valid credit card number.";
+												jQuery.validator.messages.equalTo = "Please enter the same value again.";
+												jQuery.validator.messages.accept = "Please enter a value with a valid extension.";
+												jQuery.validator.messages.maxlength = $.format("Please enter no more than {0} characters.");
+												jQuery.validator.messages.minlength = $.format("Please enter at least {0} characters.");
+												jQuery.validator.messages.rangelength = $.format("This field must have minimum {0} characters and maximum {1} characters..");
+												jQuery.validator.messages.range = $.format("Please enter a value between {0} and {1}.");
+												jQuery.validator.messages.max = $.format("Please enter a value less than or equal to {0}.");
+												jQuery.validator.messages.min = $.format("Please enter a value greater than or equal to {0}.");
+								
+
+		function fireEvent(obj, evt) {
+			var fireOnThis = obj;
+			if (document.createEvent) {
+				var evObj = document.createEvent('MouseEvents');
+				evObj.initEvent(evt, true, false);
+				fireOnThis.dispatchEvent(evObj);
+			} else if (document.createEventObject) {
+				fireOnThis.fireEvent('on'+evt);
+			}
+		}
+
+                //valid obj isntantiated in header.tpl
+                valid_obj.login_form = {
+				debug: false,
+				onKeyUp: true,
+				onfocusout: false,
+				errorElement: "span",
+				errorClass: "errForm",
+				submitHandler: function(form) {
+					// do other stuff for a valid form
+					if ($("#login_form").valid()) {
+						form.submit();
+					}
+				},
+
+				"rules": {user: {"required":true},pass: {"required":true}}, "messages": {}
+		};
+
+		$("#login_form").validate(valid_obj.login_form);
+
+                var selects = $("#login_form").find("select");
+                var crt;
+                $.each(selects, function() {
+                    crt = this.id;
+                    if(typeof(valid_obj.login_form.rules[crt]) !== 'undefined') {
+                        $("#"+crt).change(function() {
+                          $(this).valid();
+                        });
+                    }
+                });
+	});
+});
+</script>
+<script type="text/javascript">
+jQuery(function($) {
+	$(document).ready(function(){
+		
+									jQuery.validator.messages.required = "This field is required.";
+												jQuery.validator.messages.remote = "Please fix this field.";
+												jQuery.validator.messages.email = "Invalid email address format.";
+												jQuery.validator.messages.url = "Invalid URL.";
+												jQuery.validator.messages.date = "Invalid date format.";
+												jQuery.validator.messages.dateISO = "Please enter a valid date (ISO).";
+												jQuery.validator.messages.dateDE = "Bitte geben Sie ein gültiges Datum ein.";
+												jQuery.validator.messages.number = "Required numeric field.";
+												jQuery.validator.messages.numberDE = "Bitte geben Sie eine Nummer ein.";
+												jQuery.validator.messages.digits = "Required integer field.";
+												jQuery.validator.messages.creditcard = "Please enter a valid credit card number.";
+												jQuery.validator.messages.equalTo = "Please enter the same value again.";
+												jQuery.validator.messages.accept = "Please enter a value with a valid extension.";
+												jQuery.validator.messages.maxlength = $.format("Please enter no more than {0} characters.");
+												jQuery.validator.messages.minlength = $.format("Please enter at least {0} characters.");
+												jQuery.validator.messages.rangelength = $.format("This field must have minimum {0} characters and maximum {1} characters..");
+												jQuery.validator.messages.range = $.format("Please enter a value between {0} and {1}.");
+												jQuery.validator.messages.max = $.format("Please enter a value less than or equal to {0}.");
+												jQuery.validator.messages.min = $.format("Please enter a value greater than or equal to {0}.");
+								
+
+		function fireEvent(obj, evt) {
+			var fireOnThis = obj;
+			if (document.createEvent) {
+				var evObj = document.createEvent('MouseEvents');
+				evObj.initEvent(evt, true, false);
+				fireOnThis.dispatchEvent(evObj);
+			} else if (document.createEventObject) {
+				fireOnThis.fireEvent('on'+evt);
+			}
+		}
+
+                //valid obj isntantiated in header.tpl
+                valid_obj.search_form = {
+				debug: false,
+				onKeyUp: true,
+				onfocusout: false,
+				errorElement: "span",
+				errorClass: "errForm",
+				submitHandler: function(form) {
+					// do other stuff for a valid form
+					if ($("#search_form").valid()) {
+						form.submit();
+					}
+				},
+
+				"rules": {search: {"required":true}}, "messages": {}
+		};
+
+		$("#search_form").validate(valid_obj.search_form);
+
+                var selects = $("#search_form").find("select");
+                var crt;
+                $.each(selects, function() {
+                    crt = this.id;
+                    if(typeof(valid_obj.search_form.rules[crt]) !== 'undefined') {
+                        $("#"+crt).change(function() {
+                          $(this).valid();
+                        });
+                    }
+                });
+	});
+});
+</script>
+<div style="clear: both;"></div>
+<div class="header">
+<div style="float:right; width:730px; padding-top:2px;"><script type="text/javascript"><!--
+    google_ad_client = "pub-1357070878455908";
+    /* 728x90, created 23/04/10 */
+    google_ad_slot = "3222091902";
+    google_ad_width = 728;
+    google_ad_height = 90;
+    //-->
+    </script>
+<script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script></div>
+<div class="headerLogo">
+<a href="/"><img src="/templates/RednBlack/images/logo.gif" border="0" alt="Find Celebrities with Celebhoo.com" /></a>
+</div>
+</div>
+<div class="hMenuContainer"><div class="center"><div class="hMenu"><a href="/index.php" title="Back to Homepage">Home</a><a href="/celebrity_birthdays" title="Celebrity Birthdays">Celebrity Birthdays</a><a href="/info/movie_tv_extras.php" title="TV &amp; Movie Extras">TV &amp; Movie Extras</a><a href="/info/celebrity_addresses.php" title="Celebrity Addresses">Celebrity Addresses</a><a href="/submit.php" title="Submit your link to the directory">Submit Link</a></div></div></div><div class="path"><div style="float:right; border:0px solid #00ff00; padding-left:5px;"><form class="headerSearch" action="/index.php" method="get"><input class="searchInput" type="text" name="search" maxlength="250" value="" /><div class="searchBtn"><button class="searchBtnBody" type="submit">Search</button></div></form></div><div style="float:right; padding-top:3px; font-weight:bold;">Find a fan page for: </div><div style="padding-top:3px;">Find Celebrities with Celebhoo.com</div><!--Celebhoo.com--></div><div style="height:12px;"></div><div class="center1"><div class="leftContainer">
+<div class="box">
+<div class="boxTop">Celebrity Quotes</div>
+<div class="boxMiddle">		<div style="margin: 0px auto; padding: 10px; overflow: hidden;">
+"Beauty, to me, is about being comfortable in your own skin. That... or a kick-ass red lipstick!" - Gwyneth Paltrow
+</div>
+</div>
+</div>				<div class="box">
+<div class="boxTop">Popular Categories</div>
+<div class="boxMiddle">		<ul class="boxPopCats">
+<li>
+<a href="/actresses/"  title="Actresses">Actresses</a>
+</li>
+<li>
+<a href="/actors/"  title="Actors">Actors</a>
+</li>
+<li>
+<a href="/american_football/"  title="American Football">American Football</a>
+</li>
+<li>
+<a href="/celebrity_resources/"  title="Celebrity Resources">Celebrity Resources</a>
+</li>
+<li>
+<a href="/authors/"  title="Authors">Authors</a>
+</li>
+</ul>
+</div>
+</div>				<div style="width: 300px; height: 250px; margin:-5px 0 14px 3px;">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1357070878455908";
+/* 300x250, created 19/10/10 */
+google_ad_slot = "9634642988";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="box">
+<div class="boxTop">Pages</div>
+<div class="boxMiddle">		<ul class="boxPopCats">
+<li >
+<a href="/info/about_us.php" title="About Us" >About Us</a> 
+</li>
+<li >
+<a href="/info/celebrity_webmasters.php" title="Celebrity Webmasters" >Celebrity Webmasters</a> 
+</li>
+<li >
+<a href="/info/advertise.php" title="Advertise" >Advertise</a> 
+</li>
+<li >
+<a href="/info/linkback.php" title="Linking to Us" >Linking to Us</a> 
+</li>
+</ul>
+</div>
+</div>				<div class="box">
+<div class="boxTop">Webmasters</div>
+<div class="boxMiddle">		 
+<ul class="boxPopCats">   <li>   <a href="/login.php" title="Log In to your account">Login</a>   </li> 
+<li>     <a href="/profile.php?mode=register" title="Register new user">Register</a> </li> 
+</ul>
+</div>
+</div>				
+<br/>
+<center>
+<div class="boxTop">Sponsored Search</div> <div class="boxMiddle"> <div style="width:100%; text-align:center;"> <form action="http://results.celebhoo.com/search-results.php"> <input style="margin:8px 0; font-size:14px;" type="text" name="q" size="38"/> <input style="width:110px; background:#036; margin-bottom:5px; border:1px solid #333; font-size:16px; font-weight:bold; color:#fff; -moz-border-radius:10px; -webkit-border-radius:10px; border-radius:10px;" type="submit" value="Search"> </form> </div></div></div>
+</center>
+<br/>
+</div><div class="centerContainer"><div class="centerContainerM"><div class="maincontent">Welcome to Celebhoo.com. Since 1999 we've been providing quality links to 1000s of celebrity fan pages. Our goal is simple - to connect fans with the celebrities. To get started, simply select a category below to start browsing our hand-checked links to official and unofficial fan pages.</div>
+<!----><h3>Browse Our Directory</h3><table border="0" cellpadding="0" cellspacing="2" width="100%"><tr><td><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/actors/" class="catHomeMain" title="Actors">Actors</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/actresses/" class="catHomeMain" title="Actresses">Actresses</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/american_football/" class="catHomeMain" title="American Football">American Football</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/authors/" class="catHomeMain" title="Authors">Authors</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/baseball/" class="catHomeMain" title="Baseball">Baseball</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/basketball/" class="catHomeMain" title="Basketball">Basketball</a></h2></td><td><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/celebrity_resources/" class="catHomeMain" title="Celebrity Resources">Celebrity Resources</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/directors/" class="catHomeMain" title="Directors">Directors</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/golfers/" class="catHomeMain" title="Golfers">Golfers</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/ice_hockey/" class="catHomeMain" title="Ice Hockey">Ice Hockey</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/music/" class="catHomeMain" title="Music">Music</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/soccer/" class="catHomeMain" title="Soccer">Soccer</a></h2></td><td><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/sports_stars/" class="catHomeMain" title="Sports Stars">Sports Stars</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/models/" class="catHomeMain" title="Super Models">Super Models</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/tennis/" class="catHomeMain" title="Tennis">Tennis</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/tv_presenters/" class="catHomeMain" title="TV Presenters">TV Presenters</a></h2><h2><img src="/templates/RednBlack/images/cats-img.gif" border="0" width="16px" height="16px"> <a href="/tv_shows/" class="catHomeMain" title="TV Shows">TV Shows</a></h2></td></tr></table><br /><div id="links"></div><!----><!----><br /><!----><h3>Celebrity Photos &amp; Posters</h3><table border="0" cellpadding="4" cellspacing="0" width="100%"><tr><td width="20%"><a rel="nofollow" href="http://affiliates.allposters.com/link/redirect.asp?AID=251330&PSTID=1&LTID=13&LID=1572&lang=1" target="_blank" title="Twilight - New Moon"><img src="http://imagecache6.allposters.com//SML//\37\3749\1CCZF00Z.jpg" alt="Twilight - New Moon" border="0" height="115" width="77"></a><br /><a rel="nofollow" href="http://affiliates.allposters.com/link/redirect.asp?AID=251330&PSTID=1&LTID=13&LID=1572&lang=1" target="_blank" title="Twilight - New Moon Twilight - New Moon">Twilight</a></td><td width="20%"><a rel="nofollow" href="http://affiliates.allposters.com/link/redirect.asp?AID=251330&PSTID=1&LTID=13&LID=1572&lang=1" target="_blank" title="Lady Gaga"><img src="http://imagecache6.allposters.com//SML//\37\3775\MTDIF00Z.jpg" alt="Lady Gaga" border="0" height="115" width="75"></a><br /><a rel="nofollow" href="http://affiliates.allposters.com/link/redirect.asp?AID=251330&PSTID=1&LTID=13&LID=1572&lang=1" target="_blank" title="Lady Gaga">Lady Gaga</a></td><td width="20%"><a rel="nofollow" href="http://affiliates.allposters.com/link/redirect.asp?AID=251330&PSTID=1&LTID=13&LID=1572&lang=1" target="_blank" title="Entourage"><img src="http://imagecache6.allposters.com//SML//\30\3004\Q4FBF00Z.jpg" alt="Entourage" border="0" height="115" width="75"></a><br /><a rel="nofollow" href="http://affiliates.allposters.com/link/redirect.asp?AID=251330&PSTID=1&LTID=13&LID=1572&lang=1" target="_blank" title="Entourage">Entourage</a></td><td width="20%"><a rel="nofollow" href="http://affiliates.allposters.com/link/redirect.asp?AID=251330&PSTID=1&LTID=13&LID=1572&lang=1" target="_blank" title="The Hangover"><img src="http://imagecache6.allposters.com//SML//\37\3787\VS6IF00Z.jpg" alt="The Hangover" border="0" height="115" width="77"></a><br /><a rel="nofollow" href="http://affiliates.allposters.com/link/redirect.asp?AID=251330&PSTID=1&LTID=13&LID=1572&lang=1" target="_blank" title="The Hangover">The Hangover</a></td><td width="20%"><div style="text-align:center;"><b>Posters & Photos</b><br />Find 1000s of celebrity &amp; movie related posters and photos in this huge collection - <a rel="nofollow" href="http://affiliates.allposters.com/link/redirect.asp?AID=251330&PSTID=1&LTID=13&LID=1572&lang=1">click here view posters</a></div></td></tr></table><script type="text/javascript">/* <![CDATA[ */var root = '';
+      var a = document.getElementsByTagName("a");
+      for(i = 0; i< a.length; i++)
+         if(a[i].id != '')
+            a[i].onclick = count_link;
+      function count_link() {
+         i = new Image();
+         i.src= root+'/cl.php?id='+this.id;
+         return true;
+      }
+      /* ]]> */</script><div style="clear: both"></div><ul id="sortable_central" style="list-style-type: none; padding: 0px; margin: 0;"></div><div class="centerContainerB"></div></div><div class="rightContainer">
+<ul id="sortable_right" style="list-style-type: none; padding: 0px; margin: 0;">
+</ul>
+</div><div style="clear: both; height: 30px;"></div></div><div class="footer"><div style="float:right;"><a href="/submit.php">Submit URL</a> | <a href="/contact.php">Contact Us</a> | <a href="/info/terms.php">Terms & Privacy</a></div>&copy;1999-2010 <a href="/">Celebhoo.com</a> - Find Celebrities. Powered by <a href="http://www.phplinkdirectory.com" title="PHP Link Directory" rel="nofollow">phpLD</a></div></body></html>

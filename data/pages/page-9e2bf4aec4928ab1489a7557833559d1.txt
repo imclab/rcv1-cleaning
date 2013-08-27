@@ -1,0 +1,624 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="edge" />
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>College of Literature, Science, and the Arts | University of Michigan</title>
+<meta name="keywords" content="null" />
+<link href="/vgn-ext-templating/common/styles/vgn-ext-templating.css" type="text/css" rel="stylesheet" />
+<link href="/vgn-ext-templating/resources/css/style.css" type="text/css" rel="stylesheet" />
+<link href="/vgn-ext-templating/sites/lsa/style_custom.css" type="text/css" rel="stylesheet" />
+<!--[if IE 9]>
+    <link rel="stylesheet" href="/vgn-ext-templating/resources/css/style_ie9.css" />
+<![endif]-->
+<!--[if IE 8]>
+    <link rel="stylesheet" href="/vgn-ext-templating/resources/css/style_ie8.css" />
+<![endif]-->
+<!--[if IE 7]>
+    <link rel="stylesheet" href="/vgn-ext-templating/resources/css/style_ie7.css" />
+<![endif]-->
+<link rel="stylesheet" type="text/css" media="print" href="/vgn-ext-templating/resources/css/print.css" />
+<script type="text/javascript" src="/vgn-ext-templating/resources/js/modernizr.custom.12005.js"></script>
+<script type="text/javascript" src="/vgn-ext-templating/resources/js/jquery.js"></script>
+<script type="text/javascript" src="/vgn-ext-templating/resources/js/jquery-ui.min.js"></script>
+
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="/vgn-ext-templating/resources/js/selectivizr-min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="/vgn-ext-templating/resources/js/mootools.js"></script>
+<script type="text/javascript" src="/vgn-ext-templating/resources/js/search.js"></script>
+<script type="text/javascript">
+Modernizr.load([
+{
+test: Modernizr.cssgradients,
+nope: '/vgn-ext-templating/resources/js/PIE.js'
+}
+]);
+
+function hideTips(event) {  
+    var saveAlt = $(this).attr('alt');
+    var saveTitle = $(this).attr('title');
+    if (event.type == 'mouseenter') {
+        $(this).attr('title','');
+        $(this).attr('alt','');
+    } else {
+        if (event.type == 'mouseleave'){
+            $(this).attr('alt',saveAlt);
+            $(this).attr('title',saveTitle);
+        }
+   }
+}
+
+$(document).ready(function(){
+ $("img").live("hover", hideTips);
+});
+</script>
+<script type="text/javascript" src="/vgn-ext-templating/sites/lsa/js/lsa_carousel.js"></script>
+
+	<script language="JavaScript" type="text/javascript">
+	/*global ActiveXObject: false */
+	/*jslint browser: true*/
+	/*global $, jQuery*/
+
+	function loadTweet() {
+	    'use strict';
+	    var xmlhttp;
+	    try {
+	        xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+	    } catch (e) {
+	        alert("The http request could not be initialized" + e);
+	    }
+
+	    xmlhttp.onreadystatechange = function () {
+	        if ((xmlhttp.readyState === 4) && (xmlhttp.status === 200)) {
+	            document.getElementById("tweet-container").innerHTML = xmlhttp.responseText;
+	        }
+	    };
+
+	    xmlhttp.open("GET", "/vgn-ext-templating/resources/templates/lsa/twitterfeed.jsp", true);
+
+	    xmlhttp.send(null);
+	}
+
+	function loadFB() {
+	    'use strict';
+	    var xmlhttp2;
+	    try {
+	        xmlhttp2 = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+	    } catch (e) {
+	        alert("The http request could not be initialized" + e);
+	    }
+
+	    xmlhttp2.onreadystatechange = function () {
+	        if ((xmlhttp2.readyState === 4) && (xmlhttp2.status === 200)) {
+	            document.getElementById("facebook-container").innerHTML = xmlhttp2.responseText;
+	        }
+	    };
+
+	    xmlhttp2.open("GET", "/vgn-ext-templating/resources/templates/lsa/facebookfeed.jsp", true);
+
+	    xmlhttp2.send(null);
+	}
+
+	function StringBuffer() {
+	    'use strict';
+	    this.buffer = [];
+	}
+
+	StringBuffer.prototype.append = function append(string) {
+	    'use strict';
+	    this.buffer.push(string);
+	    return this;
+	};
+
+	StringBuffer.prototype.toString = function toString() {
+	    'use strict';
+	    return this.buffer.join("");
+	};
+
+	function fbFetch() {
+	    'use strict';
+	    //Set Url of JSON data from the facebook graph api. make sure callback is set with a '?' to overcome the cross domain problems with JSON
+	    var url = "https://graph.facebook.com/umichlsa/feed?limit=10&access_token=311881288828743|E2fxftnQIFPy1vIo9aOpKG2SE8Q&callback=?";
+
+	    //Use jQuery getJSON method to fetch the data from the url and then create our unordered list with the relevant data.
+	    $.getJSON(url, function (json) {
+	        var html = "<a href='http://www.facebook.com/UMichLSA'>University of Michigan College of Literature, Science, and the Arts</a><br />";
+	        var message, replaceHTTP, replacedText;
+	        var sb = new StringBuffer();
+	        var messagearray = [];
+	        //loop through and within data array's retrieve the message variable.
+	        $.each(json.data, function (i, fb) {
+	            if (fb.from.name === "University of Michigan College of Literature, Science, and the Arts") {
+	                replaceHTTP = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
+	                //replaceHTTP = /((https?|ftp):\/\/[^\s]+)/gi;
+	                //replaceHTTP = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[.\!\/\\w]*))?)/gi;
+	                if (fb.story) {
+	                    sb.append(fb.story);
+	                }
+
+	                if (fb.link) {
+	                    if (fb.message) {
+	                        replacedText = (fb.message).replace(replaceHTTP, '<a href="$1" target="_blank">$1</a>');
+	                        sb.append(replacedText);
+	                    }
+
+	                    sb.append("<br /><br /><div style=\"padding-left: 0px;\"><a href=\"");
+	                    sb.append(fb.link);
+	                    sb.append("\">");
+	                    if (fb.picture) {
+	                        sb.append("<img src=\"");
+	                        sb.append(fb.picture);
+	                        sb.append("\"><br />");
+	                    }
+	                    sb.append(fb.name);
+	                    sb.append("</a><br />");
+	                    if (fb.caption) {
+	                        sb.append(fb.caption);
+	                        sb.append("<br />");
+	                    }
+	                    sb.append("<br />");
+	                    sb.append(fb.description);
+	                    sb.append("</div>");
+
+	                    message = sb.toString();
+	                } else if (fb.message) {
+	                    replacedText = (fb.message).replace(replaceHTTP, '<a href="$1" target="_blank">$1</a>');
+	                    message += replacedText;
+	                }
+	                messagearray.push(message);
+	            }
+	        });
+	        html += messagearray[0];
+
+	        //A little animation once fetched
+	        $('.facebookfeed').animate({opacity: 1}, 500, function () {
+	            $('.facebookfeed').html(html);
+	        });
+	        $('.facebookfeed').animate({opacity: 1}, 500);
+	    });
+	}
+	function init() {
+	    'use strict';
+	    setFeature();
+	    setInteractive();
+	    loadTweet();
+	    loadFB();
+	    fbFetch();
+	}
+	</script>
+	
+</head>
+<body onLoad="javascript:init()">
+<div id="buffer">
+	<div id="wrapper">
+		<div id="header">
+			<a href="/lsa"><img style="outline: none; border: none" border="0" id="banner" src="/vgn-ext-templating/sites/lsa/images/banner.png" alt="College of Literature, Science, and the Arts" title="College of Literature, Science, and the Arts" /></a>
+<a id="link" href="/"><span>Literature, Science &amp; Arts</span></a>
+<a id="umlink" href="http://www.umich.edu"><span>University of Michigan</span></a>
+<a id="lsalink" href="http://lsa.umich.edu" alt="LSA home page"><span>College of Literature, Science, and the Arts</span></a>
+<form action=" http://search.bus.umich.edu/search">
+    <fieldset id="searchbox">
+        <input type='hidden' name='site' value='LSA'/>
+        <input type='hidden' name='proxystylesheet' value='LSA' />
+        <input type='hidden' name='client' value=LSA />
+        <input id="search" name="q" type="text" value="Search" size="20" onFocus="if(this.value=='Search')this.value=''" />
+        <input id="searchbtn" type="submit" value="GO" />
+		<ul id="search_suggestions">
+			<li><a href="#">Undergrad Admissions</a></li>
+			<li><a href="#">Faculty Directory</a></li>
+			<li><a href="#">Donations</a></li>
+			<li><a href="#">Jobs</a></li>
+		</ul>
+    </fieldset>
+</form>
+</div>
+		<!-- Static Top Nav Begin -->
+		<ul id="nav">
+			<li id="first"><a href="/students">Students</a></li>
+			<li><a href="/facstaff">Faculty &amp; Staff</a></li>
+			<li><a href="/research">Research</a></li>
+			<li><a href="/alumni">Alumni &amp; Friends</a></li>
+			<li><a href="/parents">Parents</a></li>
+			<li><a href="/lsa/events">Events</a></li>
+			<li><a href="/lsa/departmentsunits">Departments &amp; Units</a></li>
+		</ul>
+		<!-- Static Top Nav End -->	
+<!-- Begin Alert Region -->
+<!-- Channel: Home -->
+<!-- Associated content: -->
+<!-- Article: 90c1ecfdc6b33310VgnVCM10000055b1d38dRCRD, Subscriptions & RSS Feeds -->
+<!-- Article: e7b1ecfdc6b33310VgnVCM10000055b1d38dRCRD, lsa Home Left Article -->
+<!-- Article: da023a9807435310VgnVCM100000c2b1d38dRCRD, Privacy Statement -->
+<!-- Article: 3fa1ecfdc6b33310VgnVCM10000055b1d38dRCRD, Welcome Title -->
+<!-- Article: 47345527116ac310VgnVCM100000c2b1d38dRCRD, EEB -->
+<!-- Channel: Home -->
+<!-- Associated content: -->
+<!-- Article: 90c1ecfdc6b33310VgnVCM10000055b1d38dRCRD, Subscriptions & RSS Feeds -->
+<!-- Article: e7b1ecfdc6b33310VgnVCM10000055b1d38dRCRD, lsa Home Left Article -->
+<!-- Article: da023a9807435310VgnVCM100000c2b1d38dRCRD, Privacy Statement -->
+<!-- Article: 3fa1ecfdc6b33310VgnVCM10000055b1d38dRCRD, Welcome Title -->
+<!-- Article: 47345527116ac310VgnVCM100000c2b1d38dRCRD, EEB -->
+<!-- End Alert Region -->
+<div id="content" class="lsa">
+			<div id="feature">
+				<!-- Begin lsaFeaturedCarousel.jsp -->
+<script type="text/javascript">
+		  function setFeature(){
+			    var featureJSON = "[{\"content\": \"<div class='slide_inner'><a class='photo_link' href='/lsa/ci.michigangoestowashington_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/MIW_feature.jpg' alt='Michigan in Washington Feature Image'/></a><div class='caption'><div class='slide_heading'>Featured</div><br /><div class='slide_title'><a href='/lsa/ci.michigangoestowashington_ci.detail'>Michigan Goes to Washington</a></div><br /><div class='slide_byline'>spin the cube | 8/26/2013</div><p>What’s it like to live five blocks from the White House and intern at places like the French Embassy and the U.S. Senate? Participants in LSA’s Michigan in Washington (MIW) Program know. Take a behind-the-scene look at life in the nation’s capital.</p><div class='slide_more'><a href='/lsa/ci.michigangoestowashington_ci.detail'>Read More...</a></div></div></div>\",\"content_button\": \"<div class='thumb'><img src='/UMICH/lsa/Home/LSA Today/2013/images/MIW_feature_thumb.jpg' alt='Michigan in Washington Feature thumbnail'/></div>\"},{\"content\": \"<div class='slide_inner'><a class='photo_link' href='/lsa/ci.zebrafishandthecureformusculardiseases_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/ZF-FEATURE.jpg' alt='Zebrafish feature'/></a><div class='caption'><div class='slide_heading'>Featured</div><br /><div class='slide_title'><a href='/lsa/ci.zebrafishandthecureformusculardiseases_ci.detail'>Zebrafish and the Cure for Muscular Diseases</a></div><br /><div class='slide_byline'>the michigan difference | 8/19/2013</div><p>John Kuwada’s team has discovered a link between a specific gene mutation and a devastating muscular disease. Now, he and his team may also be able to find a way to treat it.</p><div class='slide_more'><a href='/lsa/ci.zebrafishandthecureformusculardiseases_ci.detail'>Read More...</a></div></div></div>\",\"content_button\": \"<div class='thumb'><img src='/UMICH/lsa/Home/LSA Today/2013/images/ZF-Feature-Thumb.jpg' alt='Zebrafish feature thumb'/></div>\"},{\"content\": \"<div class='slide_inner'><a class='photo_link' href='/lsa/ci.apulitzerpoetsgenius_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/roethke-Feature.jpg' alt='Feature-Pulitzer Poet's Genius'/></a><div class='caption'><div class='slide_heading'>Featured</div><br /><div class='slide_title'><a href='/lsa/ci.apulitzerpoetsgenius_ci.detail'>A Pulitzer Poet’s Genius</a></div><br /><div class='slide_byline'>the michigan difference | 8/12/2013</div><p>Swaggering undergraduate dandy, sensitive poet, gifted teacher, or unstable man? Pulitzer Prize winner Theodore Roethke was all of these. His career reflected a brilliant man whose extreme behavior was not always under his control.</p><div class='slide_more'><a href='/lsa/ci.apulitzerpoetsgenius_ci.detail'>Read More...</a></div></div></div>\",\"content_button\": \"<div class='thumb'><img src='/UMICH/lsa/Home/LSA Today/2013/images/roethke-feature-thumb.jpg' alt='Feature Thumb-Pulitzer Poet'/></div>\"}]";
+			    var featureData = jQuery.parseJSON(featureJSON);
+			    $("#flavor_3").agile_carousel({
+			            carousel_data: featureData,
+			            carousel_outer_height: 305,
+			            carousel_height: 305,
+			            slide_height: 305,
+			            carousel_outer_width: 790,
+			            slide_width: 800,
+			            transition_type: "fade",
+			            transition_time: 0,
+			            //timer: 4000,
+			            continuous_scrolling: true,
+			            control_set_1: "content_buttons"
+			    });
+			  }
+		</script>
+<div class="slideshow" id="flavor_3"></div>
+<img id="ribbon" class="feature"
+	src="/vgn-ext-templating/sites/lsa/images/rbn_lsatoday.png" 
+	width="100" height="26" alt="LSA Today"/>
+<!-- End lsaFeaturedCarousel.jsp --><div id="welcome_bg">
+					<div id="welcome">
+						<div id="welcome_left">
+						<img src="/vgn-ext-templating/sites/lsa/images/welcome.png" alt="Welcome to LSA" width="95" height="59" /> 
+						 </div>
+						<div id="welcome_right">
+							<p>With more than 40 programs ranked in the top ten nationally, the <strong>College of Literature, Science, and the Arts (LSA)</strong> is at the heart of the Michigan Difference. We are the vanguard for educating young leaders through a rich liberal arts curriculum and creating new knowledge through world-class research and scholarship.  
+							 <a href="http://www.lsa.umich.edu/lsa/aboutlsa">More about us...</a></p>
+						 </div>
+					</div>
+				</div>
+			</div>
+			<div id="left_col" style="border-right: none; width: 533px;">
+					<!--  Begin lsaInteractiveCarousel.jsp -->
+<script type="text/javascript">
+		  function setInteractive(){
+			    var interactiveJSON = "[{\"content\": \"<div class='slide_inner'><a class='photo_link' href='/lsa/ci.bluebirdorabluebird_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/curzan-thumb-BlueBird.jpg' alt='Blue Bird'/></a><div class='caption'><div class='slide_byline'>video | 8/5/2013</div><br /><div class='slide_title'><a href='/lsa/ci.bluebirdorabluebird_ci.detail'>Bluebird or a Blue Bird?</a></div><br /><p>Today’s lesson: when adjacent words form compounds.<br /><a href='/lsa/ci.bluebirdorabluebird_ci.detail'>See More...</a></p></div></div>\",\"content_button\": \"<div class='thumb'><a class='photo_link' href='/lsa/ci.bluebirdorabluebird_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/curzan-thumb-BlueBird.jpg' alt='Blue Bird'/></a></div>\"},{\"content\": \"<div class='slide_inner'><a class='photo_link' href='/lsa/ci.buildingthebiologicalstation_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/Biostation-THUMB.jpg' alt='Biological Station History in Photos Thumbnail'/></a><div class='caption'><div class='slide_byline'>slideshow | 7/29/2013</div><br /><div class='slide_title'><a href='/lsa/ci.buildingthebiologicalstation_ci.detail'>Building the Biological Station</a></div><br /><p>100 years of studying environmental change.<br /><a href='/lsa/ci.buildingthebiologicalstation_ci.detail'>See More...</a></p></div></div>\",\"content_button\": \"<div class='thumb'><a class='photo_link' href='/lsa/ci.buildingthebiologicalstation_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/Biostation-THUMB.jpg' alt='Biological Station History in Photos Thumbnail'/></a></div>\"},{\"content\": \"<div class='slide_inner'><a class='photo_link' href='/lsa/ci.pronunciationevasion_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/curzan-thumb-uhoh.jpg' alt='Pronunciation Evasion thumb'/></a><div class='caption'><div class='slide_byline'>video | 6/24/2013</div><br /><div class='slide_title'><a href='/lsa/ci.pronunciationevasion_ci.detail'>Pronunciation Evasion</a></div><br /><p>Today's lesson: mismatched letters and sounds.<br /><a href='/lsa/ci.pronunciationevasion_ci.detail'>See More...</a></p></div></div>\",\"content_button\": \"<div class='thumb'><a class='photo_link' href='/lsa/ci.pronunciationevasion_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/curzan-thumb-uhoh.jpg' alt='Pronunciation Evasion thumb'/></a></div>\"},{\"content\": \"<div class='slide_inner'><a class='photo_link' href='/lsa/ci.metaphoricallyspeaking_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/curzan-thumb-metaphor.jpg' alt='Metaphorically Speaking thumb'/></a><div class='caption'><div class='slide_byline'>video | 5/28/2013</div><br /><div class='slide_title'><a href='/lsa/ci.metaphoricallyspeaking_ci.detail'>Metaphorically Speaking</a></div><br /><p>Today's lesson: metaphors in everyday speech.<br /><a href='/lsa/ci.metaphoricallyspeaking_ci.detail'>See More...</a></p></div></div>\",\"content_button\": \"<div class='thumb'><a class='photo_link' href='/lsa/ci.metaphoricallyspeaking_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/curzan-thumb-metaphor.jpg' alt='Metaphorically Speaking thumb'/></a></div>\"},{\"content\": \"<div class='slide_inner'><a class='photo_link' href='/lsa/ci.complexeffects_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/rube_goldberg_thumb.jpg' alt='Rube Goldberg'/></a><div class='caption'><div class='slide_byline'>video | 5/13/2013</div><br /><div class='slide_title'><a href='/lsa/ci.complexeffects_ci.detail'>Complex Effects</a></div><br /><p>Watch our Rube Goldberg machine in action.<br /><a href='/lsa/ci.complexeffects_ci.detail'>See More...</a></p></div></div>\",\"content_button\": \"<div class='thumb'><a class='photo_link' href='/lsa/ci.complexeffects_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/rube_goldberg_thumb.jpg' alt='Rube Goldberg'/></a></div>\"},{\"content\": \"<div class='slide_inner'><a class='photo_link' href='/lsa/ci.saintsfuneralsandskylines_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/CGIS-Thumb.jpg' alt='CGIS Thumbnail'/></a><div class='caption'><div class='slide_byline'>slideshow | 5/6/2013</div><br /><div class='slide_title'><a href='/lsa/ci.saintsfuneralsandskylines_ci.detail'>Saints, Funerals, and Skylines</a></div><br /><p>2013 CGIS photo contest winners.<br /><a href='/lsa/ci.saintsfuneralsandskylines_ci.detail'>See More...</a></p></div></div>\",\"content_button\": \"<div class='thumb'><a class='photo_link' href='/lsa/ci.saintsfuneralsandskylines_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/CGIS-Thumb.jpg' alt='CGIS Thumbnail'/></a></div>\"},{\"content\": \"<div class='slide_inner'><a class='photo_link' href='/lsa/ci.toweringresonance_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/Carillon-thumb.jpg' alt='Carillon Thumbnail'/></a><div class='caption'><div class='slide_byline'>video | 4/22/2013</div><br /><div class='slide_title'><a href='/lsa/ci.toweringresonance_ci.detail'>Towering Resonance</a></div><br /><p>A ringing tour of the Charles Baird Carillon.<br /><a href='/lsa/ci.toweringresonance_ci.detail'>See More...</a></p></div></div>\",\"content_button\": \"<div class='thumb'><a class='photo_link' href='/lsa/ci.toweringresonance_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/Carillon-thumb.jpg' alt='Carillon Thumbnail'/></a></div>\"},{\"content\": \"<div class='slide_inner'><a class='photo_link' href='/lsa/ci.yourthoughtssixwords_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/RACE-CARD---THUMB.jpg' alt='Race Card Thumbnail '/></a><div class='caption'><div class='slide_byline'>slideshow | 4/15/2013</div><br /><div class='slide_title'><a href='/lsa/ci.yourthoughtssixwords_ci.detail'>Your Thoughts, Six Words</a></div><br /><p>Submissions to Michele Norris’ Race Card Project.<br /><a href='/lsa/ci.yourthoughtssixwords_ci.detail'>See More...</a></p></div></div>\",\"content_button\": \"<div class='thumb'><a class='photo_link' href='/lsa/ci.yourthoughtssixwords_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/RACE-CARD---THUMB.jpg' alt='Race Card Thumbnail '/></a></div>\"},{\"content\": \"<div class='slide_inner'><a class='photo_link' href='/lsa/ci.thedeclineofwhom_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/curzan-thumb-who-whom.jpg' alt='Curzan Whom Thumbnail'/></a><div class='caption'><div class='slide_byline'>video | 3/25/2013</div><br /><div class='slide_title'><a href='/lsa/ci.thedeclineofwhom_ci.detail'>The Decline of Whom?</a></div><br /><p>Today’s lesson: Subject pronouns vs. object pronouns.<br /><a href='/lsa/ci.thedeclineofwhom_ci.detail'>See More...</a></p></div></div>\",\"content_button\": \"<div class='thumb'><a class='photo_link' href='/lsa/ci.thedeclineofwhom_ci.detail'><img class='photo' src='/UMICH/lsa/Home/LSA Today/2013/images/curzan-thumb-who-whom.jpg' alt='Curzan Whom Thumbnail'/></a></div>\"}]";
+			    var interactiveData = jQuery.parseJSON(interactiveJSON);
+			    $(document).ready(function(){
+		            $("#multiple_slides_visible").agile_carousel({
+		                carousel_data: interactiveData,
+		                carousel_outer_height: 274,
+		                carousel_height: 259,
+		                slide_height: 259,
+		                carousel_outer_width: 521,
+		                slide_width: 174,
+		                number_slides_visible: 3,
+		                transition_time: 330,
+		                control_set_1: "previous_button,next_button",
+		                control_set_2: "group_numbered_buttons",
+		                persistent_content: "<p class='persistent_content'><strong>LSA</strong> interactive | <strong>spin the cube</strong></p>"       
+		            });
+		        });
+			  }
+		</script>
+<div class="slideshow" id="multiple_slides_visible"></div>
+<!-- End lsaInteractiveCarousel.jsp -->	<div id="lsa_today">
+					<h2 id="ribbon"><em>MORE</em> <strong>LSA</strong> TODAY</h2>
+					<!-- Begin lsaListRegion.jsp -->
+<div class="story">
+<a href='/lsa/ci.thedietofpyramidbuilders_ci.detail'><img src='/UMICH/lsa/Home/LSA Today/2013/images/egypt-Thumb.jpg' alt='Egypt thumb'/></a><h2 class="title"><a href="/lsa/ci.thedietofpyramidbuilders_ci.detail">The Diet of Pyramid Builders</a></h2>
+		<h2 class="byline">the michigan difference | 7/22/2013</h2>
+		<p>It took 4,000 pounds of meat per day to feed the laborers who built Egypt’s pyramids, according to researcher Richard Redding. He waded through thousands of animal bones to beef up his findings.</p>
+		<h2 class="more"><a href="/lsa/ci.thedietofpyramidbuilders_ci.detail">Read more...</a></h2>
+	</div>
+
+	<div class="story">
+<a href='/lsa/ci.studentsgetgivefinancialaid_ci.detail'><img src='/UMICH/lsa/Home/LSA Today/2013/images/AR-THUMB.jpg' alt='Scholarship Students Raise Funds for Emergency Scholarships'/></a><h2 class="title"><a href="/lsa/ci.studentsgetgivefinancialaid_ci.detail">Students Get, Give Financial Aid</a></h2>
+		<h2 class="byline">campus | 7/15/2013</h2>
+		<p>Motivated by gratitude, LSA scholarship recipients raise funds for peers experiencing financial hardship. One student talks about what her scholarship means to her, and how it inspires her to help others.</p>
+		<h2 class="more"><a href="/lsa/ci.studentsgetgivefinancialaid_ci.detail">Read more...</a></h2>
+	</div>
+
+	<div class="story">
+<a href='/lsa/ci.thecentennialpresident_ci.detail'><img src='/UMICH/lsa/Home/LSA Today/2013/images/Ford-THUMB.jpg' alt='Ford Thumb'/></a><h2 class="title"><a href="/lsa/ci.thecentennialpresident_ci.detail">The Centennial President</a></h2>
+		<h2 class="byline">the michigan difference | 7/8/2013</h2>
+		<p>July 14 marks the 100th anniversary of the birth of Gerald R. Ford, the 38th president of the United States and a Michigan alumnus. We look back on the life of a man devoted to public service—and to U-M.</p>
+		<h2 class="more"><a href="/lsa/ci.thecentennialpresident_ci.detail">Read more...</a></h2>
+	</div>
+
+	<div class="story">
+<a href='/lsa/ci.awolverineatgettysburg_ci.detail'><img src='/UMICH/lsa/Home/LSA Today/2013/images/Civil-War---THUMB.jpg' alt='Wolverine at Gettysburg'/></a><h2 class="title"><a href="/lsa/ci.awolverineatgettysburg_ci.detail">A Wolverine at Gettysburg</a></h2>
+		<h2 class="byline">the michigan difference | 7/1/2013</h2>
+		<p>On the 150th anniversary of the Battle of Gettysburg, we join ranks with Charles Frederick Taylor, a U-M student who fought on the frontlines and became a hero.</p>
+		<h2 class="more"><a href="/lsa/ci.awolverineatgettysburg_ci.detail">Read more...</a></h2>
+	</div>
+
+	<div class="story">
+<a href='/lsa/ci.ascientistslanguage_ci.detail'><img src='/UMICH/lsa/Home/LSA Today/2013/images/Linguistics-THUMB.jpg' alt='Linguistics detail thumb'/></a><h2 class="title"><a href="/lsa/ci.ascientistslanguage_ci.detail">A Scientist’s Language</a></h2>
+		<h2 class="byline">the michigan difference | 6/27/2013</h2>
+		<p>An LSA professor recently discovered a new language in north-central Australia. As it turns out, there’s more to learn from its existence, and its Indigenous speakers, than mere words.</p>
+		<h2 class="more"><a href="/lsa/ci.ascientistslanguage_ci.detail">Read more...</a></h2>
+	</div>
+
+	<!-- End lsaListRegion.jsp --></div>
+          		<div class="archives">
+          			<p>
+          			<img src="/vgn-ext-templating/sites/lsa/images/archives_icon.gif" 
+          				width="19" height="18" 
+          				alt="LSA Today Archives" />
+          			<em>MORE</em> <strong>LSA</strong> TODAY <em>in the</em> <a href="/lsa/archives/"><strong>ARCHIVES</strong></a>
+          			</p>
+          		</div>				
+			</div>
+			<div id="right_col" class="home">
+				<a href="http://lsa.umich.edu/cg/"><img src="/vgn-ext-templating/sites/lsa/images/lsa_courseguide.gif" width="236" height="42" alt="LSA Course Guide" /></a>
+				
+<a href="https://leadersandbest.umich.edu/give/page.aspx?pid=371&s-Tags%5CValue=lsa-priority&s-search=1"><img style="margin-top:10px" width="236" height="42" alt="Give to LSA" src="/vgn-ext-templating/sites/lsa/images/lsa_give.png" title=""></a>
+			<div id="soc_media">
+				<a href="/lsa/subscribetolsatodayemails"><img src="/vgn-ext-templating/sites/lsa/images/sm_email2.gif" width="25" height="24" alt="Email" /></a>
+			<a href="/lsa/subscriptionsrssfeeds"><img src="/vgn-ext-templating/sites/lsa/images/sm_rss.gif" width="25" height="24" alt="RSS" /></a>
+           		<a href="http://twitter.com/#!/UmichLSA"><img src="/vgn-ext-templating/sites/lsa/images/sm_twitter.gif" width="25" height="24" alt="Twitter" /></a>
+           		<a href="http://www.facebook.com/UMichLSA"><img src="/vgn-ext-templating/sites/lsa/images/sm_facebook.gif" width="25" height="24" alt="Facebook" /></a>
+            	<a href="http://www.youtube.com/UMichLSA"><img src="/vgn-ext-templating/sites/lsa/images/sm_youtube.gif" width="25" height="24" alt="Youtube" /></a>
+</div>
+				<br/>
+				<div id="tweet-container"></div>
+				<div id="tweet_bottom"><img src="/vgn-ext-templating/sites/lsa/images/cnr_blue_bg_bottom_curved.png" style="display:none" width="235" height="6" /></div>
+				<div id="facebook-container"></div>
+				<div id="facebook_bottom"><img src="/vgn-ext-templating/sites/lsa/images/cnr_white_bg_bottom_curved.png" style="display:none" width="237" height="8" /></div>
+				<div id="ads">
+					<script language='javascript'>
+function HomePopwin(context, path, target, features, width, height) {
+   SimplePopwin(context + path, target, features, width, height);
+}
+
+function dispatchURL2(context, path, key) {
+   var dispatchUrl = context + '/secure/common/session/dispatch.jsp?VgnSessionKey=' + escape(key) + '&context=' + escape(context) + '&path=' + escape(path);
+   return dispatchUrl;
+}
+
+function vgnHomeActionsLink(url) {
+   location = url;
+}
+
+function confirmDelete() {
+   return confirm('Please confirm the removal of this Content Instance? ');
+}
+
+function confirmAssociation() {
+   return confirm('Do you want to remove the association of this item? The content will not be removed from the Content Management and will be kept for future usage');
+}
+
+function confirmClone() {
+   return confirm('Do you want to clone this item? A content with the same attribute values and associations will be created');
+}
+
+</script>
+<script type="text/javascript" language="JavaScript">
+/* <![CDATA[ */
+	function deleteRelation(ciId, relationId) {
+		if (confirm('Are you sure you want to remove this content from the Region Config?')) {
+			var context = "/umich-coe-web";
+			var path = "/secure/util/deleteRelationItem.jsp";
+			var params = "?ciId=" + ciId + "&relationId=" + relationId;
+			var fullPath = context + path + params;
+			var target = '';
+			var features = 'location=no,menubar=yes,resizable=yes,scrollbars=yes,status=yes,toolbar=no';
+			var width = 320;
+			var height = 200;
+			window.open(fullPath, '', target, features, width , height);
+		}
+	}
+	
+	function clearRegionConfigCache(ciId) {
+			var context = "/vgn-ext-templating";
+			var path = "/resources/util/clearRegionConfigCache.jsp";
+			var params = "?ciId=" + ciId;
+			var fullPath = context + path + params;
+			var target = '';
+			var features = 'location=no,menubar=yes,resizable=yes,scrollbars=yes,status=yes,toolbar=no';
+			var width = 320;
+			var height = 200;
+			window.open(fullPath, '', target, features, width , height);
+	}
+	
+	function approvePress(CiId) {
+			window.open('/umich-coe-web/secure/approve.jsp?vcmId='+CiId,'Approve','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');
+	}
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+	flowplayer("a.player", "/vgn-ext-templating/resources/flowplayer/flowplayer-3.1.3.swf", {
+
+		clip: { 
+				 
+				// these two configuration variables does the trick 
+				autoPlay: false,
+				scaling: 'fit',
+				autoBuffering: true // <- do not place a comma here	 
+		} , 
+							
+		// The controlbar plugin is loaded by specifying it in the plugins section of the configuration. 
+		plugins: { 
+ 
+		// The controlbar is called "controls". By tweaking this, you can modify its look and feel 
+			controls: { 
+ 
+				// -location of the controlbar plugin 
+				url: '/vgn-ext-templating/resources/flowplayer/flowplayer.controls-3.1.3.swf', 
+ 
+				// -display properties such as size, location and opacity 
+				//top: 20, 
+				//left: 20, 
+				//bottom: 0, 
+				//opacity: 0.95, 
+ 
+				// -styling properties (will be applied to all plugins) 
+				//background: '#E5E5E5 url(/my/custom/controls.png) no-repeat 3px 6px'
+				backgroundColor: '#FFFFFF', 
+				backgroundGradient: 'none', 
+
+				// -controlbar specific settings 
+				timeColor: '#000000',
+				timeBgColor: 'null',
+				timeBorder: 'null', 
+				durationColor: '#acacac',
+				progressColor: '#acacac',
+				progressGradient: 'medium',
+				bufferColor: '#E5E5E5',
+				bufferGradient: 'none',			 
+				sliderColor: '#000000',
+				sliderGradient: 'none',
+				buttonColor: '#acacac',
+				buttonOverColor: '#696969',
+				tooltipColor: '#000000', 
+				volumeSliderColor: '#acacac',
+				volumeSliderGradient: 'medium',
+				all: true, 
+				play: true, 
+				volume: true,
+				mute: true,
+				time: true,
+				stop: false,
+				playlist: false,
+				fullscreen: true,
+				// -timeline+playhead combination
+				scrubber:	true, 
+						 
+				// -custom height 
+				height: 30, 
+				// -a little more styling							
+				//width: '98%',	
+				//bottom: 5, 
+				//left: '50%', 
+				//borderRadius: 15, 
+	
+				// -tooltips (since 3.1) 
+				//tooltips: { 
+				//		buttons: true, 
+				//		fullscreen: 'Enter fullscreen mode' 
+				//}, 
+						
+				// -setup auto hide 
+				autoHide: 'always'						 
+			} 
+		},
+		//log: { level: 'debug' }, 
+		onBeforeUnload: function() { 
+			//console.log("onBeforeUnload function entered"); 
+			return false;
+		}, 
+		
+		onLoad: function() { 
+			//console.log("onLoad function entered"); 
+		} 
+
+	});
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+	function LoadAndLog(){
+		//alert("we are here in LoadAndLog");
+		$f("*").each(function() { 
+ 		//console.log("iterating through everything function entered");
+ 		//console.log("status:"+this.getStatus());
+ 		//this.getClip().update({autoBuffering:true,autoPlay:false}); 
+ 		this.load();
+ 		//this.pause(); 
+		});
+	}
+	LoadAndLog();
+/* ]]> */
+</script>
+
+<!-- regionConfigRenderHardTest.jsp built at Tue Aug 27 00:37:04 EDT 2013 elapsed time = 83 --></div>			
+			</div>
+		</div>
+		<div id="more_lsa">
+			<h2>Even more <span style="font-family:'Times New Roman', Times, serif; font-size: 11pt !important;">LSA...</span></h2>
+			<div id="left">
+				<h3 class="header"><span style="font-weight: bold">LSA</span> Elsewhere</h3>
+				<p>
+			<a href="http://www.symmetrymagazine.org/article/august-2013/us-program-at-cern-broadens-undergrads-horizons">
+	        LSA Physics Professors Create Opportunities for U.S. Students at CERN Lab </a>
+		</p>
+		<h3 class="date">8/22/2013</h3>
+		<h3 class="reference">Symmetry</h3> 		
+	<p>
+			<a href="http://www.nytimes.com/2013/08/20/science/romes-start-to-architectural-hubris.html?_r=2&">
+	        LSA Researchers Uncover Ancient Roman Ruins in City-State of Gabii</a>
+		</p>
+		<h3 class="date">8/19/2013</h3>
+		<h3 class="reference">The New York Times</h3> 		
+	<p>
+			<a href="http://abcnews.go.com/Technology/facebook-making-sad-study/story?id=19975348">
+	        Frequent Facebook Use Linked to Sadness, Says LSA Psychologist</a>
+		</p>
+		<h3 class="date">8/16/2013</h3>
+		<h3 class="reference">ABC News</h3> 		
+	</div>
+           	<div id="right">
+           		<div id="indepth-left">
+           			<h3 class="header"><span style="font-weight: bold">LSA</span> in Depth</h3>
+<div style="width: 141px; height: 185px;"><a href="/alumni/magazine"><img src="/vgn-ext-templating/sites/lsa/images/lsa_mag_cvr_13.jpg" alt="LSA Magazine" width="141" height="185"/></a></div>
+	                <div class="chat-bubble-arrow"></div>
+	                <div class="chat-bubble-text"><a href="/alumni/magazine">Table of Contents<br /><b>Spring 2013</b></a></div>
+</div>
+                <div id="indepth-right">
+					<h3 class="title"><a href="/alumni/magazine">LSA Magazine</a></h3>
+					<h3 class="date">Spring 2013</h3>
+					<h3 class="article">Chain Reactions</h3>
+               		<p>Sharpening the complex picture of illegal immigration. Taking stock of the
+post-Higgs landscape. Bringing the scientific method to Antarctica. This
+issue is all about exercising the impulse for inquiry&ndash;and making unexpected
+connections. <a href="/alumni/magazine">Find out more...</a></p>
+               	</div>
+           	</div>
+		</div>
+	</div>	
+</div>
+<!-- footer curSiteName is lsa -->
+<div id="minimalfooter">
+<p> 
+<span class="left">College of Literature, Science, and the Arts</span>
+	<span class="middle">
+		500 S. State Street,
+		Ann Arbor,&nbsp;MI
+		&nbsp;48109</span>
+	<span class="right">&copy; 2013 Regents of the University of Michigan</span>
+	</p>
+<script type="text/javascript">
+var _gas = _gas || [];
+_gas.push(['_setAccount', 'UA-36677223-1']);  
+_gas.push(['_setAccount', 'UA-26220477-1']);
+_gas.push(['_trackPageview']);
+_gas.push(['_gasTrackForms']);
+_gas.push(['_gasTrackOutboundLinks']);
+_gas.push(['_gasTrackMaxScroll']);
+_gas.push(['_gasTrackDownloads']);
+_gas.push(['_gasTrackYoutube', {force: true}]);
+_gas.push(['_gasTrackVimeo', {force: true}]);
+_gas.push(['_gasTrackMailto']);
+_gas.push(['_require', 'inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js']);
+
+(function() {
+var ga = document.createElement('script');
+ga.type = 'text/javascript';
+ga.async = true;
+ga.src = '/vgn-ext-templating/resources/js/gas.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- IP Address: 141.211.177.192, Tracker ID: UA-26220477-1 -->
+</div></body>
+</html>

@@ -1,0 +1,871 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Calendar of Events
+</title><link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection" /><link rel="stylesheet" href="../css/print.css" type="text/css" media="print" /><link rel="stylesheet" type="text/css" href="../css/front.css" /><link rel="stylesheet" type="text/css" href="../css/ufcofa/jquery-ui-1.8.6.ufcofa.css" /><link id="ctl00_MainCSS" rel="Stylesheet" type="text/css" href="../css/cfa/jquery-ui-1.8.5.cfa.css" /><link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<!--jQuery must go in the head to allow program profiles to work correctly -->
+        
+		<script type="text/javascript" src="/js/jquery-1.4.4.min.js"></script>
+		
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><style id="ctl00_titleimagebar" type="text/css">
+#title {
+background-image: url(/images/headers/calendar.jpg);
+}
+</style>
+<style type="text/css">
+a:link { text-decoration: none; color: #339ccc; }
+a:visited { text-decoration: none; color: #339ccc; }
+a:hover { text-decoration: none; color: #f2750e; }
+a:active, a:focus { text-decoration: underline; color: #f29549; }
+</style>
+
+
+<script language="javascript">
+        <!--
+    function clearSearch(obj) {
+        obj.value = "";
+    }
+        //-->
+    </script>
+</head>
+	<body>
+    <form name="aspnetForm" method="post" action="calendar.aspx" id="aspnetForm">
+<input type="hidden" name="ctl00_LeftColumn_ToolkitScriptManager1_HiddenField" id="ctl00_LeftColumn_ToolkitScriptManager1_HiddenField" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTE5Mjg5NDc0Mw9kFgJmD2QWBGYPZBYEAgUPFgIeBGhyZWYFIX4vY3NzL2NmYS9qcXVlcnktdWktMS44LjUuY2ZhLmNzc2QCCg8WAh4JaW5uZXJodG1sBUUNCiN0aXRsZSB7DQpiYWNrZ3JvdW5kLWltYWdlOiB1cmwoL2ltYWdlcy9oZWFkZXJzL2NhbGVuZGFyLmpwZyk7DQp9DQpkAgEPZBYOZg8UKwACDxYCHgdWaXNpYmxlZ2QQFgAWABYAZAIBDxQrAAJkEBYAFgAWAGQCAg8UKwACZBAWABYAFgBkAgMPFCsAAmQQFgAWABYAZAIEDxYCHwEFSzxoMSBpZD0idGl0bGUiIHRpdGxlPSIiPjxzcGFuIGlkPSJ0aXRsZVRleHQiPkNhbGVuZGFyIG9mIEV2ZW50czwvc3Bhbj48L2gxPmQCBQ9kFgoCAw8PZBYCHgdvbkZvY3VzBRFjbGVhclNlYXJjaCh0aGlzKWQCBQ8QZGQWAWZkAgcPDxYCHgRUZXh0BShTZWFyY2ggUmVzdWx0cyBmb3I6IChBdWd1c3QgMjAxMykgRXZlbnRzZGQCCQ8WAh4LXyFJdGVtQ291bnQCChYUAgEPZBYGZg8VBwcjRkYwMEZGB1NBK0FIOiAXWGF2aWVyIENvcnRhZGE6IEZMT1I1MDAkQXVndXN0IDI5LCAyMDEzIC0gU2VwdGVtYmVyIDI3LCAyMDEzDk0tRiAxMGFtIC0gNXBtATgNRm9jdXMgR2FsbGVyeWQCAQ8PFgIfAmhkZAIJD2QWAmYPFQLRBDxQPkZyZWUgYW5kIG9wZW4gdG8gdGhlIFB1YmxpYy48L1A+DQo8UD5UaGUgRm9jdXMgZ2FsbGVyeSBpcyBsb2NhdGVkIGluIEZpbmUgQXJ0cyBDLjxCUj48L1A+DQo8UD48QlI+PFNQQU4gc3R5bGU9IkZPTlQtRkFNSUxZOiAnQ2FsaWJyaScsJ3NhbnMtc2VyaWYnOyBDT0xPUjogYmxhY2s7IEZPTlQtU0laRTogMTJwdDsgbXNvLWZhcmVhc3QtZm9udC1mYW1pbHk6ICcmIzEyNDk4OyYjMTI1MjE7JiMxMjQ2MjsmIzEyNDk0OyYjMzUyODI7JiMxMjQ2ODsgUHJvIFczJzsgbXNvLWJpZGktZm9udC1mYW1pbHk6ICdUaW1lcyBOZXcgUm9tYW4nOyBtc28tYW5zaS1sYW5ndWFnZTogRU4tVVM7IG1zby1mYXJlYXN0LWxhbmd1YWdlOiBFTi1VUzsgbXNvLWJpZGktbGFuZ3VhZ2U6IEFSLVNBIj5BbHNvIHBhcnRpY2lwYXRpbmc6IEplYiBCb290aCwgRXJpbiBDdXJyeSwgQ2FtaWxsZSBEZW1hcmluaXMsIEthdGVyaWUgR2xhZGR5cywgVG9tIEhhcnQsIEFsZXhhIEtsZWluaGFyZCwgUmVuw6kgTHluY2gsIEpvYW4gTWF0ZXksIExlc2xpZSBSb2Jpc29uLCBKYWNrIFN0ZW5uZXIsIE1hcmdhcmV0IFRvbGJlcnQsIGFuZCBUb20gVmlyZ2luLjwvU1BBTj48L1A+ajxiPldlYnNpdGU6PC9iPiA8YSBocmVmPSJodHRwOi8vd3d3LmFydHMudWZsLmVkdS9nYWxsZXJpZXMiIHRhcmdldD0iX2JsYW5rIj53d3cuYXJ0cy51ZmwuZWR1L2dhbGxlcmllczwvYT5kAgIPZBYGZg8VBwcjRkYwMEZGB1NBK0FIOiArU0ErQUggNDh0aCBBbm51YWwgU3R1ZGlvIEZhY3VsdHkgRXhoaWJpdGlvbiZTZXB0ZW1iZXIgMywgMjAxMyAtIFNlcHRlbWJlciAyNywgMjAxMyBULCBXICYgRiAxMC01OyBUaCAxMC03ICYgU2EgMTItNAE0ElVuaXZlcnNpdHkgR2FsbGVyeWQCAQ8PFgIfAmhkZAIJD2QWAmYPFQJjPFA+RnJlZSBhbmQgb3BlbiB0byB0aGUgcHVibGljLjwvcD4NCg0KPFA+T3BlbmluZyBSZWNlcHRpb246IEZyaWRheSwgU2VwdGVtYmVyIDYsIDctOVBNPGJyPg0KPC9wPg0KajxiPldlYnNpdGU6PC9iPiA8YSBocmVmPSJodHRwOi8vd3d3LmFydHMudWZsLmVkdS9nYWxsZXJpZXMiIHRhcmdldD0iX2JsYW5rIj53d3cuYXJ0cy51ZmwuZWR1L2dhbGxlcmllczwvYT5kAgMPZBYIZg8VBwcjRkYwMEZGB1NBK0FIOiAxU2VlZHMgb2YgRGlzY292ZXJ5OiBUaGUgSGlzdG9yaWMgRmxvcmEgb2YgRmxvcmlkYSRTZXB0ZW1iZXIgMywgMjAxMyAtIE9jdG9iZXIgMjksIDIwMTMNTS1GIDhhbSAtIDVwbQE5D0dyaW50ZXIgR2FsbGVyeWQCAQ8PFgIfAmhkZAIDDw8WAh8CaGRkAgkPZBYCZg8VAm88UD5GcmVlIGFuZCBvcGVuIHRvIHRoZSBwdWJsaWMuPC9QPg0KPFA+VGhlIEdyaW50ZXIgR2FsbGVyeSBpcyBsb2NhdGVkIG9uIHRoZSBncm91bmQgZmxvb3Igb2YgR3JpbnRlciBIYWxsLjwvUD5qPGI+V2Vic2l0ZTo8L2I+IDxhIGhyZWY9Imh0dHA6Ly93d3cuYXJ0cy51ZmwuZWR1L2dhbGxlcmllcyIgdGFyZ2V0PSJfYmxhbmsiPnd3dy5hcnRzLnVmbC5lZHUvZ2FsbGVyaWVzPC9hPmQCBA9kFgZmDxUHByNGRjAwRkYHU0ErQUg6IDpPUEVOSU5HIFJFQ0VQVElPTiAtIDQ4dGggQW5udWFsIFN0dWRpbyBGYWN1bHR5IEV4aGliaXRpb24gEVNlcHRlbWJlciA2LCAyMDEzCDcgLSA5IFBNATQSVW5pdmVyc2l0eSBHYWxsZXJ5ZAIBDw8WAh8CaGRkAgkPZBYCZg8VAic8UD5GcmVlIGFuZCBvcGVuIHRvIHRoZSBwdWJsaWMuPEJSPjwvUD5qPGI+V2Vic2l0ZTo8L2I+IDxhIGhyZWY9Imh0dHA6Ly93d3cuYXJ0cy51ZmwuZWR1L2dhbGxlcmllcyIgdGFyZ2V0PSJfYmxhbmsiPnd3dy5hcnRzLnVmbC5lZHUvZ2FsbGVyaWVzPC9hPmQCBQ9kFgZmDxUHByNGRjAwRkYHU0ErQUg6IGVBUlRJU1QgRElTQ1VTU0lPTiAtIFhhdmllciBDb3J0YWRhOiBBbiBBcnQtU2NpZW5jZSBQcmFjdGljZTogRnJvbSB0aGUgSGlnZ3MgQm9zb24gdG8gYSBOYXRpdmUgQmxvc3NvbRFTZXB0ZW1iZXIgNiwgMjAxMwM0cG0CMzEDRkFCZAIBDw8WAh8CaGRkAgkPZBYCZg8VAq8RPFAgc3R5bGU9Ik1BUkdJTjogMGluIDBpbiAwcHQiIGNsYXNzPU1zb1BsYWluVGV4dD48U1BBTiBzdHlsZT0iQ09MT1I6IGJsYWNrIj48U1BBTiBzaXplPSIzIj5Db3J0YWRhIG9mdGVuIGNvbGxhYm9yYXRlcyB3aXRoIHNjaWVudGlzdHMgaW4gaGlzIGFydC1tYWtpbmc6PD94bWw6bmFtZXNwYWNlIHByZWZpeCA9IG8gbnMgPSAidXJuOnNjaGVtYXMtbWljcm9zb2Z0LWNvbTpvZmZpY2U6b2ZmaWNlIiAvPjxvOnA+PC9vOnA+PC9TUEFOPjwvU1BBTj48L1A+DQo8UCBzdHlsZT0iTUFSR0lOOiAwaW4gMGluIDBwdCIgY2xhc3M9TXNvUGxhaW5UZXh0PjxTUEFOIHN0eWxlPSJDT0xPUjogYmxhY2siPjxTUEFOIHNpemU9IjMiPiZuYnNwOzxvOnA+PC9vOnA+PC9TUEFOPjwvU1BBTj48L1A+DQo8UCBzdHlsZT0iTUFSR0lOOiAwaW4gMGluIDBwdCIgY2xhc3M9TXNvUGxhaW5UZXh0PjxTUEFOIHN0eWxlPSJDT0xPUjogYmxhY2siPjxTUEFOIHNpemU9IjMiPkF0IENFUk4sIENvcnRhZGEgd29ya2VkIHdpdGggYSBwaHlzaWNpc3QgdG8gZGV2ZWxvcCBhIHNpdGUtc3BlY2lmaWMgYXJ0IGluc3RhbGxhdGlvbiBjYXB0dXJpbmcgdGhlIGZpdmUgc2VhcmNoIHN0cmF0ZWdpZXMgd2hpY2ggdGhlIENNUyBleHBlcmltZW50IGhhcyB1c2VkIHRvIGRpc2NvdmVyIGEgbmV3IEhpZ2dzLWxpa2UgcGFydGljbGUuJm5ic3A7IFRoZSBmaXZlIGdpYW50IGJhbm5lcnMgaGFuZyBhdCB0aGUgbG9jYXRpb24gKDEwMG0gYmVsb3cgdGhlIGdyb3VuZCkgd2hlcmUgdGhlIHBhcnRpY2xlIHdhcyBkaXNjb3ZlcmVkLjxvOnA+PC9vOnA+PC9TUEFOPjwvU1BBTj48L1A+DQo8UCBzdHlsZT0iTUFSR0lOOiAwaW4gMGluIDBwdCIgY2xhc3M9TXNvUGxhaW5UZXh0PjxTUEFOIHN0eWxlPSJDT0xPUjogYmxhY2siPjxTUEFOIHNpemU9IjMiPiZuYnNwOzxvOnA+PC9vOnA+PC9TUEFOPjwvU1BBTj48L1A+DQo8UCBzdHlsZT0iTUFSR0lOOiAwaW4gMGluIDBwdCIgY2xhc3M9TXNvUGxhaW5UZXh0PjxTUEFOIHN0eWxlPSJDT0xPUjogYmxhY2siPjxTUEFOIHNpemU9IjMiPkhlIGhhcyBhbHNvIHdvcmtlZCB3aXRoIGEgcG9wdWxhdGlvbiBnZW5ldGljaXN0IG9uIGEgcHJvamVjdCBleHBsb3Jpbmcgb3VyIGFuY2VzdHJhbCBqb3VybmV5cyBvdXQgb2YgQWZyaWNhIDYwLDAwMCB5ZWFycyBhZ28sIHdpdGggYSBtb2xlY3VsYXIgYmlvbG9naXN0IHRvIHN5bnRoZXNpemUgYW4gYWN0dWFsIEROQSBzdHJhbmQgbWFkZSBmcm9tIGEgc2VxdWVuY2UgcmFuZG9tbHkgZ2VuZXJhdGVkIGJ5IHBhcnRpY2lwYW50cyB2aXNpdGluZyBoaXMgbXVzZXVtIGV4aGliaXQsIGFuZCB3aXRoIGJvdGFuaXN0cyBpbiBlY28tYXJ0IHByb2plY3RzIHRvIHJlZm9yZXN0IEZsb3JpZGEncyBtYW5ncm92ZXMsIG5hdGl2ZSB0cmVlcyBhbmQgd2lsZGZsb3dlcnMuPG86cD48L286cD48L1NQQU4+PC9TUEFOPjwvUD4NCjxQIHN0eWxlPSJNQVJHSU46IDBpbiAwaW4gMHB0IiBjbGFzcz1Nc29QbGFpblRleHQ+PFNQQU4gc3R5bGU9IkNPTE9SOiBibGFjayI+PFNQQU4gc2l6ZT0iMyI+Jm5ic3A7PG86cD48L286cD48L1NQQU4+PC9TUEFOPjwvUD4NCjxQIHN0eWxlPSJNQVJHSU46IDBpbiAwaW4gMHB0IiBjbGFzcz1Nc29QbGFpblRleHQ+PFNQQU4gc3R5bGU9IkNPTE9SOiBibGFjayI+PFNQQU4gc2l6ZT0iMyI+Q29ydGFkYSBpcyBjdXJyZW50bHkgd29ya2luZyB3aXRoIHNjaWVudGlzdHMgYXQgSHViYmFyZCBCcm9vayBMVEVSIG9uIGFuIHdhdGVyIGN5Y2xlIHZpc3VhbGl6YXRpb24gcHJvamVjdCBkcml2ZW4gYnkgcmVhbC10aW1lIGRhdGEgY29sbGVjdGVkIGF0IGEgd2F0ZXJzaGVkIGluIE5ldyBIYW1waGlyZSdzIFdoaXRlIE1vdW50YWlucy48bzpwPjwvbzpwPjwvU1BBTj48L1NQQU4+PC9QPg0KPFAgc3R5bGU9Ik1BUkdJTjogMGluIDBpbiAwcHQiIGNsYXNzPU1zb1BsYWluVGV4dD48U1BBTiBzdHlsZT0iQ09MT1I6IGJsYWNrIj48U1BBTiBzaXplPSIzIj4mbmJzcDs8bzpwPjwvbzpwPjwvU1BBTj48L1NQQU4+PC9QPg0KPFAgc3R5bGU9Ik1BUkdJTjogMGluIDBpbiAwcHQiIGNsYXNzPU1zb1BsYWluVGV4dD48U1BBTiBzdHlsZT0iQ09MT1I6IGJsYWNrIj48U1BBTiBzaXplPSIzIj5Db3J0YWRhIHNlcnZlcyBhcyBBcnRpc3QtaW4tUmVzaWRlbmNlIGF0IEZJVSBDb2xsZWdlIG9mIEFyY2hpdGVjdHVyZSArIFRoZSBBcnRzIGluIE1pYW1pLjxvOnA+PC9vOnA+PC9TUEFOPjwvU1BBTj48L1A+ajxiPldlYnNpdGU6PC9iPiA8YSBocmVmPSJodHRwOi8vd3d3LmFydHMudWZsLmVkdS9nYWxsZXJpZXMiIHRhcmdldD0iX2JsYW5rIj53d3cuYXJ0cy51ZmwuZWR1L2dhbGxlcmllczwvYT5kAgYPZBYGZg8VBwcjMDBiYjMzBVNvTTogH1VGIEZhY3VsdHkgQ2hhbWJlciBNdXNpYyBTZXJpZXMSU2VwdGVtYmVyIDE3LCAyMDEzCTc6MzAgcC5tLgIxNA5NdXNpYyBCdWlsZGluZ2QCAQ8PFgIfAmhkZAIJD2QWAmYPFQI9PHA+TG9jYXRpb246IE11c2ljIEJ1aWxkaW5nLCBSb29tIDEwMTxicj4NCkluZm86IDxicj4NCjwvcD4NCmI8Yj5XZWJzaXRlOjwvYj4gPGEgaHJlZj0iaHR0cDovL3d3dy5hcnRzLnVmbC5lZHUvbXVzaWMiIHRhcmdldD0iX2JsYW5rIj53d3cuYXJ0cy51ZmwuZWR1L211c2ljPC9hPmQCBw9kFgZmDxUHByNGRjAwRkYHU0ErQUg6IDxIRVNDQUggbGVjdHVyZTogUGFtZWxhIExlZSwgIlBhdHRlcm4gUmVjb2duaXRpb24gY2lyY2EgMTk0NyISU2VwdGVtYmVyIDE3LCAyMDEzCTY6MDAgcC5tLgE3C0hhcm4gTXVzZXVtZAIBDw8WAh8CaGRkAgkPZBYCZg8VApgGPHA+PHNwYW4gZmFjZT0iVGltZXMgTmV3IFJvbWFuIiBzaXplPSIzIj4NCjwvc3Bhbj48c3BhbiBzaXplPSIzIj48Zm9udCBmYWNlPSJUaW1lcyBOZXcgUm9tYW4iPjxzcGFuIGxhbmc9IkVOIiBzdHlsZT0ibXNvLWFuc2ktbGFuZ3VhZ2U6IEVOOyI+U0ErQUggSGFybiBFbWluZW50IFNjaG9sYXIgQ2hhaXIgaW4gQXJ0IEhpc3RvcnkgcHJlc2VudHMgYSBsZWN0dXJlIGJ5IDwvc3Bhbj5QYW1lbGENCkxlZSwgUHJvZmVzc29yIEFydCBhbmQgQXJ0IEhpc3RvcnksIFN0YW5mb3JkIFVuaXZlcnNpdHkuPG86cD48L286cD48L3NwYW4+PC9mb250PjwvcD4NCjxwPjxzcGFuIGZhY2U9IlRpbWVzIE5ldyBSb21hbiIgc2l6ZT0iMyI+DQo8L3NwYW4+PHNwYW4gbGFuZz0iRU4iIHN0eWxlPSdsaW5lLWhlaWdodDogMTE1JTsgZm9udC1mYW1pbHk6ICJDYWxpYnJpIiwic2Fucy1zZXJpZiI7IGZvbnQtc2l6ZTogMTFwdDsgbXNvLWFzY2lpLXRoZW1lLWZvbnQ6IG1pbm9yLWxhdGluOyBtc28tZmFyZWFzdC1mb250LWZhbWlseTogQ2FsaWJyaTsgbXNvLWZhcmVhc3QtdGhlbWUtZm9udDogbWlub3ItbGF0aW47IG1zby1oYW5zaS10aGVtZS1mb250OiBtaW5vci1sYXRpbjsgbXNvLWJpZGktZm9udC1mYW1pbHk6ICJUaW1lcyBOZXcgUm9tYW4iOyBtc28tYmlkaS10aGVtZS1mb250OiBtaW5vci1iaWRpOyBtc28tYW5zaS1sYW5ndWFnZTogRU47IG1zby1mYXJlYXN0LWxhbmd1YWdlOiBFTi1VUzsgbXNvLWJpZGktbGFuZ3VhZ2U6IEFSLVNBOyc+SW5mbzogKDM1MikgMzkyLTAyMDE8L3NwYW4+PGJyPg0KPC9wPg0KXjxiPldlYnNpdGU6PC9iPiA8YSBocmVmPSJodHRwOi8vc2FhaGhhcm5zY2hvbGFyLm5ldC8iIHRhcmdldD0iX2JsYW5rIj5zYWFoaGFybnNjaG9sYXIubmV0LzwvYT5kAggPZBYIZg8VBwcjZTEzZDA1BlNvVEQ6IB1NaXNzIFdpdGhlcnNwb29uIFBlcmZvcm1hbmNlICdTZXB0ZW1iZXIgMjAsIDIwMTMgLSBTZXB0ZW1iZXIgMjksIDIwMTM6U2VwdC4gMjAtMjEsIDIzLTI4IGF0IDc6MzAgcC5tLiwgU2VwdC4gMjIsIDI5IGF0IDI6MDAgcC5tLgE1HEJsYWNrIEJveCAoTWFndWlyZSBQYXZpbGlvbilkAgEPDxYCHwJoZGQCAw8PFgIfAmhkZAIJD2QWAmYPFQL0CDxQPjwvUD4NCjxQPkluZm86ICgzNTIpIDI3My0wNTI2LCA8QSBocmVmPSJodHRwOi8vd3d3LmFydHMudWZsLmVkdS90aGVhdHJlYW5kZGFuY2UiPmh0dHA6Ly93d3cuYXJ0cy51ZmwuZWR1L3RoZWF0cmVhbmRkYW5jZTwvQT48QlI+Rm9yIHRpY2tldHM6IENhbGwgdGhlIFVuaXZlcnNpdHkgQm94IE9mZmljZTogKDM1MikgMzkyLTE2NTMgPEJSPlZpc2l0IHRoZSBVbml2ZXJzaXR5IEJveCBPZmZpY2UtT+KAmUNvbm5lbGwgQ2VudGVyLCBHYXRlIDE6IHNlZSB3ZWJzaXRlIGZvciBkZXRhaWxzIGFuZCBob3VyczogPEEgaHJlZj0iaHR0cDovL3d3dy5vY29ubmVsbGNlbnRlci51ZmwuZWR1L0JveE9mZmljZS9Vbml2ZXJzaXR5X0JveF9PZmZpY2UuYXNweCI+aHR0cDovL3d3dy5vY29ubmVsbGNlbnRlci51ZmwuZWR1L0JveE9mZmljZS9Vbml2ZXJzaXR5X0JveF9PZmZpY2UuYXNweDwvQT4gPEJSPlZpc2l0IHRoZSBVbml2ZXJzaXR5IEJveCBPZmZpY2UtQ29uc3RhbnMgVGhlYXRyZTogb3BlbnMgNDUgbWludXRlcyBwcmlvciB0byBwZXJmb3JtYW5jZTxCUj5PcmRlciBvbmxpbmUgYXQgPEEgaHJlZj0iaHR0cDovL3d3dy50aWNrZXRtYXN0ZXIuY29tLyI+d3d3LnRpY2tldG1hc3Rlci5jb208L0E+OiBhZGRpdGlvbmFsIHByb2Nlc3NpbmcgZmVlcyBtYXkgYXBwbHkuPEJSPjwvUD4NCjxQPjwvUD4NCjxQPldyaXR0ZW4gYnkgQ2hyaXN0b3BoZXIgRHVyYW5nOyBEaXJlY3RlZCBieSBLZXZpbiBNYXJzaGFsbC48L1A+DQo8UD5JbiB0aGlzIG9mdGVuIHphbnkgeWV0IHBvaWduYW50IGNvbWVkeSBieSBDaHJpc3RvcGhlciBEdXJhbmcsIGEgc2Vjb25kIGNoYW5jZSBhdCBsaWZlIGlzIHRoZSBsYXN0IHB1bmlzaG1lbnQgTWlzcyBXaXRoZXJzcG9vbiBleHBlY3RlZCB0byByZWNlaXZlIGFmdGVyIHBlcnNvbmFsbHkgZW5kaW5nIGhlciBmaXJzdC4gTGl2aW5nIGxpZmUgYWdhaW4gYW5kIGFnYWluIHVudGlsIHNoZSBnZXRzIGl0IHJpZ2h0LCBNaXNzIFdpdGhlcnNwb29u4oCZcyBqb3VybmV5IGlzIHNseWx5IGJpdHRlcnN3ZWV0LCBlbnRlcnRhaW5pbmcsIGFuZCB1bHRpbWF0ZWx5IGhvcGVmdWwgaW4gdGhpcyB3b25kZXJmdWxseSBpcnJldmVyZW50IGNyYXp5LXF1aWx0IGZhbnRhc3kuJm5ic3A7PC9QPg0KPFA+PC9QPnY8Yj5XZWJzaXRlOjwvYj4gPGEgaHJlZj0iaHR0cDovL3d3dy5hcnRzLnVmbC5lZHUvdGhlYXRyZWFuZGRhbmNlIiB0YXJnZXQ9Il9ibGFuayI+d3d3LmFydHMudWZsLmVkdS90aGVhdHJlYW5kZGFuY2U8L2E+ZAIJD2QWBmYPFQcHIzAwYmIzMwVTb006IBFDYXJpbGxvbiBSZWNpdGFsIBJTZXB0ZW1iZXIgMjIsIDIwMTMJMzowMCBwLm0uAjIzFkNlbnR1cnkgVG93ZXIgQ2FyaWxsb25kAgEPDxYCHwJoZGQCCQ9kFgJmDxUCJTxwPkluZm86ICgzNTIpIDM5Mi0wMjIzPGJyPg0KDQo8L3A+DQpiPGI+V2Vic2l0ZTo8L2I+IDxhIGhyZWY9Imh0dHA6Ly93d3cuYXJ0cy51ZmwuZWR1L211c2ljIiB0YXJnZXQ9Il9ibGFuayI+d3d3LmFydHMudWZsLmVkdS9tdXNpYzwvYT5kAgoPZBYGZg8VBwcjMDBiYjMzBVNvTTogJFdpbmQgU3ltcGhvbnkvU3ltcGhvbmljIEJhbmQgQ29uY2VydBJTZXB0ZW1iZXIgMjYsIDIwMTMJNzozMCBwLm0uAjEwFVVuaXZlcnNpdHkgQXVkaXRvcml1bWQCAQ8PFgIfAmhkZAIJD2QWAmYPFQKYATxQIHN0eWxlPSJNQVJHSU46IDBweCAwcHggMTBweCI+RHIuIERhdmlkIFdheWJyaWdodCBhbmQgSm9obiBNLiBXYXRraW5zLCBEaXJlY3RvcnM8L1A+DQo8UCBzdHlsZT0iTUFSR0lOOiAwcHggMHB4IDEwcHgiPkluZm86ICgzNTIpIDM5Mi0wMjIzPEJSPjxCUj48L1A+YjxiPldlYnNpdGU6PC9iPiA8YSBocmVmPSJodHRwOi8vd3d3LmFydHMudWZsLmVkdS9tdXNpYyIgdGFyZ2V0PSJfYmxhbmsiPnd3dy5hcnRzLnVmbC5lZHUvbXVzaWM8L2E+ZAILDw9kDxAWAWYWARYCHg5QYXJhbWV0ZXJWYWx1ZQUBJRYBZmRkAgYPZBYIAgEPPCsACgEADxYCHgtWaXNpYmxlRGF0ZQYAIAUJ8XDQiGRkAgMPD2QPEBYCZgIBFgIWBB4MRGVmYXVsdFZhbHVlBRU4LzI3LzIwMTMgMTI6MDA6MDAgQU0fBmQWBB8IBQdBSE1vbnRoHwZkFgICAwIDZGQCBQ8PZA8QFgFmFgEWAh8GZBYBAgNkZAIHDw9kDxAWAmYCARYCFgIfBmQWAh8GZBYCZgIDZGQYAQUoY3RsMDAkUmlnaHRDb2x1bW4kQ29udGFjdEluZm8xJEZvcm1WaWV3MQ8UKwAHZGRkZGQWAAIBZLPnEO0GdBJALejE80c1VuzLClSQy4xp69ciKASIfg8l" />
+
+
+<script src="/ScriptResource.axd?d=mzUqmVBFAuzJXHPbsgbfb5NZ77jjIUo06u5cInpVB9TpwaVBn6fWCgXkvBHBAhVEj9yfnSSQGyXCpXojZW9Do42-Y8Cae75JXXIU7CKYuZsoQX2HOpmE0WIAcVSItvjDvooFn2fpyOxkiLEc4uy4RQ2&amp;t=6b9ad1b8" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/news/calendar.aspx?_TSM_HiddenField_=ctl00_LeftColumn_ToolkitScriptManager1_HiddenField&amp;_TSM_CombinedScripts_=%3b%3bAjaxControlToolkit%2c+Version%3d4.1.50401.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-US%3a5da0a7c3-4bf6-4d4c-b5d5-f0137ca3a302%3ade1feab2%3af2c8e708%3a720a52bf%3af9cec9bc%3a4a2c8239" type="text/javascript"></script>
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWagLs7vO2AQKx9bTuAgLDrvjBBQKK9+f9AgL+0vT1BgLrn5vXBwLTjrqJAwLSvKmzCQKa9++AAQLxrZyqDgLKj8vECAKtgLLnCwK8y+CrDALsuLjrBQLwybzSDQKgxYGYAQKf4OfcCAKIt4wlAtTkxdQKApjK/DQC2MLAjgUC3sKY/w0C+LW5iAkC+LW5iAkC+LXVsAQC+LXVsAQC+LXBiwMC+LXBiwMCnazX/AECnazX/AECnazD1wgCnazD1wgCnay/qwcCnay/qwcCnayrjg4Cnayrjg4CnayH4QYCnayH4QYCnazzxA0CnazzxA0CnazvnwQCnazvnwQCnazb8gwCnazb8gwCnaz3mw4Cnaz3mw4Cnazj/gYCnazj/gYCtofx5wsCtofx5wsCtoftugICtoftugICtofZnQkCtofZnQkCtoe18QECtoe18QECtoeh1AgCtoeh1AgCtoedrwcCtoedrwcCtoeJgg4CtoeJgg4Ctofl5QYCtofl5QYCtoeRDgK2h5EOAraHjeEIAraHjeEIApvtsaYCApvtsaYCApvtrfkKApvtrfkKApvtmdwBApvtmdwBApvt9bcIApvt9bcIApvt4YoHApvt4YoHApvt3e0PApvt3e0PApvtycAGApvtycAGApvtpaQNApvtpaQNApvt0cwIApvt0cwIApvtzacHApvtzacHArzE04gEArzE04gEArzEz+MMArzEz+MMArzEu8cLArzEu8cLArzEl5oCArzEl5oCArzEg/0KArzEg/0KArzE/9ABArzE/9ABArzE66sIArzE66sIArzEx44HArzEx44HArzE87cCArzE87cCz9DrywYlZEuIWwWyC9AYPDO1idLma9hBqEI2JabiYtM=" />
+	<div id="page">
+		<div id="header">
+			<div id="header-inner" class="inner"> 
+				<!--<h1 id="site-header"><a href="/"><span class="white">college</span><span class="medGray">of</span><span class="white">fine</span><span class="electricBlue">arts</span></a></h1>
+				<h2 id="site-subheader"><a href="http://www.ufl.edu" target="_blank"><span class="medGray">at the University of Florida</span></a></h2>-->
+	<img id="ctl00_cfamap" alt="College of Fine Arts" src="../images/CFA.png" usemap="#ImageMapctl00_cfamap" border="0" style="margin: 2.25em 0; border-width: 0px;" /><map name="ImageMapctl00_cfamap" id="ImageMapctl00_cfamap">
+	<area shape="rect" coords="130,57,336,40" href="http://www.ufl.edu" title="" alt="" /><area shape="rect" coords="0,57,336,0" href="../Default.aspx" title="" alt="" />
+</map>
+         
+         
+         
+                
+           
+			</div><!-- End header-inner -->
+		</div><!-- End header -->
+		<div id="content">
+			<div id="content-inner">
+				<div class="container">
+					<div id="ctl00_pageTop" class="span-24"><h1 id="title" title=""><span id="titleText">Calendar of Events</span></h1></div><!-- End pageTop -->
+					<div id="pageLeft" class="span-16 CFA">
+						 
+
+
+    
+ <a href="#" id="aso" onclick="$('#advancedSearch').toggle('blind');$(this).toggleClass('asoClass',400);return false;" class="asoClass">Advanced Search Options</a>
+
+<div id="advancedSearch">
+<br />
+  <a id="ctl00_LeftColumn_Hyperlink1" class="noicon" href="calendar.aspx">(Clear Search)</a>  <br />
+ 
+<input name="ctl00$LeftColumn$searchName" type="text" value="Search by Event Name" id="ctl00_LeftColumn_searchName" onFocus="clearSearch(this)" style="width: 200px;" />
+<br />
+
+ <label for="SchoolDropDown">Select Area: </label> <br />
+  <select name="ctl00$LeftColumn$SchoolDropDown" id="ctl00_LeftColumn_SchoolDropDown">
+	<option selected="selected" value="%">Any Area</option>
+	<option value="SAAH">Art &amp; Art History</option>
+	<option value="SOM">Music</option>
+	<option value="SOTD">Theatre &amp; Dance</option>
+	<option value="Gallery">University Galleries</option>
+	<option value="CAHRE">Center for Arts in Healthcare</option>
+	<option value="CWA">Center for World Arts</option>
+	<option value="DWI">Digital Worlds Institute</option>
+
+</select>
+ 
+   
+</div>
+
+
+<h3 style="color:#FE7B1C"><span id="ctl00_LeftColumn_ListHeadingLabel">Search Results for: (August 2013) Events</span></h3>
+  
+ 
+   
+
+
+
+<div style="border: 1px solid #C0C0C0; background-color:#E8E8E8; padding: 0px 5px 1px 5px">
+<h3 class="title"> <font color="#FF00FF">SA+AH: Xavier Cortada: FLOR500</font></h3>
+
+<b>August 29, 2013 - September 27, 2013</b>&nbsp;
+<br />
+<b>Event Times:</b> M-F 10am - 5pm
+<br />
+<b>Venue:</b> <a href="../venue_details.asp?venueID=8">Focus Gallery</a> <br />
+
+<img id="ctl00_LeftColumn_GridView1_ctl01_freeEveryone" src="../images/icons/freeforeveryone.gif" border="0" /><br />
+<span id="ctl00_LeftColumn_GridView1_ctl01_toggleID" onmouseover="this.style.cursor=&#39;pointer&#39;"><font color="MidnightBlue"></font></span> <img id="ctl00_LeftColumn_GridView1_ctl01_toggleImage" src="" border="0" />
+
+ <div id="ctl00_LeftColumn_GridView1_ctl01_eventDetails">
+	 <hr />
+  <b>Event Details:</b><br />
+<P>Free and open to the Public.</P>
+<P>The Focus gallery is located in Fine Arts C.<BR></P>
+<P><BR><SPAN style="FONT-FAMILY: 'Calibri','sans-serif'; COLOR: black; FONT-SIZE: 12pt; mso-fareast-font-family: '&#12498;&#12521;&#12462;&#12494;&#35282;&#12468; Pro W3'; mso-bidi-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">Also participating: Jeb Booth, Erin Curry, Camille Demarinis, Katerie Gladdys, Tom Hart, Alexa Kleinhard, René Lynch, Joan Matey, Leslie Robison, Jack Stenner, Margaret Tolbert, and Tom Virgin.</SPAN></P><br />
+<b>Website:</b> <a href="http://www.arts.ufl.edu/galleries" target="_blank">www.arts.ufl.edu/galleries</a>
+
+ 
+</div>
+
+</div>
+<input type="hidden" name="ctl00$LeftColumn$GridView1$ctl01$CollapsiblePanelExtender1_ClientState" id="ctl00_LeftColumn_GridView1_ctl01_CollapsiblePanelExtender1_ClientState" />
+
+
+<div style="border: 1px solid #C0C0C0; background-color:#FFFFFF ; padding: 0px 5px 1px 5px">
+<h3 class="title"> <font color="#FF00FF">SA+AH: SA+AH 48th Annual Studio Faculty Exhibition</font>&nbsp;</h3>
+<b>September 3, 2013 - September 27, 2013</b>&nbsp;
+
+<br />
+<b>Event Times:</b> T, W & F 10-5; Th 10-7 & Sa 12-4
+<br />
+<b>Venue:</b> <a href="../venue_details.asp?venueID=4">University Gallery</a> <br />
+
+<img id="ctl00_LeftColumn_GridView1_ctl02_freeEveryone" src="../images/icons/freeforeveryone.gif" border="0" /><br />
+
+<span id="ctl00_LeftColumn_GridView1_ctl02_toggleID1" onmouseover="this.style.cursor=&#39;pointer&#39;"><font color="MidnightBlue"></font></span> <img id="ctl00_LeftColumn_GridView1_ctl02_toggleImage1" src="" border="0" />
+
+ <div id="ctl00_LeftColumn_GridView1_ctl02_eventDetails">
+	 <hr />
+  <b>Event Details:</b><br />
+<P>Free and open to the public.</p>
+
+<P>Opening Reception: Friday, September 6, 7-9PM<br>
+</p>
+<br />
+<b>Website:</b> <a href="http://www.arts.ufl.edu/galleries" target="_blank">www.arts.ufl.edu/galleries</a>
+
+</div>
+
+</div>
+<input type="hidden" name="ctl00$LeftColumn$GridView1$ctl02$CollapsiblePanelExtender1_ClientState" id="ctl00_LeftColumn_GridView1_ctl02_CollapsiblePanelExtender1_ClientState" />
+
+
+
+<div style="border: 1px solid #C0C0C0; background-color:#E8E8E8; padding: 0px 5px 1px 5px">
+<h3 class="title"> <font color="#FF00FF">SA+AH: Seeds of Discovery: The Historic Flora of Florida</font></h3>
+
+<b>September 3, 2013 - October 29, 2013</b>&nbsp;
+<br />
+<b>Event Times:</b> M-F 8am - 5pm
+<br />
+<b>Venue:</b> <a href="../venue_details.asp?venueID=9">Grinter Gallery</a> <br />
+
+<br />
+<span id="ctl00_LeftColumn_GridView1_ctl03_toggleID" onmouseover="this.style.cursor=&#39;pointer&#39;"><font color="MidnightBlue"></font></span> <img id="ctl00_LeftColumn_GridView1_ctl03_toggleImage" src="" border="0" />
+
+ <div id="ctl00_LeftColumn_GridView1_ctl03_eventDetails">
+	 <hr />
+  <b>Event Details:</b><br />
+<P>Free and open to the public.</P>
+<P>The Grinter Gallery is located on the ground floor of Grinter Hall.</P><br />
+<b>Website:</b> <a href="http://www.arts.ufl.edu/galleries" target="_blank">www.arts.ufl.edu/galleries</a>
+
+ 
+</div>
+
+</div>
+<input type="hidden" name="ctl00$LeftColumn$GridView1$ctl03$CollapsiblePanelExtender1_ClientState" id="ctl00_LeftColumn_GridView1_ctl03_CollapsiblePanelExtender1_ClientState" />
+
+
+<div style="border: 1px solid #C0C0C0; background-color:#FFFFFF ; padding: 0px 5px 1px 5px">
+<h3 class="title"> <font color="#FF00FF">SA+AH: OPENING RECEPTION - 48th Annual Studio Faculty Exhibition </font>&nbsp;</h3>
+<b>September 6, 2013</b>&nbsp;
+
+<br />
+<b>Event Times:</b> 7 - 9 PM
+<br />
+<b>Venue:</b> <a href="../venue_details.asp?venueID=4">University Gallery</a> <br />
+
+<img id="ctl00_LeftColumn_GridView1_ctl04_freeEveryone" src="../images/icons/freeforeveryone.gif" border="0" /><br />
+
+<span id="ctl00_LeftColumn_GridView1_ctl04_toggleID1" onmouseover="this.style.cursor=&#39;pointer&#39;"><font color="MidnightBlue"></font></span> <img id="ctl00_LeftColumn_GridView1_ctl04_toggleImage1" src="" border="0" />
+
+ <div id="ctl00_LeftColumn_GridView1_ctl04_eventDetails">
+	 <hr />
+  <b>Event Details:</b><br />
+<P>Free and open to the public.<BR></P><br />
+<b>Website:</b> <a href="http://www.arts.ufl.edu/galleries" target="_blank">www.arts.ufl.edu/galleries</a>
+
+</div>
+
+</div>
+<input type="hidden" name="ctl00$LeftColumn$GridView1$ctl04$CollapsiblePanelExtender1_ClientState" id="ctl00_LeftColumn_GridView1_ctl04_CollapsiblePanelExtender1_ClientState" />
+
+
+
+<div style="border: 1px solid #C0C0C0; background-color:#E8E8E8; padding: 0px 5px 1px 5px">
+<h3 class="title"> <font color="#FF00FF">SA+AH: ARTIST DISCUSSION - Xavier Cortada: An Art-Science Practice: From the Higgs Boson to a Native Blossom</font></h3>
+
+<b>September 6, 2013</b>&nbsp;
+<br />
+<b>Event Times:</b> 4pm
+<br />
+<b>Venue:</b> <a href="../venue_details.asp?venueID=31">FAB</a> <br />
+
+<img id="ctl00_LeftColumn_GridView1_ctl05_freeEveryone" src="../images/icons/freeforeveryone.gif" border="0" /><br />
+<span id="ctl00_LeftColumn_GridView1_ctl05_toggleID" onmouseover="this.style.cursor=&#39;pointer&#39;"><font color="MidnightBlue"></font></span> <img id="ctl00_LeftColumn_GridView1_ctl05_toggleImage" src="" border="0" />
+
+ <div id="ctl00_LeftColumn_GridView1_ctl05_eventDetails">
+	 <hr />
+  <b>Event Details:</b><br />
+<P style="MARGIN: 0in 0in 0pt" class=MsoPlainText><SPAN style="COLOR: black"><SPAN size="3">Cortada often collaborates with scientists in his art-making:<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></SPAN></SPAN></P>
+<P style="MARGIN: 0in 0in 0pt" class=MsoPlainText><SPAN style="COLOR: black"><SPAN size="3">&nbsp;<o:p></o:p></SPAN></SPAN></P>
+<P style="MARGIN: 0in 0in 0pt" class=MsoPlainText><SPAN style="COLOR: black"><SPAN size="3">At CERN, Cortada worked with a physicist to develop a site-specific art installation capturing the five search strategies which the CMS experiment has used to discover a new Higgs-like particle.&nbsp; The five giant banners hang at the location (100m below the ground) where the particle was discovered.<o:p></o:p></SPAN></SPAN></P>
+<P style="MARGIN: 0in 0in 0pt" class=MsoPlainText><SPAN style="COLOR: black"><SPAN size="3">&nbsp;<o:p></o:p></SPAN></SPAN></P>
+<P style="MARGIN: 0in 0in 0pt" class=MsoPlainText><SPAN style="COLOR: black"><SPAN size="3">He has also worked with a population geneticist on a project exploring our ancestral journeys out of Africa 60,000 years ago, with a molecular biologist to synthesize an actual DNA strand made from a sequence randomly generated by participants visiting his museum exhibit, and with botanists in eco-art projects to reforest Florida's mangroves, native trees and wildflowers.<o:p></o:p></SPAN></SPAN></P>
+<P style="MARGIN: 0in 0in 0pt" class=MsoPlainText><SPAN style="COLOR: black"><SPAN size="3">&nbsp;<o:p></o:p></SPAN></SPAN></P>
+<P style="MARGIN: 0in 0in 0pt" class=MsoPlainText><SPAN style="COLOR: black"><SPAN size="3">Cortada is currently working with scientists at Hubbard Brook LTER on an water cycle visualization project driven by real-time data collected at a watershed in New Hamphire's White Mountains.<o:p></o:p></SPAN></SPAN></P>
+<P style="MARGIN: 0in 0in 0pt" class=MsoPlainText><SPAN style="COLOR: black"><SPAN size="3">&nbsp;<o:p></o:p></SPAN></SPAN></P>
+<P style="MARGIN: 0in 0in 0pt" class=MsoPlainText><SPAN style="COLOR: black"><SPAN size="3">Cortada serves as Artist-in-Residence at FIU College of Architecture + The Arts in Miami.<o:p></o:p></SPAN></SPAN></P><br />
+<b>Website:</b> <a href="http://www.arts.ufl.edu/galleries" target="_blank">www.arts.ufl.edu/galleries</a>
+
+ 
+</div>
+
+</div>
+<input type="hidden" name="ctl00$LeftColumn$GridView1$ctl05$CollapsiblePanelExtender1_ClientState" id="ctl00_LeftColumn_GridView1_ctl05_CollapsiblePanelExtender1_ClientState" />
+
+
+<div style="border: 1px solid #C0C0C0; background-color:#FFFFFF ; padding: 0px 5px 1px 5px">
+<h3 class="title"> <font color="#00bb33">SoM: UF Faculty Chamber Music Series</font>&nbsp;</h3>
+<b>September 17, 2013</b>&nbsp;
+
+<br />
+<b>Event Times:</b> 7:30 p.m.
+<br />
+<b>Venue:</b> <a href="../venue_details.asp?venueID=14">Music Building</a> <br />
+
+<img id="ctl00_LeftColumn_GridView1_ctl06_freeEveryone" src="../images/icons/freeforeveryone.gif" border="0" /><br />
+
+<span id="ctl00_LeftColumn_GridView1_ctl06_toggleID1" onmouseover="this.style.cursor=&#39;pointer&#39;"><font color="MidnightBlue"></font></span> <img id="ctl00_LeftColumn_GridView1_ctl06_toggleImage1" src="" border="0" />
+
+ <div id="ctl00_LeftColumn_GridView1_ctl06_eventDetails">
+	 <hr />
+  <b>Event Details:</b><br />
+<p>Location: Music Building, Room 101<br>
+Info: <br>
+</p>
+<br />
+<b>Website:</b> <a href="http://www.arts.ufl.edu/music" target="_blank">www.arts.ufl.edu/music</a>
+
+</div>
+
+</div>
+<input type="hidden" name="ctl00$LeftColumn$GridView1$ctl06$CollapsiblePanelExtender1_ClientState" id="ctl00_LeftColumn_GridView1_ctl06_CollapsiblePanelExtender1_ClientState" />
+
+
+
+<div style="border: 1px solid #C0C0C0; background-color:#E8E8E8; padding: 0px 5px 1px 5px">
+<h3 class="title"> <font color="#FF00FF">SA+AH: HESCAH lecture: Pamela Lee, "Pattern Recognition circa 1947"</font></h3>
+
+<b>September 17, 2013</b>&nbsp;
+<br />
+<b>Event Times:</b> 6:00 p.m.
+<br />
+<b>Venue:</b> <a href="../venue_details.asp?venueID=7">Harn Museum</a> <br />
+
+<img id="ctl00_LeftColumn_GridView1_ctl07_freeEveryone" src="../images/icons/freeforeveryone.gif" border="0" /><br />
+<span id="ctl00_LeftColumn_GridView1_ctl07_toggleID" onmouseover="this.style.cursor=&#39;pointer&#39;"><font color="MidnightBlue"></font></span> <img id="ctl00_LeftColumn_GridView1_ctl07_toggleImage" src="" border="0" />
+
+ <div id="ctl00_LeftColumn_GridView1_ctl07_eventDetails">
+	 <hr />
+  <b>Event Details:</b><br />
+<p><span face="Times New Roman" size="3">
+</span><span size="3"><font face="Times New Roman"><span lang="EN" style="mso-ansi-language: EN;">SA+AH Harn Eminent Scholar Chair in Art History presents a lecture by </span>Pamela
+Lee, Professor Art and Art History, Stanford University.<o:p></o:p></span></font></p>
+<p><span face="Times New Roman" size="3">
+</span><span lang="EN" style='line-height: 115%; font-family: "Calibri","sans-serif"; font-size: 11pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: "Times New Roman"; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;'>Info: (352) 392-0201</span><br>
+</p>
+<br />
+<b>Website:</b> <a href="http://saahharnscholar.net/" target="_blank">saahharnscholar.net/</a>
+
+ 
+</div>
+
+</div>
+<input type="hidden" name="ctl00$LeftColumn$GridView1$ctl07$CollapsiblePanelExtender1_ClientState" id="ctl00_LeftColumn_GridView1_ctl07_CollapsiblePanelExtender1_ClientState" />
+
+
+<div style="border: 1px solid #C0C0C0; background-color:#FFFFFF ; padding: 0px 5px 1px 5px">
+<h3 class="title"> <font color="#e13d05">SoTD: Miss Witherspoon Performance </font>&nbsp;</h3>
+<b>September 20, 2013 - September 29, 2013</b>&nbsp;
+
+<br />
+<b>Event Times:</b> Sept. 20-21, 23-28 at 7:30 p.m., Sept. 22, 29 at 2:00 p.m.
+<br />
+<b>Venue:</b> <a href="../venue_details.asp?venueID=5">Black Box (Maguire Pavilion)</a> <br />
+
+<br />
+
+<span id="ctl00_LeftColumn_GridView1_ctl08_toggleID1" onmouseover="this.style.cursor=&#39;pointer&#39;"><font color="MidnightBlue"></font></span> <img id="ctl00_LeftColumn_GridView1_ctl08_toggleImage1" src="" border="0" />
+
+ <div id="ctl00_LeftColumn_GridView1_ctl08_eventDetails">
+	 <hr />
+  <b>Event Details:</b><br />
+<P></P>
+<P>Info: (352) 273-0526, <A href="http://www.arts.ufl.edu/theatreanddance">http://www.arts.ufl.edu/theatreanddance</A><BR>For tickets: Call the University Box Office: (352) 392-1653 <BR>Visit the University Box Office-O’Connell Center, Gate 1: see website for details and hours: <A href="http://www.oconnellcenter.ufl.edu/BoxOffice/University_Box_Office.aspx">http://www.oconnellcenter.ufl.edu/BoxOffice/University_Box_Office.aspx</A> <BR>Visit the University Box Office-Constans Theatre: opens 45 minutes prior to performance<BR>Order online at <A href="http://www.ticketmaster.com/">www.ticketmaster.com</A>: additional processing fees may apply.<BR></P>
+<P></P>
+<P>Written by Christopher Durang; Directed by Kevin Marshall.</P>
+<P>In this often zany yet poignant comedy by Christopher Durang, a second chance at life is the last punishment Miss Witherspoon expected to receive after personally ending her first. Living life again and again until she gets it right, Miss Witherspoon’s journey is slyly bittersweet, entertaining, and ultimately hopeful in this wonderfully irreverent crazy-quilt fantasy.&nbsp;</P>
+<P></P><br />
+<b>Website:</b> <a href="http://www.arts.ufl.edu/theatreanddance" target="_blank">www.arts.ufl.edu/theatreanddance</a>
+
+</div>
+
+</div>
+<input type="hidden" name="ctl00$LeftColumn$GridView1$ctl08$CollapsiblePanelExtender1_ClientState" id="ctl00_LeftColumn_GridView1_ctl08_CollapsiblePanelExtender1_ClientState" />
+
+
+
+<div style="border: 1px solid #C0C0C0; background-color:#E8E8E8; padding: 0px 5px 1px 5px">
+<h3 class="title"> <font color="#00bb33">SoM: Carillon Recital </font></h3>
+
+<b>September 22, 2013</b>&nbsp;
+<br />
+<b>Event Times:</b> 3:00 p.m.
+<br />
+<b>Venue:</b> <a href="../venue_details.asp?venueID=23">Century Tower Carillon</a> <br />
+
+<img id="ctl00_LeftColumn_GridView1_ctl09_freeEveryone" src="../images/icons/freeforeveryone.gif" border="0" /><br />
+<span id="ctl00_LeftColumn_GridView1_ctl09_toggleID" onmouseover="this.style.cursor=&#39;pointer&#39;"><font color="MidnightBlue"></font></span> <img id="ctl00_LeftColumn_GridView1_ctl09_toggleImage" src="" border="0" />
+
+ <div id="ctl00_LeftColumn_GridView1_ctl09_eventDetails">
+	 <hr />
+  <b>Event Details:</b><br />
+<p>Info: (352) 392-0223<br>
+
+</p>
+<br />
+<b>Website:</b> <a href="http://www.arts.ufl.edu/music" target="_blank">www.arts.ufl.edu/music</a>
+
+ 
+</div>
+
+</div>
+<input type="hidden" name="ctl00$LeftColumn$GridView1$ctl09$CollapsiblePanelExtender1_ClientState" id="ctl00_LeftColumn_GridView1_ctl09_CollapsiblePanelExtender1_ClientState" />
+
+
+<div style="border: 1px solid #C0C0C0; background-color:#FFFFFF ; padding: 0px 5px 1px 5px">
+<h3 class="title"> <font color="#00bb33">SoM: Wind Symphony/Symphonic Band Concert</font>&nbsp;</h3>
+<b>September 26, 2013</b>&nbsp;
+
+<br />
+<b>Event Times:</b> 7:30 p.m.
+<br />
+<b>Venue:</b> <a href="../venue_details.asp?venueID=10">University Auditorium</a> <br />
+
+<img id="ctl00_LeftColumn_GridView1_ctl10_freeEveryone" src="../images/icons/freeforeveryone.gif" border="0" /><br />
+
+<span id="ctl00_LeftColumn_GridView1_ctl10_toggleID1" onmouseover="this.style.cursor=&#39;pointer&#39;"><font color="MidnightBlue"></font></span> <img id="ctl00_LeftColumn_GridView1_ctl10_toggleImage1" src="" border="0" />
+
+ <div id="ctl00_LeftColumn_GridView1_ctl10_eventDetails">
+	 <hr />
+  <b>Event Details:</b><br />
+<P style="MARGIN: 0px 0px 10px">Dr. David Waybright and John M. Watkins, Directors</P>
+<P style="MARGIN: 0px 0px 10px">Info: (352) 392-0223<BR><BR></P><br />
+<b>Website:</b> <a href="http://www.arts.ufl.edu/music" target="_blank">www.arts.ufl.edu/music</a>
+
+</div>
+
+</div>
+<input type="hidden" name="ctl00$LeftColumn$GridView1$ctl10$CollapsiblePanelExtender1_ClientState" id="ctl00_LeftColumn_GridView1_ctl10_CollapsiblePanelExtender1_ClientState" />
+
+
+ 
+
+  
+    
+
+					</div><!-- End pageLeft -->
+					<div id="pageRight" class="span-8 CFA last">
+					 
+
+<table id="ctl00_RightColumn_Calendar1" cellspacing="2" cellpadding="2" rules="all" title="Calendar" bordercolor="Black" border="1" width="300" height="250" bgcolor="#FFFFCC">
+	<tr><td valign="bottom" colspan="7" bgcolor="#18689A" height="15"><font face="Verdana" color="#18689A" size="4"><table class="ui-widget" cellspacing="0" border="0" width="100%">
+		<tr><td width="15%"><font face="Verdana" color="White" size="1"><b><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','V4930')" style="color:White" title="Go to the previous month">&nbsp;&nbsp;&lt;</a></b></font></td><td align="center" width="70%"><font face="Verdana" color="White" size="4"><b>August 2013</b></font></td><td align="right" width="15%"><font face="Verdana" color="White" size="1"><b><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','V4992')" style="color:White" title="Go to the next month">&gt;&nbsp;&nbsp;</a></b></font></td></tr>
+	</table></font></td></tr><tr><th align="center" abbr="Sunday" scope="col" bgcolor="#EEEEEE" height="1"><font face="Verdana" color="#18689A" size="4"><b>Su</b></font></th><th align="center" abbr="Monday" scope="col" bgcolor="#EEEEEE" height="1"><font face="Verdana" color="#18689A" size="4"><b>Mo</b></font></th><th align="center" abbr="Tuesday" scope="col" bgcolor="#EEEEEE" height="1"><font face="Verdana" color="#18689A" size="4"><b>Tu</b></font></th><th align="center" abbr="Wednesday" scope="col" bgcolor="#EEEEEE" height="1"><font face="Verdana" color="#18689A" size="4"><b>We</b></font></th><th align="center" abbr="Thursday" scope="col" bgcolor="#EEEEEE" height="1"><font face="Verdana" color="#18689A" size="4"><b>Th</b></font></th><th align="center" abbr="Friday" scope="col" bgcolor="#EEEEEE" height="1"><font face="Verdana" color="#18689A" size="4"><b>Fr</b></font></th><th align="center" abbr="Saturday" scope="col" bgcolor="#EEEEEE" height="1"><font face="Verdana" color="#18689A" size="4"><b>Sa</b></font></th></tr><tr><td align="center" valign="bottom" bgcolor="White" width="14%"><font face="Verdana" color="#CCCCCC" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4957')" style="color:#CCCCCC" title="July 28">28</a></font></td><td align="center" valign="bottom" bgcolor="White" width="14%"><font face="Verdana" color="#CCCCCC" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4958')" style="color:#CCCCCC" title="July 29">29</a></font></td><td align="center" valign="bottom" bgcolor="White" width="14%"><font face="Verdana" color="#CCCCCC" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4959')" style="color:#CCCCCC" title="July 30">30</a></font></td><td align="center" valign="bottom" bgcolor="White" width="14%"><font face="Verdana" color="#CCCCCC" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4960')" style="color:#CCCCCC" title="July 31">31</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4961')" style="color:#18689A" title="August 01">1</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4962')" style="color:#18689A" title="August 02">2</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4963')" style="color:#18689A" title="August 03">3</a></font></td></tr><tr><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4964')" style="color:#18689A" title="August 04">4</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4965')" style="color:#18689A" title="August 05">5</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4966')" style="color:#18689A" title="August 06">6</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4967')" style="color:#18689A" title="August 07">7</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4968')" style="color:#18689A" title="August 08">8</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4969')" style="color:#18689A" title="August 09">9</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4970')" style="color:#18689A" title="August 10">10</a></font></td></tr><tr><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4971')" style="color:#18689A" title="August 11">11</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4972')" style="color:#18689A" title="August 12">12</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4973')" style="color:#18689A" title="August 13">13</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4974')" style="color:#18689A" title="August 14">14</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4975')" style="color:#18689A" title="August 15">15</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4976')" style="color:#18689A" title="August 16">16</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4977')" style="color:#18689A" title="August 17">17</a></font></td></tr><tr><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4978')" style="color:#18689A" title="August 18">18</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4979')" style="color:#18689A" title="August 19">19</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4980')" style="color:#18689A" title="August 20">20</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4981')" style="color:#18689A" title="August 21">21</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4982')" style="color:#18689A" title="August 22">22</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4983')" style="color:#18689A" title="August 23">23</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4984')" style="color:#18689A" title="August 24">24</a></font></td></tr><tr><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4985')" style="color:#18689A" title="August 25">25</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4986')" style="color:#18689A" title="August 26">26</a></font></td><td align="center" valign="middle" bgcolor="#FFCC66" width="14%"><font face="Verdana" color="White" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4987')" style="color:White" title="August 27">27</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4988')" style="color:#18689A" title="August 28">28</a></font></td><td align="center" valign="middle" bgcolor="Orange" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4989')" style="color:#18689A" title="August 29">29</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4990')" style="color:#18689A" title="August 30">30</a></font></td><td align="center" valign="middle" bgcolor="White" width="14%"><font face="Verdana" color="#18689A" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4991')" style="color:#18689A" title="August 31">31</a></font></td></tr><tr><td align="center" valign="bottom" bgcolor="White" width="14%"><font face="Verdana" color="#CCCCCC" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4992')" style="color:#CCCCCC" title="September 01">1</a></font></td><td align="center" valign="bottom" bgcolor="White" width="14%"><font face="Verdana" color="#CCCCCC" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4993')" style="color:#CCCCCC" title="September 02">2</a></font></td><td align="center" valign="bottom" bgcolor="White" width="14%"><font face="Verdana" color="#CCCCCC" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4994')" style="color:#CCCCCC" title="September 03">3</a></font></td><td align="center" valign="bottom" bgcolor="White" width="14%"><font face="Verdana" color="#CCCCCC" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4995')" style="color:#CCCCCC" title="September 04">4</a></font></td><td align="center" valign="bottom" bgcolor="White" width="14%"><font face="Verdana" color="#CCCCCC" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4996')" style="color:#CCCCCC" title="September 05">5</a></font></td><td align="center" valign="bottom" bgcolor="White" width="14%"><font face="Verdana" color="#CCCCCC" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4997')" style="color:#CCCCCC" title="September 06">6</a></font></td><td align="center" valign="bottom" bgcolor="White" width="14%"><font face="Verdana" color="#CCCCCC" size="4"><a href="javascript:__doPostBack('ctl00$RightColumn$Calendar1','4998')" style="color:#CCCCCC" title="September 07">7</a></font></td></tr>
+</table>
+
+
+    
+
+ 
+
+     
+   
+    
+   
+  
+ 
+	<div class="ui-widget">
+		<div class="orangeBlock ui-state-default"> 
+			<h2>News + Events</h2>
+		</div>
+		<div class="ui-content">
+			<ul>
+				<li><a href="/news/Default.aspx">CFA News Gallery</a></li>
+				<li><a href="/news/calendar.aspx">Calendar of Events</a></li>
+				<li><a href="/news/muse.aspx">Muse Magazine</a></li>
+				<li><a href="/news/publicity.aspx">Publicity Resources</a></li>
+				<li><a href="/alumnifriends/">Alumni + Friends</a></li>
+			</ul> 
+		</div>
+	</div>
+	
+	
+
+<table cellspacing="0" border="0" id="ctl00_RightColumn_ContactInfo1_FormView1" width="310">
+	<tr>
+		<td colspan="2">
+<div class="contactBlock ">
+	<div class="orangeBlock ui-state-default"> 
+		<h2>Media + Marketing Contact</h2>
+	</div>
+	<div class="ui-content">
+		<div class="contact contact-medium">
+      
+
+        
+		<img id="ctl00_RightColumn_ContactInfo1_FormView1_ContactImage" src="../faculty/images/521_hurov.jpg" width="75" border="0" />
+
+      
+			<h2 class="contact-name" style="margin-top:0;">Jessica Hurov</h2>
+            <a href="http://www.arts.ufl.edu/bio.aspx?PID=521" class="popLink noicon"><span class="contact-title">View Biography</span></a> <br />
+			 
+ 
+            <span class="contact-title">Public Relations and Marketing Manager<br />
+				College of Fine Arts</span><br />
+			<span class="contact-address">
+             <span id="ctl00_RightColumn_ContactInfo1_FormView1_OfficeAddressLabel">1389 Stadium Road<br />PO Box 115800</span>
+   
+           </span>
+           
+			<span class="contact-email"><strong>Email:</strong> <a href="mailto:jhurov@arts.ufl.edu">jhurov@arts.ufl.edu</a></span>
+			
+            <span class="contact-phone"><strong>Phone:</strong> (352) 273.1489</span>
+            
+			
+            <span class="contact-fax">
+            <span id="ctl00_RightColumn_ContactInfo1_FormView1_FaxLabel"><strong>Fax:</strong></span>
+             </span>
+		</div>
+	</div>
+</div>
+</td>
+	</tr>
+</table>
+
+	
+	<div class="ui-widget">
+		<div class="orangeBlock ui-state-default"> 
+			<h2>Muse Magazine</h2>
+		</div>
+		<div class="ui-content">
+			<p class="center"><a href="/news/muse.aspx"><img src="/images/muse/current.jpg" alt="Muse Magazine" width="100" height="134" /></a></p>
+			<p>Muse Magazine is the official publication of the University of Florida College of Fine Arts.  <a href="/news/muse.aspx">Click here</a> to read the current or past issues and catch up on exciting news from the College of Fine Arts.</p>
+			<p><a href="/news/muse.aspx">Muse Magazine</a></p>
+		</div>
+	</div>
+	
+	<div class="ui-widget">
+		<div class="orangeBlock ui-state-default"> 
+			<h2>Download Gallery</h2>
+		</div>
+		<div class="ui-content">
+			<ul>
+				<li><a href="/downloads/CFACalendar2011.pdf" target="_blank">Current CFA Calendar of Events</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+
+					</div><!-- End pageRight -->
+				</div><!-- End container -->
+				 
+
+
+<ul id="menubar">
+	<li id="welcome"><a href="http://www.arts.ufl.edu/welcome/about.aspx" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">Welcome</a>
+		<ul>
+
+            <li><a href="#">College of Fine Arts</a>
+                <ul>
+					<li><a href="/welcome/about.aspx">College Facts and Info</a></li>
+                    <li><a href="/welcome/art/">School of Art + Art History</a></li>
+					<li><a href="/welcome/music/">School of Music</a></li>
+					<li><a href="/welcome/td/">School of Theatre + Dance</a></li>
+                    <li><a href="http://www.digitalworlds.ufl.edu" class="noicon">Digital Worlds Institute</a></li>
+                    <li><a href="http://www.arts.ufl.edu/cwa">Center for World Arts</a></li>
+                    <li><a href="http://www.arts.ufl.edu/cam">Center for Arts in Medicine</a></li>
+                    <li><a href="http://nwsa.mdc.edu" class="noicon">New Worlds School of the Arts - Miami</a></li>
+				</ul>
+            </li>
+			<li><a href="#">About the Schools</a>
+				<ul>
+					<li><a href="/welcome/art/about.aspx">School of Art + Art History</a></li>
+					<li><a href="/welcome/music/about.aspx">School of Music</a></li>
+					<li><a href="/welcome/td/about.aspx">School of Theatre + Dance</a></li>
+				</ul>
+			</li>
+
+			<li><a href="http://www.arts.ufl.edu/welcome/whyuf.aspx">Why UF?</a></li>
+			<li><a href="/welcome/virtualtour.aspx">Virtual Tour</a></li>
+			<li><a href="/welcome/aboutGainesville.aspx">About Gainesville</a></li>
+			<li><a href="/welcome/research.aspx">Office of Research</a></li>
+			<li><a href="http://www.arts.ufl.edu/galleries/">University Galleries</a></li>
+			<li><a href="http://www.arts.ufl.edu/asb">UF Art in State Buildings</a></li>
+            <li><a href="/affiliates/warp">WARP</a></li>
+            <li><a href="/welcome/jobs.aspx">Faculty/Staff Vacancies</a></li>
+			<li><a href="/contacts.aspx">Contact Us + Directory</a></li>
+		</ul>
+	</li>
+	<li id="programs"><a href="/programs/admissions.aspx" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">Programs</a>
+		<ul>
+		<!-- SAAH Menu Items -->
+
+			<li><a href="/welcome/art/">School of Art + Art History</a>
+				<ul>
+
+					<li><a href="/programs/arteducation.aspx">Art Education</a></li>
+					<li><a href="/programs/arthistory.aspx">Art History</a></li>
+					<li><a href="/programs/ceramics.aspx">Ceramics</a></li><!-- This is an example page for how the new design might look -->
+					<li><a href="/programs/creativephotography.aspx">Creative Photography</a></li>
+					<li><a href="/programs/art-technology.aspx">Art + Technology</a></li>
+					<li><a href="/programs/drawing.aspx">Drawing</a></li>
+					<li><a href="/programs/graphicdesign.aspx">Graphic Design</a></li>
+					<li><a href="/programs/museumstudies.aspx">Museum Studies</a></li>
+					<li><a href="/programs/painting.aspx">Painting</a></li>
+					<li><a href="/programs/printmaking.aspx">Printmaking</a></li>
+					<li><a href="/programs/sculpture.aspx">Sculpture</a></li>
+					<li><a href="/programs/visualartstudies.aspx">Visual Art Studies</a></li>
+					<li><a href="http://www.arts.ufl.edu/programs/" class="noicon">Online</a>
+						<ul>
+						    <li><a href="http://education.arts.ufl.edu/art-education-degrees/masters-in-art-education/">Arts Education</a></li>
+							<li><a href="http://www.arts.ufl.edu/programs/artsadmin.aspx">Arts Administration</a></li>
+							<li><a href="http://www.arts.ufl.edu/cam/gradCertificate.aspx">Arts in Medicine</a></li>
+						</ul>                             
+					</li>
+
+				</ul>
+			</li>
+
+		<!-- SOM Menu Items -->
+
+			<li><a href="/welcome/music/">School of Music</a>
+				<ul>
+
+					<li><a href="/programs/brass.aspx">Brass</a></li>
+                    <li><a href="/programs/musictheory.aspx">Composition, Theory and Technology</a></li>
+					<li><a href="/programs/conducting.aspx">Conducting</a></li>
+					<li><a href="/programs/keyboard.aspx">Keyboard</a></li>
+					<li><a href="/programs/percussion.aspx">Percussion</a></li>
+					<li><a href="/programs/sacredmusic.aspx">Sacred Music</a></li>
+					<li><a href="/programs/strings.aspx">Strings</a></li>
+					<li><a href="/programs/woodwinds.aspx">Woodwinds</a></li>
+					<li><a href="/programs/vocal.aspx">Vocal</a></li>
+					<li><a href="/programs/musiceducation.aspx">Music Education</a></li>
+					<li><a href="/programs/musiccombo.aspx">Music in Combination with an Outside Field</a></li>
+					<li><a href="/programs/musicbusinessmgmt.aspx">Music + MSM Business Management</a></li>
+					<li><a href="/programs/musicprehealth.aspx">Music for Pre-Health Professions</a></li>
+					<li><a href="/programs/musichistory.aspx">Music History, Literature and Ethnomusicology</a></li>
+					<li><a href="http://www.arts.ufl.edu/programs/" class="noicon">Online</a>    
+						<ul>
+							<li><a href="http://www.arts.ufl.edu/programs/artsadmin.aspx">Arts Administration</a></li>
+							<li><a href="http://www.arts.ufl.edu/cam/gradCertificate.aspx">Arts in Medicine</a></li>
+							<li><a href="http://musiceducation.arts.ufl.edu ">Music Education</a></li>   
+						</ul>                             
+					</li> 
+					<li><a href="/music/admissions/info.aspx">Undergraduate Admission Info</a></li>
+				
+
+				</ul>
+			</li>
+
+		<!-- SOTD Menu Items -->
+
+			<li><a href="/welcome/td/">School of Theatre + Dance</a>
+				<ul>
+
+					<li><a href="/programs/acting.aspx">Acting</a></li>
+					<li><a href="/programs/musicaltheatre.aspx">Musical Theatre</a></li>
+					<li><a href="/programs/generaltheatre.aspx">General Theatre</a></li>
+					<li><a href="/programs/dance.aspx">Dance</a></li>
+					<li><a href="/programs/costumedesign.aspx">Costume Design</a></li>
+					<li><a href="/programs/lightingdesign.aspx">Lighting Design</a></li>
+					<li><a href="/programs/scenedesign.aspx">Scene Design</a></li>
+					<li><a href="http://www.arts.ufl.edu/programs/" class="noicon">Online</a>
+						<ul>
+							<li><a href="http://www.arts.ufl.edu/programs/artsadmin.aspx">Arts Administration</a></li>
+							<li><a href="http://www.arts.ufl.edu/cam/gradCertificate.aspx">Arts in Medicine</a></li> 
+						</ul>                             
+					</li>
+
+				</ul>
+			</li>
+
+			<li><a href="http://www.digitalworlds.ufl.edu/" target="_blank" class="noicon">Digital Worlds Institute</a></li>
+			<li><a href="http://www.arts.ufl.edu/cwa/" target="_blank" class="noicon">Center for World Arts</a></li>
+			<li><a href="http://www.arts.ufl.edu/cam" class="noicon">Center for Arts in Medicine</a></li>
+            <li><a href="http://nwsa.mdc.edu" class="noicon">New Worlds School of the Arts - Miami</a></li>
+			<li><a href="http://www.arts.ufl.edu/programs/" class="noicon">Online</a>
+				<ul>
+				    <li><a href="http://education.arts.ufl.edu/art-education-degrees/masters-in-art-education/">Arts Education</a></li>
+					<li><a href="http://www.arts.ufl.edu/programs/artsadmin.aspx">Arts Administration</a></li>
+					<li><a href="http://www.arts.ufl.edu/cam/gradCertificate.aspx">Arts in Medicine</a></li>
+					<li><a href="http://musiceducation.arts.ufl.edu ">Music Education</a></li>   
+				</ul>                             
+			</li>
+			<li><a href="http://www.arts.ufl.edu/programs/" class="noicon">All Programs</a> 
+
+		</ul>
+	</li>
+	<li id="newsevents"><a href="/news/" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">News + Events</a>
+		<ul>
+			<li><a href="/news/Default.aspx">CFA News Gallery</a></li>
+			<li><a href="/news/calendar.aspx">Calendar of Events</a></li>
+			<li><a href="/news/muse.aspx">Muse Magazine</a></li>
+            <li><a href="/newsandevents/loopredirect.aspx">The Loop: Online News</a></li>
+			<li><a href="/news/publicity.aspx">Publicity Resources</a></li>
+           
+		</ul>
+	</li>
+	<li id="studentlife"><a href="#" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">Student Life</a>
+		<ul>
+			<li><a href="/students/diversity.aspx">Diversity Resources</a></li>
+			<li><a href="/students/international.aspx">International Programs</a></li>
+            
+                <li><a href="/students/organizations.aspx">Bands, Ensembles and Organizations</a></li>
+            
+			
+			<li><a href="/students/reid.aspx">Reid Hall: Fine Arts Housing</a></li>
+			<li><a href="/students/internships.aspx">Career Resources + Internships</a></li>
+			<li><a href="http://www.registrar.ufl.edu/commencement">Fine Arts Commencement</a></li>
+              <li><a href="/students/syllabi.aspx">Syllabi Listing</a></li>
+			<li><a href="/resources/usp.aspx">University Scholars Program</a></li> 
+		</ul>
+	</li>
+	<li id="for" class="for CFA for-CFA"><a href="#" class="ui-state-default">For:</a></li>
+	<li id="facultystaff" class="CFA"><a href="/facultystaff/" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">Faculty + Staff</a>
+		<ul>
+			<li><a href="/contacts.aspx">Faculty + Staff Directory</a></li>
+			<li><a href="/facultystaff/">Faculty + Staff Resources</a></li>
+		</ul>
+	</li>
+	<li id="alumnifriends" class="last CFA"><a href="/alumnifriends/" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">Alumni + Friends</a>
+		<ul>
+			<li><a href="/alumnifriends/">Alumni + Friends</a></li>
+			<li><a href="/alumnifriends/giving.aspx">Make a Gift</a></li>
+
+
+			<li><a href="/join">Friends of Music</a></li>
+
+			<li><a href="/join">Friends of Theatre + Dance</a></li>
+
+			<li><a href="/join">Friends of Art + Art History</a></li>
+
+			<li><a href="http://www.ufbands.ufl.edu/bandalumni.html" target="_blank">Gator Band Alumni</a></li>
+
+			<li><a href="/galleries/membership.aspx" target="_blank">University Galleries Membership</a></li>
+
+		</ul>
+	</li>
+</ul>
+
+                <!-- End menubar -->
+			</div><!-- End content-inner -->
+		</div><!-- End content -->
+	</div>
+	<div id="toppanel">
+		<div id="panel">
+			<div class="content span-24">
+				<div class="span-5">
+				<h2>UF Links</h2>
+					<ul>
+						<li><a class="noicon" href="http://phonebook.ufl.edu/" target="_blank">UF Phonebook</a></li>
+						<li><a class="noicon" href="http://www.ufl.edu/colleges/" target="_blank">UF Colleges</a></li>
+						<li><a class="noicon" href="http://campusmap.ufl.edu/" target="_blank">Campus Map</a></li>
+						<li><a class="noicon" href="http://calendar.ufl.edu/" target="_blank">UF Master Calendar</a></li>
+						<li><a class="noicon" href="http://www.uflib.ufl.edu/" target="_blank">UF Libraries</a></li>
+					</ul>
+				</div>
+				<div class="span-5">
+				<h2>Opportunities</h2>
+					<ul>
+						<li><a class="noicon" href="http://www.sfa.ufl.edu/" target="_blank">UF Financial Aid</a></li>
+						<li><a class="noicon" href="http://gradschool.ufl.edu/" target="_blank">Graduate School</a></li>
+						<li><a class="noicon" href="http://www.ufic.ufl.edu/" target="_blank">International Center</a></li>
+						<li><a class="noicon" href="http://www.union.ufl.edu/involvement/" target="_blank">Campus Organizations</a></li>
+						<li><a class="noicon" href="http://www.union.ufl.edu/" target="_blank">J. Wayne Reitz Student Union</a></li>
+					</ul>
+				</div>
+				<div class="span-5">
+				<h2>Arts + Culture</h2>
+					<ul>
+						<li><a class="noicon" href="http://www.arts.ufl.edu/galleries/" target="_blank">University Galleries</a></li>
+						<li><a class="noicon" href="http://performingarts.ufl.edu/" target="_blank">UF Performing Arts</a></li>
+						<li><a class="noicon" href="http://www.harn.ufl.edu/" target="_blank">Samuel P. Harn Museum of Art</a></li>
+						<li><a class="noicon" href="http://www.flmnh.ufl.edu/" target="_blank">Florida Museum of Natural History</a></li>
+						<li><a class="noicon" href="http://www.gvlculturalaffairs.org/website/local_resources/local.html" target="_blank">Gainesville Arts and Culture</a></li>
+					</ul>
+				</div>
+				<div class="span-4">
+				<h2>Self-Manage</h2>
+					<ul>
+						<li><a class="noicon" href="http://webmail.ufl.edu/" target="_blank">E-mail</a></li>
+						<li><a class="noicon" href="http://my.ufl.edu/" target="_blank">MyUFL</a></li>
+						<li><a class="noicon" href="http://www.isis.ufl.edu/" target="_blank">ISIS</a></li>
+						<li><a class="noicon" href="http://lss.at.ufl.edu" target="_blank">e-Learning</a></li>
+						<li><a class="noicon" href="http://www.reg.ufl.edu/" target="_blank">UF Registrar</a></li>
+					</ul>
+				</div>
+				<div class="span-5 last">
+				<h2>Current Students</h2>
+					<ul>
+						<li><a href="/students/saah.aspx" class="popLink noicon">Art + Art History</a></li>
+						<li><a href="/students/som.aspx" class="popLink noicon">Music</a></li>
+						<li><a href="/students/sotd.aspx" class="popLink noicon">Theatre + Dance</a></li>
+						<li><a class="noicon" href="/students/commencement.aspx">Commencement</a></li>
+						<li><a href="/programs/info/GradInfo.aspx">Graduate Students</a></li>
+					</ul>
+				</div>
+			</div>
+		</div> <!-- End panel -->
+		<div class="tab">
+			<span id="toggle">
+				<a id="open" class="open" href="#">Quick Links</a>
+				<a id="close" style="display: none;" class="close" href="#">Close Panel</a>			
+			</span>
+		</div><!--End tab-->
+	</div> <!--End toppanel -->
+	
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("ctl00_LeftColumn_ToolkitScriptManager1_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CollapsiblePanelBehavior, {"ClientStateFieldID":"ctl00_LeftColumn_GridView1_ctl01_CollapsiblePanelExtender1_ClientState","CollapseControlID":"ctl00_LeftColumn_GridView1_ctl01_toggleID","Collapsed":true,"CollapsedImage":"../images/expand_blue.jpg","CollapsedSize":0,"CollapsedText":"More Information","ExpandControlID":"ctl00_LeftColumn_GridView1_ctl01_toggleID","ExpandedImage":"../images/collapse_blue.jpg","ExpandedText":"Less Information","ImageControlID":"ctl00_LeftColumn_GridView1_ctl01_toggleImage","TextLabelID":"ctl00_LeftColumn_GridView1_ctl01_toggleID","id":"ctl00_LeftColumn_GridView1_ctl01_CollapsiblePanelExtender1"}, null, null, $get("ctl00_LeftColumn_GridView1_ctl01_eventDetails"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CollapsiblePanelBehavior, {"ClientStateFieldID":"ctl00_LeftColumn_GridView1_ctl02_CollapsiblePanelExtender1_ClientState","CollapseControlID":"ctl00_LeftColumn_GridView1_ctl02_toggleID1","Collapsed":true,"CollapsedImage":"../images/expand_blue.jpg","CollapsedSize":0,"CollapsedText":"More Information","ExpandControlID":"ctl00_LeftColumn_GridView1_ctl02_toggleID1","ExpandedImage":"../images/collapse_blue.jpg","ExpandedText":"Less Information","ImageControlID":"ctl00_LeftColumn_GridView1_ctl02_toggleImage1","TextLabelID":"ctl00_LeftColumn_GridView1_ctl02_toggleID1","id":"ctl00_LeftColumn_GridView1_ctl02_CollapsiblePanelExtender1"}, null, null, $get("ctl00_LeftColumn_GridView1_ctl02_eventDetails"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CollapsiblePanelBehavior, {"ClientStateFieldID":"ctl00_LeftColumn_GridView1_ctl03_CollapsiblePanelExtender1_ClientState","CollapseControlID":"ctl00_LeftColumn_GridView1_ctl03_toggleID","Collapsed":true,"CollapsedImage":"../images/expand_blue.jpg","CollapsedSize":0,"CollapsedText":"More Information","ExpandControlID":"ctl00_LeftColumn_GridView1_ctl03_toggleID","ExpandedImage":"../images/collapse_blue.jpg","ExpandedText":"Less Information","ImageControlID":"ctl00_LeftColumn_GridView1_ctl03_toggleImage","TextLabelID":"ctl00_LeftColumn_GridView1_ctl03_toggleID","id":"ctl00_LeftColumn_GridView1_ctl03_CollapsiblePanelExtender1"}, null, null, $get("ctl00_LeftColumn_GridView1_ctl03_eventDetails"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CollapsiblePanelBehavior, {"ClientStateFieldID":"ctl00_LeftColumn_GridView1_ctl04_CollapsiblePanelExtender1_ClientState","CollapseControlID":"ctl00_LeftColumn_GridView1_ctl04_toggleID1","Collapsed":true,"CollapsedImage":"../images/expand_blue.jpg","CollapsedSize":0,"CollapsedText":"More Information","ExpandControlID":"ctl00_LeftColumn_GridView1_ctl04_toggleID1","ExpandedImage":"../images/collapse_blue.jpg","ExpandedText":"Less Information","ImageControlID":"ctl00_LeftColumn_GridView1_ctl04_toggleImage1","TextLabelID":"ctl00_LeftColumn_GridView1_ctl04_toggleID1","id":"ctl00_LeftColumn_GridView1_ctl04_CollapsiblePanelExtender1"}, null, null, $get("ctl00_LeftColumn_GridView1_ctl04_eventDetails"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CollapsiblePanelBehavior, {"ClientStateFieldID":"ctl00_LeftColumn_GridView1_ctl05_CollapsiblePanelExtender1_ClientState","CollapseControlID":"ctl00_LeftColumn_GridView1_ctl05_toggleID","Collapsed":true,"CollapsedImage":"../images/expand_blue.jpg","CollapsedSize":0,"CollapsedText":"More Information","ExpandControlID":"ctl00_LeftColumn_GridView1_ctl05_toggleID","ExpandedImage":"../images/collapse_blue.jpg","ExpandedText":"Less Information","ImageControlID":"ctl00_LeftColumn_GridView1_ctl05_toggleImage","TextLabelID":"ctl00_LeftColumn_GridView1_ctl05_toggleID","id":"ctl00_LeftColumn_GridView1_ctl05_CollapsiblePanelExtender1"}, null, null, $get("ctl00_LeftColumn_GridView1_ctl05_eventDetails"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CollapsiblePanelBehavior, {"ClientStateFieldID":"ctl00_LeftColumn_GridView1_ctl06_CollapsiblePanelExtender1_ClientState","CollapseControlID":"ctl00_LeftColumn_GridView1_ctl06_toggleID1","Collapsed":true,"CollapsedImage":"../images/expand_blue.jpg","CollapsedSize":0,"CollapsedText":"More Information","ExpandControlID":"ctl00_LeftColumn_GridView1_ctl06_toggleID1","ExpandedImage":"../images/collapse_blue.jpg","ExpandedText":"Less Information","ImageControlID":"ctl00_LeftColumn_GridView1_ctl06_toggleImage1","TextLabelID":"ctl00_LeftColumn_GridView1_ctl06_toggleID1","id":"ctl00_LeftColumn_GridView1_ctl06_CollapsiblePanelExtender1"}, null, null, $get("ctl00_LeftColumn_GridView1_ctl06_eventDetails"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CollapsiblePanelBehavior, {"ClientStateFieldID":"ctl00_LeftColumn_GridView1_ctl07_CollapsiblePanelExtender1_ClientState","CollapseControlID":"ctl00_LeftColumn_GridView1_ctl07_toggleID","Collapsed":true,"CollapsedImage":"../images/expand_blue.jpg","CollapsedSize":0,"CollapsedText":"More Information","ExpandControlID":"ctl00_LeftColumn_GridView1_ctl07_toggleID","ExpandedImage":"../images/collapse_blue.jpg","ExpandedText":"Less Information","ImageControlID":"ctl00_LeftColumn_GridView1_ctl07_toggleImage","TextLabelID":"ctl00_LeftColumn_GridView1_ctl07_toggleID","id":"ctl00_LeftColumn_GridView1_ctl07_CollapsiblePanelExtender1"}, null, null, $get("ctl00_LeftColumn_GridView1_ctl07_eventDetails"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CollapsiblePanelBehavior, {"ClientStateFieldID":"ctl00_LeftColumn_GridView1_ctl08_CollapsiblePanelExtender1_ClientState","CollapseControlID":"ctl00_LeftColumn_GridView1_ctl08_toggleID1","Collapsed":true,"CollapsedImage":"../images/expand_blue.jpg","CollapsedSize":0,"CollapsedText":"More Information","ExpandControlID":"ctl00_LeftColumn_GridView1_ctl08_toggleID1","ExpandedImage":"../images/collapse_blue.jpg","ExpandedText":"Less Information","ImageControlID":"ctl00_LeftColumn_GridView1_ctl08_toggleImage1","TextLabelID":"ctl00_LeftColumn_GridView1_ctl08_toggleID1","id":"ctl00_LeftColumn_GridView1_ctl08_CollapsiblePanelExtender1"}, null, null, $get("ctl00_LeftColumn_GridView1_ctl08_eventDetails"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CollapsiblePanelBehavior, {"ClientStateFieldID":"ctl00_LeftColumn_GridView1_ctl09_CollapsiblePanelExtender1_ClientState","CollapseControlID":"ctl00_LeftColumn_GridView1_ctl09_toggleID","Collapsed":true,"CollapsedImage":"../images/expand_blue.jpg","CollapsedSize":0,"CollapsedText":"More Information","ExpandControlID":"ctl00_LeftColumn_GridView1_ctl09_toggleID","ExpandedImage":"../images/collapse_blue.jpg","ExpandedText":"Less Information","ImageControlID":"ctl00_LeftColumn_GridView1_ctl09_toggleImage","TextLabelID":"ctl00_LeftColumn_GridView1_ctl09_toggleID","id":"ctl00_LeftColumn_GridView1_ctl09_CollapsiblePanelExtender1"}, null, null, $get("ctl00_LeftColumn_GridView1_ctl09_eventDetails"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CollapsiblePanelBehavior, {"ClientStateFieldID":"ctl00_LeftColumn_GridView1_ctl10_CollapsiblePanelExtender1_ClientState","CollapseControlID":"ctl00_LeftColumn_GridView1_ctl10_toggleID1","Collapsed":true,"CollapsedImage":"../images/expand_blue.jpg","CollapsedSize":0,"CollapsedText":"More Information","ExpandControlID":"ctl00_LeftColumn_GridView1_ctl10_toggleID1","ExpandedImage":"../images/collapse_blue.jpg","ExpandedText":"Less Information","ImageControlID":"ctl00_LeftColumn_GridView1_ctl10_toggleImage1","TextLabelID":"ctl00_LeftColumn_GridView1_ctl10_toggleID1","id":"ctl00_LeftColumn_GridView1_ctl10_CollapsiblePanelExtender1"}, null, null, $get("ctl00_LeftColumn_GridView1_ctl10_eventDetails"));
+});
+//]]>
+</script>
+</form>
+	<div id="topBar">
+		<div id="topBar-inner" class="inner">
+			<div id="topBar-left" class="span-18">
+				<a href="http://www.ufl.edu" class="noicon" target="_blank"><img src="/images/ufmonogram.png" alt="UF" title="UF" id="UFMonogram" class="ufm" /></a>
+			</div>
+			<div id="topBar-right" class="span-6 last">
+			
+
+				<form method="get" action="http://search.ufl.edu/web">
+					<input type="text" id="searchBar" name="query" value="Search the College" class="medGray" />
+					<input type="hidden" id="site" name="site" value="arts.ufl.edu" />
+				</form>
+			</div>
+		</div>
+	</div><!-- End topBar -->
+	<div id="footer">
+		<div id="footer-inner" class="inner">
+			<div id="footer-left" class="span-18">
+			<p>
+			<a href="/">Home</a> | <a href="/welcome/about.aspx">About</a> | <a href="/contacts.aspx">Faculty + Staff Directory</a> | <a href="/welcome/accreditations.aspx" class="popLink noicon">Accreditations</a> | <a href="http://www.arts.ufl.edu/welcome/jobs.aspx" class="noicon" target="_blank">Jobs</a> | <a href="/alumnifriends/giving.aspx">Giving</a> | <a href="/contacts.aspx">Contact Us</a><br />
+			&#169; 2011 College of Fine Arts &amp; University of Florida<br />
+			
+			This page uses Google Analytics (<a href="http://www.google.com/intl/en_ALL/privacypolicy.html" target="_blank" class="noicon">Google Privacy Policy</a>) | <a href="http://www.webadmin.ufl.edu/policies/internet_privacy/" target="_blank" class="noicon">Privacy Policy</a> | <a href="http://warrington.ufl.edu/docs/SocialSecurityNumberPrivacy.pdf" target="_blank" class="noicon">Social Security Number Privacy</a><br />
+			 <a href="http://www.facebook.com/uffinearts" target="_blank" class="noicon"><img src="/images/social/facebook.png" width="16" height="16" alt="Facebook" title="Facebook" /></a>
+             <a href="http://twitter.com/uffinearts" target="_blank" class="noicon"><img src="/images/social/twitter.png" width="16" height="16" alt="Twitter" title="Twitter" /></a>
+              <a href="http://www.youtube.com/uffinearts" target="_blank" class="noicon"><img src="/images/social/youtube.png" width="16" height="16" alt="YouTube" title="YouTube" /></a>
+              <a href="http://uffinearts.tumblr.com/" target="_blank" class="noicon"><img src="/images/social/tumblr.gif" width="16" height="16" alt="YouTube" title="Tumblr" /></a>
+            
+            
+            </p>
+			</div>
+			<div id="footer-right" class="span-6 last">
+			<a href="http://www.ufl.edu" style="border: none"><img src="/images/UFsignatureThemeline.png" alt="University of Florida" class="floatRight" /></a>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="/js/jquery-ui-1.8.6.custom.min.js"></script>
+         
+
+<script type="text/javascript">
+	$(function() {
+		$("#advancedSearch").show();
+	});
+	</script>
+
+
+	</div><!-- End footer -->
+	<!-- If IE <= 7.0, this will show -->
+	<div id="upgradeIE">
+		<p>Please <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx" class="noicon">upgrade your browser</a> to the latest version<br />or disable compatibility view for a better<br />viewing experience.</p>
+	</div>
+
+		<script type="text/javascript" src="/js/slide.js"></script>
+		<script type="text/javascript" src="/js/script.js"></script>
+		<script type="text/javascript">
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-15256093-2']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+	</body>
+</html>
+
+
+
+
