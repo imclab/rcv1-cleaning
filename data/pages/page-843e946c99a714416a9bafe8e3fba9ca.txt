@@ -1,0 +1,1870 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+		  <script language="JavaScript">
+		   function showresult(file,page)
+		   {
+			 
+			var path=document.getElementById('path').value;
+
+  		 	//var path="http://www.learnoutloud.com/";
+				document.frm.pageno.value=page;
+				var catname='';
+				var subcatname='';
+				var catid='';
+				try
+			 { 
+				catname=document.frm.category_name.value;
+				catid=document.frm.catid.value;
+				subcatname=document.frm.subcategory_name.value;
+			 }catch(e){}
+				page=document.frm.pageno.value;
+			  var cookie=document.frm.cookie.value;
+				var surl=document.frm.sessionurl.value;
+				var url="";
+				if(catname=='')
+				{
+           		if(cookie==0 && surl!='')
+								url='toplevel_audio_books.php?&pageno='+page+'&'+surl+'#go';
+							else
+								url=path+"/Audio-Books"+'/'+page+'#go';
+				}
+				else
+			 { 
+					if(subcatname=='')
+					{   
+							if(cookie==0 && surl!='')
+								url='category_audio_books.php?catid='+catid+'&pageno='+page+'&'+surl+'#go';
+							else
+								url=path+"/Audio-Books"+'/'+catname+'/'+page+'#go';
+					 }
+						else
+						{
+							if(cookie==0 && surl!='')
+							url='subcategory_audio_books.php?catid='+catid+'&subcatid='+subcatname+'&pageno='+page+'&'+surl+'#go';
+							else
+							url=path+"/Audio-Books"+'/'+catname+'/'+subcatname+'/'+page+'#go';
+						}
+			 } 	
+				document.frm.action=url;
+				document.frm.submit();
+		   }
+		  </script>
+		 		  <script language="JavaScript">
+		   function showresult(file,page)
+		   {
+			 
+			var path=document.getElementById('path').value;
+
+  		 	//var path="http://www.learnoutloud.com/";
+				document.frm.pageno.value=page;
+				var catname='';
+				var subcatname='';
+				var catid='';
+				try
+			 { 
+				catname=document.frm.category_name.value;
+				catid=document.frm.catid.value;
+				subcatname=document.frm.subcategory_name.value;
+			 }catch(e){}
+				page=document.frm.pageno.value;
+			  var cookie=document.frm.cookie.value;
+				var surl=document.frm.sessionurl.value;
+				var url="";
+				if(catname=='')
+				{
+           		if(cookie==0 && surl!='')
+								url='toplevel_audio_books.php?&pageno='+page+'&'+surl+'#go';
+							else
+								url=path+"/Audio-Books"+'/'+page+'#go';
+				}
+				else
+			 { 
+					if(subcatname=='')
+					{   
+							if(cookie==0 && surl!='')
+								url='category_audio_books.php?catid='+catid+'&pageno='+page+'&'+surl+'#go';
+							else
+								url=path+"/Audio-Books"+'/'+catname+'/'+page+'#go';
+					 }
+						else
+						{
+							if(cookie==0 && surl!='')
+							url='subcategory_audio_books.php?catid='+catid+'&subcatid='+subcatname+'&pageno='+page+'&'+surl+'#go';
+							else
+							url=path+"/Audio-Books"+'/'+catname+'/'+subcatname+'/'+page+'#go';
+						}
+			 } 	
+				document.frm.action=url;
+				document.frm.submit();
+		   }
+		  </script>
+		 <head>
+<title>Download Arts & Entertainment Audio Books</title>
+<link rel="alternate" type="application/rss+xml"    title="BlogOutLoud, Our Audio & Video Learning Blog" href="http://feeds2.feedburner.com/BlogOutLoud" >
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+<meta name='keywords' content="art history audio,audio drama,Radio Show MP3,Famous Speech MP3,\"Famous Speech Mp3\",famous speech,famous speeches,dr martin luther king jr famous speech,I have a dream,historical recordings,Full Cast Audio,opera learn,shakespear audio,hamlet audio">
+<meta name='description' content="Download Arts & Entertainment Audio Books on MP3. Download and play audio books on your iPod, iPhone, Android phone, or any portable audio devices. ">
+<link href="http://www.learnoutloud.com/style/common.css" rel='stylesheet' type='text/css'>
+<script src="http://www.learnoutloud.com/wimpy_button_bridge_result.js" type="text/javascript"></script>
+<SCRIPT type='text/javascript' src='http://www.learnoutloud.com/include/CommonFunctions.js'></script>
+
+<script language='JavaScript' type='text/JavaScript'>
+<!--
+function fnCheckedAudioVideo(obj)
+{
+		var i;
+		if(obj.name=='chkAudioType')
+		{
+			if(obj.checked)
+			{
+				if(document.frm.chkAudio_A.length>1)
+				{
+					for(i=0;i<document.frm.chkAudio_A.length;i++)
+					{
+						document.frm.chkAudio_A[i].checked=true;
+					}
+					document.frm.chkUnabridged.checked=true;
+					document.frm.chkAbridged.checked=true;
+					//New
+					/*for(i=0;i<document.frm.chkVideo_V.length;i++)
+					{
+						document.frm.chkVideo_V[i].checked=false;
+					}
+					document.frm.chkVideoType.checked=false;*/
+					//End
+				}
+				else
+				{
+					document.frm.chkAudio_A.checked=true;
+				}
+				document.frm.chkAudioType.value=1;
+			 }
+			 else
+			  {
+			    if(document.frm.chkAudio_A.length>1)
+				{
+					for(i=0;i<document.frm.chkAudio_A.length;i++)
+					{
+						document.frm.chkAudio_A[i].checked=false;
+					}
+					document.frm.chkUnabridged.checked=false;
+					document.frm.chkAbridged.checked=false;
+				}
+				else
+				{
+					document.frm.chkAudio_A.checked=false;
+				}
+				
+			  }	
+			  
+		}
+		
+		if(obj.name=='chkVideoType')
+		{
+			if(obj.checked)
+			{
+				if(document.frm.chkVideo_V.length>1)
+				{
+					for(i=0;i<document.frm.chkVideo_V.length;i++)
+					{
+						document.frm.chkVideo_V[i].checked=true;
+					}
+					//New
+					/*for(i=0;i<document.frm.chkAudio_A.length;i++)
+					{
+						document.frm.chkAudio_A[i].checked=false;
+					}
+					document.frm.chkUnabridged.checked=false;
+					document.frm.chkAbridged.checked=false;
+					document.frm.chkAudioType.checked=false;*/
+					//End
+				}
+				else
+				{
+					document.frm.chkVideo_V.checked=true;
+				}
+				document.frm.chkVideoType.value=1;
+			}
+			else
+			{
+				if(document.frm.chkVideo_V.length>1)
+				{
+					for(i=0;i<document.frm.chkVideo_V.length;i++)
+					{
+						document.frm.chkVideo_V[i].checked=false;
+					}
+				}
+				else
+				{
+					document.frm.chkVideo_V.checked=false;
+				} 
+			}	
+		}
+}
+
+
+function makelist()
+{
+	var lengthA=document.frm.chkAudio_A.length;
+	var lengthV=document.frm.chkVideo_V.length;
+	var listAudioVideo='';
+	var listAudio='';
+	var listVideo='';
+	
+	if(lengthA>1)
+	{
+		for(i=0;i<lengthA;i++)
+		{
+			if(document.frm.chkAudio_A[i].checked==true)
+			{
+				if(listAudio!='')
+					listAudio +=','+document.frm.chkAudio_A[i].value;
+				else
+					listAudio=document.frm.chkAudio_A[i].value;
+			}
+
+		}
+	}
+	else
+	{
+			if(document.frm.chkAudio_A.checked==true)
+			{
+				if(listAudioVideo!='')
+					listAudio +=','+document.frm.chkAudio_A.value;
+				else
+					listAudio=document.frm.chkAudio_A.value;
+			}
+	}
+	//....................................................//
+	if(lengthV>1)
+	{
+		for(i=0;i<lengthV;i++)
+		{
+			if(document.frm.chkVideo_V[i].checked==true)
+			{
+				if(listVideo!='')
+					listVideo+=','+document.frm.chkVideo_V[i].value;
+				else
+					listVideo=document.frm.chkVideo_V[i].value;
+			}
+		}
+	}
+	else
+	{
+			if(document.frm.chkVideo_V.checked==true)
+			{
+				if(listVideo!='')
+					listVideo +=','+document.frm.chkVideo_V.value;
+				else
+					listVideo =document.frm.chkVideo_V.value;
+			}
+	}
+	//...........................................................//
+	document.frm.hidFormatList.value=listAudio+':'+listVideo;
+}
+function fnsetselcted()
+{				
+					for(i=0;i<document.frm.chkAudio_A.length;i++)
+					{
+						document.frm.chkAudio_A[i].checked=true;
+					}
+					document.frm.chkUnabridged.checked=true;
+					document.frm.chkAbridged.checked=true;
+					
+					for(i=0;i<document.frm.chkVideo_V.length;i++)
+					{
+						document.frm.chkVideo_V[i].checked=true;
+					}
+					document.frm.chkVideoType.checked=true;
+					document.frm.chkAudioType.checked=true;
+					document.frm.chkVideoType.value=1;
+					document.frm.chkAudioType.value=1;
+					
+					
+
+}
+function fnSetFormatList()
+{
+var obj=document.frm.hidFormatList;
+if(document.frm.hidFormatList!=null)
+	{
+	var list1= document.frm.hidFormatList.value;
+	
+	var arrlistAV=list1.split(':');
+	var i,frmobjA,frmobjV;
+	//...............................................
+	if(arrlistAV[0]!='')
+	{
+		var arrlistA=arrlistAV[0].split(',');
+		for(i=0;i<arrlistA.length;i++)
+		{
+			frmobjA=document.getElementById(arrlistA[i]);
+			frmobjA.checked=true;
+		}
+	}	
+
+		//...............................................
+		
+	if(arrlistAV[1]!='')
+	{
+		var arrlistV=arrlistAV[1].split(',');
+		for(i=0;i<arrlistV.length;i++)
+			{
+				frmobjV=document.getElementById(arrlistV[i]);
+				
+				frmobjV.checked=true;
+				
+			}
+	
+	}
+	
+	}//end of first if
+}
+function setTypeCopy()
+{
+ objselcopy=document.frm.selTypeCopy;
+ objsel=document.frm.selType;
+ objselcnt=document.frm.selCount;
+ objselcntcopy=document.frm.selCountCopy;
+ objsel.options[objselcopy.selectedIndex].selected=true;
+ objselcnt.options[objselcntcopy.selectedIndex].selected=true;
+ setType();
+}
+
+function setType()
+{
+	document.getElementById("hidFormatFlag").value=1;
+	makelist();
+	catname=document.frm.category_name.value;
+	var path="http://www.learnoutloud.com";
+	var cookie='0';
+	var surl='';
+
+	if(cookie==0 && surl!='')
+	  url='toplevel_audio_books.php?catid='+catname+'&'+surl+'#go';
+	else
+	   url=path+'/Audio-Books/'+catname+'#go';
+	document.frm.pageno.value=1;
+	document.frm.action=url;
+	document.frm.submit();
+}
+function call_result1()
+{
+ if(event.keyCode==13)
+   setTypeCopy();
+}
+
+
+function call_result()
+{
+ if(event.keyCode==13)
+   setType();
+}
+
+function popup()
+ {
+ alert('Link According to Content')
+ }
+ function popup1()
+ {
+ alert('Please Login First')
+ }
+function winpopup(url,feature)
+ {
+  window.open(url,'',feature);
+ }
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf('#')!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf('?'))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<style type="text/css">
+ a:hover {
+  cursor:pointer;
+ }
+  span:hover {
+  cursor:pointer;
+ }
+</style>
+
+<!-- <script type="text/javascript" src="http://media.richrelevance.com/rrserver/js/0.4/p13n.js"></script><script type="text/javascript">var R3_COMMON = new r3_common(); R3_COMMON.setApiKey('360c777519890811');R3_COMMON.setBaseUrl('http://staging.richrelevance.com/rrserver/');R3_COMMON.setUserId('');R3_COMMON.setSessionId('bc0bdbea9453e4da558988fe279e8a92'); R3_COMMON.addPlacementType('category_page.content') var R3_CATEGORY = new r3_category();R3_CATEGORY.setId('C17');R3_CATEGORY.setName('Arts & Entertainment');r3();</script>--></head>
+
+<body>
+<form name='frm' method='post' >
+<div class="main_container">
+	<div class="header">
+		<div class="top_menu">
+			<a href="http://www.learnoutloud.com/shopping_cart.php">Cart</a> |
+			<a href="http://www.learnoutloud.com/downloadorder">My Downloads</a> |
+			<a href="http://www.learnoutloud.com/welcome.php?from=3&">My Account</a> |
+			<a href="http://www.learnoutloud.com/Site-Help">Site Help</a>
+		</div><div class="cl_b"><!-- --></div>	</div>
+	<div style="margin:auto; overflow:hidden; height:auto; padding:5px;"></div>
+	<div class="navigation fl_l">
+		<a href="http://www.learnoutloud.com/Home" class="logo">
+			<img src="http://www.learnoutloud.com/images/logo.png" alt="" />
+		</a>		
+			
+<script type="text/javascript">
+        var GB_ROOT_DIR = "http://www.learnoutloud.com/greybox/";
+    </script>
+
+    <script type="text/javascript" src="http://www.learnoutloud.com/greybox/AJS.js"></script>
+    <script type="text/javascript" src="http://www.learnoutloud.com/greybox/AJS_fx.js"></script>
+    <script type="text/javascript" src="http://www.learnoutloud.com/greybox/gb_scripts.js"></script>
+    <link href="http://www.learnoutloud.com/greybox/gb_styles.css" rel="stylesheet" type="text/css" media="all" />
+    <script language="javascript" type="text/javascript">
+               // we will use greybox' afterclose function to reload the parent page
+               // after closing the grebox pop up window
+             <!--
+                    function afterclose() 
+					{
+                    window.location.reload();
+                    }        
+               // -->
+          </script>
+<script language="JavaScript" type="text/JavaScript">
+
+function fnlogout()
+{
+	document.frm.actions.value='logout';
+	document.frm.submit();
+}
+</script>
+
+<input type='hidden' name='actions'> 
+<input type='hidden' name='logouturl' value="http://www.learnoutloud.com/Home">
+		<div class="pnl_gray">
+					<div class="pb_6">
+	
+				 <div  class=" fl_l">
+                		<a  href="http://www.learnoutloud.com/ulogin.php" rel="gb_page_center[500, 280]">
+					<img src="http://www.learnoutloud.com/images/sign_in.jpg" >
+                </div>                
+                <div class=" fl_r">
+                		<a href="http://www.learnoutloud.com/Register"><img src="http://www.learnoutloud.com/images/sign_up.jpg"></a>
+                </div>
+				<div class="cl_b"><!-- --></div>
+			</div>
+			<a href="http://www.learnoutloud.com/Forgot-Password">Forgot Password?</a>
+		</div>
+		   				  <div class="pnl_gray follow_pnl">
+			<h2>Follow Us On</h2>
+			<a href="http://twitter.com/learnoutloud" class="icon_twitter fl_l"><!-- --></a>
+			<a href="http://www.facebook.com/learnoutloud" class="icon_facebook fl_r"><!-- --></a>
+			<div class="cl_b"><!-- --></div>
+		</div>		<div class="pnl_gray menu_nav">
+			<h2>Audio Books</h2>
+			<ul>
+				
+									<li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment"><b> 
+									 Arts & Entertainment									  </b></a>	   
+                                   </li>
+
+							   
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Biography">
+									 Biography									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Business">
+									 Business									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Education-and-Professional">
+									 Education & Professional									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/History">
+									 History									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Languages">
+									 Languages									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Literature">
+									 Literature									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Philosophy">
+									 Philosophy									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Politics">
+									 Politics									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Religion-and-Spirituality">
+									 Religion & Spirituality									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Science">
+									 Science									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Self-Development">
+									 Self Development									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Social-Sciences">
+									 Social Sciences									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Sports-and-Hobbies">
+									 Sports & Hobbies									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Technology">
+									 Technology									  </a>
+                               </li>
+  							   <li>
+									<a href="http://www.learnoutloud.com/Audio-Books/Travel">
+									 Travel									  </a>
+                               </li>
+  			</ul>
+		</div>
+		<div class="pnl_gray">
+			<h2>Free Audio Book</h2>
+			
+			<div class="fs_11 pb_6">
+			<!--	of the month for Aug-->
+			</div> 
+			<div class="pb_6" align="center">
+				<a href="http://www.learnoutloud.com/Free-Audio-Video/Literature/American-Classics/Anthem/19264"><img src="https://www.learnoutloud.com/images/new_product/ANTHEMFINALfeature.gif" border="0" vspace="2"></a>
+			</div>
+			<div class="ta_c pb_6" style="text-align: left;">
+				   <span  style="font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 12px;">Download our free audio book for the month of August:<BR> <B>
+				   <a href="http://www.learnoutloud.com/Free-Audio-Video/Literature/American-Classics/Anthem/19264">	  Anthem by Ayn Rand</a></B>.</span>
+			</div>
+			
+			<a href="http://www.learnoutloud.com/Free-Audio-Video/Literature/American-Classics/Anthem/19264" class="btn_blue">
+				<img src="https://www.learnoutloud.com/images/download.jpg"/>
+			</a>
+			<div class="cl_b"><!-- --></div>
+
+                        					
+		</div>
+	
+	</div>
+	<div class="main_content fl_r">
+		<p class="top_txt">
+			<img src="http://www.learnoutloud.com/images/top_text.png" />
+		</p>
+		<div class="main_menu">
+			<div class="main_menu">
+<table cellpadding="0" cellspacing="0">
+<!-- <table cellpadding="0" cellspacing="0"  usemap="#Map"> -->
+				<tr>
+					<td>
+						<a href="http://www.learnoutloud.com/Catalog" class="fst">
+							<span>Catalog</span>
+						</a>
+					</td>
+					<td>
+						<a href="http://www.learnoutloud.com/Audio-Books">
+							<span>Audio Books</span>
+						</a>
+					</td>
+					<!--<td>
+						<a href="http://www.learnoutloud.com/Downloads">
+							<span>Downloads</span>
+						</a>
+					</td>-->
+					<td>
+						<a href="http://www.learnoutloud.com/Free-Audio-Video">
+							<span>Free Stuff</span>
+						</a>
+					</td>
+					<td>
+						<a href="http://www.learnoutloud.com/Podcast-Directory">
+							<span>Podcasts</span>
+						</a>
+					</td>
+					<td>
+						<a href="http://kids.learnoutloud.com" >
+							<span>Kids</span>
+						</a>
+					</td>
+					<td>
+						<a href="http://www.learnoutloud.com/View-Plans"  class="lst">
+							<span>Subscribe</span>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		</div>
+		<div class="search_pnl">
+		<script language="JavaScript">
+function callsubmit(flg)
+{
+  if(flg==0)
+	 fnGo();
+  else if(flg==1)
+	   	 fnSearchWithin();
+ }
+ function callsubmitpodcast(flg)
+{
+var e = window.event;
+
+if(e.keyCode==13)
+  if(flg==0)
+	 fnGo();
+  else if(flg==1)
+	   	 fnSearchWithinPodcast();
+ }
+function fnGo()
+{
+	if(trim(document.frm.q.value)=="" )
+	 {
+	  alert("Please enter in a search term.")
+	 }
+	 else
+	 {
+	 	var lolhost="0";
+      
+      if(lolhost != 1)
+      {
+         document.frm.action="http://www.learnoutloud.com/google_search.php";
+         document.frm.submit();
+      }
+      else if(lolhost == 1)
+      {
+         document.frm.action="http://teach.learnoutloud.com/google_search_tol.php";
+         document.frm.submit();
+      }	
+      
+	 }
+
+}			
+function fnSearchWithin()
+{
+	var level='';
+	var catid='17';
+	var id='';
+	var path='http://www.learnoutloud.com';
+	var cookie='';
+	var surl='';
+	var url="";
+	if(cookie==0 && surl!='')
+		url=surl;
+	try{	
+	searchtxt=document.getElementById("txtSearch").value;	
+	searchtxt=searchtxt.replace("&","§");
+	}catch(e){};
+	var t = path+"/category.php?txtsrc="+searchtxt+"&catid="+catid+"&id="+id+"&level="+level+"&nav=L&"+url+"#go";
+	alert(t);
+	if(level=='0')
+	location.href=path+"/category.php?txtsrc="+searchtxt+"&catid="+catid+"&id="+id+"&level="+level+"&nav=L&"+url+"#go";
+	if(level=='1')
+	 location.href=	path+"/subcategory.php?txtsrc="+searchtxt+"&catid="+catid+"&id="+id+"&level="+level+"&nav=L&"+url+"#go";
+		
+}
+function fnSearchWithinPodcast()
+{
+	var path='http://www.learnoutloud.com';
+	var cookie='';
+	var surl='';
+	var url="";
+	if(cookie==0 && surl!='')
+		url=surl;
+  try{		
+	searchtxt=document.getElementById("txtSearch2").value;	
+    searchtxt=searchtxt.replace("&","§");
+	}catch(e){}; 
+	location.href=	path+"/podcast_results.php?fname="+searchtxt+"&"+url+"#go";
+}
+</script>
+
+			<label>Search</label>
+			<input type="text"  name="q"  maxlength=255 value="" />
+			<a  href="#" onclick="javascript:callsubmit(0)" class="btn_orange">
+				<span>Go</span>
+			</a>
+			<a href="http://www.learnoutloud.com/Advanced-Search" class="lnk">Advanced Search</a>
+			<div class="cl_b"><!-- --></div>
+
+            <input type="hidden" name="hidid" value="1">
+		</div>
+			<div class="top_lnks_prt">
+			<div class="bread_crumbs">
+			<div class="fl_l">
+			<a href="http://www.learnoutloud.com/Home" class="topnavbar">Home</a> 
+                          <span class='pntr_gray'><!-- --></span> 
+                          <a href="http://www.learnoutloud.com/Audio-Books"  class="topnavbar"> Audio Books</a> 
+                          <span class='pntr_gray'><!-- --></span> <span>Arts & Entertainment</span>						</div>
+			 <table class="fl_r">
+			
+			<tr>
+<td  style="align:right;">
+<TABLE cellspacing=0 cellpadding=0>
+<TR>
+<TD>
+<span class="st_email"></span><span class="st_facebook"></span><span class="st_twitter"></span><span class="st_sharethis" displayText="ShareThis"></span>
+</TD>
+<TD>
+<g:plusone size="small" count="false"></g:plusone>
+</TD>
+</TR>
+</TABLE>
+<script type="text/javascript" src="http://wd.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher:'9e813da9-34e5-4bea-af64-f7922fcce8b9'});</script>
+</td>
+</tr>
+</table>
+			</div>
+			
+			<div class="cl_b"><!-- --></div>
+		</div>
+
+		<div class="blcks_prt">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9876342170445144";
+/* Free and Podcast Leaderboard */
+google_ad_slot = "3002098762";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+		<br></br>
+			<h1 class="mb_15">Arts & Entertainment Audio Books</h1>
+			
+			<!--<p>The LearnOutLoud.com 'Arts & Entertainment' category features audio and video titles about artists in the fine and popular arts.  Here you can also titles performed by a full cast or read by well known actors.  For the actual works of literature, poetry, and drama see our '<a href="http://www.learnoutloud.com/Sale-Section/Literature">Literature</a>' section.</p><p>You'll find audio titles from entertainers and storytellers like <a href="http://www.learnoutloud.com/Resources/Authors-and-Narrators/Garrison-Keillor/318">Garrison Keillor</a>, <a href="http://www.learnoutloud.com/Results/Author/David-Sedaris/676">David Sedaris</a> and <a href="http://www.learnoutloud.com/Resources/Authors-and-Narrators/Al-Franken/1214">Al Franken</a>.  We also feature introductions to the arts such as "<a href="http://www.learnoutloud.com/Sale-Section/Arts-and-Entertainment/Theater_-Opera_-and-Classical-Music/Opera-101/6112">Opera 101</a>" and "<a href="http://www.learnoutloud.com/Sale-Section/Arts-and-Entertainment/Theater_-Opera_-and-Classical-Music/The-History-of-Classical-Music/2092">The History of Classical Music</a>". See our featured titles for the best audio and video learning titles in 'Arts & Entertainment'.</p><br/> -->
+
+
+		<div class="sep_h mb_15"><!-- --></div>
+		
+			<h2>New & Notable Arts & Entertainment Audio Books</h2>
+			<a href="http://www.learnoutloud.com/New-Releases/Arts-and-Entertainment" class="icon_pntr">Browse Our Arts & Entertainment New Releases</a>
+
+					<div class="blcks_prt" id="disp_fet">
+			<INPUT TYPE="hidden" NAME="fpage" value="">
+
+		<!-- 	 -->
+		<div class="cl_b"><!-- --></div><a href="javascript:fnFeaturedPaging_freeStuff('2','8','17','0');" class="icon_prev"></a>	 <div class="sngl_blck">
+				<div class="img_pr\" align="center"><table height="40" width="40" border="0">
+    <tr>
+	  <td height="40" width="40"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/Art-Masterpieces/24141><img src="http://www.learnoutloud.com/../images/new_thumbnail/ArtMasterpieces-70.jpg" border="0" alt="Art Masterpieces"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr></table></div>
+				<div class="des"><a href='#24141' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image24141" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/downloadpurchases/24141_S.mp3')"></a>&nbsp;
+					<p>
+						<A href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/Art-Masterpieces/24141">Art Masterpieces</A>					</p>
+				</div>
+	</div>
+	 <div class="sngl_blck">
+				<div class="img_pr\" align="center"><table height="40" width="40" border="0">
+    <tr>
+	  <td height="40" width="40"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/Never-Have-Your-Dog-Stuffed/16492><img src="http://www.learnoutloud.com/../images/new_thumbnail/NeverHaveYourDogStuffed2.jpg" border="0" alt="Never Have Your Dog Stuffed"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr></table></div>
+				<div class="des"><a href='#16492' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image16492" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://audible.edgeboss.net/download/audible/content/BK/RAND/000663/BK_RAND_000663_sample.mp3')"></a>&nbsp;
+					<p>
+						<A href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/Never-Have-Your-Dog-Stuffed/16492">Never Have Your Dog Stuffed</A><br>by Alan Alda					</p>
+				</div>
+	</div>
+	 <div class="sngl_blck">
+				<div class="img_pr\" align="center"><table height="40" width="40" border="0">
+    <tr>
+	  <td height="40" width="40"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/The-Story-of-Classical-Music/14929><img src="http://www.learnoutloud.com/../images/new_thumbnail/StoryClassicalMusic.jpg" border="0" alt="The Story of Classical Music"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr></table></div>
+				<div class="des"><a href='#14929' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image14929" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/14929/730099031028_01_01.mp3')"></a>&nbsp;
+					<p>
+						<A href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/The-Story-of-Classical-Music/14929">The Story of Classical Music</A><br>by Darren Henley					</p>
+				</div>
+	</div>
+	 <div class="sngl_blck">
+				<div class="img_pr\" align="center"><table height="40" width="40" border="0">
+    <tr>
+	  <td height="40" width="40"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/Masterpieces-of-Western-Music/5335><img src="http://www.learnoutloud.com/../images/new_thumbnail/masterpiecesofmusicRB.jpg" border="0" alt="Masterpieces of Western Music"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr></table></div>
+				<div class="des"><a href='#5335' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image5335" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/5335/Masterpieces of Western Music - 01.mp3')"></a>&nbsp;
+					<p>
+						<A href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/Masterpieces-of-Western-Music/5335">Masterpieces of Western Music</A><br>by Jeffrey Lependorf					</p>
+				</div>
+	</div>
+	 <div class="sngl_blck">
+				<div class="img_pr\" align="center"><table height="40" width="40" border="0">
+    <tr>
+	  <td height="40" width="40"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/The-History-of-Theatre/2102><img src="http://www.learnoutloud.com/../images/new_thumbnail/HistoryOfTheatre.jpg" border="0" alt="The History of Theatre"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr></table></div>
+				<div class="des"><a href='#2102' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image2102" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/2102/9789626341995_01_02.mp3')"></a>&nbsp;
+					<p>
+						<A href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/The-History-of-Theatre/2102">The History of Theatre</A><br>by David Timson					</p>
+				</div>
+	</div>
+<a href="javascript:fnFeaturedPaging_freeStuff('2','8','17','0');" class="icon_next"></a>  <div class="cl_b"><!-- --></div>
+	</div> 
+
+			
+		<div class="sep_h mb_15"><!-- --></div>
+			<h2>Our Top 10 Arts & Entertainment Bestsellers</h2>
+		<a href="http://www.learnoutloud.com/Top-100-Audio-Books/Arts-and-Entertainment" class="icon_pntr">Browse Our Top 100 Arts & Entertainment Sellers</a>
+		
+		
+		<div class="blcks_prt" id="top_f">
+			<!-- <h2>Our Top 10 Arts & Entertainment Bestsellers</h2> -->
+			<INPUT TYPE="hidden" NAME="fpage" value="">
+			<!-- <a href="http://www.learnoutloud.com/Top-100-Audio-Books/Arts-and-Entertainment" class="icon_pntr">Browse Our Top 100 Arts & Entertainment Sellers</a> -->
+
+<!-- $j variable is included in the function for pass the $j value into function to display serial number-->
+
+		<div class="cl_b"><!-- --></div><a href="javascript:bestSellerAudioCat('2','1','17','0','17','6');" class="icon_prev"></a>		 <div class="sngl_blck">
+				<div class="num sm" style="margin: 2px 0 0;">1</div>
+				<div class="img_pr\" align="center"> <!-- <script>js_gwoformat="All My Sons";
+
+
+ // alert("js_gwoformat"+js_gwoformat);
+  </script> -->
+
+   <table height="40" width="40"  >
+    <tr>
+	  <td height="40" width="40"  valign="top" >
+
+	  	  
+	 
+
+
+	  	    			<a  href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/All-My-Sons/35895" >
+             <img src="http://www.learnoutloud.com/../images/new_thumbnail/All My Sons.jpg" border="0" alt="All My Sons"  /> </a>
+						
+	  </td>
+	</tr>
+	   </table>   
+  </div>
+				<div class="des"><a href='#35895' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image35895" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://audible.edgeboss.net/download/audible/content/PF/LATW/000117/PF_LATW_000117_sample.mp3')"></a>&nbsp;
+					<p>
+						<A href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/All-My-Sons/35895">All My Sons</A><br>by Arthur Miller					</p>
+				</div>
+			</div>
+     	 <div class="sngl_blck">
+				<div class="num sm" style="margin: 2px 0 0;">2</div>
+				<div class="img_pr\" align="center"> <!-- <script>js_gwoformat="The Crucible";
+
+
+ // alert("js_gwoformat"+js_gwoformat);
+  </script> -->
+
+   <table height="40" width="40"  >
+    <tr>
+	  <td height="40" width="40"  valign="top" >
+
+	  	  
+	 
+
+
+	  	    			<a  href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/The-Crucible/16830" >
+             <img src="http://www.learnoutloud.com/../images/new_thumbnail/Crucible.jpg" border="0" alt="The Crucible"  /> </a>
+						
+	  </td>
+	</tr>
+	   </table>   
+  </div>
+				<div class="des"><a href='#16830' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image16830" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/16830/2000003451289-TheCrucible.mp3')"></a>&nbsp;
+					<p>
+						<A href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/The-Crucible/16830">The Crucible</A><br>by Arthur Miller					</p>
+				</div>
+			</div>
+     	 <div class="sngl_blck">
+				<div class="num sm" style="margin: 2px 0 0;">3</div>
+				<div class="img_pr\" align="center"> <!-- <script>js_gwoformat="Dirk Gently's Holistic Detective Agency";
+
+
+ // alert("js_gwoformat"+js_gwoformat);
+  </script> -->
+
+   <table height="40" width="40"  >
+    <tr>
+	  <td height="40" width="40"  valign="top" >
+
+	  	  
+	 
+
+
+	  	    			<a  href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Comedy/Dirk-Gentlys-Holistic-Detective-Agency/34351" >
+             <img src="http://www.learnoutloud.com/../images/new_thumbnail/0743546520.jpg" border="0" alt="Dirk Gently's Holistic Detective Agency"  /> </a>
+						
+	  </td>
+	</tr>
+	   </table>   
+  </div>
+				<div class="des"><a href='#34351' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image34351" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://audible.edgeboss.net/download/audible/content/BK/SANS/002174/BK_SANS_002174_sample.mp3')"></a>&nbsp;
+					<p>
+						<A href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Comedy/Dirk-Gentlys-Holistic-Detective-Agency/34351">Dirk Gently's Holistic Detective Agency</A><br>by Douglas Adams					</p>
+				</div>
+			</div>
+     	 <div class="sngl_blck">
+				<div class="num sm" style="margin: 2px 0 0;">4</div>
+				<div class="img_pr\" align="center"> <!-- <script>js_gwoformat="A History of Music of the Western World";
+
+
+ // alert("js_gwoformat"+js_gwoformat);
+  </script> -->
+
+   <table height="40" width="40"  >
+    <tr>
+	  <td height="40" width="40"  valign="top" >
+
+	  	  
+	 
+
+
+	  	    			<a  href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/A-History-of-Music-of-the-Western-World/17843" >
+             <img src="http://www.learnoutloud.com/../images/new_thumbnail/Music.jpg" border="0" alt="A History of Music of the Western World"  /> </a>
+						
+	  </td>
+	</tr>
+	   </table>   
+  </div>
+				<div class="des"><a href='#17843' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image17843" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/downloadpurchases/17843_S.mp3')"></a>&nbsp;
+					<p>
+						<A href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/A-History-of-Music-of-the-Western-World/17843">A History of Music of the Western World</A>					</p>
+				</div>
+			</div>
+     	 <div class="sngl_blck">
+				<div class="num sm" style="margin: 2px 0 0;">5</div>
+				<div class="img_pr\" align="center"> <!-- <script>js_gwoformat="The Hitchhiker's Guide to the Galaxy";
+
+
+ // alert("js_gwoformat"+js_gwoformat);
+  </script> -->
+
+   <table height="40" width="40"  >
+    <tr>
+	  <td height="40" width="40"  valign="top" >
+
+	  	  
+	 
+
+
+	  	    			<a  href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/The-Hitchhikers-Guide-to-the-Galaxy/17990" >
+             <img src="http://www.learnoutloud.com/../images/new_thumbnail/0739322206.jpg" border="0" alt="The Hitchhiker's Guide to the Galaxy"  /> </a>
+						
+	  </td>
+	</tr>
+	   </table>   
+  </div>
+				<div class="des"><a href='#17990' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image17990" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/17990/Hitchhikers Guide to the Galaxy_9780739322215.mp3')"></a>&nbsp;
+					<p>
+						<A href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/The-Hitchhikers-Guide-to-the-Galaxy/17990">The Hitchhiker's Guide to the Galaxy</A><br>by Douglas Adams					</p>
+				</div>
+			</div>
+     <a href="javascript:bestSellerAudioCat('2','1','17','0','17','6');" class="icon_next"></a>  <div class="cl_b"><!-- --></div>
+  	
+		</div>
+
+
+		<div class="sep_h mb_15"><!-- --></div>
+	</div>
+
+	<h2 class="mb_15">Browse Arts & Entertainment Categories</h2>
+
+<!-- coding is edited by amit to make the page faster on 11/23/2012 -->
+<!-- previous code -->
+
+	
+	<!-- previous code end-->
+<!-- modification start -->
+<div class="categ_blcks_prt">
+	<div class="categ_blck">
+				<div class="lp">
+					<div class="img_prt" style="overflow:visible">
+						 <!-- <script>js_gwoformat="On The Road";
+
+
+ // alert("js_gwoformat"+js_gwoformat);
+  </script> -->
+
+   <table height="0" width="0"  >
+    <tr>
+	  <td height="0" width="0"  valign="top" >
+
+	  	  
+	 
+
+
+	  	    			<a  href="http://www.learnoutloud.com/Catalog/Literature/Contemporary-Literature/On-The-Road/16152" >
+             <img src="http://www.learnoutloud.com/images/new_thumbnail/0060755334.jpg" border="0" alt="On The Road"  /> </a>
+						
+	  </td>
+	</tr>
+	   </table>   
+  					</div>					
+				</div>
+						<div class="rp">
+							<div class="ttl"><a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Celebrity-Readers" class="text11darkblue">Celebrity Readers</a>
+
+						<i> (85 Titles) </i></div><br><ul><li><a href="#"><a href=http://www.learnoutloud.com/Audio-Books/Literature/Contemporary-Literature/On-The-Road/16152>On The Road</a></a></li></ul>						   </div>
+				<div class="cl_b"><!-- --></div>
+			</div>
+						   	<div class="categ_blck">
+				<div class="lp">
+					<div class="img_prt" style="overflow:visible">
+						 <!-- <script>js_gwoformat="Not Enough Indians";
+
+
+ // alert("js_gwoformat"+js_gwoformat);
+  </script> -->
+
+   <table height="0" width="0"  >
+    <tr>
+	  <td height="0" width="0"  valign="top" >
+
+	  	  
+	 
+
+
+	  	    			<a  href="http://www.learnoutloud.com/Catalog/Arts-and-Entertainment/Comedy/Not-Enough-Indians/24527" >
+             <img src="http://www.learnoutloud.com/images/new_thumbnail/1597771392.jpg" border="0" alt="Not Enough Indians"  /> </a>
+						
+	  </td>
+	</tr>
+		<tr><td align="center"><a href='#24527' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image24527" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/downloadpurchases/24527_S.mp3')"></a></td></tr>
+	   </table>   
+  					</div>					
+				</div>
+						<div class="rp">
+							<div class="ttl"><a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Comedy" class="text11darkblue">Comedy</a>
+
+						<i> (155 Titles) </i></div><br><ul><li><a href="#"><a href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Comedy/Not-Enough-Indians/24527>Not Enough Indians</a></a></li></ul><ul><li><a href="#"><a href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Comedy/The-Hitchhikers-Guide-to-the-Galaxy/17990>The Hitchhiker's Guide to the Galaxy</a></a></li></ul><ul><li><a href="#"><a href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Comedy/How-to-Ruin-Your-Life/14126>How to Ruin Your Life</a></a></li></ul>						   </div>
+				<div class="cl_b"><!-- --></div>
+			</div>
+						   	<div class="categ_blck">
+				<div class="lp">
+					<div class="img_prt" style="overflow:visible">
+						 <!-- <script>js_gwoformat="Rock 'n' Roll and American Society, Part 1";
+
+
+ // alert("js_gwoformat"+js_gwoformat);
+  </script> -->
+
+   <table height="0" width="0"  >
+    <tr>
+	  <td height="0" width="0"  valign="top" >
+
+	  	  
+	 
+
+
+	  	    			<a  href="http://www.learnoutloud.com/Catalog/Social-Sciences/Sociology/Rock-n-Roll-and-American-Society-Part-1/42889" >
+             <img src="http://www.learnoutloud.com/images/new_thumbnail/RocknRollandAmSociety1_AUD.jpg" border="0" alt="Rock 'n' Roll and American Society, Part 1"  /> </a>
+						
+	  </td>
+	</tr>
+		<tr><td align="center"><a href='#42889' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image42889" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/42889/001_Rock_n_Roll.mp3')"></a></td></tr>
+	   </table>   
+  					</div>					
+				</div>
+						<div class="rp">
+							<div class="ttl"><a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Film_-Music_-Radio_-TV_-and-Pop-Culture" class="text11darkblue">Film, Music, Radio, TV, & Pop Culture</a>
+
+						<i> (178 Titles) </i></div><br><ul><li><a href="#"><a href=http://www.learnoutloud.com/Audio-Books/Social-Sciences/Sociology/Rock-n-Roll-and-American-Society-Part-1/42889>Rock 'n' Roll and American Society, Part 1</a></a></li></ul><ul><li><a href="#"><a href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Film_-Music_-Radio_-TV_-and-Pop-Culture/Understanding-Movies-The-Art-and-History-of-Film/30850>Understanding Movies: The Art and History of Film</a></a></li></ul><ul><li><a href="#"><a href=http://www.learnoutloud.com/Audio-Books/Biography/Entertainers/Jimi-Hendrix-An-Audio-Biography/26334>Jimi Hendrix: An Audio Biography</a></a></li></ul>						   </div>
+				<div class="cl_b"><!-- --></div>
+			</div>
+						   	<div class="categ_blck">
+				<div class="lp">
+					<div class="img_prt" style="overflow:visible">
+						 <!-- <script>js_gwoformat="War Of The Worlds";
+
+
+ // alert("js_gwoformat"+js_gwoformat);
+  </script> -->
+
+   <table height="0" width="0"  >
+    <tr>
+	  <td height="0" width="0"  valign="top" >
+
+	  	  
+	 
+
+
+	  	    			<a  href="http://www.learnoutloud.com/Catalog/Arts-and-Entertainment/Full-Cast-Dramatization/War-Of-The-Worlds/21628" >
+             <img src="http://www.learnoutloud.com/images/new_thumbnail/wowcovermockup.jpg" border="0" alt="War Of The Worlds"  /> </a>
+						
+	  </td>
+	</tr>
+		<tr><td align="center"><a href='#21628' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image21628" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/21628/wowintro2.mp3')"></a></td></tr>
+	   </table>   
+  					</div>					
+				</div>
+						<div class="rp">
+							<div class="ttl"><a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization" class="text11darkblue">Full Cast Dramatization</a>
+
+						<i> (393 Titles) </i></div><br><ul><li><a href="#"><a href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/War-Of-The-Worlds/21628>War Of The Worlds</a></a></li></ul>						   </div>
+				<div class="cl_b"><!-- --></div>
+			</div>
+						   	<div class="categ_blck">
+				<div class="lp">
+					<div class="img_prt" style="overflow:visible">
+						 <!-- <script>js_gwoformat="Art Masterpieces";
+
+
+ // alert("js_gwoformat"+js_gwoformat);
+  </script> -->
+
+   <table height="0" width="0"  >
+    <tr>
+	  <td height="0" width="0"  valign="top" >
+
+	  	  
+	 
+
+
+	  	    			<a  href="http://www.learnoutloud.com/Catalog/Arts-and-Entertainment/-/Art-Masterpieces/24141" >
+             <img src="http://www.learnoutloud.com/images/new_thumbnail/ArtMasterpieces-70.jpg" border="0" alt="Art Masterpieces"  /> </a>
+						
+	  </td>
+	</tr>
+		<tr><td align="center"><a href='#24141' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image24141" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/downloadpurchases/24141_S.mp3')"></a></td></tr>
+	   </table>   
+  					</div>					
+				</div>
+						<div class="rp">
+							<div class="ttl"><a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Painting_-Architecture_-and-Sculpture" class="text11darkblue">Painting, Architecture, & Sculpture</a>
+
+						<i> (26 Titles) </i></div><br><ul><li><a href="#"><a href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Painting_-Architecture_-and-Sculpture/Art-Masterpieces/24141>Art Masterpieces</a></a></li></ul><ul><li><a href="#"><a href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Painting_-Architecture_-and-Sculpture/The-Renaissance/17847>The Renaissance</a></a></li></ul>						   </div>
+				<div class="cl_b"><!-- --></div>
+			</div>
+						   	<div class="categ_blck">
+				<div class="lp">
+					<div class="img_prt" style="overflow:visible">
+						 <!-- <script>js_gwoformat="Euripides";
+
+
+ // alert("js_gwoformat"+js_gwoformat);
+  </script> -->
+
+   <table height="0" width="0"  >
+    <tr>
+	  <td height="0" width="0"  valign="top" >
+
+	  	  
+	 
+
+
+	  	    			<a  href="http://www.learnoutloud.com/Catalog/History/Ancient-and-Medieval-History/Euripides/19186" >
+             <img src="http://www.learnoutloud.com/images/new_thumbnail/105SherwinWinecopy.jpg" border="0" alt="Euripides"  /> </a>
+						
+	  </td>
+	</tr>
+		<tr><td align="center"><a href='#19186' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image19186" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/19186/Euripides 2.mp3')"></a></td></tr>
+	   </table>   
+  					</div>					
+				</div>
+						<div class="rp">
+							<div class="ttl"><a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Theater_-Opera_-and-Classical-Music" class="text11darkblue">Theater, Opera, & Classical Music</a>
+
+						<i> (30 Titles) </i></div><br><ul><li><a href="#"><a href=http://www.learnoutloud.com/Audio-Books/History/Ancient-and-Medieval-History/Euripides/19186>Euripides</a></a></li></ul><ul><li><a href="#"><a href=http://www.learnoutloud.com/Audio-Books/Biography/Artists/The-Life-of-Mozart/18107>The Life of Mozart</a></a></li></ul><ul><li><a href="#"><a href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Theater_-Opera_-and-Classical-Music/Masterpieces-of-Western-Music/5335>Masterpieces of Western Music</a></a></li></ul>						   </div>
+				<div class="cl_b"><!-- --></div>
+			</div>
+						   </div>
+<!-- modification end -->
+
+	<div class="cl_b"><!-- --></div>
+
+	<div class="sep_h mb_15"><!-- --></div>
+
+ 
+		<!-- feature content div ads on left and image on right-->
+<div style="margin:auto; height:auto; overflow:hidden; ">
+<div style="float:left;margin-left:40px;">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9876342170445144";
+/* Large Rectangle New */
+google_ad_slot = "9547217430";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	
+</div>
+<div style="float:left;margin-left:30px;">
+	
+				<div class="hp_imgs_prt">
+		<div class="sngl">
+		<a href="http://www.learnoutloud.com/Download/LearnOutLoud.com" ><img src="http://www.learnoutloud.com/admin/managefeaturedimage/images/FeaturedBox_AudioBooksPublishedbyLearnOutLoud.jpg" alt="Audio Books by LearnOutLoud" /></a>		
+		</div>
+		<div class="cl_b"><!-- --></div>
+			</div>
+
+				<div class="hp_imgs_prt">
+		<div class="sngl">
+		<a href="http://www.learnoutloud.com/resources/LearnOutLoud.com-Publisher-Pages/5/6" ><img src="http://www.learnoutloud.com/admin/managefeaturedimage/images/FeaturedBox_PublisherPages.jpg" alt="Publisher Pages" /></a>		
+		</div>
+		<div class="cl_b"><!-- --></div>
+			</div>
+
+				
+
+
+</div>
+</div>
+<div class="sep_h mb_15"><!-- --></div>
+	<div class="sort_categ_lp">
+			<div class="sort_by_prt"><a href="#go"  name="go" ></a> 
+				<span>Sort by</span>
+				<SELECT name=selType  onchange="javascript:setType();">
+                      <OPTION selected value=17>Best Sellers</OPTION>
+							  <OPTION  value=20>Most Popular</OPTION> 
+                             <OPTION  value=6 >Release Date</OPTION>
+                             <OPTION   value=18 >Download Price</OPTION>
+                             <OPTION   value=1>Alphabetical (A-Z)</OPTION>
+                             <OPTION  value='2' >Alphabetical (Z-A)</OPTION>
+                             <OPTION  value=3>Author Name</OPTION>					  </SELECT>
+
+					<!--		<SELECT name=selType  onchange="javascript:setType();">
+                      <OPTION selected value=17>Best Sellers</OPTION>
+							  <OPTION  value=20>Most Popular</OPTION> 
+                             <OPTION  value=4>Average Member Rating</OPTION> 
+							 <OPTION  value=6 >Release Date</OPTION>
+                            <!--  <OPTION  value=5 >Featured</OPTION>
+							 <OPTION  value=16 >CD Price</OPTION>
+						     <OPTION   value=15 >Cassette Price</OPTION>
+	                         <OPTION value=21 >Recently Added</OPTION>
+							<OPTION   value=18 >Download Price</OPTION>
+                             <OPTION   value=1>Alphabetical (A-Z)</OPTION>
+                             <OPTION  value='2' >Alphabetical (Z-A)</OPTION>
+                             <OPTION  value=3>Author Name</OPTION>					  </SELECT>  -->
+			</div>
+			<div class="res_rp">
+				<span>Titles Per Page</span>
+	                             <SELECT name=selCount  onchange="javascript:setType();">
+                        <OPTION value=1 selected >10 
+                                    Titles</OPTION>
+                                    <OPTION value=2 >25 
+                                    Titles</OPTION>
+                                    <OPTION value=3 >50 
+                                    Titles</OPTION>
+                                   <!-- <OPTION value=4 >All 
+                                    Titles</OPTION>
+                                    <OPTION value=5 >Text 
+                                    (No Images)</OPTION> -->
+									<OPTION value=6 >All 
+                        Titles</OPTION>					</SELECT>
+				<!--<span>titles</span>-->
+			</div>
+			<div class="cl_b"><!-- --></div>
+
+			<!----------------- this is for "x -xx of 206 titles" ----------- -->
+				<div class="count_res">
+					
+							1							  - 
+							  10							  of 
+							  805							   Titles  
+				</div>
+				<div class="paging fl_r">
+					<b><span class="Body">1</span></b> &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','2');" title="Page 2"  class="Body">2</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','3');" title="Page 3"  class="Body">3</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','4');" title="Page 4"  class="Body">4</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','5');" title="Page 5"  class="Body">5</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','6');" title="Page 6"  class="Body">6</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','7');" title="Page 7"  class="Body">7</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','8');" title="Page 8"  class="Body">8</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','9');" title="Page 9"  class="Body">9</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','10');" title="Page 10"  class="Body">10</a>&nbsp;  ...&nbsp;&nbsp;&nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','2');" title="Next Page"  class="Body">Next</a>&nbsp;&nbsp;<img src='/images/ico_next.gif' width='4' height='5'></td>
+				</div>
+			<!-------------------- this is for "x -xx of 206 titles" ---------->
+
+				<div class="cl_b"><!-- --></div>	
+	
+
+				<div class="categ_sngl_ttl">
+												<div class="num">
+									1.
+								</div>
+				 <div class="lp">
+					<div class="img_prt">
+                        <table height="0" width="0" border="0">
+    <tr>
+	  <td height="0" width="0"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/All-My-Sons/35895><img src="http://www.learnoutloud.com/images/new_thumbnail/All My Sons.jpg" border="0" alt="All My Sons"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr><tr><td align="center"><a href='#35895' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image35895" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://audible.edgeboss.net/download/audible/content/PF/LATW/000117/PF_LATW_000117_sample.mp3')"></a></td></tr></table></div>
+				</div>
+						
+			<div class="rp">
+					<div class="ttl">					
+					<a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/All-My-Sons/35895" class="categorytitle1">All My Sons</a>
+					</div>					
+					<div class="under_ttl">
+						by Arthur Miller					</div>
+
+										<div class="avail_prt">
+						<strong class="ttl">Available on:</strong>
+						<div class="cols">							
+								<strong>Audio Download (<span class=price2><b>$4.95</b></span>)</strong>							
+						</div>
+						<div class="cl_b"><!-- --></div>
+					</div>
+												 <p>
+							   A classic Arthur Miller drama about the terrifying journey towards truth when a devastating family secret is uprooted.								</p>
+												</div>
+				
+				 <div class="cl_b"><!-- --></div>
+			</div><!-- end of categ_sngl_ttld -->
+											<div class="categ_sngl_ttl">
+												<div class="num">
+									2.
+								</div>
+				 <div class="lp">
+					<div class="img_prt">
+                        <table height="0" width="0" border="0">
+    <tr>
+	  <td height="0" width="0"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/The-Crucible/16830><img src="http://www.learnoutloud.com/images/new_thumbnail/Crucible.jpg" border="0" alt="The Crucible"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr><tr><td align="center"><a href='#16830' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image16830" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/16830/2000003451289-TheCrucible.mp3')"></a></td></tr></table></div>
+				</div>
+						
+			<div class="rp">
+					<div class="ttl">					
+					<a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/The-Crucible/16830" class="categorytitle1">The Crucible</a>
+					</div>					
+					<div class="under_ttl">
+						by Arthur Miller					</div>
+
+										<div class="avail_prt">
+						<strong class="ttl">Available on:</strong>
+						<div class="cols">							
+								<strong>Audio Download (<span class=price2><b>$4.95</b></span>) | Audio CD</strong>							
+						</div>
+						<div class="cl_b"><!-- --></div>
+					</div>
+												 <p>
+							   In the rigid theocracy of Salem, Massachusetts, rumors that women are practicing witchcraft galvanize the town.								</p>
+												</div>
+				
+				 <div class="cl_b"><!-- --></div>
+			</div><!-- end of categ_sngl_ttld -->
+											<div class="categ_sngl_ttl">
+												<div class="num">
+									3.
+								</div>
+				 <div class="lp">
+					<div class="img_prt">
+                        <table height="0" width="0" border="0">
+    <tr>
+	  <td height="0" width="0"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Comedy/Dirk-Gentlys-Holistic-Detective-Agency/34351><img src="http://www.learnoutloud.com/images/new_thumbnail/0743546520.jpg" border="0" alt="Dirk Gently's Holistic Detective Agency"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr><tr><td align="center"><a href='#34351' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image34351" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://audible.edgeboss.net/download/audible/content/BK/SANS/002174/BK_SANS_002174_sample.mp3')"></a></td></tr></table></div>
+				</div>
+						
+			<div class="rp">
+					<div class="ttl">					
+					<a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Comedy/Dirk-Gentlys-Holistic-Detective-Agency/34351" class="categorytitle1">Dirk Gently's Holistic Detective Agency</a>
+					</div>					
+					<div class="under_ttl">
+						by Douglas Adams					</div>
+
+										<div class="avail_prt">
+						<strong class="ttl">Available on:</strong>
+						<div class="cols">							
+								<strong>Audio Download (<span class=price2><b>$9.95</b></span>)</strong>							
+						</div>
+						<div class="cl_b"><!-- --></div>
+					</div>
+												 <p>
+							   There is a long tradition of Great Detectives, and Dirk Gently does not belong to it. But his search for a missing cat uncovers a ghost, a time traveler, AND the devastating secret of humankind! Detective Gently's bill for saving the human race from extinction: NO CHARGE.								</p>
+												</div>
+				
+				 <div class="cl_b"><!-- --></div>
+			</div><!-- end of categ_sngl_ttld -->
+											<div class="categ_sngl_ttl">
+												<div class="num">
+									4.
+								</div>
+				 <div class="lp">
+					<div class="img_prt">
+                        <table height="0" width="0" border="0">
+    <tr>
+	  <td height="0" width="0"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/A-History-of-Music-of-the-Western-World/17843><img src="http://www.learnoutloud.com/images/new_thumbnail/Music.jpg" border="0" alt="A History of Music of the Western World"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr><tr><td align="center"><a href='#17843' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image17843" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/downloadpurchases/17843_S.mp3')"></a></td></tr></table></div>
+				</div>
+						
+			<div class="rp">
+					<div class="ttl">					
+					<a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/A-History-of-Music-of-the-Western-World/17843" class="categorytitle1">A History of Music of the Western World</a>
+					</div>					
+					<div class="under_ttl">
+											</div>
+
+										<div class="avail_prt">
+						<strong class="ttl">Available on:</strong>
+						<div class="cols">							
+								<strong>Audio Download (<span class=price2><b>$7.99</b></span>)</strong>							
+						</div>
+						<div class="cl_b"><!-- --></div>
+					</div>
+												 <p>
+							   Explore the rudiments of music theory. Musical examples included.								</p>
+												</div>
+				
+				 <div class="cl_b"><!-- --></div>
+			</div><!-- end of categ_sngl_ttld -->
+											<div class="categ_sngl_ttl">
+												<div class="num">
+									5.
+								</div>
+				 <div class="lp">
+					<div class="img_prt">
+                        <table height="0" width="0" border="0">
+    <tr>
+	  <td height="0" width="0"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/The-Hitchhikers-Guide-to-the-Galaxy/17990><img src="http://www.learnoutloud.com/images/new_thumbnail/0739322206.jpg" border="0" alt="The Hitchhiker's Guide to the Galaxy"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr><tr><td align="center"><a href='#17990' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image17990" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/17990/Hitchhikers Guide to the Galaxy_9780739322215.mp3')"></a></td></tr></table></div>
+				</div>
+						
+			<div class="rp">
+					<div class="ttl">					
+					<a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/-/The-Hitchhikers-Guide-to-the-Galaxy/17990" class="categorytitle1">The Hitchhiker's Guide to the Galaxy</a>
+					</div>					
+					<div class="under_ttl">
+						by Douglas Adams					</div>
+
+										<div class="avail_prt">
+						<strong class="ttl">Available on:</strong>
+						<div class="cols">							
+								<strong>Audio Download (<span class=price2><b>$18.59</b></span>) | Audio CD</strong>							
+						</div>
+						<div class="cl_b"><!-- --></div>
+					</div>
+												 <p>
+							   Seconds before the Earth is demolished to make way for a galactic freeway, Arthur Dent is plucked off the planet by his friend Ford Prefect, a researcher for the revised edition of The Hitchhiker's Guide to the Galaxy who, for the last 15 years, has been posing as an out-of-work actor.								</p>
+												</div>
+				
+				 <div class="cl_b"><!-- --></div>
+			</div><!-- end of categ_sngl_ttld -->
+											<div class="categ_sngl_ttl">
+												<div class="num">
+									6.
+								</div>
+				 <div class="lp">
+					<div class="img_prt">
+                        <table height="0" width="0" border="0">
+    <tr>
+	  <td height="0" width="0"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/The-Grapes-of-Wrath/35941><img src="http://www.learnoutloud.com/images/new_thumbnail/The Grapes of Wrath.jpg" border="0" alt="The Grapes of Wrath"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr><tr><td align="center"><a href='#35941' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image35941" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://audible.edgeboss.net/download/audible/content/PF/LATW/000224/PF_LATW_000224_sample.mp3')"></a></td></tr></table></div>
+				</div>
+						
+			<div class="rp">
+					<div class="ttl">					
+					<a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/The-Grapes-of-Wrath/35941" class="categorytitle1">The Grapes of Wrath</a>
+					</div>					
+					<div class="under_ttl">
+											</div>
+
+										<div class="avail_prt">
+						<strong class="ttl">Available on:</strong>
+						<div class="cols">							
+								<strong>Audio Download (<span class=price2><b>$4.95</b></span>)</strong>							
+						</div>
+						<div class="cl_b"><!-- --></div>
+					</div>
+												 <p>
+							   Steinbeck's Pulitzer Prize-winning epic of the Great Depression follows the western movement of one family and a nation in search of work and human dignity. Stars Jeffrey Donovan and Shirley Knight.								</p>
+												</div>
+				
+				 <div class="cl_b"><!-- --></div>
+			</div><!-- end of categ_sngl_ttld -->
+											<div class="categ_sngl_ttl">
+												<div class="num">
+									7.
+								</div>
+				 <div class="lp">
+					<div class="img_prt">
+                        <table height="0" width="0" border="0">
+    <tr>
+	  <td height="0" width="0"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/Twelve-Angry-Men/35953><img src="http://www.learnoutloud.com/images/new_thumbnail/Twelve Angry Men.jpg" border="0" alt="Twelve Angry Men"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr><tr><td align="center"><a href='#35953' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image35953" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://audible.edgeboss.net/download/audible/content/PF/LATW/000107/PF_LATW_000107_sample.mp3')"></a></td></tr></table></div>
+				</div>
+						
+			<div class="rp">
+					<div class="ttl">					
+					<a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/Twelve-Angry-Men/35953" class="categorytitle1">Twelve Angry Men</a>
+					</div>					
+					<div class="under_ttl">
+						by Reginald Rose					</div>
+
+										<div class="avail_prt">
+						<strong class="ttl">Available on:</strong>
+						<div class="cols">							
+								<strong>Audio Download (<span class=price2><b>$4.95</b></span>)</strong>							
+						</div>
+						<div class="cl_b"><!-- --></div>
+					</div>
+												 <p>
+							   Over the course of a steamy and tense afternoon, twelve jurors deliberate the fate of a 19-year-old boy alleged to have murdered his own father....								</p>
+												</div>
+				
+				 <div class="cl_b"><!-- --></div>
+			</div><!-- end of categ_sngl_ttld -->
+											<div class="categ_sngl_ttl">
+												<div class="num">
+									8.
+								</div>
+				 <div class="lp">
+					<div class="img_prt">
+                        <table height="0" width="0" border="0">
+    <tr>
+	  <td height="0" width="0"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Celebrity-Readers/The-Great-Gatsby/16283><img src="http://www.learnoutloud.com/images/new_thumbnail/0060098910.jpg" border="0" alt="The Great Gatsby"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr><tr><td align="center"><a href='#16283' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image16283" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://audible.edgeboss.net/download/audible/content/BK/HARP/000930/BK_HARP_000930_sample.mp3')"></a></td></tr></table></div>
+				</div>
+						
+			<div class="rp">
+					<div class="ttl">					
+					<a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Celebrity-Readers/The-Great-Gatsby/16283" class="categorytitle1">The Great Gatsby</a>
+					</div>					
+					<div class="under_ttl">
+						by F. Scott Fitzgerald					</div>
+
+										<div class="avail_prt">
+						<strong class="ttl">Available on:</strong>
+						<div class="cols">							
+								<strong>Audio Download (<span class=price2><b>$4.99</b></span>) | Audio CD | Audio Cassette</strong>							
+						</div>
+						<div class="cl_b"><!-- --></div>
+					</div>
+												 <p>
+							   One of the classics of twentieth-century literature, <i>The Great Gatsby</i> is now available in a definitive, textually accurate edition.								</p>
+												</div>
+				
+				 <div class="cl_b"><!-- --></div>
+			</div><!-- end of categ_sngl_ttld -->
+											<div class="categ_sngl_ttl">
+												<div class="num">
+									9.
+								</div>
+				 <div class="lp">
+					<div class="img_prt">
+                        <table height="0" width="0" border="0">
+    <tr>
+	  <td height="0" width="0"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/A-Midsummer-Nights-Dream/15821><img src="http://www.learnoutloud.com/images/new_thumbnail/Midsummer.jpg" border="0" alt="A Midsummer Night's Dream"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr></table></div>
+				</div>
+						
+			<div class="rp">
+					<div class="ttl">					
+					<a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Full-Cast-Dramatization/A-Midsummer-Nights-Dream/15821" class="categorytitle1">A Midsummer Night's Dream</a>
+					</div>					
+					<div class="under_ttl">
+						by William Shakespeare					</div>
+
+										<div class="avail_prt">
+						<strong class="ttl">Available on:</strong>
+						<div class="cols">							
+								<strong>Audio Download (<span class=price2><b>$13.75</b></span>) | Audio CD | Audio Cassette</strong>							
+						</div>
+						<div class="cl_b"><!-- --></div>
+					</div>
+												 <p>
+							   Royalty, lovers, fools, fairies, and actors converge in the forest in one enchanted night of beauty, dreams, and romance. A wonderful comedy that convinces us of the magic of darkness and shadows. "Oh, what fools these mortals be!"								</p>
+												</div>
+				
+				 <div class="cl_b"><!-- --></div>
+			</div><!-- end of categ_sngl_ttld -->
+											<div class="categ_sngl_ttl">
+												<div class="num">
+									10.
+								</div>
+				 <div class="lp">
+					<div class="img_prt">
+                        <table height="0" width="0" border="0">
+    <tr>
+	  <td height="0" width="0"  valign="top"  >
+	  <a  href=http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Painting_-Architecture_-and-Sculpture/The-Grandeur-That-Was-Rome-Roman-Art-and-Archaeology/36665><img src="http://www.learnoutloud.com/images/new_thumbnail/GrandeurThatWasRome.jpg" border="0" alt="The Grandeur That Was Rome: Roman Art and Archaeology"  style="padding-bottom:3px;"></a>
+	  </td>
+	</tr><tr><td align="center"><a href='#36665' onclick='javascript:return false;'><img src="http://www.learnoutloud.com/images/but_play2.gif" name="Image36665" style="margin-top:2px;" 
+ border="0" hspace="3" vspace="3" width="36" height="9" onClick="wimpyButtonPlayPause('http://www.learnoutloud.com/samples/36665/Grandeur That Was Rome - 01.mp3')"></a></td></tr></table></div>
+				</div>
+						
+			<div class="rp">
+					<div class="ttl">					
+					<a href="http://www.learnoutloud.com/Audio-Books/Arts-and-Entertainment/Painting_-Architecture_-and-Sculpture/The-Grandeur-That-Was-Rome-Roman-Art-and-Archaeology/36665" class="categorytitle1">The Grandeur That Was Rome: Roman Art and Archaeology</a>
+					</div>					
+					<div class="under_ttl">
+						by Jennifer Tobin					</div>
+
+										<div class="avail_prt">
+						<strong class="ttl">Available on:</strong>
+						<div class="cols">							
+								<strong>Audio Download (<span class=price2><b>$34.95</b></span>)</strong>							
+						</div>
+						<div class="cl_b"><!-- --></div>
+					</div>
+												 <p>
+							   Common perceptions of Ancient Rome are plentiful, whether they take the form of crazy emperors hosting lavish feasts, scenes of chariot races and gladiatorial combat, or processions of conquering armies. But that is only half the story.								</p>
+												</div>
+				
+				 <div class="cl_b"><!-- --></div>
+			</div><!-- end of categ_sngl_ttld -->
+							
+			<div class="count_res">
+					
+							1							  - 
+							  10							  of 
+							  805							   Titles  
+			</div>
+			<div class="paging fl_r">
+				<b><span class="Body">1</span></b> &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','2');" title="Page 2"  class="Body">2</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','3');" title="Page 3"  class="Body">3</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','4');" title="Page 4"  class="Body">4</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','5');" title="Page 5"  class="Body">5</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','6');" title="Page 6"  class="Body">6</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','7');" title="Page 7"  class="Body">7</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','8');" title="Page 8"  class="Body">8</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','9');" title="Page 9"  class="Body">9</a>&nbsp;  &nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','10');" title="Page 10"  class="Body">10</a>&nbsp;  ...&nbsp;&nbsp;&nbsp;<a href="#self"  onclick="showresult('/category_audio_books.php','2');" title="Next Page"  class="Body">Next</a>&nbsp;&nbsp;<img src='/images/ico_next.gif' width='4' height='5'></td>
+			</div>
+			<div class="cl_b"><!-- --></div>
+			
+			<div class="sep_h mb_15"><!-- --></div>
+		</div><!-- End of sort_categ_lp -->
+		<div class="format_rp">
+			<div class="pnl_gray">
+				<h3 class="mb_10">Format</h3>
+				<ul class="list_ch">
+					<li class="ch_row">
+						<INPUT type="checkbox" name="chkAudio_A" id="17" value="17"  onclick="javascript:setType();"  style="margin-bottom:0px !important; margin-bottom:-1px; cursor:pointer;"  >
+						&nbsp;&nbsp;<a onclick="javascript:checkIt('1');"  name="chkVideo_V" id="17" value="17" >Audio Download</a>
+											<span class="cl_b"><!-- --></span>
+				
+					</li>
+					<li class="ch_row">
+						<INPUT type="checkbox" name="chkAudio_A" id="102" value="102"  onclick="javascript:setType();" style="margin-bottom:0px !important; margin-bottom:-1px; cursor:pointer;"   >
+						
+												&nbsp;&nbsp;<a onclick="javascript:checkIt('2');"  name="chkVideo_V" id="102" value="102" >Audio CD</a>
+									
+						
+						<span class="cl_b"><!-- --></span>
+					</li>
+					<li class="ch_row">
+						<INPUT type="checkbox" name="chkVideo_V" id="103" value="103"  onclick="javascript:setType();" style="margin-bottom:0px !important; margin-bottom:-1px; cursor:pointer;" >
+						&nbsp;&nbsp;<a onclick="javascript:checkIt('3');"  name="chkVideo_V" id="103" value="103" >Audio Cassette</a>
+											<span class="cl_b"><!-- --></span>
+					</li>
+					<li class="ch_row">
+						<INPUT type="checkbox" name="chkVideo_V" id="101" value="101"  onclick="javascript:setType();" style="margin-bottom:0px !important; margin-bottom:-1px; cursor:pointer;"   >
+						&nbsp;&nbsp;<a  onclick="javascript:checkIt('4');"  name="chkVideo_V" id="101" value="101" >MP3 CD</a>
+										<script>
+					function checkIt(val)
+					{
+						if(val == 4)
+						{							
+							var uu = document.getElementById("101").checked =true;
+							//alert(uu);
+							setType();
+						}
+						else
+						{
+							if(val==41)
+							{
+							var uu = document.getElementById("101").checked =false;
+							setType();
+							}
+						}
+						if(val == 3)
+						{							
+							var uu = document.getElementById("103").checked =true;
+							//alert(uu);
+							setType();
+						}
+						else
+						{
+							if(val==31)
+							{
+							var uu = document.getElementById("103").checked =false;
+							setType();
+							}
+						}
+						if(val == 2)
+						{							
+							var uu = document.getElementById("102").checked =true;
+							//alert(uu);
+							setType();
+						}
+						else
+						{
+							if(val==21)
+							{
+							var uu = document.getElementById("102").checked =false;
+							setType();
+							}
+						}
+						if(val == 1)
+						{							
+							
+							var uu = document.getElementById("17").checked =true;
+							//alert(uu);
+							setType();
+						}
+						else
+						{
+							if(val==11)
+							{
+							var uu = document.getElementById("17").checked =false;
+							setType();
+							}
+						}
+						
+						
+					}
+					</script>
+					
+						<span class="cl_b"><!-- --></span>
+					</li>
+				</ul>
+			</div>
+			<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9876342170445144";
+/* Wide Skyscraper New */
+google_ad_slot = "8462704231";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+			</div>
+			
+
+						  <input type="hidden" name="hidsearchtext" value=""> 
+                          <input type="hidden" name="hidid"  value="17"> 
+						  <input type="hidden" name="fpage"> 
+                          <input type="hidden" name="catid"  value="17"> 
+                          <input type="hidden" name="subcatid"  value="23"> 
+                          <input type="hidden" name="level"  value=""> 
+                          <input type='hidden' name='cat' value="1"> 
+                          <input type="hidden" name="hidid_print" value="17"> 
+						  <input type="hidden" name="hidprodid" value="35895,16830,34351,17843,17990,35941,35953,16283,15821,36665">
+						  <input type="hidden" name="pageno" value="1">
+  						  <input type="hidden" name="category_name" value="Arts-and-Entertainment">
+						  <input type="hidden" name="cookie" value="0">
+						  <input type="hidden" name="sessionurl" value="">
+						  <input type="hidden" name="fid" value="">
+
+						 						
+                          <input type="hidden" name="hidFormatList" value="" >
+						  <input type="hidden" name="hidFormatFlag" id="hidFormatFlag"  value="" >
+						  <!--inserted by amit on 4/16/2012-->
+						<input type="hidden"  name="path"  id="path" value="http://www.learnoutloud.com" />
+						
+
+</div><!-- End of main_content fl_r  div-->
+	<div class="cl_b"><!-- --></div>
+	<div class="rasp"><!-- --></div>
+</div><!-- End of main_container div -->
+
+<div class="footer">
+		<div><a href='http://www.learnoutloud.com/Home' target='_parent' title= "Home"  class='bottommenu' >Home</a>&nbsp;|&nbsp;<a href='http://www.learnoutloud.com/About-Us' target='_parent' title= "About Us"  class='bottommenu' >About Us</a>&nbsp;|&nbsp;<a href='http://www.learnoutloud.com/Contact-Us' target='_parent' title= "Contact Us"  class='bottommenu' >Contact Us</a>&nbsp;|&nbsp;<a href='http://www.learnoutloud.com/faqhelp.php' target='_parent' title= "FAQ"  class='bottommenu' >FAQ</a>&nbsp;|&nbsp;<a href='http://www.learnoutloud.com/Site-Help' target='_parent' title= "Help"  class='bottommenu' >Help</a>&nbsp;|&nbsp;<a href='http://www.learnoutloud.com/Affiliate-Program' target='_parent' title= "Affiliate Program"  class='bottommenu' >Affiliates</a>&nbsp;|&nbsp;<a href='http://www.learnoutloud.com/Advertise' target='_parent' title= "Advertise"  class='bottommenu' >Advertise</a>&nbsp;|&nbsp;<a href='http://www.learnoutloud.com/Catalog/Arts-and-Entertainment/-/Gift-Certificate/19337' target='_parent' title= "Gift Certificates"  class='bottommenu' >Gift Certificates</a>&nbsp;|&nbsp;<a href='http://www.learnoutloud.com/contents/LearnOutLoud.com-E-Magazines/12/15' target='_parent' title= "Newsletter"  class='bottommenu' >Newsletter</a>&nbsp;|&nbsp;<a href='http://www.learnoutloud.com/Free-Online-Learning' target='_parent' title= "Free Resources"  class='bottommenu' >Free Resources</a>&nbsp;|&nbsp;<a href='http://www.learnoutloud.com/https://plus.google.com/11449707961931154899' target='_parent' title="Google+"  class='bottommenu' >Google+</a></div><div>
+		<a href="http://www.learnoutloud.com/content/blog/">BlogOutLoud.com</a> |
+		<a href="http://teach.learnoutloud.com/">TeachOutLoud.com</a> |
+		<a href="http://kids.learnoutloud.com/" >Kids.LearnOutLoud.com</a>
+	</div>
+	<div>
+		<a href="#privacy" onClick="javascript:policy_popup('http://www.learnoutloud.com/How-To-Order','700','640');">How to Order</a> |
+		<a href="#privacy" onClick="javascript:policy_popup('http://www.learnoutloud.com/Privacy-Policy','700','640');">Privacy Policy</a> |
+		<a href="#service" onClick="javascript:policy_popup('http://www.learnoutloud.com/Customer-Service','700','640');">Customer Service</a> |
+		<a href="#testimonials" onClick="javascript:policy_popup('http://www.learnoutloud.com/Testimonials','700','640');">Testimonials</a>
+
+	</div>
+	
+
+
+	<div>
+            Copyright Š 2013, LearnOutLoud, Inc.&nbsp;All rights reserved.<br/>
+Developed & Maintained by <a target="_blank" href="http://www.ecotechservices.com/">
+Ecotech</a>	</div>
+	<script type="text/javascript">
+					 var _gaq = _gaq || [];
+					 _gaq.push(['_setAccount', 'UA-107942-1']);
+					 _gaq.push(['_trackPageview']);
+					 _gaq.push(['_trackPageLoadTime']);
+
+					 (function() {
+					   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+					 })();
+
+					</script><!-- Google Code for Audio Downloads Remarketing List -->
+			<script type="text/javascript">
+			/* <![CDATA[ */
+			var google_conversion_id = 1068708990;
+			var google_conversion_language = "en";
+			var google_conversion_format = "3";
+			var google_conversion_color = "666666";
+			var google_conversion_label = "2fwoCOKr3gEQ_ujM_QM";
+			var google_conversion_value = 0;
+			/* ]]> */
+			</script>
+			<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
+			</script>
+			<noscript>
+			<div style="display:inline;">
+			<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1068708990/?label=2fwoCOKr3gEQ_ujM_QM&amp;guid=ON&amp;script=0"/>
+			</div>
+			</noscript><script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script></div>
+</form>
+</body>
+</html>
+
+

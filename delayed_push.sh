@@ -1,5 +1,5 @@
 #!/bin/bash
-sleep 2s
+sleep 180m
 echo "pushing now"
 git add .
 git commit -m 'added pages'

@@ -1,0 +1,1430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+	  <base href="http://www.michigancitylaporte.com/things-to-do/arts-and-entertainment" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>Arts &amp; Entertainment in LaPorte County, Northwest Indiana</title>
+  <link href="/templates/subpage-submenu-top/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="stylesheet" href="http://www.michigancitylaporte.com/components/com_megamenu/css/megamenu.css" type="text/css" />
+  <script type="text/javascript" src="/media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="http://www.michigancitylaporte.com/components/com_megamenu/js/megamenu.js"></script>
+  <script type="text/javascript">
+
+		/****************************************************************************************************
+		
+		****************************************************************************************************/
+		function add_to_my_planner( add_url, element_id )
+		{
+			// if this element has ben clicked previously, return
+			if( $(element_id).doclick ) return false;
+
+			var myAjax;	
+			var url;
+
+			// construct the url
+			url = add_url + '&ajax=Member';
+
+			// do it
+			try{
+				myAjax = new Ajax(
+					url, 
+					{
+						method: 'get', 
+						update: element_id, 
+						onComplete:oncomplete,
+						evalScripts: false
+					}
+				).request();
+			}catch(err)	{
+				$(element_id).innerHTML = 'Error adding to My Planner ' + err;
+			}
+
+			// mark this element as having been clicked on
+			$(element_id).doclick = '1';
+		}
+
+		function oncomplete( request )
+		{
+			if(typeof my_planner_count == 'function')
+				my_planner_count( 1 );
+		}
+		
+  </script>
+
+	<link rel="stylesheet" href="/templates/css/base.css" type="text/css" />
+	<link rel="stylesheet" href="/templates/subpage/css/template.css" type="text/css" />
+    <link rel="stylesheet" href="/templates/css/print.css" type="text/css" media="Print" /> 
+    <link rel="stylesheet" href="/templates/css/lytebox.css" type="text/css" media="screen" />
+	<!--[if lte IE 6]>
+    <script type="text/javascript" src="/templates/javascript/iepngfix_tilebg.js"></script>
+	<link rel="stylesheet" href="/templates/css/ie6.css" type="text/css" />
+	<![endif]-->
+    <script type="text/javascript" src="/templates/javascript/cufon/cufon.js"></script>
+<script type="text/javascript" src="/templates/javascript/cufon/chunkfive-cufon.js"></script>
+  <script type="text/javascript" src="/templates/javascript/lytebox.js"></script>
+   <script type="text/javascript" src="/templates/javascript/gatag.js"></script>
+  
+    <!-- <script type="text/javascript" src="/templates/javascript/jquery-1.4.2.js"></script>
+  <script type="text/javascript" src="/templates/javascript/accordian.js"></script> -->
+
+<script type="text/javascript"> 
+			Cufon.replace('h1');
+			Cufon.replace('div#submenu-title');
+			Cufon.replace('div#side-note-header h3');
+			Cufon.replace('.megamenu_header h3');
+</script>
+
+<!-- SUBPAGE TOP -->
+
+<meta name="geo.region" content="US-IN" />
+<meta name="geo.placename" content="Michigan City" />
+<meta name="geo.position" content="41.707539;-86.89503" />
+<meta name="ICBM" content="41.707539, -86.89503" />
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20367628-1']);
+  _gaq.push(['_setDomainName', '.michigancitylaporte.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</head>
+<body id="top">
+
+<div id="page_background">
+<div id="header_background">
+<div id="footer_background">
+<div id="center-wrapper">
+
+	<div id="header-container">
+	
+		<div class="left">
+		<div id="logo"><a href="/"><img src="/templates/subpage/images/logo.png" width="256" height="169" alt="Michigan City LaPorte" /></a></div>
+		</div>
+		
+		<div class="left">
+		<div id="header_block2">
+		
+			<div id="header_block2_1">
+				
+				<table class="table1" cellspacing="0" cellpadding="0" border="0" align="right">
+				<tr>
+					<td class="weather"><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script>
+var $j = jQuery.noConflict();
+</script>
+
+<script type="text/javascript">
+(function($){var row='odd';$.fn.headerfeed=function(locations,options){var defaults={unit:'f',image:true,highlow:true,wind:true,link:true,showerror:true};var options=$.extend(defaults,options);return this.each(function(i,e){var $e=$(e);if(!$e.hasClass('weatherHeaderFeed'))$e.addClass('weatherHeaderFeed');if(!$.isArray(locations))return false;var count=locations.length;if(count>10)count=10;var locationid='';for(var i=0;i<count;i++){if(locationid!='')locationid+=',';locationid+="'"+locations[i]+"'";}
+now=new Date()
+var query="select * from weather.forecast where location in ("+locationid+") and u='"+options.unit+"'";var api='http://query.yahooapis.com/v1/public/yql?q='+encodeURIComponent(query)+'&rnd='+now.getFullYear()+now.getMonth()+now.getDay()+now.getHours()+'&format=json&callback=?';$.ajax({type:'GET',url:api,dataType:'json',success:function(data){if(data.query){if(data.query.results.channel.length>0){var result=data.query.results.channel.length;for(var i=0;i<result;i++){_callback(e,data.query.results.channel[i],options);}}else{_callback(e,data.query.results.channel,options);}}else{if(options.showerror)$e.html('<p>Weather information unavailable</p>');}},error:function(data){if(options.showerror)$e.html('<p>Weather request failed</p>');}});});};var _callback=function(e,feed,options){var $e=$(e);var wd=feed.wind.direction;if(wd>=348.75&&wd<=360){wd="N"};if(wd>=0&&wd<11.25){wd="N"};if(wd>=11.25&&wd<33.75){wd="NNE"};if(wd>=33.75&&wd<56.25){wd="NE"};if(wd>=56.25&&wd<78.75){wd="ENE"};if(wd>=78.75&&wd<101.25){wd="E"};if(wd>=101.25&&wd<123.75){wd="ESE"};if(wd>=123.75&&wd<146.25){wd="SE"};if(wd>=146.25&&wd<168.75){wd="SSE"};if(wd>=168.75&&wd<191.25){wd="S"};if(wd>=191.25&&wd<213.75){wd="SSW"};if(wd>=213.75&&wd<236.25){wd="SW"};if(wd>=236.25&&wd<258.75){wd="WSW"};if(wd>=258.75&&wd<281.25){wd="W"};if(wd>=281.25&&wd<303.75){wd="WNW"};if(wd>=303.75&&wd<326.25){wd="NW"};if(wd>=326.25&&wd<348.75){wd="NNW"};var wf=feed.item.forecast[0];wpd=feed.item.pubDate;n=wpd.indexOf(":");tpb=_getTimeAsDate(wpd.substr(n-2,8));tsr=_getTimeAsDate(feed.astronomy.sunrise);tss=_getTimeAsDate(feed.astronomy.sunset);if(tpb>tsr&&tpb<tss){daynight='d';}else{daynight='n';}
+var html='<div class="weatherItem">';html+='<div style="width: 150px;"><strong><span class="weatherHeader" style="color: #FFF;">Today: '+feed.item.condition.temp+'&deg;F </span><img src="http://l.yimg.com/a/i/us/nws/weather/gr/'+feed.item.condition.code+daynight+'.png" alt="" style="width: 80px; height: 58px; float: right; position: relative; top: -5px;" /></strong></div>';html+='</div>';
+$e.append(html);};var _getTimeAsDate=function(t){d=new Date();r=new Date(d.toDateString()+' '+t);return r;};})(jQuery);
+
+(function($){var row='odd';$.fn.weatherfeed=function(locations,options){var defaults={unit:'f',image:true,highlow:true,wind:true,link:true,showerror:true};var options=$.extend(defaults,options);return this.each(function(i,e){var $e=$(e);if(!$e.hasClass('weatherFeed'))$e.addClass('weatherFeed');if(!$.isArray(locations))return false;var count=locations.length;if(count>10)count=10;var locationid='';for(var i=0;i<count;i++){if(locationid!='')locationid+=',';locationid+="'"+locations[i]+"'";}
+now=new Date()
+var query="select * from weather.forecast where location in ("+locationid+") and u='"+options.unit+"'";var api='http://query.yahooapis.com/v1/public/yql?q='+encodeURIComponent(query)+'&rnd='+now.getFullYear()+now.getMonth()+now.getDay()+now.getHours()+'&format=json&callback=?';$.ajax({type:'GET',url:api,dataType:'json',success:function(data){if(data.query){if(data.query.results.channel.length>0){var result=data.query.results.channel.length;for(var i=0;i<result;i++){_callback(e,data.query.results.channel[i],options);}}else{_callback(e,data.query.results.channel,options);}}else{if(options.showerror)$e.html('<p>Weather information unavailable</p>');}},error:function(data){if(options.showerror)$e.html('<p>Weather request failed</p>');}});});};var _callback=function(e,feed,options){var $e=$(e);var wd=feed.wind.direction;if(wd>=348.75&&wd<=360){wd="N"};if(wd>=0&&wd<11.25){wd="N"};if(wd>=11.25&&wd<33.75){wd="NNE"};if(wd>=33.75&&wd<56.25){wd="NE"};if(wd>=56.25&&wd<78.75){wd="ENE"};if(wd>=78.75&&wd<101.25){wd="E"};if(wd>=101.25&&wd<123.75){wd="ESE"};if(wd>=123.75&&wd<146.25){wd="SE"};if(wd>=146.25&&wd<168.75){wd="SSE"};if(wd>=168.75&&wd<191.25){wd="S"};if(wd>=191.25&&wd<213.75){wd="SSW"};if(wd>=213.75&&wd<236.25){wd="SW"};if(wd>=236.25&&wd<258.75){wd="WSW"};if(wd>=258.75&&wd<281.25){wd="W"};if(wd>=281.25&&wd<303.75){wd="WNW"};if(wd>=303.75&&wd<326.25){wd="NW"};if(wd>=326.25&&wd<348.75){wd="NNW"};var wf=feed.item.forecast[0];wpd=feed.item.pubDate;n=wpd.indexOf(":");tpb=_getTimeAsDate(wpd.substr(n-2,8));tsr=_getTimeAsDate(feed.astronomy.sunrise);tss=_getTimeAsDate(feed.astronomy.sunset);if(tpb>tsr&&tpb<tss){daynight='d';}else{daynight='n';}
+var html='<div class="weatherItem">';html+='<div class="weatherHeader"><h3 class="subtitle" style="font: bold 1.3em Georgia;">Today&rsquo;s Weather</h3></div>';html+='</div>';html+='<img src="http://l.yimg.com/a/i/us/nws/weather/gr/'+feed.item.condition.code+daynight+'.png" alt="" style="width: 60px; height: 40px; float: left;" />';html+='<div id="wrap"><div class="weatherDesc">'+feed.item.condition.temp+'&deg;F '+feed.item.condition.text+'</div>';if(options.highlow)html+='<div class="weatherRange">High: '+wf.high+'&deg;F | Low: '+wf.low+'&deg;F</div></div>';
+$e.append(html);};var _getTimeAsDate=function(t){d=new Date();r=new Date(d.toDateString()+' '+t);return r;};})(jQuery);
+</script>
+
+<script type="text/javascript">
+$j(document).ready(function () {
+	$j('#weatherHeaderFeed').headerfeed(['USIN0341']);
+	$j('#weatherWidget').weatherfeed(['USIN0341']);
+});
+</script>
+
+<div id="weatherHeaderFeed"></div></td>
+					<td class="my_trip_planner" align="right">
+						<span class="wrapper"><span class="my_trip_planner"></span> <span id="my_trip_planner_items"><a href="/my-trip-planner">0 items</a></span></span>
+					</td>
+					<td class="search" align="right">
+					
+						<form action="/search" method="get">
+						<input name="ordering" value="" type="hidden" />
+						<input name="searchphrase" value="all" type="hidden" />
+						<input name="limit" value="50" type="hidden" />
+						<table class="table2" cellspacing="0" cellpadding="0" border="0" >
+						<tr>
+							<td class="input"><input name="searchword" id="mod_search_searchword" alt="search" class="inputbox" type="text" size="50" value="Type Keyword" onfocus="if( this.value == 'Type Keyword' ){ this.value = ''; }" onblur="if( this.value == '' ){ this.value = 'Type Keyword'; }" /></td>
+							<td class="button"><input type="image" src="/templates/subpage/images/search/button.gif" width="26" height="28" /></td>
+						</tr>
+						</table>
+						</form>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="menu" colspan="3">
+					
+						<ul class="menu"><li class="item209"><a href="http://www.michigancitylaporte.com/"><span>Home</span></a></li><li class="item97"><a href="/request-visitors-guide"><span>Request a Visitors Guide</span></a></li><li class="item98"><a href="/video-room"><span>Video Room</span></a></li><li class="item100"><a href="/maps-and-travel-tools"><span>Maps &amp; Travel Tools</span></a></li><li class="item102"><a href="/travel-blog/"><span>Insider Experts Blog</span></a></li><li class="item160"><a href="http://www.michigancitylaporte.com/online-store/"><span>Online Tickets</span></a></li></ul>
+						
+					</td>
+				</tr>
+				</table>
+			
+			</div>
+		
+			<div id="header_block2_2">
+			
+				<div id="richmegamenu"><ul class="richmegamenuul"><li class="megarichmenu megarichmenu1"><span class="megarichmenubutton"><span class="megarichmenubuttoninner"><a href="/travel-offers-and-getaways" title="Travel Offers & Getaways">Travel Offers & Getaways</a></span></span></li><li class="megarichmenu megarichmenu2"><span class="megarichmenubutton"><span class="megarichmenubuttoninner"><a href="/events" title="Events">Events</a></span></span></li><li class="megarichmenu megarichmenu3"><span class="megarichmenubutton"><span class="megarichmenubuttoninner"><a href="/explore-the-area" title="Explore The Area">Explore The Area</a></span></span><div style="display:none" class="megarichmenucolumns megarichmenucolumns3 setup1-1-1-1"><div class="wrapper"><ul><li class="megarichmenucol col1"><ul class="megarichmenuitemlist"><li class="idval1 megamenu_header"><h3>Explore The Area</h3></li><li class="idval2 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/explore-the-area/regions-and-communities"><img src="/images/stories/megamenu/img-regions.jpg" alt="Regions & Communities" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/explore-the-area/regions-and-communities" title="Regions & Communities">Regions & Communities</a></h4><p class="description">Discover diverse communities with lots of charm. <a href="http://www.michigancitylaporte.com/explore-the-area/regions-and-communities" title="Read More" class="read-more">Learn More</a></p></div></div></li></ul></li><li class="megarichmenucol col2"><ul class="megarichmenuitemlist"><li class="idval3 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/explore-the-area/history-and-culture"><img src="/images/stories/megamenu/img-history.jpg" alt="History & Culture" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/explore-the-area/history-and-culture" title="History & Culture">History & Culture</a></h4><p class="description">Uncover a gateway to bygone adventure. <a href="http://www.michigancitylaporte.com/explore-the-area/history-and-culture" title="Read More" class="read-more">Learn More</a></p></div></div></li></ul></li><li class="megarichmenucol col3"><ul class="megarichmenuitemlist"><li class="idval4 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/explore-the-area/climate-and-weather"><img src="/images/stories/megamenu/img-climate.jpg" alt="Climate & Weather" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/explore-the-area/climate-and-weather" title="Climate & Weather">Climate & Weather</a></h4><p class="description">What will the weather be like for your visit? <a href="http://www.michigancitylaporte.com/explore-the-area/climate-and-weather" title="Read More" class="read-more">Learn More</a></p></div></div></li></ul></li><li class="megarichmenucol col4"><ul class="megarichmenuitemlist"><li class="idval5 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/explore-the-area/laporte-county-by-season"><img src="/images/stories/megamenu/img-seasons.jpg" alt="LaPorte County by Season" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/explore-the-area/laporte-county-by-season" title="LaPorte County by Season">LaPorte County by Season</a></h4><p class="description">Experience four incredible seasons. <a href="http://www.michigancitylaporte.com/explore-the-area/laporte-county-by-season" title="Read More" class="read-more">Learn More</a></p></div></div></li></ul></li></ul><div style="clear:both;"></div></div></div><div style="clear:both;"></div></li><li class="megarichmenu megarichmenu4"><span class="megarichmenubutton"><span class="megarichmenubuttoninner"><a href="/where-to-stay" title="Where To Stay">Where To Stay</a></span></span><div style="display:none" class="megarichmenucolumns megarichmenucolumns4 setup1-1"><div class="wrapper"><ul><li class="megarichmenucol col1"><ul class="megarichmenuitemlist"><li class="idval6 megamenu_header"><h3>Where To Stay</h3></li><li class="idval7 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/where-to-stay/bed-and-breakfasts"><img src="/images/stories/megamenu/Thumbnail _Tryon_ Farm_BB.JPG" alt="Bed & Breakfasts" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/where-to-stay/bed-and-breakfasts" title="Bed & Breakfasts">Bed & Breakfasts</a></h4><p class="description">Discover charm, history and elegance. <a href="http://www.michigancitylaporte.com/where-to-stay/bed-and-breakfasts" title="Read More" class="read-more">Learn More</a></p></div></div></li><li class="idval8 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/where-to-stay/hotels-and-motels"><img src="/images/stories/megamenu/small exterior HIE photo.jpg" alt="Hotels & Motels" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/where-to-stay/hotels-and-motels" title="Hotels & Motels">Hotels & Motels</a></h4><p class="description">Discover comfortably familiar surroundings. <a href="http://www.michigancitylaporte.com/where-to-stay/hotels-and-motels" title="Read More" class="read-more">Learn More</a></p></div></div></li><li class="idval9 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/where-to-stay/resorts"><img src="/images/stories/megamenu/list-resorts.jpg" alt="Resorts" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/where-to-stay/resorts" title="Resorts">Resorts</a></h4><p class="description">Discover pampering for all the senses. <a href="http://www.michigancitylaporte.com/where-to-stay/resorts" title="Read More" class="read-more">Learn More</a></p></div></div></li></ul></li><li class="megarichmenucol col2"><ul class="megarichmenuitemlist"><li class="idval10 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/where-to-stay/vacation-homes"><img src="/images/stories/megamenu/Vacation_Rental_Small.jpg" alt="Vacation Homes" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/where-to-stay/vacation-homes" title="Vacation Homes">Vacation Homes</a></h4><p class="description">Discover the limitless possibilities. <a href="http://www.michigancitylaporte.com/where-to-stay/vacation-homes" title="Read More" class="read-more">Learn More</a></p></div></div></li><li class="idval12 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/where-to-stay/rvs-and-campgrounds"><img src="/images/stories/megamenu/thumbnail_Last_Resort_Campground.jpg" alt="RVs & Campgrounds" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/where-to-stay/rvs-and-campgrounds" title="RVs & Campgrounds">RVs & Campgrounds</a></h4><p class="description">Discover a selection of great campsites. <a href="http://www.michigancitylaporte.com/where-to-stay/rvs-and-campgrounds" title="Read More" class="read-more">Learn More</a></p></div></div></li></ul></li></ul><div style="clear:both;"></div></div></div><div style="clear:both;"></div></li><li class="megarichmenu megarichmenu5"><span class="megarichmenubutton current-menu"><span class="megarichmenubuttoninner"><a href="/things-to-do" title="Things To Do">Things To Do</a></span></span><div style="display:none" class="megarichmenucolumns megarichmenucolumns5 setup1-1"><div class="wrapper"><ul><li class="megarichmenucol col1"><ul class="megarichmenuitemlist"><li class="idval13 megamenu_header"><h3>Things to Do</h3></li><li class="idval14 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/things-to-do/attractions"><img src="/images/stories/megamenu/smallest-tiger.jpg" alt="Attractions" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/things-to-do/attractions" title="Attractions">Attractions</a></h4><p class="description">Discover a unique mix of things to see and do. <a href="http://www.michigancitylaporte.com/things-to-do/attractions" title="Read More" class="read-more">Learn More</a></p></div></div></li><li class="idval15 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/things-to-do/dining"><img src="/images/stories/megamenu/pizza-small.jpg" alt="Dining & Nightlife" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/things-to-do/dining" title="Dining & Nightlife">Dining & Nightlife</a></h4><p class="description">Discover a great meal to fit any occassion. <a href="http://www.michigancitylaporte.com/things-to-do/dining" title="Read More" class="read-more">Learn More</a></p></div></div></li><li class="idval16 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/things-to-do/arts-and-entertainment"><img src="/images/stories/megamenu/lcso-small.jpg" alt="Arts & Entertainment" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/things-to-do/arts-and-entertainment" title="Arts & Entertainment">Arts & Entertainment</a></h4><p class="description">Discover a range of options to help you escape. <a href="http://www.michigancitylaporte.com/things-to-do/arts-and-entertainment" title="Read More" class="read-more">Learn More</a></p></div></div></li><li class="idval20 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/things-to-do/orchards-farms-and-gardens"><img src="/images/stories/megamenu/garwoods -small.jpg" alt="Orchards, Farms & Gardens" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/things-to-do/orchards-farms-and-gardens" title="Orchards, Farms & Gardens">Orchards, Farms & Gardens</a></h4><p class="description">Discover the bounty of Mother Nature. <a href="http://www.michigancitylaporte.com/things-to-do/orchards-farms-and-gardens" title="Read More" class="read-more">Learn More</a></p></div></div></li></ul></li><li class="megarichmenucol col2"><ul class="megarichmenuitemlist"><li class="idval17 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/things-to-do/shopping"><img src="/images/stories/megamenu/lhp-small.jpg" alt="Shopping" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/things-to-do/shopping" title="Shopping">Shopping</a></h4><p class="description">Discover a shopper's paradise and more. <a href="http://www.michigancitylaporte.com/things-to-do/shopping" title="Read More" class="read-more">Learn More</a></p></div></div></li><li class="idval18 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/things-to-do/sports"><img src="/images/stories/megamenu/golf-small.jpg" alt="Sports" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/things-to-do/sports" title="Sports">Sports</a></h4><p class="description">Discover new activities to enjoy together. <a href="http://www.michigancitylaporte.com/things-to-do/sports" title="Read More" class="read-more">Learn More</a></p></div></div></li><li class="idval19 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/things-to-do/history-and-culture"><img src="/images/stories/megamenu/pioneer-land-small.jpg" alt="History & Culture" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/things-to-do/history-and-culture" title="History & Culture">History & Culture</a></h4><p class="description">Discover interesting stories from our past. <a href="http://www.michigancitylaporte.com/things-to-do/history-and-culture" title="Read More" class="read-more">Learn More</a></p></div></div></li><li class="idval21 megamenu_meeting"><div class="meet-wrapper"><div class="image"><a href="http://www.michigancitylaporte.com/things-to-do/top-ten"><img src="/images/stories/megamenu/lighthouse2-small.jpg" alt="Top Ten" /></a></div><div class="meet-entry"><h4><a href="http://www.michigancitylaporte.com/things-to-do/top-ten" title="Top Ten">Top Ten</a></h4><p class="description">Discover the best of Michigan City LaPorte. <a href="http://www.michigancitylaporte.com/things-to-do/top-ten" title="Read More" class="read-more">Learn More</a></p></div></div></li></ul></li></ul><div style="clear:both;"></div></div></div><div style="clear:both;"></div></li><li class="megarichmenu megarichmenu6"><span class="megarichmenubutton"><span class="megarichmenubuttoninner"><a href="/getting-here" title="Getting Here">Getting Here</a></span></span></li></ul><div style="clear:both;"></div></div>
+
+			</div>
+		
+		</div>
+		</div>
+	
+	</div>
+	
+	
+	
+		
+	<div id="splash_container" class="subpage">
+	
+            
+		<div class="right">
+		<div class="splash">
+			<div id="header-wrapper"><div id="header"><img class="header" src="/images/stories/splash/lcso-summer-concert-lg.jpg" width="720" height="290" border="0" alt="Things to Do - Arts and Entertainment"  /></div></div>
+			<div class="wave-overlay-narrow"></div>
+		</div>
+		</div>
+
+		<div class="left-top">
+        
+        <table><tr>
+        	
+			<td id="submenu_column">
+            
+			
+					
+				<div id="submenu-title" class="things-to-do"><a href="/things-to-do" title="Things To Do">Things To Do</a></div><ul class="menu"><li class="item10"><a href="/things-to-do/top-ten"><span>Top Ten</span></a></li><li class="item11"><a href="/things-to-do/attractions"><span>Attractions</span></a></li><li class="item13"><a href="/things-to-do/dining"><span>Dining &amp; Nightlife</span></a></li><li id="current" class="active item14"><a href="/things-to-do/arts-and-entertainment"><span>Arts &amp; Entertainment</span></a></li><li class="item17"><a href="/things-to-do/shopping"><span>Shopping</span></a></li><li class="parent item18"><a href="/things-to-do/sports"><span>Sports</span></a></li><li class="item20"><a href="/things-to-do/history-and-culture"><span>History &amp; Culture</span></a></li><li class="item206"><a href="/things-to-do/orchards-farms-and-gardens"><span>Orchards, Farms &amp; Gardens</span></a></li></ul>
+							
+
+			
+			</td>
+			
+		</tr>
+		</table>
+        
+        
+		</div>
+
+	</div>
+		
+	<div id="content_container">
+  
+	
+		
+		<table id="content_table">
+		
+        <tr>
+        
+        <td class="cta">
+			<p id="request-activities-guide-cta"><a href="/request-visitors-guide" class="cta-link">Get Yours Today</a></p><p id="travel-offers-cta"><a class="cta-link" href="/travel-offers-and-getaways">View Offers</a></p>
+		</td>
+        
+			<td id="content_column" class="narrow">
+            
+            <div id="breadcrumbs"><span class="breadcrumbs pathway">
+<a href="http://www.michigancitylaporte.com/" class="pathway">Home</a> <img src="/images/M_images/arrow.png" alt=""  /> <a href="/things-to-do" class="pathway">Things to Do</a> <img src="/images/M_images/arrow.png" alt=""  /> Arts &amp; Entertainment</span>
+</div>
+
+								
+				<!--SELECT DISTINCT l.id, l.listingid, typeid, typename, l.acctid, company, catid, catname, subcatid, subcatname, addr1, addr2, addr3, city, state, zip, latitude, longitude, tollfree, phone, altphone, fax, email, weburl, resvurl, regionid, region, acctstatus, primarycontactfullname, primarycontacttitle, rankid, rankname, description, logofile, photofile, imgpath, created, lastupdated FROM lpe_nitdc_simpleview_listings AS l WHERE 1  AND ( (  catid IN (50) AND subcatid IN (643,644,646,648) )  OR ( INSTR( additionalsubcats, '643' ) OR INSTR( additionalsubcats, '644' ) OR INSTR( additionalsubcats, '646' ) OR INSTR( additionalsubcats, '648' ) ) ) AND typeid IN (1)  ORDER BY company--><!-- Simpleview Listings Header type name: things to do > arts and entertainment > attractions > listings header -->
+<div class="things-to-do-filter-results" style="float: right; width: 260px;">
+		<script type="text/javascript">
+		/* <![CDATA[ */
+		function redirectWidget( objForm )
+		{
+			objForm.action = objForm.lodging.options[objForm.lodging.selectedIndex].value;
+			return true;
+		}
+		/* ]]> */
+		</script>
+		
+
+		<div id="browse-accommodations-bottom-bg">
+			<div id="browse-accommodations-div">
+				<label class="label-filter-your-results">Filter Your Results</label>
+				<form id="accommodations-form" name="browse-accommodations" method="post" action="index.php" onsubmit="return redirectWidget(this);">
+				<input name="search_widget" value="1" type="hidden" />
+				<ul class="select-wrapper">
+					<li>
+						<label for="lodging" class="label-type">Type</label>
+						<select name="lodging" id="lodging">
+							<option value="http://www.michigancitylaporte.com/things-to-do/attractions" >Attractions</option>
+							<option value="http://www.michigancitylaporte.com/things-to-do/dining" >Dining</option>
+							<option value="http://www.michigancitylaporte.com/things-to-do/arts-and-entertainment" selected>Arts &amp; Entertainment</option>
+							<option value="http://www.michigancitylaporte.com/things-to-do/shopping" >Shopping</option>
+							<option value="http://www.michigancitylaporte.com/things-to-do/recreation" >Recreation</option>
+							<option value="http://www.michigancitylaporte.com/things-to-do/history-and-culture" >History &amp; Culture</option>
+						</select>
+					</li>
+					<li>
+						<label for="region" class="label-region">Region</label>
+						<select name="region" id="region">
+							<option value="">All</option>
+							<option value="City of LaPorte Area" >City of LaPorte Area</option>
+							<option value="LaPorte County" >LaPorte County</option>
+							<option value="Michigan City Area" >Michigan City Area</option>
+							<option value="Hesston Area" >Hesston Area</option>
+							<option value="Westville Area" >Westville Area</option>
+							<option value="State of Indiana" >State of Indiana</option>
+							<option value="Rolling Prairie Area" >Rolling Prairie Area</option>
+							<option value="LaCrosse Area" >LaCrosse Area</option>
+							<option value="Wanatah Area" >Wanatah Area</option>
+							<option value="Other" >Other</option>
+						</select>
+					</li>
+				</ul>
+				<div class="browse-clear"></div>
+
+				<input type="submit" name="submit" id="submit" value="">
+
+				</form>
+				<div style="clear:both;"></div>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+		</div>
+<h1>Michigan City LaPorte Arts & Entertainment</h1>
+<h2>The art of escape</h2>
+
+<p>With summer theater and community theater as well as year-round productions that rival stages in the big cities, Michigan City LaPorte is well positioned to whisk you off to imaginary places and times. Discover how local artists capture the beauty and spirit of the County as you tour galleries and studios. You might even find a piece or two to take home with you—keeping your getaway alive in your memories. Let the music move you as the LaPorte County Symphony Orchestra brings the joy of live music to your vacation. Or set up your chair under the stars for an outdoor concert with the Municipal Band in Washington Park or Fox Park. </p>
+		<div class="clear-div"></div>
+		<form name="adminForm" id="adminForm" action="" method="get">
+		
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8558"><img src="http://Laporte.simpleviewcrm.com/images/listings/Acting-Theatre-of-Michigan-City.jpg" width="147 border="0" alt="Acting Theatre of Michigan City" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8558">Acting Theatre of Michigan City</a></h4>
+				<p>Indiana's only all-orginal theater.  Productions year-round featuring dance, music, lights, comedy, and drama for the family in a unique 75-seat theater.  Workshops for children.</p>
+				<p class="contact"><strong>T:</strong> 219.872.4221&nbsp;</p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8558" class="details">View Details</a></li>
+					<li><a id="event_10" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8558&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B C 4 D16 A', 'event_10');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8558" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8558" addthis:title="Acting Theatre of Michigan City">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19145"><img src="http://Laporte.simpleviewcrm.com/images/listings/MC-LaPorte-Trail.jpg" width="147 border="0" alt="Art & Earth Trail" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19145">Art & Earth Trail</a></h4>
+				<p>The trail is meant to be experienced one family at a time or by a few visitors traveling via their own personal vehicle to 'off-the-beaten-path' places such as studios, galleries, in-home studios, farms, inns, etc.</p>
+				<p class="contact"><strong>T:</strong> 800.634.2650&nbsp; <strong>|  E:</strong> <a title="info@laportecountycvb.com" href="mailto:info@laportecountycvb.com">info@laportecountycvb.com</a>  <strong>|  W:</strong> <a title="Art & Earth Trail" target="_blank" href="http://www.artandearthtrail.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19145'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19145" class="details">View Details</a></li>
+					<li><a id="event_27" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19145&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 0 1 113 A', 'event_27');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19145" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19145" addthis:title="Art & Earth Trail">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19048"><img src="http://Laporte.simpleviewcrm.com/images/listings/Blink-Contemporary-Art.jpg" width="147 border="0" alt="Blink Contemporary Art" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19048">Blink Contemporary Art</a></h4>
+				<p>Blink is a unique combination of working studio and contemporary art gallery. One hour from Chicago and 30 minutes from South Bend, we are located in the historic district of Michigan City, Indiana.</p>
+				<p class="contact"><strong>T:</strong> 773.206.0426&nbsp; <strong>|  W:</strong> <a title="Blink Contemporary Art" target="_blank" href="http://www.blinkcontemporaryart.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19048'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19048" class="details">View Details</a></li>
+					<li><a id="event_51" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19048&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 1 1 C13 A', 'event_51');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19048" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19048" addthis:title="Blink Contemporary Art">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=18960"><img src="http://Laporte.simpleviewcrm.com/images/listings/Captain-Eds-2.jpg" width="147 border="0" alt="Captain Ed's" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=18960">Captain Ed's</a></h4>
+				<p>A pirate themed candy store with a free pinball arcade, a classic 1970's record shop, an entertainment exchange with CD's, DVD's, video games, a chrome and automotive accessories shop and a furniture store. One-quarter mile east of Marquette Mall on ...<a title="Read More Details" href="/venue?listingid=18960" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.872.6294&nbsp; <strong>|  E:</strong> <a title="edbeut@gmail.com" href="mailto:edbeut@gmail.com">edbeut@gmail.com</a>  <strong>|  W:</strong> <a title="Captain Ed's" target="_blank" href="http://www.captain-eds-candy-island.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=18960'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=18960" class="details">View Details</a></li>
+					<li><a id="event_77" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=18960&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 1 8 3 413 A', 'event_77');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-18960" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=18960" addthis:title="Captain Ed's">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8494"><img src="http://www.michigancitylaporte.com/images/stories/listings/default-listings-photo.jpg" width="147 border="0" alt="Carol Block - Artist" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8494">Carol Block - Artist</a></h4>
+				<p>Limited edition prints altered digitally,  prints from 35MM negatives, some playful, others thoughtful, using scanners, silver emulsions hand painted on unorthodox surfaces such as wood, art paper and other surpirses.</p>
+				<p class="contact"><strong>T:</strong> 773.593.8366&nbsp; <strong>|  E:</strong> <a title="seeblock@hotmail.com" href="mailto:seeblock@hotmail.com">seeblock@hotmail.com</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8494" class="details">View Details</a></li>
+					<li><a id="event_80" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8494&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B D 8 116 A', 'event_80');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8494" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8494" addthis:title="Carol Block - Artist">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8445"><img src="http://Laporte.simpleviewcrm.com/images/listings/Dunes-Summer-Theatre.jpg" width="147 border="0" alt="Dunes Summer Theatre" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8445">Dunes Summer Theatre</a></h4>
+				<p>Lovely indoor theater tucked in the woods. Performances June, July, August, September. Dunes Art Foundation provided adult and children's theatrical productions. Call for schedule and directions.</p>
+				<p class="contact"><strong>T:</strong> 219.879.7509&nbsp; <strong>|  E:</strong> <a title="info@dunessummertheatre.com" href="mailto:info@dunessummertheatre.com">info@dunessummertheatre.com</a>  <strong>|  W:</strong> <a title="Dunes Summer Theatre" target="_blank" href="http://www.dunessummertheatre.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8445'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8445" class="details">View Details</a></li>
+					<li><a id="event_137" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8445&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B D 5 016 A', 'event_137');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8445" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8445" addthis:title="Dunes Summer Theatre">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=18936"><img src="http://Laporte.simpleviewcrm.com/images/listings/butterflyIMG_00021.JPG" width="147 border="0" alt="Ed Wedow's Custom Made Sculptures" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=18936">Ed Wedow's Custom Made Sculptures</a></h4>
+				<p>Ed Wedow is the original metal sculptor in LaPorte making butterflies, dragonflies, humming birds, flowers and fairies. Ed also makes custom metal artwork to order. Come and see the unsurpassed quality and originality of Ed's work, not just more ...<a title="Read More Details" href="/venue?listingid=18936" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.326.5027&nbsp; <strong>|  E:</strong> <a title="maryewedow@yahoo.com" href="mailto:maryewedow@yahoo.com">maryewedow@yahoo.com</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=18936" class="details">View Details</a></li>
+					<li><a id="event_138" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=18936&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 1 8 6 213 A', 'event_138');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-18936" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=18936" addthis:title="Ed Wedow's Custom Made Sculptures">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8430"><img src="http://Laporte.simpleviewcrm.com/images/listings/100_40150.JPG" width="147 border="0" alt="Festival Players Guild/Mainstreet Theatre" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8430">Festival Players Guild/Mainstreet Theatre</a></h4>
+				<p>Year round theatre...Our 45th 10-week Canterbury Summer Theatre Season of summer stock musicals and comedies presented by a talented acting company. Variety of programming Sept - May. Group rates and packages.</p>
+				<p class="contact"><strong>T:</strong> 219.874.4269&nbsp; <strong>|  E:</strong> <a title="info@festivalplayersguild.org" href="mailto:info@festivalplayersguild.org">info@festivalplayersguild.org</a>  <strong>|  W:</strong> <a title="Festival Players Guild/Mainstreet Theatre" target="_blank" href="http://www.festivalplayersguild.org"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8430'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8430" class="details">View Details</a></li>
+					<li><a id="event_153" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8430&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B D 2 516 A', 'event_153');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8430" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8430" addthis:title="Festival Players Guild/Mainstreet Theatre">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19004"><img src="http://Laporte.simpleviewcrm.com/images/listings/100_0497.jpg" width="147 border="0" alt="Fine Wood Turning" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19004">Fine Wood Turning</a></h4>
+				<p>Tamlin's Fine Wood Turnings has been serving the Indian community since 2003. We specialize in wood turnings and we offer quality and reliable service you can count on.</p>
+				<p class="contact"><strong>T:</strong> 219.326.6190&nbsp; <strong>|  E:</strong> <a title="geo36san@frontier.com" href="mailto:geo36san@frontier.com">geo36san@frontier.com</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19004" class="details">View Details</a></li>
+					<li><a id="event_154" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19004&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 1 5 013 A', 'event_154');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19004" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19004" addthis:title="Fine Wood Turning">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8418"><img src="http://Laporte.simpleviewcrm.com/images/listings/FootlightPlayers.jpg" width="147 border="0" alt="Footlight Players, Inc." /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8418">Footlight Players, Inc.</a></h4>
+				<p>Amateur community theatre providing live entertainment since 1950. Performances generally the first 2 or 3 weekends of each even month. Musical admission fee is $12.00, with regular plays $10.00. Reservations are strongly recommended.</p>
+				<p class="contact"><strong>T:</strong> 219.874.4035&nbsp; <strong>|  E:</strong> <a title="info@footlightplayers.org" href="mailto:info@footlightplayers.org">info@footlightplayers.org</a>  <strong>|  W:</strong> <a title="Footlight Players, Inc." target="_blank" href="http://www.footlightplayers.org"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8418'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8418" class="details">View Details</a></li>
+					<li><a id="event_164" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8418&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B D 0 D16 A', 'event_164');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8418" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8418" addthis:title="Footlight Players, Inc.">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8387"><img src="http://Laporte.simpleviewcrm.com/images/listings/4th-of-July.jpg" width="147 border="0" alt="Hesston Steam Museum" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8387">Hesston Steam Museum</a></h4>
+				<p>Three gauges of steam trains, steam crane, sawmill and traction engines. Specials: 4th of July, Father's Day, Labor Day weekend, Halloween Ghost Train, Santa's Candy Cane Express and Civil War Re-enactment.</p>
+				<p class="contact"><strong>T:</strong> 219.778.2783&nbsp; <strong>|  W:</strong> <a title="Hesston Steam Museum" target="_blank" href="http://www.hesston.org"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8387'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8387" class="details">View Details</a></li>
+					<li><a id="event_201" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8387&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B A 9 216 A', 'event_201');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8387" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8387" addthis:title="Hesston Steam Museum">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8382"><img src="http://Laporte.simpleviewcrm.com/images/listings/Hal-Higdon.jpg" width="147 border="0" alt="Higdon Studio" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8382">Higdon Studio</a></h4>
+				<p>Hal Higdon works as an author and artist.  One of his 33 books includes "The Crime of the Century".   His specialty is Pop Art paintings with brilliant primary colors.  Hal Higdon works out of his home overlooking Lake Michigan in Long Beach.</p>
+				<p class="contact"><strong>T:</strong> 219.879.0133&nbsp; <strong>|  E:</strong> <a title="halhigdon@attbi.com" href="mailto:halhigdon@attbi.com">halhigdon@attbi.com</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8382" class="details">View Details</a></li>
+					<li><a id="event_204" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8382&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B A 9 716 A', 'event_204');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8382" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8382" addthis:title="Higdon Studio">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8376"><img src="http://Laporte.simpleviewcrm.com/images/listings/lid-vessel.jpg" width="147 border="0" alt="Hook Pottery Paper" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8376">Hook Pottery Paper</a></h4>
+				<p>Jon Hook and Andrea Peterson, working together in an environmentally conscious effort, create functional pottery, handmade paper and woodblock prints as well as handmade soaps and candles.</p>
+				<p class="contact"><strong>T:</strong> 219.362.9478&nbsp; <strong>|  E:</strong> <a title="hookpotterypaper@comcast.net" href="mailto:hookpotterypaper@comcast.net">hookpotterypaper@comcast.net</a>  <strong>|  W:</strong> <a title="Hook Pottery Paper" target="_blank" href="http://www.hookpotterypaper.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8376'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8376" class="details">View Details</a></li>
+					<li><a id="event_212" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8376&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B A 6 316 A', 'event_212');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8376" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8376" addthis:title="Hook Pottery Paper">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19215"><img src="http://Laporte.simpleviewcrm.com/images/listings/Artistic-Furniture-Creative-Paintings.jpg" width="147 border="0" alt="If you Can Dream it, I can Paint it" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19215">If you Can Dream it, I can Paint it</a></h4>
+				<p>Furniture, portraits, murals, faux finishes.  If you dream it, I can paint it. Located in the same building with Joy of Flowers.</p>
+				<p class="contact"><strong>T:</strong> 760.917.3119&nbsp; <strong>|  E:</strong> <a title="Artist.LisaRene@yahoo.com" href="mailto:Artist.LisaRene@yahoo.com">Artist.LisaRene@yahoo.com</a>  <strong>|  W:</strong> <a title="If you Can Dream it, I can Paint it" target="_blank" href="http://www.lisarene.net"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19215'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19215" class="details">View Details</a></li>
+					<li><a id="event_220" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19215&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 3 4 113 A', 'event_220');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19215" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19215" addthis:title="If you Can Dream it, I can Paint it">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8365"><img src="http://Laporte.simpleviewcrm.com/images/listings/2009-mt-baldy---006.jpg" width="147 border="0" alt="Indiana Dunes National Lakeshore/Mt. Baldy" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8365">Indiana Dunes National Lakeshore/Mt. Baldy</a></h4>
+				<p>Mount Baldy is located about 2 miles west of Michigan City on US Hwy. 12. This 123 foot sand dune is within the boundaries of Indiana Dunes National Lakeshore. Picnicking, restrooms, hiking and vistas of Lake Michigan and its southern shoreline.
+...<a title="Read More Details" href="/venue?listingid=8365" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.926.7561&nbsp; <strong>|  W:</strong> <a title="Indiana Dunes National Lakeshore/Mt. Baldy" target="_blank" href="http://www.nps.gov/indu/planyourvisit/mt-baldy.htm"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8365'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8365" class="details">View Details</a></li>
+					<li><a id="event_226" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8365&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B A 7 016 A', 'event_226');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8365" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8365" addthis:title="Indiana Dunes National Lakeshore/Mt. Baldy">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8366"><img src="http://Laporte.simpleviewcrm.com/images/listings/Picture-023---Copy.jpg" width="147 border="0" alt="Indiana Dunes National Lakeshore/Pinhook Bog" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8366">Indiana Dunes National Lakeshore/Pinhook Bog</a></h4>
+				<p>The national lakeshore's Pinhook Bog consists of about 580 acres -- 145 of which make up a floating peat mat. A "moat" -- about 45 acres of wetlands -- separates the bog proper from the surrounding upland habitat. Pinhook Bog is a unique natural area ...<a title="Read More Details" href="/venue?listingid=8366" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.926.7561&nbsp; <strong>|  W:</strong> <a title="Indiana Dunes National Lakeshore/Pinhook Bog" target="_blank" href="http://www.nps.gov/"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8366'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8366" class="details">View Details</a></li>
+					<li><a id="event_227" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8366&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B A 7 316 A', 'event_227');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8366" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8366" addthis:title="Indiana Dunes National Lakeshore/Pinhook Bog">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19002"><img src="http://www.michigancitylaporte.com/images/stories/listings/default-listings-photo.jpg" width="147 border="0" alt="Jennifer Willey" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19002">Jennifer Willey</a></h4>
+				<p>Michigan City, via the South Shore Line ....full color poster by artist Jennifer Willey. 18 X 24 - Retail $35. email jennifer.willey@hotmail.com</p>
+				<p class="contact"><strong>T:</strong> 219.874.9030&nbsp; <strong>|  E:</strong> <a title="jennifer.willey@hotmail.com" href="mailto:jennifer.willey@hotmail.com">jennifer.willey@hotmail.com</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19002" class="details">View Details</a></li>
+					<li><a id="event_235" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19002&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 1 5 613 A', 'event_235');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19002" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19002" addthis:title="Jennifer Willey">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8833"><img src="http://Laporte.simpleviewcrm.com/images/listings/Jeslelskis Potteries.jpglarge.jpg" width="147 border="0" alt="Jeselskis Potteries" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8833">Jeselskis Potteries</a></h4>
+				<p>Paul has created unique designs in functional and sculptural pottery. He is well known for his stunning and vibrant glazes with colors ranging from reds, yellows, blacks, golds, and blues. Each year Paul exhibits many new designs.</p>
+				<p class="contact"><strong>T:</strong> 219.873.9543&nbsp; <strong>|  E:</strong> <a title="pmjjr@comcast.net" href="mailto:pmjjr@comcast.net">pmjjr@comcast.net</a>  <strong>|  W:</strong> <a title="Jeselskis Potteries" target="_blank" href="http://www.pauljeselskis.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8833'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8833" class="details">View Details</a></li>
+					<li><a id="event_236" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8833&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B 1 2 616 A', 'event_236');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8833" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8833" addthis:title="Jeselskis Potteries">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=18940"><img src="http://Laporte.simpleviewcrm.com/images/listings/Connie-Kassal.jpg" width="147 border="0" alt="Kassal Studio, Inc." /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=18940">Kassal Studio, Inc.</a></h4>
+				<p>Kassal Studio, Inc. is known for unusual, expressive oil paintings, drawings and photography as well as poster illustrations.</p>
+				<p class="contact"><strong>T:</strong> 219.229.2002&nbsp; <strong>|  E:</strong> <a title="connie@kassal-studio.com" href="mailto:connie@kassal-studio.com">connie@kassal-studio.com</a>  <strong>|  W:</strong> <a title="Kassal Studio, Inc." target="_blank" href="http://www.kassal-studio.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=18940'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=18940" class="details">View Details</a></li>
+					<li><a id="event_242" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=18940&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 1 8 1 413 A', 'event_242');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-18940" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=18940" addthis:title="Kassal Studio, Inc.">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19498"><img src="http://www.michigancitylaporte.com/images/stories/listings/default-listings-photo.jpg" width="147 border="0" alt="Kimberly's Clay Creation" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19498">Kimberly's Clay Creation</a></h4>
+				<p>All the jewelry made by KimberlysKlayKreations is made from my heart. As a little girl, I always loved playing with clay and making it into shapes and forms.  I like to use molds, cutters and my imagination to manipulate the clay and to create new ...<a title="Read More Details" href="/venue?listingid=19498" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.561.7736&nbsp; <strong>|  E:</strong> <a title="kimberlysclaycreation@gmail.com" href="mailto:kimberlysclaycreation@gmail.com">kimberlysclaycreation@gmail.com</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19498" class="details">View Details</a></li>
+					<li><a id="event_245" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19498&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 5 C C13 A', 'event_245');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19498" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19498" addthis:title="Kimberly's Clay Creation">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19266"><img src="http://Laporte.simpleviewcrm.com/images/listings/laporte-lake-association.jpg" width="147 border="0" alt="LaPorte Area Lake Association, Inc." /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19266">LaPorte Area Lake Association, Inc.</a></h4>
+				<p>The LaPorte Area Lake Association is a volunteer organization, comprised of businesses and residents, both on the lake and surrounding neighborhoods, who are concerned about the quality and health of our lakes. To ensure continued enjoyment of these ...<a title="Read More Details" href="/venue?listingid=19266" class="details">more</a></p>
+				<p class="contact"> <strong>|  E:</strong> <a title="info@laportelakes.com" href="mailto:info@laportelakes.com">info@laportelakes.com</a>  <strong>|  W:</strong> <a title="LaPorte Area Lake Association, Inc." target="_blank" href="http://www.laportelakes.org"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19266'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19266" class="details">View Details</a></li>
+					<li><a id="event_257" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19266&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 3 3 213 A', 'event_257');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19266" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19266" addthis:title="LaPorte Area Lake Association, Inc.">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8338"><img src="http://Laporte.simpleviewcrm.com/images/listings/civic.jpg" width="147 border="0" alt="LaPorte Civic Auditorium" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8338">LaPorte Civic Auditorium</a></h4>
+				<p>The Civic Auditorium hosts receptions, theater, concerts, sporting events, including college basketball and professional boxing. Special event space available.</p>
+				<p class="contact"><strong>T:</strong> 219.362.2325&nbsp; <strong>|  E:</strong> <a title="civicdirector@cityoflaporte.com" href="mailto:civicdirector@cityoflaporte.com">civicdirector@cityoflaporte.com</a>  <strong>|  W:</strong> <a title="LaPorte Civic Auditorium" target="_blank" href="http://www.laportecivicauditorium.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8338'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8338" class="details">View Details</a></li>
+					<li><a id="event_259" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8338&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B A 2 D16 A', 'event_259');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8338" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8338" addthis:title="LaPorte Civic Auditorium">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19050"><img src="http://Laporte.simpleviewcrm.com/images/listings/70.jpg" width="147 border="0" alt="LaPorte County CVB Artist's Gallery" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19050">LaPorte County CVB Artist's Gallery</a></h4>
+				<p>You’ll find fun and surprises year-round in our art gallery.  We feature local artists that work in all mediums.  The art exhibits change every four to six weeks.</p>
+				<p class="contact"><strong>T:</strong> 219.872.5055&nbsp; <strong>|  E:</strong> <a title="info@michigancitylaporte.com" href="mailto:info@michigancitylaporte.com">info@michigancitylaporte.com</a>  <strong>|  W:</strong> <a title="LaPorte County CVB Artist's Gallery" target="_blank" href="http://www.michigancitylaporte.com/static/index.cfm?contentID=351"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19050'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19050" class="details">View Details</a></li>
+					<li><a id="event_264" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19050&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 1 0 413 A', 'event_264');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19050" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19050" addthis:title="LaPorte County CVB Artist's Gallery">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8325"><img src="http://Laporte.simpleviewcrm.com/images/listings/P11009590.JPG" width="147 border="0" alt="LaPorte County Historical Society Museum" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8325">LaPorte County Historical Society Museum</a></h4>
+				<p>With more than 80,000 items on display, this museum houses LaPorte County family heirlooms, the W.A. Jones Antique Firearms Collection, and the Kesling Automobile Collection. A 2009-2011 AAA Gemsite. Research area.</p>
+				<p class="contact"><strong>T:</strong> 219.324.6767&nbsp; <strong>|  E:</strong> <a title="info@laportecountyhistory.org" href="mailto:info@laportecountyhistory.org">info@laportecountyhistory.org</a>  <strong>|  W:</strong> <a title="LaPorte County Historical Society Museum" target="_blank" href="http://www.laportecountyhistory.org"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8325'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8325" class="details">View Details</a></li>
+					<li><a id="event_269" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8325&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B A 3 016 A', 'event_269');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8325" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8325" addthis:title="LaPorte County Historical Society Museum">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8333"><img src="http://Laporte.simpleviewcrm.com/images/listings/LCSO-Summer-Concert.jpg" width="147 border="0" alt="LaPorte County Symphony Orchestra" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8333">LaPorte County Symphony Orchestra</a></h4>
+				<p>A symphony full of “surprises” providing a wide range of quality musical performances. Enjoy pops, classical, children’s programming, special matinees or the widely acclaimed Hoosier Star vocal competition. For dates or to purchase tickets visit ...<a title="Read More Details" href="/venue?listingid=8333" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.362.9020&nbsp; <strong>|  E:</strong> <a title="executive@lcso.net" href="mailto:executive@lcso.net">executive@lcso.net</a>  <strong>|  W:</strong> <a title="LaPorte County Symphony Orchestra" target="_blank" href="http://www.lcso.net"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8333'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8333" class="details">View Details</a></li>
+					<li><a id="event_273" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8333&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B A 2 616 A', 'event_273');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8333" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8333" addthis:title="LaPorte County Symphony Orchestra">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8321"><img src="http://Laporte.simpleviewcrm.com/images/listings/ltclogo_1_.jpg" width="147 border="0" alt="LaPorte Little Theatre" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8321">LaPorte Little Theatre</a></h4>
+				<p>Celebrating our 88th season, LaPorte Little Theatre is located in a historical former church. Performing musicals, comedies and drama for all ages. Groups welcome, handicap accessible. $12 all seats. Visit our Facebook page.</p>
+				<p class="contact"><strong>T:</strong> 219.362.5113&nbsp; <strong>|  E:</strong> <a title="laporteltc@yahoo.com" href="mailto:laporteltc@yahoo.com">laporteltc@yahoo.com</a>  <strong>|  W:</strong> <a title="LaPorte Little Theatre" target="_blank" href="http://www.laportelittletheatreclub.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8321'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8321" class="details">View Details</a></li>
+					<li><a id="event_276" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8321&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B A 3 416 A', 'event_276');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8321" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8321" addthis:title="LaPorte Little Theatre">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=18928"><img src="http://Laporte.simpleviewcrm.com/images/listings/LP-New-Church.jpg" width="147 border="0" alt="LaPorte New Church-Swedenborgian" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=18928">LaPorte New Church-Swedenborgian</a></h4>
+				<p>This beautiful and peace-filled sanctuary is the perfect setting for weddings and is open to all who desire God’s blessing on their union. Call for a wedding appointment (219-362-1769) or to book a tour of this historic church or for other ...<a title="Read More Details" href="/venue?listingid=18928" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.362.1959&nbsp; <strong>|  E:</strong> <a title="halle310@comcast.net" href="mailto:halle310@comcast.net">halle310@comcast.net</a>  <strong>|  W:</strong> <a title="LaPorte New Church-Swedenborgian" target="_blank" href="http://www.laportenewchurch.org"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=18928'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=18928" class="details">View Details</a></li>
+					<li><a id="event_279" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=18928&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 1 8 7 C13 A', 'event_279');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-18928" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=18928" addthis:title="LaPorte New Church-Swedenborgian">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19229"><img src="http://Laporte.simpleviewcrm.com/images/listings/Laura-Hernandez-Myers.jpg" width="147 border="0" alt="Laura Hernandez Myers Studio" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19229">Laura Hernandez Myers Studio</a></h4>
+				<p>Laura Hernandez-Myers was born with the gifts and great love for art and creativity. She has been drawing, painting and writing since the early years of her childhood. She finds that she is most comfortable when lost in her world of art and poetry. 
+
+...<a title="Read More Details" href="/venue?listingid=19229" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.393.6704&nbsp; <strong>|  E:</strong> <a title="lauraspaintbrush@yahoo.com" href="mailto:lauraspaintbrush@yahoo.com">lauraspaintbrush@yahoo.com</a>  <strong>|  W:</strong> <a title="Laura Hernandez Myers Studio" target="_blank" href="http://www.laurahernandezmyers.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19229'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19229" class="details">View Details</a></li>
+					<li><a id="event_284" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19229&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 3 7 D13 A', 'event_284');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19229" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19229" addthis:title="Laura Hernandez Myers Studio">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19067"><img src="http://Laporte.simpleviewcrm.com/images/listings/Lincoln-Highway.jpg" width="147 border="0" alt="Lincoln Highway" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19067">Lincoln Highway</a></h4>
+				<p>The Lincoln Highway across LaPorte County explores Indiana’s unique role in Lincoln Highway history and celebrates Indiana’s place in early automotive and road-building history. It was established across northern Indiana in 1913. The Lincoln ...<a title="Read More Details" href="/venue?listingid=19067" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 260.471.5670&nbsp; <strong>|  E:</strong> <a title="janshupert@yahoo.com" href="mailto:janshupert@yahoo.com">janshupert@yahoo.com</a>  <strong>|  W:</strong> <a title="Lincoln Highway" target="_blank" href="http://www.lincolnhighwayassoc.org/"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19067'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19067" class="details">View Details</a></li>
+					<li><a id="event_289" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19067&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 1 3 313 A', 'event_289');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19067" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19067" addthis:title="Lincoln Highway">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8306"><img src="http://Laporte.simpleviewcrm.com/images/listings/Long-Beach-Old-School-Community-Center.jpg" width="147 border="0" alt="Long Beach Old School Community Ctr." /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8306">Long Beach Old School Community Ctr.</a></h4>
+				<p>Harbart and Lake's Edge Galleries in the Old School Community Center exhibit contemporary art from the Michiana area.</p>
+				<p class="contact"><strong>T:</strong> 219.879.3845&nbsp; <strong>|  W:</strong> <a title="Long Beach Old School Community Ctr." target="_blank" href="http://www.longbeachin.org/old_school_ctr.htm"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8306'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8306" class="details">View Details</a></li>
+					<li><a id="event_294" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8306&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B A 1 316 A', 'event_294');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8306" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8306" addthis:title="Long Beach Old School Community Ctr.">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=18774"><img src="http://Laporte.simpleviewcrm.com/images/listings/LCAgallery.jpg" width="147 border="0" alt="Lubeznik Center For The Arts" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=18774">Lubeznik Center For The Arts</a></h4>
+				<p>World class art exhibitions in 5 galley spaces and outdoor sculpture collections, after hours events, special programs and artful gifts in the Gallery Shop.</p>
+				<p class="contact"><strong>T:</strong> 219.874.4900&nbsp; <strong>|  E:</strong> <a title="artinfo@lubeznikcenter.org" href="mailto:artinfo@lubeznikcenter.org">artinfo@lubeznikcenter.org</a>  <strong>|  W:</strong> <a title="Lubeznik Center For The Arts" target="_blank" href="http://www.lubeznikcenter.org"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=18774'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=18774" class="details">View Details</a></li>
+					<li><a id="event_296" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=18774&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 1 6 2 013 A', 'event_296');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-18774" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=18774" addthis:title="Lubeznik Center For The Arts">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8304"><img src="http://Laporte.simpleviewcrm.com/images/listings/LFAF2011-2380.jpg" width="147 border="0" alt="Lubeznik Center for the Arts Lakefront Art Festival" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8304">Lubeznik Center for the Arts Lakefront Art Festival</a></h4>
+				<p>32nd annual juried outdoor art festival features photography, sculpture, wearable, 2 & 3 dimensional art and fine craft, children's activities and food vendors. Free offsite parking and shuttle.</p>
+				<p class="contact"><strong>T:</strong> 219.874.4900&nbsp; <strong>|  E:</strong> <a title="artinfo@lubeznikcenter.org" href="mailto:artinfo@lubeznikcenter.org">artinfo@lubeznikcenter.org</a>  <strong>|  W:</strong> <a title="Lubeznik Center for the Arts Lakefront Art Festival" target="_blank" href="http://www.lubeznikcenter.org"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8304'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8304" class="details">View Details</a></li>
+					<li><a id="event_298" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8304&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B A 1 116 A', 'event_298');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8304" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8304" addthis:title="Lubeznik Center for the Arts Lakefront Art Festival">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8285"><img src="http://Laporte.simpleviewcrm.com/images/listings/Violins.jpg" width="147 border="0" alt="Michigan City Chamber Music Festival" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8285">Michigan City Chamber Music Festival</a></h4>
+				<p>Enjoy the privilege of great chamber music performed by some of the country's most eminent classical musicians. Congenially informative concerts for children and adults.  Summer and winter series.</p>
+				<p class="contact"><strong>T:</strong> 219.561.1939&nbsp; <strong>|  E:</strong> <a title="nicsunnysophia@yahoo.com" href="mailto:nicsunnysophia@yahoo.com">nicsunnysophia@yahoo.com</a>  <strong>|  W:</strong> <a title="Michigan City Chamber Music Festival" target="_blank" href="http://www.mccmf.org/"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8285'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8285" class="details">View Details</a></li>
+					<li><a id="event_324" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8285&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B B 9 016 A', 'event_324');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8285" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8285" addthis:title="Michigan City Chamber Music Festival">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=18963"><img src="http://www.michigancitylaporte.com/images/stories/listings/default-listings-photo.jpg" width="147 border="0" alt="Michigan City Concerts Association, Inc" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=18963">Michigan City Concerts Association, Inc</a></h4>
+				<p>Professional artists ply their talents on stage for audiences awed by their performance. MCCA offers youth outreach programs for local area secondary schools. Season tickets include reciprocities with LaPorte, Valparaiso, Portage and Munster.</p>
+				<p class="contact"><strong>T:</strong> 219.362.3665&nbsp;</p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=18963" class="details">View Details</a></li>
+					<li><a id="event_325" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=18963&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 1 8 3 713 A', 'event_325');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-18963" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=18963" addthis:title="Michigan City Concerts Association, Inc">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19296"><img src="http://Laporte.simpleviewcrm.com/images/listings/tree1.jpg" width="147 border="0" alt="Mike Papp" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19296">Mike Papp</a></h4>
+				<p>There is something in metal art that takes me on a journey to the past, when heating the steel back to melting temperature I am undoing what man has made with machinery. I turn it into an expression of something simplistic. When I am cutting out a ...<a title="Read More Details" href="/venue?listingid=19296" class="details">more</a></p>
+				<p class="contact"></p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19296" class="details">View Details</a></li>
+					<li><a id="event_347" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19296&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 3 C 213 A', 'event_347');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19296" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19296" addthis:title="Mike Papp">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8264"><img src="http://Laporte.simpleviewcrm.com/images/listings/Mixsawbah.jpg" width="147 border="0" alt="Mixsawbah State Fish Hatchery" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8264">Mixsawbah State Fish Hatchery</a></h4>
+				<p>View this trout and salmon state fish hatchery that annually produces 680,000 fish. Call ahead for weekend business hours or to make an appointment for group tours.</p>
+				<p class="contact"><strong>T:</strong> 219.369.9591&nbsp; <strong>|  W:</strong> <a title="Mixsawbah State Fish Hatchery" target="_blank" href="http://www.in.gov/dnr/fishwild/"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8264'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8264" class="details">View Details</a></li>
+					<li><a id="event_350" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8264&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B B 7 116 A', 'event_350');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8264" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8264" addthis:title="Mixsawbah State Fish Hatchery">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19286"><img src="http://Laporte.simpleviewcrm.com/images/listings/Barbara-Balis.jpg" width="147 border="0" alt="Nature's Whimsy" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19286">Nature's Whimsy</a></h4>
+				<p>Welcome to Nature's Whimsy!
+You are invited to explore nature through a new perspective - one that offers a whimsical look at the beauty, intricacy, and dynamic colors found in the world around us.
+Studies of tropical flowers, spring leaves, ...<a title="Read More Details" href="/venue?listingid=19286" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.861.1922&nbsp; <strong>|  E:</strong> <a title="barbarajbalis@gmail.com" href="mailto:barbarajbalis@gmail.com">barbarajbalis@gmail.com</a>  <strong>|  W:</strong> <a title="Nature's Whimsy" target="_blank" href="http://www.natureswhimsy.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19286'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19286" class="details">View Details</a></li>
+					<li><a id="event_360" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19286&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 3 D 213 A', 'event_360');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19286" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19286" addthis:title="Nature's Whimsy">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8706"><img src="http://Laporte.simpleviewcrm.com/images/listings/Neil Keinitz Studio.jpglarge.jpg" width="147 border="0" alt="Neil Kienitz Studio and Gallery" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8706">Neil Kienitz Studio and Gallery</a></h4>
+				<p>Having worked in watercolor all my life, I am excited to also be adding oils in portraying the beauty and serenity within the people and places I find compelling. I also do commercial work including posters, murals, and commissioned portraits.</p>
+				<p class="contact"><strong>T:</strong> 219.872.0206&nbsp; <strong>|  E:</strong> <a title="nkienitz@neilkienitz.com" href="mailto:nkienitz@neilkienitz.com">nkienitz@neilkienitz.com</a>  <strong>|  W:</strong> <a title="Neil Kienitz Studio and Gallery" target="_blank" href="http://www.neilkienitz.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8706'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8706" class="details">View Details</a></li>
+					<li><a id="event_361" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8706&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B E 1 316 A', 'event_361');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8706" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8706" addthis:title="Neil Kienitz Studio and Gallery">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19192"><img src="http://Laporte.simpleviewcrm.com/images/listings/Old-Library---Copy.jpg" width="147 border="0" alt="Old Library" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19192">Old Library</a></h4>
+				<p>This is a neoclassical structure of Indiana limestone, with a columned portico, a marble interior, and 12-foot high Tiffany style stained glass windows depicting the Shakespearean figures Rosalind, Portia, and Ophelia. The Old Library is the ...<a title="Read More Details" href="/venue?listingid=19192" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.874.9931&nbsp; <strong>|  E:</strong> <a title="cornershophope@hotmail.com" href="mailto:cornershophope@hotmail.com">cornershophope@hotmail.com</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19192" class="details">View Details</a></li>
+					<li><a id="event_372" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19192&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 0 C 613 A', 'event_372');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19192" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19192" addthis:title="Old Library">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8247"><img src="http://Laporte.simpleviewcrm.com/images/listings/Old-lighthouse-museum-0007---Copy.JPG" width="147 border="0" alt="Old Lighthouse Museum" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8247">Old Lighthouse Museum</a></h4>
+				<p>Original 1858 light station structure, 8 display rooms, Great Lakes history, shipwrecks, era of sailing ships, local history and more.</p>
+				<p class="contact"><strong>T:</strong> 219.872.6133&nbsp; <strong>|  E:</strong> <a title="mchistorical@att.net" href="mailto:mchistorical@att.net">mchistorical@att.net</a>  <strong>|  W:</strong> <a title="Old Lighthouse Museum" target="_blank" href="http://www.oldlighthousemuseum.org"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8247'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8247" class="details">View Details</a></li>
+					<li><a id="event_373" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8247&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B B 5 216 A', 'event_373');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8247" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8247" addthis:title="Old Lighthouse Museum">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8241"><img src="http://www.michigancitylaporte.com/images/stories/listings/default-listings-photo.jpg" width="147 border="0" alt="Patricia Molden Pastels" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8241">Patricia Molden Pastels</a></h4>
+				<p>Patricia Molden draws inspiration for her paintings from the natural beauty that surrounds us daily. Her quiet, rural landscapes, vivid beach scenes, and lush still lifes pay homage to these abundant gifts.</p>
+				<p class="contact"><strong>T:</strong> 219.326.5392&nbsp; <strong>|  E:</strong> <a title="pmoldenart@aol.com" href="mailto:pmoldenart@aol.com">pmoldenart@aol.com</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8241" class="details">View Details</a></li>
+					<li><a id="event_383" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8241&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B B 5 416 A', 'event_383');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8241" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8241" addthis:title="Patricia Molden Pastels">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8238"><img src="http://www.michigancitylaporte.com/images/stories/listings/default-listings-photo.jpg" width="147 border="0" alt="Picture Perfect" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8238">Picture Perfect</a></h4>
+				<p>Roy has combined a long time interest in photography with a new found love of custom picture framing utilizing the finest in art conservation materials and methods.  To see more of his work or for any framing needs please call.</p>
+				<p class="contact"><strong>T:</strong> 219.324.9163&nbsp; <strong>|  E:</strong> <a title="roydude3@hotmail.com" href="mailto:roydude3@hotmail.com">roydude3@hotmail.com</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8238" class="details">View Details</a></li>
+					<li><a id="event_387" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8238&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B B 2 D16 A', 'event_387');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8238" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8238" addthis:title="Picture Perfect">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19407"><img src="http://Laporte.simpleviewcrm.com/images/listings/Owl-Pussycat-Sculpture---Copy.JPG" width="147 border="0" alt="Pine Elementary Magnet School for the Visual & Performing Arts" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19407">Pine Elementary Magnet School for the Visual & Performing Arts</a></h4>
+				<p>The "Owl and Pussycat" resides on the east side near the front entrance of Pine Elementary Magnet School for the Visual and Performing Arts.  "Owl and Pussycat" is a whimsical steel sculpture created by Beverly Shores artist Richard Kiebdaj. The piece ...<a title="Read More Details" href="/venue?listingid=19407" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.873.2114&nbsp; <strong>|  W:</strong> <a title="Pine Elementary Magnet School for the Visual & Performing Arts" target="_blank" href="http://mcaswiki.mcas.k12.in.us/Schools/Elementary_Schools/Pine_Elementary_School"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19407'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19407" class="details">View Details</a></li>
+					<li><a id="event_388" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19407&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 5 5 313 A', 'event_388');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19407" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19407" addthis:title="Pine Elementary Magnet School for the Visual & Performing Arts">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8232"><img src="http://Laporte.simpleviewcrm.com/images/listings/Pinhook-Methodist-Church.jpg" width="147 border="0" alt="Pinhook Methodist Church" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8232">Pinhook Methodist Church</a></h4>
+				<p>Built in 1847 is the oldest standing church in LaPorte County. This pioneer landmark, restored in 1987 has no church affiliation & is owned by the Pinhook Cemetery Assn. This 157 yr. old church is open for weddings, tours of 10 or more April 1 - Oct. 31.</p>
+				<p class="contact"><strong>T:</strong> 219.785.4347&nbsp;</p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8232" class="details">View Details</a></li>
+					<li><a id="event_392" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8232&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B B 2 716 A', 'event_392');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8232" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8232" addthis:title="Pinhook Methodist Church">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8230"><img src="http://www.michigancitylaporte.com/images/stories/listings/default-listings-photo.jpg" width="147 border="0" alt="Presbyterian Church Fine Arts Series" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8230">Presbyterian Church Fine Arts Series</a></h4>
+				<p>Enjoy a variety of vocal and instrumental music, drama, dance, and are exhibits.  All programs are free of charge.  Contact us for a schedule of the season's cultural events.</p>
+				<p class="contact"><strong>T:</strong> 219.362.6219&nbsp; <strong>|  E:</strong> <a title="church@laportepresbyterian.org" href="mailto:church@laportepresbyterian.org">church@laportepresbyterian.org</a>  <strong>|  W:</strong> <a title="Presbyterian Church Fine Arts Series" target="_blank" href="http://www.laportepresbyterian.org"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8230'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8230" class="details">View Details</a></li>
+					<li><a id="event_404" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8230&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B B 2 516 A', 'event_404');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8230" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8230" addthis:title="Presbyterian Church Fine Arts Series">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8226"><img src="http://Laporte.simpleviewcrm.com/images/listings/TresBonTricycle0.jpg" width="147 border="0" alt="Purdue University North Central" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8226">Purdue University North Central</a></h4>
+				<p>Featuring the PNC Sculpture Garden, paintings by Jason Poteet and works by George Sugarman. Many arts programs are scheduled throughout the year. Public tours are available free of charge.</p>
+				<p class="contact"><strong>T:</strong> 800.872.1231&nbsp; <strong>|  W:</strong> <a title="Purdue University North Central" target="_blank" href="http://www.pnc.edu"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8226'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8226" class="details">View Details</a></li>
+					<li><a id="event_408" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8226&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B B 3 316 A', 'event_408');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8226" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8226" addthis:title="Purdue University North Central">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8575"><img src="http://www.michigancitylaporte.com/images/stories/listings/default-listings-photo.jpg" width="147 border="0" alt="Sally Signorino's Fun Art Objects" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8575">Sally Signorino's Fun Art Objects</a></h4>
+				<p>Sallie applies her unique style to the creation of whimsical and humorous shadow boxes incorporating vibrant colors and multidimensional designs. Wooden shapes with rich, textured acrylic paint come to life with movement and rhythm. They are configured,</p>
+				<p class="contact"><strong>T:</strong> 219.874.4127&nbsp;</p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8575" class="details">View Details</a></li>
+					<li><a id="event_435" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8575&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B C 6 016 A', 'event_435');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8575" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8575" addthis:title="Sally Signorino's Fun Art Objects">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8570"><img src="http://Laporte.simpleviewcrm.com/images/listings/Schmidt-Marken-Designs.jpg" width="147 border="0" alt="Schmidt-Marken Designs" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8570">Schmidt-Marken Designs</a></h4>
+				<p>Come visit the pottery gallery & gift shop featuring hand thrown stoneware pottery, ornaments, stained glass, jewelry, artwork, wood and selected crafts by more than 15 artists.</p>
+				<p class="contact"><strong>T:</strong> 219.785.4238&nbsp; <strong>|  E:</strong> <a title="schmidt4marken@aol.com" href="mailto:schmidt4marken@aol.com">schmidt4marken@aol.com</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8570" class="details">View Details</a></li>
+					<li><a id="event_440" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8570&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B C 6 516 A', 'event_440');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8570" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8570" addthis:title="Schmidt-Marken Designs">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19300"><img src="http://Laporte.simpleviewcrm.com/images/listings/SSR-Ed-Ross-LJ-Gary.jpg" width="147 border="0" alt="South Shore Regulators Band" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19300">South Shore Regulators Band</a></h4>
+				<p>We play what we call outlaw country rock and are based in Valparaiso.</p>
+				<p class="contact"><strong>T:</strong> 219.405.1102&nbsp; <strong>|  E:</strong> <a title="ed.ross@ufsc.com" href="mailto:ed.ross@ufsc.com">ed.ross@ufsc.com</a>  <strong>|  W:</strong> <a title="South Shore Regulators Band" target="_blank" href="http://www.southshoreregulators.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19300'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19300" class="details">View Details</a></li>
+					<li><a id="event_457" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19300&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 2 5 413 A', 'event_457');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19300" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19300" addthis:title="South Shore Regulators Band">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8585"><img src="http://Laporte.simpleviewcrm.com/images/listings/SSAA-logo-2x1.jpg" width="147 border="0" alt="Southern Shore Art Association" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8585">Southern Shore Art Association</a></h4>
+				<p>Located in the middle of the Uptown Arts District, the SSAA supports local and regional artists with monthly exhibitions and exhibit openings on First Fridays.</p>
+				<p class="contact"> <strong>|  W:</strong> <a title="Southern Shore Art Association" target="_blank" href="http://www.SouthernShoreArtAssociation.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8585'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8585" class="details">View Details</a></li>
+					<li><a id="event_458" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8585&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B C 9 016 A', 'event_458');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8585" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8585" addthis:title="Southern Shore Art Association">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8596"><img src="http://www.michigancitylaporte.com/images/stories/listings/default-listings-photo.jpg" width="147 border="0" alt="Steel Art Gallery" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8596">Steel Art Gallery</a></h4>
+				<p>The only thing that equals Leonard Cross's love of art is the enjoyment he gets in creating metal sculpture. From his walking man and his collection of tables and lamps to the collection of his many whimsical subjects, Leonard's kinetic works of art</p>
+				<p class="contact"><strong>T:</strong> 219.878.1577&nbsp; <strong>|  E:</strong> <a title="lccross@adsnet.com" href="mailto:lccross@adsnet.com">lccross@adsnet.com</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8596" class="details">View Details</a></li>
+					<li><a id="event_469" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8596&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B C 8 316 A', 'event_469');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8596" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8596" addthis:title="Steel Art Gallery">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8602"><img src="http://Laporte.simpleviewcrm.com/images/listings/TempleNews.jpg" width="147 border="0" alt="Temple News Agency" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8602">Temple News Agency</a></h4>
+				<p>Established 1918, today we're LaPorte's only old-fashioned soda fountain,espresso bar and Internet cafe. Newspapers, lunch, gourmet products and old-fashioned charm. Every Tuesday 7pm-9pm and Sunday 2pm-6pm acoustic music jams. Come sit in, play or ...<a title="Read More Details" href="/venue?listingid=8602" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.362.2676&nbsp; <strong>|  E:</strong> <a title="tmplnewz@csinet.net" href="mailto:tmplnewz@csinet.net">tmplnewz@csinet.net</a>  <strong>|  W:</strong> <a title="Temple News Agency" target="_blank" href="http://templenews.tripod.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8602'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8602" class="details">View Details</a></li>
+					<li><a id="event_476" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8602&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B F 1 716 A', 'event_476');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8602" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8602" addthis:title="Temple News Agency">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19176"><img src="http://Laporte.simpleviewcrm.com/images/listings/Terrawood-Design.jpg" width="147 border="0" alt="Terrawood Design" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19176">Terrawood Design</a></h4>
+				<p>Terrawood Design Company is a full service, artist led design/build Company specializing in interior architectural elements and custom furnishing.</p>
+				<p class="contact"><strong>T:</strong> 219.229.5613&nbsp; <strong>|  E:</strong> <a title="chrisgrohs@mac.com" href="mailto:chrisgrohs@mac.com">chrisgrohs@mac.com</a>  <strong>|  W:</strong> <a title="Terrawood Design" target="_blank" href="http://www.terrawood-design.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19176'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19176" class="details">View Details</a></li>
+					<li><a id="event_477" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19176&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 0 2 213 A', 'event_477');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19176" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19176" addthis:title="Terrawood Design">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19068"><img src="http://Laporte.simpleviewcrm.com/images/listings/Yellow-stone-trail.jpg" width="147 border="0" alt="The Yellowstone Trail" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19068">The Yellowstone Trail</a></h4>
+				<p>The Yellowstone Trail began in South Dakota in 1912 as an automobile route across America. The Yellowstone Trail Association located a route, motivated road improvements, produced maps and folders to guide the traveler, and promoted tourism along its ...<a title="Read More Details" href="/venue?listingid=19068" class="details">more</a></p>
+				<p class="contact"> <strong>|  W:</strong> <a title="The Yellowstone Trail" target="_blank" href="http://www.yellowstonetrail.org"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19068'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19068" class="details">View Details</a></li>
+					<li><a id="event_494" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19068&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 1 3 C13 A', 'event_494');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19068" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19068" addthis:title="The Yellowstone Trail">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19214"><img src="http://Laporte.simpleviewcrm.com/images/listings/troubleblind6-on-stage300x229.jpg" width="147 border="0" alt="Trouble Blind Band" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19214">Trouble Blind Band</a></h4>
+				<p>Trouble Blind band is available for bookings for weddings, festivals, bars, and special events. The six-piece group has a repertoire of more than 125 songs, ranging from oldies to newer tunes, and classic rock to country. 
+The multi-talented members ...<a title="Read More Details" href="/venue?listingid=19214" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.326.0172&nbsp; <strong>|  W:</strong> <a title="Trouble Blind Band" target="_blank" href="http://www.troubleblind.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19214'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19214" class="details">View Details</a></li>
+					<li><a id="event_503" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19214&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 3 4 013 A', 'event_503');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19214" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19214" addthis:title="Trouble Blind Band">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8286"><img src="http://Laporte.simpleviewcrm.com/images/listings/Farmers market.jpg" width="147 border="0" alt="Uptown Marketplace" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8286">Uptown Marketplace</a></h4>
+				<p>Saturday morning tradition in Michigan City's Uptown Arts District. Enjoy the culture and history of Downtown Michigan City while steps away from Lighthouse Place Outlets.  Local and homegrown vegetables, fruits, flowers, jams and more. Fresh-baked ...<a title="Read More Details" href="/venue?listingid=8286" class="details">more</a></p>
+				<p class="contact"> <strong>|  W:</strong> <a title="Uptown Marketplace" target="_blank" href="http://www.uptownartsdistrict.org"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=8286'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8286" class="details">View Details</a></li>
+					<li><a id="event_509" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8286&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B B 9 316 A', 'event_509');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8286" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8286" addthis:title="Uptown Marketplace">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=19196"><img src="http://Laporte.simpleviewcrm.com/images/listings/Walnut-Ink.jpg" width="147 border="0" alt="Walnut Ink Gallery" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=19196">Walnut Ink Gallery</a></h4>
+				<p>The gallery specializes in contemporary paintings, drawings, sculpture, installation and photography and represents work by a diverse group of emerging, mid-career and established artists, many of whom have achieved international recognition and ...<a title="Read More Details" href="/venue?listingid=19196" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.229.5613&nbsp; <strong>|  E:</strong> <a title="chris@walnutinkgallery.com" href="mailto:chris@walnutinkgallery.com">chris@walnutinkgallery.com</a>  <strong>|  W:</strong> <a title="Walnut Ink Gallery" target="_blank" href="http://www.Walnutinkgallery.com"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=19196'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=19196" class="details">View Details</a></li>
+					<li><a id="event_516" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=19196&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 0 0 C 213 A', 'event_516');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-19196" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=19196" addthis:title="Walnut Ink Gallery">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=18890"><img src="http://Laporte.simpleviewcrm.com/images/listings/Wanatah_Historical_Society_.jpg" width="147 border="0" alt="Wanatah Historical Society Museum" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=18890">Wanatah Historical Society Museum</a></h4>
+				<p>The Wanatah Historical Society Museum is dedicated to the preservation and display of historical objects and photographs with significance to LaPorte County and the Wanatah Area. Our railroad museum is dedicated to the preservation of the rich history ...<a title="Read More Details" href="/venue?listingid=18890" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.733.2822&nbsp; <strong>|  W:</strong> <a title="Wanatah Historical Society Museum" target="_blank" href="http://www.wanatah.org"  onclick="this.href='http://www.michigancitylaporte.com/index.php?option=com_nitdc_simpleview_listings&task=hit&listingid=18890'">View Website</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=18890" class="details">View Details</a></li>
+					<li><a id="event_520" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=18890&item_link=1759 6 0 947494753584251 B5F5B1547 B5E515956 E 2 1 9 C 413 A', 'event_520');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-18890" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=18890" addthis:title="Wanatah Historical Society Museum">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8626"><img src="http://www.michigancitylaporte.com/images/stories/listings/default-listings-photo.jpg" width="147 border="0" alt="Weigel Studios" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8626">Weigel Studios</a></h4>
+				<p>Specializing in representational and abstract prints, drawings and handmade books, her recent works incorporate natural forms, often highlighted by texture and expressive color.</p>
+				<p class="contact"><strong>T:</strong> 219.326.6027&nbsp; <strong>|  E:</strong> <a title="weigelstudios@hotmail.com" href="mailto:weigelstudios@hotmail.com">weigelstudios@hotmail.com</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8626" class="details">View Details</a></li>
+					<li><a id="event_528" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8626&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B F 3 316 A', 'event_528');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8626" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8626" addthis:title="Weigel Studios">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+			<div class="listing-wrapper">
+				<a title="Click to view details" href="/venue?listingid=8644"><img src="http://Laporte.simpleviewcrm.com/images/listings/kitty wolf1.jpg" width="147 border="0" alt="Wolf Studio Arts" /></a>
+				
+				<h4><a title="Click to view details" href="/venue?listingid=8644">Wolf Studio Arts</a></h4>
+				<p>Armina's award-winning painting and sculpture is in institutional and private collections, featured in national publications and PBS television. Currently, she is working on a bronze sculpture for the Univ. of Indianapolis. Always portraying God's ...<a title="Read More Details" href="/venue?listingid=8644" class="details">more</a></p>
+				<p class="contact"><strong>T:</strong> 219.362.2558&nbsp; <strong>|  E:</strong> <a title="awstudioart@csinet.net" href="mailto:awstudioart@csinet.net">awstudioart@csinet.net</a> </p>
+				<ul>
+					<li><a title="View Details" href="/venue?listingid=8644" class="details">View Details</a></li>
+					<li><a id="event_536" class="add-to-planner" title="Add To Trip Planner" href="#" onclick="javascript:add_to_my_planner('http://www.michigancitylaporte.com/index.php?option=com_nitdc_planner&Itemid=155&act=guest&task=add&table_name=nitdc_simpleview_listings&item_id=8644&item_link=1759 6 3 947494753584251 B5F5B1547 B5E515956 E B F 5 116 A', 'event_536');return false;">Add To Trip Planner</a></li>
+					<li ><a title="Map It" href="/maps-and-travel-tools?oid=listing-8644" class="mapit">Map It</a></li>
+					<li class="last"><a class="addthis_button_compact" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d80ad871313cc40" addthis:url="http://www.michigancitylaporte.com/venue?listingid=8644" addthis:title="Wolf Studio Arts">Share</a></li>
+				</ul>
+				<div class="clear-div"></div>
+			</div>
+			<div class="clear-div"></div>
+			
+		</form>
+		
+
+			</td>
+
+		</tr>
+        
+		</table>
+ <div style="clear:both"></div>
+	</div>
+	
+	<div id="footer_container">
+	
+		<div id="footer_menu_container">
+		
+			<ul class="menu"><li class="item87"><a href="/meeting-and-group-travel"><span>Meetings &amp; Group Travel</span></a></li><li class="item88"><a href="/press-and-media"><span>Press &amp; Media</span></a></li><li class="item89"><a href="/government-and-local-community"><span>Government and Local Community</span></a></li></ul>
+
+		</div>
+		
+		<div class="left">
+		<div id="about_the_cvb_container">
+		
+			<span class="title">About the CVB</span>
+			
+			<ul class="menu"><li class="item128"><a href="/about-the-cvb"><span>About LaPorte County</span></a></li><li class="item224"><a href="/about-the-cvb/rose-awards/online-nomination-form"><span>R.O.S.E. Award Nomination</span></a></li><li class="item129"><a href="/about-the-cvb/comments-questions-feedback"><span>Comments, Questions and Feedback</span></a></li><li class="item130"><a href="/about-the-cvb/advertising-opportunities"><span>Advertising Opportunities</span></a></li><li class="item199"><a href="/about-the-cvb/tourism-partners"><span>Tourism Partners</span></a></li><li class="item131"><a href="/about-the-cvb/privacy-statement"><span>Privacy Statement</span></a></li><li class="item132"><a href="/about-the-cvb/terms-of-use"><span>Terms of Use</span></a></li><li class="item133"><a href="/about-the-cvb/link-to-us"><span>Link to Us</span></a></li><li class="item134"><a href="/about-the-cvb/contact-us"><span>Contact Us</span></a></li><li class="item135"><a href="/site-map"><span>Site Map</span></a></li><li class="item136"><a href="http://www.michigancitylaporte.com/"><span>Home</span></a></li></ul><a href="http://www.destinationmarketing.org/" target="_blank" id="accredited-logo"></a>
+
+		</div>
+		</div>
+		
+		<div class="left">
+		<div id="our_partners_container">
+		
+			<span class="title">Our Partners</span>
+			
+			<!-- IN PROGRESS --> 
+<ul class="our-partners">
+<li><a class="partner-kosciusko" href="http://www.koscvb.org" title="Nestled among over 100 lakes, Kosciusko County contains a variety of unique experiences just waiting to be discovered" target="_blank"></a></li>
+<li><a class="partner-southbend" href="http://www.visitsouthbend.com/" title="World-class attractions, culture and arts, eclectic dining, sports and recreation" target="_blank"></a></li>
+<li><a class="partner-amishcountry" href="http://www.amishcountry.org" title="Crisp fall days. Scenic drives. Welcoming communities. Signature foods. And always, lots of local color" target="_blank"></a></li>
+<li><a class="partner-amishbackroads" href="http://www.backroads.org" title="With hundreds of things to do and places to stay, LaGrange County is great for the whole family" target="_blank"></a></li>
+</ul>
+<ul class="our-partners">
+<li><a class="partner-marshall" href="http://www.visitmarshallcounty.org/" title="Marshall County is just the place for that long weekend. A place where people still enjoy the simple pleasures of life" target="_blank"></a></li>
+<li><a class="partner-northernindiana" href="http://www.northernindianagetaways.com" title="Discover simple pleasures, friendly people, quaint hometowns and hidden treasures in Northern Indiana" target="_blank"></a></li>
+<li><a class="partner-artearth" href="http://www.artandearthtrail.com/" title="Northern Indiana Art and Earth Trail" target="_blank"></a></li>
+<li><a class="partner-indiana" href="http://www.indianadunes.com" title="The official agency for tourism marketing, planning and development in Porter County, Indiana" target="_blank"></a></li>
+</ul>
+
+		</div>
+		</div>
+		
+		<div class="left">
+		<div id="connect_with_us_container">
+		
+			<span class="title">Connect with Us</span>
+			
+			<table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <tr valign="top">
+          <td height="48" width="48"><a class="fb" href="http://www.facebook.com/pages/Michigan-City-IN/LaPorte-County-Convention-Visitors-Bureau/92404224854" title="Michigan City LaPorte on Facebook" target="_blank">Michigan City LaPorte on Facebook</a></td>
+          <td height="48" width="48"><a class="twitter" href="http://twitter.com/MichCityLaPorte" title="Follow Michigan City LaPorte on Twitter" target="_blank">Follow Michigan City LaPorte on Twitter</a></td>
+        </tr>
+        <tr>
+          <td height="48" width="48"><a class="youtube" href="http://www.youtube.com/user/MichiganCityLaPorte?feature=mhum" title="Watch Michigan City LaPorte on YouTube" target="_blank">Watch Michigan City LaPorte on YouTube</a></td>
+          <td width="48"><a class="flickr" href="http://www.flickr.com/photos/56579087@N06/" title="View Michigan City LaPorte on Flickr" target="_blank">View Michigan City LaPorte on Flickr</a></td>
+        </tr>
+        <tr>
+          <td width="48"><a class="rss" href="/rss-feeds" title="Subcribe to our RSS feed" >Subcribe to our RSS feed</a></td>
+          <td width="48">
+              <!-- AddThis Button BEGIN -->
+                  <div class="addthis_toolbox addthis_default_style">
+                  <div class="custom_images"><a href="https://www.addthis.com/bookmark.php?v=250&amp;username=xa-4cb49adc226c8c03" class="addthis_button_email email"><img /></a></div>
+                  </div>
+                  <script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#username=xa-4cb49adc226c8c03"></script>
+              <!-- AddThis Button END -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+		</div>
+		</div>
+		
+		<div class="left">
+		<div id="keep_informed_container">
+		
+			<span class="title">Keep Informed</span>
+			<span class="line2">Sign-up for E-News Today!</span>
+			
+			<div class="form">
+			<form id="newsletterForm" name="newsletterForm" action="/keep-informed/" method="get">
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td class="input"><div><input name="contact_fname" value="Enter your name" maxlength="50" onclick="if(this.value == 'Enter your name'){this.value='';}" onfocus="if(this.value == 'Enter your name'){this.value='';}" onblur="if(this.value == ''){this.value='Enter your name';}" type="text" /></div></td>
+</tr>
+<tr>
+	<td class="input"><div><input name="contact_email" value="Enter your email address" maxlength="255" onclick="if(this.value == 'Enter your email address'){this.value='';}" onfocus="if(this.value == 'Enter your email address'){this.value='';}" onblur="if(this.value == ''){this.value='Enter your email address';}" type="text" /></div></td>
+</tr>
+<tr>
+	<td class="button" align="right"><div><input type="submit" id="submit"/></div></td>
+</tr>
+</table>
+</form>
+
+<script type="text/javascript" language="javascript">
+		/* <![CDATA[ */
+function GET() {
+  var data = [];
+  var param;
+  for(x = 0; x < arguments.length; ++x) {
+    param = location.href.match(new RegExp("/\?".concat(arguments[x],"=","([^\n&]*)")));
+    if (param == null) {
+      data.push("");
+    } else {
+      data.push(param[1]);
+    }
+  }
+  return data;
+}	
+       
+		x = GET("contact_email")
+		if (x != "" && x != null)
+		{
+			
+			x = x[0].replace('%40','@');
+			document.newsletterForm.contact_email.value = x;
+		}
+		/* ]]> */
+		</script>
+			</div>
+
+		</div>
+		</div>
+	
+    <div class="verb"><a href="http://www.verbinteractive.com" title="Tourism Internet Marketing by VERB" target="_blank">Tourism Internet Marketing by VERB</a></div>
+    
+	</div>
+
+</div>
+</div>
+</div>
+
+<div id="wave_watermark"></div>
+<div id="logo_watermark"></div>
+
+</div>
+
+<script type="text/javascript" src="/templates/subpage-submenu-top/javascript/subpage-submenu-top.js"></script>
+</body>
+</html>

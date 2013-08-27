@@ -1,0 +1,858 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>State College Pennsylvania Arts & Entertainment | Central PA CVB</title>
+<meta name="description" content="Find arts &amp; entertainment in State College and the Penn State University area. The Central PA Convention &amp; Visitors Bureau offers free full-color travel &amp; vacation planning brochures for family vacations, group tours, and meeting and convention planners." />
+<meta name="keywords" content="state college pennsylvania, central pa, centre county, penn state university, travel, vacation packages, state college hotels, accommodations, lodging, restaurants, dining, nightlife, attractions, activities, museums, sports, recreation, transportation, maps" />
+<meta name="Author" content="Equity Marketing Solutions and Sleepless Media" />
+<meta name="robots" content="noodp,noydir" />
+<meta name="Slurp" content="noydir" />
+<link rel="stylesheet" media="screen" type="text/css" href="/css/screen.css" />
+<link rel="stylesheet" media="print" type="text/css" href="/css/print.css" />
+<link rel="stylesheet" type="text/css" href="/css/quickmenu_styles.css" />
+<script type="text/javascript" src="/js/quickmenu.js"></script>
+<link rel="stylesheet" media="only screen and (max-device-width: 480px)" type="text/css" href="/css/smartphone.css" />
+<meta name="viewport" content="width=1000" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<script src="/js/jquery.min.js" charset="utf-8"></script>
+<script src="/js/jquery.simpleWeather.js" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function() {
+		$.simpleWeather({
+			location: 'Central Pennsylvania',
+			unit: 'f',
+			success: function(weather) {
+				html = 'Sky Conditions: '+weather.currently.toUpperCase()+'&nbsp;&nbsp;|&nbsp;&nbsp;Temperature: '+weather.temp+'&deg; '+weather.units.temp;
+
+				$("#weather").html(html);
+			},
+			error: function(error) {
+				$("#weather").html('<p>'+error+'</p>');
+			}
+		});
+
+		$.simpleWeather({
+			zipcode: '90210',
+			unit: 'f',
+			success: function(weather) {
+				html = '<h2>'+weather.city+', '+weather.region+' '+weather.country+'</h2>';
+				html += '<p><strong>Today\'s High</strong>: '+weather.high+'&deg; '+weather.units.temp+' - <strong>Today\'s Low</strong>: '+weather.low+'&deg; '+weather.units.temp+'</p>';
+				html += '<p><strong>Current Temp</strong>: '+weather.temp+'&deg; '+weather.units.temp+' ('+weather.tempAlt+'&deg; C)</p>';
+				html += '<p><strong>Condition Code</strong>: '+weather.code+'</p>';
+				html += '<p><strong>Thumbnail</strong>: <img src="'+weather.thumbnail+'"></p>';
+				html += '<p><strong>Wind</strong>: '+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+' <strong>Wind Chill</strong>: '+weather.wind.chill+'</p>';
+				html += '<p><strong>Currently</strong>: '+weather.currently+' - <strong>Forecast</strong>: '+weather.forecast+'</p>';
+				html += '<p><img src="'+weather.image+'"></p>';
+				html += '<p><strong>Humidity</strong>: '+weather.humidity+' <strong>Pressure</strong>: '+weather.pressure+' <strong>Rising</strong>: '+weather.rising+' <strong>Visibility</strong>: '+weather.visibility+'</p>';
+				html += '<p><strong>Heat Index</strong>: '+weather.heatindex+'</p>';
+				html += '<p><strong>Sunrise</strong>: '+weather.sunrise+' - <strong>Sunset</strong>: '+weather.sunset+'</p>';
+				html += '<p><strong>Tomorrow\'s Date</strong>: '+weather.tomorrow.day+' '+weather.tomorrow.date+'<br /><strong>Tomorrow\'s High/Low</strong>: '+weather.tomorrow.high+'/'+weather.tomorrow.low+'<br /><strong>Tomorrow\'s Condition Code</strong>: '+weather.tomorrow.code+'<br /><strong>Tomorrow\'s Forecast</strong>: '+weather.tomorrow.forecast+'<br /> <strong>Tomorrow\'s Image</strong>: '+weather.tomorrow.image+'</p>';
+				html += '<p><strong>Last updated</strong>: '+weather.updated+'</p>';
+				html += '<p><a href="'+weather.link+'">View forecast at Yahoo! Weather</a></p>';
+
+				$("#weather2").html(html);
+			},
+			error: function(error) {
+				$("#weather2").html('<p>'+error+'</p>');
+			}
+		});
+	});
+</script>
+<link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<script type="text/javascript" src="/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("a.element").fancybox();
+
+		$("a.fbiframe").fancybox({
+			'width'				: 560,
+			'height'			: 315,
+			'autoScale'			: false,
+			'transitionIn'		: 'fade',
+			'transitionOut'		: 'fade',
+			'type'				: 'iframe'
+		});
+
+		$("a.fbiframe1").fancybox({
+			'width'				: 560,
+			'height'			: 345,
+			'autoScale'			: false,
+			'transitionIn'		: 'fade',
+			'transitionOut'		: 'fade',
+			'type'				: 'iframe'
+		});
+	});
+</script>
+<script type="text/javascript" src="/js/highslide/highslide-full.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/highslide/highslide.css" />
+<script type="text/javascript">
+hs.graphicsDir = '/js/highslide/graphics/';
+hs.outlineType = 'rounded-white';
+hs.wrapperClassName = 'draggable-header';
+hs.transitions = ['expand', 'crossfade'];
+hs.fadeInOut = false;
+hs.dimmingOpacity = 0.2;
+
+// Add the controlbar
+hs.addSlideshow({
+	slideshowGroup: 'member-photos',
+	interval: 3500,
+	repeat: false,
+	useControls: true,
+	fixedControls: 'fit',
+	overlayOptions: {
+		opacity: .75,
+		position: 'bottom center',
+		hideOnMouseOut: true
+	}
+});
+
+hs.addSlideshow({
+	slideshowGroup: 'member-photos1',
+	interval: 3500,
+	repeat: false,
+	useControls: true,
+	fixedControls: 'fit',
+	overlayOptions: {
+		opacity: .75,
+		position: 'bottom center',
+		hideOnMouseOut: true
+	}
+});
+</script>
+<script src="/js/JSCal2-1.9/js/jscal2.js"></script>
+<script src="/js/JSCal2-1.9/js/lang/en.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/JSCal2-1.9/css/jscal2.css" />
+<link rel="stylesheet" type="text/css" href="/js/JSCal2-1.9/css/border-radius.css" />
+<script type="text/javascript">
+  var cal = Calendar.setup({
+      onSelect: function(cal) { cal.hide() },
+      fdow : 0,
+      weekNumbers: true,
+      animation: false,
+      showTime: false
+  });
+</script>
+<script src="/js/dw_scroll_c.js" type="text/javascript"></script>
+<script language="javascript1.3" src="/js/jah.js" ></script>
+<script language=javascript>
+<!--
+	function trim(s) {
+	  s = s.replace(/^\s*/,'').replace(/\s*$/, '');
+	  return s;
+	}
+
+	function setVisibility(id, visibility, display) {
+		document.getElementById(id).style.visibility = visibility;
+		document.getElementById(id).style.display = display;
+	}
+
+	function NumFormat(num) {
+		TempNum = Math.round(parseFloat(CommaRem(num.toString())) * 100)/100
+		if (isNaN(TempNum)) { TempNum = "0.00" }
+		TempNum = TempNum.toString()
+		if (TempNum.indexOf('.') == -1) { TempNum = TempNum + ".00" }
+		if ((TempNum.length - TempNum.indexOf('.')) <= 2) { TempNum = TempNum + "0" }
+
+		pt_pos = TempNum.indexOf('.')
+		comma_pos = 0
+		NewNum = ""
+		Start = "F"
+		for (i = TempNum.length - 1; i >= 0; i--) {
+			NewNum = TempNum.charAt(i) + NewNum
+			if (Start == "F") {
+				if (TempNum.charAt(i) == ".") { Start = "T" }
+			} else {
+				comma_pos++
+				if (comma_pos == 3) {
+					comma_pos = 0
+					if (i-1 >= 0) {
+						if (TempNum.charAt(i-1) != "-") { NewNum = "," + NewNum }
+					}
+				}
+			}
+		}
+		return NewNum
+	}
+
+	function Round2(num) {
+		NewNum = Math.round(num * 100)/100;
+		return NewNum;
+	}
+
+	function CommaRem(str) {
+		re = /,/gi;
+		RetVal = str.replace(re, "")
+		return RetVal
+	}
+
+	function is_int(value){
+	  if((parseFloat(value) == parseInt(value)) && !isNaN(value)){ return true; } else { return false; }
+	}
+
+  function ValidateSearchForm() {
+  	Obj = document.searchform.search_keyword;
+		str = trim(Obj.value);
+		if (str == "" || str == "Search This Site") {
+			alert("Please fill in Search Keyword!");
+			Obj.focus();
+			return false;
+		}
+  }
+
+	function ChangePhoto(num) {
+		document.getElementById("photo").src = document.getElementById("photo_fn"+num).value;
+		document.getElementById("photo").title = document.getElementById("alt_text"+num).value;
+		document.getElementById("image_title").innerHTML = document.getElementById("image_title"+num).value;
+		document.getElementById("image_id").value = document.getElementById("image_id"+num).value;
+	}
+
+	function ChangePhoto1(num) {
+		document.getElementById("photo").src = frames['thumbnails'].document.getElementById("photo_fn"+num).value;
+		document.getElementById("photo").title = frames['thumbnails'].document.getElementById("alt_text"+num).value;
+		document.getElementById("image_title").innerHTML = frames['thumbnails'].document.getElementById("image_title"+num).value;
+		document.getElementById("image_id").value = frames['thumbnails'].document.getElementById("image_id"+num).value;
+	}
+
+	function AddToGallery() {
+		document.formGalleryCart.submit_action.value = "add";
+		document.formGalleryCart.submit();
+	}
+
+	function RemoveFromGallery() {
+		document.formGalleryCart.submit_action.value = "remove";
+		document.formGalleryCart.submit();
+	}
+
+	function CheckCalendarDateRange() {
+		Obj = document.formCalendarDateRange.start_date;
+		if (trim(Obj.value) == "") {
+			alert("Please select for Event Start Date!");
+			Obj.style.backgroundColor='#FFDADA';
+			Obj.focus();
+			return false;
+		}
+		Obj = document.formCalendarDateRange.end_date;
+		if (trim(Obj.value) == "") {
+			alert("Please select for Event End Date!");
+			Obj.style.backgroundColor='#FFDADA';
+			Obj.focus();
+			return false;
+		}
+		Obj = document.formCalendarDateRange.start_date;
+		Obj1 = document.formCalendarDateRange.end_date;
+		from_date = Obj.value;
+    to_date = Obj1.value;
+    var fromdate = from_date.split('-');
+    //from_date = new Date();
+    //from_date.setFullYear(fromdate[2],fromdate[0],fromdate[1]);
+		var d1 = new Date(fromdate[2],fromdate[0]-1,fromdate[1], 0,0,0,0);
+    var todate = to_date.split('-');
+    //to_date = new Date();
+    //to_date.setFullYear(todate[2],todate[0]-1,todate[1]);
+    var d2 = new Date(todate[2],todate[0]-1,todate[1], 0,0,0,0);
+    //alert(d1+' - '+d2);
+  	if (d1 > d2) {
+    	alert("Invalid Date Range!\n\nStart Date cannot be after End Date!")
+    	Obj1.style.backgroundColor='#FFDADA';
+			Obj1.focus();
+			return false;
+    }
+	}
+-->
+</script>
+<script type="text/javascript">11
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3146366-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body>
+<div id="topBarArea">
+  <div id="topBar">
+    <div class="topBarNav">
+	<a href="/meeting-sports-planners/">Meeting & Sports Planners</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/group-tours/">Group Tours</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/media/">Media</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/about-us/">About Us</a></div>
+    <div id="weather" class="topBarWeather"></div>	  </div>
+</div>
+<!-- end #topBarArea -->
+<div id="mastheadArea">
+  <div class="mastheadLogo"><a href="/"><img src="/images/logo.gif" title="Central Pennsylvania Convention &amp; Visitors Bureau" /></a></div>
+  <div class="mastheadMainImage">
+  <img src="/mediafiles/pages/banner_images/7_ArtsFest.jpg" title="activities" />  </div>
+  <div class="mastheadTopShadow"></div>
+</div>
+<!-- end #mastheadArea -->
+<div id="mainNav">
+  <ul id="qm0" class="qmmc">
+	<li>
+  <a href="/penn-state/" class="qmparent">PENN STATE</a>
+</li>
+<li>
+  <a href="/accommodations/" class="qmparent">ACCOMMODATIONS</a>
+  <ul>
+<li><a href="/accommodations/listings.php?category=Hotels_24">Hotels</a></li>
+<li><a href="/accommodations/listings.php?category=Motels_and_Inns_26">Motels and Inns</a></li>
+<li><a href="/accommodations/listings.php?category=Bed_and_Breakfasts_22">Bed and Breakfasts</a></li>
+<li><a href="/accommodations/listings.php?category=Lodges_and_Vacation_Rentals_25">Lodges and Vacation Rentals</a></li>
+<li><a href="/accommodations/listings.php?category=Campgrounds_23">Campgrounds</a></li>
+<li><a href="/accommodations/listings.php?category=Pet_Lodging_27">Pet Lodging</a></li>
+    <li>
+      <a href="/accommodations/lodging-availability.php">Lodging Availability</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="/activities/" style="color:#ffea4a;" class="qmparent">ACTIVITIES</a>
+  <ul>
+<li><a href="/activities/listings.php?category=Arts_%26_Entertainment_57" style="color:#ffea4a;">Arts & Entertainment</a></li>
+<li><a href="/activities/listings.php?category=Attractions_58">Attractions</a></li>
+<li><a href="/activities/listings.php?category=Events_59">Events</a></li>
+<li><a href="/activities/listings.php?category=Family_Attractions_60">Family Attractions</a></li>
+<li><a href="/activities/listings.php?category=Historic_Sites_%26_Tours_61">Historic Sites & Tours</a></li>
+<li><a href="/activities/listings.php?category=Recreation_62">Recreation</a></li>
+<li>
+<a href="/activities/shopping-listings.php?category=Shopping_5">Shopping</a>
+<ul>
+<li><a href="/activities/shopping-listings.php?category=Antique,_Gift_and_Furnishings_46">Antique, Gift and Furnishings</a></li>
+<li><a href="/activities/shopping-listings.php?category=Apparel_%26_Accessories_47">Apparel & Accessories</a></li>
+<li><a href="/activities/shopping-listings.php?category=Books/Bookstores_48">Books/Bookstores</a></li>
+<li><a href="/activities/shopping-listings.php?category=Florist_and_Garden_Centers_49">Florist and Garden Centers</a></li>
+<li><a href="/activities/shopping-listings.php?category=Grocers,_Convenience_Stores_%26_Pharmacies_50">Grocers, Convenience Stores & Pharmacies</a></li>
+<li><a href="/activities/shopping-listings.php?category=PSU_Souvenirs_51">PSU Souvenirs</a></li>
+<li><a href="/activities/shopping-listings.php?category=Shopping_Centers_and_Associations_52">Shopping Centers and Associations</a></li>
+<li><a href="/activities/shopping-listings.php?category=Shopping,_Retailers,_Toys_and_Antiques_53">Shopping, Retailers, Toys and Antiques</a></li>
+<li><a href="/activities/shopping-listings.php?category=Sporting_Goods_and_Hobbies_54">Sporting Goods and Hobbies</a></li>
+<li><a href="/activities/shopping-listings.php?category=Toys_and_Games_55">Toys and Games</a></li>
+<li><a href="/activities/shopping-listings.php?category=Wineries_and_Farm_Markets_56">Wineries and Farm Markets</a></li>
+</ul>
+</li>
+    <li>
+      <a href="/activities/sightseeing.php">Sightseeing</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="/restaurants/" class="qmparent">RESTAURANTS</a>
+  <ul>
+<li><a href="/restaurants/listings.php?category=American_Restaurants_7">American Restaurants</a></li>
+<li><a href="/restaurants/listings.php?category=Asian_8">Asian</a></li>
+<li><a href="/restaurants/listings.php?category=Bakery_and_Coffee_Shops_9">Bakery and Coffee Shops</a></li>
+<li><a href="/restaurants/listings.php?category=Banquet_%26_Catering_10">Banquet & Catering</a></li>
+<li><a href="/restaurants/listings.php?category=Cafe_And_Deli_11">Cafe And Deli</a></li>
+<li><a href="/restaurants/listings.php?category=Cajun_And_Creole_Restaurants_12">Cajun And Creole Restaurants</a></li>
+<li><a href="/restaurants/listings.php?category=Family_Dining_Restaurants_14">Family Dining Restaurants</a></li>
+<li><a href="/restaurants/listings.php?category=Fast_Food_15">Fast Food</a></li>
+<li><a href="/restaurants/listings.php?category=Fine_Dining_16">Fine Dining</a></li>
+<li><a href="/restaurants/listings.php?category=Italian_Restaurants_17">Italian Restaurants</a></li>
+<li><a href="/restaurants/listings.php?category=Mexican_and_Southwestern_18">Mexican and Southwestern</a></li>
+<li><a href="/restaurants/listings.php?category=Pizza,_Subs_and_Sandwiches_19">Pizza, Subs and Sandwiches</a></li>
+<li><a href="/restaurants/listings.php?category=Steaks_20">Steaks</a></li>
+<li><a href="/restaurants/listings.php?category=Tavern_Fare_and_Beverages_21">Tavern Fare and Beverages</a></li>
+  </ul>
+</li>
+<li>
+  <a href="/outdoors/" class="qmparent">OUTDOORS</a>
+  <ul>
+    <li>
+      <a href="/outdoors/fishing-boating.php">Fishing & Boating</a>
+      <ul>
+        <li><a href="/outdoors/state-college-fishing-guide.php">State College Fishing Guide</a></li>
+        <li><a href="/outdoors/interview-with-george-daniel.php">Interview with George Daniel</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="/arts/" class="qmparent">ARTS</a>
+</li>
+<li>
+  <a href="/deals/" class="qmparent">DEALS</a>
+</li>
+  <li class="qmclear">&nbsp;</li>
+</ul>
+<!-- Create Menu Settings: (Menu ID, Is Vertical, Show Timer, Hide Timer, On Click (options: 'all' * 'all-always-open' * 'main' * 'lev2'), Right to Left, Horizontal Subs, Flush Left, Flush Top) -->
+<script type="text/javascript">qm_create(0,false,0,500,false,false,false,false,false);</script></div>
+<!-- end #mainNav -->
+<div id="mainContentArea">
+	<div class="mainContentAreaTopShadow"></div>
+  <div id="threeColumns">
+  	    <div id="sideColumn1">
+      <div class="headingBarLeft">Activities</div>
+<ul>
+	<li class="pawsIcon"><a href="/activities/listings.php?category=Arts_%26_Entertainment_57" style="text-decoration:underline;">Arts & Entertainment</a></li>
+<li class="pawsIcon"><a href="/activities/listings.php?category=Attractions_58">Attractions</a></li>
+<li class="pawsIcon"><a href="/activities/listings.php?category=Events_59">Events</a></li>
+<li class="pawsIcon"><a href="/activities/listings.php?category=Family_Attractions_60">Family Attractions</a></li>
+<li class="pawsIcon"><a href="/activities/listings.php?category=Historic_Sites_%26_Tours_61">Historic Sites & Tours</a></li>
+<li class="pawsIcon"><a href="/activities/listings.php?category=Recreation_62">Recreation</a></li>
+<li class="pawsIcon">
+<a href="/activities/shopping-listings.php?category=Shopping_5">Shopping</a>
+</li>
+<li class="pawsIcon">
+<a href="/activities/sightseeing.php">Sightseeing</a></li>
+</ul><div class="headingBarLeft">Follow Central PA</div>
+<div class="socialMediaIcons">
+	  <div class="facebookIcon"><a href="http://www.facebook.com/visitpennstate" target="_blank" title="Connect on Facebook"></a></div>
+      <div class="twitterIcon"><a href="http://twitter.com/visitpennstate" target="_blank" title="Follow Us on Twitter"></a></div>
+      <div class="youTubeIcon"><a href="http://www.youtube.com/user/VisitPennState" target="_blank" title="View Our Videos"></a></div>
+      <div class="clearFloat"></div>
+</div><div class="headingBarLeft">Quick Find</div>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="2" height="10">
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="right" width="20%">
+				<img src="/userfiles/images/icon-suitcase.gif" style="margin: 1px 8px; width: 27px; height: 26px;" /></td>
+			<td align="left" width="80%">
+				<span style="font-size: 18px;"><a href="/travel-packages/">Travel Packages</a></span></td>
+		</tr>
+		<tr>
+			<td align="right">
+				<img src="/userfiles/images/icon-bed.gif" style="margin: 1px 8px; width: 27px; height: 26px;" /></td>
+			<td align="left">
+				<span style="font-size: 18px;"><a href="/accommodations/lodging-availability.php">Lodging Availability</a></span></td>
+		</tr>
+		<tr>
+			<td align="right">
+				<img src="/userfiles/images/icon-asterisk.gif" style="margin: 1px 8px; width: 27px; height: 26px;" /></td>
+			<td align="left">
+				<span style="font-size: 18px;"><a href="/activities/listings.php?category=Events_59">Local Events</a></span></td>
+		</tr>
+		<tr>
+			<td align="right">
+				<img src="/userfiles/images/icon-car.gif" style="margin: 1px 8px; width: 27px; height: 26px;" /></td>
+			<td align="left">
+				<span style="font-size: 18px;"><a href="/activities/sightseeing.php">Sightseeing</a></span></td>
+		</tr>
+		<tr>
+			<td align="right">
+				<img src="/userfiles/images/icon-compass.gif" style="margin: 1px 8px; width: 27px; height: 26px;" /></td>
+			<td align="left">
+				<span style="font-size: 18px;"><a href="/about-us/directions.php">Get Directions</a></span></td>
+		</tr>
+		<tr>
+			<td align="right">
+				<img src="/userfiles/images/icon-camera.gif" style="margin: 1px 8px; width: 27px; height: 26px;" /></td>
+			<td align="left">
+				<span style="font-size: 18px;"><a href="/media/gallery.php">Photo &amp; Video Galleries</a></span></td>
+		</tr>
+		<tr>
+			<td align="right">
+				<img src="/userfiles/images/icon-paper.gif" style="margin: 1px 8px; width: 27px; height: 26px;" /></td>
+			<td align="left">
+				<span style="font-size: 18px;"><a href="/local-services/">Local Services</a></span></td>
+		</tr>
+		<tr>
+			<td colspan="2" height="10">
+				&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	&nbsp;</p>    </div>
+    <!-- end #sideColumn1 -->
+  	    <div id="mainColumn3">
+    	<h1>Arts & Entertainment</h1>
+<p>
+	The Central PA Region is rich with opportunities for connoisseurs of the Arts. Live theatre, music &amp; dance performances, art galleries and artist studios dot Centre County ensuring that no matter where you go, you will find representation of the arts. State College &amp; Penn State University feature a wide variety of performance art venues year-round.</p><div class="clearFloat"></div>
+<div class="jumpToListings">
+	<span class="floatLeft">Jump to: <a href="/activities/listings.php?category=Arts_%26_Entertainment_57&opt=af">A-F</a> | <a href="/activities/listings.php?category=Arts_%26_Entertainment_57&opt=gl">G-L</a> | <a href="/activities/listings.php?category=Arts_%26_Entertainment_57&opt=mr">M-R</a> | <a href="/activities/listings.php?category=Arts_%26_Entertainment_57&opt=sz">S-Z</a> | <a href="/activities/listings.php?category=Arts_%26_Entertainment_57" style="font-weight:bold;">All</a></span>
+	<span class="floatRight">1-19 of 19</span>
+  <div class="clearFloat"></div>
+</div>
+	<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Art_Alliance_of_Central_PA_26c57">Art Alliance of Central PA</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	818 Pike Street<br />Lemont, PA 16851-0811<br />Phone: 814-234-2740	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.artalliancepa.org" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Art_Alliance_of_Central_PA_26c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>Member-supported non-profit arts organization offering exhibits & sales; art education for children & adults; arts events; special benefits for members.</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Bellefonte_ART_Museum_for_Centre_County_45c57">Bellefonte ART Museum for Centre County</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	133 N Allegheny St.<br />Bellefonte, PA 16823<br />Phone: 814-355-9033	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.bellefontemuseum.org" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Bellefonte_ART_Museum_for_Centre_County_45c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>The Bellefonte Museum for Centre County AKA the Bellefonte Art Museum for Centre County is an "Imagination Celebration" with five galleries from International Art Shows to featured local artists to a hands-on Children&#39;s Creativity Centre. Always free including the 1 st Sunday which offers art classes, receptions and meet the...</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Bryce_Jordan_Center_62c57">Bryce Jordan Center</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	Penn State University<br />127 Bryce Jordan Center<br />University Park, PA 16802<br />Phone: 814-863-5500 direct	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.bjc.psu.edu" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Bryce_Jordan_Center_62c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>16,000-seat arena. Conferences, entertainment and sporting events.</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Center_for_Performing_Arts_(PSU)_70c57">Center for Performing Arts (PSU)</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	101 Eisenhower Auditorium<br />University Park, PA 16802<br />Phone: 814-863-0255<br />Tollfree: 1800ARTSTIX	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.cpa.psu.edu" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Center_for_Performing_Arts_(PSU)_70c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>World-class symphonies, ballet and Broadway shows, jazz, drama, dance.</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Elk_Creek_Cafe_%26_Aleworks_134c57">Elk Creek Cafe & Aleworks</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	100 West Main Street<br />Millheim, PA 16854<br />Phone: 814-349-8850	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.elkcreekcafe.net" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Elk_Creek_Cafe_%26_Aleworks_134c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>Elk Creek Cafe & Aleworks is a local bistro brewpub committed to community, local foods, health, and sustainability in all ways by providing Nouveau Dutchie Cuisine, Fresh Craft-Brewed Ales as well as presenting some of the most original and authentic roots, jazz, and blues music around plus Local Art.</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Gallery_Shop_151c57">Gallery Shop</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	824 Pike St.<br />PO Box 973<br />Lemont, PA 16851<br />Phone: 814-867-0442	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.gallery-shop.com" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Gallery_Shop_151c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>Original work representing more than 50 Central Pennsylvania artists.</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Green_Drake_Gallery_%26_Arts_Center_164c57">Green Drake Gallery & Arts Center</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	101-B W. Main St.<br />Millheim, PA 16854<br />Phone: (814) 349-2486	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.greendrakeart.com" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Green_Drake_Gallery_%26_Arts_Center_164c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>The Green Drake Gallery and Arts Center is a Fine art and crafts gallery combined with studio and educatoinal space, all housed in a renovated historic building on Main Street.</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=HUB-Robeson_Art_Galleries_194c57">HUB-Robeson Art Galleries</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	241 HUB-Robeson Center<br />University Park, PA 16802<br />Phone: 814-865-2563	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.studentaffairs.psu.edu/hub/artgalleries" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=HUB-Robeson_Art_Galleries_194c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>Exhibitions of contemporary visual art by students, emerging and professional artists. Inclusive of all national & international cultures, artists and art forms.</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=JazzPA_204c57">JazzPA</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	www.jazzpa.com<br />Bellefonte, PA 16823<br />Tollfree: 888-221-6670	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.jazzpa.com" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=JazzPA_204c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>Utilizing local, regional, national and world-renowned performing artists and composers. JazzPA strives to develop appreciation for jazz as a living art form by working to preserve and advance the diverse legacies and traditions of jazz, presenting financially accessible jazz year-round in concert, cabaret, festival and scholastic settings and providing opportunities...</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Millbrook_Playhouse_247c57">Millbrook Playhouse</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	Country Club Lane<br />P.O. Box 161<br />Mill Hall, PA 17751<br />Phone: 570-748-8083	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://millbrookplayhouse.org/" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Millbrook_Playhouse_247c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>Clinton County's only professional summer stock theater company. Presenting 8 plays and musicals June-August.</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Music_at_Penn's_Woods_448c57">Music at Penn's Woods</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	Penn State School of Music<br />233 Music Bldg I<br />University Park, PA 16802<br />Phone: 814-865-0431	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.music.psu.edu" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Music_at_Penn's_Woods_448c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>Presenting over 350 concerts, recitals, and masterclasses each year, the Penn State School of Music provides a wide variety of excellent events offered at no charge or for a small admission fee. Our talented students work hard to present exciting and interesting performances, and they enjoy seeing full houses of...</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Nittany_Valley_Symphony_270c57">Nittany Valley Symphony</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	270 Walker Drive, Suite 102E<br />State College, PA 16801<br />Phone: 814-231-8224	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.nvs.org" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Nittany_Valley_Symphony_270c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>The only full sized community orchestra between Pittsburgh and Philadelphia. Celebrating more than 40 years of live symphonic music in the Centre region..</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Palmer_Museum_of_Art_286c57">Palmer Museum of Art</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	Curtin Road<br />Penn State University<br />University Park, PA 16802<br />Phone: 814-865-7672	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.palmermuseum.psu.edu" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Palmer_Museum_of_Art_286c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>Dramatic and exciting describe the Palmer Art Museum.</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Penn_State_Centre_Stage_295c57">Penn State Centre Stage</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	121 Theatre Building<br />University Park, PA 16802<br />Phone: 814-863-0493	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://theatre.psu.edu" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Penn_State_Centre_Stage_295c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>Some of the greatest entertainment in the Alleghenies.</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Pennsylvania_Centre_Orchestra_308c57">Pennsylvania Centre Orchestra</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	119 S. Fraser St., Ste. D<br />State College, PA 16801<br />Phone: 814-234-8313	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.centreorchestra.org" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Pennsylvania_Centre_Orchestra_308c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>Centre County's only all professional orchestra, showcasing the area's finest musicians. We present an average of 6 concerts per season.</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=State_College_Choral_Society_365c57">State College Choral Society</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	P.O. Box 675<br />State College, PA 16804<br />Phone: 814-234-0169	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.scchoralsociety.org" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=State_College_Choral_Society_365c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>Dedicated to presenting quality choral repertoire to the local community.</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=State_College_Community_Theatre,_Inc._366c57">State College Community Theatre, Inc.</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	1250 University Dr.<br />State College, PA 16801<br />Phone: 814-234-7228	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.scctonline.org" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=State_College_Community_Theatre,_Inc._366c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>Enjoy State College Community Theatre's summer season at the Boal Barn Playhouse, as well as our special events throughout the year at various venues. Celebrating 55 years!</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=State_Theatre_(The)_370c57">State Theatre (The)</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	130 W. College Avenue<br />State College, PA 16801<br />Phone: 814-272-0606	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://thestatetheatre.org/" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=State_Theatre_(The)_370c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>The State Theatre is a non-profit community theatre dedicated to serving the Centre County region by providing a venue for theatre, dance, music, and film. Local community productions, children's theatre, local and national concerts, film festivals, "art house" and second run films are just some of the programming ideas being...</p>		</div>
+	</div>
+		<div class="listingNarrow">
+	  <div class="listingNarrowTitle"><a href="/activities/listings.php?member=Tussey_Mountain_All_Se4sons_391c57">Tussey Mountain All Se4sons</a></div>
+	  <div class="listingNarrowContactInfo">
+	  	341 Bear Meadows Road<br />Boalsburg, PA 16827<br />Phone: 814-466-6810<br />Tollfree: 800-733-2754	  </div>
+		<div class="listingNarrowLinks">
+			<a href="http://www.tusseymountain.com" target="_blank">Website</a><br />	  	<a href="/activities/listings.php?member=Tussey_Mountain_All_Se4sons_391c57">More Info</a>
+		</div>
+		<div class="listingNarrowTeaser">
+	  	<p>We provide outdoor entertainment for All seasons. Ski the slopes when the snow is falling, and drive our go carts when the temperatures are soaring. Take advantage of all the aspects that Tussey has to offer: Skiing, golf, driving range, batting cages, mini-golf, go-karts, skate park, fishing, paddle boats, and...</p>		</div>
+	</div>
+	<div class="jumpToListings">
+	<span class="floatLeft">Jump to: <a href="/activities/listings.php?category=Arts_%26_Entertainment_57&opt=af">A-F</a> | <a href="/activities/listings.php?category=Arts_%26_Entertainment_57&opt=gl">G-L</a> | <a href="/activities/listings.php?category=Arts_%26_Entertainment_57&opt=mr">M-R</a> | <a href="/activities/listings.php?category=Arts_%26_Entertainment_57&opt=sz">S-Z</a> | <a href="/activities/listings.php?category=Arts_%26_Entertainment_57" style="font-weight:bold;">All</a></span>
+	<span class="floatRight">1-19 of 19</span>
+  <div class="clearFloat"></div>
+</div>
+<div class="backToTopLink">&uarr; <a href="#">Back to Top</a></div>
+    </div>
+    <!-- end #mainColumn3 -->
+        <div id="sideColumn2">
+      <div class="headingBarRight">Visitors Guide</div>
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 232px;">
+	<tbody>
+		<tr>
+			<td colspan="2">
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="width: 101px;">
+				<img alt="Visit Penn State - Request A Free Visitors Guide" src="/userfiles/images/2013VGcover_forweb.jpg" style="width: 80px; height: 124px;" /></td>
+			<td style="width: 131px; vertical-align: top;">
+				<p>
+					<span style="font-size: 14px;">Request your free copy of Central Pennsylvania&#39;s Visitors Guide today.</span></p>
+				<p>
+					<br />
+					<span style="font-size: 14px;"><a href="/media/visitors-guide-request.php">Request Guide</a> &rarr;</span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+	<tbody>
+		<tr>
+			<td>
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<a href="http://www.visitpennstate.org/media/fun-pass-guide-request.php"><img alt="" src="/userfiles/images/GettheFunPass.png" style="width: 239px; height: 83px;" /></a></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	&nbsp;</p><div class="headingBarRight">Calendar of Events</div>
+<div class="calendarOfEventsPromotion">
+	  <div class="calendarListingPromotion">
+    <div class="calendarListingPromotionSummary">
+    	<a href="/calendar/index.php?event=139th_Centre_County_Grange_Fair_Encampment_255">139th Centre County Gr...<br />Grange Fair Grounds</a>
+    </div>
+    <div class="calendarListingPromotionDate">8/26</div>
+  </div>
+	  <div class="calendarListingPromotion">
+    <div class="calendarListingPromotionSummary">
+    	<a href="/calendar/index.php?event=139th_Centre_County_Grange_Fair_Encampment_255">139th Centre County Gr...<br />Grange Fair Grounds</a>
+    </div>
+    <div class="calendarListingPromotionDate">8/27</div>
+  </div>
+	  <div class="calendarListingPromotion">
+    <div class="calendarListingPromotionSummary">
+    	<a href="/calendar/index.php?event=Boalsburg_Farmers_Market_1037">Boalsburg Farmers Mark...<br />Pennsylvania Military ...</a>
+    </div>
+    <div class="calendarListingPromotionDate">8/27</div>
+  </div>
+	  <div class="calendarListingPromotion">
+    <div class="calendarListingPromotionSummary">
+    	<a href="/calendar/index.php?event=Community_discussion_on_the_published_works_of_Mary_Baker_Eddy_1048">Community discussion o...<br />Christian Science Read...</a>
+    </div>
+    <div class="calendarListingPromotionDate">8/27</div>
+  </div>
+	  <div class="calendarListingPromotion">
+    <div class="calendarListingPromotionSummary">
+    	<a href="/calendar/index.php?event=139th_Centre_County_Grange_Fair_Encampment_255">139th Centre County Gr...<br />Grange Fair Grounds</a>
+    </div>
+    <div class="calendarListingPromotionDate">8/28</div>
+  </div>
+		<table width="242" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td><img src="/images/dot.gif" width="10" height="10"></td>
+		</tr>
+		<tr>
+			<td>
+				<div id="calendar"></div>
+				<script type="text/javascript">
+					function RefreshCalendar(ts,opt) {
+						var d = new Date();
+						jah10('/calendar.php?'+d.getTime()+'&ts='+ts+'&opt='+opt,'calendar');
+					}
+				</script>
+				<script>RefreshCalendar('','');</script>
+			</td>
+		</tr>
+		<tr>
+			<td><img src="/images/dot.gif" width="5" height="5"></td>
+		</tr>
+		<tr>
+			<td align="left" style="font-size:12px;">Search date range:</td>
+		</tr>
+		<tr>
+			<td><img src="/images/dot.gif" width="5" height="5"></td>
+		</tr>
+		<tr>
+			<td align="left">
+				<form name="formCalendarDateRange" method="post" action="/calendar/index.php" onSubmit="return CheckCalendarDateRange(this);" enctype="multipart/form-data">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td style="font-size:11px;">
+							<input type="text" id="start_date" name="start_date" value="" maxlength="10" onblur="this.style.backgroundColor='#ffffff';" class="calendarInput" readonly>
+			        <img id="trigger_start_date" src="/images/calendar-icon.gif" onmouseover="this.style.cursor='pointer';" class="calendarIcon">
+			        <script type="text/javascript">
+								cal.manageFields("trigger_start_date", "start_date", "%m-%d-%Y");
+							</script>
+							TO <input type="text" id="end_date" name="end_date" value="" maxlength="10" onblur="this.style.backgroundColor='#ffffff';" class="calendarInput" readonly>
+			        <img id="trigger_end_date" src="/images/calendar-icon.gif" onmouseover="this.style.cursor='pointer';" class="calendarIcon">
+			        <script type="text/javascript">
+								cal.manageFields("trigger_end_date", "end_date", "%m-%d-%Y");
+							</script>
+						</td>
+						<td>
+							<input type="submit" name="submit" value="Go" title="" class="goButtonSmall" />
+						</td>
+					</tr>
+				</table>
+				</form>
+			</td>
+		</tr>
+	</table>
+  <div class="viewAllEventsButton floatLeft" style="margin-top:15px;"><a href="/calendar/"></a></div>
+  <div class="submitAnEventButton floatLeft" style="margin-top:15px;margin-left:20px;"><a href="/calendar/submit-event.php"></a></div>
+  <div class="clearFloat"></div>
+</div>
+<div class="searchBox">
+  <form id="searchform" name="searchform" method="post" action="/search-results.php" onSubmit="return ValidateSearchForm();">
+    <input type="text" id="search_keyword" name="search_keyword" value="Search This Site" onfocus="if (this.value == 'Search This Site') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search This Site';}" class="searchBoxField" />
+    <input type="submit" name="searchButton" value="" title="Click here to search this site" class="goButtonBig floatRight" />
+  </form>
+  <div class="clearFloat"></div>
+</div>
+<div class="partnersBanner">
+	<p>
+	<img src="/userfiles/images/partners-banner.gif" style="width: 240px; height: 176px;" title="Central PA CVB Partners" usemap="#Map" /><map id="Map" name="Map"><area coords="50,60,190,94" href="http://www.thealleghenies.com/" shape="rect" target="_blank" title="The Alleghenies" /> <area coords="21,100,105,155" href="http://www.visitpa.com/" shape="rect" target="_blank" title="Pennsylvania - State of Independence" /><area coords="118,102,216,151" href="http://www.sportspa.org/" shape="rect" target="_blank" title="Pennsylvania Sports" /></map></p></div>    </div>
+    <!-- end #sideColumn2 -->
+  	    <div class="clearFloat"></div>
+  </div>
+  <!-- end #threeColumns -->
+</div>
+<!-- end #mainContentArea -->
+<div id="footerAreaLedge"></div>
+<div id="footerArea">
+  <div class="footerContactInfo">
+	<p>
+	<span class="bold">Centre County/Penn State<br />
+	Visitor Center/CPCVB</span><br />
+	800 E. Park Ave<br />
+	State College, PA. 16803<br />
+	<br />
+	Hours of Operation<br />
+	Monday - Friday: 7:30am - 6:00pm<br />
+	Saturday &amp; Sunday: 9:00am - 6:00pm<br />
+	<br />
+	Local: 814-231-1400<br />
+	Toll Free: 800-358-5466<br />
+	Fax: 814-231-8123<br />
+	E-mail: <a href="mailto:info@visitpennstate.org">info@visitpennstate.org</a></p></div><div class="footerLinks">
+	<a href="/about-us/contact-us.php">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/sitemap.php">Sitemap</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/privacy.php">Privacy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/member-login.php">Member Login</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.yousendit.com/transfer.php?action=dropbox&dropbox=DanielBeisel485689&secure=1" onclick="return hs.htmlExpand(this,{objectType:'iframe',preserveContent:false,align:'center',width:825,height:725})">Image Upload</a>	
+</div>
+<div class="footerText">
+  <p>
+	The Central Pennsylvania Convention &amp; Visitors Bureau includes member businesses in <a href="http://www.visitpennstate.org/penn-state/state-college.php">State College PA</a>, <a href="http://www.visitpennstate.org/penn-state/bellefonte.php">Bellefonte</a>, <a href="http://www.visitpennstate.org/penn-state/boalsburg.php">Boalsburg</a>, <a href="http://www.visitpennstate.org/penn-state/philipsburg.php">Philipsburg</a> and all of Centre County. Find hotels, bed &amp; breakfasts, restaurants, attractions, recreation, events, and information about Penn State University, as well as information for meeting &amp; sports planners, group tour planners, and family vacations. Be sure to check our <a href="http://www.visitpennstate.org/calendar/">Calendar of Events</a> to find out what&#39;s going on in Centre County when you Visit Penn State.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<span class="bold">Partners:</span><br />
+	<span class="bold"><a href="http://www.thealleghenies.com/" target="_blank">The Alleghenies</a></span> | <span class="bold"><a href="http://www.visitpa.com/" target="_blank">Pennsylvania State of Independence</a></span> | <span class="bold"><a href="http://www.sportsinpa.org/" target="_blank">Pennsylvania Sports</a></span></p></div>
+<div class="footerSocialMediaAndCopyright">
+	  <div class="footerFacebookIcon"><a href="http://www.facebook.com/visitpennstate" target="_blank" title="Connect on Facebook"></a></div>
+      <div class="footerTwitterIcon"><a href="http://twitter.com/visitpennstate" target="_blank" title="Follow Us on Twitter"></a></div>
+      <div class="footerYouTubeIcon"><a href="http://www.youtube.com/user/VisitPennState" target="_blank" title="View Our Videos"></a></div>
+    	
+  <div style="margin-top:1px;" class="footerCopyright">
+  	&copy;2009-2013 Central PA CVB<br />
+  	<a href="http://www.equitymarketingsolutions.com" target="_blank">Design by EMS</a> | <a href="http://www.sleeplessmedia.com" target="_blank">Development by Sleepless Media</a>
+  </div>
+  <div class="clearFloat"></div>
+</div>
+  <div class="clearFloat"></div>
+</div>
+<!-- end #footerArea -->
+</body>
+</html>

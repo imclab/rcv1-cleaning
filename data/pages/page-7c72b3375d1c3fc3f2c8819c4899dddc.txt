@@ -1,0 +1,2478 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW" />
+<meta name="revisit-after" content="2 days" />
+
+<meta name="googlebot" content="noodp">
+<meta name="description" content="Your source for entertainment in Wilmington, Delaware. Live music, arts, dining, special events &amp; shows. Discover the arts &amp; entertainment in Delaware" />
+<meta name="keywords" content="arts in delaware, arts in wilmington, delaware entertainment, entertainment in wilmington, events in wilmington, fine arts in delaware, fine arts in wilmington, live music in delaware, live music in wilmington, restaurants in wilmington, theatre in delaware, theatre in wilmington, wilmington delaware restaurants, delaware music scene, concerts in delaware, live shows in delaware, live shows in wilmington, art shows in delaware, art shows in wilmington" />
+<meta name="author" content="Mobius New Media" />
+
+<link rel="canonical" href="http://inwilmingtonde.com/" />
+
+<!--Facebook OPEN GRAPH Tags -->
+<meta property="og:title" content=" - Events IN Wilmington Delaware"/>
+<meta property="og:description" content="Your source for entertainment in Wilmington, Delaware. Live music, arts, dining, special events &amp; shows. Discover the arts &amp; entertainment in Delaware"/>
+<meta property="og:url" content="http://inwilmingtonde.com/" />
+<meta property="og:image" content="http://inwilmingtonde.com/myWilmington/promotionalMaterials/logos/inwilmington-circle.jpg" />
+
+<!--GENERATE SEO LOCATION META DATA BASED UPON COMPANY ADDRESS: http://geo-tag.de/generator/en.html -->
+<meta name="geo.region" content="US-DE" />
+<meta name="geo.placename" content="Wilmington" />
+<meta name="geo.position" content="39.745833;-75.546667" />
+<meta name="ICBM" content="39.745833, -75.546667" />
+
+<!-- icons -->
+<link rel="shortcut icon" href="/images/favicon.png" />
+
+<!-- css -->
+<link href="../../css/style.css" rel="stylesheet" type="text/css" media="screen" /><!-- global style sheet, but also includes embedded fonts and jquery ui css -->
+<link rel="stylesheet" media="screen and (min-width: 800px) and (max-width: 1150px)" href="../../css/1024.css" /><!-- load styles if window size is between 800px and 1150px -->
+<link href="../../css/print.css" rel="stylesheet" type="text/css" media="print" /><!-- print style sheet -->
+<noscript><link href="../../css/nojs.css" rel="stylesheet" media="screen" /><!-- stylesheet for disabled javascript --></noscript>
+
+<script src="/js/libraries.js"></script><!--jquery 1.5.1, jquery ui: sortable, draggable, dialog, tabs, jquery ui timepicker add-on, packaged and minimized -->
+<meta name="msvalidate.01" content="C43BBA9B19E37FF53951FE6CE9EB96E6" />
+
+<link rel="alternate" type="application/rss+xml" title="ROR" href="/sitemap.xml" />
+
+<!--[if lte IE 8]>
+<link href="../../css/IE8.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 6]>
+<script type="text/javascript" src="../js/sfHover.js"></script>
+<link href="../../css/IE6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--
+ <script type="text/javascript" src="/js/prototype.js"></script>
+ <script type="text/javascript" src="/js/balloon.config.js"></script>
+ <script type="text/javascript" src="/js/balloon.js"></script>
+ <script type="text/javascript" src="/js/box.js"></script>
+ 
+ <script type="text/javascript">
+   // white balloon with default configuration
+   // (see http://www.wormbase.org/wiki/Balloon_Tooltips)
+   var balloon    = new Balloon;
+   //BalloonConfig(balloon,'GBubble');
+
+   // plain balloon tooltip
+   var tooltip  = new Balloon;
+   BalloonConfig(tooltip,'GPlain');
+
+   // fading balloon
+   var fader = new Balloon;
+   BalloonConfig(fader,'GFade');
+
+   // a plainer popup box
+   var box         = new Box;
+   BalloonConfig(box,'GBox');
+
+   // a box that fades in/out
+   var fadeBox     = new Box;
+   BalloonConfig(fadeBox,'GBox');
+   fadeBox.bgColor     = 'black';
+   fadeBox.fontColor   = 'white';
+   fadeBox.borderStyle = 'none';
+   fadeBox.delayTime   = 200;
+   fadeBox.allowFade   = true;
+   fadeBox.fadeIn      = 750;
+   fadeBox.fadeOut     = 200;
+
+ </script> 
+ -->
+
+
+<title>In Wilmington: Delaware Arts and Entertainment in Your Backyard</title>
+
+<!--IE 6 One-Time Upgrade Dialog for Homepage Only! -->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/ie6warning.js"></script>
+<![endif]-->
+<script language="javascript" type="text/javascript">
+
+var userID = -1;
+
+var music_from = 1;
+var arts_from = 1;
+var food_from = 1;
+var hot_from = 1;
+var ourPicks_from = 1;
+var targetID; // keep this in global scope so jquery ajax function can access it
+var totalMusicEvents =12;
+var totalArtsEvents = 32;
+var loadMoreArts = 1;
+var loadMoreMusic = 1;
+
+function addClick( activity,objectID,objectType,organizationID,theLink){
+	//alert("addClick \n activity: " +activity + "\nobjectID: " + objectID + "\nobjectType" +objectType +"\norganizationID: " +organizationID + "the link:" + theLink );
+	//addClick($userID,$objectID,$objectType,$organizationID,$dateTime,$link,$activity)
+	var userID = -1; // user ID is now a global javascript value - see line ~100
+	var objectID = objectID;
+	var objectType = objectType;
+	var organizationID = organizationID;
+	var dateTime = '2013-08-26 18:28:24';
+	var theLink = theLink;
+	
+	var theData= "userID=" + userID + "&objectID=" + objectID + "&objectType=" + objectType + "&organizationID=" + organizationID + "&dateTime=" + dateTime + "&link=" + theLink + "&activity=" + activity;
+	
+	$.ajax({
+	   type: "POST",
+	   url: "/includes/ajax_addClick.php",
+	   data: theData,
+	   success: function(returnMessage){
+	  // alert('result: ' + returnMessage);
+	   }
+	 });	
+	return true;
+}
+
+
+
+function getNextMusicEvents(){
+	//alert("index line 172 getNextMusicEvents");
+	getNextEvents( 2);
+	return;
+}
+
+function getNextArtsEvents(){
+	//alert("index line 178 getNextArtsEvents");
+	getNextEvents( 1);
+	return;
+}
+
+function getNextEvents( eventType){
+// remove this when testing is done. ... this function will not do anything but return
+//return;
+	
+//addClick($userID,$objectID,$objectType,$organizationID,$dateTime,$link,$activity)
+
+var startDate = '2013-08-26';
+var endDate = '';
+var from=0;
+var doTheAjaxCall = 1;
+
+switch(eventType){
+
+case 1:
+if (arts_from==undefined){arts_from=0}
+arts_from = arts_from + 12;
+from = arts_from;
+if(from + 12 >= totalArtsEvents){
+	loadMoreArts = 0; // this will tell the backend ajax function which card button to append to the end of the result list: 'Load More' or 'See All'
+}else{
+	loadMoreArts = 1;
+}
+
+category= 1;
+subcategory='all';
+showOnHomepage=1; // same as HOT PICK
+editorsPick=1; // same as OUR PICKS
+targetID = 'arts_events'
+$("#getMoreArtsEvents_button").remove();
+doTheAjaxCall = 1;
+
+break;
+
+
+case 2:
+if (music_from==undefined){music_from=0}
+//alert("from is: " + from + " music_from: "+ music_from);
+
+music_from = music_from + 12;
+
+from =  parseInt(  music_from);
+
+showOnHomepage=1; // same is HOT PICK
+editorsPick=1; // same is OUR PICKS
+category= 2;
+subcategory='all';
+targetID = 'music_events'
+$("#getMoreMusicEvents_button").remove();
+doTheAjaxCall = 1;
+if(from + 12 >= totalMusicEvents){
+	loadMoreMusic = 0; // this will tell the backend ajax function which card button to append to the end of the result list: 'Load More' or 'See All'
+}else{
+	loadMoreMusic = 1;
+}
+break;
+
+case 4:
+hot_from = hot_from + 12;
+from = hot_from;
+showOnHomepage=1; // same is HOT PICK
+editorsPick=0; // same is OUR PICKS
+category= 'all';
+subcategory='all';
+targetID = 'hot_picks_events';
+break;
+
+case 3:
+food_from = food_from + 12;
+from = food_from;
+category= 1;
+subcategory='all';
+targetID = 'food_events';
+break;
+
+
+
+case 5:
+ourPicks_from = ourPicks_from + 12;
+from = ourPicks_from;
+showOnHomepage=0; // same is HOT PICK
+editorsPick=1; // same is OUR PICKS
+category= 'all';
+subcategory='all';
+targetID = 'our_picks_events';
+break;
+
+default:
+break;
+}
+
+
+if(doTheAjaxCall > 0 ){
+	var theData= "from=" + from + "&showOnHomepage=" + showOnHomepage + "&editorsPick=" + editorsPick + "&category=" + category + "&subcategory=" + subcategory + "&startDate=" + startDate + "&endDate=" + endDate + "&seeAllCategory=" + eventType + "&loadMoreArts=" + loadMoreArts + "&loadMoreMusic=" + loadMoreMusic;
+	//alert("getNextEvents \n eventType: " +eventType + "\n from: " + from + "\n\ntheData" + theData);
+	$.ajax({
+	   type: "POST",
+	   url: "includes/ajax_getNextEvents.php",
+	   data: theData,
+	   success: function(returnMessage){
+			//alert("targetID is:"+targetID + "\nreturnMessage is:\n" + returnMessage);
+			//$(".getMoreEvents").hide();
+	  		$( returnMessage ).appendTo( '#'+targetID );
+	  		truncateTitles();
+	   }
+	 });	
+} // if execute ajax
+	return true;
+}
+/*
+function: addEventReminder
+synopsis: calls ajax function and sets a reminder in db for the logged-in user
+returns: 
+*/
+
+function addEventReminder(){
+	
+	var userID = -1;
+	var eventID = $("#reminderForm_eventID").val();
+	var objectType = 2;
+	var organizationID = "";
+	var dateTime = '2013-08-26 18:28:24';
+	var eventDate		= '';
+	var eventTitle		= $("#reminderForm_eventTitle").val();
+	var reminderEmail = $("#reminderEmail").val();
+	var reminderSMS = $("#reminderSMS").val();
+	var reminderDate = $("#reminderDate").val();
+	var reminderTime =$("#reminderTime").val();
+	var reminderMessage = encodeURI($("#reminderMessage").val() );
+
+	
+	//alert("addEventReminder : userID=" + userID + "\neventID=" + eventID  + "\norganizationID=" + organizationID + "\ndateTime=" + dateTime  + "\neventDate=" + eventDate + "\neventTitle=" + eventTitle + "\nreminderDate=" + reminderDate + "\nreminderMessage=" + reminderMessage+ "\nreminderSMS:" + reminderSMS + "\nreminderEmail=" + reminderEmail  );
+	var theData= "userID=" + userID + "&eventID=" + eventID  + "&organizationID=" + organizationID + "&dateTime=" + dateTime  + "&eventDate=" + eventDate + "&eventTitle=" + eventTitle + "&reminderDate=" + reminderDate +"&reminderTime=" + reminderTime + "&reminderMessage=" + reminderMessage + "&reminderEmail=" + reminderEmail +"&reminderSMS=" + reminderSMS;
+	
+	$.ajax({
+	   type: "POST",
+	   url: "/includes/ajax_addEventReminder.php",
+	   data: theData,
+	   success: function(returnMessage){
+	  alert('addEventReminder: ' + returnMessage);
+	   }
+	 });	
+	return false;
+
+} 
+
+function seeAllEventsToggle(x){
+	//alert(x+' '+ +' '+ +' '+);
+	$.post("/includes/seeAllEventsToggle.php", { tval: x });
+	location.reload();
+}
+</script>
+</head>
+
+<!--[if lte IE 6 ]> <body class="ie6" onLoad="loadMsg('msgbox');" id="body_home"> <![endif]-->
+<!--[if (gte IE 7)|!(IE)]><!--> <body id="body_home"> <!--<![endif]-->
+
+<div id="container">
+	
+    <div id="headerWrapper">
+	<div id="header">
+            
+        
+
+<h1 id="logo" class="imageReplace"><a href="/">Arts &amp; Entertainment IN Wilmington Delaware</a></h1>
+
+<div id="weather">
+</div><!--weather-->
+
+<ul id="myWilmingtonLink">
+    <li class="hover">
+        <a href="/myWilmington/" class="myWilmMain"><span class="icon icon-mywilmington"></span> my<span class="green">Wilmington</span> <!--(7)--></a><a href="/myWilmington/mylogin.php" class="myWilmLogInOut">Login</a>
+        
+    </li>    
+</ul><!--myWilmingtonLink-->
+
+<div id="search">
+	<form id="searchForm" name="searchForm" action="/search/" method="post">
+    <input type="hidden" name="mode" value="search">
+        <input name="searchKeywords" id="searchKeywords" type="text" class="text" value="" />
+        <button class="submit" type="submit">Search</button>
+    </form>
+</div><!--search-->        <ul id="nav">
+
+ <li class="hover"><a href="#" class="lightbox">Get IN</a>
+    	<ul>
+        <li><a href="/myWilmington">Sign Up</a></li>
+          <!-- <li><a href="/festivals/inWilmWeek">IN Wilmington Week</a></li> -->
+        		
+                 <li><a href="/contact/sign-up.php">Stay INformed</a></li>
+                  <li><a href="/get-involved/">Get INvolved</a></li>
+                                   
+		 		<li><a href="/rss-widget">RSS Widget</a></li>
+                <li><a href="/about-wilmington/" class="">City Info</a></li>
+        </ul>
+    </li>
+
+	<li class="hover"><a href="/events/?searchCategory=1">Events</a>
+    	
+        <ul>
+        
+        	<li><a href="/events/?searchCategory=1">Arts &amp; Entertainment</a>
+                <ul>
+                <li><a href="/events/?searchCategory=1">See All</a></li>
+              
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=19" >Classes &amp; Workshops</a></li>
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=8" >Comedy</a></li>
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=20" >Dance/Ballet</a></li>
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=21" >Film</a></li>
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=30" >Food &amp; Drink</a></li>
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=5" >Gallery</a></li>
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=7" >Garden</a></li>
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=31" >Holiday</a></li>
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=6" >Museum</a></li>
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=29" >Musical Theater</a></li>
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=33" >Nature </a></li>
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=10" >Other</a></li>
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=9" >Sports</a></li>
+                       
+                        <li><a href="/events/?searchCategory=1&searchsubcategory=4" >Theater</a></li>
+                                    </ul>
+            </li>
+            <li><a href="/events/?searchCategory=2">Music</a>
+            	<ul>
+                  <li><a href="/events/?searchCategory=2">See All</a></li>
+					   
+                    <li><a href="/events/?searchCategory=2&searchsubcategory=22" >Blues</a></li>
+                       
+                    <li><a href="/events/?searchCategory=2&searchsubcategory=32" >Choral</a></li>
+                       
+                    <li><a href="/events/?searchCategory=2&searchsubcategory=13" >Classical &amp; Opera</a></li>
+                       
+                    <li><a href="/events/?searchCategory=2&searchsubcategory=23" >Country</a></li>
+                       
+                    <li><a href="/events/?searchCategory=2&searchsubcategory=24" >Electronic/Dance</a></li>
+                       
+                    <li><a href="/events/?searchCategory=2&searchsubcategory=25" >Folk</a></li>
+                       
+                    <li><a href="/events/?searchCategory=2&searchsubcategory=26" >Hip-Hop/Rhythm and Blues</a></li>
+                       
+                    <li><a href="/events/?searchCategory=2&searchsubcategory=12" >Jazz</a></li>
+                       
+                    <li><a href="/events/?searchCategory=2&searchsubcategory=14" >Other</a></li>
+                       
+                    <li><a href="/events/?searchCategory=2&searchsubcategory=11" >Pop/Rock</a></li>
+                       
+                    <li><a href="/events/?searchCategory=2&searchsubcategory=27" >Reggae</a></li>
+                       
+                    <li><a href="/events/?searchCategory=2&searchsubcategory=28" >World</a></li>
+                                    </ul>
+            </li>
+            <!-- <li><a href="/festivals/">Festivals</a>
+            </li> -->
+            
+        </ul>
+    
+    </li>
+    
+    
+    <li class="hover"><a href="/places/?primaryCategory=1" >Food &amp; Drink</a>
+    	<ul>
+            <li><a href="/places/?primaryCategory=1&searchCategory=6">Bars &amp; Taverns</a></li>
+            <li><a href="/places/?primaryCategory=1&searchCategory=7">Cafe &amp; Coffee</a></li>
+            <li><a href="/places/?primaryCategory=1&searchCategory=5">Restaurant</a></li>
+        </ul>
+    </li>
+    
+    <li class="hover"><a href="/places/" >Places</a>
+    	<ul>
+            <li class='hover'><a href='/places/?primaryCategory=2'>Arts &amp; Entertainment</a>
+<ul><li class='child'><a href='/places/?searchCategory=17' >Concert Hall</a><li class='child'><a href='/places/?searchCategory=11' >Gallery</a><li class='child'><a href='/places/?searchCategory=10' >Movie Theater</a><li class='child'><a href='/places/?searchCategory=8' >Museum</a><li class='child'><a href='/places/?searchCategory=9' >Theater</a></ul></li>
+<li class='hover'><a href='/places/?primaryCategory=1'>Food &amp; Drink</a>
+<ul><li class='child'><a href='/places/?searchCategory=6' >Bars &amp; Taverns</a><li class='child'><a href='/places/?searchCategory=7' >Cafe &amp; Coffee</a><li class='child'><a href='/places/?searchCategory=5' >Restaurant</a></ul></li>
+<li class='hover'><a href='/places/?primaryCategory=4'>Outdoor</a>
+<ul><li class='child'><a href='/places/?searchCategory=15' >Block</a><li class='child'><a href='/places/?searchCategory=14' >Park</a><li class='child'><a href='/places/?searchCategory=16' >Tent</a></ul></li>
+<li class='hover'><a href='/places/?primaryCategory=3'>Other</a>
+<ul><li class='child'><a href='/places/?searchCategory=12' >Church</a><li class='child'><a href='/places/?searchCategory=18' >Library</a><li class='child'><a href='/places/?searchCategory=19' >Municipal Building</a><li class='child'><a href='/places/?searchCategory=21' >Rental Facility</a><li class='child'><a href='/places/?searchCategory=13' >School</a><li class='child'><a href='/places/?searchCategory=20' >Storefront</a></ul></li>
+        </ul>
+    </li>
+    
+    <li class="hover"><a href="/orgs/">Organizations</a>
+    	<ul>
+        	<li><a href="/orgs/">All Organizations</a></li>
+            <li><a href="/orgs/brochures.php">Brochures</a></li>
+        </ul>
+       
+    </li>       
+     
+    <li class="hover"><a href="/contests" class="">Promos / Contests</a>
+    	<ul>
+        	<!--<li><a href="javascript:" class="">Hot Deals</a></li>-->
+            <li><a href="/contests" class="">Contests</a>
+            <ul>
+            <li><a href="/myWilmington/live-contest.php" class="">Live IN Wilmington Contest</a></li>
+        </ul></li>  
+    </ul></li>
+    
+   
+    
+    <li class="hover"><a href="../help.html" class="lightbox">Help</a>
+    	<ul>
+            <!--<li><a href="../search/" class="">Advanced Search</a></li>-->
+            <li><a href="../events/suggest-event.php" class="">Suggest an Event</a></li>
+        </ul>
+    </li>
+    
+</ul><!--nav-->        
+    </div><!--header-->
+    </div><!--headerWrapper-->
+    
+    <div id="mainContent">
+    
+    	<div id="music" class="categoryBar">
+        
+        	<div class="leftBar">
+            
+            	<h1 class="ir"><a href="/events/?searchCategory=2">Music Events</a></h1>
+                <a id="music-prevLink" class="icon icon-singleArrowL prev browse left" href="javascript:" title="Previous">Previous</a>
+                <a id="music-firstLink" class="icon icon-doubleArrowL" href="javascript:" title="First">First</a>
+                <!--<a id="music-pause" class="icon icon-pause pauseLink" href="javascript:" title="Pause">Pause</a>-->
+                <a class="seeAllLink ir" href="/events/?searchCategory=2">See All Music Events</a>
+            
+            </div><!--leftBar-->
+            
+            <div itemscope itemtype="http://schema.org/MusicGroup">
+            <div class="mainBar scrollable mainBarScrollable">
+            
+<ul class="eventList items" id="music_events">
+                	
+<li class="feature music">
+    
+        <!-- feature image and link to feature -->
+    <a href="../indepth/indepth.php?a=156">	
+        <img class="mainImg" src="/media/5871/large.jpg" width="500" height="375" alt="Beta HiFi 2013! Wilmington Delaware" title="Beta HiFi 2013! ">
+            </a>
+     
+    <!-- feature title and link to feature -->
+   
+    
+    <h2><a href="../indepth/indepth.php?a=156">INtroducing the INaugural Rockabilly Rumble!</a></h2>
+    
+    <div class="eventFlagDiv">
+        <span title="Indepth Event" class="eventFlag indepth">Indepth Article</span>
+    </div><!--eventFlags-->
+    
+</li>
+<li class="musicEvent" id="event1">
+
+<!-- EVENT DATE -->
+<span class="date">
+Aug 27  thru Aug 31 </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=5309" title="View Event Details">
+
+<img itemprop="image" src="../media/5617/small.jpg" alt="Beta HiFi 2013! Wilmington Delaware" title="Beta HiFi 2013!"/>
+
+</a>
+
+<div id="loading"></div>
+
+<!-- SECONDARY CATEGORIES -->
+<h2>Blues, Folk, Pop/Rock, World</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a itemprop="url" href="/events/event.php?e=5309" title="View Event Details">Beta HiFi 2013!</a></h3>
+
+<!-- PLACE TITLE -->
+<h4 itemprop="location">World Cafe Live at the Queen</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+      	
+        <!--  add to mywilmington link -->
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5309" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+</div><!--floatleft-->
+<div class="floatright">
+      
+<!-- SHARE LINK -->
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5309" st_title="Beta HiFi 2013!"></span>
+      
+<!-- set reminder link -->
+      <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
+      
+      </div><!--floatright-->
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+    
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="musicEvent" id="event1">
+
+<!-- EVENT DATE -->
+<span class="date">
+Aug 27  thru Dec 17 </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=5707" title="View Event Details">
+
+<img itemprop="image" src="../media/6057/small.jpg" alt="Open Mic Night Wilmington Delaware" title="Open Mic Night"/>
+
+</a>
+
+<div id="loading"></div>
+
+<!-- SECONDARY CATEGORIES -->
+<h2>Blues, Country, Hip-Hop/Rhythm and Blues, Pop/Rock</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a itemprop="url" href="/events/event.php?e=5707" title="View Event Details">Open Mic Night</a></h3>
+
+<!-- PLACE TITLE -->
+<h4 itemprop="location">Oddity Bar</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+      	
+        <!--  add to mywilmington link -->
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5707" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+</div><!--floatleft-->
+<div class="floatright">
+      
+<!-- SHARE LINK -->
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5707" st_title="Open Mic Night"></span>
+      
+<!-- set reminder link -->
+      <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
+      
+      </div><!--floatright-->
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+    
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="musicEvent" id="event1">
+
+<!-- EVENT DATE -->
+<span class="date">
+Sep 06  - 6:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/DEirishfest" title="View Event Details">
+
+<img itemprop="image" src="../media/5952/small.jpg" alt="Delaware Irish Fest at World Cafe Live at the Queen Wilmington Delaware" title="Delaware Irish Fest at World Cafe Live at the Queen"/>
+
+</a>
+
+<div id="loading"></div>
+
+<!-- SECONDARY CATEGORIES -->
+<h2>Folk, World</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a itemprop="url" href="/events/DEirishfest" title="View Event Details">Delaware Irish Fest at World Cafe Live at the Queen</a></h3>
+
+<!-- PLACE TITLE -->
+<h4 itemprop="location">World Cafe Live at the Queen</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+      	
+        <!--  add to mywilmington link -->
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5606" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+</div><!--floatleft-->
+<div class="floatright">
+      
+<!-- SHARE LINK -->
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/DEirishfest" st_title="Delaware Irish Fest at World Cafe Live at the Queen"></span>
+      
+<!-- set reminder link -->
+      <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
+      
+            <!-- TICKETING LINK -->
+      <a href="http://www.ticketfly.com/purchase/event/305061?wrKey=DAA1B11CE5655EAE7F884061CFBDB8D7" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick(4,5606,2,71,'http://www.ticketfly.com/purchase/event/305061?wrKey=DAA1B11CE5655EAE7F884061CFBDB8D7');"><span class="custom reminder">Buy Tickets for Event</span></a>
+  	  </div><!--floatright-->
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+    
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="musicEvent" id="event1">
+
+<!-- EVENT DATE -->
+<span class="date">
+Sep 06  thru Sep 08 </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=5573" title="View Event Details">
+
+<img itemprop="image" src="../media/5929/small.jpg" alt="The Life and Music of Maria Callas Wilmington Delaware" title="The Life and Music of Maria Callas"/>
+
+</a>
+
+<div id="loading"></div>
+
+<!-- SECONDARY CATEGORIES -->
+<h2>Classical &amp; Opera</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a itemprop="url" href="/events/event.php?e=5573" title="View Event Details">The Life and Music of Maria Callas</a></h3>
+
+<!-- PLACE TITLE -->
+<h4 itemprop="location">OperaDelaware Studios</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+      	
+        <!--  add to mywilmington link -->
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5573" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+</div><!--floatleft-->
+<div class="floatright">
+      
+<!-- SHARE LINK -->
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5573" st_title="The Life and Music of Maria Callas"></span>
+      
+<!-- set reminder link -->
+      <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
+      
+            <!-- TICKETING LINK -->
+      <a href="https://www.vendini.com/ticket-software.html?t=tix&e=7d9007386ade22de34c9a311eeed7f69" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick(4,5573,2,73,'https://www.vendini.com/ticket-software.html?t=tix&e=7d9007386ade22de34c9a311eeed7f69');"><span class="custom reminder">Buy Tickets for Event</span></a>
+  	  </div><!--floatright-->
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+    
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="musicEvent" id="event1">
+
+<!-- EVENT DATE -->
+<span class="date">
+Sep 07  - 8:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/Musikarmageddon2013" title="View Event Details">
+
+<img itemprop="image" src="../media/5987/small.jpg" alt="Musikarmageddon 2013 Wilmington Delaware" title="Musikarmageddon 2013"/>
+
+</a>
+
+<div id="loading"></div>
+
+<!-- SECONDARY CATEGORIES -->
+<h2>Pop/Rock</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a itemprop="url" href="/events/Musikarmageddon2013" title="View Event Details">Musikarmageddon 2013</a></h3>
+
+<!-- PLACE TITLE -->
+<h4 itemprop="location">The Grand Opera House</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+      	
+        <!--  add to mywilmington link -->
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5410" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+</div><!--floatleft-->
+<div class="floatright">
+      
+<!-- SHARE LINK -->
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/Musikarmageddon2013" st_title="Musikarmageddon 2013"></span>
+      
+<!-- set reminder link -->
+      <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
+      
+      </div><!--floatright-->
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+    
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="musicEvent" id="event1">
+
+<!-- EVENT DATE -->
+<span class="date">
+Sep 07  - 8:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=5415" title="View Event Details">
+
+<img itemprop="image" src="../media/5727/small.jpg" alt="John Prine Wilmington Delaware" title="John Prine"/>
+
+</a>
+
+<div id="loading"></div>
+
+<!-- SECONDARY CATEGORIES -->
+<h2>Country, Folk</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a itemprop="url" href="/events/event.php?e=5415" title="View Event Details">John Prine</a></h3>
+
+<!-- PLACE TITLE -->
+<h4 itemprop="location">The Grand Opera House</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+      	
+        <!--  add to mywilmington link -->
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5415" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+</div><!--floatleft-->
+<div class="floatright">
+      
+<!-- SHARE LINK -->
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5415" st_title="John Prine"></span>
+      
+<!-- set reminder link -->
+      <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
+      
+            <!-- TICKETING LINK -->
+      <a href="http://www.ticketsatthegrand.org/Performance?Perf_no=2800" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick(4,5415,2,37,'http://www.ticketsatthegrand.org/Performance?Perf_no=2800');"><span class="custom reminder">Buy Tickets for Event</span></a>
+  	  </div><!--floatright-->
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+    
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="musicEvent" id="event1">
+
+<!-- EVENT DATE -->
+<span class="date">
+Sep 13  - 8:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/INtheLight" title="View Event Details">
+
+<img itemprop="image" src="../media/6019/small.jpg" alt="In The Light presents &quot;Queen at The Queen&quot; w/ Rainbow Chorale  Wilmington Delaware" title="In The Light presents &quot;Queen at The Queen&quot; w/ Rainbow Chorale "/>
+
+</a>
+
+<div id="loading"></div>
+
+<!-- SECONDARY CATEGORIES -->
+<h2>Pop/Rock</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a itemprop="url" href="/events/INtheLight" title="View Event Details">In The Light presents &quot;Queen at The Queen&quot; w/ Rainbow Chorale </a></h3>
+
+<!-- PLACE TITLE -->
+<h4 itemprop="location">World Cafe Live at the Queen</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+      	
+        <!--  add to mywilmington link -->
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5600" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+</div><!--floatleft-->
+<div class="floatright">
+      
+<!-- SHARE LINK -->
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/INtheLight" st_title="In The Light presents &quot;Queen at The Queen&quot; w/ Rainbow Chorale "></span>
+      
+<!-- set reminder link -->
+      <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
+      
+            <!-- TICKETING LINK -->
+      <a href="http://www.ticketfly.com/purchase/event/256149?__utmx=-&__utmv=-&__utmk=146494260&__utmz=1.1374671133.16.14.utmcsr%3DRCD+Email+List%7Cutmccn%3D1d081c307b-June_20_20136_20_2013%7Cutmcmd%3Demail%7Cutmctr%3D0_8604916709-1d081c307b-57101605&__utma=1.932236161" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick(4,5600,2,71,'http://www.ticketfly.com/purchase/event/256149?__utmx=-&__utmv=-&__utmk=146494260&__utmz=1.1374671133.16.14.utmcsr%3DRCD+Email+List%7Cutmccn%3D1d081c307b-June_20_20136_20_2013%7Cutmcmd%3Demail%7Cutmctr%3D0_8604916709-1d081c307b-57101605&__utma=1.932236161');"><span class="custom reminder">Buy Tickets for Event</span></a>
+  	  </div><!--floatright-->
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+    
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="musicEvent" id="event1">
+
+<!-- EVENT DATE -->
+<span class="date">
+Sep 14  - 12:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=5687" title="View Event Details">
+
+<img itemprop="image" src="../media/6052/small.jpg" alt="FoxTail Fest Wilmington Delaware" title="FoxTail Fest"/>
+
+</a>
+
+<div id="loading"></div>
+
+<!-- SECONDARY CATEGORIES -->
+<h2>Food &amp; Drink, Electronic/Dance, Hip-Hop/Rhythm and Blues, Pop/Rock</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a itemprop="url" href="/events/event.php?e=5687" title="View Event Details">FoxTail Fest</a></h3>
+
+<!-- PLACE TITLE -->
+<h4 itemprop="location">Tubman-Garrett Riverfront Park</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+      	
+        <!--  add to mywilmington link -->
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5687" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+</div><!--floatleft-->
+<div class="floatright">
+      
+<!-- SHARE LINK -->
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5687" st_title="FoxTail Fest"></span>
+      
+<!-- set reminder link -->
+      <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
+      
+            <!-- TICKETING LINK -->
+      <a href="http://foxtailfest.inticketing.com" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick(4,5687,2,-1,'http://foxtailfest.inticketing.com');"><span class="custom reminder">Buy Tickets for Event</span></a>
+  	  </div><!--floatright-->
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+    
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="musicEvent" id="event1">
+
+<!-- EVENT DATE -->
+<span class="date">
+Sep 14  - 8:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=5611" title="View Event Details">
+
+<img itemprop="image" src="../media/5957/small.jpg" alt="Rick James Tribute Show featuring Corey Osby with Universal Funk Order, Brian Fitzy, Arielle Fahrner Wilmington Delaware" title="Rick James Tribute Show featuring Corey Osby with Universal Funk Order, Brian Fitzy, Arielle Fahrner"/>
+
+</a>
+
+<div id="loading"></div>
+
+<!-- SECONDARY CATEGORIES -->
+<h2></h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a itemprop="url" href="/events/event.php?e=5611" title="View Event Details">Rick James Tribute Show featuring Corey Osby with Universal Funk Order, Brian Fitzy, Arielle Fahrner</a></h3>
+
+<!-- PLACE TITLE -->
+<h4 itemprop="location">World Cafe Live at the Queen</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+      	
+        <!--  add to mywilmington link -->
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5611" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+</div><!--floatleft-->
+<div class="floatright">
+      
+<!-- SHARE LINK -->
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5611" st_title="Rick James Tribute Show featuring Corey Osby with Universal Funk Order, Brian Fitzy, Arielle Fahrner"></span>
+      
+<!-- set reminder link -->
+      <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
+      
+            <!-- TICKETING LINK -->
+      <a href="http://www.ticketfly.com/purchase/event/299653?wrKey=DAA1B11CE5655EAE7F884061CFBDB8D7" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick(4,5611,2,71,'http://www.ticketfly.com/purchase/event/299653?wrKey=DAA1B11CE5655EAE7F884061CFBDB8D7');"><span class="custom reminder">Buy Tickets for Event</span></a>
+  	  </div><!--floatright-->
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+    
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="musicEvent" id="event1">
+
+<!-- EVENT DATE -->
+<span class="date">
+Sep 15  - 3:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=5762" title="View Event Details">
+
+<img itemprop="image" src="../media/1453/small.jpg" alt="Music Along the Bank w/ Betty &amp; The Bullet Wilmington Delaware" title="Music Along the Bank w/ Betty &amp; The Bullet"/>
+
+</a>
+
+<div id="loading"></div>
+
+<!-- SECONDARY CATEGORIES -->
+<h2>Folk</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a itemprop="url" href="/events/event.php?e=5762" title="View Event Details">Music Along the Bank w/ Betty &amp; The Bullet</a></h3>
+
+<!-- PLACE TITLE -->
+<h4 itemprop="location">Winterthur Museum, Garden &amp; Library</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+      	
+        <!--  add to mywilmington link -->
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5762" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+</div><!--floatleft-->
+<div class="floatright">
+      
+<!-- SHARE LINK -->
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5762" st_title="Music Along the Bank w/ Betty &amp; The Bullet"></span>
+      
+<!-- set reminder link -->
+      <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
+      
+      </div><!--floatright-->
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+    
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="musicEvent" id="event1">
+
+<!-- EVENT DATE -->
+<span class="date">
+Sep 17  - 6:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/robertrandolph" title="View Event Details">
+
+<img itemprop="image" src="../media/5958/small.jpg" alt="Robert Randolph and The Family Band with Lukas Nelson &amp; Promise of the Real Wilmington Delaware" title="Robert Randolph and The Family Band with Lukas Nelson &amp; Promise of the Real"/>
+
+</a>
+
+<div id="loading"></div>
+
+<!-- SECONDARY CATEGORIES -->
+<h2>Blues, Choral, Jazz, Pop/Rock</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a itemprop="url" href="/events/robertrandolph" title="View Event Details">Robert Randolph and The Family Band with Lukas Nelson &amp; Promise of the Real</a></h3>
+
+<!-- PLACE TITLE -->
+<h4 itemprop="location">World Cafe Live at the Queen</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+      	
+        <!--  add to mywilmington link -->
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5612" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+</div><!--floatleft-->
+<div class="floatright">
+      
+<!-- SHARE LINK -->
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/robertrandolph" st_title="Robert Randolph and The Family Band with Lukas Nelson &amp; Promise of the Real"></span>
+      
+<!-- set reminder link -->
+      <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
+      
+            <!-- TICKETING LINK -->
+      <a href="http://www.ticketfly.com/purchase/event/259413?__utmx=-&__utmv=-&__utmk=115170823&__utmz=1.1374693610.55.31.utmcsr%3Dqueen.worldcafelive.com%7Cutmccn%3D%28referral%29%7Cutmcmd%3Dreferral%7Cutmcct%3D%2F&__utma=1.1433878050.1366928193.1374684184.1374693610." class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick(4,5612,2,71,'http://www.ticketfly.com/purchase/event/259413?__utmx=-&__utmv=-&__utmk=115170823&__utmz=1.1374693610.55.31.utmcsr%3Dqueen.worldcafelive.com%7Cutmccn%3D%28referral%29%7Cutmcmd%3Dreferral%7Cutmcct%3D%2F&__utma=1.1433878050.1366928193.1374684184.1374693610.');"><span class="custom reminder">Buy Tickets for Event</span></a>
+  	  </div><!--floatright-->
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+    
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="musicEvent" id="event1">
+
+<!-- EVENT DATE -->
+<span class="date">
+Oct 11  thru Oct 13 </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=5690" title="View Event Details">
+
+<img itemprop="image" src="../media/6015/small.jpg" alt="L'elisir d'amore (The Elixir of Love) Wilmington Delaware" title="L'elisir d'amore (The Elixir of Love)"/>
+
+</a>
+
+<div id="loading"></div>
+
+<!-- SECONDARY CATEGORIES -->
+<h2>Classical &amp; Opera</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a itemprop="url" href="/events/event.php?e=5690" title="View Event Details">L'elisir d'amore (The Elixir of Love)</a></h3>
+
+<!-- PLACE TITLE -->
+<h4 itemprop="location">The Grand Opera House</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+      	
+        <!--  add to mywilmington link -->
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5690" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+</div><!--floatleft-->
+<div class="floatright">
+      
+<!-- SHARE LINK -->
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5690" st_title="L'elisir d'amore (The Elixir of Love)"></span>
+      
+<!-- set reminder link -->
+      <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
+      
+            <!-- TICKETING LINK -->
+      <a href="http://operade.org/SeasonsTickets/LElisir-damore-The-Elixir-of-Love.htm" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick(4,5690,2,73,'http://operade.org/SeasonsTickets/LElisir-damore-The-Elixir-of-Love.htm');"><span class="custom reminder">Buy Tickets for Event</span></a>
+  	  </div><!--floatright-->
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+    
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="seeAllEvents"  id="seeAllMusicEvents_button"><a href="events/?searchCategory=2"><span id="getMoreMusic_label">See More <br />Our Picks</span></a></li> 
+	  
+                    
+</ul><!--eventList-->
+            	
+            </div><!--mainBar-->
+            </div><!--Music Event Schema -->
+            
+            <div class="rightBar">
+            <!---
+            <a href="javascript:;"  class="tooltiptoggle" style="color:#FFFFFF; font-weight:bold;" onClick="seeAllEventsToggle('2');">
+<img class="toggleicon" src="../images/on.png"><span class"custom seeall">Toggle All Events</span>
+</a>
+ --->           
+            
+            	<a id="music-nextLink" class="icon icon-singleArrowR next browse right" href="javascript:" title="Next">Next</a>
+                
+                <a id="music-lastLink" class="icon icon-doubleArrowR" href="javascript:" title="Last">Last</a>
+                <a class="seeAllLink2 ir tooltipseeall" href="events/?searchCategory=2"><span class"custom seeall">See All Music Events</span></a>
+                
+            </div><!--rightBar-->
+        
+</div><!--music-->
+        
+        <div id="artsEntertainment" class="categoryBar">
+        
+        	<div class="leftBar">
+            
+            	<h1 class="ir"><a href="/events/?searchCategory=1">Arts and Entertainment Events</a></h1>
+                <a id="arts-prevLink" class="icon icon-singleArrowL prev browse left" href="javascript:" title="Previous">Previous</a>
+                <a id="arts-firstLink" class="icon icon-doubleArrowL" href="javascript:" title="First">First</a>
+                <!--<a id="arts-pause" class="icon icon-pause pauseLink" href="javascript:" title="Pause">Pause</a>-->
+            	<a class="seeAllLink ir" href="/events/?searchCategory=1">See All Arts and Entertainment Events</a>
+                
+            </div><!--leftBar-->
+            
+            
+            
+<div itemscope itemtype="http://schema.org/Event">            
+<div class="mainBar scrollable mainBarScrollable">
+            
+<ul class="eventList items" id="arts_events">
+                	
+<li class="feature arts">
+    
+        <!-- feature image and link to feature -->
+    <a href="../indepth/indepth.php?a=166">
+        <img itemprop="image"class="mainImg" src="/media/559/large.jpg" width="500" height="375" alt="Pint for a Pint Wilmington Delaware" title="Pint for a Pint">
+            </a>
+
+    <!-- feature title and link to feature -->
+    <h2><a href="../indepth/indepth.php?a=166">DTC Celebrates 35 Years IN Wilmington!</a></h2>
+    
+    <div class="eventFlagDiv">
+        <span title="Indepth Event" class="eventFlag indepth">Indepth Article</span>
+    </div><!--eventFlags-->
+    
+</li>
+
+<li class="artsEvent" id="event1">
+
+<!-- E V E N T     D A T E -->
+<span class="date">
+<meta itemprop="startDate" content="2013-01-01T10:00">
+<meta itemprop="endDate" content="2015-12-31T13:45"> 
+Aug 26  thru Sep 05 </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=5672" title="View Event Details">
+<img src="../media/6000/small.jpg" alt="Pint for a Pint Wilmington Delaware" title="Pint for a Pint" />
+</a>
+ <div id="loading"></div>
+<!-- SECONDARY CATEGORIES -->
+<h2>Food &amp; Drink</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a  itemprop="url" href="/events/event.php?e=5672" title="View Event Details">Pint for a Pint</a></h3>
+
+<!-- PLACE TITLE -->
+<h4>Blood Bank of Delmarva</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+  
+         <!--  add to mywilmington link -->
+		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5672"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+             
+  </div>
+  
+  <div class="floatright">
+      
+      <!-- SHARE LINK -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5672" st_title="Pint for a Pint"></span>
+   
+<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
+     
+    
+            
+  </div>
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+
+<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
+
+</div><!--eventFlags-->
+
+</li>
+				
+
+<li class="artsEvent" id="event1">
+
+<!-- E V E N T     D A T E -->
+<span class="date">
+<meta itemprop="startDate" content="2013-01-01T10:00">
+<meta itemprop="endDate" content="2015-12-31T13:45"> 
+Aug 26  thru Sep 02 </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=5532" title="View Event Details">
+<img src="../media/5878/small.jpg" alt="Water's Extreme Journey Wilmington Delaware" title="Water's Extreme Journey" />
+</a>
+ <div id="loading"></div>
+<!-- SECONDARY CATEGORIES -->
+<h2>Museum</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a  itemprop="url" href="/events/event.php?e=5532" title="View Event Details">Water's Extreme Journey</a></h3>
+
+<!-- PLACE TITLE -->
+<h4>Delaware Museum of Natural History</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+  
+         <!--  add to mywilmington link -->
+		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5532"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+             
+  </div>
+  
+  <div class="floatright">
+      
+      <!-- SHARE LINK -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5532" st_title="Water's Extreme Journey"></span>
+   
+<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
+     
+    
+            
+  </div>
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+
+<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
+
+</div><!--eventFlags-->
+
+</li>
+				
+
+<li class="artsEvent" id="event1">
+
+<!-- E V E N T     D A T E -->
+<span class="date">
+<meta itemprop="startDate" content="2013-01-01T10:00">
+<meta itemprop="endDate" content="2015-12-31T13:45"> 
+Aug 26  thru Sep 14 </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/1913menu" title="View Event Details">
+<img src="../media/719/small.jpg" alt="$19.13 Lunch Menu Wilmington Delaware" title="$19.13 Lunch Menu" />
+</a>
+ <div id="loading"></div>
+<!-- SECONDARY CATEGORIES -->
+<h2>Food &amp; Drink</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a  itemprop="url" href="/events/1913menu" title="View Event Details">$19.13 Lunch Menu</a></h3>
+
+<!-- PLACE TITLE -->
+<h4>Green Room at the Hotel du Pont</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+  
+         <!--  add to mywilmington link -->
+		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5512"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+             
+  </div>
+  
+  <div class="floatright">
+      
+      <!-- SHARE LINK -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/1913menu" st_title="$19.13 Lunch Menu"></span>
+   
+<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
+     
+    
+            
+  </div>
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+
+<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
+
+</div><!--eventFlags-->
+
+</li>
+				
+
+<li class="artsEvent" id="event1">
+
+<!-- E V E N T     D A T E -->
+<span class="date">
+<meta itemprop="startDate" content="2013-01-01T10:00">
+<meta itemprop="endDate" content="2015-12-31T13:45"> 
+Aug 26  thru Oct 28 </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/Urban-Farm-Market" title="View Event Details">
+<img src="../media/5971/small.jpg" alt="12th &amp; Brandywine Urban Farm Market Wilmington Delaware" title="12th &amp; Brandywine Urban Farm Market" />
+</a>
+ <div id="loading"></div>
+<!-- SECONDARY CATEGORIES -->
+<h2>Food &amp; Drink, Garden, Nature </h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a  itemprop="url" href="/events/Urban-Farm-Market" title="View Event Details">12th &amp; Brandywine Urban Farm Market</a></h3>
+
+<!-- PLACE TITLE -->
+<h4>12th &amp; Brandywine Urban Farm Market</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+  
+         <!--  add to mywilmington link -->
+		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink2758"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+             
+  </div>
+  
+  <div class="floatright">
+      
+      <!-- SHARE LINK -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/Urban-Farm-Market" st_title="12th &amp; Brandywine Urban Farm Market"></span>
+   
+<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
+     
+    
+            
+  </div>
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+
+<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
+
+</div><!--eventFlags-->
+
+</li>
+				
+
+<li class="artsEvent" id="event1">
+
+<!-- E V E N T     D A T E -->
+<span class="date">
+<meta itemprop="startDate" content="2013-01-01T10:00">
+<meta itemprop="endDate" content="2015-12-31T13:45"> 
+Aug 27  - 7:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=5521" title="View Event Details">
+<img src="../media/5854/small.jpg" alt="Under the Stars Rooftop Movie: Back to the Future (1985) Wilmington Delaware" title="Under the Stars Rooftop Movie: Back to the Future (1985)" />
+</a>
+ <div id="loading"></div>
+<!-- SECONDARY CATEGORIES -->
+<h2>Film</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a  itemprop="url" href="/events/event.php?e=5521" title="View Event Details">Under the Stars Rooftop Movie: Back to the Future (1985)</a></h3>
+
+<!-- PLACE TITLE -->
+<h4>ShopRite </h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+  
+         <!--  add to mywilmington link -->
+		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5521"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+             
+  </div>
+  
+  <div class="floatright">
+      
+      <!-- SHARE LINK -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5521" st_title="Under the Stars Rooftop Movie: Back to the Future (1985)"></span>
+   
+<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
+     
+    
+            
+  </div>
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+
+<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
+
+</div><!--eventFlags-->
+
+</li>
+				
+
+<li class="artsEvent" id="event1">
+
+<!-- E V E N T     D A T E -->
+<span class="date">
+<meta itemprop="startDate" content="2013-01-01T10:00">
+<meta itemprop="endDate" content="2015-12-31T13:45"> 
+Aug 28  - 5:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/bike-and-hike" title="View Event Details">
+<img src="../media/5796/small.jpg" alt="Bike and Hike Wilmington Delaware" title="Bike and Hike" />
+</a>
+ <div id="loading"></div>
+<!-- SECONDARY CATEGORIES -->
+<h2>Food &amp; Drink, Garden, Museum, Nature </h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a  itemprop="url" href="/events/bike-and-hike" title="View Event Details">Bike and Hike</a></h3>
+
+<!-- PLACE TITLE -->
+<h4>Hagley Museum and Library</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+  
+         <!--  add to mywilmington link -->
+		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5490"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+             
+  </div>
+  
+  <div class="floatright">
+      
+      <!-- SHARE LINK -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/bike-and-hike" st_title="Bike and Hike"></span>
+   
+<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
+     
+    
+            
+  </div>
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+
+<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
+
+</div><!--eventFlags-->
+
+</li>
+				
+
+<li class="artsEvent" id="event1">
+
+<!-- E V E N T     D A T E -->
+<span class="date">
+<meta itemprop="startDate" content="2013-01-01T10:00">
+<meta itemprop="endDate" content="2015-12-31T13:45"> 
+Aug 29  - 7:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/morrissey25live" title="View Event Details">
+<img src="../media/5943/small.jpg" alt="Screening of Morrissey 25: Live Wilmington Delaware" title="Screening of Morrissey 25: Live" />
+</a>
+ <div id="loading"></div>
+<!-- SECONDARY CATEGORIES -->
+<h2>Film</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a  itemprop="url" href="/events/morrissey25live" title="View Event Details">Screening of Morrissey 25: Live</a></h3>
+
+<!-- PLACE TITLE -->
+<h4>World Cafe Live at the Queen</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+  
+         <!--  add to mywilmington link -->
+		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5599"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+             
+  </div>
+  
+  <div class="floatright">
+      
+      <!-- SHARE LINK -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/morrissey25live" st_title="Screening of Morrissey 25: Live"></span>
+   
+<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
+     
+    
+            <!-- TICKETING LINK -->
+      <a href="http://www.ticketfly.com/purchase/event/321067?__utmx=-&__utmv=-&__utmk=71831955&__utmz=1.1374593711.51.29.utmcsr%3Dqueen.worldcafelive.com%7Cutmccn%3D%28referral%29%7Cutmcmd%3Dreferral%7Cutmcct%3D%2F&__utma=1.1433878050.1366928193.1374602871.1374609784.5" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick('http://queentickets.worldcafelive.com/event/321067-morrissey-25-live-wilmington/',4,'http://www.ticketfly.com/purchase/event/321067?__utmx=-&__utmv=-&__utmk=71831955&__utmz=1.1374593711.51.29.utmcsr%3Dqueen.worldcafelive.com%7Cutmccn%3D%28referral%29%7Cutmcmd%3Dreferral%7Cutmcct%3D%2F&__utma=1.1433878050.1366928193.1374602871.1374609784.5'); return true;"><span class="custom reminder">Buy Tickets for Event</span></a>
+  	        
+  </div>
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+
+<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
+
+</div><!--eventFlags-->
+
+</li>
+				
+
+<li class="artsEvent" id="event1">
+
+<!-- E V E N T     D A T E -->
+<span class="date">
+<meta itemprop="startDate" content="2013-01-01T10:00">
+<meta itemprop="endDate" content="2015-12-31T13:45"> 
+Aug 30  - 5:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/FridaysAfter5" title="View Event Details">
+<img src="../media/6013/small.jpg" alt="$5 Fridays After 5pm Wilmington Delaware" title="$5 Fridays After 5pm" />
+</a>
+ <div id="loading"></div>
+<!-- SECONDARY CATEGORIES -->
+<h2>Gallery, Museum, Sports</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a  itemprop="url" href="/events/FridaysAfter5" title="View Event Details">$5 Fridays After 5pm</a></h3>
+
+<!-- PLACE TITLE -->
+<h4>Delaware Children's Museum</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+  
+         <!--  add to mywilmington link -->
+		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5680"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+             
+  </div>
+  
+  <div class="floatright">
+      
+      <!-- SHARE LINK -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/FridaysAfter5" st_title="$5 Fridays After 5pm"></span>
+   
+<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
+     
+    
+            
+  </div>
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+
+<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
+
+</div><!--eventFlags-->
+
+</li>
+				
+
+<li class="artsEvent" id="event1">
+
+<!-- E V E N T     D A T E -->
+<span class="date">
+<meta itemprop="startDate" content="2013-01-01T10:00">
+<meta itemprop="endDate" content="2015-12-31T13:45"> 
+Aug 30  thru Dec 20 </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=4167" title="View Event Details">
+<img src="../media/2601/small.jpg" alt="Clay Date Wilmington Delaware" title="Clay Date" />
+</a>
+ <div id="loading"></div>
+<!-- SECONDARY CATEGORIES -->
+<h2>Classes &amp; Workshops, Food &amp; Drink, Gallery, Museum</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a  itemprop="url" href="/events/event.php?e=4167" title="View Event Details">Clay Date</a></h3>
+
+<!-- PLACE TITLE -->
+<h4>Delaware Art Museum</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+  
+         <!--  add to mywilmington link -->
+		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink4167"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+             
+  </div>
+  
+  <div class="floatright">
+      
+      <!-- SHARE LINK -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=4167" st_title="Clay Date"></span>
+   
+<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
+     
+    
+            <!-- TICKETING LINK -->
+      <a href="http://www.delart.org/prog_events/adult_prog/sac_claydate.html" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick('http://www.delart.org/prog_events/adult_prog/sac_claydate.html',4,'http://www.delart.org/prog_events/adult_prog/sac_claydate.html'); return true;"><span class="custom reminder">Buy Tickets for Event</span></a>
+  	        
+  </div>
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+
+<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
+
+</div><!--eventFlags-->
+
+</li>
+				
+
+<li class="artsEvent" id="event1">
+
+<!-- E V E N T     D A T E -->
+<span class="date">
+<meta itemprop="startDate" content="2013-01-01T10:00">
+<meta itemprop="endDate" content="2015-12-31T13:45"> 
+Sep 01  - 12:30 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/Steamin-Days" title="View Event Details">
+<img src="../media/867/small.jpg" alt="Steamin' Days Wilmington Delaware" title="Steamin' Days" />
+</a>
+ <div id="loading"></div>
+<!-- SECONDARY CATEGORIES -->
+<h2>Museum</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a  itemprop="url" href="/events/Steamin-Days" title="View Event Details">Steamin' Days</a></h3>
+
+<!-- PLACE TITLE -->
+<h4>Marshall Steam Museum</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+  
+         <!--  add to mywilmington link -->
+		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink4294"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+             
+  </div>
+  
+  <div class="floatright">
+      
+      <!-- SHARE LINK -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/Steamin-Days" st_title="Steamin' Days"></span>
+   
+<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
+     
+    
+            
+  </div>
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+
+<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
+
+</div><!--eventFlags-->
+
+</li>
+				
+
+<li class="artsEvent" id="event1">
+
+<!-- E V E N T     D A T E -->
+<span class="date">
+<meta itemprop="startDate" content="2013-01-01T10:00">
+<meta itemprop="endDate" content="2015-12-31T13:45"> 
+Sep 04  thru Sep 22 </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=5571" title="View Event Details">
+<img src="../media/5915/small.jpg" alt="Any Given Monday Wilmington Delaware" title="Any Given Monday" />
+</a>
+ <div id="loading"></div>
+<!-- SECONDARY CATEGORIES -->
+<h2>Comedy, Theater</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a  itemprop="url" href="/events/event.php?e=5571" title="View Event Details">Any Given Monday</a></h3>
+
+<!-- PLACE TITLE -->
+<h4>Delaware Theatre Company</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+  
+         <!--  add to mywilmington link -->
+		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5571"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+             
+  </div>
+  
+  <div class="floatright">
+      
+      <!-- SHARE LINK -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5571" st_title="Any Given Monday"></span>
+   
+<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
+     
+    
+            <!-- TICKETING LINK -->
+      <a href="http://delawaretheatre.org/plays/any-given-monday" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick('http://delawaretheatre.org/plays/any-given-monday',4,'http://delawaretheatre.org/plays/any-given-monday'); return true;"><span class="custom reminder">Buy Tickets for Event</span></a>
+  	        
+  </div>
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+
+<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
+
+</div><!--eventFlags-->
+
+</li>
+				
+
+<li class="artsEvent" id="event1">
+
+<!-- E V E N T     D A T E -->
+<span class="date">
+<meta itemprop="startDate" content="2013-01-01T10:00">
+<meta itemprop="endDate" content="2015-12-31T13:45"> 
+Sep 06  - 12:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=4180" title="View Event Details">
+<img src="../media/2959/small.jpg" alt="Art is Tasty Wilmington Delaware" title="Art is Tasty" />
+</a>
+ <div id="loading"></div>
+<!-- SECONDARY CATEGORIES -->
+<h2>Food &amp; Drink, Gallery, Museum</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a  itemprop="url" href="/events/event.php?e=4180" title="View Event Details">Art is Tasty</a></h3>
+
+<!-- PLACE TITLE -->
+<h4>Delaware Art Museum</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+  
+         <!--  add to mywilmington link -->
+		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink4180"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+             
+  </div>
+  
+  <div class="floatright">
+      
+      <!-- SHARE LINK -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=4180" st_title="Art is Tasty"></span>
+   
+<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
+     
+    
+            <!-- TICKETING LINK -->
+      <a href="http://www.delart.org/prog_events/adult_prog/art_is_tasty.html" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick('http://www.delart.org/prog_events/adult_prog/art_is_tasty.html',4,'http://www.delart.org/prog_events/adult_prog/art_is_tasty.html'); return true;"><span class="custom reminder">Buy Tickets for Event</span></a>
+  	        
+  </div>
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+
+<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
+
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="getMoreEvents"  id="getMoreArtsEvents_button"><a href="javascript:" onClick="getNextEvents( 1)"><span id="getMoreArtsEvents_label">See More<br />IN Picks</span></a></li> 
+	  
+	  
+                 
+                </ul>
+          
+          </div><!--mainBar-->
+          </div><!--Event Schema -->  	  
+            <div class="rightBar">
+         <!---   
+            <a href="javascript:;" class="tooltiptoggle" style="color:#FFFFFF; font-weight:bold;" onClick="seeAllEventsToggle('1');">
+<img class="toggleicon" src="../images/on.png"><span class"custom seeall">Toggle All Events</span>
+</a>
+    --->        
+            	<a id="arts-nextLink" class="icon icon-singleArrowR next browse right" href="javascript:" title="Next">Next</a>
+                
+                <a id="arts-lastLink" class="icon icon-doubleArrowR" href="javascript:" title="Last">Last</a>
+                <a class="seeAllLink2 ir tooltipseeall" href="events/?searchCategory=1"><span class"custom seeall">See All Arts &amp; Entertainment Events</span></a>
+                
+            </div><!--rightBar-->
+        
+        	
+        </div><!--artsEntertainment-->
+        
+        <div id="foodDrink" class="categoryBar">
+        
+        	<div class="leftBar">
+            
+                <h1 class="ir"><a href="/places/?primaryCategory=1" >Food and Drink Events</a></h1>
+                <a id="food-prevLink" class="icon icon-singleArrowL prev browse left" href="javascript:" title="Previous">Previous</a>
+                <a id="food-firstLink" class="icon icon-doubleArrowL" href="javascript:" title="First">First</a>
+                <!--<a id="food-pause" class="icon icon-pause pauseLink" href="javascript:" title="Pause">Pause</a>-->
+				<a class="seeAllLink ir" href="/places/?primaryCategory=1">See All Food and Drink Events</a>
+                            
+            </div><!--leftBar-->
+            
+            
+            
+            <div itemscope itemtype="http://schema.org/LocalBusiness">
+            <div class="mainBar scrollable mainBarScrollable">
+            
+<ul class="eventList items" id="food_events">
+                
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/place.php?p=257" title="View Place Details">
+<img itemprop="image" src="../media/2196/small.jpg" width="160" height="120" alt="Ubon Thai Cuisine Wilmington Delaware" title="Ubon Thai Cuisine">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Bars &amp; Taverns, Restaurant</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/place.php?p=257" title="View Event Details">Ubon Thai Cuisine</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">936 Justison Street</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=257" st_title="Ubon Thai Cuisine"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/place.php?p=106" title="View Place Details">
+<img itemprop="image" src="../media/389/small.jpg" width="160" height="120" alt="LOMA Coffee Wilmington Delaware" title="LOMA Coffee">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Cafe &amp; Coffee</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/place.php?p=106" title="View Event Details">LOMA Coffee</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">239 N Market St</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=106" st_title="LOMA Coffee"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/place.php?p=107" title="View Place Details">
+<img itemprop="image" src="../media/412/small.jpg" width="160" height="120" alt="Luigi Vitrone's Pastabilities Restaurant Wilmington Delaware" title="Luigi Vitrone's Pastabilities Restaurant">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Restaurant</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/place.php?p=107" title="View Event Details">Luigi Vitrone's Pastabilities Restaurant</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">415 N. Lincoln Street</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=107" st_title="Luigi Vitrone's Pastabilities Restaurant"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/place.php?p=39" title="View Place Details">
+<img itemprop="image" src="../media/1443/small.jpg" width="160" height="120" alt="Cafe Mezzanotte Wilmington Delaware" title="Cafe Mezzanotte">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Bars &amp; Taverns, Cafe &amp; Coffee, Restaurant</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/place.php?p=39" title="View Event Details">Cafe Mezzanotte</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">1007 N. Orange St.</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=39" st_title="Cafe Mezzanotte"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/place.php?p=304" title="View Place Details">
+<img itemprop="image" src="../media/2600/small.jpg" width="160" height="120" alt="DiMeo's Wilmington Delaware" title="DiMeo's">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Restaurant</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/place.php?p=304" title="View Event Details">DiMeo's</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">831 N. Market Street</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=304" st_title="DiMeo's"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/place.php?p=210" title="View Place Details">
+<img itemprop="image" src="../media/1633/small.jpg" width="160" height="120" alt="Zaikka Indian Grill Wilmington Delaware" title="Zaikka Indian Grill">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Restaurant</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/place.php?p=210" title="View Event Details">Zaikka Indian Grill</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">209 N. Market St.</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=210" st_title="Zaikka Indian Grill"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/place.php?p=50" title="View Place Details">
+<img itemprop="image" src="../media/419/small.jpg" width="160" height="120" alt="Qdoba - Wilmington Wilmington Delaware" title="Qdoba - Wilmington">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Restaurant</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/place.php?p=50" title="View Event Details">Qdoba - Wilmington</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">837 N Market Street</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=50" st_title="Qdoba - Wilmington"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/columbus-inn" title="View Place Details">
+<img itemprop="image" src="../media/1370/small.jpg" width="160" height="120" alt="Columbus Inn Wilmington Delaware" title="Columbus Inn">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Bars &amp; Taverns, Restaurant</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/columbus-inn" title="View Event Details">Columbus Inn</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">2216 Pennsylvania Avenue</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/columbus-inn" st_title="Columbus Inn"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/place.php?p=33" title="View Place Details">
+<img itemprop="image" src="../media/379/small.jpg" width="160" height="120" alt="Chelsea Tavern Wilmington Delaware" title="Chelsea Tavern">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Bars &amp; Taverns, Restaurant</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/place.php?p=33" title="View Event Details">Chelsea Tavern</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">821 North Market Street</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=33" st_title="Chelsea Tavern"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/Mollys-ice-cream" title="View Place Details">
+<img itemprop="image" src="../media/3547/small.jpg" width="160" height="120" alt="Molly's Old Fashioned Ice Cream and Deli Wilmington Delaware" title="Molly's Old Fashioned Ice Cream and Deli">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Cafe &amp; Coffee, Restaurant</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/Mollys-ice-cream" title="View Event Details">Molly's Old Fashioned Ice Cream and Deli</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">928 Justison Street</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/Mollys-ice-cream" st_title="Molly's Old Fashioned Ice Cream and Deli"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/place.php?p=52" title="View Place Details">
+<img itemprop="image" src="../media/352/small.jpg" width="160" height="120" alt="Nomad Bar Wilmington Delaware" title="Nomad Bar">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Bars &amp; Taverns</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/place.php?p=52" title="View Event Details">Nomad Bar</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">905 N. Orange Street</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=52" st_title="Nomad Bar"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/place.php?p=43" title="View Place Details">
+<img itemprop="image" src="../media/386/small.jpg" width="160" height="120" alt="Extreme Pizza Wilmington Delaware" title="Extreme Pizza">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Restaurant</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/place.php?p=43" title="View Event Details">Extreme Pizza</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">201 N Market Street</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=43" st_title="Extreme Pizza"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+	
+                    
+                    <!--<li class="suggest">
+                    	<a href="#"><span class="icon icon-lightbulb"></span> Suggest a Food &amp; Drink Event</a>
+                    </li>-->
+                    
+                </ul>
+            
+            </div><!--mainBar-->
+            </div><!--Place Schema -->	
+            
+            
+            <div class="rightBar">
+            
+            	<a id="food-nextLink" class="icon icon-singleArrowR next browse right" href="javascript:" title="Next">Next</a>
+                
+                <a id="food-lastLink" class="icon icon-doubleArrowR" href="javascript:" title="Last">Last</a>
+                <a class="seeAllLink2 ir tooltipseeall" href="/places/?primaryCategory=1"><span class"custom seeall">See All Food Events</span></a>
+                
+            </div><!--rightBar-->
+            
+        </div><!--foodDrink-->      
+    
+    </div><!--mainContent-->
+    
+    <div id="footer">
+    
+    <!--
+$rssLinkString = "events_rss.php?cat=$category&subcat=$subcategory";
+"/rss/ echo $rssLinkString"
+-->
+
+<div id="footerWrap">
+
+<ul id="socialMediaIcons">
+<li id="facebook"><a href="http://www.facebook.com/IN.Wilmington" target="_blank">Facebook</a></li>
+<li id="twitter"><a href="http://twitter.com/INWilmingtonDE" target="_blank">Twitter</a></li>
+<li id="rss"><a href="http://feeds.feedburner.com/inwilmingtonde" target="_blank">RSS Feed</a></li>
+</ul>
+
+<a id="inButton" class="tooltip" href="/contact/sign-up.php">Stay Informed<!-- <span class="custom info">Here is some custom text that will show up when you hover </span>--></a>
+
+<ul id="footerNav">
+	<li><a href="../../">Home</a>
+    <li><a href="../../about-wilmington/">City <span class="white">In</span>fo</a></li>
+    <li><a href="../../get-involved/">Get <span class="white">In</span>volved</a></li>
+    <li><a href="../../contact/contact-us.php">Contact</a></li>
+    <li><a href="/get-involved/using-the-in-campaign.php">Using The <span class="white">In</span> Campaign</a></li>
+</ul><!-- footerNav -->
+
+<div id="copyright">
+<p>&copy; <script type="text/javascript">new Date();var d = new Date();document.write(d.getFullYear());</script> InWilmingtonDE.com / Site by <a href="http://mobiusnm.com" target="_blank">Mobius New Media</a></p>
+</div><!-- copyright -->
+
+<div class="hidden">
+<!-- <div id="signup">
+  <div id="signupfooter" style="width:350px;">
+   </div>
+   <!-- <p>Just pop your email address in the box below and we'll keep you in the loop about all the arts and entertainment happenings in Wilmington, Delaware!</p>
+    
+    <form id="signupForm" onSubmit="return verifyRequired12743();" name="icpsignup" action="http://app.icontact.com/icp/signup.php" accept-charset="UTF-8" method="post">
+        
+        <input type="hidden" value="http://www.inwilmingtonde.com/icontact.php" name="redirect">
+        <input type="hidden" value="http://www.icontact.com/www/signup/error.html" name="errorredirect">
+        
+        <label class="required" for="fields_email">Your Email Address</label>
+        <input type="text" class="text" id="fields_email" name="fields_email" />
+        <p class="note small">(don't worry, we won't spam or sell your email address)</p>
+        <input type="hidden" value="182431" name="listid">
+        <input type="hidden" value="2TWJ" name="specialid:182431">
+        <input type="hidden" value="342264" name="clientid">
+        <input type="hidden" value="12813" name="formid">
+        <input type="hidden" value="1" name="reallistid">
+        <input type="hidden" value="0" name="doubleopt">
+        
+        <input type="submit" class="submit" value="Sign Up" />
+                
+    </form> 
+  
+</div> -->
+</div>
+
+
+
+</div><!-- footerWrap -->
+
+<div id="maps">
+<h1 class="ir"><a href="../../about-wilmington/">Maps</a></h1>
+<ul>
+	<li><a href="http://visitwilmingtonde.com/" target="_blank">Visitor Information</a></li>
+    <li><a href="http://www.downtownvisions.org/" target="_blank">Downtown Shopping</a></li>
+    <li><a href="http://www.ci.wilmington.de.us/" target="_blank">City Website</a></li>
+    <li><a href="/about-wilmington/">Other City Links</a></li>
+</ul>
+</div><!-- maps -->	
+    
+    </div><!--footer-->
+
+</div><!--container-->
+
+<!-- IE 6 Upgrade Box for homepage only! -->
+<!--[if lte IE 6]> <div id="IEsix" class="msgbox">  <h2>Warning!</h2>  <p><strong>You are using an obselete browser.</strong> This site was not designed for Internet Explorer 6 or earlier versions. To experience this website to it's fullest potential, please download the latest version of <a href="http://www.Microsoft.com/Windows" target="_blank">Internet Explorer</a>, <a href="http://www.mozilla.com/firefox/" target="_blank">Mozilla Firefox</a>, or <a href="http://www.google.com/chrome" target="_blank">Google Chrome</a>. Or <a href="javascript:;" class="close" onclick="closeBox('IEsix'); return false;">click here</a> to close this window and continue onto the site.</p> </div> <![endif]--> 
+<script language="javascript" type="text/javascript">
+
+var currentCategory = 2;
+
+function setSubcategory(theSubcategory){
+//alert("reload page with subcategory selection: "+theSubcategory);
+$("#subcategory").val(theSubcategory);
+$("#form_reload").submit();
+return true;
+}
+function setCategory(theCategory){
+//alert("reload page with category selection: "+theCategory);
+$("#searchCategory").val(theCategory);
+$("#form_goToEventsPage").submit();
+return true;
+}
+function setFoodAndDrinkCategory(theCategory){
+$("#searchPlaceCategory").val(theCategory);
+$("#form_goToPlacesPage").submit();
+
+}
+function showOnHomepage(){
+$("#showOnHomepage").val(1);
+$("#editorsPick").val('all');
+$("#form_filterThisPage").submit();
+return true;
+}
+function editorsPick(){
+$("#showOnHomepage").val('all');
+$("#editorsPick").val(1);
+$("#form_filterThisPage").submit();
+return true;
+}
+function showAll(){
+$("#showOnHomepage").val('all');
+$("#editorsPick").val('all');
+$("#form_filterThisPage").submit();
+return true;
+}
+</script>
+
+<form id="form_goToEventsPage" action="/events/" method="post">
+<input type="hidden" name="searchCategory" id="searchCategory"value="2" />
+</form>
+<form id="form_goToPlacesPage" action="/places/" method="post">
+<input type="hidden" name="searchCategory" id="searchPlaceCategory"value="2" />
+</form>
+<form id="form_filterThisPage" action="/index.php" method="post">
+<input type="hidden" name="showOnHomepage" id="showOnHomepage" value="1" />
+<input type="hidden" name="editorsPick" id="editorsPick"value="1" />
+</form>
+
+<!-- -----------------------------
+SET REMINDER DIALOG BOX
+----------------------------- -->
+<div id="setReminderDiv" class="dialogBox" title="Set Event Reminder">
+
+<form class="basicForm" id="setEventReminderForm" name="setEventReminderForm" action="" onsubmit="return addEventReminder();">
+<input type="hidden" name="eventID" id="reminderForm_eventID" />
+<input type="hidden" name="eventTitle" id="reminderForm_eventTitle" />
+	<div>
+    	<label>Send Me A Reminder About</label><br />
+
+
+        <h2 id="reminderForm_eventTitleDisplay">Art is Tasty</h2>
+        <h3><span>at</span> <span id="reminderForm_placeTitle"></span></h3>
+        <h4><span id="reminderForm_nextDate"></span></h4>
+    </div>
+    
+     
+    <div >
+    	<label class="required" for="reminderEmail">To This Email Address</label>
+        <input name="reminderEmail" id="reminderEmail" class="text" type="text" value="" />
+   </div>
+    
+    
+	<div class="twoCols">
+    	<label class="required" for="reminderDate">On This Date</label>
+        <input name="reminderDate" id="reminderDate" class="text datePicker" type="text" />
+   </div>
+   <div class="twoCols">
+        <label class="required" for="reminderDate">At This Time</label>
+        <input name="reminderTime" id="reminderTime" class="text reminderTimePicker" type="text" />
+    </div>
+   
+    
+    <div>
+    	<label for="reminderMessage">With This Message (Optional)</label>
+        <textarea name="reminderMessage" id="reminderMessage" class="textarea" type="textarea"></textarea>
+    </div>
+    
+  	
+
+</form>
+
+</div><!--setReminderDiv-->
+
+
+<!--<div id="maintenancemode"><a href="javascript:" id="maintenance-close" class="icon icon-close-on" title="Close this Message">Close this Message</a> <p>inWilmingtonDe.com is currently undergoing some work under the hood. While the site is still usable, you may run into some quirks along the way. But no need to worry, as we are aware of these issues and working on them!</p></div>-->
+
+<script src="../../js/plugins.js"></script><!--all jquery plugins-->
+<script src="../../js/script.min.js"></script><!--global site scripts-->
+
+<!--<script type="text/javascript">var switchTo5x=true;</script>--><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><!--<script type="text/javascript">stLight.options({publisher:'b906a4d8-3e11-450e-926f-b4e404ab2d34'});</script>-->
+
+<script type="text/javascript">stLight.options({publisher:'acd4f325-bd3c-4866-a1c3-4523dce2b45e',tracking:'google'});</script><!--sharethis-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20876573-15']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<a style="display:none;" href="http://www.inwilmingtonde.com/blackhole/" rel="nofollow"></a>
+
+
+
+</body>
+</html>
