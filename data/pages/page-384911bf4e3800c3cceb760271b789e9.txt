@@ -1,0 +1,1831 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head >
+    
+
+
+<script language="JavaScript">
+    // <!-- OPTIMOST PAGE CODE V2.7 - Copyright 2002-2009 Interwoven, Inc. -->
+    var optimost={A:{},C:{},D:document,L:document.location,M:[],Q:{},T:new Date(),U:'',V:'2.7',Enabled:true,ST:"script",SA:
+    {"type":"text/javascript"},I:function(){var s=this.L.search;var c=this.D.cookie;if(s.length>3){for(var a=s.substring(1)
+    .split("&"),i=0,l=a.length;i<l;i++){var p=a[i].indexOf("=");if(p>0)this.Q[a[i].substring(0,p)]=unescape(a[i].substring(
+    p+1));}}if(c.length>3){for(var a=c.split(";"),i=0,b=a.length;i<b;i++){var v=a[i].split("=");while(v[0].substring(0,
+    1)==" ")v[0]=v[0].substring(1,v[0].length);if(v.length==2)this.C[v[0]]=unescape(v[1]);}}},B:function(){var n;this.A={
+    };var _o=this;this.A.D_ts=Math.round(_o.T.getTime()/1000);this.A.D_tzo=_o.T.getTimezoneOffset();this.A.D_loc=_o.L.protocol+
+    "//"+_o.L.hostname+_o.L.pathname;this.A.D_ckl=_o.D.cookie.length;this.A.D_ref=_o.D.referrer;if(typeof optrial=="object")
+    for(n in optrial)this.A[n]=optrial[n];for(n in this.Q)this.A[n]=this.Q[n];for(n in this.C)if(n.substring(0,2)=="op")this.A[n]=
+    this.C[n];},S:function(){var q='';for(var n in this.A)if(this.A[n]!=null && this.A[n]!="")q+=(q.length>0?"&":(this.U.indexOf(
+    "?")>0?"&":"?"))+n+"="+escape(this.A[n]);return this.U+q;},SC:function(n,v,e,d){var de=new Date();de.setTime(
+    de.getTime()+e * 1000);this.D.cookie=n+"="+escape(v)+((e==null)?"":("; expires="+de.toGMTString()))+"; path=/"+((d==
+    null)?"":(";domain="+d));},SLD:function(){var sld=this.D.domain;var dp=sld.split(".");var l=dp.length;if(l<2)sld=null;
+    else if(!isNaN(dp[l-1])&&!isNaN(dp[l-2]))sld=null;else sld="."+dp[l-2]+"."+dp[l-1];return sld;},R:function(r,c,d,
+    e){if(this.Enabled){var b=true;if(r<1000){b=(Math.floor(Math.random()*1000)<r);if(c!=null){if(this.C[c]!=null)b=(this.C[c]!=
+    "mvt-no");else this.SC(c,b?"mvt-yes":"mvt-no",e,d);}}if(b){var t='<'+this.ST+' src="'+this.S()+'"';for(n in this.SA)
+    t+=(" "+n+'="'+this.SA[n]+'"');t+='><\/'+this.ST+'>';this.D.write(t);}}},addModule:function(s,f){this.M[s]=f;
+    },displayModule:function(s){if(typeof this.M[s]=="function")this.M[s]();},hasModules:function(){return count(this.M)>0;
+    }};optimost.I();
+    // <!-- END OPTIMOST PAGE CODE -->
+    // <!-- OPTIMOST EXPERIMENT SELECTOR CODE -->
+    var opProto = (("https:" == document.location.protocol) ? "https://by.essl." : "http://es.");
+    var opLiveURL = opProto + 'optimost.com/es/265/c/12/u/live.js';
+    var opQaURL = opProto + 'optimost.com/es/265/c/12/u/staging.js';
+    var opContentURL = opLiveURL;
+    var opThisURL = document.location.toString();
+    opThisURL = opThisURL.split('?')[0];
+    if (opThisURL) {
+    	if (typeof(optimost)=='object') {
+		    if (optimost.Q['opsel'] && optimost.Q['opsel']=='opsel') opContentURL = opQaURL;
+	    }
+    }
+    document.write('<' + 'script type="text/javascript" src="' + opContentURL + '"></' + 'script>\n');
+    // <!-- END OPTIMOST EXPERIMENT SELECTOR CODE -->
+
+</script>
+    
+<title>Honda Certified Used Cars - Search Dealer Inventory</title>
+
+<meta name="keywords" content="honda, certified, used, cars, preowned, pre-owned, car, accord, civic, odyssey, dealer, dealers, inventory" />
+
+<meta name="description" content="Search for available inventory of Honda Certified Used Cars in your area at the official Honda autos Web site.  Locate dealers near you." />
+<meta name="robots" content="NOODP" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="false" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+
+<meta property="og:image" content="http://automobiles.honda.com/images/_global/icons/honda-facebook-icon.png" />
+
+
+    <script language="javascript" type="text/javascript">
+
+     function onChange_YrBegin() {
+		var start = 0;
+        var optYrStartIndex = document.getElementById('selYearStart').selectedIndex;
+        var optYrEndIndex = document.getElementById('selYearEnd').selectedIndex;
+        var optYrStart = document.getElementById('selYearStart');
+        var optYrEnd = document.getElementById('selYearEnd');
+        
+		var iBegin = $('#selYearStart').val();
+        var iEnd = $('#selYearEnd').val();
+        
+        if ( iBegin == 'All' ) {
+		optYrEnd.options.length = 0;
+		addOption(optYrEnd , 'Any','All' , true);
+		optYrEnd.selectedIndex = 0;
+			  return false;
+        }
+		else {
+		if (optYrEnd.options.length <= 1) {
+			  optYrEnd.options.length = 0;
+			  
+			  addOption(optYrEnd , '2008','2008' , false);
+			  
+			  addOption(optYrEnd , '2009','2009' , false);
+			  
+			  addOption(optYrEnd , '2010','2010' , false);
+			  
+			  addOption(optYrEnd , '2011','2011' , false);
+			  
+			  addOption(optYrEnd , '2012','2012' , false);
+			  
+			  addOption(optYrEnd , '2013','2013' , false);
+			  
+			  addOption(optYrEnd , '2014','2014' , false);
+			  			  
+			optYrEnd.selectedIndex = optYrStartIndex -1; return 0;
+			}
+		}		
+		
+		iBegin = $('#selYearStart').val();
+        iEnd = $('#selYearEnd').val();
+        var tempindex = '';		
+        if( iBegin > iEnd ) {
+          tempindex = optYrStartIndex
+          optYrStart.selectedIndex = optYrEndIndex;
+          optYrEnd.selectedIndex = tempindex;     
+        }
+      }
+      
+      function onChange_YrEnd() {
+        var tempindex = '';
+        var optYrStartIndex = document.getElementById('selYearStart').selectedIndex;
+        var optYrEndIndex = document.getElementById('selYearEnd').selectedIndex;
+        var optYrStart = document.getElementById('selYearStart');
+        var optYrEnd = document.getElementById('selYearEnd');      
+		iBegin = $('#selYearStart').val();
+        iEnd = $('#selYearEnd').val();
+        
+        if( iBegin > iEnd ) {
+          tempindex = optYrStartIndex
+          optYrStart.selectedIndex = optYrEndIndex;
+          optYrEnd.selectedIndex = tempindex;
+        }
+      }    
+    
+    
+    
+    
+    </script>
+
+    <script language="JavaScript" src="/js/main.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/js/tools/shopping/functions.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/js/validation.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2"></script>
+    <script language="javascript" type="text/javascript" src="/handlers/combine-files.aspx?type=js&files=/js/jquery/jquery-1.4.2.min.js|/js/jquery/jquery-queryString.js|/js/jquery/jquery.tools.tooltip.js|/js/jquery/jquery.tools.expose.js|/js/tools/current-offers/current-offers-hcuc.js|/js/geolocation.js" ></script>
+    <script language="javascript" type="text/javascript" src="/js/certified-used/inventory-search-results.js"></script>
+    <link rel="stylesheet" href="/css/main.css" type="text/css" />
+    <link rel="stylesheet" href="/css/certified.css" type="text/css" />
+    <link rel="stylesheet" href="/css/certified-used/inventory-search-results.css" type="text/css" />
+    <style type="text/css" media="print">
+        #LeftShadow { display:none; }
+        #RightShadow { display: none; }
+        #HeaderContainer { display:none; }
+    </style>
+    
+    <style type="text/css">
+    .clr {clear:both;} 
+    .offericon {vertical-align:middle; height:17px;}
+    
+    #Offers {display:none;position:absolute; top:50%; left:50%; width:540px; height:auto; overflow:auto; background-color:#f2f2f2; margin-left:-290px; margin-top:-220px;z-index:990;}        
+    #OfferTitle {float:left;width:290px;height:40px;}
+    #OfferBtns {float:left;height:40px;}
+    #OffersIntro {width:510px; margin-left:15px; height:auto; overflow:auto; background-color:#ffffff;z-index:991; padding-bottom:10px;}
+    #OffersIntroText {padding:10px; text-align:left; font-size:12px; color:#777777;}
+    #OfferList {width:490px; height:auto; margin-left:10px; overflow:auto; overflow-x:hidden; background-color:#ecf3fa; border:1px solid #c5c5c5; z-index:999; text-align:left;}        
+    #OfferHLList {float:left; width:140px; display:none;}            
+    #OfferDescription {float:left;width:480px;}       
+        .offerhlon {width:140px; height:51px; color:#000000; background-image: url("/images/current-offers/bg-offerhl-on.jpg");}
+        .offerhloff {width:140px; height:51px; color:#ffffff; background-image: url("/images/current-offers/bg-offerhl-off.jpg");}
+        .offerhloff {cursor: pointer; cursor: hand;}
+        .hlheader {margin-left:10px; font-size:10px; text-align:center; padding-top:10px;}
+            .hlrow1 {font-size:16px; font-weight:bold;}
+            #LeaseTitle {padding-left:10px; padding-top:10px; font-size:11px;font-weight:bold; text-align:center;}
+            #FinanceTitle {padding-left:10px; padding-top:10px; font-size:11px;font-weight:bold;text-align:center;}
+            
+            #OfferDetailContent{margin-left:10px; padding-top:10px; padding-bottom:10px; width:470px; overflow:hidden;}
+            #OfferDetailHeader {font-size:18px; font-weight:bold; height:auto;}
+            #OfferDates {font-size:10px; font-style:italic; padding-top:3px;}
+            #OfferHightLight {font-size:14px; font-weight:bold; color:#2079d2;padding-top:8px; text-align:center;}
+            #OfferShortDesc {font-size:11px;padding-top:8px;}
+            #OfferTerms {font-size:9px; color:#777777;padding-top:8px;}
+            #OfferDesc {font-size:9px; color:#777777;padding-top:8px; display:none;}
+            
+            #HideDetailLink {}
+            #OfferDetailLink {}
+            .OfferDetailLink {font-size:9px; text-align:right; margin-top:5px;}
+            .OfferDetailLink a, .OfferDetailLink a:hover, .OfferDetailLink a:visited {color:#2079d2; text-decoration:underline;}
+                    
+                    
+        .OfferHightLightDivLine {float:left; width:2px; vertical-align:middle; margin-left:5px;margin-right:5px;}
+        .OfferHightLight {width:100px; color:#0e78d4; text-align:center; font-weight:bold; float:left; height:90px;}
+        
+        .SmallerBig {font-size:25px; vertical-align:top;}
+        #OfferHightLight0 {}
+        #OfferHightLight1 { font-size:30px;}
+        #OfferHightLight2 { font-size:30px;}
+        #OfferHightLight3 { font-size:30px;}
+        #OfferHightLight4 { font-size:30px;}
+            .OfferHightLightdesc {font-size:12px;}                    
+                    
+                    
+    #ContinueContainer {text-align:left; margin-right:10px; float:right; margin-top:10px; height:40px;}
+        #ContinueCopy {font-size:14px; font-weight:bold; float:left; color:#777777; margin-top:5px;}
+        #ContinueBtn {margin-left:10px; float:left;}                    
+         
+        .tooltip {
+            z-index:999;
+	        display:none;
+	        width:178px;
+	        height:34px;
+	        overflow:hidden;
+	        background:transparent url(/images/current-offers/bg-tooltip.png);
+	        background-repeat:no-repeat;
+	        margin-left:-30px;
+	        padding-top:5px;
+	        font-size:12px;
+	        color:#000000;	
+        }        
+        #btnemail {}
+        #UserEmail {display:none; margin-left:20px; margin-top:10px; text-align:left; background-color:#ecf3fa; width:450px;  height:auto; min-height:350px; color:#333333;}
+        #EmailTitle {font-size:18px; font-weight:bold;}
+        #EmailIntro {margin-top:35px; font-size:12px;}
+        #EmailIntroText {font-size:14px; font-weight:bold;}
+        #EmailDivline {margin-top:20px; width:440px;}
+        #EmailForm {font-size:12px;}
+        #EmailFormInputs {width:440px;}
+            .EmailFormItem {margin-top:5px; height:20px;}
+            .EmailFormName {float:left; width:150px;}
+                .EmailFormInput {float:left; }
+                .EmailFormInput input {border:1px solid #cccccc; font-size:10px; width:200px;}
+        #EmailButton {margin-top:10px; width:355px; text-align:right;}    
+        
+    #EmailThankyou {display:none; margin-top:10px;}
+        #ThankyouTitle {font-size:18px; font-weight:bold; color:#0e78d4;}
+        #ThankyouMessage {font-size:13px; font-weight:bold;}
+        #btnofferemail {cursor: pointer; cursor: hand;}    
+        #OffersClose {cursor: pointer; cursor: hand;}
+        #OffersClose2 {cursor: pointer; cursor: hand;}
+        #btnemail {cursor: pointer; cursor: hand;}      
+           
+            
+    </style>
+    <link rel="stylesheet" id="OfferPrint" type="text/css" media="print" />
+    <script language="javascript" type="text/javascript">
+        //--------- VARIABLES ---------//
+        var userZip = '98052';
+        var mapRadiusInMiles = '15';
+    
+        // Tracking variables
+        var TrackingZipCode = '98052';
+        var TrackingNumResults = '80';
+        
+        var TrackingStartYearFilter = 'ANY';
+        
+        var TrackingEndYearFilter = 'ANY';
+            
+        var TrackingModelFilter = 'ALL MODELS';
+            
+        var TrackingTransmissionFilter = 'ANY';
+        var TrackingRangeFilter = '15';
+            
+        var TrackingPriceFilter = 'ANY';    
+
+
+        var oDataControl= new DataControl();
+        var oValidation= new Validation();    
+        var LeaseOffers = new Array();
+        var FinanceOffers = new Array();
+        var tempOffersList = new Array();
+        var currentofferid = 0;
+
+        $(document).ready(function(){
+            $('#OffersClose').bind('click', function(){
+                $('#Offers').hide();
+                $.mask.close();
+                $("#OfferPrint").attr({href : ""});
+            });            
+            
+            $('#OffersClose2').bind('click', function(){
+                $('#Offers').hide();
+                $.mask.close();
+                $("#OfferPrint").attr({href : ""});
+            });                   
+            
+            $('.offerhloff').live('click', function(){
+                $('#offerhl'+currentofferid).removeClass('offerhlon');
+                $('#offerhl'+currentofferid).addClass('offerhloff');
+                
+                currentofferid = $(this).attr('id').replace('offerhl','');
+                $(this).removeClass('offerhloff');
+                $(this).addClass('offerhlon');
+                updateofferdetail(currentofferid);
+            });
+            $('.offerhlon').live('click', function(){
+                $('#offerhl'+currentofferid).removeClass('offerhlon');
+                $('#offerhl'+currentofferid).addClass('offerhloff');
+                
+                currentofferid = $(this).attr('id').replace('offerhl','');
+                $(this).removeClass('offerhloff');
+                $(this).addClass('offerhlon');
+                updateofferdetail(currentofferid);
+            });  
+            
+            $('#btnemail').bind('click', function(){
+                $('#OfferDetailContent').hide();
+                $('#EmailThankyou').hide();
+                $('#UserEmail').show();
+                $('#EmailForm').show();
+             });            
+           
+            $('#btnofferemail').bind('click', function(){
+                SendEmail();
+            });                
+            
+            $('.OfferIcon[title]').live('mouseover',function() {
+                var me = $(this); 
+                if(!me.hasClass('decorated')) {
+                    $(this).tooltip({position: 'top right',api: true}).show(); 
+                    me.addClass('decorated');
+                }
+            });
+
+
+            if (!oValidation.IsEmpty(userZip)) {
+                s.pageName = 'CERTIFIED USED VEHICLE RESULTS';
+                s.channel = 'HCUC';
+                s.prop8 = TrackingZipCode;
+                s.prop9 = 'HCUC INVENTORY SEARCH';
+                s.prop10 = TrackingNumResults;
+                s.prop26 = 'DEALER INVENTORY';
+                s.prop27 = 'RESULTS';
+                s.prop32 = TrackingModelFilter + ':' + TrackingTransmissionFilter + ':' + TrackingStartYearFilter + ':' + TrackingEndYearFilter + ':' + TrackingRangeFilter + ' MILES';
+                s.prop36 = TrackingPriceFilter;
+                s.prop37 = 'HCUC:DEALER INVENTORY:RESULTS:CERTIFIED USED VEHICLE RESULTS';
+                s.events = 'event22';
+                s.eVar3 = 'HCUC INVENTORY SEARCH';
+                CallSDotT(s);
+
+            } else {
+                s.pageName = 'CERTIFIED USED SEARCH FOR VEHICLES';
+                s.channel = 'HCUC';
+                s.prop8 = TrackingZipCode;
+                s.prop9 = 'HCUC INVENTORY SEARCH';
+                s.prop10 = TrackingNumResults;
+                s.prop26 = 'DEALER INVENTORY';
+                s.prop27 = 'RESULTS';
+                s.prop32 = TrackingModelFilter + ':' + TrackingTransmissionFilter + ':' + TrackingStartYearFilter + ':' + TrackingEndYearFilter + ':' + TrackingRangeFilter + ' MILES';
+                s.prop36 = TrackingPriceFilter;
+                s.prop37 = 'HCUC:DEALER INVENTORY:RESULTS:CERTIFIED USED SEARCH FOR VEHICLES';
+                s.events = 'event22';
+                s.eVar3 = 'HCUC INVENTORY SEARCH';
+                CallSDotT(s);
+            }
+            
+        });
+
+        function TrackLinks(Key) {
+            s.linkTrackVars = 'prop26,prop27,prop37';
+            switch (Key) {
+                case 'comparenow':
+                    s.pageName = 'CERTIFIED USED VEHICLE RESULTS';
+                    s.channel = 'HCUC';
+                    s.prop37 = s.prop26 + ':' + s.prop27 + ':' + s.pageName;
+                    CallSDotTL(s, true, 'HCUC:COMPARE VEHICLES LINK', 'o');
+                    break;
+                case 'finance':
+                    s.pageName = 'CERTIFIED USED VEHICLE RESULTS';
+                    s.channel = 'HCUC';
+                    s.prop37 = s.prop26 + ':' + s.prop27 + ':' + s.pageName;
+                    CallSDotTL(s, true, 'HCUC:FINANCE YOUR HONDA LINK', 'o');
+                    break;
+                case 'paymentestimator':
+                    s.pageName = 'CERTIFIED USED VEHICLE RESULTS';
+                    s.channel = 'HCUC';
+                    s.prop37 = s.prop26 + ':' + s.prop27 + ':' + s.pageName;
+                    CallSDotTL(s, true, 'HCUC:PAYMENT ESTIMATOR LINK', 'o');
+                    break;
+            }
+        }
+        
+    </script>
+
+</head>
+<body class="landscape">
+    <!-- Email PopUp Stuff Start -->
+
+    <script language="javascript" type="text/javascript">
+         function sendEmail() {
+            var emailFrom = $('input[name=Email]').val();
+            var emailTo = $('input[name=FriendEmail]').val();
+            var failed = new Boolean();
+            var oValidation= new Validation();
+            
+            if (!oValidation.IsEmail(emailFrom)) { 
+                failed = true; 
+                document.getElementById('Email').style.background = '#ec9797';
+                document.getElementById('EmailError').style.display = ''; 
+            }
+            else { 
+                document.getElementById('Email').style.background = ''; 
+                document.getElementById('EmailError').style.display = 'none'; 
+            }
+            
+            if (!oValidation.IsEmail(emailTo)) { 
+                failed = true; 
+                document.getElementById('FriendEmail').style.background = '#ec9797';
+                document.getElementById('FriendEmailError').style.display = ''; 
+            }
+            else { 
+                document.getElementById('FriendEmail').style.background = ''; 
+                document.getElementById('FriendEmailError').style.display = 'none'; 
+            }
+            
+            if (failed == false) {
+                var content;
+                var strLoc = window.location.href;
+                content = 'Hi, I would like to share search results with you:';
+                content += '<br /><br />';
+                content += 'Any Model, Any Transmission, All Years, Any Price, 15 miles from 98052.';
+                content += '<br /><br /><a href="';
+                content += strLoc.replace(/ /g,"+");
+                content += '">' + strLoc + '</a><br /><br />';
+                content += "(If the link doesn't work, try copying and pasting it from this email into your browser's address bar.)";
+                content += '<br /><br />';
+                content += "This email was sent to you by a user on the Honda Certified Used Cars website (certified.honda.com)";
+                
+                var jsonObj = { 
+                    From: emailFrom, 
+                    FromName: $("#Name").val(),
+                    To: emailTo, 
+                    Subject: emailFrom + ' sent this to you: a Honda Certified Used Cars Link', 
+                    Content: content,
+                    sendToMe: $('input[name=CopySelf]:checked').val()
+                };
+                $.post("/handlers/tools/shopping/inventory-search-email.ashx", jsonObj, null, "html");
+                tb_remove();
+            }
+         }
+    </script>
+
+    <div id="emailPopUpContainer">
+        <div id="emailPopUp">
+            <div>
+                <div id="emailcloseContainer" style="float: right;">
+                    <a href="#" onclick="javascript:tb_remove();">
+                        <img src="/images/certified-used/inventory-search/popUp-closeBtn.png" border="0" /></a>
+                </div>
+                <div class="clr">
+                </div>
+            </div>
+            <div style="text-align: left;">
+                <div id="ForwardFormContainer" style="border: 1px solid #999; background: #fff;">
+                    <div class="ForwardFormBody">
+                        <div class="FormTitleRow" id="ForwardPageName">
+                            Send this vehicle to a friend:
+                            <br />
+                            Any Model, Any Transmission, All Years, Any Price, 15 miles near 98052.
+                        </div>
+                        <div class="FormLeft">
+                            <div class="FormLeftRow">
+                                <div id="FriendEmailLabel">
+                                    Friend's e-mail address</div>
+                                <div id="FriendEmailError" style="display: none;">
+                                    Please enter a valid e-mail.</div>
+                                <div id="FriendEmailField">
+                                    <input class="TextBox" size="45" name="FriendEmail" id="FriendEmail" maxlength="200"
+                                        type="text"></div>
+                            </div>
+                            <div class="FormLeftRow">
+                                <div id="EmailLabel">
+                                    Your e-mail address</div>
+                                <div id="EmailError" style="display: none;">
+                                    Please enter a valid e-mail.</div>
+                                <div id="EmailField">
+                                    <input class="TextBox" size="45" id="Email" name="Email" maxlength="45" type="text" /></div>
+                            </div>
+                            <div class="FormLeftRow">
+                                <div id="NameLabel">
+                                    Your full name (optional)</div>
+                                <div id="NameField">
+                                    <input class="TextBox" size="45" name="Name" id="Name" maxlength="100" type="text" /></div>
+                            </div>
+                            <div class="FormLeftRow" style="margin-top: 10px; margin-bottom: 5px;">
+                                <input id="CopySelf" name="CopySelf" type="checkbox" value="1" />
+                                <label for="CopySelf">
+                                    Send yourself a copy of this message</label>
+                            </div>
+                        </div>
+                        <div class="FormRight">
+                            <div class="FormRightRow">
+                                These e-mail addresses will be used to<br />
+                                e-mail the information on your behalf and will not be collected or used by Honda
+                                for any marketing purposes.
+                            </div>
+                        </div>
+                        <input name="Url" id="Url" value="" type="hidden" />
+                        <div class="FormButtonRow" style="margin-bottom: 20px;">
+                            <a href="javascript:sendEmail();">
+                                <img src="/images/tools/forward/button-send-off.gif" id="ForwardSendButton" onmouseover="SwitchImg('ForwardSendButton', '/images/tools/forward/button-send-over.gif')"
+                                    onmouseout="SwitchImg('ForwardSendButton', '/images/tools/forward/button-send-off.gif')"
+                                    alt="SEND" border="0" /></a></div>
+                    </div>
+                    <div class="clr">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Email Pop Up Stuff ended -->
+        
+    <div id="PageContainer">
+        <div id="LeftShadow">
+            <img src="/images/_controls/global-header/background-header-left.png" /></div>
+        <div id="CenterContent">
+            
+<script language="javascript" type="text/javascript">
+
+
+
+var searchBox = function() {
+
+    var sPlaceholderText = '';
+    var oToolTipDiv = null;
+
+    return {
+    
+        focus : function() {
+        
+            if (sPlaceholderText == '') {
+                sPlaceholderText = document.getElementById('HeaderSearchText').value;
+            }
+
+            if (document.getElementById('HeaderSearchText').value == sPlaceholderText) {
+                document.getElementById('HeaderSearchText').value = '';
+            }
+        
+        } , 
+        
+        blur : function() {
+        
+            if (document.getElementById('HeaderSearchText').value == '') {
+                document.getElementById('HeaderSearchText').value = sPlaceholderText;
+            }
+        
+        } , 
+
+        tooltip : function() {
+	        
+	        var id = 'HeaderSearchTooltip';
+	        var speed = 10;
+	        var timer = 20;
+	        var endalpha = 95;
+	        var alpha = 0;
+	        var ie = document.all ? true : false;
+	        var sTooltipHtml = ' \
+	            <p class="top">Enter any search criteria or keywords to search the site.</p> \
+	            <p class="mid">To Locate a Dealer</> \
+	            <p class="bot">Enter your 5 digit zip code to locate a dealer near you.</p> \
+	            ';
+
+	        var fade = function(d){
+
+		        var a = alpha;
+		        if((a != endalpha && d == 1) || (a != 0 && d == -1)){
+			        var i = speed;
+			        if(endalpha - a < speed && d == 1){
+				        i = endalpha - a;
+			        }else if(alpha < speed && d == -1){
+				        i = a;
+			        }
+			        alpha = a + (i * d);
+			        oToolTipDiv.style.opacity = alpha * .01;
+			        if (!ie) {
+			            oToolTipDiv.style.filter = 'alpha(opacity=' + alpha + ')';
+			        }
+		        }else{
+			        clearInterval(timer);
+			        if(d == -1){oToolTipDiv.style.display = 'none'}
+		        }
+	        }
+
+        	
+	        return {
+		        show:function(){
+			        if(oToolTipDiv == null){
+				        oToolTipDiv = document.createElement('div');
+				        oToolTipDiv.setAttribute('id',id);
+				        document.body.appendChild(oToolTipDiv);
+				        oToolTipDiv.innerHTML = sTooltipHtml;
+			        }
+			        oToolTipDiv.style.opacity = 0;
+			        if (!ie) {
+				        oToolTipDiv.style.filter = 'alpha(opacity=0)';
+				    }
+				    var rect = document.getElementById('HeaderSearchField').getBoundingClientRect();
+                    oToolTipDiv.style.top = rect.bottom + 10 + 'px';
+			        oToolTipDiv.style.left = rect.left - 100 + 'px';
+			        oToolTipDiv.style.display = 'block';
+			        clearInterval(timer);
+			        timer = setInterval(function(){fade(1)},timer);
+		        },
+		        hide:function(){
+			        clearInterval(timer);
+			        timer = setInterval(function(){fade(-1)},timer);
+		        }
+	        };
+        }
+            
+    }
+
+}();
+
+
+
+
+
+
+
+
+
+
+    function GlobalNavigationChangeModel(){
+        var oField=document.getElementById("HeaderModelSelector");
+        var sUrl=oField.options[oField.selectedIndex].value;
+        var sUrlSiteSection=oField.options[oField.selectedIndex].text;
+        if(sUrl!=""){
+            if(typeof isHondaHomePage !=="undefined"){
+                if(isHondaHomePage==true) TrackNavigationClick(sUrlSiteSection);
+            }
+            top.location.href="http://automobiles.honda.com" + sUrl;
+        }
+    }
+    // This function will redirect to search results page.
+    function GlobalNavigationSearchSite(){
+      if (document.getElementById("HeaderSearchText").value.replace(/ /g,'').length > 0) {
+        // If 5 digits, do a dealer locator search
+        if (document.getElementById("HeaderSearchText").value.match(/(\d{5})/g)) {
+            top.location = 'http://automobiles.honda.com/tools/dealer-locator/results.aspx?address=&city=&state=&zip=' + document.getElementById("HeaderSearchText").value + '&dealername=&filters=&fromsection=NEW';
+        } else {
+            top.location = "http://automobiles.honda.com/search-results.aspx?question="+escape(document.getElementById("HeaderSearchText").value);
+        }
+        
+      }
+      else {
+      alert("You must enter a question before submitting");
+      }    
+    }
+    function TrackNavigationClick(SiteSection){
+        var s=s_gi(s_account);
+        s.linkTrackVars='prop16,prop21,prop23,prop24,prop25,eVar31,eVar21,eVar23,eVar24,eVar25';
+        s.prop21=Currentprop21;
+        s.prop23=Currentprop23;
+        s.prop24=Currentprop24;
+        s.prop25=Currentprop25;
+        s.eVar21=s.prop21;
+        s.eVar23=s.prop23;
+        s.eVar24=s.prop24;
+        s.eVar25=s.prop25;
+        s.prop16="Home Page Site Nav DropDown : "+SiteSection;
+        s.eVar31="Home Page Site Nav DropDown : "+SiteSection;
+        s.tl(this,'o','GLOBAL NAVIGATION CLICK');
+    }
+</script>
+
+<div id="HeaderContainer">
+    <form id="HeaderForm" onsubmit="GlobalNavigationSearchSite(); return false;">
+        <div id="HeaderLogo"><a href="http://automobiles.honda.com/" target="_top" onmouseover="SwitchImg('HondaLogo', '/images/_controls/global-header/honda-logo-over.gif')" onmouseout="SwitchImg('HondaLogo', '/images/_controls/global-header/honda-logo-off.gif')"><img src="/images/_controls/global-header/honda-logo-off.gif" id="HondaLogo" width="73" height="51" /></a></div>
+        <div id="HeaderModelSelect">
+            
+                    <div id="DropDownText">
+                        <span>Select a Model</span>
+                        <div id="DropDownTextLinks">
+                        
+                            <a href="/accord-coupe" style="display: block; clear: both; font-size: 10px;">Accord Coupe</a>
+                        
+                            <a href="/accord-sedan" style="display: block; clear: both; font-size: 10px;">Accord Sedan</a>
+                        
+                            <a href="/accord-plug-in" style="display: block; clear: both; font-size: 10px;">Accord Plug-In</a>
+                        
+                            <a href="/civic-coupe" style="display: block; clear: both; font-size: 10px;">Civic Coupe</a>
+                        
+                            <a href="/civic-hybrid" style="display: block; clear: both; font-size: 10px;">Civic Hybrid Sedan</a>
+                        
+                            <a href="/civic-hf" style="display: block; clear: both; font-size: 10px;">Civic HF Sedan</a>
+                        
+                            <a href="/civic-natural-gas" style="display: block; clear: both; font-size: 10px;">Civic Natural Gas</a>
+                        
+                            <a href="/civic-sedan" style="display: block; clear: both; font-size: 10px;">Civic Sedan</a>
+                        
+                            <a href="/civic-si-coupe" style="display: block; clear: both; font-size: 10px;">Civic Si Coupe</a>
+                        
+                            <a href="/civic-si-sedan" style="display: block; clear: both; font-size: 10px;">Civic Si Sedan</a>
+                        
+                            <a href="/crosstour" style="display: block; clear: both; font-size: 10px;">Crosstour</a>
+                        
+                            <a href="/cr-v" style="display: block; clear: both; font-size: 10px;">CR-V SUV</a>
+                        
+                            <a href="/cr-z" style="display: block; clear: both; font-size: 10px;">CR-Z Sport Hybrid</a>
+                        
+                            <a href="/fcx-clarity" style="display: block; clear: both; font-size: 10px;">FCX Clarity Electric Vehicle</a>
+                        
+                            <a href="/fit" style="display: block; clear: both; font-size: 10px;">Fit 5-Door</a>
+                        
+                            <a href="/fit-ev" style="display: block; clear: both; font-size: 10px;">Fit EV</a>
+                        
+                            <a href="/insight-hybrid" style="display: block; clear: both; font-size: 10px;">Insight Hybrid</a>
+                        
+                            <a href="/odyssey" style="display: block; clear: both; font-size: 10px;">Odyssey Minivan</a>
+                        
+                            <a href="/pilot" style="display: block; clear: both; font-size: 10px;">Pilot SUV</a>
+                        
+                            <a href="/ridgeline" style="display: block; clear: both; font-size: 10px;">Ridgeline Truck</a>
+                        
+                            <a href="/alternative-fuel-vehicles/">Hybrid and Alternative Fuel Vehicles</a>
+                            <a href="/all-models.aspx">All Models</a>
+                            <a href="/certified-used/">Certified Used Cars</a>
+                            <a href="/future-cars/">Future Models &amp; Concepts</a>
+                        </div>
+                    </div>
+                    <script language="Javascript">
+                
+                        var sContent = '';
+            
+                        sContent += '<select name="HeaderModelSelector" id="HeaderModelSelector" class="HeaderModelSelector" onchange="GlobalNavigationChangeModel()">';
+                            sContent += '<option value="">Select a Model</option>';
+                        
+                            sContent += '<option value="/accord-coupe">Accord Coupe</option>';
+                        
+                            sContent += '<option value="/accord-sedan">Accord Sedan</option>';
+                        
+                            sContent += '<option value="/accord-plug-in">Accord Plug-In</option>';
+                        
+                            sContent += '<option value="/civic-coupe">Civic Coupe</option>';
+                        
+                            sContent += '<option value="/civic-hybrid">Civic Hybrid Sedan</option>';
+                        
+                            sContent += '<option value="/civic-hf">Civic HF Sedan</option>';
+                        
+                            sContent += '<option value="/civic-natural-gas">Civic Natural Gas</option>';
+                        
+                            sContent += '<option value="/civic-sedan">Civic Sedan</option>';
+                        
+                            sContent += '<option value="/civic-si-coupe">Civic Si Coupe</option>';
+                        
+                            sContent += '<option value="/civic-si-sedan">Civic Si Sedan</option>';
+                        
+                            sContent += '<option value="/crosstour">Crosstour</option>';
+                        
+                            sContent += '<option value="/cr-v">CR-V SUV</option>';
+                        
+                            sContent += '<option value="/cr-z">CR-Z Sport Hybrid</option>';
+                        
+                            sContent += '<option value="/fcx-clarity">FCX Clarity Electric Vehicle</option>';
+                        
+                            sContent += '<option value="/fit">Fit 5-Door</option>';
+                        
+                            sContent += '<option value="/fit-ev">Fit EV</option>';
+                        
+                            sContent += '<option value="/insight-hybrid">Insight Hybrid</option>';
+                        
+                            sContent += '<option value="/odyssey">Odyssey Minivan</option>';
+                        
+                            sContent += '<option value="/pilot">Pilot SUV</option>';
+                        
+                            sContent += '<option value="/ridgeline">Ridgeline Truck</option>';
+                        
+                            sContent += '<option value="/alternative-fuel-vehicles/">Hybrid and Alternative Fuel Vehicles</option>';
+                            sContent += '<option value="/all-models.aspx">All Models</option>';
+                            sContent += '<option value="/certified-used/">Certified Used Cars</option>';
+                            sContent += '<option value="/future-cars/">Future Models &amp; Concepts</option>';
+                        sContent += '</select>';
+                        
+                        document.getElementById('HeaderModelSelect').innerHTML = sContent;
+                
+                    </script>
+                
+            
+        </div>
+        
+        <div class="HeaderLink"><a href="http://automobiles.honda.com/tools/dealer-locator/?type=certifiedused" target="_top">Find a Dealer</a></div>
+        <div class="HeaderDiv"><img src="/images/_controls/global-header/header-div.gif" width="1" height="31" /></div>
+        <div class="HeaderLink"><a href="http://automobiles.honda.com/tools/build-price/" target="_top">Build Your Honda</a></div>
+        <div class="HeaderDiv"><img src="/images/_controls/global-header/header-div.gif" width="1" height="31" /></div>
+        <div class="HeaderLink"><a href="http://automobiles.honda.com/tools/price-quote.aspx" target="_top">Request a Quote</a></div>
+        <div class="HeaderDiv"><img src="/images/_controls/global-header/header-div.gif" width="1" height="31" /></div>
+        <div class="HeaderLink"><a href="http://automobiles.honda.com/tools/compare/" target="_top">Compare Vehicles</a></div>
+        
+            <div id="HeaderSearchField"><input type="text" id="HeaderSearchText" onmouseover="searchBox.tooltip().show();" onmouseout="searchBox.tooltip().hide();" value="Search / Find A Dealer" onfocus="searchBox.focus();" onblur="searchBox.blur();" /></div>
+        
+    </form>
+</div>
+
+            <!-- Content area start here -->
+            <div id="PageContent" style="width:963px;overflow:hidden;">
+            
+            
+<style type="text/css">
+#PageHeader {position:relative; width:963px; height:100px; background: url('/images/_controls/certified-navigation-all/header.jpg') no-repeat; z-index:999;}
+.PageHeaderButtonOff { float:left; margin-top:73px; padding-right:3px;  z-index:999;}
+.PageHeaderButtonOn { float:left; margin-top:73px; padding-right:3px;  z-index:999;}
+#ShoppingToolsMenuOn {position:relative; z-index:999;}
+#ShoppingToolsMenuItems {top:27px; left:0px; position:absolute; display:none; z-index:999; background: url('/images/_controls/certified-navigation-all/dropdown-bg.gif'); width:178px; height:169px; overflow:hidden; z-index:999;}
+.smenuitem { font-size:12px; font-weight:bold; line-height:22px; height:24px; width:177px; border-top:1px solid #ccc; background-color:transparent; color:#000; position:relative; left:2px;}
+.smenuitemover { font-size:12px; font-weight:bold; line-height:22px; height:24px; width:177px; border-top:1px solid #fff; background-color:#0483c8; color:#fff; position:relative; left:2px;}
+.innermenu {padding-left:5px;}
+#PageHeader ul { list-style-type: none; text-indent: 0px; padding:0px; margin:0px;}
+#PageHeader li {text-indent: 0px; padding:0px; margin:0px;}
+.smenuitemover a:hover {color:#fff; text-decoration:none;}
+
+#TertiaryNav { height:25px;position: relative; top: 9px; }
+a.tertnav {font-size: 11px; color: #666666; FONT-FAMILY: arial; TEXT-DECORATION: underline; font-weight:bold;}
+a.tertnav:visited { font-size: 11px; color: #666666; FONT-FAMILY: arial; TEXT-DECORATION: underline;}
+a.tertnav:hover {font-size: 11px; color: #666666; FONT-FAMILY: arial; TEXT-DECORATION: underline;}
+#CertifiedLogo {float:right; padding-right:20px;}
+#downloadBrochure {font-size:10px; float:right; position: relative; top: -15px; right: 5px;}
+.brochureText { text-decoration:underline; } 
+#downloadbrochure {position:absolute; left:720px; top:30px;}
+</style>
+<script language="javascript" type="text/javascript" >
+        $(document).ready(function(){
+            if (typeof(disableHidingCombox) == "boolean" ) {
+            $("#ShoppingToolsMenuOn").hover(
+                  function () {
+                    $('#ShoppingToolsMenuItems').show();
+                  }, 
+                  function () {
+                    $('#ShoppingToolsMenuItems').hide();
+                 });
+            }
+            else {
+                $("#ShoppingToolsMenuOn").hover(
+                  function () {
+                  if ($('#selYearEnd').length > 0) {
+                    $('#selYearStart').hide();
+                    $('#selYearEnd').hide();
+                    $('#selPrice').hide();
+                  }
+                  if ($('#seating').length > 0) {
+                    $('#seating').hide();
+                  }
+                  
+                    $('#ShoppingToolsMenuItems').show();
+                  }, 
+                  function () {
+                  if ($('#selYearEnd').length > 0) {
+                    $('#selYearStart').show();
+                    $('#selYearEnd').show();
+                    $('#selPrice').show();
+                  }
+                  
+                  if ($('#seating').length > 0) {
+                    $('#seating').show();
+                  }              
+                    $('#ShoppingToolsMenuItems').hide();
+                 });
+             } 
+            
+            //image has rollover class will load rollover state on hover
+             $('.rolloverbtn').hover(
+              function () {
+                $(this).attr('src',$(this).attr('src').replace('off.','over.'));
+              }, 
+              function () {
+                $(this).attr("src",$(this).attr('src').replace('over.','off.'));
+              });  
+        });
+
+        function openForwardWindow() {
+             mywindow = window.open("http://automobiles.honda.com/tools/forward.aspx", "ForwardWindow", "location=0,status=0,scrollbars=0,height=440,width=575");
+        }
+
+        function menuonselect(t,onclass) {
+            if (undefined == onclass) {
+            onclass = 'smenuitemover';
+            }
+	        document.getElementById('menu'+t).className = onclass;
+        }
+
+        function menuoffselect(t,offclass) {
+            if (undefined == offclass) {
+            offclass = 'smenuitem';
+            }
+	        document.getElementById('menu'+t).className = offclass;
+        }
+</script>
+<div id="PageHeader" style="width: 963px;">
+
+    <div class="PageHeaderButtonOff" style="margin-left:8px;">
+        <a href="http://automobiles.honda.com/certified-used/">
+        <img id="certified-used" class="rolloverbtn" alt="Home" src="/images/_controls/certified-navigation-all/tab-home-off.jpg" border="0"/>
+        </a>
+    </div>
+
+    <div class="PageHeaderButtonOff">
+    <a href="http://automobiles.honda.com/certified-used/program-benefits.aspx"><img id="program-benefits" class="rolloverbtn" alt="Program Benefits" src="/images/_controls/certified-navigation-all/tab-programbenefits-off.jpg" border="0"/>
+    </a>
+  </div>
+
+    <div class="PageHeaderButtonOff">
+    <a href="http://automobiles.honda.com/certified-used/model-library.aspx">
+    <img id="model-library"  class="rolloverbtn" alt="Model Library" src="/images/_controls/certified-navigation-all/tab-model-library-off.jpg" border="0"/>
+    </a>
+  </div>
+
+     <div class="PageHeaderButtonOn">
+    <img id="search-inventory"  alt="Find a Car" src="/images/_controls/certified-navigation-all/tab-find-a-car-on.jpg" />
+  </div>  
+
+     <div class="PageHeaderButtonOff">
+     <a href="http://automobiles.honda.com/certified-used/reverse-calculator.aspx">
+    <img id="payment-tools"  class="rolloverbtn" alt="Estimate Payments" src="/images/_controls/certified-navigation-all/tab-shopping-tools-off.jpg" border="0"/>
+    </a>
+  </div>
+
+<div id="downloadbrochure">
+    <span class="brochureText" onclick="window.open('/images/certified-used/downloads/HCUCbrochure.pdf','CertifiedUsedCarsBrochure')" style="cursor:hand"><img class="rolloverbtn" alt="Download the Brochure" src="/images/certified-used/model-library/btn-brochure-off.jpg" border="0" /></span>
+  </div>
+  <div id="CertifiedLogo">
+  <a href="http://automobiles.honda.com/certified-used/">
+    <img src="/images/_controls/certified-navigation-all/certified-used-logo.gif" alt="Honda Certified Used Cars"  border="0" />
+  </a>
+  </div>
+</div>
+    <div class="clr"></div>
+
+
+            
+            <div id="searchContainer" style="width:963px;overflow:hidden;">
+
+                <!-- Search area div start here -->
+                <div id="searchTitle">
+                    Find a car
+                </div>
+                <div id="searchIntro">
+                    To find your Certified Used Honda, enter the information below. Or choose Dealer to search for a dealer near you. 
+                </div>
+                <div id="inventorytabs">
+                    <div id="searchbyintro" class="inventorytab left"><span style="font-weight:bold;">Search by</span></div>
+                    <div id="vehicletab" class="inventorytab left"><a href="/certified-used/inventory-search-results.aspx?txtZip=98052"><img class="rolloverbtn" src="/images/certified-used/tab-vehicle-on.png" border="0" /></a></div>
+                    <div id="dealertab" class="inventorytab left"><a href="/certified-used/dealer-inventory-search-results.aspx?txtZip=98052"><img class="rolloverbtn" src="/images/certified-used/tab-dealer-off.png" border="0" /></a></div>
+                    <div id="bugettoollink" class="inventorytab left"><div style="text-align:right;width:100%;color:#444444;">Not sure what you can afford? <br />Try <a href="http://automobiles.honda.com/certified-used/reverse-calculator.aspx" onclick="TrackLinks('paymentestimator');" style="color:#0483c8; font-weight:bold;">Estimate Payments</a>.</div></div>
+                </div>
+                <div id="searchFields">
+                    <form method="get" onsubmit="return submitQuery();">
+                        <div class="searchoption" id="zip-div">
+                            ZIP Code<br />
+                            <input name="txtZip" type="text" id="txtZip" value="98052" maxlength="5" /></div>
+                        <div class="searchoption" id="serchr-div">
+                            Search Range<br />
+                            <select name="selRange" id="selRange">
+                                <option value="15">15 miles</option><option value="25">25 miles</option><option value="50">50 miles</option><option value="100">100 miles</option><option value="250">250 miles</option>
+                            </select>
+                        </div>
+                        <div class="searchoption" id="model-div">
+                            Model<br />
+                            <select name="selModel" id="selModel">
+                                <option value="All Models">All Models</option>
+                                <option value="Accord Coupe">Accord Coupe</option><option value="Accord Crosstour">Accord Crosstour</option><option value="Accord Sedan">Accord Sedan</option><option value="Civic Coupe">Civic Coupe</option><option value="Civic GX">Civic GX</option><option value="Civic Hybrid">Civic Hybrid</option><option value="Civic Natural Gas">Civic Natural Gas</option><option value="Civic Sedan">Civic Sedan</option><option value="Civic Si Coupe">Civic Si Coupe</option><option value="Civic Si Sedan">Civic Si Sedan</option><option value="Crosstour">Crosstour</option><option value="CR-V">CR-V</option><option value="CR-Z">CR-Z</option><option value="Element">Element</option><option value="Element SC">Element SC</option><option value="Fit">Fit</option><option value="Insight">Insight</option><option value="Odyssey">Odyssey</option><option value="Pilot">Pilot</option><option value="Ridgeline">Ridgeline</option><option value="S2000">S2000</option>
+                            </select>
+                        </div>
+                        <div class="searchoption" id="tmission-div">
+                            Transmission<br />
+                            <select name="selTrans" id="selTrans">
+                                <option value="All">Any</option>
+                                <option value="Automatic">Automatic</option><option value="Manual">Manual</option>
+                            </select>
+                        </div>
+                        <div class="searchoption" id="year-div">
+                            Year<br />
+                            <select name="selYearStart" id="selYearStart" onchange="onChange_YrBegin();">
+                                <option value="All">Any</option>
+                                <option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option>
+                            </select>
+                            &nbsp;&nbsp;to&nbsp;&nbsp;<select name="selYearEnd" id="selYearEnd" onchange="onChange_YrEnd()">
+                            <option value="All">Any</option>
+                                <option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option>
+                            </select></div>
+                        <div class="searchoption" id="price-div">
+                            Price Limit<br />
+                            <select name="selPrice" id="selPrice">
+                                <option value="Any Price">Any Price</option>
+                                <option value="10000">$10,000</option><option value="15000">$15,000</option><option value="20000">$20,000</option><option value="25000">$25,000</option><option value="30000">$30,000</option><option value="99999">Over $30,000</option>
+                            </select>
+                        </div>
+                        <div class="searchoption" id="search-button" style="margin-top: 15px;">
+                            <input type="image" class="rolloverbtn" src="/images/certified-used/inventory-search/btn-search-off.jpg" width="136" height="30" border="0" alt="Search" onclick="SetUserZip(document.getElementById('txtZip').value);" />
+                        </div>
+                    </form>
+                </div>
+                <div class="clr">
+                </div>
+                <!-- Search area div end here -->
+            </div>
+            <!-- Search area bg end here -->
+                <div id="pageHeader">
+                
+                    <div class="resultsContainer" style="font-size:11px;line-height:15px; padding-bottom:10px; width:520px;">
+                    
+                    <b>Results: 80 matches</b> for Any Model, Any Transmission, All Years, Any Price, 15 miles near 98052.
+                    
+                    </div>
+                    <br />
+                    <table width="505" border="0" cellspacing="0" cellpadding="2">
+                        <tr>
+                            <td width="30" bgcolor="#ffffff">
+                            </td>
+                            <td width="55" class="Header">
+                                <span><a href="javascript:loadData(0);">Year</a></span>&nbsp;<img id="simImgArrow0"
+                                    src="/images/certified-used/inventory-search/uparrow.jpg" width="7" height="4" /></td>
+                            <td width="152">
+                                <span><a href="javascript:loadData(1);">Model</a></span>&nbsp;<img id="simImgArrow1"
+                                    src="/images/certified-used/inventory-search/uparrow.jpg" width="7" height="4" /></td>
+                            <td width="66">
+                                <span><a href="javascript:loadData(2);">Color</a></span>&nbsp;<img id="simImgArrow2"
+                                    src="/images/certified-used/inventory-search/uparrow.jpg" width="7" height="4" /></td>
+                            <td width="60">
+                                <span><a href="javascript:loadData(3);">Price</a></span>&nbsp;<img id="simImgArrow3"
+                                    src="/images/certified-used/inventory-search/uparrow.jpg" width="7" height="4" /></td>
+                            <td width="66">
+                                <span><a href="javascript:loadData(4);">Mlleage</a></span>&nbsp;<img id="simImgArrow4"
+                                    src="/images/certified-used/inventory-search/uparrow.jpg" width="7" height="4" /></td>
+                            <td width="60">
+                                <span><a href="javascript:loadData(5);">Distance</a></span>&nbsp;<img id="simImgArrow5"
+                                    src="/images/certified-used/inventory-search/uparrow.jpg" width="7" height="4" /></td>
+                        </tr>
+                    </table>
+                    <div id="table-content" class="table-content">
+                        <div style="position:relative;overflow:auto;height:435px;">
+                        <div id="VehicleList" style="position:relative;">
+                            <div id="noneFoundMsg" style="display:none;font-weight:bold;text-align:center;margin-top:50px;">No results were found with your search criteria.<br />Please modify your search and try again.</div>
+                        </div>
+                        </div>
+                        <div id="Data">
+                            <div id="InventoryData">
+                                <script language="javascript" type="text/javascript">
+var Inventory = new Array();
+Inventory[0] = new Array("2012","Civic Sedan EX","5 Speed Automatic","White","19899","5295","207971","2HGFB2F88CH548469","2.6","http://www.autobase.com/photos/00100/1208/12084755_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2012/FB2F8CJW_Taffeta_White_thumb.jpg","FB2F8CJW","C8355","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Civic Sedan EX&StockNumber=C8355&VIN=2HGFB2F88CH548469&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[1] = new Array("2010","Odyssey EX","5 Speed Automatic","Blue","26995","32233","207971","5FNRL3H4XAB105820","2.6","/images/shopping-assets/thumb/2010/RL3H4AEW_Bali_Blue_Pearl_thumb.jpg","Odyssey","","/images/shopping-assets/thumb/2010/RL3H4AEW_Bali_Blue_Pearl_thumb.jpg","RL3H4AEW","C131116A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2010&Make=Honda&Model=Odyssey EX&StockNumber=C131116A&VIN=5FNRL3H4XAB105820&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[2] = new Array("2012","Accord Sedan EX V-6 w/Leather","5 Speed Automatic","Gray","26899","5425","207971","1HGCP3F86CA020048","2.6","http://www.autobase.com/photos/00100/1209/12097166_001.jpg","Accord Sedan","","/images/shopping-assets/thumb/2012/CP3F8CJNW_Polished_Metal_Metallic_thumb.jpg","CP3F8CJNW","C8352","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Accord Sedan EX V-6 w/Leather&StockNumber=C8352&VIN=1HGCP3F86CA020048&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[3] = new Array("2012","Civic Sedan LX","5 Speed Automatic","Silver","17987","7493","207971","19XFB2F54CE346518","2.6","/images/shopping-assets/thumb/2012/FB2F5CEW_Alabaster_Silver_Metallic_thumb.jpg","Civic Sedan","","/images/shopping-assets/thumb/2012/FB2F5CEW_Alabaster_Silver_Metallic_thumb.jpg","FB2F5CEW","C8361","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Civic Sedan LX&StockNumber=C8361&VIN=19XFB2F54CE346518&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[4] = new Array("2011","Pilot 2WD EX w/Leather","5 Speed Automatic","Black","29978","18924","207971","5FNYF3H58BB004482","2.6","http://www.autobase.com/photos/00100/1203/12030653_001.jpg","Pilot","","/images/shopping-assets/thumb/2011/YF3H5BJNW_Crystal_Black_Pearl_thumb.jpg","YF3H5BJNW","C139132A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2011&Make=Honda&Model=Pilot 2WD EX w/Leather&StockNumber=C139132A&VIN=5FNYF3H58BB004482&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[5] = new Array("2012","Civic Sedan LX","5 Speed Automatic","Silver","17995","4468","207971","19XFB2F56CE340901","2.6","/images/shopping-assets/thumb/2012/FB2F5CEW_Alabaster_Silver_Metallic_thumb.jpg","Civic Sedan","","/images/shopping-assets/thumb/2012/FB2F5CEW_Alabaster_Silver_Metallic_thumb.jpg","FB2F5CEW","C8328","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Civic Sedan LX&StockNumber=C8328&VIN=19XFB2F56CE340901&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[6] = new Array("2012","Accord Sedan EX w/Leather & Navigation","5 Speed Automatic","Silver","26895","8272","207971","1HGCP2F85CA089050","2.6","http://www.autobase.com/photos/00100/1189/11895738_001.jpg","Accord Sedan","","/images/shopping-assets/thumb/2012/CP2F8CKNW_Alabaster_Silver_Metallic_thumb.jpg","CP2F8CKNW","C8273","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Accord Sedan EX w/Leather & Navigation&StockNumber=C8273&VIN=1HGCP2F85CA089050&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[7] = new Array("2010","Accord Crosstour 4WD EX V-6 w/Leather","5 Speed Automatic","Gray","23981","35202","207971","5J6TF2H50AL002171","2.6","http://www.autobase.com/photos/00100/1205/12054348_001.jpg","Accord Crosstour","","/images/shopping-assets/thumb/2010/TF2H5AJNW_Polished_Metal_Metallic_thumb.jpg","TF2H5AJNW","C8347","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2010&Make=Honda&Model=Accord Crosstour 4WD EX V-6 w/Leather&StockNumber=C8347&VIN=5J6TF2H50AL002171&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[8] = new Array("2012","Accord Sedan LX","5 Speed Automatic","Silver","21906","2101","207971","1HGCP2F32CA126933","2.6","/images/shopping-assets/thumb/2012/CP2F3CEW_Alabaster_Silver_Metallic_thumb.jpg","Accord Sedan","","/images/shopping-assets/thumb/2012/CP2F3CEW_Alabaster_Silver_Metallic_thumb.jpg","CP2F3CEW","C8358","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Accord Sedan LX&StockNumber=C8358&VIN=1HGCP2F32CA126933&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[9] = new Array("2010","CR-V 4WD EX","5 Speed Automatic","Blue","21995","52941","207971","5J6RE4H53AL027722","2.6","http://www.autobase.com/photos/00100/1204/12040400_001.jpg","CR-V","","/images/shopping-assets/thumb/2010/RE4H5AJW_Glacier_Blue_Metallic_thumb.jpg","RE4H5AJW","C138475A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2010&Make=Honda&Model=CR-V 4WD EX&StockNumber=C138475A&VIN=5J6RE4H53AL027722&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[10] = new Array("2011","CR-V 2WD LX","5 Speed Automatic","White","21804","27484","207971","JHLRE3H32BC010347","2.6","http://www.autobase.com/photos/00100/1198/11985286_001.jpg","CR-V","","/images/shopping-assets/thumb/2011/RE3H3BEW_Taffeta_White_thumb.jpg","RE3H3BEW","C138414A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2011&Make=Honda&Model=CR-V 2WD LX&StockNumber=C138414A&VIN=JHLRE3H32BC010347&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[11] = new Array("2012","Civic Sedan EX","5 Speed Automatic","White","19575","10355","207971","2HGFB2F84CH500810","2.6","http://www.autobase.com/photos/00100/1208/12089476_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2012/FB2F8CJW_Taffeta_White_thumb.jpg","FB2F8CJW","C138543A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Civic Sedan EX&StockNumber=C138543A&VIN=2HGFB2F84CH500810&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[12] = new Array("2011","Civic Sedan EX w/Leather & Navigation","5 Speed Automatic","Silver","18983","22067","207971","2HGFA1F98BH522801","2.6","http://www.autobase.com/photos/00100/1209/12091443_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2011/FA1F9BKNW_Alabaster_Silver_Metallic_thumb.jpg","FA1F9BKNW","C134299A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2011&Make=Honda&Model=Civic Sedan EX w/Leather & Navigation&StockNumber=C134299A&VIN=2HGFA1F98BH522801&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[13] = new Array("2012","Civic Sedan LX","5 Speed Automatic","Blue","17953","4539","207971","19XFB2F52CE361146","2.6","http://www.autobase.com/photos/00100/1210/12102606_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2012/FB2F5CEW_Dyno_Blue_Pearl_thumb.jpg","FB2F5CEW","C8360","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Civic Sedan LX&StockNumber=C8360&VIN=19XFB2F52CE361146&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[14] = new Array("2012","Pilot 4WD EX w/Leather","5 Speed Automatic","Black","34983","11891","207971","5FNYF4H57CB042244","2.6","http://www.autobase.com/photos/00100/1209/12091413_001.jpg","Pilot","","/images/shopping-assets/thumb/2012/YF4H5CJNW_Crystal_Black_Pearl_thumb.jpg","YF4H5CJNW","C8356","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Pilot 4WD EX w/Leather&StockNumber=C8356&VIN=5FNYF4H57CB042244&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[15] = new Array("2010","Civic Coupe EX","5 Speed Automatic","Blue","16995","28993","207971","2HGFG1B86AH525187","2.6","http://www.autobase.com/photos/00100/1202/12024199_001.jpg","Civic Coupe","","/images/shopping-assets/thumb/2010/FG1B8AJW_Atomic_Blue_Metallic_thumb.jpg","FG1B8AJW","C8334","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2010&Make=Honda&Model=Civic Coupe EX&StockNumber=C8334&VIN=2HGFG1B86AH525187&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[16] = new Array("2012","Civic Sedan EX","5 Speed Automatic","Silver","19999","5432","207971","19XFB2F88CE326024","2.6","http://www.autobase.com/photos/00100/1199/11996685_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2012/FB2F8CJW_Alabaster_Silver_Metallic_thumb.jpg","FB2F8CJW","C8298","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Civic Sedan EX&StockNumber=C8298&VIN=19XFB2F88CE326024&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[17] = new Array("2012","Civic Sedan EX w/ Leather","5 Speed Automatic","Blue","20971","6956","207971","19XFB2F9XCE318063","2.6","http://www.autobase.com/photos/00100/1201/12019963_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2012/FB2F9CJNW_Dyno_Blue_Pearl_thumb.jpg","FB2F9CJNW","C8297","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Civic Sedan EX w/ Leather&StockNumber=C8297&VIN=19XFB2F9XCE318063&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[18] = new Array("2012","Accord Sedan LX","5 Speed Automatic","Silver","20989","6961","207971","1HGCP2F37CA197691","2.6","/images/shopping-assets/thumb/2012/CP2F3CEW_Alabaster_Silver_Metallic_thumb.jpg","Accord Sedan","","/images/shopping-assets/thumb/2012/CP2F3CEW_Alabaster_Silver_Metallic_thumb.jpg","CP2F3CEW","C8350","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Accord Sedan LX&StockNumber=C8350&VIN=1HGCP2F37CA197691&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[19] = new Array("2012","Accord Sedan LX","5 Speed Automatic","Silver","20858","6272","207971","1HGCP2F34CA156595","2.6","http://www.autobase.com/photos/00100/1210/12102578_001.jpg","Accord Sedan","","/images/shopping-assets/thumb/2012/CP2F3CEW_Alabaster_Silver_Metallic_thumb.jpg","CP2F3CEW","C8362","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Accord Sedan LX&StockNumber=C8362&VIN=1HGCP2F34CA156595&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[20] = new Array("2012","Civic Sedan EX","5 Speed Automatic","Silver","19995","5543","207971","2HGFB2F88CH325350","2.6","http://www.autobase.com/photos/00100/1200/12009077_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2012/FB2F8CJW_Alabaster_Silver_Metallic_thumb.jpg","FB2F8CJW","C8295","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Civic Sedan EX&StockNumber=C8295&VIN=2HGFB2F88CH325350&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[21] = new Array("2012","Pilot 4WD EX w/Leather & Navigation","5 Speed Automatic","White","33945","25538","207971","5FNYF4H77CB010721","2.6","http://www.autobase.com/photos/00100/1202/12028738_001.jpg","Pilot","","/images/shopping-assets/thumb/2012/YF4H7CKNW_Taffeta_White_thumb.jpg","YF4H7CKNW","C138450A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Pilot 4WD EX w/Leather & Navigation&StockNumber=C138450A&VIN=5FNYF4H77CB010721&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[22] = new Array("2012","Crosstour 4WD EX V-6 w/Leather & Navigation","5 Speed Automatic","Black","32854","7349","207971","5J6TF2H51CL008676","2.6","http://www.autobase.com/photos/00100/1207/12079350_001.jpg","Crosstour","","/images/shopping-assets/thumb/2012/TF2H5CKNW_Crystal_Black_Pearl_thumb.jpg","TF2H5CKNW","C8354","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Crosstour 4WD EX V-6 w/Leather & Navigation&StockNumber=C8354&VIN=5J6TF2H51CL008676&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[23] = new Array("2011","Pilot 4WD EX w/Leather","5 Speed Automatic","Black","31920","27753","207971","5FNYF4H5XBB057660","2.6","http://www.autobase.com/photos/00100/1204/12042712_001.jpg","Pilot","","/images/shopping-assets/thumb/2011/YF4H5BJNW_Crystal_Black_Pearl_thumb.jpg","YF4H5BJNW","C139170A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2011&Make=Honda&Model=Pilot 4WD EX w/Leather&StockNumber=C139170A&VIN=5FNYF4H5XBB057660&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[24] = new Array("2012","Civic Coupe LX","5 Speed Automatic","Silver","16997","11400","207971","2HGFG3B52CH541519","2.6","http://www.autobase.com/photos/00100/1203/12036238_001.jpg","Civic Coupe","","/images/shopping-assets/thumb/2012/FG3B5CEW_Alabaster_Silver_Metallic_thumb.jpg","FG3B5CEW","C8332","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Civic Coupe LX&StockNumber=C8332&VIN=2HGFG3B52CH541519&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[25] = new Array("2012","Pilot 4WD EX w/Leather","5 Speed Automatic","White","33985","8589","207971","5FNYF4H57CB039277","2.6","/images/shopping-assets/thumb/2012/YF4H5CJNW_Taffeta_White_thumb.jpg","Pilot","","/images/shopping-assets/thumb/2012/YF4H5CJNW_Taffeta_White_thumb.jpg","YF4H5CJNW","C8326","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207971","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207971&Year=2012&Make=Honda&Model=Pilot 4WD EX w/Leather&StockNumber=C8326&VIN=5FNYF4H57CB039277&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[26] = new Array("2013","Pilot 4WD Touring Package w/Navigation & DVD","5 Speed Automatic","White","38788","701","207343","5FNYF4H99DB061902","7.3","http://www.autobase.com/photos/00100/1210/12104585_001.jpg","Pilot","","/images/shopping-assets/thumb/2013/YF4H9DKNW_White_Diamond_Pearl_thumb.jpg","YF4H9DKNW","27595P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2013&Make=Honda&Model=Pilot 4WD Touring Package w/Navigation & DVD&StockNumber=27595P&VIN=5FNYF4H99DB061902&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[27] = new Array("2013","Pilot 4WD Touring Package w/Navigation & DVD","5 Speed Automatic","Red","38488","10320","207343","5FNYF4H93DB055125","7.3","http://www.autobase.com/photos/00100/1210/12108354_001.jpg","Pilot","","/images/shopping-assets/thumb/2013/YF4H9DKNW_Dark_Cherry_Pearl_thumb.jpg","YF4H9DKNW","27673P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2013&Make=Honda&Model=Pilot 4WD Touring Package w/Navigation & DVD&StockNumber=27673P&VIN=5FNYF4H93DB055125&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[28] = new Array("2013","Odyssey EX w/ Leather & DVD","5 Speed Automatic","White","34895","725","207343","5FNRL5H62DB081563","7.3","http://www.autobase.com/photos/00100/1210/12104714_001.jpg","Odyssey","","/images/shopping-assets/thumb/2013/RL5H6DJXW_Taffeta_White_thumb.jpg","RL5H6DJXW","27591P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2013&Make=Honda&Model=Odyssey EX w/ Leather & DVD&StockNumber=27591P&VIN=5FNRL5H62DB081563&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[29] = new Array("2012","Pilot 2WD EX w/Leather & DVD","5 Speed Automatic","Black","34895","9262","207343","5FNYF3H68CB039193","7.3","http://www.autobase.com/photos/00100/1210/12108368_001.jpg","Pilot","","/images/shopping-assets/thumb/2012/YF3H6CJNW_Crystal_Black_Pearl_thumb.jpg","YF3H6CJNW","27652P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2012&Make=Honda&Model=Pilot 2WD EX w/Leather & DVD&StockNumber=27652P&VIN=5FNYF3H68CB039193&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[30] = new Array("2012","Pilot 4WD Touring Package w/Navigation & DVD","5 Speed Automatic","Brown","36788","11077","207343","5FNYF4H98CB061307","7.3","http://www.autobase.com/photos/00100/1210/12104807_001.jpg","Pilot","","/images/shopping-assets/thumb/2012/YF4H9CKNW_Dark_Amber_Metallic_thumb.jpg","YF4H9CKNW","27620P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2012&Make=Honda&Model=Pilot 4WD Touring Package w/Navigation & DVD&StockNumber=27620P&VIN=5FNYF4H98CB061307&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[31] = new Array("2013","Pilot 4WD Touring Package w/Navigation & DVD","5 Speed Automatic","White","38488","7487","207343","5FNYF4H93DB019516","7.3","http://www.autobase.com/photos/00100/1209/12099603_001.jpg","Pilot","","/images/shopping-assets/thumb/2013/YF4H9DKNW_White_Diamond_Pearl_thumb.jpg","YF4H9DKNW","27590P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2013&Make=Honda&Model=Pilot 4WD Touring Package w/Navigation & DVD&StockNumber=27590P&VIN=5FNYF4H93DB019516&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[32] = new Array("2012","Odyssey Touring Package","6 Speed Automatic","White","37895","9034","207343","5FNRL5H97CB116915","7.3","/images/shopping-assets/thumb/2012/RL5H9CKW_White_Diamond_Pearl_thumb.jpg","Odyssey","","/images/shopping-assets/thumb/2012/RL5H9CKW_White_Diamond_Pearl_thumb.jpg","RL5H9CKW","27622P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2012&Make=Honda&Model=Odyssey Touring Package&StockNumber=27622P&VIN=5FNRL5H97CB116915&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[33] = new Array("2012","CR-V AWD EX","5 Speed Automatic","Silver","24588","26520","207343","5J6RM4H58CL000523","7.3","http://www.autobase.com/photos/00100/1210/12108302_001.jpg","CR-V","","/images/shopping-assets/thumb/2012/RM4H5CJW_Alabaster_Silver_Metallic_thumb.jpg","RM4H5CJW","27635P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2012&Make=Honda&Model=CR-V AWD EX&StockNumber=27635P&VIN=5J6RM4H58CL000523&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[34] = new Array("2011","CR-V 4WD SE","5 Speed Automatic","Blue","22895","14374","207343","JHLRE4H48BC007483","7.3","http://www.autobase.com/photos/00100/1197/11977289_001.jpg","CR-V","","/images/shopping-assets/thumb/2011/RE4H4BEW_Glacier_Blue_Metallic_thumb.jpg","RE4H4BEW","136368A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2011&Make=Honda&Model=CR-V 4WD SE&StockNumber=136368A&VIN=JHLRE4H48BC007483&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[35] = new Array("2012","Accord Coupe EX V-6 w/Leather & Navigation","5 Speed Automatic","White","25488","16543","207343","1HGCS2B84CA011167","7.3","http://www.autobase.com/photos/00100/1207/12079561_001.jpg","Accord Coupe","","/images/shopping-assets/thumb/2012/CS2B8CKNW_Taffeta_White_thumb.jpg","CS2B8CKNW","27623P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2012&Make=Honda&Model=Accord Coupe EX V-6 w/Leather & Navigation&StockNumber=27623P&VIN=1HGCS2B84CA011167&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[36] = new Array("2013","Accord Coupe EX V-6 w/Leather","6 Speed Manual","Black","28788","6782","207343","1HGCT2A81DA000322","7.3","http://www.autobase.com/photos/00100/1206/12062241_001.jpg","Accord Coupe","","/images/shopping-assets/thumb/2013/CT2A8DJNW_Crystal_Black_Pearl_thumb.jpg","CT2A8DJNW","27588P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2013&Make=Honda&Model=Accord Coupe EX V-6 w/Leather&StockNumber=27588P&VIN=1HGCT2A81DA000322&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[37] = new Array("2011","Element 4WD EX","5 Speed Automatic","Orange","27488","21890","207343","5J6YH2H70BL000990","7.3","/images/shopping-assets/thumb/2011/YH2H7BEW_Citrus_Fire_Metallic_thumb.jpg","Element","","/images/shopping-assets/thumb/2011/YH2H7BEW_Citrus_Fire_Metallic_thumb.jpg","YH2H7BEW","27564Q","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2011&Make=Honda&Model=Element 4WD EX&StockNumber=27564Q&VIN=5J6YH2H70BL000990&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[38] = new Array("2012","Civic Sedan EX","5 Speed Automatic","Silver","19788","9330","207343","2HGFB2F81CH302363","7.3","http://www.autobase.com/photos/00100/1201/12012643_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2012/FB2F8CJW_Alabaster_Silver_Metallic_thumb.jpg","FB2F8CJW","133214A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2012&Make=Honda&Model=Civic Sedan EX&StockNumber=133214A&VIN=2HGFB2F81CH302363&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[39] = new Array("2010","Civic Hybrid","CVT","Silver","18488","14684","207343","JHMFA3F28AS004268","7.3","http://www.autobase.com/photos/00100/1197/11970189_001.jpg","Civic Hybrid","","/images/shopping-assets/thumb/2010/FA3F2AEW_Alabaster_Silver_Metallic_thumb.jpg","FA3F2AEW","27518P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2010&Make=Honda&Model=Civic Hybrid&StockNumber=27518P&VIN=JHMFA3F28AS004268&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[40] = new Array("2012","Civic Sedan EX","5 Speed Automatic","White","18788","4791","207343","19XFB2F86CE324255","7.3","http://www.autobase.com/photos/00100/1199/11992532_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2012/FB2F8CJW_Taffeta_White_thumb.jpg","FB2F8CJW","27530P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2012&Make=Honda&Model=Civic Sedan EX&StockNumber=27530P&VIN=19XFB2F86CE324255&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[41] = new Array("2012","Fit Sport","5 Speed Automatic","Gray","18788","28361","207343","JHMGE8H54CC006366","7.3","/images/shopping-assets/thumb/2012/GE8H5CEXW_Polished_Metal_Metallic_thumb.jpg","Fit","","/images/shopping-assets/thumb/2012/GE8H5CEXW_Polished_Metal_Metallic_thumb.jpg","GE8H5CEXW","27600P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2012&Make=Honda&Model=Fit Sport&StockNumber=27600P&VIN=JHMGE8H54CC006366&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[42] = new Array("2012","Civic Sedan LX","5 Speed Automatic","Red","17895","585","207343","19XFB2F5XCE377255","7.3","http://www.autobase.com/photos/00100/1209/12099666_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2012/FB2F5CEW_Crimson_Pearl_thumb.jpg","FB2F5CEW","27666P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2012&Make=Honda&Model=Civic Sedan LX&StockNumber=27666P&VIN=19XFB2F5XCE377255&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[43] = new Array("2010","Insight LX","CVT","Silver","15488","10014","207343","JHMZE2H56AS037501","7.3","http://www.autobase.com/photos/00100/1210/12108329_001.jpg","Insight","","/images/shopping-assets/thumb/2010/ZE2H5AEW_Alabaster_Silver_Metallic_thumb.jpg","ZE2H5AEW","27661P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207343","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207343&Year=2010&Make=Honda&Model=Insight LX&StockNumber=27661P&VIN=JHMZE2H56AS037501&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[44] = new Array("2011","CR-V 4WD EX w/Leather","5 Speed Automatic","Blue","24991","35488","207617","JHLRE4H78BC014234","10.8","/images/shopping-assets/thumb/2011/RE4H7BJNW_Glacier_Blue_Metallic_thumb.jpg","CR-V","","/images/shopping-assets/thumb/2011/RE4H7BJNW_Glacier_Blue_Metallic_thumb.jpg","RE4H7BJNW","39836A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207617","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207617&Year=2011&Make=Honda&Model=CR-V 4WD EX w/Leather&StockNumber=39836A&VIN=JHLRE4H78BC014234&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[45] = new Array("2010","CR-V 4WD EX","5 Speed Automatic","Silver","19882","56384","207617","5J6RE4H50AL005743","10.8","/images/shopping-assets/thumb/2010/RE4H5AJW_Alabaster_Silver_Metallic_thumb.jpg","CR-V","","/images/shopping-assets/thumb/2010/RE4H5AJW_Alabaster_Silver_Metallic_thumb.jpg","RE4H5AJW","P4127","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207617","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207617&Year=2010&Make=Honda&Model=CR-V 4WD EX&StockNumber=P4127&VIN=5J6RE4H50AL005743&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[46] = new Array("2012","CR-V AWD EX w/Leather & Navigation","5 Speed Automatic","Black","29991","14608","207617","5J6RM4H71CL014720","10.8","/images/shopping-assets/thumb/2012/RM4H7CKW_Crystal_Black_Pearl_thumb.jpg","CR-V","","/images/shopping-assets/thumb/2012/RM4H7CKW_Crystal_Black_Pearl_thumb.jpg","RM4H7CKW","39566A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207617","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207617&Year=2012&Make=Honda&Model=CR-V AWD EX w/Leather & Navigation&StockNumber=39566A&VIN=5J6RM4H71CL014720&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[47] = new Array("2013","Accord Sedan Sport","CVT","Red","27950","4418","207433","1HGCR2F52DA179130","12.8","http://www.autobase.com/photos/00100/1206/12063362_001.jpg","Accord Sedan","","/images/shopping-assets/thumb/2013/CR2F5DEW_Basque_Red_Pearl_thumb.jpg","CR2F5DEW","13164P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2013&Make=Honda&Model=Accord Sedan Sport&StockNumber=13164P&VIN=1HGCR2F52DA179130&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[48] = new Array("2010","Accord Sedan LX","5 Speed Automatic","Black","17995","45077","207433","1HGCP2F36AA014634","12.8","http://www.autobase.com/photos/00100/1197/11974885_001.jpg","Accord Sedan","","/images/shopping-assets/thumb/2010/CP2F3AEW_Crystal_Black_Pearl_thumb.jpg","CP2F3AEW","131256A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Accord Sedan LX&StockNumber=131256A&VIN=1HGCP2F36AA014634&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[49] = new Array("2010","Civic Coupe EX w/Leather","5 Speed Automatic","Red","18450","34575","207433","2HGFG1B95AH529434","12.8","/images/shopping-assets/thumb/2010/FG1B9AJNW_Rallye_Red_thumb.jpg","Civic Coupe","","/images/shopping-assets/thumb/2010/FG1B9AJNW_Rallye_Red_thumb.jpg","FG1B9AJNW","13138P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Civic Coupe EX w/Leather&StockNumber=13138P&VIN=2HGFG1B95AH529434&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[50] = new Array("2009","Ridgeline RTL w/Navigation","5 Speed Automatic","Gray","26999","43502","207433","5FPYK16539B106485","12.8","http://www.autobase.com/photos/00100/1205/12057692_001.jpg","Ridgeline","","/images/shopping-assets/thumb/2009/YK1659KNW_Sterling_Gray_Metallic_thumb.jpg","YK1659KNW","130324A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2009&Make=Honda&Model=Ridgeline RTL w/Navigation&StockNumber=130324A&VIN=5FPYK16539B106485&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[51] = new Array("2010","Insight LX","CVT","Silver","17950","13768","207433","JHMZE2H55AS037831","12.8","http://www.autobase.com/photos/00100/1204/12047638_001.jpg","Insight","","/images/shopping-assets/thumb/2010/ZE2H5AEW_Alabaster_Silver_Metallic_thumb.jpg","ZE2H5AEW","13157P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Insight LX&StockNumber=13157P&VIN=JHMZE2H55AS037831&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[52] = new Array("2010","Civic Sedan LX","5 Speed Automatic","Gray","16950","35058","207433","19XFA1F53AE073775","12.8","/images/shopping-assets/thumb/2010/FA1F5AEW_Polished_Metal_Metallic_thumb.jpg","Civic Sedan","","/images/shopping-assets/thumb/2010/FA1F5AEW_Polished_Metal_Metallic_thumb.jpg","FA1F5AEW","13182P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Civic Sedan LX&StockNumber=13182P&VIN=19XFA1F53AE073775&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[53] = new Array("2010","Insight EX","CVT","Gray","16950","33300","207433","JHMZE2H75AS040665","12.8","http://www.autobase.com/photos/00100/1209/12092144_001.jpg","Insight","","/images/shopping-assets/thumb/2010/ZE2H7AEW_Polished_Metal_Metallic_thumb.jpg","ZE2H7AEW","13179P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Insight EX&StockNumber=13179P&VIN=JHMZE2H75AS040665&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[54] = new Array("2010","Fit","5 Speed Automatic","Blue","15950","23820","207433","JHMGE8H25AC029772","12.8","http://www.autobase.com/photos/00100/1206/12068274_001.jpg","Fit","","/images/shopping-assets/thumb/2010/GE8H2AEW_Tidewater_Blue_Metallic_thumb.jpg","GE8H2AEW","13170P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Fit&StockNumber=13170P&VIN=JHMGE8H25AC029772&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[55] = new Array("2010","Civic Sedan LX","5 Speed Automatic","Silver","16495","42102","207433","19XFA1F59AE075384","12.8","http://www.autobase.com/photos/00100/1205/12052821_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2010/FA1F5AEW_Alabaster_Silver_Metallic_thumb.jpg","FA1F5AEW","131702A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Civic Sedan LX&StockNumber=131702A&VIN=19XFA1F59AE075384&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[56] = new Array("2010","Fit Sport","5 Speed Automatic","Silver","16995","30715","207433","JHMGE8H46AS025124","12.8","http://www.autobase.com/photos/00100/1203/12031349_001.jpg","Fit","","/images/shopping-assets/thumb/2010/GE8H4AEW_Storm_Silver_Metallic_thumb.jpg","GE8H4AEW","13151J","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Fit Sport&StockNumber=13151J&VIN=JHMGE8H46AS025124&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[57] = new Array("2008","Accord Sedan EX V-6 w/Leather","5 Speed Automatic","Green","20995","34098","207433","1HGCP36818A056074","12.8","/images/shopping-assets/thumb/2008/CP3688JNW_Mystic_Green_Metallic_thumb.jpg","Accord Sedan","","/images/shopping-assets/thumb/2008/CP3688JNW_Mystic_Green_Metallic_thumb.jpg","CP3688JNW","13177J","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2008&Make=Honda&Model=Accord Sedan EX V-6 w/Leather&StockNumber=13177J&VIN=1HGCP36818A056074&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[58] = new Array("2010","Civic Sedan EX","5 Speed Automatic","Silver","17950","20355","207433","19XFA1F89AE034599","12.8","http://www.autobase.com/photos/00100/1207/12073812_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2010/FA1F8AJW_Alabaster_Silver_Metallic_thumb.jpg","FA1F8AJW","13173P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Civic Sedan EX&StockNumber=13173P&VIN=19XFA1F89AE034599&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[59] = new Array("2010","Insight EX","CVT","Gray","16995","20037","207433","JHMZE2H75AS042576","12.8","http://www.autobase.com/photos/00100/1205/12058188_001.jpg","Insight","","/images/shopping-assets/thumb/2010/ZE2H7AEW_Polished_Metal_Metallic_thumb.jpg","ZE2H7AEW","131473A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Insight EX&StockNumber=131473A&VIN=JHMZE2H75AS042576&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[60] = new Array("2010","Civic Sedan LX","5 Speed Automatic","Blue","17450","34856","207433","2HGFA1F55AH566962","12.8","http://www.autobase.com/photos/00100/1197/11975625_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2010/FA1F5AEW_Atomic_Blue_Metallic_thumb.jpg","FA1F5AEW","131573A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Civic Sedan LX&StockNumber=131573A&VIN=2HGFA1F55AH566962&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[61] = new Array("2009","Civic Coupe LX","5 Speed Automatic","Silver","18500","15875","207433","2HGFG12659H542203","12.8","/images/shopping-assets/thumb/2009/FG1269EW_Alabaster_Silver_Metallic_thumb.jpg","Civic Coupe","","/images/shopping-assets/thumb/2009/FG1269EW_Alabaster_Silver_Metallic_thumb.jpg","FG1269EW","13141J","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2009&Make=Honda&Model=Civic Coupe LX&StockNumber=13141J&VIN=2HGFG12659H542203&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[62] = new Array("2009","Element 4WD EX","5 Speed Automatic","Gray","22995","54630","207433","5J6YH28759L003331","12.8","/images/shopping-assets/thumb/2009/YH2879EW_Polished_Metal_Metallic_thumb.jpg","Element","","/images/shopping-assets/thumb/2009/YH2879EW_Polished_Metal_Metallic_thumb.jpg","YH2879EW","13123J","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2009&Make=Honda&Model=Element 4WD EX&StockNumber=13123J&VIN=5J6YH28759L003331&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[63] = new Array("2011","Civic Coupe EX","5 Speed Automatic","Gray","18995","17919","207433","2HGFG1B83BH502628","12.8","http://www.autobase.com/photos/00100/1203/12034573_001.jpg","Civic Coupe","","/images/shopping-assets/thumb/2011/FG1B8BJW_Polished_Metal_Metallic_thumb.jpg","FG1B8BJW","131249A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2011&Make=Honda&Model=Civic Coupe EX&StockNumber=131249A&VIN=2HGFG1B83BH502628&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[64] = new Array("2012","Accord Sedan SE","5 Speed Automatic","White","23500","26208","207433","1HGCP2F60CA004162","12.8","http://www.autobase.com/photos/00100/1196/11968774_001.jpg","Accord Sedan","","/images/shopping-assets/thumb/2012/CP2F6CENW_Taffeta_White_thumb.jpg","CP2F6CENW","13121J","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2012&Make=Honda&Model=Accord Sedan SE&StockNumber=13121J&VIN=1HGCP2F60CA004162&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[65] = new Array("2011","Accord Sedan EX w/Leather","5 Speed Automatic","Silver","22995","20892","207433","1HGCP2F86BA042754","12.8","/images/shopping-assets/thumb/2011/CP2F8BJNW_Alabaster_Silver_Metallic_thumb.jpg","Accord Sedan","","/images/shopping-assets/thumb/2011/CP2F8BJNW_Alabaster_Silver_Metallic_thumb.jpg","CP2F8BJNW","131607A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2011&Make=Honda&Model=Accord Sedan EX w/Leather&StockNumber=131607A&VIN=1HGCP2F86BA042754&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[66] = new Array("2010","Odyssey LX","5 Speed Automatic","Gray","21995","24250","207433","5FNRL3H25AB027395","12.8","http://www.autobase.com/photos/00100/1207/12075974_001.jpg","Odyssey","","/images/shopping-assets/thumb/2010/RL3H2AEW_Polished_Metal_Metallic_thumb.jpg","RL3H2AEW","140008A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Odyssey LX&StockNumber=140008A&VIN=5FNRL3H25AB027395&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[67] = new Array("2013","Civic Coupe LX","5 Speed Manual","Gray","20995","9708","207433","2HGFG3A53DH507186","12.8","http://www.autobase.com/photos/00100/1204/12041036_001.jpg","Civic Coupe","","/images/shopping-assets/thumb/2013/FG3A5DEW_Polished_Metal_Metallic_thumb.jpg","FG3A5DEW","13154J","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2013&Make=Honda&Model=Civic Coupe LX&StockNumber=13154J&VIN=2HGFG3A53DH507186&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[68] = new Array("2010","Accord Sedan EX w/Leather","5 Speed Automatic","Black","20950","34570","207433","1HGCP2F81AA119299","12.8","http://www.autobase.com/photos/00100/1202/12026365_001.jpg","Accord Sedan","","/images/shopping-assets/thumb/2010/CP2F8AJNW_Crystal_Black_Pearl_thumb.jpg","CP2F8AJNW","13147P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Accord Sedan EX w/Leather&StockNumber=13147P&VIN=1HGCP2F81AA119299&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[69] = new Array("2010","Accord Sedan LX-P","5 Speed Automatic","Gray","19450","34496","207433","1HGCP2F44AA139737","12.8","http://www.autobase.com/photos/00100/1209/12092145_001.jpg","Accord Sedan","","/images/shopping-assets/thumb/2010/CP2F4AEW_Polished_Metal_Metallic_thumb.jpg","CP2F4AEW","13180P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Accord Sedan LX-P&StockNumber=13180P&VIN=1HGCP2F44AA139737&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[70] = new Array("2010","Civic Hybrid","CVT","White","19450","19992","207433","JHMFA3F20AS000344","12.8","http://www.autobase.com/photos/00100/1206/12066676_001.jpg","Civic Hybrid","","/images/shopping-assets/thumb/2010/FA3F2AEW_Spectrum_White_Pearl_thumb.jpg","FA3F2AEW","13168P","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2010&Make=Honda&Model=Civic Hybrid&StockNumber=13168P&VIN=JHMFA3F20AS000344&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[71] = new Array("2013","Accord Sedan Sport","CVT","Blue","25500","20411","207433","1HGCR2F50DA013009","12.8","http://www.autobase.com/photos/00100/1207/12075091_001.jpg","Accord Sedan","","/images/shopping-assets/thumb/2013/CR2F5DEW_Obsidian_Blue_Pearl_thumb.jpg","CR2F5DEW","13176J","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2013&Make=Honda&Model=Accord Sedan Sport&StockNumber=13176J&VIN=1HGCR2F50DA013009&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[72] = new Array("2013","CR-V AWD LX","5 Speed Automatic","Brown","24995","12198","207433","5J6RM4H37DL020679","12.8","http://www.autobase.com/photos/00100/1209/12094650_001.jpg","CR-V","","/images/shopping-assets/thumb/2013/RM4H3DEW_Urban_Titanium_Metallic_thumb.jpg","RM4H3DEW","131773A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2013&Make=Honda&Model=CR-V AWD LX&StockNumber=131773A&VIN=5J6RM4H37DL020679&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[73] = new Array("2012","Civic Sedan LX","5 Speed Automatic","Silver","18500","30957","207433","19XFB2F56CE304142","12.8","/images/shopping-assets/thumb/2012/FB2F5CEW_Alabaster_Silver_Metallic_thumb.jpg","Civic Sedan","","/images/shopping-assets/thumb/2012/FB2F5CEW_Alabaster_Silver_Metallic_thumb.jpg","FB2F5CEW","13166J","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2012&Make=Honda&Model=Civic Sedan LX&StockNumber=13166J&VIN=19XFB2F56CE304142&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[74] = new Array("2013","Fit","5 Speed Automatic","Blue","18500","4643","207433","JHMGE8H31DC007670","12.8","http://www.autobase.com/photos/00100/1207/12073813_001.jpg","Fit","","/images/shopping-assets/thumb/2013/GE8H3DEXW_Blue_Raspberry_Metallic_thumb.jpg","GE8H3DEXW","13174J","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2013&Make=Honda&Model=Fit&StockNumber=13174J&VIN=JHMGE8H31DC007670&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[75] = new Array("2013","Civic Sedan EX w/Leather","5 Speed Automatic","White","24500","6599","207433","19XFB2F90DE207698","12.8","http://www.autobase.com/photos/00100/1203/12036897_001.jpg","Civic Sedan","","/images/shopping-assets/thumb/2013/FB2F9DJNW_White_Orchid_Pearl_thumb.jpg","FB2F9DJNW","13153J","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2013&Make=Honda&Model=Civic Sedan EX w/Leather&StockNumber=13153J&VIN=19XFB2F90DE207698&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[76] = new Array("2009","Accord Sedan EX","5 Speed Automatic","Blue","18995","58145","207433","1HGCP26719A103798","12.8","http://www.autobase.com/photos/00100/1202/12026938_001.jpg","Accord Sedan","","/images/shopping-assets/thumb/2009/CP2679JW_Royal_Blue_Pearl_thumb.jpg","CP2679JW","13148J","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2009&Make=Honda&Model=Accord Sedan EX&StockNumber=13148J&VIN=1HGCP26719A103798&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[77] = new Array("2011","CR-V 4WD SE","5 Speed Automatic","Black","23950","28628","207433","JHLRE4H46BC003495","12.8","http://www.autobase.com/photos/00100/1203/12036899_001.jpg","CR-V","","/images/shopping-assets/thumb/2011/RE4H4BEW_Crystal_Black_Pearl_thumb.jpg","RE4H4BEW","131465A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2011&Make=Honda&Model=CR-V 4WD SE&StockNumber=131465A&VIN=JHLRE4H46BC003495&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[78] = new Array("2013","Civic Sedan EX","5 Speed Automatic","Blue","23999","1537","207433","19XFB2F8XDE220790","12.8","/images/shopping-assets/thumb/2013/FB2F8DJW_Dyno_Blue_Pearl_thumb.jpg","Civic Sedan","","/images/shopping-assets/thumb/2013/FB2F8DJW_Dyno_Blue_Pearl_thumb.jpg","FB2F8DJW","131668A","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2013&Make=Honda&Model=Civic Sedan EX&StockNumber=131668A&VIN=19XFB2F8XDE220790&OriginationUrl='+encodeURIComponent(location.href) + '");
+Inventory[79] = new Array("2012","Accord Sedan SE","5 Speed Automatic","Gray","23995","19758","207433","1HGCP2F68CA018794","12.8","http://www.autobase.com/photos/00100/1199/11996778_001.jpg","Accord Sedan","","/images/shopping-assets/thumb/2012/CP2F6CENW_Polished_Metal_Metallic_thumb.jpg","CP2F6CENW","13137J","http://honda.contactatonce.com/getagentstatusimage.aspx?ProviderId=6&MerchantID=207433","http://honda.contactatonce.com/caoclientcontainer.aspx?ProviderId=6&MerchantID=207433&Year=2012&Make=Honda&Model=Accord Sedan SE&StockNumber=13137J&VIN=1HGCP2F68CA018794&OriginationUrl='+encodeURIComponent(location.href) + '");
+</script>
+                            </div>
+                            <div id="DealerData">
+
+                                <script language="javascript" type="text/javascript">
+                                var Dealer = new Array();
+Dealer[0] = new Array("207971","Honda of Kirkland         ","2.6 miles","47.679916","-122.17569","(425)827-9300","Kirkland","12420 Ne 85th St","26","");
+Dealer[1] = new Array("207343","Honda Auto Center of Bellevue           ","7.3 miles","47.579334","-122.16294","(888)963-7057","Bellevue","13291 Se 36th St","18","");
+Dealer[2] = new Array("207617","Honda of Seattle         ","10.8 miles","47.615669","-122.33151","(206)382-8800","Seattle","1015 Olive Way","3","");
+Dealer[3] = new Array("207433","Lynnwood Honda                          ","12.8 miles","47.799","-122.33336","(425)775-7575","Edmonds","22020 Highway 99","33","");
+
+                                </script>
+                                <script language="javascript" type="text/javascript">
+                                
+                                </script>
+
+                            </div>
+                            <div id="DealerMapScript">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                    <div>
+                        <div style="float:left; font-weight:bold; padding-top:12px; padding-left:10px;">Select up to 5 models to compare &nbsp;&nbsp;</div><div style="float:left; margin-left:5px; margin-top:7px;"><a href="javascript:goCompare();" onclick="TrackLinks('comparenow');"><img class="rolloverbtn" src="/images/certified-used/inventory-search/btn-compare-off.jpg" width="134" height="29" border="0" /></a></div><br />
+                    </div>
+                    <div class="clr"></div>
+                    <div style="background-image:url(/images/certified-used/bg-financetoollink.jpg); background-repeat:repeat-x; width:520px; height:40px;"><div style="padding:10px 0px 0px 10px;">Finance your Honda. <a href="https://secure.automobiles.honda.com/tools/shopping.aspx?Function=apply_preapproval" onclick="TrackLinks('finance');" style="font-weight:bold;font-size:12px;color:#216aa4;">Apply now</a>.</div></div>
+                
+                </div>
+                <div id="dealerMapContainer" style="float:right;width:430px;">
+                    <div id="popUpContainer" style="position:absolute;z-index:993;margin-left:5px;margin-top:10px;">
+                        <div id="popUpDealer" style="margin: 20px; position: absolute; width: 400px;display:none;">
+	                        <div class="popUpLeftColumn">
+		                        <div class="popUpDealerInfo">
+			                        <span id="dealerPopUpName" style="font-weight: bold; font-size: 14px;">DealerName</span>
+			                        <br /><span id="dealerPopUpCity"></span> - <span id="dealerPopUpPhone"></span><br /><span id="dealerPopUpCount"></span><br />
+			                        <br />
+		                        </div>
+	                        </div>
+	                        <div class="popUpRightColumn">
+		                        <div class="closeBtnContainer">
+			                        <div class="closeBtn" onclick="closePopUp();"></div>
+		                        </div>
+	                        </div>
+	                        <div class="clr"></div>
+	                        <div class="popUpLeftColumn">
+		                        <div id="popUpVehicleList" class="popUpVehicleList">
+			                        <ul id="vehicleListUL">
+				                        <li id="itm1" class="vehicleInfoli" onmouseout="changeVehicleListInfoOff(1)" onmouseover="changeVehicleListInfo(1)">
+					                        <a style="text-decoration: none;" href="/certified-used/inventory-vehicle-details.aspx?Zip=90041&amp;VIN=JHMAP21228S000446&amp;DealerID=206888"></a>
+				                        </li>
+			                        </ul>			                        
+		                        </div>
+	                        </div>
+	                        <div class="popUpbottomRightColumn">
+		                        <div class="popUpvehicleInfo">
+			                        <div class="popUpVehicleInfoContent">
+				                        <div id="vehicleInfoTitle"></div>
+				                        <div id="vehicleInfoImg"></div>
+				                        <div id="vehicleInfoTrans"></div><div id="vehicleInfoColor"></div><div id="vehicleInfoPrice"></div><div id="vehicleInfoMileage"></div>
+				                        <div id="vehicleInfoMoreBtn"><a href="/certified-used/inventory-vehicle-details.aspx?zip=90041&amp;vin=JHMAP21228S000446"><img src="/images/certified-used/inventory-search/moreInfoBtn.jpg" border="0"></a></div>
+			                        </div>
+		                        </div>
+	                        </div>
+	                        <div class="clr"></div>
+	                        <div id="pagingContainer" style="text-align:center;">1 - 1 of 1</div>
+                        </div>
+                        <div id="vehicleInfoPopUp" style="margin: 30px; position: absolute; width: 400px;height:240px;display:none;">
+		                <div class="closeBtnContainer" style="margin-left: 290px;">
+			                <div class="closeBtn" onclick="closePopUp();"></div>
+		                </div>
+		                <div id="vehicleInfoPopUpImgContainer" class="vehicleInfoPopUpImgContainer" style="float: left;">
+		                </div>
+		                <div class="vehicleInfoPopUpDealerInfo" style="margin-left: 30px; float: left; text-align: left; padding-top: 20px; width: 215px;">
+			                <span id="vehiclePopUpDealerName" style="font-size: 13px; font-weight: bold;"></span>
+			                <br /><span id="vehiclePopUpDealerCityPhone"></span>
+			                <br /><span id="vehiclePopUpCAOLink"></span>
+		                </div>
+		                <div class="clr"></div>
+		                <div id="popupVehicleTitle"></div>
+		                <div id="popupVehicleInfo" style="float: left; width: 200px; text-align: left; margin-top: 10px; font-size: 13px;"></div>
+		                <div id="popupVehicleDetailsBtnContainer" style="float: left; width: 180px; margin-top: 10px;">
+		                </div>
+	                </div>
+                        <table id="popUpTbl" class="popUpTbl" cellpadding="0" cellspacing="0" style="display:none;">
+	                        <tbody>
+		                        <tr>
+			                        <td class="popUpTopLeft"></td>
+			                        <td class="popUpTopMid"></td><td class="popUpTopRight"></td>
+		                        </tr>
+		                        <tr>
+			                        <td class="popUpMidLeft"></td>
+			                        <td class="popUpMidContainer"><div id="popUpMidContent" class="popUpMidContent" style="height: 190px;"></div></td>
+			                        <td class="popUpMidRight"></td>
+		                        </tr>
+		                        <tr>
+			                        <td class="popUpBottemLeft"></td>
+			                        <td class="popUpBottemMid"></td>
+			                        <td class="popUpBottomRight"></td>
+		                        </tr>
+		                        <tr><td class="balloonTipContainer" colspan="3" style="padding-left:205px;"><div id="balloonTip"></div></td></tr>
+	                        </tbody>
+                        </table>
+                    </div>
+                    <div id="dealerMap" style="width: 425px; height:480px; position:relative;">
+                    </div>
+                    
+                </div>
+                <div class="clr"></div>
+                <div id="debug" style="display:none;"></div>
+                    
+                <!-- HTML -->
+            </div>
+            <div id="PageFooter">
+                
+
+<div id="FooterContainer">
+
+    <div id="FooterLinks">
+        <div id="FooterLinksContainer">
+            <div class="FooterLink"><a href="http://automobiles.honda.com/spanish/" target="_top">En Espa&#241;ol</a></div>
+            <div class="FooterDiv"></div>                    
+            <div class="FooterLink"><a href="http://automobiles.honda.com/information/customer-relations.aspx" target="_top">Customer Service/FAQs</a></div>
+            <div class="FooterDiv"></div>
+            <div class="FooterLink"><a href="http://automobiles.honda.com/information/owner-resources.aspx" target="_top">Owner Resources</a></div>
+            <div class="FooterDiv"></div>
+            <div class="FooterLink"><a href="http://automobiles.honda.com/mobile/" target="_top">Mobile Site</a></div>
+            <div class="FooterDiv"></div>
+            <div class="FooterLink"><a href="http://www.honda.com/" target="_top">All Honda Sites</a></div>
+            <div class="FooterDiv"></div>
+            <div class="FooterLink"><a href="http://automobiles.honda.com/information/consumer-privacy-policy.aspx" target="_top">Privacy Policy</a></div>
+            <div class="FooterDiv"></div>
+            <div class="FooterLink"><a href="http://automobiles.honda.com/information/legal-terms.aspx" target="_top">Terms of Use</a></div>
+            <div class="FooterDiv"></div>
+            <div class="FooterLink"><a href="http://automobiles.honda.com/site-map.aspx" target="_top">Site Map</a></div>
+        </div>
+    </div>
+    <div id="FooterCopyright">
+        &#169;2013 <span class="DottedLink"><b class="FooterCorporateLink"><a href="http://www.honda.com/" target="_top">American Honda Motor Co., Inc</a></b>.  All information contained herein applies to U.S. vehicles only.
+        <a id="HondaWorldwideLink" href="http://world.honda.com/link/" target="_top">Honda Worldwide</a>.</span>
+        <a id="AdChoices" href="http://preferences.truste.com/preference.html?affiliateId=99" target="_blank">AdChoices<img class="AdChoicesLogo" src="/images/_global/logos/AdChoicesLogo.gif" border="0" /></a>    
+
+    </div>
+
+</div>
+
+<div id="DisclaimersContainer">
+    <span name="Disclaimers"></span>
+
+    <span name="Disclaimer_certified-generic">Contact your local Honda Certified Used Car dealer for vehicle availability. All vehicles subject to prior sale. Dealers set their own prices. All prices and specifications are subject to change without notice. Prices may not include additional fees such as government fees and taxes, title and registration fees, finance charges, dealer document preparation fees, processing fees, and emission testing and compliance charges. All detailed vehicle information is provided by individual Honda automobile dealers. American Honda Motor Co., Inc. is neither responsible nor guarantees the accuracy of any information provided by individual Honda automobile dealers.</span><br /><br />
+
+
+</div>
+
+            </div>
+        </div>
+        <div id="RightShadow">
+            <img src="/images/_controls/global-header/background-header-right.png" width="20" height="51" /></div>
+    </div>
+    
+                <div id="Offers">
+                    <div id="OffersHeader"><div id="OfferTitle">&nbsp;</div><div id="OfferBtns"><img id="btnemail" src="/images/current-offers/btn-mapemail.jpg" border="0" /><a href="javascript:void(0);" onclick="Print();"><img src="/images/current-offers/btn-mapprint.jpg" border="0" /></a><img id="OffersClose" src="/images/current-offers/btn-mapclose.jpg" border="0" /></div></div>
+                    <div class="clr"></div>
+                    <div id="OffersIntro">
+                        <div id="OffersIntroText"></div>
+                        <div id="OfferList">
+                            <div id="OfferHLList">
+                                <div id="LeaseTitle"></div>
+                                <div id="LeaseOfferHLList"></div>
+                                <div id="FinanceTitle"></div>
+                                <div id="FinanceOfferHLList"></div>
+                            </div>
+                            <div id="OfferDescription">
+                                <div id="OfferDetailContent">
+                                    <div id="OfferDetailHeader"></div>
+                                    <div id="OfferHightLight">
+                                                <div class="OfferHightLight">
+                                                    <div id="OfferHightLight1"></div>
+                                                    <div id="OfferHightLight1desc" class="OfferHightLightdesc"></div>
+                                                </div>
+                                                <div class="OfferHightLightDivLine"><img src="/images/current-offers/line-offerdetaildiv.jpg" /></div>                                    
+                                                <div class="OfferHightLight">
+                                                    <div id="OfferHightLight2"></div>
+                                                    <div id="OfferHightLight2desc" class="OfferHightLightdesc"></div>                            
+                                                </div>
+                                                <div class="OfferHightLightDivLine"><img src="/images/current-offers/line-offerdetaildiv.jpg" /></div>                                    
+                                                <div class="OfferHightLight">
+                                                    <div id="OfferHightLight3"></div>
+                                                    <div id="OfferHightLight3desc" class="OfferHightLightdesc"></div>                            
+                                                </div>
+                                                <div class="OfferHightLightDivLine" id="OfferHightLightDivLine0"><img src="/images/current-offers/line-offerdetaildiv.jpg" /></div>
+                                                <div class="OfferHightLight" id="OfferHightLight0" >
+                                                    <div id="OfferHightLight4"></div>
+                                                    <div id="OfferHightLight4desc" class="OfferHightLightdesc"></div>                            
+                                                </div>                                         
+                                    </div>
+                                    <div class="clr"></div>
+                                    <div id="OfferDates"></div>
+                                    <div id="OfferShortDesc"></div>
+                                    <div id="OfferTerms"></div>
+                                    <div id="OfferDetailLink" class="OfferDetailLink"><a href="javascript:void(0);" onclick="showofferdetail(); return false;">Show Details</a><img src="/images/current-offers/icon-downarrow.jpg" border="0" /></div>
+                                    <div id="OfferDesc"></div>
+                                </div>
+                                <div class="clr"></div>
+                                <div id="UserEmail">
+                                    <div id="EmailTitle">Email Offer</div>
+                                    <div id="EmailIntro">You have selected to email this offer:</div>
+                                    <div id="EmailIntroText"></div>
+                                    <div id="EmailDivline"><img src="/images/current-offers/line-emaildiv.jpg" border="0" /></div>
+                                    <div id="EmailForm">
+                                        <div id="EmailFormInputs">
+                                            <div class="EmailFormItem">
+                                                <div class="EmailFormName">Your Email</div>
+                                                <div class="EmailFormInput"><input type="text" id="FromEmail" name="FromEmail" value="" /></div>
+                                            </div>
+                                            <div class="EmailFormItem">
+                                                <div class="EmailFormName">Recipient's Email</div>
+                                                <div class="EmailFormInput"><input type="text" id="ToEmail" name="ToEmail" value="" /></div>
+                                            </div>
+                                        </div>
+                                        <div id="EmailButton"><img id="btnofferemail" src="/images/current-offers/btn-offeremail-off.jpg" border="0" /></div>
+                                        <div id="EmailDisc" style="margin-top:80px;font-size:10px;"><sup>*</sup>These e-mail addresses will be used to e-mail the information on your behalf and will not be collected by Honda for any marketing purposes.</div>
+                                    </div>
+                                <div id="EmailThankyou">
+                                    <div id="ThankyouTitle">Thank you,</div>
+                                    <div id="ThankyouMessage"></div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>            
+                    <div style="text-align:right;width:98%;height:40px;"><img src="/images/current-offers/btn-backtoresult-off.jpg" alt="Back To Search Result" border="0"  id="OffersClose2" /></div>
+                </div>
+    
+<div id="TrackingTags">
+
+<!-- SiteCatalyst code version: H.22.1.
+Copyright 1997-2007 Omniture, Inc. More info available at
+http://www.omniture.com -->
+
+<script language="JavaScript">
+/* Specify the Report Suite ID(s) to track here */
+
+
+var s_account = 'ahmautomobilesprod';
+
+
+
+</script>
+
+<script language="JavaScript" src="/js/tracking/global_code.js"></script>
+<script language="javascript" type="text/javascript">
+
+    /* Custom Functions */
+
+    // Sometimes we want to track links on a page as specific page names.
+    // This function will help accomodate for that.
+    function TrackPageClick(sPageName) {
+
+        var s=s_gi(s_account);
+        s.pageName = sPageName;
+        s.events = '';
+        s.products = '';
+        
+        CallSDotT(s);
+    }
+
+    function TrackLinkClick(sLinkName) {
+
+        var s=s_gi(s_account);
+     
+        s.linkTrackVars = '';
+        s.linkTrackEvents='';
+        
+        CallSDotTL(s , this , sLinkName , "o");
+
+    }
+    
+    function CallSDotT(s) {
+    
+        // Nothing should call s.t() directly. Everything should go through this function.
+
+        s = FormatVars(s);
+
+        var s_code=s.t();if(s_code)document.write(s_code)
+
+    }
+    
+    function CallSDotTL(s , sObject , sLinkName , sLinkType) {
+  
+        // Nothing should call s.t() directly. Everything should go through this function.
+    
+        s = FormatVars(s);
+        
+        s.tl(sObject , sLinkType , sLinkName);
+
+    }
+    
+    function FormatVars(s) {
+        // The purpose of this function is to provide sort of a Vista layer for ensuring
+        //  that data is formatted as desired no matter how it is programmed.
+        
+        s.prop28 = 'English';
+        
+        
+        
+        s.prop12 = 'JS';
+        
+
+        if(s.prop1) s.eVar10 = s.prop1;
+        if(s.prop2) s.eVar11 = s.prop2;
+        if(s.prop3) s.eVar12 = s.prop3;
+        if(s.prop4) s.eVar13 = s.prop4;
+        if(s.prop5) s.eVar14 = s.prop5;
+        if(s.prop6) s.eVar15 = s.prop6;
+        if(s.prop7) s.eVar22 = s.prop7;
+        if(s.prop17) s.eVar17 = s.prop17;
+        if(s.prop18) s.eVar18 = s.prop18;
+        if(s.prop19) s.eVar24 = s.prop19;
+        if(s.prop22) s.eVar25 = s.prop22;
+        if(s.prop26)s.eVar26 = s.prop26;
+        if(s.prop27)s.eVar27 = s.prop27;
+        if(s.prop33)s.eVar16 = s.prop33;
+        if(s.prop34)s.eVar34 = s.prop34;
+        if(s.prop39)s.eVar7 = s.prop39;
+
+        s.prop25 = document.location.pathname.toUpperCase() + '' + window.location.search.toUpperCase();
+
+        // Certain props and eVars have been disabled. Make sure they are always empty.
+        s.prop21 = '';
+        s.prop24 = '';
+
+        s.eVar21 = '';
+        s.eVar23 = '';
+        s.eVar28 = '';
+        s.eVar35 = '';
+
+        s.hier1 = '';
+        s.hier2 = '';
+        
+        // Trim whitespace off the end of values and uppercase values
+        for (var sKey in s) {
+            if ( (sKey.substr(0,4) == 'prop') || (sKey.substr(0,4) == 'eVar') || (sKey.substr(0,8) == 'pageName') || (sKey.substr(0,8) == 'linkName') || (sKey.substr(0,8) == 'channel') ) {
+                if (s[sKey] != '') {
+                    s[sKey] = (s[sKey] + '').replace(/^\s+|\s+$/g, '');
+                    s[sKey] = s[sKey].toUpperCase();
+                }
+            } 
+        }
+        
+
+        return s;
+    }
+    
+    // for s.products
+    function GetModelProductType(sModel) {
+        switch (sModel.toUpperCase()) {
+            case 'ACCORD SEDAN': case 'ACCORD COUPE': case 'CIVIC SEDAN': case 'CIVIC COUPE': case 'CIVIC GX': case 'CIVIC GX NGV': case 'CIVIC GX FLEET': case 'CIVIC HYBRID': case 'CIVIC SI COUPE': case 'CIVIC SI SEDAN': case 'CR-Z': case 'FCX': case 'FIT': case 'INSIGHT': case 'S2000': case 'ACCORD PLUG-IN':
+                return 'CARS'; break;
+            case 'CR-V': case 'ELEMENT': case 'ELEMENT SC': case 'PILOT': case 'ODYSSEY': case 'RIDGELINE': case 'ACCORD CROSSTOUR': case 'CROSSTOUR':
+                return 'TRUCKS'; break;             
+        }
+        return '';
+    }
+    
+   
+
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+s.linkInternalFilters="javascript:,rpa.com,honda.com,redesign.automobiles.honda.com,automobiles.honda.com"
+s.servers='10.100.71.109';
+
+var CurrentPageName='Certified Used Inventory Search Results';
+if(CurrentPageName=='')CurrentPageName="Honda Automobiles - " + document.location.href;
+var Currentprop21='';
+var Currentprop23='';
+var Currentprop24='';
+var Currentprop25='';
+//ModelName and ModelYear For Model Sections
+
+//PageName, ModelName and ModelYear For HCUC Sections
+if(typeof CurrentModelName !=="undefined")s.prop1=CurrentModelName;
+if(typeof CurrentModelYear !=="undefined")s.prop2=CurrentModelYear;
+
+
+
+
+		<!--s.pageName='CERTIFIED USED RESULTS BY VEHICLE';-->
+		<!--s.channel='HCUC';-->
+		<!--s.prop8=TrackingZipCode;-->
+		<!--s.prop9='HCUC INVENTORY SEARCH';-->
+		<!--s.prop10=TrackingNumResults;-->
+		<!--s.prop26='DEALER INVENTORY';-->
+		<!--s.prop27='RESULTS';-->
+		<!--s.prop32=TrackingModelFilter + ':' + TrackingTransmissionFilter + ':' + TrackingStartYearFilter + ':' + TrackingEndYearFilter + ':' + TrackingRangeFilter + ' MILES';-->
+		<!--s.prop36=TrackingPriceFilter;-->
+		<!--s.prop37='HCUC:DEALER INVENTORY:RESULTS:CERTIFIED USED DEALER INVENTORY RESULTS';-->
+		<!--s.events='event22';-->
+		<!--s.eVar3='HCUC INVENTORY SEARCH';-->
+        
+        var DO_NOT_TRACK_ON_LOAD = true;
+	
+
+//Setting s.pageName
+//Special Case pageName For News Article Detail
+if(typeof CurrentNewsTitle!=="undefined") {
+    s.pageName=CurrentPageName+" Detail - "+CurrentNewsTitle;
+}
+//Special Case pageName For FAQ Questions
+else if(typeof CurrentFAQ!=="undefined") {
+    s.pageName=CurrentPageName+" Question "+CurrentFAQ;
+}
+//Special Case pageName For HCUC Section
+else if(typeof CurrentModelName !=="undefined"){
+    var tmpPageName=(s.prop26) ? s.prop26.split(":")[1] : "";
+    s.pageName="Certified Used " + CurrentModelYear+" "+CurrentModelName+" "+tmpPageName;
+    s.prop26 = "Certified Used Model Library";
+    s.prop27 = "Certified Used " + CurrentModelYear+" "+CurrentModelName;
+}
+else {
+    if (!s.pageName) s.pageName=CurrentPageName;
+}
+
+//Setting prop37
+if (!s.prop37) s.prop37=s.channel + ":" + s.prop26 + ":" + s.prop27 + ":" + s.pageName;
+/*
+if (!s.prop37) {
+    if (s.channel) {
+        s.prop37 = s.channel;
+    }    
+    if (s.prop26) {
+        if (s.prop37) { s.prop37 += ':'; }
+        s.prop37 += s.prop26;
+    }
+    if (s.prop27) {
+        if (s.prop37) { s.prop37 += ':'; }
+        s.prop37 += s.prop27;
+    }    
+    if (s.pageName) {
+        if (s.prop37) { s.prop37 += ':'; }
+        s.prop37 += s.pageName;
+    }
+}
+*/
+
+
+
+// Setting Portal Referral prop29 eVar29 if is from honda.com or www.honda.com
+
+
+
+
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+try {
+    if ( (typeof(DO_NOT_TRACK_ON_LOAD) != 'undefined') && (DO_NOT_TRACK_ON_LOAD) ) {
+    } else {
+        CallSDotT(s);
+    }
+} catch (ex) {
+    // This is here as a just in case since this line of code is so important
+    CallSDotT(s);
+}
+
+//--></script>
+
+
+
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><img src="http://honda.112.2o7.net/b/ss/ahmautomobilesprod/5/H.22.1--NS/0?pageName=CERTIFIED USED INVENTORY SEARCH RESULTS - NON-JS&c12=NON-JS" height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.22.1 -->
+
+
+
+
+
+
+
+
+
+
+<script language="JavaScript">
+
+// -------------------------------------
+// Dynamically add tracking code to page
+// -------------------------------------
+var xmlHttp = false;
+
+
+function AddTrackingTagsToPage (url) {
+
+    // Create http object
+    try {
+        xmlHttp=new XMLHttpRequest();
+    } catch (e) {
+        try {
+            xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    }
+
+    if (xmlHttp) {
+        xmlHttp.onreadystatechange = ProcessTrackingTags;
+        xmlHttp.open ('GET', url, true);
+        xmlHttp.send (null);
+    }
+
+}
+
+function ProcessTrackingTags() {
+
+    var sUserTrackingHTML = '';
+
+    if (xmlHttp.readyState == 4) {
+
+        if (xmlHttp.status == 200) {
+
+            var sUserTrackingHTML = xmlHttp.responseText;
+
+	        ParseTrackingHTML(sUserTrackingHTML);
+                    
+        } else {
+                // The request could not be fulfilled.
+        }
+    }
+
+}
+    
+    
+// This function will separate out the HTML and JavaScript from the HTML block.
+// The JavaScript code will be passed into an eval() statement.
+// The HTML code will be added to a new DIV.
+function ParseTrackingHTML(sValue) {
+
+		var sTempValue = sValue;
+
+		var sTempString = sTempValue.toLowerCase();
+		
+        // Pull JavaScript code out of HTML block
+		while (sTempString.indexOf("<scr" + "ipt") > 0) {
+		
+			var iIndex1 = sTempString.indexOf("<scr" + "ip" + "t");
+			var iIndex2 = iIndex1 + sTempString.substr(iIndex1).indexOf(">") + 1;
+			var iIndex3 = sTempString.substr(iIndex1).indexOf("</s" + "cr" + "ipt>");
+			
+			var sJS = sTempValue.substr(iIndex2   , iIndex3 - (iIndex2 - iIndex1));
+
+            // document.write won't work, so we need to replace it with a call to CreateDivAndWriteContent
+            sJS = sJS.replace(/document.write/g , 'CreateDivAndWriteContent');
+            // Get rid of comment tags
+            sJS = sJS.replace("<!--" , "");
+            sJS = sJS.replace("//-->" , "");
+
+            // Execute JS code
+			eval(sJS);
+
+            // Remove this JS block from sTempValue to look for next instance
+			sTempValue = sTempValue.substr(0 , iIndex1) + '' + sTempValue.substr(iIndex1 + iIndex3 + 9);
+
+			var sTempString = sTempValue.toLowerCase();			
+		
+		}
+
+    // What's remaining from sTempValue is just HTML. Write it to a <div>
+    CreateDivAndWriteContent(sTempValue);
+		
+}
+	
+// This function will dynamically create a div, populate it with passed in content, 
+//  and append it to the current document.
+function CreateDivAndWriteContent(sText) {
+
+    var oNewDiv = document.createElement('div');
+    oNewDiv.innerHTML = sText;
+    document.body.appendChild(oNewDiv);
+
+}
+
+
+
+// Create URL for tracking tags page
+// This should use javascript to retrieve the domain and protocol since we don't want to get a security violation by accessing the wrong domain.
+var sTrackingTagsPageURL = location.protocol + '//' + location.host + '/feeds/tracking-data.aspx?PageID=certified_inventory_search_results&ModelName=&ModelYear=&Language=';
+
+if(window.onload){
+    
+    
+    if (window.onload.toString().indexOf('oldonload') >= 0) {
+        window.onload = function() { }        
+    }
+    if(typeof(OnLoadExecute)=="function"){
+        if(window.onload!=OnLoadExecute){
+            var OldWindowOnLoadFunction=window.onload;
+            OnLoadAppend("OldWindowOnLoadFunction()");
+            window.onload=OnLoadExecute;
+        }else{
+        }
+        OnLoadAppend("AddTrackingTagsToPage(sTrackingTagsPageURL)");
+    }else{
+        var OldWindowOnLoadFunction=window.onload;
+        var TrackingOnLoadFunction=new Function("AddTrackingTagsToPage(sTrackingTagsPageURL); OldWindowOnLoadFunction();");
+        window.onload=TrackingOnLoadFunction;
+    }
+
+
+
+
+
+
+
+
+
+}else{
+    var TrackingOnLoadFunction=new Function("AddTrackingTagsToPage(sTrackingTagsPageURL)");
+    window.onload=TrackingOnLoadFunction;
+}
+</SCRIPT>
+
+
+
+        
+        
+         
+
+<!-- OPTIMOST GLOBAL MODULE AND COUNTER CODE -->
+<script type="text/javascript">
+if (typeof(opContentUrls)!='undefined' && typeof(opModulesArray)!='undefined' && opContentUrls.length>0 && opModulesArray.length>0) {
+	for(var i=0;i<opModulesArray.length;i++){
+		optimost.displayModule(opModulesArray[i]);
+	}
+}
+if(typeof opRunCounters=='function'){
+	opRunCounters();
+}
+</script>
+<!-- END OPTIMOST GLOBAL MODULE AND COUNTER CODE -->
+
+
+
+
+
+<!-- Begin Visual IQ Tags -->
+<script type="text/javascript" src="/js/IQ-SEOTag.js"></script>
+<script type="text/javascript">
+
+(function (){
+
+    var CURRENT_URL=document.URL;
+    var REFERRER_URL=document.referrer;
+    var additionalParameters={
+		     CUSTOM_ACCESS_MODES_BY_REFERRER:{
+	        	        	    SOCIAL:["facebook.com","twitter.com","plus.google.com","pinterest.com","instagram.com"]
+	        	        }
+	    }
+
+    var result =new IQSeoTag(REFERRER_URL,CURRENT_URL,null,additionalParameters);
+    var currentParams="false";
+    if(result.current_page_params && result.current_page_params.queryKey){
+
+
+			    for(key in result.current_page_params.queryKey){
+			    currentParams="true";		
+				    if(key.toLowerCase() != key){
+					    result.current_page_params.queryKey[key.toLowerCase()] = result.current_page_params.queryKey[key];
+					    delete result.current_page_params.queryKey[key];
+				    }
+			    }
+		    }
+    		
+    var imageURL;
+
+    if(result.modeOfAccess == "ORGANIC") {
+	    if(result.current_page_params.queryKey["kwid"] || CURRENT_URL.indexOf("kwid")>0 || CURRENT_URL.indexOf("KWID")>0){
+
+	    }else{
+		    imageURL = "http://ad.doubleclick.net/ad/N8821.547841.VISUALIQ.COM/B7809882.2;sz=1x1;u=" + result.source + "-" + result.query + "-" + result.current_page_params.query + "|" + REFERRER_URL + ";ord=[" + result.timestamp + "]?";
+	    }
+    	
+    }else if(result.modeOfAccess == "SOCIAL"){
+
+	    if(currentParams == "false"){
+    	
+		    imageURL = "http://ad.doubleclick.net/ad/N8821.547841.VISUALIQ.COM/B7809882;sz=1x1;u=" + result.current_page_params.query + "|" + REFERRER_URL + ";ord=[" + result.timestamp + "]?";
+	    }
+    }
+
+
+    if(result.current_page_params.queryKey["sp_mid"]){
+	       imageURL = "http://ad.doubleclick.net/ad/N8821.547841.VISUALIQ.COM/B7809882.4;sz=1x1;u=" + result.current_page_params.query + "|" + REFERRER_URL + ";ord=[" + result.timestamp + "]?";
+    }
+
+
+    if(CURRENT_URL.indexOf("kwid")>0 || CURRENT_URL.indexOf("KWID")>0){
+    	
+	    var params=CURRENT_URL.split("?");
+						    imageURL = "http://ad.doubleclick.net/ad/N8821.547841.VISUALIQ.COM/B7809882.3;sz=1x1;u=" + result.source + "-" + result.query + "-" + params[1] + "|" + REFERRER_URL + ";ord=[" + result.timestamp + "]?";
+    		
+	    }
+
+    if(REFERRER_URL.indexOf("youtube")>0){
+    if(currentParams == "false"){
+    		
+		    imageURL = "http://ad.doubleclick.net/ad/N8821.547841.VISUALIQ.COM/B7809882;sz=1x1;u=" + result.current_page_params.query + "|" + REFERRER_URL + ";ord=[" + result.timestamp + "]?";
+	    }
+    }
+    if (imageURL) {
+	    var image = new Image();
+	    image.src = imageURL;
+    }
+    
+}());
+</script>
+<!-- End Visual IQ Tags -->
+
+
+
+</div>
+   
+   		
+ 
+</body>
+</html>

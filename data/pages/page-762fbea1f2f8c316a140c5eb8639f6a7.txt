@@ -1,0 +1,2398 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js ie9" lang="en"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="maximum-scale=1.0; minimum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta name="description" content="Find, buy or order an inspected, certified and warrantied used vehicle at a great price at any GM Certified dealers in Quebec."/>
+    <meta name="keywords" content="GM Certified, Used vehicles Quebec" />
+    <meta name="robots" content="noodp,noydir" />
+    
+
+    <title>Used vehicle dealers everywhere in Quebec | GM Certified</title>
+
+    <link href="/stylesheets/stylesheet_en.css?1370958182" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/component/thickbox.css?1370958182" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" media="print" href="/stylesheets/stylesheet_print.css" />
+
+    
+    
+    <script src="/javascripts/jquery.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/jquery-ui.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/jrails.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/jquery.form.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/jquery.cookie.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/jquery.thickbox.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/ga_custom_tracking.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/map.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/application.js?1370958182" type="text/javascript"></script>
+    <script src="/javascripts/jquery.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/jquery-ui.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/jrails.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/jquery.form.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/jquery.cookie.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/jquery.thickbox.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/ga_custom_tracking.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/map.js?1370958182" type="text/javascript"></script>
+<script src="/javascripts/application.js?1370958182" type="text/javascript"></script>
+    <link href="/stylesheets/reskin/style.css?1370958182" media="screen" rel="stylesheet" type="text/css" />
+    
+    <link href="/stylesheets/reskin/map.css?1370958182" media="screen" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+      jQuery.noConflict();
+      TB_close_text = "Close";
+      TB_prev_text = "Prev";
+      TB_next_text = "Next";
+    </script> 
+    
+    
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script type="text/javascript">
+
+
+    /* NE PAS EFFACER - DEVRA ETRE REMIS EN PLACE */
+
+    jQuery(document).ready(function(){
+      var _delay  = 300;
+      var _min = '.min_tooltip';
+      var _max = '.max_tooltip';
+
+      var geocoder;
+      geocoder = new google.maps.Geocoder();
+
+  
+
+      //var keyWordsBox = jQuery("#keywords");
+      var keyWordsBox = jQuery("#form_recherche_rapide #keywords");
+
+      var keyWordsDefault = "Make, model, year, etc.";
+      
+
+
+      var keyWordsDefault_fr = "Marque, modèle, année, etc.";
+      var keyWordsDefault_en = "Make, model, year, etc.";
+
+      keyWordsBox.focus(function(){
+        if (jQuery(this).attr("value").replace(".", " ") == keyWordsDefault_fr.replace(".", " ") || jQuery(this).attr("value").replace(".", " ") == keyWordsDefault_en.replace(".", " ")) {
+          jQuery(this).attr("value", "");
+          jQuery("#usekeywords2").attr("value",'0');
+        }
+        jQuery("#usekeywords2").attr("value",'1');
+      });
+      keyWordsBox.blur(function(){
+        if (jQuery(this).attr("value") == "") {
+          jQuery(this).attr("value", keyWordsDefault);
+          jQuery("#form_recherche_avancee #usekeywords2").attr("value",'0');
+        }
+      });
+      jQuery("#make").bind("change",function(){
+        jQuery("#model").attr("disabled","disabled");
+      });
+      jQuery("#model").bind("change",function(){
+        //jQuery("#nombre_vehicules_text").hide();
+      });
+
+      /* ############################################################## */
+      /* MTLFJGM-1005 - Approach 1 : calc lat, lng here in _recherche_avancee and xfer. */
+      /* Approch 2 is to do it in _recherche_rapide ajax_before_call instead */
+      jQuery("#form_recherche_rapide #postal_code").keyup(function(){
+        //alert('in _recherche_avancee keyup postalcode')
+        //var postal_code = document.getElementById("postal_code").value;
+        var postal_code = jQuery(".postalCodeForLatLngInit").attr('value');
+        //alert('postal_code=' + postal_code);
+        postal_code = postal_code.replace(/\s/g,"");
+        if (postal_code.length == 0 || postal_code.length == 3 || postal_code.length == 6 ) {
+          //alert('OK pc length')
+          var session_postalcode = '';
+          //alert('postal_code=' + postal_code + ' session_postalcode=' + session_postal_code);
+          if (postal_code != session_postalcode){
+            //alert('postal_code != session_postalcode');
+            geocoder.geocode( { 'address': postal_code}, function(results, status) {
+              if (status == google.maps.GeocoderStatus.OK) {
+                //alert('OK lat=' + results[0].geometry.location.lat() + ' lng=' + results[0].geometry.location.lng())
+                jQuery("#form_recherche_avancee #lat").attr('value', results[0].geometry.location.lat());
+                jQuery("#form_recherche_avancee #lng").attr('value', results[0].geometry.location.lng());
+              } else {
+                jQuery("#form_recherche_avancee #lat").attr('value', '');
+                jQuery("#form_recherche_avancee #lng").attr('value', '');
+              }
+            });
+            fraLat=jQuery("#form_recherche_avancee #lat").attr('value');
+            fraLng=jQuery("#form_recherche_avancee #lng").attr('value');
+            //alert('#form_recherche_avancee #lat=' + fraLat + '#form_recherche_avancee #lng=' + fraLng)
+          }else{
+            //alert('postal_code == session_postalcode');
+          }
+        }else{
+          //alert('pc length not 0, 3, 6')
+        }
+      });
+      /* ############################################################## */
+
+    });
+
+
+    function ajax_call(){
+
+      // MTLFJGM-1033
+      jQuery('#submit_recherche_rapide').attr('disabled', true);
+      jQuery('#submit_recherche_rapide').css('background-color', '#6E6E6E');
+      jQuery('#submit_recherche_avancee').attr('disabled', true);
+      jQuery('#submit_recherche_avancee').css('background-color', '#6E6E6E');
+
+      jQuery("#nombre_vehicules").hide();
+      jQuery("#ajax_gif").show();
+    }
+
+    function ajax_call_end(){
+      jQuery("#ajax_gif").hide();
+      jQuery("#nombre_vehicules").show();
+
+      // MTLFJGM-1033
+      jQuery('#submit_recherche_rapide').attr('disabled', false);
+      jQuery('#submit_recherche_rapide').css('background-color', '#FF9600');
+      jQuery('#submit_recherche_avancee').attr('disabled', false);
+      jQuery('#submit_recherche_avancee').css('background-color', '#FF9600');
+    }
+
+  </script>
+
+
+    
+    
+       
+       
+       
+    
+
+    
+
+    
+
+<!-- <script src="<path>/ga_custom_tracking.js"></script> -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1544453-1']);
+  
+    _gaq.push(['_setDomainName', 'auto-cbgc.ca']);
+  
+
+  // insérer les custom vars ici
+  if(typeof(dealer_id)!="undefined" && typeof(dealer_name)!="undefined"){
+    _gaq.push(['_setCustomVar', 1, 'dealer', dealer_id + ' : ' + dealer_name, 3]);
+  }
+  // MTLFJGM-938 GA Phase 2 (2.1) - Uniquement quand on est dans le contexte d'un véhicule (fiche véhicule, mais pas résultat de recherche)
+  // La variable make_model est initialisée dans app/views/search/details.html.erb
+  if(typeof(make_model)!="undefined"){
+    _gaq.push(['_setCustomVar', 2, 'Marque et modèle', make_model, 3]);
+  }
+  _gaq.push(['_setCustomVar', 3, 'Version du Site', 'Complet', 3]);
+
+  // MTLFJGM-938 GA Phase 2 (2.1) - Initialisation conditionnelle
+  
+    _gaq.push(['_setCustomVar', 4, 'Langue', 'Anglais', 2]);
+  
+  if(typeof(utm_pagename)!="undefined"){
+    _gaq.push(['_set', 'page', utm_pagename]);
+  }
+
+  var utm_iccat = _ga.extractParamFromUri_(document.location.href, 'utm_iccat');
+  var utm_icitem = _ga.extractParamFromUri_(document.location.href, 'utm_icitem');
+
+  if (utm_iccat != null && utm_icitem != null){
+    utm_iccat = unescape(utm_iccat);
+    utm_icitem = unescape(utm_icitem);
+    if(utm_iccat.length >= 64){
+      utm_iccat = utm_iccat.substring(0, 63);
+    }
+
+    if(utm_iccat.length + utm_icitem.length >= 128){
+      utm_icitem = utm_icitem.substring(0, 127-utm_iccat.length);
+    }
+    _gaq.push(['_setCustomVar', 5, utm_iccat.replace(/\+/, ' '), utm_icitem.replace(/\+/, ' '), 1]);
+  }
+
+
+  
+  
+    var utm_pagename = location.pathname + (location.pathname.length>1 && location.pathname[location.pathname.length-1]=='/'  ? '':'/') + 'prompt-codepostal' + location.search
+  
+
+
+  // MTLFJGM-938 GA Phase 2 (3.1, 3.1.1 et 3.2)
+  if(typeof(utm_pagename)!="undefined"){
+    _gaq.push(['_set', 'page', utm_pagename]);
+  }
+
+  _gaq.push(['_setSiteSpeedSampleRate', 25]);
+  _gaq.push(['_trackPageview']);
+
+
+  // MTLFJGM-938 GA Phase 2 (3.4)
+  if(typeof(is_dealer_inventory_search)!="undefined" && typeof(dealer_id)!="undefined" && typeof(dealer_name)!="undefined"){
+    _gaq.push(['_trackEvent', 'Interaction Concessionnaire', 'Inventaire',  dealer_id + ' : ' + dealer_name, , true]);
+  }
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+jQuery(document).ready(function () {
+
+jQuery('a[href^="http"]:not([href$=".pdf"]):not([href*="auto-cbgc"]):not([href*="gmcorestatic"]):not([href*="linkedin.com"]):not([href*="twitter.com"]):not([href*="facebook.com"]):not([href*="youtube.com"])').bind('click mouseup', function (ev) {
+    _ga.trackLink(ev, "outbound", true, false, true);
+  });
+  jQuery('a[href*="facebook.com"]:not([href$=".pdf"]):not([href^="mailto"])').bind('click mouseup', function (ev) {
+    _ga.trackLink(ev, "social", true, false, true);
+  });
+  jQuery('a[href*="youtube.com"]:not([href$=".pdf"]):not([href^="mailto"])').bind('click mouseup', function (ev) {
+    _ga.trackLink(ev, "social", true, false, true);
+  });
+  jQuery('a[href*="linkedin.com"]:not([href$=".pdf"]):not([href^="mailto"])').bind('click mouseup', function (ev) {
+    _ga.trackLink(ev, "social", true, false, true);
+  });
+  jQuery('a[href*="twitter.com"]:not([href$=".pdf"]):not([href^="mailto"])').bind('click mouseup', function (ev) {
+    _ga.trackLink(ev, "social", true, false, true);
+  });
+  jQuery('a[href$=".pdf"]').bind('click mouseup', function (ev) {
+    _ga.trackLink(ev, "download", true, false, true);
+  });
+  jQuery('a[href^="mailto"]').bind('click mouseup', function (ev) {
+    _ga.trackLink(ev, "mailto", false, false, false);
+  });
+});
+</script>
+
+<!--
+  Copy and paste this tag before the data profile tag (we suggest to paste it in the HEAD).
+-->
+<script type="text/javascript" language="JavaScript">
+/*
+<![CDATA[
+*/
+(function() {
+  var proto = "http:";
+  var host = "cdn.adgear.com";
+  var bucket = "acs";
+  if (window.location.protocol == "https:") {
+    proto = "https:";
+    host = "acs.adgear.com";
+    bucket = "";
+  }
+  document.writeln('<scr' + 'ipt type="text/ja' + 'vascr' + 'ipt" s' + 'rc="' +
+      proto + '//' + host + '/' + bucket + '/adgear.js/current/adgear.js' +
+      '"></scr' + 'ipt>');
+})();
+/*
+]]>
+*/
+</script>
+
+<script type="text/javascript" language="JavaScript">
+  function showPopupContact(dealerId, dealerName, dealerEmail){
+
+    //MTLFJGM-938
+    _gaq.push(['_setCustomVar', 1, 'dealer', dealerId + ' : ' + dealerName, 3]);
+    _gaq.push(['_set', 'page', document.location.pathname + '/contactform' +  document.location.search]);
+    _gaq.push(['_trackPageview']);
+
+    jQuery('.popup-form-quicksearch input[name="dealer_id"]').val(dealerId)
+    jQuery('.popup-form-quicksearch input[name="dealer_name"]').val(dealerName)
+    jQuery('.popup-form-quicksearch input[name="dealer_email"]').val(dealerEmail)
+    jQuery('.popup-form-quicksearch').css("display","block");
+    jQuery('.closePopup').click(function(){jQuery('.popup-form-quicksearch').css("display","none")})
+  }
+</script>
+
+  </head>
+
+  
+  
+  
+  <body class="page_gm_home_index">
+
+    <div id="fb-root"></div>
+    <script>
+
+      // MTLFJGM-938 GA Phase 2 (5.7)
+      window.fbAsyncInit = function() {
+        FB.init({
+          //appId      : '123456', // ENTER your FB App ID
+          //channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+          //status     : true, // check login status
+          //cookie     : true, // enable cookies to allow the server to access the session
+          //xfbml      : true  // parse XFBML
+        });
+
+        _ga.trackFacebook(true, true); //Google Analytics tracking
+
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <script type="text/javascript">
+              jQuery(document).ready(function(){
+                if(jQuery.browser.msie){
+                  jQuery('.accueil.popup').css('display','block');
+                }
+                else{
+                  jQuery('.accueil.popup').fadeIn(300);
+                }
+              });
+            </script>
+    <!-- BEGIN POPUP CONTENT DO NOT DELETE DO NOT DELETE //-->
+    <div class='site_redirection_popup' id='site_redirection_banner' data-postal-code='H3G1X1' >
+      <div class='site_redirection_window'>
+        You're currently browsing Atlantic and Quebec certified vehicle site.<br><a href='http://apps.gm.ca/app/GMCanada/UsedVehicleLocatorList.do?lang=en&type=1&inputPostalCode=H3G1X1&radius_opt=500&nav=040&cta=blank&lang=fr&reqType=2&searchType=1&searchMake=&searchModel=&searchSortBy=PRICE&searchLowYear=2005&searchHighYear=2013&searchLowPrice=0&searchHighPrice=100000&searchLowOdometer=0&searchHighOdometer=200000&searchPostalCode=H3G1X1&searchHighRadius=500'>Click here</a> to be redirected to inventory in other regions.
+        <a href="#" class="site_redirection_close" id="site_redirection_banner_close">x</a>
+      </div>
+    </div>
+
+   <div class='accueil popup' style="display:none">
+      <div class='window'>
+        <div class="left-french">
+          <strong class="title">Recherchez une voiture<br /></strong>
+          <div class='region'>
+            <form action="/fr/search" id="form_recherche_popup_fr" method="get" onsubmit="return validatePopupPostalCode('fr')">
+              <input id="province" name="province" type="hidden" value="all" />
+              
+                <input id="radius" name="radius" type="hidden" value="25" />
+              
+              <label>Veuillez entrer un code postal pour voir les offres disponibles près de chez vous.</label>
+              <input autocomplete="off" class="postal" id="postal_code" name="postal_code" type="text" value="" />
+              <input class="submit" value="" name="" type="submit" />
+              <div id="error_fr" style="display:none;">
+                 <span class="error">Veuillez entrer un code postal valide.</span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="right-english">
+          <strong class="title">Find a car<br /></strong>
+          <div class='region'>
+            <form action="/en/search" id="form_recherche_popup_en" method="get" onsubmit="return validatePopupPostalCode('en')">
+              <input id="province" name="province" type="hidden" value="all" />
+              
+                <input id="radius" name="radius" type="hidden" value="25" />
+              
+              <label>Please provide your postal code to see the offers available in your neighborhood.</label>
+              <input autocomplete="off" class="postal" id="postal_code" name="postal_code" type="text" value="" />
+              <input class="submit" value="" name="" type="submit" />
+              <div id="error_en" style="display:none;">
+                <span class="error">Please enter a valid postal code</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END POPUP CONTENT //-->
+
+    <div id="page" class="page_accueil">
+      <div id="header">
+  <span class="logo">
+    <a href="/en"><img alt="Used vehicles dealers - GM Certified" height="74" src="/images/en/header/logo_gm_optimum-certifie.png?1370958182" width="160" /></a>
+   </span>
+  <ul class="sub_menu">
+    <li><a href="/" data-ajax="false">Fran&ccedil;ais</a></li>
+  </ul>
+</div>
+
+      <div id="main_menu">
+  <ul>
+    <li class="menu_accueil active"><a href="/en">Home</a></li>
+    <li class="menu_avantage "><a href="/en/vehicle-dealers">Find a Dealer</a></li>    
+    <li class="menu_goodwrench2 ">
+        <a href="/en/goodwrench">Goodwrench Service</a>
+        <ul class='sub-menu'>
+          <li><a href="/en/goodwrench">Québec</a></li>
+          <li><a href="/en/atlantic_goodwrench">Atlantic</a></li>
+        </ul>
+    </li>
+
+    
+    <!-- <li class="menu_guideachat "></li> -->
+    <li class="menu_guidesresources ">
+      <a href="/en/buying-guide-used-car">Guides & Resources</a>
+        <ul class='sub-menu'>
+          <li><a href="/en/buying-guide-used-car">Buying</a></li>
+          <li><a href="/en/evaluation">Evaluation</a></li>
+          <li><a href="/en/costs">Costs</a></li>
+          <li><a href="/en/insurance">Insurance</a></li>
+          <li><a href="/en/students">Students</a></li>
+        </ul>
+    </li>
+
+    
+    <!--
+    <li class="menu_10000 "></li>
+    <li class="menu_20000 "></li>
+    -->
+    <li id="less_than_10000" class="menu_10000 "><a href="/less-than-10000?active_tab=less_10000&amp;kms_from=0&amp;kms_to=160000&amp;lat=&amp;lng=&amp;postal_code=H3G1X1&amp;radius=2500&amp;year_from=2004&amp;year_to=2012">$10,000 and less</a></li>
+    <li id="less_than_20000" class="menu_20000 "><a href="/less-than-20000?active_tab=less_20000&amp;kms_from=0&amp;kms_to=160000&amp;lat=&amp;lng=&amp;postal_code=H3G1X1&amp;radius=2500&amp;year_from=2004&amp;year_to=2012">$20,000 and less</a></li>
+
+
+
+  </ul>
+
+</div>
+
+
+<div id="advantages">
+  <div class="ctn">
+    <p>GM CERTIFIED PRE-OWNED ADVANTAGES</p>
+    <a href="#" class="close-advantage close">Hide</a>
+    <div>
+      <div class="revendeurs first-last">
+        
+          <img alt="1st choice before all secondhand dealers" id="meilleur_choix_revendeurs" src="/images/reskin/en/revendeurs.png?1370958182" />
+          <div class="ictn">
+            <p class="title">Our selection of the best end-of-lease GM vehicles.</p>
+            <p>GM Certified dealers have exclusive first choice of end-of-lease GM vehicles. Non-selected vehicles go to auction. Therefore, you are sure to find the best available pre-owned vehicles.</p>
+            <a href="/en/advantage#advantage1" onclick="_gaq.push(['_trackEvent', 'Interaction Générale', 'Avantages', 'meilleur_choix_revendeurs']);" class="btn learnmore">Learn more</a>
+            <a href="#" class="btn see-all">See all</a>
+          </div>
+        
+      </div>
+      <div class="points">
+        
+          <img alt="150+ point inspection" id="inspection_points" src="/images/reskin/en/points.png?1370958182" />
+          <div class="ictn">
+            <p class="title">Stringent inspection carried out by qualified technicians.</p>
+            <p>At GM Certified dealers, every vehicle is subjected to a meticulous 150+ point inspection before it's sold. Our qualified technicians perform the required tune-ups and exercise strict quality control. So you're assured to find a used vehicle that's in excellent condition.</p>
+            <a href="/en/advantage#advantage2" onclick="_gaq.push(['_trackEvent', 'Interaction Générale', 'Avantages', 'inspection_points']);" class="btn learnmore">Learn more</a>
+            <a href="#" class="btn see-all">See all</a>
+          </div>
+        
+      </div>
+      <div class="manufacturier">
+        
+          <img alt="1er choix avant tous" id="garantie_manufacturier" src="/images/reskin/en/manufacturier.png?1370958182" />
+          <div class="ictn">
+            <p class="title">Serious warranties that prove themselves time and again.</p>
+            <p>All GM Certified vehicles are covered by a manufacturer's warranty. The warranty guarantees:</p>
+            <ul class="liste">
+                    <li>the vehicle is under the care of qualified technicians</li>
+                    <li>the installation of manufacturer-approved parts</li>
+            </ul>
+            <a href="/en/advantage#advantage3" onclick="_gaq.push(['_trackEvent', 'Interaction Générale', 'Avantages', 'garantie_manufacturier']);" class="btn learnmore">Learn more</a>
+            <a href="#" class="btn see-all">See all</a>
+          </div>
+        
+      </div>
+      <div class="routiere">
+        
+          <img alt="1er choix avant tous" id="assistance_routiere" src="/images/reskin/en/routiere.png?1370958182" />
+          <div class="ictn">
+            <p class="title">Help is just a call away, 24/7.</p>
+            <p>Thanks to 24-hour roadside assistance (included for at least 3 months or 5,000 km), you benefit from:</p>
+            <ul class="liste">
+                    <li>Help in the event of a flat or if you run out of gas</li>
+                    <li>A trip interruption reimbursement allowance</li>
+            </ul>
+            <a href="/en/advantage#advantage4" onclick="_gaq.push(['_trackEvent', 'Interaction Générale', 'Avantages', 'assistance_routiere']);" class="btn learnmore">Learn more</a>
+            <a href="#" class="btn see-all">See all</a>
+          </div>
+        
+      </div>
+      <div class="echange">
+        
+          <img alt="1er choix avant tous" id="privilege_echange" src="/images/reskin/en/echange.png?1370958182" />
+          <div class="ictn">
+            <p class="title">30 days to exchange your vehicle.</p>
+            <p>If you aren't satisfied with your new vehicle, bring it back within 30 days or 2,500 km and we'll exchange it.</p>
+            <a href="/en/advantage#advantage5" onclick="_gaq.push(['_trackEvent', 'Interaction Générale', 'Avantages', 'privilege_echange']);" class="btn learnmore">Learn more</a>
+            <a href="#" class="btn see-all">See all</a>
+          </div>
+        
+      </div>
+      <div class="piggy first-last">
+        
+          <img alt="1er choix avant tous" id="rabais_etudiant" src="/images/reskin/en/piggy.png?1370958182" />
+          <div class="ictn">
+            <p class="title">It pays to be a student.</p>
+            <p>You may qualify for our $500 student rebate if you are:</p>
+            <ul class="liste">
+                    <li>A student registered full-time and able to show a valid student ID from an accredited institution, or</li>
+                    <li>You have graduated within the last six months</li>
+            </ul>
+            <a href="/en/advantage#advantage6" onclick="_gaq.push(['_trackEvent', 'Interaction Générale', 'Avantages', 'rabais_etudiant']);" class="btn learnmore">Learn more</a>
+            <a href="#" class="btn see-all">See all</a>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <script id="map-info-window" type="text/x-tmpl">
+  <div style="float:left; height:auto; width:100%;">
+      <div class="bubble-info">
+          <p>
+              <strong>{{name}}</strong><br>
+              {{address}}
+          </p>
+      </div>
+      <div class="bubble-address">
+          <p>
+              {{city}},&nbsp;{{province_en}}
+              {{postalcode}}<br>
+              {{phone}}
+          </p>
+      </div>
+
+      <div class="inventaire">
+          <a href="#" class="btn_contact_right itineraire" onclick="document.getElementById('{{id}}_form').submit()">Directions</a>
+          <a href="{{inventory_url}}">Vehicles Inventory</a>
+          <a href="#" class="thickbox mail" onclick="showPopupContact('{{id}}','{{address}}','{{email}}')"><img alt="Ico-mail" src="images/reskin/common/ico-mail.png"></a>
+          <form id="{{id}}_form" action="/en/directions/{{id}}" method="get">
+            <input type="hidden" name="back" value="/en">
+              <input type="hidden" name="to" value="{{postalcode}}">
+          </form>
+      </div>
+  </div>
+</script>
+
+
+
+<!-- FORMULAIRE DE CONTACT DEALER -->
+<div class="popup-form-quicksearch">
+<form class="popup_s2f contactDealer" id="popup_s2f_map" action='/en/contact_send'>
+  
+  <a href='#' class='closePopup' onclick="_gaq.push(['_set', 'page', document.location.pathname + document.location.search]); _gaq.push(['_trackPageview']);_gaq.push(['_deleteCustomVar', 1]);_gaq.push(['_deleteCustomVar', 2]);" style="display:none;">&nbsp;</a>
+  <div id="erreur" style="display:none;">
+    <p></p>
+    <p class="erreur"><em>You must fill in fields marked with an asterisk and if a phone number is entered, it must be valid.</em></p>
+  </div>
+
+  <label for="name">Your name *</label>
+  <input class="size1" id="name" name="name" type="text" value="" />
+
+  <label for="email">Your email *</label>
+  <input class="size1" id="email" name="email" type="text" value="" />
+
+  <label for="phone">Telephone</label>
+  <input class="sizephone3" id="phone_area_code" maxLength="3" name="phone_area_code" type="text" value="" />
+  <input class="sizephone3" id="phone_prefix" maxLength="3" name="phone_prefix" type="text" value="" />
+  <input class="sizephone4" id="phone_line_number" maxLength="4" name="phone_line_number" type="text" value="" />
+  <label class="inline" for="name">extension</label>
+  <input class="sizephone4" id="extension" maxLength="4" name="extension" type="text" value="" />
+
+  <label for="comments">Questions / comments *</label>
+
+  <textarea class="textarea" id="questions" name="questions"></textarea>
+
+
+   <input type="hidden" name="dealer_id" value=""/>
+   <input type="hidden" name="dealer_name" value=""/>
+   <input type="hidden" name="dealer_email" value=""/>
+   <input type="hidden" name="no_redirect_to_details" value="true" />
+
+
+  <input id="other_info1" name="other_info1" style="display:none" type="text" value="Keep following field blank" />
+  <input id="other_info2" name="other_info2" style="display:none" type="text" value="" />
+
+
+  <input class="bouton  envoyer_enveloppe" name="commit" type="submit" value="Send" />
+</form>
+</div>
+<script type="text/javascript">
+  jQuery('.closePopup').click(function(){
+      jQuery('#page .popup').css("display","none");
+  });
+</script>
+<!-- FORMULAIRE DE CONTACT DEALER -->
+
+
+
+
+<div id="quickSearch">
+  <div class="ctn">
+    <form action="/en/search" id="form_recherche_rapide" method="get" onsubmit="return false">
+      
+      <input class="search keywordswitch" id="keywords" name="keywords" type="text" value="Make, model, year, etc." />
+            <input class="userkeywordswitch" id="usekeywords" name="usekeywords" type="hidden" value="0" />
+
+
+      <input class="submit" id="submit_recherche_rapide" name="commit" type="submit" value="Find" />
+      
+      <span class="nbResult">
+        <img alt="Ajax-loader" id="ajax_gif" src="/images/common/icones/ajax-loader.gif?1370958182" style="display:none;float:left;background-color:#fff;" />
+        <span id="nombre_vehicules" class="digits4">2976</span>
+      </span>
+
+      
+      <div id="results_area">
+        
+          <p>results in a radius of</p>
+          <select id="radius" name="radius"><option value="25" selected="selected">25 km</option>
+<option value="50">50 km</option>
+<option value="100">100 km</option>
+<option value="250">250 km</option>
+<option value="500">500 km</option>
+<option value="2500">+500 km</option></select>
+          <p>from postal code</p>
+          
+          <input autocomplete="off" class="postal postalValid postalCodeForLatLngInit" id="postal_code" maxLength="6" name="postal_code" type="text" value="H3G1X1" />
+        
+      </div>
+      
+
+</form>
+  </div>
+
+
+  
+  
+  
+</div>
+
+
+<script type="text/javascript">
+  function ieValueChange(pEle, pEleParent, pHidParent, pId){
+     var ele = document.getElementsByTagName(pEle);
+     var hid = document.getElementsByTagName('input');
+     
+     for(var i =0; i<ele.length; i++){
+
+       var selectId = ele[i].getAttribute('id')
+       var parentId = ele[i].parentNode.getAttribute('id')
+
+       if(selectId == pId && parentId == pEleParent){
+         for(var k=0; k<hid.length;k++){
+            var hidId = hid[k].getAttribute('id')
+            parentId = hid[k].parentNode.getAttribute('id')
+
+            if(hidId == pId && parentId == pHidParent && (hid[k].getAttribute('type') == 'hidden')){
+              hid[k].setAttribute('value', ele[i].getAttribute('value'))
+            }
+         }
+       }
+     }
+  }
+
+
+ jQuery('#form_recherche_rapide .submit').click(function(){
+
+
+   // MTLFJGM-938 GA Phase 2 (3.1 et 3.2)
+   // On sait que c'est la recherche rapide qui a été lancée.
+   jQuery('#form_recherche_avancee #ga_type_recherche').val('recherche_rapide')
+   
+   if(jQuery.browser.msie && parseInt(jQuery.browser.version) < 8){
+     jQuery('#form_recherche_avancee .hiddenkeyword').val(jQuery('#form_recherche_rapide .keywordswitch').val())
+     jQuery('#form_recherche_avancee .hiddenuserkey').val(jQuery('#form_recherche_rapide .userkeywordswitch').val())
+     jQuery('#form_recherche_avancee .hiddenpostal').val(jQuery('#form_recherche_rapide .postalCodeForLatLngInit').val())
+     jQuery('#form_recherche_avancee .hiddenradius').val(jQuery('#form_recherche_rapide select').val())
+    }else{
+     jQuery('#form_recherche_avancee #keywords').val(jQuery('#form_recherche_rapide #keywords').val())
+     jQuery('#form_recherche_avancee #usekeywords2').val(jQuery('#form_recherche_rapide #usekeywords2').val())
+     jQuery('#form_recherche_avancee #postal_code').val(jQuery('#form_recherche_rapide #postal_code').val())
+     jQuery('#form_recherche_avancee #radius').val(jQuery('#form_recherche_rapide #radius').val())
+   }
+   jQuery('#form_recherche_avancee').submit()  
+ })
+
+
+  function ajax_before_call(){
+
+    // MTLFJGM-1033
+    jQuery('#submit_recherche_rapide').attr('disabled', true);
+    jQuery('#submit_recherche_rapide').css('background-color', '#6E6E6E');
+    jQuery('#submit_recherche_avancee').attr('disabled', true);
+    jQuery('#submit_recherche_avancee').css('background-color', '#6E6E6E');
+
+    jQuery("#nombre_vehicules").hide();
+    jQuery("#ajax_gif").show();
+
+    if(jQuery.browser.msie && parseInt(jQuery.browser.version) < 8){
+      jQuery('#form_recherche_avancee .hiddenkeyword').val(jQuery('#form_recherche_rapide .keywordswitch').val())
+      jQuery('#form_recherche_avancee .hiddenuserkey').val(jQuery('#form_recherche_rapide .userkeywordswitch').val())
+      jQuery('#form_recherche_avancee .hiddenpostal').val(jQuery('#form_recherche_rapide .postalCodeForLatLngInit').val())
+      jQuery('#form_recherche_avancee .hiddenradius').val(jQuery('#form_recherche_rapide select').val())
+    }else{
+      jQuery('#form_recherche_avancee #keywords').val(jQuery('#form_recherche_rapide #keywords').val())
+      jQuery('#form_recherche_avancee #usekeywords2').val(jQuery('#form_recherche_rapide #usekeywords2').val())
+      jQuery('#form_recherche_avancee #postal_code').val(jQuery('#form_recherche_rapide #postal_code').val())
+      jQuery('#form_recherche_avancee #radius').val(jQuery('#form_recherche_rapide #radius').val())
+    }
+  }
+
+  function ajax_success_call(){
+    jQuery("#ajax_gif").hide();
+    jQuery("#nombre_vehicules").show();
+
+    // MTLFJGM-1033
+    jQuery('#submit_recherche_rapide').attr('disabled', false);
+    jQuery('#submit_recherche_rapide').css('background-color', '#FF9600');
+    jQuery('#submit_recherche_avancee').attr('disabled', false);
+    jQuery('#submit_recherche_avancee').css('background-color', '#FF9600');
+
+    // MTLFJGM-1091 - update map
+    // tentative de mise à jour nouvelle carte
+    //var dealers=;
+    //var dealers='';
+    // Ci-dessous, ça fonctionne, mais avec données statiques: n'est pas arrivé pas à passer la liste des dealers dynamique...
+    //app.globals.map = new app.DealersMap(dealers_sta, {lang: 'en'});
+
+  }
+
+  // MTLFJGM-1091 - update map - this is close to a solution
+  function ajax_success_call_dealers(dealers){
+
+    jQuery("#ajax_gif").hide();
+    jQuery("#nombre_vehicules").show();
+
+    // MTLFJGM-1033
+    jQuery('#submit_recherche_rapide').attr('disabled', false);
+    jQuery('#submit_recherche_rapide').css('background-color', '#FF9600');
+    jQuery('#submit_recherche_avancee').attr('disabled', false);
+    jQuery('#submit_recherche_avancee').css('background-color', '#FF9600');
+
+    // MTLFJGM-1091 - update map
+    // mise à jour nouvelle carte
+    if (jQuery.isArray(dealers)) {
+      app.globals.map.clear();
+      app.globals.map.add(dealers);
+    }
+  }
+
+
+
+</script>
+
+
+
+  <script type="text/javascript">
+//<![CDATA[
+jQuery('#form_recherche_rapide').delayedObserver(1, function(element, value) {ajax_before_call(); jQuery.ajax({data:jQuery('#form_recherche_avancee').serialize() + '&authenticity_token=' + encodeURIComponent('oujsoqQlQEAlwqNhiuCxhT3Z6LnFXPp7ygLV5LSbqSM='), dataType:'script', success:function(request){ajax_success_call_dealers('dummy json list')}, type:'post', url:'/en/home/update_home_form_count_and_map'})})
+//]]>
+</script>
+
+
+<script type="text/javascript">
+
+  jQuery('.telephone input').keyup(function(){
+    if(jQuery(this).attr('name') !='phone_line_number' ){
+      if(jQuery(this).val().length == 3)
+        jQuery(this).next().focus()
+    }
+  })
+
+  var failed = false;
+
+  function validateBubbleForm(formData, jqForm, options){
+    //alert('validateForm')
+    var form = jqForm[0];
+    if(!isValidBubbleEmailAddress(form.email.value))
+      doBubbleError(form.email);
+
+    /*MTLFJGM-527*/
+    if(form.phone_area_code.value || form.phone_prefix.value || form.phone_line_number.value || form.extension.value){
+      if(!isValidBubblePhoneAreaCode(form.phone_area_code.value)){
+        doBubbleError(form.phone_area_code);
+      }
+      if(!isValidBubblePhonePrefix(form.phone_prefix.value)){
+        doBubbleError(form.phone_prefix);
+      }
+      if(!isValidBubblePhoneLineNumber(form.phone_line_number.value)){
+        doBubbleError(form.phone_line_number);
+      }
+      if(!isValidBubbleExtension(form.extension.value)){
+        doBubbleError(form.extension);
+      }
+    }else{
+      jQuery('#popup_s2f_map #phone_area_code').removeClass("error");
+      jQuery('#popup_s2f_map #phone_prefix').removeClass("error");
+      jQuery('#popup_s2f_map #phone_line_number').removeClass("error");
+      jQuery('#popup_s2f_map #extension').removeClass("error");
+    }
+
+
+    if(!form.name.value){
+      doBubbleError(form.name);
+    }else{
+      //jQuery('.popup_s2f.contactDealer #name').removeClass('error')
+      jQuery('#popup_s2f_map #name').removeClass('error')
+    }
+
+    /* We are using jquery forms the textarea's default starting length is 8 :| */
+    if(form.questions.value.length < 8){
+      doBubbleError(form.questions);
+    }else{
+      //jQuery('.popup_s2f.contactDealer #questions').removeClass('error')
+      jQuery('#popup_s2f_map #questions').removeClass('error')
+    }
+
+    if(failed)
+      return false;
+
+    var dealer_id = form.dealer_id.value;
+    var dealer_name = form.dealer_name.value;
+    if(typeof(dealer_id)!='undefined'){
+        _gaq.push(['_setCustomVar', 1, 'dealer', dealer_id + ' : ' + dealer_name, 3]); // TODO: need to format dealer_name (get_dealer_name)
+    }
+    _gaq.push(['_set', 'page', document.location.pathname + '/contactform/thankyou' + document.location.search]);
+    _gaq.push(['_trackPageview']);
+    _gaq.push(['_trackEvent', 'Interaction Concessionnaire', 'Contact Concessionnaire', dealer_id + ' : ' + dealer_name]);
+    _gaq.push(['_set', 'page', document.location.pathname + document.location.search]);
+
+    ADGEAR.tags.data.init();
+    ADGEAR.tags.data.embed({ "id": "325", "chip_key": "b49a1c607abc012fc6e20024e87a30c2" });
+
+  }
+
+  function doBubbleError(element){
+    jQuery("#popup_s2f_map #erreur").fadeIn();
+    jQuery(element).effect("highlight");
+    jQuery(element).addClass('error');
+    failed = true;
+  }
+
+  function isValidBubbleEmailAddress(emailAddress)
+  {
+    var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+    if(pattern.test(emailAddress)){
+      //jQuery('.popup_s2f.contactDealer #email').removeClass('error')
+      jQuery('#popup_s2f_map #email').removeClass('error')
+      return true
+    }else{
+      return false
+    }
+  }
+
+  // MTLFJGM-527
+  function isValidBubblePhoneAreaCode(phoneAreaCode){
+    var pattern = new RegExp(/^[0-9]{3}$/);
+
+    if(pattern.test(phoneAreaCode)){
+      jQuery('#popup_s2f_map #phone_area_code').removeClass('error')
+      return true
+    }else{
+      return false
+    }
+  }
+  // MTLFJGM-527
+  function isValidBubblePhonePrefix(phonePrefix){
+    var pattern = new RegExp(/^[0-9]{3}$/);
+
+    if(pattern.test(phonePrefix)){
+      jQuery('#popup_s2f_map #phone_prefix').removeClass('error')
+      return true
+    }else{
+      return false
+    }
+  }
+  // MTLFJGM-527
+  function isValidBubblePhoneLineNumber(phoneLineNumber){
+    var pattern = new RegExp(/^[0-9]{4}$/);
+
+    if(pattern.test(phoneLineNumber)){
+      jQuery('#popup_s2f_map #phone_line_number').removeClass('error')
+      return true
+    }else{
+      return false
+    }
+  }
+  // MTLFJGM-527
+  function isValidBubbleExtension(extension){
+    var pattern = new RegExp(/^[0-9]{0,4}$/);
+
+    if(pattern.test(extension)){
+      jQuery('#popup_s2f_map #extension').removeClass('error')
+      return true
+    }else{
+      return false
+    }
+  }
+
+  function closeBubbleWindow(){
+    // Ici on veut fermer le popup
+    jQuery('.popup-form-quicksearch').css("display","none")
+    //tb_remove();
+  }
+
+  // bind to the form's submit event
+  jQuery('#popup_s2f_map').submit(function(){
+    failed = false;
+    jQuery(this).ajaxSubmit({beforeSubmit:validateBubbleForm,success:closeBubbleWindow})
+    return false;
+  });
+</script>
+
+<script type="text/javascript">
+  var chkBoxCount = 0
+
+  //MTLFJGM-1074-3
+  //var comparatorDirty = false
+
+  jQuery(document).ready(function() {
+    jQuery(".compare-numb").text(chkBoxCount);
+    // MTLFJGM-1074-3
+    //if (comparatorDirty){
+    //  jQuery(".compare-stat").text('D');
+    //} else {
+    //  jQuery(".compare-stat").text('K');
+    //}
+
+    jQuery(".compare-numb").text(chkBoxCount);
+  });
+
+  function CompareBoxClickVerif(objCheckBox, addorremove)
+  {
+    //alert("CompareBoxClickVerif");
+    if(addorremove == 'add'){
+      if(chkBoxCount >= 5){
+        //alert(">=5 do nothing");
+        //objCheckBox.checked = false;
+      }else{
+        //alert("INcrement chkBoxCount from " + chkBoxCount + " and update .compare-numb");
+        chkBoxCount++;
+        jQuery(".compare-numb").text(chkBoxCount);
+      }
+    }else{
+      //alert("DEcrement chkBoxCount from " + chkBoxCount + " and update .compare-numb");
+      if(chkBoxCount > 0){
+        chkBoxCount--;
+      }else{
+        chkBoxCount = 0;
+      }
+      jQuery(".compare-numb").text(chkBoxCount);
+    }
+  }
+</script>
+
+
+
+<div id="comparateur">
+  
+  
+  <p class="close">Comparator&nbsp;(<span class="compare-numb">0</span>)</p>
+  <div class="ctn">
+    <ul>
+      
+      <li></li>
+    
+         <li>Choose vehicles for comparison</li>
+      </ul>
+      <a href="" disable="true">Compare</a>
+    
+  </div>
+</div>
+
+
+<div id="leftCol">
+  
+
+<div class="advance-search">
+
+  <form action="/en/search" id="form_recherche_avancee" method="get" onsubmit="return validateSearchForm()">
+
+  
+    <input id="province" name="province" type="hidden" value="all" />
+    <input class="hiddenradius" id="radius" name="radius" type="hidden" value="25" />
+    
+    <input class="hiddenpostal" id="postal_code" name="postal_code" type="hidden" value="H3G1X1" />
+    
+    
+    <input id="lat" name="lat" type="hidden" />
+    <input id="lng" name="lng" type="hidden" />
+    
+    <input class="hiddenkeyword" id="keywords" name="keywords" type="hidden" value="Make, model, year, etc." />
+        <input class="hiddenuserkey" id="usekeywords2" name="usekeywords" type="hidden" value="0" />
+
+  
+  
+  <input id="ga_type_recherche" name="ga_type_recherche" type="hidden" value="recherche_avancee" />
+
+  
+
+    <label>Categories</label>
+    <select class="cat" id="category" name="category"><option value="">All categories</option>
+<option value="5">Luxury vehicle</option>
+<option value="6">Truck</option>
+<option value="1">Passenger car</option>
+<option value="2">Sports car</option>
+<option value="3">Minivan</option>
+<option value="4">Sport utility vehicle</option></select>
+    <span class="cat-ico"></span>
+
+    <label>Makes</label>
+    <select id="make" name="make"><option value="">All makes</option>
+<option value="Buick">Buick</option>
+<option value="Chevrolet">Chevrolet</option>
+<option value="Cadillac">Cadillac</option>
+<option value="GMC">GMC</option>
+<option value="HUMMER">HUMMER</option>
+<option value="Oldsmobile">Oldsmobile</option>
+<option value="Pontiac">Pontiac</option>
+<option value="Acura">Acura</option>
+<option value="Audi">Audi</option>
+<option value="BMW">BMW</option>
+<option value="Chrysler">Chrysler</option>
+<option value="Dodge">Dodge</option>
+<option value="Ford">Ford</option>
+<option value="Honda">Honda</option>
+<option value="Hyundai">Hyundai</option>
+<option value="Infiniti">Infiniti</option>
+<option value="Isuzu">Isuzu</option>
+<option value="Jaguar">Jaguar</option>
+<option value="Jeep">Jeep</option>
+<option value="Kia">Kia</option>
+<option value="Land Rover">Land Rover</option>
+<option value="Lexus">Lexus</option>
+<option value="Lincoln">Lincoln</option>
+<option value="Mazda">Mazda</option>
+<option value="Mercedes Benz">Mercedes Benz</option>
+<option value="Mercury">Mercury</option>
+<option value="MINI">MINI</option>
+<option value="Mitsubishi">Mitsubishi</option>
+<option value="Nissan">Nissan</option>
+<option value="Plymouth">Plymouth</option>
+<option value="Saab">Saab</option>
+<option value="Saturn">Saturn</option>
+<option value="Smart">Smart</option>
+<option value="Subaru">Subaru</option>
+<option value="Suzuki">Suzuki</option>
+<option value="Toyota">Toyota</option>
+<option value="Volkswagen">Volkswagen</option>
+<option value="Volvo">Volvo</option></select>
+
+    <label>Models</label>
+    <select id="model" name="model"><option value="">All models</option>
+<option value="2WD B-Series Pickup">2WD B-Series Pickup</option>
+<option value="300M">300M</option>
+<option value="300-Series">300-Series</option>
+<option value="350Z">350Z</option>
+<option value="3-Series">3-Series</option>
+<option value="4Runner">4Runner</option>
+<option value="4WD B-Series Pickup">4WD B-Series Pickup</option>
+<option value="5-Series">5-Series</option>
+<option value="626">626</option>
+<option value="6-Series">6-Series</option>
+<option value="7-Series">7-Series</option>
+<option value="9-2X">9-2X</option>
+<option value="9-3">9-3</option>
+<option value="9-5">9-5</option>
+<option value="9-7X">9-7X</option>
+<option value="A3">A3</option>
+<option value="A4">A4</option>
+<option value="A6">A6</option>
+<option value="A8">A8</option>
+<option value="A8 L">A8 L</option>
+<option value="Acadia">Acadia</option>
+<option value="Accent">Accent</option>
+<option value="Accord Cpe">Accord Cpe</option>
+<option value="Accord Hybrid">Accord Hybrid</option>
+<option value="Accord Sdn">Accord Sdn</option>
+<option value="Aerio">Aerio</option>
+<option value="Alero">Alero</option>
+<option value="allroad">allroad</option>
+<option value="Allroad">Allroad</option>
+<option value="Allure">Allure</option>
+<option value="Altima">Altima</option>
+<option value="Amanti">Amanti</option>
+<option value="Armada">Armada</option>
+<option value="Aspen">Aspen</option>
+<option value="Astro">Astro</option>
+<option value="Aura">Aura</option>
+<option value="Aurora">Aurora</option>
+<option value="Avalanche">Avalanche</option>
+<option value="Avalon">Avalon</option>
+<option value="Aveo">Aveo</option>
+<option value="Aviator">Aviator</option>
+<option value="Azera">Azera</option>
+<option value="Aztek">Aztek</option>
+<option value="B9 Tribeca">B9 Tribeca</option>
+<option value="Baja">Baja</option>
+<option value="B Class">B Class</option>
+<option value="Blazer">Blazer</option>
+<option value="Bonneville">Bonneville</option>
+<option value="Bravada">Bravada</option>
+<option value="B-Series Pickup">B-Series Pickup</option>
+<option value="C70">C70</option>
+<option value="Cabrio">Cabrio</option>
+<option value="Caliber">Caliber</option>
+<option value="Camaro">Camaro</option>
+<option value="Camry">Camry</option>
+<option value="Camry Hybrid">Camry Hybrid</option>
+<option value="Camry Solara">Camry Solara</option>
+<option value="Canyon">Canyon</option>
+<option value="Caravan">Caravan</option>
+<option value="Caravan C/V">Caravan C/V</option>
+<option value="Catera">Catera</option>
+<option value="Cavalier">Cavalier</option>
+<option value="C Class">C Class</option>
+<option value="Celica">Celica</option>
+<option value="Century">Century</option>
+<option value="Charger">Charger</option>
+<option value="Cherokee">Cherokee</option>
+<option value="Cirrus">Cirrus</option>
+<option value="Civic">Civic</option>
+<option value="Civic Cpe">Civic Cpe</option>
+<option value="Civic Hybrid">Civic Hybrid</option>
+<option value="Civic Sdn">Civic Sdn</option>
+<option value="CL">CL</option>
+<option value="CL Class">CL Class</option>
+<option value="CLK Class">CLK Class</option>
+<option value="CLS Class">CLS Class</option>
+<option value="Cobalt">Cobalt</option>
+<option value="Colorado">Colorado</option>
+<option value="Commander">Commander</option>
+<option value="Compass">Compass</option>
+<option value="Concorde">Concorde</option>
+<option value="Continental">Continental</option>
+<option value="Cooper">Cooper</option>
+<option value="Cooper Conv">Cooper Conv</option>
+<option value="Corolla">Corolla</option>
+<option value="Corvette">Corvette</option>
+<option value="Cougar">Cougar</option>
+<option value="Crossfire">Crossfire</option>
+<option value="Crown Victoria">Crown Victoria</option>
+<option value="Cruze">Cruze</option>
+<option value="CR-V">CR-V</option>
+<option value="CSX">CSX</option>
+<option value="CTS">CTS</option>
+<option value="CTS-V">CTS-V</option>
+<option value="CX-7">CX-7</option>
+<option value="CX-9">CX-9</option>
+<option value="Dakota">Dakota</option>
+<option value="DeVille">DeVille</option>
+<option value="Diamante">Diamante</option>
+<option value="Discovery II">Discovery II</option>
+<option value="Discovery Series II">Discovery Series II</option>
+<option value="DTS">DTS</option>
+<option value="Durango">Durango</option>
+<option value="Echo">Echo</option>
+<option value="E Class">E Class</option>
+<option value="Eclipse">Eclipse</option>
+<option value="Econoline Cargo Van">Econoline Cargo Van</option>
+<option value="Econoline Commercial Chassis">Econoline Commercial Chassis</option>
+<option value="Econoline Commercial Cutaway">Econoline Commercial Cutaway</option>
+<option value="Econoline Commrcl Chassis">Econoline Commrcl Chassis</option>
+<option value="Econoline Cutaway">Econoline Cutaway</option>
+<option value="Econoline Wagon">Econoline Wagon</option>
+<option value="Edge">Edge</option>
+<option value="EL">EL</option>
+<option value="Elantra">Elantra</option>
+<option value="Eldorado">Eldorado</option>
+<option value="Element">Element</option>
+<option value="Enclave">Enclave</option>
+<option value="Endeavor">Endeavor</option>
+<option value="Entourage">Entourage</option>
+<option value="Envoy">Envoy</option>
+<option value="Eos">Eos</option>
+<option value="Epica">Epica</option>
+<option value="Equinox">Equinox</option>
+<option value="ES 300">ES 300</option>
+<option value="ES 330">ES 330</option>
+<option value="ES 350">ES 350</option>
+<option value="Escalade">Escalade</option>
+<option value="Escape">Escape</option>
+<option value="Escape Hybrid">Escape Hybrid</option>
+<option value="Escort ZX2">Escort ZX2</option>
+<option value="Esteem">Esteem</option>
+<option value="EuroVan">EuroVan</option>
+<option value="Excursion">Excursion</option>
+<option value="Expedition">Expedition</option>
+<option value="Expedition Max">Expedition Max</option>
+<option value="Explorer">Explorer</option>
+<option value="Explorer Sport">Explorer Sport</option>
+<option value="Explorer Sport Trac">Explorer Sport Trac</option>
+<option value="Express">Express</option>
+<option value="F-150">F-150</option>
+<option value="F-150 Heritage">F-150 Heritage</option>
+<option value="F-150 Series">F-150 Series</option>
+<option value="F-150 Series Standard">F-150 Series Standard</option>
+<option value="F-150 SuperCrew">F-150 SuperCrew</option>
+<option value="Firebird">Firebird</option>
+<option value="Firefly">Firefly</option>
+<option value="Fit">Fit</option>
+<option value="Five Hundred">Five Hundred</option>
+<option value="FJ Cruiser">FJ Cruiser</option>
+<option value="Focus">Focus</option>
+<option value="Forester">Forester</option>
+<option value="fortwo">fortwo</option>
+<option value="Freelander">Freelander</option>
+<option value="Freestar">Freestar</option>
+<option value="Freestar Wagon">Freestar Wagon</option>
+<option value="Freestyle">Freestyle</option>
+<option value="Frontier">Frontier</option>
+<option value="Frontier 2WD">Frontier 2WD</option>
+<option value="Frontier 4WD">Frontier 4WD</option>
+<option value="Fusion">Fusion</option>
+<option value="FX35">FX35</option>
+<option value="FX45">FX45</option>
+<option value="G20">G20</option>
+<option value="G35 Coupe">G35 Coupe</option>
+<option value="G35 Sedan">G35 Sedan</option>
+<option value="G5">G5</option>
+<option value="G6">G6</option>
+<option value="G8">G8</option>
+<option value="Galant">Galant</option>
+<option value="G Class">G Class</option>
+<option value="GL CLass">GL CLass</option>
+<option value="Golf">Golf</option>
+<option value="Golf City">Golf City</option>
+<option value="Grand Am">Grand Am</option>
+<option value="Grand Caravan">Grand Caravan</option>
+<option value="Grand Caravan C/V">Grand Caravan C/V</option>
+<option value="Grand Cherokee">Grand Cherokee</option>
+<option value="Grand Marquis">Grand Marquis</option>
+<option value="Grand Prix">Grand Prix</option>
+<option value="Grand Vitara">Grand Vitara</option>
+<option value="GS 300">GS 300</option>
+<option value="GS 350">GS 350</option>
+<option value="GS 400">GS 400</option>
+<option value="GS 430">GS 430</option>
+<option value="GS 450h">GS 450h</option>
+<option value="GT">GT</option>
+<option value="GTI">GTI</option>
+<option value="GX 470">GX 470</option>
+<option value="H2">H2</option>
+<option value="H3">H3</option>
+<option value="HHR">HHR</option>
+<option value="Highlander">Highlander</option>
+<option value="I30">I30</option>
+<option value="I35">I35</option>
+<option value="Impala">Impala</option>
+<option value="Impreza">Impreza</option>
+<option value="Impreza Coupe">Impreza Coupe</option>
+<option value="Impreza Sedan">Impreza Sedan</option>
+<option value="Impreza Wagon">Impreza Wagon</option>
+<option value="Insight">Insight</option>
+<option value="Integra">Integra</option>
+<option value="Intrepid">Intrepid</option>
+<option value="Intrigue">Intrigue</option>
+<option value="Ion">Ion</option>
+<option value="Ion Coupe">Ion Coupe</option>
+<option value="Ion Quad Coupe">Ion Quad Coupe</option>
+<option value="Ion Sedan">Ion Sedan</option>
+<option value="IS 250">IS 250</option>
+<option value="IS 300">IS 300</option>
+<option value="IS 350">IS 350</option>
+<option value="Jetta">Jetta</option>
+<option value="Jetta City">Jetta City</option>
+<option value="Jetta Sedan">Jetta Sedan</option>
+<option value="Jetta Wagon">Jetta Wagon</option>
+<option value="Jimmy">Jimmy</option>
+<option value="Lacrosse">Lacrosse</option>
+<option value="Lancer">Lancer</option>
+<option value="Legacy">Legacy</option>
+<option value="Legacy Sedan">Legacy Sedan</option>
+<option value="Legacy Wagon">Legacy Wagon</option>
+<option value="LeSabre">LeSabre</option>
+<option value="LHS">LHS</option>
+<option value="Liberty">Liberty</option>
+<option value="LR3">LR3</option>
+<option value="LS">LS</option>
+<option value="LS 400">LS 400</option>
+<option value="LS 430">LS 430</option>
+<option value="LS 460">LS 460</option>
+<option value="LS 4dr Sedan">LS 4dr Sedan</option>
+<option value="L Series Sedan">L Series Sedan</option>
+<option value="L Series Wagon">L Series Wagon</option>
+<option value="Lucerne">Lucerne</option>
+<option value="LW">LW</option>
+<option value="LW 4dr Wagon">LW 4dr Wagon</option>
+<option value="LX 470">LX 470</option>
+<option value="M35">M35</option>
+<option value="M45">M45</option>
+<option value="Magentis">Magentis</option>
+<option value="Magnum">Magnum</option>
+<option value="Malibu">Malibu</option>
+<option value="Marauder">Marauder</option>
+<option value="Mark LT">Mark LT</option>
+<option value="Matrix">Matrix</option>
+<option value="Maxima">Maxima</option>
+<option value="MAZDA3">MAZDA3</option>
+<option value="MAZDA5">MAZDA5</option>
+<option value="MAZDA6">MAZDA6</option>
+<option value="M Class">M Class</option>
+<option value="MDX">MDX</option>
+<option value="Metro">Metro</option>
+<option value="Millenia">Millenia</option>
+<option value="MKS">MKS</option>
+<option value="MKX">MKX</option>
+<option value="MKZ">MKZ</option>
+<option value="Montana">Montana</option>
+<option value="Monte Carlo">Monte Carlo</option>
+<option value="Montero">Montero</option>
+<option value="Montero Sport">Montero Sport</option>
+<option value="MPV Wagon">MPV Wagon</option>
+<option value="Murano">Murano</option>
+<option value="Mustang">Mustang</option>
+<option value="MX-5 Miata">MX-5 Miata</option>
+<option value="MX5 Miata">MX5 Miata</option>
+<option value="Navigator">Navigator</option>
+<option value="Navigator L">Navigator L</option>
+<option value="Neon">Neon</option>
+<option value="New Beetle">New Beetle</option>
+<option value="New Beetle Convertible">New Beetle Convertible</option>
+<option value="New Beetle Coupe">New Beetle Coupe</option>
+<option value="Nitro">Nitro</option>
+<option value="NSX">NSX</option>
+<option value="Odyssey">Odyssey</option>
+<option value="Optra">Optra</option>
+<option value="Optra 5">Optra 5</option>
+<option value="Outback">Outback</option>
+<option value="Outlander">Outlander</option>
+<option value="Outlook">Outlook</option>
+<option value="Pacifica">Pacifica</option>
+<option value="Park Avenue">Park Avenue</option>
+<option value="Passat">Passat</option>
+<option value="Passat Sedan">Passat Sedan</option>
+<option value="Passat Wagon">Passat Wagon</option>
+<option value="Pathfinder">Pathfinder</option>
+<option value="Pathfinder Armada">Pathfinder Armada</option>
+<option value="Patriot">Patriot</option>
+<option value="Phaeton">Phaeton</option>
+<option value="Pilot">Pilot</option>
+<option value="Prelude">Prelude</option>
+<option value="Prius">Prius</option>
+<option value="Protege">Protege</option>
+<option value="Protege5">Protege5</option>
+<option value="Prowler">Prowler</option>
+<option value="PT Cruiser">PT Cruiser</option>
+<option value="Pursuit">Pursuit</option>
+<option value="Q45">Q45</option>
+<option value="Q45t">Q45t</option>
+<option value="Q7">Q7</option>
+<option value="Quest">Quest</option>
+<option value="QX4">QX4</option>
+<option value="QX56">QX56</option>
+<option value="Rabbit">Rabbit</option>
+<option value="Rainier">Rainier</option>
+<option value="Ram 1500">Ram 1500</option>
+<option value="Ram 2500">Ram 2500</option>
+<option value="Ram 3500">Ram 3500</option>
+<option value="Ram 3500 Cab Chassis">Ram 3500 Cab Chassis</option>
+<option value="Ram BR2500 Chassis Cab">Ram BR2500 Chassis Cab</option>
+<option value="Ram BR3500 Chassis Cab">Ram BR3500 Chassis Cab</option>
+<option value="Ram SRT-10">Ram SRT-10</option>
+<option value="Ram Van">Ram Van</option>
+<option value="Ram Wagon">Ram Wagon</option>
+<option value="Ranger">Ranger</option>
+<option value="Range Rover">Range Rover</option>
+<option value="Range Rover Sport">Range Rover Sport</option>
+<option value="RAV4">RAV4</option>
+<option value="R Class">R Class</option>
+<option value="RDX">RDX</option>
+<option value="Regal">Regal</option>
+<option value="Relay">Relay</option>
+<option value="Rendezvous">Rendezvous</option>
+<option value="Ridgeline">Ridgeline</option>
+<option value="Rio">Rio</option>
+<option value="RL">RL</option>
+<option value="Rodeo">Rodeo</option>
+<option value="Rondo">Rondo</option>
+<option value="RS 4">RS 4</option>
+<option value="RS6">RS6</option>
+<option value="RSX">RSX</option>
+<option value="RX 300">RX 300</option>
+<option value="RX 330">RX 330</option>
+<option value="RX 350">RX 350</option>
+<option value="RX 400h">RX 400h</option>
+<option value="RX-8">RX-8</option>
+<option value="S-10">S-10</option>
+<option value="S2000">S2000</option>
+<option value="S4">S4</option>
+<option value="S40">S40</option>
+<option value="S6">S6</option>
+<option value="S60">S60</option>
+<option value="S70">S70</option>
+<option value="S8">S8</option>
+<option value="S80">S80</option>
+<option value="Safari">Safari</option>
+<option value="Santa Fe">Santa Fe</option>
+<option value="Savana">Savana</option>
+<option value="SC 3dr Coupe">SC 3dr Coupe</option>
+<option value="SC 430">SC 430</option>
+<option value="S Class">S Class</option>
+<option value="Sebring">Sebring</option>
+<option value="Sebring Conv">Sebring Conv</option>
+<option value="Sebring Sdn">Sebring Sdn</option>
+<option value="Sedona">Sedona</option>
+<option value="Sentra">Sentra</option>
+<option value="Sephia">Sephia</option>
+<option value="Sequoia">Sequoia</option>
+<option value="Seville">Seville</option>
+<option value="Sienna">Sienna</option>
+<option value="Sierra">Sierra</option>
+<option value="Silhouette">Silhouette</option>
+<option value="Silverado">Silverado</option>
+<option value="Sky">Sky</option>
+<option value="SL 4dr Sedan">SL 4dr Sedan</option>
+<option value="SL Class">SL Class</option>
+<option value="SLK Class">SLK Class</option>
+<option value="Solstice">Solstice</option>
+<option value="Sonata">Sonata</option>
+<option value="Sonic">Sonic</option>
+<option value="Sonoma">Sonoma</option>
+<option value="Sorento">Sorento</option>
+<option value="Spectra">Spectra</option>
+<option value="Spectra5">Spectra5</option>
+<option value="Sportage">Sportage</option>
+<option value="Sprinter">Sprinter</option>
+<option value="Sprinter Cab Chassis">Sprinter Cab Chassis</option>
+<option value="Sprinter Wagon">Sprinter Wagon</option>
+<option value="SRX">SRX</option>
+<option value="SSR">SSR</option>
+<option value="STS">STS</option>
+<option value="STS-V">STS-V</option>
+<option value="S-TYPE">S-TYPE</option>
+<option value="Suburban">Suburban</option>
+<option value="Sunfire">Sunfire</option>
+<option value="Super Duty E-350 DRW">Super Duty E-350 DRW</option>
+<option value="Super Duty E-450 DRW">Super Duty E-450 DRW</option>
+<option value="Super Duty E-550 Cutaway">Super Duty E-550 Cutaway</option>
+<option value="Super Duty E-550 DRW">Super Duty E-550 DRW</option>
+<option value="Super Duty F-250">Super Duty F-250</option>
+<option value="Super Duty F-350 DRW">Super Duty F-350 DRW</option>
+<option value="Super Duty F-350 SRW">Super Duty F-350 SRW</option>
+<option value="Super Duty F-450">Super Duty F-450</option>
+<option value="Super Duty F-450 DRW">Super Duty F-450 DRW</option>
+<option value="Super Duty F-550">Super Duty F-550</option>
+<option value="Super Duty F-550 DRW">Super Duty F-550 DRW</option>
+<option value="Super Duty F-650">Super Duty F-650</option>
+<option value="Super Duty F-750">Super Duty F-750</option>
+<option value="SW 4dr Wagon">SW 4dr Wagon</option>
+<option value="Swift">Swift</option>
+<option value="Swift+">Swift+</option>
+<option value="SX 2.0">SX 2.0</option>
+<option value="SX4">SX4</option>
+<option value="Tacoma">Tacoma</option>
+<option value="Tahoe">Tahoe</option>
+<option value="Taurus">Taurus</option>
+<option value="Terrain">Terrain</option>
+<option value="Terraza">Terraza</option>
+<option value="Thunderbird">Thunderbird</option>
+<option value="Tiburon">Tiburon</option>
+<option value="Titan">Titan</option>
+<option value="TJ">TJ</option>
+<option value="TL">TL</option>
+<option value="Torrent">Torrent</option>
+<option value="Touareg">Touareg</option>
+<option value="Town Car">Town Car</option>
+<option value="Town &amp; Country">Town &amp; Country</option>
+<option value="Tracker">Tracker</option>
+<option value="TrailBlazer">TrailBlazer</option>
+<option value="Traverse">Traverse</option>
+<option value="Tribute">Tribute</option>
+<option value="Tribute SUV">Tribute SUV</option>
+<option value="Trooper">Trooper</option>
+<option value="TSX">TSX</option>
+<option value="TT">TT</option>
+<option value="Tucson">Tucson</option>
+<option value="Tundra">Tundra</option>
+<option value="Uplander">Uplander</option>
+<option value="V40">V40</option>
+<option value="V50">V50</option>
+<option value="V70">V70</option>
+<option value="Venture">Venture</option>
+<option value="Verano">Verano</option>
+<option value="Verona">Verona</option>
+<option value="Versa">Versa</option>
+<option value="Vibe">Vibe</option>
+<option value="Viper">Viper</option>
+<option value="Vitara">Vitara</option>
+<option value="Volt">Volt</option>
+<option value="VUE">VUE</option>
+<option value="VUE 4dr SUV">VUE 4dr SUV</option>
+<option value="Wave">Wave</option>
+<option value="Windstar">Windstar</option>
+<option value="Wrangler">Wrangler</option>
+<option value="X3">X3</option>
+<option value="X5">X5</option>
+<option value="X5-Series">X5-Series</option>
+<option value="XC70">XC70</option>
+<option value="XC90">XC90</option>
+<option value="XG300">XG300</option>
+<option value="XG350">XG350</option>
+<option value="XJ Series">XJ Series</option>
+<option value="XK Series">XK Series</option>
+<option value="XL7">XL7</option>
+<option value="XL-7">XL-7</option>
+<option value="XLR">XLR</option>
+<option value="XLR-V">XLR-V</option>
+<option value="Xterra">Xterra</option>
+<option value="X-Trail">X-Trail</option>
+<option value="X-TYPE">X-TYPE</option>
+<option value="Yaris">Yaris</option>
+<option value="Yukon">Yukon</option>
+<option value="Z3-Series">Z3-Series</option>
+<option value="Z4">Z4</option>
+<option value="Z4-Series">Z4-Series</option>
+<option value="Z8">Z8</option>
+<option value="Zephyr">Zephyr</option></select>
+
+    <div class="yearTo">
+      <label>Year</label>
+      <select id="year_from" name="year_from"><option value="2004" selected="selected">2004</option>
+<option value="2005">2005</option>
+<option value="2006">2006</option>
+<option value="2007">2007</option>
+<option value="2008">2008</option>
+<option value="2009">2009</option>
+<option value="2010">2010</option>
+<option value="2011">2011</option>
+<option value="2012">2012</option></select>
+      <span>to</span>
+      <select id="year_to" name="year_to"><option value="2004">2004</option>
+<option value="2005">2005</option>
+<option value="2006">2006</option>
+<option value="2007">2007</option>
+<option value="2008">2008</option>
+<option value="2009">2009</option>
+<option value="2010">2010</option>
+<option value="2011">2011</option>
+<option value="2012" selected="selected">2012</option></select>
+    </div>
+
+    <div class="PriceTo">
+      <label>Price</label>
+      <select id="price_from" name="price_from"><option value="0" selected="selected">0</option>
+<option value="2500">2500</option>
+<option value="5000">5000</option>
+<option value="7500">7500</option>
+<option value="10000">10000</option>
+<option value="12500">12500</option>
+<option value="15000">15000</option>
+<option value="17500">17500</option>
+<option value="20000">20000</option>
+<option value="25000">25000</option>
+<option value="30000">30000</option>
+<option value="35000">35000</option>
+<option value="40000">40000</option>
+<option value="45000">45000</option>
+<option value="50000">50000</option>
+<option value="60000">60000</option>
+<option value="70000">70000</option>
+<option value="80000">80000</option>
+<option value="90000">90000</option>
+<option value="100000">100000</option>
+<option value="110000">110000</option>
+<option value="120000">120000</option>
+<option value="130000">130000</option></select>
+      <span>to</span>
+      <select id="price_to" name="price_to"><option value="0">0</option>
+<option value="2500">2500</option>
+<option value="5000">5000</option>
+<option value="7500">7500</option>
+<option value="10000">10000</option>
+<option value="12500">12500</option>
+<option value="15000">15000</option>
+<option value="17500">17500</option>
+<option value="20000">20000</option>
+<option value="25000">25000</option>
+<option value="30000">30000</option>
+<option value="35000">35000</option>
+<option value="40000">40000</option>
+<option value="45000">45000</option>
+<option value="50000">50000</option>
+<option value="60000">60000</option>
+<option value="70000">70000</option>
+<option value="80000">80000</option>
+<option value="90000">90000</option>
+<option value="100000">100000</option>
+<option value="110000">110000</option>
+<option value="120000">120000</option>
+<option value="130000" selected="selected">130000</option></select>
+    </div>
+
+    <div class="kmTo">
+      <label>Km</label>
+      <select id="kms_from" name="kms_from"><option value="0" selected="selected">0</option>
+<option value="5000">5000</option>
+<option value="10000">10000</option>
+<option value="20000">20000</option>
+<option value="30000">30000</option>
+<option value="40000">40000</option>
+<option value="50000">50000</option>
+<option value="60000">60000</option>
+<option value="70000">70000</option>
+<option value="80000">80000</option>
+<option value="90000">90000</option>
+<option value="100000">100000</option>
+<option value="110000">110000</option>
+<option value="120000">120000</option>
+<option value="130000">130000</option>
+<option value="140000">140000</option>
+<option value="150000">150000</option>
+<option value="160000">160000</option></select>
+      <span>to</span>
+      <select id="kms_to" name="kms_to"><option value="0">0</option>
+<option value="5000">5000</option>
+<option value="10000">10000</option>
+<option value="20000">20000</option>
+<option value="30000">30000</option>
+<option value="40000">40000</option>
+<option value="50000">50000</option>
+<option value="60000">60000</option>
+<option value="70000">70000</option>
+<option value="80000">80000</option>
+<option value="90000">90000</option>
+<option value="100000">100000</option>
+<option value="110000">110000</option>
+<option value="120000">120000</option>
+<option value="130000">130000</option>
+<option value="140000">140000</option>
+<option value="150000">150000</option>
+<option value="160000" selected="selected">160000</option></select>
+    </div>
+
+    <span class="gear">Transmission</span>
+    <span class="ieGear">
+      <input class="inRadio" id="transmission_62" name="transmission" type="radio" value="62" />
+      <label class="lblRadio">Automatic</label>
+
+      <input class="inRadio" id="transmission_61" name="transmission" type="radio" value="61" />
+      <label class="lblRadio">Manual</label>
+
+      <input checked="checked" class="inRadio" id="transmission__" name="transmission" type="radio" value=" " />
+      <label class="lblRadio">All</label>
+    </span>
+
+    <input class="submit" id="submit_recherche_avancee" name="commit" type="submit" value="Find" />
+  </form>
+
+  <div id="expand_recherche" class="close">
+    <p>Advanced search</p>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+  function validateSearchForm(){
+    var succes=true;
+    //alert('validateSearchForm');
+    var form = document.getElementById("form_recherche_avancee");
+    if(!isValidPostalCode(form.postal_code.value)) {
+      doError(form.postal_code);
+      //success=false;
+    }
+
+    return success;
+  }
+
+
+  function doError(element){
+    //alert('B-Where to put the error with the postal code????');
+    //jQuery("#erreur").fadeIn();
+    //jQuery(element).effect("highlight");
+    //failed = true;
+    success=false;
+  }
+
+
+  function isValidPostalCode(postal_code)
+  {
+    postal_code = postal_code.replace(/\s/g,"");
+    //alert('isValidPostalCode:' + postal_code);
+    if (postal_code.length == 6){
+      //alert('length == 6 OK');
+      pattern = new RegExp("^[a-zA-Z][0-9][a-zA-Z][0-9][a-zA-Z][0-9]$");
+      if(pattern.test(postal_code)) {
+        //alert('regexp OK');
+        return true;
+      } else {
+        //alert('regexp KO');
+        return false;
+      }
+    } else {
+      //alert('length != 6 KO');
+      return false;
+    }
+  }
+
+
+
+
+
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+jQuery('#form_recherche_avancee').delayedObserver(0.6, function(element, value) {ajax_call(); jQuery.ajax({data:value + '&authenticity_token=' + encodeURIComponent('oujsoqQlQEAlwqNhiuCxhT3Z6LnFXPp7ygLV5LSbqSM='), dataType:'script', success:function(request){ajax_call_end()}, type:'post', url:'/en/home/update_count?province=all'})})
+//]]>
+</script>
+
+  
+
+
+
+  
+  <div class="brands">
+    <p>GM Certified Pre-Owned vehicles by make</p>
+    <ul>
+      <li class="chevy">
+        
+        <!-- &nbsp;<span>()</span> -->
+        <a href="/en/brands/Chevrolet"><img alt="Chevrolet" src="/images/reskin/common/logos/brands-chevy.png?1370958182" /></a>&nbsp;<span>(1336)</span>
+        
+        <a href="/en/brands/Chevrolet"><img alt="Arrow-right" class="arrow" src="/images/reskin/common/arrow-right.png?1370958182" /></a>
+      </li>
+
+      <li class="buick">
+        
+        <!-- &nbsp;<span>()</span> -->
+        <a href="/en/brands/Buick"><img alt="Buick" src="/images/reskin/common/logos/brands-buick.png?1370958182" /></a>&nbsp;<span>(134)</span>
+        
+        <a href="/en/brands/Buick"><img alt="Arrow-right" class="arrow" src="/images/reskin/common/arrow-right.png?1370958182" /></a>
+      </li>
+
+      <li class="gmc">
+        
+        <!-- &nbsp;<span>()</span> -->
+        <a href="/en/brands/GMC"><img alt="GMC" src="/images/reskin/common/logos/brands-gmc.png?1370958182" /></a>&nbsp;<span>(396)</span>
+        
+        <a href="/en/brands/GMC"><img alt="Arrow-right" class="arrow" src="/images/reskin/common/arrow-right.png?1370958182" /></a>
+      </li>
+
+
+      <li class="cadillac">
+        
+        <!-- &nbsp;<span>()</span> -->
+        <a href="/en/brands/Cadillac"><img alt="Cadillac" src="/images/reskin/common/logos/brands-cadillac.png?1370958182" /></a>&nbsp;<span>(115)</span>
+        
+        <a href="/en/brands/Cadillac"><img alt="Arrow-right" class="arrow" src="/images/reskin/common/arrow-right.png?1370958182" /></a>
+      </li>
+
+      <li class="last">
+        <ul>
+                      
+              
+              <!-- <li class="topVisible visible"><strong></strong>&nbsp;<span>()</span></li> -->
+              <li class="topVisible visible"><strong><a href="/en/brands/Acura">Acura</a></strong>&nbsp;<span>(2)</span></li>
+            
+            
+                      
+              
+              <!-- <li class="topVisible visible"><strong></strong>&nbsp;<span>()</span></li> -->
+              <li class="topVisible visible"><strong><a href="/en/brands/Audi">Audi</a></strong>&nbsp;<span>(8)</span></li>
+            
+            
+                      
+              
+              <!-- <li class="topVisible visible"><strong></strong>&nbsp;<span>()</span></li> -->
+              <li class="topVisible visible"><strong><a href="/en/brands/BMW">BMW</a></strong>&nbsp;<span>(18)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Buick">Buick</a></strong>&nbsp;<span>(134)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Cadillac">Cadillac</a></strong>&nbsp;<span>(115)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Chevrolet">Chevrolet</a></strong>&nbsp;<span>(1336)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Chrysler">Chrysler</a></strong>&nbsp;<span>(39)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Dodge">Dodge</a></strong>&nbsp;<span>(104)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Ford">Ford</a></strong>&nbsp;<span>(107)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/GMC">GMC</a></strong>&nbsp;<span>(396)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Honda">Honda</a></strong>&nbsp;<span>(46)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/HUMMER">HUMMER</a></strong>&nbsp;<span>(2)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Hyundai">Hyundai</a></strong>&nbsp;<span>(59)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Infiniti">Infiniti</a></strong>&nbsp;<span>(2)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Isuzu">Isuzu</a></strong>&nbsp;<span>(0)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Jaguar">Jaguar</a></strong>&nbsp;<span>(0)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Jeep">Jeep</a></strong>&nbsp;<span>(32)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Kia">Kia</a></strong>&nbsp;<span>(40)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Land%20Rover">Land Rover</a></strong>&nbsp;<span>(1)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Lexus">Lexus</a></strong>&nbsp;<span>(1)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Lincoln">Lincoln</a></strong>&nbsp;<span>(4)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Mazda">Mazda</a></strong>&nbsp;<span>(65)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Mercedes%20Benz">Mercedes Benz</a></strong>&nbsp;<span>(3)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Mercury">Mercury</a></strong>&nbsp;<span>(0)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/MINI">MINI</a></strong>&nbsp;<span>(4)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Mitsubishi">Mitsubishi</a></strong>&nbsp;<span>(10)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Nissan">Nissan</a></strong>&nbsp;<span>(57)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Oldsmobile">Oldsmobile</a></strong>&nbsp;<span>(0)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Plymouth">Plymouth</a></strong>&nbsp;<span>(0)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Pontiac">Pontiac</a></strong>&nbsp;<span>(245)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Saab">Saab</a></strong>&nbsp;<span>(2)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Saturn">Saturn</a></strong>&nbsp;<span>(30)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Smart">Smart</a></strong>&nbsp;<span>(3)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Subaru">Subaru</a></strong>&nbsp;<span>(4)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Suzuki">Suzuki</a></strong>&nbsp;<span>(11)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Toyota">Toyota</a></strong>&nbsp;<span>(69)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Volkswagen">Volkswagen</a></strong>&nbsp;<span>(13)</span></li>
+            
+            
+                      
+              
+              <!-- <li><strong></strong>&nbsp;<span>()</span></li> -->
+              <li><strong><a href="/en/brands/Volvo">Volvo</a></strong>&nbsp;<span>(1)</span></li>
+            
+            
+          
+
+        </ul>
+        <p class="more">More&nbsp;<img alt="" src="/images/reskin/common/arrow-down.png?1370958182" /></a>
+        <p class="less">Less&nbsp;<img alt="" src="/images/reskin/common/arrow-up.png?1370958182" /></a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<div id="rightCol">
+  <h3>GM CERTIFIED PRE-OWNED DEALERS</h3>
+
+   <div id="map" class="googlemap"></div>
+  <!--
+      <div class="googlemap google_map">
+      <div class="boite_contenu">
+        
+      </div>
+    </div>
+    -->
+  
+</div>
+
+        <!-- MTLFJGM-1091 NEW MAP -->
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;language=fr"></script>
+        <script>
+            var dealers_dyn = [{"name":"440 CHEVROLET BUICK GMC LTEE","address":"3670 AUTOROUTE LAVAL OUEST","city":"LAVAL","postalcode":"H7T 2H6","province_en":"Quebec","id":70,"lng":-73.7706953,"phone":"(877) 395-8333","lat":45.5660086,"province":50,"email":"demandedeprix@gm440.com"},{"name":"ACTION CHEVROLET BUICK GMC INC.","address":"7955, CHEMIN CHAMBLY","city":"SAINT HUBERT","postalcode":"J3Y 5K2","province_en":"Quebec","id":1,"lng":-73.4111881,"phone":"(877) 479-7333","lat":45.5000837,"province":50,"email":"actionchev@actionchevrolet.com"},{"name":"BOURASSA CHEVROLET BUICK GMC LTEE","address":"1601, BOUL. ST-MARTIN EST","city":"Laval","postalcode":"H7G 4R4","province_en":"Quebec","id":146,"lng":-73.6950657,"phone":"(877) 382-2122","lat":45.5915234,"province":50,"email":"jpgarcia@bourassapontiac.com"},{"name":"BROSSARD CADILLAC INC","address":"2555 BOUL. MATTE SUITE 100","city":"BROSSARD","postalcode":"J4Y2P4","province_en":"Quebec","id":212,"lng":-73.4739037,"phone":"(888) 830-4507","lat":45.4339496,"province":50,"email":"serge.contant@brossardgm.ca"},{"name":"BROSSARD CHEVROLET BUCIK GMC INC","address":"2555 BOUL. MATTE","city":"BROSSARD","postalcode":"J4Y2P4","province_en":"Quebec","id":211,"lng":-73.4739037,"phone":"(855) 722-4310","lat":45.4339496,"province":50,"email":"serge.contant@brossardgm.ca"},{"name":"CADILLAC CHEVROLET BUICK GMC DU WEST ISLAND LTEE","address":"3650 BL DES SOURCES","city":"DOLLARD DES ORMEAUX","postalcode":"H9B1Z9","province_en":"Quebec","id":213,"lng":-73.8012643,"phone":"(514) 683-6555","lat":45.4883385,"province":50,"email":"lemire@gmwestisland.ca"},{"name":"CADILLAC DE LAVAL","address":"2800, boul. Chomedey","city":"Laval","postalcode":"H7P 5Z9","province_en":"Quebec","id":148,"lng":-73.7678794,"phone":"(877) 320-0028","lat":45.5708135,"province":50,"email":"dchartrand@cadillaclaval.com"},{"name":"CHEVROLET BUICK GMC DE LASALLE","address":"8000  BOUL. NEWMAN","city":"LASALLE","postalcode":"H8N 1X9","province_en":"Quebec","id":206,"lng":-73.6264604,"phone":"(877) 595-5666","lat":45.4352007,"province":50,"email":"sgagne@gmdelasalle.ca"},{"name":"CHRISTIN AUTOMOBILE INC","address":"12011  RUE SHERBROOKE E","city":"MONTREAL","postalcode":"H1B 1C6","province_en":"Quebec","id":67,"lng":-73.5143712,"phone":"(877) 640-1050","lat":45.6429581,"province":50,"email":"ggioia@christin.com"},{"name":"DESCHAMPS CHEVROLET BUICK CADILLAC GMC LTEE","address":"333, BOUL ARMAND-FRAPPIER","city":"SAINTE JULIE","postalcode":"J3E 0C7","province_en":"Quebec","id":25,"lng":-73.3307387,"phone":"(877) 315-9333","lat":45.5805232,"province":50,"email":"info@deschampsauto.com"},{"name":"DESJARDINS CHEVROLET BUICK GMC INC","address":"190, BOUL. ST-JEAN-BAPTISTE","city":"CHATEAUGUAY","postalcode":"J6K 3B6","province_en":"Quebec","id":79,"lng":-73.719611,"phone":"(888) 718-6005","lat":45.351997,"province":50,"email":"info@desjardinschevrolet.com"},{"name":"GRAVEL CHEVROLET BUICK CADILLAC GMC LTEE","address":"1000, BOUL. REN\u00c9 L\u00c9VESQUE","city":"ILE DES SOEURS","postalcode":"H3E 1E5","province_en":"Quebec","id":161,"lng":-73.536041,"phone":"(877) 769-5353","lat":45.467745,"province":50,"email":"dhoude@gravelauto.com"},{"name":"GRENIER CHEVROLET BUICK GMC INC","address":"1325 CARRE MASSON","city":"TERREBONNE","postalcode":"J6W 6J7","province_en":"Quebec","id":153,"lng":-73.6227013,"phone":"(888) 785-3746","lat":45.7171291,"province":50,"email":"pldelisle@grenierauto.com"},{"name":"Gravel D\u00e9carie Chevrolet Buick GMC Cadillac Lt\u00e9e","address":"6100, Boul. D\u00e9carie","city":"Montr\u00e9al","postalcode":"H3X-2J8","province_en":"Quebec","id":207,"lng":-73.6423362,"phone":"1-877-276-2659","lat":45.4892841,"province":50,"email":"bvezina@gravelauto.com"},{"name":"HAMEL CHEVROLET BUICK GMC LTEE","address":"9455 BOUL LACORDAIRE","city":"SAINT LEONARD","postalcode":"H1R 3E8","province_en":"Quebec","id":109,"lng":-73.6129197,"phone":"(877) 327-3540","lat":45.6004835,"province":50,"email":"demandes@hamelchevrolet.com"},{"name":"LE RELAIS CHEVROLET CADILLAC BUICK GMC LTEE","address":"9411  AVENUE PAPINEAU","city":"MONTREAL","postalcode":"H2M 2G5","province_en":"Quebec","id":98,"lng":-73.6436427,"phone":"(866) 996-6380","lat":45.5643733,"province":50,"email":"usages@lerelaischevrolet.com"},{"name":"MAISONNEUVE CHEVROLET BUICK GMC INC.","address":"3700, RUE STE-CATHERINE EST","city":"MONTREAL","postalcode":"H1W 2E8","province_en":"Quebec","id":105,"lng":-73.5383023,"phone":"(877) 855-4471","lat":45.5438256,"province":50,"email":"maisonneuve@maisonneuvechev.com"},{"name":"PLAZA CHEV CAD INC","address":"10480, BOUL. HENRI BOURASSA OUEST","city":"SAINT LAURENT","postalcode":"H4S 1N6","province_en":"Quebec","id":92,"lng":-73.7568955,"phone":"(877) 878-1673","lat":45.4929619,"province":50,"email":"dlauziere@gmplaza.ca"},{"name":"VISION CHEV CAD BUICK GMC LT\u00c9E","address":"30, ROUTE 132","city":"DELSON","postalcode":"J5B 1H3","province_en":"Quebec","id":38,"lng":-73.542164,"phone":"(888) 659-5471","lat":45.384417,"province":50,"email":"denise.courchesne@visionchevrolet.ca"}];
+            
+            jQuery(document).ready(function() {
+                // "user_lat": 46.3254317, "user_lng": -72.5628786
+                app.globals.map = new app.DealersMap(dealers_dyn, {lang: 'en'});
+            });
+        </script>
+        <!-- MTLFJGM-1091 NEW MAP -->
+      
+
+
+
+
+
+
+<div id="footer">
+  <ul class="sub_menu">
+    <li class="separateur"><a href="http://gm.ca/gm/english/home">GM.ca</a></li>
+    <li class="separateur"><a href="/en?mobile=1">Mobile site</a></li>
+    <li class="separateur"><a href="http://www.gm.ca/gm/english/corporate/help/privacy">Privacy</a></li>
+    <li><a href="http://www.gm.ca/gm/english/corporate/help/legal">Legal</a></li>
+  </ul>
+  <br/>
+  <br/>
+  
+  <!--
+  <div style="display:block;float:none;width:800px;">
+    
+  </div>
+  <br/>
+  -->
+
+ 
+ 
+ 
+
+
+  
+  
+ 
+
+  
+  
+    <div style="display:block;float:none;width:800px;">
+      Québec - Find by area : <a href="/en/abitibi-temiscamingue/used-vehicles">Abitibi-Témiscamingue</a> | <a href="/en/bas-saint-laurent/used-vehicles">Bas-Saint-Laurent</a> | <a href="/en/capitale-nationale/used-vehicles">Capitale-Nationale</a> | <a href="/en/centre-du-quebec/used-vehicles">Centre-du-Québec</a> | <a href="/en/chaudiere-appalaches/used-vehicles">Chaudière-Appalaches</a> | <a href="/en/cote-nord/used-vehicles">Côte-Nord</a> | <a href="/en/estrie/used-vehicles">Estrie</a> | <a href="/en/gaspesie-iles-de-la-madeleine/used-vehicles">Gaspésie îles-de-la-Madeleine</a> | <a href="/en/lanaudiere/used-vehicles">Lanaudière</a> | <a href="/en/laurentides/used-vehicles">Laurentides</a> | <a href="/en/laval/used-vehicles">Laval</a> | <a href="/en/mauricie/used-vehicles">Mauricie</a> | <a href="/en/montreal/used-vehicles">Montréal</a> | <a href="/en/monteregie/used-vehicles">Montérégie</a> | <a href="/en/outaouais/used-vehicles">Outaouais</a> | <a href="/en/saguenay-lac-st-jean/used-vehicles">Saguenay Lac-Saint-Jean</a><br /><br />Atlantic - Find by area : <a href="/en/new-brunswick/used-vehicles">New-Brunswick</a> | <a href="/en/newfoundland/used-vehicles">Newfoundland</a> | <a href="/en/nova-scotia/used-vehicles">Nova-Scotia</a> | <a href="/en/prince-edward-island/used-vehicles">Prince-Edward-Island</a>
+    </div>
+    <br/>
+  
+
+  
+  <!--
+  <div style="display:block;float:none;width:800px;">
+    
+  </div>
+  -->
+  <br/><div style="display:block;float:none;width:800px;color:#B9BBBF;font-size=10px">v4.5.3</div>
+
+  
+
+</div>
+
+
+<!-- Reskin Google Analytics Adgear -->
+
+
+<script type="text/javascript" language="JavaScript">
+  function updateRechercheRapideAreaSection(){
+    alert("updateRechercheRapideAreaSection");
+  }
+</script>
+
+
+
+
+<!--
+  Embedding the tag below into the BODY section of a web page will have
+  the effect of qualifying a visitor to the AdGear data profile with
+  ID 324 (key 9ad318407abc012fc6e10024e87a30c2).  By default ADGEAR.tags.data.embed()
+  is called on page load, but you should feel free to change that
+  if e.g., you would like to qualify users following a specific action,
+  other than page load.
+-->
+<script type="text/javascript" language="JavaScript">
+/*
+<![CDATA[
+*/
+ADGEAR.tags.data.init();
+ADGEAR.env.add_load_listener(function() {
+  ADGEAR.tags.data.embed({ "id": "324", "chip_key": "9ad318407abc012fc6e10024e87a30c2" });
+});
+/*
+]]>
+*/
+</script>
+<!-- Reskin Google Analytics -->
+
+      
+      
+
+      
+      
+
+    </div>
+
+
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+
+
+   
+        //alert('if is_expanded_advantages? YES keep open');
+   
+        //alert('if is_expanded_advantages? NO will close');
+        if(jQuery("#advantages .ctn a").hasClass("close")){
+          jQuery("#advantages").animate({height: "10px"}, 500);
+          jQuery(".close-advantage").addClass("open").html("Show").removeClass("close");
+        //}else{
+        // alert('cannot find class close');
+        }
+   
+
+   // MTLFJGM-1074-3
+   //
+    
+        //alert('if is_expanded_comparateur? NO will close or leave closed');
+   
+
+    
+    jQuery('#comparateur p').live('click', function(){
+      if(jQuery("#comparateur p").hasClass("open")){
+        //alert('closing')
+        jQuery('#comparateur .ctn').animate({marginRight: '-290px'}, 200, function(){
+          jQuery("#comparateur p").addClass("close").removeClass("open");
+        });
+        jQuery.ajax({
+          cache: false,
+          url:"/fr/expanded_comparateur?value=false",
+          type: 'GET'//,
+	});
+      }else{
+        //alert('opening')
+        jQuery('#comparateur .ctn').animate({marginRight: '0px'}, 200, function(){
+          jQuery("#comparateur p").addClass("open").removeClass("close");
+        });
+        jQuery.ajax({
+          cache: false,
+          url:"/fr/expanded_comparateur?value=true",
+          type: 'GET'//,
+	});
+      }
+    });
+
+
+    jQuery("#advantages .ctn .close-advantage").click(function(){
+      if(jQuery(this).hasClass("close")){
+        //alert('click on Réduire');
+
+        // MTLFJGM-938 GA Phase 2 (7.7)
+        _gaq.push(['_trackEvent', 'Interaction Générale', 'Avantages', 'Fermeture']);
+
+        jQuery("#advantages").animate({height: "10px"}, 500);
+        //jQuery(this).addClass("open").html("Show").removeClass("close");
+        jQuery(".close-advantage").addClass("open").html("Show").removeClass("close");
+        jQuery.ajax({
+            cache: false,
+            url:"/fr/expanded_advantages?value=false",
+            type: 'GET'//,
+	});
+      }else{
+        //alert('click on Ouvrir');
+        
+        // MTLFJGM-938 GA Phase 2 (7.7)
+        _gaq.push(['_trackEvent', 'Interaction Générale', 'Avantages', 'Ouverture']);
+
+        jQuery("#advantages").animate({height: "135px"}, 500);
+        //jQuery(this).removeClass("open").html("Hide").addClass("close");
+        jQuery(".close-advantage").removeClass("open").html("Hide").addClass("close");
+        jQuery.ajax({
+            cache: false,
+            url:"/fr/expanded_advantages?value=true",
+            type: 'GET'//,
+	});
+      }
+    });
+
+
+    jQuery("#advantages .ctn div>img").click(function(){
+      var self = jQuery(this).parent()
+
+      // MTLFJGM-938 GA Phase 2 (7.1)
+      var clicked_advantage = jQuery(this).attr('id');
+
+      jQuery(".ictn").fadeOut();
+
+      for(var i = 0; i < jQuery("#advantages .ctn>div>div").length; i++){
+        var item = jQuery("#advantages .ctn>div>div")[i]
+        var selfPos = self.position().left
+        var itemPos = jQuery(item).position().left
+
+        if(jQuery(item).data('iniLeft') == undefined) jQuery(item).data('iniLeft', jQuery(item).css('left'))
+
+        goMacaroons(self, item, selfPos, itemPos, i)
+      }//fin for
+      // MTLFJGM-938 GA Phase 2 (7.7)
+      //alert('_gaq.push([\'_trackEvent\', \'Interaction Générale\', \'Avantages\',' + clicked_advantage + ']);');
+      _gaq.push(['_trackEvent', 'Interaction Générale', 'Avantages', clicked_advantage]);
+    });
+
+    function goMacaroons(pSelf, pItem, pSelfPos, pItemPos, pI){
+      if(pSelfPos > pItemPos){
+        jQuery(pItem).data('finalLeft', (40*pI))
+        jQuery(pItem).animate({left: (jQuery(pItem).data('finalLeft')+'px')}, 200);
+      }else if(pSelfPos < pItemPos){
+        jQuery(pItem).data('finalLeft',(780 + ((45*pI)-220)))
+        jQuery(pItem).animate({left: (jQuery(pItem).data('finalLeft')+'px')}, 200);
+      }else if(pSelfPos == pItemPos){
+        var lastItem = jQuery("#advantages .ctn>div>div")[(pI-1)]
+        jQuery(pItem).animate({left: ((jQuery(lastItem).data('finalLeft') + 90) +'px')}, 200)
+        jQuery(".ictn", pSelf).fadeIn();
+      }
+    }
+
+    jQuery('#advantages .see-all').click(function(){
+      for(var i = 0; i < jQuery("#advantages .ctn>div>div").length; i++){
+        var item = jQuery("#advantages .ctn>div>div")[i]
+        jQuery(".ictn").fadeOut('fast');
+        jQuery(item).animate({left: jQuery(item).data('iniLeft')}, 200)
+      }
+      // MTLFJGM-938 GA Phase 2 (7.7)
+      //alert('_gaq.push([\'_trackEvent\', \'Interaction Générale\', \'Avantages\', \'Accueil\']);');
+      _gaq.push(['_trackEvent', 'Interaction Générale', 'Avantages', 'Accueil']);
+    });
+
+
+    jQuery('form select.cat').change(function(){
+      jQuery(".cat-ico").attr("class","").addClass("cat-ico "+jQuery(this).val())
+    });
+
+/*
+    jQuery(".advance-search .open, .advance-search .close ").click(function(){
+      if(jQuery(this).hasClass("open")){
+        jQuery(".advance-search form").slideUp()
+        jQuery(this).removeClass("open").addClass("close");
+      }else{
+        jQuery(".advance-search form").slideDown()
+        jQuery(this).removeClass("close").addClass("open");
+      }
+    });
+*/
+
+    
+
+    jQuery(".advance-search .open, .advance-search .close ").click(function(){
+      //if(jQuery(this).hasClass("open")){
+      if(jQuery(".advance-search").hasClass("open")){
+        //alert('will slide up (close)');
+        jQuery(".advance-search form").slideUp()
+        //jQuery(this).removeClass("open").addClass("close");
+        jQuery(".advance-search").removeClass("open").addClass("close");
+        jQuery.ajax({
+            cache: false,
+            url:"/fr/expanded_advanced_search?value=false",
+            type: 'GET'//,
+	});
+      }else{ 
+        //alert('will silde down (open)');
+        jQuery(".advance-search form").slideDown()
+        //jQuery(this).removeClass("close").addClass("open");
+        jQuery(".advance-search").removeClass("close").addClass("open");
+        jQuery.ajax({
+            cache: false,
+            url:"/fr/expanded_advanced_search?value=true",
+            type: 'GET'//,
+	});
+      }
+    });
+
+
+    jQuery(".brands .more").click(function(){
+      jQuery(".last li").addClass("visible");
+      jQuery(this).css('display','none');
+      jQuery('.less').css('display','block');
+    });
+    jQuery(".brands .less").click(function(){
+      jQuery(".last li").removeClass("visible");
+      jQuery(this).css('display','none');
+      jQuery('.more').css('display','block');
+    });
+  });
+</script>
+
+  </body>
+</html>
+
+<script type="text/javascript">
+  var success=true;
+  function validatePopupPostalCode(lang){
+    jQuery("#error_fr").fadeOut();
+    jQuery("#error_en").fadeOut();
+    //alert('validatePopupPostalCode in ' + lang);  
+    var form = document.getElementById("form_recherche_popup_" + lang);
+    //alert('postalcode=' + form.postal_code.value)
+    if(!isValidPopupPostalCode(form.postal_code.value, lang)){
+      displayError(form.postal_code, lang);
+    }
+    //alert('success=' + success);
+    return success;
+  }
+
+
+  function displayError(element, lang){
+    //alert(2);
+    jQuery("#error_" + lang).fadeIn();
+    success=false;
+    //alert('2success=' + success);
+  }
+
+
+  function isValidPopupPostalCode(postal_code, lang)
+  {
+    //alert(1);
+    postal_code = postal_code.replace(/\s/g,"");
+    //alert('length=' + postal_code.length)
+    if (postal_code.length == 6){
+      pattern = new RegExp("^[a-zA-Z][0-9][a-zA-Z][0-9][a-zA-Z][0-9]$");
+      if(pattern.test(postal_code)) {
+        success=true;
+        return true;
+      } else {
+        //alert('regexp failed')
+        return false;
+      }
+    } else {
+      //alert('length failed')
+      return false;
+    }
+  }
+</script>
+
+
+<script type="text/javascript">
+  function showMarkerGa(dealerId, dealerName){
+    _gaq.push(['_trackEvent', 'Interaction Concessionnaire', 'Afficher bulle information', dealerId + ' : ' + dealerName]);
+  }
+</script>
+
+
+
+
+
+<script type="text/javascript">
+  function changeBG(b, qui){
+    if(!b){
+      jQuery("#result_"+qui+" .resultat_vehicule").css("background-color","transparent");
+    }else{
+      jQuery("#result_"+qui+" .resultat_vehicule").css("background-color","#eeeeee");
+    }
+  }
+</script>
+
+

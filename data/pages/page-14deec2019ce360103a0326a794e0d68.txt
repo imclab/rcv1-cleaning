@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="head"><title>
+	Home - ASE
+</title><meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+<meta http-equiv="pragma" content="no-cache" /> 
+<meta http-equiv="content-style-type" content="text/css" /> 
+<meta http-equiv="content-script-type" content="text/javascript" /> 
+<link href="/CMSPages/GetResource.ashx?stylesheetname=ase-styles" type="text/css" rel="stylesheet"/> 
+
+
+<link rel="stylesheet" href="/CMSPages/GetResource.ashx?stylesheetname=print" type="text/css" media="print" />
+<!--[if IE 7]>
+<style>
+#pagecontent{
+margin:0 0 0 0;}
+</style>
+<link href="/CMSPages/GetCSS.aspx?stylesheetname=ase-ie7" type="text/css" rel="stylesheet" />
+<![endif]-->
+
+<script type="text/javascript" src="/jquery-ui/js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+	$(".MainSubCMSListMenuUL").prev(".MainSubCMSListMenuLink").addClass("SubMenu");
+	$(".MainSubCMSListMenuUL").prev(".MainSubCMSListMenuLinkHighlighted").addClass("SubMenu");
+    
+	$(".MainCMSListMenuHighlightedLIfirst, MainCMSListMenuHighlightedLIlast, .MainCMSListMenuLIlast, .MainCMSListMenuLIfirst, .MainCMSListMenuLI, .MainCMSListMenuHighlightedLI").mouseover(function() {    
+        	$(this).addClass("MainCMSListMenuSpanHover");
+	        $(this).children("ul").stop(true, true);
+	        $(this).children("ul").slideDown(100);        
+	    }).mouseleave(function() {
+        	$(this).removeClass("MainCMSListMenuSpanHover");
+	        $(this).children("ul").slideUp(50);
+	});
+    
+      
+
+
+
+
+
+        $("form input").keypress(function (e) {
+            if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+                if ($(this).hasClass("searchButton")) {
+                    $(".searchButton").click();
+                    return false;
+                } else if ($(this).hasClass("LogonTextBox")) {
+                    $(".login .button input[type='image']").click();
+                    return false;
+                }
+            } else {
+                return true;
+            }
+        });
+
+	// ND CONVERSION TRACKING CLICK FUNCTIONS
+	// TRACK CONVERSION FUNCTION BELOW DOC READY FUNCTION.
+	$(".myASE .create a").click(function(){ trackConv("983372051", "orceCM2i0wQQk6L01AM"); });
+	$(".nd-webinar-tracking").click(function(){ trackConv("983372051", "HAYbCL2k0wQQk6L01AM"); _gaq.push(['_trackPageview', $(this).attr('href') ]);   });
+	$(".nd-g1-study-guide").click(function(){ trackConv("983372051", "vUx9CMWj0wQQk6L01AM"); });
+
+
+	if( /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+		$("#quicklinks").html("<a href='#' id='mobile-menu'>Menu</a>");
+	}
+	
+	$("#mobile-menu").live('click', function(){
+		
+		if( $("#navigation").attr("style") && $("#navigation").attr("style").indexOf("220px") != -1 ){
+			$("#navigation").animate({height: 0}, 500);
+		} else {
+			$("#navigation").animate({height: 220}, 500);
+		}
+		
+		return false;
+		
+	});
+	
+	$(".main-content p, .main-content h2, .main-content div").filter( function() {
+		var html = $(this).html();
+		if(html.trim() == '' || html.trim() == '&nbsp;'){
+			return true;
+		}
+	}).addClass('mobile-empty');
+
+
+    });
+
+	function trackConv(google_conversion_id,google_conversion_label) {
+		var image = new Image(1,1); 
+		image.src = "http://www.googleadservices.com/pagead/conversion/"+google_conversion_id+"/?label="+google_conversion_label+"&script=0";
+	} 
+
+String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g, '');};
+
+</script>
+<script>
+
+</script>
+
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="/CMSPages/GetResource.ashx?stylesheetname=ase-mobile" type="text/css" media="screen" title="no title" charset="utf-8"><link type="text/css" href="/ASEStuffs/hometab/css/jquery-ui-1.8rc3.custom.css" rel="stylesheet" />
+
+<script type="text/javascript" src="/ASEStuffs/hometab/js/jquery-ui-1.8rc3.custom.min.js"></script>
+
+<script type="text/javascript" src="/Scripts/jquery.cycle.all.js"></script>
+
+<script type="text/javascript" src="/Scripts/jquery.tools.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        // Tabs
+        $('#homeTabs').tabs();
+        $('#newsTabs').tabs();
+
+        //hover states on the static widgets
+        $('#dialog_link, ul#icons li').hover(
+            function() { $(this).addClass('ui-state-hover'); }, 
+            function() { $(this).removeClass('ui-state-hover'); }
+        );
+
+        $('#slider').cycle({
+          pager: '#sliderNav',
+          pagerAnchorBuilder: pagerFactory,
+          speed: 1400,
+          timeout: 9000
+        });
+
+        function pagerFactory(idx, slide) {
+          return '<div class="sliderButton sliderNumberButton"><a href="#">'+(idx+1)+'</a></div>';
+        };
+
+        $('.myASE .title').after('<div class="tooltip"><a href="/About-ASE/myASE.aspx">What Is This?</a></div>');
+        $('.myASE .title').tooltip({ effect: 'fade', position: 'bottom center', offset: [-10, 50] });
+    });
+
+    function pauseSlider() {
+      $('#slider').cycle('pause');
+      $('#sliderButtonPause').addClass('sliderButtonSelected');
+      $('#sliderButtonPlay').removeClass('sliderButtonSelected');
+    }
+
+    function playSlider() {
+      $('#slider').cycle('resume');
+      $('#sliderButtonPause').removeClass('sliderButtonSelected');
+      $('#sliderButtonPlay').addClass('sliderButtonSelected');
+    }
+</script>
+
+<link href="/dojotoolkit/dijit/themes/tundra/tundra.css" rel="stylesheet" type="text/css" />
+
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="/dojotoolkit/customcss-ie.css" />
+<![endif]--> 
+<link href="/favicon.ico" type="image/x-icon" rel="shortcut icon"/> 
+<link href="/favicon.ico" type="image/x-icon" rel="icon"/> 
+</head>
+<body class="LTR ENUS ContentBody" >
+    <form method="post" action="/home.aspx" id="form">
+<div class="aspNetHidden">
+<input type="hidden" name="manScript_HiddenField" id="manScript_HiddenField" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTYwODg0MzQ2Ng9kFgICARBkZBYCAgMPZBYCZg9kFgJmD2QWAgIED2QWAgIBD2QWAgICD2QWAmYPZBYCZg9kFgYCAQ9kFgJmDw8WBB4PSXNBdXRoZW50aWNhdGVkaB4HVmlzaWJsZWhkZAIDD2QWCGYPZBYCZg9kFgICDw8PFgIeC05hdmlnYXRlVXJsBTxodHRwczovL3BvcnRhbC5hc2Vjcm0uY29tL1Byb2ZpbGUvU2V0dXAvQWNjb3VudE1hdGNoaW5nLmFzcHhkZAIDD2QWAgICD2QWBmYPZBYCZg9kFgJmDxUFA0p1bAIzMQQyMDEzUy9OZXdzLUV2ZW50cy9QcmVzcy1SZWxlYXNlcy9WaWV3LWEtUmVjb3JkZWQtV2ViaW5hci1vbi1Ib3ctQVNFLVRlc3RzLWFyZS1EZXZlbC5hc3B4NlZpZXcgYSBSZWNvcmRlZCBXZWJpbmFyIG9uIEhvdyBBU0UgVGVzdHMgYXJlIERldmVsb3BlZGQCAQ9kFgJmD2QWAmYPFQUDSnVuAjI4BDIwMTNTL05ld3MtRXZlbnRzL1ByZXNzLVJlbGVhc2VzL1ZpZXctYS1SZWNvcmRlZC1XZWJpbmFyLW9uLVRpbWUtU2F2aW5nLVRpcHMtZm9yLUFTLmFzcHg7VmlldyBhIFJlY29yZGVkIFdlYmluYXIgb24gVGltZSBTYXZpbmcgVGlwcyBmb3IgQVNFIFRlc3RpbmdkAgIPZBYCZg9kFgJmDxUFA0p1bgIxMwQyMDEzUi9OZXdzLUV2ZW50cy9QcmVzcy1SZWxlYXNlcy9DYWxsLWZvci1FbnRyaWVzLWZvci10aGUtQVRNQy1OYXRpb25hbC1FeGNlbGxlbmNlLmFzcHhEQ2FsbCBmb3IgRW50cmllcyBmb3IgdGhlIEFUTUMgTmF0aW9uYWwgRXhjZWxsZW5jZSBpbiBUcmFpbmluZyBBd2FyZHNkAgQPZBYCAgIPZBYGZg9kFgJmD2QWAmYPFQUDSnVsAjAxBDIwMTNrL05ld3MtRXZlbnRzL0NvbW11bml0eS9CbG9ncy9UaGUtTmV3LUJsdWUvSnVseS0yMDEzL0FTRS1BdXRvLU1haW50ZW5hbmNlLWFuZC1MaWdodC1SZXBhaXItQ2VydGlmaWNhdGlvLmFzcHgzQVNFIEF1dG8gTWFpbnRlbmFuY2UgYW5kIExpZ2h0IFJlcGFpciBDZXJ0aWZpY2F0aW9uZAIBD2QWAmYPZBYCZg8VBQNGZWICMDYEMjAxM1cvTmV3cy1FdmVudHMvQ29tbXVuaXR5L0Jsb2dzL1RoZS1OZXctQmx1ZS9GZWJydWFyeS0yMDEzL0dldC10aGUtQ3JlZGl0LVlvdS1EZXNlcnZlLmFzcHgaR2V0IHRoZSBDcmVkaXQgWW91IERlc2VydmVkAgIPZBYCZg9kFgJmDxUFA09jdAIxNwQyMDEyUS9OZXdzLUV2ZW50cy9Db21tdW5pdHkvQmxvZ3MvVGhlLU5ldy1CbHVlL09jdG9iZXItMjAxMi0oMSkvVG9vbHMtZm9yLVN1Y2Nlc3MuYXNweBFUb29scyBmb3IgU3VjY2Vzc2QCBQ9kFgICAg9kFgZmD2QWAmYPZBYCZg8VBANPY3QCMDMEMjAxMxFNaWRhcyBEZWFsZXIgU2hvd2QCAQ9kFgJmD2QWAmYPFQQDT2N0AjE2BDIwMTMiQXV0b21vdGl2ZSBTZXJ2aWNlIGFuZCBSZXBhaXIgV2Vla2QCAg9kFgJmD2QWAmYPFQQDTm92AjA1BDIwMTMtU3BlY2lhbHR5IEVxdWlwbWVudCBNYXJrZXQgQXNzb2NpYXRpb24gKFNFTUEpZAIFD2QWAmYPZBYCAgIPZBYKZg9kFgJmD2QWAmYPFQMIL0cxLmFzcHhCL2dldGF0dGFjaG1lbnQvZTA0MWI0NGUtYjg0Zi00YTFhLThhNzUtNGE2MjllMWNmMTVmL0Jhbm5lci1HMS5hc3B4CUJhbm5lciBHMWQCAQ9kFgJmD2QWAmYPFQMVL0Fib3V0LUFTRS9teUFTRS5hc3B4QS9nZXRhdHRhY2htZW50LzQ4NWFhNDhjLWQxNTgtNGE4MS1iM2Q2LWZhYmIwMThjZWFmNi9CYW5uZXItNS5hc3B4CEJhbm5lciA1ZAICD2QWAmYPZBYCZg8VAwwvdGVzdGNlbnRlcnNBL2dldGF0dGFjaG1lbnQvNDFiYTM3OWQtODAxMC00Y2MxLTk2ZjgtNDEyMmFlNzBmZDRjL0Jhbm5lci0zLmFzcHgIQmFubmVyIDNkAgMPZBYCZg9kFgJmDxUDMC9UZXN0cy9BU0UtQ2VydGlmaWNhdGlvbi1UZXN0cy9SZWdpc3Rlci1Ob3cuYXNweEEvZ2V0YXR0YWNobWVudC8wY2I1Yzg2Ni03YzRhLTQ3ZTMtYjBlZC01MTA0N2MyZmNlM2IvQmFubmVyLTQuYXNweAhCYW5uZXIgNGQCBA9kFgJmD2QWAmYPFQM+L0xhbmRpbmctUGFnZXMvQ2FyLU93bmVycy9GaW5kLWEtUmVwYWlyLVNob3AvU2hvcC1Mb2NhdG9yLmFzcHhIL2dldGF0dGFjaG1lbnQvZWY4N2VmYmMtMDZiMC00NDBlLWIyZDctMzUzYjU5MWM4ZDcwL0JsdWUtU2VhbC1Qcm9tby5hc3B4D0JsdWUgU2VhbCBQcm9tb2QYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFKHAkbHQkem9uZVNlYXJjaCRTZWFyY2hCb3gkYnRuSW1hZ2VCdXR0b24FW3AkbHQkem9uZVBhZ2VDb250ZW50JFBhZ2VQbGFjZWhvbGRlciRQYWdlUGxhY2Vob2xkZXIkbHQkem9uZUxlZnQkTXlBU0VMb2dpbkZvcm0kTG9naW5CdXR0b266aJz4V3YerVI43WAecwb4EsabbQ==" />
+</div>
+
+<input type="hidden" name="lng" id="lng" value="en-US" />
+<script src="/ScriptResource.axd?d=46djf9lNnGCIvFqjEY7ef_Y36SYz8dkd68obYdonJCdww_0ohQmDxrISaL-d8yGT6oCCFYt1_OlrZdSEXTae6YjaNkf70YwLBHI6aacXvgBXBLUWORYk1upOg2qShfm57gUPjw2&amp;t=34d147fd" type="text/javascript"></script>
+    <div id="CMSHeaderDiv">
+	<!-- -->
+</div>
+     
+<div id="wrapper">
+  <div id="header">
+    <div id="header-left">
+      <div class="logo">
+        <a href="/home.aspx"><img src="/images/logo.gif" alt="ASE" /></a>
+      </div>
+
+      <div class="slogan">
+        <img src="/images/slogan.gif" />
+      </div>
+    </div>
+
+    <div id="header-right">
+
+	<div class="links">
+        <a href="/About-ASE/myASE.aspx">myASE</a>&nbsp;&nbsp;<img src="/images/vr-separator-grey.gif">&nbsp;&nbsp;
+	<a href="/About-ASE/Frequently-Asked-Questions.aspx">FAQs</a>&nbsp;&nbsp;<img src="/images/vr-separator-grey.gif">&nbsp;&nbsp;
+	<a target=_blank href="http://www.asecampus.com/ihtml/application/student/interface.ase/index.htm">ASE Campus</a>&nbsp;&nbsp;<img src="/images/vr-separator-grey.gif">&nbsp;&nbsp;
+	<a href="/Help/Public.aspx">Help</a>&nbsp;&nbsp;<img src="/images/vr-separator-grey.gif">&nbsp;&nbsp;
+	<a href="/About-ASE/Contact-Us.aspx">Contact Us</a>
+	</div>
+
+      <div class="search">
+        <div class="searchbox"><div id="p_lt_zoneSearch_SearchBox_pnlSearch" class="searchBox">
+	
+    <label for="p_lt_zoneSearch_SearchBox_txtWord" id="p_lt_zoneSearch_SearchBox_lblSearch" style="display:none;">Search for:</label>
+    <input name="p$lt$zoneSearch$SearchBox$txtWord" type="text" maxlength="1000" id="p_lt_zoneSearch_SearchBox_txtWord" class="searchText" />
+    
+    <input type="image" name="p$lt$zoneSearch$SearchBox$btnImageButton" id="p_lt_zoneSearch_SearchBox_btnImageButton" class="searchButton" src="/MediaLibrary/images/General/searchBTN.gif" alt="Search" />
+
+</div>
+</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="quicklinks">
+    
+	<ul class="MainCMSListMenuUL" id="quicklink">
+		<li class="MainCMSListMenuLI" id="quicklink_LI_0_1_2165" style=""><span class="MainCMSListMenuLink" style="" onclick="return false;"  >Quicklinks</span>
+		<ul class="MainSubCMSListMenuUL" id="quicklink_UL_1">
+			<li class="MainSubCMSListMenuLI" id="quicklink_LI_1_1_2166" style=""><a href="/About-ASE/ASE-at-a-Glance.aspx" class="MainSubCMSListMenuLink" style="" >ASE at a Glance</a></li>
+			<li class="MainSubCMSListMenuLI" id="quicklink_LI_1_2_2166" style=""><a href="/Tests/ASE-Certification-Tests.aspx" class="MainSubCMSListMenuLink" style="" >Get Started</a></li>
+			<li class="MainSubCMSListMenuLI" id="quicklink_LI_1_3_2166" style=""><a href="/Tests/ASE-Certification-Tests/Certification-Testing.aspx" class="MainSubCMSListMenuLink" style="" >Certification Testing</a>
+			<ul class="MainSubSubCMSListMenuUL" id="quicklink_UL_2">
+				<li class="MainSubSubCMSListMenuLI" id="quicklink_LI_2_1_2169" style=""><a href="/Tests/ASE-Certification-Tests/Test-Series/General-Information.aspx" class="MainSubSubCMSListMenuLink" style="" >General Info</a></li>
+				<li class="MainSubSubCMSListMenuLI" id="quicklink_LI_2_2_2169" style=""><a href="/Tests/ASE-Certification-Tests/Test-Series.aspx" class="MainSubSubCMSListMenuLink" style="" >Specialties</a></li>
+				<li class="MainSubSubCMSListMenuLI" id="quicklink_LI_2_3_2169" style=""><a href="/Tests/ASE-Certification-Tests/Certification-Testing/What-to-Expect.aspx" class="MainSubSubCMSListMenuLink" style="" >What to Expect</a></li>
+			</ul>
+			</li>
+			<li class="MainSubCMSListMenuLI" id="quicklink_LI_1_4_2166" style=""><a href="/Tests/ASE-Certification-Tests/Register-Now.aspx" class="MainSubCMSListMenuLink" style="" >Register Now!</a></li>
+		</ul>
+		</li>
+	</ul>
+
+
+  </div>
+  <div id="navigation">
+    <div class="horizontalmenu">
+	<ul id="menuElem">
+		<li style=""><a href="/Tests/ASE-Certification-Tests/Register-Now.aspx" style="" >Register Now!</a></li>
+		<li style=""><a href="/ASE-Store.aspx" onclick="window.open('http://web.ase.com/store/', '_blank');return false;"  style="" >ASE Store</a></li>
+		<li style=""><a href="/News-Events.aspx" style="" >News &amp; Events</a></li>
+		<li style=""><a href="/Test-Prep-Training.aspx" style="" >Test Prep &amp; Training</a></li>
+		<li style=""><a href="/About-ASE.aspx" style="" >About ASE</a></li>
+		<li style=""><a href="/Tests.aspx" style="" >Tests</a></li>
+	</ul>
+
+  <div style="clear: both;"></div>
+</div>
+  </div>
+  <div class="">
+  
+  </div>
+  
+  <div id="pagecontent">
+    
+ 
+<div class="homeTopImage2cols">
+	<!-- Status -->
+	<div class="zoneStatus">
+	
+	</div>
+	<div class="homeContainer">
+	<!-- Left column -->
+	<div class="zoneLeft" style="float: right;">
+		<div class="sidewrap">
+  <div class="boxtop-red-login"></div>
+  <div class="boxmid-red-login">
+    <div class="myASE">
+      <div class="title">myASE LOGIN</div>
+<div id="p_lt_zonePageContent_PagePlaceholder_PagePlaceholder_lt_zoneLeft_MyASELoginForm_LoginPanel" class="login">
+	
+    <div class="username">
+        <span id="p_lt_zonePageContent_PagePlaceholder_PagePlaceholder_lt_zoneLeft_MyASELoginForm_UserNameLabel" class="label">Username</span>
+        <input name="p$lt$zonePageContent$PagePlaceholder$PagePlaceholder$lt$zoneLeft$MyASELoginForm$UserName" type="text" maxlength="100" id="p_lt_zonePageContent_PagePlaceholder_PagePlaceholder_lt_zoneLeft_MyASELoginForm_UserName" class="LogonTextBox" />
+        
+    </div>
+    <div class="password">
+        <span id="p_lt_zonePageContent_PagePlaceholder_PagePlaceholder_lt_zoneLeft_MyASELoginForm_PasswordLabel" class="label">Password</span>
+        <input name="p$lt$zonePageContent$PagePlaceholder$PagePlaceholder$lt$zoneLeft$MyASELoginForm$Password" type="password" maxlength="110" id="p_lt_zonePageContent_PagePlaceholder_PagePlaceholder_lt_zoneLeft_MyASELoginForm_Password" class="LogonTextBox" />
+        
+    </div>
+    <div class="button">
+        <input type="image" name="p$lt$zonePageContent$PagePlaceholder$PagePlaceholder$lt$zoneLeft$MyASELoginForm$LoginButton" id="p_lt_zonePageContent_PagePlaceholder_PagePlaceholder_lt_zoneLeft_MyASELoginForm_LoginButton" src="images/login.gif" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;p$lt$zonePageContent$PagePlaceholder$PagePlaceholder$lt$zoneLeft$MyASELoginForm$LoginButton&quot;, &quot;&quot;, true, &quot;Login&quot;, &quot;&quot;, false, false))" />
+    </div>
+    <div class="forgotPassword">
+        <a id="p_lt_zonePageContent_PagePlaceholder_PagePlaceholder_lt_zoneLeft_MyASELoginForm_PasswordRetrievalLink" href="https://portal.asecrm.com/Profile/Setup/AccountMatching.aspx" target="_blank">Forgot password?</a>
+    </div>
+    <div class="message">
+        <span id="p_lt_zonePageContent_PagePlaceholder_PagePlaceholder_lt_zoneLeft_MyASELoginForm_MessageLabel"></span>
+    </div>
+
+</div>
+      <div class="create">
+        <a href="https://portal.asecrm.com/Profile/Setup/AccountMatching.aspx" target="_blank">Create myASE Account</a>
+      </div>
+    </div>
+  </div>
+  <div class="boxbot-red-login"></div>
+</div><a href="/News-Events/Community/Newsletter-Signup.aspx"><img alt="" src="/MediaLibrary/Images/Home/subscribe.png" style="width: 225px; height: 89px; margin: 10px 0 0 10px; " /></a><div class="sidewrap">
+<div class="boxtop-grey-news"></div>
+<div class="boxmid-grey-news">
+<div id="newsTabs">
+  <ul>
+    <li><a href="#newsTabs-1"><span class="outer"><span class="inner"><span class="text">News</span></span></span></a></li>
+    <li><a href="#newsTabs-2"><span class="outer"><span class="inner"><span class="text">Blog</span></span></span></a></li>
+  </ul>
+  <div id="newsTabs-1">
+    <div id="tabNews">
+      <div class="news-content">
+<div class="NewsPTitle"> Jul&nbsp;31,&nbsp;2013<br><a href="/News-Events/Press-Releases/View-a-Recorded-Webinar-on-How-ASE-Tests-are-Devel.aspx">View a Recorded Webinar on How ASE Tests are Developed</a></div><div class="NewsPTitle"> Jun&nbsp;28,&nbsp;2013<br><a href="/News-Events/Press-Releases/View-a-Recorded-Webinar-on-Time-Saving-Tips-for-AS.aspx">View a Recorded Webinar on Time Saving Tips for ASE Testing</a></div><div class="NewsPTitle"> Jun&nbsp;13,&nbsp;2013<br><a href="/News-Events/Press-Releases/Call-for-Entries-for-the-ATMC-National-Excellence.aspx">Call for Entries for the ATMC National Excellence in Training Awards</a></div>
+      </div>
+      <div class="all-news">
+        <a href="/News-Events/Press-Releases.aspx" > ALL NEWS</a>
+      </div>
+    </div>
+  </div>  <div id="newsTabs-2">
+    <div id="tabBlog">
+      <div class="news-content">
+<div class="NewsPTitle"> Jul&nbsp;01,&nbsp;2013<br><a href="/News-Events/Community/Blogs/The-New-Blue/July-2013/ASE-Auto-Maintenance-and-Light-Repair-Certificatio.aspx">ASE Auto Maintenance and Light Repair Certification</a></div><div class="NewsPTitle"> Feb&nbsp;06,&nbsp;2013<br><a href="/News-Events/Community/Blogs/The-New-Blue/February-2013/Get-the-Credit-You-Deserve.aspx">Get the Credit You Deserve</a></div><div class="NewsPTitle"> Oct&nbsp;17,&nbsp;2012<br><a href="/News-Events/Community/Blogs/The-New-Blue/October-2012-(1)/Tools-for-Success.aspx">Tools for Success</a></div>
+      </div>
+      <div class="all-news">
+        <a href="/News-Events/Community/Blogs.aspx"> ALL BLOGS</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="boxbot"></div>
+</div><div class="sidewrap"><div class="boxtop"></div><div class="boxmid"><div class="aseevents"><div class="event-title">UPCOMING EVENTS</div><div class="event-content">
+<div class="event">Oct&nbsp;03,&nbsp;2013<br><a href="/News-Events/Calendar.aspx">Midas Dealer Show</a></div><br /><div class="event">Oct&nbsp;16,&nbsp;2013<br><a href="/News-Events/Calendar.aspx">Automotive Service and Repair Week</a></div><br /><div class="event">Nov&nbsp;05,&nbsp;2013<br><a href="/News-Events/Calendar.aspx">Specialty Equipment Market Association (SEMA)</a></div><br />
+</div><div class="all-events"><a href="/News-Events/Calendar.aspx">ALL EVENTS</a></div></div></div><div class="boxbot"></div></div>
+	</div>
+	<!-- Right column -->
+	<div class="zoneRight" style="float: left;">
+		<div id="sliderContainer">
+  <div id="sliderImagesContainer">
+    <div id="slider">
+<div class="sliderImage"><a href='/G1.aspx'><img src="/getattachment/e041b44e-b84f-4a1a-8a75-4a629e1cf15f/Banner-G1.aspx" alt="Banner G1" /></a></div><div class="sliderImage"><a href='/About-ASE/myASE.aspx'><img src="/getattachment/485aa48c-d158-4a81-b3d6-fabb018ceaf6/Banner-5.aspx" alt="Banner 5" /></a></div><div class="sliderImage"><a href='/testcenters'><img src="/getattachment/41ba379d-8010-4cc1-96f8-4122ae70fd4c/Banner-3.aspx" alt="Banner 3" /></a></div><div class="sliderImage"><a href='/Tests/ASE-Certification-Tests/Register-Now.aspx'><img src="/getattachment/0cb5c866-7c4a-47e3-b0ed-51047c2fce3b/Banner-4.aspx" alt="Banner 4" /></a></div><div class="sliderImage"><a href='/Landing-Pages/Car-Owners/Find-a-Repair-Shop/Shop-Locator.aspx'><img src="/getattachment/ef87efbc-06b0-440e-b2d7-353b591c8d70/Blue-Seal-Promo.aspx" alt="Blue Seal Promo" /></a></div>
+    </div>
+  </div>
+  <div id="sliderButtonContainer">
+    <div id="sliderFloatContainer">
+      <div id="sliderNav">
+      </div>
+      <div id="sliderActions">
+        <div id="sliderButtonPause" class="sliderButton" onclick="pauseSlider();">Pause</div>
+        <div id="sliderButtonPlay" class="sliderButton sliderButtonSelected" onclick="playSlider();">Play</div>
+      </div>
+    </div>
+  </div>
+</div><div id="homeTabs">
+	<ul>
+		<li>
+			<a href="#tabs-1"><span class="outer"><span class="inner"><span class="text">Technicians</span></span></span></a></li>
+		<li>
+			<a href="#tabs-2"><span class="outer"><span class="inner"><span class="text">Employers</span></span></span></a></li>
+		<li>
+			<a href="#tabs-3"><span class="outer"><span class="inner"><span class="text">Students &amp; Teachers</span></span></span></a></li>
+		<li>
+			<a href="#tabs-4"><span class="outer"><span class="inner"><span class="text">Car Owners</span></span></span></a></li>
+	</ul>
+	<div id="tabs-1">
+		<div class="img-side">
+			<img alt="" src="/MediaLibrary/images/image-technician.jpg" /></div>
+		<div class="content-side">
+			<h2>
+				Show Customers Your Expertise.</h2>
+			Join the more than 330,000 automotive professionals nationwide who have earned the ASE Blue Seal of Excellence.<br />
+			<ul>
+				<li>
+					<a href="/Tests/ASE-Certification-Tests.aspx">ASE Certification Test Series</a></li>
+				<li>
+					<a href="/Tests/ASE-Certification-Tests/Register-Now.aspx">Register for a Test</a></li>
+			</ul>
+			<a href="/Landing-Pages/Technicians.aspx"><img alt="" src="/MediaLibrary/images/technicians-more.gif" /></a></div>
+		<div style="clear: both;">
+			&nbsp;</div>
+	</div>
+	<div id="tabs-2">
+		<div class="img-side">
+			<img alt="" src="/MediaLibrary/images/image-employer.jpg" /></div>
+		<div class="content-side">
+			<h2>
+				Use ASE Certification to Grow Your Business.</h2>
+			Learn how ASE certification for your service technicians can draw in savvy customers &mdash; and how to increase market visibility for your business.<br />
+			<ul>
+				<li>
+					<a href="/Tests/ASE-Certification-Tests.aspx">ASE Certification Tests &amp; Costs</a></li>
+				<li>
+					<a href="/Landing-Pages/Employers/Blue-Seal-program.aspx">Blue Seal of Excellence Recognition</a></li>
+			</ul>
+			<a href="/Landing-Pages/Employers.aspx"><img alt="" src="/MediaLibrary/images/employers-more.gif" /></a></div>
+		<div style="clear: both;">
+			&nbsp;</div>
+	</div>
+	<div id="tabs-3">
+		<div class="img-side">
+			<img alt="" src="/MediaLibrary/images/image-students.gif" /></div>
+		<div class="content-side">
+			<h2>
+				Get the Educational Resources You Need.</h2>
+			Learn about educational and testing resources offered by ASE in partnership with AYES, NATEF, SkillsUSA, and other leading organizations.<br />
+			<ul>
+				<li>
+					<a href="/Landing-Pages/Students-Teachers/Career-Information.aspx">Career Info</a></li>
+				<li>
+					<a href="/Landing-Pages/Students-Teachers/NATEF.aspx">NATEF-Accredited Schools</a></li>
+				<li>
+					<a href="/Landing-Pages/Students-Teachers/ASE-Student-Certification.aspx">ASE Student Certification</a></li>
+			</ul>
+			<a href="/Landing-Pages/Students-Teachers.aspx"><img alt="" src="/MediaLibrary/images/students-more.gif" /></a></div>
+		<div style="clear: both;">
+			&nbsp;</div>
+	</div>
+	<div id="tabs-4">
+		<div class="img-side">
+			<img alt="" src="/MediaLibrary/images/image-owners.jpg" /></div>
+		<div class="content-side">
+			<h2>
+				Behind the Wheel? Trust the Seal.</h2>
+			Find an ASE-recognized facility, or browse our virtual library of free materials and money-saving tips on getting the most from your automotive investment.<br />
+			<ul>
+				<li>
+					<a href="/Landing-Pages/Car-Owners/Find-a-Repair-Shop.aspx">Find an ASE Blue Seal Facility Near You</a></li>
+				<li>
+					<a href="/News-Events/Publications/Car-Care-Articles.aspx">Free Automotive Tips &amp; Advice</a></li>
+			</ul>
+			<a href="/Landing-Pages/Car-Owners.aspx"><img alt="" src="/MediaLibrary/images/owners-more.gif" style="margin-bottom: -6px;" /></a></div>
+		<div style="clear: both;">
+			&nbsp;</div>
+	</div>
+</div>
+<br />
+<div id="links">
+ <div class="top-border">
+  &nbsp;</div>
+ <div class="midarea">
+  <div class="left-border">
+   &nbsp;</div>
+  <div class="content-links">
+   JOIN OUR COMMUNITY:<br />
+   <a href="http://www.facebook.com/pages/ASE-Certifications/101422521083" target="_blank"><img alt="" src="/MediaLibrary/images/facebook.gif" /></a> <a href="http://www.twitter.com/asetests"><img alt="" src="/MediaLibrary/images/twitter.gif" /></a><a href="http://www.youtube.com/asetests" target="_blank"><img alt="" src="/MediaLibrary/images/youtube.gif" /></a><a href="/News-Events/Community/Blogs.aspx"><img alt="" src="/MediaLibrary/Images/blog.gif" style="width: 144px; height: 44px;" /></a></div>
+  <div class="right-border">
+   &nbsp;</div>
+ </div>
+ <div class="bottom-border">
+  &nbsp;</div>
+</div>
+<br />
+
+	</div>
+	<div style="clear:both;line-height:0px;height:0px;" ></div>
+	</div>
+</div>
+ 
+ <script type="text/javascript">
+        var now = new Date();
+        var time = now.getTime();
+        time += 3600 * 1000 * 24 * 30;
+        now.setTime(time);
+        if (document.location.search!="")
+            document.cookie = "campaign" + "=" + document.location.search + ";expires" + "=" + now.toGMTString();
+    </script>
+  </div>
+
+  <div id="footer">
+
+    <div class="footer-left" style="width: 600px;">
+&copy; 1972-2013 National Institute for Automotive Service Excellence (ASE).<span style="font-weight:normal"> All rights 
+
+reserved.</span>
+        <span class="brk">
+        <a href="http://www.youtube.com/asetests" target="_blank"><img src="/MediaLibrary/Images/Icons/youtube.png" height="16" width="16" alt="Find Us On YouTube" title="Find Us On YouTube" style="float:right;padding-right: 5px;" /></a>
+        <a href="https://twitter.com/asetests" target="_blank"><img src="/MediaLibrary/Images/Icons/twitter-2.png" height="16" width="16" alt="Find Us On Twitter" title="Find Us On Twitter" style="float:right;padding-right: 5px;" /></a>
+        <a href="https://www.facebook.com/ASEtests" target="_blank"><img src="/MediaLibrary/Images/Icons/facebook.png" height="16" width="16" alt="Find Us On Facebook" title="Find Us On Facebook" style="float:right;padding-right: 5px;" /></a>
+        </span>
+    </div>
+
+    <div class="footer-right">
+      <a href="/SiteMap.aspx">sitemap</a>&nbsp;&nbsp;<img src="/images/vr-separator-grey.gif">&nbsp;&nbsp;<a 
+
+href="/Terms-of-Use.aspx">terms of use</a>&nbsp;&nbsp;<img src="/images/vr-separator-grey.gif">&nbsp;&nbsp;<a href="	
+
+/Privacy-Policy.aspx">privacy policy</a>
+    </div>
+
+  </div>
+
+</Div>
+
+<script type="text/javascript">
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-8356270-2']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script>
+
+<script>
+    $(document).ready(function () {
+        var mcid = getUrlVars()["mcid"];
+
+        if (!mcid)
+            return;
+
+        $('a').each(function () {
+            var href = $(this).attr('href');
+
+            if (href) {
+                href = href.toLowerCase();
+                if (href.indexOf('mcid=') === -1 &&
+                    href.indexOf('javascript:') === -1 &&
+                    href.indexOf('#') === -1) {
+                    href += (href.match(/\?/) ? '&' : '?') + 'mcid=' + mcid;
+                    $(this).attr('href', href);
+                }
+            }
+        });
+    });
+
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+</script>
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("manScript_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();//]]>
+</script>
+</form>
+</body>
+</html>

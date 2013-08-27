@@ -1,0 +1,186 @@
+ï»¿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Baldwin Filters E-Catalog</title>
+<script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript" src="js/baldwin.js"></script>
+<link rel="stylesheet" href="Styles/layout.css" media="all" />
+
+<script type="text/javascript">
+function SearchUPC(){                
+        parent.window.frames["main"].location.href = "UPC.asp?SearchBy=1";
+        parent.window.frames["main2"].location.href = "UPC_Post.asp?SearchItem=CLEAR";    
+    }
+
+function SearchCharts(){
+    parent.window.frames["main"].location.href = "SizeCharts.html";
+    //parent.window.frames["main2"].location.href = "Charts_Post.asp?SearchItem=CLEAR";    
+}
+function SearchProductGuide(){
+     parent.window.frames["main2"].location.href = "DisplayPartInfoNew.asp?partnumber=&VehicleRef=4";
+	 parent.window.frames["main"].location.href = "PartEntry.asp";   
+}
+function SearchCrossReference(){
+     parent.window.frames["main2"].location.href = "BaldwinDisplay.asp?partnumber=CLEAR&optiontype=OEM";
+		parent.window.frames["main"].location.href = "BaldwinOEM.asp"; 
+}
+function gup( name )
+ {  
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]"); 
+    var regexS = "[\\?&]"+name+"=([^&#]*)";  
+    var regex = new RegExp( regexS );  
+    var results = regex.exec( window.location.href );  
+    if( results == null )    
+        return "";  
+    else    
+        return results[1];
+ }
+</script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-5714656-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script> 
+</head>
+<body class="home">
+	<div class="seo">
+		<h1>Baldwin Filters</h1>
+	</div>
+	<!--
+	 ///
+	 /// begin template
+	 ///
+	 -->
+	<div id="template">
+		<div id="header">
+			<div id="headerContent" style="background-image:url('ui/image/CatalogHeaderBackground.jpg');">		
+			    <div id="headerLogo" >
+				<a href="http://www.baldwinfilter.com"><img src="Images1/BFBrandDB0707.gif" alt="Baldwin Filters &reg;" /></a>
+				</div>
+			   
+			    <!--img src="Images1/CatalogHeaderBackground.jpg" alt="Baldwin Filters &reg;" /-->
+				<!--img src="Images1/eCatalog.jpg" alt="Baldwin Filters &reg;" /-->			
+				
+				<div id="headerLinks">	
+				<div class="clear"></div>
+				</div>				
+			</div>
+			<div id="headerNav">
+				<!--
+				 ///
+				 /// begin nav
+				 ///
+				 -->
+				<ul id="nav">
+				    <li><a href="http://www.baldwinfilter.com">Baldwin Filters</a></li>
+					<li><a>Catalog Information</a>
+						<ul>
+							<li><a href="pdfs/abbreviations.pdf">Abbreviations</a></li>
+                            <li><a href="pdfs/mfgcodes.pdf">Manufacturing Codes</a></li>
+                            <li><a href="pdfs/prefixes.pdf">Prefixes &amp; Suffixes</a></li>
+ <li><a href="pdfs/obsoletes.pdf">Obsoleted Products</a></li><!--li><a href="UPC.pdf">UPC Codes</a></li-->
+                            <li><a href="Javascript:SearchUPC()">UPC Codes Search</a></li>
+                            <li><a href="pdfs/weights.pdf">Weights/Volume</a></li>
+                           <!--li><a href="oring.pdf">Size Chart</a></li-->
+                            <li><a href="Javascript:SearchCharts()">Size Chart Search</a></li>
+						</ul>
+					</li>
+					<li><a href="Javascript:SearchCrossReference()">Cross-Reference</a>						
+					</li>	
+					<li><a target="main">Applications</a>
+						<ul>
+							<li><a href="Catalog.asp?VehicleRef=1" target="main">Automotive</a></li>
+                            <li><a href="Catalog.asp?VehicleRef=2" target="main">Off-Highway</a></li>
+                            <li><a href="Catalog.asp?VehicleRef=3" target="main">Trucks &amp; Buses</a></li>
+                            <li><a href="ScanDescription.asp?Parent=1&VehicleRef=1&Scan=Automotive" target="main">Search By Keyword</a></li>                            
+						</ul>
+					</li>
+					<li><a href="Javascript:SearchProductGuide()">Product Guide</a></li>	
+					<li><a href="ProductsMain.html" target="main">New Products</a></li>																		
+				</ul>
+				<!-- end nav -->
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!--
+		 ///
+		 /// begin mainContent
+		 ///
+		 -->
+		 <frameset>
+		<div id="mainContent">			
+			<!--
+			 ///
+			 /// begin main
+			 ///
+			 -->
+			<div id="main">
+				<!-- begin products -->
+				<div id="products">
+					<!-- begin search -->
+					<div id="search" style="padding-top:3px; padding-left:30px">
+                       <iframe frameborder = "0" name ="main" 
+                        src="Catalog.asp?VehicleRef=1" style="padding: 0px 0px 0px 2px; height: 620px; width: 350px;">                        
+                       </iframe>
+                    </div>
+					<!-- end search -->
+					
+                    <div class="clear"></div>
+				</div>
+				<!-- end products -->
+				<!--
+				 ///
+				 /// begin columnRight
+				 ///
+				 -->
+				<div >
+											
+					<!-- begin columnRightLeft -->
+					<div style="padding-top:3px">
+						<iframe frameborder = "0" name ="main2" 
+                         src="BaldwinDisplay.asp?partnumber=CLEAR&amp;optiontype=OEM" 
+                         style="width:64%; height: 620px">
+                        </iframe>	                        		
+                  </div>									
+					<div class="clear"></div>
+				</div>
+				<!-- end columnRight -->
+				<div class="clear"></div>
+			</div>
+			<!-- end main -->
+		</div>
+		<!-- end mainContent -->
+		<!--
+		 ///
+		 /// begin footer
+		 ///
+		 -->
+		 </frameset>
+		<div class="clear"></div>
+		<div id="footer">
+			<ul id="companyInfo">
+				<li class="first">&copy;2008 Baldwin Filters, Inc.</li>
+				<li>4400 East Highway 30</li>
+				<li>Kearney, NE 68847</li>
+				<li>Ph: 800-822-5394</li>
+				<li>Fax: 800-828-4453</li>
+			</ul>
+			<ul id="companyDocuments">
+				<li class="first"><a href="termsconditions.html">Terms & Conditions</a></li>
+				
+			</ul>
+			<div class="clear"></div>
+		</div>	
+		<!-- end footer -->
+	</div>
+	<!-- end template -->
+</body>
+</html>

@@ -1,0 +1,1437 @@
+
+
+<!--
+111
+8/27/2013 5:51:06 PM
+/certified-used/index.aspx?
+Release: 14.43.1A
+//-->
+
+
+<html>
+<head>
+    
+<title>Used Cars, SUVs, Trucks and Vans from Honda Certified Used Cars</title>
+
+<meta name="keywords" content="honda certified used cars" />
+
+<meta name="description" content="Honda's used vehicles come with a free Carfax history report and 7-year/100,000-mile powertrain warranty. Compare Honda Certified Used Cars and find a used Honda dealer near you." />
+<meta name="robots" content="NOODP" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="false" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+
+<meta property="og:image" content="http://automobiles.honda.com/images/_global/icons/honda-facebook-icon.png" />
+
+
+    <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/css/certified.css" type="text/css" media="screen">
+    <script language="javascript" type="text/javascript" src="/js/clientdetection.js"></script>   
+	<script language="JavaScript" src="/js/main.js" type="text/javascript"></script>
+	<script language="javascript" type="text/javascript" src="/js/jquery/jquery-1.7.1.min.js"></script>
+	<script language="javascript" type="text/javascript" src="/js/geolocation.js"></script>   
+	<script language="javascript" type="text/javascript" src="/js/validation.js"></script>
+    <script language="javascript" type="text/javascript">
+var offersList = new Array();
+</script>
+	<script language="javascript">
+        $(document).ready(function(){
+            if (GetUserZip(true) != '') {
+            $("#txtZip").val(GetUserZip(true));
+            } else {
+            $("#txtZip").attr('maxlength','15'); 
+            $("#txtZip").val('Enter ZIP Code here')
+            }
+            
+            $("#txtZip").click(function () { 
+              $(this).val(''); 
+              $(this).attr('maxlength','5'); 
+            });
+        });
+        
+		function init() {
+		
+//		if(document.getElementById('pano')) {
+		   
+		    //pick a random pano
+//		    var i = Math.round(4*Math.random());
+//		    var panos = new Array();
+//		    panos[0] = '/images/certified-used/overview/pano-odyssey.jpg';
+//		    panos[1] = '/images/certified-used/overview/pano-crv.jpg';
+//		    panos[2] = '/images/certified-used/overview/pano-accord.jpg';
+//		    panos[3] = '/images/certified-used/overview/pano-civic.jpg';
+//		    panos[4] = '/images/certified-used/overview/pano-pilot.jpg';
+//		    document.getElementById('pano').style.backgroundImage = "url('" + panos[i] + "')";
+//		    
+//		    switch(i)
+//            {    
+//            case 1:
+//                document.getElementById('pano').innerHTML = '<div class="dottedLink"><div style="padding-top:238px;margin-left:17px;font-size:12px;color:black;font-weight:bold;">To see a tour that highlights the benefits of Honda Certified Used Cars, please <a style="color:black;" href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">download the Flash Player.</a></div></div>';              
+//                break;  
+//            default:
+//		        document.getElementById('pano').innerHTML = '<div class="dottedLink"><div style="padding-top:238px;margin-left:17px;font-size:12px;color:white;font-weight:bold;">To see a tour that highlights the benefits of Honda Certified Used Cars, please <a style="color:white;" href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">download the Flash Player.</a></div></div>';                              		        
+//            }
+//		}
+
+                var j = Math.round((offersList.length-1)*Math.random());
+                if (offersList.length > 0) {
+                    $('#CurrentOffers').show();
+                    var offerstr = '';
+                    offerstr += '<div class="OfferHighlight" style="float:left; width:80px; height:auto; overflow:auto; margin-top:50px;margin-left:10px; text-align:center;display:inline;">';
+                    offerstr += '   <div style="text-align:center;margin-left:5px;">';                
+                    offerstr += '       <div class="BigFont" style="float:left; color:#0e78d4; font-size:36px; font-weight:bold;line-height:33px; overflow:hidden;text-align:center;">'+offersList[j][13]+'</div>';
+                    offerstr += '       <div class="SmallFont" style="float:left; color:#0e78d4; font-size:20px; font-weight:bold; overflow:hidden;text-align:center;">%</div>';
+                    offerstr += '   </div>';
+                    offerstr += '   <div class="clr"></div>';
+                    offerstr += '   <div class="SmallerFont" style="font-size:9px; color:#000000; font-weight:bold;margin-top:5px;">APR for ' + offersList[j][14] + '-' + offersList[j][15] + '<br />months</div>';
+                    offerstr += '</div>';
+                    offerstr += '<div class="OfferDesc" style="float:left; width:120px;margin-top:50px;margin-left:10px;display:inline;">';
+                    offerstr += '   <div class="OfferTitle" style="color:#000000; font-size:11; font-weight:bold;">' + offersList[j][2] + '<br /><span style="font-size:10px;font-weight:bold;">' + offersList[j][5] + '</span></div>';
+                    offerstr += '   <div class="OfferLink" style="text-align:right;font-size:10px; margin-top:8px;"><a href="/certified-used/current-offers.aspx" style="color:#0e78d4;text-decoration:underline;">Show All Offers</a></div>';
+                    offerstr += '</div>';
+                    $('#CurrentOffers').html(offerstr)                    
+                } else {
+                    $('#CurrentOffers').show();
+                    $('#CurrentOffers').html('<div id="OfferText" style="margin-top:60px; padding-top:10px; border-top:1px solid #dedede;font-size:12px;font-weight:bold;text-align:center;"><a style="color:#5da1e6;" href="/tools/dealer-locator/?Type=CertifiedUsed"><span class="DottedLink">See your local dealer for offers that may be available in your area.</span></a></div>');
+                }
+		}
+		
+</script>
+	
+</head>
+<body onload="init();">
+   <div id="PageContainer">
+        <div id="LeftShadow"><img src="/images/_controls/global-header/background-header-left.png" width="17" height="51" /></div>
+        <div id="CenterContent">
+            
+<script language="javascript" type="text/javascript">
+
+
+
+var searchBox = function() {
+
+    var sPlaceholderText = '';
+    var oToolTipDiv = null;
+
+    return {
+    
+        focus : function() {
+        
+            if (sPlaceholderText == '') {
+                sPlaceholderText = document.getElementById('HeaderSearchText').value;
+            }
+
+            if (document.getElementById('HeaderSearchText').value == sPlaceholderText) {
+                document.getElementById('HeaderSearchText').value = '';
+            }
+        
+        } , 
+        
+        blur : function() {
+        
+            if (document.getElementById('HeaderSearchText').value == '') {
+                document.getElementById('HeaderSearchText').value = sPlaceholderText;
+            }
+        
+        } , 
+
+        tooltip : function() {
+	        
+	        var id = 'HeaderSearchTooltip';
+	        var speed = 10;
+	        var timer = 20;
+	        var endalpha = 95;
+	        var alpha = 0;
+	        var ie = document.all ? true : false;
+	        var sTooltipHtml = ' \
+	            <p class="top">Enter any search criteria or keywords to search the site.</p> \
+	            <p class="mid">To Locate a Dealer</> \
+	            <p class="bot">Enter your 5 digit zip code to locate a dealer near you.</p> \
+	            ';
+
+	        var fade = function(d){
+
+		        var a = alpha;
+		        if((a != endalpha && d == 1) || (a != 0 && d == -1)){
+			        var i = speed;
+			        if(endalpha - a < speed && d == 1){
+				        i = endalpha - a;
+			        }else if(alpha < speed && d == -1){
+				        i = a;
+			        }
+			        alpha = a + (i * d);
+			        oToolTipDiv.style.opacity = alpha * .01;
+			        if (!ie) {
+			            oToolTipDiv.style.filter = 'alpha(opacity=' + alpha + ')';
+			        }
+		        }else{
+			        clearInterval(timer);
+			        if(d == -1){oToolTipDiv.style.display = 'none'}
+		        }
+	        }
+
+        	
+	        return {
+		        show:function(){
+			        if(oToolTipDiv == null){
+				        oToolTipDiv = document.createElement('div');
+				        oToolTipDiv.setAttribute('id',id);
+				        document.body.appendChild(oToolTipDiv);
+				        oToolTipDiv.innerHTML = sTooltipHtml;
+			        }
+			        oToolTipDiv.style.opacity = 0;
+			        if (!ie) {
+				        oToolTipDiv.style.filter = 'alpha(opacity=0)';
+				    }
+				    var rect = document.getElementById('HeaderSearchField').getBoundingClientRect();
+                    oToolTipDiv.style.top = rect.bottom + 10 + 'px';
+			        oToolTipDiv.style.left = rect.left - 100 + 'px';
+			        oToolTipDiv.style.display = 'block';
+			        clearInterval(timer);
+			        timer = setInterval(function(){fade(1)},timer);
+		        },
+		        hide:function(){
+			        clearInterval(timer);
+			        timer = setInterval(function(){fade(-1)},timer);
+		        }
+	        };
+        }
+            
+    }
+
+}();
+
+
+
+
+
+
+
+
+
+
+    function GlobalNavigationChangeModel(){
+        var oField=document.getElementById("HeaderModelSelector");
+        var sUrl=oField.options[oField.selectedIndex].value;
+        var sUrlSiteSection=oField.options[oField.selectedIndex].text;
+        if(sUrl!=""){
+            if(typeof isHondaHomePage !=="undefined"){
+                if(isHondaHomePage==true) TrackNavigationClick(sUrlSiteSection);
+            }
+            top.location.href="http://automobiles.honda.com" + sUrl;
+        }
+    }
+    // This function will redirect to search results page.
+    function GlobalNavigationSearchSite(){
+      if (document.getElementById("HeaderSearchText").value.replace(/ /g,'').length > 0) {
+        // If 5 digits, do a dealer locator search
+        if (document.getElementById("HeaderSearchText").value.match(/(\d{5})/g)) {
+            top.location = 'http://automobiles.honda.com/tools/dealer-locator/results.aspx?address=&city=&state=&zip=' + document.getElementById("HeaderSearchText").value + '&dealername=&filters=&fromsection=NEW';
+        } else {
+            top.location = "http://automobiles.honda.com/search-results.aspx?question="+escape(document.getElementById("HeaderSearchText").value);
+        }
+        
+      }
+      else {
+      alert("You must enter a question before submitting");
+      }    
+    }
+    function TrackNavigationClick(SiteSection){
+        var s=s_gi(s_account);
+        s.linkTrackVars='prop16,prop21,prop23,prop24,prop25,eVar31,eVar21,eVar23,eVar24,eVar25';
+        s.prop21=Currentprop21;
+        s.prop23=Currentprop23;
+        s.prop24=Currentprop24;
+        s.prop25=Currentprop25;
+        s.eVar21=s.prop21;
+        s.eVar23=s.prop23;
+        s.eVar24=s.prop24;
+        s.eVar25=s.prop25;
+        s.prop16="Home Page Site Nav DropDown : "+SiteSection;
+        s.eVar31="Home Page Site Nav DropDown : "+SiteSection;
+        s.tl(this,'o','GLOBAL NAVIGATION CLICK');
+    }
+</script>
+
+<div id="HeaderContainer">
+    <form id="HeaderForm" onsubmit="GlobalNavigationSearchSite(); return false;">
+        <div id="HeaderLogo"><a href="http://automobiles.honda.com/" target="_top" onmouseover="SwitchImg('HondaLogo', '/images/_controls/global-header/honda-logo-over.gif')" onmouseout="SwitchImg('HondaLogo', '/images/_controls/global-header/honda-logo-off.gif')"><img src="/images/_controls/global-header/honda-logo-off.gif" id="HondaLogo" width="73" height="51" /></a></div>
+        <div id="HeaderModelSelect">
+            
+                    <div id="DropDownText">
+                        <span>Select a Model</span>
+                        <div id="DropDownTextLinks">
+                        
+                            <a href="/accord-coupe" style="display: block; clear: both; font-size: 10px;">Accord Coupe</a>
+                        
+                            <a href="/accord-sedan" style="display: block; clear: both; font-size: 10px;">Accord Sedan</a>
+                        
+                            <a href="/accord-plug-in" style="display: block; clear: both; font-size: 10px;">Accord Plug-In</a>
+                        
+                            <a href="/civic-coupe" style="display: block; clear: both; font-size: 10px;">Civic Coupe</a>
+                        
+                            <a href="/civic-hybrid" style="display: block; clear: both; font-size: 10px;">Civic Hybrid Sedan</a>
+                        
+                            <a href="/civic-hf" style="display: block; clear: both; font-size: 10px;">Civic HF Sedan</a>
+                        
+                            <a href="/civic-natural-gas" style="display: block; clear: both; font-size: 10px;">Civic Natural Gas</a>
+                        
+                            <a href="/civic-sedan" style="display: block; clear: both; font-size: 10px;">Civic Sedan</a>
+                        
+                            <a href="/civic-si-coupe" style="display: block; clear: both; font-size: 10px;">Civic Si Coupe</a>
+                        
+                            <a href="/civic-si-sedan" style="display: block; clear: both; font-size: 10px;">Civic Si Sedan</a>
+                        
+                            <a href="/crosstour" style="display: block; clear: both; font-size: 10px;">Crosstour</a>
+                        
+                            <a href="/cr-v" style="display: block; clear: both; font-size: 10px;">CR-V SUV</a>
+                        
+                            <a href="/cr-z" style="display: block; clear: both; font-size: 10px;">CR-Z Sport Hybrid</a>
+                        
+                            <a href="/fcx-clarity" style="display: block; clear: both; font-size: 10px;">FCX Clarity Electric Vehicle</a>
+                        
+                            <a href="/fit" style="display: block; clear: both; font-size: 10px;">Fit 5-Door</a>
+                        
+                            <a href="/fit-ev" style="display: block; clear: both; font-size: 10px;">Fit EV</a>
+                        
+                            <a href="/insight-hybrid" style="display: block; clear: both; font-size: 10px;">Insight Hybrid</a>
+                        
+                            <a href="/odyssey" style="display: block; clear: both; font-size: 10px;">Odyssey Minivan</a>
+                        
+                            <a href="/pilot" style="display: block; clear: both; font-size: 10px;">Pilot SUV</a>
+                        
+                            <a href="/ridgeline" style="display: block; clear: both; font-size: 10px;">Ridgeline Truck</a>
+                        
+                            <a href="/alternative-fuel-vehicles/">Hybrid and Alternative Fuel Vehicles</a>
+                            <a href="/all-models.aspx">All Models</a>
+                            <a href="/certified-used/">Certified Used Cars</a>
+                            <a href="/future-cars/">Future Models &amp; Concepts</a>
+                        </div>
+                    </div>
+                    <script language="Javascript">
+                
+                        var sContent = '';
+            
+                        sContent += '<select name="HeaderModelSelector" id="HeaderModelSelector" class="HeaderModelSelector" onchange="GlobalNavigationChangeModel()">';
+                            sContent += '<option value="">Select a Model</option>';
+                        
+                            sContent += '<option value="/accord-coupe">Accord Coupe</option>';
+                        
+                            sContent += '<option value="/accord-sedan">Accord Sedan</option>';
+                        
+                            sContent += '<option value="/accord-plug-in">Accord Plug-In</option>';
+                        
+                            sContent += '<option value="/civic-coupe">Civic Coupe</option>';
+                        
+                            sContent += '<option value="/civic-hybrid">Civic Hybrid Sedan</option>';
+                        
+                            sContent += '<option value="/civic-hf">Civic HF Sedan</option>';
+                        
+                            sContent += '<option value="/civic-natural-gas">Civic Natural Gas</option>';
+                        
+                            sContent += '<option value="/civic-sedan">Civic Sedan</option>';
+                        
+                            sContent += '<option value="/civic-si-coupe">Civic Si Coupe</option>';
+                        
+                            sContent += '<option value="/civic-si-sedan">Civic Si Sedan</option>';
+                        
+                            sContent += '<option value="/crosstour">Crosstour</option>';
+                        
+                            sContent += '<option value="/cr-v">CR-V SUV</option>';
+                        
+                            sContent += '<option value="/cr-z">CR-Z Sport Hybrid</option>';
+                        
+                            sContent += '<option value="/fcx-clarity">FCX Clarity Electric Vehicle</option>';
+                        
+                            sContent += '<option value="/fit">Fit 5-Door</option>';
+                        
+                            sContent += '<option value="/fit-ev">Fit EV</option>';
+                        
+                            sContent += '<option value="/insight-hybrid">Insight Hybrid</option>';
+                        
+                            sContent += '<option value="/odyssey">Odyssey Minivan</option>';
+                        
+                            sContent += '<option value="/pilot">Pilot SUV</option>';
+                        
+                            sContent += '<option value="/ridgeline">Ridgeline Truck</option>';
+                        
+                            sContent += '<option value="/alternative-fuel-vehicles/">Hybrid and Alternative Fuel Vehicles</option>';
+                            sContent += '<option value="/all-models.aspx">All Models</option>';
+                            sContent += '<option value="/certified-used/">Certified Used Cars</option>';
+                            sContent += '<option value="/future-cars/">Future Models &amp; Concepts</option>';
+                        sContent += '</select>';
+                        
+                        document.getElementById('HeaderModelSelect').innerHTML = sContent;
+                
+                    </script>
+                
+            
+        </div>
+        
+        <div class="HeaderLink"><a href="http://automobiles.honda.com/tools/dealer-locator/?type=certifiedused" target="_top">Find a Dealer</a></div>
+        <div class="HeaderDiv"><img src="/images/_controls/global-header/header-div.gif" width="1" height="31" /></div>
+        <div class="HeaderLink"><a href="http://automobiles.honda.com/tools/build-price/" target="_top">Build Your Honda</a></div>
+        <div class="HeaderDiv"><img src="/images/_controls/global-header/header-div.gif" width="1" height="31" /></div>
+        <div class="HeaderLink"><a href="http://automobiles.honda.com/tools/price-quote.aspx" target="_top">Request a Quote</a></div>
+        <div class="HeaderDiv"><img src="/images/_controls/global-header/header-div.gif" width="1" height="31" /></div>
+        <div class="HeaderLink"><a href="http://automobiles.honda.com/tools/compare/" target="_top">Compare Vehicles</a></div>
+        
+            <div id="HeaderSearchField"><input type="text" id="HeaderSearchText" onmouseover="searchBox.tooltip().show();" onmouseout="searchBox.tooltip().hide();" value="Search / Find A Dealer" onfocus="searchBox.focus();" onblur="searchBox.blur();" /></div>
+        
+    </form>
+</div>
+
+            <div id="PageContent">
+            
+<style type="text/css">
+#PageHeader {position:relative; width:963px; height:100px; background: url('/images/_controls/certified-navigation-all/header.jpg') no-repeat; z-index:999;}
+.PageHeaderButtonOff { float:left; margin-top:73px; padding-right:3px;  z-index:999;}
+.PageHeaderButtonOn { float:left; margin-top:73px; padding-right:3px;  z-index:999;}
+#ShoppingToolsMenuOn {position:relative; z-index:999;}
+#ShoppingToolsMenuItems {top:27px; left:0px; position:absolute; display:none; z-index:999; background: url('/images/_controls/certified-navigation-all/dropdown-bg.gif'); width:178px; height:169px; overflow:hidden; z-index:999;}
+.smenuitem { font-size:12px; font-weight:bold; line-height:22px; height:24px; width:177px; border-top:1px solid #ccc; background-color:transparent; color:#000; position:relative; left:2px;}
+.smenuitemover { font-size:12px; font-weight:bold; line-height:22px; height:24px; width:177px; border-top:1px solid #fff; background-color:#0483c8; color:#fff; position:relative; left:2px;}
+.innermenu {padding-left:5px;}
+#PageHeader ul { list-style-type: none; text-indent: 0px; padding:0px; margin:0px;}
+#PageHeader li {text-indent: 0px; padding:0px; margin:0px;}
+.smenuitemover a:hover {color:#fff; text-decoration:none;}
+
+#TertiaryNav { height:25px;position: relative; top: 9px; }
+a.tertnav {font-size: 11px; color: #666666; FONT-FAMILY: arial; TEXT-DECORATION: underline; font-weight:bold;}
+a.tertnav:visited { font-size: 11px; color: #666666; FONT-FAMILY: arial; TEXT-DECORATION: underline;}
+a.tertnav:hover {font-size: 11px; color: #666666; FONT-FAMILY: arial; TEXT-DECORATION: underline;}
+#CertifiedLogo {float:right; padding-right:20px;}
+#downloadBrochure {font-size:10px; float:right; position: relative; top: -15px; right: 5px;}
+.brochureText { text-decoration:underline; } 
+#downloadbrochure {position:absolute; left:720px; top:30px;}
+</style>
+<script language="javascript" type="text/javascript" >
+        $(document).ready(function(){
+            if (typeof(disableHidingCombox) == "boolean" ) {
+            $("#ShoppingToolsMenuOn").hover(
+                  function () {
+                    $('#ShoppingToolsMenuItems').show();
+                  }, 
+                  function () {
+                    $('#ShoppingToolsMenuItems').hide();
+                 });
+            }
+            else {
+                $("#ShoppingToolsMenuOn").hover(
+                  function () {
+                  if ($('#selYearEnd').length > 0) {
+                    $('#selYearStart').hide();
+                    $('#selYearEnd').hide();
+                    $('#selPrice').hide();
+                  }
+                  if ($('#seating').length > 0) {
+                    $('#seating').hide();
+                  }
+                  
+                    $('#ShoppingToolsMenuItems').show();
+                  }, 
+                  function () {
+                  if ($('#selYearEnd').length > 0) {
+                    $('#selYearStart').show();
+                    $('#selYearEnd').show();
+                    $('#selPrice').show();
+                  }
+                  
+                  if ($('#seating').length > 0) {
+                    $('#seating').show();
+                  }              
+                    $('#ShoppingToolsMenuItems').hide();
+                 });
+             } 
+            
+            //image has rollover class will load rollover state on hover
+             $('.rolloverbtn').hover(
+              function () {
+                $(this).attr('src',$(this).attr('src').replace('off.','over.'));
+              }, 
+              function () {
+                $(this).attr("src",$(this).attr('src').replace('over.','off.'));
+              });  
+        });
+
+        function openForwardWindow() {
+             mywindow = window.open("http://automobiles.honda.com/tools/forward.aspx", "ForwardWindow", "location=0,status=0,scrollbars=0,height=440,width=575");
+        }
+
+        function menuonselect(t,onclass) {
+            if (undefined == onclass) {
+            onclass = 'smenuitemover';
+            }
+	        document.getElementById('menu'+t).className = onclass;
+        }
+
+        function menuoffselect(t,offclass) {
+            if (undefined == offclass) {
+            offclass = 'smenuitem';
+            }
+	        document.getElementById('menu'+t).className = offclass;
+        }
+</script>
+<div id="PageHeader" style="width: 963px;">
+
+    <div class="PageHeaderButtonOn" style="margin-left:8px;">
+        <a href="http://automobiles.honda.com/certified-used/"><img id="certified-used" alt="Home" src="/images/_controls/certified-navigation-all/tab-home-on.jpg" border="0" /></a>
+    </div>      
+
+    <div class="PageHeaderButtonOff">
+    <a href="http://automobiles.honda.com/certified-used/program-benefits.aspx"><img id="program-benefits" class="rolloverbtn" alt="Program Benefits" src="/images/_controls/certified-navigation-all/tab-programbenefits-off.jpg" border="0"/>
+    </a>
+  </div>
+
+    <div class="PageHeaderButtonOff">
+    <a href="http://automobiles.honda.com/certified-used/model-library.aspx">
+    <img id="model-library"  class="rolloverbtn" alt="Model Library" src="/images/_controls/certified-navigation-all/tab-model-library-off.jpg" border="0"/>
+    </a>
+  </div>
+
+     <div class="PageHeaderButtonOff">
+     <a href="http://automobiles.honda.com/certified-used/inventory-search.aspx">
+    <img id="search-inventory"  class="rolloverbtn" alt="Find a Car" src="/images/_controls/certified-navigation-all/tab-find-a-car-off.jpg" border="0"/>
+    </a>
+  </div>
+
+     <div class="PageHeaderButtonOff">
+     <a href="http://automobiles.honda.com/certified-used/reverse-calculator.aspx">
+    <img id="payment-tools"  class="rolloverbtn" alt="Estimate Payments" src="/images/_controls/certified-navigation-all/tab-shopping-tools-off.jpg" border="0"/>
+    </a>
+  </div>
+
+<div id="downloadbrochure">
+    <span class="brochureText" onclick="window.open('/images/certified-used/downloads/HCUCbrochure.pdf','CertifiedUsedCarsBrochure')" style="cursor:hand"><img class="rolloverbtn" alt="Download the Brochure" src="/images/certified-used/model-library/btn-brochure-off.jpg" border="0" /></span>
+  </div>
+  <div id="CertifiedLogo">
+  <a href="http://automobiles.honda.com/certified-used/">
+    <img src="/images/_controls/certified-navigation-all/certified-used-logo.gif" alt="Honda Certified Used Cars"  border="0" />
+  </a>
+  </div>
+</div>
+    <div class="clr"></div>
+
+
+       
+        <script>
+   var siteaddress = "http://automobiles.honda.com";
+   //alert(siteaddress);
+   </script> 
+   
+   
+
+  
+            <div class="clr"></div>          
+            
+    
+<script language="JavaScript">
+	var validator = new Validation;
+	function checkHcucForm(){
+			if(validator.IsZip($("#txtZip").val())){
+				SetUserZip($("#txtZip").val());
+				var sPrams = '';
+				sPrams = 'txtZip=' + $("#txtZip").val();
+				sPrams+= '&selRange=15';
+				sPrams+= '&selModel=' + document.forms[1].selModel[document.forms[1].selModel.selectedIndex].value;
+				sPrams+= '&selYearStart=All';
+				sPrams+= '&selYearEnd=All';
+				sPrams+= '&selPrice=Any%20Price';
+				window.location = '/certified-used/inventory-search-results.aspx?' + sPrams;
+       }else{
+				//error code goes here...
+				$("#txtZip").css({'background-color' : '#db6151'});
+				$("#txtZip").attr('maxlength','15'); 
+				$("#txtZip").val('Enter ZIP Code here');
+			}
+			return false;
+		}
+
+		// Functions for tracking the tour
+		function TrackEvent (sEvent , sArg2 , sArg3) {
+
+			sEvent = sEvent.toUpperCase();
+			
+			var sOldProp37 = s.prop37;
+			
+			
+
+			switch (sEvent) {
+				case 'START':
+				
+					// Stop the main pano from rotating
+					StopRotatingPano();
+				
+					var sLinkName = 'HCUC:CERTIFIED USED DEMO VIDEO START';
+					s.linkTrackVars = 'channel,prop20,prop37,eVar19,eVar20,events';
+					s.linkTrackEvents = 'event19,event18';
+					s.prop20 = 'CERTIFIED USED DEMO VIDEO';
+					s.eVar19 = 'VIDEO START';
+					s.eVar20 = s.prop20;
+					s.events = 'event19,event18';					
+					s.prop37 = s.channel + ':' + s.prop26 + ':' + s.prop27 + ':' + s.pageName;
+					CallSDotTL(s , true , sLinkName , 'o');
+
+					break;
+				case 'BENCH':
+					var sLinkName = 'HCUC:CERTIFIED USED DEMO VIDEO BENCHMARK';
+					s.linkTrackVars = 'channel,prop20,prop37,eVar19,eVar20,events';
+					s.linkTrackEvents = 'event18';
+					s.prop20 = 'CERTIFIED USED DEMO VIDEO';
+					s.eVar20 = s.prop20;
+					s.eVar19 = sArg2 + ' SECONDS COMPLETE';
+					s.events = 'event18';					
+					s.prop37 = s.channel + ':' + s.prop26 + ':' + s.prop27 + ':' + s.pageName;
+					CallSDotTL(s , true , sLinkName , 'o');
+
+					break;
+				case 'END':
+					var sLinkName = 'HCUC:CERTIFIED USED DEMO VIDEO COMPLETE';
+					s.linkTrackVars = 'channel,prop20,prop37,eVar19,eVar20,events';
+					s.linkTrackEvents = 'event20,event18';
+					s.prop20 = 'CERTIFIED USED DEMO VIDEO';
+					s.eVar20 = s.prop20;
+					s.eVar19 = 'VIDEO COMPLETE';
+					s.events = 'event20,event18';					
+					s.prop37 = s.channel + ':' + s.prop26 + ':' + s.prop27 + ':' + s.pageName;
+					CallSDotTL(s , true , sLinkName , 'o');
+					
+					break;
+				case 'CHAPTER START':
+					var sLinkName = 'HCUC:CERTIFIED USED DEMO VIDEO ' + sArg3 + ' CHAPTER START';
+					s.linkTrackVars = 'channel,prop20,prop37';
+					s.prop20 = 'CERTIFIED USED DEMO VIDEO ' + sArg3 + ' CHAPTER';
+					s.prop37 = s.channel + ':' + s.prop26 + ':' + s.prop27 + ':' + s.pageName;
+					CallSDotTL(s , true , sLinkName , 'o');
+					
+					break;
+				case 'CHAPTER END':
+					var sLinkName = 'HCUC:CERTIFIED USED DEMO VIDEO ' + sArg3 + ' CHAPTER COMPLETE';
+					s.linkTrackVars = 'channel,prop20,prop37';
+					s.prop20 = 'CERTIFIED USED DEMO VIDEO ' + sArg3 + ' CHAPTER';
+					s.prop37 = s.channel + ':' + s.prop26 + ':' + s.prop27 + ':' + s.pageName;
+					CallSDotTL(s , true , sLinkName , 'o');
+					
+					break;
+			}
+	    
+
+			s.prop37 = sOldProp37;
+
+
+		}
+		
+		var iCurrentPanoRotationIndex = -1;
+		var iPrimaryRotationInterval;
+		function RotatePano() {
+		
+			iCurrentPanoRotationIndex++;
+			if (iCurrentPanoRotationIndex >= (aPanos.length)) {
+				iCurrentPanoRotationIndex = 0;
+			}
+
+			ShowPano(iCurrentPanoRotationIndex);
+			
+
+			if (aPanos.length > 1) {
+				iPrimaryRotationInterval = setTimeout("RotatePano();", 14000);
+			}
+
+		}
+		
+		function ShowPano(index) {
+
+
+			var obj = aPanos[index];
+			iCurrentPanoRotationIndex = index;
+
+
+			if (obj["type"] == 'videotour') {
+				ShowFlashTour();
+			} else if (obj["type"] == 'flash') {
+			
+					var src = obj["src"];
+
+
+					var oDetection=new ClientDetection();
+					if(oDetection.HasFlash()){
+
+
+						var sContent = '';
+						sContent += '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="726" height="300" id="HCUCDemo" align="middle">';
+						sContent += '<param name="allowScriptAccess" value="sameDomain" />';
+						sContent += '<param name="movie" value="' + src + '" />';
+						sContent += '<param name="quality" value="high" />';
+						sContent += '<param name="bgcolor" value="#FFFFFF" />';
+						sContent += '<param name="menu" value="false" />';
+						sContent += '<param name="wmode" value="opaque" />';
+						sContent += '<embed src="' + src + '" menu="false" quality="high" bgcolor="#FFFFFF" width="726" height="300" name="UrbanInitiative" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="opaque" />';
+						sContent += '</object>';
+						EmbededObjectWriteContent('Panorama' , sContent);
+						
+					} else {
+					
+						document.getElementById('Panorama').innerHTML = '<div id="pano" style="width:726;height:297;background-image: url(' + obj["nonflashbackup"] + ');cursor:pointer;background-repeat: no-repeat;" onclick="goToCurrentOffer();" ></div>';
+						
+					}
+
+			}
+			
+			// Turn on jelly
+			$('#PanoJellies div').find('img').attr('src' , '/images/certified-used/overview/pano-jelly-off.png');
+			$('#PanoJellies').find('div').eq(iCurrentPanoRotationIndex).find('img').attr('src' , '/images/certified-used/overview/pano-jelly-on.png');
+			
+			// Tracking
+			//sOldLinkTrackVars = s.linkTrackVars;
+			//s.linkTrackVars = 'prop37';
+			//CallSDotTL(s , true , 'HCUC:' + obj["trackingname"] + ' PROMO DISPLAY' , 'o');
+			//s.linkTrackVars = sOldLinkTrackVars
+
+		}
+		
+		function StopRotatingPano() {
+			clearTimeout(iPrimaryRotationInterval);
+		}
+		
+		function JumpToPano(index) {
+		
+			StopRotatingPano();
+			ShowPano(index);
+		
+		}
+		
+		function TrackBannerClick() {
+		
+			var obj = aPanos[iCurrentPanoRotationIndex];
+
+			// Tracking
+			sOldLinkTrackVars = s.linkTrackVars;
+			s.linkTrackVars = 'prop37';
+			CallSDotTL(s , true , 'HCUC:' + obj["trackingname"] + ' PROMO CLICK' , 'o');
+			s.linkTrackVars = sOldLinkTrackVars
+
+		}
+		
+
+
+
+		$(document).ready(function() {
+		
+			if (aPanos.length < 2) {
+				$('#PanoJellyHolder').hide();
+				$('#CurrentOffers').css('height' , '141px');
+			}  else {
+
+				// Initialize Pano Jellies
+				$('#PanoJellies').css('width' , (31 * aPanos.length) + 'px');
+				for (var i = 0; i < aPanos.length; i++) {
+					$('#PanoJellies').append('<div style="float: left; margin-left: 3px; margin-top: 4px;"><a href="javascript: JumpToPano(' + i + ')"><img src="/images/certified-used/overview/pano-jelly-off.png" border="0" /></a></div>');
+				}
+			
+			}
+			
+			RotatePano();
+		
+
+		});
+       
+        
+</script>
+    
+	<style type="text/css">
+	.left {float:left;}
+	.Module {float:left; width:182px; height:230px; overflow:hidden;}
+	#Panorama {float: left; width:727; border: 1px solid #a0c9e9; height:301px;}
+	
+	#LeftContent {width:728px; overflow:hidden;}
+	#RightContent {width:234px; overflow:hidden;}
+
+	#Module1 { background: url(/images/certified-used/overview/module-qa-bg.jpg);}
+	    #Module1Copy {color:#585858; font-weight:bold; margin-left: 20px; width:155px; padding-top:60px; } 
+	#Module2 { background: url(/images/certified-used/overview/module-warranty-bg.jpg);}
+	    #Module2Copy { color:#585858; font-weight:bold; margin-left: 20px; width:155px; padding-top:40px;} 	
+	#Module3 { background: url(/images/certified-used/overview/module-carfax-bg.jpg);}
+	    #Module3Copy { color:#585858; font-weight:bold; margin-left: 20px; width:155px; padding-top:120px;}
+	#Module4 { background: url(/images/certified-used/overview/module-library-bg.jpg);}
+	    #Module4Copy { color:#585858; font-weight:bold; margin-left: 20px; width:155px; padding-top:120px; } 
+		   .ModuleCopy {} 
+		   .arrow {height:5px;}
+		   .ModuleCopy a, .ModuleCopy a:visited, .ModuleCopy a:hover {color: #3b92dc; font-size:12px;}
+		   
+		
+	#SearchBox { background: url(/images/certified-used/overview/searchform-bg.jpg); width: 234px; height: 239px;}
+	    #SearchForm {position:relative;}
+		#zipfield { margin-top:40px;}
+		#modelfield { margin-top:40px;}
+		#btnfield { margin-top:30px;}
+		.formitem { margin-left:18px;text-align:left;}
+		.formitem a, .formitem a:visited, .formitem a:active {color:#13568f; font-weight:bold; margin-left:2px;}
+	
+	#CurrentOffers {background: url(/images/certified-used/overview/currentoffer-bg-tall.jpg); width:234px; height:163px; overflow:hidden;}
+	   #OfferText {margin-left:20px; margin-top:55px; font-size:11px; font-weight:bold; width:190px;}
+		  #OfferText a, #OfferText a:hover, #OfferText a:visited {font-weight:bold;}
+		  .offertextextra {margin-left:20px; margin-top:5px;}
+	#XMRadio {background: url(/images/certified-used/overview/xmradio-bg.jpg);  width:234px; height:152px;}
+	   #XMRadioCopy {width:200px; margin-left:20px; padding-top:15px; font-weight:bold;color:#636567;}
+		  #XMLearnMore {margin-top:45px; margin-left:130px; font-weight:bold;}
+		  
+
+	</style>
+	<script language="JavaScript">
+
+            function goToCurrentOffer(){
+                window.location = "/certified-used/program-accolades.aspx"; 
+            }
+
+			var aPanos = [		
+
+				{'type' : 'flash' , 'src' : '/images/certified-used/overview/pano-kbb-accolade.swf' , 'trackingname' : 'KBB ACCOLADE' , 'nonflashbackup' : '/images/certified-used/overview/pano-kbb-accolade.jpg' } ,
+				
+				{'type' : 'videotour' , 'trackingname' : 'HCUC VIDEO TOUR' } 
+			
+			];
+			
+			
+			function ShowFlashTour() {
+
+				var oDetection=new ClientDetection();
+				if(oDetection.HasFlash()){
+
+					var sContent = "";
+					var sFlashVars = '';
+						            
+					sContent += '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="726" height="300" id="HCUCDemo" align="middle">';
+					sContent += '<param name="allowScriptAccess" value="sameDomain" />';
+					sContent += '<param name="movie" value="/images/certified-used/overview/hcuc_demo.swf?xmlSource=/feeds/omniture-flash-tracking.aspx" />';
+					sContent += '<param name="quality" value="high" />';
+					sContent += '<param name="bgcolor" value="#FFFFFF" />';
+					sContent += '<param name="menu" value="false" />';
+					sContent += '<param name="wmode" value="opaque" />';
+					sContent += '<param name="FlashVars" value="' + sFlashVars + '" />';
+					sContent += '<embed src="/images/certified-used/overview/hcuc_demo.swf?xmlSource=/feeds/omniture-flash-tracking.aspx" FlashVars="' + sFlashVars + '" menu="false" quality="high" bgcolor="#FFFFFF" width="726" height="300" name="UrbanInitiative" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="opaque" />';
+					sContent += '</object>';
+					EmbededObjectWriteContent('Panorama' , sContent);
+					
+				} else {
+				
+					document.getElementById('Panorama').innerHTML = '<div id="pano" style="width:726;height:297;background-image: url(/images/certified-used/overview/pano-main.jpg);cursor:pointer;background-repeat: no-repeat;" onclick="goToCurrentOffer();" ></div>';
+
+				}
+
+			}
+			
+					
+         </script>
+
+<div id="ContentDiv">
+	<div class="left" id="LeftContent">
+	   <div id="Panorama"></div>
+		<div style="clear: both; background-image: url(/images/certified-used/overview/pano-rotation-nav.jpg); width: 729px; height: 19px; margin-bottom: 3px; text-align: center;" id="PanoJellyHolder">
+			<div style="margin: 0 auto; height: 19px; text-align: center;" id="PanoJellies"></div>
+		</div>
+		<div id="Modules">
+			    <div id="Module1" class="Module">
+                    <div id="Module1Copy" class="ModuleCopy">
+					Our certification process includes an exhaustive 150-point mechanical and appearance inspection. <br /><a class="modulelink" href="/certified-used/certification-standards.aspx">Learn more <img src="/images/certified-used/overview/icon-bluearrow.jpg" border="0"/></a>
+                    </div>
+                </div>
+                <div id="Module2" class="Module">
+                    <div id="Module2Copy" class="ModuleCopy">
+					Every Honda Certified Used Car comes with one of the most extensive certified used-car warranties in the business. <br /><br /><a class="modulelink" href="/certified-used/warranty.aspx">What's included ? <img src="/images/certified-used/overview/icon-bluearrow.png" border="0"/></a>
+					</div>
+                </div>
+                <div id="Module3" class="Module">
+                    <div id="Module3Copy" class="ModuleCopy">
+					For added peace of mind, each certified used vehicle comes with a free Vehicle History Report. <br /><br /><a class="modulelink" href="/certified-used/inventory-search.aspx">Find a car <img src="/images/certified-used/overview/icon-bluearrow.jpg" border="0"/></a>
+					</div>
+                </div>
+                <div id="Module4" class="Module">
+                    <div id="Module4Copy" class="ModuleCopy">
+					Find photos, specs and more for your favorite Honda Certified Used Car. <br /><br /><a class="modulelink" href="/certified-used/model-library.aspx">All models <img src="/images/certified-used/overview/icon-bluearrow.jpg" border="0"/></a>
+					</div>
+                </div>				
+		</div>
+	</div>
+	<div id="RightContent" class="left">
+	            <div id="SearchBox">
+                    <div id="SearchForm">
+						<form id="frmSearch" onsubmit="return checkHcucForm();">
+							&nbsp;
+							<div id="zipfield" class="formitem">
+								<input class="FormFields" id="txtZip" size="10" name="txtZip">	   
+							</div>
+                            <div id="modelfield" class="formitem">
+								<select class="FormFields" id="selModel" name="selModel">
+									<option value="All Models" selected >All Models</option>
+									<option value="Accord Coupe">Accord Coupe</option>
+									<option value="Accord Crosstour">Accord Crosstour</option>
+									<option value="Accord Sedan">Accord Sedan</option>
+									<option value="CR-V">CR-V</option>
+                  <option value="CR-Z">CR-Z</option>
+									<option value="Civic Coupe">Civic Coupe</option>
+									<option value="Civic GX">Civic GX</option>
+									<option value="Civic Hybrid">Civic Hybrid</option>
+                                    <option value="Civic Natural Gas">Civic Natural Gas</option>
+									<option value="Civic Sedan">Civic Sedan</option>         
+									<option value="Civic Si Coupe">Civic Si Coupe</option>
+									<option value="Civic Si Sedan">Civic Si Sedan</option>
+									<option value="Crosstour">Crosstour</option>
+									<option value="Element">Element</option>
+                  <option value="Element SC">Element SC</option>
+									<option value="Fit">Fit</option>
+									<option value="Insight">Insight</option>
+									<option value="Odyssey">Odyssey</option>
+									<option value="Pilot">Pilot</option>
+									<option value="Ridgeline">Ridgeline</option>
+									<option value="S2000">S2000</option>
+								</select>
+								<br />
+								<a class="formlink" href="/certified-used/model-library.aspx">Browse the Model Library</a>
+							</div>
+							<div id="btnfield" class="formitem">
+								<a onclick="checkHcucForm();" href="#"><img alt="Search" class="rolloverbtn" src="/images/certified-used/overview/btn-search-off.jpg" border="0" id="searchbtn"></a>
+								<br />
+							</div>
+						
+						</form>
+    				</div>
+                </div>
+				<div id="CurrentOffers">
+				</div>
+				<div id="XMRadio">
+					<div id="XMRadioCopy">Get a free three-month trial period of XM&#174; Radio when you purchase any Honda Certified Used Car factory-equipped with XM&#174; Radio</div>
+					<div id="XMLearnMore"><a href="/certified-used/xm-radio.aspx">LEARN MORE</a></div>
+				</div>
+	</div>
+</div>
+
+
+                
+
+
+
+
+
+            </div>
+            <div id="PageFooter">
+
+<div id="FooterContainer">
+
+    <div id="FooterLinks">
+        <div id="FooterLinksContainer">
+            <div class="FooterLink"><a href="http://automobiles.honda.com/spanish/" target="_top">En Espa&#241;ol</a></div>
+            <div class="FooterDiv"></div>                    
+            <div class="FooterLink"><a href="http://automobiles.honda.com/information/customer-relations.aspx" target="_top">Customer Service/FAQs</a></div>
+            <div class="FooterDiv"></div>
+            <div class="FooterLink"><a href="http://automobiles.honda.com/information/owner-resources.aspx" target="_top">Owner Resources</a></div>
+            <div class="FooterDiv"></div>
+            <div class="FooterLink"><a href="http://automobiles.honda.com/mobile/" target="_top">Mobile Site</a></div>
+            <div class="FooterDiv"></div>
+            <div class="FooterLink"><a href="http://www.honda.com/" target="_top">All Honda Sites</a></div>
+            <div class="FooterDiv"></div>
+            <div class="FooterLink"><a href="http://automobiles.honda.com/information/consumer-privacy-policy.aspx" target="_top">Privacy Policy</a></div>
+            <div class="FooterDiv"></div>
+            <div class="FooterLink"><a href="http://automobiles.honda.com/information/legal-terms.aspx" target="_top">Terms of Use</a></div>
+            <div class="FooterDiv"></div>
+            <div class="FooterLink"><a href="http://automobiles.honda.com/site-map.aspx" target="_top">Site Map</a></div>
+        </div>
+    </div>
+    <div id="FooterCopyright">
+        &#169;2013 <span class="DottedLink"><b class="FooterCorporateLink"><a href="http://www.honda.com/" target="_top">American Honda Motor Co., Inc</a></b>.  All information contained herein applies to U.S. vehicles only.
+        <a id="HondaWorldwideLink" href="http://world.honda.com/link/" target="_top">Honda Worldwide</a>.</span>
+        <a id="AdChoices" href="http://preferences.truste.com/preference.html?affiliateId=99" target="_blank">AdChoices<img class="AdChoicesLogo" src="/images/_global/logos/AdChoicesLogo.gif" border="0" /></a>    
+
+    </div>
+
+</div>
+
+<div id="DisclaimersContainer">
+    <span name="Disclaimers"></span>
+
+<span name="Disclaimer_hcuc_xmradio">[1]&nbsp;XM services require a subscription after 90-day trial period. Subscriptions governed by SiriusXM Customer Agreement; see www.siriusxm.com. If you decide to continue your XM service at the end of your complimentary trial, the plan you choose will automatically be renewed and you will be billed at then-current rates until you call XM at 1-800-967-2346 to cancel. Fees and programming subject to change. Available only to those at least 18 years of age in the 48 contiguous United States and D.C. &#169;2011 Sirius XM Radio Inc. Sirius, XM and all related marks and logos are trademarks of Sirius XM Radio Inc. and its subsidiaries.</span><br /><br />
+
+</div>
+</div>
+        </div>
+        <div id="RightShadow"><img src="/images/_controls/global-header/background-header-right.png" Width="20" Height="51" /></div>
+    </div>
+    
+<div id="TrackingTags">
+
+<!-- SiteCatalyst code version: H.22.1.
+Copyright 1997-2007 Omniture, Inc. More info available at
+http://www.omniture.com -->
+
+<script language="JavaScript">
+/* Specify the Report Suite ID(s) to track here */
+
+
+var s_account = 'ahmautomobilesprod';
+
+
+
+</script>
+
+<script language="JavaScript" src="/js/tracking/global_code.js"></script>
+<script language="javascript" type="text/javascript">
+
+    /* Custom Functions */
+
+    // Sometimes we want to track links on a page as specific page names.
+    // This function will help accomodate for that.
+    function TrackPageClick(sPageName) {
+
+        var s=s_gi(s_account);
+        s.pageName = sPageName;
+        s.events = '';
+        s.products = '';
+        
+        CallSDotT(s);
+    }
+
+    function TrackLinkClick(sLinkName) {
+
+        var s=s_gi(s_account);
+     
+        s.linkTrackVars = '';
+        s.linkTrackEvents='';
+        
+        CallSDotTL(s , this , sLinkName , "o");
+
+    }
+    
+    function CallSDotT(s) {
+    
+        // Nothing should call s.t() directly. Everything should go through this function.
+
+        s = FormatVars(s);
+
+        var s_code=s.t();if(s_code)document.write(s_code)
+
+    }
+    
+    function CallSDotTL(s , sObject , sLinkName , sLinkType) {
+  
+        // Nothing should call s.t() directly. Everything should go through this function.
+    
+        s = FormatVars(s);
+        
+        s.tl(sObject , sLinkType , sLinkName);
+
+    }
+    
+    function FormatVars(s) {
+        // The purpose of this function is to provide sort of a Vista layer for ensuring
+        //  that data is formatted as desired no matter how it is programmed.
+        
+        s.prop28 = 'English';
+        
+        
+        
+        s.prop12 = 'JS';
+        
+
+        if(s.prop1) s.eVar10 = s.prop1;
+        if(s.prop2) s.eVar11 = s.prop2;
+        if(s.prop3) s.eVar12 = s.prop3;
+        if(s.prop4) s.eVar13 = s.prop4;
+        if(s.prop5) s.eVar14 = s.prop5;
+        if(s.prop6) s.eVar15 = s.prop6;
+        if(s.prop7) s.eVar22 = s.prop7;
+        if(s.prop17) s.eVar17 = s.prop17;
+        if(s.prop18) s.eVar18 = s.prop18;
+        if(s.prop19) s.eVar24 = s.prop19;
+        if(s.prop22) s.eVar25 = s.prop22;
+        if(s.prop26)s.eVar26 = s.prop26;
+        if(s.prop27)s.eVar27 = s.prop27;
+        if(s.prop33)s.eVar16 = s.prop33;
+        if(s.prop34)s.eVar34 = s.prop34;
+        if(s.prop39)s.eVar7 = s.prop39;
+
+        s.prop25 = document.location.pathname.toUpperCase() + '' + window.location.search.toUpperCase();
+
+        // Certain props and eVars have been disabled. Make sure they are always empty.
+        s.prop21 = '';
+        s.prop24 = '';
+
+        s.eVar21 = '';
+        s.eVar23 = '';
+        s.eVar28 = '';
+        s.eVar35 = '';
+
+        s.hier1 = '';
+        s.hier2 = '';
+        
+        // Trim whitespace off the end of values and uppercase values
+        for (var sKey in s) {
+            if ( (sKey.substr(0,4) == 'prop') || (sKey.substr(0,4) == 'eVar') || (sKey.substr(0,8) == 'pageName') || (sKey.substr(0,8) == 'linkName') || (sKey.substr(0,8) == 'channel') ) {
+                if (s[sKey] != '') {
+                    s[sKey] = (s[sKey] + '').replace(/^\s+|\s+$/g, '');
+                    s[sKey] = s[sKey].toUpperCase();
+                }
+            } 
+        }
+        
+
+        return s;
+    }
+    
+    // for s.products
+    function GetModelProductType(sModel) {
+        switch (sModel.toUpperCase()) {
+            case 'ACCORD SEDAN': case 'ACCORD COUPE': case 'CIVIC SEDAN': case 'CIVIC COUPE': case 'CIVIC GX': case 'CIVIC GX NGV': case 'CIVIC GX FLEET': case 'CIVIC HYBRID': case 'CIVIC SI COUPE': case 'CIVIC SI SEDAN': case 'CR-Z': case 'FCX': case 'FIT': case 'INSIGHT': case 'S2000': case 'ACCORD PLUG-IN':
+                return 'CARS'; break;
+            case 'CR-V': case 'ELEMENT': case 'ELEMENT SC': case 'PILOT': case 'ODYSSEY': case 'RIDGELINE': case 'ACCORD CROSSTOUR': case 'CROSSTOUR':
+                return 'TRUCKS'; break;             
+        }
+        return '';
+    }
+    
+   
+
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+s.linkInternalFilters="javascript:,rpa.com,honda.com,redesign.automobiles.honda.com,automobiles.honda.com"
+s.servers='10.100.71.111';
+
+var CurrentPageName='HCUC home page';
+if(CurrentPageName=='')CurrentPageName="Honda Automobiles - " + document.location.href;
+var Currentprop21='';
+var Currentprop23='';
+var Currentprop24='';
+var Currentprop25='';
+//ModelName and ModelYear For Model Sections
+
+//PageName, ModelName and ModelYear For HCUC Sections
+if(typeof CurrentModelName !=="undefined")s.prop1=CurrentModelName;
+if(typeof CurrentModelYear !=="undefined")s.prop2=CurrentModelYear;
+
+
+
+
+s.channel="HCUC"
+s.prop26="HCUC:HOME"
+s.prop28="NotSetYet"
+
+
+//Setting s.pageName
+//Special Case pageName For News Article Detail
+if(typeof CurrentNewsTitle!=="undefined") {
+    s.pageName=CurrentPageName+" Detail - "+CurrentNewsTitle;
+}
+//Special Case pageName For FAQ Questions
+else if(typeof CurrentFAQ!=="undefined") {
+    s.pageName=CurrentPageName+" Question "+CurrentFAQ;
+}
+//Special Case pageName For HCUC Section
+else if(typeof CurrentModelName !=="undefined"){
+    var tmpPageName=(s.prop26) ? s.prop26.split(":")[1] : "";
+    s.pageName="Certified Used " + CurrentModelYear+" "+CurrentModelName+" "+tmpPageName;
+    s.prop26 = "Certified Used Model Library";
+    s.prop27 = "Certified Used " + CurrentModelYear+" "+CurrentModelName;
+}
+else {
+    if (!s.pageName) s.pageName=CurrentPageName;
+}
+
+//Setting prop37
+if (!s.prop37) s.prop37=s.channel + ":" + s.prop26 + ":" + s.prop27 + ":" + s.pageName;
+/*
+if (!s.prop37) {
+    if (s.channel) {
+        s.prop37 = s.channel;
+    }    
+    if (s.prop26) {
+        if (s.prop37) { s.prop37 += ':'; }
+        s.prop37 += s.prop26;
+    }
+    if (s.prop27) {
+        if (s.prop37) { s.prop37 += ':'; }
+        s.prop37 += s.prop27;
+    }    
+    if (s.pageName) {
+        if (s.prop37) { s.prop37 += ':'; }
+        s.prop37 += s.pageName;
+    }
+}
+*/
+
+
+
+// Setting Portal Referral prop29 eVar29 if is from honda.com or www.honda.com
+
+
+
+
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+try {
+    if ( (typeof(DO_NOT_TRACK_ON_LOAD) != 'undefined') && (DO_NOT_TRACK_ON_LOAD) ) {
+    } else {
+        CallSDotT(s);
+    }
+} catch (ex) {
+    // This is here as a just in case since this line of code is so important
+    CallSDotT(s);
+}
+
+//--></script>
+
+
+
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><img src="http://honda.112.2o7.net/b/ss/ahmautomobilesprod/5/H.22.1--NS/0?pageName=HCUC HOME PAGE - NON-JS&c12=NON-JS" height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.22.1 -->
+
+
+
+
+
+
+
+
+
+
+<script language="JavaScript">
+
+// -------------------------------------
+// Dynamically add tracking code to page
+// -------------------------------------
+var xmlHttp = false;
+
+
+function AddTrackingTagsToPage (url) {
+
+    // Create http object
+    try {
+        xmlHttp=new XMLHttpRequest();
+    } catch (e) {
+        try {
+            xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    }
+
+    if (xmlHttp) {
+        xmlHttp.onreadystatechange = ProcessTrackingTags;
+        xmlHttp.open ('GET', url, true);
+        xmlHttp.send (null);
+    }
+
+}
+
+function ProcessTrackingTags() {
+
+    var sUserTrackingHTML = '';
+
+    if (xmlHttp.readyState == 4) {
+
+        if (xmlHttp.status == 200) {
+
+            var sUserTrackingHTML = xmlHttp.responseText;
+
+	        ParseTrackingHTML(sUserTrackingHTML);
+                    
+        } else {
+                // The request could not be fulfilled.
+        }
+    }
+
+}
+    
+    
+// This function will separate out the HTML and JavaScript from the HTML block.
+// The JavaScript code will be passed into an eval() statement.
+// The HTML code will be added to a new DIV.
+function ParseTrackingHTML(sValue) {
+
+		var sTempValue = sValue;
+
+		var sTempString = sTempValue.toLowerCase();
+		
+        // Pull JavaScript code out of HTML block
+		while (sTempString.indexOf("<scr" + "ipt") > 0) {
+		
+			var iIndex1 = sTempString.indexOf("<scr" + "ip" + "t");
+			var iIndex2 = iIndex1 + sTempString.substr(iIndex1).indexOf(">") + 1;
+			var iIndex3 = sTempString.substr(iIndex1).indexOf("</s" + "cr" + "ipt>");
+			
+			var sJS = sTempValue.substr(iIndex2   , iIndex3 - (iIndex2 - iIndex1));
+
+            // document.write won't work, so we need to replace it with a call to CreateDivAndWriteContent
+            sJS = sJS.replace(/document.write/g , 'CreateDivAndWriteContent');
+            // Get rid of comment tags
+            sJS = sJS.replace("<!--" , "");
+            sJS = sJS.replace("//-->" , "");
+
+            // Execute JS code
+			eval(sJS);
+
+            // Remove this JS block from sTempValue to look for next instance
+			sTempValue = sTempValue.substr(0 , iIndex1) + '' + sTempValue.substr(iIndex1 + iIndex3 + 9);
+
+			var sTempString = sTempValue.toLowerCase();			
+		
+		}
+
+    // What's remaining from sTempValue is just HTML. Write it to a <div>
+    CreateDivAndWriteContent(sTempValue);
+		
+}
+	
+// This function will dynamically create a div, populate it with passed in content, 
+//  and append it to the current document.
+function CreateDivAndWriteContent(sText) {
+
+    var oNewDiv = document.createElement('div');
+    oNewDiv.innerHTML = sText;
+    document.body.appendChild(oNewDiv);
+
+}
+
+
+
+// Create URL for tracking tags page
+// This should use javascript to retrieve the domain and protocol since we don't want to get a security violation by accessing the wrong domain.
+var sTrackingTagsPageURL = location.protocol + '//' + location.host + '/feeds/tracking-data.aspx?PageID=certified_home&ModelName=&ModelYear=&Language=';
+
+if(window.onload){
+    
+    
+    if (window.onload.toString().indexOf('oldonload') >= 0) {
+        window.onload = function() { }        
+    }
+    if(typeof(OnLoadExecute)=="function"){
+        if(window.onload!=OnLoadExecute){
+            var OldWindowOnLoadFunction=window.onload;
+            OnLoadAppend("OldWindowOnLoadFunction()");
+            window.onload=OnLoadExecute;
+        }else{
+        }
+        OnLoadAppend("AddTrackingTagsToPage(sTrackingTagsPageURL)");
+    }else{
+        var OldWindowOnLoadFunction=window.onload;
+        var TrackingOnLoadFunction=new Function("AddTrackingTagsToPage(sTrackingTagsPageURL); OldWindowOnLoadFunction();");
+        window.onload=TrackingOnLoadFunction;
+    }
+
+
+
+
+
+
+
+
+
+}else{
+    var TrackingOnLoadFunction=new Function("AddTrackingTagsToPage(sTrackingTagsPageURL)");
+    window.onload=TrackingOnLoadFunction;
+}
+</SCRIPT>
+
+
+
+        
+        
+         
+
+<!-- OPTIMOST GLOBAL MODULE AND COUNTER CODE -->
+<script type="text/javascript">
+if (typeof(opContentUrls)!='undefined' && typeof(opModulesArray)!='undefined' && opContentUrls.length>0 && opModulesArray.length>0) {
+	for(var i=0;i<opModulesArray.length;i++){
+		optimost.displayModule(opModulesArray[i]);
+	}
+}
+if(typeof opRunCounters=='function'){
+	opRunCounters();
+}
+</script>
+<!-- END OPTIMOST GLOBAL MODULE AND COUNTER CODE -->
+
+
+
+
+
+<!-- Begin Visual IQ Tags -->
+<script type="text/javascript" src="/js/IQ-SEOTag.js"></script>
+<script type="text/javascript">
+
+(function (){
+
+    var CURRENT_URL=document.URL;
+    var REFERRER_URL=document.referrer;
+    var additionalParameters={
+		     CUSTOM_ACCESS_MODES_BY_REFERRER:{
+	        	        	    SOCIAL:["facebook.com","twitter.com","plus.google.com","pinterest.com","instagram.com"]
+	        	        }
+	    }
+
+    var result =new IQSeoTag(REFERRER_URL,CURRENT_URL,null,additionalParameters);
+    var currentParams="false";
+    if(result.current_page_params && result.current_page_params.queryKey){
+
+
+			    for(key in result.current_page_params.queryKey){
+			    currentParams="true";		
+				    if(key.toLowerCase() != key){
+					    result.current_page_params.queryKey[key.toLowerCase()] = result.current_page_params.queryKey[key];
+					    delete result.current_page_params.queryKey[key];
+				    }
+			    }
+		    }
+    		
+    var imageURL;
+
+    if(result.modeOfAccess == "ORGANIC") {
+	    if(result.current_page_params.queryKey["kwid"] || CURRENT_URL.indexOf("kwid")>0 || CURRENT_URL.indexOf("KWID")>0){
+
+	    }else{
+		    imageURL = "http://ad.doubleclick.net/ad/N8821.547841.VISUALIQ.COM/B7809882.2;sz=1x1;u=" + result.source + "-" + result.query + "-" + result.current_page_params.query + "|" + REFERRER_URL + ";ord=[" + result.timestamp + "]?";
+	    }
+    	
+    }else if(result.modeOfAccess == "SOCIAL"){
+
+	    if(currentParams == "false"){
+    	
+		    imageURL = "http://ad.doubleclick.net/ad/N8821.547841.VISUALIQ.COM/B7809882;sz=1x1;u=" + result.current_page_params.query + "|" + REFERRER_URL + ";ord=[" + result.timestamp + "]?";
+	    }
+    }
+
+
+    if(result.current_page_params.queryKey["sp_mid"]){
+	       imageURL = "http://ad.doubleclick.net/ad/N8821.547841.VISUALIQ.COM/B7809882.4;sz=1x1;u=" + result.current_page_params.query + "|" + REFERRER_URL + ";ord=[" + result.timestamp + "]?";
+    }
+
+
+    if(CURRENT_URL.indexOf("kwid")>0 || CURRENT_URL.indexOf("KWID")>0){
+    	
+	    var params=CURRENT_URL.split("?");
+						    imageURL = "http://ad.doubleclick.net/ad/N8821.547841.VISUALIQ.COM/B7809882.3;sz=1x1;u=" + result.source + "-" + result.query + "-" + params[1] + "|" + REFERRER_URL + ";ord=[" + result.timestamp + "]?";
+    		
+	    }
+
+    if(REFERRER_URL.indexOf("youtube")>0){
+    if(currentParams == "false"){
+    		
+		    imageURL = "http://ad.doubleclick.net/ad/N8821.547841.VISUALIQ.COM/B7809882;sz=1x1;u=" + result.current_page_params.query + "|" + REFERRER_URL + ";ord=[" + result.timestamp + "]?";
+	    }
+    }
+    if (imageURL) {
+	    var image = new Image();
+	    image.src = imageURL;
+    }
+    
+}());
+</script>
+<!-- End Visual IQ Tags -->
+
+
+
+</div>
+
+</body>
+</html>
+

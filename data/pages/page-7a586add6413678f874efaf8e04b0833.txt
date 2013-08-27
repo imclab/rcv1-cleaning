@@ -1,0 +1,475 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><title>
+	Allegro MicroSystems - Automotive
+</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta id="metaDescription" name="description" /><meta id="metaKeywords" name="keywords" /><meta name="Developer" content="Boston Interactive - http://www.bostoninteractive.com" /><meta name="google-site-verification" content="qlywGYWHWfgwGNG8Iy-WCWpv2LvcI9hMqCJGcyN_0BY" />
+
+<!-- include jQuery library -->
+<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+
+<!-- include Fancybox plugin -->
+<script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+<!-- include Cycle plugin -->
+<script type="text/javascript" src="/scripts/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="/scripts/events.js"></script>
+
+<!-- include bx slider plugin -->
+<script type="text/javascript" src="/scripts/jquery.bxSlider.min.js"></script>
+<!--<script type="text/javascript" src="/scripts/jquery.easing.1.3.js"></script>-->
+
+<!-- include maphighlight plugin -->
+<script type="text/javascript" src="/scripts/jquery.maphilight.min.js"></script>
+
+<link rel="stylesheet" type="text/css"  href="/css/styles.css" />
+<link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+<script>
+    jQuery(document).ready(function() {
+        var filetypes = /\.(ashx|zip|pdf|doc*|xls*|ppt*)$/i;
+        var baseHref = '';
+        if (jQuery('base').attr('href') != undefined)
+            baseHref = jQuery('base').attr('href');
+        jQuery('a').each(function () {
+            var href = jQuery(this).attr('href');
+            if (href && (href.match(/^https?\:/i)) && (!href.match(document.domain))) {
+                jQuery(this).click(function () {
+                    var extLink = href.replace(/^https?\:\/\//i, '');
+                    _gaq.push(['_trackEvent', 'External', 'Click', extLink]);
+                    if (jQuery(this).attr('target') != undefined && jQuery(this).attr('target').toLowerCase() != '_blank') {
+                        setTimeout(function () { location.href = href; }, 200);
+                        return false;
+                    }
+                });
+            }
+            else if (href && href.match(/^mailto\:/i)) {
+                jQuery(this).click(function () {
+                    var mailLink = href.replace(/^mailto\:/i, '');
+                    _gaq.push(['_trackEvent', 'Email', 'Click', mailLink]);
+                });
+            }
+            else if (href && href.match(filetypes)) {
+                jQuery(this).click(function () {
+                    var extension = (/[.]/.exec(href)) ? /[^.]+$/.exec(href) : undefined;
+                    var filePath = href;
+                    _gaq.push(['_trackEvent', 'Download', 'Click-' + extension, filePath]);
+                    /*if (jQuery(this).attr('target') != undefined && jQuery(this).attr('target').toLowerCase() != '_blank') {
+                        setTimeout(function () { location.href = baseHref + href; }, 200);
+                        return false;
+                    }*/
+                });
+            }
+        });
+
+        jQuery("a.fancybox").fancybox({
+            'hideOnContentClick': false
+        });
+	jQuery('img[usemap]').maphilight({fillColor:'ffffff',stroke:false,fade:true,shadow:true,shadowColor:'ffffff'});
+        jQuery("a.imagePopup").fancybox({
+            'type': 'image',
+            'autoDimensions': true,
+            'centerOnScroll': true,
+            'height': 360,
+            'width': 500,
+            'onComplete': function() {
+            jQuery("#fancybox-frame").css({ 'overflow-x': 'auto' });
+            },
+            'onStart': function() {
+            jQuery("body").css({ 'overflow': 'auto' });
+            },
+            'onClosed': function() {
+            jQuery("body").css({ 'overflow': 'auto' });
+            }
+        });
+        jQuery("a.alertPopup").fancybox({
+            'type': 'iframe',
+            'scrolling': 'no',
+            'centerOnScroll': true,
+            'height': 160,
+            'width': 460,
+            'onComplete': function() {
+            jQuery("#fancybox-frame").css({ 'overflow-x': 'hidden' });
+            },
+            'onStart': function() {
+            jQuery("body").css({ 'overflow': 'hidden' });
+            },
+            'onClosed': function() {
+            jQuery("body").css({ 'overflow': 'auto' });
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    jQuery(function() {
+    jQuery('#slider1').bxSlider({
+        auto: true,
+        pager: true,
+        controls: false,
+        mode: 'fade',
+        speed: 500,
+        pause: 5000,
+        autoHover: true
+        });
+    });
+</script></head>
+<body>
+    <form name="form1" method="post" action="/Applications/Automotive.aspx" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMzQ2NjMxMzEzD2QWBGYPZBYEAgIPFgIeB2NvbnRlbnRkZAIDDxYCHwBkZAIBEGRkFgICAQ9kFgJmD2QWAmYPZBYGAgEPZBYCZg9kFgJmD2QWBAIDDxYCHgtfIUl0ZW1Db3VudAICFgRmD2QWAgIBDw8WBB4LTmF2aWdhdGVVcmwFJS9lbi9TYW1wbGUtQW5kLUJ1eS9Db250YWN0LVNhbGVzLmFzcHgeBFRleHQFDUNvbnRhY3QgU2FsZXNkZAICD2QWAgIBDw8WBB8CBRpodHRwOi8vemguYWxsZWdyb21pY3JvLmNvbR8DBQbkuK3mlodkZAIFDxYCHwECBRYKZg9kFgQCAQ8PFgIfAgURL2VuL1Byb2R1Y3RzLmFzcHhkFgJmDw8WAh4ISW1hZ2VVcmwFNS9+L21lZGlhL0ltYWdlcy9BbGxlZ3JvVVMvTmF2aWdhdGlvbi9uYXZQcm9kdWN0cy5hc2h4FggeBHJlc3QFNS9+L21lZGlhL0ltYWdlcy9BbGxlZ3JvVVMvTmF2aWdhdGlvbi9uYXZQcm9kdWN0cy5hc2h4HgVob3ZlcgVNL34vbWVkaWEvSW1hZ2VzL0FsbGVncm9VUy9OYXZpZ2F0aW9uL25hdlByb2R1Y3RzT3Zlci5hc2h4PzIwMTEwNDI4VDExMzAwOTQ2MDMeBmFjdGl2ZQVNL34vbWVkaWEvSW1hZ2VzL0FsbGVncm9VUy9OYXZpZ2F0aW9uL25hdlByb2R1Y3RzT3Zlci5hc2h4PzIwMTEwNDI4VDExMzAxNTI2MzYeC2FjdGl2ZWNsYXNzBQJvbmQCAw8WAh8BAgcWDgIBD2QWAgIBD2QWAgIBDw8WBB8CBSQvZW4vUHJvZHVjdHMvQ3VycmVudC1TZW5zb3ItSUNzLmFzcHgfAwUSQ3VycmVudCBTZW5zb3IgSUNzZGQCAg9kFgICAQ9kFgICAQ8PFgQfAgU2L2VuL1Byb2R1Y3RzL01hZ25ldGljLURpZ2l0YWwtUG9zaXRpb24tU2Vuc29yLUlDcy5hc3B4HwMFJE1hZ25ldGljIERpZ2l0YWwgUG9zaXRpb24gU2Vuc29yIElDc2RkAgMPZBYCAgEPZBYCAgEPDxYEHwIFQS9lbi9Qcm9kdWN0cy9NYWduZXRpYy1MaW5lYXItQW5kLUFuZ3VsYXItUG9zaXRpb24tU2Vuc29yLUlDcy5hc3B4HwMFL01hZ25ldGljIExpbmVhciBhbmQgQW5ndWxhciBQb3NpdGlvbiBTZW5zb3IgSUNzZGQCBA9kFgICAQ9kFgICAQ8PFgQfAgUrL2VuL1Byb2R1Y3RzL01hZ25ldGljLVNwZWVkLVNlbnNvci1JQ3MuYXNweB8DBRlNYWduZXRpYyBTcGVlZCBTZW5zb3IgSUNzZGQCBQ9kFgICAQ9kFgICAQ8PFgQfAgUwL2VuL1Byb2R1Y3RzL01vdG9yLURyaXZlci1BbmQtSW50ZXJmYWNlLUlDcy5hc3B4HwMFHk1vdG9yIERyaXZlciBhbmQgSW50ZXJmYWNlIElDc2RkAgYPZBYCAgEPZBYCAgEPDxYEHwIFKS9lbi9Qcm9kdWN0cy9SZWd1bGF0b3JzLUFuZC1MaWdodGluZy5hc3B4HwMFF1JlZ3VsYXRvcnMgYW5kIExpZ2h0aW5nZGQCBw9kFgICAQ9kFgICAQ8PFgQfAgUhL2VuL1Byb2R1Y3RzL1Nhbmtlbi1Qcm9kdWN0cy5hc3B4HwMFD1NhbmtlbiBQcm9kdWN0c2RkAgEPZBYEAgEPDxYCHwIFFS9lbi9BcHBsaWNhdGlvbnMuYXNweGQWAmYPDxYGHwQFTS9+L21lZGlhL0ltYWdlcy9BbGxlZ3JvVVMvTmF2aWdhdGlvbi9uYXZBcHBsaWNhdGlvbnMuYXNoeD8yMDExMDQyOFQxMTMwMzc2ODkwHghDc3NDbGFzcwUCb24eBF8hU0ICAhYIHwUFTS9+L21lZGlhL0ltYWdlcy9BbGxlZ3JvVVMvTmF2aWdhdGlvbi9uYXZBcHBsaWNhdGlvbnMuYXNoeD8yMDExMDQyOFQxMTMwMzc2ODkwHwYFUS9+L21lZGlhL0ltYWdlcy9BbGxlZ3JvVVMvTmF2aWdhdGlvbi9uYXZBcHBsaWNhdGlvbnNPdmVyLmFzaHg/MjAxMTA0MjhUMTEzMDQ5MTU1MR8HBVEvfi9tZWRpYS9JbWFnZXMvQWxsZWdyb1VTL05hdmlnYXRpb24vbmF2QXBwbGljYXRpb25zT3Zlci5hc2h4PzIwMTEwNDI4VDExMzA1MzUxOTUfCAUCb25kAgMPFgIfAQIGFgwCAQ9kFgICAQ9kFgICAQ8PFgQfAgUgL2VuL0FwcGxpY2F0aW9ucy9BdXRvbW90aXZlLmFzcHgfAwUKQXV0b21vdGl2ZWRkAgIPZBYCAgEPZBYCAgEPDxYEHwIFIC9lbi9BcHBsaWNhdGlvbnMvQXBwbGlhbmNlcy5hc3B4HwMFCkFwcGxpYW5jZXNkZAIDD2QWAgIBD2QWAgIBDw8WBB8CBR4vZW4vQXBwbGljYXRpb25zL0xpZ2h0aW5nLmFzcHgfAwUITGlnaHRpbmdkZAIED2QWAgIBD2QWAgIBDw8WBB8CBSovZW4vQXBwbGljYXRpb25zL0NvbnN1bWVyLUVsZWN0cm9uaWNzLmFzcHgfAwUUQ29uc3VtZXIgRWxlY3Ryb25pY3NkZAIFD2QWAgIBD2QWAgIBDw8WBB8CBSAvZW4vQXBwbGljYXRpb25zL0luZHVzdHJpYWwuYXNweB8DBQpJbmR1c3RyaWFsZGQCBg9kFgICAQ9kFgICAQ8PFgQfAgUwL2VuL0FwcGxpY2F0aW9ucy9FbmVyZ3ktRWZmaWNpZW50LVNvbHV0aW9ucy5hc3B4HwMFGkVuZXJneS1FZmZpY2llbnQgU29sdXRpb25zZGQCAg9kFgQCAQ8PFgIfAgUWL2VuL0Rlc2lnbi1DZW50ZXIuYXNweGQWAmYPDxYCHwQFTS9+L21lZGlhL0ltYWdlcy9BbGxlZ3JvVVMvTmF2aWdhdGlvbi9uYXZEZXNpZ25DZW50ZXIuYXNoeD8yMDExMDQyOFQxMTMxNDIxNDYwFggfBQVNL34vbWVkaWEvSW1hZ2VzL0FsbGVncm9VUy9OYXZpZ2F0aW9uL25hdkRlc2lnbkNlbnRlci5hc2h4PzIwMTEwNDI4VDExMzE0MjE0NjAfBgVRL34vbWVkaWEvSW1hZ2VzL0FsbGVncm9VUy9OYXZpZ2F0aW9uL25hdkRlc2lnbkNlbnRlck92ZXIuYXNoeD8yMDExMDQyOFQxMTMxNDUzODczHwcFUS9+L21lZGlhL0ltYWdlcy9BbGxlZ3JvVVMvTmF2aWdhdGlvbi9uYXZEZXNpZ25DZW50ZXJPdmVyLmFzaHg/MjAxMTA0MjhUMTEzMTQ5NzY0NR8IBQJvbmQCAw8WAh8BAgQWCAIBD2QWAgIBD2QWAgIBDw8WBB8CBSAvZW4vRGVzaWduLUNlbnRlci9QYWNrYWdpbmcuYXNweB8DBQlQYWNrYWdpbmdkZAICD2QWAgIBD2QWAgIBDw8WBB8CBS4vZW4vRGVzaWduLUNlbnRlci9RdWFsaXR5LUFuZC1FbnZpcm9ubWVudC5hc3B4HwMFF1F1YWxpdHkgYW5kIEVudmlyb25tZW50ZGQCAw9kFgICAQ9kFgICAQ8PFgQfAgUqL2VuL0Rlc2lnbi1DZW50ZXIvVGVjaG5pY2FsLURvY3VtZW50cy5hc3B4HwMFE1RlY2huaWNhbCBEb2N1bWVudHNkZAIED2QWAgIBD2QWAgIBDw8WBB8CBSsvZW4vRGVzaWduLUNlbnRlci9UZWNobmljYWwtQXNzaXN0YW5jZS5hc3B4HwMFFFRlY2huaWNhbCBBc3Npc3RhbmNlZGQCAw9kFgQCAQ8PFgIfAgUXL2VuL1NhbXBsZS1BbmQtQnV5LmFzcHhkFgJmDw8WAh8EBUgvfi9tZWRpYS9JbWFnZXMvQWxsZWdyb1VTL05hdmlnYXRpb24vbmF2U2FtcGxlcy5hc2h4PzIwMTEwNDI4VDExMzIxNjQ4MzYWCB8FBUgvfi9tZWRpYS9JbWFnZXMvQWxsZWdyb1VTL05hdmlnYXRpb24vbmF2U2FtcGxlcy5hc2h4PzIwMTEwNDI4VDExMzIxNjQ4MzYfBgVML34vbWVkaWEvSW1hZ2VzL0FsbGVncm9VUy9OYXZpZ2F0aW9uL25hdlNhbXBsZXNPdmVyLmFzaHg/MjAxMTA0MjhUMTE0NjQ5Nzc0MB8HBUwvfi9tZWRpYS9JbWFnZXMvQWxsZWdyb1VTL05hdmlnYXRpb24vbmF2U2FtcGxlc092ZXIuYXNoeD8yMDExMDQyOFQxMTMyMjQyNjcxHwgFAm9uZAIDDxYCHwECAxYGAgEPZBYCAgEPZBYCAgEPDxYEHwIFJS9lbi9TYW1wbGUtQW5kLUJ1eS9Db250YWN0LVNhbGVzLmFzcHgfAwUeU2FsZXMgT2ZmaWNlcyBhbmQgRGlzdHJpYnV0b3JzZGQCAg9kFgICAQ9kFgICAQ8PFgQfAgUnL2VuL1NhbXBsZS1BbmQtQnV5L1JlcXVlc3QtU2FtcGxlcy5hc3B4HwMFD1NhbXBsZSBSZXF1ZXN0c2RkAgMPZBYCAgEPZBYCAgEPDxYEHwIFIy9lbi9TYW1wbGUtQW5kLUJ1eS9EZW1vLUJvYXJkcy5hc3B4HwMFC0RlbW8gQm9hcmRzZGQCBA9kFgQCAQ8PFgIfAgUWL2VuL0Fib3V0LUFsbGVncm8uYXNweGQWAmYPDxYCHwQFTS9+L21lZGlhL0ltYWdlcy9BbGxlZ3JvVVMvTmF2aWdhdGlvbi9uYXZBYm91dEFsbGVncm8uYXNoeD8yMDExMDQyOFQxMTMyNDYxMzc1FggfBQVNL34vbWVkaWEvSW1hZ2VzL0FsbGVncm9VUy9OYXZpZ2F0aW9uL25hdkFib3V0QWxsZWdyby5hc2h4PzIwMTEwNDI4VDExMzI0NjEzNzUfBgVRL34vbWVkaWEvSW1hZ2VzL0FsbGVncm9VUy9OYXZpZ2F0aW9uL25hdkFib3V0QWxsZWdyb092ZXIuYXNoeD8yMDExMDQyOFQxMTMyNTE2NTIyHwcFUS9+L21lZGlhL0ltYWdlcy9BbGxlZ3JvVVMvTmF2aWdhdGlvbi9uYXZBYm91dEFsbGVncm9PdmVyLmFzaHg/MjAxMTA0MjhUMTEzMzI5NDU1OB8IBQJvbmQCAw8WAh8BAgUWCgIBD2QWAgIBD2QWAgIBDw8WBB8CBSUvZW4vQWJvdXQtQWxsZWdyby9BbGxlZ3JvLVZpc2lvbi5hc3B4HwMFDkFsbGVncm8gVmlzaW9uZGQCAg9kFgICAQ9kFgICAQ8PFgQfAgUgL2VuL0Fib3V0LUFsbGVncm8vTmV3cy1Sb29tLmFzcHgfAwUJTmV3cyBSb29tZGQCAw9kFgICAQ9kFgICAQ8PFgQfAgUhL2VuL0Fib3V0LUFsbGVncm8vRmFjaWxpdGllcy5hc3B4HwMFCkZhY2lsaXRpZXNkZAIED2QWAgIBD2QWAgIBDw8WBB8CBR4vZW4vQWJvdXQtQWxsZWdyby9DYXJlZXJzLmFzcHgfAwUHQ2FyZWVyc2RkAgUPZBYCAgEPZBYCAgEPDxYEHwIFHC9lbi9BYm91dC1BbGxlZ3JvL0xlZ2FsLmFzcHgfAwUFTGVnYWxkZAIDD2QWAmYPZBYCZg9kFgICAw9kFgJmD2QWAmYPZBYCAgMPZBYCZg9kFgJmD2QWAmYPFgIfAQIEFghmD2QWAmYPFQIbTWFnbmV0aWMgU2Vuc29yIElDIE92ZXJ2aWV3dlBsZWFzZSBjbGlja8KgPGEgaHJlZj0iL2VuL0Fib3V0LUFsbGVncm8vU2Vuc29yLUlDLmFzcHgiPmhlcmU8L2E+IGZvciBhbiBvdmVydmlldyBvZiBvdXIgTWFnbmV0aWMgU2Vuc29yIElDIFBvcnRmb2xpby5kAgEPZBYCZg8VAhFQb3dlciBJQyBPdmVydmlld2tQbGVhc2UgY2xpY2vCoDxhIGhyZWY9Ii9lbi9BYm91dC1BbGxlZ3JvL1Bvd2VyLUlDLmFzcHgiPmhlcmU8L2E+IGZvciBhbiBvdmVydmlldyBvZiBvdXIgUG93ZXIgSUMgUG9ydGZvbGlvLmQCAg9kFgJmDxUCD1Nhbmtlbi1Qcm9kdWN0c29QbGVhc2UgY2xpY2smbmJzcDs8YSBocmVmPSIvZW4vUHJvZHVjdHMvU2Fua2VuLVByb2R1Y3RzLmFzcHgiPmhlcmU8L2E+IGZvciBhbiBvdmVydmlldyBvZiBvdXIgU2Fua2VuIFBvcnRmb2xpby5kAgMPZBYCZg8VAhNHZW5lcmFsIEluZm9ybWF0aW9ufVBob25lOiA1MDgtODUzLTUwMDAgPGJyIC8+RmF4OsKgwqDCoMKgwqA1MDgtODUzLTc4OTUgPGJyIC8+PGEgaHJlZj0ibWFpbHRvOnNhbGVzQGFsbGVncm9taWNyby5jb20iPnNhbGVzQGFsbGVncm9taWNyby5jb208L2E+ZAIFD2QWAmYPZBYCZg9kFgQCAQ8WAh8DBfgBPHA+Q29weXJpZ2h0ICZjb3B5OyAyMDEzIEFsbGVncm8gTWljcm9TeXN0ZW1zLCBMTEM8L3A+DQo8cD48YSBocmVmPSIvZW4vU2l0ZW1hcC5hc3B4Ij5TaXRlbWFwPC9hPiZuYnNwOyB8ICZuYnNwOzxhIGhyZWY9Ii9lbi9Qcml2YWN5LVBvbGljeS5hc3B4Ij5Qcml2YWN5IFBvbGljeTwvYT4mbmJzcDsgfCAmbmJzcDs8YSBocmVmPSJtYWlsdG86d2VibWFzdGVyQGFsbGVncm9taWNyby5jb20iPkNvbnRhY3QgV2VibWFzdGVyPC9hPjwvcD5kAgMPFgIfAQIGFgxmD2QWAgIBDw8WBB8CBR4vZW4vQWJvdXQtQWxsZWdyby9DYXJlZXJzLmFzcHgfAwUHQ2FyZWVyc2RkAgIPZBYCAgEPDxYEHwIFJS9lbi9TYW1wbGUtQW5kLUJ1eS9Db250YWN0LVNhbGVzLmFzcHgfAwUNQ29udGFjdCBTYWxlc2RkAgQPZBYCAgEPDxYEHwIFCC9lbi5hc3B4HwMFBEhvbWVkZAIGD2QWAgIBDw8WBB8CBRwvZW4vQWJvdXQtQWxsZWdyby9MZWdhbC5hc3B4HwMFBUxlZ2FsZGQCCA9kFgICAQ8PFgQfAgUuL2VuL0Rlc2lnbi1DZW50ZXIvUXVhbGl0eS1BbmQtRW52aXJvbm1lbnQuYXNweB8DBRlRdWFsaXR5ICZhbXA7IEVudmlyb25tZW50ZGQCCg9kFgICAQ8PFgQfAgUnL2VuL1NhbXBsZS1BbmQtQnV5L1JlcXVlc3QtU2FtcGxlcy5hc3B4HwMFD1JlcXVlc3QgU2FtcGxlc2RkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYBBSh3ZWJjb250ZW50XzAkaGVhZGVyd3JhcHBlcl8wJGJ0bkhkU2VhcmNoRKtgYMJcSeI5URPYmJGYM/sq/mU=" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAwK11LL/CgL0pIDsBgKa987KDbwfVohr+IFD6GtA7pkf4t34pbQI" />
+</div>
+    <div>
+        
+<div id="wrapper">
+        
+<div id="headerwrapper">
+<a name="top"></a>
+    <div id="logo">
+        <a href="/">
+            <img src="/images/Logo.png" alt="Allegro Microsystems" /></a>
+    </div>
+    <div id="navigation">
+        <div id="utility">
+            
+            
+            <div id="webcontent_0_headerwrapper_0_pnlSearch">
+	
+                 <div id="search"><span>Search:</span>
+                <input name="webcontent_0$headerwrapper_0$txtHdTerms" type="text" id="webcontent_0_headerwrapper_0_txtHdTerms" class="textbox_default" style="height:21px;width:211px;" />
+                <input type="image" name="webcontent_0$headerwrapper_0$btnHdSearch" id="webcontent_0_headerwrapper_0_btnHdSearch" src="/images/btnGo.gif" style="border-width:0px;" /></div>   
+                    
+                
+</div>
+                
+                
+            <div id="languagenav">
+            
+                        <a id="webcontent_0_headerwrapper_0_rptUtilityLinks_ctl00_hl" href="/en/Sample-And-Buy/Contact-Sales.aspx">Contact Sales</a>
+                    <img src="/images/bulletBlue.gif" style="padding: 1px 10px;" />
+                        <a id="webcontent_0_headerwrapper_0_rptUtilityLinks_ctl02_hl" href="http://zh.allegromicro.com">中文</a>
+                    
+            </div>
+        </div>
+        
+        <div id="mainnav">
+        <ol>
+        
+                <li>
+                    <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_hlTopNavItem" href="/en/Products.aspx"><img id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_img" rest="/~/media/Images/AllegroUS/Navigation/navProducts.ashx" hover="/~/media/Images/AllegroUS/Navigation/navProductsOver.ashx?20110428T1130094603" active="/~/media/Images/AllegroUS/Navigation/navProductsOver.ashx?20110428T1130152636" activeclass="on" src="/~/media/Images/AllegroUS/Navigation/navProducts.ashx" style="border-width:0px;" /></a>
+                
+                
+                        <ol>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl01_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl01_hl" href="/en/Products/Current-Sensor-ICs.aspx">Current Sensor ICs</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl02_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl02_hl" href="/en/Products/Magnetic-Digital-Position-Sensor-ICs.aspx">Magnetic Digital Position Sensor ICs</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl03_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl03_hl" href="/en/Products/Magnetic-Linear-And-Angular-Position-Sensor-ICs.aspx">Magnetic Linear and Angular Position Sensor ICs</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl04_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl04_hl" href="/en/Products/Magnetic-Speed-Sensor-ICs.aspx">Magnetic Speed Sensor ICs</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl05_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl05_hl" href="/en/Products/Motor-Driver-And-Interface-ICs.aspx">Motor Driver and Interface ICs</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl06_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl06_hl" href="/en/Products/Regulators-And-Lighting.aspx">Regulators and Lighting</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl07_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl00_rptSub_ctl07_hl" href="/en/Products/Sanken-Products.aspx">Sanken Products</a>
+                        </li>
+                    
+                        </ol>
+                    
+                </li>
+            
+                <li>
+                    <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_hlTopNavItem" href="/en/Applications.aspx"><img id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_img" class="on" rest="/~/media/Images/AllegroUS/Navigation/navApplications.ashx?20110428T1130376890" hover="/~/media/Images/AllegroUS/Navigation/navApplicationsOver.ashx?20110428T1130491551" active="/~/media/Images/AllegroUS/Navigation/navApplicationsOver.ashx?20110428T1130535195" activeclass="on" src="/~/media/Images/AllegroUS/Navigation/navApplications.ashx?20110428T1130376890" style="border-width:0px;" /></a>
+                
+                
+                        <ol>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_rptSub_ctl01_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_rptSub_ctl01_hl" href="/en/Applications/Automotive.aspx">Automotive</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_rptSub_ctl02_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_rptSub_ctl02_hl" href="/en/Applications/Appliances.aspx">Appliances</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_rptSub_ctl03_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_rptSub_ctl03_hl" href="/en/Applications/Lighting.aspx">Lighting</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_rptSub_ctl04_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_rptSub_ctl04_hl" href="/en/Applications/Consumer-Electronics.aspx">Consumer Electronics</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_rptSub_ctl05_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_rptSub_ctl05_hl" href="/en/Applications/Industrial.aspx">Industrial</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_rptSub_ctl06_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl01_rptSub_ctl06_hl" href="/en/Applications/Energy-Efficient-Solutions.aspx">Energy-Efficient Solutions</a>
+                        </li>
+                    
+                        </ol>
+                    
+                </li>
+            
+                <li>
+                    <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl02_hlTopNavItem" href="/en/Design-Center.aspx"><img id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl02_img" rest="/~/media/Images/AllegroUS/Navigation/navDesignCenter.ashx?20110428T1131421460" hover="/~/media/Images/AllegroUS/Navigation/navDesignCenterOver.ashx?20110428T1131453873" active="/~/media/Images/AllegroUS/Navigation/navDesignCenterOver.ashx?20110428T1131497645" activeclass="on" src="/~/media/Images/AllegroUS/Navigation/navDesignCenter.ashx?20110428T1131421460" style="border-width:0px;" /></a>
+                
+                
+                        <ol>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl02_rptSub_ctl01_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl02_rptSub_ctl01_hl" href="/en/Design-Center/Packaging.aspx">Packaging</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl02_rptSub_ctl02_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl02_rptSub_ctl02_hl" href="/en/Design-Center/Quality-And-Environment.aspx">Quality and Environment</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl02_rptSub_ctl03_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl02_rptSub_ctl03_hl" href="/en/Design-Center/Technical-Documents.aspx">Technical Documents</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl02_rptSub_ctl04_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl02_rptSub_ctl04_hl" href="/en/Design-Center/Technical-Assistance.aspx">Technical Assistance</a>
+                        </li>
+                    
+                        </ol>
+                    
+                </li>
+            
+                <li>
+                    <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl03_hlTopNavItem" href="/en/Sample-And-Buy.aspx"><img id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl03_img" rest="/~/media/Images/AllegroUS/Navigation/navSamples.ashx?20110428T1132164836" hover="/~/media/Images/AllegroUS/Navigation/navSamplesOver.ashx?20110428T1146497740" active="/~/media/Images/AllegroUS/Navigation/navSamplesOver.ashx?20110428T1132242671" activeclass="on" src="/~/media/Images/AllegroUS/Navigation/navSamples.ashx?20110428T1132164836" style="border-width:0px;" /></a>
+                
+                
+                        <ol>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl03_rptSub_ctl01_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl03_rptSub_ctl01_hl" href="/en/Sample-And-Buy/Contact-Sales.aspx">Sales Offices and Distributors</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl03_rptSub_ctl02_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl03_rptSub_ctl02_hl" href="/en/Sample-And-Buy/Request-Samples.aspx">Sample Requests</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl03_rptSub_ctl03_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl03_rptSub_ctl03_hl" href="/en/Sample-And-Buy/Demo-Boards.aspx">Demo Boards</a>
+                        </li>
+                    
+                        </ol>
+                    
+                </li>
+            
+                <li>
+                    <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl04_hlTopNavItem" href="/en/About-Allegro.aspx"><img id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl04_img" rest="/~/media/Images/AllegroUS/Navigation/navAboutAllegro.ashx?20110428T1132461375" hover="/~/media/Images/AllegroUS/Navigation/navAboutAllegroOver.ashx?20110428T1132516522" active="/~/media/Images/AllegroUS/Navigation/navAboutAllegroOver.ashx?20110428T1133294558" activeclass="on" src="/~/media/Images/AllegroUS/Navigation/navAboutAllegro.ashx?20110428T1132461375" style="border-width:0px;" /></a>
+                
+                
+                        <ol>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl04_rptSub_ctl01_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl04_rptSub_ctl01_hl" href="/en/About-Allegro/Allegro-Vision.aspx">Allegro Vision</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl04_rptSub_ctl02_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl04_rptSub_ctl02_hl" href="/en/About-Allegro/News-Room.aspx">News Room</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl04_rptSub_ctl03_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl04_rptSub_ctl03_hl" href="/en/About-Allegro/Facilities.aspx">Facilities</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl04_rptSub_ctl04_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl04_rptSub_ctl04_hl" href="/en/About-Allegro/Careers.aspx">Careers</a>
+                        </li>
+                    
+                        <li id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl04_rptSub_ctl05_li">
+                            <a id="webcontent_0_headerwrapper_0_rptTopNavigation_ctl04_rptSub_ctl05_hl" href="/en/About-Allegro/Legal.aspx">Legal</a>
+                        </li>
+                    
+                        </ol>
+                    
+                </li>
+            
+    </ol>
+    </div>
+        
+    </div>
+</div>
+    
+        
+<div id="contentwrapper">
+    <div id="breadcrumb"><a href="/en.aspx">Home</a>&nbsp;&nbsp;<span style="color:#36b557;font-weight:bold;">&raquo;</span>&nbsp;&nbsp;<a href="/en/Applications.aspx">Applications</a>&nbsp;&nbsp;<span style="color:#36b557;font-weight:bold;">&raquo;</span>&nbsp;&nbsp;Automotive</div>
+    
+
+<div class="landingpage">
+    <div class="mainwrapper">
+        <div class="maincolumn">
+            
+<h1>Automotive</h1><img src="/~/media/Images/Applications/Automotive/sub_banners_auto.ashx" alt="Allegro Automotive" width="640" height="184" />
+<div class="maincontent">
+
+		<p>
+    </p>
+<p>For more than&nbsp;20 years, Allegro has designed and manufactured highly innovative sensor and power integrated circuits (ICs) for demanding, safety critical automotive applications.&nbsp; In fact, Allegro has shipped well over&nbsp;one billion ICs into automotive applications.&nbsp; Allegro’s extensive experience in the automotive market motivates our entire organization to continually enhance and refine our broad foundation of high voltage automotive semiconductor and IC package technologies, our deep automotive applications knowledge, our global automotive market support infrastructure, and our commitment to automotive quality systems.&nbsp; </p>
+<p>As a result, Allegro’s core technologies are well aligned with emerging trends towards fuel efficiency and reduced vehicle emissions. Allegro is well positioned to deliver robust, applications specific ICs for a broad range of safety critical powertrain, electronic power steering, infotainment, and comfort and convenience applications for both internal combustion engine and hybrid or fully electric vehicles.&nbsp; </p>
+</div>
+<div class="applicationbuckets">
+    <div class="bucket first">
+        <h3><a href="/en/Applications/Automotive/Body-And-Convenience.aspx">Body & Convenience</a></h3>
+        
+		<ul>
+      <li>
+        <a href="/en/Applications/Automotive/Body-And-Convenience/Power-Steering-Systems.aspx">Power Steering Systems</a>  </li>
+      <li>
+        <a href="/en/Applications/Automotive/Body-And-Convenience/Wiper-Systems.aspx">Wiper Systems </a>  </li>
+      <li>
+        <a href="/en/Applications/Automotive/Body-And-Convenience/HVAC-Systems.aspx">HVAC Systems </a>
+      </li>
+      <li>
+        <a href="/en/Applications/Automotive/Body-And-Convenience/Infotainment.aspx">Infotainment</a>  </li>
+      <li>
+        <a href="/en/Applications/Automotive/Body-And-Convenience/Closure-Systems.aspx">Closure Systems</a>  </li>
+      <li>
+        <a href="/en/Applications/Automotive/Body-And-Convenience/Lighting.aspx">Lighting </a>
+      </li>
+    </ul>
+
+    </div>
+    <div class="bucket">
+        <h3><a href="/en/Applications/Automotive/Safety-Applications.aspx">Safety Applications</a></h3>
+        
+		<ul>
+<li><a href="/en/Applications/Automotive/Safety-Applications/Seatbelt.aspx">Seatbelt</a>&nbsp; 
+</li><li><a href="/en/Applications/Automotive/Safety-Applications/Seat-Position.aspx">Seat Position</a>&nbsp; 
+</li><li><a href="/en/Applications/Automotive/Safety-Applications/Electric-Parking-Brake.aspx">Electric Parking Brake</a>&nbsp; 
+</li><li><a href="/en/Applications/Automotive/Safety-Applications/Anti-Lock-Brake-Stability-Control.aspx">Anti-Lock Brake/Stability Control</a> </li></ul>
+
+    </div>
+    <div class="bucket">
+        <h3><a href="/en/Applications/Automotive/Conventional-Powertrain.aspx">Conventional Powertrain</a></h3>
+        
+		<ul>
+      <li>
+        <a href="/en/Applications/Automotive/Conventional-Powertrain/Transmission.aspx">Transmission</a> </li>
+      <li>
+        <a href="/en/Applications/Automotive/Conventional-Powertrain/Engine-Management.aspx">Engine Management</a> </li>
+      <li>
+        <a href="/en/Applications/Automotive/Conventional-Powertrain/Engine-Cooling-Fans.aspx">Engine Cooling Fans</a> </li>
+      <li>
+        <a href="/en/Applications/Automotive/Conventional-Powertrain/Pump-Systems.aspx">Pump Systems</a>
+      </li>
+    </ul>
+
+    </div>
+    <div class="bucket last">
+        <h3><a href="/en/Applications/Automotive/Hybrid-EV-Solutions.aspx">Hybrid / EV Solutions</a></h3>
+        
+		<ul>
+<li><a href="/en/Applications/Automotive/Hybrid-EV-Solutions/Battery-Cooling-Fans.aspx">Battery Cooling Fans</a>&nbsp; 
+</li><li><a href="/en/Applications/Automotive/Hybrid-EV-Solutions/Inverter-Systems.aspx">Inverter Systems</a>&nbsp;&nbsp;&nbsp; 
+</li><li><a href="/en/Applications/Automotive/Hybrid-EV-Solutions/HVAC-Systems-And-Pumps.aspx">HVAC Systems &amp; Pumps</a> </li></ul>
+
+    </div>
+</div>
+        </div>
+        <div class="rightcolumn">
+            
+    <div class="rightBucket">
+    <div class="bucketHeader"><div class="bucketTitle">Magnetic Sensor IC Overview</div><img src="/images/bgCalloutHeadingBottom.gif" /></div>
+    <div class="bucketContent">       Please click <a href="/en/About-Allegro/Sensor-IC.aspx">here</a> for an overview of our Magnetic Sensor IC Portfolio.
+    </div>
+</div>
+    
+    
+    <div class="rightBucket">
+    <div class="bucketHeader"><div class="bucketTitle">Power IC Overview</div><img src="/images/bgCalloutHeadingBottom.gif" /></div>
+    <div class="bucketContent">       Please click <a href="/en/About-Allegro/Power-IC.aspx">here</a> for an overview of our Power IC Portfolio.
+    </div>
+</div>
+    
+    
+    <div class="rightBucket">
+    <div class="bucketHeader"><div class="bucketTitle">Sanken-Products</div><img src="/images/bgCalloutHeadingBottom.gif" /></div>
+    <div class="bucketContent">       Please click&nbsp;<a href="/en/Products/Sanken-Products.aspx">here</a> for an overview of our Sanken Portfolio.
+    </div>
+</div>
+    
+    
+    <div class="rightBucket">
+    <div class="bucketHeader"><div class="bucketTitle">General Information</div><img src="/images/bgCalloutHeadingBottom.gif" /></div>
+    <div class="bucketContent">       Phone: 508-853-5000 <br />Fax:     508-853-7895 <br /><a href="mailto:sales@allegromicro.com">sales@allegromicro.com</a>
+    </div>
+</div>
+    
+    
+        </div>
+    </div>
+</div>
+</div>
+        
+<div id="footerwrapper">
+            <div id="footerleft">               <p>Copyright &copy; 2013 Allegro MicroSystems, LLC</p>
+<p><a href="/en/Sitemap.aspx">Sitemap</a>&nbsp; | &nbsp;<a href="/en/Privacy-Policy.aspx">Privacy Policy</a>&nbsp; | &nbsp;<a href="mailto:webmaster@allegromicro.com">Contact Webmaster</a></p>
+            </div>
+            <div id="footerright">
+            
+                <a id="webcontent_0_footerwrapper_0_rptFooterRight_ctl00_hlFooter" href="/en/About-Allegro/Careers.aspx">Careers</a>
+            
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a id="webcontent_0_footerwrapper_0_rptFooterRight_ctl02_hlFooter" href="/en/Sample-And-Buy/Contact-Sales.aspx">Contact Sales</a>
+            
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a id="webcontent_0_footerwrapper_0_rptFooterRight_ctl04_hlFooter" href="/en.aspx">Home</a>
+            
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a id="webcontent_0_footerwrapper_0_rptFooterRight_ctl06_hlFooter" href="/en/About-Allegro/Legal.aspx">Legal</a>
+            
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a id="webcontent_0_footerwrapper_0_rptFooterRight_ctl08_hlFooter" href="/en/Design-Center/Quality-And-Environment.aspx">Quality &amp; Environment</a>
+            
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a id="webcontent_0_footerwrapper_0_rptFooterRight_ctl10_hlFooter" href="/en/Sample-And-Buy/Request-Samples.aspx">Request Samples</a>
+            
+            
+            
+            </div>
+        </div>
+        
+    </div>
+    </div>
+    </form>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-790126-4']);
+  _gaq.push(['_setDomainName', '.allegromicro.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

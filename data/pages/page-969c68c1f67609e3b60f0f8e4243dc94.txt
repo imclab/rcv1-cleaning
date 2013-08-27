@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>CarCareKiosk – Free How-to Videos to Fix Your Car</title>
+<meta name="description" content="Do-it-yourself car and automotive repair videos." />
+<meta name="keywords" content="car repair, automotive, how-to videos, videos" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link href="/saux/cck.css" rel="stylesheet" type="text/css" />
+<link href="/saux/jquery-ui-1.10.2.custom.min.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="/saux/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/saux/jquery-ui-1.10.2.custom.min.js"></script>
+<script type="text/javascript">
+function AjaxFormErrorHandler( FormID,data )
+{
+    $('input, textarea, radio, checkbox, select',$("#"+FormID)).each(function( k )
+    {
+    	if( $(this).attr('name') !== undefined )
+    	{
+        	Name = $(this).attr('name').replace('[]','');
+    	}
+
+        if( data.ErrorFields )
+        {
+            if( data.ErrorFields[Name] === 'Error' )
+                $(this).css('border','1px solid red');
+            else if( data.ErrorFields[Name] === '' )
+                $(this).css('border','');
+        }
+    });
+}
+$(function() {
+	$('#Search').toggle(function(e) {
+		$('#SearchBox').show();
+		e.preventDefault();
+	}, function(e) {
+		$('#SearchBox').hide();
+		e.preventDefault();
+	});
+	$('#back-top').hide();
+	$(function () {
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 100) {
+				$('#back-top').fadeIn();
+			} else {
+				$('#back-top').fadeOut();
+			}
+		});
+		$('#back-top a').click(function () {
+			$('body,html').animate({ scrollTop: 0 }, 800);
+			return false;
+		});
+	});
+	$('#dialog').dialog({
+        autoOpen: false,
+        modal: true,
+        resizable: false,
+        position: ['center',50],
+        width: 410,
+        hide: 'fade',
+        close: function() {
+            $('#dialog').html('');
+                   }
+    });
+    $('.opener').live('click',function() {
+               $('#dialog').load($(this).attr('href'));
+        $('#dialog').dialog('open');
+        return false;
+    });
+    $('#dialogWide').dialog({
+        autoOpen: false,
+        modal: true,
+        resizable: false,
+        position: ['center',50],
+        width: 700,
+        hide: 'fade',
+        close: function() {
+            $('#dialogWide').html('');
+        }
+    });
+    $('.openerWide').live('click',function() {
+    	$('video').hide();
+    	$('#holder').show();
+        $('#dialogWide').load($(this).attr('href'));
+        $('#dialogWide').dialog('open');
+        return false;
+    });
+	$('.header-link').hover(function() {
+        $(this).find('img').attr('src',$(this).find('img').attr('src').replace('.png','-on.png'));
+        $(this).css('color','#fff');
+        if( $(this).attr('id') == 'UserTab' )
+        	$(this).find('ul').show();
+    }, function() {
+        $(this).find('img').attr('src',$(this).find('img').attr('src').replace('-on.png','.png'));
+        $(this).css('color','#959595');
+        if( $(this).attr('id') == 'UserTab' )
+        	$(this).find('ul').hide();
+    });
+    $('.amazon').hover(function() {
+        $(this).css('background-image','url("http://cck.cnvyr.com/timg/img/amazon-on.png")');
+    }, function() {
+        $(this).css('background-image','url("http://cck.cnvyr.com/timg/img/amazon.png")');
+    });
+});
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') +
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+googletag.cmd.push(function() {
+googletag.defineSlot('/21349734/Homepage_top-right_300x250', [300, 250], 'div-gpt-ad-1365115533293-0').addService(googletag.pubads());
+googletag.defineSlot('/21349734/Homepage_bottom_728x90', [728, 90], 'div-gpt-ad-1365182368810-0').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+<meta name="msvalidate.01" content="7395AA3B542E278C302C8B5DE3D779DD" />
+<meta name="google-site-verification" content="QW-viG8Kf0AoVxo2BbyK3M62o8kPj4WjMMgWz1UOiMo" />
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25396258-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+(function (tos) {
+  window.setInterval(function () {
+    tos = (function (t) {
+      return t[0] == 50 ? (parseInt(t[1]) + 1) + ':00' : (t[1] || '0') + ':' + (parseInt(t[0]) + 10);
+    })(tos.split(':').reverse());
+    window.pageTracker ? pageTracker._trackEvent('Time', 'Log', tos) : _gaq.push(['_trackEvent', 'Time', 'Log', tos]);
+  }, 30000);
+})('00');
+</script>
+</head>
+<body>
+<header><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+.header-link {color:#959595; font-weight:bold}
+.header-link-on {color:#fff;}
+.logo a {opacity:1}
+.logo a:hover {opacity:0.8}
+</style>
+
+<div class="container" style="font:14px Arial; position:relative;">
+	<div style="position:absolute; left:10px; z-index:100;"><img src="http://cck.cnvyr.com/timg/img/red-tab.png" /></div>
+	<div style="float:left; margin:8px 10px 8px 50px;" class="logo">
+		<a href="http://www.carcarekiosk.com/"><img src="http://cck.cnvyr.com/timg/img/logo.png" /></a>
+	</div>
+	<div style="float:left; margin:8px 20px;">
+		<a href="http://www.carcarekiosk.com/parts-and-tools" class="header-link" style="text-decoration:none;">
+			<span style="margin-right:5px;">Parts & Tools</span>
+			<img src="http://cck.cnvyr.com/timg/img/parts-and-tools.png" style="vertical-align:middle;" />
+		</a>
+	</div>
+	<div style="float:left; margin:8px 20px;">
+		<a href="http://www.carcarekiosk.com/mechanics" class="header-link" style="text-decoration:none;">
+			<span style="margin-right:5px;">Mechanics</span>
+			<img src="http://cck.cnvyr.com/timg/img/mechanics.png" style="vertical-align:middle;" />
+		</a>
+	</div>
+	<div style="float:left; margin:8px 20px;">
+		<a href="http://www.carcarekiosk.com/gear-guide/stop-leak" class="header-link" style="text-decoration:none;">
+			<span style="margin-right:5px;">Gear Guide</span>
+			<img src="http://cck.cnvyr.com/timg/img/gear-guide.png" style="vertical-align:middle;" />
+		</a>
+	</div>
+	<div style="float:left; margin:8px 20px;">
+		<a href="" id="Search" class="header-link" style="text-decoration:none;">
+			<img src="/img/search.png" style="vertical-align:middle;" />
+		</a>
+	</div>
+       <div style="float:left; margin:8px 5px;">
+		<a href="http://www.carcarekiosk.com/aj/signin" class="header-link opener" style="text-decoration:none;">
+			<img src="http://cck.cnvyr.com/timg/img/user-tab.png" style="vertical-align:middle;" />
+		</a>
+	</div>
+   	<div id="SearchBox" class="cse-branding-bottom" style="display:none; background-color:#000000; color:#FFFFFF; position:absolute; width:420px; top:38px; right:0px; padding:10px; z-index:100;">
+		<div class="cse-branding-form">
+	    <form action="http://www.carcarekiosk.com/search" id="cse-search-box">
+			<div>
+	        	<input type="hidden" name="cx" value="partner-pub-7461142793089923:4957176630" />
+				<input type="hidden" name="cof" value="FORID:10" />
+				<input type="hidden" name="ie" value="UTF-8" />
+				<input type="text" name="q" size="55" />
+				<input type="submit" name="sa" value="Search" />
+			</div>
+	    </form>
+		</div>
+		<div class="cse-branding-logo">
+	    	<img src="http://www.google.com/images/poweredby_transparent/poweredby_000000.gif" alt="Google" />
+		</div>
+		<div class="cse-branding-text">Custom Search</div>
+	</div>
+</div></header>
+<a href="http://www.carcarekiosk.com/aj/feedback" class="opener"><div class="feedback"></div></a>
+<div class="container"><style type="text/css">
+@font-face {font-family:'EntypoRegular'; src:url('/saux/entypo-webfont.eot'); src:url('/saux/entypo-webfont.eot?#iefix') format('embedded-opentype'),url('/saux/entypo-webfont.woff') format('woff'),url('/saux/entypo-webfont.ttf') format('truetype'),url('/saux/entypo-webfont.svg#EntypoRegular') format('svg'); font-weight: normal; font-style: normal;
+}
+.button {font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#fff; text-decoration:none; display:inline-block; text-align:center; padding:11px 20px 9px; margin:.5em; cursor:pointer; text-shadow:0 1px 1px rgba(0,0,0,0.4); -webkit-transition:0.1s linear; -moz-transition:0.1s linear; -ms-transition:0.1s linear; -o-transition:0.1s linear; transition:0.1s linear;}
+.button {border-radius:2px; box-shadow:inset rgba(255,255,255,0.3) 1px 1px 0;}
+.button:active {box-shadow:0 0 6px rgba(0, 0, 0, 0.4) inset;}
+.black {background:#444444; background:-moz-linear-gradient(top,  #444444 0%, #1c1c1c 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#444444), color-stop(100%,#1c1c1c)); background:-webkit-linear-gradient(top,  #444444 0%,#1c1c1c 100%); background:-o-linear-gradient(top,  #444444 0%,#1c1c1c 100%); background:-ms-linear-gradient(top,  #444444 0%,#1c1c1c 100%); background:linear-gradient(to bottom,  #444444 0%,#1c1c1c 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#1c1c1c',GradientType=0 ); border:1px solid #2a2a2a;}
+.black:hover {background:#686868; background:-moz-linear-gradient(top,  #686868 0%, #1c1c1c 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#686868), color-stop(100%,#1c1c1c)); background:-webkit-linear-gradient(top,  #686868 0%,#1c1c1c 100%); background:-o-linear-gradient(top,  #686868 0%,#1c1c1c 100%); background:-ms-linear-gradient(top,  #686868 0%,#1c1c1c 100%); background:linear-gradient(to bottom,  #686868 0%,#1c1c1c 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#686868', endColorstr='#1c1c1c',GradientType=0 );}
+.button span {font-family:'EntypoRegular'; font-size:20px; font-weight:normal; vertical-align:middle; line-height:0; margin-right:.1em;}
+.play:after {content:"q"; font-size:36px;}
+.folder:after {content:"s"; font-size:36px;}
+.back {width:34px; height:31px; position:absolute; left:80%; border-radius:50%;	text-align:center; line-height:27px; color:#999; background:#ddd; background:rgba(255,255,255,0.5); cursor:pointer; display:none; -webkit-touch-callout:none; -webkit-user-select:none; -khtml-user-select:none; -moz-user-select:none; -ms-user-select:none;	user-select:none;}
+.back:hover {background:#fff; background:rgba(255,255,255,0.9);}
+
+.dropdown {display:inline-block; position:relative; overflow:hidden; height:28px; width:220px; margin:5px; background:#f2f2f2; border:1px solid; border-color:white #f7f7f7 whitesmoke; border-radius:3px; background-image:-webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06)); background-image:-moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06)); background-image:-o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06)); background-image:linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.06)); -webkit-box-shadow:0 1px 1px rgba(0, 0, 0, 0.08); box-shadow:0 1px 1px rgba(0, 0, 0, 0.08);}
+.dropdown:before, .dropdown:after {content:''; position:absolute; z-index:2; top:9px; right:10px; width:0; height:0; border:4px dashed; border-color:#888888 transparent; pointer-events:none;}
+.dropdown:before {border-bottom-style:solid; border-top:none;}
+.dropdown:after {margin-top:7px; border-top-style:solid; border-bottom:none;}
+.dropdown-select {position:relative; width:130%; margin:0; padding:6px 8px 6px 10px; height:28px; line-height:14px; font-size:12px; color:#62717a; text-shadow:0 1px white; background:#f2f2f2; background:rgba(0, 0, 0, 0) !important; border:0; border-radius:0; -webkit-appearance:none;}
+.dropdown-select:focus {z-index:3; width:100%; color:#394349; outline:2px solid #49aff2; outline:2px solid -webkit-focus-ring-color; outline-offset:-2px;}
+.dropdown-select > option {margin:3px; padding:6px 8px; text-shadow:none; background:#f2f2f2; border-radius:3px; cursor:pointer;}
+.lt-ie9 .dropdown {z-index:1;}
+.lt-ie9 .dropdown-select {z-index:-1;}
+.lt-ie9 .dropdown-select:focus {z-index:3;}
+@-moz-document url-prefix() {.dropdown-select {padding-left:6px;}}
+
+.library {list-style:none; position:relative; margin-left:8px; height:1600px;}
+.library li {backface-visibility:hidden; border:8px solid #FFFFFF; box-shadow:0 2px 3px rgba(0, 0, 0, 0.2); cursor:pointer; display:none; overflow:hidden; position:absolute;}
+.library li a:hover {opacity:0.8}
+.library li img {border:medium none; display:block;}
+</style>
+<div style="padding:20px 0 10px; font:24px Arial;">
+	Prepare for the repair - watch free how-to videos and learn how to fix your car
+</div>
+<div style="float:left;">
+	<div style="background:#ededed; border-top:1px solid #959595; border-bottom:1px solid #959595; padding:2px; font:26px Arial">Pick Your Vehicle</div>
+	<div style="padding:10px; width:230px;">
+		<div class="dropdown">
+			<select name="Make" id="Make" class="dropdown-select">
+				<option value="">Select Make</option>
+				<option value="Acura">Acura</option>
+				<option value="Audi">Audi</option>
+				<option value="BMW">BMW</option>
+				<option value="Buick">Buick</option>
+				<option value="Cadillac">Cadillac</option>
+				<option value="Chevrolet">Chevrolet</option>
+				<option value="Chrysler">Chrysler</option>
+				<option value="Daewoo">Daewoo</option>
+				<option value="Dodge">Dodge</option>
+				<option value="Eagle">Eagle</option>
+				<option value="Fiat">Fiat</option>
+				<option value="Ford">Ford</option>
+				<option value="Freightliner">Freightliner</option>
+				<option value="GMC">GMC</option>
+				<option value="Geo">Geo</option>
+				<option value="Honda">Honda</option>
+				<option value="Hummer">Hummer</option>
+				<option value="Hyundai">Hyundai</option>
+				<option value="Infiniti">Infiniti</option>
+				<option value="Isuzu">Isuzu</option>
+				<option value="Jaguar">Jaguar</option>
+				<option value="Jeep">Jeep</option>
+				<option value="Kia">Kia</option>
+				<option value="Lexus">Lexus</option>
+				<option value="Lincoln">Lincoln</option>
+				<option value="Mazda">Mazda</option>
+				<option value="Mercedes-Benz">Mercedes-Benz</option>
+				<option value="Mercury">Mercury</option>
+				<option value="Mini">Mini</option>
+				<option value="Mitsubishi">Mitsubishi</option>
+				<option value="Nissan">Nissan</option>
+				<option value="Oldsmobile">Oldsmobile</option>
+				<option value="Plymouth">Plymouth</option>
+				<option value="Pontiac">Pontiac</option>
+				<option value="Porsche">Porsche</option>
+				<option value="Ram">Ram</option>
+				<option value="Saab">Saab</option>
+				<option value="Saturn">Saturn</option>
+				<option value="Scion">Scion</option>
+				<option value="Smart">Smart</option>
+				<option value="Subaru">Subaru</option>
+				<option value="Suzuki">Suzuki</option>
+				<option value="Toyota">Toyota</option>
+				<option value="Volkswagen">Volkswagen</option>
+				<option value="Volvo">Volvo</option>
+			</select>
+		</div>
+		<div class="dropdown">
+			<select name="Model" id="Model" class="dropdown-select">
+				<option value="">Select Model</option>
+			</select>
+		</div>
+		<div class="dropdown">
+			<select name="Year" id="Year" class="dropdown-select">
+				<option value="">Select Year</option>
+			</select>
+		</div>
+		<div class="dropdown">
+			<select name="Car" id="Car" class="dropdown-select">
+				<option value="">Select Car</option>
+			</select>
+		</div>
+		<a href="http://www.carcarekiosk.com/home-mr" class="button black" id="Repair"><span class="play"></span> <strong>Select Video</strong></a>
+	</div>
+	<div style="background:#ededed; border-top:1px solid #959595; border-bottom:1px solid #959595; padding:2px; font:26px Arial">Parts & Tools</div>
+	<div style="background:url('http://cck.cnvyr.com/timg/img/home-parts-tools.png'); width:240px; height:82px; padding:5px; margin-bottom:10px;">
+		<strong>What's that thing called?</strong><br/>
+		Find all the of the <a href="http://www.carcarekiosk.com/parts-and-tools" style="color:#003366;">parts and tools</a> you will need to complete your repair
+	</div>
+	<div style="background:#ededed; border-top:1px solid #959595; border-bottom:1px solid #959595; padding:2px; font:26px Arial">Gear Guide</div>
+	<div style="background:url('http://cck.cnvyr.com/timg/img/home-gear-guide.png'); width:240px; height:82px; padding:5px; margin-bottom:10px;">
+		<strong>What should I put in my car?</strong><br/>
+		<a href="http://www.carcarekiosk.com/gear-guide/stop-leak" style="color:#003366;">Learn more</a> about the companies that make the products you need
+	</div>
+	<div style="background:#ededed; border-top:1px solid #959595; border-bottom:1px solid #959595; padding:2px; font:26px Arial">Maintenance Guide</div>
+	<div style="background:url('http://cck.cnvyr.com/timg/img/home-maintenance.png'); width:240px; height:82px; padding:5px; margin-bottom:10px;">
+		<strong>What should I do and why?</strong><br/>
+		<a href="http://www.carcarekiosk.com/maintenance/battery-replacement" style="color:#003366;">Find out</a> what procedures you can to do to add 100,000 miles to your car's life
+	</div>
+</div>
+<div style="width:700px; float:right; padding-bottom:10px;">
+	<div class="left" style="margin-right:10px;">
+		<div style="background:#ededed; border-top:1px solid #959595; border-bottom:1px solid #959595; padding:2px; font:26px Arial">Repair Coverage</div>
+		<div style="background:url('http://cck.cnvyr.com/timg/img/home-repair-list.png'); width:325px; height:215px; padding:15px 15px 5px; margin-bottom:10px;">
+			<strong>Want to select your repair first?</strong><br/>
+			See a list of all the repairs that we have<br/>videos for<br/>
+			<a href="http://www.carcarekiosk.com/home-mr" class="button black openerWide" style="margin:118px 0px 5px"><span class="folder"></span> <strong>Select Repair</strong></a>
+		</div>
+	</div>
+	<div style="float:right; width:304px; height:250px; background:url('/img/ad-box-300-250.png'); padding:11px 14px;">
+		<!-- Homepage_top-right_300x250 -->
+		<div id='div-gpt-ad-1365115533293-0' style='width:300px; height:250px;'>
+		<script type='text/javascript'>
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-1365115533293-0'); });
+		</script>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div style="width:700px; background:#ededed; border-top:1px solid #959595; border-bottom:1px solid #959595; padding:2px; font:26px Arial"><span id="name">Browse Our Video Library</span> <span id="close" class="back" style="float:right;">&larr;</span></div>
+	<br/>
+	<ul class="library">
+         		<li style="transform:rotate(-5deg); left:0px; top:0px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:0px; top:0px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:0px; top:0px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Acura" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Acura</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Acura/Acura_MDX_2009.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:175px; top:0px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:175px; top:0px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:175px; top:0px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Audi" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Audi</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Audi/Audi_A3_2008.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:350px; top:0px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:350px; top:0px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:350px; top:0px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=BMW" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">BMW</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/BMW/BMW_325i_2002.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:525px; top:0px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:525px; top:0px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:525px; top:0px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Buick" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Buick</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Buick/Buick_LaCrosse_2011.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:0px; top:160px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:0px; top:160px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:0px; top:160px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Cadillac" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Cadillac</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Cadillac/Cadillac_DeVille_2004.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:175px; top:160px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:175px; top:160px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:175px; top:160px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Chevrolet" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Chevrolet</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Chevrolet/Chevrolet_Impala_2008.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:350px; top:160px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:350px; top:160px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:350px; top:160px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Chrysler" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Chrysler</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Chrysler/Chrysler_LHS_2001.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:525px; top:160px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:525px; top:160px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:525px; top:160px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Dodge" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Dodge</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Dodge/Dodge_Ram 1500_2009.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:0px; top:320px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:0px; top:320px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:0px; top:320px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Fiat" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Fiat</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Fiat/Fiat_500_2012.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:175px; top:320px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:175px; top:320px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:175px; top:320px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Ford" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Ford</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Ford/Ford_Fusion_2010.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:350px; top:320px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:350px; top:320px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:350px; top:320px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=GMC" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">GMC</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/GMC/GMC_Yukon XL 2500_2002.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:525px; top:320px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:525px; top:320px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:525px; top:320px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Honda" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Honda</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Honda/Honda_Element_2008.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:0px; top:480px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:0px; top:480px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:0px; top:480px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Hummer" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Hummer</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Hummer/Hummer_H2_2003.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:175px; top:480px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:175px; top:480px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:175px; top:480px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Hyundai" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Hyundai</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Hyundai/Hyundai_Genesis_2009.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:350px; top:480px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:350px; top:480px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:350px; top:480px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Infiniti" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Infiniti</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Infiniti/Infiniti_FX35_2010.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:525px; top:480px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:525px; top:480px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:525px; top:480px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Jaguar" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Jaguar</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Jaguar/Jaguar_XF_2009.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:0px; top:640px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:0px; top:640px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:0px; top:640px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Jeep" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Jeep</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Jeep/Jeep_Grand Cherokee_2003.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:175px; top:640px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:175px; top:640px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:175px; top:640px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Kia" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Kia</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Kia/Kia_Optima_2004.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:350px; top:640px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:350px; top:640px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:350px; top:640px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Lexus" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Lexus</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Lexus/Lexus_IS250_2008.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:525px; top:640px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:525px; top:640px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:525px; top:640px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Lincoln" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Lincoln</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Lincoln/Lincoln_Continental_2001.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:0px; top:800px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:0px; top:800px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:0px; top:800px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Mazda" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Mazda</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Mazda/Mazda_Miata_2005.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:175px; top:800px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:175px; top:800px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:175px; top:800px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Mercedes-Benz" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Mercedes-Benz</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Mercedes-Benz/Mercedes-Benz_ML350_2007.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:350px; top:800px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:350px; top:800px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:350px; top:800px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Mercury" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Mercury</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Mercury/Mercury_Grand Marquis_1999.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:525px; top:800px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:525px; top:800px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:525px; top:800px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Mini" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Mini</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Mini/Mini_Cooper_2009.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:0px; top:960px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:0px; top:960px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:0px; top:960px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Mitsubishi" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Mitsubishi</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Mitsubishi/Mitsubishi_Eclipse_2006.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:175px; top:960px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:175px; top:960px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:175px; top:960px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Nissan" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Nissan</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Nissan/Nissan_Quest_1999.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:350px; top:960px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:350px; top:960px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:350px; top:960px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Oldsmobile" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Oldsmobile</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Oldsmobile/Oldsmobile_98_1993.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:525px; top:960px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:525px; top:960px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:525px; top:960px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Plymouth" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Plymouth</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Plymouth/Plymouth_Breeze_1996.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:0px; top:1120px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:0px; top:1120px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:0px; top:1120px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Pontiac" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Pontiac</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Pontiac/Pontiac_Grand Prix_2003.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:175px; top:1120px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:175px; top:1120px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:175px; top:1120px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Porsche" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Porsche</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Porsche/Porsche_Boxster_1998.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:350px; top:1120px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:350px; top:1120px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:350px; top:1120px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Ram" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Ram</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Ram/Ram_1500_2011.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:525px; top:1120px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:525px; top:1120px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:525px; top:1120px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Saab" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Saab</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Saab/Saab_9-3_2004.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:0px; top:1280px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:0px; top:1280px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:0px; top:1280px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Saturn" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Saturn</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Saturn/Saturn_Outlook_2008.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:175px; top:1280px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:175px; top:1280px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:175px; top:1280px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Scion" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Scion</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Scion/Scion_xD_2008.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:350px; top:1280px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:350px; top:1280px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:350px; top:1280px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Smart" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Smart</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Smart/Smart_Fortwo_2009.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:525px; top:1280px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:525px; top:1280px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:525px; top:1280px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Subaru" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Subaru</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Subaru/Subaru_Impreza_2008.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:0px; top:1440px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:0px; top:1440px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:0px; top:1440px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Suzuki" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Suzuki</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Suzuki/Suzuki_Verona_2004.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:175px; top:1440px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:175px; top:1440px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:175px; top:1440px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Toyota" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Toyota</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Toyota/Toyota_Prius_2010.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:350px; top:1440px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:350px; top:1440px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:350px; top:1440px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Volkswagen" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Volkswagen</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Volkswagen/Volkswagen_Jetta_2010.png" />
+			</a>
+		</li>
+         		<li style="transform:rotate(-5deg); left:525px; top:1440px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+   		<li style="transform:rotate(5deg); left:525px; top:1440px; display: list-item;"><img src="http://cck.cnvyr.com/timg/img/grey.gif" width="140" height="115" /></li>
+		<li style="transform:rotate(0deg); left:525px; top:1440px; display: list-item;">
+			<a href="http://www.carcarekiosk.com/aj/get-model?Make=Volvo" class="openerWide">
+				<span style="background:none repeat scroll 0 0 #FFFFFF; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1), 5px 0 5px -3px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.04) inset; color:#333333; font-weight:700; line-height:20px; padding:5px; position:absolute; text-align:right; top:60%; width:auto; opacity:0.8">Volvo</span>
+			    <img src="http://cck.cnvyr.com/homethumbs/img/make/Volvo/Volvo_XC70_2008.png" />
+			</a>
+		</li>
+   	</ul>
+	</div>
+	<div style="float:right; width:728px; height:83px; background:url('/img/ad-box-728-90.png'); padding:13px 2px; margin-bottom:20px;">
+		<!-- Homepage_bottom_728x90 -->
+		<div id='div-gpt-ad-1365182368810-0' style='width:728px; height:90px;'>
+		<script type='text/javascript'>
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-1365182368810-0'); });
+		</script>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+<script type="text/javascript">
+$(function() {
+	$('#Make').change(function() {
+	    $.getJSON('http://www.carcarekiosk.com/aj/find-model?Make='+$(this).val(), function(data) {
+			var Model = '<option value="">Select Model</option>';
+			$.each(data, function(i,item) {
+				Model += '<option value="'+item+'">'+item+'</option>';
+			});
+			$('#Model').html(Model);
+			var Year = '<option value="">Select Year</option>';
+			$('#Year').html(Year);
+			var Car = '<option value="">Select Car</option>';
+			$('#Car').html(Car);
+			$('#Repair').removeClass('openerWide');
+	    });
+	});
+	$('#Model').change(function() {
+	    $.getJSON('http://www.carcarekiosk.com/aj/find-year?Make='+$('#Make').val()+'&Model='+$(this).val(), function(data) {
+			var Year = '<option value="">Select Year</option>';
+			$.each(data, function(i,item) {
+				Year += '<option value="'+item+'">'+item+'</option>';
+			});
+			$('#Year').html(Year);
+			var Car = '<option value="">Select Car</option>';
+			$('#Car').html(Car);
+			$('#Repair').removeClass('openerWide');
+	    });
+	});
+	$('#Year').change(function() {
+	    $.getJSON('http://www.carcarekiosk.com/aj/find-car?Make='+$('#Make').val()+'&Model='+$('#Model').val()+'&Year='+$(this).val(), function(data) {
+			var Car = '<option value="">Select Car</option>';
+			$.each(data, function(i,item) {
+				Car += '<option value="'+item+'">'+item+'</option>';
+			});
+			$('#Car').html(Car);
+			$('#Repair').removeClass('openerWide');
+	    });
+	});
+	$('#Car').change(function() {
+		$('#Repair').addClass('openerWide');
+	});
+	$('#Repair').click(function(e) {
+		e.preventDefault();
+	});
+});
+</script></div>
+<footer><style type="text/css">
+footer a,footer a:visited{color:black}
+</style>
+<div class="container" style="width:960px; background:url(http://cck.cnvyr.com/timg/img/footer-bottom.png);">
+	<img src="http://cck.cnvyr.com/timg/img/footer-spacer.png" style="float:left; position:relative; left:-1px;" />
+	<div style="float:left; width:948px; padding:10px 5px 5px;" class="logo">
+		<a href="http://www.carcarekiosk.com/"><img src="http://cck.cnvyr.com/timg/img/logo.png" style="display:inline-block; vertical-align:middle;" /></a>
+		<a href="http://www.carcarekiosk.com/advertise" style="font:bold 14px Arial; color:#336699; text-decoration:none; margin:0 20px;">Advertise</a> |
+		<a href="http://www.carcarekiosk.com/faq" style="font:bold 14px Arial; color:#336699; text-decoration:none; margin:0 20px;">FAQ</a> |
+		<a href="http://www.carcarekiosk.com/internship" style="font:bold 14px Arial; color:#336699; text-decoration:none; margin:0 20px;">Jobs</a> |
+		<a href="http://www.carcarekiosk.com/about" style="font:bold 14px Arial; color:#336699; text-decoration:none; margin:0 20px;">About Us</a>
+		<p style="font:10px Arial; padding-top:5px;">Use of this site constitutes acceptance of our <a href="http://www.carcarekiosk.com/terms">Terms of Service</a> and <a href="http://www.carcarekiosk.com/privacy">Privacy Policy</a>. Copyright &copy; 2010 - 2013 Flatsix, LLC. All Rights Reserved. Designated trademarks are the property of their respective owners.</p>
+	</div>
+	<img src="http://cck.cnvyr.com/timg/img/footer-spacer.png" style="position:relative; left:1px;" />
+	<div class="clear"></div>
+</div></footer>
+<div id="dialog"></div>
+<div id="dialogWide"></div>
+<p id="back-top"><a href="#top"></a></p>
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-31xMAh1UEGV-s"
+});
+</script>
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-31xMAh1UEGV-s.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+</body>
+</html>

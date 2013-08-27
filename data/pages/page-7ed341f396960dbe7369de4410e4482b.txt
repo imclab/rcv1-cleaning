@@ -1,0 +1,707 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+ 
+
+
+
+
+<html>
+<head>
+    <title>
+  Aggieland Automotive: Auto Repair, Maintenance &amp; Service - College Station, TX
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="HOME PAGE: Welcome to Aggieland Automotive, proudly providing expert auto and light truck repair, and maintenance services to customers of the College Station area.">
+<meta name="keywords" content="Aggieland Automotive, College Station, TX, 77840,
+
+  
+  Auto, Automotive, Car, Automobile, Vehicle, Truck, SUV,
+  Compact, Domestic Repair, Import Repair, European Repair, Foreign Repair,
+  Honda Repair, Muffler & Exhaust Repair, Truck Repair, Electrical Repair,
+  Japanese Repair, Radiator Repair, Electric Repair, Auto Repair Services,
+  Hybrid, Mechanic, Oil Change, Tune-Up, Transmission, Brake Repair, Engine,
+  Engine Flush, Transmission Flush, Cooling System Flush, Brake System Flush,
+  Power Steering Flush, Air Conditioning Service, Battery Service, Differential
+  Service, 4x4 Transfer Case Service, Manual Transmission Service, Clutch
+  Service, Factory Scheduled Maintenance, Four wheel alignment, Tire rotation
+  and balance, Brake service, Brake fluid flush, Automatic transmission service
+  and flush, Induction system cleaning
+  
+
+">
+<meta name="robots" content="noodp,noydir">
+<link href="/base/jquery-ui-1.8.11.custom.css"    rel="Stylesheet" type="text/css" />    
+<link href="/base/colorbox/colorbox.css"          rel="stylesheet" type="text/css" />
+<link href="/themes2/_base/css/modal.css"         rel="stylesheet" type="text/css" />
+<link href="/themes2/mng01_cool/css/modal.css" rel="stylesheet" type="text/css" />
+<link href="/themes2/_base/css/2011_template.css"  rel="stylesheet" type="text/css" />
+<link href="/themes2/mng01_cool/css/2011_template.css" rel="stylesheet" type="text/css" />
+<link href="/themes2/_base/css/nav.css"           rel="stylesheet" type="text/css" />
+<link href="/themes2/_base/css/scroll.css"        rel="stylesheet" type="text/css" />
+    
+<script src="/base/jquery-1.5.1.min.js"                type="text/javascript"></script>
+<script src="/base/jquery-ui-1.8.11.custom.min.js"     type="text/javascript"></script>
+<script src="/base/colorbox/jquery.colorbox.js"        type="text/javascript"></script>
+<script src="/base/jcarousel/jquery.jcarousel.min.js"  type="text/javascript"></script>
+<script src="/base/jquery.autoellipsis-1.0.2.min.js"   type="text/javascript"></script>
+
+<script>
+$(document).ready(function() {
+    
+    // Truncate the main text box as needed. 
+    var copyText = $('#copy-text');
+    if (copyText.height() > 424) {
+      copyText.css({ 'height':'412px', 'overflow':'hidden' });
+      $('#copy-view-all').show();
+    }
+
+    // Old code:
+    //  copyText.height(380);
+    //  copyText.ellipsis();
+	
+    // Sliding scroller int
+    $('#navigation a').stop().animate({'marginLeft':'-150px'},1000);
+    $('#navigation > li').hover(
+            function () { $('a',$(this)).stop().animate({'marginLeft':'-2px'},200); },
+            function () { $('a',$(this)).stop().animate({'marginLeft':'-150px'},200); }
+    );   
+    
+    // fix up the large button link -- comment out for now as entire text is now linkable 
+    // var link = $('.btnLarge a').first()
+    // link.attr('href','/apps/shops/reviews')
+    // link.attr('target','_new')   // change this to colorbox after apps have been converted
+    
+    $(".btnLarge a").each(function() {
+	var button_function = 'Rotating Reviews';
+    
+	if ( (button_function != 'Custom Website') &&
+	     (button_function != 'Customer Tools') ) {
+            if (setupColorbox($(this),{width:825, height:665})) {
+                $(this).attr('href','/apps/shops/reviews');
+            }
+        } else {
+	    $(this).attr('href',   '/apps/shops/reviews');
+            $(this).attr('target', '_new');
+	    }
+    })
+
+    // make these open in iFrame, everything else in new windows until app conversion is complete. 
+    // Group iframes by window size
+    $(".btn-contactus a,.li-contactus a").each(function() {
+          setupColorbox($(this),{width:825, height:445, scrolling:false})
+    })
+
+    $(".btn-feedback a").each(function(){
+    	// var reviewOptIn = '1';
+    	// if (reviewOptIn == 0 ) {
+    	//     $(this).colorbox({html:'coming soon',width:200,height:100});
+    	// } else {
+    	     setupColorbox($(this),{width:825, height:800});
+    	// }
+    })
+
+    $(".btn-expertise a,.li-expertise a,.btn-privacy a,.li-privacy a,#copy-view-all a,.btn-videos a").each(function() {
+          setupColorbox($(this),{width:825, height:800})
+    })
+
+    $(".btn-refer a").each(function() {
+          if (setupColorbox($(this),{width:825, height:665})) {
+             $(this).attr('href','/apps/mycar/refer');
+          }
+    })
+    
+    $(".btn-appointment a,.btn-reminders a,.li-appointment a,.li-reminders a").each(function() {
+          setupColorbox($(this),{width:825, height:800})
+    })
+
+    $(".btn-pomwarranty a,.li-pomwarranty a,.btn-promotions a,.li-promotions a,.btn-tipsandtricks a,.btn-rotatingreviews a").each(function() {
+          setupColorbox($(this),{width:825, height:665})
+    })
+    
+    $("#certs-more,#networks-more,#payments-more").each(function() {
+          $(this).colorbox({iframe:true, width:825, height:400})
+    })
+        
+    // fix up direction links
+    $(".btn-directions a,.li-directions a").each(function() {
+    	if (setupColorbox($(this),{width:825, height:665})) {
+    	    $(this).attr('href','http://www.mechanicnet.com/apps/shops/display2?page=directions&shop_id=2513');
+    	}
+     });
+
+    $(".btn-symptomsevaluation a").each(function() {
+         if (setupColorbox($(this),{width:825, height:665})) {
+            $(this).attr('href','/apps/shops/symptoms');
+         }
+    })
+
+    // make the color boxes draggable
+    $("#colorbox").draggable();
+    //$(".ui-draggable").css('cursor','move')   // didn't work as expected, so set it via bind below
+    $(document).bind('cbox_complete', function() {
+    	$(".ui-draggable").css('cursor','move')
+    });
+    
+    $('#mycarousel').jcarousel({
+        auto: 0,
+        wrap: 'both',
+        initCallback: mycarousel_initCallback
+    });
+    
+    $('#mycarousel a[rel="carousel"]').colorbox({maxWidth:"75%", maxHeight:"75%"});
+    
+});
+
+function setupColorbox(elem, opts) {
+	var result = false;
+    var href = elem.attr('href')
+    if (!(href.indexOf('http://') == 0 || href.indexOf('https://') == 0)) {
+        opts.iframe = true 
+        elem.removeAttr('target')
+        elem.colorbox(opts)
+        result = true
+    }
+    return result
+}
+
+function resize_image(elem) {	
+    var maxWidth  = 210      
+    var maxHeight = 150
+    var width     = elem.width
+    var height    = elem.height
+    // Check if the current width is larger than the max    
+    if(width > height && width > maxWidth) {
+        ratio = maxWidth / width                   // get ratio for scaling image
+        elem.width  = maxWidth                     // Set new width
+        elem.height = height * ratio               // Scale height based on ratio
+    } else if(height > width && height > maxHeight) {
+        ratio = maxHeight / height                 // get ratio for scaling image
+        elem.height = maxHeight                    // Set new height
+        elem.width  = width * ratio                // Scale width based on ratio
+    }
+    elem.style.visibility = 'visible'
+}
+
+function mycarousel_initCallback(carousel,state) {
+    // Disable autoscrolling if the user clicks the prev or next button.
+    carousel.buttonNext.bind('click', function() {
+        carousel.startAuto(0);
+    });
+ 
+    carousel.buttonPrev.bind('click', function() {
+        carousel.startAuto(0);
+    });
+
+    // Pause autoscrolling if the user moves with the cursor over the clip.
+    carousel.clip.hover(function() {
+        carousel.stopAuto();
+    }, function() {
+        carousel.startAuto();
+    });
+};
+
+</script>
+    
+</head>
+
+<body>
+
+
+
+<div id="top">
+    <div id="shopWrap">
+      
+      <div id="shopLogo">
+        
+        <img src="/images/shops/2513/2513logo.jpg" alt="Aggieland Automotive" />
+        
+      </div>
+      <div id="shopName">
+        <table width="750" border="0" cellpadding="0" cellspacing="0" class="shopNameText">
+            <tr valign="bottom">
+              <td>
+                
+                
+                
+                
+                    Aggieland Automotive
+                
+              </td>
+            </tr>
+        </table>
+      </div>
+    </div>
+
+</div>
+
+<div id="banner">
+    
+    
+    <div id="bannerWrap">
+        <div class="btnLarge  btnl-rotatingreviews">      
+            <a href="/apps/shops/reviews"><span class="bannerTitle">What our customers are saying</span></a>
+            <br/>
+            
+                    <img src="/themes2/mng01_cool/images/icon_review_star.png" width="17" height="14" alt="star" />
+                  
+                    <img src="/themes2/mng01_cool/images/icon_review_star.png" width="17" height="14" alt="star" />
+                  
+                    <img src="/themes2/mng01_cool/images/icon_review_star.png" width="17" height="14" alt="star" />
+                  
+                    <img src="/themes2/mng01_cool/images/icon_review_star.png" width="17" height="14" alt="star" />
+                  
+                    <img src="/themes2/mng01_cool/images/icon_review_star.png" width="17" height="14" alt="star" />
+                  
+                  
+                     By Rodney
+                   
+                   <!-- &nbsp;-&nbsp;26/07/2012<br/> -->
+                   <br/>
+                   <a href="/apps/shops/reviews">Aggieland Automotive always provides excellent service. Kirk and his staff are courteous and frien &nbsp; ... </a>
+               
+        </div>
+                
+        <div id="bannerImage"><img src="/images/t2/banners/banner_people_family_4_trip_cool.jpg" width="980" height="175"/></div>
+    </div>
+
+</div>
+
+<div id="contentWrap">
+    <div id="contentLeft">
+            <div id="btnMwrap">            
+            
+                
+                
+                
+                
+                <div class="btnMedium">
+                <div class="btn-appointment">
+                  <a href="/apps/shops/display2?page=appointment" target="_new">
+                    <span class="btnMtitle">Appointments</span><span class="btnMtext">Book On-Line</span>
+                  </a>
+                </div>            
+                </div>
+            
+                
+                
+                
+                
+                <div class="btnMedium">
+                <div class="btn-contactus">
+                  <a href="/apps/shops/display2?page=contact_us" target="_new">
+                    <span class="btnMtitle">Contact us</span><span class="btnMtext">Call us or send an email</span>
+                  </a>
+                </div>            
+                </div>
+            
+                
+                
+                
+                
+                <div class="btnMedium">
+                <div class="btn-expertise">
+                  <a href="/apps/shops/display2?page=expertise" target="_new">
+                    <span class="btnMtitle">Expertise</span><span class="btnMtext">See our specialties</span>
+                  </a>
+                </div>            
+                </div>
+            
+       </div>
+
+              <div id="shopInfo">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                                          
+                        <td class="shopInfoText" valign="middle">
+                          
+                            
+                            
+                                                                                    
+                          
+                          
+                            Aggieland Automotive<br />
+                          
+                          979-693-1000<br />
+                          aggieland@mechanicnet.com<br />
+                        </td>                        
+                        <td class="partnerLogo" valign="middle">
+                                                        
+                        
+                          
+                            <a href="http://www.napaautocare.com/" target="_new">
+                                                    
+                          <img src="/images/t2/logos/napa_us_logo_partner.png" />
+                          
+                            </a>
+                                                    
+                        
+                        </td>
+                    </tr>
+                </table>
+          </div> 
+
+
+    
+              <div id="copy">
+          <div id="copy-text">
+             <p><span style="font-size:14px;">Welcome to Aggieland Automotive, proudly providing expert auto and light truck repair, and maintenance services to customers of the College Station area. Our certified technicians are here to provide you with the highest level of automotive service.</span></p><p><span style="font-size:14px;">We begin by offering a host of FREE services, including on-line auto maintenance schedules for your car or light truck, followed up with friendly reminders that let you know when your car is due for service. It has never been easier or more convenient to keep your car or truck in top shape.</span></p><p><span style="font-size:14px;">We also take the time to explain every job, and always provide you with an estimate in advance. You can be rest assured that our technicians have been trained to repair your vehicle &mdash; no matter what the age &mdash; the first time and to always use the right part for your car.</span></p><p><span style="font-size:14px;">Our friendly staff invites you to schedule an appointment for your next scheduled maintenance or repair. We are a full service shop and can handle both your basic requirements and your ultimate performance needs. From batteries, to brakes, to tune-ups &mdash; let us make sure your vehicle is reliable and safe.</span></p><p style="text-align: center;"><span style="font-size:14px;"><a href="http://www.app.cat/aggielandautomotive" target="_blank">Download our iPhone app</a></span></p>
+          </div>
+          <div id="copy-view-all">
+            <p><a href="/apps/shops/display2?page=homecopy">...More</a></p>
+          </div>
+        </div>
+
+    
+
+            <div id="shopPhotos">
+            <ul id="mycarousel" class="jcarousel-skin-tango">
+                 
+                
+                <li style="text-align:center;">
+                  <a rel="carousel" href="/images/shops/2513/2513IMG00003.jpg">
+                  <img style="visibility: hidden;" onload="resize_image(this)" src="/images/shops/2513/2513IMG00003.jpg" border="0" />
+                  </a>
+                </li>
+                 
+                
+                <li style="text-align:center;">
+                  <a rel="carousel" href="/images/shops/2513/2513IMG00002.jpg">
+                  <img style="visibility: hidden;" onload="resize_image(this)" src="/images/shops/2513/2513IMG00002.jpg" border="0" />
+                  </a>
+                </li>
+                 
+                
+                <li style="text-align:center;">
+                  <a rel="carousel" href="/images/shops/2513/2513IMG00004.jpg">
+                  <img style="visibility: hidden;" onload="resize_image(this)" src="/images/shops/2513/2513IMG00004.jpg" border="0" />
+                  </a>
+                </li>
+                
+            </ul>
+        </div>  
+
+    </div>    
+    <div id="contentRight">
+            <div class="catHeader">Hours</div>
+        <div id="hours">
+            
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="hours">
+                <tr>
+                    <td width="26%">Mon</td>
+                    
+            <td width="74%">7:30  - 6 </td>
+            
+                </tr>
+                <tr>
+                    <td>Tue</td>
+                    
+            <td width="74%">7:30  - 6 </td>
+            
+                </tr>
+                <tr>
+                    <td>Wed</td>
+                    
+            <td width="74%">7:30  - 6 </td>
+            
+                </tr>
+                <tr>
+                    <td>Thu</td>
+                    
+            <td width="74%">7:30  - 6 </td>
+            
+                </tr>
+                <tr>
+                    <td>Fri</td>
+                    
+            <td width="74%">7:30  - 6 </td>
+            
+                </tr>
+                <tr>
+                    <td>Sat</td>
+                    
+            <td width="74%">8  - 3 </td>
+            
+                </tr>
+                <tr>
+                    <td>Sun</td>
+                    
+            <td width="74%">Closed </td>
+            
+                </tr>
+            </table>
+        </div>
+        
+
+            <div class="catHeader">Address</div>
+        <div id="address">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="address">
+                <tr valign="middle">
+                    <td>107 Brentwood<br />
+                        College Station,&nbsp;TX&nbsp;77840<br /></td>
+                </tr>
+            </table>
+        </div>
+
+
+            
+            
+            
+            <div class="btnSmall">
+            <div class="btn-directions">
+              <a href="/apps/shops/display2?page=directions" target="_new">
+                Directions
+              </a>
+            </div>            
+            </div>
+        
+            
+            
+            <div class="btnSmall">
+            <div class="btn-feedback">
+              <a href="/apps/mycar/review" target="_new">
+                Feedback
+              </a>
+            </div>            
+            </div>
+        
+            
+            
+            <div class="btnSmall">
+            <div class="btn-refer">
+              <a href="/apps/mycar/refer" target="_new">
+                Refer a friend
+              </a>
+            </div>            
+            </div>
+        
+            
+            
+            <div class="btnSmall">
+            <div class="btn-custom01">
+              <a href="http://repairpal.com" target="_new">
+                Get Estimates
+              </a>
+            </div>            
+            </div>
+        
+            
+            
+            <div class="btnSmall">
+            <div class="btn-customertools">
+              <a href="/apps/mycar/user" target="_new">
+                Customer Tools
+              </a>
+            </div>            
+            </div>
+        
+            
+            
+            <div class="btnSmall">
+            <div class="btn-contactus">
+              <a href="/apps/shops/display2?page=contact_us" target="_new">
+                Contact us
+              </a>
+            </div>            
+            </div>
+        
+            
+            
+            <div class="btnSmall">
+            <div class="btn-blog">
+              <a href="http://aggielandautomotive.autotipsvideo.com" target="_new">
+                Video Blog
+              </a>
+            </div>            
+            </div>
+        
+            
+            
+            <div class="btnSmall">
+            <div class="btn-custom02">
+              <a href="http://aggielandautomotive.napavision.com/" target="_new">
+                NAPA Vision
+              </a>
+            </div>            
+            </div>
+                
+
+
+    </div>
+        <div id="certs">
+        
+          <span class="textCat">Certifications/Products/Specialties</span><br />
+        
+                
+          
+           <a href="http://www.aaa.com/" target="_new">
+           <img src="/images/cert/Automobile_Assoc_America_ce.png" width="66" height="66" border="0" />
+           </a>
+           
+                
+          
+           <a href="http://www.ase.com/" target="_new">
+           <img src="/images/cert/Auto_Srvc_Excellence_ce.png" width="66" height="66" border="0" />
+           </a>
+           
+                
+          
+           <a href="http://www.iatn.net/" target="_new">
+           <img src="/images/cert/International_Auto_Tech_Netwrk_ce.png" width="66" height="66" border="0" />
+           </a>
+           
+                
+          
+           
+           <img src="/images/cert/Tow_Srvc_pr.png" width="66" height="66" border="0" />
+           
+           
+                
+          
+           <a href="http://www.napaautocare.com/" target="_new">
+           <img src="/images/cert/NAPA_AutoCare_Center_ce.png" width="66" height="66" border="0" />
+           </a>
+           
+                
+          
+           <a href="http://www.carcare.org/" target="_new">
+           <img src="/images/cert/Car_Care_Aware_ce.png" width="66" height="66" border="0" />
+           </a>
+           
+        
+    </div>    
+    <div id="marketingLogo">
+       
+       
+        
+          
+            <a href="http://www.napatracs.com/NapaTracs/tracs_marketing.aspx" target="_new">
+          
+          <img src="/images/t2/logos/napa_us_logo_marketing.png" width="220" height="90" border="0" />
+          
+            </a>
+          
+        
+    </div>
+
+</div>
+
+<div id="links">
+    <div id="linksWrap">
+        <div id="networks">
+            
+            <span class="textCat">networks</span><br />
+            
+            
+              
+                
+                <a href="http://aggielandautomotive.autotipsvideo.com/" target="_new"><img src="/themes2/_base/images/btn_social_blogger.png" alt="Blogger" width="40" height="40" border="0" /></a>
+                                               
+           
+              
+                
+                <a href="http://www.facebook.com/pages/Aggieland-Automotive/177744158952083" target="_new"><img src="/themes2/_base/images/btn_social_facebook.png" alt="Facebook" width="40" height="40" border="0" /></a>
+                                               
+           
+              
+                
+                <a href="http://twitter.com/aggielandauto" target="_new"><img src="/themes2/_base/images/btn_social_twitter.png" alt="Twitter" width="40" height="40" border="0" /></a>
+                                               
+           
+              
+                
+                <a href="http://repairpal.com/aggieland-automotive" target="_new"><img src="/themes2/_base/images/btn_social_repairpal.png" alt="RepairPal" width="40" height="40" border="0" /></a>
+                                               
+           
+        </div>
+        <div id="payments">
+            
+            <span class="textCat">payments</span><br />
+            
+                            
+                
+                
+                <img src="/images/cert/Discover_pa.png" width="40" height="40" />
+                
+                                                           
+                            
+                
+                
+                <img src="/images/cert/Visa_pa.png" width="40" height="40" />
+                
+                                                           
+                            
+                
+                
+                <img src="/images/cert/American_Express_pa.png" width="40" height="40" />
+                
+                                                           
+                            
+                
+                
+                <img src="/images/cert/MasterCard_pa.png" width="40" height="40" />
+                
+                                                           
+            
+        </div>
+        <div id="textLink">
+            <ul>
+                
+                
+                <li class='li-appointment'><a target='_new' href="/apps/shops/display2?page=appointment">Request Appointment</a></li>
+                
+                
+                <li class='li-expertise'><a href="/apps/shops/display2?page=expertise">Expertise</a></li>
+                
+                <li class='li-directions'><a href="/apps/shops/display2?page=directions">Directions</a></li>
+	      
+                <li class='li-customertools'><a href="/apps/mycar/user" target="_new">Customer&nbsp;Tools</a></li>
+	      
+
+	      
+                <li class='li-contactus'><a href="/apps/shops/display2?page=contact_us" target="_new">Contact&nbsp;Us</a></li>
+	      
+
+                <li class='li-privacy'><a href="/apps/shops/display2?page=privacy">Privacy</a></li>
+            </ul>
+        </div>    
+    </div>
+
+</div>
+
+<div id="bottom">  
+    <div id="bottomWrap">   
+        <div id="shopLogin">
+            <a href="/apps/myshop/user" target="_new"><img src="/themes2/mng01_cool/images/icon_shop_login.png" alt="shop login" width="34" height="30" border="0" /><br />Shop Owner Login</a>
+        </div>
+        <div id="mng">            
+            <a href="http://www.mechanicnet.com" target="_new"><img src="/themes2/mng01_cool/images/logo_m.png" alt="mechanicnet" width="100" height="30" border="0" /><br />Powered by MechanicNet</a>
+        </div>
+    </div>
+   
+</div>
+
+<div class="scroll">
+    <ul id="navigation">
+        
+          
+            <li class="blogger"><a href="http://aggielandautomotive.autotipsvideo.com/" target="_new">Blogger</a></li>
+          
+        
+          
+            <li class="facebook"><a href="http://www.facebook.com/pages/Aggieland-Automotive/177744158952083" target="_new">Facebook</a></li>
+          
+        
+          
+            <li class="twitter"><a href="http://twitter.com/aggielandauto" target="_new">Twitter</a></li>
+          
+        
+          
+            <li class="repairpal"><a href="http://repairpal.com/aggieland-automotive" target="_new">RepairPal</a></li>
+          
+        
+    </ul>
+</div>
+ 
+
+</body>
+</html>

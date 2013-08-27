@@ -1,0 +1,970 @@
+<!doctype html>
+
+
+<!--[if lt IE 7 ]> <html class="ie6" lang="en-us"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en-us"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en-us"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="en-us"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="" lang="en-us"> <!--<![endif]-->  
+<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+
+		 
+			<meta name="description" content="Learn about purchasing and ordering GSA vehicles.">		
+		
+		
+			<meta name="last_modified" content="2013-06-13">
+				
+		
+			<meta name="keywords" content="automobiles, automobile, autochoice, vehicle, vehicles, cars, tire, trucks, 23V, 751, new tires, tires, car, truck, automotive, 261, 26 I, 26 i, 23 v, 26 1, buy a car, buy cars">
+				
+		
+		<link rel="stylesheet" href="/resources/css/gsa-theme-styles.css" type="text/css" />	
+		
+		<!-- Theme specific css files: defaultTheme -->
+		
+			<link rel="stylesheet" href="/resources/css/gsa-default-styles.css" type="text/css" />
+		
+				<!-- Layout specific css files -->
+		
+		<!-- End: Layout specific css files -->
+		
+		 
+		<script src="/resources/js/pulldown.js"></script>
+		<script type="text/javascript" src="/resources/js/datetimepicker.js"> </script>
+		
+	
+ 
+		<SCRIPT type="text/javascript" SRC="/resources/js/jquery.min.js"></SCRIPT>
+		
+		<!-- HELPER SCRIPTS -->
+		<script type="text/javascript" src="/resources/js/mobile.js"></script>
+		<script type="text/javascript" src="/resources/js/jquery.cookie.js"></script>
+ 		<script type="text/javascript" src="/resources/js/helper.js"></script>
+ 		<script type="text/javascript" src="/resources/js/plugins.js"></script>
+ 		
+ 		<!-- GSA FEEDBACK PLUGIN -->
+ 		<script type="text/javascript" src="/resources/js/gsaFeedback.js"></script>
+ 		<!--<script type="text/javascript" src="/resources/bootstrap/bootstrap.min.js"></script>-->
+ 		<script type="text/javascript" src="/resources/bootstrap/bootstrap3.min.js"></script>
+ 		<link rel="stylesheet" href="/resources/css/gsaFeedback.css" type="text/css" />
+ 		<link rel="stylesheet" href="/resources/css/bootstrap-container.css" type="text/css" />
+
+		
+	
+		
+					
+		<!-- Layout specific script files -->
+		
+		<!-- End: Layout specific script files -->
+		<script type="text/javascript" SRC="/resources/js/tabbedMenuDynamic_8.js"> </SCRIPT>
+		<SCRIPT type="text/javascript" SRC="/resources/js/jquery-bgiframe.js"></SCRIPT>		
+		<SCRIPT type="text/javascript" SRC="/resources/js/jquery.focus.js"></SCRIPT>
+		<script type="text/javascript" SRC="/resources/js/jquery.hoverIntent.minified.js"> </SCRIPT>
+		<SCRIPT type="text/javascript" SRC="/resources/js/dropdown.js"></SCRIPT>
+		<script type="text/javascript" SRC="/resources/js/swfobject.js"> </SCRIPT>
+		<script type="text/javascript" SRC="/resources/js/homeflashmovie.js"> </SCRIPT>
+		<script type="text/javascript" src="/resources/js/jquery.rotatingFeatureBlock.js"></script>
+		<script type="text/javascript" src="/resources/js/emergencyResponse.js"></script>
+		<link type="text/css" href="/resources/assets/css/styles.css" rel="stylesheet" />	
+		
+   		<script type="text/javascript">
+	    	var uri = '/portal';
+
+	    	function getChunk(infoId, divId) {
+		    	var url =  uri + "/chunk/" + infoId;
+		    	setAjaxBlock(url, divId);
+	    	}
+	    	function getRFBChunk(infoId, divId) {
+		    	var url =  uri + "/rfbchunk/" + infoId;
+	    		document.getElementById(divId).innerHTML='<img src="/resources/images/loading.gif" border="0"/>';
+		    	$.ajax({
+		    		   type: "GET",
+		    		   url: url,
+		    		   success: function(msg){
+		    			   document.getElementById(divId).innerHTML= msg;
+		    			   $('#rfb').slideShow();
+		    		   }
+		    	});
+	    	}
+	    	function getRss(rssFeedUrl, divId, rssStyle, count) {
+		    	var url =  uri + "/rss/items?rssFeedUrl=" + rssFeedUrl 
+		    						+ "&rssItemCount=" + count + "&rssStyle=" + rssStyle;
+		    	setAjaxBlock(url, divId);
+	    	}
+
+	    	// Pass the actionUrl starting with / Example: /portal/getAcronyms
+	    	function getActionResult(actionUrl, divId) {
+		    	var url =  uri + actionUrl;
+		    	//alert(url);
+		    	setAjaxBlock(url, divId);
+	    	}
+
+	    	function getAcronymBySearch(actionUrl,divId){
+	    		//alert("Inside the acronym Method..");	
+	    		var acronymName = document.getElementById('acronymName').value;
+	    		//alert(acronymName)
+	    		if(acronymName==""){
+	    			acronymName="";
+	    		}
+	    		var url =  uri + actionUrl+"?acronymName="+acronymName;
+	    		//alert(url);
+	    		setAjaxDialogBlock(url, divId);
+	    	}
+	    	
+	    	function setAjaxBlock(url, divId) {
+	    		document.getElementById(divId).innerHTML='<img src="/resources/images/loading.gif" border="0"/>';
+		    	$.ajax({
+		    		   type: "GET",
+		    		   url: url,
+		    		   success: function(msg){
+		    			   document.getElementById(divId).innerHTML= msg;
+		    		   }
+		    		 });
+	    	}
+	    	 
+	    	function setAjaxDialogBlock(url, divId) {
+	    		document.getElementById(divId).innerHTML='<img src="/resources/images/loading.gif" border="0"/>';
+		    	$.ajax({
+		    		   type: "GET",
+		    		   url: url,
+		    		   success: function(msg){
+		    			 document.getElementById(divId).innerHTML= msg;
+		    			  //$(divId).dialog({height: 200,modal: true});
+
+							//alert("After msg="+msg);
+		    		   }
+		    	
+		    		 });
+	    	}
+	    	
+	    </script>   	
+	   <!--    	
+		<script type="text/javascript">
+			$(document).ready(
+				function (){
+					$("#pikame").PikaChoose();
+
+					$("#pikame").jcarousel({scroll:4,initCallback: function(carousel) 
+						{
+					        $(carousel.list).find('img').click(function() {
+					        	//console.log($(this).parents('.jcarousel-item').attr('jcarouselindex'));
+					            carousel.scroll(parseInt($(this).parents('.jcarousel-item').attr('jcarouselindex')));
+					        });
+					    }
+				    });
+
+				});
+		</script>
+ 		-->
+ 		
+		<!-- NEW SSCRIPTS FOR GALLERIFFIC -->
+		 
+		<script type="text/javascript" src="/resources/js/jquery.history.js"></script>		
+		<script type="text/javascript" src="/resources/js/jquery.galleriffic.js"></script>
+		<script type="text/javascript" src="/resources/js/jquery.opacityrollover.js"></script>
+ 
+
+		
+		<!-- NEW STYLESHEETS FOR GALLERIFFIC -->
+ 		<link rel="stylesheet" href="/resources/css/galleriffic-gsa.css" type="text/css" />
+		<link rel="stylesheet" href="/resources/css/gsa-grey.css" type="text/css" />
+		
+	    <!-- SEPARATED TYLESHEETS TO EVENTUALLY BREAK OUT BY THEME -->
+ 		<link rel="stylesheet" href="/resources/css/gsa-forms-library.css" type="text/css" />
+ 		<link rel="stylesheet" href="/resources/css/gsa-events.css" type="text/css" />
+ 		<link rel="stylesheet" href="/resources/css/gsa-popup-styles.css" type="text/css" />
+ 		<link rel="stylesheet" href="/resources/css/gsa-rfb-styles.css" type="text/css" />
+ 		
+ 		<!-- FANCYBOX -->
+ 		<link rel="stylesheet" href="/resources/fancybox/jquery.fancybox.css" type="text/css" />
+ 		<script src="/resources/fancybox/jquery.fancybox.min.js" type="text/javascript"/></script>
+
+	
+
+
+  
+  
+  
+   
+  
+  		<title>GSA Vehicle Buying Overview</title>
+  
+   		<meta property="twitter:account_id" content="61583656" />
+   		<meta name="PCODE" content="FFA1">
+ 		<meta name="NAMECODE" content="GSA Vehicle Buying Overview">
+ 		<meta name="PROVIDERCODE" content="FAS">
+
+ 		<meta name="program" content="FFA1">
+        <meta name="title" content="GSA Vehicle Buying Overview">
+ 		<meta name="organization" content="FAS">
+ 		
+ 		
+		<style type="text/css">
+  /*this is what we want the div to look like
+    when it is not showing*/
+  div.loading-invisible{
+    /*make invisible*/
+    display:none;
+  }
+
+  /*this is what we want the div to look like
+    when it IS showing*/
+  div.loading-visible{
+    /*make visible*/
+    display:block;
+
+    /*position it 200px down the screen*/
+    position:absolute;
+    top:200px;
+    left:0;
+    width:100%;
+    text-align:center;
+
+    /*in supporting browsers, make it
+      a little transparent*/
+    background:#fff;
+    filter: alpha(opacity=75); /* internet explorer */
+    -khtml-opacity: 0.75;      /* khtml, old safari */
+    -moz-opacity: 0.75;       /* mozilla, netscape */
+    opacity: 0.75;           /* fx, safari, opera */
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+  }
+</style>
+    
+          <!-- GOVERNMENT WIDE TRACKING GA CODE -->
+<script type="text/javascript" src="/resources/js/federated-analytics.js"></script>
+<script type="text/javascript" src="/resources/js/addLinkerEvents-std.js"></script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-28449919-1']);
+	//Commented as per sarah Hyder. It will stay commented for another 30 days from the day we deploy then it has to be removed. commented on 05/22/2012	
+	//_gaq.push(['_setVisitorCookieTimeout', 0]);
+	//_gaq.push(['_setSessionCookieTimeout', 0]);
+	//_gaq.push(['_setCampaignCookieTimeout', 0]);
+	_gaq.push(['_setCustomVar',1,'title','GSA Vehicle Buying Overview',3]);
+	_gaq.push(['_setCustomVar',2,'organization','FAS',3]);
+	_gaq.push(['_setCustomVar',3,'program','FFA1',3]);
+	_gaq.push(['_trackPageview']);
+	
+	(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+</script>
+    
+     
+
+     
+    <script>
+function load()
+{	
+	var url = '/portal/openId/usersession';
+	userEmailAjaxCall(url, 'openIdUserEmail');
+	
+	//submitAuthForm(openidForm);
+}
+</script>
+
+
+</head>   	
+<!--    <body onload=""> -->
+ <body> 
+	<!--  skip nav -->
+	 
+		<div id="skip-to-content-destination"><a href="#content" class="skip-content">Skip to main content</a></div>
+	
+	<form id="openId_authRequest" name="openidForm" action="/portal/openId/authRequest;jsessionid=FC16290956362466756B7161F7BA495D.fourteen" target="_self" method="post">
+				<input type="hidden" name="redirectUrl" value="" id="openId_authRequest_redirectUrl"/>	
+	</form>
+
+
+
+
+    <!--googleoff: all-->
+    <div id="gray"></div>
+	<div id="wrapper">
+		<div id="openIdUserEmail" style="float:right;clear:right;min-height:0px;">		
+	   </div>
+		
+
+<div id="curtain" style="display:none;"></div>
+<div id="header">  
+	<a href="/HDR_0_home" style=" float: left;"><img width="286" height="50" border="0" alt="GSA Logo" style="margin-top: 22px;" src="/resources/images/GSAlogo.gif"></a>
+		<div id="GSAloginHeader" >
+           		 <ul>
+		 		 <li><a title="home" href="/HDR_0_home">Home</a></li>
+		 		 <li>|</li>
+		 		 <li><a id="mobileSite" title="mobile" href="#">Mobile Site</a></li>
+		 		 <li>|</li>
+		 		 <li><a title="newsroom" href="/newsroom">Newsroom</a></li>
+		 		 <li>|</li>
+		 		 <li><a title="Regions" href="/HDR_0_regions">Regions</a></li>
+		 		 <li>|</li>
+		 		 <li>
+		 		 <a id="link0" href="/portal/staffDirectory/searchStaffDirectory;jsessionid=FC16290956362466756B7161F7BA495D.fourteen" title="Staff Directory">Staff Directory</a>
+		 		 </li> <li>|</li>
+		 		 <li><a title="Careers" href="/HDR_0_careers">Careers</a></li>
+		 		 <li>|</li>
+		 		 <li><a href="/portal/forms/type/TOP" title="Forms">Forms</a></li>
+		 		 <li>|</li>
+		 		 <li><a title="e-Tools" href="/HDR_0_etools">e-Tools</a></li>
+		 		 <li>|</li>
+		 		 <li><a title="QuickLinks" href="/HDR_0_quicklinks">QuickLinks</a></li>
+		 </ul>
+		</div>
+		<div class="clear"><img src="/resources/images/transparent.gif" height="1" alt="" /></div>
+		<div id="GSAsearchHeader">
+				
+		<form accept-charset="UTF-8" action="http://search.gsa.gov/search" id="search_form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /></div>
+
+		    <input id="affiliate" name="affiliate" type="hidden" value="gsa.gov" />
+		    <label for="query">Enter Search Term(s):</label>
+		    <input autocomplete="off" class="usagov-search-autocomplete" id="query" name="query" type="text" />
+		    <input name="commit" type="submit" value="Search" />
+  		</form>
+		 
+		  <!-- 
+		<form id="search" name="search" action="/portal/search;jsessionid=FC16290956362466756B7161F7BA495D.fourteen" method="GET"> 
+				 <label for="searchBox">Search</label>
+			     <input autocomplete="off" class="usagov-search-autocomplete" id="searchBox" accessKey="" tabindex="0" type="text" name="q" alt="Enter search term" value=""/>
+	   		     <input accessKey="" tabindex="0" type="image" src="/resources/images/button_search.gif" alt="Click to Search" id="searchButton" />
+			     <input type="hidden" name="btnG" value="Google Search"/>
+			     <input type="hidden" name="access" value="p"/>
+			     <input type="hidden" name="client" value="ASTO_PROD_FRONT_END"/>
+			     <input type="hidden" name="output" value="xml_no_dtd"/>
+			     <input type="hidden" name="proxystylesheet" value="ASTO_PROD_FRONT_END"/>
+			     <input type="hidden" name="entqr" value="3"/>
+			     <input type="hidden" name="oe" value="UTF-8"/>
+			     <input type="hidden" name="ud" value="1"/>
+			     <input type="hidden" name="site" value="ASTO_PROD_COLLECTION"/>
+			     <input type="hidden" name="getfields" value="description"/>
+			     <input type="hidden" name="filter" value="0"/>
+			     <input type="hidden" name="num" value="30"/>
+			     
+			     <input id="m" name="m" type="hidden" />
+			     <input type="hidden" name="affiliate" value="gsa.gov" />			     			     
+			     </form>
+
+
+
+
+			 -->
+			</div>
+		<!-- Mobile Forward -->
+		<!--<div id="mobileForward">
+			<div>
+				<h1>GSA Mobile</h1>
+				<p><strong>We see youre using a mobile device.</strong></p>
+				<p>Would you like to try our mobile site: m.gsa.gov?</p>
+				</div>
+				<div class="bottom">
+					<button id="stay" class="mobileButton">Stay on Full Site</button>
+					<button id="continue" class="mobileButton buttonBlue">Continue to Mobile Site</button>
+				<div class="always">
+					<label>Always Do This</label>
+					<input id="always" name="always" type="checkbox"/>
+				</div>
+			</div>
+		</div>-->
+		<!-- top navigation -->
+		 		 <div id="topnav">
+	 		 		 <ul>
+		 		 		 <li class="tab" id="gsa_offers">
+ 		  		 		  <a href="#" class="mainlk">What GSA Offers</a>
+ 		  		 		  <div class="submenu">
+ 	  		 		  		<ul>
+ 		  		 		  	  <li><h2><a href="/portal/category/20987">BUILDINGS & REAL ESTATE</a></h2></li>
+	 		  		 		  <li><a href="/HDR_1_Bldgs_design">Design &amp; Construction</a></li>
+	 		  		 		  <li><a href="/HDR_1_Bldgs_environmental">Environmental Programs</a></li>
+	 		  		 		  <li><a href="/HDR_1_Bldgs_properties">GSA Properties</a></li>
+	 		  		 		  <li><a href="/HDR_1_Bldgs_historic">Historic Preservation</a></li>
+	 		  		 		  <li><a href="/HDR_1_Bldgs_facilities">Facilities Management</a></li>
+	 		  		 		  <li><a href="/HDR_1_Bldgs_realty">Realty Services</a></li>
+	 		  		 		  <li class="NOSEPARATOR"><a href="/HDR_1_Bldgs_workplace">WorkPlace Innovation</a></li>
+ 	 		  		 		  </ul> 
+ 	 		  		 		<ul>
+	 		  		 		  <li><h2><a href="/portal/category/21027">PRODUCTS & SERVICES</a></h2></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_acquisition">Acquisition Solutions</a></li>	 		  		 		  
+	 		  		 		  <li><a href="/HDR_2_Prdcts_energy">Energy &amp; Environmental</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_supplies">Facilities, Supplies, Equipment, &amp; Tools</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_office">Office Supplies, Equipment, &amp; Furniture</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_professional">Professional &amp; Technical Solutions</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_property">Property for Disposal/Sale</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_security">Security, Fire, &amp; Law Enforcement</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_sharedsvcs">Shared Services</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_technology">Technology &amp; Telecommunications</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_transportation">Transportation, Relocation & Vehicles</a></li>
+	 		  		 		  <li class="NOSEPARATOR"><a href="/HDR_2_Prdcts_travel">Travel</a></li>
+ 		  		 		  	</ul>
+ 		  		 		  	<ul>
+	 		  		 		  <li><h2><a href="/portal/category/21219">POLICY & REGULATIONS</a></h2></li>
+	 		  		 		  <li><a href="/HDR_3_Plcy_acquisition">Acquisition Policy</a></li>
+	 		  		 		  <li><a href="/HDR_3_Plcy_aircraft">Aviation Management Policy</a></li>
+	 		  		 		   <li><a href="/HDR_3_Plcy_technology">Information, Integrity, & Access</a></li>
+	 		  		 		   <li><a href="/HDR_3_Plcy_mail">Mail Management Policy</a></li>
+	 		  		 		   <li><a href="/HDR_3_Plcy_personal">Personal Property Management Policy</a></li>
+	 		  		 		  <li><a href="/HDR_3_Plcy_innovation">Policy Performance</a></li>
+	 		  		 		   <li><a href="/HDR_3_Plcy_real">Real Property Management Policy</a></li>
+	 		  		 		  <li><a href="/HDR_3_Plcy_regulations">Regulations: FMR, FTR, &amp; FAR</a></li>
+	 		  		 		   <li><a href="/HDR_3_Plcy_transportation">Transportation Management Policy</a></li>
+	 		  		 		   <li><a href="/HDR_3_Plcy_travel">Travel and Relocation Policy</a></li>
+	        		 		  <li class="NOSEPARATOR"><a href="/HDR_3_Plcy_vehicle">Vehicle Management Policy</a></li>
+ 		  		 		  	</ul>
+          		 		 		 <div class="clear"></div>
+ 		  		 		   </div>
+ 		  		 </li>
+ 		  		 <li class="tab" id="business_gsa">
+ 		  		 		  <a href="#" class="mainlk">Doing Business with GSA</a>
+ 		  		 		  <div class="submenu">
+ 		  		 		  	<ul>
+	 		  		 		  <li><h2><a href="/portal/category/20998">PURCHASING PROGRAMS</a></h2></li>
+	 		  		 		  <li><a href="/HDR_4_Prchsng_schedules">GSA Schedules</a></li>
+	 		  		 		  <li><a href="/HDR_4_Prchsng_tech">Technology Programs</a></li>
+	 		  		 		  <li><a href="/HDR_4_Prchsng_acquisition">Assisted Acquisition</a></li>
+	 		  		 		  <li><a href="/HDR_4_Prchsng_requisition">Requisition Programs</a></li>
+     		 		 		  <li><a href="/HDR_4_Prchsng_fleet">GSA Fleet &amp; Automotive</a></li>
+	 		  		 		  <li><a href="/HDR_4_Prchsng_global">GSA Global Supply</a></li>
+     		 		 		  <li><a href="/HDR_4_Prchsng_travel">GSA Travel Programs</a></li>
+      		 		 		  <li><a href="/HDR_4_Prchsng_personal">Personal Property Management</a></li>
+     		 		 		  <li><a href="/HDR_4_Prchsng_smartpay">SmartPay (Charge Card) Services</a></li>
+     		 		 		  <li class="NOSEPARATOR"><a href="/HDR_4_Prchsng_gettingstarted">Getting Started</a></li>
+  		 		  		 	</ul>
+  		 		  		 	<ul>
+	 		  		 		  <li><h2><a href="/portal/category/21122">REAL ESTATE SERVICES</a></h2></li>
+     		 		 		  <li><a href="/HDR_5_RealEstScvs_opps">Finding Business Opportunities</a></li>
+      		 		 		  <li><a href="/HDR_5_RealEstScvs_cstmrs">For Federal Customers</a></li>
+      		 		 		  <li><a href="/HDR_5_RealEstScvs_workers">For Workers in Federal Buildings</a></li>
+      		 		 		  <li class="NOSEPARATOR"><a href="/HDR_5_RealEstScvs_property">Property for Disposal/Sale</a></li>
+ 		  		 		  	</ul>
+ 		  		 		  		  <div class="clear"></div>
+ 		  		 		  </div>
+ 		  		 </li>
+ 		  		 <li class="tab" id="learn_more">
+ 		  		 		  <a href="#" class="mainlk" style="text-indent: -9999px">Learn More</a>
+ 		  		 		  <div class="submenu">
+ 		  		 		  	<ul>
+	 		  		 		  <li><h2><a href="/portal/category/21023">HOW WE HELP</a></h2></li>
+	 		  		 		  <li><a href="/HDR_6_Help_govtcustomers">Government Customers</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_state">State and Local Governments</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_fedemployees">Federal Employees</a></li>	 		  		 		  
+	 		  		 		  <li><a href="/HDR_6_Help_businesses">Businesses</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_citizens">Citizens &amp; Consumers</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_disabilities">Americans with Disabilities</a></li>	 		  		 		  
+	 		  		 		  <li><a href="/HDR_6_Help_tribes">Native American Tribes</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_emergency">Emergency Response</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_support">Customer Support</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_presidential">Presidential Transition</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_recovery">Recovery Act</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_open">Open Government</a></li>
+							  <li><a href="/HDR_6_Help_mobilegov">Mobile Government</a></li>
+		 		 		  	  <li><a href="/HDR_6_Help_areasinterest">Areas of Interest</a></li>
+	 		  		 		  <li class="NOSEPARATOR"><a href="/HDR_6_Help_new">New to GSA?</a></li>
+ 		  		 		  	</ul>
+ 		  		 		  	<ul>
+	 		  		 		  <li><h2><a href="/portal/category/20982">ABOUT GSA</a></h2></li>
+	 		  		      	  <li><a href="/HDR_7_Aboutgsa_background">Background &amp; History</a></li>
+	 		  		 		  <li><a href="/portal/event/getEvents/">Events</a></li>
+	 		  		 		  <li><a href="/HDR_7_Aboutgsa_training">Training Programs</a></li>
+		 		 		      <li><a href="/HDR_7_Aboutgsa_organization">Organization</a></li>
+	 		  		 		  <li><a href="/HDR_7_Aboutgsa_careers">Careers</a></li>
+	 		  		 		  <li><a href="/HDR_7_Aboutgsa_reports">Budget, Performance, &amp; Agency Reports</a></li>
+	 		  		 		  <li><a href="/directives">Orders & Directives</a></li>	 		  		 		  
+	 		  		 		  <li><a href="/HDR_7_Aboutgsa_reference">Reference</a></li>
+	 		  		 		  <li><a href="/HDR_7_Aboutgsa_catalogs">Catalogs, Publications, &amp; Newsletters</a></li>
+	 		  		 		  <li><a href=" /HDR_7_Aboutgsa_socialmedia">Social Media</a></li>
+	 		  		 		  <li class="NOSEPARATOR"><a href="/HDR_7_Aboutgsa_staffdirectory">Staff Directory</a></li>
+ 		  		 		  	</ul>
+ 		  		 		  	<ul>
+	 		  		 		  <li><h2><a href="/portal/category/26627">NEWSROOM</a></h2></li>
+	 		  		 		  <li><a href="/HDR_8_News_releases">News Releases</a></li>	 		  		 		  
+	 		  		 		  <li><a href="/HDR_8_News_photogalleries">Photo Galleries</a></li>
+	 		  		 		  <li><a href="/HDR_8_News_videos">Videos</a></li>
+	 		  		 		  <li><a href="/HDR_8_News_speeches">Speeches</a></li>
+	 		  		 		  <li><a href="/HDR_8_News_congress">Congressional Testimony</a></li>
+ 		  		 		  	</ul>
+  		 		  		 	<div class="clear"></div>
+ 		  		 		  </div>
+ 		    </li>
+			<li class="tab" id="blogs">
+				<a href="/HDR_Blogs" class="mainlk" style="text-indent: -9999px">Blog</a>
+			</li>
+ 		 </ul>
+ 		 </div>
+		 		 <!-- top nav end -->
+	
+</div>			<!-- header  -->
+
+<script type="text/javascript" language="javascript">
+ (function() {
+    var id = document.getElementById('search');   
+    if (id && id.q) {
+      var name = id.q;      
+      var unclicked = function() {
+          if (name.value == '') {
+              name.style.background = '#FFFFFF url(/resources/images/search_magnifyingGlass.gif) left no-repeat';
+          }
+       };
+       var clicked = function() {
+          name.style.background = '#ffffff';
+       };
+    name.onfocus = clicked;
+    name.onblur = unclicked;
+    unclicked();
+    }
+  })();
+</script>
+
+		
+
+<div id="portal">
+	
+		<div id="breadcrumb">
+			
+			 
+
+	<a href="/portal/category/100000">Home</a> &gt;
+
+
+		
+			<a href="/portal/category/21027">
+			Products & Services
+			</a> &gt; 
+		
+		
+
+		
+			<a href="/portal/category/21030">
+			Transportation, Relocation, and Vehicles
+			</a> &gt; 
+		
+		
+
+		
+			<a href="/portal/category/21208">
+			Vehicle Buying
+			</a> &gt; 
+		
+		
+
+
+		</div>
+					
+
+
+
+
+
+
+		
+
+
+
+				 
+
+  
+ 
+<div id="navcontainer">
+	<div id="CatName">
+	Vehicle Buying
+	</div>
+	
+	<div class='firstlevel NavSelected'>
+	<a href="/portal/category/21208">Overview</a>
+	</div>
+	
+	
+	
+	<div class='firstlevel'><a href="/portal/content/104211">Alternative Fuel Vehicles</a></div>
+
+<div class='firstlevel'><a href="/portal/content/104135">Biodiesel Fuels</a></div>
+
+<div class='firstlevel'><a href="/portal/content/208289">Federal Fleet Management System (FedFMS)</a></div>
+
+<div class='firstlevel'><a href="/portal/content/104336">Federal Vehicle Standards</a></div>
+
+<div class='firstlevel'><a href="/portal/category/21209">How To Buy Vehicles</a></div>
+
+<div class='firstlevel'><a href="/portal/content/104219">Important Information and Notices</a></div>
+
+<div class='firstlevel'><a href="/portal/content/104221">Reporting Vehicle Problems</a></div>
+
+<div class='firstlevel'><a href="/portal/content/101335">Sign up for Email Updates</a></div>
+
+<div class='firstlevel'><a href="/portal/content/101387">Vehicle Availability Listing(VAL)</a></div>
+
+<div class='firstlevel'><a href="/portal/content/104352">Vehicle Delivery</a></div>
+
+<div class='firstlevel'><a href="/portal/content/104235">Vehicle Publications</a></div>
+
+<div class='firstlevel'><a href="/portal/category/21210">Vehicles and Products</a></div>
+
+
+
+</div>
+
+
+
+
+
+				
+		
+
+
+			<div id="pageLayout">
+				
+				
+				
+
+
+
+
+
+	
+		
+		
+	
+
+	 <!-- CONTENT: 104485 -->
+	
+	
+	
+    <!--googleon: all--> 
+
+		
+			
+			<div id="content" class="left_nav">
+			
+			
+
+
+					
+							
+							<h2 id="headline">GSA Vehicle Buying Overview</h2>
+							
+						
+						
+<p class="SectionTitle">RIGHT VEHICLE, RIGHT PRICE, GREAT SERVICE</p>
+
+<div id="picture-right" style=" float: right;">
+<p class="Img_Border"><img src="/graphics/fas/overview_cars.jpg" alt="color photo of cars" /></p>
+</div>
+
+<p><a href="http://service.govdelivery.com/service/multi_subscribe.html?code=USGSAAUTO&#38;origin=http://www.gsa.gov/automotive"><u>Sign up</u></a> for GSA Automotive's email notification system!</p>
+
+<p><u><a href="/graphics/fas/get-cfr.pdf">FPMR 101-26.501</a></u> [60.8KB] requires DOD, federal executive agencies and other <a href="/portal/content/104212">eligible users</a> to use GSA as the mandatory source for purchasing vehicles.</p>
+
+<p>Benefits of purchasing vehicles through GSA:</p>
+
+<ul>
+<li>Purchases vehicles at a savings of over 26 percent from the manufacturer's invoice price;</li>
+
+<li>Professional engineering services including technical assistance and vehicle design services;</li>
+
+<li>Professional contracting teams;</li>
+
+<li>On-line ordering tool, <a href="https://apps.fas.gsa.gov/cops/vehicles/autochoice/Login.cfm"><u>AutoChoice</u></a>;</li>
+
+<li>Reasonable pricing;</li>
+
+<li>Wide variety of vehicle types available; and</li>
+
+<li>Program team dedicated to customer care.</li>
+</ul>
+
+<p class="Subtitle"><strong>AUTOCHOICE WEBINAR</strong></p>
+
+<p>By the end of the <a href="https://interact.gsa.gov/webinar/autochoice-0">AutoChoice Webinar</a>, you will be able to navigate the AutoChoice online tool; locate a vehicle that fits your needs; place your vehicle purchase order; track the status of your purchase order; and create reports for your order(s).&#160;</p>
+
+<p>Approximately 50,000 vehicles are procured annually from GSA Automotive. &#160;By procuring such a large volume of vehicles and automotive products annually, GSA obtains significant discounts below the manufacturer's invoice price and passes on the substantial savings to you.</p>
+
+<p>&#160;</p>
+
+<p class="Subtitle">AUTOMOTIVE PROGRAMS</p>
+
+<p>To learn about all the programs offered by GSA Automotive, please refer to <a href="/portal/category/21210">Automotive Vehicle Solutions: Vehicle and Products</a>; or contact our Customer CARE team at (703) 605-CARS (2277) or by email at <a href="mailto:vehicle.buying@gsa.gov"><u>vehicle.buying@gsa.gov</u></a></p>
+
+<p>&#160;</p>
+
+<p class="Subtitle">USED VEHICLES</p>
+
+<p>Used government vehicles are auctioned to the public. To find out how to buy used vehicles, visit <a href="http://www.autoauctions.gsa.gov/"><u>AutoAuctions</u></a> and <a href="http://gsaauctions.gov/gsaauctions/gsaauctions/"><u>GSA Auctions®</u></a>.</p>
+
+<p>&#160;</p>
+
+<p class="Subtitle">FEDERAL FLEEET MANAGEMENT SYSTEM (FedFMS)</p>
+
+<p>FMR 102-34.340 states that, a federal agency must have a fleet management information system at the department or agency levels that identifies and collects accurate inventory, cost, and use data to cover the complete lifecycle of each motor vehicle. To learn more, please visit <a href="http://ffms.fas.gsa.gov/">FedFMS.</a></p>
+
+						
+					 
+			</div></div>
+			
+
+					<div id="right_navcontainer"><!-- Floating DIV -->
+						
+						<div class="right_contact_box">
+							<div class="whiteBorder">
+								<h5>CONTACTS</h5>
+								
+										<p class="list-header"><strong>Vehicle Buying</strong><br>
+										  (703) 605-CARS (2277)<br> 
+										<ul>
+																						
+				 									<li>
+													<a href="mailto:vehicle.buying@gsa.gov" class="blue">vehicle.buying@gsa.gov</a><br>
+													</li>										
+																						
+		 									<li>
+										<a href="/portal/staffDirectory/generic/104569">View Contact Details</a><br>
+											</li>
+										</ul>
+											
+										</p>
+															
+										
+							</div>	
+						</div>				
+						
+						
+							<div class="right_links_box">
+							<div class="whiteBorder">
+							<p class="list-header">
+								
+								
+									<h5> PURCHASING PROGRAMS</h5>
+									
+								
+								<ul><li><a href='/portal/content/100792' title='Learn how to obtain a GSA Fleet vehicle here.'>GSA Fleet - Vehicle Leasing</a></li></ul>		
+							</div>
+							</div>
+							
+							
+						
+							<div class="right_links_box">
+							<div class="whiteBorder">
+							<p class="list-header">
+								
+								
+									<h5> E-TOOLS</h5>
+									
+								
+								<ul><li><a href='/portal/content/100012' title='Read about and access the AutoChoice website.'>AutoChoice</a></li><li><a href='/portal/content/104677' title='Enter the GSA Advantage! online shopping/ordering system. This is the most efficient way to gain access to a wide variety of contractors and supplies.'>GSA <em>Advantage!&#174;</em></a></li><li><a href='/portal/content/100020' title='Check the GSA online eLibrary for contract award information for GSA and VA Schedules, and Technology Contracts.'>GSA eLibrary</a></li><li><a href='/portal/content/100814' title='Now the public can acquire well maintained federal government vehicles at significant savings. Learn more on this page.'>AutoAuctions</a></li><li><a href='/portal/content/100747' title='GSA Auctions<sup>&#174;</sup> offers the opportunity to bid electronically on federal assets. Learn more and visit the site on this page.'>GSA Auctions<sup>&#8480;</sup></a></li></ul>		
+							</div>
+							</div>
+							
+							
+						
+							<div class="right_links_box">
+							<div class="whiteBorder">
+							<p class="list-header">
+								
+								
+									<h5> RELATED GSA TOPICS</h5>
+									
+								
+								<ul><li><a href='/portal/content/104624' title='The content on this page provides a brief overview on the history and practices of GSA Fleet.  '>GSA Fleet - Leading the Way</a></li><li><a href='/portal/content/104963' title='Learn more about training, workshops, classes and events - many of which are free - occuring in GSA's 11 Regions.'>GSA Regions</a></li><li><a href='/portal/content/100043' title='Find information on Mileage Express and GSA Fleet Drive-thru, and learn about other mileage reporting options.'>Mileage Express</a></li></ul>		
+							</div>
+							</div>
+							
+							
+						
+							<div class="right_links_box">
+							<div class="whiteBorder">
+							<p class="list-header">
+								
+								
+									<h5> GOVERNMENT LINKS</h5>
+									
+								
+								<ul><li><a href='http://www.epa.gov/greenvehicles/Index.do' title='EPA's Green Vehicle'>EPA's Green Vehicle</a></li><li><a href='http://www-odi.nhtsa.dot.gov/cars/problems/recalls/' title='NHTSA Recalls'>NHTSA Recalls</a></li></ul>		
+							</div>
+							</div>
+							
+							
+						
+					</div><!-- Floating DIV -->
+
+
+			  
+
+
+		
+		
+
+	
+    <!--googleoff: all-->
+    
+		
+							
+	
+		
+		
+	
+
+<input type="hidden" name="blnNewBlock1" id="blnNewBlock1"/>
+	 <div id="contentFooter">
+		 
+
+    <script>
+        var tmpHtml;
+		function printerFriendly() {
+			tmpHtml = document.getElementById('wrapper').innerHTML;
+			document.getElementById('contentFooter').style.display = 'none';
+			lm = document.getElementById('modified_dt').innerHTML;
+			document.getElementById('wrapper').innerHTML= '<div style="float:right"><a href="javascript:refresh()">Back to original</a></div><html:link page=""><img src="/resources/images/GSAlogo.gif" width="295" height="50"  style="margin-top: 17px; margin-left: 2px" alt="GSA Logo" border="0" /></html:link><br><br>' + '<div id="portal"><div id="pageLayout"><table><tr><td>' + document.getElementById('pageLayout').innerHTML + '</td></tr></table><p><em id="modified_dt" style="font-size: 1.2em; color: #838282; ">' + lm + '</em></p></div></div>';
+			window.print();
+		}
+		function refresh() {
+			document.getElementById('wrapper').innerHTML= tmpHtml;
+		}
+    </script>
+ <div id="contentFooter" class="links_nounderline left">
+    <em id="modified_dt">Last Reviewed 2013-06-13</em>
+<script type="text/javascript">
+var addthis_share = 
+{ 
+// ...
+    templates: {
+                   twitter: '{{title}} {{url}} via @USGSA'
+               }
+}
+</script>
+	<div class="addthis_toolbox addthis_default_style">
+
+	 	<a class="at300b" href="javascript:printerFriendly()" title="Print">
+			<img src="/resources/images/printer.gif" alt="" /><span>Print</span>
+	 	</a>
+
+	  	<a class="addthis_button_email at300b" title="Email">
+			<img src="/resources/images/email.gif" alt="" /><span>Email</span>
+	  	</a>
+
+	 	<a class="addthis_button_favorites at300b" title="Save to Favorites">
+	 		<img src="/resources/images/favs.gif" alt="" /><span>Favorites</span>
+		</a>
+
+   		<a class="addthis_button_twitter at300b" href="//www.addthis.com/bookmark.php?pub=gsagov&amp;v=250&amp;source=tbx-250&amp;tt=0&amp;s=twitter&amp;content=&amp;lng=en" target="_blank" title="Tweet This">
+			<img src="/resources/images/twitter.gif" alt="" /><span>Twitter</span>
+		</a>
+
+		<a class="addthis_button_facebook at300b" href="//www.addthis.com/bookmark.php?pub=gsagov&amp;v=250&amp;source=tbx-250&amp;tt=0&amp;s=facebook&amp;content=&amp;lng=en" target="_blank" title="Send to Facebook">
+			<img src="/resources/images/facebook_icon.gif" alt="" /><span>Facebook</span>
+		</a>
+
+		<a class="addthis_button" style="text-decoration: none;" href="http://www.addthis.com/bookmark.php">
+		 		 <img height="18" width="18" border="0" alt="Share" src="/resources/images/sm-plus.gif"><span>Share</span>
+		</a>
+
+		<div class="atclear"></div>
+		<div class="atclear">
+		</div>
+
+
+		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=gsagov">
+		 //<!--
+		 //-->
+		 </script>
+		 <script type="text/javascript">
+		 //<!--
+	    var addthis_config = {
+	    	    services_compact:'delicious,digg,google,linkedin,live,myspace,reddit,stumbleupon'
+	    }
+		//--></script>
+	</div>
+
+	</div> 
+			</div>			
+
+
+
+		
+<br/>
+	<div id="footer">
+	 		<ul id="footer_navigation">
+				<li><a href="/HP_11_Footer_help" title="Help"> Help </a></li>
+				<li><a href="/portal/site/map/" title="Sitemap"> Sitemap </a></li> 
+				<li><a href="/HP_11_Footer_accessibility" title="Accessibility Aids"> Accessibility Aids </a></li>
+				<li><a href="/HP_11_Footer_linking" title="Linking"> Linking </a></li> 
+				<li><a href="/HP_11_Footer_privacy" title="Privacy and Security"> Privacy and Security </a></li>
+				<li class="last"><a href="/HP_11_Footer_contactus#contactUsForm" title="Contact Us"> Contact Us </a></li>  
+			</ul>
+				<div id="footer_icon">
+				  	<span>Also of Interest:</span>
+				    <a href="/FTR_whitehouse"><img alt="icon of whitehouse.gov" style="border: none;" src="/resources/images/wh_homepage_icon.gif" /></a>
+				    <a href="/HP_11_Footer_recovery"><img alt="icon of recovery.gov" style="border: none;" src="/resources/images/recover_homepage_icon.gif" /></a>
+				    <a href="/HP_11_Footer_data"><img alt="icon of data.gov" style="border: none;" src="/resources/images/data_homepage_icon.gif" /></a>
+				    <a href="/FTR_usagov"><img alt="icon of usa.gov" style="border: none;" src="/resources/images/usa_homepage_icon.gif" /></a>				    
+				  	<a href="http://business.usa.gov/"><img alt="icon of BusinessUSA.gov" style="border:none;" src="/resources/images/businessusagov_homepage_icon.gif" /></a>
+				  </div>
+	</div>	
+	
+	
+		<!-- START OF SmartSource Data Collector TAG -->
+<!-- Copyright (c) 1996-2010 WebTrends Inc.  All rights reserved. -->
+<!-- Version: 8.6.2 -->
+<!-- Tag Builder Version: 3.0  -->
+<!-- Created: 6/22/2010 5:14:31 PM -->
+<script src="/resources/js/webtrends.js" type="text/javascript"></script>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- Warning: The two script blocks below must remain inline. Moving them to an external -->
+<!-- JavaScript include file can cause serious problems with cross-domain tracking.      -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<script type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends();
+//]]>>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://sdc.gsa.gov/dcs9q5va4cxafpjsr2bgvxlzf_8u3k/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;DCS.dcscfg=1&amp;WT.tv=8.6.2"/></div>
+</noscript>
+<!-- END OF SmartSource Data Collector TAG -->
+
+		<SCRIPT LANGUAGE="JavaScript" SRC="/resources/js/foresee/foresee-trigger.js"> </SCRIPT>	
+		<script type="text/javascript" src="http://dnn506yrbagrg.cloudfront.net/pages/scripts/0011/0536.js"> </script>
+	
+	
+	
+	<!-- Theme specific script files -->
+	
+	<!-- End: Theme specific script files -->
+		<!-- Layout specific script files -->
+		
+		<!-- End: Layout specific script files -->
+<!--  @buildlabel@ -->	
+<!-- app : ~kcgsa2app~~8021 -->		 
+		
+			<!--googleon: all-->
+			<div class="hidden_text">
+				automobiles, automobile, autochoice, vehicle, vehicles, cars, tire, trucks, 23V, 751, new tires, tires, car, truck, automotive, 261, 26 I, 26 i, 23 v, 26 1, buy a car, buy cars
+			</div>
+			<!--googleoff: all-->
+				
+	</div>
+	
+	
+	
+	 
+<script type="text/javascript">
+//<![CDATA[
+      var usasearch_config = { siteHandle:"gsa.gov" };
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://search.usa.gov/javascripts/remote.loader.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+
+//]]>
+</script>
+</body>
+</html>

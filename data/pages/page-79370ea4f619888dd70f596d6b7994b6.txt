@@ -1,0 +1,223 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>LeMay Museum > The Museum</title>	
+	<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/css/dynamic_css.php" rel="stylesheet" type="text/css" />
+<link href="/css/pg.css" rel="stylesheet" type="text/css" />
+<meta name="description" content="The Harold LeMay Museum is the largest collection of classic and vintage automobiles, trucks, and motorcycles in the world. Visit online or make reservations for a tour." />
+<meta name="keywords" content="Harold LeMay, Harold, LeMay, car, automobile, museum, memorabilia, classic, cars, collection, Seattle, Tacoma, Washington, antique, car museum, automobile museum, classic cars, museums, antique car museum, lemaymuseum, tractors, sports car, vintage, motorcycles, Mopars, hot rods, hood ornaments, history, automotive history, automobile history, tourism, old cars, automotive art, special interest cars, special interest autos, antique toys, car books, automotive, education, educational, AMC, American Austin, American Bantam, American LaFrance, Amish, Amphicar, Armleder, Auburn, Austin, Austin Healey, BMW, Buick, Cadillac, Chevrolet, Chrysler, Citroen, Cletrac, Cord, Crosley, Crown, Cushman, DeSoto, Detroit Electric, Dodge, Duesenberg, Edsel, Fiat, Ford, Fordson, Franklin, Frazer, GMC, Graham, Harley Davidson, Hillman, Honda, Hudson, Hupmobile, Jaguar, Jeep, Kaiser, Kenworth, King Midget, Lambretta, LaSalle, Lincoln, Mack, Mercury, Metropolitan, Morris, Nash, Oldsmobile, Packard, Pierce Arrow, Plymouth, Pontiac, Rambler, Rolls Royce, Seagrave, Sterling, Studebaker, Stutz, Subaru, Sunbeam, Toyota, Triumph, Tucker, Volkswagen, Ward La France, car museum, northwest attractions, museum collection, car rallies, auto museums, northwest museums, tacoma downtown, motorheads, car show display" />
+<script type="text/javascript" src="/js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/sf_hover.js"></script>
+<script type="text/javascript" src="/js/divshow.js"></script>
+<script type="text/javascript" src="/js/LightGearBox.js"></script>
+<script type="text/javascript" src="/js/discounts.js"></script>
+
+</head>
+
+
+<body >
+	
+<div id="header" style="background: url(/files/library/5bedde8a0e9697c9.jpg) 0 0 no-repeat;">
+	<a href="/"><div class="header-link">&nbsp;</div></a>
+	<div id="header-right">
+		<ul id="global-nav">
+                        			<li></li>
+			<li><a href="javascript:init_login('volunteer');lightbox.show();">Volunteer Login</a></li>
+			<li class="last"><a href="/page.php?id=27">Contact Us</a></li>
+		</ul>
+		<span class="clr">&nbsp;</span>
+		
+		<form id="site_search" method="get" action="/search.php">
+		<input type="text" name="k" id="search" class="search" value="Search" onfocus="toggleSearch('on');" onblur="toggleSearch('off');" /><input type="submit" name="submit" class="search-button" value="" />
+		</form>
+		
+	</div>
+</div>
+<div id="container">
+<div id="inner-container">
+	<div id="header_lightbox" class="lightbox" style="height: 160px;">
+	<div class="top_corners"></div>
+		<div class="items">
+			<span class="close"><img src="/images/lb_close.png" border=0 /></span>
+			<div class="item"></div>
+		</div>
+		<div id="login">
+			<!--<div id="member">
+				<h1>Member Login</h1>
+					<form action="https://www.lemaymuseum.org/login.php" method="post" autocomplete="off">
+					<div class="left">
+						<p><input type="text" name="username" size="35" value="email address" onfocus="javascript:if(this.value=='email address'){this.value=''}" onblur="javascript:if(this.value==''){this.value='email address'}" /></p>
+						<p><input type="text" name="password" size="35" value="password" onfocus="javascript:if(this.value=='password'){ this.type='password'; this.value=''; }" onblur="javascript:if(this.value==''){ this.type='text' this.value='password' }" /></p>
+						<p><input type="checkbox" name="remember_me" /><label for="remember_me"> Remember Me</label></p>
+						<p><input type="submit" name="submit" value="" class="login-button" /> <a href="/forgot.php">Forgot your information?</a></p>
+					</div>
+					<div class="right">
+					<h2>Not A Member Yet?</h2>
+					<input type="submit" name="become_member" value="&nbsp;" class="member-button" />
+					</div>
+					</form>
+			</div>-->
+			<div id="volunteer">
+				<h1>Volunteer Login</h1>
+					<form action="https://www.lemaymuseum.org/volunteer_login.php" method="post" autocomplete="off">
+					<div class="left">
+						<p><input type="text" name="email" size="35" value="email address" onfocus="javascript:if(this.value=='email address'){this.value=''}" onblur="javascript:if(this.value==''){this.value='email address'}" /></p>
+						<p><input type="text" name="password" size="35" value="password" onfocus="javascript:if(this.value=='password'){ this.type='password'; this.value=''; }" onblur="javascript:if(this.value==''){ this.type='text'; this.value='password' }" /></p>
+						<p><input type="submit" name="submit" value="" class="login-button" /><br /> <a href="/volunteer_forgot.php">Forgot your information?</a></p>
+					</div>
+					<div class="right">
+					<h2>Not A Volunteer Yet?</h2>
+					<input type="submit" name="become_volunteer" value="&nbsp;" class="volunteer-button" />
+					</div>
+					</form>
+				
+			</div>
+		
+		</div>
+		
+	<div class="btm_corners"></div>
+	</div>
+
+	<script>
+	var lightbox = new LightGearBox("header_lightbox");
+	
+	function init_login(type) {
+		if(type=='member'){
+			document.getElementById('volunteer').style.display = 'none';
+			document.getElementById('member').style.display = 'block';
+		}
+		else if( type=='volunteer' ){
+			//document.getElementById('member').style.display = 'none';
+			document.getElementById('volunteer').style.display = 'block';
+		}
+	}
+	</script>
+					
+					
+		<ul id="nav">
+			<li><a href="/page.php?id=1">Home</a></li><li class="active"><a href="/page.php?id=63">About</a></li><li><a href="/page.php?id=20">Membership</a></li><li><a href="/page.php?id=19">Collection</a></li><li><a href="/page.php?id=168">Support</a></li><li><a href="/page.php?id=23">Sponsors</a></li><li><a href="/page.php?id=45">Events</a></li><li><a href="/page.php?id=62">Education</a></li><li><a href="/page.php?id=22">Media</a></li><li><a href="/page.php?id=18">Visit</a></li><li><a href="/page.php?id=497">ACM Store</a></li><li><a href="/page.php?id=431">Blog</a></li>			
+		</ul>
+	<span class="clr"></span>
+	
+<div id="inner_top">&nbsp;</div>
+	<div id="content_container">
+		<div id="side-nav">
+		<ul>
+	<li><a href="/page.php?id=63">Main</a></li>
+	<li class="active"><a href="/page.php?id=64">The Museum</a>
+			<ul>
+			<li><a href="/page.php?id=242">Exterior</a>
+			</li>
+			<li><a href="/page.php?id=241">Interior</a>
+			</li>
+			<li><a href="/page.php?id=240">Facilities</a>
+			</li>
+			<li><a href="/page.php?id=499">Museum Cafe - Classics by Pacific Grill</a>
+			</li>
+			<li><a href="/page.php?id=73">Site Details</a>
+			</li>
+			<li><a href="/page.php?id=491">Current Exhibits</a>
+			</li>
+			<li><a href="/page.php?id=74">People Are Talking</a>
+			</li>
+			</ul>
+	</li>
+	<li><a href="/page.php?id=65">History</a>
+	</li>
+	<li><a href="/page.php?id=66">Board of Directors</a>
+	</li>
+	<li><a href="/page.php?id=67">Steering Commitee</a>
+	</li>
+	<li><a href="/page.php?id=68">Museum Administration</a>
+	</li>
+	<li><a href="/page.php?id=69">Annual Reports</a>
+	</li>
+	<li><a href="/page.php?id=70">Employment</a>
+	</li>
+	<li><a href="/page.php?id=75">Frequently Asked Questions</a>
+	</li>
+</ul>
+<div id="addthis">
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=lemay"></script>
+<!-- AddThis Button END -->
+</div>
+		</div>
+		
+		<div id="inner_content_template">
+<noscript>
+<div class="warning message">
+<p><strong>You don't appear to have Javascript enabled.</strong> Some parts of this website may not display correctly and certain functionality may not be available.</p>
+</div>
+</noscript>
+			<img src="files/library/d25233470d856c9c.jpg" class="temp2_img_main" />
+<div id="text_container">
+<div id="temp5_main">
+<h1>Our Vision</h1>
+<div class="text">
+<span style="font-family: Arial;">LeMay &ndash; America&rsquo;s Car Museum (ACM) spotlights America&rsquo;s love affair with the automobile.&nbsp; Featuring a nine-acre campus &ndash; with a four-story museum as the centerpiece &ndash; ACM, situated atop Tacoma, Wash., 30 minutes south of Seattle and in the shadow of Mt. Rainier, is one of the world&rsquo;s largest auto museums and attractions when it opened in June 2012.<br /><br />ACM is designed to preserve history and celebrate the world&rsquo;s automotive culture.&nbsp; The spacious facility houses up to 350 cars, trucks and motorcycles from private owners, corporations, and the LeMay collection, which amassed a Guinness Book record of more than 3,500 vehicles in the mid-&lsquo;90s.<br /><br />&ldquo;Everybody remembers their first car, family driving vacations, a sports car they fell in love with as a teenager,&rdquo; says ACM CEO David Madeira. &ldquo;Personal experiences with cars are at the heart of the American experience, and we&rsquo;re going to showcase more than a century of automotive lifestyle and history as well as the future of transportation.&rdquo;<br /><br /></span>
+<h3><span style="font-family: Arial;"><b>The ACM Vision:</b></span></h3>
+<h2><span style="font-family: Arial;"></span></h2>                        
+<ul>                        
+<li><span style="font-family: Arial;">Become the gathering place where automotive enthusiasts from around the globe celebrate America&rsquo;s love affair with the automobile. </span></li>                        
+<li><span style="font-family: Arial;">Create social networks for auto enthusiasts, serious collectors and educational entities.</span></li>                        
+<li><span style="font-family: Arial;">Portray present achievements and future directions in the transportation industry, including design, technology and products.</span></li>                        
+<li><span style="font-family: Arial;">Develop an education center/library to promote automotive history, restoration and preservation.</span></li></ul>        
+<p><b><br /></b></p>
+                      
+<h3><b>The ACM Mission:</b><br /></h3>
+<p>The LeMay - ACM is a non-profit organization chartered to preserve and interpret the history and technology of the automobile and its influence on American culture. The museum is dedicated to securing and interpreting the valuable LeMay Collection and to acquiring, preserving and interpreting additional artifacts that explore broad themes of American mobility lifestyle in an instructive and entertaining manner. The Museum will sustain its vital public service through viable, professional operations and complementary alliances.<br /></p>
+                                
+<div style="margin-left: 40px;"><span style="font-family: Arial;"></span></div><span style="font-family: Arial;"><br /></span>
+<h3><span style="font-family: Arial;"><b>The ACM Campus:</b></span><span style="font-family: Arial;"></span></h3>
+<h3><span style="font-family: Arial;"></span></h3>                        
+<ul>                        
+<li><span style="font-family: Arial;">165,000-sq.-ft. museum</span></li>                                      
+<li><span style="font-family: Arial;">3.5-acre show field</span></li>                        
+<li><span style="font-family: Arial;">Galleries</span></li>                        
+<li><span style="font-family: Arial;">Banquet hall</span></li>                        
+<li><span style="font-family: Arial;">Meeting space</span></li>                        
+<li><span style="font-family: Arial;">Car storage</span></li>                        
+<li><span style="font-family: Arial;">Caf&eacute;/restaurant</span></li>                        
+<li><span style="font-family: Arial;">Administrative offices</span></li>                        
+<li><span style="font-family: Arial;">Adjacent to the Tacoma Dome &ndash; just off Interstate 5; annually traveled by more than 7 million motorists</span></li></ul><span style="font-family: Arial;"><br />ACM is conceived on the premise that there is an important, unique automotive story to tell about the past, present and future of cars, trucks and motorcycles.&nbsp; As a result, ACM will attract young and old alike, will inspire everybody who enters, and will help educate the drivers of the future.<br /><br /></span><span style="font-family: Arial;"><br /><br /><br /></span><iframe src="http://www.youtube.com/embed/wK4On4yufXo" allowfullscreen="" frameborder="0" height="349" width="560"></iframe><script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript">
+function loadPlayer(file) {
+var s1 = new SWFObject("swf/flvplayer.swf","single","400","320","7");
+s1.addParam("allowfullscreen","true");
+s1.addVariable("file",file);
+s1.addVariable("width","400");
+s1.addVariable("height","320");
+s1.write("player");
+}
+</script>
+<script type="text/javascript">loadPlayer('LeMayDesign0907med.flv');</script></div>
+</div>
+
+</div><!--end text container-->
+</div><!-- end inner content -->
+<div class="clr"></div>
+		
+	</div><!-- end content container -->
+
+
+</div><!-- end inner-container -->	</div> <!-- end container --><span class="clr"></span><div id="footer">	<p><a href="/">Home</a>	 &nbsp;|&nbsp; <a href="page.php?id=26">Privacy Policy</a> &nbsp;|&nbsp; <a href="page.php?id=27">Contact</a> &nbsp;|&nbsp; <a href="page.php?id=36">Sitemap</a>	<!--  &nbsp;|&nbsp; 	<a href="page.php?id=46">Visit</a> &nbsp;|&nbsp;	<a href="page.php?id=26">Privacy Policy</a> &nbsp;|&nbsp; 	<a href="sitemap.php">Sitemap</a> --></p>		<p>&copy; 2013 LeMay - AMERICA'S CAR MUSEUM</p>		<img src="/images/footer_logo.gif" width="85" height="31" alt="LeMay - America's Car Museum&reg;" /></div><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3706533-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script><script type="text/javascript" src="http://static.sitecrafting.com/js/jquery/1.4.3/jquery.min.js"></script><script>    $(document).ready(function() {        $("a.close").click(function () {          $("div.ad_feat_overlay").hide();        });    });        setTimeout(function() {        $('div.ad_feat_overlay').fadeOut("slow");    }, 10000);</script></body></html>

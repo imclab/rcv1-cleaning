@@ -1,0 +1,1432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
+	<head>
+		 
+		
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+		<!-- Used to verify webmaster tools -->
+		<meta name="verify-v1" content="P+G8uxo9s17ps+E2UEXOnJq/3f/XZ7YlokhyOPTrS2o=" />
+		<meta name="google-site-verification" content="_1cgFdB0a4CKV3i2uZ23L-DFRZjfqgeQ8Nbv0hBBdR4" />
+		<meta name="msvalidate.01" content="D9A1078FD2738539A86F85435761EBC9" />
+		<meta name="y_key" content="c8440d8af56defe4" />
+		
+		
+		
+		<meta name="keywords" content="used car deals, best used car deals, used car sales, best used car sales" />
+		<meta name="description" content="Find the best used car deals at U.S. News." />
+		
+
+		
+		<title>Best Used Car Deals | U.S. News Best Cars</title>
+
+		<link type="text/css" rel="stylesheet" media="all" href="http://static.usnews.rankingsandreviews.com/css/yahoo-reset-font-min.rr1.css" />
+		<link type="text/css" rel="stylesheet" media="all" href="http://static.usnews.rankingsandreviews.com/css/base.rr51.css" />
+		<link type="text/css" rel="stylesheet" href="http://static.usnews.rankingsandreviews.com/css/jQuery/custom-theme/jquery-ui-1.8.20.custom.css" />
+		<link type="image/ico" rel="shortcut icon" href="http://static.usnews.rankingsandreviews.com/images/favicon.ico" />
+
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/jquery.cookie.js"></script>
+
+	    <script type="text/javascript">
+	       //global ad src for JS
+	       var gl_js_adsrc;
+	       
+	       var isrld = false;
+	       
+	       //track mob version collision
+	       var edata = null;
+	       var trackit = false;
+	       function mobcollision(fdata) {
+            	$.ajax({
+				  type: 'POST',
+				  url: '/ajax/moddesk/event/',
+				  data: fdata,
+				  success: function(data) {},
+				  dataType: "json",
+				  async:true
+			});
+           }
+            
+	       function mob_switch(obj) {
+	       	try {
+	       	   wt_track_event({category:'SwitchSite',action:'Mobile'});
+				$.cookie("usn_is_mob",null,{path:"/"});
+	           	$.cookie("usn_is_mob","Y",{path:"/"});
+	           	window.location.reload(true);
+	           } catch(ex) {
+	           	   console.log("Error:" + ex);
+	           } 
+	       }
+	       
+            try {
+            	//track mob version collision
+    	    	var event_val = "mobcookie-" + $.cookie("usn_is_mob") + ":mobtemplate-True:rldflag-" + $.cookie("rldflg") +":isrld-" + isrld;
+    			edata = {'type':'desktop','value':event_val,'loc':document.URL};
+            	
+	            if(( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && $.cookie("usn_is_mob") == null)
+	               || $.cookie("usn_is_mob") == 'Y')  {
+	               	if ($.cookie("rldflg") == null && 'True' == 'True') {
+	                   $.cookie("rldflg",1,{path:"/"});
+	                   $.cookie("usn_is_mob",null,{path:"/"});
+	                   $.cookie("usn_is_mob","Y",{path:"/"});
+	                   isrld = true;
+	                   window.location.reload(true);
+	                }
+	                else if ('True' == 'True') {
+	                	//track mob version collision
+	            		trackit = true;
+	                }
+	            }
+	       } catch(err) {
+               	var event_val = "mobcookie-" + $.cookie("usn_is_mob") + ":mobtemplate-True:rldflag-" + $.cookie("rldflg") +":isrld-" + isrld + ':err-' + err;
+               	edata = {'type':'error-desktop','value':event_val,'loc':document.URL};
+               	trackit = true;
+	       	   	console.log("Error mob js detection: " + err);
+	       }
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            	//track mob version collision
+            	if (trackit) {
+            		mobcollision(edata);
+            	}
+            });
+            
+            if (!isrld) {
+                $.cookie("rldflg",null,{path:"/"});
+            }
+        </script>
+         
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/jquery.textbox-hinter.min.js"></script>
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/jquery.leanModal.min.js"></script>
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/jquery-ui-1.8.20.custom.min.js"></script>
+		<script type="text/javascript" src="/scripts/cars-trucks/used_vast.rr5.js"></script>
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/global_v2.rr2.js"></script>
+		<script type="text/javascript" src="/cars-trucks/dynamic_scripts/auto_finder.js"></script>
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/cars-trucks/doubleClick.rr40.js"></script>
+
+		<script type="text/javascript">
+		    var show_allstate_widget = false;	
+		    function show_allstate_callback(is_blocked) {
+				if (is_blocked) {
+					show_allstate_widget = false;
+					$.cookie("show_allst",2,{ expires: 7,path: '/' });
+				}
+				else {
+					try {
+			            show_allstate_widget = Math.floor(Math.random()*2);
+			            var cookie_flag = show_allstate_widget ? 1 :2;
+			            $.cookie("show_allst",cookie_flag,{ path: '/' });
+			        }
+			        catch(err){ }
+				}
+			}
+	
+			function setup_allstate_widget_flag() {
+				if ($.cookie("show_allst") != null) {
+			        //Code to throttle allstate
+			       	show_allstate_widget = $.cookie("show_allst") == 1 ? true : false;
+			        return;
+			    }   	
+				$.ajax({
+					url: '/cars-trucks/aj/is_as_blocked/', 
+					async: false,
+					timeout: 600,
+					success: function(data) {
+				  		show_allstate_callback(data.blocked);
+				  	}
+				});
+			}		
+			
+			var template = -1;
+			template = 83;
+			// Double Click variables - TODO - These need to be set properly
+			ord = Math.random() * 10000000000000000;
+			product_details = '';
+			adParameters = '';
+			var rsTags = get_RS_tags();			
+		</script>
+		<script src="http://js.revsci.net/gateway/gw.js?csid=H05525&auto=t"></script>
+		
+		
+				
+		<link type="text/css" rel="stylesheet" media="all" href="http://static.usnews.rankingsandreviews.com/css/article.rr10.css" />			
+
+			
+		
+		
+			
+			
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+
+  var ga_accounts = [
+	
+	['', 'UA-1727688-8'] ,
+	
+	['b.', 'UA-11570513-1'] 
+	                 
+	]; 
+  
+  function wt_track_pageview(f_tracking_url) {
+	  for(var i in ga_accounts) {
+		  var gacct = ga_accounts[i];
+		  if (f_tracking_url != "") {
+			_gaq.push([ gacct[0] + "_trackPageview" , f_tracking_url ]);
+		  }
+		  else {
+			_gaq.push([ gacct[0] + "_trackPageview" ]);
+		  }
+	  }  
+  }
+  
+  function wt_track_event(event) {
+	  for(var i in ga_accounts) {
+		  var gacct = ga_accounts[i];
+		  _gaq.push([gacct[0] + '_setAccount', gacct[1]]);
+		  
+		  if('label' in event) {
+            _gaq.push(['_trackEvent', event.category, event.action, event.label]);
+		  } 
+		  else {
+			_gaq.push(['_trackEvent', event.category, event.action]);
+		  }
+		  setTimeout(null,100);
+	  } 
+	  setTimeout(function() {},100);
+  }
+  
+  function track_pageviews() {
+	  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+	  
+	  
+	  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+	  _gaq.push(['_setAccount', 'UA-1727688-8']);
+	  _gaq.push(['_setDomainName', '.rankingsandreviews.com']);
+	  
+	 	  
+	        _gaq.push(['_setCustomVar',1,'Site Type','Full',3]);
+	 	  
+	 	  
+	 	  if(typeof show_allstate_widget != 'undefined') {
+	 		  if (show_allstate_widget) _gaq.push(['_setCustomVar',2,'Ad Units','Allstate Widget',3]);  	 		  
+	 	  }
+	 	  
+		  
+		  	_gaq.push(['_trackPageview']);
+		  
+		  
+		  _gaq.push(['_trackPageLoadTime']);
+		  
+		  _gaq.push(['_setCampaignCookieTimeout', 86400000]);
+	  
+	  _gaq.push(['b._require', 'inpage_linkid', pluginUrl]);
+	  _gaq.push(['b._setAccount', 'UA-11570513-1']);
+	  _gaq.push(['b._setDomainName', '.rankingsandreviews.com']);
+	  
+	 	  
+	        _gaq.push(['_setCustomVar',1,'Site Type','Full',3]);
+	 	  
+	 	  
+	 	  if(typeof show_allstate_widget != 'undefined') {
+	 		  if (show_allstate_widget) _gaq.push(['_setCustomVar',2,'Ad Units','Allstate Widget',3]);  	 		  
+	 	  }
+	 	  
+		  
+		  	_gaq.push(['b._trackPageview']);
+		  
+		  
+		  _gaq.push(['b._trackPageLoadTime']);
+		  
+		  _gaq.push(['_setCampaignCookieTimeout', 86400000]);
+	  
+  }
+  track_pageviews();
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+			
+		
+		<!-- Start Visual Website Optimizer Code -->
+		<script type='text/javascript'>
+		var _vis_opt_account_id = 25361;
+		var _vis_opt_url = typeof(_vis_opt_url)=="undefined" ? document.URL : _vis_opt_url;
+		var _vis_opt_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+		document.write('<s' + 'cript src="' + _vis_opt_protocol + 
+		'dev.visualwebsiteoptimizer.com/deploy/js_visitor_settings.php?v=1&a='+_vis_opt_account_id+'&url='
+		+encodeURIComponent(_vis_opt_url)+'&random='+Math.random()+'" type="text/javascript">' + '<\/s' + 'cript>');
+		</script>
+		
+		<script type='text/javascript'>
+		if(typeof(_vis_opt_settings_loaded) == "boolean") { document.write('<s' + 'cript src="' + _vis_opt_protocol + 
+		'd5phz18u4wuww.cloudfront.net/vis_opt.js" type="text/javascript">' + '<\/s' + 'cript>'); }
+		// if your site already has jQuery 1.4.2, replace vis_opt.js with vis_opt_no_jquery.js above
+		</script>
+		
+		<script type='text/javascript'>
+		if(typeof(_vis_opt_settings_loaded) == "boolean" && typeof(_vis_opt_top_initialize) == "function") {
+		        _vis_opt_top_initialize(); vwo_$(document).ready(function() { _vis_opt_bottom_initialize(); });
+		}
+		</script>
+		<!-- End Visual Website Optimizer Code -->
+	</head>
+
+<body>
+	<script type="text/javascript">
+	  var _kiq = _kiq || [];
+	  (function(){
+	    setTimeout(function(){
+	    var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript'; 
+	    s.async = true; s.src = '//s3.amazonaws.com/ki.js/13866/4u-.js'; f.parentNode.insertBefore(s, f);
+	    }, 1);
+	  })();
+	</script>
+
+	<div id="header">
+		<div id="header2">
+			 <a href="http://www.usnews.com" id="logo">
+			 	<span>US News &amp; World Report</span>
+			 </a>
+			 <div id='auto-logo' onclick="location.href='/cars-trucks/'">&nbsp;</div>
+			 
+			 <div class="nav">
+				<ul>
+					<li class="first">
+						<a class="home" href="/cars-trucks/">Home</a>
+						<ul>
+							<li id="sn-cars" class=""><a href="/cars-trucks/">Cars</a></li>
+							<li class="list-divider">Other sections:</li>
+							<li id="sn-politics" class=""><a href="http://www.usnews.com/news">Politics &amp; Policy</a></li>
+							<li id="sn-health" class=""><a href="http://www.usnews.com/health">Health</a></li> 
+							<li id="sn-money" class=""><a href="http://www.usnews.com/money">Money</a></li>      
+							<li id="sn-education" class=""><a href="http://www.usnews.com/education">Education</a></li>
+							<li id="sn-science" class=""><a href="http://www.usnews.com/science">Science</a></li>
+							<li id="sn-travel" class=""><a href="http://travel.usnews.com">Travel</a></li>
+							<li id="sn-home" class="last"><a href="http://www.usnews.com">U.S. News Home</a></li>
+						</ul>
+					</li>
+					<li><a href="/cars-trucks/rankings/">Car Rankings</a></li>
+					<li><a href="/cars-trucks/browse/">New Cars</a></li>
+					<li><a href="/cars-trucks/used-cars/">Used Cars</a></li>
+					<li class="last"><a href="/cars-trucks/best-cars-blog/">News</a></li>
+				</ul>
+				
+				<div id="banner-share">
+					<a href="/cars-trucks/feeds/daily-news-rss/best-cars-blog/" target="_blank"><img src="/images/social/rss-sm-gray.png" alt="RSS Feed"></a>
+					<a href="http://www.facebook.com/usnewsbestcars" target="_blank"><img src="/images/social/facebook-sm-gray.png" alt="Facebook"></a>
+					<a href="http://twitter.com/#!/USNewsCars" target="_blank"><img src="/images/social/twitter-sm-gray.png" alt="Twitter"></a>
+		        </div>
+		        
+				
+					
+<form method="post" action="" id="auto-finder">
+	<fieldset>
+		<label>Find a Car:</label>
+	
+		<select name="auto_make" class="car_make" style="width: 108px;">
+			<option value="ALL BRANDS">-- All Makes --</option>
+			
+				<option value="acura">Acura</option>
+			
+				<option value="aston-martin">Aston Martin</option>
+			
+				<option value="audi">Audi</option>
+			
+				<option value="bmw">BMW</option>
+			
+				<option value="buick">Buick</option>
+			
+				<option value="cadillac">Cadillac</option>
+			
+				<option value="chevrolet">Chevrolet</option>
+			
+				<option value="chrysler">Chrysler</option>
+			
+				<option value="dodge">Dodge</option>
+			
+				<option value="ferrari">Ferrari</option>
+			
+				<option value="fiat">FIAT</option>
+			
+				<option value="ford">Ford</option>
+			
+				<option value="gmc">GMC</option>
+			
+				<option value="honda">Honda</option>
+			
+				<option value="hummer">Hummer</option>
+			
+				<option value="hyundai">Hyundai</option>
+			
+				<option value="infiniti">Infiniti</option>
+			
+				<option value="isuzu">Isuzu</option>
+			
+				<option value="jaguar">Jaguar</option>
+			
+				<option value="jeep">Jeep</option>
+			
+				<option value="kia">Kia</option>
+			
+				<option value="lamborghini">Lamborghini</option>
+			
+				<option value="land-rover">Land Rover</option>
+			
+				<option value="lexus">Lexus</option>
+			
+				<option value="lincoln">Lincoln</option>
+			
+				<option value="lotus">Lotus</option>
+			
+				<option value="maserati">Maserati</option>
+			
+				<option value="mazda">Mazda</option>
+			
+				<option value="mercedes-benz">Mercedes-Benz</option>
+			
+				<option value="mercury">Mercury</option>
+			
+				<option value="mini">MINI</option>
+			
+				<option value="mitsubishi">Mitsubishi</option>
+			
+				<option value="nissan">Nissan</option>
+			
+				<option value="pontiac">Pontiac</option>
+			
+				<option value="porsche">Porsche</option>
+			
+				<option value="ram">Ram</option>
+			
+				<option value="saab">Saab</option>
+			
+				<option value="saturn">Saturn</option>
+			
+				<option value="scion">Scion</option>
+			
+				<option value="smart">Smart</option>
+			
+				<option value="subaru">Subaru</option>
+			
+				<option value="suzuki">Suzuki</option>
+			
+				<option value="tesla">Tesla</option>
+			
+				<option value="toyota">Toyota</option>
+			
+				<option value="volkswagen">Volkswagen</option>
+			
+				<option value="volvo">Volvo</option>
+			
+		</select>
+	
+		<select name="auto_model" class="car_model" disabled="disabled" style="width: 115px;">
+			 <option value="-1">-- Model --</option>
+		</select>
+	
+		<select name="finder_year" class="car_year" disabled="disabled" style="width: 57px;">
+			<option value="-1">----</option>
+		</select>	
+		<a class="car_submit btn">GO</a>
+	</fieldset>
+	
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+			 </div><!--/#nav-->
+		</div><!--/#header2-->
+	 </div>
+ 	<script type="text/javascript">
+		$('.nav ul li.first').hover(
+			function(){ $('.nav ul ul').css('left','auto'); },
+			function(){ $('.nav ul ul').css('left','-999em'); }
+		);
+	</script>
+	
+	<div id="body" class="lg-gutter">
+		<ul id="breadcrumbs">
+			<li><a href='/cars-trucks/'>Home</a> <span>></span> </li><li>Used Car Deals <span>></span> </li><li>Best Used Car Deals</li>
+		</ul>
+		
+		<div id="top-banner">
+				
+	
+
+
+
+
+
+
+
+
+	<div class="banner pushdown" id="bannerId1" style="display:none;">
+		<script type="text/javascript">
+		
+		renderDoubleClickDynamic(1, adParameters,false);
+		
+		</script>
+		<script type="text/javascript">
+            adValidator("bannerId1");
+            setTimeout(function() {adValidator("bannerId1")},500);
+		</script>
+	</div>
+
+
+
+
+
+
+
+		</div>
+		
+		<div id="title-content">
+			
+		</div>
+		
+		<div id="content" class="article-page ">
+			
+			
+	<div class="header-area">
+		<h1>
+		
+			
+				Used Car Deals
+			
+		
+		</h1>
+	</div>
+	
+		
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+<style type="text/css">
+	a.share-link {
+		float:right;
+		width:52px;
+		height:22px;
+		text-align:right;
+		margin-right:5px;
+		text-decoration:none;
+	}
+	
+	a.share-link:hover {
+		color:#ffffff
+	}
+	.fb-button {
+		background: url(/images/social/facebook.png) no-repeat;
+		color: #ffffff;	
+	}
+		
+	a.email-share {
+		background: url(/images/social/email.png) no-repeat;
+		width:67px;
+		margin-right:3px;
+	}
+	
+	a.twitter-share {
+		background: url(/images/social/twitter.png) no-repeat;
+		color: #3b9bc1;
+	}
+	a.twitter-share:hover {
+		color: #3b9bc1;
+	}
+	
+	span.share-count {
+		display:block;
+		font-weight:bold;
+		height: 22px;
+		margin-right:7px;
+		padding-top:3px;
+	}
+	
+	
+</style>		
+<script type="text/javascript">
+	var usn_share_url=encodeURIComponent("http://usnews.rankingsandreviews.com/cars-trucks/Best-Car-Deals/Used-Car-Sales-and-Deals/");
+	var usn_share_title=encodeURIComponent("Used Car Deals");
+	var usn_share_description=encodeURIComponent("Used Car Deals -- U.S. News Best Cars");
+	
+	function get_facebook_count() {
+		FB.api(
+		  {
+		    method: 'fql.query',
+		    query: 'SELECT share_count FROM link_stat WHERE url = "' + usn_share_url + '"'
+		  },
+		  function(response) {
+		    $('a.fb-button span').html(response[0].share_count);
+		  }
+		);
+	}
+	
+	function get_twitter_count() {
+		jQuery.getJSON(
+		    'ht'+'tp://urls.api.twitter.com/1/urls/count.json?url=' + usn_share_url + '&callback=?', 
+		    function (data) {
+		    	if (data != null) 
+		    		$('a.twitter-share span').html(data.count);
+		    }
+		);
+	}
+
+	function fbs_click() {
+		window.open('http://www.facebook.com/sharer.php?u='+usn_share_url+'&t='+usn_share_description,'sharer','toolbar=0,status=0,width=485,height=450');
+		return false;
+	}
+		
+	function es_click() {
+		window.open('/cars-trucks/aj/emailshare/?url=' + usn_share_url + '&title='+ usn_share_title,'email_share', 'width=485, height=480, menubar=0, status=0,toolbar=0, scrollbars=0'); 
+		return false;
+	}
+	
+	function ts_click() {
+		window.open('http://twitter.com/share?url=' + usn_share_url + '&related=USNewsCars&text=' + usn_share_description,'share','toolbar=0,status=0,width=485,height=450'); 
+		return false;
+	}
+</script>
+
+<div class="share-buttons">
+<a class="share-link email-share" href="/cars-trucks/aj/emailshare/?url=encodeURIComponent('http://usnews.rankingsandreviews.com/cars-trucks/Best-Car-Deals/Used-Car-Sales-and-Deals/')&title=Used%20Car%20Deals" onclick='return es_click()' target="_blank">&nbsp;</a>
+<a class="share-link fb-button" href="http://www.facebook.com/share.php?u=encodeURIComponent('http://usnews.rankingsandreviews.com/cars-trucks/Best-Car-Deals/Used-Car-Sales-and-Deals/')" onclick='return fbs_click()' target="_blank" title="Share on Facebook..."><span class='share-count'></span></a>
+<a target="_blank" href="http://twitter.com/share?url=encodeURIComponent('http://usnews.rankingsandreviews.com/cars-trucks/Best-Car-Deals/Used-Car-Sales-and-Deals/')" onclick="return ts_click()" class="share-link twitter-share"><span class='share-count'></span></a>
+</div>
+
+<script type="text/javascript">
+	get_twitter_count();
+	get_facebook_count();
+</script>
+		<p class="byline">Aug 06, 2013 12:00 a.m.</p>
+	
+	<div id="article_content">
+		
+			
+			
+			
+				<p><h2>Best Used Car Financing Deals</h2>
+
+			
+		
+			
+			
+			
+				<p>Used car sales are available from several automotive brands this August. The best used car deals feature low interest rate incentives on certified pre-owned (CPO) vehicles. What you pay for a used car depends on things like vehicle condition and mileage, as well as supply and demand. To find the best used car deals, check out these offers before you buy.</p>
+
+			
+		
+			
+			
+			
+				<p><a href="/cars-trucks/browse/volkswagen/">Volkswagen</a> is promoting an interest rate of 1.99 percent for up to four years on all its CPO vehicles. <a href="http://usnews.rankingsandreviews.com/cars-trucks/browse/subaru/">Subaru</a> is offering a low interest rate deal on all 2008 to 2014 certified pre-owned models this August, with financing as low as 0.99 percent. Used <a href="/cars-trucks/browse/toyota/">Toyota</a> vehicles are generally in-demand, and some certified pre-owned Toyota models are available with 1.9 percent financing for up to five years in many areas. <a href="/cars-trucks/browse/mazda/">Mazda</a> is offering 0.9 percent financing for three years on 2011 to 2013 CPO cars and SUVs right now.</p>
+
+			
+		
+			
+			
+			
+				<p>Several luxury automakers have low interest rate used car deals that will help save you money this August. <a href="http://usnews.rankingsandreviews.com/cars-trucks/browse/mercedes-benz/">Mercedes-Benz</a> is offering 1.99 percent financing on select certified pre-owned models from the 2009 to 2012 model years. Land Rover, BMW and Audi are also offering low interest rate purchase deals this month. <a href="/cars-trucks/browse/land-rover/">Land Rover</a> has interest rates as low as 0.9 percent on many models. <a href="/cars-trucks/browse/bmw/">BMW</a> is featuring 0.9 percent financing on many of its 2010 and 2011 CPO vehicles.&nbsp;<a href="/cars-trucks/browse/audi/">Audi</a> is promoting 0.9 percent financing on its 2010 to 2012 CPO vehicles.</p>
+
+			
+		
+			
+			
+			
+				<p>Looking to buy a used car? Check out our&nbsp;<a href="http://usnews.rankingsandreviews.com/cars-trucks/rankings/used/">Used Car Rankings</a>, where you can compare used cars by class, model year and budget. Then search our&nbsp;<a href="http://usnews.rankingsandreviews.com/cars-trucks/used-cars/">Used Car Listings</a>, where you can browse used vehicles for sale in your area. While we work to keep used car deals up-to-date and accurate, the best source of current discounts and incentives on a used or certified pre-owned car is your local dealer.</p>
+<h2>The Best Used Car Sales and Deals for August 2013:</h2>
+<table class="used-deals">
+<tbody>
+<tr>
+<td colspan="2">
+<h3>Mercedes-Benz</h3>
+</td>
+</tr>
+<tr>
+<td><img src="http://static.usnews.rankingsandreviews.com/images/Auto/chrome/305831/305831_140x70.jpg" alignstore="left" /> <a href="http://usnews.rankingsandreviews.com/cars-trucks/Mercedes-Benz_C-Class/2009/">2009 Mercedes C-Class</a>
+
+			
+		
+			
+			
+			
+				<p>ClearBook Price: $18,780*</p>
+</td>
+<td>
+
+			
+		
+			
+			
+			
+				<p><strong>Model:</strong>&nbsp;Select 2009-2012 certified pre-owned models</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Deal:</strong> 1.99% financing for up to 36, 48 or 66 months</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Summary:</strong>&nbsp;There really is nothing quite like driving a Mercedes-Benz. The automaker is offering 1.99 percent financing on the C-Class, E-Class, S-Class, M-Class, GL-Class and GLK-Class.</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Expires:</strong>&nbsp;9/3/2013</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="used-deals">
+<tbody>
+<tr>
+<td colspan="2">
+<h3>Toyota</h3>
+</td>
+</tr>
+<tr>
+<td><img src="http://static.usnews.rankingsandreviews.com/images/Auto/chrome/295960/295960_140x70.jpg" alignstore="left" /><a href="http://usnews.rankingsandreviews.com/cars-trucks/Toyota_Camry/2009/"> 2009 Toyota Camry</a>
+
+			
+		
+			
+			
+			
+				<p>ClearBook Price: $11,037*</p>
+</td>
+<td>
+
+			
+		
+			
+			
+			
+				<p><strong>Model:</strong>&nbsp;Some certified pre-owned models</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Deal:</strong>&nbsp;1.9% financing for up to 60 months</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Summary:</strong>&nbsp;Toyota cars, trucks and SUVs are known for their great reliability ratings, which makes them sought-after used cars. You can get some certified used Toyotas with 1.9 percent financing for up to 60 months in many areas.</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Expires:</strong>&nbsp;9/3/2013</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="used-deals">
+<tbody>
+<tr>
+<td colspan="2">
+<h3>BMW</h3>
+</td>
+</tr>
+<tr>
+<td><img src="http://static.usnews.rankingsandreviews.com/images/Auto/chrome/307944/307944_140x70.jpg" alignstore="left" /> <a href="/cars-trucks/BMW_X3/2010/">2010 BMW X3</a>
+
+			
+		
+			
+			
+			
+				<p>ClearBook Price: $26,510*</p>
+</td>
+<td>
+
+			
+		
+			
+			
+			
+				<p><strong>Model:</strong> Many 2010 and 2011 certified pre-owned models</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Deal:</strong>&nbsp;0.9% financing</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Summary:</strong>&nbsp;Now is a great time to get 0.9 percent financing on many 2010 and 2011 CPO BMWs.</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Expires:</strong>&nbsp;9/1/2013</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="used-deals">
+<tbody>
+<tr>
+<td colspan="2">
+<h3>Volkswagen</h3>
+</td>
+</tr>
+<tr>
+<td><img src="http://static.usnews.rankingsandreviews.com/images/Auto/chrome/316298/316298_140x70.jpg" alignstore="left" /><a href="http://usnews.rankingsandreviews.com/cars-trucks/Volkswagen_Golf/2010/"> 2010 Volkswagen Golf</a>
+
+			
+		
+			
+			
+			
+				<p>ClearBook Price: $11,497*</p>
+</td>
+<td>
+
+			
+		
+			
+			
+			
+				<p><strong>Model:</strong> All certified pre-owned models</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Deal:</strong>&nbsp;1.99% financing for up to 48 months</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Summary:</strong>&nbsp;Volkswagen is known for its high-quality interiors and fuel-efficient diesel models.&nbsp;Volkswagen is offering 1.99 percent financing for up to 48 months on all certified pre-owned models.</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Expires:</strong>&nbsp;9/30/2013</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="used-deals">
+<tbody>
+<tr>
+<td colspan="2">
+<h3>Audi</h3>
+</td>
+</tr>
+<tr>
+<td><img src="http://static.usnews.rankingsandreviews.com/images/Auto/chrome/313049/313049_140x70.jpg" alignstore="left" /><a href="http://usnews.rankingsandreviews.com/cars-trucks/Audi_A6/2010/"> 2010 Audi A6</a>
+
+			
+		
+			
+			
+			
+				<p>ClearBook Price: $26,297*</p>
+</td>
+<td>
+
+			
+		
+			
+			
+			
+				<p><strong>Model:</strong>&nbsp;All 2010-2012 certified pre-owned models</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Deal:</strong>&nbsp;0.9% financing for up to 36 months</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Summary:</strong> Reviewers agree that Audi&rsquo;s German engineering makes these luxury vehicles some of the best-handling cars and SUVs on the market. Audi is offering 0.9 percent financing on all 2010, 2011 and 2012 certified pre-owned models and 1.4 percent financing on all other CPO Audis.</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Expires:</strong>&nbsp;8/5/2013</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="used-deals">
+<tbody>
+<tr>
+<td colspan="2">
+<h3>Subaru</h3>
+</td>
+</tr>
+<tr>
+<td><img src="http://usnews.rankingsandreviews.com/images/article/200901/121571/2009_Subaru_Outback_140x70.jpg" /> <a href="http://usnews.rankingsandreviews.com/cars-trucks/Subaru_Outback/2009/">2009 Subaru Outback</a>
+
+			
+		
+			
+			
+			
+				<p>ClearBook Price: $13,733*</p>
+</td>
+<td>
+
+			
+		
+			
+			
+			
+				<p><strong>Model:</strong> All 2008-2014 certified pre-owned models</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Deal:</strong>&nbsp;0.99% financing</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Summary:</strong>&nbsp;Most Subaru vehicles have standard all-wheel drive, which is good if you plan to take trips off the beaten path.&nbsp;Subaru is offering financing as low as 0.99 percent on all of its certified pre-owned models.</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Expires:</strong>&nbsp;9/3/2013</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="used-deals">
+<tbody>
+<tr>
+<td colspan="2">
+<h3>Land Rover</h3>
+</td>
+</tr>
+<tr>
+<td><img src="http://static.usnews.rankingsandreviews.com/images/Auto/chrome/307707/307707_140x70.jpg" /> <a href="http://usnews.rankingsandreviews.com/cars-trucks/Land-Rover_LR2/2009/">2009 Land Rover LR2</a>
+
+			
+		
+			
+			
+			
+				<p>ClearBook Price: $18,978*</p>
+</td>
+<td>
+
+			
+		
+			
+			
+			
+				<p><strong>Model:</strong> Most 2008-2013 certified pre-owned models</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Deal:</strong> 0.9% for 24 months, 1.9% or 2.9% for 36 to 60 months</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Summary:</strong>&nbsp;Excellent off-road capability makes a used Land Rover a good choice for venturing beyond the pavement. Land Rover is offering 0.9, 1.9 or 2.9 percent financing on certified pre-owned models, including the 2008-2013 LR2, LR3, LR4, Range Rover Evoque, Range Rover Sport and Range Rover SUVs.</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Expires: </strong>9/30/2013</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="used-deals">
+<tbody>
+<tr>
+<td colspan="2">
+<h3>Mazda</h3>
+</td>
+</tr>
+<tr>
+<td><img src="http://static.usnews.rankingsandreviews.com/images/Auto/custom/11016/custom_main_140x70.jpg" /> <a href="/cars-trucks/Mazda_Mazda3/2011/">2011 Mazda3</a>
+
+			
+		
+			
+			
+			
+				<p><a href="/cars-trucks/Mazda_Mazda3/2011/"></a>ClearBook Price: $12,936*</p>
+</td>
+<td>
+
+			
+		
+			
+			
+			
+				<p><strong>Model:</strong>&nbsp;Selelct 2011-2013 certified pre-owned models</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Deal:</strong> 0.9% financing for 36 months</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Summary:</strong> With good dependability ratings and fun driving dynamics, a used Mazda lets you save money without sacrificing driving pleasure. Mazda is offering 0.9 percent financing for up to 36 months on select certified pre-owned models.</p>
+
+			
+		
+			
+			
+			
+				<p><strong>Expires: </strong>See dealer for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+			
+		
+			
+			
+			
+				<p><em><em>*ClearBook prices are for used vehicles in excellent condition with an average of 12,000 miles per year.</em></em></p>
+
+			
+		
+			
+			
+			
+				<p>Interested in a new car? Check out our <a href="http://usnews.rankingsandreviews.com/cars-trucks/Best-Car-Deals/"><strong>Best Car</strong> <strong>Deals</strong></a> this month.</p>
+			
+		
+	</div>
+
+		</div>
+
+		<div id="sidebar">
+			
+			
+	
+		
+
+
+	
+		<div class="widget custom-promo deals-widget">
+			<h4>Car Deals: August 2013</h4>
+			<div class="widget-body">
+				<p class="deals-widget">We've compiled a list of the best car deals available in the U.S. for this month.</p>
+<div class="deals-widget">
+<ul id="deal-types">
+<li id="new-deals" class="deals-btn"><a href="/cars-trucks/Best-Car-Deals/"><span>New Deals</span></a></li>
+<li id="lease-deals" class="deals-btn"><a href="/cars-trucks/best-car-deals/Car-Lease-Deals/"><span>Lease Deals</span></a></li>
+<li id="used-deals" class="deals-btn" style="margin-right: 0px;"><a href="/cars-trucks/Best-Car-Deals/Used-Car-Sales-and-Deals/"><span>Used Deals</span></a></li>
+</ul>
+</div>
+<h5>Deals by Manufacturer:</h5>
+<ul id="deal-manufacturer">
+<li><a href="/cars-trucks/Best-car-deals/Chevrolet-Deals/">Chevy Deals</a></li>
+<li><a href="/cars-trucks/best-car-deals/Ford-Deals/">Ford Deals</a></li>
+<li><a href="/cars-trucks/best-car-deals/Honda-Deals/">Honda Deals</a></li>
+<li><a href="/cars-trucks/best-car-deals/Hyundai-Deals/">Hyundai Deals</a></li>
+<li><a href="/cars-trucks/best-car-deals/Kia-Deals/">Kia Deals</a></li>
+<li><a href="/cars-trucks/best-car-deals/Mazda-Deals/">Mazda Deals</a></li>
+<li><a href="/cars-trucks/best-car-deals/Nissan-Deals/">Nissan Deals</a></li>
+<li><a href="/cars-trucks/best-car-deals/Toyota-Deals/">Toyota Deals</a></li>
+<li><a href="/cars-trucks/best-car-deals/Volkswagen-Deals/">VW Deals</a></li>
+<li><a href="/cars-trucks/best-car-deals/Lexus-Deals/">Lexus Deals</a></li>
+<li><a href="/cars-trucks/best-car-deals/Subaru-Deals/">Subaru Deals</a></li>
+<li style="width: 34%;"><a href="/cars-trucks/best-car-deals/buick-and-GMC-Deals/">Buick/GMC Deals</a></li>
+</ul>
+			</div>
+		</div>
+	
+
+		
+
+
+
+
+
+
+
+
+
+
+	<div id="doubleclickTile2" style="display:none;" class="ad_right ad">
+		<span class="usn-label">advertisement</span>
+		<script type="text/javascript">
+		
+		renderDoubleClickDynamic(2, adParameters,false);
+		
+		</script>
+		<script type="text/javascript">
+			adValidator("doubleclickTile2");
+			setTimeout(function() {adValidator("doubleclickTile2")},500);
+		</script>
+	</div>
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+	<div class="widget used-rankings-promo">
+		<h4>Used Car Rankings</h4>
+		<div class="widget-body">
+			<a href="/cars-trucks/rankings/used/"><img src="/images/used_rankings_icon.png" alt="Used Car Rankings" /></a>
+			<p>If you're planning to buy a used car, our rankings highlight the best used cars for every budget.</p>
+			<ul>
+				<li><a href="/cars-trucks/rankings/used/">Best Used Cars</a></li>
+				<li><a href="/cars-trucks/rankings/used/hybrids/">Best Used Hybrids</a></li>
+				<li><a href="/cars-trucks/rankings/used/suvs/">Best Used SUVs</a></li>
+				<li><a href="/cars-trucks/rankings/used/vans/">Best Used Minivans</a></li>
+			</ul>
+		</div>
+	</div>
+
+		
+
+
+
+
+
+
+
+
+	<div class="widget research-promo">
+		<h4>What's My Car Worth?</h4>
+		<div class="widget-body" id="af-used-price-widget">
+			<p>Select the make, model and year of your car to find out its value and how much you could sell it for.</p>
+			<fieldset>
+				<label>Make*</label>
+				<select name="make" class="car_make">
+					<option value="ALL BRANDS">Choose a Make</option>
+					
+					<option value="acura">Acura</option>
+					
+					<option value="aston-martin">Aston Martin</option>
+					
+					<option value="audi">Audi</option>
+					
+					<option value="bmw">BMW</option>
+					
+					<option value="buick">Buick</option>
+					
+					<option value="cadillac">Cadillac</option>
+					
+					<option value="chevrolet">Chevrolet</option>
+					
+					<option value="chrysler">Chrysler</option>
+					
+					<option value="dodge">Dodge</option>
+					
+					<option value="ferrari">Ferrari</option>
+					
+					<option value="fiat">FIAT</option>
+					
+					<option value="ford">Ford</option>
+					
+					<option value="gmc">GMC</option>
+					
+					<option value="honda">Honda</option>
+					
+					<option value="hummer">Hummer</option>
+					
+					<option value="hyundai">Hyundai</option>
+					
+					<option value="infiniti">Infiniti</option>
+					
+					<option value="isuzu">Isuzu</option>
+					
+					<option value="jaguar">Jaguar</option>
+					
+					<option value="jeep">Jeep</option>
+					
+					<option value="kia">Kia</option>
+					
+					<option value="lamborghini">Lamborghini</option>
+					
+					<option value="land-rover">Land Rover</option>
+					
+					<option value="lexus">Lexus</option>
+					
+					<option value="lincoln">Lincoln</option>
+					
+					<option value="lotus">Lotus</option>
+					
+					<option value="maserati">Maserati</option>
+					
+					<option value="mazda">Mazda</option>
+					
+					<option value="mercedes-benz">Mercedes-Benz</option>
+					
+					<option value="mercury">Mercury</option>
+					
+					<option value="mini">MINI</option>
+					
+					<option value="mitsubishi">Mitsubishi</option>
+					
+					<option value="nissan">Nissan</option>
+					
+					<option value="pontiac">Pontiac</option>
+					
+					<option value="porsche">Porsche</option>
+					
+					<option value="ram">Ram</option>
+					
+					<option value="saab">Saab</option>
+					
+					<option value="saturn">Saturn</option>
+					
+					<option value="scion">Scion</option>
+					
+					<option value="smart">Smart</option>
+					
+					<option value="subaru">Subaru</option>
+					
+					<option value="suzuki">Suzuki</option>
+					
+					<option value="tesla">Tesla</option>
+					
+					<option value="toyota">Toyota</option>
+					
+					<option value="volkswagen">Volkswagen</option>
+					
+					<option value="volvo">Volvo</option>
+					
+				</select>
+			</fieldset>
+			
+			<fieldset>
+				<label>Model*</label>
+				<select class="car_model" name="model" disabled="disabled">
+					<option value="-1">Choose a Model</option>
+				</select>
+			</fieldset>		
+			
+			<fieldset>
+				<label>Year*</label>
+				<select class="car_year" name="year" disabled="disabled">
+					<option value="-1">Choose a Year</option>
+				</select>
+			</fieldset>	
+			
+			<input type="submit" class="button car_submit" value="Go"/>
+			<div class="required">*Required fields</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+		<div class="widget myautoloan-widget">
+	
+		<h4>Ready to buy a used car?</h4>
+	
+	<div class="widget-body">
+		<div>
+			
+			
+			
+			
+				<a class="apply"  onclick="wt_track_event({category:'Right Rail',action:'RR Used Loan on Used Deals'});" href="http://www.myautoloan.com/USNEWS-purchase-used-neutral.html?promocode=usedwidget3" target="_blank">Apply Now</a>
+			
+			<img src="/images/myautoloan_logo.gif" />
+		</div>
+		
+			<p>Find low financing rates and get up to 4 pre-approved loan offers from competing lenders in minutes.</p>
+		
+	</div>	
+</div>
+	
+
+		</div>
+		
+		<div id="foot-content">
+			
+
+		</div>
+
+	</div>
+
+	<div id="footer">
+		<ul id="foot-nav">
+			<!-- show if mob capable -->
+			<li class="first mob-hide" style="display:None"><a href="" onclick="mob_switch(this);return false;"><strong>Mobile Site</strong></a></li>
+			<li class="mob-hide" style="display:None"><a href="/aboutUs/">About Us</a></li>
+			<!-- show else -->
+			<li class="first mob-show"><a href="/aboutUs/">About Us</a></li>
+			<!-- end show if mob capable -->
+			<li><a href="/methodology/">How We Rank New Cars</a></li>
+			<li><a href="/methodology-used/">How We Rank Used Cars</a></li>
+			<li><a rel="nofollow" href="/contactUs/">Contact Us</a></li>
+			<li><a href="/siteMap/">Site Map</a></li>
+			<li><a href="http://www.usnews.com/">U.S. News Home</a></li>
+		</ul>
+		<div id="copy-legal">Use of this Web site constitutes acceptance of our <a rel="nofollow" href="/termsAndConditions/">Terms and Conditions of Use and Privacy Policy</a>. Copyright 2007-2013 &copy; U.S. News Rankings &amp; Reviews</div>
+	</div>
+	
+	<!-- mob links -->
+    <script type="text/javascript">
+        try {
+        	if ($.cookie("usn_is_mob") != undefined) {
+        	       $('.mob-hide').show();
+        	       $('.mob-show').hide();
+        	}   
+        }
+        catch (ex) {
+        }
+    </script>
+	<!-- end mob links -->
+	
+	<!-- Begin comScore Tag -->
+<script type="text/javascript">document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));</script>
+<script type="text/javascript">COMSCORE.beacon({    c1:2,    c2:"11307981",    c3:"",    c4:escape(window.location),    c5:"",    c6:"autos",    c15:""  });</script><noscript>  <div><img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=11307981&amp;c3=&amp;c4=&amp;c5=&amp;c6=autos&amp;c15=&amp;cj=1" alt="comScore"/></div></noscript>
+<!-- End comScore Tag -->
+
+
+	
+	
+
+	<!-- Start Quantcast tag -->
+	<script type="text/javascript">
+	_qoptions={
+	qacct:"p-efoP1AkkGV9EU"
+	};
+	</script>
+	<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+	<noscript>
+	<img src="http://pixel.quantserve.com/pixel/p-efoP1AkkGV9EU.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+	</noscript>
+	<!-- End Quantcast tag -->
+	
+	<!-- crazyegg -->
+	<script type="text/javascript">document.write(unescape('%3Cscript type="text/javascript" src="'+document.location.protocol+'//dnn506yrbagrg.cloudfront.net/pages/scripts/0010/9297.js"%3E%3C%2Fscript%3E'))</script>
+	<!-- end crazy egg -->
+	
+	<!-- Begin BlueKai Tag -->
+	<iframe name="__bkframe" height="0" width="0" frameborder="0" src="javascript:void(0)"></iframe>
+	<script type="text/javascript" src="http://tags.bkrtx.com/js/bk-coretag.js"></script>
+	<script type="text/javascript">
+	if (gl_js_adsrc){
+		try {  
+			bk_addPageCtx("Year",(typeof(getAdParam(gl_js_adsrc,"yr"))!='undefined')?getAdParam(gl_js_adsrc,"yr"):'');
+			bk_addPageCtx("Model",(typeof(getAdParam(gl_js_adsrc,"mod"))!='undefined')?getAdParam(gl_js_adsrc,"mod"):'');
+			bk_addPageCtx("Make",(typeof(getAdParam(gl_js_adsrc,"mak"))!='undefined')?getAdParam(gl_js_adsrc,"mak"):'');
+			if (typeof(getAdParam(gl_js_adsrc,"body"))!='undefined') {
+				bk_addPageCtx("Body",(typeof(getAdParam(gl_js_adsrc,"body"))!='undefined')?getAdParam(gl_js_adsrc,"body"):'');
+			} else {
+				bk_addPageCtx("Body",(typeof(getAdParam(gl_js_adsrc,"type"))!='undefined')?getAdParam(gl_js_adsrc,"type"):'');
+			}
+			bk_addPageCtx("Type",(typeof(getAdParam(gl_js_adsrc,"type"))!='undefined')?getAdParam(gl_js_adsrc,"type"):'');
+			bk_addPageCtx("Style",(typeof(getAdParam(gl_js_adsrc,"style"))!='undefined')?getAdParam(gl_js_adsrc,"style"):'');
+			bk_addPageCtx("Section",(typeof(getAdParam(gl_js_adsrc,"prod"))!='undefined')?getAdParam(gl_js_adsrc, "prod"):'');
+			
+			bk_addPageCtx("Location",encodeURIComponent(document.location));
+			
+			
+			bk_ignore_meta = true;
+			bk_doJSTag(14415, 10);
+		}
+		catch (e) {console.error("bluekai error:" + e.message);}
+	}
+	</script>
+	<!-- End BlueKai Tag -->
+</body>
+
+</html>
+

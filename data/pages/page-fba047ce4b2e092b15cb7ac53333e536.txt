@@ -1,0 +1,289 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8">
+<title>Do it Yourself Automobile Repair Manuals - Mitchell 1 DIY</title>
+<meta name="Author" content="Mitchell Repair Information Company, LLC">
+<meta name="Description" content="Mitchell 1 DIY, Provides Professional Repair, Estimator, Maintenance, TSB and Recall information for Automotive enthusiasts.">
+<meta name="Keywords" content="Do-it-yourself, automotive repair information, technical service bulletins, engine diagnostics, service maintenance, fuel pumps, coolant, timing belt, brakes, transmission, truck, wiring diagrams">
+<meta name="verify-v1" content="YfGW53MowTelXkvy4cY4rQUw6nD4ypLks4KM+9U79VA">
+<meta name="msvalidate.01" content="E640FB1AD71C967681AA8A3D0A8E3823">
+<META name="y_key" content="2ea4f7682e22f38d">
+<meta http equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta name="google-site-verification" content="xO1kFbSsP3EMQdP5hXURTvGGEG9u9-O2HeuENmn5sj0" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="index,follow">
+<meta name="url" content="http://www.eautorepair.net">
+<meta name="category" content="home page">
+<meta http-equiv="content-language" content="en-US"> 
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="assets/css/core.css">
+<link rel="stylesheet" href="assets/css/home.css">
+<!--[if lte IE 8]>
+	<link rel="stylesheet" type="text/css" href="assets/css/iecore.css">
+<![endif]-->
+<script src="assets/js/mylibs/script-hdr.min.js"></script>
+
+<!--The ajaxification code-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+<!--<script type="text/javascript" src='./AjaxPages/jquery.js'></script>-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        //This code is only used when the back button is clicked
+        //and this resets the Year visually, though perhaps not actually
+        if ($('#Years').val() != "Select Year") {
+            $('#Years').val('Select Year');
+        }
+    });
+    $('#Years').find('option').remove().end().append('<option value=""></option>').val('');
+    $(function() {
+        $('#Years').change(function() {
+            //Pass year and load Makes into Makes dropdown
+            $('#Makes').load('./AjaxPages/GetMakesAjax.asp?Year=' + $('#Years').val());
+            //if the year is changed then remove the options in the Models drop down
+            $('#Models').find('option').remove().end().append('<option value=""></option>').val('');
+        });
+        $('#Makes').change(function() {
+            $('#Models').load('./AjaxPages/GetModelsAjax.asp?Year=' + $('#Years').val() + "'&MakeId='" + $('#Makes').val() + "'");
+        });
+        $('#submitYMM').click(function() {
+            //Make sure YMM selected
+            if ($('#Years').val() == "" || $('#Makes').val() == "" || $('#Models').val() == "" || $('#Models').val() == "Select Model" || $('#Makes').val() == "Select Make") {
+                alert("You must select a Year-Make-Model.");
+                return false;
+            }
+            else {
+                var modelId = $('#Models').val();
+                var underscore = ($('#Models').val()).indexOf("_");
+                var subModelId = modelId.substring(underscore + 1);
+                var modelId = modelId.substring(0, underscore);
+                //populate hidden inputs to pass to customerinfo.asp
+                $('#YR').attr('value', $('#Years').val());
+                $('#MakeId').attr('value', $('#Makes').val());
+                $('#ModelId').attr('value', modelId);
+                $('#SubModelId').attr('value', subModelId);
+                $('#MakeName').attr('value', $("#Makes option:selected").text());
+                $('#ModelName').attr('value', $("#Models option:selected").text());
+                return true;
+            }
+        });
+    });
+</script>
+<script src="http://static.dudamobile.com/DM_redirect.js" type="text/javascript"></script>
+<script type="text/javascript">DM_redirect("http://mobile.dudamobile.com/site/eautorepair_3");</script>
+</head>
+<body>
+
+
+<div class="wrap header">
+	<header>
+		<a id="hdrLogo" href="./default.asp?VID=&Count=Y" title="go back to Mitchell 1 DIY Homepage"></a>
+		<nav topmenu>
+			<a href="../../app/YearsMakes.asp?VID=&Count=Y" title="Subscribe">subscribe</a> <a href="https://www.eautorepair.net/app/AccountManagement.asp?VID=&Count=Y" title="Login">login</a>
+		</nav>
+		<nav menunav>
+			<a home href="./default.asp?VID=&Count=Y">home</a>
+			<a product href="./html/products.asp?VID=&Count=Y">product</a>
+			<a demo href="./html/demo.asp?VID=&Count=Y">demo</a>
+			<a diy href="./html/about_us.asp?VID=&Count=Y">mitchell 1 diy</a>
+			<a affiliates href="./html/affiliates.asp?VID=&Count=Y">affiliates</a>
+            <a affiliates href="./html/help.asp?VID=&Count=Y">help </a>
+		</nav>
+	</header>
+</div>
+
+
+<div class="wrap home">
+	<div class="wrapper ajaxpanel">
+		<article slideshow>
+			<div id=slides>
+				<div class="slides_container">
+				<!-- SLIDES START HERE -->
+					<a href="./html/autorepair.asp?VID=&Count=Y"><img src="temp/ajaxpanel/ajax_slide-001.jpg" width="90" height="335" alt="Repair your Car, Truck, Van, or SUV"></a>
+					<a href="./html/maintenance.asp?VID=&Count=Y"><img src="temp/ajaxpanel/ajax_slide-002.jpg" width="990" height="335" alt="Do your own Maintenance and save with Mitchell 1"></a>
+					<a href="./html/estimator-feature.asp?VID=&Count=Y"><img src="temp/ajaxpanel/ajax_slide-003.jpg" width="990" height="335" alt="Calculate Your own Auto Repair Estimate"></a>
+					<a href="./html/technicalBulletin.asp?VID=&Count=Y"><img src="temp/ajaxpanel/ajax_slide-004.jpg" width="990" height="335" alt="Are you driving a Recall?  88,000 Factory Recall Data"></a>
+					<a href="./html/technicalBulletin.asp?VID=&Count=Y"><img src="temp/ajaxpanel/ajax_slide-005.jpg" width="990" height="335" alt="Instance Access to 197,000 Technical Service Bulletins"></a>
+					<a href="./html/wiring_diagrams.asp?VID=&Count=Y"><img src="temp/ajaxpanel/ajax_slide-006.jpg" width="990" height="335" alt="Over 200,000 Auto Repair Wiring Diagrams"></a>
+				</div>
+			</div>
+		</article>
+	</div>
+	
+	<div class="wrapper services">
+		<article services>
+			<div class="col1">
+			  <p>Mitchell 1 DIY provides online access to auto repair information on over 30,000 vehicles between 1983 to 2012 in a powerful browser-based application that gives the do-it-yourself home mechanics instant  access to the very latest in auto repair, maintenance, technical service bulletins and recall information.
+		        <a href="./html/demo.asp?VID=&Count=Y"><img src="Mitchell1_source/Msc-automotive-images/vehicle-fix.gif" alt="sample vehicle access" hspace="2" vspace="0"></a><br>
+	          <span style="font-size: 16px"><a href="./html/demo.asp?VID=&Count=Y" style="color: #063955;"><strong><u>View sample vehicles.</u></strong></a></span><u><strong></a></strong></u></p></strong>
+			  
+	    </div>
+			
+			<form id="formYMM" action="../app/CustomerInfo.asp?VID=&Count=Y" method="post" class="col2">
+			        <input type='hidden' value = '' name= 'YR' id='YR'/>
+			        <input type='hidden' value = '' name= 'MakeId' id='MakeId'/>
+			        <input type='hidden' value = '' name= 'ModelId' id='ModelId'/>
+			        <input type='hidden' value = '' name= 'MakeName' id='MakeName'/>
+			        <input type='hidden' value = '' name= 'ModelName' id='ModelName'/>
+			        <input type='hidden' value = '' name= 'SubModelId' id='SubModelId'/>
+				<dl>
+					<dt>
+						Mitchell1 DIY - Single vehicle access, comes in convenient
+						and affordable subscription terms of:
+						
+					  <ul>
+							<li>1 Month (31 Days) : $ 16.99</li>
+							<li>1 Year (Best Value) : $ 25.99</li>
+						    <li>4 Year (Best Value) : $ 39.99</li>
+					  </ul>
+						<a href="./html/basic-repairs.asp?VID=&Count=Y"class="link-light-blue-14">Visit Free Basic Diagnostic & Troubleshooting Procedures</a></dt>
+					<dd>
+						<h2>subscribe now!</h2>
+						<ul>
+							<li>
+							<select id="Years" style="width:129px; margin-right:5px; font-weight: bold;">
+								
+								<option>Select Year</option><option value='2012'>2012</option>
+<option value='2011'>2011</option>
+<option value='2010'>2010</option>
+<option value='2009'>2009</option>
+<option value='2008'>2008</option>
+<option value='2007'>2007</option>
+<option value='2006'>2006</option>
+<option value='2005'>2005</option>
+<option value='2004'>2004</option>
+<option value='2003'>2003</option>
+<option value='2002'>2002</option>
+<option value='2001'>2001</option>
+<option value='2000'>2000</option>
+<option value='1999'>1999</option>
+<option value='1998'>1998</option>
+<option value='1997'>1997</option>
+<option value='1996'>1996</option>
+<option value='1995'>1995</option>
+<option value='1994'>1994</option>
+<option value='1993'>1993</option>
+<option value='1992'>1992</option>
+<option value='1991'>1991</option>
+<option value='1990'>1990</option>
+<option value='1989'>1989</option>
+<option value='1988'>1988</option>
+<option value='1987'>1987</option>
+<option value='1986'>1986</option>
+<option value='1985'>1985</option>
+<option value='1984'>1984</option>
+<option value='1983'>1983</option>
+
+							</select>
+							
+							<select id="Makes" style="width:129px; font-weight: bold;">
+							  <option></option>
+							</select>
+							</li>
+							<li>
+							<select id="Models" style="width:268px; font-weight: bold;">
+								<option></option>
+							</select>
+							</li>
+						</ul>
+						<input id="submitYMM" type="submit" value="" />
+					</dd>
+				</dl>
+			</form>
+			
+		</article>
+	</div>
+
+	<div class="wrapper midbox">
+		<table id="socialInfo" align="center" width="990">
+			<tr>
+				<td width="23%">
+					<a href="http://www.facebook.com/pages/Mitchell-1-DIY/199771830042655"><img src="assets/images/icon_fbnetwork.png" width="75" height="33" alt="Follow Mitchell 1 DIY with FaceBook"></a>
+					<a href="http://twitter.com/mitchell1diy"><img src="assets/images/icon_ttnetwork.png" width="75" height="33" alt="Follow Mitchell 1 DIY in Twitter "></a>
+					<a href="http://www.youtube.com/watch?v=6LFsmZigzik"><img src="assets/images/icon_ytnetwork.png" width="34" height="33" alt="Follow Mitchell 1 DIY in YouTube"></a>
+                   
+		    </td>
+				<td class="links" width="56%" height="65" align="center"><a href="./html/testimonials.asp?VID=&Count=Y">testimonials</a>|<a href="./html/faq.asp?VID=&Count=Y">faq</a>|<a href="http://buymitchell1.net/mm5/merchant.mvc?Screen=PROD&Store_Code=M1&Product_Code=ECAT13&Category_Code=REPMAN">Emission Control Application</a>|<a href="./html/help.asp?VID=&Count=Y">contact us</a></td>
+				<td width="21%" align="right"><img src="assets/images/icon_snapon.png" width="183" height="40" alt="Mitchell 1, A Division of Snap On"></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div class="wrap footer">
+	<footer>
+		<div seal><img src="assets/images/icon_seal.png" width="89" height="89" alt="Satisfaction 100% Guaranteed"></div>
+		<h1>Your eAutoRepairâ¢ Solution <small>Check Latest Auto Recalls &TSBs here</small></h1>
+		<p>This page, and all contents, are Â© 2004 - 2013 Mitchell 1 Repair Information Company, LLC. All Rights Reserved. By accessing and using Mitchell 1 Repair's web sites, each user agrees that they have read and agreed to be bound by the 
+		<a style="color:#ffffff;text-decoration:underline;" href="../../app/help/legalNotice.asp?VID=&Count=Y">Legal Notices</a> and 
+		 <a style="color:#ffffff;text-decoration:underline;" href="../../app/help/privacy.asp?VID=&Count=Y">Privacy Policy</a>
+     governing Mitchell 1 Repair Online.</p>
+		<p><a href="./html/autorepair.asp?VID=&Count=Y" class="link-light-blue-14">Factory Service Tips</a> â <a href="./html/obd_sae_codes.asp?VID=&Count=Y" class="link-light-blue-14">OBD II Codes</a> â<a href="./html/maintenance.asp?VID=&Count=Y" class="link-light-blue-14"> Troubleshooting & Reset Check Engine Light</a> â <a href="./html/repair_graphics.asp?VID=&Count=Y" class="link-light-blue-14">Exploded View Illustrations</a> â <a href="./html/estimator-feature.asp?VID=&Count=Y" class="link-light-blue-14">Basic Diagnostic & Troubleshooting Procedures</a>â <a href="./html/estimator-feature.asp?VID=&Count=Y" class="link-light-blue-14">Labor Times & Calculate the Repair Cost </a>â<a href="./html/affiliates.asp?VID=&Count=Y" class="link-light-blue-14">Link to us and receive generous commissions on each initial sale, add-on sales, and renewal subscriptions.</a></p>
+	</footer>
+</div>
+
+<script>
+head.js("//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js","assets/js/mylibs/script-ftr.min.js","assets/slidejs/js/slides.min.js");
+head.ready(function() {
+
+//Shadowbox.init();
+    
+	
+	$('.moreOption').click(function() {
+		$('#option').slideToggle('fast');
+	});
+	
+	$(function(){
+		$('#slides').slides({
+			preload: true,
+			preloadImage: 'assets/slidejs/img/loading.gif',
+			play: 5000,
+			pause: 2500,
+			hoverPause: true,
+			paginationClass: 'pagination',
+			effect: 'slide'
+		});
+
+		$(".pagination li").each(function (i) {
+			i = i+1;
+			$(this).addClass("pList"+i);
+		});
+	});
+
+});	
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-226473-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- Google Code for Home page Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1070510048;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "666666";
+var google_conversion_label = "IR_wCOakhwIQ4N-6_gM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1070510048/?label=IR_wCOakhwIQ4N-6_gM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+</body>
+</html>

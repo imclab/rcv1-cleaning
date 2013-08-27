@@ -1,0 +1,996 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+    <script type="text/javascript">
+        <!--
+        // parseUri 1.2.2
+        // (c) Steven Levithan <stevenlevithan.com>
+        // MIT License
+
+        function parseUri (str) {
+            var	o   = parseUri.options,
+                    m   = o.parser[o.strictMode ? "strict" : "loose"].exec(str),
+                    uri = {},
+                    i   = 14;
+
+            while (i--) uri[o.key[i]] = m[i] || "";
+
+            uri[o.q.name] = {};
+            uri[o.key[12]].replace(o.q.parser, function ($0, $1, $2) {
+                if ($1) uri[o.q.name][$1] = $2;
+            });
+
+            return uri;
+        };
+
+        parseUri.options = {
+            strictMode: false,
+            key: ["source","protocol","authority","userInfo","user","password","host","port","relative","path","directory","file","query","anchor"],
+            q:   {
+                name:   "queryKey",
+                parser: /(?:^|&)([^&=]*)=?([^&]*)/g
+            },
+            parser: {
+                strict: /^(?:([^:\/?#]+):)?(?:\/\/((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?))?((((?:[^?#\/]*\/)*)([^?#]*))(?:\?([^#]*))?(?:#(.*))?)/,
+                loose:  /^(?:(?![^:@]+:[^:@\/]*@)([^:\/?#.]+):)?(?:\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/
+            }
+        };
+
+        function createCookie(name,value,days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime()+(days*24*60*60*1000));
+                var expires = "; expires="+date.toGMTString();
+            }
+            else var expires = "";
+            document.cookie = name+"="+value+expires+"; path=/";
+        }
+
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+
+        function eraseCookie(name) {
+            createCookie(name,"",-1);
+        }
+
+        function areCookiesEnabled() {
+            var r = false;
+            createCookie("cookiesEnabled", "true", 1);
+            if (readCookie("cookiesEnabled") != null) {
+                r = true;
+                eraseCookie("cookiesEnabled");
+            }
+            return r;
+        }
+
+        (function(){
+            var referrer = '';
+            var referrerKw = '';
+            if (typeof document.referrer != 'undefined') {
+                // pound's for google.
+                var oUri = parseUri(document.referrer.replace('#','?'));
+
+                referrer = oUri.host;
+                if (typeof oUri.queryKey.q != 'undefined') {
+                    referrerKw = decodeURIComponent(oUri.queryKey.q).replace('site:essortment.com','').replace(/[^a-zA-Z0-9\s]+/g,' ').replace(/\s\s/g,' ');
+                } else if (typeof oUri.queryKey.p != 'undefined') {
+                    referrerKw = decodeURIComponent(oUri.queryKey.p).replace('site:essortment.com','').replace(/[^a-zA-Z0-9\s]+/g,' ').replace(/\s\s/g,' ');
+                } else {
+                    referrerKw = 'finances investments';
+                }
+            }
+            // oUri.file == 'google.html' ||
+            if ((referrer.indexOf('.google.com') > -1 || referrer.indexOf('.yahoo.com') > -1 || referrer.indexOf('.bing.com') > -1) && areCookiesEnabled()) {
+                oUri = parseUri(document.location.href);
+
+                if (referrerKw.length > 0) {
+                    // "&cof=FORID%3A10&sa=Search&cx=partner-pub-6167988213978292%3A6447045120&ie=UTF-8&ss=1280j221896j10&ref=" + referrer + "%2F&siteurl=www.essortment.com" + encodeURIComponent(oUri.path))
+                    document.location.replace("/search.htm?r=" + encodeURIComponent(oUri.relative) + "&q=" + encodeURIComponent(referrerKw));
+                }
+            }
+        })();
+        // -->
+    </script>
+
+
+
+	<meta name="date" content="1986-05-16 00:00:00">
+	<meta charset="utf-8"/>
+	<meta name="msvalidate.01" content="129B5DE6FF8DD0ECBDD457C93FF101E3" />
+	<meta property="og:site_name" content="Essortment"/>
+	<meta property="fb:app_id" content="141718515877590"/>
+	<meta property="fb:admins" content=""/>
+	
+	<link rel="stylesheet" href="http://www.essortment.com/css.css" media="all" type="text/css"/>
+	<link rel="shortcut icon" href="http://www.essortment.com/favicon.ico" />
+	<link rel="icon" href="http://www.essortment.com/favicon.ico" />
+	
+	
+	
+
+	<!-- Custom JS to render Google AdSense ads -->
+	<script type="text/javascript" src="http://www.essortment.com/adsense.js"></script>
+	<!-- End Custom JS to render Google AdSense ads -->
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://www.essortment.com/jquery.scrollto.min.js"></script>
+
+	<!-- Demdex Tag Insertion Manager -->
+	<script type="text/javascript" src="http://www.essortment.com/dil_essortment.js"></script>
+	<!-- End Demdex Tag Insertion Manager -->	
+	<script type="text/javascript">
+        if (typeof readCookie != 'function') {
+            function readCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0;i < ca.length;i++) {
+                    var c = ca[i];
+                    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+                }
+                return null;
+            }
+        }
+
+        var gUtmSource = '';
+        var gUtmMedium = '';
+        (function(){
+            var pattern=/utm_source=([a-zA-Z0-9]+)&utm_medium=([a-zA-Z0-9]+)/;
+            var result = pattern.exec(readCookie('utm_params'));
+
+            if (result != null && result.length == 3) {
+                gUtmSource = result[1];
+                gUtmMedium = result[2];
+            }
+        })();
+
+        function getParameterByName(name, url) {
+            if (!url) {
+                url = document.location.href;
+            }
+            name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+            var regexS = "[\\?&]"+name+"=([^&#]*)";
+            var regex = new RegExp( regexS );
+            var results = regex.exec( url );
+            if( results == null )
+            return '';
+            else
+            return results[1];
+        }
+
+        function IsAdWords() {
+            var utmSource = getParameterByName("utm_source");
+
+            if (utmSource.length > 0) {
+                utmSource = decodeURIComponent(utmSource);
+                utmSource = utmSource.replace(/[^a-zA-Z0-9\_\-]+/g,'');
+
+                createCookie("utm_source", utmSource);
+
+                if (utmSource.toLowerCase() == "adwords") {
+                    return true;
+                }
+            } else if (readCookie("utm_source") != null) {
+                if (readCookie("utm_source").toLowerCase() == "adwords") {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+		function doAutoSearch()
+		{
+			if ('referrer' in document && 'host' in location && (getParameterByName('afsforce', document.location.search) == 1 || document.referrer.length > 0) && document.referrer.substring(0, location.host.length + 7) != 'http://' + location.host)
+			{
+				var utm_medium = decodeURIComponent(getParameterByName('utm_medium', document.location.search)).replace(/\+/g, " ");
+				var utm_source = decodeURIComponent(getParameterByName('utm_source', document.location.search)).replace(/\+/g, " ");
+				var keywords = decodeURIComponent(getParameterByName('q', document.location.search)).replace(/\+/g, " ");
+				if (keywords.length > 0 && utm_medium.length > 0)
+				{
+					if (utm_source.length > 0)
+					{
+						$('#cse-search-box').append('<input type="hidden" name="utm_source" value="' + utm_source + '" />');
+					}
+					if (utm_medium.length > 0)
+					{
+						$('#cse-search-box').append('<input type="hidden" name="channel" value="' + utm_medium + '" />');
+					}
+					$('#cse-search-box input[name="q"]').val(keywords);
+					$('#cse-search-box').submit();
+				}
+			}
+		}
+	</script>
+
+	<script src="//cdn.optimizely.com/js/7970001.js"></script>
+	
+
+
+
+
+
+
+
+
+	
+	<title>What Is The Best Way To Buy A Car?</title>
+	<meta name="description" content="What is the best way to buy a car? If you buy a used car and use this system, you will never have another car payment again and save thousands in interest." />
+	<meta property="og:description" content="What is the best way to buy a car? If you buy a used car and use this system, you will never have another car payment again and save thousands in interest."/>	
+	
+
+	<meta property="og:title" content="What Is The Best Way To Buy A Car?"/>
+	<link rel="canonical" href="http://www.essortment.com/way-buy-car-20078.html" />
+
+	
+	<meta property="og:url" content="http://www.essortment.com/way-buy-car-20078.html"/>
+	
+	
+	<meta property="og:image" content="http://www.essortment.com/images/essortment_glass_73x73.jpg"/>
+	
+	<meta property="og:type" content="article"/>
+
+		
+	
+	
+	
+	
+	<meta name="description" content="What is the best way to buy a car? If you buy a used car and use this system, you will never have another car payment again and save thousands in interest.">
+	<meta name="template" content="article">
+	
+	<!-- START OMNITURE CODE -->
+	<meta name="wa_lr" scheme="DMINSTR2" content="en-US" />
+	
+	
+	<meta property="legacyKey" content="24439"/>
+	
+	<meta name="contentid" scheme="DMINSTR2" content="24439" />
+	<meta name="category" scheme="DMINSTR2" content="Finances & Investments" />
+
+	
+    	<meta name="pagetype" scheme="DMINSTR2" content="Legacy Article" />
+	
+	<meta name="siteid" scheme="DMINSTR2" content="ESTC" />
+	<!-- END OMNITURE CODE -->
+
+	
+	<script type="text/javascript">
+		var tag = escape('pub-6167988213978292;6206758351|pub-6167988213978292;6206758351|pub-6167988213978292;6206758351');
+    	document.write ('<meta name="ltvtag" scheme="DMINSTR2" content="' + tag + '">');
+	</script>
+	
+
+
+
+	<script src="http://scripts.demandmedia.com/wm.js" type="text/javascript"></script>	
+
+
+
+
+
+	<!-- Set up Yahoo related text ads -->
+	<script type="text/javascript">
+		// Get the keywords, if any.
+		// If opYahoo1Click is equal to one, then forget it.
+		if (typeof(opYahoo1Click) != 'undefined' && opYahoo1Click == 1) {
+			document.write('\n\n<!-- One click ads disabled by Optimost. -->\n');
+		} else {
+			var keywords = '';
+			if (document.referrer != '') {
+				var domainName = document.referrer.split('/')[2].toLowerCase();
+				if (domainName.indexOf('google.com') > -1 || domainName.indexOf('ask.com') > -1 || domainName.indexOf('bing.com') > -1) {
+					keywords = getParameterByName('q', document.referrer);
+				} else if (domainName.indexOf('yahoo.com') > -1) {
+					keywords = getParameterByName('p', document.referrer);
+				}
+			}
+			// Allow back door keywords.
+			var backDoorKeywords = getParameterByName('k', document.location.href);
+			if (backDoorKeywords != '') {
+				keywords = backDoorKeywords;
+			}
+			// Build ad URL and display it.
+			if (keywords != '') {
+				var url = 'http://xml.demandmedia.overture.com/d/search/p/demandmedia/js/?Partner=enom_retargeting_search&config=1234567890&serveUrl=' + encodeURIComponent(window.location.href) + '&Keywords=' + keywords + '&maxCount=4&cb=' + Math.floor(Math.random() * 100000);
+				// this doesn't appear to be used anymore, commenting it out.
+				// document.write('<SCR' + 'IPT LANGUAGE=JavaScript1.1 SRC="' + url + '"></SCR'+'IPT>');
+			}
+		}
+	</script>
+
+    <style type="text/css">
+        .yahoo336x280 { width:336px; margin-left:180px; text-align:left; }
+        .yahoo336x280 a.title { font-size:15px; font-weight:bold; color:#437AAE; text-decoration:underline; }
+        .yahoo336x280 a.host { font-size:15px; font-weight:normal; color:#437AAE; text-decoration:none; text-transform:lowercase; }
+        .yahoo336x280 p.desc { font-size:15px; font-weight:normal; color:#000; text-decoration:none; }
+
+        .yahoo300x250 { width:336px; text-align:left; }
+        .yahoo300x250 a.title { font-size:15px; font-weight:bold; color:#437AAE; text-decoration:underline; }
+        .yahoo300x250 a.host { font-size:15px; font-weight:normal; color:#437AAE; text-decoration:none; text-transform:lowercase; }
+        .yahoo300x250 p.desc { font-size:15px; font-weight:normal; color:#000; text-decoration:none; }
+    </style>
+
+    <script type="text/javascript">
+        <!--
+        function YahooShowListings(k) {
+            if (k==null){k=1;}
+            var i=((k-1)*24)+6;
+            var j=0;
+            while (i < zSr.length && j < 4 ) {
+                var descr = zSr[i++]; // listing description
+                var unused1 = zSr[i++]; // (ignore)
+                var clickURL = zSr[i++]; // listing link
+                var title = zSr[i++]; // listing title
+                var sitehost = zSr[i++]; // advertiserâs domain name
+                var unused2 = zSr[i++]; // (ignore)
+                document.write('<a class="title" target="_new" href="' + clickURL + '">' + title + '</a> ');
+                document.write('<a class="host" target="_new" href="http://' + sitehost + '/">' + sitehost + '</a>');
+                document.write('<p class="desc">' + descr + '</p>');
+                j++;
+            }
+        }
+        // -->
+    </script>
+
+    <script type="text/javascript">
+        var strCategoryNameUrlSafe = 'finances-investments';
+        var bolIsQS = false;
+
+        if (typeof bolShowMediaNet == "undefined")
+        {
+          var bolShowMediaNet = true;
+        }
+
+        if (!bolShowMediaNet && (typeof document.referrer != 'undefined')) {
+            var objURI = parseUri(document.referrer.replace('#','?'));
+            var strRefHost = objURI.host;
+
+            if ((strRefHost.indexOf('.essortment.com') > -1 && objURI.file == 'search.htm' && (typeof objURI.queryKey.r != 'undefined')) || strRefHost.indexOf('.yahoo.com') > -1 || strRefHost.indexOf('.bing.com') > -1 || strRefHost.indexOf('.google.com') > -1) {
+                bolIsQS = true;
+
+                if (typeof objURI.queryKey.q != 'undefined') {
+                    var strRefKeywords = decodeURIComponent(objURI.queryKey.q).replace('site:essortment.com','').replace(/[^a-zA-Z0-9\s]+/g,' ').replace(/\s\s/g,' ');
+                } else if (typeof objURI.queryKey.p != 'undefined') {
+                    var strRefKeywords = decodeURIComponent(objURI.queryKey.p).replace('site:essortment.com','').replace(/[^a-zA-Z0-9\s]+/g,' ').replace(/\s\s/g,' ');
+                } else {
+                    var strRefKeywords = 'finances investments';
+                }
+
+                var strURI = parseUri(document.location.href).protocol + '://' + parseUri(document.location.href).host + parseUri(document.location.href).path;
+
+                document.write('<scr' + 'ipt type="text/javascript" src="http://xml.overture.com/d/search/p/demandmedia/js/?Partner=enom_essortment_qs_search&mkt=us&serveUrl=' + encodeURIComponent(strURI) + '&Keywords=' + encodeURIComponent(strRefKeywords) + '&outputCharEnc=utf8&keywordCharEnc=utf8&maxCount=8&adultFilter=any&cb=123abc"></scr' + 'ipt>');
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+
+
+	<div id="master">
+	<div id="header" class="flc">
+		
+		
+			<a rel="http://www.essortment.com/" class="track"><img src="http://www.essortment.com/images/clear.gif" alt="Articles - Free Online Articles on Health, Science, Education" class="sprites essortment_glassGIF logo" /></a>
+			
+		
+		
+		<div class="search">
+	<!-- BEGIN Google Search Code -->
+			<form action="/search.htm" id="cse-search-box">
+				<div>
+					<input type="hidden" name="cof" value="FORID:10" />
+					<input type="text" name="q" size="31" />
+					<input type="submit" name="sa" value="Search" />
+
+                    <input type="hidden" name="cx" value="partner-pub-6167988213978292:6447045120" />
+                    <input type="hidden" name="ie" value="UTF-8" />
+
+					<!-- <input type="hidden" name="cx" value="partner-pub-6167988213978292:2fh5d1-ontm" /> -->
+					<!-- <input type="hidden" name="ie" value="ISO-8859-1" /> -->
+				</div>
+			</form>
+			<script type='text/javascript'>doAutoSearch();</script>
+			<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en"></script>
+	<!-- END Google Search Code -->
+		</div>
+	</div><!-- /#header -->
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+		<div id="breadcrumbs">
+			<ol class="flc">
+				<li><a rel="http://www.essortment.com/" class="track">Home</a> <span class="sprites liPNG"></span></li>
+				
+				
+					<li><a href="http://www.essortment.com/finances-investments/">Finances & Investments</a> <span class="sprites liPNG"></span></li>
+				
+				<li class="last"><a href="http://www.essortment.com/way-buy-car-20078.html">What Is The Best Way To Buy A Car?</a></li>
+			</ol>
+		</div><!-- /#breadcrumbs -->
+		<div id="pageframe" class="article">
+		<div class="flc"><br/></div>
+		<div class="massiveContainer">
+			<div class="massive flc">
+				<div class="left module token">
+					<div class="mainbody flc">
+					
+						<div class="particulars flc">
+							<!--<img class="avatar" alt="" src="http://www.essortment.com/images/blank.jpg" height="64" width="64"/>-->
+								<!-- google_ad_section_start -->
+								<h1 class="articletitle">What Is The Best Way To Buy A Car?</h1>
+								<!-- google_ad_section_end -->
+								
+						</div><!-- /.particulars -->
+
+		
+
+						<div class="content">
+							<div class="leftsidebar" id="leftsidebar">
+									<!-- BEGIN POD Related Ad Links Widget -->
+									<script type="text/javascript" charset="utf-8">
+									HL_WIDGET_OPTIONS = {
+									"header": "Finances & Investments Ads",
+									"linksResultsPageUrl" : "/radlinks.htm",
+									"widgetID" : 800,
+									"customerID" : 91
+									}
+									</script>
+									<script src="http://js.hotkeys.com/js/widget/hotlinks.js" type="text/javascript" charset="utf-8" id="hotlinksScript"></script>
+									<!-- END    Related Ad Links Widget -->
+															
+								<div id="relatedestc" class="catentry"></div>
+								<script>   
+								  _DMW_loc = "relatedestc";   
+								  _DMW_title = "More Like This";   
+								  _DMW_id = "25";   
+								  _DMW_type = "VERTICAL";
+								  _dmwm.collectWidgets();
+								</script>   
+								<script>   								
+								  _DMW_loc = "trehow";   
+								  _DMW_title = "Trending Now";   
+								  _DMW_id = "46";   
+								  _DMW_type = "VERTICAL";
+								  _dmwm.collectWidgets(); 
+								</script>
+								<script>  
+								  window._DMWO = window._DMWO || {};
+								  window._DMWO.sbsehow = window._DMWO.sbsehow || {};
+									window._DMWO.sbsehow.imgSize = [100, 72];
+									window._DMWO.sbsehow.imgLoc = 'top';
+/*
+								  _DMW_loc = "bottomehow";  
+								  _DMW_title = "Popular Partner Articles";  
+								  _DMW_id = "41";  
+								  _DMW_type = "HORIZONTAL";  
+								  _dmwm.collectWidgets();
+                         */
+								</script>  
+								
+								<div id="DMINSTR" type="adimpression" data-type="adTracking"
+									name="&amp;adunit_id=pub-6167988213978292&amp;ad_unit_type=CNT&amp;ad_unit_network=GAP&amp;revenue_basis=CPC&amp;ad_position=LB&amp;revenue_tag=6206758351">																
+								<div id="GoogleAdsense160x600" class="ad google">
+								
+								
+									<script type="text/javascript"><!--
+										google_ad_client = "pub-6167988213978292";
+										google_ad_width = 160;
+										google_ad_height = 600;
+										google_ad_format = "160x600_as";
+										google_ad_channel ="6206758351, 2244068056, 2426488435";
+										if (gUtmSource.toLowerCase() == 'adwords') { google_ad_channel = google_ad_channel + ', ' + gUtmMedium; }
+										google_color_border = "FFFFFF";
+										google_color_bg = "FFFFFF";
+										google_color_link = "437AAE";
+										google_color_url = "437AAE";
+										google_color_text = "000000";//-->
+									</script>
+									<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+								
+								
+								</div><!-- /ad.google -->
+								</div><!-- /DMINSTR -->
+							</div><!-- /.leftsidebar -->
+							<div id="main-content">
+							
+							<div id="DMINSTR" type="adimpression" data-type="adTracking" name="&amp;adunit_id=pub-6167988213978292&amp;ad_unit_type=CNT&amp;ad_unit_network=GAP&amp;revenue_basis=CPC&amp;ad_position=MT&amp;revenue_tag=6206758351" >
+                                <div id="GoogleAdsense336x280" class="ad subgoogle">
+    <script type='text/javascript'>
+
+            if (bolIsQS)
+            {
+                document.write('<div class="yahoo336x280">');
+                YahooShowListings(1);
+                document.write('</div>');
+            }
+            else
+            {
+                if (strCategoryNameUrlSafe == 'arts-culture')
+                {
+                    ad_order = 1;
+                    num_ads = 4;
+                    type = 'text_image_flash';
+                    channels = '6206758351, 7461115626, 2426488435, 6499374751, 1930890257';
+                    if (gUtmSource.toLowerCase() == 'adwords') { channels = channels + ', ' + gUtmMedium; }
+                    ad_client = 'pub-6167988213978292';
+                    class_name = '';
+                    image_size = '336x280';
+                    print_google_ad(ad_order,num_ads,type,channels,ad_client,class_name);
+                }
+                else
+                {
+                    google_ad_client = "pub-6167988213978292";
+                    google_ad_width = 336;
+                    google_ad_height = 280;
+                    google_ad_format = "336x280_as";
+                    google_ad_channel = "6206758351, 7461115626, 2426488435, 1930890257";
+                    if (gUtmSource.toLowerCase() == 'adwords') { google_ad_channel = google_ad_channel + ', ' + gUtmMedium; }
+                    google_color_border = "FFFFFF";
+                    google_color_bg = "FFFFFF";
+                    google_color_link = "437AAE";
+                    google_color_url = "437AAE";
+                    google_color_text = "000000";
+                    document.write('<scr' + 'ipt type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></scr' + 'ipt>');
+                }
+            }
+
+    </script>
+                                </div>
+							</div><!-- /DMINSTR -->
+							<!-- google_ad_section_start -->
+							 <!-- Else if it is old/legacy content -->
+							
+								<h2 class="summary">What is the best way to buy a car? If you buy a used car and use this system, you will never have another car payment again and save thousands in interest.</h2>
+						
+															
+														
+							<div class="KonaBody">
+							
+							
+							
+								
+															
+							
+														
+								
+								
+								
+								<div class="articleContentPart">
+								
+									
+										<div data-cme-module="stronglinks" data-cme-module-min="0" data-cme-module-max="10">										
+											<p>
+In any financial decision, one principal must always be applied.  That principal is delayed gratification.  If you don't absolutely need whatever you are thinking about right now, then you can definitely wait for it.  This applies with any item that you are planning on buying on credit.  In this article, we will only be looking at automobiles.
+<p>
+<p>First off, you must understand that the automobile industry is hoping that you will buy new.  They make their greatest profit when you buy a new vehicle.  They would absolutely love it if you would lease a new vehicle.  That is why every car commercial you see on television is selling a lease.  They have a HUGE profit margin on a lease.  
+	
+										</div>
+																	
+									
+									
+									
+										
+																	
+								
+									
+										<p>
+<p>Now, a vehicle is a need...correct?  Absolutely.  You have to be able to motivate.  However, there is no rule that says that you have to have a new car...yet.  The plan I am about to give you will allow you to be in the car that you want in a matter of a few short years with minimal interest paid and no need to ever have a car payment again.
+<p>
+<p>1. Determine how much you can afford to spend per month.  Let us assume you can afford $250.
+
+																	
+									
+									
+									
+										
+																	
+								
+									
+										<p>2. You need to find a $3000 car that you are willing to drive.  You can easily find one that will last and be dependable.  You just have to, here is the key, delay your gratification.
+<p>3. Get a five-year loan on the $3000 car. No matter how much the payment is on the loan, pay the amount that you said you could afford every month.  At $250 per month, you should have the car paid off in about 13 months with about $250 in interest paid on the loan.
+
+																	
+									
+									
+									
+									
+										<div id="DMINSTR" type="adimpression" data-type="adTracking" name="&amp;adunit_id=pub-6167988213978292&amp;ad_unit_type=CNT&amp;ad_unit_network=GAP&amp;revenue_basis=CPC&amp;ad_position=M2&amp;revenue_tag=6206758351" >
+                                            <div id="GoogleAdsense300x250" class="ad googleinline">
+    <script type='text/javascript'>
+
+            if (bolIsQS)
+            {
+                document.write('<div class="yahoo300x250">');
+                YahooShowListings(2);
+                document.write('</div>');
+            }
+            else
+            {
+                if (strCategoryNameUrlSafe == 'arts-culture')
+                {
+                    ad_order = 2;
+                    num_ads = 4;
+                    type = 'text_image_flash';
+                    channels = '6206758351, 5990168106, 2426488435, 1936588302';
+                    if (gUtmSource.toLowerCase() == 'adwords') { channels = channels + ', ' + gUtmMedium; }
+                    ad_client = 'pub-6167988213978292';
+                    class_name = '';
+                    image_size = '300x250';
+                    print_google_ad(ad_order,num_ads,type,channels,ad_client,class_name);
+                }
+                else
+                {
+                    google_ad_client = "pub-6167988213978292";
+                    google_ad_width = 300;
+                    google_ad_height = 250;
+                    google_ad_format = "300x250_as";
+                    google_ad_channel = "6206758351, 5990168106, 2426488435";
+                    if (gUtmSource.toLowerCase() == 'adwords') { google_ad_channel = google_ad_channel + ', ' + gUtmMedium; }
+                    google_color_border = "FFFFFF";
+                    google_color_bg = "FFFFFF";
+                    google_color_link = "437AAE";
+                    google_color_url = "437AAE";
+                    google_color_text = "000000";
+                    document.write('<scr' + 'ipt type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></scr' + 'ipt>');
+                }
+            }
+
+    </script>
+                                            </div>
+										</div><!--DMINSTR-->								
+										
+										
+																	
+								
+									
+										<p>4.  You now own your car.  Continue to drive it for the rest of that year, but keep paying the $250 per month to yourself.  It doesn't matter if you put it under your pillow.  Just keep putting it aside.  You were planning on paying it to the finance company anyway, so you won't miss it.
+<p>5.  At the end of that year, you will have a car that is worth about $2000 and will have $2750 saved.  Sell the car, and buy a $4750 car.  Since you paid cash for the car, you will be able to get a discount.  That means your car will probably be worth at least $5500.
+
+																	
+									
+									
+									
+										
+																	
+								
+									
+										<p>6.  Drive that car for a year and continue to pay yourself the $250 per month.  At the end of that year, you will have a car that is worth $5000 and $3000 in cash.  Sell the car, and buy a car for $8000.  With the discount, you should be able to get a $9000 car.  Remember to continue to buy used, however.  A new car loses alot in depreciation as soon as you drive it off of the lot.
+<p>7.  Continue that process for the next year.  You now have an $8500 car and $3000 in cash.  Sell the car, and buy an $11,500 car.  It will be worth around $12,500.
+
+																	
+									
+									
+									
+										
+																	
+								
+									
+										<p>8.  You are now in the fifth year of the process.  At the end of the year, you will have a $12,000 car and $3000 in cash.  Go buy a $15,000 car.
+<p>
+<p>So, let us compare.  Using a traditional purchase plan five years ago, you would have been able to buy an $11,000 car for $250 per month with 10% interest.  You would have paid $4110 in interest.  The car would now be worth approximately $5000.  In order to be in a better vehicle than you started with, you will need to go get another loan and pay more interest.
+<p>
+<p>Using our system, you paid less than $400 in interest on the initial loan.  You now are able to pay cash on a $15,000 car.  If you continue to buy used, you won't have to pay the depreciation.  So, you can continue to pay yourself the $250 per month and move up in car regularly or save the $250 per month and stay in about the same level of car forever.
+<p>
+<p>Isn't delayed gratification fun?</p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p>
+																	
+									
+									
+									
+										
+																	
+								
+								</div>
+								<!-- google_ad_section_end -->
+								
+								<div id="divPhotoCredit"></div>
+									
+
+		
+								<div style="display: block">
+
+
+                                
+                        <div id="incite-bottom-frame">       
+                            <h4 class="DM53-widget-header DM53-widget-header1" style="clear: both; line-height: 1.4em; border-bottom: 3px solid #DDDDDD; font-size: 16px; font-weight:400; color:#333333; text-shadow: 0 2px 3px #BBBBBB;">Trending Now</h4>
+                        <script class="herbie-script" data-id="5">  
+                            (function(){
+                                var insEl = document.getElementsByTagName("script")[0],
+                                    script = document.createElement("script");
+                                script.src="http://scripts.demandmedia.com/herbie/b101.js";
+                                script.async = true;
+                                insEl.parentNode.insertBefore(script,insEl);
+                            }());
+ 
+                        </script>
+                       
+                        </div>
+                       
+                                
+
+
+								<div id="bottomehow"></div>	
+                                <!-- vestigial DIV -->
+								</div> 							
+							</div><!-- /.KonaBody -->
+						
+						</div>
+
+						</div><!-- /.content -->
+
+					</div><!-- /.mainbody -->
+				</div><!-- /.left.module -->
+
+				<div class="right module" id="sidebar">
+					<div class="ad square">
+						<!-- BEGIN STANDARD TAG - 300 x 250 - Essortment: Run-of-site - DO NOT MODIFY -->
+						<!-- BEGIN 300 x 250 - Essortment: Run-of-site - DO NOT MODIFY -->
+						<script type="text/javascript">
+							ord=Math.floor(Math.random()*10000000000000000);
+							document.write(modify_dart_tag('<script language="JavaScript" src="http://ad.doubleclick.net/adj/dmd.essortment/;tile=1;dcopt=ist;%dx%;sz=300x250;ord=' + ord + '?" type="text/javascript"><\/script>'));
+						</script>
+						<noscript>
+							<a href="http://ad.doubleclick.net/jump/dmd.essortment/;tile=1;sz=300x250;ord=123456789?" target="_blank"><img src="http://ad.doubleclick.net/ad/dmd.essortment/;tile=1;sz=300x250;ord=123456789?" width="300" height="250" border="0" alt=""></a>
+						</noscript>
+
+						<!-- END 300 x 250 - Essortment: Run-of-site -->
+						
+						<!-- END TAG -->
+					</div><!-- /.ad.square -->
+
+					<div id="trehowed" class="catentry"></div>
+			
+					<!-- div class="catentry">
+						<h2 class="entryheader smaller">Popular Articles</h2>
+						<ul class="tracked trackedID-2 bullet normal">
+						
+							
+							<li class="flc"><span class="sprites liPNG"></span> <span><a href="http://www.essortment.com/times-buy-cars-65970.html">Best times to buy cars</a></span></li>
+							
+						
+							
+							<li class="flc"><span class="sprites liPNG"></span> <span><a href="http://www.essortment.com/retirement-questions-way-handle-ira-rollover-19396.html">Retirement Questions: What Is The Best Way To Handle An Ira Rollover?</a></span></li>
+							
+						
+							
+							<li class="flc"><span class="sprites liPNG"></span> <span><a href="http://www.essortment.com/buy-first-car-20080.html">How To Buy Your First Car</a></span></li>
+							
+						
+							
+							<li class="flc"><span class="sprites liPNG"></span> <span><a href="http://www.essortment.com/used-car-buying-tips-20077.html">Used Car Buying Tips</a></span></li>
+							
+						
+							
+							<li class="flc"><span class="sprites liPNG"></span> <span><a href="http://www.essortment.com/buy-cheap-used-honda-accord-20214.html">How To Buy A Cheap Used Honda Accord</a></span></li>
+							
+						
+						</ul>
+					</div--> <!-- /.catentry -->
+
+					
+					<div class="catentry">
+						<h2 class="entryheader smaller">More Essortment Articles</h2>
+						<ul class="tracked trackedID-4 bullet normal">
+						
+							
+							<li class="flc"><span class="sprites liPNG"></span> <span><a href="http://www.essortment.com/used-car-buying-car-lots-salesmen-vs-auto-classifieds-20067.html">Used Car Buying: Car Lots And Salesmen Vs Auto Classifieds</a></span></li>
+							
+						
+							
+							<li class="flc"><span class="sprites liPNG"></span> <span><a href="http://www.essortment.com/interest-good-thing-17529.html">Why Is Interest A Good Thing?</a></span></li>
+							
+						
+							
+							<li class="flc"><span class="sprites liPNG"></span> <span><a href="http://www.essortment.com/guide-paroli-system-17478.html">Guide To The Paroli System</a></span></li>
+							
+						
+							
+							<li class="flc"><span class="sprites liPNG"></span> <span><a href="http://www.essortment.com/look-buying-used-honda-accord-model-years-92-95-20215.html">What To Look For When Buying A Used Honda Accord Model Years 92 To 95</a></span></li>
+							
+						
+							
+							<li class="flc"><span class="sprites liPNG"></span> <span><a href="http://www.essortment.com/harder-car-loan-used-car-20197.html">Is It Harder To Get A Car Loan For A Used Car?</a></span></li>
+							
+						
+						</ul>
+					</div><!-- /.catentry -->
+																		
+				</div><!-- /.right.module -->
+			</div><!-- /.massive -->
+			</div><!-- /.massiveContainer -->
+
+
+
+<div id="bottom">
+	<div class="tabs">
+		<ul class="controls flc">
+			<li><div class="spritesRepeatX controls02PNG a"><span><span>Popular Articles</span></span></span></div></li>
+		</ul>
+		<div class="tabmaster">
+			<div class="tabwrap">
+				<!-- Popular Articles -->
+				<div class="tabentry" id="popular-articles">
+					<div class="slide-master flc">
+						<div class="viewport2">
+							<img alt="" src="http://www.essortment.com/images/finances-investments.jpg" height="93" width="144"/>
+							<ul class="left">
+								
+																																		
+										<li><a href="http://www.essortment.com/buy-non-owners-car-insurance-19033.html">How to Buy Non-Owner's Car Insurance</a></i>
+										
+																		
+																																		
+										<li><a href="http://www.essortment.com/saving-home-owner-insurance-rates-19250.html">Saving On Home Owner Insurance Rates</a></i>
+										
+																		
+																																		
+										<li><a href="http://www.essortment.com/buy-cheap-used-honda-civic-20213.html">How To Buy A Cheap Used Honda Civic</a></i>
+										
+																		
+																																		
+										<li><a href="http://www.essortment.com/ebay-tips-buying-cars-auctions-20071.html">Ebay Tips: Buying Cars In Auctions</a></i>
+										
+																		
+																																		
+										<li><a href="http://www.essortment.com/donate-car-utah-18699.html">How to Donate a Car in Utah</a></i>
+																														
+											</ul><ul class="left">
+										
+																		
+																									
+										<li><a href="http://www.essortment.com/vital-down-payment-purchasing-house-20162.html">Is It Vital To Have A Down Payment When Purchasing A House?</a></i>
+																		
+																									
+										<li><a href="http://www.essortment.com/ways-donate-cars-18664.html">Best Ways to Donate Cars</a></i>
+																		
+																									
+										<li><a href="http://www.essortment.com/check-card-17560.html">What Is A Check Card?</a></i>
+																		
+																									
+										<li><a href="http://www.essortment.com/car-buying-info-20081.html">Car Buying Info</a></i>
+																		
+								</ul>
+						</div><!-- /.viewport -->
+					</div><!-- /.slide-master -->
+				</div><!-- /.tabentry -->
+			</div><!-- /.tabwrap -->
+		</div><!-- /.tabmaster -->
+	</div><!-- /.tabs -->
+</div><!-- /#bottom -->
+
+
+
+
+			<div class="ad banner">
+				<!-- BEGIN STANDARD TAG - 728 x 90 - Essortment: Run-of-site - DO NOT MODIFY -->
+				<script type="text/javascript">
+				//ord=Math.random()*10000000000000000;
+				document.write(modify_dart_tag('<script language="JavaScript" src="http://ad.doubleclick.net/adj/dmd.essortment/;tile=2;%dx%;sz=728x90;ord=' + ord + '?" type="text/javascript"><\/script>'));
+				</script><noscript><a href="http://ad.doubleclick.net/jump/dmd.essortment/;tile=2;sz=728x90;ord=123456789?" target="_blank"><img src="http://ad.doubleclick.net/ad/dmd.essortment/;tile=2;sz=728x90;ord=123456789?" width="728" height="90" border="0" alt=""></a></noscript>
+				<!-- END TAG -->
+			</div><!-- /.ad.banner -->
+			
+			<!-- Kontera ContentLink -->
+			<script type="text/javascript">
+			var dc_UnitID = 14;
+			var dc_PublisherID = 7763;
+			var dc_AdLinkColor = 'blue';
+			var dc_adprod='ADL';
+			var dc_startInterval = 30000;
+			var dc_flowMode = 4;
+			</script>
+			<script type="text/javascript" src="http://kona.kontera.com/javascript/lib/KonaLibInline.js"></script>
+			<!-- Kontera ContentLink -->
+
+		</div><!-- /#pageframe.home -->	
+	</div><!-- /#master -->
+	<script type="text/javascript">
+		request_google_ads();
+	</script>
+    <script type="text/javascript">
+        if ('referrer' in document && (typeof console != "undefined")) {
+            console.log('referrer: ' + document.referrer);
+        }
+    </script>
+
+
+</div><!-- /.massive -->
+<div id="footer" class="module flc">
+	<p>
+		
+			<a id="_bapw-link"><img id="_bapw-icon" style="display:inline !important;vertical-align:middle !important"/>AdChoices</a> |
+			<a class="track" rel="http://www.essortment.com/privacy.htm">Privacy Policy</a> |
+			<a class="track" rel="http://www.essortment.com/disclaimer.htm">Terms of Use</a>
+		
+	</p>
+</div><!-- /#footer.module -->
+
+<div id="legals">
+	<p>&copy; Demand Media 2011</p>
+</div><!-- /#legals -->
+
+			<!-- Google Analytics -->
+			<script type="text/javascript" src="http://opt-n.net/adj/portal.aspx?cat=main"></script>
+			<script type="text/javascript">insertBot();</script>
+			<script type="text/javascript" src="http://www.google-analytics.com/urchin.js">
+			</script>
+			<script type="text/javascript">
+			_uacct = "UA-2130855-11";
+			_udn="essortment.com";
+			urchinTracker();
+			</script>
+			<!-- end Google Analytics -->
+			<!-- Begin comScore Tag -->
+			<script type="text/javascript">
+			document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));
+			</script>
+			<script type="text/javascript">
+			COMSCORE.beacon({ c1:2, c2:6036385, c3:"", c4:"", c5:"", c6:"", c15:"" });
+			</script>
+			<noscript>
+			<img src="http://b.scorecardresearch.com/b?c1=2&c2=6036385&c3=&c4=&c5=&c6=&c15=&cv=1.3&cj=1" style="display:none" width="0" height="0" alt="" />
+			</noscript>
+			<!-- End comScore Tag --> 
+
+			<!-- Casale Media 2008 (C) -->
+			<!-- Ad Format: Pop Under -->
+			<!-- Domain(s): essortment.com -->
+			<script type="text/javascript"><!--
+			if (!IsAdWords()) {
+			    var casaleD=new Date();var casaleR=(casaleD.getTime()%8673806982)+Math.random();
+			    var casaleU=escape('essortment.com');
+			    var casaleHost=' type="text/javascript" src="http://as.casalemedia.com/s?s=';
+			    document.write('<scr'+'ipt'+casaleHost+'94844&amp;u=');
+			    document.write(casaleU+'&amp;f=1&amp;id='+casaleR+'"><\/scr'+'ipt>');
+			}
+			//--></script>
+			<!-- Casale Media 2008 (C) -->
+
+			<script src="http://vs.dmtracker.com/tags/vsboone.js"></script>    
+			<script src="http://i.lsimg.net/ls_images/vs.js" type="text/javascript"></script>
+			<noscript><img src="http://vs.dmtracker.com/images/zig.gif?Log=1"/></noscript>
+			</div><!-- /#pageframe.home -->				
+		</div><!-- /#master -->
+		<script type="text/javascript">
+			request_google_ads();
+		</script>
+		
+        <script type="text/javascript">
+        if (!IsAdWords()) {
+            var infolinks_pid = 1496668;
+            var infolinks_wsid = 1;
+            document.write('<scr'+'ipt type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></scr'+'ipt>');
+        }
+        </script>
+
+		<script type="text/javascript" src="http://www.essortment.com/common.js"></script>
+		<script type="text/javascript">
+			(function(){var e=document,b,a=(e.location.protocol=="https:"?"https":"http"),c=(a=="https"?"https://info.evidon.com/c/betrad/pub/":"http://cdn.betrad.com/pub/");e.getElementById("_bapw-icon").src=c+"icon1.png";
+			e.getElementById("_bapw-link").onclick=function(){var f=this;function d(i,l){var j=e.getElementsByTagName("head")[0]||e.documentElement,h=false,g=e.createElement("script");function k(){g.onload=g.onreadystatechange=null;
+			j.removeChild(g);l()}g.src=i;g.onreadystatechange=function(){if(!h&&(this.readyState=="loaded"||this.readyState=="complete")){h=true;k()}};g.onload=k;j.insertBefore(g,j.firstChild)}this.onclick="return false";
+			d(a+"://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",function(){d(c+"pub1.js",function(){BAPW.i(f,{pid:46,ocid:374},false)})});return false};b=new Image();b.src=a+"://l.betrad.com/pub/p.gif?pid=46&ocid=374&ii=1&r="+Math.random()}());
+		</script>
+	</body>
+</html>
+

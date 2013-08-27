@@ -1,0 +1,822 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-US" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head"><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /><meta content="text/javascript" http-equiv="Content-Script-Type" /><meta content="text/css" http-equiv="Content-Style-Type" /><meta id="MetaDescription" name="DESCRIPTION" content="Where Southern California Car Culture meets Modern Mopar Muscle" /><meta id="MetaKeywords" name="KEYWORDS" content="Home" /><meta id="MetaCopyright" name="COPYRIGHT" content="Copyright 2006-2012 by SoCalLX" /><meta id="MetaAuthor" name="AUTHOR" content="SoCalLX" /><meta name="RESOURCE-TYPE" content="DOCUMENT" /><meta name="DISTRIBUTION" content="GLOBAL" /><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW" /><meta name="REVISIT-AFTER" content="1 DAYS" /><meta name="RATING" content="GENERAL" /><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" /><style id="StylePlaceholder" type="text/css"></style><link id="APortals__default_" rel="stylesheet" type="text/css" href="/Portals/_default/default.css" /><link id="APortals__default_Containers_Black_T2_" rel="stylesheet" type="text/css" href="/Portals/_default/Containers/Black_T2/container.css" /><link id="APortals_0_" rel="stylesheet" type="text/css" href="/Portals/0/portal.css" /><link id="style" rel="stylesheet" type="text/css" href="/Portals/_default/Skins/Black_T2/style.css" /><!--[if IE 6]><link id="styleIE6" rel="stylesheet" type="text/css" href="/Portals/_default/Skins/Black_T2/style.ie6.css" /><![endif]--><!--[if IE 7]><link id="styleIE7" rel="stylesheet" type="text/css" href="/Portals/_default/Skins/Black_T2/style.ie7.css" /><![endif]--><!--[if IE 8]><link id="styleIE8" rel="stylesheet" type="text/css" href="/Portals/_default/Skins/Black_T2/style.ie8.css" /><![endif]--><script type="text/javascript" src="/Resources/Shared/Scripts/jquery/jquery.min.js" ></script><link rel="image_src" href="http://www.socallx.com/Portals/0/Images/SFOLX-Icon.jpg" />
+<meta property="og:title" content="SoCalLx.com" />
+<meta property="og:description" content="SoCalLx.com - Where Southern California Car Culture Meets Modern Mopar Muscle" />
+<meta property="og:image" content="http://www.socallx.com/Portals/0/Images/SFOLX-Icon.jpg" />
+<title>
+	SoCalLx.com - Where Southern California Car Culture meets Modern Mopar Muscle
+</title></head>
+<body id="Body">
+    <form name="Form" method="post" action="/default.aspx" id="Form" enctype="multipart/form-data">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2NDIyOTEzMjkPZBYGZg8WAh4EVGV4dAV5PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAxLjAgVHJhbnNpdGlvbmFsLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL1RSL3hodG1sMS9EVEQveGh0bWwxLXRyYW5zaXRpb25hbC5kdGQiPmQCAQ9kFg4CBA8WAh4HVmlzaWJsZWhkAgUPFgIeB2NvbnRlbnQFP1doZXJlIFNvdXRoZXJuIENhbGlmb3JuaWEgQ2FyIEN1bHR1cmUgbWVldHMgTW9kZXJuIE1vcGFyIE11c2NsZWQCBg8WAh8CBQRIb21lZAIHDxYCHwIFHkNvcHlyaWdodCAyMDA2LTIwMTIgYnkgU29DYWxMWGQCCA8WBB8CZB8BaGQCCQ8WAh8CBQdTb0NhbExYZAIMDxYCHwIFDUlOREVYLCBGT0xMT1dkAgIPZBYCAgEPZBYEAgQPZBYCZg9kFixmD2QWAgIBD2QWAmYPFgIfAWgWAmYPZBYCZg9kFgYCAw8QZGQWAGQCDw9kFgJmDw8WBh4ISW1hZ2VVcmwFFC9pbWFnZXMvY29sbGFwc2UuZ2lmHg1BbHRlcm5hdGVUZXh0BQhNaW5pbWl6ZR4HVG9vbFRpcAUITWluaW1pemVkZAIRD2QWAgIBD2QWAgIBD2QWEAIBDxBkZBYAZAIFDxBkZBYAZAIHDxBkZBYAZAILDxBkZBYAZAIPDxBkZBYAZAIVDxBkZBYAZAIZDxBkZBYBZmQCHQ8QZGQWAGQCAg9kFgJmDw8WBh4IQ3NzQ2xhc3MFC1VTRVJfb2JqZWN0HgRfIVNCAgIfAWhkZAIDD2QWAmYPDxYGHwYFDExPR0lOX29iamVjdB8ABQVMb2dpbh8HAgJkZAIED2QWAmYPDxYEHwUFB1NvQ2FsTFgeC05hdmlnYXRlVXJsBSBodHRwOi8vd3d3LnNvY2FsbHguY29tL0hvbWUuYXNweGRkAgUPZBYCZg8WAh4FY2xhc3MFKkRubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTcxNxYCAgEPZBYMAgEPZBYCAgEPD2QWAh8JBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAw8PFgIfAWhkZAIED2QWAmYPDxYCHwFoZGQCBQ9kFgJmDw8WAh8BaGRkAgcPZBYCZg8PFgIfAWhkZAIID2QWAmYPDxYCHwFoZGQCBg9kFghmDxYCHwAFsQg8ZGl2IGNsYXNzPSJDeWJlci1uYXYiPjxkaXYgY2xhc3M9ImwiPjwvZGl2PjxkaXYgY2xhc3M9InIiPjwvZGl2PjxkaXYgY2xhc3M9IkN5YmVyLW5hdi1jZW50ZXIiPjx1bCBjbGFzcz0iQ3liZXItbWVudSI+DQo8bGk+PGEgaHJlZj0iaHR0cDovL3d3dy5zb2NhbGx4LmNvbS9Ib21lLmFzcHgiIGNsYXNzPSIgYWN0aXZlIj48c3BhbiBjbGFzcz0ibCI+PC9zcGFuPjxzcGFuIGNsYXNzPSJyIj48L3NwYW4+PHNwYW4gY2xhc3M9InQiPkhvbWU8L3NwYW4+PC9hPjwvbGk+PGxpPjxhIGhyZWY9Imh0dHA6Ly93d3cuc29jYWxseC5jb20vQ2FsZW5kYXIuYXNweCI+PHNwYW4gY2xhc3M9ImwiPjwvc3Bhbj48c3BhbiBjbGFzcz0iciI+PC9zcGFuPjxzcGFuIGNsYXNzPSJ0Ij5DYWxlbmRhcjwvc3Bhbj48L2E+PC9saT48bGk+PGEgaHJlZj0iaHR0cDovL3d3dy5zb2NhbGx4LmNvbS9DaGFyaXRpZXMuYXNweCI+PHNwYW4gY2xhc3M9ImwiPjwvc3Bhbj48c3BhbiBjbGFzcz0iciI+PC9zcGFuPjxzcGFuIGNsYXNzPSJ0Ij5DaGFyaXRpZXM8L3NwYW4+PC9hPjwvbGk+PGxpPjxhIGhyZWY9Imh0dHA6Ly93d3cuc29jYWxseC5jb20vQXBwYXJlbC5hc3B4Ij48c3BhbiBjbGFzcz0ibCI+PC9zcGFuPjxzcGFuIGNsYXNzPSJyIj48L3NwYW4+PHNwYW4gY2xhc3M9InQiPkFwcGFyZWw8L3NwYW4+PC9hPjwvbGk+PGxpPjxhIGhyZWY9Imh0dHA6Ly93d3cuc29jYWxseC5jb20vU3BvbnNvcnMuYXNweCI+PHNwYW4gY2xhc3M9ImwiPjwvc3Bhbj48c3BhbiBjbGFzcz0iciI+PC9zcGFuPjxzcGFuIGNsYXNzPSJ0Ij5TcG9uc29yczwvc3Bhbj48L2E+PC9saT48bGk+PGEgaHJlZj0iaHR0cDovL3d3dy5zb2NhbGx4LmNvbS9TcHJpbmdGZXN0aXZhbC5hc3B4Ij48c3BhbiBjbGFzcz0ibCI+PC9zcGFuPjxzcGFuIGNsYXNzPSJyIj48L3NwYW4+PHNwYW4gY2xhc3M9InQiPlNwcmluZyBGZXN0aXZhbDwvc3Bhbj48L2E+PHVsPjxsaT48YSBocmVmPSJodHRwOi8vd3d3LnNvY2FsbHguY29tL1NwcmluZ0Zlc3RpdmFsLzIwMTNTRlN0YXRpc3RpY3MuYXNweCI+MjAxMyBTRiBTdGF0aXN0aWNzPC9hPjwvbGk+PC91bD48L2xpPmQCAg8PFgIfAWhkFgJmDw8WAh8ABQVMb2dpbmRkAgYPDxYCHwFoZBYCZg8PFgIfAWhkZAIIDxYCHwAFETwvdWw+PC9kaXY+PC9kaXY+ZAIHDxYCHwkFF0Jhbm5lclBhbmUgRE5ORW1wdHlQYW5lZAIJD2QWBGYPZBYGAgEPEA8WCh8GBQZzZWFyY2gfAAUDV2ViHwUFEUdvb2dsZSBXZWIgU2VhcmNoHwcCAh8BaGRkZGQCAw8QDxYKHwYFBnNlYXJjaB8ABQRTaXRlHwUFC1NpdGUgU2VhcmNoHwcCAh8BaGRkZGQCBw8PFgYfBgUGc2VhcmNoHwAFBlNlYXJjaB8HAgJkZAICD2QWBGYPDxYEHwQFFlNlbGVjdCB0aGUgc2VhcmNoIHR5cGUfBQUWU2VsZWN0IHRoZSBzZWFyY2ggdHlwZWRkAgIPDxYGHwYFBnNlYXJjaB8ABQZTZWFyY2gfBwICZGQCCg8WAh8JBRhDb250ZW50UGFuZSBETk5FbXB0eVBhbmVkAgsPFgIfCQUYVG9wTGVmdFBhbmUgRE5ORW1wdHlQYW5lZAIMDxYCHwkFGVRvcFJpZ2h0UGFuZSBETk5FbXB0eVBhbmVkAg0PZBYCZg8WAh8JBSpEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS00MDIWAgIBD2QWDAIBDxYCHwkFDEROTkFsaWdubGVmdBYCAgEPD2QWAh8JBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAw8PFgIfAWhkZAIED2QWAmYPDxYCHwFoZGQCBQ9kFgJmDw8WAh8BaGRkAgcPZBYCZg8PFgIfAWhkZAIID2QWAmYPDxYCHwFoZGQCDg8WAh8JBRVNaWRQYW5lMiBETk5FbXB0eVBhbmVkAg8PZBYCZg8WAh8JBSpEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MzMWAgIBD2QWDAIBD2QWAgIBDw9kFgIfCQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgMPDxYCHwFoZGQCBA9kFgJmDw8WAh8BaGRkAgUPZBYCZg8PFgIfAWhkZAIHD2QWAmYPDxYCHwFoZGQCCA9kFgJmDw8WAh8BaGRkAhAPFgIfCQUVTWlkUGFuZTQgRE5ORW1wdHlQYW5lZAIRDxYCHwkFFU1pZFBhbmU1IEROTkVtcHR5UGFuZWQCEg8WAh8JBRVNaWRQYW5lNiBETk5FbXB0eVBhbmVkAhMPFgIfCQUVTWlkUGFuZTcgRE5ORW1wdHlQYW5lZAIUDxYCHwkFG0JvdHRvbUxlZnRQYW5lIEROTkVtcHR5UGFuZWQCFQ8WAh8JBRxCb3R0b21SaWdodFBhbmUgRE5ORW1wdHlQYW5lZAIWD2QWBGYPFgIfCQUqRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNzE5FgICAQ9kFgwCAQ9kFgICAQ8PZBYCHwkFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIDDw8WAh8BaGRkAgQPZBYCZg8PFgIfAWhkZAIFD2QWAmYPDxYCHwFoZGQCBw9kFgJmDw8WAh8BaGRkAggPZBYCZg8PFgIfAWhkZAIBDxYCHwkFKkRubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTQzMBYCAgEPZBYMAgEPFgIfCQUMRE5OQWxpZ25sZWZ0FgICAQ8PZBYCHwkFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIDDw8WAh8BaGRkAgQPZBYCZg8PFgIfAWhkZAIFD2QWAmYPDxYCHwFoZGQCBw9kFgJmDw8WAh8BaGRkAggPZBYCZg8PFgIfAWhkZAIbD2QWAmYPFgIfCQUqRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNzY0FgICAQ9kFgwCAQ9kFgICAQ8PZBYCHwkFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIDDw8WAh8BaGRkAgQPZBYCZg8PFgIfAWhkZAIFD2QWAmYPDxYCHwFoZGQCBw9kFgJmDw8WAh8BaGRkAggPZBYCZg8PFgIfAWhkZAIKDxQrAAIUKwADZGRkZGRkf7Xb1frh8GUzyr49dfgB4rLIAdQ=" />
+</div>
+
+
+<script src="/js/dnncore.js" type="text/javascript"></script>
+<script src="/Portals/_default/Skins/Black_T2/script.js" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=nMrg8F5PawIMNsNe64aRYeqv38zyVhNZBhrPG-tCgGqTsfiIKKxZzYAEYCUS8XbPQVGo1TIZU2ZwQOXBeDJFh3tO86WBFmd9qM-8xM2ZJToALaRuEE0mjG5_AUTIbQu3RfljL21CRYtCCjMNIbtC1JtrTg81&amp;t=ffffffffacb28bee" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWBgLv5dDNAwK1woeYAQLDqsLUAgLs1ZiABAL+5PGyAgLR9YnYDlWEbgWDBH3T55Iy5pwfFOyQW4Io" />
+</div>
+        
+        
+<script type="text/javascript" src="/Portals/_default/Skins/Black_T2/reflection.js"></script>
+
+<div align="center">
+<table id="TemplateTableOpen1200" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td id="ControlPanel"></td>
+  </tr>
+  <tr>
+    <td id="OpenBodyTD">
+    
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="28" class="OpenBody_TL">&nbsp;</td>
+        <td class="OpenBody_T">          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td align="left" id="DateTD"><span id="dnn_dnnCURRENTDATE_lblDate" class="DATE_object">Tuesday, August 27, 2013</span>
+</td>
+              <td align="right" id="LogRegTD"><a id="dnn_dnnLOGIN_cmdLogin" class="LOGIN_object" href="javascript:__doPostBack('dnn$dnnLOGIN$cmdLogin','')">Login</a></td>
+            </tr>
+          </table>
+</td>
+        <td width="29" class="OpenBody_TR">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="28" class="OpenBody_L"><a href="http://www.cyberspacesolutionsinc.com" target="_blank"><img
+        src="/Portals/_default/Skins/Black_T2/images/spacer.gif"
+        alt="www.cyberspacesolutionsinc.com" width="28" height="1" border="0" /></a></td>
+        <td class="OpenBody_M">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td id="HeaderTD">
+                       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="left" valign="top"><a id="dnn_dnnLOGO_hypLogo" title="SoCalLX" href="http://www.socallx.com/Home.aspx"></a></td>
+                          <td id="dnn_HeaderPane" align="left" valign="top" class="HeaderPane"><div class="DnnModule DnnModule-DNN_HTML DnnModule-717"><a name="717"></a>
+
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="13" height="13" class="BlackGlass_tl"></td>
+<td class="BlackGlass_t"></td>
+<td width="13" height="13" class="BlackGlass_tr"></td>
+</tr>
+<tr>
+<td width="13" class="BlackGlass_l">&nbsp;</td>
+<td class="BlackGlass_m">
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td id="dnn_ctr717_ContentPane" align="left"><!-- Start_Module_717 --><div id="dnn_ctr717_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr717_HtmlModule_lblContent" class="Normal">
+	<table align="center">
+    <tbody>
+        <tr>
+            <td class="style1" valign="middle" width="100%" nowrap="nowrap" align="center" style="text-align: center; width: 750px; height: 100px"><img class="style3" border="0" name="slide" alt="Loading images....one moment please...." style="filter: blendTrans(duration=1)" src="/Portals/0/images/blank.gif" /></a> <script language="JavaScript1.1">
+			<!--
+				var slidespeed=4000;		//specify interval between slide (in mili seconds)
+				var slidelinks=new Array("/gallery/default.aspx") ;  //specify corresponding links
+				var newwindow=0 ; 	//open links in new window? 1=yes, 0=no
+				var numimages=4 ;
+				var imageholder=new Array() ;
+				var ie=document.all ;
+				var tmpnum ;
+				// Load image file names into array.
+				var slideimages=new Array() ;
+				for (i=0;i<numimages;i++)
+				{
+					if (i < 10) 
+						tmpnum = "0" + i
+					else 
+						tmpnum = i ;
+
+					slideimages[i]="/portals/0/Banner-" + tmpnum + ".jpg" ;
+					slidelinks[i]="/" ;
+				}
+
+				// Sort array in random order.
+				fisherYates(slideimages);
+
+
+				for (i=0;i<slideimages.length;i++)
+				{
+					imageholder[i]=new Image()
+					imageholder[i].src=slideimages[i]
+				}
+			
+				function gotoshow()
+				{
+					if (newwindow)
+						window.open(slidelinks[whichlink])
+					else
+						window.location=slidelinks[whichlink] ;
+				}
+
+				function fisherYates ( myArray ) 
+				{
+					var i = myArray.length;
+					if ( i == 0 ) return false;
+					while ( --i ) 
+					{
+				    	var j = Math.floor( Math.random() * ( i + 1 ) );
+				    	var tempi = myArray[i];
+				     	var tempj = myArray[j];
+				     	myArray[i] = tempj;
+				     	myArray[j] = tempi;
+				   }
+				}			
+			//-->
+			</script><script language="JavaScript1.1">
+			<!--
+				var whichlink=0 ;
+				var whichimage=0 ;
+				var blenddelay=(ie)? document.images.slide.filters[0].duration*500 : 0 ;
+				function slideit()
+				{
+					if (!document.images) return ;
+					if (ie) document.images.slide.filters[0].apply() ;
+					document.images.slide.src=imageholder[whichimage].src ;
+					if (ie) document.images.slide.filters[0].play() ;
+					whichlink=whichimage ;
+					whichimage=(whichimage<slideimages.length-1)? whichimage+1 : 0 ;
+					setTimeout("slideit()",slidespeed+blenddelay) ;
+				}
+
+				slideit() ;
+			//-->
+			</script></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div><!-- End_Module_717 --></td>
+
+  </tr>
+  <tr>
+    <td width="100%" align="right">
+<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" ></td>
+    <td align="right" ></td>
+  </tr>
+</table>
+    </td>
+  </tr>
+</table>
+</td>
+<td width="13" class="BlackGlass_r">&nbsp;</td>
+</tr>
+<tr>
+<td width="13" height="13" class="BlackGlass_bl"></td>
+<td class="BlackGlass_b"></td>
+<td width="13" height="13" class="BlackGlass_br"></td>
+</tr>
+</table>
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="10" height="5"></td>
+</tr>
+</table>
+</div></td>
+
+                       </tr>
+                       </table>
+           </td>
+          </tr>
+          <tr>
+            <td id="MenuTD">
+                    <table cellpadding="0" align="center" cellspacing="0" border="0" class="FullWidth">
+                    <tr>
+                    <td id="Menu_L"><img
+        src="/Portals/_default/Skins/Black_T2/images/spacer.gif"
+        alt="www.cyberspacesolutionsinc.com" width="28" height="46" border="0" /></td>
+                    <td align="center" id="Menu_M">
+<div class="Cyber-nav"><div class="l"></div><div class="r"></div><div class="Cyber-nav-center"><ul class="Cyber-menu">
+<li><a href="http://www.socallx.com/Home.aspx" class=" active"><span class="l"></span><span class="r"></span><span class="t">Home</span></a></li><li><a href="http://www.socallx.com/Calendar.aspx"><span class="l"></span><span class="r"></span><span class="t">Calendar</span></a></li><li><a href="http://www.socallx.com/Charities.aspx"><span class="l"></span><span class="r"></span><span class="t">Charities</span></a></li><li><a href="http://www.socallx.com/Apparel.aspx"><span class="l"></span><span class="r"></span><span class="t">Apparel</span></a></li><li><a href="http://www.socallx.com/Sponsors.aspx"><span class="l"></span><span class="r"></span><span class="t">Sponsors</span></a></li><li><a href="http://www.socallx.com/SpringFestival.aspx"><span class="l"></span><span class="r"></span><span class="t">Spring Festival</span></a><ul><li><a href="http://www.socallx.com/SpringFestival/2013SFStatistics.aspx">2013 SF Statistics</a></li></ul></li>
+	
+	
+	
+	</ul></div></div>                    </td>
+                    <td id="Menu_R">&nbsp;</td>
+                    </tr>
+                    </table>
+            </td>
+          </tr>
+          <tr>
+            <td id="BannerTD">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                    <td id="dnn_BannerPane" valign="top" class="BannerPane DNNEmptyPane"></td>
+
+                    </tr>
+                    </table>
+            </td>
+          </tr>
+          <tr>
+            <td id="BreadSearchTD">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td id="BreadTD"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td height="41" width="11"><img
+        src="/Portals/_default/Skins/Black_T2/images/bread-bg-l.png"
+        alt="www.cyberspacesolutionsinc.com" width="11" height="41" border="0" /></td>
+        <td align="left" id="UtilityTD"><!-- AddThis Button BEGIN -->
+			<script type="text/javascript"> 
+			var addthis_config = 
+			{ 
+			ui_508_compliant: true,
+			ui_cobrand: "www.SoCalLX.com",
+			} 
+			</script> 
+		
+		<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b368dd4381fac6c"><img alt="Bookmark and Share" width="119" height="12" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" src="/Portals/_default/Skins/Black_T2/images/share.png" /></a>
+          <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b368dd4381fac6c"></script> <!-- AddThis Button END --></td>                                <td align="left" id="BreadcrumbsTD"><span class="BREADCRUMBS_object">Your Current Location&nbsp;&nbsp;&nbsp;&raquo;&nbsp;&nbsp;&nbsp;
+                                <span id="dnn_dnnBREADCRUMB_lblBreadCrumb"><a href="http://www.socallx.com/Home.aspx" class="BREADCRUMBS_object">Home</a></span>
+</span></td>
+                              </tr>
+                            </table>
+</td>
+                            <td class="SearchTD" onmouseover="this.className='SearchTDHover'" onmouseout="this.className='SearchTD'" ><span id="dnn_dnnSEARCH_ClassicSearch">
+  
+  
+  <input name="dnn$dnnSEARCH$txtSearch" type="text" maxlength="255" size="20" id="dnn_dnnSEARCH_txtSearch" class="NormalTextBox" onkeydown="return __dnn_KeyDown('13', 'javascript:__doPostBack(%27dnn$dnnSEARCH$cmdSearch%27,%27%27)', event);" />&nbsp;
+  <a id="dnn_dnnSEARCH_cmdSearch" class="search" href="javascript:__doPostBack('dnn$dnnSEARCH$cmdSearch','')">Search</a>
+</span>
+
+
+</td>
+                          </tr>
+                        </table>
+             </td>
+          </tr>
+          <tr>
+            <td valign="top" id="ContentTD">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td id="dnn_ContentPane" valign="top" class="ContentPane DNNEmptyPane"></td>
+
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td id="dnn_TopLeftPane" valign="top" class="TopLeftPane DNNEmptyPane"></td>
+
+                            <td id="dnn_TopRightPane" valign="top" class="TopRightPane DNNEmptyPane"></td>
+
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td id="dnn_MidPane1" valign="top" class="MidPane1"><div class="DnnModule DnnModule-DNN_HTML DnnModule-402"><a name="402"></a>
+
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="13" height="13" class="BlackGlass_tl"></td>
+<td class="BlackGlass_t"></td>
+<td width="13" height="13" class="BlackGlass_tr"></td>
+</tr>
+<tr>
+<td width="13" class="BlackGlass_l">&nbsp;</td>
+<td class="BlackGlass_m">
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td id="dnn_ctr402_ContentPane" align="left" class="DNNAlignleft"><!-- Start_Module_402 --><div id="dnn_ctr402_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr402_HtmlModule_lblContent" class="Normal">
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td bgcolor="#cc0000" style="text-align: center"><span style="font-size: small"><strong>Contacts</strong></span></td>
+        </tr>
+    </tbody>
+</table>
+<p align="left"><span style="font-size: smaller"><strong>Spring Festival Contacts</strong><br />
+</span>(<u><a href="mailto:sfolx@SoCalLX.com">E-Mail</a></u>)&#160; &#160;</p>
+<p align="left"><strong>JonW </strong>&#160;/ &#160;Jon&#160;<br />
+(<a href="mailto:JonW@SoCalLX.com"><u>E-Mail</u></a>) (<a href="http://www.lxforums.com/board/member.php?u=2668"><u>Profile</u></a>)</p>
+<p align="left"><strong>TMagnum / </strong>Tom&#160;<br />
+(<a href="mailto:TMagnum@SoCalLX.com"><u>E-Mail</u></a>) (<a target="_blank" href="http://www.lxforums.com/board/member.php?u=4677"><u>Profile</u></a>)</p>
+<p align="left"><strong>Fatchance</strong> / John<br />
+(<u><a href="mailto:Fatchance@SoCalLX.com">E-Mail</a></u>) (<a href="http://www.lxforums.com/board/member.php?u=2874"><u>Profile</u></a>)</p>
+</div>
+
+</div><!-- End_Module_402 --></td>
+
+  </tr>
+  <tr>
+    <td width="100%" align="right">
+<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" ></td>
+    <td align="right" ></td>
+  </tr>
+</table>
+    </td>
+  </tr>
+</table>
+</td>
+<td width="13" class="BlackGlass_r">&nbsp;</td>
+</tr>
+<tr>
+<td width="13" height="13" class="BlackGlass_bl"></td>
+<td class="BlackGlass_b"></td>
+<td width="13" height="13" class="BlackGlass_br"></td>
+</tr>
+</table>
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="10" height="5"></td>
+</tr>
+</table>
+</div></td>
+
+                            <td id="dnn_MidPane2" valign="top" class="MidPane2 DNNEmptyPane"></td>
+
+                            <td id="dnn_MidPane3" valign="top" class="MidPane3"><div class="DnnModule DnnModule-DNN_HTML DnnModule-733"><a name="733"></a>
+
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="13" height="13" class="BlackGlass_tl"></td>
+<td class="BlackGlass_t"></td>
+<td width="13" height="13" class="BlackGlass_tr"></td>
+</tr>
+<tr>
+<td width="13" class="BlackGlass_l">&nbsp;</td>
+<td class="BlackGlass_m">
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td id="dnn_ctr733_ContentPane" align="left"><!-- Start_Module_733 --><div id="dnn_ctr733_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr733_HtmlModule_lblContent" class="Normal">
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td bgcolor="#cc0000" style="text-align: center"><span style="font-size: small"><strong>Forum Links</strong></span></td>
+        </tr>
+    </tbody>
+</table>
+<p style="text-align: left"><span style="font-size: smaller"><a target="_blank" href="http://www.lxforums.com/board/forumdisplay.php?f=227">SoCalLX on LXForums</a></span></p>
+<p style="text-align: left"><span style="font-size: smaller"><a target="_blank" href="http://SoCalChallengers.com/forum">SoCal Challengers</a></span></p>
+<p style="text-align: left"><span style="font-size: smaller"><a target="_blank" href="http://www.srtconnection.com/">SRT Connection</a></span></p>
+<p style="text-align: left"><span style="font-size: smaller"><a target="_blank" href="http://www.srt8oc.com/">SRT8OC Forums</a></span></p>
+<p style="text-align: left"><span style="font-size: smaller"><a target="_blank" href="http://www.chargerforums.com/">Charger Forums</a></span></p>
+<p style="text-align: left"><span style="font-size: smaller"><a target="_blank" href="http://www.300cforums.com/">300C Forums</a></span></p>
+<p style="text-align: left"><span style="font-size: smaller"><a target="_blank" href="http://www.custommagnums.com/">Custom Magnums</a></span></p>
+</div>
+
+</div><!-- End_Module_733 --></td>
+
+  </tr>
+  <tr>
+    <td width="100%" align="right">
+<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" ></td>
+    <td align="right" ></td>
+  </tr>
+</table>
+    </td>
+  </tr>
+</table>
+</td>
+<td width="13" class="BlackGlass_r">&nbsp;</td>
+</tr>
+<tr>
+<td width="13" height="13" class="BlackGlass_bl"></td>
+<td class="BlackGlass_b"></td>
+<td width="13" height="13" class="BlackGlass_br"></td>
+</tr>
+</table>
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="10" height="5"></td>
+</tr>
+</table>
+</div></td>
+
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td id="dnn_MidPane4" valign="top" class="MidPane4 DNNEmptyPane"></td>
+
+                            <td id="dnn_MidPane5" valign="top" class="MidPane5 DNNEmptyPane"></td>
+
+                            <td id="dnn_MidPane6" valign="top" class="MidPane6 DNNEmptyPane"></td>
+
+                            <td id="dnn_MidPane7" valign="top" class="MidPane7 DNNEmptyPane"></td>
+
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td id="dnn_BottomLeftPane" valign="top" class="BottomLeftPane DNNEmptyPane"></td>
+
+                            <td id="dnn_BottomRightPane" valign="top" class="BottomRightPane DNNEmptyPane"></td>
+
+                          </tr>
+                        </table>                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td id="dnn_BottomPane" valign="top" class="BottomPane"><div class="DnnModule DnnModule-DNN_HTML DnnModule-719"><a name="719"></a>
+
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="13" height="13" class="BlackGlass_tl"></td>
+<td class="BlackGlass_t"></td>
+<td width="13" height="13" class="BlackGlass_tr"></td>
+</tr>
+<tr>
+<td width="13" class="BlackGlass_l">&nbsp;</td>
+<td class="BlackGlass_m">
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td id="dnn_ctr719_ContentPane" align="left"><!-- Start_Module_719 --><div id="dnn_ctr719_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr719_HtmlModule_lblContent" class="Normal">
+		<p style="text-align: center"><span style="font-size: x-large"><strong><span style="font-family: Verdana">What is the Spring Festival of Lx's?</span></strong></span></p>
+<table style="width: 100%">
+    <tbody>
+        <tr>
+            <td nowrap="nowrap" align="center" style="text-align: center; width: 460px"><img border="0" name="slide2" alt="Loading images....one moment please...." width="400" height="300" style="filter: blendTrans(duration=1)" src="/Portals/0/images/blank.gif" />&#160;<br />
+            <script language="JavaScript1.1">
+			<!--
+				var slide2speed=4000;		//specify interval between slide (in mili seconds)
+				var slide2links=new Array("/gallery/default.aspx") ;  //specify corresponding links
+				var newwindow=0 ; 	//open links in new window? 1=yes, 0=no
+				var num2images=20 ;
+				var image2holder=new Array() ;
+				var ie2=document.all ;
+				var tmpnum2 ;
+				// Load image file names into array.
+				var slide2images=new Array() ;
+
+				slide2images[0]="/Portals/0/Images/SFOLX/2012-0100.jpg" ; 
+				slide2images[1]="/Portals/0/Images/SFOLX/2012-0200.jpg" ; 
+				slide2images[2]="/Portals/0/Images/SFOLX/2011-0100.jpg" ; 
+				slide2images[3]="/Portals/0/Images/SFOLX/2011-0200.jpg" ; 
+				slide2images[4]="/Portals/0/Images/SFOLX/2009-2100.jpg" ; 
+				slide2images[5]="/Portals/0/Images/SFOLX/2007-0800.jpg" ; 
+				slide2images[6]="/Portals/0/Images/SFOLX/2008-1900.jpg" ; 
+				slide2images[7]="/Portals/0/Images/SFOLX/2009-1900.jpg" ; 
+				slide2images[8]="/Portals/0/Images/SFOLX/2006-0300.jpg" ; 
+				slide2images[9]="/Portals/0/Images/SFOLX/2008-1800.jpg" ; 
+				slide2images[10]="/Portals/0/Images/SFOLX/2009-1800.jpg" ; 
+				slide2images[11]="/Portals/0/Images/SFOLX/2008-1700.jpg" ; 
+				slide2images[12]="/Portals/0/Images/SFOLX/2009-1700.jpg" ; 
+				slide2images[13]="/Portals/0/Images/SFOLX/2007-0700.jpg" ; 
+				slide2images[14]="/Portals/0/Images/SFOLX/2008-1600.jpg" ; 
+				slide2images[15]="/Portals/0/Images/SFOLX/2006-0200.jpg" ; 
+				slide2images[16]="/Portals/0/Images/SFOLX/2009-1600.jpg" ; 
+				slide2images[17]="/Portals/0/Images/SFOLX/2008-1500.jpg" ;
+				slide2images[18]="/Portals/0/Images/SFOLX/2009-1500.jpg" ; 
+				slide2images[19]="/Portals/0/Images/SFOLX/2008-2000.jpg" ; 
+
+
+				// Sort array in random order.
+				fisherYates(slide2images);
+
+
+				for (i2=0;i2<slide2images.length;i2++)
+				{
+					image2holder[i2]=new Image()
+					image2holder[i2].src=slide2images[i2]
+				}
+			
+				function gotoshow2()
+				{
+					if (newwindow)
+						window.open(slide2links[which2link])
+					else
+						window.location=slide2links[which2link] ;
+				}
+
+				function fisherYates ( myArray2 ) 
+				{
+					var i2 = myArray2.length;
+					if ( i2 == 0 ) return false;
+					while ( --i2 ) 
+					{
+				    	var j2 = Math.floor( Math.random() * ( i2 + 1 ) );
+				    	var tempi2 = myArray2[i2];
+				     	var tempj2 = myArray2[j2];
+				     	myArray2[i2] = tempj2;
+				     	myArray2[j2] = tempi2;
+				   }
+				}			
+			//-->
+			</script><script language="JavaScript1.1">
+			<!--
+				var which2link=0 ;
+				var which2image=0 ;
+				var blenddelay=(ie)? document.images.slide2.filters[0].duration*500 : 0 ;
+				function slideit2()
+				{
+					if (!document.images) return ;
+					if (ie) document.images.slide2.filters[0].apply() ;
+					document.images.slide2.src=image2holder[which2image].src ;
+					if (ie) document.images.slide2.filters[0].play() ;
+					which2link=which2image ;
+					which2image=(which2image<slide2images.length-1)? which2image+1 : 0 ;
+					setTimeout("slideit2()",slidespeed+blenddelay) ;
+				}
+
+				slideit2() ;
+			//-->
+			</script><br />
+            <table width="400" height="300" style="width: 100%">
+                <tbody>
+                    <tr>
+                        <td valign="top" style="width: 400px"><embed width="400" type="application/x-shockwave-flash" height="300" allowfullscreen="true" src="http://www.youtube.com/v/UfiOfMKrmtY?version=3" allowscriptaccess="always"></embed><br />
+                        &#160;</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table width="400" height="300" style="width: 100%">
+                <tbody>
+                    <tr>
+                        <td valign="top" style="width: 400px"><embed width="400" type="application/x-shockwave-flash" height="300" allowfullscreen="true" src="http://www.youtube.com/v/2apBWVhezJM?version=3" allowscriptaccess="always"></embed><br />
+                        &#160;</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table width="400" height="300" style="width: 100%">
+                <tbody>
+                    <tr>
+                        <td valign="top" style="width: 400px"><embed width="400" type="application/x-shockwave-flash" height="300" allowfullscreen="true" src="http://www.youtube.com/v/vbHPtJglLdo?version=3" allowscriptaccess="always"></embed></td>
+                    </tr>
+                </tbody>
+            </table>
+            </td>
+            <td valign="top" style="width: 400px; margin-left: 40px">
+            <table border="0" cellspacing="0" cellpadding="0" style="width: 700px; height: 626px">
+                <tbody>
+                    <tr>
+                        <td valign="middle" width="700" align="center" style="height: 100px">
+                        <p style="width: 698px; margin-left: 40px"><span>The Spring Festival of <strong>Lx's</strong> has its roots in Southern California as an enthusiast gathering for the hottest car platform to hit the American car market in years. Starting in 2004 (for 2005 model years), <strong>LX</strong> first referred to the new generation vehicle platform for the Chrysler 300 and Dodge Magnum.&#160; For the 2006 model year, the Dodge Charger was added.&#160; We now use the <strong>Lx</strong> designation to generically refer to first generation <strong>LX</strong> as well as now encompassing the next generation platforms for <strong>LX</strong> (Chrysler 300), <strong>LC</strong> (Dodge Challenger) and <strong>LD</strong> (Dodge Charger).&#160; </span></p>
+                        <p style="width: 698px; margin-left: 40px"><span>As a group of SoCal car enthusiasts, our first meet in 2004 consisted of only 4 vehicles.&#160; Our next few meets in 2005 quickly grew to approach 100 vehicles. Starting in 2006, we kicked it up a notch and surpassed 300 vehicles with participants from all over the US and Canada. This event has grown every year since and we now expect over 1000 vehicles for the 2012 Spring Festival. As a community and enthusiast event, we have the tremendous support of Chrysler, Dodge, Mopar and SRT.&#160; We have had many executives in attendance from both the local Irvine office as well as Auburn Hills.&#160; The Spring Festival is becoming one of their favorite events as well!</span></p>
+                        <p style="width: 698px; margin-left: 40px"><span>As participants at this event, you share the passion we have for these cars. Through the various online forums, we post photos of our cars, our mods and ask questions. The Spring Festival is the place where you will see it all first hand and talk directly to other members that you have become friends with online. You may be a senior member or a newbie, have a full blown modified car or a totally stock car, it makes no difference. If it will be your first event you will not believe how great the people are. This is an experience of a lifetime and those who return year after year will tell you so. That's why they post and encourage everyone to attend. We hope to see you there. <br />
+                        </span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style3" valign="middle" width="700" align="center" style="height: 50px">
+                        <p style="width: 698px; margin-left: 40px"><strong><span style="font-size: x-large"><strong><span style="font-family: Verdana">Spring Festival Event Coverage</span></strong></span></strong></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="middle" width="700" align="center" style="height: 50px">
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://blog.chryslerllc.com/entry/1733/sf_heaven">2012 Spring Fest Wrapup - Chrysler Blog</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.redlinedodge.com/2012/02/27/the-7th-annual-spring-festival-of-lxs/">Redline Dodge Coverage of 2012 Spring Festival</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.automotivetraveler.com/magazine/viewer.php?path=2012/04/2012_Spring_Festival_of_LX">Automotive Traveler Magazine coverage of 2012 Spring Festival</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.youtube.com/watch?v=5g03cyT51uk&amp;feature=player_embedded#!">Samuel Hubinette Racing - 2012 SFLX Drifting Coverage</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://blog.chryslerllc.com/entry/1727/_lx_spring_fest_kicks_off_with_passion_">2012 Spring Fest Kick-off video @ Beach Burger</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://jonsibal.com/blog/2012/03/2012-spring-festival-of-lx/">2012 Spring Fest Coverage from JONSIBAL Designworks</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.youtube.com/watch?v=2apBWVhezJM">2011 Spring Festival of LX's - Wrapup (Pentastar Video)</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.youtube.com/watch?v=x1Ca0SeN0xE">2011 Spring Festival of LX's - Fatchance 2.0 - Build It (Chrysler)</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.youtube.com/watch?v=jOHiD0yZZAM">2011 Spring Festival of LX's - Hubinette DRIFT Ride (Pentastar Video)</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.youtube.com/watch?v=9BBs66nptyc">2011 Spring Festival of LX's - Concept Reveal (Pentastar Video)</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.youtube.com/watch?v=DYLpoB2C8S0">2011 Spring Festival of LX's - Beach Burgers (Pentastar Video)</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.facebook.com/media/set/?set=a.10150176001474224.343816.7346304223">Dodge, Facebook Photo's from 2011 Spring Festival</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.facebook.com/media/set/?set=a.213339022013429.65621.167943056553026">Mopar, Facebook Photo's from 2011 Spring Festival</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://jonsibal.com/blog/2011/03/spring-fest-6/">JONSIBAL - DESIGNWORKS, SF6 Event Coverage Details</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.lxforums.com/board/showthread.php?t=260201">LXFORUMS.com - 2011 SF6 Photo Thread</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.allpar.com/history/auto-shows/springfest/springfest-2011.html">ALLPAR.com - Spring Festival 2011: LX Car Gathering</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.redlinedodge.com/2011/01/17/westward-migration-spring-festival-of-lxs/">Redline Dodge - Westward Migration – Spring Festival of LXs</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.moparmusclemagazine.com/eventcoverage/mopp_110411_2011_lx_spring_festival/viewall.html">Mopar Muscle Magazine - 2011 LX Spring Festival - LX Overload</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.autoweek.com/article/20110603/CARNEWS/110609954#ixzz1i9ajApuY">AutoWeek - Rear-drive revelers: Spring Fest draws LX devotees to California love-in</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.theautochannel.com/news/2011/03/27/525169.html">TheAutoChannel.com - Chrysler 6th Annual Spring Festival of LX: A Loud, Roaring Salute to Muscle</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://content.usatoday.com/communities/driveon/post/2011/03/southern-california-chrysler-lx-rear-drive-srt8-mopar-meet-show/1?loc=interstitialskip">USA Today - Hemi heaven: Annual meet today for big Chryslers, Dodges</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.moparmagazine.com/2011/may-jun/best_fest_yet.html">Mopar Magazine - Best Fest Yet</a></p>
+                        <p style="width: 698px; margin-left: 40px"><a target="_blank" href="http://www.facebook.com/SpringFestivalLX">Like us at the official Facebook page of the Spring Festival of LX</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="middle" width="200" align="center">&#160;</td>
+                    </tr>
+                </tbody>
+            </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+	</div>
+
+</div><!-- End_Module_719 --></td>
+
+  </tr>
+  <tr>
+    <td width="100%" align="right">
+<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" ></td>
+    <td align="right" ></td>
+  </tr>
+</table>
+    </td>
+  </tr>
+</table>
+</td>
+<td width="13" class="BlackGlass_r">&nbsp;</td>
+</tr>
+<tr>
+<td width="13" height="13" class="BlackGlass_bl"></td>
+<td class="BlackGlass_b"></td>
+<td width="13" height="13" class="BlackGlass_br"></td>
+</tr>
+</table>
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="10" height="5"></td>
+</tr>
+</table>
+</div><div class="DnnModule DnnModule-DNN_HTML DnnModule-430"><a name="430"></a>
+
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="13" height="13" class="BlackGlass_tl"></td>
+<td class="BlackGlass_t"></td>
+<td width="13" height="13" class="BlackGlass_tr"></td>
+</tr>
+<tr>
+<td width="13" class="BlackGlass_l">&nbsp;</td>
+<td class="BlackGlass_m">
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td id="dnn_ctr430_ContentPane" align="left" class="DNNAlignleft"><!-- Start_Module_430 --><div id="dnn_ctr430_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr430_HtmlModule_lblContent" class="Normal">
+	<p><span style="font-size: medium">Welcome to the SoCalLX website.&#160;&#160;Membership is free and open to any individuals that have LX/LC/LD platform vehicles, including the Chrysler 300, Dodge Challenger, Dodge Charger and the Dodge Magnum.&#160; One of the&#160;primary&#160;purposes of this site is&#160;for&#160;our annual Spring Festival registration.&#160; Additionally, we try to maintain a calendar of all LX/LC/LD events going on in Southern California.&#160; If you have an&#160;event going on, please post it in the SoCalLX car club section at LXFORUMS and then contact us and we'll add it to the calendar along with a link to the forum&#160;that will have more detailed information.</span></p>
+<p><span style="font-size: medium"><bdo dir="ltr">While we do have a formal message area on LXFORUMS, the group of members for SoCalLX call many different online forums their home.&#160; If you would like to have a link to an LX/LC/LD based forum added here, just ask, we'll be happy to add it.</bdo></span></p>
+</div>
+
+</div><!-- End_Module_430 --></td>
+
+  </tr>
+  <tr>
+    <td width="100%" align="right">
+<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" ></td>
+    <td align="right" ></td>
+  </tr>
+</table>
+    </td>
+  </tr>
+</table>
+</td>
+<td width="13" class="BlackGlass_r">&nbsp;</td>
+</tr>
+<tr>
+<td width="13" height="13" class="BlackGlass_bl"></td>
+<td class="BlackGlass_b"></td>
+<td width="13" height="13" class="BlackGlass_br"></td>
+</tr>
+</table>
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="10" height="5"></td>
+</tr>
+</table>
+</div></td>
+
+                          </tr>
+                        </table>
+            </td>
+          </tr>
+          <tr>
+            <td id="LinksTD">
+                    <table cellpadding="0" align="center" cellspacing="0" border="0" class="FullWidth">
+                    <tr>
+                    <td id="Links_L"><img
+        src="/Portals/_default/Skins/Black_T2/images/spacer.gif"
+        alt="www.cyberspacesolutionsinc.com" width="28" height="46" border="0" /></td>
+                    <td id="Links_M" >
+<span id="dnn_dnnLINKS_lblLinks"><a class="Links_object" href="http://www.socallx.com/Home.aspx">Home</a><span class="Links_object">   |   </span><a class="Links_object" href="http://www.socallx.com/Calendar.aspx">Calendar</a><span class="Links_object">   |   </span><a class="Links_object" href="http://www.socallx.com/Charities.aspx">Charities</a><span class="Links_object">   |   </span><a class="Links_object" href="http://www.socallx.com/Apparel.aspx">Apparel</a><span class="Links_object">   |   </span><a class="Links_object" href="http://www.socallx.com/Sponsors.aspx">Sponsors</a><span class="Links_object">   |   </span><a class="Links_object" href="http://www.socallx.com/SpringFestival.aspx">Spring Festival</a></span>
+                    </td>
+                    <td id="Links_R">&nbsp;</td>
+                    </tr>
+                    </table>
+            </td>
+          </tr>
+        </table>
+        </td>
+        <td width="29" class="OpenBody_R"><a href="http://www.cyberspacesolutionsinc.com" target="_blank"><img
+        src="/Portals/_default/Skins/Black_T2/images/spacer.gif"
+        alt="www.cyberspacesolutionsinc.com" width="29" height="1" border="0" /></a> </td>
+      </tr>
+      <tr>
+        <td width="28" height="34" class="OpenBody_BL">&nbsp;</td>
+        <td height="34" class="OpenBody_B">    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="left" id="TermsTD" class="footer_object"><a id="dnn_dnnPRIVACY_hypPrivacy" class="footer_object" rel="nofollow" href="http://www.socallx.com/privacy.aspx">Privacy Statement</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="dnn_dnnTERMS_hypTerms" class="footer_object" rel="nofollow" href="http://www.socallx.com/terms.aspx">Terms Of Use</a></td>
+        <td align="right" id="CopyrightTD" class="footer_object"><span id="dnn_dnnCOPYRIGHT_lblCopyright" class="footer_object">Copyright 2006-2012 by SoCalLX</span>
+</td>
+      </tr>
+    </table>
+</td>
+        <td width="29" height="34" class="OpenBody_BR">&nbsp;</td>
+      </tr>
+    </table>
+    
+    
+    
+    </td>
+  </tr>
+  <tr>
+    <td id="BottomTD">
+    </td>
+  </tr>
+  <tr>
+    <td id="HiddenTD">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td id="dnn_FooterPane" valign="top" class="FooterPane"><div class="DnnModule DnnModule-DNN_HTML DnnModule-764"><a name="764"></a>
+
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="13" height="13" class="BlackGlass_tl"></td>
+<td class="BlackGlass_t"></td>
+<td width="13" height="13" class="BlackGlass_tr"></td>
+</tr>
+<tr>
+<td width="13" class="BlackGlass_l">&nbsp;</td>
+<td class="BlackGlass_m">
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td id="dnn_ctr764_ContentPane" align="left"><!-- Start_Module_764 --><div id="dnn_ctr764_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr764_HtmlModule_lblContent" class="Normal">
+		<table id="table1" border="0" style="width: 100%; border-collapse: collapse">
+    <tbody>
+        <tr>
+            <td style="text-align: center">
+            <p style="text-align: center"><img border="0" alt="" width="1" height="1" src="https://www.paypal.com/en_US/i/scr/pixel.gif" /> <input type="hidden" name="cmd" value="_xclick" /> <input type="hidden" name="business" value="Donations@SoCalLx.com" /> <input type="hidden" name="item_name" value="SoCalLx Donations ()" /> <input type="hidden" name="amount" value="10.00" /> <input type="hidden" name="shipping" value="0.00" /> <input type="hidden" name="no_shipping" value="0" /> <input type="hidden" name="no_note" value="1" /> <input type="hidden" name="currency_code" value="USD" /> <input type="hidden" name="tax" value="0.00" /> <input type="hidden" name="lc" value="US" /> <input type="hidden" name="first_name" value="" /> <input type="hidden" name="last_name" value="" /> <input type="hidden" name="address1" value="" /> <input type="hidden" name="address2" value="" /> <input type="hidden" name="state" value="" /> <input type="hidden" name="city" value="" /> <input type="hidden" name="zip" value="" /> <input type="hidden" name="lc" value="" /> <input type="hidden" name="email" value="" /> <img border="0" alt="" width="1" height="1" src="https://www.paypal.com/en_US/i/scr/pixel.gif" /> We could use your help so that we may keep providing vehicle decals &amp; event banners.<br />
+            <br />
+            <strong>Would you donate <br />
+            $10 to SoCalLx?</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center"><font size="2" face="Verdana"><input border="0" align="absMiddle" src="https://www.paypal.com/en_US/i/btn/btn_paynowCC_LG.gif" type="image" altmake="" payments="" with="" onclick="document.getElementById('Form').action='https://www.paypal.com/cgi-bin/webscr';document.getElementById('Form').target='_blank'" name="submit" value="Go" /></font></td>
+        </tr>
+    </tbody>
+</table>
+	</div>
+
+</div><!-- End_Module_764 --></td>
+
+  </tr>
+  <tr>
+    <td width="100%" align="right">
+<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" ></td>
+    <td align="right" ></td>
+  </tr>
+</table>
+    </td>
+  </tr>
+</table>
+</td>
+<td width="13" class="BlackGlass_r">&nbsp;</td>
+</tr>
+<tr>
+<td width="13" height="13" class="BlackGlass_bl"></td>
+<td class="BlackGlass_b"></td>
+<td width="13" height="13" class="BlackGlass_br"></td>
+</tr>
+</table>
+<table class="BlackGlass_Table" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="10" height="5"></td>
+</tr>
+</table>
+</div></td>
+
+                          </tr>
+                        </table>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+
+
+<img src="/Portals/_default/Skins/Black_T2/images/searchhover-bg.png" alt="www.cyberspacesolutionsinc.com" width="222" height="41" border="0" class="hiddenPic"/>
+<img src="/Portals/_default/Skins/Black_T2/images/ico-login-over.png" alt="www.cyberspacesolutionsinc.com" width="17" height="17" border="0" class="hiddenPic"/>
+<img src="/Portals/_default/Skins/Black_T2/images/ico-register-over.png" alt="www.cyberspacesolutionsinc.com" width="17" height="17" border="0" class="hiddenPic"/>
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop" />
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" />
+        
+    
+<script type="text/javascript" src="/Resources/Shared/scripts/initWidgets.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+</form>
+</body>
+</html>

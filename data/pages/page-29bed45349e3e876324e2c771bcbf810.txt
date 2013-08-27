@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-US" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head"><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /><meta content="text/javascript" http-equiv="Content-Script-Type" /><meta content="text/css" http-equiv="Content-Style-Type" /><meta id="MetaDescription" name="DESCRIPTION" content="Need to get your car fixed? Browse our huge directory to find quality domestic and foreign car repair services in your area. Helpful ratings and reviews!" /><meta id="MetaKeywords" name="KEYWORDS" content="auto repair service,auto repair services,auto service repair,auto service and repair,car repair service" /><meta id="MetaAuthor" name="AUTHOR" content="AutoRepair.net" /><meta name="RESOURCE-TYPE" content="DOCUMENT" /><meta name="DISTRIBUTION" content="GLOBAL" /><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW" /><meta name="REVISIT-AFTER" content="1 DAYS" /><meta name="RATING" content="GENERAL" /><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" /><style id="StylePlaceholder" type="text/css"></style><link id="APortals__default_" rel="stylesheet" type="text/css" href="/Portals/_default/default.css" /><link id="SkinCSS" rel="stylesheet" type="text/css" href="../portals/_default/skins/RapidDD-Generic/DBQCSS.axd" /><link id="APortals_14_" rel="stylesheet" type="text/css" href="/Portals/14/portal.css" />
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/Resources/Shared/Scripts/jquery/jquery.min.js" ></script>   
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js" type="text/javascript"></script>
+     
+    <link rel="alternate" type="application/rss+xml" title="autorepair.netRSS Feed" href="http://www.autorepair.net/rss/" /><link href="/Portals/_default/Skins/_default/WebControlSkin/Default/TabStrip.Default.css" rel="stylesheet" type="text/css" /><link href="/Portals/_default/Skins/_default/WebControlSkin/Default/RibbonBar/RibbonBar.Default.css" rel="stylesheet" type="text/css" /><link href="/Portals/_default/Skins/_default/WebControlSkin/Default/RibbonBar/TabStrip.Default.css" rel="stylesheet" type="text/css" /><title>
+	Find Auto Repair Services In Your Area | AutoRepair.net
+</title></head>
+<body id="Body">
+        
+<form name="Form" method="post" action="/auto-repair-services/" id="Form" enctype="multipart/form-data">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE4NTEwNDUyOTcPZBYGZg8WAh4EVGV4dAV5PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAxLjAgVHJhbnNpdGlvbmFsLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL1RSL3hodG1sMS9EVEQveGh0bWwxLXRyYW5zaXRpb25hbC5kdGQiPmQCAQ9kFhACBA8WAh4HVmlzaWJsZWhkAgUPFgIeB2NvbnRlbnQFmQFOZWVkIHRvIGdldCB5b3VyIGNhciBmaXhlZD8gQnJvd3NlIG91ciBodWdlIGRpcmVjdG9yeSB0byBmaW5kIHF1YWxpdHkgZG9tZXN0aWMgYW5kIGZvcmVpZ24gY2FyIHJlcGFpciBzZXJ2aWNlcyBpbiB5b3VyIGFyZWEuIEhlbHBmdWwgcmF0aW5ncyBhbmQgcmV2aWV3cyFkAgYPFgIfAgVnYXV0byByZXBhaXIgc2VydmljZSxhdXRvIHJlcGFpciBzZXJ2aWNlcyxhdXRvIHNlcnZpY2UgcmVwYWlyLGF1dG8gc2VydmljZSBhbmQgcmVwYWlyLGNhciByZXBhaXIgc2VydmljZWQCBw8WBB8CBShDb3B5cmlnaHQgMjAxMCBieSBEb3ROZXROdWtlIENvcnBvcmF0aW9uHwFoZAIIDxYEHwJkHwFoZAIJDxYCHwIFDkF1dG9SZXBhaXIubmV0ZAIMDxYCHwIFDUlOREVYLCBGT0xMT1dkAhUPFgIfAAV4PGxpbmsgcmVsPSJhbHRlcm5hdGUiIHR5cGU9ImFwcGxpY2F0aW9uL3Jzcyt4bWwiIHRpdGxlPSJhdXRvcmVwYWlyLm5ldFJTUyBGZWVkIiBocmVmPSJodHRwOi8vd3d3LmF1dG9yZXBhaXIubmV0L3Jzcy8iIC8+ZAICD2QWAgIBD2QWBAIED2QWAmYPZBYSZg9kFgJmD2QWAmYPFgIfAWgWBAIBD2QWCAIDDxBkZBYAZAIHDxYCHwFoZAIJDxYCHwFoZAILD2QWAmYPDxYGHghJbWFnZVVybAUUL2ltYWdlcy9jb2xsYXBzZS5naWYeDUFsdGVybmF0ZVRleHQFCE1pbmltaXplHgdUb29sVGlwBQhNaW5pbWl6ZWRkAgMPZBYEAgEPFCsAAhQrAAIPFgQeBFNraW4FB0RlZmF1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" />
+</div>
+
+
+<script src="/js/dnncore.js" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=t9ICJ5S7L3fnOtFxQoMYkYtqX9zUi_R0JFP6mPLBmbIKVAl2kKB3fAzRuMmTWciHsoudp1JCQILPZGqNu9y9-1Msn4-he0ySuEypNV_dRBCxC27YCNWedaSFJIDLPe55cjLSn-tR-UGS0tx-Hnb6fOSba-Ty1ej1qWm9fg2&amp;t=ffffffff940d030f" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+	
+	
+
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=275075312506103";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));
+</script>
+
+<script src="/portals/_default/skins/RapidDD-Generic/js/scripts.js" type="text/javascript"></script>
+<script src="/portals/_default/skins/RapidDD-Generic/js/coda-slider.1.1.1.pack.js" type="text/javascript"></script>
+<script src="/portals/_default/skins/RapidDD-Generic/js/jquery-easing-compatibility.1.2.pack.js" type="text/javascript"></script>
+<script src="/portals/_default/skins/RapidDD-Generic/js/jquery-easing-1.3.pack.js" type="text/javascript"></script>
+
+<div style="margin:auto; text-align:center; background-color:#FFFFFF; width:1101px;">
+    <div id="dnn_ControlPanel">
+
+</div>
+</div>
+
+<div id="wrapper">
+		
+		<div id="dnn_header">           
+
+		<div id="dnn_ctr1712_ContentPane"><!-- Start_Module_1712 --><div id="dnn_ctr1712_ModuleContent" class="ModDNNHTMLC">
+	<div id="dnn_ctr1712_HtmlModule_lblContent" class="Normal">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+	    <td valign="bottom">	
+		    <a href="http://www.autorepair.net"><img src="/portals/14/images/logo.png" alt="" title=""></a>
+	    </td>
+			
+	    <td valign="bottom" width="450">							
+				    <input id="search-what" class="default-value" value="Find what?" size="27" onkeyup="if(event.keyCode == 13){$('#search-de').click();}" type="text">
+				    <input id="search-where" name="" class="default-value" value="Find where?" size="27" onkeyup="if(event.keyCode == 13){$('#search-de').click();}" type="text">
+				    <input class="small-circle-button" value="GO" onclick="window.location='/search/?what=' + document.getElementById('search-what').value + '&amp;where=' + document.getElementById('search-where').value;return false;" type="submit">                                     
+			    <div class="clear"></div>
+			    <div id="header-social">
+				    <div style="text-align: center;"><strong><em>Welcome to AutoRepair.net! <a href="#" id="login-modal-button">Log in</a> or <a href="#" id="join-modal-button">Join</a> the community.</em></strong>
+                        <div class="social-buttons">
+                            <span class="st_fblike_hcount" displaytext="Facebook Like" st_url="http://www.facebook.com/pages/FindAutoRepair/308544852566882"></span>
+                            <span class="st_twitter_hcount" displaytext="Tweet" st_url="http://www.autorepair.net"></span>
+                            <span class="st_plusone_hcount" displaytext="Google +1" st_url="http://www.autorepair.net"></span>
+<span class='st_pinterest_hcount' displayText='Pinterest' st_url="http://www.autorepair.net"></span>
+                        </div>
+                    </div>
+			    </div>		
+		    </td>
+	    </tr>
+    </tbody>
+</table>
+</div>
+
+</div><!-- End_Module_1712 --></div>
+</div><!-- end #header -->
+		
+		<div id="container">
+        		
+			<div id="dnn_menu">				
+			<div id="dnn_ctr1713_ContentPane"><!-- Start_Module_1713 --><div id="dnn_ctr1713_ModuleContent" class="ModDNNHTMLC">
+	<div id="dnn_ctr1713_HtmlModule_lblContent" class="Normal">
+	<ul>
+	<li class="first"><a href="http://www.autorepair.net">Home</a></li>
+	<li><a href="http://www.autorepair.net/auto-repair-services/">Auto Repair Services</a></li>
+    <li><a href="/auto-repair-resources/">Auto Repair Resources</a></li><li><a href="/news/">News</a></li>
+</ul>
+</div>
+
+</div><!-- End_Module_1713 --></div>
+</div><!-- end #menu -->
+			
+			<div id="breadcrumbs">
+			    <div id="breadcrumb">
+				    <div class="breadcrumb-object"><a href="/">Home</a><div class="space"></div></div>
+<div class="breadcrumb-object">Auto Repair Services<div class="space"></div></div>
+ 
+			    </div>
+            </div>
+		
+			<div id="full-page-container">
+			
+				<div id="ContentPane" class="full"> 	
+                		<div class="block">
+						<div id="big-map-container">
+						    
+                            <div id="dnn_Content">
+
+<div id="dnn_ctr1749_ContentPane"><!-- Start_Module_1749 --><div id="dnn_ctr1749_ModuleContent" class="ModDNNHTMLC">
+	<div id="dnn_ctr1749_HtmlModule_lblContent" class="Normal">
+	<div class="text-block">
+								<h1>Find Car Repair Sevices Near You</h1>
+								
+								<div class="form">
+									<input id="search-what-de" size="30" value="Name or keyword" class="default-value" onkeyup="if(event.keyCode == 13){$('#search-de').click();}" type="text">
+									<input id="search-where-de" size="22" value="City or Zipcode" class="default-value" onkeyup="if(event.keyCode == 13){$('#search-de').click();}" type="text">
+									<input id="search-de" value="Search" onclick="window.location='/search/?what=' + document.getElementById('search-what-de').value + '&amp;where=' + document.getElementById('search-where-de').value;return false;" type="submit">
+								</div>
+								
+                                <ul>
+<li>Browse the largest directory of auto repair services in the nation.</li>
+<li>Find auto mechanics that handle domestic, foreign and classic cars.</li>
+<li>Locate certified mechanics that specialize in things like auto body, glass, or transmission repair.</li>
+<li>Helpful ratings and reviews make it easy to find a quality, affordable service.</li>
+                                </ul>								
+								
+							</div>
+</div>
+
+</div><!-- End_Module_1749 --></div></div>
+							
+							<div class="left-col">
+								<div class="title">Find Auto Repair Services In Your Local Area</div>
+								<div class="col-block">
+								
+									<div id="dnn_States">
+
+<div id="dnn_ctr1747_ContentPane"><!-- Start_Module_1747 --><div id="dnn_ctr1747_ModuleContent" class="ModDBQStateListC">
+	
+
+        <ul class="">
+    
+		<li><a href="/alabama/">Alabama</a></li>
+    
+		<li><a href="/alaska/">Alaska</a></li>
+    
+		<li><a href="/arizona/">Arizona</a></li>
+    
+		<li><a href="/arkansas/">Arkansas</a></li>
+    
+		<li><a href="/california/">California</a></li>
+    
+		<li><a href="/colorado/">Colorado</a></li>
+    
+		<li><a href="/connecticut/">Connecticut</a></li>
+    
+		<li><a href="/delaware/">Delaware</a></li>
+    
+		<li><a href="/district-of-columbia/">District of Columbia</a></li>
+    
+		<li><a href="/florida/">Florida</a></li>
+    
+		<li><a href="/georgia/">Georgia</a></li>
+    
+		<li><a href="/hawaii/">Hawaii</a></li>
+    
+		<li><a href="/idaho/">Idaho</a></li>
+    
+		<li><a href="/illinois/">Illinois</a></li>
+    
+		<li><a href="/indiana/">Indiana</a></li>
+    
+		<li><a href="/iowa/">Iowa</a></li>
+    
+		<li><a href="/kansas/">Kansas</a></li>
+    
+		<li><a href="/kentucky/">Kentucky</a></li>
+    
+		<li><a href="/louisiana/">Louisiana</a></li>
+    
+		<li><a href="/maine/">Maine</a></li>
+    
+		<li><a href="/maryland/">Maryland</a></li>
+    
+		<li><a href="/massachusetts/">Massachusetts</a></li>
+    
+		<li><a href="/michigan/">Michigan</a></li>
+    
+		<li><a href="/minnesota/">Minnesota</a></li>
+    
+		<li><a href="/mississippi/">Mississippi</a></li>
+    
+		<li><a href="/missouri/">Missouri</a></li>
+    
+		<li><a href="/montana/">Montana</a></li>
+    
+		<li><a href="/nebraska/">Nebraska</a></li>
+    
+		<li><a href="/nevada/">Nevada</a></li>
+    
+		<li><a href="/new-hampshire/">New Hampshire</a></li>
+    
+		<li><a href="/new-jersey/">New Jersey</a></li>
+    
+		<li><a href="/new-mexico/">New Mexico</a></li>
+    
+		<li><a href="/new-york/">New York</a></li>
+    
+		<li><a href="/north-carolina/">North Carolina</a></li>
+    
+		<li><a href="/north-dakota/">North Dakota</a></li>
+    
+		<li><a href="/ohio/">Ohio</a></li>
+    
+		<li><a href="/oklahoma/">Oklahoma</a></li>
+    
+		<li><a href="/oregon/">Oregon</a></li>
+    
+		<li><a href="/pennsylvania/">Pennsylvania</a></li>
+    
+		<li><a href="/rhode-island/">Rhode Island</a></li>
+    
+		<li><a href="/south-carolina/">South Carolina</a></li>
+    
+		<li><a href="/south-dakota/">South Dakota</a></li>
+    
+		<li><a href="/tennessee/">Tennessee</a></li>
+    
+		<li><a href="/texas/">Texas</a></li>
+    
+		<li><a href="/utah/">Utah</a></li>
+    
+		<li><a href="/vermont/">Vermont</a></li>
+    
+		<li><a href="/virginia/">Virginia</a></li>
+    
+		<li><a href="/washington/">Washington</a></li>
+    
+		<li><a href="/west-virginia/">West Virginia</a></li>
+    
+		<li><a href="/wisconsin/">Wisconsin</a></li>
+    
+		<li><a href="/wyoming/">Wyoming</a></li>
+    
+        </ul>
+    
+</div><!-- End_Module_1747 --></div></div>
+									
+									<div class="clear"></div>
+									
+								</div>	
+							</div>
+							
+							
+							<div class="right-col">
+								<div class="title">Featured Cities</div>
+								<div class="col-block">
+								
+									<div id="dnn_FeaturedCities">
+
+<div id="dnn_ctr1748_ContentPane"><!-- Start_Module_1748 --><div id="dnn_ctr1748_ModuleContent" class="ModDBQCityListC">
+	
+
+        <ul class="">
+    
+		<li><a href="/atlanta-ga/">Atlanta</a></li>
+    
+		<li><a href="/bronx-ny/">Bronx</a></li>
+    
+		<li><a href="/brooklyn-ny/">Brooklyn</a></li>
+    
+		<li><a href="/chicago-il/">Chicago</a></li>
+    
+		<li><a href="/cincinnati-oh/">Cincinnati</a></li>
+    
+		<li><a href="/cleveland-oh/">Cleveland</a></li>
+    
+		<li><a href="/dallas-tx/">Dallas</a></li>
+    
+		<li><a href="/denver-co/">Denver</a></li>
+    
+		<li><a href="/detroit-mi/">Detroit</a></li>
+    
+		<li><a href="/houston-tx/">Houston</a></li>
+    
+		<li><a href="/indianapolis-in/">Indianapolis</a></li>
+    
+		<li><a href="/las-vegas-nv/">Las Vegas</a></li>
+    
+		<li><a href="/los-angeles-ca/">Los Angeles</a></li>
+    
+		<li><a href="/miami-fl/">Miami</a></li>
+    
+		<li><a href="/milwaukee-wi/">Milwaukee</a></li>
+    
+		<li><a href="/minneapolis-mn/">Minneapolis</a></li>
+    
+		<li><a href="/new-york-ny/">New York</a></li>
+    
+		<li><a href="/philadelphia-pa/">Philadelphia</a></li>
+    
+		<li><a href="/phoenix-az/">Phoenix</a></li>
+    
+		<li><a href="/saint-louis-mo/">Saint Louis</a></li>
+    
+		<li><a href="/san-antonio-tx/">San Antonio</a></li>
+    
+		<li><a href="/san-diego-ca/">San Diego</a></li>
+    
+		<li><a href="/san-jose-ca/">San Jose</a></li>
+    
+		<li><a href="/tucson-az/">Tucson</a></li>
+    
+        </ul>
+    
+
+
+
+</div><!-- End_Module_1748 --></div></div>
+    								
+    								<div class="clear"></div>
+									
+								</div>
+							</div>
+							
+							<script>
+							    function equalHeight(group) {
+							        var tallest = 0;
+							        group.each(function () {
+							            var thisHeight = $(this).height();
+							            if (thisHeight > tallest) {
+							                tallest = thisHeight;
+							            }
+							        });
+							        group.height(tallest);
+							    }
+
+							    $(document).ready(function () {
+							        equalHeight($(".col-block"));
+							    });
+							</script>
+							
+						 <div class="clear"></div>
+						</div>
+					</div><!-- end .block -->
+
+				</div><!-- end #main -->
+				<div id="dnn_ContentPane" class="full">
+
+<div id="dnn_ctr1750_ContentPane"><!-- Start_Module_1750 --><div id="dnn_ctr1750_ModuleContent" class="ModDBQAdminPageManagerC">
+
+</div><!-- End_Module_1750 --></div></div>
+
+			 <div class="clear"></div>
+			</div><!-- end #full-page-container -->
+		
+		 <div class="clear"></div>
+		</div><!-- end #container -->	
+		
+	</div><!-- end #wrapper -->
+
+    <div id="footer-wrapper">
+        <div id="dnn_footer">	  
+        <div id="dnn_ctr1714_ContentPane"><!-- Start_Module_1714 --><div id="dnn_ctr1714_ModuleContent" class="ModDNNHTMLC">
+	<div id="dnn_ctr1714_HtmlModule_lblContent" class="Normal">
+	<table border="0" cellpadding="10" cellspacing="0" width="100%">
+<tbody>
+    <tr>
+		<td valign="top" width="180">
+			<ul class="menu">	
+				<li><a href="http://www.autorepair.net">HOME</a></li>
+				<li><a href="http://www.autorepair.net/auto-repair-services/">AUTO REPAIR SERVICES</a></li>
+				<li><a href="http://www.autorepair.net/news/">NEWS</a></li>
+				<li><a href="http://www.autorepair.net/auto-repair-resources/">AUTO REPAIR RESOURCES</a></li>
+				<li><a href="http://www.autorepair.net/faq/">FAQ</a></li>
+				<li><a href="http://www.autorepair.net/contact-us/">CONTACT</a></li>
+                                <li><a href="http://www.autorepair.net/sitemap/">SITEMAP</a></li>
+			</ul>
+		</td>
+					
+		<td valign="top" width="250">
+			<div class="title">RECENT ARTICLES</div>
+			<ul><li><a href="/news/lawmakers-weigh-in-on-auto-repair-debate-13571/">Lawmakers Weigh in on Auto Repair Debate</a></li><li><a href="/news/auto-repair-shop-offering-free-advice-13542/">Auto Repair Shop Offering Free Advice</a></li><li><a href="/news/hail-damage-sends-many-to-repair-shop-13493/">Hail Damage Sends Many to Repair Shop</a></li><li><a href="/news/repair-shop-on-wheels-13494/">Repair Shop on Wheels</a></li><li><a href="/news/avoiding-common-auto-repair-scams-13448/">Avoiding Common Auto Repair Scams</a></li></ul>
+		</td>
+					
+		<td valign="top" width="245">
+			<h2>SIGN UP</h2>
+			<p style="font-size: 16px;">Get the latest auto repair news<br> delivered straight to your inbox</p>
+			<p>
+				</p>
+					<input name="" value="Enter your email address" class="footer-enter-email default-value" id="newsletter-email" onkeyup="if(event.keyCode == 13){$('#newsletter-signup-button').click();}" size="30" type="text">
+					<input class="small-circle-button" value="GO" onclick="SaveNewsletter();return false;" id="newsletter-signup-button" type="submit"><img id="newsletter-image" style="width: 1px; height: 1px;" src="/NewsletterSignup.aspx" alt="">													
+			<p></p>
+		</td>
+					
+		<td valign="top" width="200">
+			<h2>FIND US</h2>
+			<p><a href="http://www.facebook.com/pages/FindAutoRepair/308544852566882" target="_blank"><img src="/portals/_default/skins/RapidDD-Generic/img/footer-facebook.png" alt="Facebook" title="Facebook"></a>
+					<a href="https://twitter.com/#%21/FindAutoRepair/" target="_blank"><img src="/portals/_default/skins/RapidDD-Generic/img/footer-twitter.png" alt="Twitter" title="Twitter"></a>
+					<a href=""><img src="/portals/_default/skins/RapidDD-Generic/img/footer-share.png" alt="Share" title="Share"></a></p>
+			<ul class="menu2">
+				<li><a href="http://www.autorepair.net/privacy-policy/">PRIVACY POLICY</a></li>
+				<li><a href="http://www.autorepair.net/terms-of-use/">TERMS OF USE</a></li>
+                        </ul>
+                        <br>
+                      <p>© 2012 AutoRepair.net</p>
+		</td>
+	</tr>
+</tbody>
+</table>
+<script type="text/javascript">
+var clicky_site_ids = clicky_site_ids || [];
+clicky_site_ids.push(66589336);
+(function() {
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//static.getclicky.com/js';
+  ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+})();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66589336ns.gif" /></p></noscript>
+
+</div>
+
+</div><!-- End_Module_1714 --></div>
+</div><!-- end #footer -->
+    </div>   
+
+<script type="text/javascript">        var switchTo5x = true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">    stLight.options({ publisher: "ur-26ec659b-3157-94bd-a716-8c99328eacff" }); </script>
+	<input name="ScrollTop" type="hidden" id="ScrollTop" />
+	<input name="__dnnVariable" type="hidden" id="__dnnVariable" />
+	
+</form>
+    
+		<!-- LOGIN modal content -->
+		<div id="login-modal-content" style="display: none;">
+			
+			<!-- LOGIN -->
+			<div id="login-content">
+				<div class="left-column">
+					<div class="title">Use a connected account</div>
+					
+					<ul class="login-options">
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/facebook-icon.png" alt="Facebook" /> Facebook</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/twitter-icon.png" alt="Twitter" /> Twitter</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/aol-icon.png" alt="AOL." /> AOL.</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/google-icon.png" alt="Google" /> Google</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/yahoo-icon.png" alt="Yahoo" /> Yahoo</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/linkedin-icon.png" alt="LinkedIn" /> LinkedIn</a></li>
+						<li class="last"><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/hotmail-icon.png" alt="Hotmail" /> Hotmail</a></li>
+					</ul>
+				</div>
+				
+				<div class="right-column">
+					<div class="title2">Login</div>
+					
+					<p><label for="username">Username or email</label>
+					<input type="text" name="username" size="30" /></p>
+					
+					<p><label for="password">Password</label>
+					<input type="password" size="30" /></p>
+					
+					<p><span style="font-size: 11px;"><em><a href="">Forgot your password?</a></em></span></p>
+					
+					<p><input type="submit" value="Log in" /></p>
+					
+					<p><input type="checkbox" /> Remember me</p>
+				
+					<p>...or <a href="#" id="join-modal-button-next">create an account</a></p>
+				</div>
+			</div>
+			
+			<!-- JOIN -->
+			<div id="join-content">
+				<div class="left-column">
+					<div class="title">Connect an account</div>
+					
+					<ul class="login-options">
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/facebook-icon.png" alt="Facebook" /> Facebook</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/twitter-icon.png" alt="Twitter" /> Twitter</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/aol-icon.png" alt="AOL." /> AOL.</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/google-icon.png" alt="Google" /> Google</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/yahoo-icon.png" alt="Yahoo" /> Yahoo</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/linkedin-icon.png" alt="LinkedIn" /> LinkedIn</a></li>
+						<li class="last"><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/hotmail-icon.png" alt="Hotmail" /> Hotmail</a></li>
+					</ul>
+				</div>
+				
+				<div class="right-column">
+					<div class="title2">Join</div>
+					
+					<p><label for="username">Username</label>
+					<input type="text" name="username" size="30" /></p>
+					
+					<p><label for="email">Email</label>
+					<input type="text" name="email" size="30" /></p>
+					
+					<p><label for="password">Password</label>
+					<input type="password" name="password" size="30" /></p>
+					
+					<p><label for="password2">Confirm password</label>
+					<input type="password" name="password2" size="30" /></p>
+			
+					<p><input type="submit" value="Register" /></p>
+				</div>
+			</div>
+				
+			<div class="clear"></div>
+						
+		</div>
+			
+		<script type='text/javascript' src='/Portals/_default/Skins/RapidDD-Generic/js/jquery.simplemodal.js'></script>
+		<script type='text/javascript' src='/Portals/_default/Skins/RapidDD-Generic/js/login.js'></script>
+    	<script src="/portals/_default/skins/RapidDD-Generic/js/view-more-less.js" type="text/javascript"></script>
+    
+   
+</body>
+</html>

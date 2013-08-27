@@ -1,0 +1,900 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- Mzinga, Build 5667.160 (Thu Aug 12 11:09:25 EDT 2010), DC2WEB038 0 wait -->
+<html><head><title>Cars</title><script type="text/javascript">
+// allows arbitrary places in the page to register window.onload handlers
+var PT_onLoadFunctions;    // the array of registered handlers
+
+// call this from a script element in the page to register a function to be called 
+// when loading is completed. The function should be parameterless.
+// If fn is a string, then, at onLoad time, we just eval the string. This is useful when the function
+// referenced is not defined at the time of the call, e.g. it is in a different script file.
+function PT_RegisterOnLoad(fn)
+{
+  if (typeof PT_onLoadFunctions == "undefined")
+  {
+    // this is the first one we've seen, create the array
+    PT_onLoadFunctions = new Array();
+    if (window.onload)
+    {
+      // we already had a (statically defined) onload - include it in the array
+      PT_onLoadFunctions.push(window.onload);
+    }
+    // set our master handler to run when the window has completed loading
+    window.onload = PT_execOnload;
+  }
+  // add our function to the array
+  PT_onLoadFunctions.push(fn);
+}
+
+// called when PT_RegisterOnLoad() has been used to register onload handlers
+// calls each of the registered functions in turn
+function PT_execOnload()
+{
+  if (PT_onLoadFunctions)
+  {
+    for(var i = 0; i < PT_onLoadFunctions.length; i++)
+    {
+			var fn = PT_onLoadFunctions[i];
+			if (typeof(fn) == "string")
+				eval(fn);
+			else
+				fn();
+    }
+  }
+}
+</script><script type='text/javascript' src='/dir-script/856861/Script.StandardJavascriptRef.js?'></script>
+<script type="text/javascript" src="/dir-script/prospero/TempestNS.Accordion.js"></script><meta http-equiv="Content-Style-Type" content="text/css"/><link rel="stylesheet" HREF="http://www.consumerreports.org/cro/resources/rd07/css/whev.css" type="text/css">
+<style type="text/css">
+/* start header style */
+
+#header { 
+	position: absolute; 
+	top: 0; 
+	/*width: 100%; 
+	background: url(
+http://www.consumerreports.org/cro/resources/rd07/images/site_bkgrnd.jpg) repeat-x; */
+	margin-left: auto;
+	margin-right: auto;
+	height: 141px;
+	}
+
+#header #croheader { 
+	width: 920px;  
+	margin: auto;
+	margin-top: 8px;
+	}
+	
+h1
+{
+font: bold 16px Arial, Helvetica, sans-serif;
+padding: 10px 0 0 5px;
+text-decoration: none;
+color: #091c30; 
+}
+
+	
+#header #croheader .global_top { 
+	margin: 0 22px 8px 0;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	color: #000;
+	text-align: right;
+	}
+
+#header #croheader .global_top .links { 
+	padding-top: 1px;
+	}
+	
+#header #croheader .global_top a:link { 
+	color: #FFF;
+	text-decoration: none;
+	}
+	
+#header #croheader .global_top a:visited { 
+	color: #FFF;
+	text-decoration: none;
+	}
+	
+#header #croheader .global_top a:active { 
+	text-decoration: underline;
+	}
+	
+#header #croheader .global_top a:hover { 
+	text-decoration: underline;
+	}
+	
+/* sign in area */
+
+#header #croheader .global_top .sign-in {
+	margin: 0 0 0 20px;
+	float: right;
+		}
+
+#header #croheader .global_top .sign-in dl {
+  margin: 0;
+  font: 11px/14px Arial, Helvetica, sans-serif;
+  }
+  
+#header #croheader .global_top .sign-in dt {
+  margin: 0;
+  padding: 1px 5px 0 15px;
+  background: url(http://www.consumerreports.org/cro/resources/rd07/images/signsub_back_left.gif) no-repeat top left;
+  font: bold 11px Arial, Helvetica, sans-serif;
+  color: #FFFFCC;
+  border: 0;
+  float: left;
+  height: 17px;
+  }
+
+#header #croheader .global_top .sign-in dd {
+  margin: 0;
+  padding: 1px 15px 0 0;
+  background: url(http://www.consumerreports.org/cro/resources/rd07/images/signsub_back_right.gif) no-repeat top right;
+  font: bold 11px Arial, Helvetica, sans-serif;
+  color: #FFF;
+  border: 0;
+  float: left;
+  height: 17px;
+  }
+  
+#header #croheader .global_top .sign-in dd a:link {
+	font: bold 11px Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: none;
+	}
+	
+#header #croheader .global_top .sign-in dd a:visited {
+	font: bold 11px Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: none;
+	}
+	
+#header #croheader .global_top .sign-in dd a:hover {
+	font: bold 11px Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: underline;
+	}
+	
+#header #croheader .global_top .sign-in dd a:active {
+	font: bold 11px Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: underline;
+	}
+  
+ /* GLOBAL HEAD LOGO AND SEARCH AREA */
+ 
+#header #croheader #main {
+	margin: -5px 0 0 0;
+	}
+
+#header #croheader #main dl {
+  width: 920px;
+  height: 79px;
+  background: url(http://www.consumerreports.org/cro/resources/rd07/images/cro_head_bg.gif) no-repeat top left;
+  color: #000;
+  margin-bottom: 0;
+  }
+
+* html #header #croheader #main dl {
+  margin-bottom: 20px;
+  }
+
+#header #croheader #main dt {
+  margin: 0;
+  padding: 10px 30px 0 10px;
+  font: normal 11px Arial, Helvetica, sans-serif;
+  color: #176fcc;
+  border: 0;
+  text-align: right;
+  float: right;
+  }
+
+#header #croheader #main dd {
+  margin: 0;
+  padding: 10px 10px 0 10px;
+  text-align: left;
+  float: left;
+  }  
+  
+#header #croheader #main dl a:link { text-decoration: none; color:#176fcc;}
+#header #croheader #main dl a:visited { text-decoration: none; color:#176fcc; }
+#header #croheader #main dl a:hover { text-decoration: underline; color:#176fcc; }
+  
+  #header #croheader #main dt img {
+ 	margin: 0 5px 0 10px;
+	padding: 0;
+	vertical-align: bottom
+	}
+  
+ #header #croheader #main dd img {
+ 	margin: 15px 0 0 -10px;
+	padding: 0;
+	}
+
+	 /* BLOGS HEADER STYLES */
+ 
+.breadcrumb_and_head_blog {
+	width: 918px;
+	height: 84px;
+	margin: 0;
+	padding: 0;
+	border-left: 1px solid #e6e6ee;
+	border-right: 1px solid #e6e6ee;
+	background: url(
+http://www.consumerreports.org/cro/resources/rd07/images/blogs_header.gif) no-repeat;
+	position: absolute;
+	top: 141px;
+	overflow: hidden;
+	line-height: 1.2em;
+  }
+  
+  * html #breadcrumb_and_head_blog {
+  position: absolute;
+  top: 147px;
+  } 
+  
+.breadcrumb_and_head_blog .breadcrumb {
+  margin: 3px 0 0 9px; 
+  font: normal 11px Arial, Helvetica, sans-serif; 
+  color: #8594a6;
+  }
+  
+.breadcrumb_and_head_blog .blog_image_head {
+ 	margin: 10px 0 0 15px;
+	}
+
+ /* MAIN NAV BUTTONS */
+ 
+ #main_nav {
+	width: 920px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: absolute;
+	}
+
+* html 	 #main_nav {
+	margin-top: -27px;
+	}
+
+ #main_nav dl {
+ 	width: 920px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+	}
+	
+ #main_nav dl {
+ 	width: 920px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+	}
+	
+ #main_nav dl dd.left {
+ 	width: 79px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+	
+ #main_nav dl dd.cars {
+ 	width: 67px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+
+ #main_nav dl dd.appliances {
+ 	width: 106px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+	
+ #main_nav dl dd.electronics {
+ 	width: 107px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+
+ #main_nav dl dd.home {
+ 	width: 131px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+
+ #main_nav dl dd.babies {
+ 	width: 121px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+	
+ #main_nav dl dd.money {
+ 	width: 80px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+
+ #main_nav dl dd.food {
+ 	width: 71px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+	
+	
+ #main_nav dl dd.health {
+ 	width: 77px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+	
+	
+#main_nav dl dd.shopping {
+ 	width: 95px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}	
+
+ #main_nav dl dd.right {
+ 	width: 58px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+
+	
+ #main_nav dl a:hover {
+	position: relative;
+	top: -32px;
+	}
+	
+ #main_nav dl a:active {
+	position: relative;
+	top: -32px;
+	}
+	
+ #main_nav dl img {
+ 	border: 0;
+	}
+	
+/* end header style */
+
+
+
+/* start footer styles */
+
+#crofooter {
+width:920px;
+clear:both;
+font: 11px Arial, Helvetica, sans-serif; 
+color:#000;
+}
+
+#crofooter a:link { text-decoration:none; color:#176fcc}
+#crofooter a:visited { text-decoration:none; color:#176fcc}
+#crofooter a:hover { text-decoration: underline; color:#176fcc}
+
+/* This is the gradient bar above footer*/
+
+#crofooter .shadow {
+background: url(
+http://www.consumerreports.org/cro/resources/rd07/images/footer_shadow.gif) repeat-x top; 
+height: 11px;
+}
+
+/* This is the left section */
+
+#crofooter .left {
+	width: 155px;
+	height: 145px;
+	float: left;
+	background-color: #e9f0fa;
+	padding-bottom: 10px;
+	margin-right: 5px;
+}
+
+#crofooter .left ul { 
+color:#000;
+padding: 0;
+margin: 0;
+list-style: none; 
+line-height:1.5em;
+} 
+
+#crofooter .left li {
+padding:0; 
+margin:0; 
+padding-left: 8px; 
+margin-left: 10px;
+background: url(
+http://www.consumerreports.org/cro/resources/rd07/images/squarebullet.gif) no-repeat 0 7px;
+font-size: 11px;
+} 
+
+#crofooter .left li a {
+color: #176fcc;
+padding: 0;
+margin: 0;
+font-size: 11px;
+} 
+
+/* This is for the left section header image which has two backgrounds*/
+
+#crofooter .testlab {
+background: url(
+http://www.consumerreports.org/cro/resources/rd07/images/cro_testlab_back.gif) repeat-x top left;
+margin-bottom:5px; 
+height: 20px;
+}
+
+#crofooter .testlab ul {
+padding: 0;
+margin: 0;
+list-style: none; 
+}
+
+#crofooter .testlab li {
+padding: 0;
+margin: 0;
+list-style: none; 
+width: 97px;
+height: 20px;
+}
+
+
+/* container which holds left and middle section*/
+
+#crofooter .leftandmiddle {
+overflow: auto;
+width: 760px; 
+margin-right:5px;
+float:left;
+}
+
+/* middle section*/
+
+#crofooter .middle {
+background-color: #e9f0fa;
+width:570px; 
+height: 145px;
+float: right; 
+padding-left: 15px; 
+padding-right: 15px; 
+padding-top:10px;
+}
+
+#crofooter .middle ul {
+        width: 570px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+}
+
+#crofooter .middle ul.second {
+        width: 570px;
+        padding: 0;
+		margin: 0; 
+		float:left;
+        margin-top: 10px;
+        list-style: none;
+}
+ 
+#crofooter .middle li {
+        margin: 0;
+        list-style: none;
+        font: normal 11px Arial, Helvetica, sans-serif;
+		padding: 0;
+        float: left;
+}
+
+#crofooter .middle li a {
+        margin: 0;
+        list-style: none;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #176fcc;
+        
+}
+
+#crofooter .middle li.third {
+margin: 0;
+        list-style: none;
+        font-family:Arial, Helvetica, sans-serif;
+		        padding: 0 2px;
+        float: left;
+}
+ 
+ 
+#crofooter .middle li.custom {
+        margin: 0;
+        list-style: none;
+        font: bold 11px Arial, Helvetica, sans-serif;
+        border-right: 0;
+        float: left;
+        padding: 0 2px;
+}
+
+#crofooter .middle li.rss {
+        margin: 0;
+		margin-left:6px;
+        list-style: none;
+        font: Arial, Helvetica, sans-serif;
+        color: #000;
+        float: left;
+        padding: 0 2px 0 17px;
+		background: url(
+http://www.consumerreports.org/cro/resources/rd07/images/footer_rssicon.gif) no-repeat left center;
+}
+
+/* right section */
+
+#crofooter .right
+{
+float: right;
+clear: right;
+width: 125px;
+height: 145px;
+background-color: #e9f0fa;
+padding: 10px 15px 0 15px;
+line-height: 1.5em;
+}
+
+#crofooter .right ul { 
+color:#000;
+padding: 0;
+margin: 0;
+list-style: none; line-height: 1.5em;
+} 
+
+#crofooter .right li {
+padding:0; 
+margin:0; 
+padding-left: 8px;
+background: url(
+http://www.consumerreports.org/cro/resources/rd07/images/squarebullet.gif) no-repeat 0 7px;
+font-weight: normal;
+font-size: 11px;
+} 
+
+#crofooter .right li a {
+color: #176fcc;
+padding: 0;
+margin: 0;
+font-size: 11px;
+} 
+
+/* hack to make outer div expand downwards*/
+
+#crofooter .expanddivdownward {
+clear:both; 
+line-height:0; 
+height:0;
+}
+
+/* copyright line*/
+
+#crofooter .copyright {
+padding-left:10px;
+color: #999;
+line-height:2.0em;
+float: left;
+clear: both;
+width: 920px;
+}
+
+
+
+/* end footer styles */
+
+/* fix the unstyled My Forums */
+table#pfMyForums tr.ptcHead td.ptcHead {
+padding-top:10px !important;
+font-weight:800;
+font-size:16px;
+}
+
+table#pfMyForums tr.ptcHead th.ptcMessages {
+padding-left: 5px;
+}
+
+table#pfMyForums tr.ptcHead td.ptcName a.ptbAction {
+background-color:#e5e5e5;
+font-weight:800;
+}
+
+table#pfMyForums tr.ptcValue td.ptcValue a {
+white-space:nowrap;
+}
+
+/* added to fix erroring image on linked stylesheet */
+#home_middle #blogs li {
+background: url(http://www.consumerreports.org/cro/resources/rd07/images/squarebullet.gif) no-repeat 0 7px;
+}
+
+/*testing a fix which makes no sense - hot topics wrong on just this page, just in IE7 and IE8??   */
+/* div.ptcHomepage DIV.ptcPanel {
+margin-top: -280px !important;
+}
+
+DIV.ptcHomepage DIV.ptcRecentDiscussions {
+margin-bottom: 20px;
+float:right;
+} */
+</style>
+<link rel="stylesheet" media="all" type="text/css" href="/dir-css/856862/qs;msgSize=8;textsize=9;browserType=1/Common.css" /><link rel="stylesheet" media="all" type="text/css" href="/dir-css/856862/qs;msgSize=8;textsize=9;browserType=1/forum.css" /></head><body class="ptWrapBody ptcWebtag-cr-carsstart ptcNav-start ptcApp-forum"><div class="ptNavstart"><div id="ptWrapDiv" class="ptWrapDiv"><div id="ptcBrandHeader" class="ptcWrapperHeader">
+	<div class="ptcBranding">
+		<!--<img src="/dir-icon/249/9/temp_headerGraphic.icon" />-->
+<div id="header">
+<div id="croheader">
+<div class="global_top">
+<!--<div class="sign-in">
+<dl>
+<dt>Welcome Timothy&nbsp;&nbsp;- </dt>
+<dd><a href="#">Sign out</a></dd>
+</dl>
+</div>-->
+<div class="links"><a href="http://custhelp.consumerreports.org/cgi-bin/consumerreports.cfg/php/enduser/home.php">Customer Service</a>&#160;&#160;|&#160;&#160;<a href="http://www.consumerreports.org/main/user/myaccount.jsp">My Account</a>&#160;&#160;|&#160;&#160;<a href="http://www.consumerreports.org/cro/donate/cro/home.htm">Donate</a>&#160;&#160;|&#160;&#160;<a href="http://www.consumerreports.org/cro/our-web-sites/index.htm">Our Web Sites</a></div></div>
+
+<div id="main">
+<dl>
+<dt><a href="http://www.consumerreports.org/cro/news/index.htm"><img src="http://www.consumerreports.org/cro/resources/rd07/images/head_news_icon.gif" alt="News and blogs" width="10" height="13" border="0" /></a><a href="http://news.consumerreports.org/">News</a><!--<a href="http://www.consumerreports.org/cro/blogs/index.htm"><img src="http://www.consumerreports.org/cro/resources/rd07/images/head_blogs_icon.gif" alt="News and blogs" width="10" height="12" border="0" /></a><a href="http://www.consumerreports.org/cro/our-blogs/index.htm">Blogs</a>--><a href="http://www.consumerreports.org/cro/discussion/discussions/index.htm"><img src="http://www.consumerreports.org/cro/resources/rd07/images/head_discuss_icon.gif" alt="Discussions" width="10" height="12" border="0" /></a><a href="http://www.consumerreports.org/cro/discussion/discussions/index.htm">Forums</a><!--<a href="#"><img src="http://www.consumerreports.org/cro/resources/rd07/images/head_vid_icon.gif" alt="Videos" width="14" height="13" border="0" /></a><a href="#">Videos</a>--><br />
+
+<!--
+<div id="search">
+<dl>
+  <dt><img src="http://www.consumerreports.org/cro/resources/rd07/images/head_srchbutton.gif" alt="search" width="58" height="24" /></dt>
+  <dd>
+    <input type="text" name="textfield" size="48" style="width: 242px;" />
+  </dd>
+</dl>
+</div>
+-->
+  </dt>
+<dd><a href="http://www.consumerreports.org"><img src="http://www.consumerreports.org/cro/resources/rd07/images/headback_left.gif" alt="Consumer Reports logo" width="515" height="55" border="0" /></a></dd>
+</dl>
+  </div>
+  
+  <!-- NAV BUTTONS* -->
+  <div id="main_nav">
+                  <dl>
+                     <dd class="left"><img alt="" height="32" width="79" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_left2.gif" /></dd>
+                     <dd class="cars"><a href="http://www.consumerreports.org/cro/cars/index.htm"><img alt="Car ratings and safety" height="64" width="67" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_cars.gif" /></a></dd>
+                     <dd class="appliances"><a href="http://www.consumerreports.org/cro/appliances/index.htm"><img alt="Appliance ratings" height="64" width="106" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_appliance.gif" /></a></dd>
+                     <dd class="electronics"><a href="http://www.consumerreports.org/cro/electronics-computers/index.htm"><img alt="Electronics and computer ratings" height="64" width="107" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_electronics.gif" /></a></dd>
+                     <dd class="home"><a href="http://www.consumerreports.org/cro/home-garden/index.htm"><img alt="Home and garden product ratings" height="64" width="131" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_homegard.gif" /></a></dd>
+                     <dd class="babies"><a href="http://www.consumerreports.org/cro/babies-kids/index.htm"><img alt="Babies and kids product ratings" height="64" width="121" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_babieskids.gif" /></a></dd>
+                     <dd class="money"><a href="http://www.consumerreports.org/cro/money/index.htm"><img alt="Money saving tips and advice" height="64" width="80" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_money.gif" /></a></dd>
+                     <dd class="shopping"><a href="http://www.consumerreports.org/cro/shopping/index.htm"><img alt="shopping" height="64" width="95" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_shopping.gif" /></a></dd>
+                     <dd class="health"><a href="http://www.consumerreports.org/health/home.htm"><img alt="Health and fitness product ratings" height="64" width="77" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_health.gif" /></a></dd>
+                     <dd class="right"><img alt="" height="32" width="58" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_right2.gif" /></dd>
+                  </dl>
+</div>
+</div>
+</div>
+
+<div style="padding-bottom:115px;">;&#160;</div>
+	</div>
+</div><div id="ptcForumHeader" class="ptcWrapperHeader">
+	<div id="ptcBreadCrumbBar" class="ptcForumHeaderBar">
+		<table class="ptcListContainer">
+			<tr>
+				<td class="ptcListContainerCellLeft"><ul id="ptcBreadCrumb" class="ptcListFlow">
+	<li><span class="ptcListHead"><a href="http://www.consumerreports.org">Home</a> &gt; <a href="http://forums.consumerreports.org/cr-home">Forums</a> &gt;&nbsp;</span></li><li><span class="ptcListText">Cars</span></li>
+</ul></td>
+			</tr>
+		</table>
+	</div><div class="ptcBranding">
+		<h2>Forums</h2>
+	</div>
+</div><div id="ptcBodyDiv"><table id="ptcBodyTable" class="ptcListContainer"><tr><td id="ptcBodyLeft" class="ptcListContainerCellLeft" rowspan="1"><div id="ptcWidgetColumnLeft" class="ptcWidgetColumn">
+	<div class="ptcBranding">
+		<div class="ptcPanel ptcCatList"><div class="ptcHead">Forum Categories</div><div class="ptcBody"><ul><li><a href="/n/pfx/forum.aspx?webtag=cr-appStart" onMouseOut="this.blur();return true;">Appliances</a></li><li class="ptcSelectedCat"><a href="/n/pfx/forum.aspx?webtag=cr-carsStart" onMouseOut="this.blur();return true;">Cars</a></li><li><a href="/n/pfx/forum.aspx?webtag=cr-ecStart" onMouseOut="this.blur();return true;">Electronics & Computers</a></li><li><a href="/n/pfx/forum.aspx?webtag=cr-hgStart" onMouseOut="this.blur();return true;">Home & Garden</a></li></ul></div></div><div class="ptcPanel ptcRelatedLinks"><div class="ptcHead">Related Links</div><div class="ptcBody"><ul><li><a href="http://blogs.consumerreports.org/cars/">CR Cars News</a></li><li><a href="http://onlocation.consumerreports.org/New-Car-Preview/Default.asp?ctype=">New car preview</a></li><li><a href="http://www.consumerreports.org/cro/video-hub/cars/">Videos: cars</a></li><li><a href="http://www.consumerreports.org/cro/cars/safety-recalls/index.htm">Guide to car safety</a></li></ul><br/><ul><i>For subscribers</i><li><a href="http://www.consumerreports.org/cro/cars/new-cars/sedans/selector/ratings-overview.htm">New car selector</a></li><li><a href="http://www.consumerreports.org/cro/cars/types/new-a-to-z-index.htm">New Cars A to Z</a></li><li><a href="http://www.consumerreports.org/cro/cars/used-cars/cr-recommended/best-and-worst-used-cars/models-to-look-for/best-and-worst-used-cars-models-to-look-for.htm">Best used cars </a></li><li><a href="http://www.consumerreports.org/main/ur/home.jsp">Consumer Opinions - cars</a></li></ul></div></div>
+	</div>
+</div></td><td id="ptcBodyContents" class="ptcListContainerCell"><div id="ptcContentTop" class="ptcWrapperHeader">
+	<div class="ptcForumHeader">
+		<div class="ptcNameAndDescription"><div id="ptcHeaderName" class="ptcForumName">Cars</div><div class="ptcForumDescription"><p>Our general Car Forum is "<a href="http://forums.consumerreports.org/n/pfx/forum.aspx?folderId=1&amp;listMode=13&amp;nav=messages&amp;webtag=cr-38auluxsuvgj">The right car for you</a>". Post there if you are not sure where to start. We also have forums by type of car, even <a href="http://forums.consumerreports.org/n/pfx/forum.aspx?webtag=cr-0609fcaethan">Hybrids and Electric</a>. Plus, there are forums on <a href="http://forums.consumerreports.org/n/pfx/forum.aspx?webtag=cr-38aujohn">Car maintenance</a>, <a href="http://forums.consumerreports.org/n/pfx/forum.aspx?webtag=cr-tiretalk">Tires</a>, <a href="http://forums.consumerreports.org/n/pfx/forum.aspx?webtag=cr-2kmileclub">High-Mileage</a>, and more. <br></p><p><br></p><p>Click on the drop-down boxes below and explore them all.</p></div><div class="ptcClear"></div></div>
+	</div>
+</div><div id="ptcMainTemplate"><form name="_pttmf" method="post" action="/n/pfx/forum.aspx?webtag=cr-carsStart" id="_pttmf" style="margin:0;padding:0">
+<input type="hidden" name="ptButtonCmd" id="ptButtonCmd" value="" />
+<input type="hidden" name="ptButtonValidate" id="ptButtonValidate" value="true" />
+<input type="hidden" name="ptButtonCCOId" id="ptButtonCCOId" value="0" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUENTM4MQ8WBB4FY0d1aWQFJEMxOTVCMTFELUM5NUMtNDExQy1CNjBFLTRDMDg1OThEMkM2Rh4FcFZhcnMy3AQAAQAAAP////8BAAAAAAAAAAQBAAAA4gFTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5EaWN0aW9uYXJ5YDJbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAdWZXJzaW9uCENvbXBhcmVyCEhhc2hTaXplAAMACJIBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuR2VuZXJpY0VxdWFsaXR5Q29tcGFyZXJgMVtbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0IAAAAAAkCAAAAAAAAAAQCAAAAkgFTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5HZW5lcmljRXF1YWxpdHlDb21wYXJlcmAxW1tTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXQAAAAALZGRO0hdmjWP9qhK8UyiDfNyOMSstxg==" />
+
+<script type='text/javascript' src='/dir-script/856861/Script.PTTMenu.js?'></script>
+<script type='text/javascript' src='/dir-script/856861/Script.PttControls.js?'></script>
+<script type='text/javascript' src='/dir-script/856861/Script.Ajax.js?'></script>
+<script type="text/javascript">
+		function simpleSearch(textCtlId)
+		{
+			var searchCtl = document.getElementById(textCtlId);
+			if (!searchCtl) return;
+			var searchText = searchCtl.value;
+			if (searchText == "") return;
+		
+			  location.href = AddDbgFlags('/n/pfx/forum.aspx?webtag=cr-carsstart&nav=search&q=' + searchText);
+			
+		PTM_hideMenu();
+		}
+		</script><div class="ptcHomepage"><div class="ptcPanel ptcAnnouncements"><div class="ptcHead">Announcements</div><div class="ptcBody">If you are unsure about where to post, try our general forum  - "The right car for you". You can ask about anything there.</div></div><div class="ptcPanel ptcHotTopics"><div class="ptcHead">Hot Topics</div><div class="ptcBody"><ul><li class="ptcMessage"><p class="ptcDiscussionTitle"><a href="/n/pfx/forum.aspx?nav=messages&amp;tsn=1&amp;webtag=cr-0609fcaethan&amp;tid=8473" onMouseOut="this.blur();return true;">What about Diesel</a></p><p class="ptcDiscussionText">The October issue of CR has an article about all the new high efficiency cars being introduced to the US by both...<a href="/n/pfx/forum.aspx?nav=messages&amp;tsn=1&amp;webtag=cr-0609fcaethan&amp;tid=8473" onMouseOut="this.blur();return true;"> More</a></p></li><li class="ptcMessage"><p class="ptcDiscussionTitle"><a href="/n/pfx/forum.aspx?nav=messages&amp;tsn=22&amp;webtag=cr-gps&amp;tid=18" onMouseOut="this.blur();return true;">Compare Magellan to Garmin</a></p><p class="ptcDiscussionText">Magellan does support addresses with route numbers. The nuisance is that, depending on the state you're in, some...<a href="/n/pfx/forum.aspx?nav=messages&amp;tsn=22&amp;webtag=cr-gps&amp;tid=18" onMouseOut="this.blur();return true;"> More</a></p></li><li class="ptcMessage"><p class="ptcDiscussionTitle"><a href="/n/pfx/forum.aspx?nav=messages&amp;tsn=7&amp;webtag=cr-usdcarbuying&amp;tid=186" onMouseOut="this.blur();return true;">Why is CR Pricing so low?</a></p><p class="ptcDiscussionText">I can't help but agree. Shopping for a used car, the CR price seems lowest for the models I'm looking at, often...<a href="/n/pfx/forum.aspx?nav=messages&amp;tsn=7&amp;webtag=cr-usdcarbuying&amp;tid=186" onMouseOut="this.blur();return true;"> More</a></p></li></ul></div></div><div class="ptcPanel ptcRecentDiscussions"><div class="ptcHead">Recent Discussions <img src="http://forums.consumerreports.org/dir-icon/249/5/head_discuss_icon.icon" alt="" /></div><div class="ptcBody"><ul><li class="ptcMessage"><p class="ptcDiscussionTitle"><a href="/n/pfx/forum.aspx?nav=messages&amp;tsn=1&amp;webtag=cr-38aujohn&amp;tid=5145" onMouseOut="this.blur();return true;">Throttle body cleaning</a></p><p class="ptcDiscussionText">Are they necessary? Do they work? How much are they<a href="/n/pfx/forum.aspx?nav=messages&amp;tsn=1&amp;webtag=cr-38aujohn&amp;tid=5145" onMouseOut="this.blur();return true;"> More</a></p></li><li class="ptcMessage"><p class="ptcDiscussionTitle"><a href="/n/pfx/forum.aspx?nav=messages&amp;tsn=3&amp;webtag=cr-38aujohn&amp;tid=5145" onMouseOut="this.blur();return true;">Throttle body cleaning</a></p><p class="ptcDiscussionText">Depends on the vehicle. Some are more prone than others to gunking up. Than you get a sticky feeling when...<a href="/n/pfx/forum.aspx?nav=messages&amp;tsn=3&amp;webtag=cr-38aujohn&amp;tid=5145" onMouseOut="this.blur();return true;"> More</a></p></li><li class="ptcMessage"><p class="ptcDiscussionTitle"><a href="/n/pfx/forum.aspx?nav=messages&amp;tsn=1&amp;webtag=cr-38aujohn&amp;tid=5144" onMouseOut="this.blur();return true;">Timing Belt Honda Replacement</a></p><p class="ptcDiscussionText">Honda recommends replacement at 90K miles.(did that). I now have 185K miles. Should I do it again? Plan on...<a href="/n/pfx/forum.aspx?nav=messages&amp;tsn=1&amp;webtag=cr-38aujohn&amp;tid=5144" onMouseOut="this.blur();return true;"> More</a></p></li></ul></div></div><div class="ptcPanel ptcForumCats"><div class="ptcHead">Forums & Categories</div><div class="ptcBody">
+<!--
+
+        clusterId856874
+        parentwebtagcr-cars01_2z
+-->
+<div class="ptcPanel ptccr-carsstart"><div class="ptcHead"><img src="http://forums.consumerreports.org/dir-icon/249/14/homepage_856874.icon" alt="" /></div><div class="ptcBody"><h2 class="ptcForumName"><a href="/n/forumIndex.aspx?webtag=cr-subscrIdx" onMouseOut="this.blur();return true;">Choosing, maintaining your car</a><span class="ptcDiscCount">
+                    (17088 discussions)
+                  </span></h2><p class="ptcForumDescription"><P>These forums are&nbsp;open to all.&nbsp; To post,&nbsp;<A href="https://ec.consumerreports.org/ec/cro/order.htm?INTKEY=I61HLL0">subscribers</A> sign-in.&nbsp; Visitors <A href="https://ec.consumerreports.org/ec/forums/login.htm?seamlesswebtag=http%3A%2F%2Fforums.consumerreports.org%2Fn%2Fpfx%2Fforum.aspx%3Fdbg%3D20%26webtag%3Dcr-home">register</A> free and sign in.</P>
+<P>&nbsp;</P></p><span class="ptbCustomForumsMenu"><a class="ptbMenuLink" href="javascript:void(0)" onclick="PTM_showMenu(this, 'custom_forums_list_menu_856874', '', -1, true);return false;" onMouseOut="this.blur();return true;">Select a topic/forum</a></span></div><div class="ptcClr"></div></div>
+<!--
+
+        clusterId856875
+        parentwebtagcr-cars02_2z
+-->
+<div class="ptcPanel ptccr-carsstart"><div class="ptcHead"><img src="http://forums.consumerreports.org/dir-icon/249/14/homepage_856875.icon" alt="" /></div><div class="ptcBody"><h2 class="ptcForumName"><a href="/n/forumIndex.aspx?webtag=cr-cartypeIdx" onMouseOut="this.blur();return true;">Car types</a><span class="ptcDiscCount">
+                    (2872 discussions)
+                  </span></h2><p class="ptcForumDescription"><A href="http://forums.consumerreports.org/n/pfx/forum.aspx?webtag=cr-sedans">Sedan</A> or <A href="http://forums.consumerreports.org/n/pfx/forum.aspx?webtag=cr-sportycars">sport</A>, <A href="http://forums.consumerreports.org/n/pfx/forum.aspx?webtag=cr-wagons">wagon</A> or <A href="http://forums.consumerreports.org/n/pfx/forum.aspx?webtag=cr-SUVs">SUV</A>, <A href="http://forums.consumerreports.org/n/pfx/forum.aspx?webtag=cr-0609fcaethan">hybrid</A>? You'll meet others here exploring the same questions. </p><span class="ptbCustomForumsMenu"><a class="ptbMenuLink" href="javascript:void(0)" onclick="PTM_showMenu(this, 'custom_forums_list_menu_856875', '', -1, true);return false;" onMouseOut="this.blur();return true;">Select a topic/forum</a></span></div><div class="ptcClr"></div></div>
+<!--
+
+        clusterId856877
+        parentwebtagcr-cars04_2z
+-->
+<div class="ptcPanel ptccr-carsstart"><div class="ptcHead"><img src="http://forums.consumerreports.org/dir-icon/249/14/homepage_856877.icon" alt="" /></div><div class="ptcBody"><h2 class="ptcForumName"><a href="/n/forumIndex.aspx?webtag=cr-morecarIdx" onMouseOut="this.blur();return true;">More car topics</a><span class="ptcDiscCount">
+                    (2781 discussions)
+                  </span></h2><p class="ptcForumDescription">Buying, selling? New, used? Talk it over here with the CR community. You'll also find groups on auto add-ons, GPS, making cars last, and motorcycles-scooters. </p><span class="ptbCustomForumsMenu"><a class="ptbMenuLink" href="javascript:void(0)" onclick="PTM_showMenu(this, 'custom_forums_list_menu_856877', '', -1, true);return false;" onMouseOut="this.blur();return true;">Select a topic/forum</a></span></div><div class="ptcClr"></div></div></div></div></div></form></div></td><td id="ptcBodyRight" class="ptcListContainerCellRight" rowspan="1"><div id="ptcWidgetColumnRight" class="ptcWidgetColumn">
+	<div class="ptcBranding">
+		<div class="ptcForumSearch"><ul class="ptcListFlow"><li><span class="ptcListHeader">Search Forums</span></li><li><input type="text" ID="ptMsgSearchText" onkeypress="if (event.keyCode != 13 && event.keyCode != 10)return true;location.href='/n/pfx/forum.aspx?webtag=cr-carsstart&nav=search&br=ALL&q=' + document.getElementById('ptMsgSearchText').value;return false;" NAME="ptMsgSearchText"/></li><li><span class="ptbMsgSearch"><a class="basic" href="javascript:void(0)" title="Start Search" onclick="location.href='/n/pfx/forum.aspx?webtag=cr-carsstart&amp;nav=search&amp;br=ALL&amp;q=' + document.getElementById('ptMsgSearchText').value;return false;" onMouseOut="this.blur();return true;" style="width:22px;height:22px;"><img src="http://forums.consumerreports.org/dir-icon/249/4/btn_searchglass.icon" border="0" height="23" width="36" alt="Start Search" style="vertical-align:middle;" /></a></span></li><li class="ptcAdvancedSearchLink"><a href="/n/pfx/forum.aspx?nav=search&amp;webtag=cr-carsStart" onMouseOut="this.blur();return true;">Advanced</a></li></ul></div><div class="ptcPanel ptcMemberCenter"><div class="ptcHead"><img src="http://forums.consumerreports.org/dir-icon/249/9/MemberCenterHeader.icon" alt="My Membership Center"/></div><div class="ptcBody" id="ptcMemberCenterAccordion"><div class="ptcWelcomeText">
+            Welcome, Guest
+          </div><div class="ptcLogin"><a href="javascript:void(0)" title="Sign in" onclick="return PTButtonCmd('cmdLogin()', false, '');" onMouseOut="this.blur();return true;">Sign in</a></div><div class="ptcGuidelines"><a href="http://www.consumerreports.org/cro/discussion/forums-discussion-guidelines/index.htm" onMouseOut="this.blur();return true;">Guidelines</a></div><div class="ptcAbout"><a href="http://www.consumerreports.org/static/FirstTimeVisitor.html" onMouseOut="this.blur();return true;">About Forums</a></div><div class="ptcContact"><a href="http://www.consumerreports.org/cro/discussion/forums-email/index.htm" onMouseOut="this.blur();return true;">Feedback</a></div></div></div><script type="text/javascript">
+    new TempestNS.Accordion("ptcMemberCenterAccordion",null,false,"","","");
+  </script><script language="javascript" type="text/javascript" src="http://oascentral.consumerreports.org/Scripts/oas_analytics.js"></script><script language="javascript" type="text/javascript" src="http://www.consumerreports.org/cro/resources/js/sx.js"></script><div class="ad" style="border-bottom: 1px solid #D2D6DF;"><script type="text/javascript">
+
+var randomoverride = randomString(9,"0123456789");
+
+displayAdWithClassAndStyle("cu/cro/forums","Right1","135","190","Right1,Right2,Right3",randomoverride,"class='rightads'","style='margin-bottom: 12px; margin-top: 12px; margin-left: 8px;'");
+
+</script></div><div class="ad" style="border-bottom: 1px solid #D2D6DF;"><script type="text/javascript">
+
+displayAdWithClassAndStyle("cu/cro/forums","Right2","135","190","Right1,Right2,Right3",randomoverride,"class='rightads'","style='margin-bottom: 12px; margin-top: 12px; margin-left: 8px;'");
+
+</script></div><div style="padding-top: 5px;" class="ad"><script type="text/javascript">
+
+displayAdWithClassAndStyle("cu/cro/forums","Right3","135","190","Right1,Right2,Right3",randomoverride,"class='rightads'","");
+
+</script></div>
+	</div>
+</div></td></tr></table></div><div id="ptcBrandFooter" class="ptcWrapperHeader">
+	<div class="ptcBranding">
+		<div id="footer"><div id="crofooter"><div class="shadow">&nbsp;</div><div class="leftandmiddle"><div class="left"><div class="testlab"><ul><li><img alt="Test labs" height="20" src="http://www.consumerreports.org/cro/resources/rd07/images/cro_testlab_badge.gif" width="97"/></li></ul></div><ul><li><a href="http://www.consumerreports.org/cro/aboutus/test/index.htm" title="How We Test">How We Test</a></li><li><a href="http://www.consumerreports.org/cro/aboutus/history/interactive/index.htm" title="Our History">Our History</a></li><li><a href="http://www.consumerreports.org/cro/aboutus/labtour/index.htm" title="Lab Tour">Lab Tour</a></li></ul></div><div class="middle"><ul><li class="custom">ConsumerReports.org:&nbsp;&nbsp;</li><li><a href="http://www.consumerreports.org/cro/a-to-z-index/index.htm" title="A to Z Index">A-Z Index</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://www.consumerreports.org/cro/a-to-z-index/index/index.htm" title="Site Map">Site Map</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://www.consumerreports.org/cro/customer-service/overview/index.htm" title="Overview">Overview</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://www.consumerreports.org/cro/customer-service/privacy/index.htm" title="Your Privacy Rights">Your Privacy Rights</a> &nbsp;|&nbsp;
+
+                        </li><li><a href="http://www.consumerreports.org/cro/customer-service/user-agreement/index.htm" title="User Agreement">User Agreement</a></li></ul><ul style=" margin-left: 2px; float: left; clear: both; margin-top: 1px;"><li><a href="http://www.consumerreports.org/cro/canadaextra/index.htm">Canada Extra</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://espanol.consumerreports.org/">en Espa&ntilde;ol</a> &nbsp;|&nbsp;
+
+                        </li><li class="custom visitor-only"><a href="https://ec.consumerreports.org/ec/cro/order.htm?INTKEY=I610LT0" style=" font-weight: bold;">Subscribe</a></li></ul><ul class="second"><li class="custom">Who We Are:&nbsp;&nbsp;</li><li><a href="http://www.consumerreports.org/cro/aboutus/index.htm" title="About Us">About Us</a> &nbsp;|&nbsp;
+
+                        </li><li><a href="http://www.consumerreports.org/cro/aboutus/mission/overview/index.htm" title="Our Mission">Our Mission</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://www.consumerreports.org/cro/aboutus/adviolation/index.htm">No Commercial Use</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://www.consumerreports.org/cro/home-garden/news/august-2006/report-your-problem-products-8-06/overview/reporty-our-problem-products.htm" title="Report A Safety Problem">Report a Safety Problem</a> &nbsp;|&nbsp;
+
+                        </li><li><a href="http://jobs-consumers.icims.com/consumers_jobs/jobs/candidate/intro.jsp;jsessionid=20309690839678505f17">Career Opportunities</a></li></ul><ul style=" margin-left: 2px; float: left; clear: both; margin-top: 1px;"><li><a href="http://www.consumerreports.org/cro/book-store/products-and-services/index.htm" title="Bookstore">Bookstore</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://www.consumerreports.org/cro/customer-service/email-service/e-mail-newsletters/index.htm" title="E-mail Newsletters">E-mail Newsletters</a> &nbsp;|&nbsp;
+
+                        </li><li class="rss"><a href="http://simplefeed.consumerreports.org">RSS</a> &nbsp;|
+                        </li><li class="third"><a href="http://www.consumerreports.org/cro/cu-press-room/pressroom/welcome/index.htm" title="Press Room">Press Room</a> &nbsp;|
+                     </li><li><a href="https://consumerreports.secure-donor.com/consumerreports?source=0027222223">Donate</a></li>&nbsp;|&nbsp;
+ <li><a href="http://custhelp.consumerreports.org/cgi-bin/consumerreports.cfg/php/enduser/home.php">Customer Service-Contact Us</a></li></ul><ul class="second"><li class="custom">Consumer Reports Network:&nbsp;&nbsp;</li><li><a href="http://www.consumerreports.org/cro/index.htm">ConsumerReports.org</a> &nbsp;|&nbsp;
+</li><li><a href="http://www.consumerreports.org/health/home.htm">ConsumerReportsHeath.org</a> &nbsp;|&nbsp;
+</li><li><a href="http://consumerist.com/">The Consumerist</a></li></ul><ul style=" margin-top: 1px; clear: both; margin-left: 2px; float: left;"><li><a href="http://www.consumerreports.org/cro/customer-service/consumer-reports-advice-and-prices-on-buying-a-new-car/index.htm">Car Pricing Service</a> &nbsp;|&nbsp;
+</li><li><a href="http://www.consumersunion.org/">ConsumersUnion.org</a></li></ul></div></div><div class="right"><strong>FREE Newsletter</strong><br/>Sign up for our FREE updates delivered by email.
+                  <ul><li><a href="http://www.consumerreports.org/cro/customer-service/email-service/e-mail-newsletters/index.htm" title="E-mail Newsletters">Sign up now</a> or <a href="http://www.consumerreports.org/cro/customer-service/email-service/e-mail-newsletters/index.htm">click here</a> to manage your newsletters</li></ul></div><div class="copyright">Copyright &copy; 2006-2013 <a href="http://www.consumersunion.org/">Consumers Union</a> of U.S., Inc. No reproduction, in whole or in part, without written <a href="http://www.consumerreports.org/cro/book-store/additional-information/permission-requests/index.htm">permission</a>.
+               </div><div class="expanddivdownward">&nbsp;</div></div></div>
+	</div><div class="ptcBrandCopyright">
+		
+	</div><div class="ptcAdSpace">
+		
+	</div>
+</div><div style="position:absolute;left:-100px;top:-100px;width:10px;height:10px;overflow:hidden"><div style="display:none" id="folderOpenIconDiv"><img src="http://forums.consumerreports.org/dir-icon/249/5/folder_dn.icon" iconWidth="18" iconHeight="16" alt="" /></div><div style="display:none" id="folderClosedIconDiv"><img src="http://forums.consumerreports.org/dir-icon/249/5/folder_rt.icon" iconWidth="18" iconHeight="16" alt="" /></div><div style="display:none" id="dscArrowDiv"><img src="http://forums.consumerreports.org/dir-icon/249/4/dsc_index.icon" width="14" height="12" alt="" /></div><div style="display:none" id="dscClearDiv"><img src="http://forums.consumerreports.org/dir-icon/249/4/clr.icon" width="14" border="0" height="12" alt="" /></div><script type='text/javascript' src='/dir-script/856861/Script.MessagesPage.js?'></script>
+<div style="display:none" id="loadingImageDiv"><table cellpadding="0" cellspacing="0" border="0" width="100%" ID="Table1"><tr><td align="center" valign="top"><img src="http://forums.consumerreports.org/dir-icon/249/13/load_anim.icon" width="240" height="180" alt="" /></td></tr></table></div></div><!-- SiteCatalyst code version: H.21.1 
+Copyright 1996-2010 Adobe, Inc. All Rights Reserved 
+More info available at http://www.omniture.com --> 
+<script language="JavaScript" type="text/javascript"> 
+var s_account="cuconsumer,cuglobal" 
+</script> 
+<script language="JavaScript" type="text/javascript" src="http://www.consumerreports.org/cro/shared-resources/scripts/site-catalyst/s_code.js"></script> 
+<script language="JavaScript" type="text/javascript"> 
+
+s.channel="cro" 
+s.pageName="CRO:Discussion" 
+s.prop1="Discussion" 
+s.prop9="free" 
+
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/ 
+var s_code=s.t();if(s_code)document.write(s_code) 
+</script> 
+<!-- End SiteCatalyst code version: H.21.1 --><script type='text/javascript' src='/dir-script/856861/Script.ExternalPageTrackingRef.js?'></script>
+</div></div>
+<!-- Starting Ptt Menus -->
+<ul id="custom_forums_list_menu_856874" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)"></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-tiretalk" onMouseOut="this.blur();return true;">Tires & tire-talk</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-38auluxsuvgj" onMouseOut="this.blur();return true;">The right car for you</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-38aujohn" onMouseOut="this.blur();return true;">Maintenance & repair</a></li>
+</ul><ul id="custom_forums_list_menu_856875" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)"></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-SUVs" onMouseOut="this.blur();return true;">SUVs</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-sedans" onMouseOut="this.blur();return true;">Sedans</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-0609fcaethan" onMouseOut="this.blur();return true;">Hybrids, electric, alternative-fuel cars</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-minivans" onMouseOut="this.blur();return true;">Minivans</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-smallcars" onMouseOut="this.blur();return true;">Small cars</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-wagons" onMouseOut="this.blur();return true;">Wagons</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-pickups" onMouseOut="this.blur();return true;">Pickups</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-convertibles" onMouseOut="this.blur();return true;">Convertibles</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-sportycars" onMouseOut="this.blur();return true;">Sporty cars</a></li>
+</ul><ul id="custom_forums_list_menu_856877" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)"></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-2kmileclub" onMouseOut="this.blur();return true;">The High-Mileage Club</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-newcarbuying" onMouseOut="this.blur();return true;">New-car buying & leasing</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying" onMouseOut="this.blur();return true;">Used-car buying & selling</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-gps" onMouseOut="this.blur();return true;">GPS, navigation</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-aftermarket" onMouseOut="this.blur();return true;">Auto add-ons</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-0806camotorc" onMouseOut="this.blur();return true;">Motorcycles & scooters</a></li>
+</ul><ul id="discaction_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;left:-300px;top:-300px;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Discussion Actions</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="/n/pfx/forum.aspx?nav=post&amp;webtag=cr-carsStart" title="Post a new message to this forum" onMouseOver="status='Post a new message to this forum';return true;" onMouseOut="status='';this.blur();return true;"><img src="http://forums.consumerreports.org/dir-icon/249/4/tools_newmsg.icon" border="0" height="16" width="22" alt="Post a new message to this forum" style="vertical-align:middle;" />&nbsp;Post a message</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="2" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" title="Mark discussions as read" onclick="return PTM_extraClickArgs('return PTButtonCmd(\'cmdMarkAsRead(#markReadDate#)\', true, \'\');', 'PTM_args');" onMouseOver="status='Mark discussions as read';return true;" onMouseOut="status='';this.blur();return true;"><img src="http://forums.consumerreports.org/dir-icon/249/4/tools_markread.icon" border="0" height="16" width="22" alt="Mark discussions as read" style="vertical-align:middle;" />&nbsp;Mark read</a></li>
+</ul><ul id="textsize_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;left:-300px;top:-300px;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Adjust text size</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:8pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(8)', true, '');" onMouseOut="this.blur();return true;">8 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:9pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(9)', true, '');" onMouseOut="this.blur();return true;">9 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:10pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(10)', true, '');" onMouseOut="this.blur();return true;">10 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:11pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(11)', true, '');" onMouseOut="this.blur();return true;">11 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:12pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(12)', true, '');" onMouseOut="this.blur();return true;">12 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:14pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(14)', true, '');" onMouseOut="this.blur();return true;">14 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:16pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(16)', true, '');" onMouseOut="this.blur();return true;">16 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:18pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(18)', true, '');" onMouseOut="this.blur();return true;">18 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:24pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(24)', true, '');" onMouseOut="this.blur();return true;">24 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:36pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(36)', true, '');" onMouseOut="this.blur();return true;">36 point</a></span></li>
+</ul><ul id="msgoptions_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Options</li>
+<!--
+
+        Popup List: emailMsg,printMsg,tosReport
+-->
+<li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="/n/pfx/forum.aspx?tsn=#tsn#&amp;nav=tosReportMaster&amp;webtag=cr-carsStart&amp;tid=#tid#&amp;ptpw=y" onclick="return PTM_extraClickArgs('var newWin=window.open(\'/n/pfx/forum.aspx?tsn=#tsn#&amp;nav=tosReportMaster&amp;webtag=cr-carsStart&amp;tid=#tid#&amp;ptpw=y\', \'PttPopupWin\', \'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=350,height=280,\');newWin.focus();return false;', 'PTM_args');" onMouseOut="this.blur();return true;">Report this post</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="/n/pfx/forum.aspx?action=forward&amp;tsn=#tsn#&amp;nav=emailPrint&amp;webtag=cr-carsStart&amp;tid=#tid#&amp;ptpw=y" onclick="return PTM_extraClickArgs('var newWin=window.open(\'/n/pfx/forum.aspx?action=forward&amp;tsn=#tsn#&amp;nav=emailPrint&amp;webtag=cr-carsStart&amp;tid=#tid#&amp;ptpw=y\', \'PttPopupWin\', \'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=350,height=280,\');newWin.focus();return false;', 'PTM_args');" onMouseOut="this.blur();return true;">E-mail this message</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="/n/pfx/forum.aspx?action=print&amp;tsn=#tsn#&amp;nav=emailPrint&amp;webtag=cr-carsStart&amp;tid=#tid#&amp;ptpw=y" onclick="return PTM_extraClickArgs('var newWin=window.open(\'/n/pfx/forum.aspx?action=print&amp;tsn=#tsn#&amp;nav=emailPrint&amp;webtag=cr-carsStart&amp;tid=#tid#&amp;ptpw=y\', \'PttPopupWin\', \'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=350,height=280,\');newWin.focus();return false;', 'PTM_args');" onMouseOut="this.blur();return true;">Print Message</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="10" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('javascript:PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-carsStart\', \'\', PT_ajaxShowAlert, \'makeFriend(#fromUserId#)\');', 'PTM_args');" onMouseOut="this.blur();return true;">Add to Friends</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="6" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('javascript:PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-carsStart\', \'\', PT_ajaxShowAlert, \'makeIgnore(#fromUserId#)\');', 'PTM_args');" onMouseOut="this.blur();return true;">Ignore this Author</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="4" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('javascript:PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-carsStart\', \'\', PT_ajaxShowAlert, \'makeNeutral(#fromUserId#)\');', 'PTM_args');" onMouseOut="this.blur();return true;">Remove from Friends List</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="8" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('javascript:PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-carsStart\', \'\', PT_ajaxShowAlert, \'makeNeutral(#fromUserId#)\');', 'PTM_args');" onMouseOut="this.blur();return true;">Stop Ignoring this Author</a></li>
+</ul><ul id="msgrating_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Rate this message</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="javascript:void(0)" onclick="return PTM_extraClickArgs('PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-carsStart\', \'\', PT_ajaxShowAlert, \'cmdSetMessageRating(#tid#, #tsn#, 1)\', \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""></a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="javascript:void(0)" onclick="return PTM_extraClickArgs('PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-carsStart\', \'\', PT_ajaxShowAlert, \'cmdSetMessageRating(#tid#, #tsn#, 2)\', \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""></a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="javascript:void(0)" onclick="return PTM_extraClickArgs('PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-carsStart\', \'\', PT_ajaxShowAlert, \'cmdSetMessageRating(#tid#, #tsn#, 3)\', \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""></a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="javascript:void(0)" onclick="return PTM_extraClickArgs('PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-carsStart\', \'\', PT_ajaxShowAlert, \'cmdSetMessageRating(#tid#, #tsn#, 4)\', \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /></a><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="javascript:void(0)" onclick="return PTM_extraClickArgs('PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-carsStart\', \'\', PT_ajaxShowAlert, \'cmdSetMessageRating(#tid#, #tsn#, 5)\', \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://forums.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://forums.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /></a></li>
+</ul><ul id="tools_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Discussion Tools</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="/n/pfx/forum.aspx?nav=post&amp;webtag=cr-carsStart" title="Post a new message to this forum" onMouseOver="status='Post a new message to this forum';return true;" onMouseOut="status='';this.blur();return true;"><img src="http://forums.consumerreports.org/dir-icon/249/4/tools_newmsg.icon" border="0" height="16" width="22" alt="Post a new message to this forum" style="vertical-align:middle;" />&nbsp;Post a message</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" title="Get a printer-friendly version of this discussion" onclick="return PTM_extraClickArgs('window.location=\'/n/pfx/forum.aspx?nav=printDiscussion&amp;webtag=cr-carsStart&amp;tid=#tid#\'', 'PTM_args');" onMouseOver="status='Get a printer-friendly version of this discussion';return true;" onMouseOut="status='';this.blur();return true;"><img src="http://forums.consumerreports.org/dir-icon/249/4/tools_print.icon" border="0" height="16" width="20" alt="Get a printer-friendly version of this discussion" style="vertical-align:middle;" />&nbsp;Print Discussion</a></li>
+</ul><ul id="interest_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Interest level</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('return PTButtonCmd(\'SetInterestLevel(#tid#, 2)\', true, \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://forums.consumerreports.org/dir-icon/249/5/flag_yellow.icon" border="0" height="16" width="20" alt="" style="vertical-align:middle;" />&nbsp; High</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('return PTButtonCmd(\'SetInterestLevel(#tid#, 1)\', true, \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://forums.consumerreports.org/dir-icon/249/4/clr.icon" border="0" height="16" width="20" alt="" style="vertical-align:middle;" />&nbsp; Neutral</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('return PTButtonCmd(\'SetInterestLevel(#tid#, 0)\', true, \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://forums.consumerreports.org/dir-icon/249/5/flag_blue.icon" border="0" height="16" width="20" alt="" style="vertical-align:middle;" />&nbsp; Ignore</a></li>
+</ul><ul id="search_menu" class="ptPopMenuPlain" onShow="document.getElementById('_ptForumSearchText').select()" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li displayMask="-1" onclick="PTM_onclick(this, event)" style="padding:0;margin:0;text-align:left;line-height:128px"><table cellpadding="2" cellspacing="0" border="0" class="ptPopupMenuTable" onclick="PT_cancelBubble(event)" align="left"><tr><td colspan="2" align="center" width="100%" class="ptPopupMenuTableHead"><b>Find messages</b></td></tr><tr><td height="22" align="center" style="white-space:nowrap" valign="middle" class="ptPopupMenuTableBody"><input type="text" ID="_ptForumSearchText" style="width:112px" maxlength="250" onkeypress="if (event.keyCode != 13 && event.keyCode != 10)return true;simpleSearch('_ptForumSearchText');return false;"/><a href="javascript:void(0)" title="Start Search" onclick="simpleSearch('_ptForumSearchText');return false;" onMouseOut="this.blur();return true;" style="width:22px;height:22px;"><img src="http://forums.consumerreports.org/dir-icon/249/4/btn_searchglass.icon" border="0" alt="Start Search" style="vertical-align:middle;" /></a></td></tr><tr><td colspan="2" class="ptPopupMenuTableBody" style="height:16px;text-align:center"><a class="basic" href="/n/pfx/forum.aspx?nav=search&amp;webtag=cr-carsStart" onMouseOut="this.blur();return true;">Advanced</a></td></tr></table></li>
+</ul><ul id="modes_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">View Modes</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" title="Go to basic message view" onclick="return PTButtonCmd('cmdMemberSetValue(viewMode,basic)', true, '');" onMouseOver="status='Go to basic message view';return true;" onMouseOut="status='';this.blur();return true;"><img src="http://forums.consumerreports.org/dir-icon/249/4/msgmodsel_0.icon" border="0" height="16" width="22" alt="Go to basic message view" style="vertical-align:middle;" />&nbsp;Basic</a></li>
+</ul><ul id="forums_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Related Forums</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-demo1" onMouseOut="this.blur();return true;">CR Digital Photography Demo</a></li>
+</ul><ul id="mystuff_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">
+  My Stuff by section
+  </li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?nav=myforums&amp;webtag=cr-carsStart#myforumschats" onMouseOut="this.blur();return true;">My Chats</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?nav=myforums&amp;webtag=cr-carsStart#myforumsforums" onMouseOut="this.blur();return true;">My Forums</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?nav=myforums&amp;webtag=cr-carsStart#myforumssubscriptions" onMouseOut="this.blur();return true;">My Subscriptions</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?nav=myforums&amp;webtag=cr-carsStart#myforumsfriends" onMouseOut="this.blur();return true;">My Friends</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?nav=myforums&amp;webtag=cr-carsStart#myforumsprefs" onMouseOut="this.blur();return true;">My Preferences</a></li>
+</ul><ul id="mgmttools_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Management Tools</li>
+</ul></body></html>

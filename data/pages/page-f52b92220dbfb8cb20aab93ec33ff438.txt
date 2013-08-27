@@ -1,0 +1,879 @@
+﻿
+
+<!DOCTYPE HTML>
+<html id="htmlTag" class="no-js hideBodyBackground" style="background:#c0bba5 url(/Global/Backgrounds/MC-web-background-french-horn.jpg) no-repeat fixed 0 0;">
+<head><title>
+	Music Center | Los Angeles Performing Arts
+</title><meta name="keywords" content="Home page SEO Keywords" /><meta name="description" content="Home page Description" /><meta name="revisit-after" content="4 weeks" /><meta name="generator" content="EPiServer" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="creation_date" content="Tue, 02 Aug 2011 17:11:00 GMT" /><meta name="last-modified" content="Fri, 23 Mar 2012 14:40:57 GMT" /><meta name="revised" content="Fri, 23 Mar 2012 14:40:57 GMT" /><meta http-equiv="Content-Language" content="en" /><meta name="viewport" content="width=device-width" />
+
+<link rel="icon" href="http://www.musiccenter.org/favicon.ico" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width" /><link href="/App_Themes/main/main.css" rel="stylesheet" type="text/css" media="screen" /><link href="/App_Themes/main/print.css" rel="stylesheet" type="text/css" media="print" />
+    <script src="/js/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+    <script src="/js/lib/underscore.js"></script>
+    <script src="/js/lib/backbone.js"></script>
+    <script src="/js/lib/handlebars.js"></script>
+    <script src="/js/lib/head.load.js"></script>
+    <script src="/js/lib/moment.js"></script>
+    <script src="/js/flowplayer-3.2.6.min.js"></script>
+    <script src="/js/flowplayer.ipad-3.2.2.min.js"></script>
+    <script src="/js/xFormHelpers.js"></script>
+    <script src="/js/app/run.js"></script>
+    
+
+
+    
+
+
+ <script type="text/javascript">
+     var timerInterval;
+     var highlightTime;
+     var secondsRemaining;
+
+     $(document).ready(function () {
+         secondsRemaining = parseInt(jQuery("#secondsRemaining").val());
+         if (secondsRemaining !== -1)
+             startCartTimer();
+         highlightTime = parseInt($('#warningSeconds').val());
+         //highlightTime = 20;
+     });
+
+
+
+     function startCartTimer() {
+         $('#countDownTimer').append('<span class="countdown_row countdown_amount"></span>');
+         timerInterval = setInterval(function () {
+
+             if (secondsRemaining < 0) {
+                 secondsRemaining = 0;
+             }
+
+             var hangingSeconds = secondsRemaining % 60;
+             var minuteSeconds = secondsRemaining - hangingSeconds;
+             var minutesRemaining = minuteSeconds / 60;
+             var formattedHangingSeconds;
+             var formattedMinutesRemaining;
+
+             if (hangingSeconds < 10) { formattedHangingSeconds = "0" + hangingSeconds; }
+             else { formattedHangingSeconds = hangingSeconds; }
+
+             if (minutesRemaining < 10) { formattedMinutesRemaining = "0" + minutesRemaining; }
+             else { formattedMinutesRemaining = minutesRemaining; }
+
+             $('.countdown_amount').html(formattedMinutesRemaining + ":" + formattedHangingSeconds);
+             if (secondsRemaining <= highlightTime) { cartTimerShouldHiglight() }
+             if (secondsRemaining === 0) { cartTimerDidEnd(); }
+             secondsRemaining--;
+
+         }, 1000);
+     }
+
+     function cartTimerShouldHiglight() {
+         $('.countdown_amount').parents('.expirationTime').addClass('highlight');
+     }
+
+     function cartTimerDidEnd() {
+         clearInterval(timerInterval);
+     }
+
+
+
+    </script>
+
+</head>
+<!--[if IE 7 ]><body class="ie ielt9 ielt8 ie7"><![endif]-->
+<!--[if IE 8 ]><body class="ie ielt9 ie8"><![endif]-->
+<!--[if IE 9 ]><body class="ie ie9"><![endif]-->
+<!--[if !IE]><!-->
+<body id="body">
+    <!--<![endif]-->
+
+    <form method="post" action="/" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="gaKey" id="gaKey" value="UA-3890015-1" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDk4MDY0NDgxD2QWAmYPZBYCAgEPFgQeBWNsYXNzBRhuby1qcyBoaWRlQm9keUJhY2tncm91bmQeBXN0eWxlBWJiYWNrZ3JvdW5kOiNjMGJiYTUgdXJsKC9HbG9iYWwvQmFja2dyb3VuZHMvTUMtd2ViLWJhY2tncm91bmQtZnJlbmNoLWhvcm4uanBnKSBuby1yZXBlYXQgZml4ZWQgMCAwOxYCAgMPZBYCAgEQZGQWDAIFD2QWCAIDD2QWMGYPDxYEHgtfaXNFZGl0YWJsZWgeCV9sYXN0VHlwZQUHRGVmYXVsdGRkAgEPDxYEHwJoHwMFB0RlZmF1bHRkZAICDw8WBB8CaB8DBQdEZWZhdWx0ZGQCAw8PFgQfAmgfAwUHRGVmYXVsdGRkAgQPDxYEHwJoHwMFB0RlZmF1bHRkZAIFDw8WBB8CaB8DBQdEZWZhdWx0ZGQCBg8PFgQfAmgfAwUHRGVmYXVsdGRkAgcPDxYEHwJoHwMFB0RlZmF1bHRkZAIIDw8WBB8CaB8DBQdEZWZhdWx0ZGQCCQ8PFgQfAmgfAwUHRGVmYXVsdGRkAgoPDxYEHwJoHwMFB0RlZmF1bHRkZAILDw8WBB8CaB8DBQdEZWZhdWx0ZGQCDA8PFgQfAmgfAwUHRGVmYXVsdGRkAg0PDxYEHwJoHwMFB0RlZmF1bHRkZAIODw8WBB8CaB8DBQdEZWZhdWx0ZGQCDw8PFgQfAmgfAwUHRGVmYXVsdGRkAhAPDxYEHwJoHwMFB0RlZmF1bHRkZAIRDw8WBB8CaB8DBQdEZWZhdWx0ZGQCEg8PFgQfAmgfAwUHRGVmYXVsdGRkAhMPDxYEHwJoHwMFB0RlZmF1bHRkZAIUDw8WBB8CaB8DBQdEZWZhdWx0ZGQCFQ8PFgQfAmgfAwUHRGVmYXVsdGRkAhYPDxYEHwJoHwMFB0RlZmF1bHRkZAIXDw8WBB8CaB8DBQdEZWZhdWx0ZGQCBQ8PFgQeC05hdmlnYXRlVXJsBQ8vYWNjb3VudC9sb2dpbi8eB1Zpc2libGVnZGQCDQ8WAh4EVGV4dAXKAjxsaT48YSBocmVmPSIvVGVtcGxhdGVzL1BhZ2VzL0hvbWUuYXNweD9pZD0zJmFtcDtlcHNsYW5ndWFnZT1lbiI+SG9tZTwvYT48L2xpPg0KPGxpPjxhIGhyZWY9Ii9UZW1wbGF0ZXMvUGFnZXMvZG9uYXRpb25zLmFzcHg/aWQ9MTQ1NyIgdGFyZ2V0PSJfYmxhbmsiPkdpdmUgTm93PC9hPjwvbGk+DQo8bGk+PGEgaHJlZj0iL1RlbXBsYXRlcy9QYWdlcy9QYWdlLmFzcHg/aWQ9MTcwNiZhbXA7ZXBzbGFuZ3VhZ2U9ZW4iPkNvbnRhY3QgVXM8L2E+PC9saT4NCjxsaT48YSBocmVmPSIvVGVtcGxhdGVzL1BhZ2VzL1BhZ2UuYXNweD9pZD0xMTcwIj5FLU5ld3MgU2lnbiBVcDwvYT48L2xpPmQCDw9kFgQCAQ8PFgIfBWdkZAIDDw8WAh8FZ2RkAgsPZBYCAgEPDxYEHwJoHwMFB0RlZmF1bHRkZAINDw8WAh8FaGRkAg8PZBYIAgEPDxYEHwJoHwMFB0RlZmF1bHRkFgJmD2QWAmYPFgIeCGRpc2FibGVkZGQCAw8WAh4LXyFJdGVtQ291bnQCBRYKAgEPZBYCZg8VAgEwMUdsb3J5YSBLYXVmbWFuIFByZXNlbnRzIERhbmNlIGF0IFRoZSBNdXNpYyBDZW50ZXJkAgIPZBYCZg8VAgExCExBIE9wZXJhZAIDD2QWAmYPFQIBMhRDZW50ZXIgVGhlYXRyZSBHcm91cGQCBA9kFgJmDxUCATMSTEEgTWFzdGVyIENob3JhbGUgZAIFD2QWAmYPFQIBNAhMQSBQaGlsIGQCBQ8WAh8IAgUWCgIBD2QWAmYPFQMBMEgvTWVkaWEvSG9tZS1QYWdlLUltYWdlcy9SZXNpZGVudC1Db21wYW55LUltYWdlcy9ETUMxM18xNC1NQ3BhZ2VfUk5aQi5qcGeeATxwPkNMQVNTSUMgUkVERUZJTkVEPC9wPjxwPkNlbGVicmF0ZSB0aW1lbGVzcyBwaWVjZXMgYW5kIGdyb3VuZGJyZWFraW5nIHdvcmtzLjwvcD48cD48YSBocmVmPSIvVGVtcGxhdGVzL1BhZ2VzL0JvdHRvbUdyaWQuYXNweD9pZD0xNzM2Ij5MRUFSTiBNT1JFIOKAujwvYT48L3A+ZAICD2QWAmYPFQMBMTwvTWVkaWEvSG9tZS1QYWdlLUltYWdlcy9SZXNpZGVudC1Db21wYW55LUltYWdlcy9MQU9GbHV0ZS5qcGeCATxwPkxBIE9QRVJBPC9wPjxwPkdyZWF0ZXIgdGhhbiB0aGUgc3VtIG9mIGl0cyBhcnRzLjwvcD48cD48YSBocmVmPSJodHRwOi8vd3d3Lmxhb3BlcmEuY29tLyIgdGFyZ2V0PSJfYmxhbmsiPkxFQVJOIE1PUkUg4oC6PC9hPjwvcD5kAgMPZBYCZg8VAwEyPC9NZWRpYS9Ib21lLVBhZ2UtSW1hZ2VzL1Jlc2lkZW50LUNvbXBhbnktSW1hZ2VzL0NUR0ltYWdlLmpwZ94BPHA+TG9uZG9uLiBCcm9hZHdheS4gQWhtYW5zb24uPC9wPjxwPuKAnEEgQmxhc3Qgb2YgQ3JlYXRpdmUgRW5lcmd54oCdIGZvciB0aGUgNDZ0aCBZZWFyIG9mIHRoZSBBaG1hbnNvbiBUaGVhdHJlIGF0IFRoZSBNdXNpYyBDZW50ZXIuPC9wPjxwPjxhIGhyZWY9Imh0dHA6Ly93d3cuQ2VudGVyVGhlYXRyZUdyb3VwLm9yZyIgdGFyZ2V0PSJfYmxhbmsiPkxFQVJOIE1PUkUg4oC6IDwvYT48L3A+ZAIED2QWAmYPFQMBMygvR2xvYmFsL1Rlc3RJbWFnZXMvTEFNYXN0ZXJDaG9yYWxlTUMuanBnlgE8cD5FeHBsb3JlIGEgTmV3IFNlYXNvbiE8L3A+PHA+Q29tcGVsbGluZyBjaG9yYWwgbXVzaWMgZXhwZXJpZW5jZXMgYXdhaXQgeW91LjwvcD48cD48YSBocmVmPSJodHRwOi8vbGFtYy5vcmcvIiB0YXJnZXQ9Il9ibGFuayI+TEVBUk4gTU9SRSDigLogPC9hPjwvcD5kAgUPZBYCZg8VAwE0JC9HbG9iYWwvVGVzdEltYWdlcy9MQVBoaWxEVURBTUVMLmpwZ7ABPHA+TEEgUGhpbCBzdWJzY3JpcHRpb25zIGF2YWlsYWJsZSBub3chPC9wPjxwPkNsYXNzaWNhbCwgamF6eiwgd29ybGQgbXVzaWMsIGhvbGlkYXkgY29uY2VydHMgYW5kIG1vcmUuPC9wPjxwPjxhIGhyZWY9Imh0dHA6Ly9sYXBoaWwuY29tLyIgdGFyZ2V0PSJfYmxhbmsiPkxFQVJOIE1PUkUg4oC6PC9hPjwvcD5kAgcPDxYEHwJoHwMFB0RlZmF1bHRkZAIRD2QWEAIBDw8WBB8CaB8DBQdEZWZhdWx0ZGQCAw9kFgYCAQ9kFgJmDxUCf1RIRSBNVVNJQyBDRU5URVIgQU5EIEdSQU5EIFBBUksgSU5UUk9EVUNFIExPUyBBTkdFTEVTIFRPIEFSQ0hJVEVDVFMgT0YgQUlS4oCZUyDigJxFWFhPUE9MSVMs4oCdIEEgTU9OVU1FTlRBTCBTRU5TT1JZIEVYUEVSSUVOQ0UxL1RlbXBsYXRlcy9QYWdlcy9QYWdlLmFzcHg/aWQ9NTU1MSZlcHNsYW5ndWFnZT1lbmQCAg9kFgJmDxUCiwFUaGUgRGl6enkgRmVldCBGb3VuZGF0aW9uLCBUaGUgTXVzaWMgQ2VudGVyIGFuZCB0aGUgSm9obiBGLiBLZW5uZWR5IENlbnRlciBmb3IgdGhlIFBlcmZvcm1pbmcgQXJ0cyBBbm5vdW5jZSBOYXRpb25hbCBEYW5jZSBEYXkgQ2VsZWJyYXRpb25zMS9UZW1wbGF0ZXMvUGFnZXMvUGFnZS5hc3B4P2lkPTUzMDYmZXBzbGFuZ3VhZ2U9ZW5kAgMPZBYCZg8VAklHUkFORCBQQVJLIFRPIEhPU1QgV0VTVCBDT0FTVOKAmVMgRkxBR1NISVAgTkFUSU9OQUwgREFOQ0UgREFZIENFTEVCUkFUSU9OMS9UZW1wbGF0ZXMvUGFnZXMvUGFnZS5hc3B4P2lkPTUzMDUmZXBzbGFuZ3VhZ2U9ZW5kAgUPDxYEHwJoHwMFB0RlZmF1bHRkZAIHDw8WBB8CaB8DBQdEZWZhdWx0ZGQCCQ8PFgQfAmgfAwUHRGVmYXVsdGRkAg0PFgIfCAIDFgYCAQ9kFgJmDxUDAFtEaWQgeW91IGtub3cgaXQncyBOYXRpb25hbCBEb2cgRGF5PyBDaGVjayBvdXQgdGhlIGZ1cnJ5IGZyaWVuZHMgb2Ygc29tZSBvZiB0aGUgQUJUIGRhbmNlcnMhKWh0dHA6Ly93d3cuZmFjZWJvb2suY29tLzEwMTUxODA1MzcxNjkxODU4ZAICD2QWAmYPFQMAblRoZSBNdXNpYyBDZW50ZXI6IFBlcmZvcm1pbmcgQXJ0cyBDZW50ZXIgb2YgTG9zIEFuZ2VsZXMgcG9zdGVkIGEgbGluayB0byBEYW5jZSBEb3dudG93biwgNjBzIE5pZ2h0J3MgdGltZWxpbmUuImh0dHA6Ly93d3cuZmFjZWJvb2suY29tLzkwMTYzOTI4NDNkAgMPZBYCZg8VAwBJVGhlIE11c2ljIENlbnRlcjogUGVyZm9ybWluZyBBcnRzIENlbnRlciBvZiBMb3MgQW5nZWxlcyBjcmVhdGVkIGFuIGV2ZW50Li9odHRwOi8vd3d3LmZhY2Vib29rLmNvbS9ldmVudHMvMTU4ODYxMzMwOTg2MTM0L2QCDw8WAh8IAgMWBgIBD2QWAmYPFQNaaHR0cDovL2EwLnR3aW1nLmNvbS9wcm9maWxlX2ltYWdlcy8zNTAzODg3NDgwL2Q4NTU1YTdmNTY4ZTk2ZTRlYjc2OWQ4MDgzZTlkNzU2X25vcm1hbC5qcGVn5QE8YSBocmVmPSJodHRwOi8vdHdpdHRlci5jb20vIyEvc2VhcmNoP3E9JTIzc3VtbWVyZG93bnRvd24iIHRhcmdldD0iX2JsYW5rIiBjbGFzcz0idGhlbWVjb2xvciI+I3N1bW1lcmRvd250b3duPC9hPiBJc24ndCBvdmVyIHlldC4gIFdlIHN0aWxsIGhhdmUgc29tZSBncmVhdCB0aGluZ3MgY29taW5nIHVwISBTYW1iYSwgNjBzIGRhbmNlIG5pZ2h0LCBkcnVtIGRvd250b3duLCBhbmQgdWt1bGUtYWxvbmcuPmh0dHA6Ly93d3cudHdpdHRlci5jb20vTXVzaWNDZW50ZXJMQS9zdGF0dXMvMzcyMTQzODA0MDU4MzA0NTEyZAICD2QWAmYPFQNaaHR0cDovL2EwLnR3aW1nLmNvbS9wcm9maWxlX2ltYWdlcy8zNTAzODg3NDgwL2Q4NTU1YTdmNTY4ZTk2ZTRlYjc2OWQ4MDgzZTlkNzU2X25vcm1hbC5qcGVnqARSVCA8YSBocmVmPSJodHRwOi8vdHdpdHRlci5jb20vIyEvbWFya3NsYXZraW4iIHRhcmdldD0iX2JsYW5rIiBjbGFzcz0idGhlbWVjb2xvciI+QG1hcmtzbGF2a2luPC9hPjogVmVyeSBwcm91ZCB0aGUgdHdvIGN1cnJlbnQgbGVhZHMgaW4gPGEgaHJlZj0iaHR0cDovL3R3aXR0ZXIuY29tLyMhL1dJQ0tFRF9NdXNpY2FsIiB0YXJnZXQ9Il9ibGFuayIgY2xhc3M9InRoZW1lY29sb3IiPkBXSUNLRURfTXVzaWNhbDwvYT4gb24gQnJvYWR3YXkgPGEgaHJlZj0iaHR0cDovL3R3aXR0ZXIuY29tLyMhL0RlcmVrS2xlbmEiIHRhcmdldD0iX2JsYW5rIiBjbGFzcz0idGhlbWVjb2xvciI+QERlcmVrS2xlbmE8L2E+IGFuZCA8YSBocmVmPSJodHRwOi8vdHdpdHRlci5jb20vIyEvTGluZHNheU1lbmRleiIgdGFyZ2V0PSJfYmxhbmsiIGNsYXNzPSJ0aGVtZWNvbG9yIj5ATGluZHNheU1lbmRlejwvYT4gYXJlIGFsdW1uaSBvZiBTcG90bGlnaHQgPGEgaHJlZj0iaHR0cDovL3R3aXR0ZXIuY29tLyMhL011IiB0YXJnZXQ9Il9ibGFuayIgY2xhc3M9InRoZW1lY29sb3IiPkBNdTwvYT7igKY+aHR0cDovL3d3dy50d2l0dGVyLmNvbS9NdXNpY0NlbnRlckxBL3N0YXR1cy8zNzIxNDMxNzg4NzIxNDc5NjlkAgMPZBYCZg8VA1podHRwOi8vYTAudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzM1MDM4ODc0ODAvZDg1NTVhN2Y1NjhlOTZlNGViNzY5ZDgwODNlOWQ3NTZfbm9ybWFsLmpwZWfQATxhIGhyZWY9Imh0dHA6Ly90d2l0dGVyLmNvbS8jIS9zZWFyY2g/cT0lMjNzdW1tZXJkb3dudG93biIgdGFyZ2V0PSJfYmxhbmsiIGNsYXNzPSJ0aGVtZWNvbG9yIj4jc3VtbWVyZG93bnRvd248L2E+IDxhIGhyZWY9Imh0dHA6Ly90LmNvL3M3dHlwWUx5bnUiIHRhcmdldD0iX2JsYW5rIiBjbGFzcz0idGhlbWVjb2xvciI+aHR0cDovL3QuY28vczd0eXBZTHludTwvYT4+aHR0cDovL3d3dy50d2l0dGVyLmNvbS9NdXNpY0NlbnRlckxBL3N0YXR1cy8zNzEwOTk0MjQxOTU2MzcyNDhkAhEPFgIfCAIDFgYCAQ9kFgJmDxUDL2h0dHBzOi8vaTEueXRpbWcuY29tL3ZpL0FTbUVpSFJJV280L2RlZmF1bHQuanBnvQFJbGVuZSBHcmFmZiwgQnJvYWR3YXkgQWN0cmVzcwpDaG9vc2luZyBhbiBBdWRpdGlvbiBTb25nCgpXZWJzaXRlOiBtdXNpY2NlbnRlci5vcmcvc3BvdGxpZ2h0CkZhY2Vib29rOiBmYWNlYm9vay5jb20vc3BvdGxpZ2h0YXdhcmRzClR3aXR0ZXI6IEBTcG90bGlnaHRBd2FyZHMKRW1haWw6IHNwb3RsaWdodEBtdXNpY2NlbnRlci5vcmdIaHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1BU21FaUhSSVdvNCZmZWF0dXJlPXlvdXR1YmVfZ2RhdGFfcGxheWVyZAICD2QWAmYPFQMvaHR0cHM6Ly9pMS55dGltZy5jb20vdmkvdllNbWdDcDdpckkvZGVmYXVsdC5qcGcASGh0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9dllNbWdDcDdpckkmZmVhdHVyZT15b3V0dWJlX2dkYXRhX3BsYXllcmQCAw9kFgJmDxUDL2h0dHBzOi8vaTEueXRpbWcuY29tL3ZpLzJxVzVod0RGcUg0L2RlZmF1bHQuanBnAEhodHRwczovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PTJxVzVod0RGcUg0JmZlYXR1cmU9eW91dHViZV9nZGF0YV9wbGF5ZXJkAhMPZBYEAgEPDxYGHwJoHglfcGFnZUxpbmsoKWxFUGlTZXJ2ZXIuQ29yZS5QYWdlUmVmZXJlbmNlLCBFUGlTZXJ2ZXIsIFZlcnNpb249Ni4xLjM3OS4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPThmZTgzZGVhNzM4YjQ1YjcBMx8DBQdEZWZhdWx0ZGQCAw8PFgYfAmgfCSgrBAEzHwMFB0RlZmF1bHRkZBgCBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQUaY3RsMDAkc2l0ZUhlYWRlciRzZWFyY2hCdG4FG2N0bDAwJGJlZm9yZUZvb3RlciRycHRQcmVzcw8PZmRkW/LV7xLwbqNjo8GNbCi5wav5Zt7/uswzJv0/UuXEHYg=" />
+</div>
+
+
+<script src="/ScriptResource.axd?d=-kjyD4C5AWIn5KPEoISlIPQWHB_gcJzQ0TwNSKvWlitIEm8ibLyv6AheNKOcnqHtaymljD1_w1YepfhQ3Uos1E8WQq9rMgPns1XCUgB_Vg5YMTqwcdbqL1wfdlLYX6_e0&amp;t=ffffffffc9f82b39" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWBQKZkMv4CQKez9PzCwKpz4v0CwLQjtXJDwLu/5D+BtwvkAdBMIXUjV1XMHDQYTfnp+G6dcLlPr/+6MwZhaVZ" />
+</div>
+
+    
+    
+
+    
+    <div class="homePage">
+    
+
+
+    
+    
+
+ 
+    
+
+<div id="siteHeader">
+    <div id="siteHeaderContent">
+        <a href="/">
+            <img id="logo" src="https://musiccenter.org/img/placeholders/logo.png" alt="The Music Center" />
+        </a>
+        <div id="mainNav">
+            <ul class="bare">
+                <li><a href="#">Performances &amp; Tickets</a></li>
+                <li><a href="#">Plan Your Visit</a></li>
+                <li><a href="#">Free Events &amp; Activities</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Support Us</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+        
+<div id="meganav">
+    <div id="megaTickets">
+        <div class="col colNarrow">
+            <div>
+	<h3><em>Explore calendar by</em> Date</h3>
+</div>
+            
+            <div id="megaCalendar"></div>
+
+            <a href="/tickets/calendar" class="fullCal">See Full Calendar > </a>
+
+        </div>
+        <div class="col colNarrow">
+	<h3><em>Explore calendar by</em> Performance Type</h3>
+<ul>
+<li><a href="/tickets/Calendar/?perfType=Dance">Dance</a></li>
+<li><a href="/tickets/Calendar/?perfType=Music">Music</a></li>
+<li><a href="/tickets/Calendar/?perfType=Opera">Opera</a></li>
+<li><a href="/tickets/Calendar/?perfType=Theatre">Theatre</a></li>
+<li><a href="/tickets/calendar/?perfType=Free">FREE</a></li>
+<li><a href="/tickets/calendar/?perfType=Especially for Children">Especially for Children</a></li>
+<li><a href="/tickets/calendar/?perfType=Outdoor Events">Outdoor Events</a></li>
+<li><a href="/tickets/calendar/?perfType=Guest Events">Guest Events</a></li>
+</ul>
+</div>
+        <div class="col colNarrow">
+	<h3><em>Explore calendar by</em> Venues at the Music Center</h3>
+<ul>
+<li><a href="/tickets/calendar/?venue=Ahmanson Theatre">Ahmanson Theatre</a></li>
+<li><a href="/tickets/calendar/?venue=Dorothy Chandler Pavilion">Dorothy Chandler Pavilion</a></li>
+<li><a href="/tickets/calendar/?venue=Mark Taper Forum">Mark Taper Forum</a></li>
+<li><a href="/tickets/calendar/?venue=Walt Disney Hall">Walt Disney Concert&nbsp;Hall</a></li>
+<li><a href="/tickets/calendar/?venue=The Music Center Plaza">The Music Center Plaza</a></li>
+<li><a href="/tickets/calendar/?venue=Gershwin Gallery">Gershwin Gallery</a></li>
+<li><a href="/tickets/calendar/?venue=WM Keck Childrens Amphitheater">W.M. Keck Children’s Amphitheater</a></li>
+</ul>
+</div>
+        <div class="col colWider">
+	<h3>The Music Center Presents</h3>
+<ul>
+<li><a href="/tickets/calendar/?MCPresents=Glorya Kaufman Presents Dance at The Music Center">Glorya Kaufman Presents Dance at The Music Center Calendar</a>&nbsp;
+<p>Significant works by prestigous ballet and contemporary dance artists from around the works.<br /><a href="/about/Our-Programs/Glorya-Kaufman-Dance/">LEARN MORE&gt;</a></p>
+</li>
+<li><a href="/tickets/calendar/?MCPresents=Active Arts">Active Arts Calendar</a>
+<p>It's your turn to sing, dance, make music-participate.<br /><a href="/events/activearts/">LEARN MORE&gt;</a></p>
+</li>
+<li><a href="/tickets/calendar/?MCPresents=World City">World City Calendar</a>
+<p>Workshops &amp; performances. Artistic traditions from around the globe.<br /><a href="/events/worldcity/">LEARN MORE&gt;</a></p>
+</li>
+</ul>
+</div>
+        <div class="col colNarrow">
+	<h3><em>Explore calendar by</em> Resident Companies at the Music Center</h3>
+<ul>
+<li><a href="/tickets/calendar/?company=Center Theater Group">Center Theatre Group</a></li>
+<li><a href="/tickets/calendar/?company=LA Master Chorale">LA Master Chorale</a></li>
+<li><a href="/tickets/calendar/?company=LA Opera">LA Opera</a></li>
+<li><a href="/tickets/calendar/?company=LA Phil">LA Phil</a></li>
+</ul>
+</div>
+    </div>
+    <div id="megaVisit">
+        <div class="col colMessage">
+	<p><img src="/Media/B_events_activities/MEGANAV-Thumbnail-Plan-Your-Visit-MC-Music-Center-DTLA-240x160-v3.jpg" alt="" /></p>
+<p>All the information you need to plan the perfect visit and have a sensational time</p>
+</div>
+        <div class="col col1Third gettingHere">
+	<h3><a href="/visit/Getting-Here-and-Around/">Getting Here and Around</a></h3>
+<ul>
+<li><a href="/visit/Getting-Here-and-Around/Visitor-FAQs/">Visitor FAQs</a> <a href="/visit/Getting-Here-and-Around/Visitor-FAQs/Visitor-FAQs-Espanol/">(En Español)</a></li>
+<li><a href="/visit/Getting-Here-and-Around/Driving-Directions/">Driving Directions</a></li>
+<li><a href="/visit/Getting-Here-and-Around/Parking/">Parking</a></li>
+<li><a href="/visit/Getting-Here-and-Around/MetroDash-Taxis/">Metro, DASH, Taxis</a></li>
+<li><a href="/visit/Getting-Here-and-Around/Accessibility/">Accessibility</a>&nbsp;<a href="/visit/Getting-Here-and-Around/Accessibility/Servicios-de-Acceso-para-Nuestros-Huespedes/">(En Español)</a></li>
+<li><a href="/visit/Getting-Here-and-Around/Guest-Services/">Guest Services</a></li>
+</ul>
+</div>
+        <div class="col col1Third">
+	<h3><a href="/visit/Exploring-the-Center/">Exploring the Center</a></h3>
+<ul>
+<li><a href="/visit/Exploring-the-Center/Dining-On-Site/">Dining on Site</a></li>
+<li><a href="/visit/Exploring-the-Center/Tours/">Tours</a></li>
+</ul>
+<h3><a href="/visit/Venue-Seating-Charts/">Venue Seating Charts</a></h3>
+<ul>
+<li><a href="/Media/B_events_activities/B3-Ahmanson-AHM-BO-Seating-Chart-BW-copy.pdf" target="_blank">Ahmanson Theatre</a></li>
+<li><a href="/Media/B_events_activities/B3-Dorothy-Chandler-DCP-BO-Seating-Chart-BW-copy.pdf" target="_blank">Dorothy Chandler Pavilion</a></li>
+<li><a href="/Media/B_events_activities/B3-Mark-Taper-Forum-bw-copy.pdf" target="_blank">Mark Taper Forum</a></li>
+<li><a href="/Media/B_events_activities/B3-WDCH-Seating-Chart-copy.pdf" target="_blank">Walt Disney Concert Hall</a></li>
+</ul>
+</div>
+        <div class="col col1Third">
+	<h3><a href="/visit/Discover-Downtown/">Discover Downtown</a></h3>
+<ul>
+<li><a href="/visit/Discover-Downtown/Dining--Drinks/">Dining &amp; Drinks</a></li>
+<li><a href="/visit/Discover-Downtown/Hotels/">Hotels</a></li>
+</ul>
+</div>
+    </div>
+    <div id="megaEvents">
+        <div class="col colMessage">
+	<p>Find yourself at the center of fun with our engaging mix of free dance and musical experiences</p>
+</div>
+        <div class="col col2Thirds">
+	<h3><a title="The Music Center Active Arts" href="/events/activearts/">The Music Center: <br />Active Arts</a></h3>
+<ul>
+<li><a title="24/1" href="/events/activearts/241/">24/1</a></li>
+<li><a title="Taste of Dance" href="/events/activearts/A-Taste-of-Dance/">A Taste of Dance</a></li>
+<li><a title="Dance Downtown" href="/events/activearts/Dance-Downtown/">Dance Downtown</a></li>
+<li><a title="Drum Downtown" href="/events/activearts/Drum-Downtown/">Drum Downtown</a></li>
+<li><a title="Friday Night Sing-Alongs" href="/events/activearts/friday-night-sing-alongs/">Friday Night Sing-Alongs</a></li>
+</ul>
+<ul>
+<li><a href="/events/activearts/Holiday-Sing-Along/">The Music Center Holiday <br />Sing-Along</a></li>
+<li><a href="/events/activearts/nationaldanceday/">National Dance Day Celebration</a></li>
+<li><a title="Public Practice" href="/events/activearts/Public-Practice/">Public Practice</a></li>
+<li><a title="Ukule-Along" href="/events/activearts/UKULE-ALONG-2013/">Ukule-Along</a></li>
+<li><a href="/events/activearts/UKULELE-CHRISTMAS-ORCHESTRA/">Ukulele Christmas Orchestra</a></li>
+</ul>
+</div>
+        <div class="col col1Third">
+	<h3><a title="The Music Center World City" href="/events/worldcity/">The Music Center: <br />World City</a></h3>
+<ul>
+<li><a href="/events/worldcity/Ticketing--Event-Information/">Ticketing &amp; Event Information</a></li>
+</ul>
+<h3>More Events</h3>
+<ul>
+<li><a href="/events/Summer-Downtown-Calendar/">Summer Downtown</a></li>
+<li><a href="/about/Our-Programs/Special-Events-Festivals/Rocka/">RockaYourSoul</a></li>
+<li><a href="/education/Students-at-the-Center/Very-Special-Arts-Festival/">Very&nbsp;Special Arts Festival</a></li>
+<li><a href="/events/flashfest/">FLASHFEST</a></li>
+<li><a href="/education/Students-at-the-Center/Blue-Ribbon-Childrens-Festival/">Blue Ribbon Children's Festival</a></li>
+<li><a href="/about/Our-Programs/Glorya-Kaufman-Dance/Special-Engagements/LAs-Rite-Festival/">LA's Rite</a></li>
+</ul>
+</div>
+    </div>
+    <div id="megaEducation">
+        <div class="col colMessage">
+	<p>The arts are powerful tools for teaching and learning that inspire and engage students. Our programs provide that opportunity to classrooms across LA County.</p>
+</div>
+        <div class="col col1Third">
+	<h3><a href="/education/Students-at-the-Center/">Students at the Center</a></h3>
+<ul>
+<li><a href="/education/Students-at-the-Center/Spotlight/">Spotlight</a></li>
+<li><a href="/education/Students-at-the-Center/Very-Special-Arts-Festival/">Very Special Arts Festival</a></li>
+<li><a href="/education/Students-at-the-Center/Blue-Ribbon-Childrens-Festival/">Blue Ribbon Children's Festival</a></li>
+<li><a href="/education/Students-at-the-Center/Student-Ambassador-Program/">Student Ambassador Program</a></li>
+</ul>
+<h3><a href="/education/School-Programs/">School Programs</a></h3>
+<ul>
+<li><a href="/education/School-Programs/The-Music-Center-On-Tour/">Music Center on Tour Assemblies</a></li>
+<li><a href="/education/School-Programs/Artist-Directory/">Performing&nbsp;Artist Directory</a></li>
+<li><a href="/education/School-Programs/Classroom-Workshops/">Classroom Workshops</a></li>
+<li><a href="/education/School-Programs/Institute-for-educators/">Institute for Educators</a></li>
+<li><a href="/education/School-Programs/District-Partnerships/">District Partnerships</a></li>
+</ul>
+</div>
+        <div class="col col1Third">
+	<h3><a href="/education/About-Education/">About Education</a></h3>
+<ul>
+<li><a href="/education/About-Education/Education-at-The-Music-Center/">Education at the Music Center</a></li>
+<li><a href="/education/About-Education/Resident-Company-Education-Programs/">Resident Company Education Programs</a></li>
+</ul>
+<h3><a href="/education/LEADERSHIP-AND-ADVOCACY/">Leadership &amp; Advocacy</a></h3>
+<ul>
+<li><a href="/education/LEADERSHIP-AND-ADVOCACY/The-Case-for-Arts-Education/">The Case for Arts Education</a></li>
+<li><a href="/education/LEADERSHIP-AND-ADVOCACY/Grand-Avenue-Partners-GAP/">Grand Avenue Partners</a></li>
+</ul>
+</div>
+        <div class="col col1Third">
+	<h3><a href="/education/Research--Evaluation/">Research &amp; Evaluation</a></h3>
+<ul>
+<li><a href="/education/Research--Evaluation/A-Culture-of-Evidence/">A Culture of Evidence</a></li>
+<li><a href="/education/Research--Evaluation/Current-Projects/">Current Projects</a></li>
+<li><a href="/education/Research--Evaluation/Resources/">Resources</a></li>
+</ul>
+<h3><a href="/education/Teacher-Resources/">Teacher Resources</a></h3>
+<ul>
+<li><a href="/education/Teacher-Resources/Artsource-Curriculum/">Artsource Curriculum</a></li>
+<li><a href="/education/Teacher-Resources/Professional-Development/">Professional Development</a></li>
+</ul>
+<h3><a href="/education/Our-Teaching-Artists/">Our Teaching&nbsp;Artists</a></h3>
+<ul>
+<li><a href="/education/Our-Teaching-Artists/Artist-Chronicles/">The Artist Chronicles</a></li>
+<li><a href="/education/Our-Teaching-Artists/Teaching-Artist-Seminars/">Teaching Artist Seminars</a></li>
+<li><a href="/education/Our-Teaching-Artists/Teaching-Artist-Faculty/">Teaching Artist Faculty</a></li>
+</ul>
+</div>
+    </div>
+    <div id="megaSupport">
+        <div class="col colMessage">
+	<p>Join us at the center of possibility. Your support helps us bring to life compelling programming, engaging learning, free arts events and family fun in the heart of Los Angeles</p>
+<p><a class="btn" href="/support/Give-Now/">Give Now</a></p>
+</div>
+        <div class="col col1Third">
+	<h3><a href="/support/Give-Now/">Give</a></h3>
+<ul>
+<li><a href="/support/Give-Now/Planned-Giving/">Create a Planned Gift</a></li>
+<li><a href="/support/Give-Now/Endowment/">Establish an Endowment</a></li>
+<li><a href="/support/Give-Now/Galas-and-Events/">Support a Gala or Event</a></li>
+<li><a href="/education/About-Education/Education-at-The-Music-Center/Volunteer/">Volunteer at The Music Center</a></li>
+</ul>
+</div>
+        <div class="col col1Third">
+	<h3><a href="/support/Key-Supporters/">Key Supporters</a></h3>
+<ul>
+<li><a href="/support/Give-Now/Annual-Fund/">Annual Fund</a></li>
+<li><a href="/support/Key-Supporters/The-Blue-Ribbon/">The Blue Ribbon</a></li>
+<li><a href="/support/Key-Supporters/Board-of-Ambassadors/">Board of Ambassadors</a></li>
+<li><a href="/support/Key-Supporters/Center-Dance-Arts/">Center Dance Arts</a></li>
+<li><a href="/support/Key-Supporters/Founders/">Founders</a></li>
+<li><a href="/support/Key-Supporters/Music-Center-Leadership-Council/">Leadership Council</a></li>
+<li><a href="/support/Key-Supporters/Support-Spotlight-Program/">Spotlight Patrons</a></li>
+<li><a href="/support/Key-Supporters/Thanks-to-Our-Donors/">Thanks to Our Donors</a></li>
+</ul>
+</div>
+        <div class="col col1Third">
+	<h3><a href="/support/Corporate-And-Foundation-Giving/">Corporate &amp; Foundation Giving</a></h3>
+<ul>
+<li><a href="/support/Corporate-And-Foundation-Giving/Corporate-Sponsorship/">Corporate Sponsorship</a></li>
+<li><a href="/support/Corporate-And-Foundation-Giving/Foundation-Government-Support/">Foundation &amp; Government</a></li>
+</ul>
+</div>
+    </div>
+    <div id="megaAbout">
+        <div class="col colMessage">
+	<p>Standing at the center of LA arts and culture for close to 50 years, The Music Center is proud to be regarded as one of world’s premier performing arts destinations</p>
+</div>
+        <div class="col col1Third">
+	<h3><a href="/about/Our-Venues/">Our Venues</a></h3>
+<ul>
+<li><a title="Our Theaters &amp; Concert Halls" href="/about/OUR-VENUES/Our-Theatres--Concert-Halls/#Ahmanson Theatre">Ahmanson Theatre</a></li>
+<li><a title="Our Theaters &amp; Concert Halls" href="/about/OUR-VENUES/Our-Theatres--Concert-Halls/#Dorothy Chandler Pavilion">Dorothy Chandler Pavilion</a></li>
+<li><a title="Our Theaters &amp; Concert Halls" href="/about/OUR-VENUES/Our-Theatres--Concert-Halls/#Mark Taper Forum">Mark Taper Forum</a></li>
+<li><a href="/about/OUR-VENUES/Our-Theatres--Concert-Halls/#Walt Disney Concert Hall">Walt Disney Concert Hall</a></li>
+<li><a title="Our Outdoor Venues" href="/about/OUR-VENUES/Our-Outdoor-Venues/#Music Center Plaza">Music Center Plaza</a></li>
+<li><a title="Our Outdoor Venues" href="/about/OUR-VENUES/Our-Outdoor-Venues/#Keck Childrens Amphitheater">The W.M. Keck Foundation Children’s Amphitheater</a></li>
+<li><a title="Our Outdoor Venues" href="/about/OUR-VENUES/Our-Outdoor-Venues/#Blue Ribbon Garden">Blue Ribbon Garden</a></li>
+</ul>
+<h3><a href="/about/Event-Rentals/">Event Rentals</a></h3>
+<ul>
+<li><a href="/about/Event-Rentals/Filming/">Filming</a></li>
+<li><a href="/about/Event-Rentals/Venue-Rentals/">Venue Rentals</a></li>
+<li><a href="/about/Event-Rentals/Private-Receptions/">Private Receptions</a></li>
+</ul>
+</div>
+        <div class="col col1Third">
+	<h3><a href="/about/About-The-Music-Center/">About the Music Center</a></h3>
+<ul>
+<li><a href="/about/About-The-Music-Center/Staff--Board/">Staff &amp; Board</a></li>
+<li><a href="/about/About-The-Music-Center/Corporate-Governance/">Corporate Governance</a></li>
+<li><a href="/about/About-The-Music-Center/Careers/">Careers</a></li>
+<li><a href="/about/About-The-Music-Center/eNewsletter/">eNewsletter</a></li>
+<li><a href="/about/About-The-Music-Center/Press/">Press</a></li>
+<li><a href="/about/About-The-Music-Center/History--Archives/">History &amp; Archives</a></li>
+<li><a href="/about/About-The-Music-Center/50th-anniversary-gala/">50th Anniversary Gala Celebration</a></li>
+</ul>
+<h3><a href="/about/Our-Programs/">Our Programs</a></h3>
+<ul>
+<li><a href="/about/Our-Programs/Glorya-Kaufman-Dance/">Glorya Kaufman Presents Dance at The Music Center</a></li>
+<li><a href="/events/activearts/">Active Arts</a></li>
+<li><a href="/events/worldcity/">World City</a></li>
+<li><a href="/education/About-Education/">Arts Education</a></li>
+<li><a href="/about/Our-Programs/Special-Events-Festivals/">Special Events &amp; Festivals</a></li>
+</ul>
+</div>
+        <div class="col col1Third">
+	<h3><a href="/about/Resident-Companies/">Resident Companies</a></h3>
+<ul>
+<li><a href="/about/Resident-Companies/Centre-Theatre-Group/">Center Theatre Group</a></li>
+<li><a href="/about/Resident-Companies/LA-Opera/">LA Opera</a></li>
+<li><a href="/about/Resident-Companies/LA-Phil/">LA Phil</a></li>
+<li><a href="/about/Resident-Companies/LA-Master-Chorale/">LA Master Chorale<br /></a></li>
+</ul>
+<h3><a href="/about/blogs/">Music Center Blogs</a></h3>
+<ul>
+<li><a href="/about/blogs/At-The-Center/">At The Center</a></li>
+<li><a href="/about/blogs/Active-Arts-Creativity-Blog/">Active Arts Creativity Blog</a></li>
+<li><a href="/about/blogs/Education/">Education Blog</a></li>
+</ul>
+</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+        $('#megaCalendar').datepicker({
+            inline: true,
+            onSelect: function (dateText, inst) { window.location = "/tickets/Calendar/" + "?startdate=" + dateText; }
+        })
+    });
+</script>
+
+        <div id="userNav">
+            <ul class="bare">
+                <li>
+                    <a id="siteHeader_lnkLogin" class="smallBtn" href="/account/login/">Login</a>
+                    
+                </li>
+                
+                <li>
+                    <a id="siteHeader_lnkCart" class="smallBtn" href="/cart/index.aspx">Your Cart</a>
+                </li>
+                <li><a href="/">Home</a></li>
+<li><a href="/support/Give-Now/" target="_blank">Give Now</a></li>
+<li><a href="/Contact-Us/">Contact Us</a></li>
+<li><a href="/about/About-The-Music-Center/eNewsletter/">E-News Sign Up</a></li>
+                <li class="search">
+                    <div id="siteSearch">
+	
+                        <input name="ctl00$siteHeader$searchBox" type="text" value="Search" id="searchBox" />
+                        <input type="image" name="ctl00$siteHeader$searchBtn" id="searchBtn" src="https://musiccenter.org/img/buttons/button_search.png" />
+                    
+</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <input type="hidden" name="ctl00$secondsRemaining" id="secondsRemaining" value="-1" />
+    <input type="hidden" name="ctl00$warningSeconds" id="warningSeconds" value="300" />
+   
+
+    <section id="siteMain">
+            <div id="subHeader">
+
+                
+    <div class="homeHeader cf">
+	<script type="text/javascript">// <![CDATA[
+ $(document).ready(function(){
+  //THIS JAVASCRIPT FUNCTION DOES THE WORK AND RETURNS THE 
+  //STRING WITH HTML ANCHOR LINKS	
+  function replaceURLWithHTMLLinks(text) {
+    var exp = /(\b(http|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    return text.replace(exp,"<a href='$1' style=\"text-transform:lowercase\">$1</a>"); 
+  }
+  //THIS IS A JQUERY STATEMENT THAT GRABS A CHUNK OF
+  //TEXT AND REPLACES IT WITH THE UPDATED STRING
+  $("#drawer5 li p").each(function(i){
+    var text = $(this).html();
+    $(this).html(replaceURLWithHTMLLinks(text));
+  });
+});
+// ]]></script>
+<h1>"Creativity is Contagious. Pass it on." &nbsp;<br /><span>- Albert Einstein</span></h1>
+<!--
+<h1>At the Center <br /> of Now &amp; Wow</h1>
+-->
+</div>
+
+
+            
+
+            </div>
+            <div id="mainContent" class="cf">
+                
+    <div id="homeFeatures">
+        <h2>Who's at the Center?</h2>
+        
+                <ul id="featureLinks" class="bare">
+            
+                <li><a href="#feature0">
+                    Glorya Kaufman Presents Dance at The Music Center</a></li>
+            
+                <li><a href="#feature1">
+                    LA Opera</a></li>
+            
+                <li><a href="#feature2">
+                    Center Theatre Group</a></li>
+            
+                <li><a href="#feature3">
+                    LA Master Chorale </a></li>
+            
+                <li><a href="#feature4">
+                    LA Phil </a></li>
+            
+                </ul>
+            
+        <div id="featureContentBox">
+        </div>
+        
+                <div id="featureContent">
+            
+                <div id="feature0">
+                    <img src='/Media/Home-Page-Images/Resident-Company-Images/DMC13_14-MCpage_RNZB.jpg' alt="" />
+                    <div class="content">
+                        <p>CLASSIC REDEFINED</p><p>Celebrate timeless pieces and groundbreaking works.</p><p><a href="/about/Our-Programs/Glorya-Kaufman-Dance/">LEARN MORE ›</a></p></div>
+                </div>
+            
+                <div id="feature1">
+                    <img src='/Media/Home-Page-Images/Resident-Company-Images/LAOFlute.jpg' alt="" />
+                    <div class="content">
+                        <p>LA OPERA</p><p>Greater than the sum of its arts.</p><p><a href="http://www.laopera.com/" target="_blank">LEARN MORE ›</a></p></div>
+                </div>
+            
+                <div id="feature2">
+                    <img src='/Media/Home-Page-Images/Resident-Company-Images/CTGImage.jpg' alt="" />
+                    <div class="content">
+                        <p>London. Broadway. Ahmanson.</p><p>“A Blast of Creative Energy” for the 46th Year of the Ahmanson Theatre at The Music Center.</p><p><a href="http://www.CenterTheatreGroup.org" target="_blank">LEARN MORE › </a></p></div>
+                </div>
+            
+                <div id="feature3">
+                    <img src='/Global/TestImages/LAMasterChoraleMC.jpg' alt="" />
+                    <div class="content">
+                        <p>Explore a New Season!</p><p>Compelling choral music experiences await you.</p><p><a href="http://lamc.org/" target="_blank">LEARN MORE › </a></p></div>
+                </div>
+            
+                <div id="feature4">
+                    <img src='/Global/TestImages/LAPhilDUDAMEL.jpg' alt="" />
+                    <div class="content">
+                        <p>LA Phil subscriptions available now!</p><p>Classical, jazz, world music, holiday concerts and more.</p><p><a href="http://laphil.com/" target="_blank">LEARN MORE ›</a></p></div>
+                </div>
+            
+                </div>
+            
+    </div>
+
+    <div class="homeCallouts">
+	<h2>The Music Center Presents</h2>
+<ul class="bare">
+<li><a href="http://www.musiccenter.org/about/Our-Programs/Glorya-Kaufman-Dance/Tickets--Subscription/Subscriber-Benefits--Forms/" target="_blank"><img src="/Media/Home-Page-Images/150x100_Thumbnail_Images/Dance-13-14.jpg" alt="Summer Downtown" width="150" height="100" /></a>
+<div class="content">
+<h3><a href="http://www.musiccenter.org/about/Our-Programs/Glorya-Kaufman-Dance/Tickets--Subscription/Subscriber-Benefits--Forms/">FLEX SUBSCRIPTIONS NOW ON SALE</a></h3>
+<p>This is a great way to tailor your own subscription by selecting three or more engagements of your choice.</p>
+</div>
+</li>
+<li><a href="/events/worldcity/1314-Season/Exxopolis/" target="_blank"><img src="/Media/Home-Page-Images/150x100_Thumbnail_Images/exxopolis-thumb.jpg" alt="Exxopolis" width="150" height="100" /></a>
+<div class="content">
+<h3><a href="/events/worldcity/1314-Season/Exxopolis/">ARCHITECTS OF AIR: EXXOPOLIS</a><br />September 7-8, 13-15</h3>
+<p>Step into this interactive walk-in sculpture and immerse yourself in an amazing world of light, color and sound.</p>
+</div>
+</li>
+<li><a href="/events/activearts/Dance-Downtown/Upcoming-Events/60s-Night/" target="_blank"><img src="/Media/Home-Page-Images/150x100_Thumbnail_Images/60s.jpg" alt="60s Dance Night" width="150" height="100" /></a>
+<div class="content">
+<h3><a href="/events/activearts/Dance-Downtown/Upcoming-Events/60s-Night/">DANCE DOWNTOWN: 60s Night</a><br /> Sept 6 | 6:30 - 10:00 p.m.</h3>
+<p>No experience necessary. Beginner lessons throughout the evening.</p>
+</div>
+</li>
+</ul>
+</div>
+
+            </div>
+        </section>
+    
+    <div id="homeDrawers">
+        <ul class="bare">
+            <li><a href="#drawer1"><span>News at the Center</span></a></li>
+            <li><a href="#drawer2">Blog</a></li>
+            <li><a href="#drawer3">Facebook</a></li>
+            <li><a href="#drawer4">Twitter</a></li>
+            <li><a href="#drawer5">Youtube</a></li>
+        </ul>
+        <div id="drawers">
+            
+                    <div id="drawer1" class="cf">
+                        <ul class="bare">
+                
+                    <li>
+                        <h3>THE MUSIC CENTER AND GRAND PARK INTRODUCE LOS ANGELES TO ARCHITECTS OF AIR’S “EXXOPOLIS,” A MONUMENTAL SENSORY EXPERIENCE</h3>
+                        <p><a href="/about/About-The-Music-Center/Press/2013/the-music-center-and-grand-park-introduce-los-angeles-to-architects-of-air/" target="_blank">Read More ›</a></p>
+                    </li>
+                
+                    <li>
+                        <h3>The Dizzy Feet Foundation, The Music Center and the John F. Kennedy Center for the Performing Arts Announce National Dance Day Celebrations</h3>
+                        <p><a href="/about/About-The-Music-Center/Press/2013/THE-DIZZY-FEET-FOUNDATION-THE-MUSIC-CENTER-AND-THE-JOHN-F-KENNEDY-CENTER-FOR-THE-PERFORMING-ARTS-IN-CONJUNCTION-WITH-CONGRESSWOMAN-ELEANOR-HOLMES-NORTON--ANNOUNCE-NATIONAL-DANCE-DAY-CELEBRATIONS-ON-JULY-27-2013/" target="_blank">Read More ›</a></p>
+                    </li>
+                
+                    <li>
+                        <h3>GRAND PARK TO HOST WEST COAST’S FLAGSHIP NATIONAL DANCE DAY CELEBRATION</h3>
+                        <p><a href="/about/About-The-Music-Center/Press/2013/GRAND-PARK-TO-HOST-WEST-COASTS-FLAGSHIP-NATIONAL-DANCE-DAY-CELEBRATION/" target="_blank">Read More ›</a></p>
+                    </li>
+                
+                        </ul>
+                    </div>
+                
+
+           
+            <div id="drawer2" class="cf">
+                <ul class="bare">
+                    <li>
+                        <div>
+	<p>AT THE CENTER:&nbsp;<br /><br />World City Turns 10</p>
+<p><a href="/about/blogs/At-The-Center/Dates/2012/9/World-City-Turns-10/">READ MORE ›</a></p>
+</div>
+                    </li>
+                    <li>
+                        <div>
+	<p>ACTIVE ARTS CREATIVITY BLOG:</p>
+<p>The Magic of the "Musical" Moment&nbsp;</p>
+<p><a href="/about/blogs/Active-Arts-Creativity-Blog/Dates/2013/4/The-Magic-of-the-Musical-Moment/">READ MORE ›</a></p>
+</div>
+                    </li>
+                    <li>
+                        <div>
+	<p>EDUCATION BLOG:</p>
+<p>Inside the Classroom Part 4 &amp; 5: Students Get Excited for The Blue Ribbon Children’s Festival</p>
+<p><a href="/about/blogs/Education/">READ MORE ›</a></p>
+</div>
+                    </li>
+                </ul>
+            </div>
+
+            
+            
+                    <div id="drawer3" class="cf">
+                        <ul class="bare">
+                
+                    <li>
+                        <img src="" alt="" />
+                        <p>Did you know it's National Dog Day? Check out the furry friends of some of the ABT dancers! <a href="http://www.facebook.com/10151805371691858" target="_blank">Read More ›</a></p>
+                    </li>
+                
+                    <li>
+                        <img src="" alt="" />
+                        <p>The Music Center: Performing Arts Center of Los Angeles posted a link to Dance Downtown, 60s Night's timeline. <a href="http://www.facebook.com/9016392843" target="_blank">Read More ›</a></p>
+                    </li>
+                
+                    <li>
+                        <img src="" alt="" />
+                        <p>The Music Center: Performing Arts Center of Los Angeles created an event. <a href="http://www.facebook.com/events/158861330986134/" target="_blank">Read More ›</a></p>
+                    </li>
+                
+                        </ul>
+                    </div>
+                
+            
+                    <div id="drawer4" class="cf">
+                        <ul class="bare">
+                
+                    <li>
+                        <img src="http://a0.twimg.com/profile_images/3503887480/d8555a7f568e96e4eb769d8083e9d756_normal.jpeg" alt="" />
+                        <p><a href="http://twitter.com/#!/search?q=%23summerdowntown" target="_blank" class="themecolor">#summerdowntown</a> Isn't over yet.  We still have some great things coming up! Samba, 60s dance night, drum downtown, and ukule-along. <a href="http://www.twitter.com/MusicCenterLA/status/372143804058304512" target="_blank">Read More ›</a></p>
+                    </li>
+                
+                    <li>
+                        <img src="http://a0.twimg.com/profile_images/3503887480/d8555a7f568e96e4eb769d8083e9d756_normal.jpeg" alt="" />
+                        <p>RT <a href="http://twitter.com/#!/markslavkin" target="_blank" class="themecolor">@markslavkin</a>: Very proud the two current leads in <a href="http://twitter.com/#!/WICKED_Musical" target="_blank" class="themecolor">@WICKED_Musical</a> on Broadway <a href="http://twitter.com/#!/DerekKlena" target="_blank" class="themecolor">@DerekKlena</a> and <a href="http://twitter.com/#!/LindsayMendez" target="_blank" class="themecolor">@LindsayMendez</a> are alumni of Spotlight <a href="http://twitter.com/#!/Mu" target="_blank" class="themecolor">@Mu</a>… <a href="http://www.twitter.com/MusicCenterLA/status/372143178872147969" target="_blank">Read More ›</a></p>
+                    </li>
+                
+                    <li>
+                        <img src="http://a0.twimg.com/profile_images/3503887480/d8555a7f568e96e4eb769d8083e9d756_normal.jpeg" alt="" />
+                        <p><a href="http://twitter.com/#!/search?q=%23summerdowntown" target="_blank" class="themecolor">#summerdowntown</a> <a href="http://t.co/s7typYLynu" target="_blank" class="themecolor">http://t.co/s7typYLynu</a> <a href="http://www.twitter.com/MusicCenterLA/status/371099424195637248" target="_blank">Read More ›</a></p>
+                    </li>
+                
+                        </ul>
+                    </div>
+                
+            
+                    <div id="drawer5" class="cf">
+                        <ul class="bare">
+                
+                    <li>
+                        <img src="https://i1.ytimg.com/vi/ASmEiHRIWo4/default.jpg" alt="" />
+                        <p>Ilene Graff, Broadway Actress
+Choosing an Audition Song
+
+Website: musiccenter.org/spotlight
+Facebook: facebook.com/spotlightawards
+Twitter: @SpotlightAwards
+Email: spotlight@musiccenter.org <a href="https://www.youtube.com/watch?v=ASmEiHRIWo4&amp;feature=youtube_gdata_player" target="_blank">Watch ›</a></p>
+                    </li>
+                
+                    <li>
+                        <img src="https://i1.ytimg.com/vi/vYMmgCp7irI/default.jpg" alt="" />
+                        <p> <a href="https://www.youtube.com/watch?v=vYMmgCp7irI&amp;feature=youtube_gdata_player" target="_blank">Watch ›</a></p>
+                    </li>
+                
+                    <li>
+                        <img src="https://i1.ytimg.com/vi/2qW5hwDFqH4/default.jpg" alt="" />
+                        <p> <a href="https://www.youtube.com/watch?v=2qW5hwDFqH4&amp;feature=youtube_gdata_player" target="_blank">Watch ›</a></p>
+                    </li>
+                
+                        </ul>
+                    </div>
+                
+        </div>
+    </div>
+
+   
+
+           <!--- PLACE FOOTER HERE -->
+            
+   
+    <footer id="siteFooter">
+            <div id="siteFooterContent">
+                
+                <div>
+	<ul id="footerNav" class="bare">
+<li><a href="/Contact-Us/">Contact Us</a></li>
+<li><a href="/tickets/calendar/">Calendar</a></li>
+<li><a href="/visit/Getting-Here-and-Around/Guest-Services/">Guest Services</a></li>
+<li><a href="/about/About-The-Music-Center/Press/">Press</a></li>
+<li><a href="/about/Event-Rentals/">Filming &amp; Venue Rentals</a></li>
+<li><a href="/about/About-The-Music-Center/eNewsletter/">E-News</a></li>
+<li><a href="/about/blogs/">Blogs</a></li>
+</ul>
+<ul id="socialNav" class="bare">
+<li class="facebook"><a href="https://www.facebook.com/MusicCenterLA" target="_blank">Facebook</a></li>
+<li class="twitter"><a href="https://twitter.com/#!/musiccenterla" target="_blank">Twitter</a></li>
+<li class="youtube"><a href="https://www.youtube.com/MusicCenterLA" target="_blank">YouTube</a></li>
+</ul>
+</div>
+                <div class="legal">
+	<p>© 2013 Music Center. All Rights Reserved.</p>
+<ul class="bare">
+<li><a href="/Privacy-Policy/">Privacy Policy</a></li>
+<li><a href="/sitemap/">Site Map</a></li>
+</ul>
+</div>
+            </div>
+        </footer>
+
+
+    
+    
+    </div>
+    
+
+    </form>
+    
+    <script src="/js/meganav.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+
+    <script type="text/javascript" src="/js/buttons.js"></script>
+    <script type="text/javascript">    stLight.options({ publisher: "ur-fb9c96b6-13bf-b66c-d421-c387c653639" }); </script>
+
+    
+    <script src="/js/jquery-cycle.js"></script>
+    <script>
+        var drawerTabs = $('#homeDrawers > ul a');
+        var drawerWrapper = $('#drawers');
+        var drawers = drawerWrapper.children('div');
+        var dur = 500;
+        var ease = 'easeOutCubic';
+        var supportsOpacity = Modernizr.opacity;
+
+        $(function () {
+            var changeDrawerEvent = Modernizr.touch ? 'click' : 'mouseover';
+            drawerWrapper.height('0');
+
+            if (!supportsOpacity) {
+                drawers.css('display', 'none');
+            }
+            else {
+
+                drawers.css('opacity', '0');
+
+            }
+            drawerTabs[changeDrawerEvent](changeDrawer);
+            $('#homeDrawers').mouseleave(closeDrawers);
+            initFeatureRotator();
+        });
+
+        function changeDrawer() {
+            if (!$(this).parent().hasClass('tabOn')) {
+                var visible = $('.visible');
+                var divToShow = $('#' + $(this).attr('href').replace('#', ''));
+                var newHeight = divToShow.outerHeight();
+                $('.tabOn').removeClass('tabOn');
+                $(this).parent().addClass('tabOn');
+                if (visible.length) {
+                    if (!supportsOpacity) {
+                        visible.removeClass('visible').hide();
+                    }
+                    else {
+                        visible.removeClass('visible').stop().animate({ opacity: 0 }, dur, ease);
+                    }
+
+                }
+
+                if (!supportsOpacity) {
+                    divToShow.addClass('visible').show();
+                }
+                else {
+                    divToShow.addClass('visible').stop().animate({ opacity: 1 }, dur, ease);
+                }
+                drawerWrapper.stop().animate({ height: newHeight }, dur, ease);
+            }
+            return false;
+        }
+
+        function closeDrawers() {
+            $('.tabOn').removeClass('tabOn');
+            drawerWrapper.stop().animate({ height: 0 }, dur, ease);
+
+            if (!supportsOpacity) {
+                $('.visible').removeClass('visible').hide();
+
+            }
+            else {
+                $('.visible').removeClass('visible').stop().animate({ opacity: 0 }, dur, ease);
+            }
+            return false;
+        }
+
+        function initFeatureRotator() {
+            $('#featureContent').cycle({ before: updateFeature, fx: 'fade', /*pagerEvent: 'mouseenter.cycle',*/speed: dur, /*timeout: 0,*/easing: ease, pager: '#featureLinks',
+                pagerAnchorBuilder: function (idx, slide) {
+                    return '#featureLinks li:eq(' + idx + ') a';
+                }
+            });
+        }
+
+        function updateFeature() {
+            var currentLinkIndex = $(this).index();
+            var content = $('#featureContent > div:eq(' + currentLinkIndex + ')').find('.content').html();
+            $('#featureContentBox').html(content);
+        }
+    </script>
+
+
+    
+    
+   <script type="text/javascript">
+
+       var _gaq = _gaq || [];
+       var gaKey = document.getElementById("gaKey").value;
+
+        _gaq.push(['_setAccount', gaKey]);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+
+
+    <script id="LOTCC_2001" src="https://tags.crwdcntrl.net/c/2001/cc.js?ns=_cc2001" type="text/javascript"></script>
+
+    <iframe src="https://network.mogointeractive.com/0/20107/universal.html?page_name=rt_hp&amp;rt=1&amp;mpuid=" frameborder="0" width="1" height="1"></iframe>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+
+void(function(){var tUrl = "/LMTrackerHandler.ashx?pageId=3_65251";tUrl += (tUrl.indexOf("?") > 0 ? "&" : "?") + "r=" + Math.random(); tUrl += "&referrer=" + escape(document.referrer);document.write("<img src='" + tUrl + "' alt='' width='1' height='1'/>");}());
+//]]>
+</script><noscript><img style="position: absolute; width: 1px; height: 1px; display:none;"   alt="" src="../../LMTrackerHandler.ashx?pageId=3_65251"/></noscript>
+
+</body>
+</html>

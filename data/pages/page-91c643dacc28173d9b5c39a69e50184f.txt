@@ -1,0 +1,1675 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>iNeedParts.com - Automotive Parts Network</title>
+
+<base href="http://www.ineedparts.com/" />
+<link href='https://fonts.googleapis.com/css?family=Ruda:400,700,900' rel='stylesheet' type='text/css'>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="description" content="We work directly with manufacturers to bring you a true quality selection of parts products at reduced online prices. We&#039;ve been providing great deals on quality auto parts, accessories and tools &amp; equipment online since 1998." />
+<meta name="keywords" content="" />
+
+
+<link href="/skins/ineedparts/customer/images/icons/favicon.ico" rel="shortcut icon" />
+
+<link href="/var/cache/css/style_c_e062561ff6a1aa4bcdc0b83c9da88fd0.css" rel="stylesheet" type="text/css" />
+
+<link href="/skins/ineedparts/customer/print.css" rel="stylesheet" media="print" type="text/css" />
+<!--[if lte IE 7]>
+<link href="/skins/ineedparts/customer/styles_ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="/skins/ineedparts/customer/addons/quick_search/styles.css" rel="stylesheet" type="text/css" /><link href="/skins/ineedparts/customer/addons/buy_together/styles.css" rel="stylesheet" type="text/css" />
+<!--[if lte IE 7]>
+<link href="/skins/ineedparts/customer/addons/buy_together/styles_ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<style type="text/css">
+.ad-gallery {
+	width: 575px;
+}
+.ad-image-wrapper {
+	width: 575px;
+	height: 300px;
+}
+.ad-controls * {
+	color: #2d2d2d;
+}
+.ad-nav_h {
+	visibility: hidden;
+	height: 1px;
+}
+.ad-gallery .ad-forward,.ad-gallery .ad-back {
+	height:46px;
+}
+</style>
+
+
+
+<script type="text/javascript" src="/lib/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/js/jqueryui/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="/lib/js/tools/tooltip.min.js"></script>
+<script type="text/javascript" src="/lib/js/appear/jquery.appear-1.1.1.js"></script>
+
+<script type="text/javascript" src="/var/cache/js/editors/tinymce.editor.js"></script>
+
+<script type="text/javascript" src="/var/cache/js/core.js"></script>
+<script type="text/javascript" src="/var/cache/js/ajax.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+var index_script = 'index.php';
+var current_path = '';
+var changes_warning = 'Y';
+
+var lang = {
+	cannot_buy: 'You cannot buy the product with these option variants ',
+	no_products_selected: 'No products selected',
+	error_no_items_selected: 'No items selected! At least one check box must be selected to perform this action.',
+	delete_confirmation: 'Are you sure you want to delete the selected items?',
+	text_out_of_stock: 'Out-of-stock',
+	in_stock: 'In stock',
+	items: 'item(s)',
+	text_required_group_product: 'Please select a product for the required group [group_name]',
+	notice: 'Notice',
+	warning: 'Warning',
+	loading: 'Loading...',
+	none: 'None',
+	text_are_you_sure_to_proceed: 'Are you sure you want to proceed?',
+	text_invalid_url: 'You have entered an invalid URL',
+	text_cart_changed: 'Items in the shopping cart have been changed. Please click on \"OK\" to save changes, or on \"Cancel\" to leave the items unchanged.',
+	error_validator_email: 'The email address in the <b>[field]<\/b> field is invalid.',
+	error_validator_confirm_email: 'The email addresses in the <b>[field]<\/b> field and confirmation fields do not match.',
+	error_validator_phone: 'The phone number in the <b>[field]<\/b> field is invalid. The correct format is (555) 555-55-55 or 55 55 555 5555.',
+	error_validator_integer: 'The value of the <b>[field]<\/b> field is invalid. It should be integer.',
+	error_validator_multiple: 'The <b>[field]<\/b> field does not contain the selected options.',
+	error_validator_password: 'The passwords in the <b>[field2]<\/b> and <b>[field1]<\/b> fields do not match.',
+	error_validator_required: 'The <b>[field]<\/b> field is mandatory.',
+	error_validator_zipcode: 'The ZIP / Postal code in the <b>[field]<\/b> field is incorrect. The correct format is [extra].',
+	error_validator_message: 'The value of the <b>[field]<\/b> field is invalid.',
+	text_page_loading: 'Loading... Your request is being processed, please wait.',
+	view_cart: 'View cart',
+	checkout: 'Checkout',
+	product_added_to_cart: 'Added to Your Cart...',
+	products_added_to_cart: 'Products were added to your cart',
+	product_added_to_wl: 'Product was added to your Wish list',
+	product_added_to_cl: 'Product was added to your Compare list',
+	close: 'Close',
+	error: 'Error',
+	error_ajax: 'Oops, something went wrong ([error]). Please try again.',
+	text_changes_not_saved: 'Your changes have not been saved.',
+	text_data_changed: 'Your changes have not been saved.\n\nPress OK to continue, or Cancel to stay on the current page.'
+}
+
+var currencies = {
+	'primary': {
+		'decimals_separator': '.',
+		'thousands_separator': ',',
+		'decimals': '2',
+		'coefficient': '1.00000'
+	},
+	'secondary': {
+		'decimals_separator': '.',
+		'thousands_separator': ',',
+		'decimals': '2',
+		'coefficient': '1.00000'
+	}
+};
+
+var default_editor = 'tinymce';
+var default_previewer = 'prettyphoto';
+
+var cart_language = 'EN';
+var images_dir = '/skins/ineedparts/customer/images';
+var skin_name = 'ineedparts';
+var notice_displaying_time = 6;
+var cart_prices_w_taxes = false;
+var translate_mode = false;
+var regexp = new Array();
+
+
+
+$(document).ready(function(){
+	jQuery.runCart('C');
+});
+
+document.write('<style>.cm-noscript { display:none }</style>'); // hide noscript tags
+//]]>
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+	$('ul.dropdown li').hover(function(){
+		$(this).addClass('hover');
+		$('> .dir',this).addClass('open');
+		$('ul:first',this).css('display', 'block');
+	},function(){
+		$(this).removeClass('hover');
+		$('.open',this).removeClass('open');
+		$('ul:first',this).css('display', 'none');
+	});
+});
+//]]>
+</script>
+<![endif]-->
+
+
+<script type="text/javascript" src="/var/cache/addons/quick_search/js/func.js"></script>
+<script type="text/javascript" src="/var/cache/addons/buy_together/js/func.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+	lang['buy_together_fill_the_mandatory_fields'] = 'Please specify product options before adding this product combination to the cart.';
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+var lang_wgpe = {
+	wg_back_and_forward: 'false',
+	wg_speed: '5000',
+	wg_start: 'Start',
+	wg_stop: 'Stop',
+	wg_effect: 'slide-hori'
+}
+//]]>
+</script>
+<script type="text/javascript" src="/skins/ineedparts/customer/addons/wg_jqslideshow/js/wg_jqslideshow.js"></script></head>
+
+<body>
+<div class="helper-container">
+	<a name="top"></a>
+	
+<div id="ajax_loading_box" class="ajax-loading-box"><div class="right-inner-loading-box"><div id="ajax_loading_message" class="ajax-inner-loading-box">Loading...</div></div></div>
+
+	
+
+
+
+
+<div id="container" class="container">
+		<div id="header">
+<div class="header-helper-container">
+<div class="logo-image">
+		<a href="/"><img src="/skins/ineedparts/customer/images/ineedparts-logo.png" width="324" height="63" border="0" alt="Automotive Parts Network, Inc." /></a>
+	</div>
+	
+	<!--<p class="quick-links">&nbsp;
+			<a href="/">Home</a>
+			<a href="/page-3.html">About Us</a>
+			<a href="/page-1.html">Contact Us</a>
+			<a href="/index.php?dispatch=promotions.list">Promotions</a>
+			<a href="/index.php?dispatch=sitemap.view">Sitemap</a>
+	</p>
+-->
+	
+	
+<div id="top_menu">
+<ul class="top-menu dropdown"><li class="first-level cm-active"><span><a href="/">Home</a></span></li><li class="first-level "><span><a href="/index.php?dispatch=categories.catalog">Catalog</a></span></li><li class="first-level "><span><a href="/index.php?dispatch=profiles.update">My Account</a></span></li><li class="first-level "><span><a href="contact-us.html">Contact Us</a></span></li></ul>
+</div>
+<span class="helper-block">&nbsp;</span>
+</div>
+
+<div class="top-tools-container">
+
+	<div class="top-tools-helper">
+		<div class="float-right" id="sign_io">
+			Part of Automotive Parts Network &nbsp; &nbsp; -  &nbsp;
+													<a id="sw_login"  rel="nofollow" href="/index.php?dispatch=auth.login_form&amp;return_url=index.php">Sign in</a>
+				or
+				<a href="/index.php?dispatch=profiles.add" rel="nofollow">Register</a>
+						
+								<!--sign_io--></div>
+		<div class="top-search">
+			<form action="/" name="search_form" method="get">
+<input type="hidden" name="subcats" value="Y" />
+<input type="hidden" name="status" value="A" />
+<input type="hidden" name="pshort" value="Y" />
+<input type="hidden" name="pfull" value="Y" />
+<input type="hidden" name="pname" value="Y" />
+<input type="hidden" name="pkeywords" value="Y" />
+<input type="hidden" name="search_performed" value="Y" />
+
+	<div class="qsearch-result border cm-popup-box" id="quick_search_result">
+
+	<div class="center">No data found</div>
+
+<p class="right">
+	<a class="extra-link" onclick="$('#quick_search_result').hide();">Close</a>
+</p>
+<!--quick_search_result--></div>
+
+<script type="text/javascript">
+	var qs_min_length = 3
+</script> 
+
+<span class="search-products-text">Search:</span>
+
+<input type="text" name="q" value="" onfocus="this.select();" class="search-input" /><input type="image" src="/skins/ineedparts/customer/images/icons/go.gif" alt="Search" title="Search" class="go-button" /><input type="hidden" name="dispatch" value="search.results" />
+</form>		</div>
+	</div>
+</div>
+
+<div class="content-tools">
+	<span class="float-left">&nbsp;</span>
+	<span class="float-right">&nbsp;</span>
+	<div class="content-tools-helper clear">
+			<div id="cart_status">
+	<div class="float-left">
+					<img id="sw_cart_box" class="cm-combination cm-combo-on valign hand" src="/skins/ineedparts/customer/images/icons/empty_cart_icon.gif" alt="Cart is empty" title="Cart is empty" /><strong>&nbsp;&nbsp;&nbsp;Cart is empty</strong>
+			
+		<div id="cart_box" class="cart-list hidden cm-popup-box">
+			<img src="/skins/ineedparts/customer/images/icons/empty_cart_list_icon.gif" alt="Cart" class="cm-popup-switch hand cart-list-icon" />
+			<div class="list-container">
+				<div class="list">
+									<p class="center">Cart is empty</p>
+								</div>
+				<div class="buttons-container">
+					<a href="/index.php?dispatch=checkout.cart" rel="nofollow" class="view-cart">View cart</a>
+											<a href="/index.php?dispatch=checkout.checkout" rel="nofollow">Checkout</a>
+									</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="checkout-link">
+
+	<a href="/index.php?dispatch=checkout.checkout" rel="nofollow">Checkout</a>
+
+	</div>
+	<!--cart_status--></div>
+		<div class="float-right">
+			
+			
+					</div>
+	</div>
+</div></div>
+		
+	<div id="content">
+		<div class="content-helper clear">
+						
+						<div class="central-column">
+				<div class="central-content">
+					
+					
+
+
+<div class="cm-notification-container"></div>
+					
+					<div class="box-wrapper" align="center">
+	<div id="gallery" class="ad-gallery">
+	  <div class="ad-image-wrapper"></div>
+
+	  <div class="ad-nav ad-nav_h">
+		<div class="ad-thumbs">
+		  <ul class="ad-thumb-list">
+																																																
+			<li>
+				<a href="/images/promo/51/supplies.jpg">				<img src="/images/thumbnails/51/185/supplies.jpg" height="40" longdesc="supplies.html" target="_self" alt="New Automotive Supplies category. Click here to view." title="Supplies" border="0" /></a>					
+			</li>
+																																																
+			<li>
+				<a href="/images/promo/51/tractor-rads.jpg">				<img src="/images/thumbnails/51/185/tractor-rads.jpg" height="40" longdesc="/index.php?dispatch=statistics.banners&amp;banner_id=8" target="_self" alt="" title="Tractor Radiators" border="0" /></a>					
+			</li>
+																																																
+			<li>
+				<a href="/images/promo/51/car-capsules.jpg">				<img src="/images/thumbnails/51/185/car-capsules.jpg" height="40" longdesc="/index.php?dispatch=statistics.banners&amp;banner_id=7" target="_self" alt="" title="Car Capsules" border="0" /></a>					
+			</li>
+																																																
+			<li>
+				<a href="/images/promo/51/jeep-manifold.jpg">				<img src="/images/thumbnails/51/185/jeep-manifold.jpg" height="40" longdesc="/index.php?dispatch=statistics.banners&amp;banner_id=4" target="_self" alt="For 4.0L 6-Cylinder engines. Fits 1991-1999 Jeeps." title="Jeep Exhaust Manifold" border="0" /></a>					
+			</li>
+						
+		  </ul>
+		</div>
+	  </div>
+  	  <div class="ad-controls"></div>
+  	</div>
+</div><div class="mainbox2-container">
+	<h1 class="mainbox2-title clear"><span>Popular Parts</span></h1>
+	<div class="mainbox2-body">
+	
+	
+
+
+<script type="text/javascript" src="/var/cache/js/exceptions.js"></script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="product-container clear">
+		<form action="/" method="post" name="product_form_2500018898" enctype="multipart/form-data" class="cm-disable-empty-files cm-ajax">
+<input type="hidden" name="result_ids" value="cart_status,wish_list" />
+<input type="hidden" name="redirect_url" value="index.php" />
+<input type="hidden" name="product_data[18898][product_id]" value="18898" />
+
+		
+	<div class="float-left product-item-image center">
+		<span class="cm-reload-2500018898 image-reload" id="list_image_update_2500018898">
+							<a href="/universal-fuel-pump-low-pressure-1.5-4lbs-12-volt.html">
+				<input type="hidden" name="image[list_image_update_2500018898][link]" value="/universal-fuel-pump-low-pressure-1.5-4lbs-12-volt.html" />
+						
+			<input type="hidden" name="image[list_image_update_2500018898][data]" value="2500018898,150,,product" />
+			<img class=" "  id="det_img_2500018898" src="/images/thumbnails/49/150/18898web.jpg" width="150"  alt=""  border="0" />			
+							</a>
+					<!--list_image_update_2500018898--></span>
+		
+					
+
+	
+	</div>
+	<div class="product-info">
+									<a href="/universal-fuel-pump-low-pressure-1.5-4lbs-12-volt.html" class="product-title">Universal Fuel Pump - Low Pressure (1.5 to 4lbs - 12v)</a>	
+		<br />
+			<span class="prodid_small">APN ID#: <strong>18898</strong></span>
+		
+		<div class="float-right right add-product">
+						
+		</div>
+		
+		<div class="prod-info">
+			<div class="prices-container clear">
+				<div class="float-left product-prices">
+															
+											<span class="cm-reload-2500018898 price-update" id="price_update_2500018898">
+		<input type="hidden" name="appearance[show_price_values]" value="1" />
+		<input type="hidden" name="appearance[show_price]" value="1" />
+																	<span class="price" id="line_discounted_price_2500018898"><span class="price">$</span><span id="discounted_price_2500018898" class="price">40.95</span></span>
+													<!--price_update_2500018898--></span>
+
+					<br />
+					
+																		&nbsp; <span class="shipping_charge"><strong>$7.00</strong> Shipping</span>
+																	
+					
+											
+					
+											
+				</div>
+				<div class="float-left">
+										
+				</div>
+			</div>
+											
+						<div class="product-descr">
+				<div class="strong">			<div class="cm-reload-2500018898" id="product_features_update_2500018898">
+			<input type="hidden" name="appearance[show_features]" value="1" />
+			
+		<!--product_features_update_2500018898--></div>
+	</div>
+										 New universal low pressure fuel pump, for use in fuel systems that require between 1.5 to 4lbs of pressure. 
+ 
+ Includes instructions, mounting hardware... <a href="/universal-fuel-pump-low-pressure-1.5-4lbs-12-volt.html" class="lowercase">More</a>			
+			</div>
+						
+											<div class="cm-reload-2500018898" id="product_options_update_2500018898">
+		<input type="hidden" name="appearance[show_product_options]" value="1" />
+															
+
+<input type="hidden" name="appearance[details_page]" value="" />
+	<input type="hidden" name="additional_info[get_icon]" value="1" />
+	<input type="hidden" name="additional_info[get_detailed]" value="1" />
+	<input type="hidden" name="additional_info[get_options]" value="1" />
+	<input type="hidden" name="additional_info[get_discounts]" value="1" />
+	<input type="hidden" name="additional_info[get_features]" value="" />
+	<input type="hidden" name="additional_info[get_extra]" value="" />
+	<input type="hidden" name="additional_info[get_taxed_prices]" value="1" />
+	<input type="hidden" name="additional_info[get_for_one_product]" value="" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+function fn_form_pre_product_form_2500018898()
+{
+	warning_class = '.cm-no-combinations-2500018898';
+
+	if ($(warning_class).length) {
+		jQuery.showNotifications({'forbidden_combination': {'type': 'W', 'title': lang.warning, 'message': lang.cannot_buy, 'save_state': false}});
+		return false;
+	} else {
+		
+		return true;
+	}
+
+};
+
+//]]>
+</script>
+			<!--product_options_update_2500018898--></div>
+	
+			
+										<div class="cm-reload-2500018898" id="qty_update_2500018898">
+		<input type="hidden" name="appearance[show_qty]" value="1" />
+		<input type="hidden" name="appearance[capture_options_vs_qty]" value="" />
+									
+					<input type="hidden" name="product_data[18898][amount]" value="1" />
+				<!--qty_update_2500018898--></div>
+		
+						
+									<div class="cm-reload-2500018898" id="advanced_options_update_2500018898">
+			
+
+					
+			
+		<!--advanced_options_update_2500018898--></div>
+	
+			
+							
+			
+							
+		</div>
+		
+	</div>
+			</form>
+
+</div>
+<hr />
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="product-container clear">
+		<form action="/" method="post" name="product_form_2500015519" enctype="multipart/form-data" class="cm-disable-empty-files cm-ajax">
+<input type="hidden" name="result_ids" value="cart_status,wish_list" />
+<input type="hidden" name="redirect_url" value="index.php" />
+<input type="hidden" name="product_data[15519][product_id]" value="15519" />
+
+		
+	<div class="float-left product-item-image center">
+		<span class="cm-reload-2500015519 image-reload" id="list_image_update_2500015519">
+							<a href="/saginaw-3-and-4-speed-standard-transmission-rebuild-kit.html">
+				<input type="hidden" name="image[list_image_update_2500015519][link]" value="/saginaw-3-and-4-speed-standard-transmission-rebuild-kit.html" />
+						
+			<input type="hidden" name="image[list_image_update_2500015519][data]" value="2500015519,150,,product" />
+			<img class=" "  id="det_img_2500015519" src="/images/thumbnails/46/150/BKS-297web1214917380486a2b0490b37.jpg" width="150"  alt=""  border="0" />			
+							</a>
+					<!--list_image_update_2500015519--></span>
+		
+					
+
+	
+	</div>
+	<div class="product-info">
+									<a href="/saginaw-3-and-4-speed-standard-transmission-rebuild-kit.html" class="product-title">Saginaw 3 & 4 Speed Standard Transmission Rebuild Kit</a>	
+		<br />
+			<span class="prodid_small">APN ID#: <strong>15519</strong></span>
+		
+		<div class="float-right right add-product">
+						
+		</div>
+		
+		<div class="prod-info">
+			<div class="prices-container clear">
+				<div class="float-left product-prices">
+															
+											<span class="cm-reload-2500015519 price-update" id="price_update_2500015519">
+		<input type="hidden" name="appearance[show_price_values]" value="1" />
+		<input type="hidden" name="appearance[show_price]" value="1" />
+																	<span class="price" id="line_discounted_price_2500015519"><span class="price">$</span><span id="discounted_price_2500015519" class="price">114.60</span></span>
+													<!--price_update_2500015519--></span>
+
+					<br />
+					
+																		&nbsp; <span class="shipping_charge"><strong>$10.26</strong> Shipping</span>
+																	
+					
+											
+					
+											
+				</div>
+				<div class="float-left">
+										
+				</div>
+			</div>
+											
+						<div class="product-descr">
+				<div class="strong">			<div class="cm-reload-2500015519" id="product_features_update_2500015519">
+			<input type="hidden" name="appearance[show_features]" value="1" />
+			
+		<!--product_features_update_2500015519--></div>
+	</div>
+										 Our Master Rebuild Kits offer you everything you will need to properly rebuild your 3 or 4 speed saginaw transmission. Super value and excellent quality.... <a href="/saginaw-3-and-4-speed-standard-transmission-rebuild-kit.html" class="lowercase">More</a>			
+			</div>
+						
+											<div class="cm-reload-2500015519" id="product_options_update_2500015519">
+		<input type="hidden" name="appearance[show_product_options]" value="1" />
+															
+
+<input type="hidden" name="appearance[details_page]" value="" />
+	<input type="hidden" name="additional_info[get_icon]" value="1" />
+	<input type="hidden" name="additional_info[get_detailed]" value="1" />
+	<input type="hidden" name="additional_info[get_options]" value="1" />
+	<input type="hidden" name="additional_info[get_discounts]" value="1" />
+	<input type="hidden" name="additional_info[get_features]" value="" />
+	<input type="hidden" name="additional_info[get_extra]" value="" />
+	<input type="hidden" name="additional_info[get_taxed_prices]" value="1" />
+	<input type="hidden" name="additional_info[get_for_one_product]" value="" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+function fn_form_pre_product_form_2500015519()
+{
+	warning_class = '.cm-no-combinations-2500015519';
+
+	if ($(warning_class).length) {
+		jQuery.showNotifications({'forbidden_combination': {'type': 'W', 'title': lang.warning, 'message': lang.cannot_buy, 'save_state': false}});
+		return false;
+	} else {
+		
+		return true;
+	}
+
+};
+
+//]]>
+</script>
+			<!--product_options_update_2500015519--></div>
+	
+			
+										<div class="cm-reload-2500015519" id="qty_update_2500015519">
+		<input type="hidden" name="appearance[show_qty]" value="1" />
+		<input type="hidden" name="appearance[capture_options_vs_qty]" value="" />
+									
+					<input type="hidden" name="product_data[15519][amount]" value="1" />
+				<!--qty_update_2500015519--></div>
+		
+						
+									<div class="cm-reload-2500015519" id="advanced_options_update_2500015519">
+			
+
+					
+			
+		<!--advanced_options_update_2500015519--></div>
+	
+			
+							
+			
+							
+		</div>
+		
+	</div>
+			</form>
+
+</div>
+<hr />
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="product-container clear">
+		<form action="/" method="post" name="product_form_2500017806" enctype="multipart/form-data" class="cm-disable-empty-files cm-ajax">
+<input type="hidden" name="result_ids" value="cart_status,wish_list" />
+<input type="hidden" name="redirect_url" value="index.php" />
+<input type="hidden" name="product_data[17806][product_id]" value="17806" />
+
+		
+	<div class="float-left product-item-image center">
+		<span class="cm-reload-2500017806 image-reload" id="list_image_update_2500017806">
+							<a href="/gm-intake-sure-fix-manifold-kit.html">
+				<input type="hidden" name="image[list_image_update_2500017806][link]" value="/gm-intake-sure-fix-manifold-kit.html" />
+						
+			<input type="hidden" name="image[list_image_update_2500017806][data]" value="2500017806,150,,product" />
+			<img class=" "  id="det_img_2500017806" src="/images/thumbnails/49/150/229679_L.jpg" width="150"  alt=""  border="0" />			
+							</a>
+					<!--list_image_update_2500017806--></span>
+		
+					
+
+	
+	</div>
+	<div class="product-info">
+									<a href="/gm-intake-sure-fix-manifold-kit.html" class="product-title">GM Intake "Sure Fix" Manifold Kit</a>	
+		<br />
+			<span class="prodid_small">APN ID#: <strong>17806</strong></span>
+		
+		<div class="float-right right add-product">
+						
+		</div>
+		
+		<div class="prod-info">
+			<div class="prices-container clear">
+				<div class="float-left product-prices">
+															
+											<span class="cm-reload-2500017806 price-update" id="price_update_2500017806">
+		<input type="hidden" name="appearance[show_price_values]" value="1" />
+		<input type="hidden" name="appearance[show_price]" value="1" />
+																	<span class="price" id="line_discounted_price_2500017806"><span class="price">$</span><span id="discounted_price_2500017806" class="price">89.95</span></span>
+													<!--price_update_2500017806--></span>
+
+					<br />
+					
+																		&nbsp; <span class="shipping_charge"><strong>$16.15</strong> Shipping</span>
+																	
+					
+											
+					
+											
+				</div>
+				<div class="float-left">
+										
+				</div>
+			</div>
+											
+						<div class="product-descr">
+				<div class="strong">			<div class="cm-reload-2500017806" id="product_features_update_2500017806">
+			<input type="hidden" name="appearance[show_features]" value="1" />
+			
+		<!--product_features_update_2500017806--></div>
+	</div>
+										<p>Sure-Fix GM Intake Manifold Kit. 12 MONTH OR 12,000 MILE WARRANTY!  For lower manifold gasket set, see 19112,19130, or 20000.</p>
+			
+			</div>
+						
+											<div class="cm-reload-2500017806" id="product_options_update_2500017806">
+		<input type="hidden" name="appearance[show_product_options]" value="1" />
+															
+
+<input type="hidden" name="appearance[details_page]" value="" />
+	<input type="hidden" name="additional_info[get_icon]" value="1" />
+	<input type="hidden" name="additional_info[get_detailed]" value="1" />
+	<input type="hidden" name="additional_info[get_options]" value="1" />
+	<input type="hidden" name="additional_info[get_discounts]" value="1" />
+	<input type="hidden" name="additional_info[get_features]" value="" />
+	<input type="hidden" name="additional_info[get_extra]" value="" />
+	<input type="hidden" name="additional_info[get_taxed_prices]" value="1" />
+	<input type="hidden" name="additional_info[get_for_one_product]" value="" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+function fn_form_pre_product_form_2500017806()
+{
+	warning_class = '.cm-no-combinations-2500017806';
+
+	if ($(warning_class).length) {
+		jQuery.showNotifications({'forbidden_combination': {'type': 'W', 'title': lang.warning, 'message': lang.cannot_buy, 'save_state': false}});
+		return false;
+	} else {
+		
+		return true;
+	}
+
+};
+
+//]]>
+</script>
+			<!--product_options_update_2500017806--></div>
+	
+			
+										<div class="cm-reload-2500017806" id="qty_update_2500017806">
+		<input type="hidden" name="appearance[show_qty]" value="1" />
+		<input type="hidden" name="appearance[capture_options_vs_qty]" value="" />
+									
+					<input type="hidden" name="product_data[17806][amount]" value="1" />
+				<!--qty_update_2500017806--></div>
+		
+						
+									<div class="cm-reload-2500017806" id="advanced_options_update_2500017806">
+			
+
+					
+			
+		<!--advanced_options_update_2500017806--></div>
+	
+			
+							
+			
+							
+		</div>
+		
+	</div>
+			</form>
+
+</div>
+<hr />
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="product-container clear">
+		<form action="/" method="post" name="product_form_2500018975" enctype="multipart/form-data" class="cm-disable-empty-files cm-ajax">
+<input type="hidden" name="result_ids" value="cart_status,wish_list" />
+<input type="hidden" name="redirect_url" value="index.php" />
+<input type="hidden" name="product_data[18975][product_id]" value="18975" />
+
+		
+	<div class="float-left product-item-image center">
+		<span class="cm-reload-2500018975 image-reload" id="list_image_update_2500018975">
+							<a href="/1987-1996-ford-fullsize-pickup-tailgate-cables-pair.html">
+				<input type="hidden" name="image[list_image_update_2500018975][link]" value="/1987-1996-ford-fullsize-pickup-tailgate-cables-pair.html" />
+						
+			<input type="hidden" name="image[list_image_update_2500018975][data]" value="2500018975,150,,product" />
+			<img class=" "  id="det_img_2500018975" src="/images/thumbnails/51/150/TGC-11_web.jpg" width="150"  alt="tailgate cables"  border="0" />			
+							</a>
+					<!--list_image_update_2500018975--></span>
+		
+					
+
+	
+	</div>
+	<div class="product-info">
+									<a href="/1987-1996-ford-fullsize-pickup-tailgate-cables-pair.html" class="product-title">1987-1996 Ford Fullsize Pickup Tailgate Cables Pair</a>	
+		<br />
+			<span class="prodid_small">APN ID#: <strong>18975</strong></span>
+		
+		<div class="float-right right add-product">
+						
+		</div>
+		
+		<div class="prod-info">
+			<div class="prices-container clear">
+				<div class="float-left product-prices">
+															<span class="cm-reload-2500018975" id="old_price_update_2500018975">
+			<input type="hidden" name="appearance[show_price_values]" value="1" />
+			<input type="hidden" name="appearance[show_old_price]" value="1" />
+							<span class="list-price nowrap" id="line_list_price_2500018975"><strike><span class="list-price nowrap">$</span><span id="list_price_2500018975" class="list-price nowrap">24.95</span></strike></span>
+					<!--old_price_update_2500018975--></span>
+			&nbsp;					
+											<span class="cm-reload-2500018975 price-update" id="price_update_2500018975">
+		<input type="hidden" name="appearance[show_price_values]" value="1" />
+		<input type="hidden" name="appearance[show_price]" value="1" />
+																	<span class="price" id="line_discounted_price_2500018975"><span class="price">$</span><span id="discounted_price_2500018975" class="price">19.90</span></span>
+													<!--price_update_2500018975--></span>
+
+					<br />
+					
+																		&nbsp; <span class="shipping_charge"><strong>$6.90</strong> Shipping</span>
+																	
+					
+											
+					
+											
+				</div>
+				<div class="float-left">
+										
+				</div>
+			</div>
+											
+						<div class="product-descr">
+				<div class="strong">			<div class="cm-reload-2500018975" id="product_features_update_2500018975">
+			<input type="hidden" name="appearance[show_features]" value="1" />
+			
+		<!--product_features_update_2500018975--></div>
+	</div>
+										 These new replacement cables will get your tailgate working properly in no time. Made of heavy duty materials and will meet or exceed O.E specifications for... <a href="/1987-1996-ford-fullsize-pickup-tailgate-cables-pair.html" class="lowercase">More</a>			
+			</div>
+						
+											<div class="cm-reload-2500018975" id="product_options_update_2500018975">
+		<input type="hidden" name="appearance[show_product_options]" value="1" />
+															
+
+<input type="hidden" name="appearance[details_page]" value="" />
+	<input type="hidden" name="additional_info[get_icon]" value="1" />
+	<input type="hidden" name="additional_info[get_detailed]" value="1" />
+	<input type="hidden" name="additional_info[get_options]" value="1" />
+	<input type="hidden" name="additional_info[get_discounts]" value="1" />
+	<input type="hidden" name="additional_info[get_features]" value="" />
+	<input type="hidden" name="additional_info[get_extra]" value="" />
+	<input type="hidden" name="additional_info[get_taxed_prices]" value="1" />
+	<input type="hidden" name="additional_info[get_for_one_product]" value="" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+function fn_form_pre_product_form_2500018975()
+{
+	warning_class = '.cm-no-combinations-2500018975';
+
+	if ($(warning_class).length) {
+		jQuery.showNotifications({'forbidden_combination': {'type': 'W', 'title': lang.warning, 'message': lang.cannot_buy, 'save_state': false}});
+		return false;
+	} else {
+		
+		return true;
+	}
+
+};
+
+//]]>
+</script>
+			<!--product_options_update_2500018975--></div>
+	
+			
+										<div class="cm-reload-2500018975" id="qty_update_2500018975">
+		<input type="hidden" name="appearance[show_qty]" value="1" />
+		<input type="hidden" name="appearance[capture_options_vs_qty]" value="" />
+									
+					<input type="hidden" name="product_data[18975][amount]" value="1" />
+				<!--qty_update_2500018975--></div>
+		
+						
+									<div class="cm-reload-2500018975" id="advanced_options_update_2500018975">
+			
+
+					
+			
+		<!--advanced_options_update_2500018975--></div>
+	
+			
+							
+			
+							
+		</div>
+		
+	</div>
+			</form>
+
+</div>
+<hr />
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="product-container clear">
+		<form action="/" method="post" name="product_form_250001767" enctype="multipart/form-data" class="cm-disable-empty-files cm-ajax">
+<input type="hidden" name="result_ids" value="cart_status,wish_list" />
+<input type="hidden" name="redirect_url" value="index.php" />
+<input type="hidden" name="product_data[1767][product_id]" value="1767" />
+
+		
+	<div class="float-left product-item-image center">
+		<span class="cm-reload-250001767 image-reload" id="list_image_update_250001767">
+							<a href="/fuel-injection-system-premium-remanufactured.html">
+				<input type="hidden" name="image[list_image_update_250001767][link]" value="/fuel-injection-system-premium-remanufactured.html" />
+						
+			<input type="hidden" name="image[list_image_update_250001767][data]" value="250001767,150,,product" />
+			<img class=" "  id="det_img_250001767" src="/images/thumbnails/20/150/228531_L1218146448489b70905cdac.jpg" width="150"  alt=""  border="0" />			
+							</a>
+					<!--list_image_update_250001767--></span>
+		
+					
+
+	
+	</div>
+	<div class="product-info">
+									<a href="/fuel-injection-system-premium-remanufactured.html" class="product-title">Fuel Injection System - (Premium Remanufactured)</a>	
+		<br />
+			<span class="prodid_small">APN ID#: <strong>1767</strong></span>
+		
+		<div class="float-right right add-product">
+						
+		</div>
+		
+		<div class="prod-info">
+			<div class="prices-container clear">
+				<div class="float-left product-prices">
+															
+											<span class="cm-reload-250001767 price-update" id="price_update_250001767">
+		<input type="hidden" name="appearance[show_price_values]" value="1" />
+		<input type="hidden" name="appearance[show_price]" value="1" />
+																	<span class="price" id="line_discounted_price_250001767"><span class="price">$</span><span id="discounted_price_250001767" class="price">148.00</span></span>
+													<!--price_update_250001767--></span>
+
+					<br />
+					
+																		&nbsp; <span class="shipping_charge"><strong>$9.99</strong> Shipping</span>
+																	
+					
+											
+					
+											
+				</div>
+				<div class="float-left">
+										
+				</div>
+			</div>
+											
+						<div class="product-descr">
+				<div class="strong">			<div class="cm-reload-250001767" id="product_features_update_250001767">
+			<input type="hidden" name="appearance[show_features]" value="1" />
+			
+		<!--product_features_update_250001767--></div>
+	</div>
+										 Complete CPI Fuel Injection Assembly. Fits 1996-2002 GM vehicles with 4.3L Vortec V6. 			
+			</div>
+						
+											<div class="cm-reload-250001767" id="product_options_update_250001767">
+		<input type="hidden" name="appearance[show_product_options]" value="1" />
+															
+
+<input type="hidden" name="appearance[details_page]" value="" />
+	<input type="hidden" name="additional_info[get_icon]" value="1" />
+	<input type="hidden" name="additional_info[get_detailed]" value="1" />
+	<input type="hidden" name="additional_info[get_options]" value="1" />
+	<input type="hidden" name="additional_info[get_discounts]" value="1" />
+	<input type="hidden" name="additional_info[get_features]" value="" />
+	<input type="hidden" name="additional_info[get_extra]" value="" />
+	<input type="hidden" name="additional_info[get_taxed_prices]" value="1" />
+	<input type="hidden" name="additional_info[get_for_one_product]" value="" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+function fn_form_pre_product_form_250001767()
+{
+	warning_class = '.cm-no-combinations-250001767';
+
+	if ($(warning_class).length) {
+		jQuery.showNotifications({'forbidden_combination': {'type': 'W', 'title': lang.warning, 'message': lang.cannot_buy, 'save_state': false}});
+		return false;
+	} else {
+		
+		return true;
+	}
+
+};
+
+//]]>
+</script>
+			<!--product_options_update_250001767--></div>
+	
+			
+										<div class="cm-reload-250001767" id="qty_update_250001767">
+		<input type="hidden" name="appearance[show_qty]" value="1" />
+		<input type="hidden" name="appearance[capture_options_vs_qty]" value="" />
+									
+					<input type="hidden" name="product_data[1767][amount]" value="1" />
+				<!--qty_update_250001767--></div>
+		
+						
+									<div class="cm-reload-250001767" id="advanced_options_update_250001767">
+			
+
+					
+			
+		<!--advanced_options_update_250001767--></div>
+	
+			
+							
+			
+							
+		</div>
+		
+	</div>
+			</form>
+
+</div>
+
+
+
+
+</div>
+	<div class="mainbox2-bottom"><span>&nbsp;</span></div>
+</div><div class="mainbox-container">
+		<div class="mainbox-body"></div>
+</div><form class="cm-ajax" action="/" method="post" name="short_list_form18000">
+<input type="hidden" name="result_ids" value="cart_status,wish_list" />
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="table">
+<tr>
+	<th>&nbsp;</th>
+	<th>Product</th>
+	<th>APN#</th>
+	<th>Price</th>
+	<th>&nbsp;</th></tr>
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<tr  valign="middle">
+		<td class="product-image">
+			<a href="/12-standard-duty-wheel-dolly-set-of-4.html"><img class=" "  id="det_img_1800019205" src="/images/thumbnails/50/40/40/19205web.jpg" width="40" height="40" alt=""  border="0" /></a>
+		</td>
+		<td class="compact">
+						<a href="/12-standard-duty-wheel-dolly-set-of-4.html" class="product-title">12" Standard  Duty Wheel Dolly Set Of 4</a>	
+		</td>
+		<td class="center">
+			19205
+		</td>
+		<td class="center">
+				<span class="cm-reload-1800019205 price-update" id="price_update_1800019205">
+		<input type="hidden" name="appearance[show_price_values]" value="1" />
+		<input type="hidden" name="appearance[show_price]" value="1" />
+																	<span class="price" id="line_discounted_price_1800019205"><span class="price">$</span><span id="discounted_price_1800019205" class="price">149.00</span></span>
+													<!--price_update_1800019205--></span>
+
+		</td>
+				<td class="center nowrap">
+			<div class="cm-reload-1800019205" id="add_to_cart_update_1800019205">
+<input type="hidden" name="appearance[show_add_to_cart]" value="1" />
+<input type="hidden" name="appearance[separate_buttons]" value="" />
+<input type="hidden" name="appearance[show_list_buttons]" value="" />
+<input type="hidden" name="appearance[but_role]" value="act" />
+			<span id="cart_add_block_1800019205">
+																									
+		
+ 
+
+	<a class="cm-submit-link text-button-act" id="button_cart_1800019205" name="dispatch:-checkout.add..19205-:">Add to Cart</a>
+
+																						</span>
+	
+	
+		<!--add_to_cart_update_1800019205--></div>
+
+		</td>
+			</tr>
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<tr class="table-row" valign="middle">
+		<td class="product-image">
+			<a href="/black-headliner-replacement-kit-for-cars.html"><img class=" "  id="det_img_1800018915" src="/images/thumbnails/49/40/40/headliner-black.jpg" width="40" height="40" alt=""  border="0" /></a>
+		</td>
+		<td class="compact">
+						<a href="/black-headliner-replacement-kit-for-cars.html" class="product-title">Black Headliner Replacement Kit for Cars</a>	
+		</td>
+		<td class="center">
+			18915
+		</td>
+		<td class="center">
+				<span class="cm-reload-1800018915 price-update" id="price_update_1800018915">
+		<input type="hidden" name="appearance[show_price_values]" value="1" />
+		<input type="hidden" name="appearance[show_price]" value="1" />
+																	<span class="price" id="line_discounted_price_1800018915"><span class="price">$</span><span id="discounted_price_1800018915" class="price">46.99</span></span>
+													<!--price_update_1800018915--></span>
+
+		</td>
+				<td class="center nowrap">
+			<div class="cm-reload-1800018915" id="add_to_cart_update_1800018915">
+<input type="hidden" name="appearance[show_add_to_cart]" value="1" />
+<input type="hidden" name="appearance[separate_buttons]" value="" />
+<input type="hidden" name="appearance[show_list_buttons]" value="" />
+<input type="hidden" name="appearance[but_role]" value="act" />
+			<span id="cart_add_block_1800018915">
+																									
+		
+ 
+
+	<a class="cm-submit-link text-button-act" id="button_cart_1800018915" name="dispatch:-checkout.add..18915-:">Add to Cart</a>
+
+																						</span>
+	
+	
+		<!--add_to_cart_update_1800018915--></div>
+
+		</td>
+			</tr>
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<tr  valign="middle">
+		<td class="product-image">
+			<a href="/door-hinge-repair-kit.html"><img class=" "  id="det_img_1800015395" src="/images/thumbnails/46/40/40/15395web.jpg" width="40" height="40" alt=""  border="0" /></a>
+		</td>
+		<td class="compact">
+						<a href="/door-hinge-repair-kit.html" class="product-title">Door Hinge Repair Kit</a>	
+		</td>
+		<td class="center">
+			15395
+		</td>
+		<td class="center">
+				<span class="cm-reload-1800015395 price-update" id="price_update_1800015395">
+		<input type="hidden" name="appearance[show_price_values]" value="1" />
+		<input type="hidden" name="appearance[show_price]" value="1" />
+																	<span class="price" id="line_discounted_price_1800015395"><span class="price">$</span><span id="discounted_price_1800015395" class="price">14.95</span></span>
+													<!--price_update_1800015395--></span>
+
+		</td>
+				<td class="center nowrap">
+			<div class="cm-reload-1800015395" id="add_to_cart_update_1800015395">
+<input type="hidden" name="appearance[show_add_to_cart]" value="1" />
+<input type="hidden" name="appearance[separate_buttons]" value="" />
+<input type="hidden" name="appearance[show_list_buttons]" value="" />
+<input type="hidden" name="appearance[but_role]" value="act" />
+			<span id="cart_add_block_1800015395">
+																									
+		
+ 
+
+	<a class="cm-submit-link text-button-act" id="button_cart_1800015395" name="dispatch:-checkout.add..15395-:">Add to Cart</a>
+
+																						</span>
+	
+	
+		<!--add_to_cart_update_1800015395--></div>
+
+		</td>
+			</tr>
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<tr class="table-row" valign="middle">
+		<td class="product-image">
+			<a href="/motorcycle-heavy-duty-dolly.html"><img class=" "  id="det_img_1800019209" src="/images/thumbnails/50/40/40/cycle_dolly2.jpg" width="40" height="40" alt=""  border="0" /></a>
+		</td>
+		<td class="compact">
+						<a href="/motorcycle-heavy-duty-dolly.html" class="product-title">Motorcycle Heavy Duty Dolly</a>	
+		</td>
+		<td class="center">
+			19209
+		</td>
+		<td class="center">
+				<span class="cm-reload-1800019209 price-update" id="price_update_1800019209">
+		<input type="hidden" name="appearance[show_price_values]" value="1" />
+		<input type="hidden" name="appearance[show_price]" value="1" />
+																	<span class="price" id="line_discounted_price_1800019209"><span class="price">$</span><span id="discounted_price_1800019209" class="price">299.00</span></span>
+													<!--price_update_1800019209--></span>
+
+		</td>
+				<td class="center nowrap">
+			<div class="cm-reload-1800019209" id="add_to_cart_update_1800019209">
+<input type="hidden" name="appearance[show_add_to_cart]" value="1" />
+<input type="hidden" name="appearance[separate_buttons]" value="" />
+<input type="hidden" name="appearance[show_list_buttons]" value="" />
+<input type="hidden" name="appearance[but_role]" value="act" />
+			<span id="cart_add_block_1800019209">
+																									
+		
+ 
+
+	<a class="cm-submit-link text-button-act" id="button_cart_1800019209" name="dispatch:-checkout.add..19209-:">Add to Cart</a>
+
+																						</span>
+	
+	
+		<!--add_to_cart_update_1800019209--></div>
+
+		</td>
+			</tr>
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<tr  valign="middle">
+		<td class="product-image">
+			<a href="/1986-2007-rear-shackle-kit-for-ford-fullsize-trucks-and-vans-2wd.html"><img class=" "  id="det_img_1800020199" src="/images/thumbnails/32/40/40/722-001-00712738492814bed65c1821ff.jpg" width="40" height="40" alt=""  border="0" /></a>
+		</td>
+		<td class="compact">
+						<a href="/1986-2007-rear-shackle-kit-for-ford-fullsize-trucks-and-vans-2wd.html" class="product-title">1986-2007 Rear Shackle Kit for Ford Fullsize Trucks and Vans 2WD</a>	
+		</td>
+		<td class="center">
+			20199
+		</td>
+		<td class="center">
+				<span class="cm-reload-1800020199 price-update" id="price_update_1800020199">
+		<input type="hidden" name="appearance[show_price_values]" value="1" />
+		<input type="hidden" name="appearance[show_price]" value="1" />
+																	<span class="price" id="line_discounted_price_1800020199"><span class="price">$</span><span id="discounted_price_1800020199" class="price">26.44</span></span>
+													<!--price_update_1800020199--></span>
+
+		</td>
+				<td class="center nowrap">
+			<div class="cm-reload-1800020199" id="add_to_cart_update_1800020199">
+<input type="hidden" name="appearance[show_add_to_cart]" value="1" />
+<input type="hidden" name="appearance[separate_buttons]" value="" />
+<input type="hidden" name="appearance[show_list_buttons]" value="" />
+<input type="hidden" name="appearance[but_role]" value="act" />
+			<span id="cart_add_block_1800020199">
+																									
+		
+ 
+
+	<a class="cm-submit-link text-button-act" id="button_cart_1800020199" name="dispatch:-checkout.add..20199-:">Add to Cart</a>
+
+																						</span>
+	
+	
+		<!--add_to_cart_update_1800020199--></div>
+
+		</td>
+			</tr>
+	</table>
+
+</form>
+				</div>
+			</div>
+		
+						<div class="left-column">
+				<div class="sidebox-categories-wrapper ">
+	<h3 class="sidebox-title"><span>Auto Parts</span></h3>
+	<div class="sidebox-body"><ul>
+		<li><a href="/auto-parts/4wd-transfer-case-motors.html">4WD Transfer Case Motors</a></li>
+		<li><a href="/auto-parts/ac-condensers.html">AC Condensers</a></li>
+		<li><a href="/auto-parts/automotive-light-bulbs.html">Automotive Light Bulbs</a></li>
+		<li><a href="/auto-parts/brake-backing-plates.html">Brake Backing Plates</a></li>
+		<li><a href="/auto-parts/car-truck-and-van-taillights.html">Car, Truck &amp; Van Taillights</a></li>
+		<li><a href="/auto-parts/classic-body-panels.html">Classic Body Panels</a></li>
+		<li><a href="/auto-parts/classic-car-headliner-bow-sets.html">Classic Car Headliner Bow Sets</a></li>
+		<li><a href="/auto-parts/clutch-kits.html">Clutch Kits</a></li>
+		<li><a href="/auto-parts/door-and-tailgate-handles.html">Door And Tailgate Handles </a></li>
+		<li><a href="/auto-parts/door-hinge-repair-kits.html">Door Hinge Repair Kits</a></li>
+		<li><a href="/auto-parts/emergency-hazard-warning-switch.html">Emergency Hazard Warning Switch</a></li>
+		<li><a href="/auto-parts/exhaust-parts.html">Exhaust Parts</a></li>
+		<li><a href="/auto-parts/flywheels.html">Flywheels</a></li>
+		<li><a href="/auto-parts/fuel-injectors.html">Fuel Injectors</a></li>
+		<li><a href="/auto-parts/fuel-pumps.html">Fuel Pumps</a></li>
+		<li><a href="/auto-parts/gas-tanks-and-fuel-system-parts.html">Gas Tanks &amp; Fuel System Parts</a></li>
+		<li><a href="/auto-parts/harmonic-balancers.html">Harmonic Balancers</a></li>
+		<li><a href="/auto-parts/headlight-capsules.html">Headlight Capsules</a></li>
+		<li><a href="/auto-parts/headliner-replacement-kits.html">Headliner Replacement Kits</a></li>
+		<li><a href="/auto-parts/heat-risers.html">Heat Risers</a></li>
+		<li><a href="/auto-parts/heater-cores.html">Heater Cores</a></li>
+		<li><a href="/auto-parts/intake-manifolds.html">Intake Manifolds</a></li>
+		<li><a href="/auto-parts/locking-gas-caps.html">Locking Gas Caps</a></li>
+		<li><a href="/auto-parts/manual-transmission-rebuild-kits.html">Manual Transmission Rebuild Kits</a></li>
+		<li><a href="/auto-parts/mirrors.html">Mirrors</a></li>
+		<li><a href="/auto-parts/oil-pans-and-gaskets.html">Oil Pans &amp; Gaskets</a></li>
+		<li><a href="/auto-parts/plastic-poly-gas-tanks.html">Plastic (Poly) Gas Tanks</a></li>
+		<li><a href="/auto-parts/radiators.html">Radiators</a></li>
+		<li><a href="/auto-parts/rear-leaf-spring-shackle-kits.html">Rear Leaf Spring Shackle Kits</a></li>
+		<li><a href="/auto-parts/rust-repair-body-parts-late-model-car-truck-van.html">Rust Repair Body Parts Late Model Car Truck Van  </a></li>
+		<li><a href="/auto-parts/seat-belts-and-extenders.html">Seat Belts And Extenders </a></li>
+		<li><a href="/auto-parts/sun-visor-repair-kits.html">Sun Visor Repair Kits</a></li>
+		<li><a href="/auto-parts/sway-bars-and-track-bars.html">Sway Bars &amp; Track Bars </a></li>
+		<li><a href="/auto-parts/timing-covers.html">Timing Covers</a></li>
+		<li><a href="/auto-parts/transmission-manuals.html">Transmission Manuals</a></li>
+		<li><a href="/auto-parts/transmission-pans.html">Transmission Pans</a></li>
+		<li><a href="/auto-parts/truck-and-s.u.v.-3rd-brake-lights.html">Truck &amp; S.U.V. 3rd Brake Lights</a></li>
+		<li><a href="/auto-parts/truck-and-s.u.v.-tailgate-cables.html">Tailgate Cables</a></li>
+		<li><a href="/auto-parts/truck-tailgate-hardware-and-parts.html">Truck Tailgate Hardware &amp; Parts</a></li>
+		<li><a href="/auto-parts/weatherstripping.html">Weatherstripping  </a></li>
+		<li><a href="/auto-parts/wheel-center-caps.html">Wheel Center Caps</a></li>
+		<li><a href="/auto-parts/wiper-blades.html">Wiper Blades</a></li>
+		<li><a href="/auto-parts/wiper-motor-and-related-parts.html">Wiper Motor And Related Parts</a></li>
+	</ul>
+</div>
+	<div class="sidebox-bottom"><span>&nbsp;</span></div>
+</div><div class="sidebox-categories-wrapper ">
+	<h3 class="sidebox-title"><span>More Categories</span></h3>
+	<div class="sidebox-body"><ul>
+		<li><a href="/auto-accessories.html">Auto Accessories</a></li>
+		<li><a href="/home-and-garden.html">Home &amp; Garden</a></li>
+		<li><a href="/supplies.html">Supplies</a></li>
+		<li><a href="/tools-and-equipment.html">Tools &amp; Equipment</a></li>
+	</ul>
+</div>
+	<div class="sidebox-bottom"><span>&nbsp;</span></div>
+</div>
+			</div>
+						
+						<div class="right-column">
+				<div class="sidebox-categories-wrapper ">
+	<h3 class="sidebox-title"><span>Popular Categories</span></h3>
+	<div class="sidebox-body"><ul>
+		<li><a href="/auto-accessories/car-and-motorcycle-capsules.html">Car Capsules</a></li>
+		<li><a href="/auto-parts/exhaust-parts/exhaust-manifolds.html">Exhaust Manifolds</a></li>
+		<li><a href="/auto-parts/fuel-injectors.html">Fuel Injectors</a></li>
+		<li><a href="/auto-parts/gas-tanks-and-fuel-system-parts.html">Gas Tanks &amp; Fuel System Parts</a></li>
+		<li><a href="/auto-parts/radiators/tractor-radiators.html">Tractor Radiators</a></li>
+		<li><a href="/auto-parts/wiper-blades.html">Wiper Blades</a></li>
+	</ul>
+</div>
+	<div class="sidebox-bottom"><span>&nbsp;</span></div>
+</div><div class="sidebox-wrapper  wrapper-overflow">
+	<h3 class="sidebox-title"><span>Parts Lookup</span></h3>
+	<div class="sidebox-body"><div class="wysiwyg-content">
+<p><img style="padding-right: 3px;" src="../../../../images/icons/car.png" alt="" align="absmiddle" /><strong>Auto Parts Lookup</strong></p>
+<hr />
+<form id="parts_lookup" action="http://www.ineedparts.com/lookup/bycat_model.php" method="get"> <select name="AUTOPN_ID"> <!--<option value="">All Parts</option>--> <option value="3">Gas Tanks</option> <option value="5">Fuel Injectors</option> <option value="15">AC Condensers</option> <option value="11">Alternators</option> <option value="2">Clutch Kits</option> <option value="6">Exhaust Manifolds</option> <option value="8">Flywheels</option> <option value="1">Fuel Pumps</option> <option value="7">Harmonic Balancers</option> <option value="4">Heater Cores</option> <option value="13">Heat Risers</option> <option value="14">Mirrors</option> <option value="12">Oil Pans</option> <option value="17">Radiators</option> <option value="11">Starters</option> <option value="16">Timing Covers</option> </select> <br /> <select id="YEAR" name="YEAR"> <option value="2008">2008</option> <option value="2007">2007</option> <option value="2006">2006</option> <option value="2005">2005</option> <option value="2004">2004</option> <option value="2003">2003</option> <option value="2002">2002</option> <option value="2001">2001</option> <option value="2000">2000</option> <option value="1999">1999</option> <option selected="selected" value="1998">1998</option> <option value="1997">1997</option> <option value="1996">1996</option> <option value="1995">1995</option> <option value="1994">1994</option> <option value="1993">1993</option> <option value="1992">1992</option> <option value="1991">1991</option> <option value="1990">1990</option> <option value="1989">1989</option> <option value="1988">1988</option> <option value="1987">1987</option> <option value="1986">1986</option> <option value="1985">1985</option> <option value="1984">1984</option> <option value="1983">1983</option> <option value="1982">1982</option> <option value="1981">1981</option> <option value="1980">1980</option> <option value="1979">1979</option> <option value="1978">1978</option> <option value="1977">1977</option> <option value="1976">1976</option> <option value="1975">1975</option> <option value="1974">1974</option> <option value="1973">1973</option> <option value="1972">1972</option> <option value="1971">1971</option> <option value="1970">1970</option> <option value="1969">1969</option> <option value="1968">1968</option> <option value="1967">1967</option> <option value="1966">1966</option> <option value="1965">1965</option> <option value="1964">1964</option> <option value="1963">1963</option> <option value="1962">1962</option> <option value="1961">1961</option> <option value="1960">1960</option> <option value="1959">1959</option> <option value="1958">1958</option> <option value="1957">1957</option> <option value="1956">1956</option> <option value="1955">1955</option> <option value="1954">1954</option> <option value="1953">1953</option> <option value="1952">1952</option> <option value="1951">1951</option> <option value="1950">1950</option> <option value="1949">1949</option> <option value="1948">1948</option> <option value="1947">1947</option> <option value="1946">1946</option> <option value="1945">1945</option> <option value="1944">1944</option> </select> <br /> <select id="MAKE" name="MAKE"> <option value="AC">AC</option> <option value="ACURA">ACURA</option> <option value="ALFA ROMEO">ALFA ROMEO</option> <option value="ALPINE">ALPINE</option> <option value="AM GENERAL">AM GENERAL</option> <option value="AMERICAN MOTORS">AMERICAN MOTORS</option> <option value="ASTON MARTIN">ASTON MARTIN</option> <option value="ASUNA">ASUNA</option> <option value="AUDI">AUDI</option> <option value="AUSTIN">AUSTIN</option> <option value="AVANTI">AVANTI</option> <option value="BENTLEY">BENTLEY</option> <option value="BERTONE">BERTONE</option> <option value="BMW">BMW</option> <option value="BRICKLIN">BRICKLIN</option> <option value="BUGATTI">BUGATTI</option> <option value="BUICK">BUICK</option> <option value="CADILLAC">CADILLAC</option> <option value="CHECKER">CHECKER</option> <option selected="selected" value="CHEVROLET">CHEVROLET</option> <option value="CHRYSLER">CHRYSLER</option> <option value="CITROEN">CITROEN</option> <option value="CROSLEY">CROSLEY</option> <option value="CUNNINGHAM">CUNNINGHAM</option> <option value="DAEWOO">DAEWOO</option> <option value="DAIHATSU">DAIHATSU</option> <option value="DAIMLER">DAIMLER</option> <option value="DARRIN">DARRIN</option> <option value="DELORIAN">DELORIAN</option> <option value="DETOMASO">DETOMASO</option> <option value="DODGE">DODGE</option> <option value="EAGLE">EAGLE</option> <option value="EXCALIBUR">EXCALIBUR</option> <option value="FACEL VEGA">FACEL VEGA</option> <option value="FERRARI">FERRARI</option> <option value="FIAT">FIAT</option> <option value="FORD">FORD</option> <option value="FRAZER">FRAZER</option> <option value="FRAZER NASH">FRAZER NASH</option> <option value="GENERAL MOTORS">GENERAL MOTORS</option> <option value="GEO">GEO</option> <option value="GMC">GMC</option> <option value="GRIFFITH">GRIFFITH</option> <option value="HEALEY">HEALEY</option> <option value="HONDA">HONDA</option> <option value="HUDSON">HUDSON</option> <option value="HUMMER">HUMMER</option> <option value="HYUNDAI">HYUNDAI</option> <option value="INFINITI">INFINITI</option> <option value="INTERNATIONAL">INTERNATIONAL</option> <option value="ISUZU">ISUZU</option> <option value="JAGUAR">JAGUAR</option> <option value="JEEP">JEEP</option> <option value="JENSEN">JENSEN</option> <option value="KAISER">KAISER</option> <option value="KIA">KIA</option> <option value="KURTIS">KURTIS</option> <option value="LADA">LADA</option> <option value="LAFORZA">LAFORZA</option> <option value="LAMBORGHINI">LAMBORGHINI</option> <option value="LANCIA">LANCIA</option> <option value="LAND ROVER">LAND ROVER</option> <option value="LEXUS">LEXUS</option> <option value="LINCOLN">LINCOLN</option> <option value="LOTUS">LOTUS</option> <option value="MASERATI">MASERATI</option> <option value="MAYBACH">MAYBACH</option> <option value="MAZDA">MAZDA</option> <option value="MERCEDES-BENZ">MERCEDES-BENZ</option> <option value="MERCURY">MERCURY</option> <option value="MERKUR">MERKUR</option> <option value="MG">MG</option> <option value="MINI">MINI</option> <option value="MITSUBISHI">MITSUBISHI</option> <option value="MORGAN">MORGAN</option> <option value="MORRIS">MORRIS</option> <option value="NASH">NASH</option> <option value="NISSAN">NISSAN</option> <option value="NSU">NSU</option> <option value="OLDSMOBILE">OLDSMOBILE</option> <option value="OPEL">OPEL</option> <option value="PACKARD">PACKARD</option> <option value="PANOZ">PANOZ</option> <option value="PEUGEOT">PEUGEOT</option> <option value="PLYMOUTH">PLYMOUTH</option> <option value="PONTIAC">PONTIAC</option> <option value="PORSCHE">PORSCHE</option> <option value="QVALE">QVALE</option> <option value="RENAULT">RENAULT</option> <option value="ROLLS ROYCE">ROLLS ROYCE</option> <option value="ROVER">ROVER</option> <option value="SAAB">SAAB</option> <option value="SALEEN">SALEEN</option> <option value="SATURN">SATURN</option> <option value="SCION">SCION</option> <option value="SHELBY">SHELBY</option> <option value="SMART">SMART</option> <option value="STERLING">STERLING</option> <option value="STUDEBAKER">STUDEBAKER</option> <option value="STUTZ">STUTZ</option> <option value="SUBARU">SUBARU</option> <option value="SUNBEAM">SUNBEAM</option> <option value="SUZUKI">SUZUKI</option> <option value="TOYOPET">TOYOPET</option> <option value="TOYOTA">TOYOTA</option> <option value="TRIUMPH">TRIUMPH</option> <option value="TVR">TVR</option> <option value="VAUXHALL">VAUXHALL</option> <option value="VOLKSWAGEN">VOLKSWAGEN</option> <option value="VOLVO">VOLVO</option> <option value="YUGO">YUGO</option> </select> 
+<hr />
+<input id="submit" name="submit" src="../../../../images/buttons/continue-search-button-mini.jpg" type="image" /> </form>
+<p>&nbsp;</p>
+</div></div>
+	<div class="sidebox-bottom"><span>&nbsp;</span></div>
+</div><div class="sidebox-categories-wrapper ">
+	<h3 class="sidebox-title"><span>Information</span></h3>
+	<div class="sidebox-body"><ul>
+		<li><a href="/aboutus.html">About Us</a></li>
+		<li><a href="/contact-us.html">Contact Us</a></li>
+		<li><a href="/return-policy.html">Return Policy</a></li>
+		<li><a href="/privacy-policy.html">Privacy Policy</a></li>
+		<li><a href="/shipping-information.html">Shipping Information</a></li>
+		<li><a href="/policies.html">Policies</a></li>
+	</ul>
+</div>
+	<div class="sidebox-bottom"><span>&nbsp;</span></div>
+</div><div class="ad-container center">
+		<a href="/index.php?dispatch=statistics.banners&amp;banner_id=1" target="_blank">		<img class=" "  id="det_img_1540788891" src="/images/promo/51/seal-sidebar-2.jpg" width="165" height="350" alt=""  border="0" />		</a>	</div><div class="sidebox-wrapper  wrapper-overflow">
+	<h3 class="sidebox-title"><span>Testimonials</span></h3>
+	<div class="sidebox-body">
+
+
+
+	<p class="post-message"><a href="/index.php?dispatch=discussion.view&amp;thread_id=109&amp;post_id=2">"I have used your company several times in purchasing items I need. Always fast shipping and great..."</a></p>
+
+<p class="post-author">&ndash; Chuck R., <em>06/13/2011</em></p>
+
+<div class="clear">
+	<div class="right"></div>
+	</div>
+
+
+	<p class="post-message"><a href="/index.php?dispatch=discussion.view&amp;thread_id=109&amp;post_id=4">"This was my first internet purchase and i want to thank u guys for getting me my parts for my..."</a></p>
+
+<p class="post-author">&ndash; Adrian B., <em>02/07/2011</em></p>
+
+<div class="clear">
+	<div class="right"></div>
+	</div>
+
+
+<div class="right">
+	<a href="/index.php?dispatch=discussion.view&amp;thread_id=109">More...</a>
+</div>
+
+</div>
+	<div class="sidebox-bottom"><span>&nbsp;</span></div>
+</div>
+			</div>
+									
+					</div>
+	</div>
+	
+	<div id="footer">
+		<div class="footer-helper-container">
+			<div class="footer-top-helper"><span class="float-left">&nbsp;</span><span class="float-right">&nbsp;</span></div>
+			
+<!-- ><div class="bottom-search center">
+	<span class="float-left">&nbsp;</span>
+	<span class="float-right">&nbsp;</span>
+	<form action="/" name="search_form" method="get">
+<input type="hidden" name="subcats" value="Y" />
+<input type="hidden" name="status" value="A" />
+<input type="hidden" name="pshort" value="Y" />
+<input type="hidden" name="pfull" value="Y" />
+<input type="hidden" name="pname" value="Y" />
+<input type="hidden" name="pkeywords" value="Y" />
+<input type="hidden" name="search_performed" value="Y" />
+
+ 
+
+<span class="search-products-text">Search:</span>
+
+<input type="text" name="q" value="" onfocus="this.select();" class="search-input" /><input type="image" src="/skins/ineedparts/customer/images/icons/go.gif" alt="Search" title="Search" class="go-button" /><input type="hidden" name="dispatch" value="search.results" />
+</form></div> -->
+
+<table cellpadding="0" cellspacing="0" width="900px" align="center" class="footer-text">
+<tr>
+
+	
+			
+			<td><img src="images/payments-bottom.png" width="288" height="96"></td>
+			<td><strong>Automotive Parts Network, Inc.</strong> <br /> 38 West Franklin Street <br /> Shelbyville, IN 46176 <br /> <strong>888-530-PART</strong> <br /> <a href="aboutus.html">more About Us…</a></td>
+			
+			
+			<td><strong>Your Account:</strong><br />						<a id="sw_login"  rel="nofollow" href="/index.php?dispatch=auth.login_form&amp;return_url=">Sign in</a>
+						or
+						<a href="/index.php?dispatch=profiles.add" rel="nofollow">Register</a>
+					
+					<br /> <a href="index.php?dispatch=orders.search">View Orders</a> <br /> <a href="index.php?dispatch=profiles.update">Edit Profile Info</a><br /> <a href="index.php?dispatch=wishlist.view">Wish List</a></td>
+			
+					<td><img src="images/icons/comment.png" width="16" height="16" align="absmiddle" hspace="5" vspace="5px"><strong><a href="contact-us.html">Contact Us</a></strong>
+					<br />
+					<img src="images/icons/cart.png" width="16" height="16" align="absmiddle" hspace="5" vspace="5px"><strong><a href="index.php?dispatch=checkout.cart">View Cart</a></strong>
+					<br /><img src="images/icons/cart_go.png" width="16" height="16" align="absmiddle" hspace="5" vspace="5px"><strong><a href="index.php?dispatch=checkout.cart">Checkout</a></strong>
+
+		</td>
+			
+	
+</tr>
+</table>
+
+<p>&nbsp;</p>
+<p class="bottom-copyright class"><br /><br />&copy; 1998-2013 Automotive Parts Network, Inc.</p>
+
+
+
+			<div class="footer-bottom-helper"><span class="float-left">&nbsp;</span><span class="float-right">&nbsp;</span></div>
+		</div>
+	</div>
+</div>
+			</div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+	jQuery.ajaxRequest('/index.php?dispatch=statistics.collect', {
+		method: 'post',
+		data: {
+			've[url]': location.href,
+			've[title]': document.title,
+			've[browser_version]': jQuery.ua.version,
+			've[browser]': jQuery.ua.browser,
+			've[os]': jQuery.ua.os,
+			've[client_language]': jQuery.ua.language,
+			've[referrer]': document.referrer,
+			've[screen_x]': (screen.width || null),
+			've[screen_y]': (screen.height || null),
+			've[color]': (screen.colorDepth || screen.pixelDepth || null),
+			've[time_begin]': 1377638051.96
+		},
+		hidden: true
+	});
+});
+//]]>
+</script>
+
+<noscript>
+<object data="/index.php?dispatch=statistics.collect&amp;ve%5Burl%5D=http%3A%2F%2Fwww.ineedparts.com%2F&amp;ve%5Btitle%5D=iNeedParts.com+-+Automotive+Parts+Network&amp;ve%5Breferrer%5D=&amp;ve%5Btime_begin%5D=1377638051.96" width="0" height="0"></object>
+</noscript>
+<script type="text/javascript">
+//<![CDATA[
+	var _gaq = _gaq || [];
+	_gaq.push(["_setAccount", "UA-1268161-1"]);
+	_gaq.push(["_trackPageview"]);
+	
+	(function() {
+		var ga = document.createElement("script");
+		ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+		ga.setAttribute("async", "true");
+		document.documentElement.firstChild.appendChild(ga);
+	})();
+//]]>
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,947 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Welcome to Automotive Mannai Corporation</title>
+
+        <link href="css/mannai-style.css" rel="stylesheet" type="text/css" />
+        <link href="css/suggest.css" rel="stylesheet" type="text/css" />       
+        <link href="css/tabs.css" rel="stylesheet" type="text/css" />
+        <link href="css/menustyle.css" rel="stylesheet" type="text/css" />
+        <link href="css/popup.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <!--4tabs -->
+
+        <script src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/tytabs.jquery.min.js"></script>
+        <script type="text/javascript" src="js/suggestion.js"></script>
+        <script type="text/javascript" src="admin10/js/Validation.js"></script>
+        <link href="css/innertabs.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body onclick="BodyMouseClick();">
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!--Start:main -->
+        <div id="main-container">
+
+            <!--Start:top-container -->
+            <div id="top-container">
+
+                <!--Start:logo-container -->
+                <div id="logo-container">
+                    <a href="index.jsp"><span class="invi">Mannai Home Page</span></a>
+                </div>
+                <!--End:logo-container -->
+
+                <form id="SearchForm" autocomplete="off" method="post">
+                    <!--Start:top-info -->
+                    <div id="top-info">
+
+                        <p class="search-container">
+
+
+                            <input type="text" name="txtSearch" id="txtSearch" value="SEARCH"   class="search" onblur="if(this.value=='') this.value='SEARCH'" onfocus="if(this.value =='SEARCH' ) this.value=''"  onKeyUp="suggestme(this.value,event)"/>
+                            <input type="hidden" name="hdnLink" id="hdnLink"/>
+                            <input type="image" src="images/search-button.jpg"  class="go-button" name="Submit" value="Submit" />
+                            <script type="text/javascript">
+                            document.getElementById("txtSearch").value = "SEARCH";
+                            </script>
+                        </p>
+
+                        <p class="subtitle" align="right" style="float: right; width: 260px;">Customer service: 44558000</p>
+                    </div>
+                    <div id="divSearchSuggest">
+                        <div id="divSuggession">Tester</div>
+
+                    </div>
+                    <!--End:top-info -->
+                </form>
+            </div>
+            <!--End:top-container -->
+
+
+
+            <!--Start:menu-container -->
+            <div id="menu-container"  style="z-index: 9999;">
+                <!--Start:navigation -->
+                <div id="navigation">
+                    <ul id="navi">
+                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="CMS.jsp?md=ABOUT">About&nbsp;us</a>
+                            <ul>
+                                <li><a href="CMS.jsp?md=ABOUT">About&nbsp;us</a></li>
+                                <li><a href="CMS.jsp?md=HISTORY">Our History</a></li>
+                                <li><a href="CMS.jsp?md=TEAM">Our Team</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Vehicle&nbsp;Models</a>
+                            <ul>
+                                <li><a href="brandhome.jsp?md=CADILLAC" style="min-width: 89px;">Cadillac Models</a></li>
+                                <li><a href="brandhome.jsp?md=GMC" style="min-width: 89px;">GMC Models</a></li>
+                                <li><a href="brandhome.jsp?md=SUBARU" style="min-width: 89px;">Subaru Models</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="offers.jsp">Current&nbsp;Offers</a></li>
+                        <li><a href="pre-owned-cars.jsp">Pre&nbsp;Owned&nbsp;Cars</a></li>
+                        <li><a href="autorent.jsp">Auto&nbsp;Rent</a></li>
+                        <li><a href="heavy-equipments.jsp">Heavy&nbsp;Equipment</a>
+                            <ul>
+                                <li><a href="heavy-equipments.jsp">Heavy&nbsp;Equipment</a></li>                                
+                                <li><a href="heavy-equipment-models.jsp">Models Showcase</a></li>
+                                <li><a href="heavy-equipment-partners.jsp">Our Partners</a></li>
+                                <li><a href="heavy-equipment-contactus.jsp">Contact Us</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">After&nbsp;Sales</a>
+                            <ul>
+                                <li><a href="services.jsp" style="width: 130px;">Auto Services</a></li>                                
+                                <li><a href="servicebooking.jsp" style="width: 130px;">Services Booking</a></li>
+                                <li><a href="accessories.jsp" style="width: 130px;">Parts &amp; Accessories</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="gallery.jsp">Gallery</a></li>
+                        <li><a href="Contactus.jsp?md=CONTACT">Keep&nbsp;in&nbsp;touch</a>
+                            <ul>
+                                <li><a style="min-width: 80px;" href="Contactus.jsp?md=CONTACT">Contact&nbsp;us</a></li>
+                                <li><a style="min-width: 80px;" href="locations.jsp?md=SHOWROOMS">Showrooms</a></li>
+                                <li><a style="min-width: 80px;" href="locations.jsp?md=SERVICE CENTER">Service Centers</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--End:navigation -->
+
+
+            </div>
+            <!--End:menu-container -->
+
+<!-- Slider Block Start -->
+<link rel="stylesheet" href="css/offerslider.css" type="text/css" media="screen" />
+<script src="js/jquery.flexslider-min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.flexslider').flexslider();
+    });
+</script>
+<!-- Slider Block End -->
+
+<script type="text/javascript">
+    
+    function NewsletterRadioChanged()
+    {
+        if(document.getElementById("rbtnsubscribe").checked == true)
+        {
+            document.getElementById("txtnlsname").style.visibility = "visible";
+        }
+        else
+        {
+            document.getElementById("txtnlsname").style.visibility = "hidden";
+        }
+    }
+    
+</script>
+
+<script type="text/javascript">
+    <!--
+    $(document).ready(function(){
+
+        $("#tabsholder").tytabs({
+            prefixtabs:"tabz",
+            prefixcontent:"contentz",
+            classcontent:"tabscontent2",
+            tabinit:"1",
+            catchget:"tab2",
+            fadespeed:"normal",
+            ulClass:"tabs2"
+        });
+    });
+    -->
+</script>
+
+
+
+
+<div id="divOfferPopup" class="login-popup" style="width: 600px; height: 514px;">
+    <a href="#" class="close"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <div id="inner-left-column" class="PopupInnerDiv" style="height: 500px; width: 600px;">
+
+        <!--Start:page-title -->
+        <div id="PopupTitle" style="width: 580px; ">
+            FEATURED OFFER</div>
+        <!--End:page-title-->
+        <!--Start:gen-content-->
+        <div id="gen-content" style="width: 600px;">
+            <div class="flexslider">
+                <ul class="slides">
+                    
+                    <li style="display: list-item;">    
+                        <img src="App_Rec/CMS/img_HOM_OFR_1.jpg" width="600" height="470" />
+                    </li>
+                    
+                    <li style="display: list-item;">    
+                        <img src="App_Rec/CMS/img_HOM_OFR_2.jpg" width="600" height="470" />
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!--End:gen-content-->
+    </div>
+</div>
+
+
+
+
+
+<!--Start:header -->
+<div id="header">
+    <iframe name="slider" src="slider.jsp" frameborder="0" width="950" height="315" allowtransparency="yes" scrolling="no" onclick="BodyMouseClick();">
+    </iframe>
+</div>
+<!--End:header -->
+
+
+
+
+
+<!--Start:blocks -->
+<div id="blocks">
+    <object  type="application/x-shockwave-flash" data="swf/blocks.swf" width="950" height="154">
+        <param name="movie" value="swf/blocks.swf" />
+        <param name="quality" value="high" />
+        <param name="wmode" value="transparent" />
+    </object>
+</div>
+<!--End:blocks -->
+
+
+<!--Start:middle -->
+<div id="middle">
+
+    <!--Start:left-column -->
+    <div id="left-column">
+        <h1 class="heading">DRIVE AWAY A DEAL TODAY</h1>
+        <p><p>From small compacts to luxury passenger cars, commercial vehicles to used cars and heavy construction equipment, Mannai Automotive Division provides a complete vehicle sales and after sales service to the Qatari automobile market. The Automotive Group holds exclusive franchise for leading vehicle manufacturers including Cadillac ,GMC and Subaru. We offer our clients the widest possible choice of vehicles supported by an extensive network of after-sales service centers.</p><p></p></p>
+        <p>
+            <span class="more-link"><a href="CMS.jsp?md=ABOUT">Read More</a></span>
+        </p>
+        <!--Start:column-container -->
+        <div id="column-container">
+
+
+
+            <!--Start:co3 -->
+            <div class="col2">
+                <h1 class="requestheading"><a href="http://www.mannai.com/" target="_blank">CORPORATE PROFILE</a></h1>
+                <p><a href="http://www.mannai.com/" target="_blank"><img src="images/request-brochure.jpg" alt="" /></a></p>
+                <p> Get To Know More about Our Company </p>
+                <p>
+                    <span class="more-link"><a href="http://www.mannai.com/" target="_blank">Click Here</a></span></p>
+            </div>
+            <!--End:co3 -->
+
+            <!--Start:col -->
+            <div class="col">
+                <h1 class="requestheading"><a href="javascript: void(0);" onclick="popupFunction('#divTestDrive')">REQUEST TEST DRIVE</a></h1>
+                <p><img src="images/request-test-drive.jpg" alt="" onclick="popupFunction('#divTestDrive')" style="cursor: pointer;"/></p>
+                <p>Book a test drive & get behind the wheel of your next vehicle.</p>
+                <p>
+                    <span class="more-link" onclick="popupFunction('#divTestDrive')">Click Here</span></p>
+            </div>
+            <!--End:col -->
+
+
+
+            <!--Start:co2 -->
+            <div class="col">
+                <h1 class="requestheading"><a href="javascript: void(0);" onclick="popupFunction('#divTestQuote')">CORPORATE QUOTE</a></h1>
+                <p>
+                    <img src="images/request-quote.jpg" alt="" onclick="popupFunction('#divTestQuote')" style="cursor: pointer;"/></p>
+                <p>Click on a link to explore range in more detail...</p>
+                <p>
+                    <span class="more-link" onclick="popupFunction('#divTestQuote')">Click Here</span></p>
+            </div>
+            <!--End:co2 -->
+
+
+
+
+
+        </div>
+        <!--End:column-container -->
+
+
+    </div>
+    <!--End:left-column -->
+
+
+
+
+    <!--Start:right-column -->
+    <div id="right-column">
+
+
+
+        <!--Start:tab-container -->
+
+
+        <div class="center2">
+
+            <!-- Tabs -->
+            <div id="tabsholder">
+                <ul class="tabs2">
+                    <li id="tabz1">LATEST NEWS</li>
+                    <li id="tabz2">EVENTS</li>
+                    <li id="tabz3">TESTIMONIALS</li>
+                </ul>
+
+                <div class="contents marginbot">
+
+                    <!--Tab01 -->
+                    <div id="contentz1" class="tabscontent2">
+                        <!--Start:news-wraper -->
+                        <div class="news-wraper">
+                            <p class="testi">
+                                Mannai Trading Company launches the New 2013 GMC Acadia in Qatar ... <br />
+
+                                <br />
+                                <a href="mannai-news.jsp">View more news</a>
+                            </p>
+                        </div>
+                        <!--End:news-wraper -->
+                    </div>
+                    <!--Tab01 -->
+
+                    <!--Tab02 -->
+                    <div id="contentz2" class="tabscontent2">
+
+                        <!--Start:Events -->
+                        <div class="news-wraper">
+                            
+                            <!--Start:date -->
+                            <div class="date">
+                                <span>27</span>
+                                <br />
+                                MAY
+                            </div>
+                            <!--End:date -->
+
+                            <!--Start:class="news -->
+                            <div class="news">
+                                General Motors hosts Gala Dinner for Mannai in celebration for their Grandmaster Dealers 2012 Achievement  ...<br />
+                                <br />
+                                <a href="mannai-events.jsp">view more events</a>
+                            </div>
+                            <!--End:events -->
+                            
+                        </div>
+                        <!--End:news-wraper -->
+                    </div>
+                    <!--Tab02 -->
+
+                    <!--Tab02 -->
+                    <div id="contentz3" class="tabscontent2">
+                        <p class="testi">
+                            Best Customer Service ... <br />
+
+                            <br />
+                            <a href="testimonials.jsp">View more testimonials</a>
+                        </p>
+
+                    </div>
+                    <!--Tab02 -->
+
+
+                </div>
+            </div>
+            <!-- /Tabs -->
+        </div>
+
+        <!--End:tab-container -->
+
+
+        <!--Start:online-booking -->
+        <div id="online-booking">
+            <a href="servicebooking.jsp"><span class="invi">Online Booking</span></a>
+        </div>
+        <!--End:online-booking -->
+
+
+        <!--Start:news-letter-container -->
+        <div id="news-letter-container">
+            <form action="SendEmail.do?emc=NL_NLSB_110" method="post">
+                <div class="news-letter-container">
+                    <input type="text" name="txtnlsname" id="txtnlsname" value="Enter Your Name" class="letter-field" onblur="if(this.value=='') this.value='Enter Your Name'" onfocus="if(this.value =='Enter Your Name' ) this.value=''" />
+                    <input type="text" name="txtnlemail" id="txtnlemail" value="Enter Your Email ID" class="letter-field" onblur="if(this.value=='') this.value='Enter Your Email ID'" onfocus="if(this.value =='Enter Your Email ID' ) this.value=''" />
+                    <input  type="image" src="images/go-button.gif" class="go" name="Submit2" value="Submit" onclick="validateFormNewLetter(this.form);" />
+                </div>
+                <p style="float: left; width: 250px; height: 40px;">
+                    <input name="rbEmailSub" type="radio" value="rbtnsubscribe" checked="checked" id="rbtnsubscribe" onchange="NewsletterRadioChanged();"  />
+                    Subcribe
+                    <input name="rbEmailSub" type="radio" value="rbtnunsubscribe" id="rbtnunsubscribe" onchange="NewsletterRadioChanged();"/>
+                    Unsubscribe
+                </p>
+            </form>
+        </div>
+        <!--End:news-letter-container -->
+
+    </div>
+    <!--End:right-column -->
+
+</div>
+<!--End:middle -->
+
+</div>
+<!-- End:main -->
+
+<script type="text/javascript">
+    function validateFormNewLetter(form)
+    {
+        if (CheckEmptyValue('txtnlemail', 'Enter Your Email ID', 'Please enter your emailID') == true) {
+            if (CheckValidEmail('txtnlemail', 'Invalid Email ID') == true) {
+                form.submit();
+            }
+        }
+        return false;
+    }
+</script>
+
+
+<div id="divTestDrive" class="login-popup" style="width: 670px;" >
+    <a href="#" class="close"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <div id="inner-left-column" class="PopupInnerDiv">
+
+        <!--Start:page-title -->
+        <div id="PopupTitle">
+            Request a test drive</div>
+        <!--End:page-title-->
+
+        <!--Start:gen-content-->
+        <div id="gen-content">
+
+            <form action="SendEmail.do?emc=TD_VHCL_110" method="post">
+
+
+                <div id="pnl-left">
+
+                    <p><span class="subtitle2">Selected Model</span></p>
+                    <p>
+                        <select name="ddlModelsTestDrive" class="input ddModel" id="ddlModelsTestDrive" onclick="GetModelDetails(this);">
+                            <option value="0" selected="true">Not decided yet</option>
+                            <option value="27"> CADILLAC ATS</option><option value="28"> CADILLAC CTS</option><option value="29"> CADILLAC CTS Coupe</option><option value="32"> CADILLAC CTS V</option><option value="30"> CADILLAC CTS V Coupe</option><option value="42"> CADILLAC Cadillac XTS</option><option value="41"> CADILLAC Cadillac SRX</option><option value="36"> CADILLAC Escalade</option><option value="40"> CADILLAC Escalade EXT</option><option value="38"> CADILLAC Escalade ESV</option><option value="34"> CADILLAC Escalade Platinum</option><option value="22"> GMC Acadia</option><option value="23"> GMC Acadia Denali</option><option value="31"> GMC Terrain</option><option value="43"> GMC Terrain Denali</option><option value="25"> GMC Sierra</option><option value="26"> GMC Sierra Denali</option><option value="33"> GMC Yukon</option><option value="35"> GMC Yukon Denali</option><option value="37"> GMC Yukon XL</option><option value="39"> GMC Yukon XL Denali</option><option value="24"> GMC Savana</option>
+                        </select></p>
+
+                    <p>
+                        <img id="imgModelImageTestDrive" src="" alt="" class="PopupImage" width="304" height="139" style="display: none;" />
+                    </p>
+                    <h1 id="h1ModelNameTestDrive" class="subtitle"></h1>
+                    <p id="pModelVariantsTestDrive">
+
+                    </p>
+
+
+
+                    <div class="clear"></div>
+
+
+
+
+
+                </div>
+                <!--End:pnl-left -->
+
+                <!--Start:pnl-right -->
+                <div id="pnl-right">
+                    
+
+
+<h1 class="subtitle">Your Details</h1>
+<p>Full Name*<br />
+    <input type="text" name="txtFullName" id="txtFullName" class="input" />
+</p>
+<p>Place/City*<br />
+    <input type="text" name="txtPlaceCity" id="txtPlaceCity" class="input" /></p>
+<p>Mobile Number*<br />
+    <input type="text" name="txtMobNumber" id="txtMobNumber"  class="input" /></p>
+<p>Email Address*<br />
+    <input type="text" name="txtEmail1" id="txtEmail1"  class="input" /></p>
+<p>Comments<br />
+    <textarea name="txtComments" id="txtComments"  class="input" style="height: 50px;"></textarea>
+</p>
+
+<div class="clear" style="height: 0px;"></div>
+
+
+
+<hr />
+
+
+
+<p> <input type="checkbox" id="cbTerms" name="cbTerms" value="checkbox" /> 
+    <span style="font-size: 11px;">   Mannai is committed to protecting your privacy details,<br>
+    You may opt out by ticking the box if you do not want any further communications from Mannai.</span>
+</p>    
+<p>
+</p>     
+
+
+
+<p>
+    <input name="Submit" type="button" class="button" value="Submit" onclick="validateFormCommon(this.form)"/>
+
+</p>
+                </div>
+                <!--End:pnl-right -->
+
+            </form>
+        </div>
+        <!--End:gen-content-->
+    </div>
+</div>
+
+<div id="divTestQuote" class="login-popup" style="width: 670px;">
+    <a href="#" class="close"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <div id="inner-left-column" class="PopupInnerDiv">
+
+        <!--Start:page-title -->
+        <div id="PopupTitle">
+            Request Quote</div>
+        <!--End:page-title-->
+
+        <!--Start:gen-content-->
+        <div id="gen-content">
+
+            <form action="SendEmail.do?emc=RQ_VHCL_110" method="post">
+                <div id="pnl-left">
+
+                    <p><span class="subtitle2">Selected Model</span></p>
+                    <p>
+                        <select name="ddlModelsQuote" class="input ddModel" id="ddlModelsQuote" onclick="GetModelDetailsQ(this);">
+                            <option value="0" selected="true">Not decided yet</option>
+                            <option value="27"> CADILLAC ATS</option><option value="28"> CADILLAC CTS</option><option value="29"> CADILLAC CTS Coupe</option><option value="32"> CADILLAC CTS V</option><option value="30"> CADILLAC CTS V Coupe</option><option value="42"> CADILLAC Cadillac XTS</option><option value="41"> CADILLAC Cadillac SRX</option><option value="36"> CADILLAC Escalade</option><option value="40"> CADILLAC Escalade EXT</option><option value="38"> CADILLAC Escalade ESV</option><option value="34"> CADILLAC Escalade Platinum</option><option value="22"> GMC Acadia</option><option value="23"> GMC Acadia Denali</option><option value="31"> GMC Terrain</option><option value="43"> GMC Terrain Denali</option><option value="25"> GMC Sierra</option><option value="26"> GMC Sierra Denali</option><option value="33"> GMC Yukon</option><option value="35"> GMC Yukon Denali</option><option value="37"> GMC Yukon XL</option><option value="39"> GMC Yukon XL Denali</option><option value="24"> GMC Savana</option>
+                        </select></p>
+
+                    <p>
+                        <img id="imgModelImageTestDriveQ" src="" alt="" class="PopupImage" width="304" height="139" style="display: none;" />
+                    </p>
+                    <h1 id="h1ModelNameTestDriveQ" class="subtitle"></h1>
+                    <p id="pModelVariantsTestDriveQ">
+
+                    </p>
+
+
+
+                    <div class="clear"></div>
+
+
+
+
+
+                </div>
+                <!--Start:pnl-right -->
+                <div id="pnl-right">
+                    
+
+
+<h1 class="subtitle">Your Details</h1>
+<p>Full Name*<br />
+    <input type="text" name="txtFullName" id="txtFullName" class="input" />
+</p>
+<p>Place/City*<br />
+    <input type="text" name="txtPlaceCity" id="txtPlaceCity" class="input" /></p>
+<p>Mobile Number*<br />
+    <input type="text" name="txtMobNumber" id="txtMobNumber"  class="input" /></p>
+<p>Email Address*<br />
+    <input type="text" name="txtEmail1" id="txtEmail1"  class="input" /></p>
+<p>Comments<br />
+    <textarea name="txtComments" id="txtComments"  class="input" style="height: 50px;"></textarea>
+</p>
+
+<div class="clear" style="height: 0px;"></div>
+
+
+
+<hr />
+
+
+
+<p> <input type="checkbox" id="cbTerms" name="cbTerms" value="checkbox" /> 
+    <span style="font-size: 11px;">   Mannai is committed to protecting your privacy details,<br>
+    You may opt out by ticking the box if you do not want any further communications from Mannai.</span>
+</p>    
+<p>
+</p>     
+
+
+
+<p>
+    <input name="Submit" type="button" class="button" value="Submit" onclick="validateFormCommon(this.form)"/>
+
+</p>
+                </div>
+                <!--End:pnl-right -->
+
+            </form>
+        </div>
+        <!--End:gen-content-->
+    </div>
+</div>
+
+<script type="text/javascript">
+       
+    
+        $(document).ready(function() {
+            //setTimeout("popupFunction('#divOfferPopup')", 1000);
+            popupFunction('#divOfferPopup')
+        });   
+              
+    
+       
+       
+       
+        $(document).ready(function() {
+           
+        
+	
+            // When clicking on the button close or the mask layer the popup closed
+            $('a.close, #mask').live('click', function() { 
+                $('#mask , .login-popup').fadeOut(300 , function() {
+                    $('#mask').remove();  
+                }); 
+                return false;
+            });
+        });
+    
+        function popupFunction(divID)
+        {
+            //Fade in the Popup
+            $(divID).fadeIn(300);
+		
+            //Set the center alignment padding + border see css style
+            var popMargTop = ($(divID).height() + 24) / 2; 
+            var popMargLeft = ($(divID).width() + 24) / 2; 
+		
+            $(divID).css({ 
+                'margin-top' : -popMargTop,
+                'margin-left' : -popMargLeft
+            });
+		
+            // Add the mask to body
+            if(divID == '#divOfferPopup')
+            {
+                //var el = $("browserName");
+                //var BO = detectBrowser();
+                var match = navigator.userAgent.match('MSIE (.)');
+                var version = match && match.length > 1 ? match[1] : 'unknown';
+                if((version=='7') || (version=='7'))
+                {
+                    return false;
+                }
+            }
+            $('body').append('<div id="mask"></div>');
+            $('#mask').fadeIn(300);
+		
+            return false;
+        }
+        
+        function GetModelDetails(ddlModel)
+        { 
+            document.getElementById("imgModelImageTestDrive").src = 'App_Rec/Models/Thumb/img_' + ddlModel.value + '.jpg';
+            var si = ddlModel.selectedIndex;
+            
+            if(ddlModel.selectedIndex > 0)
+            {
+                document.getElementById("imgModelImageTestDrive").style.display = 'inline-block';
+                document.getElementById("h1ModelNameTestDrive").innerHTML = ddlModel.options[si].text;
+            }
+            else
+            {
+                document.getElementById("imgModelImageTestDrive").style.display = 'none';
+                document.getElementById("h1ModelNameTestDrive").innerHTML = "";
+            }
+        }
+        
+        function GetModelDetailsQ(ddlModel)
+        { 
+            document.getElementById("imgModelImageTestDriveQ").src = 'App_Rec/Models/Thumb/img_' + ddlModel.value + '.jpg';
+            var si = ddlModel.selectedIndex;
+            
+            if(ddlModel.selectedIndex > 0)
+            {
+                document.getElementById("imgModelImageTestDriveQ").style.display = 'inline-block';
+                document.getElementById("h1ModelNameTestDriveQ").innerHTML = ddlModel.options[si].text;
+            }
+            else
+            {
+                document.getElementById("imgModelImageTestDriveQ").style.display = 'none';
+                document.getElementById("h1ModelNameTestDriveQ").innerHTML = "";
+            }
+        }
+</script>
+
+
+
+
+
+
+<!--Start:footer-container -->
+<div id="footer-container">
+    <!--Start:footer -->
+    <div id="footer">
+        <div id="footer-bg">
+            <!--Start:icons-wraper -->
+            <div id="icons-wraper">
+
+                <!--Start:special-offers -->
+                <div id="special-offers">
+                    <a href="usefulllinks.jsp"><span class="invi">special offers</span></a>
+                </div>
+                <!--End:special-offers -->
+
+
+                <!--Start:chat -->
+                <div id="chat">
+                    <a href="live-chat.jsp"><span class="invi">live chat</span></a>
+                </div>
+                <!--End:chat -->
+
+
+
+
+
+
+                <!--Start:360-degree -->
+                <div id="dig">
+                    <a href="degree.jsp"><span class="invi">360-degree</span></a>
+                </div>
+                <!--End:360-degree -->
+
+
+
+                <!--Start:download -->
+                <div id="download">
+                    <a href="javascript:void(0);" onclick="popupFunctionFooter('#divBrochure_');"><span class="invi">downloads</span></a>
+                </div>
+                <!--End:download -->
+
+
+                <!--Start:images -->
+                <div id="images">
+                    <a href="videogallery.jsp"><span class="invi">Videos</span></a>
+                </div>
+                <!--End:images -->
+
+
+                <!--Start:contact -->
+                <div id="contact">
+                    <a href="Contactus.jsp?md=CONTACT"><span class="invi">contact</span></a>
+                </div>
+                <!--End:contact -->
+
+
+            </div>
+            <!--End:icons-wraper -->
+        </div>
+
+
+        <!--Start:copy -->
+        <div id="copy">
+            <div id="flinks">
+                <p> <a href="index.jsp">Home</a> | <a href="CMS.jsp?md=ABOUT">About </a> | <a href="pre-owned-cars.jsp">Pre&nbsp;Owned&nbsp;Cars</a> | <a href="autorent.jsp">Auto Rent</a> | <a href="offers.jsp">Current Offers</a> | <a href="gallery.jsp">Gallery</a> | <a href="servicebooking.jsp">Services</a> | <a href="accessories.jsp">Accessories</a> | <a href="locations.jsp?md=SHOWROOMS">Showroom Location</a> | <a href="locations.jsp?md=SERVICE CENTER">Service Center Location</a> | <a href="Contactus.jsp?md=FEEDBACK">Feed Back</a><br />
+                    Copyright &copy; mannaiautos.com</p>
+            </div>
+            <div id="social">
+                <div class="social">we are social:</div>
+                <div id="twitter"><a target="_blank" href="https://twitter.com/@MannaiAuto"><span class="invi">twitter</span></a></div>
+                <div id="facebook"><a target="_blank" href="https://www.facebook.com/MannaiAutomotive"><span class="invi">facebook</span></a></div>
+                
+            </div>
+        </div>
+        <!--End:copy -->
+
+
+    </div>
+    <!--End:footer -->
+</div>
+<!--End:footer-container -->
+
+
+
+
+<script type="text/javascript">
+    function validateFormCommon(form)
+    {
+        if (CheckEmptyValue_Control(form.txtFullName, ' ', 'Please enter first name') == true) {
+            if (CheckEmptyValue_Control(form.txtPlaceCity, ' ', 'Please enter your Place/City') == true) {
+                if (CheckEmptyValue_Control(form.txtMobNumber, ' ', 'Please enter your mobile number') == true) {
+                    if (CheckEmptyValue_Control(form.txtEmail1, ' ', 'Please enter your email') == true) {
+                        if (CheckValidEmail_Control(form.txtEmail1, 'Invalid Email ID') == true) {
+                            try
+                            {
+                                form.Dwonloadlink.click();
+                            }
+                            catch(ex)
+                            {
+                            }
+                            finally{
+                                form.submit();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    
+    $(document).ready(function() {
+        
+        // When clicking on the button close or the mask layer the popup closed
+        $('a.close, #mask').live('click', function() { 
+            $('#mask , .login-popup').fadeOut(300 , function() {
+                $('#mask').remove();  
+            }); 
+            return false;
+        });
+    });
+    
+    function popupFunctionFooter(divID)
+    {
+        if(divID == '#divBrochure_')
+        {
+            //document.getElementById('ddlModelsBrochure').value = MM_VMM_ID;
+            //document.getElementById('Dwonloadlink').href = 'App_Rec/Models/Brochures/Brochure_' + MM_VMM_ID + '_1.pdf';
+            GetBrochures();
+        }
+
+        //Fade in the Popup
+        $(divID).fadeIn(300);
+		
+        //Set the center alignment padding + border see css style
+        var popMargTop = ($(divID).height() + 24) / 2; 
+        var popMargLeft = ($(divID).width() + 24) / 2; 
+		
+        $(divID).css({ 
+            'margin-top' : -popMargTop,
+            'margin-left' : -popMargLeft
+        });
+		
+        // Add the mask to body
+        $('body').append('<div id="mask"></div>');
+        $('#mask').fadeIn(300);
+		
+        return false;
+    }
+    
+    function GetBrochures()
+    {
+        xmlHttpFooter = GetXmlHttpObject()
+        if (xmlHttpFooter==null)
+        {
+            alert ("Browser does not support HTTP Request")
+            return
+        }
+        
+        document.getElementById("divbrochuresList").innerHTML = "Loading...";
+        var url="IndirectPages/GetVehicleBrochuresList.jsp?bn=ANY";
+        xmlHttpFooter.onreadystatechange=stateChangedFooter 
+        xmlHttpFooter.open("GET",url,true)
+        xmlHttpFooter.send(null)
+
+    }
+    
+    function stateChangedFooter() 
+    { 
+        if (xmlHttpFooter.readyState==4 || xmlHttpFooter.readyState=="complete")
+        { 
+            var showdata = xmlHttpFooter.responseText; 
+            document.getElementById("divbrochuresList").innerHTML = showdata
+        }
+    }
+
+    function GetXmlHttpObject()
+    {
+        var xmlHttp=null;
+        try
+        {
+            // Firefox, Opera 8.0+, Safari
+            xmlHttp=new XMLHttpRequest();
+        }
+        catch (e)
+        {
+            //Internet Explorer
+            try
+            {
+                xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e)
+            {
+                xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        }
+        return xmlHttp;
+    }
+    
+</script>
+
+
+
+<div id="divBrochure_" class="login-popup" style="width: 674px;">
+    <a href="#" class="close"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <div id="inner-left-column" class="PopupInnerDiv">
+
+        <!--Start:page-title -->
+        <div id="PopupTitle">
+            Download Brochure</div>
+        <!--End:page-title-->
+
+        <!--Start:gen-content-->
+        <div id="gen-content">
+            <div class="news-highlight" id="divbrochuresList" style="height: 400px; overflow-y: scroll;">
+
+                <p class="morenews">
+                    <a target="_blank" href="http://qa-en.cadillacarabia.com/">Cadillac Qatar </a>
+                    <a target="_blank" href="http://qa-en.cadillacarabia.com/" style="float: right; color: #000000;">www.qa-en.cadillacarabia.com</a>
+                </p>
+                <p class="morenews">
+                    <a target="_blank" href="http://qa-en.cadillacarabia.com/">Cadillac Qatar </a>
+                    <a target="_blank" href="http://qa-en.cadillacarabia.com/" style="float: right; color: #000000;">www.qa-en.cadillacarabia.com</a>
+                </p>
+                <p class="morenews">
+                    <a target="_blank" href="http://qa-en.cadillacarabia.com/">Cadillac Qatar </a>
+                    <a target="_blank" href="http://qa-en.cadillacarabia.com/" style="float: right; color: #000000;">www.qa-en.cadillacarabia.com</a>
+                </p>
+
+            </div>
+        </div>
+        <!--End:gen-content-->
+    </div>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+

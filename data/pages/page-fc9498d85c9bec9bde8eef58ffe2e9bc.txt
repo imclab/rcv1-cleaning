@@ -1,0 +1,1018 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- Mzinga, Build 5667.160 (Thu Aug 12 11:09:25 EDT 2010), DC2WEB031 0 wait -->
+<html><head><title>Used-car buying & selling</title><script type="text/javascript">
+// allows arbitrary places in the page to register window.onload handlers
+var PT_onLoadFunctions;    // the array of registered handlers
+
+// call this from a script element in the page to register a function to be called 
+// when loading is completed. The function should be parameterless.
+// If fn is a string, then, at onLoad time, we just eval the string. This is useful when the function
+// referenced is not defined at the time of the call, e.g. it is in a different script file.
+function PT_RegisterOnLoad(fn)
+{
+  if (typeof PT_onLoadFunctions == "undefined")
+  {
+    // this is the first one we've seen, create the array
+    PT_onLoadFunctions = new Array();
+    if (window.onload)
+    {
+      // we already had a (statically defined) onload - include it in the array
+      PT_onLoadFunctions.push(window.onload);
+    }
+    // set our master handler to run when the window has completed loading
+    window.onload = PT_execOnload;
+  }
+  // add our function to the array
+  PT_onLoadFunctions.push(fn);
+}
+
+// called when PT_RegisterOnLoad() has been used to register onload handlers
+// calls each of the registered functions in turn
+function PT_execOnload()
+{
+  if (PT_onLoadFunctions)
+  {
+    for(var i = 0; i < PT_onLoadFunctions.length; i++)
+    {
+			var fn = PT_onLoadFunctions[i];
+			if (typeof(fn) == "string")
+				eval(fn);
+			else
+				fn();
+    }
+  }
+}
+</script><script type='text/javascript' src='/dir-script/856877/Script.StandardJavascriptRef.js?'></script>
+<script type="text/javascript" src="/dir-script/prospero/TempestNS.Accordion.js"></script><meta http-equiv="Content-Style-Type" content="text/css"/><link rel="stylesheet" HREF="http://www.consumerreports.org/cro/resources/rd07/css/whev.css" type="text/css">
+<style type="text/css">
+/* start header style */
+
+#header { 
+	position: absolute; 
+	top: 0; 
+	/*width: 100%; 
+	background: url(http://www.consumerreports.org/cro/resources/rd07/images/site_bkgrnd.jpg) repeat-x; */
+	margin-left: auto;
+	margin-right: auto;
+	height: 141px;
+	}
+
+#header #croheader { 
+	width: 920px;  
+	margin: auto;
+	margin-top: 8px;
+	}
+	
+h1
+{
+font: bold 16px Arial, Helvetica, sans-serif;
+padding: 10px 0 0 5px;
+text-decoration: none;
+color: #091c30; 
+}
+
+	
+#header #croheader .global_top { 
+	margin: 0 22px 8px 0;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	color: #000;
+	text-align: right;
+	}
+
+#header #croheader .global_top .links { 
+	padding-top: 1px;
+	}
+	
+#header #croheader .global_top a:link { 
+	color: #FFF;
+	text-decoration: none;
+	}
+	
+#header #croheader .global_top a:visited { 
+	color: #FFF;
+	text-decoration: none;
+	}
+	
+#header #croheader .global_top a:active { 
+	text-decoration: underline;
+	}
+	
+#header #croheader .global_top a:hover { 
+	text-decoration: underline;
+	}
+	
+/* sign in area */
+
+#header #croheader .global_top .sign-in {
+	margin: 0 0 0 20px;
+	float: right;
+		}
+
+#header #croheader .global_top .sign-in dl {
+  margin: 0;
+  font: 11px/14px Arial, Helvetica, sans-serif;
+  }
+  
+#header #croheader .global_top .sign-in dt {
+  margin: 0;
+  padding: 1px 5px 0 15px;
+  background: url(http://www.consumerreports.org/cro/resources/rd07/images/signsub_back_left.gif) no-repeat top left;
+  font: bold 11px Arial, Helvetica, sans-serif;
+  color: #FFFFCC;
+  border: 0;
+  float: left;
+  height: 17px;
+  }
+
+#header #croheader .global_top .sign-in dd {
+  margin: 0;
+  padding: 1px 15px 0 0;
+  background: url(http://www.consumerreports.org/cro/resources/rd07/images/signsub_back_right.gif) no-repeat top right;
+  font: bold 11px Arial, Helvetica, sans-serif;
+  color: #FFF;
+  border: 0;
+  float: left;
+  height: 17px;
+  }
+  
+#header #croheader .global_top .sign-in dd a:link {
+	font: bold 11px Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: none;
+	}
+	
+#header #croheader .global_top .sign-in dd a:visited {
+	font: bold 11px Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: none;
+	}
+	
+#header #croheader .global_top .sign-in dd a:hover {
+	font: bold 11px Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: underline;
+	}
+	
+#header #croheader .global_top .sign-in dd a:active {
+	font: bold 11px Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: underline;
+	}
+  
+ /* GLOBAL HEAD LOGO AND SEARCH AREA */
+ 
+#header #croheader #main {
+	margin: -5px 0 0 0;
+	}
+
+#header #croheader #main dl {
+  width: 920px;
+  height: 79px;
+  background: url(http://www.consumerreports.org/cro/resources/rd07/images/cro_head_bg.gif) no-repeat top left;
+  color: #000;
+  margin-bottom: 0;
+  }
+
+* html #header #croheader #main dl {
+  margin-bottom: 20px;
+  }
+
+#header #croheader #main dt {
+  margin: 0;
+  padding: 10px 30px 0 10px;
+  font: normal 11px Arial, Helvetica, sans-serif;
+  color: #176fcc;
+  border: 0;
+  text-align: right;
+  float: right;
+  }
+
+#header #croheader #main dd {
+  margin: 0;
+  padding: 10px 10px 0 10px;
+  text-align: left;
+  float: left;
+  }  
+  
+#header #croheader #main dl a:link { text-decoration: none; color:#176fcc;}
+#header #croheader #main dl a:visited { text-decoration: none; color:#176fcc; }
+#header #croheader #main dl a:hover { text-decoration: underline; color:#176fcc; }
+  
+  #header #croheader #main dt img {
+ 	margin: 0 5px 0 10px;
+	padding: 0;
+	vertical-align: bottom
+	}
+  
+ #header #croheader #main dd img {
+ 	margin: 15px 0 0 -10px;
+	padding: 0;
+	}
+
+	 /* BLOGS HEADER STYLES */
+ 
+.breadcrumb_and_head_blog {
+	width: 918px;
+	height: 84px;
+	margin: 0;
+	padding: 0;
+	border-left: 1px solid #e6e6ee;
+	border-right: 1px solid #e6e6ee;
+	background: url(http://www.consumerreports.org/cro/resources/rd07/images/blogs_header.gif) no-repeat;
+	position: absolute;
+	top: 141px;
+	overflow: hidden;
+	line-height: 1.2em;
+  }
+  
+  * html #breadcrumb_and_head_blog {
+  position: absolute;
+  top: 147px;
+  } 
+  
+.breadcrumb_and_head_blog .breadcrumb {
+  margin: 3px 0 0 9px; 
+  font: normal 11px Arial, Helvetica, sans-serif; 
+  color: #8594a6;
+  }
+  
+.breadcrumb_and_head_blog .blog_image_head {
+ 	margin: 10px 0 0 15px;
+	}
+
+ /* MAIN NAV BUTTONS */
+ 
+ #main_nav {
+	width: 920px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: absolute;
+	}
+
+* html 	 #main_nav {
+	margin-top: -27px;
+	}
+
+ #main_nav dl {
+ 	width: 920px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+	}
+	
+ #main_nav dl {
+ 	width: 920px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+	}
+	
+ #main_nav dl dd.left {
+ 	width: 79px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+	
+ #main_nav dl dd.cars {
+ 	width: 67px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+
+ #main_nav dl dd.appliances {
+ 	width: 106px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+	
+ #main_nav dl dd.electronics {
+ 	width: 107px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+
+ #main_nav dl dd.home {
+ 	width: 131px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+
+ #main_nav dl dd.babies {
+ 	width: 121px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+	
+ #main_nav dl dd.money {
+ 	width: 80px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+
+ #main_nav dl dd.food {
+ 	width: 71px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+	
+	
+ #main_nav dl dd.health {
+ 	width: 77px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+	
+	
+#main_nav dl dd.shopping {
+ 	width: 95px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}	
+
+ #main_nav dl dd.right {
+ 	width: 58px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	}
+
+	
+ #main_nav dl a:hover {
+	position: relative;
+	top: -32px;
+	}
+	
+ #main_nav dl a:active {
+	position: relative;
+	top: -32px;
+	}
+	
+ #main_nav dl img {
+ 	border: 0;
+	}
+	
+/* end header style */
+
+
+
+/* start footer styles */
+
+#crofooter {
+width:920px;
+clear:both;
+font: 11px Arial, Helvetica, sans-serif; 
+color:#000;
+}
+
+#crofooter a:link { text-decoration:none; color:#176fcc}
+#crofooter a:visited { text-decoration:none; color:#176fcc}
+#crofooter a:hover { text-decoration: underline; color:#176fcc}
+
+/* This is the gradient bar above footer*/
+
+#crofooter .shadow {
+background: url(http://www.consumerreports.org/cro/resources/rd07/images/footer_shadow.gif) repeat-x top; 
+height: 11px;
+}
+
+/* This is the left section */
+
+#crofooter .left {
+	width: 155px;
+	height: 145px;
+	float: left;
+	background-color: #e9f0fa;
+	padding-bottom: 10px;
+	margin-right: 5px;
+}
+
+#crofooter .left ul { 
+color:#000;
+padding: 0;
+margin: 0;
+list-style: none; 
+line-height:1.5em;
+} 
+
+#crofooter .left li {
+padding:0; 
+margin:0; 
+padding-left: 8px; 
+margin-left: 10px;
+background: url(http://www.consumerreports.org/cro/resources/rd07/images/squarebullet.gif) no-repeat 0 7px;
+font-size: 11px;
+} 
+
+#crofooter .left li a {
+color: #176fcc;
+padding: 0;
+margin: 0;
+font-size: 11px;
+} 
+
+/* This is for the left section header image which has two backgrounds*/
+
+#crofooter .testlab {
+background: url(http://www.consumerreports.org/cro/resources/rd07/images/cro_testlab_back.gif) repeat-x top left;
+margin-bottom:5px; 
+height: 20px;
+}
+
+#crofooter .testlab ul {
+padding: 0;
+margin: 0;
+list-style: none; 
+}
+
+#crofooter .testlab li {
+padding: 0;
+margin: 0;
+list-style: none; 
+width: 97px;
+height: 20px;
+}
+
+
+/* container which holds left and middle section*/
+
+#crofooter .leftandmiddle {
+overflow: auto;
+width: 760px; 
+margin-right:5px;
+float:left;
+}
+
+/* middle section*/
+
+#crofooter .middle {
+background-color: #e9f0fa;
+width:570px; 
+height: 145px;
+float: right; 
+padding-left: 15px; 
+padding-right: 15px; 
+padding-top:10px;
+}
+
+#crofooter .middle ul {
+        width: 570px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+}
+
+#crofooter .middle ul.second {
+        width: 570px;
+        padding: 0;
+		margin: 0; 
+		float:left;
+        margin-top: 10px;
+        list-style: none;
+}
+ 
+#crofooter .middle li {
+        margin: 0;
+        list-style: none;
+        font: normal 11px Arial, Helvetica, sans-serif;
+		padding: 0;
+        float: left;
+}
+
+#crofooter .middle li a {
+        margin: 0;
+        list-style: none;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #176fcc;
+        
+}
+
+#crofooter .middle li.third {
+margin: 0;
+        list-style: none;
+        font-family:Arial, Helvetica, sans-serif;
+		        padding: 0 2px;
+        float: left;
+}
+ 
+ 
+#crofooter .middle li.custom {
+        margin: 0;
+        list-style: none;
+        font: bold 11px Arial, Helvetica, sans-serif;
+        border-right: 0;
+        float: left;
+        padding: 0 2px;
+}
+
+#crofooter .middle li.rss {
+        margin: 0;
+		margin-left:6px;
+        list-style: none;
+        font: Arial, Helvetica, sans-serif;
+        color: #000;
+        float: left;
+        padding: 0 2px 0 17px;
+		background: url(http://www.consumerreports.org/cro/resources/rd07/images/footer_rssicon.gif) no-repeat left center;
+}
+
+/* right section */
+
+#crofooter .right
+{
+float: right;
+clear: right;
+width: 125px;
+height: 145px;
+background-color: #e9f0fa;
+padding: 10px 15px 0 15px;
+line-height: 1.5em;
+}
+
+#crofooter .right ul { 
+color:#000;
+padding: 0;
+margin: 0;
+list-style: none; line-height: 1.5em;
+} 
+
+#crofooter .right li {
+padding:0; 
+margin:0; 
+padding-left: 8px;
+background: url(http://www.consumerreports.org/cro/resources/rd07/images/squarebullet.gif) no-repeat 0 7px;
+font-weight: normal;
+font-size: 11px;
+} 
+
+#crofooter .right li a {
+color: #176fcc;
+padding: 0;
+margin: 0;
+font-size: 11px;
+} 
+
+/* hack to make outer div expand downwards*/
+
+#crofooter .expanddivdownward {
+clear:both; 
+line-height:0; 
+height:0;
+}
+
+/* copyright line*/
+
+#crofooter .copyright {
+padding-left:10px;
+color: #999;
+line-height:2.0em;
+float: left;
+clear: both;
+width: 920px;
+}
+
+
+
+/* end footer styles */
+
+/* fix the unstyled My Forums */
+table#pfMyForums tr.ptcHead td.ptcHead {
+padding-top:10px !important;
+font-weight:800;
+font-size:16px;
+}
+
+table#pfMyForums tr.ptcHead th.ptcMessages {
+padding-left: 5px;
+}
+
+table#pfMyForums tr.ptcHead td.ptcName a.ptbAction {
+background-color:#e5e5e5;
+font-weight:800;
+}
+
+table#pfMyForums tr.ptcValue td.ptcValue a {
+white-space:nowrap;
+}
+
+/* added to fix erroring image on linked stylesheet */
+#home_middle #blogs li {
+background: url(http://www.consumerreports.org/cro/resources/rd07/images/squarebullet.gif) no-repeat 0 7px;
+}
+/* increase 'Archive' link */
+table.ptcContentTable tr td ul.ptcListFlow li span.ptbFolderName A {
+   font-size: 14px;
+font-weight:bold;
+margin: 0 4px 0 0;
+}
+</style>
+<link rel="stylesheet" media="all" type="text/css" href="/dir-css/743789/qs;msgSize=8;textsize=9;browserType=1/Common.css" /><link rel="stylesheet" media="all" type="text/css" href="/dir-css/743789/qs;msgSize=8;textsize=9;browserType=1/forum.css" /></head><body class="ptWrapBody ptcWebtag-cr-usdcarbuying ptcNav-messages ptcApp-forum"><div class="ptNavmessages"><div id="ptWrapDiv" class="ptWrapDiv"><div id="ptcBrandHeader" class="ptcWrapperHeader">
+	<div class="ptcBranding">
+		<!--<img src="/dir-icon/249/9/temp_headerGraphic.icon" />-->
+<div id="header">
+<div id="croheader">
+<div class="global_top">
+<!--<div class="sign-in">
+<dl>
+<dt>Welcome Timothy&nbsp;&nbsp;- </dt>
+<dd><a href="#">Sign out</a></dd>
+</dl>
+</div>-->
+<div class="links"><a href="http://custhelp.consumerreports.org/cgi-bin/consumerreports.cfg/php/enduser/home.php">Customer Service</a>&#160;&#160;|&#160;&#160;<a href="http://www.consumerreports.org/main/user/myaccount.jsp">My Account</a>&#160;&#160;|&#160;&#160;<a href="http://www.consumerreports.org/cro/donate/cro/home.htm">Donate</a>&#160;&#160;|&#160;&#160;<a href="http://www.consumerreports.org/cro/our-web-sites/index.htm">Our Web Sites</a></div></div>
+
+<div id="main">
+<dl>
+<dt><a href="http://www.consumerreports.org/cro/news/index.htm"><img src="http://www.consumerreports.org/cro/resources/rd07/images/head_news_icon.gif" alt="News and blogs" width="10" height="13" border="0" /></a><a href="http://news.consumerreports.org/">News</a><!--<a href="http://www.consumerreports.org/cro/blogs/index.htm"><img src="http://www.consumerreports.org/cro/resources/rd07/images/head_blogs_icon.gif" alt="News and blogs" width="10" height="12" border="0" /></a><a href="http://www.consumerreports.org/cro/our-blogs/index.htm">Blogs</a>--><a href="http://www.consumerreports.org/cro/discussion/discussions/index.htm"><img src="http://www.consumerreports.org/cro/resources/rd07/images/head_discuss_icon.gif" alt="Discussions" width="10" height="12" border="0" /></a><a href="http://www.consumerreports.org/cro/discussion/discussions/index.htm">Forums</a><!--<a href="#"><img src="http://www.consumerreports.org/cro/resources/rd07/images/head_vid_icon.gif" alt="Videos" width="14" height="13" border="0" /></a><a href="#">Videos</a>--><br />
+
+<!--
+<div id="search">
+<dl>
+  <dt><img src="http://www.consumerreports.org/cro/resources/rd07/images/head_srchbutton.gif" alt="search" width="58" height="24" /></dt>
+  <dd>
+    <input type="text" name="textfield" size="48" style="width: 242px;" />
+  </dd>
+</dl>
+</div>
+-->
+  </dt>
+<dd><a href="http://www.consumerreports.org"><img src="http://www.consumerreports.org/cro/resources/rd07/images/headback_left.gif" alt="Consumer Reports logo" width="515" height="55" border="0" /></a></dd>
+</dl>
+  </div>
+  
+  <!-- NAV BUTTONS* -->
+  <div id="main_nav">
+                  <dl>
+                     <dd class="left"><img alt="" height="32" width="79" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_left2.gif" /></dd>
+                     <dd class="cars"><a href="http://www.consumerreports.org/cro/cars/index.htm"><img alt="Car ratings and safety" height="64" width="67" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_cars.gif" /></a></dd>
+                     <dd class="appliances"><a href="http://www.consumerreports.org/cro/appliances/index.htm"><img alt="Appliance ratings" height="64" width="106" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_appliance.gif" /></a></dd>
+                     <dd class="electronics"><a href="http://www.consumerreports.org/cro/electronics-computers/index.htm"><img alt="Electronics and computer ratings" height="64" width="107" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_electronics.gif" /></a></dd>
+                     <dd class="home"><a href="http://www.consumerreports.org/cro/home-garden/index.htm"><img alt="Home and garden product ratings" height="64" width="131" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_homegard.gif" /></a></dd>
+                     <dd class="babies"><a href="http://www.consumerreports.org/cro/babies-kids/index.htm"><img alt="Babies and kids product ratings" height="64" width="121" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_babieskids.gif" /></a></dd>
+                     <dd class="money"><a href="http://www.consumerreports.org/cro/money/index.htm"><img alt="Money saving tips and advice" height="64" width="80" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_money.gif" /></a></dd>
+                     <dd class="shopping"><a href="http://www.consumerreports.org/cro/shopping/index.htm"><img alt="shopping" height="64" width="95" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_shopping.gif" /></a></dd>
+                     <dd class="health"><a href="http://www.consumerreports.org/health/home.htm"><img alt="Health and fitness product ratings" height="64" width="77" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_health.gif" /></a></dd>
+                     <dd class="right"><img alt="" height="32" width="58" src="http://www.consumerreports.org/cro/resources/rd07/images/mainnav_right2.gif" /></dd>
+                  </dl>
+</div>
+</div>
+</div>
+
+<div style="padding-bottom:115px;">;&#160;</div>
+	</div>
+</div><div id="ptcForumHeader" class="ptcWrapperHeader">
+	<div id="ptcBreadCrumbBar" class="ptcForumHeaderBar">
+		<table class="ptcListContainer">
+			<tr>
+				<td class="ptcListContainerCellLeft"><ul id="ptcBreadCrumb" class="ptcListFlow">
+	<li><span class="ptcListHead"><a href="http://www.consumerreports.org">Home</a> &gt; <a href="http://forums.consumerreports.org/cr-home">Forums</a> &gt;&nbsp;</span></li><li><span class="ptcListLink"><a class="navLink" href="/n/pfx/forum.aspx?webtag=cr-carsStart">Cars</a></span></li><li><span class="ptcListDelimiter"><span class="ptDelim"> &nbsp;&gt;&nbsp; </span></span></li><li><span class="ptcListLink"><a class="navLink" href="/n/forumIndex.aspx?webtag=cr-morecarIdx">More car topics</a></span></li><li><span class="ptcListDelimiter"><span class="ptDelim"> &nbsp;&gt;&nbsp; </span></span></li><li><span class="ptcListText">Used-car buying & selling</span></li>
+</ul></td>
+			</tr>
+		</table>
+	</div><div class="ptcBranding">
+		<h2>Forums</h2>
+	</div>
+</div><div id="ptcBodyDiv"><table id="ptcBodyTable" class="ptcListContainer"><tr><td id="ptcBodyLeft" class="ptcListContainerCellLeft" rowspan="1"><div id="ptcWidgetColumnLeft" class="ptcWidgetColumn">
+	<div class="ptcBranding">
+		<div class="ptcPanel ptcCatList"><div class="ptcHead">Forum Categories</div><div class="ptcBody"><ul><li><a href="/n/pfx/forum.aspx?webtag=cr-appStart" onMouseOut="this.blur();return true;">Appliances</a></li><li class="ptcSelectedCat"><a href="/n/pfx/forum.aspx?webtag=cr-carsStart" onMouseOut="this.blur();return true;">Cars</a></li><li><a href="/n/pfx/forum.aspx?webtag=cr-ecStart" onMouseOut="this.blur();return true;">Electronics & Computers</a></li><li><a href="/n/pfx/forum.aspx?webtag=cr-hgStart" onMouseOut="this.blur();return true;">Home & Garden</a></li></ul></div></div><div class="ptcPanel ptcRelatedLinks"><div class="ptcHead">Related Links</div><div class="ptcBody"><ul><li><a href=" http://www.consumerreports.org/cro/cars/car-buying-advice/guide-to-used-car-buying/narrow-your-choices/pros-and-cons-of-buying-used/index.htm">Buying a used car</a></li><li><a href=" http://www.consumerreports.org/cro/cars/used-cars/buying-advice/used-car-savings/overview/used-cars-ov.htm">Used car savings</a></li><li><a href="http://www.consumerreports.org/cro/cars/safety-recalls/index.htm">Guide to car safety</a></li><li><a href="http://blogs.consumerreports.org/cars/">CR Cars News</a></li></ul><br/><ul><i>For subscribers</i><li><a href="http://www.consumerreports.org/cro/magazine/2012/04/best-and-worst-used-cars/index.htm">Best and Worst Used Cars</a></li><li><a href="http://www.consumerreports.org/cro/cars/used-cars/reliability/used-car-reliability/most-and-least-reliable-used-cars/most-and-least-reliable.htm">Used car reliability</a></li><li><a href=" http://www.consumerreports.org/cro/cars/used-cars/buying-advice/used-car-savings/finding-a-great-used-vehicle/used-cars-finding-a-great-used-car.htm">How to find a great used car</a></li><li><a href=" http://www.consumerreports.org/cro/cars/used-cars/buying-advice/used-car-savings/new-vs-used-owner-costs/used-cars-new-vs-used-owner-costs.htm">New versus used</a></li><li><a href="http://www.consumerreports.org/cro/2012/05/make-your-car-last-200-000-miles/index.htm">Get 200,000 miles</a></li><li><a href="http://www.consumerreports.org/main/ur/home.jsp">Consumer Opinions - cars</a></li></ul></div></div>
+	</div>
+</div></td><td id="ptcBodyContents" class="ptcListContainerCell"><div id="ptcContentTop" class="ptcWrapperHeader">
+	<div class="ptcForumHeader">
+<div class="ptcRelatedForums"><span class="ptbCustomForumsMenu"><a class="ptbMenuLink" href="javascript:void(0)" onclick="PTM_showMenu(this, 'custom_forums_list_menu', '', -1, true);return false;" onMouseOut="this.blur();return true;">Select a related forum</a></span></div><div class="ptcNameAndDescription"><div id="ptcHeaderName" class="ptcForumName">Used-car buying & selling</div><div class="ptcForumDescription">Looking to save buying used, but not sure how to find a reliable car? <span class="cars08"><span>G</span></span>et help<span class="cars08"><span> here </span></span>on <span class="cars08"><span>how to get that good deal: </span></span>who to buy from, <span class="cars08"><span>what to look for, and what to avoid.</span></span></div><div class="ptcClear"></div></div>
+</div>
+</div><div id="ptcMainTemplate"><form name="_pttmf" method="post" action="/n/pfx/forum.aspx?webtag=cr-usdcarbuying" id="_pttmf" style="margin:0;padding:0">
+<input type="hidden" name="ptButtonCmd" id="ptButtonCmd" value="" />
+<input type="hidden" name="ptButtonValidate" id="ptButtonValidate" value="true" />
+<input type="hidden" name="ptButtonCCOId" id="ptButtonCCOId" value="0" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUENTM4MQ8WBB4FY0d1aWQFJEQyNEYxMjQzLTBDN0UtNEZGQi1BNUZELTI0RTVFMDE1Qzg1Qx4FcFZhcnMy3AQAAQAAAP////8BAAAAAAAAAAQBAAAA4gFTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5EaWN0aW9uYXJ5YDJbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAdWZXJzaW9uCENvbXBhcmVyCEhhc2hTaXplAAMACJIBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuR2VuZXJpY0VxdWFsaXR5Q29tcGFyZXJgMVtbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0IAAAAAAkCAAAAAAAAAAQCAAAAkgFTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5HZW5lcmljRXF1YWxpdHlDb21wYXJlcmAxW1tTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXQAAAAALZGRAhXZZgjhoz9U8SPkhkDfIw+O3yg==" />
+
+<script type='text/javascript' src='/dir-script/856877/Script.PTTMenu.js?'></script>
+<script type='text/javascript' src='/dir-script/856877/Script.PttControls.js?'></script>
+<script type='text/javascript' src='/dir-script/856877/Script.Ajax.js?'></script>
+<script type="text/javascript">
+		function simpleSearch(textCtlId)
+		{
+			var searchCtl = document.getElementById(textCtlId);
+			if (!searchCtl) return;
+			var searchText = searchCtl.value;
+			if (searchText == "") return;
+		
+			  location.href = AddDbgFlags('/n/pfx/forum.aspx?webtag=cr-usdcarbuying&nav=search&q=' + searchText);
+			
+		PTM_hideMenu();
+		}
+		</script><div class="pfDLMall"><div class="pfDiscList"><div id="PTID-discussionList-header">
+	<div id="PTID-discussionList-header-discussionListMenuBar" class="pfDiscListHead">
+		<table class="ptcListContainer">
+			<tr>
+				<td class="ptcListContainerCellRight"><ul class="ptcListFlow">
+					<li><span class="ptbPostNew"><a class="basic" href="/n/pfx/forum.aspx?nav=post&amp;webtag=cr-usdcarbuying" title="Start a new discussion" onMouseOver="status='Start a new discussion';return true;" onMouseOut="status='';this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/5/btn_postNew.icon" border="0" height="22" width="72" alt="Start a new discussion" style="vertical-align:middle;" /></a></span></li>
+				</ul></td>
+			</tr>
+		</table>
+	</div>
+</div><table class="ptcContentTable" id="pfDiscListTable"><tr class="ptcHeadRow">
+	<td class="pfFolder" colspan="4"><table class="ptcListContainer">
+		<tr>
+			<td class="ptcListContainerCellLeft"><ul class="ptcListFlow">
+				<li>49 discussions, 49 shown</li>
+			</ul></td><td class="ptcListContainerCellRight"><ul class="ptcListFlow">
+				<li><div class="pfNavFifty"><ul class="ptcListFlow"><li><span class="ptcNext"><a class="navLink" href="/n/pfx/forum.aspx?lastDate=8/19/2012 6:11:51 PM&amp;webtag=cr-usdcarbuying&amp;firstDisc=51" title="Next 50" onMouseOver="status='Next 50';return true;" onMouseOut="status='';this.blur();return true;">Next 50 »</a></span></li></ul></div></li>
+			</ul></td>
+		</tr>
+	</table></td>
+</tr><tr class="ptcNameRow">
+	<th class="ptcNameCell ptcNameCellSubject"><span class="ptcNameCell"><span class="ptcNameCellSubject">Subject</span></span></th><th class="ptcNameCell ptcNameCellLatest"><span class="ptcNameCell"><span class="ptcNameCellLatest">Last post</span></span></th><th class="ptcNameCell ptcNameCellPosts"><span class="ptcNameCell"><span class="ptcNameCellPosts">Msgs</span></span></th><th class="ptcNameCell ptcNameCellViews"><span class="ptcNameCell"><span class="ptcNameCellViews">Views</span></span></th>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=529" onMouseOut="this.blur();return true;">Unknown (to me) Frame Damage</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=396298786" title="Show posts by Timothy_J_Benton" onMouseOver="window.status='Show posts by Timothy_J_Benton';return true;" onmouseout="window.status='';return true;">Timothy_J_Benton</a>&nbsp;on/at&nbsp;Aug-22 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=465733096" title="Show posts by Cale_Johnson" onMouseOver="window.status='Show posts by Cale_Johnson';return true;" onmouseout="window.status='';return true;">Cale_Johnson</a></span></li><li><span class="ptcListText">Aug-23 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">2</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">33</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=527" onMouseOut="this.blur();return true;">2011 Honda Pilot Touring</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1896345194" title="Show posts by Peter_Badding" onMouseOver="window.status='Show posts by Peter_Badding';return true;" onmouseout="window.status='';return true;">Peter_Badding</a>&nbsp;on/at&nbsp;Aug-8 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">Aug-9 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">2</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">99</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=7&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=459" onMouseOut="this.blur();return true;">pre 2002 used car reviews?</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895010497" title="Show posts by Justin_Alderson" onMouseOver="window.status='Show posts by Justin_Alderson';return true;" onmouseout="window.status='';return true;">Justin_Alderson</a>&nbsp;on/at&nbsp;5/20/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">Jul-16 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">8</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">2936</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=4&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=510" onMouseOut="this.blur();return true;">Sedan w/loan to midsize SUV- HOW?</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=873267870" title="Show posts by Ramona_Hadzima" onMouseOver="window.status='Show posts by Ramona_Hadzima';return true;" onmouseout="window.status='';return true;">Ramona_Hadzima</a>&nbsp;on/at&nbsp;Mar-3 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=873267870" title="Show posts by Ramona_Hadzima" onMouseOver="window.status='Show posts by Ramona_Hadzima';return true;" onmouseout="window.status='';return true;">Ramona_Hadzima</a></span></li><li><span class="ptcListText">Jul-4 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">4</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">887</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=3&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=522" onMouseOut="this.blur();return true;">How much does paint affect sell price?</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1896199429" title="Show posts by Jason_Fox" onMouseOver="window.status='Show posts by Jason_Fox';return true;" onmouseout="window.status='';return true;">Jason_Fox</a>&nbsp;on/at&nbsp;May-11 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=357737603" title="Show posts by William_Cook" onMouseOver="window.status='Show posts by William_Cook';return true;" onmouseout="window.status='';return true;">William_Cook</a></span></li><li><span class="ptcListText">Jul-4 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">3</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">540</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=526" onMouseOut="this.blur();return true;">Double Burned</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1896274670" title="Show posts by marijane_diCandia" onMouseOver="window.status='Show posts by marijane_diCandia';return true;" onmouseout="window.status='';return true;">marijane_diCandia</a>&nbsp;on/at&nbsp;Jun-27 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=357737603" title="Show posts by William_Cook" onMouseOver="window.status='Show posts by William_Cook';return true;" onmouseout="window.status='';return true;">William_Cook</a></span></li><li><span class="ptcListText">Jul-4 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">2</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">262</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=525" onMouseOut="this.blur();return true;">Advice on first car purchase</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1896261715" title="Show posts by greg_richard" onMouseOver="window.status='Show posts by greg_richard';return true;" onmouseout="window.status='';return true;">greg_richard</a>&nbsp;on/at&nbsp;Jun-16 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1896261715" title="Show posts by greg_richard" onMouseOver="window.status='Show posts by greg_richard';return true;" onmouseout="window.status='';return true;">greg_richard</a></span></li><li><span class="ptcListText">Jun-16 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">375</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=524" onMouseOut="this.blur();return true;">Five best used cars for teens</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator_Jerry" onMouseOver="window.status='Show posts by CR_Moderator_Jerry';return true;" onmouseout="window.status='';return true;">CR_Moderator_Jerry</a>&nbsp;on/at&nbsp;Jun-15 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">Jun-15 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">320</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=3&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=521" onMouseOut="this.blur();return true;">Dealer fees</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1896153809" title="Show posts by Kathryn_Castellano" onMouseOver="window.status='Show posts by Kathryn_Castellano';return true;" onmouseout="window.status='';return true;">Kathryn_Castellano</a>&nbsp;on/at&nbsp;Apr-22 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1896251064" title="Show posts by kyle_olson" onMouseOver="window.status='Show posts by kyle_olson';return true;" onmouseout="window.status='';return true;">kyle_olson</a></span></li><li><span class="ptcListText">Jun-7 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">3</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">602</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=523" onMouseOut="this.blur();return true;">avoiding dealer scams??</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1896251064" title="Show posts by kyle_olson" onMouseOver="window.status='Show posts by kyle_olson';return true;" onmouseout="window.status='';return true;">kyle_olson</a>&nbsp;on/at&nbsp;Jun-7 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1896251064" title="Show posts by kyle_olson" onMouseOver="window.status='Show posts by kyle_olson';return true;" onmouseout="window.status='';return true;">kyle_olson</a></span></li><li><span class="ptcListText">Jun-7 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">322</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=6&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=519" onMouseOut="this.blur();return true;">Need Advice Salvage Title Lexus</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1896104237" title="Show posts by Chris_James" onMouseOver="window.status='Show posts by Chris_James';return true;" onmouseout="window.status='';return true;">Chris_James</a>&nbsp;on/at&nbsp;Apr-2 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1870222107" title="Show posts by Martin_E_Wri..." onMouseOver="window.status='Show posts by Martin_E_Wri...';return true;" onmouseout="window.status='';return true;">Martin_E_Wri...</a></span></li><li><span class="ptcListText">May-3 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">6</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">809</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=5&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=452" onMouseOut="this.blur();return true;">Dealer says 'Found you cheaper financing</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1894695470" title="Show posts by Toni_Hothan" onMouseOver="window.status='Show posts by Toni_Hothan';return true;" onmouseout="window.status='';return true;">Toni_Hothan</a>&nbsp;on/at&nbsp;3/27/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">May-2 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">5</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">2947</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=518" onMouseOut="this.blur();return true;">2010 Honda brakes</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=466568251" title="Show posts by richard_butela" onMouseOver="window.status='Show posts by richard_butela';return true;" onmouseout="window.status='';return true;">richard_butela</a>&nbsp;on/at&nbsp;Mar-28 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">Mar-28 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">2</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">712</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=517" onMouseOut="this.blur();return true;">2013 New York Auto Show</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator_Jerry" onMouseOver="window.status='Show posts by CR_Moderator_Jerry';return true;" onmouseout="window.status='';return true;">CR_Moderator_Jerry</a>&nbsp;on/at&nbsp;Mar-27 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">Mar-27 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">657</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=516" onMouseOut="this.blur();return true;">Best used under 20K</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator_Jerry" onMouseOver="window.status='Show posts by CR_Moderator_Jerry';return true;" onmouseout="window.status='';return true;">CR_Moderator_Jerry</a>&nbsp;on/at&nbsp;Mar-26 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">Mar-26 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">666</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=515" onMouseOut="this.blur();return true;">stuck with a lemon</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1894328613" title="Show posts by OSCAR_SERRANO" onMouseOver="window.status='Show posts by OSCAR_SERRANO';return true;" onmouseout="window.status='';return true;">OSCAR_SERRANO</a>&nbsp;on/at&nbsp;Mar-23 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=465733096" title="Show posts by Cale_Johnson" onMouseOver="window.status='Show posts by Cale_Johnson';return true;" onmouseout="window.status='';return true;">Cale_Johnson</a></span></li><li><span class="ptcListText">Mar-23 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">2</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">724</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=511" onMouseOut="this.blur();return true;">Personal advice from CR experts</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator_Jerry" onMouseOver="window.status='Show posts by CR_Moderator_Jerry';return true;" onmouseout="window.status='';return true;">CR_Moderator_Jerry</a>&nbsp;on/at&nbsp;Mar-6 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">Mar-6 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">760</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=509" onMouseOut="this.blur();return true;">How we test cars</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator_Jerry" onMouseOver="window.status='Show posts by CR_Moderator_Jerry';return true;" onmouseout="window.status='';return true;">CR_Moderator_Jerry</a>&nbsp;on/at&nbsp;Mar-2 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">Mar-2 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">746</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=508" onMouseOut="this.blur();return true;">Annual Auto Issue</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator_Jerry" onMouseOver="window.status='Show posts by CR_Moderator_Jerry';return true;" onmouseout="window.status='';return true;">CR_Moderator_Jerry</a>&nbsp;on/at&nbsp;2/26/13 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">2/26/13 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">768</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=506" onMouseOut="this.blur();return true;">Book vs Reality</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895996657" title="Show posts by Andrew_Beebe" onMouseOver="window.status='Show posts by Andrew_Beebe';return true;" onmouseout="window.status='';return true;">Andrew_Beebe</a>&nbsp;on/at&nbsp;2/23/13 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895996657" title="Show posts by Andrew_Beebe" onMouseOver="window.status='Show posts by Andrew_Beebe';return true;" onmouseout="window.status='';return true;">Andrew_Beebe</a></span></li><li><span class="ptcListText">2/23/13 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">811</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=503" onMouseOut="this.blur();return true;">Selling to Carmax</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1872649896" title="Show posts by David_Richter" onMouseOver="window.status='Show posts by David_Richter';return true;" onmouseout="window.status='';return true;">David_Richter</a>&nbsp;on/at&nbsp;2/21/13 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">2/23/13 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">4</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">968</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=504" onMouseOut="this.blur();return true;">Best deals on used family sedans</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator_Jerry" onMouseOver="window.status='Show posts by CR_Moderator_Jerry';return true;" onmouseout="window.status='';return true;">CR_Moderator_Jerry</a>&nbsp;on/at&nbsp;2/22/13 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">2/22/13 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">804</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=499" onMouseOut="this.blur();return true;">vin checks</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895894265" title="Show posts by Linda_DUNCAN" onMouseOver="window.status='Show posts by Linda_DUNCAN';return true;" onmouseout="window.status='';return true;">Linda_DUNCAN</a>&nbsp;on/at&nbsp;1/16/13 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895963323" title="Show posts by Julie_Dellapi" onMouseOver="window.status='Show posts by Julie_Dellapi';return true;" onmouseout="window.status='';return true;">Julie_Dellapi</a></span></li><li><span class="ptcListText">2/12/13 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">2</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1047</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=500" onMouseOut="this.blur();return true;">Vehicle Donation to Charity</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895928789" title="Show posts by Tim_Boon" onMouseOver="window.status='Show posts by Tim_Boon';return true;" onmouseout="window.status='';return true;">Tim_Boon</a>&nbsp;on/at&nbsp;2/11/13 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895928789" title="Show posts by Tim_Boon" onMouseOver="window.status='Show posts by Tim_Boon';return true;" onmouseout="window.status='';return true;">Tim_Boon</a></span></li><li><span class="ptcListText">2/11/13 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">867</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=498" onMouseOut="this.blur();return true;">2005 Jeep</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895894265" title="Show posts by Linda_DUNCAN" onMouseOver="window.status='Show posts by Linda_DUNCAN';return true;" onmouseout="window.status='';return true;">Linda_DUNCAN</a>&nbsp;on/at&nbsp;1/16/13 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895894265" title="Show posts by Linda_DUNCAN" onMouseOver="window.status='Show posts by Linda_DUNCAN';return true;" onmouseout="window.status='';return true;">Linda_DUNCAN</a></span></li><li><span class="ptcListText">1/16/13 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">950</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=9&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=497" onMouseOut="this.blur();return true;">Which used car should I get?</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895865895" title="Show posts by Anthony_Rapino" onMouseOver="window.status='Show posts by Anthony_Rapino';return true;" onmouseout="window.status='';return true;">Anthony_Rapino</a>&nbsp;on/at&nbsp;1/7/13 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">1/10/13 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">9</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1318</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=496" onMouseOut="this.blur();return true;">Too good to be true - Used Hyundai Sonat</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895858996" title="Show posts by Stephen_Thomas" onMouseOver="window.status='Show posts by Stephen_Thomas';return true;" onmouseout="window.status='';return true;">Stephen_Thomas</a>&nbsp;on/at&nbsp;1/4/13 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">1/4/13 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">2</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1122</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=6&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=449" onMouseOut="this.blur();return true;">When is a used car worth it?</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1894534775" title="Show posts by Phil_Kashdan" onMouseOver="window.status='Show posts by Phil_Kashdan';return true;" onmouseout="window.status='';return true;">Phil_Kashdan</a>&nbsp;on/at&nbsp;3/15/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895794781" title="Show posts by jenny_smith" onMouseOver="window.status='Show posts by jenny_smith';return true;" onmouseout="window.status='';return true;">jenny_smith</a></span></li><li><span class="ptcListText">12/24/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">6</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">3647</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=495" onMouseOut="this.blur();return true;">Car resale value</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1868621060" title="Show posts by Ken_Garza" onMouseOver="window.status='Show posts by Ken_Garza';return true;" onmouseout="window.status='';return true;">Ken_Garza</a>&nbsp;on/at&nbsp;12/11/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1868621060" title="Show posts by Ken_Garza" onMouseOver="window.status='Show posts by Ken_Garza';return true;" onmouseout="window.status='';return true;">Ken_Garza</a></span></li><li><span class="ptcListText">12/11/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1190</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=493" onMouseOut="this.blur();return true;">Used Commuter Car</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895804299" title="Show posts by Barry_Wilt" onMouseOver="window.status='Show posts by Barry_Wilt';return true;" onmouseout="window.status='';return true;">Barry_Wilt</a>&nbsp;on/at&nbsp;12/9/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1868621060" title="Show posts by Ken_Garza" onMouseOver="window.status='Show posts by Ken_Garza';return true;" onmouseout="window.status='';return true;">Ken_Garza</a></span></li><li><span class="ptcListText">12/11/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">3</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1263</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=494" onMouseOut="this.blur();return true;">Five key car features you might like</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator_Jerry" onMouseOver="window.status='Show posts by CR_Moderator_Jerry';return true;" onmouseout="window.status='';return true;">CR_Moderator_Jerry</a>&nbsp;on/at&nbsp;12/11/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">12/11/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1152</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=492" onMouseOut="this.blur();return true;">How much evry year for all thats needed?</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895796292" title="Show posts by Javier_DL" onMouseOver="window.status='Show posts by Javier_DL';return true;" onmouseout="window.status='';return true;">Javier_DL</a>&nbsp;on/at&nbsp;12/5/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1870222107" title="Show posts by Martin_E_Wri..." onMouseOver="window.status='Show posts by Martin_E_Wri...';return true;" onmouseout="window.status='';return true;">Martin_E_Wri...</a></span></li><li><span class="ptcListText">12/5/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">2</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1211</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=489" onMouseOut="this.blur();return true;">mechanic inspection</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895744021" title="Show posts by Tom_Jones" onMouseOver="window.status='Show posts by Tom_Jones';return true;" onmouseout="window.status='';return true;">Tom_Jones</a>&nbsp;on/at&nbsp;11/24/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895794781" title="Show posts by jenny_smith" onMouseOver="window.status='Show posts by jenny_smith';return true;" onmouseout="window.status='';return true;">jenny_smith</a></span></li><li><span class="ptcListText">12/5/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">7</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1599</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=491" onMouseOut="this.blur();return true;">Reliability checks</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895788404" title="Show posts by kevin_pruden" onMouseOver="window.status='Show posts by kevin_pruden';return true;" onmouseout="window.status='';return true;">kevin_pruden</a>&nbsp;on/at&nbsp;12/2/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">12/2/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">2</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1212</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=490" onMouseOut="this.blur();return true;">See SANDY car pile . . .</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=442923375" title="Show posts by Edward_Burke" onMouseOver="window.status='Show posts by Edward_Burke';return true;" onmouseout="window.status='';return true;">Edward_Burke</a>&nbsp;on/at&nbsp;11/29/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=442923375" title="Show posts by Edward_Burke" onMouseOver="window.status='Show posts by Edward_Burke';return true;" onmouseout="window.status='';return true;">Edward_Burke</a></span></li><li><span class="ptcListText">11/29/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1252</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=488" onMouseOut="this.blur();return true;">How to avoid buying a flooded used car</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator_Jerry" onMouseOver="window.status='Show posts by CR_Moderator_Jerry';return true;" onmouseout="window.status='';return true;">CR_Moderator_Jerry</a>&nbsp;on/at&nbsp;11/3/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">11/3/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1372</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=487" onMouseOut="this.blur();return true;">Advice regarding Corolla</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895653214" title="Show posts by avinash_sahu" onMouseOver="window.status='Show posts by avinash_sahu';return true;" onmouseout="window.status='';return true;">avinash_sahu</a>&nbsp;on/at&nbsp;11/2/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">11/3/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">2</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1579</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=4&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=441" onMouseOut="this.blur();return true;">Help with buying a 2006-2009 Civic</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1894468962" title="Show posts by malikkah_rollins" onMouseOver="window.status='Show posts by malikkah_rollins';return true;" onmouseout="window.status='';return true;">malikkah_rollins</a>&nbsp;on/at&nbsp;2/22/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895448803" title="Show posts by Julian_Humble" onMouseOver="window.status='Show posts by Julian_Humble';return true;" onmouseout="window.status='';return true;">Julian_Humble</a></span></li><li><span class="ptcListText">10/28/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">4</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">3018</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=486" onMouseOut="this.blur();return true;">South Africa</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895626984" title="Show posts by Dave_Jonesy" onMouseOver="window.status='Show posts by Dave_Jonesy';return true;" onmouseout="window.status='';return true;">Dave_Jonesy</a>&nbsp;on/at&nbsp;10/26/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895626984" title="Show posts by Dave_Jonesy" onMouseOver="window.status='Show posts by Dave_Jonesy';return true;" onmouseout="window.status='';return true;">Dave_Jonesy</a></span></li><li><span class="ptcListText">10/26/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1356</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=484" onMouseOut="this.blur();return true;">Carfax</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895594352" title="Show posts by John_Robbins" onMouseOver="window.status='Show posts by John_Robbins';return true;" onmouseout="window.status='';return true;">John_Robbins</a>&nbsp;on/at&nbsp;10/24/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1870222107" title="Show posts by Martin_E_Wri..." onMouseOver="window.status='Show posts by Martin_E_Wri...';return true;" onmouseout="window.status='';return true;">Martin_E_Wri...</a></span></li><li><span class="ptcListText">10/24/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">2</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1515</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=2&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=471" onMouseOut="this.blur();return true;">USED car value with rebuilt engine...</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895240882" title="Show posts by wingo_wong" onMouseOver="window.status='Show posts by wingo_wong';return true;" onmouseout="window.status='';return true;">wingo_wong</a>&nbsp;on/at&nbsp;7/13/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895448803" title="Show posts by Julian_Humble" onMouseOver="window.status='Show posts by Julian_Humble';return true;" onmouseout="window.status='';return true;">Julian_Humble</a></span></li><li><span class="ptcListText">10/22/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">2</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1970</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=483" onMouseOut="this.blur();return true;">Use Local Newspapers to Buy & Sell</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=442923375" title="Show posts by Edward_Burke" onMouseOver="window.status='Show posts by Edward_Burke';return true;" onmouseout="window.status='';return true;">Edward_Burke</a>&nbsp;on/at&nbsp;10/16/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=442923375" title="Show posts by Edward_Burke" onMouseOver="window.status='Show posts by Edward_Burke';return true;" onmouseout="window.status='';return true;">Edward_Burke</a></span></li><li><span class="ptcListText">10/16/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1428</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=482" onMouseOut="this.blur();return true;">Varible AWD perf on snow/ice?</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1870285943" title="Show posts by Dennis_Clines" onMouseOver="window.status='Show posts by Dennis_Clines';return true;" onmouseout="window.status='';return true;">Dennis_Clines</a>&nbsp;on/at&nbsp;10/5/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1870285943" title="Show posts by Dennis_Clines" onMouseOver="window.status='Show posts by Dennis_Clines';return true;" onmouseout="window.status='';return true;">Dennis_Clines</a></span></li><li><span class="ptcListText">10/5/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">1</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1470</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=7&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=469" onMouseOut="this.blur();return true;">Used Car Market for Private Owners</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895200467" title="Show posts by John_Cranston" onMouseOver="window.status='Show posts by John_Cranston';return true;" onmouseout="window.status='';return true;">John_Cranston</a>&nbsp;on/at&nbsp;7/4/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895507622" title="Show posts by Anthony_Lama..." onMouseOver="window.status='Show posts by Anthony_Lama...';return true;" onmouseout="window.status='';return true;">Anthony_Lama...</a></span></li><li><span class="ptcListText">10/1/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">7</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">2664</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=481" onMouseOut="this.blur();return true;">buying a renatl car</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895480669" title="Show posts by Bill_Lomuscio" onMouseOver="window.status='Show posts by Bill_Lomuscio';return true;" onmouseout="window.status='';return true;">Bill_Lomuscio</a>&nbsp;on/at&nbsp;9/24/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1870222107" title="Show posts by Martin_E_Wri..." onMouseOver="window.status='Show posts by Martin_E_Wri...';return true;" onmouseout="window.status='';return true;">Martin_E_Wri...</a></span></li><li><span class="ptcListText">9/27/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">2</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1623</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=3&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=425" onMouseOut="this.blur();return true;">Determinng Long-term Cost of A Used Car</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1893801551" title="Show posts by Geoff_Cardillo" onMouseOver="window.status='Show posts by Geoff_Cardillo';return true;" onmouseout="window.status='';return true;">Geoff_Cardillo</a>&nbsp;on/at&nbsp;11/15/11 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1048126619" title="Show posts by CR_Moderator..." onMouseOver="window.status='Show posts by CR_Moderator...';return true;" onmouseout="window.status='';return true;">CR_Moderator...</a></span></li><li><span class="ptcListText">9/17/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">4</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">2956</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=4&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=480" onMouseOut="this.blur();return true;">4500 dollar car to last 2 years?</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895437772" title="Show posts by Karl_Stephens" onMouseOver="window.status='Show posts by Karl_Stephens';return true;" onmouseout="window.status='';return true;">Karl_Stephens</a>&nbsp;on/at&nbsp;9/6/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895437772" title="Show posts by Karl_Stephens" onMouseOver="window.status='Show posts by Karl_Stephens';return true;" onmouseout="window.status='';return true;">Karl_Stephens</a></span></li><li><span class="ptcListText">9/10/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">4</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">1787</span></span></td>
+</tr><tr class="ptcValueRowAlt">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=478" onMouseOut="this.blur();return true;">dealer renigs offer agreed on</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895417639" title="Show posts by Rose_Gerber" onMouseOver="window.status='Show posts by Rose_Gerber';return true;" onmouseout="window.status='';return true;">Rose_Gerber</a>&nbsp;on/at&nbsp;8/30/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=465733096" title="Show posts by Cale_Johnson" onMouseOver="window.status='Show posts by Cale_Johnson';return true;" onmouseout="window.status='';return true;">Cale_Johnson</a></span></li><li><span class="ptcListText">9/6/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">3</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">2002</span></span></td>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=8&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=110" onMouseOut="this.blur();return true;">Is CarMax a reliable dealership?</a></li><li>&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1872708302" title="Show posts by W_Howard" onMouseOver="window.status='Show posts by W_Howard';return true;" onmouseout="window.status='';return true;">W_Howard</a>&nbsp;on/at&nbsp;1/24/08 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1870222107" title="Show posts by Martin_E_Wri..." onMouseOver="window.status='Show posts by Martin_E_Wri...';return true;" onmouseout="window.status='';return true;">Martin_E_Wri...</a></span></li><li><span class="ptcListText">8/28/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">8</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">15074</span></span></td>
+</tr><tr class="ptcSpacerRow">
+	<td class="ptcSpacerCell" colspan="4"><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="1" height="4" border="0" alt=""></td>
+</tr><tr class="ptcHeadRow">
+	<td class="pfFolder" colspan="4"><table class="ptcListContainer">
+		<tr>
+			<td class="ptcListContainerCellLeft"><ul class="ptcListFlow">
+				<li>439 discussions, 1 shown</li>
+			</ul></td><td class="ptcListContainerCellRight"><ul class="ptcListFlow">
+				<li><div class="pfNavFifty"><ul class="ptcListFlow"><li><span class="ptcNext"><a class="navLink" href="/n/pfx/forum.aspx?lastDate=8/19/2012 6:11:51 PM&amp;webtag=cr-usdcarbuying&amp;firstDisc=51" title="Next 50" onMouseOver="status='Next 50';return true;" onMouseOut="status='';this.blur();return true;">Next 50 »</a></span></li></ul></div></li>
+			</ul></td>
+		</tr>
+	</table></td>
+</tr><tr class="ptcNameRow">
+	<th class="ptcNameCell ptcNameCellSubject"><span class="ptcNameCell"><span class="ptcNameCellSubject">Subject</span></span></th><th class="ptcNameCell ptcNameCellLatest"><span class="ptcNameCell"><span class="ptcNameCellLatest">Last post</span></span></th><th class="ptcNameCell ptcNameCellPosts"><span class="ptcNameCell"><span class="ptcNameCellPosts">Msgs</span></span></th><th class="ptcNameCell ptcNameCellViews"><span class="ptcNameCell"><span class="ptcNameCellViews">Views</span></span></th>
+</tr><tr class="ptcValueRow">
+	<td class="ptcValueCell ptcValueCellSubject"><table class="ptcListContainer"><tr class="ptcTop"><td class="ptcListContainerCellLeft"><ul class="ptcListFlow"><li><table style="display:inline"><tr><td><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="15" title="This discussion contains no new messages." height="15" alt="" /></td></tr></table></li><li><a class="navLink" href="/n/pfx/forum.aspx?tsn=1&amp;nav=messages&amp;webtag=cr-usdcarbuying&amp;tid=477" onMouseOut="this.blur();return true;">2005 Mazda MPV LX</a></li><li><img src="http://discussions.consumerreports.org/dir-icon/249/5/disc_lock.icon" width="24" title="This discussion is closed." height="24" alt="" />&nbsp;</li></ul></td></tr></table><table class="ptcListContainer"><tr class="ptcBottom"><td class="ptcListContainerCellLeft"><span style="padding-left:30px">Started By&nbsp;<a target="_self" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1895376496" title="Show posts by karin_curtis" onMouseOver="window.status='Show posts by karin_curtis';return true;" onmouseout="window.status='';return true;">karin_curtis</a>&nbsp;on/at&nbsp;8/17/12 </span></td></tr></table></td><td class="ptcValueCell ptcValueCellLatest"><ul class="ptcListStack"><li><span class="ptcMemberlink"><a target="_self" class="lastPoster" href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=userposts&amp;userId=1870222107" title="Show posts by Martin_E_Wri..." onMouseOver="window.status='Show posts by Martin_E_Wri...';return true;" onmouseout="window.status='';return true;">Martin_E_Wri...</a></span></li><li><span class="ptcListText">8/19/12 </span></li></ul></td><td class="ptcValueCell ptcValueCellPosts"><span class="ptcPostCount">3</span></td><td class="ptcValueCell ptcValueCellViews"><span class="ptcValueCell"><span class="ptcValueCellViews">2031</span></span></td>
+</tr></table><div id="PTID-discussionList-footer">
+	<div id="PTID-discussionList-footer-discussionListMenuBar" class="pfDiscListFoot">
+		<table class="ptcTableContainer">
+			<tr class="ptcRowTop">
+				<td class="ptcTableContainerCell"><table class="ptcListContainer">
+					<tr>
+						<td class="ptcListContainerCellRight"><ul class="ptcListFlow">
+							<li><div class="pfNavFifty"><ul class="ptcListFlow"><li><span class="ptcNext"><a class="navLink" href="/n/pfx/forum.aspx?lastDate=8/19/2012 6:11:51 PM&amp;webtag=cr-usdcarbuying&amp;firstDisc=51" title="Next 50" onMouseOver="status='Next 50';return true;" onMouseOut="status='';this.blur();return true;">Next 50 »</a></span></li></ul></div></li>
+						</ul></td>
+					</tr>
+				</table></td>
+			</tr><tr class="ptcRowBottom">
+				<td class="ptcTableContainerCell"><table class="ptcListContainer">
+					<tr>
+						<td class="ptcListContainerCellRight"><ul class="ptcListFlow">
+							<li><span class="ptbPostNew"><a class="basic" href="/n/pfx/forum.aspx?nav=post&amp;webtag=cr-usdcarbuying" title="Start a new discussion" onMouseOver="status='Start a new discussion';return true;" onMouseOut="status='';this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/5/btn_postNew.icon" border="0" height="22" width="72" alt="Start a new discussion" style="vertical-align:middle;" /></a></span></li>
+						</ul></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table>
+	</div>
+</div></div></div></form></div></td><td id="ptcBodyRight" class="ptcListContainerCellRight" rowspan="1"><div id="ptcWidgetColumnRight" class="ptcWidgetColumn">
+	<div class="ptcBranding">
+		<div class="ptcForumSearch"><ul class="ptcListFlow"><li><span class="ptcListHeader">Search Forums</span></li><li><input type="text" ID="ptMsgSearchText" onkeypress="if (event.keyCode != 13 && event.keyCode != 10)return true;location.href='/n/pfx/forum.aspx?webtag=cr-usdcarbuying&nav=search&br=ALL&q=' + document.getElementById('ptMsgSearchText').value;return false;" NAME="ptMsgSearchText"/></li><li><span class="ptbMsgSearch"><a class="basic" href="javascript:void(0)" title="Start Search" onclick="location.href='/n/pfx/forum.aspx?webtag=cr-usdcarbuying&amp;nav=search&amp;br=ALL&amp;q=' + document.getElementById('ptMsgSearchText').value;return false;" onMouseOut="this.blur();return true;" style="width:22px;height:22px;"><img src="http://discussions.consumerreports.org/dir-icon/249/4/btn_searchglass.icon" border="0" height="23" width="36" alt="Start Search" style="vertical-align:middle;" /></a></span></li><li class="ptcAdvancedSearchLink"><a href="/n/pfx/forum.aspx?nav=search&amp;webtag=cr-usdcarbuying" onMouseOut="this.blur();return true;">Advanced</a></li></ul></div><div class="ptcPanel ptcMemberCenter"><div class="ptcHead"><img src="http://discussions.consumerreports.org/dir-icon/249/9/MemberCenterHeader.icon" alt="My Membership Center"/></div><div class="ptcBody" id="ptcMemberCenterAccordion"><div class="ptcWelcomeText">
+            Welcome, Guest
+          </div><div class="ptcLogin"><a href="javascript:void(0)" title="Sign in" onclick="return PTButtonCmd('cmdLogin()', false, '');" onMouseOut="this.blur();return true;">Sign in</a></div><div class="ptcGuidelines"><a href="http://www.consumerreports.org/cro/discussion/forums-discussion-guidelines/index.htm" onMouseOut="this.blur();return true;">Guidelines</a></div><div class="ptcAbout"><a href="http://www.consumerreports.org/static/FirstTimeVisitor.html" onMouseOut="this.blur();return true;">About Forums</a></div><div class="ptcContact"><a href="http://www.consumerreports.org/cro/discussion/forums-email/index.htm" onMouseOut="this.blur();return true;">Feedback</a></div></div></div><script type="text/javascript">
+    new TempestNS.Accordion("ptcMemberCenterAccordion",null,false,"","","");
+  </script><script language="javascript" type="text/javascript" src="http://oascentral.consumerreports.org/Scripts/oas_analytics.js"></script><script language="javascript" type="text/javascript" src="http://www.consumerreports.org/cro/resources/js/sx.js"></script><div class="ad" style="border-bottom: 1px solid #D2D6DF;"><script type="text/javascript">
+
+var randomoverride = randomString(9,"0123456789");
+
+displayAdWithClassAndStyle("cu/cro/forums","Right1","135","190","Right1,Right2,Right3",randomoverride,"class='rightads'","style='margin-bottom: 12px; margin-top: 12px; margin-left: 8px;'");
+
+</script></div><div class="ad" style="border-bottom: 1px solid #D2D6DF;"><script type="text/javascript">
+
+displayAdWithClassAndStyle("cu/cro/forums","Right2","135","190","Right1,Right2,Right3",randomoverride,"class='rightads'","style='margin-bottom: 12px; margin-top: 12px; margin-left: 8px;'");
+
+</script></div><div style="padding-top: 5px;" class="ad"><script type="text/javascript">
+
+displayAdWithClassAndStyle("cu/cro/forums","Right3","135","190","Right1,Right2,Right3",randomoverride,"class='rightads'","");
+
+</script></div>
+	</div>
+</div></td></tr></table></div><div id="ptcBrandFooter" class="ptcWrapperHeader">
+	<div class="ptcBranding">
+		<div id="footer"><div id="crofooter"><div class="shadow">&nbsp;</div><div class="leftandmiddle"><div class="left"><div class="testlab"><ul><li><img alt="Test labs" height="20" src="http://www.consumerreports.org/cro/resources/rd07/images/cro_testlab_badge.gif" width="97"/></li></ul></div><ul><li><a href="http://www.consumerreports.org/cro/aboutus/test/index.htm" title="How We Test">How We Test</a></li><li><a href="http://www.consumerreports.org/cro/aboutus/history/interactive/index.htm" title="Our History">Our History</a></li><li><a href="http://www.consumerreports.org/cro/aboutus/labtour/index.htm" title="Lab Tour">Lab Tour</a></li></ul></div><div class="middle"><ul><li class="custom">ConsumerReports.org:&nbsp;&nbsp;</li><li><a href="http://www.consumerreports.org/cro/a-to-z-index/index.htm" title="A to Z Index">A-Z Index</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://www.consumerreports.org/cro/a-to-z-index/index/index.htm" title="Site Map">Site Map</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://www.consumerreports.org/cro/customer-service/overview/index.htm" title="Overview">Overview</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://www.consumerreports.org/cro/customer-service/privacy/index.htm" title="Your Privacy Rights">Your Privacy Rights</a> &nbsp;|&nbsp;
+
+                        </li><li><a href="http://www.consumerreports.org/cro/customer-service/user-agreement/index.htm" title="User Agreement">User Agreement</a></li></ul><ul style=" margin-left: 2px; float: left; clear: both; margin-top: 1px;"><li><a href="http://www.consumerreports.org/cro/canadaextra/index.htm">Canada Extra</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://espanol.consumerreports.org/">en Espa&ntilde;ol</a> &nbsp;|&nbsp;
+
+                        </li><li class="custom visitor-only"><a href="https://ec.consumerreports.org/ec/cro/order.htm?INTKEY=I610LT0" style=" font-weight: bold;">Subscribe</a></li></ul><ul class="second"><li class="custom">Who We Are:&nbsp;&nbsp;</li><li><a href="http://www.consumerreports.org/cro/aboutus/index.htm" title="About Us">About Us</a> &nbsp;|&nbsp;
+
+                        </li><li><a href="http://www.consumerreports.org/cro/aboutus/mission/overview/index.htm" title="Our Mission">Our Mission</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://www.consumerreports.org/cro/aboutus/adviolation/index.htm">No Commercial Use</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://www.consumerreports.org/cro/home-garden/news/august-2006/report-your-problem-products-8-06/overview/reporty-our-problem-products.htm" title="Report A Safety Problem">Report a Safety Problem</a> &nbsp;|&nbsp;
+
+                        </li><li><a href="http://jobs-consumers.icims.com/consumers_jobs/jobs/candidate/intro.jsp;jsessionid=20309690839678505f17">Career Opportunities</a></li></ul><ul style=" margin-left: 2px; float: left; clear: both; margin-top: 1px;"><li><a href="http://www.consumerreports.org/cro/book-store/products-and-services/index.htm" title="Bookstore">Bookstore</a> &nbsp;|&nbsp;
+                        </li><li><a href="http://www.consumerreports.org/cro/customer-service/email-service/e-mail-newsletters/index.htm" title="E-mail Newsletters">E-mail Newsletters</a> &nbsp;|&nbsp;
+
+                        </li><li class="rss"><a href="http://simplefeed.consumerreports.org">RSS</a> &nbsp;|
+                        </li><li class="third"><a href="http://www.consumerreports.org/cro/cu-press-room/pressroom/welcome/index.htm" title="Press Room">Press Room</a> &nbsp;|
+                     </li><li><a href="https://consumerreports.secure-donor.com/consumerreports?source=0027222223">Donate</a></li>&nbsp;|&nbsp;
+ <li><a href="http://custhelp.consumerreports.org/cgi-bin/consumerreports.cfg/php/enduser/home.php">Customer Service-Contact Us</a></li></ul><ul class="second"><li class="custom">Consumer Reports Network:&nbsp;&nbsp;</li><li><a href="http://www.consumerreports.org/cro/index.htm">ConsumerReports.org</a> &nbsp;|&nbsp;
+</li><li><a href="http://www.consumerreports.org/health/home.htm">ConsumerReportsHeath.org</a> &nbsp;|&nbsp;
+</li><li><a href="http://consumerist.com/">The Consumerist</a></li></ul><ul style=" margin-top: 1px; clear: both; margin-left: 2px; float: left;"><li><a href="http://www.consumerreports.org/cro/customer-service/consumer-reports-advice-and-prices-on-buying-a-new-car/index.htm">Car Pricing Service</a> &nbsp;|&nbsp;
+</li><li><a href="http://www.consumersunion.org/">ConsumersUnion.org</a></li></ul></div></div><div class="right"><strong>FREE Newsletter</strong><br/>Sign up for our FREE updates delivered by email.
+                  <ul><li><a href="http://www.consumerreports.org/cro/customer-service/email-service/e-mail-newsletters/index.htm" title="E-mail Newsletters">Sign up now</a> or <a href="http://www.consumerreports.org/cro/customer-service/email-service/e-mail-newsletters/index.htm">click here</a> to manage your newsletters</li></ul></div><div class="copyright">Copyright &copy; 2005-2011 <a href="http://www.consumersunion.org/">Consumers Union</a> of U.S., Inc. No reproduction, in whole or in part, without written <a href="http://www.consumerreports.org/cro/book-store/additional-information/permission-requests/index.htm">permission</a>.
+               </div><div class="expanddivdownward">&nbsp;</div></div></div>
+	</div><div class="ptcBrandCopyright">
+		
+	</div><div class="ptcAdSpace">
+		
+	</div>
+</div><div style="position:absolute;left:-100px;top:-100px;width:10px;height:10px;overflow:hidden"><div style="display:none" id="folderOpenIconDiv"><img src="http://discussions.consumerreports.org/dir-icon/249/5/folder_dn.icon" iconWidth="18" iconHeight="16" alt="" /></div><div style="display:none" id="folderClosedIconDiv"><img src="http://discussions.consumerreports.org/dir-icon/249/5/folder_rt.icon" iconWidth="18" iconHeight="16" alt="" /></div><div style="display:none" id="dscArrowDiv"><img src="http://discussions.consumerreports.org/dir-icon/249/4/dsc_index.icon" width="14" height="12" alt="" /></div><div style="display:none" id="dscClearDiv"><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" width="14" border="0" height="12" alt="" /></div><script type='text/javascript' src='/dir-script/856877/Script.MessagesPage.js?'></script>
+<div style="display:none" id="loadingImageDiv"><table cellpadding="0" cellspacing="0" border="0" width="100%" ID="Table1"><tr><td align="center" valign="top"><img src="http://discussions.consumerreports.org/dir-icon/249/13/load_anim.icon" width="240" height="180" alt="" /></td></tr></table></div></div><!-- SiteCatalyst code version: H.21.1 
+Copyright 1996-2010 Adobe, Inc. All Rights Reserved 
+More info available at http://www.omniture.com --> 
+<script language="JavaScript" type="text/javascript"> 
+var s_account="cuconsumer,cuglobal" 
+</script> 
+<script language="JavaScript" type="text/javascript" src="http://www.consumerreports.org/cro/shared-resources/scripts/site-catalyst/s_code.js"></script> 
+<script language="JavaScript" type="text/javascript"> 
+
+s.channel="cro" 
+s.pageName="CRO:Discussion" 
+s.prop1="Discussion" 
+s.prop9="free" 
+
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/ 
+var s_code=s.t();if(s_code)document.write(s_code) 
+</script> 
+<!-- End SiteCatalyst code version: H.21.1 --><script type='text/javascript' src='/dir-script/856877/Script.ExternalPageTrackingRef.js?'></script>
+</div></div>
+<!-- Starting Ptt Menus -->
+		<ul id="custom_forums_list_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)"></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-newcarbuying" onMouseOut="this.blur();return true;">New-car buying & leasing</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-usdcarbuying" onMouseOut="this.blur();return true;">Used-car buying & selling</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-aftermarket" onMouseOut="this.blur();return true;">Auto add-ons</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-gps" onMouseOut="this.blur();return true;">GPS, navigation</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-2kmileclub" onMouseOut="this.blur();return true;">The High-Mileage Club</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-0806camotorc" onMouseOut="this.blur();return true;">Motorcycles & scooters</a></li>
+</ul><ul id="discaction_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;left:-300px;top:-300px;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Discussion Actions</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="/n/pfx/forum.aspx?nav=post&amp;webtag=cr-usdcarbuying" title="Post a new message to this forum" onMouseOver="status='Post a new message to this forum';return true;" onMouseOut="status='';this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/4/tools_newmsg.icon" border="0" height="16" width="22" alt="Post a new message to this forum" style="vertical-align:middle;" />&nbsp;Post a message</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="2" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" title="Mark discussions as read" onclick="return PTM_extraClickArgs('return PTButtonCmd(\'cmdMarkAsRead(#markReadDate#)\', true, \'\');', 'PTM_args');" onMouseOver="status='Mark discussions as read';return true;" onMouseOut="status='';this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/4/tools_markread.icon" border="0" height="16" width="22" alt="Mark discussions as read" style="vertical-align:middle;" />&nbsp;Mark read</a></li>
+</ul><ul id="textsize_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;left:-300px;top:-300px;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Adjust text size</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:8pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(8)', true, '');" onMouseOut="this.blur();return true;">8 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:9pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(9)', true, '');" onMouseOut="this.blur();return true;">9 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:10pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(10)', true, '');" onMouseOut="this.blur();return true;">10 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:11pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(11)', true, '');" onMouseOut="this.blur();return true;">11 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:12pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(12)', true, '');" onMouseOut="this.blur();return true;">12 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:14pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(14)', true, '');" onMouseOut="this.blur();return true;">14 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:16pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(16)', true, '');" onMouseOut="this.blur();return true;">16 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:18pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(18)', true, '');" onMouseOut="this.blur();return true;">18 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:24pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(24)', true, '');" onMouseOut="this.blur();return true;">24 point</a></span></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><span style="font-size:36pt;line-height:1.1;"><a class="multiSize" href="javascript:void(0)" onclick="return PTButtonCmd('cmdSetTextSizeValue(36)', true, '');" onMouseOut="this.blur();return true;">36 point</a></span></li>
+</ul><ul id="msgoptions_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Options</li>
+<!--
+
+        Popup List: emailMsg,printMsg,tosReport
+-->
+<li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="/n/pfx/forum.aspx?tsn=#tsn#&amp;nav=tosReportMaster&amp;webtag=cr-usdcarbuying&amp;tid=#tid#&amp;ptpw=y" onclick="return PTM_extraClickArgs('var newWin=window.open(\'/n/pfx/forum.aspx?tsn=#tsn#&amp;nav=tosReportMaster&amp;webtag=cr-usdcarbuying&amp;tid=#tid#&amp;ptpw=y\', \'PttPopupWin\', \'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=350,height=280,\');newWin.focus();return false;', 'PTM_args');" onMouseOut="this.blur();return true;">Report this post</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="/n/pfx/forum.aspx?action=forward&amp;tsn=#tsn#&amp;nav=emailPrint&amp;webtag=cr-usdcarbuying&amp;tid=#tid#&amp;ptpw=y" onclick="return PTM_extraClickArgs('var newWin=window.open(\'/n/pfx/forum.aspx?action=forward&amp;tsn=#tsn#&amp;nav=emailPrint&amp;webtag=cr-usdcarbuying&amp;tid=#tid#&amp;ptpw=y\', \'PttPopupWin\', \'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=350,height=280,\');newWin.focus();return false;', 'PTM_args');" onMouseOut="this.blur();return true;">E-mail this message</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="/n/pfx/forum.aspx?action=print&amp;tsn=#tsn#&amp;nav=emailPrint&amp;webtag=cr-usdcarbuying&amp;tid=#tid#&amp;ptpw=y" onclick="return PTM_extraClickArgs('var newWin=window.open(\'/n/pfx/forum.aspx?action=print&amp;tsn=#tsn#&amp;nav=emailPrint&amp;webtag=cr-usdcarbuying&amp;tid=#tid#&amp;ptpw=y\', \'PttPopupWin\', \'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=350,height=280,\');newWin.focus();return false;', 'PTM_args');" onMouseOut="this.blur();return true;">Print Message</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="10" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('javascript:PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-usdcarbuying\', \'\', PT_ajaxShowAlert, \'makeFriend(#fromUserId#)\');', 'PTM_args');" onMouseOut="this.blur();return true;">Add to Friends</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="6" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('javascript:PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-usdcarbuying\', \'\', PT_ajaxShowAlert, \'makeIgnore(#fromUserId#)\');', 'PTM_args');" onMouseOut="this.blur();return true;">Ignore this Author</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="4" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('javascript:PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-usdcarbuying\', \'\', PT_ajaxShowAlert, \'makeNeutral(#fromUserId#)\');', 'PTM_args');" onMouseOut="this.blur();return true;">Remove from Friends List</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="8" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('javascript:PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-usdcarbuying\', \'\', PT_ajaxShowAlert, \'makeNeutral(#fromUserId#)\');', 'PTM_args');" onMouseOut="this.blur();return true;">Stop Ignoring this Author</a></li>
+</ul><ul id="msgrating_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Rate this message</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="javascript:void(0)" onclick="return PTM_extraClickArgs('PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-usdcarbuying\', \'\', PT_ajaxShowAlert, \'cmdSetMessageRating(#tid#, #tsn#, 1)\', \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""></a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="javascript:void(0)" onclick="return PTM_extraClickArgs('PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-usdcarbuying\', \'\', PT_ajaxShowAlert, \'cmdSetMessageRating(#tid#, #tsn#, 2)\', \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""></a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="javascript:void(0)" onclick="return PTM_extraClickArgs('PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-usdcarbuying\', \'\', PT_ajaxShowAlert, \'cmdSetMessageRating(#tid#, #tsn#, 3)\', \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""></a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="javascript:void(0)" onclick="return PTM_extraClickArgs('PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-usdcarbuying\', \'\', PT_ajaxShowAlert, \'cmdSetMessageRating(#tid#, #tsn#, 4)\', \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /></a><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="javascript:void(0)" onclick="return PTM_extraClickArgs('PTButtonCmdAjax(\'/n/pfx/forum.aspx?template=commandResult&amp;nav=iframe&amp;webtag=cr-usdcarbuying\', \'\', PT_ajaxShowAlert, \'cmdSetMessageRating(#tid#, #tsn#, 5)\', \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/4/c.icon" width="15" height="15" border="0" alt=""><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /><img src="http://discussions.consumerreports.org/dir-icon/249/13/rat_star.icon" width="15" border="0" height="15" alt="" /></a></li>
+</ul><ul id="tools_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Discussion Tools</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="/n/pfx/forum.aspx?nav=post&amp;webtag=cr-usdcarbuying" title="Post a new message to this forum" onMouseOver="status='Post a new message to this forum';return true;" onMouseOut="status='';this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/4/tools_newmsg.icon" border="0" height="16" width="22" alt="Post a new message to this forum" style="vertical-align:middle;" />&nbsp;Post a message</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" title="Get a printer-friendly version of this discussion" onclick="return PTM_extraClickArgs('window.location=\'/n/pfx/forum.aspx?nav=printDiscussion&amp;webtag=cr-usdcarbuying&amp;tid=#tid#\'', 'PTM_args');" onMouseOver="status='Get a printer-friendly version of this discussion';return true;" onMouseOut="status='';this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/4/tools_print.icon" border="0" height="16" width="20" alt="Get a printer-friendly version of this discussion" style="vertical-align:middle;" />&nbsp;Print Discussion</a></li>
+</ul><ul id="interest_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Interest level</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('return PTButtonCmd(\'SetInterestLevel(#tid#, 2)\', true, \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/5/flag_yellow.icon" border="0" height="16" width="20" alt="" style="vertical-align:middle;" />&nbsp; High</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('return PTButtonCmd(\'SetInterestLevel(#tid#, 1)\', true, \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/4/clr.icon" border="0" height="16" width="20" alt="" style="vertical-align:middle;" />&nbsp; Neutral</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" onclick="return PTM_extraClickArgs('return PTButtonCmd(\'SetInterestLevel(#tid#, 0)\', true, \'\');', 'PTM_args');" onMouseOut="this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/5/flag_blue.icon" border="0" height="16" width="20" alt="" style="vertical-align:middle;" />&nbsp; Ignore</a></li>
+</ul><ul id="search_menu" class="ptPopMenuPlain" onShow="document.getElementById('_ptForumSearchText').select()" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li displayMask="-1" onclick="PTM_onclick(this, event)" style="padding:0;margin:0;text-align:left;line-height:128px"><table cellpadding="2" cellspacing="0" border="0" class="ptPopupMenuTable" onclick="PT_cancelBubble(event)" align="left"><tr><td colspan="2" align="center" width="100%" class="ptPopupMenuTableHead"><b>Find messages</b></td></tr><tr><td height="22" align="center" style="white-space:nowrap" valign="middle" class="ptPopupMenuTableBody"><input type="text" ID="_ptForumSearchText" style="width:112px" maxlength="250" onkeypress="if (event.keyCode != 13 && event.keyCode != 10)return true;simpleSearch('_ptForumSearchText');return false;"/><a href="javascript:void(0)" title="Start Search" onclick="simpleSearch('_ptForumSearchText');return false;" onMouseOut="this.blur();return true;" style="width:22px;height:22px;"><img src="http://discussions.consumerreports.org/dir-icon/249/4/btn_searchglass.icon" border="0" alt="Start Search" style="vertical-align:middle;" /></a></td></tr><tr><td colspan="2" class="ptPopupMenuTableBody" style="height:16px;text-align:center"><a class="basic" href="/n/pfx/forum.aspx?nav=search&amp;webtag=cr-usdcarbuying" onMouseOut="this.blur();return true;">Advanced</a></td></tr></table></li>
+</ul><ul id="modes_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">View Modes</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a class="basic" href="javascript:void(0)" title="Go to basic message view" onclick="return PTButtonCmd('cmdMemberSetValue(viewMode,basic)', true, '');" onMouseOver="status='Go to basic message view';return true;" onMouseOut="status='';this.blur();return true;"><img src="http://discussions.consumerreports.org/dir-icon/249/4/msgmodsel_0.icon" border="0" height="16" width="22" alt="Go to basic message view" style="vertical-align:middle;" />&nbsp;Basic</a></li>
+</ul><ul id="forums_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Related Forums</li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?webtag=cr-demo1" onMouseOut="this.blur();return true;">CR Digital Photography Demo</a></li>
+</ul><ul id="mystuff_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">
+  My Stuff by section
+  </li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?nav=myforums&amp;webtag=cr-usdcarbuying#myforumschats" onMouseOut="this.blur();return true;">My Chats</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?nav=myforums&amp;webtag=cr-usdcarbuying#myforumsforums" onMouseOut="this.blur();return true;">My Forums</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?nav=myforums&amp;webtag=cr-usdcarbuying#myforumssubscriptions" onMouseOut="this.blur();return true;">My Subscriptions</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?nav=myforums&amp;webtag=cr-usdcarbuying#myforumsfriends" onMouseOut="this.blur();return true;">My Friends</a></li><li class="normal" onmouseover="this.className='hilite';" onmouseout="this.className='normal';" displayMask="-1" onclick="PTM_onclick(this, event)"><a href="/n/pfx/forum.aspx?nav=myforums&amp;webtag=cr-usdcarbuying#myforumsprefs" onMouseOut="this.blur();return true;">My Preferences</a></li>
+</ul><ul id="mgmttools_menu" class="ptPopMenuList" style="visibility:hidden;position:absolute;left:0;top:0;">
+<li class="titletext" displayMask="-1" onclick="PTM_onclick(this, event)">Management Tools</li>
+</ul></body></html>

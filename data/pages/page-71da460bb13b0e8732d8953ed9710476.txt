@@ -1,0 +1,706 @@
+
+	<!DOCTYPE HTML>
+	
+	<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:fb="https://www.facebook.com/2008/fbml">
+		
+	<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">  
+	
+	
+		<script>
+			window.onerror = function(error, url, line) {
+				$.ajax({url: "/ajaxsupport/jserrlogger.cfm?ERRMSG=" + error + "&ERRURL=" + url + "&ERRLINE=" + line+ "&ERRSITE=US&ERRSCRIPTNAME=/mobile/index.cfm"})
+			};
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	<meta http-equiv="Cache-control" content="max-age=0,private,no-store,no-cache,must-revalidate">
+	
+	
+	
+<meta http-equiv="Content-language" content="en-US">
+	<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=iso-8859-1">
+	
+	
+	<meta name="google" value="notranslate">
+	
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<!-- 199.16.172.157 WS4 AEMobile -->
+	<!-- AUTOEUROPE 0 http://www.autoeurope.com US8105 -->
+	
+
+		<title>Car Rentals On The Go | Auto Europe Mobile</title>
+		<meta name="description" content="Book your car rental, look up your reservation and get questions answered while on the go with Auto Europe Mobile.">
+		
+		<script>
+			var jsloginStatus = "false";
+		</script>
+		
+	<link type="text/css" href="css/m_jquery-ui.css" rel="stylesheet">
+	<link type="text/css" href="css/m_main.css?cb=R8jYUKHHgffPb" rel="stylesheet">
+	<link type="text/css" href="css/m_form.css?cb=R8jYUKHHgffPb" rel="stylesheet">
+	<link rel="stylesheet" href="/css/print.css?cb=R8jYUKHHgffPb" type="text/css" media="print" />
+	<script src="/js/jsLibraries.min.js" type="text/javascript"></script>
+	<script>
+	var callang = 'US';
+	var calsite = 'US';
+	</script>
+	<script src="/CALLANG/US.js" type="text/javascript"></script>
+	<script src="js/m_common.js?cb=R8jYUKHHgffPb" type="text/javascript"></script>
+	<script src="js/m_jquery.plugins-min.js" type="text/javascript"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+	
+		var isLive = true;
+	
+	</script>
+	
+	
+	
+	
+        <!-- ga -->
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-418341-1']);
+          _gaq.push(['_trackPageview']);
+          (function() {
+        	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        	
+        		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        	
+        	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        <!-- END ga -->
+			
+	</head>
+	<body class="US">
+	
+	<div id="map" class="dia-map" title="Select a Location">
+		<div id="map_canvas"></div>
+	</div>
+	
+	<!-- TO DO: ADD H2/H3 -->
+	
+	<script>
+	$(function(){
+			pageSetup();
+	});
+	</script>
+	
+	
+	<div id="header_wrapper">
+	
+	<div class="cor">Please choose your Country of Residence</div>
+	
+	
+	<div id="header_box">
+			
+				<a href="http://www.autoeurope.com/mobile/index.cfm"><img border="1" style="float:left;margin: 14px 0px 0px 10px;" width="175" height="28" src="img/mobile-logo-sm.png"></a>
+			
+		
+		
+		<div class="header_origin">
+		<script>
+		$(function(){
+				$('.origin_list').appendTo('.header_origin');
+		});
+		</script>
+			
+			<div class="mobileMenuTrigger">
+				</span>Menu
+			</div>
+		</div>
+		<div class="header_item_cap_left">&nbsp;</div>
+		
+		<div style="float: right;  position: relative;  width: 40px; height: 53px; border-left: 1px solid #568BC7; text-align: center;">
+			<a href="contact.cfm" class="showspinner" style="height:53px; display: block;"><img class="header_phone_icon" src="img/phone_white.png" border="0"></a>
+		</div>
+		
+		<div class="header_item_cap_left">&nbsp;</div>
+	</div>
+		
+	</div>
+	
+	
+	
+	<div class="mobileload" style="height:0px;">
+		<img src="img/ui/spinner.gif" >
+		
+	</div>
+	
+	
+	<div id="aebooking">
+	
+	
+	
+			<style>body {background-color: #EBEBEB;}</style>
+			<div id="menusearchtop" class="hometop">
+				<h2>FIND A RENTAL CAR</h2>
+			</div>
+			
+			<div id="mapsearchtop" class="hometop" style="display:none;">
+				<h2>Search By Map</h2>
+				<div class="btn_map"><a class="togglemap">Close Map</a></div>
+			</div>
+			
+			
+			
+			
+			<div id="content_wrapper">
+				<div id="content_box">
+					<div id="book_formHP">
+						
+						
+						
+						<div class="book_bottom">
+							<div class="book_bottomContent">
+								
+    
+		
+		<script>
+			var thisSite = 'US';
+			var thisLang = 'US';
+			var typeTxt = 'Keep typing to further refine your search';
+			var selectLocTxt = 'Select this location';
+			var mapTxt = 'MAP';
+			var groupTxt = '- City Offices';
+			var display24Hour = 'false';
+			var hideUSPLogoDisplay = true;
+			var menuSearch = true;
+      
+			// Labels
+			var defCityOpt = "--- Choose City ---";
+			var defLocOpt = "--- Choose Location ---";		
+			var airLB = ('Airport').replace(/\ /g, " ");
+			var railLB = ('Rail').replace(/\ /g, " ");
+			var cityLB = ('City').replace(/\ /g, " ");
+			var chooseLoc = '<option value=""> --- Choose Location --- </option>';
+
+			var pucode = '';
+     		var docode = '';
+			var pucity = '';
+			var docity = '';
+			var puloclist = '';
+			var doloclist = '';
+      		var diffdo = false;
+			var isCar =  false;
+			var aff = 'AUTOEUROPE';
+		</script>
+		
+		<script>
+			
+			$(".book_top").hide();
+			
+			if($('#book_formHP').length > 0){
+			 	$("#content_wrapper").addClass("BForm menu");
+				$(".book_middle").hide();
+			}else{
+				 /* don't apply dark background styles for modify in car utility-bar */
+				$(".sec_leftContent").addClass("menu");
+				
+					$("#book_formSec").removeClass("step1");
+					$(".sec_leftContent").addClass("BFormNarrow");
+				
+			}
+			
+			if(hideUSPLogoDisplay){
+				$('.BForm').addClass('hideSLogos');
+			}
+
+		</script>
+
+		
+		<script src="js/m_alt_search.js?cb=R8jYUKHHgffPb" type="text/javascript"></script>
+		
+		
+	<div class="book_bottomForm  map-search">
+		<div id="alt_s_dialog" title=""></div>
+		<div id="tabC-newRes">
+			<form name="carform" method="post" action="http://www.autoeurope.com/mobile/m_car.cfm"  id="menusearchform">
+				
+				<input type="hidden" name="CarSearchUUID" value="91EFBD62-D5E5-A5BC-C3591D1290FDED28">
+				<input type="hidden" name="sessid" id="sessid" value="91EF9C9ED6BAED9231738739E5956B2F">
+				
+				<ul class="book_steps">
+					
+					<li>
+
+						<div class="loccity">Your location could not be found. Please enter a city name or airport code to see available locations.</div> 
+						
+						<div class="menuSearch">
+						
+							
+							<div class="mapIconLinkTop"><a href="#" id="alt_pu_link"><span>Find Locations Near Me</span></a></div><div style="clear:both;"></div>
+							<div class="searchMenuRowDiv">&nbsp;</div>
+							
+							<div class="searchMenuRow">
+								
+								<select name="pucode" id="pucode" class="sfTypeDD pu">
+									<option value=""> SELECT PICKUP COUNTRY </option>
+								</select>
+							</div>
+							<div class="searchMenuRowDiv">&nbsp;</div>
+							
+							<div class="searchMenuRow">
+								
+								<select name="pucity" id="pucity" class="sfTypeDD pu dimmed" >
+									<option value=""> --- Choose City --- </option>
+								</select>
+							</div>
+							<div class="searchMenuRowDiv">&nbsp;</div>
+							
+							<div class="searchMenuRow">
+								
+								<select name="puloclist" id="puloclist" class="sfTypeDD dimmed" >
+									<option value=""> --- Choose Location --- </option>
+								</select>
+								
+								<div class="loccityr">Your location could not be found. Please enter a city name or airport code to see available locations.</div> 
+								
+								<label for="book_doPrompt" class="ShowLoc" style="padding-top:18px;">
+									<input  type="checkbox" id="book_doPrompt" class="" >Drop off at a Different Location?
+								</label>
+							</div>
+							<div class="searchMenuRowDiv">&nbsp;</div>
+							
+						</div>
+
+						<div id="doLoc" class="book_dolocWrapper">
+
+							
+							
+							<div class="menuSearch">
+								
+								<div class="searchMenuRow">
+									
+									<select name="docode" id="docode" class="sfTypeDD do">
+										<option value=""> SELECT DROP-OFF COUNTRY </option>
+									</select>
+								</div>
+								<div class="searchMenuRowDiv">&nbsp;</div>
+								
+								<div class="searchMenuRow">
+									
+									<select name="docity" id="docity" name="docity" class="sfTypeDD do dimmed" >
+										<option value=""> --- Choose City --- </option>
+									</select>
+								</div>
+								<div class="searchMenuRowDiv">&nbsp;</div>
+							
+								<div class="searchMenuRow">
+									
+									<select name="doloclist" id="doloclist" name="doloclist" class="sfTypeDD dimmed" >
+										<option value=""> --- Choose Location --- </option>
+									</select>
+	
+									
+									<div class="mapIconLink"><a href="#" id="alt_do_link"><span>Find Locations Near Me</span><img src="/img/ui/mapin_sm.png" /></a></div><div style="clear:both;"></div>
+
+								</div>
+								<div class="searchMenuRowDiv">&nbsp;</div>
+
+							</div>
+
+						</div>
+					</li>
+				</ul>
+				
+				<ul class="book_steps_dates">
+					<li>
+						<div class="searchMenuRow">
+							<label for="pu_date" class="book_label">PICKUP </label>
+							<div class="book_stepContainter">
+								<div class="cal_wrap">
+									<input  name="puCal" type="text" id="pu_date" class="book_calInput" readonly="readonly" value="">
+									<input  name="pu_datePost" type="hidden" id="pu_datePost" class="book_calInput"  value="">
+								</div>
+							<select  class="sfTimesDD" name="selDDpu_time">
+								
+									<option  value="00:00">12:00 AM</option>
+								
+									<option  value="00:30">12:30 AM</option>
+								
+									<option  value="01:00">01:00 AM</option>
+								
+									<option  value="01:30">01:30 AM</option>
+								
+									<option  value="02:00">02:00 AM</option>
+								
+									<option  value="02:30">02:30 AM</option>
+								
+									<option  value="03:00">03:00 AM</option>
+								
+									<option  value="03:30">03:30 AM</option>
+								
+									<option  value="04:00">04:00 AM</option>
+								
+									<option  value="04:30">04:30 AM</option>
+								
+									<option  value="05:00">05:00 AM</option>
+								
+									<option  value="05:30">05:30 AM</option>
+								
+									<option  value="06:00">06:00 AM</option>
+								
+									<option  value="06:30">06:30 AM</option>
+								
+									<option  value="07:00">07:00 AM</option>
+								
+									<option  value="07:30">07:30 AM</option>
+								
+									<option  value="08:00">08:00 AM</option>
+								
+									<option  value="08:30">08:30 AM</option>
+								
+									<option  value="09:00">09:00 AM</option>
+								
+									<option  value="09:30">09:30 AM</option>
+								
+									<option selected value="10:00">10:00 AM</option>
+								
+									<option  value="10:30">10:30 AM</option>
+								
+									<option  value="11:00">11:00 AM</option>
+								
+									<option  value="11:30">11:30 AM</option>
+								
+									<option  value="12:00">12:00 PM</option>
+								
+									<option  value="12:30">12:30 PM</option>
+								
+									<option  value="13:00">01:00 PM</option>
+								
+									<option  value="13:30">01:30 PM</option>
+								
+									<option  value="14:00">02:00 PM</option>
+								
+									<option  value="14:30">02:30 PM</option>
+								
+									<option  value="15:00">03:00 PM</option>
+								
+									<option  value="15:30">03:30 PM</option>
+								
+									<option  value="16:00">04:00 PM</option>
+								
+									<option  value="16:30">04:30 PM</option>
+								
+									<option  value="17:00">05:00 PM</option>
+								
+									<option  value="17:30">05:30 PM</option>
+								
+									<option  value="18:00">06:00 PM</option>
+								
+									<option  value="18:30">06:30 PM</option>
+								
+									<option  value="19:00">07:00 PM</option>
+								
+									<option  value="19:30">07:30 PM</option>
+								
+									<option  value="20:00">08:00 PM</option>
+								
+									<option  value="20:30">08:30 PM</option>
+								
+									<option  value="21:00">09:00 PM</option>
+								
+									<option  value="21:30">09:30 PM</option>
+								
+									<option  value="22:00">10:00 PM</option>
+								
+									<option  value="22:30">10:30 PM</option>
+								
+									<option  value="23:00">11:00 PM</option>
+								
+									<option  value="23:30">11:30 PM</option>
+								
+							</select>
+						
+							</div>
+						</div>
+						<div class="searchMenuRowDiv">&nbsp;</div>
+					</li>
+							
+					<li class="do_dateLi">
+						<div class="searchMenuRow">
+							<label for="do_date" class="book_label">DROPOFF </label>
+							<div class="book_stepContainter">
+								<div class="cal_wrap">
+									<input name="doCal" type="text" id="do_date" class="book_calInput" readonly="readonly" value="">
+									<input name="do_datePost" type="hidden" id="do_datePost" class="book_calInput"  value="">
+								</div>
+								<select  class="sfTimesDD" name="selDDdo_time">
+									
+										<option  value="00:00">12:00 AM</option>
+									
+										<option  value="00:30">12:30 AM</option>
+									
+										<option  value="01:00">01:00 AM</option>
+									
+										<option  value="01:30">01:30 AM</option>
+									
+										<option  value="02:00">02:00 AM</option>
+									
+										<option  value="02:30">02:30 AM</option>
+									
+										<option  value="03:00">03:00 AM</option>
+									
+										<option  value="03:30">03:30 AM</option>
+									
+										<option  value="04:00">04:00 AM</option>
+									
+										<option  value="04:30">04:30 AM</option>
+									
+										<option  value="05:00">05:00 AM</option>
+									
+										<option  value="05:30">05:30 AM</option>
+									
+										<option  value="06:00">06:00 AM</option>
+									
+										<option  value="06:30">06:30 AM</option>
+									
+										<option  value="07:00">07:00 AM</option>
+									
+										<option  value="07:30">07:30 AM</option>
+									
+										<option  value="08:00">08:00 AM</option>
+									
+										<option  value="08:30">08:30 AM</option>
+									
+										<option  value="09:00">09:00 AM</option>
+									
+										<option  value="09:30">09:30 AM</option>
+									
+										<option selected value="10:00">10:00 AM</option>
+									
+										<option  value="10:30">10:30 AM</option>
+									
+										<option  value="11:00">11:00 AM</option>
+									
+										<option  value="11:30">11:30 AM</option>
+									
+										<option  value="12:00">12:00 PM</option>
+									
+										<option  value="12:30">12:30 PM</option>
+									
+										<option  value="13:00">01:00 PM</option>
+									
+										<option  value="13:30">01:30 PM</option>
+									
+										<option  value="14:00">02:00 PM</option>
+									
+										<option  value="14:30">02:30 PM</option>
+									
+										<option  value="15:00">03:00 PM</option>
+									
+										<option  value="15:30">03:30 PM</option>
+									
+										<option  value="16:00">04:00 PM</option>
+									
+										<option  value="16:30">04:30 PM</option>
+									
+										<option  value="17:00">05:00 PM</option>
+									
+										<option  value="17:30">05:30 PM</option>
+									
+										<option  value="18:00">06:00 PM</option>
+									
+										<option  value="18:30">06:30 PM</option>
+									
+										<option  value="19:00">07:00 PM</option>
+									
+										<option  value="19:30">07:30 PM</option>
+									
+										<option  value="20:00">08:00 PM</option>
+									
+										<option  value="20:30">08:30 PM</option>
+									
+										<option  value="21:00">09:00 PM</option>
+									
+										<option  value="21:30">09:30 PM</option>
+									
+										<option  value="22:00">10:00 PM</option>
+									
+										<option  value="22:30">10:30 PM</option>
+									
+										<option  value="23:00">11:00 PM</option>
+									
+										<option  value="23:30">11:30 PM</option>
+									
+								</select>
+							</div>
+						</div>
+						<div class="searchMenuRowDiv">&nbsp;</div>
+					</li>	
+					
+					<li class="nocarcollage">
+						<div class="searchMenuRow" style="padding-bottom:15px;">
+							<label for="carType" class="book_label">CAR TYPE</label>
+							<div class="sel_carWrapper">
+							
+								
+								
+								
+								<select  id="carType" class="sfTypeDD" name="sippList">
+									<option value="M***,E***" >Mini/Economy</option><option value="C***,I***" >Compact/Midsize</option><option value="S***,F***,P***,I***,CW**,CV**" >Family Size</option><option value="L***,X***,P***" >Luxury</option><option value="*S**" >Sports Car</option><option value="*F**" >SUV/4WD</option><option value="*V**" >Van/People Carrier</option><option value="*T**" >Convertible</option><option value="*Y**" >Motorcycles (USA only)</option><option value="****" selected>All Classes</option>
+								</select>
+							</div>
+						</div>
+						<div class="searchMenuRowDiv">&nbsp;</div>
+					</li>
+					
+					<li class="required">
+						<div class="searchMenuRow">
+							<div class="driverAge">
+								<label for="searchAge" class="book_label">DRIVER AGE</label>
+								<input type="number" name="searchAge" id="searchAge" class="" maxlength="2">
+							</div>
+						</div>
+						<div class="searchMenuRowDiv">&nbsp;</div>
+						<div class="searchMenuRow">
+							<div class="transPass">
+								<label for="searchTransmissionType" class="book_label">TRANSMISSION TYPE</label>
+								<select name="searchTransmissionType" id="searchTransmissionType" class="sfTypeDD">
+									<option value="" selected>Manual or Automatic</option>
+									<option value="M">Manual only</option>
+									<option value="A">Automatic only</option>
+								</select>
+								<div class="search_spdiv"></div>
+							</div>
+						</div>
+						<div class="searchMenuRowDiv">&nbsp;</div>
+					</li>
+					
+					
+					
+				
+					<li>
+						
+						<div class="searchMenuRow">
+							<button type="submit" class="book_btn align_center" name="submitForm" id="menuSubmitButton" >
+								<span>Get Your Quote</span>
+							</button>
+						</div>
+						
+					</li>
+				</ul>
+				
+				
+						
+						
+					
+					
+				
+				<input type="hidden" name="locCh" id="locCh" class="locCh" value="">
+				<input type="hidden" name="bookingstep" id="bookingstep" value="getrates">
+				
+					
+				
+			</form>
+			<script>
+				$(function() {
+					formSetup();
+					$('.refine_modifyTrigger').click(function(){
+					$('#pu_date').datepicker('setDate',new Date(2013,7,30)  );
+					$('#do_date').datepicker('setDate',new Date(2013,8,2)  );
+					});
+				});
+			</script>
+		</div>
+			
+		
+		
+			<div id="omniError">
+				<ul class="omniError_list">
+					<li class="locErrAb"><b>Pick-up Location:</b><br>Please start typing a location and then select it from the suggested locations.</li>
+					<li class="locErr"><b>Pick-up Location:</b><br>Your location could not be found. Please enter a city name or airport code to see available locations.</li>
+					<li class="locErrEmpty"><b>Pick-up Location:</b><br>Please enter a pick-up location.</li>
+					<li class="locErrDOEmpty"><b>Drop-off Location:</b><br>Please enter a drop-off location.</li>
+					<li class="dateErr"><b>Dates:</b><br>Please set the drop-off time to be after the pick-up time.</li>
+					<li class="eastErr"><b>Travels to Eastern Europe:</b><br>If you are travelling to Eastern European countries, please call us at 1-888-223-5555.</li>
+					<li class="suppMatchErr"><b>Supplier:</b><br>There are no matching suppliers for this drop off location. Please selected a different Pickup or Drop off.</li>
+					<li id="driverAgeError"><p class="errortitle"><b>Driver's Age:</b></p><p>Please enter the driver's age.</p></li>
+				</ul>
+			</div>
+		
+		
+	</div>
+	
+		
+		
+		
+							</div>
+						</div>
+					</div> 
+					
+				</div> 
+			</div>
+			
+	
+	<div id="footer_wrapper">
+	
+		
+			<img id="lyrisTrack" src="/images/spacer.gif" alt="" height="1" width="1"/>
+			
+				
+				<script type="text/javascript">
+					 // Load Lyris tracking images after pageLoad
+					 function runLyrisOnLoad() {
+						var lyrisImg = "";
+						document.getElementById('lyrisTrack').src = lyrisImg;
+					 }
+					 
+					 // Check for browser support of event handling capability
+					 if (window.addEventListener) {
+						 window.addEventListener("load", runLyrisOnLoad, true);
+						}	
+					 else if (window.attachEvent) {
+						 window.attachEvent("onload", runLyrisOnLoad);
+						}	
+					 else { 
+						// Add runLyrisOnLoad - only if not already set
+						if (window.onLoad == "")
+							window.onload = runLyrisOnLoad;
+						// This would be overwritten if there were any later calls to set window.onLoad
+						}
+				</script>
+				<noscript>
+					<IMG SRC="" ALT="" HEIGHT=1 WIDTH=1>
+				</noscript>
+				 
+		
+	</div>
+	
+	
+
+	
+	
+	<div class="mobileMenu">
+		<ul>
+			<li class="bordertop"><a class="mobileMenuLink" href="http://www.autoeurope.com/mobile/m_residence.cfm">Change Country of Residence</a></li>
+			<li class="mobileMenuDiv"> </li>
+			<li><a class="mobileMenuLink" href="http://www.autoeurope.com/mobile/index.cfm">New Search</a></li>
+			<li class="mobileMenuDiv"> </li>
+			<li><a class="mobileMenuLink" href="https://www.autoeurope.com/mobile/reslookup.cfm">Reservation Look-Up</a></li>
+			<li class="mobileMenuDiv"> </li>
+			<li><a class="mobileMenuLink" href="http://www.autoeurope.com/mobile/contact.cfm">Contact Us</a></li>
+			<li class="mobileMenuDiv"> </li>
+			
+				<li><a class="mobileMenuLink" href="http://www.autoeurope.com/mobile/login.cfm">Log In</a></li>
+			
+			<li class="mobileMenuDiv"> </li>
+			<li><a class="mobileMenuLink" href="http://www.autoeurope.com?fullsite=true">Full Web Site</a></li>
+		</ul>
+	</div>
+	
+	
+</body>
+
+</html>

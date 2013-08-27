@@ -1,0 +1,161 @@
+
+<html><!DOCTYPE html> <meta http-equiv="X-UA-Compatible" content="IE=edge" /><head><title>Auto and Car Sales Site | Search Used Cars for Sale Tasmania, Launceston, Hobart, Devonport, Burnie  | Tassie Cars </title><META NAME="author" CONTENT="Bitwise Systems Pty Ltd">
+<META NAME="keywords" CONTENT="">
+<META NAME="description" CONTENT="">
+
+<link rel="stylesheet" href="stylenew.css" type="text/css" media="screen" />
+<link rel="SHORTCUT ICON" href="images/tcicon.ico"></head>
+<body><script type="text/javascript" src="script/common2.js"></script><table width="100%" class="default" bgcolor="#ffffff">
+<tr><td>
+<div class="header"><table width="100%" bgcolor="#ffffff"><tr>
+  <td width="355" height="80" style="text-align:left"><a
+href="index.jsp"><img src="images/TCLogo.png" width="370" height="60" border="0" alt="New and Used
+Cars on-line"></a></td>
+  <td style="text-align:right" valign="bottom">Not logged in<br/><br/>  <a href="index.jsp"><img src="buttons/TCbHomeb54s.jpg" border="0" title="Tassie Cars Home Page"></a> <img src="buttons/TCbLog_Inb52sd.jpg" border="0"> <a href="register.jsp"><img src="buttons/TCbRegisterb54s.jpg" border="0" title="Register with Tassie Cars"></a></td>
+</tr>
+</table>
+<tr style="background:#e1e2e5"  height="2"><td style="text-align:right"></td></tr>
+</td></tr></table>
+
+<div id="wrapper"><table width="100%" background=""><tr><td valign="top"><td width="1" valign="top">
+  <table width="1" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><div class="box" align="center"><h3>Used Car Search</h3><table align="center" border="0" width="1" cellpadding="2" cellspacing="0"><form name="qsearch" method="get" action="srchres.jsp"><script language="JavaScript">
+function dealerChange() {
+  loadCombo6(document.qsearch.dlr,document.qsearch.veh,'script/vehfsrc.jsp?dlr=','Any Vehicle Type',vehicleChange,-2);
+}
+
+function vehicleChange() {
+  loadCombo6(document.qsearch.veh,document.qsearch.make,'script/makefveh.jsp?dlr=' + document.qsearch.dlr.value + '&veh=','Any Make',clearModels,-2);
+}
+
+function makeChange() {
+  loadCombo4(document.qsearch.make,document.qsearch.model,'script/modfmake.jsp?dlr=' + document.qsearch.dlr.value + '&veh=' +document.qsearch.veh.value + '&mk=','Any Model');
+}
+
+function clearModels() {
+  clearCombo(document.qsearch.model,'Any Model');
+}
+</script>
+<tr><td colspan="2" nowrap><font size="1"><b>Dealer/Private</b></font></td></tr><tr><td colspan="2"><select name="dlr" size="1" class="qsrch" onchange="dealerChange();">  <option value="-1">Any Adverts</option><option value="-3">Dealer Adverts</option><option value="-4">Private Adverts</option></select></td></tr>
+<tr><td colspan="2" nowrap><font size="1"><b>Vehicle Type</b></font></td></tr><tr><td colspan="2"><select name="veh" size="1" class="qsrch" onchange="vehicleChange();">  <option value="-1">Any Vehicle Type</option><option value="0">Small Sedan/Hatch</option><option value="1">Family Sedan</option><option value="2">Wagon</option><option value="3">4x4 Wagon</option><option value="4">People Mover</option><option value="5">Utility</option><option value="6">4x4 Utility</option><option value="7">Van</option><option value="8">Bus</option><option value="9">Classic/Vintage</option><option value="10">Prestige</option><option value="11">Sports/Performance</option><option value="12">Hot/Custom</option><option value="13">Convertible</option><option value="14">Camper/Motor Home</option><option value="15">Truck</option><option value="18">Road Bike</option><option value="21">Scooter</option><option value="22">Caravan</option><option value="24">Trailer</option></select></td></tr>
+<tr><td colspan="2" nowrap><font size="1"><b>Make</b></font></td></tr><tr><td colspan="2"><select name="make" size="1" class="qsrch" onchange="makeChange();">  <option value="-1">Any Make</option><option value="53">Alfa Romeo</option><option value="52">Audi</option><option value="13">Austin</option><option value="19">Austin Healey</option><option value="92">BMW</option><option value="131">Caravan</option><option value="65">Chrysler</option><option value="35">Citroen</option><option value="10">Daewoo</option><option value="44">Daihatsu</option><option value="57">Datsun</option><option value="48">Fiat</option><option value="61">Ford</option><option value="30">FPV</option><option value="137">Great Wall</option><option value="46">Hino</option><option value="63">Holden</option><option value="34">Honda</option><option value="71">HSV</option><option value="80">Hyundai</option><option value="5">Isuzu</option><option value="139">Jayco</option><option value="16">Jeep</option><option value="138">Kawasaki</option><option value="39">Kia</option><option value="88">Land Rover</option><option value="11">Lexus</option><option value="1">Mazda</option><option value="20">Mercedes-Benz</option><option value="14">MG</option><option value="59">Mini</option><option value="56">Mitsubishi</option><option value="68">Morris</option><option value="74">Nissan</option><option value="67">Peugeot</option><option value="79">Porsche</option><option value="25">Proton</option><option value="94">Renault</option><option value="24">Saab</option><option value="266">Select Trailers</option><option value="263">Shelby</option><option value="38">Subaru</option><option value="37">Suzuki</option><option value="76">Toyota</option><option value="6">Volkswagen</option><option value="96">Volvo</option><option value="136">Yamaha</option></select></td></tr>
+<tr><td colspan="2" nowrap><font size="1"><b>Model</b></font></td></tr><tr><td colspan="2"><select name="model" size="1" class="qsrch">  <option value="-1">Any Model</option></select></td></tr>
+<tr><td colspan="2" nowrap><font size="1"><b>Lowest Price</b></font></td></tr><tr><td colspan="2"><select name="minpr" size="1" class="qsrch">  <option value="-1">Any Price</option><option value="500">$500</option><option value="1000">$1,000</option><option value="2000">$2,000</option><option value="3000">$3,000</option><option value="4000">$4,000</option><option value="5000">$5,000</option><option value="6000">$6,000</option><option value="7000">$7,000</option><option value="8000">$8,000</option><option value="9000">$9,000</option><option value="10000">$10,000</option><option value="12500">$12,500</option><option value="15000">$15,000</option><option value="17500">$17,500</option><option value="20000">$20,000</option><option value="25000">$25,000</option><option value="30000">$30,000</option><option value="40000">$40,000</option><option value="50000">$50,000</option><option value="60000">$60,000</option><option value="70000">$70,000</option><option value="80000">$80,000</option><option value="100000">$100,000</option></select></td></tr>
+<tr><td colspan="2" nowrap><font size="1"><b>Highest Price</b></font></td></tr><tr><td colspan="2"><select name="maxpr" size="1" class="qsrch">  <option value="-1">Any Price</option><option value="500">$500</option><option value="1000">$1,000</option><option value="2000">$2,000</option><option value="3000">$3,000</option><option value="4000">$4,000</option><option value="5000">$5,000</option><option value="6000">$6,000</option><option value="7000">$7,000</option><option value="8000">$8,000</option><option value="9000">$9,000</option><option value="10000">$10,000</option><option value="12500">$12,500</option><option value="15000">$15,000</option><option value="17500">$17,500</option><option value="20000">$20,000</option><option value="25000">$25,000</option><option value="30000">$30,000</option><option value="40000">$40,000</option><option value="50000">$50,000</option><option value="60000">$60,000</option><option value="70000">$70,000</option><option value="80000">$80,000</option><option value="100000">$100,000</option></select></td></tr>
+<tr><td nowrap><font size="1"><b>Distance</b></font></td><td align="right" nowrap><font size="1"><b>Post Code</b></font></td></tr><tr><td nowrap><select name="maxdist" size="1">  <option value="-1">Any</option><option>10</option><option>20</option><option>50</option><option>100</option><option>150</option><option>200</option></select><font size="1"> km from</font></td><td align="right" nowrap><input type="text" name="pcode" size="4" value=""></td></tr>
+<tr><td colspan="2" align="right"><input type="image" border="0" src="buttons/TCbSearch_NowW100.jpg" align="Search for Used Cars"></td></tr><tr>
+  <td colspan="2"  align="center">Find your next car right here in Tasmania<br></td>
+</tr>
+</form></table><script language="JavaScript">
+document.qsearch.dlr.selectedIndex = 0;
+document.qsearch.veh.selectedIndex = 0;
+document.qsearch.make.selectedIndex = 0;
+document.qsearch.model.selectedIndex = 0;
+</script></div></td></tr></table>
+</td>
+    <td width="100%" valign="top">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><div class="box"><table width="100%"><tr><td width="100%"><div class="content"><table class="default">
+  <tr>
+    <td width="50%"><p><b><font size="4">Sell your vehicle</font></b></p>
+	<a href="privatead.jsp"><img border="0" src="images/CarBikeCaravan.png" width="300" height="40"></a>
+      <p align="center">Want to sell your Car, Bike or Camper/Motor Home?<br>
+      <br>
+ Look no further. Add
+      your vehicle to&nbsp;<br>
+ Tassie Cars private listings</p>
+<p align="center"><a href="privatead.jsp">
+     <img border="0" src="images/PrivateAd.png" width="140" height="35"></a><br><br>
+ <font size="1">Are you a Car Dealer in Tasmania? <a href="tradead.jsp">click
+      here</a></font></p></td>
+    <td width="50%"><br><p align="center"><a href="privatead.jsp"><img border="0" src="images/FROM2495.png" width="120" height="120"></a></p>
+      <p align="center">Hold Until Sold<br>and Priority Listings</p>
+	<p align="center"><img border="0" src="images/visa.gif" alt="Visa Card" width="39" height="25">
+      <img border="0" src="images/mastercard.gif" alt="MasterCard" width="41" height="25">&nbsp;
+      <img border="0" src="images/amex.gif" alt="AMEX">&nbsp;
+      <img border="0" src="images/cheque1.png" width="38" height="22" alt="Cheque"><img border="0" src="images/ddepost.png" width="38" height="26" alt="Direct Deposit">&nbsp;<img border="0" src="images/AusPost.png" width="25" height="25" alt="Australia Post"></p></td>
+  </tr>
+</table>
+</div></td></tr></table></div></td></tr><tr><td valign="top"><div class="box"><table width="100%"><tr><td width="100%"><div class="content"><table width="100%">
+  <tr>
+    <td width="33%"><img border="0" src="images/buyersHP.jpg" width="180" height="144"></td>
+    <td width="33%"><img border="0" src="images/sellersHP.jpg" width="180" height="144"></td>
+    <td width="34%"><img border="0" src="images/otherHP.jpg" width="180" height="144"></td>
+  </tr>
+  <tr>
+    <td width="33%">&nbsp;</td>
+    <td width="33%"></td>
+    <td width="34%"></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="buyguide.jsp">Car Buying Guide <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+    <td width="33%"><a href="sellguide.jsp">Car Selling Guide <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+    <td width="34%"><a href="centre.jsp?section=Finance+Choices">Car Finance <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="bbuyguide.jsp">Bike Buying Guide <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+    <td width="33%"><a href="bsellguide.jsp">Bike Selling Guide <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+    <td width="34%"><a href="centre.jsp?section=Why+Get+a+Car+Warranty%3F">Car
+      Warranties <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="dlrdir.jsp">Dealer Directory <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+    <td width="33%"><a href="tradead.jsp">Trade Advertising <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+    <td width="34%"><a href="centre.jsp?section=Insurance">Car Insurance <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="buyingscams.jsp">Car Buying Scams <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+    <td width="33%"><a href="scams.jsp">Scams Warning <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+    <td width="34%"><a href="http://www.transport.tas.gov.au/pls/apex/f?p=202:200:1581096604102533" target="_blank">Registration
+      Status Check <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="searchtips.jsp">Search Tips <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+    <td width="33%"><a href="privatead.jsp">Sell Your Car, Bike or Caravan <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+    <td width="34%"><a href="http://www.transport.tas.gov.au/licence_information_folder/motorcycle_learner_licence#top" target="_blank">Bike
+      Learner Advice <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="faq.jsp">FAQ <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+    <td width="33%"><a href="faq.jsp">FAQ <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+    <td width="34%"><a href="centre.jsp?section=Attractions">Attractions <img border="0" src="images/bullet.gif" width="8" height="8"></a></td>
+  </tr>
+  <tr>
+    <td width="33%">&nbsp;</td>
+    <td width="33%">&nbsp;</td>
+    <td width="34%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="3">
+      <h1><font color="#ff7100">Tassie Cars Car and Auto Sales Website<br>
+      The best choice for buying and selling cars in Tasmania</font></h1>
+    </td>
+  </tr>
+</table></div>
+</td></tr></table></div></td></tr>
+      </table>
+    </td><td width="1" valign="top">
+  <table width="160" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><div class="box" align="center"><h3>Member Log In</h3><table align="center" border="0" width="1" cellpadding="2" cellspacing="0"><form name="login" method="post" action="index.jsp"><tr><td nowrap><font size="1"><b>Email Address</b></font></td></tr><tr><td><input type="text" name="lgemail" size="20" value=""><tr><td nowrap><font size="1"><b>Password</b></font></td></tr><tr><td><input type="password" name="lgpass" size="20" value=""><tr><td nowrap><font size="1"><input type="checkbox" name="lgremember"><b>Remember my details</b></font></td></tr><tr>
+  <td  align="right"><input type="image" border="0" src="buttons/TCbLog_InW62.jpg"></td>
+</tr>
+<tr><td nowrap><font size="1"><a href="forgot.jsp">Forgotten your password?</a></font></td></tr><tr><td nowrap><font size="1"><a href="register.jsp">Not registered?</a></font></td></tr><tr><td nowrap><font size="1"><a href="whyjoin.jsp">Why become a member?</a></font></td></tr></form></table></div></td></tr><tr><td valign="top"><div class="box" align="center"><h3>Car of the Week</h3><table width="100%" cellspacing="1" cellpadding="1"><tr><td width="100%" align="center" colspan="2"><a href="javascript:doDetail('id=60424',10);"><img src="pics/241/pic241196s.jpg" border="1"></a></td></tr><tr><td colspan="2" valign="top" align="center"><font size="1">2012 <b>Mazda 3 Maxx Sport Hatchback</b></font></td></tr><tr><td colspan="2" valign="top"><font size="1">As Brand New Travelled Only 300 klms, Curtain Air-Bags, Electronic Stability Program, MP3 Compatible.. ABS, Air Conditioning, Immobiliser, Alloy Wheels, Body Kit, CD Stacker, Remote Central Locking, Cruise Control, Dual Airbags, Side Airbags, EFI, Electric Mirrors, Electric Windows, Power Steering, ...</font></td></tr><tr><td width="100%"><font size="1"><b>$24,990</b></font></td><td width="1" bgcolor="#000000"><a href="javascript:doDetail('id=60424',10);"><font size="1" color="#ffffff">More&nbsp;Info</font></a></td></tr></table></div></td></tr></table>
+</td>
+
+</tr></table>
+</div><div class="footer">
+<a href="privacy.jsp">Privacy Policy</a> |
+<a href="terms.jsp">Terms and Conditions</a> |
+<a href="sitemap.jsp">Site Map</a> |
+<a href="positions.jsp">Positions Vacant</a> |
+<a href="faq.jsp">Frequently Asked Questions</a> |
+<a href="about.jsp">About Us</a> |
+<a href="contact.jsp">Contact Us</a>
+<br /><br /></div>
+    
+        <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+        </script>
+        <script type="text/javascript">
+          _uacct = "UA-451086-1";
+          urchinTracker();
+        </script>
+    <!-- 0.001 sec -->
+  </body>
+</html>

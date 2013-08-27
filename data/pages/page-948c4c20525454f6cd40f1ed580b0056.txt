@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head><base href="http://bidfunshop.com/" />
+<script type="text/javascript"><!--
+		window.onload= function(){
+			if (document.getElementById('extraQuestionName')){
+				var names = document.getElementById('extraQuestionName').getElementsByTagName('li');
+				var values = document.getElementById('extraQuestionValue').getElementsByTagName('li');
+				for(var child=0; child < names.length; child++ ){
+					if (names[child].offsetHeight < values[child].offsetHeight){
+						names[child].style.height = values[child].offsetHeight + 'px';
+					} else if (names[child].offsetHeight > values[child].offsetHeight) {
+						values[child].style.height = names[child].offsetHeight + 'px';
+					}
+				}
+			}
+		}
+		-->
+		</script>
+	<script type='text/javascript'>
+		function win(fileName) 
+		{
+			var myFloater = window.open('','myWindow','scrollbars=yes,resizable=yes,status=no,width=300,height=300');
+			myFloater.location.href = fileName;
+			if (window.focus) myFloater.focus();
+		}
+		
+		function winimage(fileName,width,height) 
+		{
+			var myFloater = window.open('','myWindow','scrollbars=yes,resizable=yes,status=no,width=' + width + ',height=' + height);
+			myFloater.location.href = fileName;
+		}
+	</script>
+	
+<style type="text/css">
+<!--
+ .display_ad_category_tree { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 14px; 
+font-style: normal; 
+font-weight: bold; 
+color: #0000cc; 
+text-decoration: none; 
+ } 
+
+.display_ad_title { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 14px; 
+font-style: normal; 
+font-weight: bold; 
+text-align: left;
+ } 
+
+.display_ad_label { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: bold; 
+color: #000000; 
+text-align: left;
+ } 
+
+.display_ad_value { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+text-align: left;
+ } 
+
+.description_label { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #ffffff; 
+text-decoration: none; 
+text-align: left;
+ } 
+
+.display_ad_extra_question_label { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: bold; 
+color: #000000; 
+text-align: left;
+ } 
+
+.display_ad_extra_question_value { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+text-align: left;
+ } 
+
+.description_value { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 14px; 
+font-style: normal; 
+font-weight: normal; 
+text-align: left;
+ } 
+
+.error_messages { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: bold; 
+color: #ff0000; 
+text-align: center;
+ } 
+
+.favorites_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+text-decoration: underline; 
+text-align: center;
+ } 
+
+.notify_friend_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+text-decoration: underline; 
+text-align: center;
+ } 
+
+.notify_seller_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+text-decoration: underline; 
+text-align: center;
+ } 
+
+.display_ad_extra_checkbox_label { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+ } 
+
+.sellers_other_ads_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+text-decoration: underline; 
+text-align: center;
+ } 
+
+.previous_ad_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+text-decoration: none; 
+text-align: right;
+ } 
+
+.next_ad_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+text-decoration: none; 
+ } 
+
+.vote_on_ad_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+ } 
+
+.show_votes_on_ad_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+ } 
+
+.full_images_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+text-decoration: none; 
+ } 
+
+.print_friendly_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+text-decoration: underline; 
+ } 
+
+.return_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+ } 
+
+.mapping_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+text-decoration: underline; 
+text-align: center;
+ } 
+
+.url_link_1 { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 10px; 
+font-style: normal; 
+font-weight: normal; 
+ } 
+
+.url_link_2 { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 10px; 
+font-style: normal; 
+font-weight: normal; 
+ } 
+
+.url_link_3 { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 10px; 
+font-style: normal; 
+font-weight: normal; 
+ } 
+
+.zoom_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 10px; 
+font-style: normal; 
+font-weight: normal; 
+text-decoration: none; 
+text-align: center;
+ } 
+
+.buy_now_link { 
+ } 
+
+.seller_info_data { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+ } 
+
+.make_bid_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 14px; 
+font-style: normal; 
+font-weight: normal; 
+ } 
+
+.seller_rating { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+ } 
+
+.bid_history_link { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+text-decoration: underline; 
+ } 
+
+.reserve_label { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: bold; 
+color: #ff0000; 
+ } 
+
+.current_dutch_bidders_header { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: bold; 
+color: #ffffff; 
+background-color: #000000;
+ } 
+
+.current_dutch_bidders_body { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+background-color: #eeeeee;
+ } 
+
+.closed_label { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: bold; 
+color: #FF0000; 
+ } 
+
+.display_auction_title { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 14px; 
+font-style: normal; 
+font-weight: bold; 
+text-align: left;
+ } 
+
+.display_auction_label { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: bold; 
+color: #000000; 
+ } 
+
+.display_auction_value { 
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 12px; 
+font-style: normal; 
+font-weight: normal; 
+color: #000000; 
+ } 
+
+ -->
+</style>
+<script type='text/javascript' src='js/geo_ajax.js'></script>
+<script type='text/javascript' src='js/general.js'></script>
+
+	<script type="text/javascript">
+	  	sendReq('close', '');
+	</script>
+<title>		:: 1950 Ford Business Coupe Classic Auto
+</title>	
+<link rel="Shortcut Icon" href="/favicon.ico">
+<META name="robots" content="index,follow">
+<META name="description" content="		:: 1950 Ford Business Coupe Classic Auto
+">
+<META name="keywords" content="		:: 1950 Ford Business Coupe Classic Auto
+">   
+<script type="text/javascript">
+	var showDateShort = 1;
+	var showDate= 2;
+	var showDateTime= 3;
+	var showTime= 4;
+	function ShowDateTime(dateStyle)
+	{
+	var today = new Date();
+	var dStr = "";
+	switch (dateStyle)
+	{
+	case showDateShort:
+	dStr = today.toDateString();
+	break;
+	case showDateTime:
+	dStr = today.toLocaleString();
+	break;
+	case showTime:
+	dStr = today.toLocaleTimeString();
+	break;
+	case showDate:
+	default:
+	dStr = today.toLocaleDateString();
+	break;
+	}
+	document.write(dStr);
+	}
+	</script>
+	<link href="mainstyle.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+#apDiv1 {
+	position:absolute;
+	left:1px;
+	top:51px;
+	width:257px;
+	height:20px;
+	z-index:1;
+}
+.style1 {color: #000000}
+-->
+</style>
+</head>
+<body>
+<table class="bodytable">
+<tbody>
+<tr>
+<td><!-- # BEGIN HEADER - CHANGE THIS HTML IN THE MODULES AREA OF THE ADMIN --> <!-- END HEADER --></td>
+</tr>
+<tr>
+<td><style type="text/css">
+.topnav {
+   border-top: 0px solid #ffffff;
+   background: #dffcfe;
+   background: -webkit-gradient(linear, left top, left bottom, from(#d4fcff), to(#ecfdff));
+   background: -webkit-linear-gradient(top, #d4fcff, #ecfdff);
+   background: -moz-linear-gradient(top, #d4fcff, #ecfdff);
+   background: -ms-linear-gradient(top, #d4fcff, #ecfdff);
+   background: -o-linear-gradient(top, #d4fcff, #ecfdff);
+   padding: 2px 12px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0 0px 0 0px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 0px 0;
+   text-shadow: rgba(0,0,0,.4) 0 px 0;
+   color: #000000;
+   font-size: 14px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.topnav:hover {
+   border-top-color: #ffffff;
+   background: 
+   color: #000000;
+   }
+.topnav:active {
+   border-top-color: #ffffff;
+   background: #ffffff;
+   }
+.style18 {
+	color: #000000
+}
+</style>
+
+<table cellpadding="0" cellspacing="0" style="border: 0pt none ; border-collapse: collapse" width="100%">
+<tbody>
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" style="border: 0pt none ; border-collapse: collapse">
+<tbody>
+<tr>
+<td height="23" class="topnav" style="white-space: nowrap"><a href="" class="style18"style="text-decoration: none">Home</a></td>
+<td><img alt="" src="images/blank.gif" width="2" /></td>
+<td class="topnav" style="white-space: nowrap"><a href="http://bidfunshop.com/197/Classifieds" class="style18"style="text-decoration: none">Classifieds</a></td>
+<td><img alt="" src="images/blank.gif" width="2" /></td>
+<td class="topnav" style="white-space: nowrap"><a href="http://bidfunshop.com/196/Auctions" class="style18"style="text-decoration: none">Auctions</a></td>
+<td><img alt="" src="images/blank.gif" width="2" /></td>
+<td class="topnav" style="white-space: nowrap"><a href="myaccount.html" class="style18"style="text-decoration: none">My Account</a></td>
+<td><img alt="" src="images/blank.gif" width="2" /></td>
+<td class="topnav" style="white-space: nowrap"><a href="pricingpage.html" class="style18"style="text-decoration: none">Pricing</a></td>
+<td><img alt="" src="images/blank.gif" width="2" /></td>
+<td class="topnav" style="white-space: nowrap"><a href="helppages.html" class="style18"style="text-decoration: none">Help</a></td>
+<td><img alt="" src="images/blank.gif" width="2" /></td>
+<td class="topnav" style="white-space: nowrap"><a href="selllogin.html" class="style18"style="text-decoration: none">Sell</a></td>
+<td><img alt="" src="images/blank.gif" width="2" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td><!-- MAIN 3 COLUMN BODY TABLE START--> 
+<table class="maintable">
+<tbody>
+<tr valign="top">
+<td class="centercolumn"><!-- CENTER COLUMN - MAIN TABLE START--> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head><base href="http://bidfunshop.com/" />
+<style type="text/css">
+<!--
+.style1 {
+	font-size: 16px;
+	font-weight: bold;
+}
+.style9 {font-size: 16px}
+.style10 {font-size: 12px}
+.style13 {color: #000000}
+-->
+</style>
+</head>
+<span class="display_ad_category_tree"><span style="color: #ED7700"><strong>[
+Auction ]</strong> </span> <a href="http://bidfunshop.com/index.php?a=5" class="display_ad_category_tree">Main</a> > <a href="197/Classifieds" class="display_ad_category_tree">Classifieds</a> &gt; <a href="715/Listings" class="display_ad_category_tree">Listings</a> &gt; <a href="5046/-" class="display_ad_category_tree">:</a></span>
+<div class="display_ad_category_tree"></div>
+<div class="display_auction_title"></div>
+<table border="0" cellpadding="2" cellspacing="0" style="border-collapse: collapse" width="100%">
+	<tbody>
+		<tr valign="top">
+			<td style="width: 70%">
+			<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" 
+
+width="100%">
+				<tbody>
+					<tr valign="top">
+						<td><!-- # Auction Info Box Begin -->
+						<table border="0" cellpadding="0" cellspacing="0" 
+
+style="border-collapse: collapse" width="100%">
+							<tbody>
+								<tr>
+									<td>
+									<table border="0" 
+
+cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+										<tbody>
+											<tr>
+												
+
+<td height="23" background="http://bidfunshop.com/images/Bar.gif">&nbsp;</td>
+</tr>
+										</tbody>
+									</table>									</td>
+								</tr>
+								<tr>
+								  <td>
+									<table 
+
+class="box_dyn_content" width="100%">
+										<tbody>
+											<tr>
+												
+
+<td><table border="0" 
+
+cellpadding="0" cellspacing="0" style="height: 416px" width="660">
+													
+
+<tbody>
+													
+<tr>
+  <td colspan="3" class="bodytable" style="background-repeat: no-repeat"><div class="style1"> <font color="#000000"><img src="images/misc/attn_gtr_sold2.gif" /> 1950 Ford Business Coupe Classic Auto</font></div></td>
+</tr>
+<tr>
+  <td colspan="3" class="bodytable" style="background-repeat: no-repeat"><script type="text/javascript">
+ch_client = "bidfunshop";
+ch_width = 468;
+ch_height = 90;
+ch_type = "mpu";
+ch_sid = "Chitika Default";
+ch_backfill = 1;
+ch_color_site_link = "#cccccc";
+ch_color_title = "#0000cc";
+ch_color_border = "#FFFFFF";
+ch_color_text = "#cccccc";
+ch_color_bg = "#FFFFFF";
+      </script>
+        <script src="http://scripts.chitika.net/eminimalls/amm.js" type="text/javascript">
+        </script></td>
+</tr>
+<tr>
+													
+
+		<td colspan="3" class="bodytable" style="background-repeat: no-repeat">
+													
+
+		
+		<p align="left"><span class="display_auction_value">	<table cellpadding="2" cellspacing="1" style="border: none; width: 100%;">
+					<tr>			
+			<td align="center" valign="top" style="width: 100%;">
+				<a href="javascript:winimage('http://bidfunshop.com/get_image.php?popupimage=3697','1250','1000')" class="zoom_link"> 
+<img src="user_images/2026144.jpg" width="400" height="274" alt="" /><br /><span class="zoom_link">1950 Ford Business Coupe</span><br /><span class="zoom_link"></span><span class="zoom_link"><strong>Click-to-Zoom</strong>
+</span></a>
+			</td>
+			
+			</tr>		 
+	</table>
+</span><span class="style30"><a href="2244.html" class="full_images_link">View All Images</a></span></p>		</td>
+	</tr>
+													
+
+	
+	<tr>
+													
+
+	  <td><font face="arial,helvetica,sans-serif" class="style1">Price:</font></span></td>
+													
+
+	  <td><font face="arial,helvetica,sans-serif" class="style1">$ 0.00</font></td>
+  </tr>
+	<tr>
+	  <td><font face="arial,helvetica,sans-serif" class="style1">US Shipping:
+</font></td>
+	  <td><font face="arial,helvetica,sans-serif" class="style1">-</font></td>
+	  </tr>
+	<tr>
+	  <td><font face="arial,helvetica,sans-serif" class="style1">City:</font></td>
+	  <td><font face="arial,helvetica,sans-serif" class="style1">-</font></td>
+	  <td style="color: #e87700">&nbsp;</td>
+	  </tr>
+	<tr>
+	  <td><font face="arial,helvetica,sans-serif" class="style1">State:</font></td>
+	  <td><font face="arial,helvetica,sans-serif" class="style1">PA</font></td>
+	   </tr>
+	<tr>
+	  <td><font face="arial,helvetica,sans-serif" class="style1">Zip Code:</font></td>
+	  <td><font face="arial,helvetica,sans-serif" class="style1">14211</font></td>
+	  <td width="154">&nbsp;</td>
+	</tr>
+	   <tr>
+      <td><font face="arial,helvetica,sans-serif" class="style1">Country:</font></td>
+      <td><font face="arial,helvetica,sans-serif" class="style1">UNITED STATES</font></td>
+    </tr>
+    <tr>
+	  <td><font face="arial,helvetica,sans-serif" class="style1"></font></td>
+	  <td><font face="arial,helvetica,sans-serif" class="style1"></font></td>
+	  </tr>
+		<tr>
+		  <td><font face="arial,helvetica,sans-serif" class="style1"></font></td>
+		  </tr>
+		<tr>
+	  <td><font face="arial,helvetica,sans-serif" class="style1"></font></td>
+	    </tr><tr>
+	  <td colspan="3"><div align="left"></div></td>
+	  </tr>
+											
+
+	<tr>
+													
+
+		<td><font face="arial,helvetica,sans-serif" class="style1"> </font></td>
+													
+
+		<td colspan="2"></td>
+	</tr>
+	<tr>
+	  <td colspan="3"><font face="arial,helvetica,sans-serif" class="style1"></font></strong><font face="arial,helvetica,sans-serif" class="style9"> </font></td>
+	  </tr><tr>
+	  <td colspan="3" class="display_auction_label"><hr noshade></td>
+	  </tr>
+	<tr>
+	  <td colspan="3">&nbsp;</td>
+	  </tr>
+	<tr>
+													
+
+		<td><font face="arial,helvetica,sans-serif" class="style1"></font></td>
+													
+
+		<td><font face="arial,helvetica,sans-serif" class="style1"></font></td>
+	</tr>
+	<tr>
+													
+
+		<td colspan="3"><font face="arial,helvetica,sans-serif" class="style1"> </font></td>
+		</tr>
+</tbody>
+</table></td>
+											</tr>
+										</tbody>
+									</table>								  </td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- # Auction Info Box End -->
+						<!-- # Seller Info Box Begin -->
+                        <!-- # Seller Info Box End -->
+<div style="line-height: 1px">
+						<img alt="" height="4" src="images/blank.gif" width="1" />						</div>
+						<!-- # DESCRIPTION BOX START -->
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+							<tbody>
+								<tr>
+								  
+								</tr>
+								
+							</tbody>
+						</table>
+						<!-- # DESCRIPTION BOX END -->
+						<div style="line-height: 1px">
+						<img alt="" height="4" src="images/blank.gif" width="1" />						</div>
+                        <!-- # DESCRIPTION BOX START -->
+						<table border="0" cellpadding="0" cellspacing="0" 
+
+style="border-collapse: collapse" width="100%">
+							<tbody>
+								<tr>
+									<td>
+									<table border="0" 
+
+cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+										<tbody>
+																						<tr>
+												
+
+<td height="1" bgcolor="#ffffff">
+												
+
+  <div class="description_label"></div></td>
+</tr>
+										</tbody>
+									</table>									</td>
+								</tr>
+								<td height="19" background="http://bidfunshop.com/images/Bar.gif">&nbsp;</td>
+</tr>
+
+</table></td>
+</tr>
+<tr>
+<td>
+<table class="box_dyn_content" width="100%">
+<tbody>
+<tr>
+ <td class="style9">Classic Antique Ford For Sale, 1950 Ford Business Coupe, Taking Offers</td>
+</tr>
+</tbody>
+</table><tr>
+									<td>
+							  <table border="0" class="" 
+
+style="background-color: #ffffff" width="100%">
+										<tbody>
+											<tr>
+											  <td class="style9">&nbsp;</td>
+										  </tr>
+											<tr>
+											  <td align="center" title="facebook"><a href="http://www.facebook.com/sharer/sharer.php?src=bm&u="><img src="http://bidfunshop.com/images/facebook.gif" alt="facebook" width="32" height="32" /></a><a href="http://twitter.com/share"><img src="http://bidfunshop.com/images/twitter.gif" alt="twitter" width="32" height="32" title="twitter" /></a><a href="http://www.blogger.com/blog_this.pyra?t&u="><img src="http://bidfunshop.com/images/blogger.gif" alt="blogger" width="32" height="32" title="blogger" /></a><a href="http://digg.com/submit"><img src="http://bidfunshop.com/images/digg.gif" alt="digg" width="32" height="32" title="digg" /></a><a href="http://www.delicious.com"><img src="http://bidfunshop.com/images/delicious.gif" alt="delicious" width="32" height="32" title="delicious" /></a></td>
+										  </tr>
+										</tbody>
+			  </table>									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div align="left">						</div>
+						<div style="line-height: 1px">
+						<img alt="" height="4" src="images/blank.gif" width="1" />						</div>
+						<!-- # DESCRIPTION BOX END -->
+						<!-- # PICTURE BOX START -->
+						<table border="0" cellpadding="0" cellspacing="0" 
+
+style="border-collapse: collapse" width="100%">
+							<tbody>
+								<tr>
+								  <td>&nbsp;</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- # PICTURE BOX END --></td>
+						<td style="width: 4px">&nbsp;</td>
+		  <td style="width: 30%">
+						<!-- # LEAD PICTURE BOX START --><!-- # LEAD PICTURE 
+
+BOX END --><!--  OTHER ACTIONS BOX START --> 
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+<tbody>
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+<tbody>
+<tr>
+<td height="23" background="http://bidfunshop.com/images/Bar.gif">&nbsp;</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr>
+<td>
+<table border="0" class="box_content_2" style="background-color: #ffffff;" width="100%">
+<tbody>
+<tr>
+  <td align="center"><div align="left"><span style="color: #000000;"><a href="http://bidfunshop.com/index.php?a=13&amp;b=2244" class="display_ad_value">yacky</a> (<a href="index.php?a=1030&amp;b=2244&amp;d=152" class="display_auction_value">0</a><img style="vertical-align: text-bottom;" src="images/feedback/star_gray2.gif"  alt="feedback icon" />) <a href="javascript:win('http://bidfunshop.com/show_help.php?a=102826&amp;l=1');"><img src="images/misc/question_mark.gif" alt="" /></a></span></div></td>
+</tr>
+<tr>
+  <td align="center"><div align="left"><span style="color: #000000;">Listing # 2244</span></div></td>
+</tr>
+<tr>
+<td align="center"><a href="other/152" class="sellers_other_ads_link"><u>Other Listings</u>
+</a><br />
+  <a href="http://bidfunshop.com/index.php?a=13&amp;b=2244" class="notify_seller_link">Contact
+</a><br />
+  <a href="print/2244" class="print_friendly_link">Print Ad</a><br />
+  <a href="http://bidfunshop.com/index.php?a=20&amp;b=2244" class="favorites_link">Favorites</a><br />
+  <a href="javascript:winimage('http://www.mapquest.com/maps/map.adp?homesubmit=Get+Map&amp;address=%2B&amp;state=NY&amp;country=US&amp;zipcode=14211','800','800')" class="mapping_link">Map
+</a><br />
+  <a href="index.php?a=1030&amp;b=2244&amp;d=152" class="display_auction_value">View Feedback</a><br />
+  <br />
+  </td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table>
+<p>
+  <!--  OTHER ACTIONS BOX END -->
+</p>
+<p><a href="http://tradeclassiccar.com"><img src="http://bidfunshop.com/images/trade-classic-car.gif" alt="Trade Classic Car" width="50" height="24" /></a><a href="http://tradeclassiccar.com"> Trade Classic Car</a></p>
+		  <tr>
+		  <td></td>
+		</tr>
+	</tbody>
+</table>
+  <div style="text-align: center">
+<span class="display_ad_value">
+<span class="style25"></strong></span><br />
+<a href="mailto:report@bidfunshop.com?subject=Report :: Item:%202244%20&amp;body=" class="style13">Report </a></span></div>
+<div style="text-align: center">
+<a href="-/2294/Prussian-Blue-Des-Moines" class="previous_ad_link"><img src="images/buttons/btn_user_prev.gif" alt="previous" /></a> &nbsp; <a href="-/1937/1950-DeSoto-Coupe-Original-Fluid-Drive" class="next_ad_link"><img src="images/buttons/btn_user_next.gif" alt="next" /></a></div>
+<br />
+</div>
+</html> <!-- CENTER COLUMN - MAIN TABLE END--></td>
+</tr>
+</tbody>
+</table>
+<!-- MAIN 3 COLUMN BODY TABLE END--></td>
+</tr>
+<tr>
+<td><style type="text/css">
+<!--
+.footertext {
+	background-color: #ffffff;
+}
+-->
+</style>
+<div class="footertext" style="text-align: center">
+<div class="" style="text-align: center;"><a class="footer_links" href="selllogin.html"><font size="2"><font color="#000000">POST FREE AD</font></font></a>&nbsp;| <a class="footer_links" href="contactus.html"><font size="2"><font color="#000000">Contact Us</font></font></a>&nbsp;| <a class="footer_links" href="bulletin.html"><font size="2"><font color="#000000">Bulletin</font></font></a>&nbsp;| <a class="footer_links" href="questionsanswers.html"><font size="2"><font color="#000000">Q & A</font></font></a>&nbsp;| <a class="footer_links" href="termsconditions.html"><font size="2"><font color="#000000">Terms &amp; Conditions</font></font></a>&nbsp;| <a class="footer_links" href="http://bidfunshop.com/bing-search.html"><font size="2"><font color="#000000">Bing Search</font></font></a></div>
+<div class="footertext" style="text-align: center"><font size="2">USA &copy;Copyright 2008 BidFunShop.com All Rights Reserved</font><br /> <img alt="accept visa mastercard discover" src="images/a_ccards.gif" /><img alt="paypal accepted" src="images/a_paypal.gif" /></div>
+</span></td>
+  </tr>
+</table>
+<!--# MAIN 3 COLUMN BODY TABLE END--></td>
+</tr>
+</body>
+</html>

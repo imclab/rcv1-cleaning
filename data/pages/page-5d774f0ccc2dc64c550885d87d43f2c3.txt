@@ -1,0 +1,1663 @@
+
+
+
+
+
+<!-- bof: guides.jsp -->
+
+<!-- This file handles two cases: coming into the guides page from clicking on a topic, or coming into it from clicking on an actual guides
+aticle. In the first case, the latest guide associated with that topic is pulled and displayed, in the second case, the article itself
+is displayed, and its appropriate topic information is put up on the page. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+	<head>
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+	<meta name="description" content="Web resources for do-it-yourself car repair, repair manuals, and repair advice " />
+
+	<meta name="keywords" content="do-it-yourself car repair, repair manuals, repair advice " />
+
+	<title>Car Repair: Do-It-Yourself Car Repair</title>
+
+<meta name="Robots" content="all" />
+
+<!-- Start DI Tracking Code for HEAD section-->
+<SCRIPT LANGUAGE="JavaScript1.2">
+var refr=escape(document.referrer); /* get the http referer and encode it */
+var dom=location.hostname; /* get the host domain */
+var stURL="http://na.link.decdna.net/n/41835/41837/www.findingdulcinea.com/1nedeho;11;3;;6;;7q3ggj;;;;;1;/i/c?0&1pixgif&referer="
++ refr;
+if ( (refr && refr.search(dom) == -1) && (location.href.toUpperCase().indexOf("247SEO=N") == -1) ) /* if the referrer is external preload the image request and does not contain 247SEO argument = "N" */
+{
+imageTR = new Image();
+imageTR.src = stURL;
+}
+</SCRIPT>
+<!-- End DI Tracking Code -->
+
+<!-- Start Sportgenic -->
+    <!-- ADS WILL NOT DISPLAY WITHOUT THE HEADCODE INSTALLED -->
+    <!-- begin script to create random number for ads -->
+    <script type="text/javascript">
+    <!--
+    sgi_ord=Math.random()*10000000000000000;
+    sgi_tile=1;
+    //-->
+    </script>
+
+    <!-- End random number script -->
+    <!-- PLACE THE QUANTCAST AND GOOGLE ANALYTICS TAGS BEFORE THE CLOSING BODY TAG -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6181637-14");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- End Sportgenic -->
+
+
+<LINK REL="SHORTCUT ICON" HREF="/docroot/dulcinea/img/favicon.ico" />
+
+		
+
+
+<LINK rel="alternate" TYPE="application/rss+xml" TITLE="RSS" HREF="http://www.findingdulcinea.com/guides/Autos/Car-Repair.rss"/>
+
+	
+
+		<script src="/docroot/dulcinea/js/dulcinea.js" type="text/javascript" language="javascript"></script>
+  
+		<link rel="stylesheet" type="text/css" href="/docroot/dulcinea/css/dulcinea.css" />
+		<link rel="stylesheet" type="text/css" href="/docroot/dulcinea/css/fd_content.css" />
+  		<link rel="stylesheet" type="text/css" href="/docroot/dulcinea/css/fd_guides.css" />
+  		<link rel="stylesheet" type="text/css" href="/docroot/dulcinea/css/dulcinea_dailyDulcinea.css" />
+		<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+  		<script type="text/javascript" language="javascript">
+   		if ( navigator.userAgent.indexOf('Safari') != -1 )
+      		document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"/docroot/dulcinea/css/dulcinea_safari.css\" />");
+  		</script>
+  		
+  		<!-- JAVASCRIPT FUNCTIONS -->
+		<script>
+		
+			/--* FUNCTIONS THAT DEAL WITH TAGS OF CLASS NAx *--/
+	
+			// Show a single section
+			function showSection(divId) {
+				if ( document.getElementById("NA"+divId) ) { 
+						document.getElementById("NA"+divId).style.display = "block";
+						document.getElementById("dulcinea_section_title_"+divId).style.background =
+							"url(/docroot/dulcinea/jsp/home/guidesArticleMinus.gif) top left no-repeat";
+				}
+			}
+			
+			// Hide a single section
+			function hideSection(divId) {
+				if ( document.getElementById("NA"+divId) ) { 
+						document.getElementById("NA"+divId).style.display = "none";
+						document.getElementById("dulcinea_section_title_"+divId).style.background =
+							"url(/docroot/dulcinea/jsp/home/guidesArticlePlus.gif) top left no-repeat";
+				}
+			}
+			
+			// Toggles a single section
+			function toggleSection(divId) {
+				if ( document.getElementById("NA"+divId) )
+					if ( document.getElementById("NA"+divId).style.display == "block" )
+						hideSection(divId);
+					else 
+						showSection(divId);
+			}
+			
+			// Hides all but a single section
+			function hideAllBut(divId) {
+			   for (i=0; i<totDiv; i++) {
+					if ( document.getElementById("NA"+i) ) {
+						if (i == divId)
+							showSection(i);
+						else
+							hideSection(i);
+					}
+				}
+			}
+			
+			// Hides all sections
+			function hideAll() {
+				for (i=0; i<totDiv; i++)
+					if ( document.getElementById("NA"+i) )
+						hideSection(i);	
+			}
+			
+			// Shows all sections
+			function showAll() { 
+				for (i=0; i<totDiv; i++)
+					if ( document.getElementById("NA"+i) )
+						showSection(i);	
+			}
+			
+						
+			/--* MISCELLANEOUS FUNCTIONS *--/
+			
+			// Centers content horizontally on page
+			
+			// Gets all elements of class "className" which are of type "tag" and are descended from element "elm"					
+			function getElementsByClassName(className, tag, elm) {
+				var testClass = new RegExp("(^|\\s)" + className + "(\\s|$)");
+				var tag = tag || "*";
+				var elm = elm || document;
+				var elements = (tag == "*" && elm.all)? elm.all : elm.getElementsByTagName(tag);
+				var returnElements = [];
+				var current;
+				var length = elements.length;
+				for(var i=0; i<length; i++){
+					current = elements[i];
+					if(testClass.test(current.className)){
+						returnElements.push(current);
+					}
+				}
+				return returnElements;
+			}
+		
+		</script>
+		<!-- END JAVASCRIPT FUNCTIONS -->
+  		<script language="javascript" src="/docroot/dulcinea/js/menu.js"> </script>
+		<script language="javascript" src="/docroot/dulcinea/js/dulcinea.js"> </script>
+	</head>
+	
+	<body id="replaceWithBrowserName">
+	
+		<script type="text/javascript" language="javascript">
+			// alert(navigator.userAgent);
+			var browser = new whichBrowser();
+			
+			if (browser.isIE)
+				document.getElementById("replaceWithBrowserName").id = "MSIE";
+			else if (navigator.userAgent.indexOf("Safari") != -1)    
+				document.getElementById("replaceWithBrowserName").id = "SAFARI";
+			else if (browser.isNS)
+				document.getElementById("replaceWithBrowserName").id = "FIREFOX";
+
+		function browseBySubmit() {
+			var selectedIndex = document.browseByForm['browseBySelect'].selectedIndex;
+			window.location = document.browseByForm['browseBySelect'].options[selectedIndex].value;
+		}
+		</script>
+	
+		<div id="body_div">
+		<div class="main_content" id="dulcinea_guides" >
+		
+			<!-- eof: header.jsp -->
+
+<DIV id="dulcinea_header">
+   <div id="head_border">
+        <div id="header">
+             <a href="/"><img src="/docroot/dulcinea/img/home/new_home/logo.gif" class="logo_pad" alt="findingDulcinea" height="81" width="149"></a>
+             <div id="head_rt">
+                  <div class="nav">
+                       <div class="nav_links">
+                            <ul class="orangeTab">                                        
+         			<li><a href="/guides/Technology/Internet/Dulcineas-Guide-to-Searching-on-the-Web.html">Web Guides</a></li>
+                	    </ul>
+                            <ul class="greenTab">
+                                <li><a href="/news.topic__ss_categories_ss_top-stories.html">Beyond the Headlines</a></li>
+                            </ul>
+                            <ul class="blueTab">
+                                <li><a href="/features.topic__ss_categories_ss_todays-features.html">Features</a></li>
+                            </ul>
+                            <ul class="blueBar">
+                                <li><a href="/info/Our-Mission.html">About Us</a><span>|</span></li>
+				<li><a href="/info/main/FAQ.html">FAQ</a><span>|</span></li>
+				<li><a href="/info/contact-us.html">Contact Us</a></li>
+                            </ul>
+			<ul class="blueBar blueBarIcon">
+			   <li><img border="0" src="/docroot/dulcinea/img/home/new_home/follow_us.jpg"/></li>
+			   <li><a href="http://www.facebook.com/pages/findingDulcineacom/9844132329" target="_blank"><img width="35" height="35" border="0" src="/docroot/dulcinea/img/home/new_home/facebook.png"/></a></li>
+			   <li><a href="http://twitter.com/findingDulcinea" target="_blank"><img width="35" height="35" border="0" src="/docroot/dulcinea/img/home/new_home/twitter.png"/></a></li>
+			   <li><a href="/home.rss" target="_blank"><img width="35" height="35" border="0" src="/docroot/dulcinea/img/home/new_home/feed.png"/></a></li>
+			   <li><a href="/info/newsletter.html"><img width="35" height="35" border="0" src="/docroot/dulcinea/img/home/new_home/email.jpg"/></a></li>
+			</ul>
+                         </div>
+                         <div id="quick_search"><h4>Quick Search</h4>
+                             <form name="form" action="/search.html" id="quick_search_form">
+                                     <input name="keywords" class="txt" value="" type="text">
+                                     <input alt="GO" class="btn" name="go" src="/docroot/dulcinea/img/home/new_home/btn_go_blue.gif" type="image">
+                             </form>
+                         </div><!-- end #quick_search -->
+                   </div><!-- end #Nav -->
+             </div><!-- end #head_rt -->
+         </div><!-- end #header -->
+   </div><!-- end #head_border --> 	
+   <script>
+   
+   function handleDropdownMenu(elem) {
+   	var top;
+   	var left;
+	if (elem != null) {
+   		top=getPos(elem, '#document', 'bottom'); 
+		left = getPos(elem, '#document', 'left') - getPos(document.getElementById('body_div'),'#document','left');
+		
+		var target = document.getElementById('headerMenu')
+		if (target != null) {
+			target.style.top = top + "px";
+			target.style.left = left + "px";
+			target.style.display = "block";
+		}
+	}
+   }
+   
+   function getPos(elem, myroot, pos) {
+	var myroot = myroot || "HTML";
+	if (elem == null) return false;
+		var rootT=elem.offsetTop 
+	    	var rootL=elem.offsetLeft 
+	        var rootB=elem.offsetHeight
+	    	var rootR=elem.offsetWidth;
+	    	var elemP = elem.parentNode;
+	    	var mynode = elemP.id;
+	    	
+	    	while (mynode != myroot) {
+	        	rootT += elemP.offsetTop;
+	        	rootL += elemP.offsetLeft;
+	        	
+	        	elemP = elemP.parentNode;
+	        	mynode = elemP.nodeName;
+	    	}
+	    		
+	    	rootB += rootT;
+	    	rootR += rootL;
+	    		
+	    	switch(pos)
+		{
+			case "top":
+  				return rootT;
+  				break;
+			case "left":
+  				return rootL;
+  				break;
+  			case "bottom":
+  				return rootB;
+  				break;
+  			case "right":
+  				return rootR;
+  				break;
+			default:
+				return("error");
+		}
+	}
+
+   function getPosById(elem, pID, pos) {
+	if (elem == null) return false;
+		var rootT=elem.offsetTop 
+	    	var rootL=elem.offsetLeft 
+	        var rootB=elem.offsetHeight
+	    	var rootR=elem.offsetWidth;
+	    	var elemP = elem.parentNode;
+	    	var mynode = elemP.id;
+	    	
+	    	while (mynode != pID) {
+	        	rootT += elemP.offsetTop;
+	        	rootL += elemP.offsetLeft;
+	        	//alert(elemP.id + "::" + rootT);
+	        	elemP = elemP.parentNode;
+	        	mynode = elemP.id;
+			
+	    	}
+	    		
+	    	rootB += rootT;
+	    	rootR += rootL;
+	    		
+	    	switch(pos)
+		{
+			case "top":
+  				return rootT;
+  				break;
+			case "left":
+  				return rootL;
+  				break;
+  			case "bottom":
+  				return rootB;
+  				break;
+  			case "right":
+  				return rootR;
+  				break;
+			default:
+				return("error");
+		}
+	}
+</script>
+   
+   				
+
+</DIV> <!-- dulcinea_header -->
+
+
+<!-- eof: header.jsp -->
+
+			
+			<div id="full_width_container">
+			<div id="content">
+				<div class="page_tab_header" id="guides_tab">
+					<img id="tab_top" src="/docroot/dulcinea/img/guides/tab_top.jpg"/>
+					<h2 id="topic" class="dulcinea_landing_found_text"><a HREF="/guides/Autos/Car-Repair.html">Do-It-Yourself Car Repair</a></h2>
+					<form method="get" action="/guides.html" class="topic_select" name="browseByForm" id="tab_topic_select">
+						<label for="btopic">Browse By:</label>
+						<select onchange="javascript: browseBySubmit()" class="topic_browse_select" id="btopic" name="browseBySelect">
+							<option value="/guides/Technology/Internet/Dulcineas-Guide-to-Searching-on-the-Web.html" selected="selected">Main Topics</option>
+							<option value="/guides/Technology/Internet/Dulcineas-Guide-to-Searching-on-the-Web.html">------------------------</option>
+							<option value="/topics.html?type=guides">Complete Index</option>
+							
+								<option value="/guides/Entertainment.html">Art and Entertainment</option>
+							
+								<option value="/guides/Autos.html">Autos</option>
+							
+								<option value="/guides/Careers.html">Careers</option>
+							
+								<option value="/guides/Education.html">Education</option>
+							
+								<option value="/guides/Family-and-Relationships.html">Family and Relationships</option>
+							
+								<option value="/guides/Finance.html">Finance</option>
+							
+								<option value="/guides/Food.html">Food</option>
+							
+								<option value="/guides/Technology/Internet/Dulcineas-Guide-to-Searching-on-the-Web.html">Guide to Web Search</option>
+							
+								<option value="/guides/Foreign-Language.html">Guides in Foreign Languages</option>
+							
+								<option value="/guides/Health.html">Health</option>
+							
+								<option value="/guides/Homes.html">Homes</option>
+							
+								<option value="/guides/Politics.html">Politics</option>
+							
+								<option value="/guides/Reference.html">Reference</option>
+							
+								<option value="/guides/Religion-and-Spirituality.html">Religion and Spirituality</option>
+							
+								<option value="/guides/Science.html">Science</option>
+							
+								<option value="/guides/Shopping.html">Shopping</option>
+							
+								<option value="/guides/Sports.html">Sports</option>
+							
+								<option value="/guides/Technology.html">Technology</option>
+							
+								<option value="/guides/Travel.html">Travel</option>
+							
+						</select>
+						<noscript><input type="submit" value="go"/></noscript>
+					</form>
+				</div> <!-- guides_tab -->
+				
+				<div id="article_content">
+
+					<div id="article_sidebar">
+						<div id="sidebar_breadcrumb_links">
+							<a HREF="/">Home</a>
+							&raquo;
+							<a HREF="/guides/Technology/Internet/Dulcineas-Guide-to-Searching-on-the-Web.html">Web Guides</a>
+							&raquo;
+							
+								<a HREF="/guides/Autos.html">Autos</a>
+								&raquo;
+							
+							Car Repair
+						</div>
+                                                
+
+
+
+
+
+<script src="/docroot/dulcinea/js/articleShare.js" type="text/javascript"></script>
+<div class="article_sidebar_block share_box_style">
+        <A HREF="mailto:?subject=An interesting article from findingDulcinea&body=Hi,%0D%0A%0D%0AI just found an interesting entry on http://www.findingDulcinea.com. Thought you'd like to look at it too.   %0D%0A%0D%0Ahttp://www.findingdulcinea.com/guides/Autos/Car-Repair.pg_0.html"><IMG SRC="/docroot/dulcinea/img/icons/icon_email.jpg" /></A>
+        &nbsp;&nbsp;
+        <span style="position:relative; bottom:1px;">
+	<a href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&amp;noui&amp;jump=close&amp;url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;" target="_blank"><img src="http://static.delicious.com/img/delicious.gif" height="14" width="14" alt="Delicious" /></a>
+        </span>&nbsp;
+        <a href="http://digg.com/submit?url=http://www.findingdulcinea.com/guides/Autos/Car-Repair.pg_0.html&title=Car Repair: Do-It-Yourself Car Repair&bodytext=Anyone who drives knows that auto maintenance and auto repair can be expensive and time-consuming. However, if you know where to look for auto repair and maintenance, there&#039;s a lot you can do on your own to save your car and your wallet. This Web guide highlights the best sites on the Web for do-it-yourself guides,&amp;nbsp;advice from experts and fellow car owners, finding auto repair shops, and everything else you need to keep your car running and looking like it should." target="_blank"><img border="0" src="http://digg.com/img/badges/16x16-digg-guy.gif" width="16" height="16" alt="Digg!" /></a>&nbsp;&nbsp;
+        <script> function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;} </script>
+        <a href="http://www.facebook.com/share.php?u=http://www.findingdulcinea.com/guides/Autos/Car-Repair.pg_0.html" onclick="return fbs_click()" target="_blank"><img src="http://b.static.ak.fbcdn.net/images/share/facebook_share_icon.gif?8:26981" alt="facebook" /></a>&nbsp;&nbsp; 
+        <a href="http://www.stumbleupon.com/submit?url=http://www.findingdulcinea.com/guides/Autos/Car-Repair.pg_0.html%26title%3DCar Repair: Do-It-Yourself Car Repair" target="_blank"> <img border="0" alt="StumbleUpon" src="http://cdn.stumble-upon.com/images/16x16_su_3d.gif" /></a>&nbsp;&nbsp;
+        <a href="http://www.diigo.com" onclick="var s=document.createElement('script');s.type='text/javascript';s.src='http://www.diigo.com/javascripts/webtoolbar/diigolet_b_h_b.js';document.body.appendChild(s);return false;"><img style="border: medium none ;" alt="diigo" src="http://www.diigo.com/images/ii_blue.gif" /></a>&nbsp;&nbsp;
+	<a href="http://www.reddit.com/submit?url=http://www.findingdulcinea.com/guides/Autos/Car-Repair.pg_0.html&title=Car Repair: Do-It-Yourself Car Repair; return false" target="_blank"> <img src="http://www.reddit.com/static/spreddit1.gif" alt="submit to reddit" border="0" /></a>&nbsp;&nbsp;
+</div>
+
+
+
+
+						<!-- END BREADCRUMB -->
+						
+						<!-- bof: capsule.jsp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- TOC PANEL -->
+	<div id="sidebar_what_youll_find" class="article_sidebar_block box_style">
+		
+		<img id="what_youll_find_arrow" src="/docroot/dulcinea/jsp/home/featuresWhatYoullFindArrow.gif"/>
+		<h3 id="TOC_heading">In This Guide</h3>
+		<ul>
+			
+				<li><h3><a href="/guides/Autos/Car-Repair.pg_0.html#0">Do-It-Yourself Car Repair</a></h3></li>
+			
+			 
+				<li><h3><a href="/guides/Autos/Car-Repair.pg_00.html#00">Find Auto Repair Shops</a></h3></li>
+			
+			 
+				<li><h3><a href="/guides/Autos/Car-Repair.pg_01.html#01">Auto Maintenance</a></h3></li>
+			
+			 
+				<li><h3><a href="/guides/Autos/Car-Repair.pg_02.html#02">Auto Maintenance and Repair Blogs and Forums</a></h3></li>
+			
+			 
+		</ul>
+	</div><!-- END TOC PANEL -->
+	
+
+							
+
+						
+						
+
+
+
+
+
+
+
+
+
+
+
+						
+						
+						
+
+
+
+
+
+						
+						
+
+
+
+
+
+<div id="most_popular_articles" class="article_sidebar_block box_style">
+	<h3>Most Popular</h3>
+	<ol>
+
+	<li>
+		<h3 class="news_link"><a href="/news/sports/2010/feb/Olympic-Student-Athletes--Balancing-School-and-Sport.html">
+			Olympic Student-Athletes: Balancing School and Sport
+		</a></h3>
+	</li>
+
+	<li>
+		<h3 class="news_link"><a href="/news/science/2010/feb/Satellite-Determines-New-Birthday-for-the-Universe.html">
+			Satellite Determines New Birthday for the Universe
+		</a></h3>
+	</li>
+
+	<li>
+		<h3 class="news_link"><a href="/news/education/2010/feb/The-Vancouver-Olympics-in-the-Classroom.html">
+			The Vancouver Olympics in the Classroom
+		</a></h3>
+	</li>
+
+	<li>
+		<h3 class="features_link"><a href="/features/profiles/k/martin-luther-king-jr.html">
+			Martin Luther King Jr., Civil Rights Leader
+		</a></h3>
+	</li>
+
+	<li>
+		<h3 class="news_link"><a href="/news/environment/2010/feb/Seeding-the-Clouds-for-Drought-Relief.html">
+			Seeding the Clouds for Drought Relief
+		</a></h3>
+	</li>
+
+	<li>
+		<h3 class="news_link"><a href="/news/entertainment/2010/feb/-Temple-Grandin--Sheds-New-Light-on-Autistic-Experience.html">
+			“Temple Grandin” Sheds New Light on Autistic Experience
+		</a></h3>
+	</li>
+
+	<li>
+		<h3 class="news_link"><a href="/news/on-this-day/Feb/On-this-Day--U-S--Olympic-Team-Performs--Miracle-on-Ice-.html">
+			On This Day: US Hockey Beats USSR in “Miracle on Ice”
+		</a></h3>
+	</li>
+
+	<li>
+		<h3 class="features_link"><a href="/features/profiles/w/shaun-white.html">
+			Vancouver Olympians: Snowboarder Shaun White
+		</a></h3>
+	</li>
+
+	<li>
+		<h3 class="features_link"><a href="/features/profiles/d/web-du-bois.html">
+			Happy Birthday, W.E.B. Du Bois, Civil Rights Pioneer and Social Historian
+		</a></h3>
+	</li>
+
+	<li>
+		<h3 class="features_link"><a href="/features/sports/olympians/Vancouver-Olympians--Ice-Dancers-Oksana-Domnina-and-Maxim-Shabalin.html">
+			Vancouver Olympians: Ice Dancers Oksana Domnina and Maxim Shabalin
+		</a></h3>
+	</li>
+
+	</ol>
+</div> <!-- mostPopularArticles -->
+
+					</div> <!-- END ARTICLE_SIDEBAR -->
+					
+					<!-- bof: capsule.jsp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+#article_capsule_image {
+	margin-right:12px;
+}
+</style>
+
+
+<div id="article_capsule">
+	
+		<div id="article_capsule_image"><img alt="null" src="/docroot/dulcinea/fd_images/guides/Autos/Car-Repair/guides/0/image.jpg" />
+		
+		</div>
+	
+
+	
+		<h1 id="article_capsule_headline">Auto Repair and Maintenance: Keep Your Vehicle in Tip-Top Shape</h1> <!-- headline -->
+	
+	
+        
+                <div id="article_capsule_deck">Anyone who drives knows that auto maintenance and auto repair can be expensive and time-consuming. However, if you know where to look for auto repair and maintenance, there's a lot you can do on your own to save your car and your wallet. This Web guide highlights the best sites on the Web for do-it-yourself guides,&nbsp;advice from experts and fellow car owners, finding auto repair shops, and everything else you need to keep your car running and looking like it should.</div>
+        
+	
+</div> <!-- END article_capsule -->
+
+					<div id="article_detail">
+					
+						<div id="article_toolbar">
+							<ul>
+							<li class="article_toolbar_item"><a href="/guides/Autos/Car-Repair.xa_1.html"><img class="article_toolbar_icon" src="/docroot/dulcinea/img/icons/icon_guides_plus.png"/>Expand All Guide Sections</a></li>
+							</ul>
+						</div>
+					
+						<div class="guide_section" >
+						
+											
+						
+							<h2 class="guidesSectionTitle section_title  open" id="dulcinea_section_title_0">
+							<a name="0" href="/guides/Autos/Car-Repair.html">
+							Do-It-Yourself Car Repair
+							</a>
+							</h2>
+						
+						
+							<p class="section_intro_full">Perhaps your car has been making a funny grinding noise when it starts, or maybe someone backed it into a parking meter. (Maybe, just maybe, that person was you.)&nbsp; But before you rush out to a garage or&nbsp;auto body shop, visit the sites in this section&nbsp;for do-it-yourself auto repair advice and car repair manuals.</p>
+						
+						<div id="NA0">
+							
+								
+
+
+
+
+
+
+
+
+
+
+<div class="dulcinea_section" id="dulcinea_section_267">
+	
+	
+		<h3 class="guidesSectionTitle"><a name="267">Dulcinea's Insight</a></h3>
+	
+
+        
+        
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+
+<div class="resource_section">
+
+	<div class="resource_text">
+		<ul>     <li>DIY is a common abbreviation for &quot;do it yourself.&quot; You'll frequently come across the phrase &quot;DIY auto repair&quot; in this guide and during your Internet searches on car repair.</li> </ul>
+	</div>
+
+
+
+
+</div>
+
+
+
+                
+
+
+
+
+
+
+
+
+<div class="resource_section">
+
+	<div class="resource_text">
+		<ul>     <li>Although there are a number of do-it-yourself car repair sites out there, knowing your capabilities is a virtue. Auto repair can be an arduous and even risky task-be prepared to work hard.</li> </ul>
+	</div>
+
+
+
+
+</div>
+
+
+
+                
+
+
+
+
+
+
+
+
+<div class="resource_section">
+
+	<div class="resource_text">
+		<ul>     <li>Consult the findingDulcinea Cars Web Guide for help finding car parts. If you need specific information about old and vintage car parts, take a look at the findingDulcinea Car Restoring Web Guide.</li> </ul>
+	</div>
+
+
+
+
+</div>
+
+
+
+
+	
+</div>
+
+
+
+							
+								
+
+
+
+
+
+
+
+
+
+
+<div class="dulcinea_section" id="dulcinea_section_268">
+	
+	
+		<h3 class="guidesSectionTitle"><a name="268">Dulcinea's Picks</a></h3>
+	
+
+        
+        
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+
+<div class="resource_section">
+
+	<div class="resource_text">
+		<em>To help you solve some common car-trouble mysteries ...</em>
+	</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.familycar.com/CarRepair/');">
+				Family Car
+			</a>
+		
+		features 10 of the most common car problems (e.g., <a onclick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false" href="http://www.familycar.com/CarRepair/NoStart.htm">what to do when your car doesn't start</a>),&nbsp;and each issue is explained in great detail. Scroll down the busy, ad-filled&nbsp;homepage to find the section on <a onclick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false" href="http://www.familycar.com/CarRepair/">major auto repairs</a>&nbsp;(it's on the right side).
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.familycar.com/CarRepair/');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.obd-codes.com');">
+				OBD-Codes.com
+			</a>
+		
+		disseminates information about on-board diagnostics, the messages that say things like &quot;MAP Higher Than Expected.&quot; The easiest way to find these facts and figures is to click on &quot;<a href="http://www.obd-codes.com/trouble_codes/" onClick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false">Trouble Codes</a>&quot; at the top of the screen and then choose the model of your car. The forums here help with any other questions you may have; browse through the recent forum topics to view recent discussions.
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.obd-codes.com');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.automd.com/default.aspx');">
+				Auto MD
+			</a>
+		
+		is an online car doctor. Features such as &quot;Drip ID&quot; and Virtual Automotive Diagnostic (VAD) help you diagnose mysterious blue leaks and pesky engine problems, and if these features still can't figure out your car's illness, you can always ask your own questions at &quot;Mechanic's Corner.&quot; You'll have to register to use this site, but membership is free, and the wealth of information makes the effort worthwhile.
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.automd.com/default.aspx');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+
+
+</div>
+
+
+
+                
+
+
+
+
+
+
+
+
+<div class="resource_section">
+
+	<div class="resource_text">
+		<em>For do-it-yourself repair guides and tips ...</em>
+	</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.carcare.org/index.shtml');">
+				Be Car Care Aware
+			</a>
+		
+		is a campaign initiated by the Automotive Aftermarket Industry Association (AAIA). The site is meant to assist consumers with general car issues, and it touches upon many aspects related to car repair and maintenance. On this site you can find information about <a href="http://www.carcare.org/collision.shtml" onClick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false">collision repair</a> , getting your vehicle ready for a <a href="http://www.carcare.org/road_trip.shtml" onClick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false">road trip</a>, essential tools for <a href="http://www.carcare.org/DIY_tools.shtml" onClick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false">DIY types</a>, <a href="http://mfr.activant.com/mfrserv/aaiasrv?command=vehicleExt&amp;extusr=aaiaguest&amp;extsupplier=Golden" onClick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false">finding parts</a>, and more.
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.carcare.org/index.shtml');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.diynetwork.com/diy/autos_boats');">
+				DIY Network
+			</a>
+		
+		has information on a variety of topics, including auto body repair and tire alignment. The most popular projects are listed on the Automotive homepage-see what other car owners are doing for <a href="http://www.diynetwork.com/diy/pac_ctnt/text/0,2019,DIY_14161_37961,00.html" onClick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false">preventative maintenance</a> this winter, for example.
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.diynetwork.com/diy/autos_boats');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.jonko.com/forum/index.htm');">
+				Jonko Online Auto Repair
+			</a>
+		
+		compiles a substantial number of facts and recommendations about auto repair. The tutorials are short passages about auto repair that cover issues like common leaks and overheating thermostats. There are also opinion and troubleshooting sections and message boards that connect you to a wide community of car owners with similar questions. Although the site's design is rudimentary, these links are clearly visible and easy to distinguish from the ads at the top of the page.
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.jonko.com/forum/index.htm');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.carbibles.com/');">
+				Carbibles.com
+			</a>
+		
+		was created by a car enthusiast seeking to share his knowledge with other drivers. The graphic design on the site is a bit distracting, but the content is helpful. Information is organized into various bibles: the &quot;<a href="http://www.carbibles.com/engineoil_bible.html" onClick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false">Engine Oil Bible</a>,&quot; the &quot;<a href="http://www.carbibles.com/suspension_bible.html" onClick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false">Suspension Bible</a>,&quot; the &quot;<a href="http://www.carbibles.com/transmission_bible.html" onClick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false">Transmission Bible</a>,&quot; and so on. Each section is loaded with text, photographs, charts, and pictures that guide you through the process of car repair and maintenance.
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.carbibles.com/');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.auto-facts.org/DIY-auto-repair.html');">
+				Auto-Facts.org
+			</a>
+		
+		provides a list of illustrated DIY car-repair articles on the bottom of the page. A column on the left of the page offers links to common auto themes offers car-buying tips, information on detailing, automotive news, and much more.
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.auto-facts.org/DIY-auto-repair.html');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.autozone.com/servlet/UiBroker?ForwardPage=/az/repair_info/repair_guide/repair_guide.jsp');">
+				Auto Zone
+			</a>
+		
+		's list of repair guides for various makes and models is by no means complete, but it just might include your car. The guides are thorough, easy-to-follow, and organized by car feature, such as &quot;Body and Trim&quot; and &quot;Suspension and Steering.&quot;&nbsp;
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.autozone.com/servlet/UiBroker?ForwardPage=/az/repair_info/repair_guide/repair_guide.jsp');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.popularmechanics.com/automotive/how_to/archive.html');">
+				Popular Mechanics
+			</a>
+		
+		has a huge archive of how-to guides on car repair and car maintenance. Although there's a wealth of information, the site is not organized by category or topic; if you're willing to spend some time looking for them, you'll find articles with great advice, such as &quot;<a href="http://www.popularmechanics.com/automotive/how_to/4216365.html" onClick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false">How to Repair Your Car Scratch</a>.&quot; <br />
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.popularmechanics.com/automotive/how_to/archive.html');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+
+
+</div>
+
+
+
+                
+
+
+
+
+
+
+
+
+<div class="resource_section">
+
+	<div class="resource_text">
+		<em>For repair manuals ...</em>
+	</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.haynes.com/');">
+				Haynes Online
+			</a>
+		
+		supplies popular DIY car repair manuals. Each manual has step-by-step instructions accompanied by hundreds of photographs. The site is easy to navigate, and you can search for a manual by the specific make and model of your car. The drop-down menu helps narrow your search by brand, year, and model, which makes finding a specific vehicle easy.
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.haynes.com/');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.eautorepair.net/');">
+				eAutoRepair
+			</a>
+		
+		offers do-it-yourself guides and schematics, mechanical repair advice, and factory tips for vehicles made between 1983 and 2005; the site also sells a DVD of vintage repair manuals for cars manufactured between 1960-1982. It costs $9.99 to access the information for a week, $14.99 for a month, and $29.99 for a year. Before you purchase a subscription, though, be sure to read &quot;What's Inside&quot; and &quot;What's Not Inside&quot; so you're not stuck with useless information.
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.eautorepair.net/');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.books4cars.com');">
+				Books4cars.com
+			</a>
+		
+		boasts more than 40,000 automotive books and manuals for American, European and Japanese cars, as well as motorcycles and trucks. If you click on the link to a specific manual, you'll get lots of information on what to expect: page numbers, illustrations, and the models discussed within the manual. The Seattle-based store ships books and manuals anywhere in the world.
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.books4cars.com');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.chiltondiy.com/');">
+				ChiltonDIY.com
+			</a>
+		
+		offers detailed instructions on repairing cars. A one-year online subscription costs $19.95. Click on the &quot;<a href="http://www.chiltondiy.com/pub/mkt/description.aspx" onClick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false">Features and Samples</a>&quot; link on the left side of the page to see examples of the detailed information provided by this service.
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.chiltondiy.com/');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+
+
+</div>
+
+
+
+                
+
+
+
+
+
+
+
+
+<div class="resource_section">
+
+	<div class="resource_text">
+		<em>For advice from the pros ...</em>
+	</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.2carpros.com/index.htm');">
+				2 Car Pros
+			</a>
+		
+		, created by a father-and-son team of mechanics, is a great place to go with car-repair questions. The site is primarily organized in a question-and-answer format; the creators of the site have tried to answer each one of the more than 118,000 questions archived there. The &quot;Site Menu&quot; on the left-hand side of the page makes browsing categories easy; for example, you can search by topic, manufacturer, or symptom.
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.2carpros.com/index.htm');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+
+
+</div>
+
+
+
+                
+
+
+
+
+
+
+
+
+<div class="resource_section">
+
+	<div class="resource_text">
+		<em>Who knew?</em>
+	</div>
+
+
+	
+
+
+
+<div class="dulcinea_link">
+
+	<div class="dulcinea_link_text dulcinea_text">
+		
+			<a class="link_resource_link" href="javascript:openwin('http://www.wisebread.com/remove-car-dents-quickly-and-cheaply');">
+				WiseBread
+			</a>
+		
+		is a blog about personal finance and &quot;frugal living tips.&quot; This particular post shares the blogger's advice for removing car dents. His two tactics for this type of auto repair, one involving dry ice, and the other, a hairdryer and air duster, are both available on video. You can also read his insightful blog entry on <a onClick="window.open(this.href,'','resizable=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes,fullscreen=no,dependent=no,width=700,height=600,status'); return false" href="http://www.wisebread.com/removing-car-scratches-the-revenge-of-the-frugal-body-shop">repairing scratches</a>.
+		<div class="go_to_link_row">
+			<a class="snap_shots go_to_link" href="javascript:openwin('http://www.wisebread.com/remove-car-dents-quickly-and-cheaply');">go to site &raquo;</a>
+		</div>
+	</div>
+	
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+	
+</div>
+
+
+
+							
+							<!-- bof: article_section_nav.jsp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+<!-- START BOTTOM GUIDE NAVIGATION -->
+<div class="article_section_nav">
+	<a id="bottom_nav_back_top" href="#0">Back to Top</a>
+</div>
+<!-- END BOTTOM GUIDE NAVIGATION -->
+	
+<!-- eof: article_section_nav.jsp -->
+
+	
+						</div>
+						
+					</div> <!-- END GUIDE_SECTION -->
+								
+					    
+						<div class="guide_section" >
+						
+											
+						
+							<h2 class="guidesSectionTitle section_title  closed" id="dulcinea_section_title_00">
+							<a name="00" href="/guides/Autos/Car-Repair.pg_00.html#00">
+							Find Auto Repair Shops
+							</a>
+							</h2>
+						
+						
+							<p class="section_intro">OK, so the blow dryer didn't work. You can always send your car to the folks who really know what ... <a href="/guides/Autos/Car-Repair.pg_00.html#00">read more &raquo;</a></p>
+						
+					</div> <!-- END GUIDE_SECTION -->
+								
+					    
+						<div class="guide_section" >
+						
+											
+						
+							<h2 class="guidesSectionTitle section_title  closed" id="dulcinea_section_title_01">
+							<a name="01" href="/guides/Autos/Car-Repair.pg_01.html#01">
+							Auto Maintenance
+							</a>
+							</h2>
+						
+						
+							<p class="section_intro">If you can, it's best to avoid auto repairs in the first place. Maintaining your car through ... <a href="/guides/Autos/Car-Repair.pg_01.html#01">read more &raquo;</a></p>
+						
+					</div> <!-- END GUIDE_SECTION -->
+								
+					    
+						<div class="guide_section" >
+						
+											
+						
+							<h2 class="guidesSectionTitle section_title  closed" id="dulcinea_section_title_02">
+							<a name="02" href="/guides/Autos/Car-Repair.pg_02.html#02">
+							Auto Maintenance and Repair Blogs and Forums
+							</a>
+							</h2>
+						
+						
+							<p class="section_intro">Drivers tend to take their cars very seriously: &quot;Sure, my son graduated medical school today, ... <a href="/guides/Autos/Car-Repair.pg_02.html#02">read more &raquo;</a></p>
+						
+					</div> <!-- END GUIDE_SECTION -->
+								
+					    
+					
+							<script>
+								var totDiv = 10;
+							</script>
+					
+							
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="most_recent_articles" class="article_bottom_block box_style">
+	<h3>Most Recent Guides</h3>
+
+	<div class="most_recent_col">
+		<a href="/guides/Sports/Horse-Racing/Kentucky-Derby.html">
+	    		<img width="127" height="127" src="/docroot/dulcinea/fd_images/guides/Sports/Horse-Racing/Kentucky-Derby/guides/0/newImageHome.jpg" />
+		</a>
+		<a href="/guides/Sports/Horse-Racing/Kentucky-Derby.html">
+	    		The Kentucky Derby: “The Fastest Two Minutes in Sports”
+		</a>
+	</div>
+
+	<div class="most_recent_col">
+		<a href="/guides/Entertainment/Holidays/Kwanzaa.html">
+	    		<img width="127" height="127" src="null" />
+		</a>
+		<a href="/guides/Entertainment/Holidays/Kwanzaa.html">
+	    		The Kwanzaa Holiday: A Cultural Celebration
+		</a>
+	</div>
+
+	<div class="most_recent_col">
+		<a href="/guides/Education/Latin-American-Studies.html">
+	    		<img width="127" height="127" src="/docroot/dulcinea/fd_images/guides/Education/Latin-American-Studies/guides/0/newImageHome.jpg" />
+		</a>
+		<a href="/guides/Education/Latin-American-Studies.html">
+	    		Latin American Studies
+		</a>
+	</div>
+
+	<br class="clearfloat"/>
+	<img width="100" height="1" alt="" src="/docroot/dulcinea/img/home/new_home/spacer.gif"/>
+</div> <!-- recentArticles -->
+
+					
+							
+							
+							<!-- END SECTIONS UNDER QUESTIONS ANSWERED -->
+							<!-- bof: article_detail_nav.jsp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+<!-- START BOTTOM GUIDE NAVIGATION -->
+
+<div id="bottom_navigation">
+	<a id="bottom_nav_read_more" href="/guides.topic__ss_categories_ss_guide-to-web-search.html">Click For More Web Guides</a>
+</div>
+<!-- END BOTTOM GUIDE NAVIGATION -->
+
+
+	
+<!-- eof: article_detail_nav.jsp -->
+	
+						</div>  <!-- article detail -->
+				
+					</div> <!-- article_content -->
+					
+				<div id="footer">
+					
+					
+
+
+
+
+
+<!--<table cellpadding="0" class="dulcinea_footer">-->
+<div class="dulcinea_footer">
+	<div class="dulcinea_footer_text">					
+		<a href="/info/Our-Mission.html">
+			&nbsp;About Us&nbsp;
+		</a>
+		<a href="/info/media-kit.html">
+			&nbsp;Press&nbsp;
+		</a>
+		<a href="/info/newsletter.html">
+			&nbsp;Newsletter Sign-up&nbsp;
+		</a>
+		<a href="/info/terms.html">
+			&nbsp;Terms of Service&nbsp;
+		</a>
+		<a href="/info/privacy-promise.html">
+			&nbsp;Privacy Policy&nbsp;
+		</a>
+		<a href="/employees.html">
+			&nbsp;Our Team&nbsp;
+		</a>
+		<a href="/info/site-tour.html">
+			&nbsp;Site Tour&nbsp;
+		</a>
+		<a href="/info/contact-us.html">
+			&nbsp;Contact Us&nbsp;
+		</a>
+		<a href="/info/Education-Initiative.html">
+			&nbsp;Educators&nbsp;
+		</a>
+		<a href="/store.html">
+			&nbsp;Media Store&nbsp;
+		</a>
+		<hr/>
+	</div>
+	<img id="footer_curves" src="/docroot/dulcinea/img/footer/black_footer_bg.jpg"/>					
+	<div id="copyright_notice">&copy; 2013 Dulcinea Media, Inc.</div>
+	
+
+
+
+
+
+
+
+
+
+<div class="ad">
+
+	
+	<iframe src="http://rcm.amazon.com/e/cm?t=findingdulcin-20&o=1&p=48&l=ur1&category=gift_certificates&banner=1J95RP5SP9MDBFSH63R2&f=ifr" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+
+</div>
+
+</div>
+
+
+
+<!-- Begin 24/7 Media Tracking block -->
+<script type='text/javascript' language='javascript' 
+src='http://oasc05.247realmedia.com/RealMedia/ads/adstream_jx.ads/Dulcinea/analytics/11949360303@x01?section=guides&'>
+</script>
+<!-- End 24/7 Media Tracking block -->
+
+<!-- eof: footer.jsp -->
+
+
+				</div> <!-- footer -->
+				
+				
+				
+			</div> <!-- content -->
+			<div id="right_sidebar" >   
+			<!-- bof: dulcinea_dailyDulcinea.jsp -->
+
+<!-- Tue 7 Aug 07 / The "Daily Dulcinea" panel at the right of every? page. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- right sidebar -->
+<div class="dulcinea_dailyDulcinea">
+	<div class="promo-button" id="findingEducation"><h4><a target="_blank" href="http://findingeducation.com"><img class="how_to_button" id="findingeducation-button" alt="findingEducation" src="/docroot/dulcinea/img/fedu_long_btn.gif"/></a></h4></div>
+	<div class="promo-button" id="encontrandoDulcinea"><h4><a target="_blank" href="http://www.encontrandodulcinea.com"><img class="how_to_button" id="encontrando-button" alt="encontrandoDulcinea" src="/docroot/dulcinea/img/encontrandoButton.jpg"/></a></h4></div>
+	<div class="promo-button" id="SweetSearch"><h4><a target="_blank" href="http://www.sweetsearch.com"><img class="how_to_button" id="SweetSearch-button" alt="SweetSearch" src="/docroot/dulcinea/img/SweetSearchButton.jpg"/></a></h4></div>
+	<div class="sidebar_block" id="other_content">
+		<!--<h3 class="sidebar_header">More Tools</h3>-->
+		<h3 class="sidebar_header"></h3>
+		<!-- SIGN UP FOR FREE -->
+		<ul id="more_tools_list">
+			<!--<li><a style="color:red;" target="_blank" href="http://www.dulcineamedia.com/store/?aznode=287">American-Made Toy Store</a></li>-->
+			<li class="more_tools_list_top"><a target="_blank" href="http://blog.findingdulcinea.com">Read Our Blog</a></li>
+			<li><a href="/info/newsletter.html">Sign Up for Our Newsletter</a></li>
+			<li><a href="/info/contact-us.html">Send Us Feedback</a></li>
+			
+				<li id="rss_item"><img id="rss_icon" src="/docroot/dulcinea/img/rss/rss-icon.jpg"/><a href="/guides.rss">Live Updates (RSS)</a></li>
+			
+			<li id="add_bookmark_link"><a href="#" onclick="window.external.AddFavorite(window.location.href, document.title);">Add to Favorites</a></li>
+			
+		</ul></div> <!-- other_content -->
+
+        <div class="sidebar_ad" align="center">
+		<h3>Advertisement</h3>
+
+	<iframe src="http://rcm.amazon.com/e/cm?t=findingdulcin-20&o=1&p=14&l=ur1&category=school&banner=1QAZTF5S3XMCN844TR02&f=ifr" width="160" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+
+        </div>
+</div> <!-- dulcinea_dailyDulcinea -->
+<!-- google analytics code -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1469577-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<!-- eof: dulcinea_dailyDulcinea.jsp -->
+		
+			</div> <!-- right_sidebar -->
+			</div> <!-- full_width_container -->
+		</div> <!-- dulcinea_guides -->
+		
+		</div> <!-- body_div -->
+		
+ 	<!--<script type="text/javascript" src="http://shots.snap.com/ss/54998c46307d49abc3af26ac1493d921/snap_shots.js"></script>-->
+	</body>
+</html>
+
+<!-- eof: guides.jsp -->

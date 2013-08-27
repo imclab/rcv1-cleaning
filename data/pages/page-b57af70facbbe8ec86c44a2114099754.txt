@@ -1,0 +1,258 @@
+		<script src="/js/jquery-1.2.6.min.js"></script>
+		<script type="text/javascript">
+			function checkJava(){ $.ajax({data:({'java':'true'}), url: '/checkJava.php', type: 'GET', cache: false}); }
+			checkJava();
+		</script>
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#makes_paragraph').hide();
+		//$('#vehicle_types_paragraph').hide();
+		$('#newUsed').change(function() {
+			if($('#newUsed').val() != '') {
+				//$('#vehicle_types_paragraph').slideDown('fast');
+				$('#makes_paragraph').slideDown('fast');
+				get_makes();//get_vehicle_types();
+			} else {
+				//$('#vehicle_types_paragraph').slideUp('fast');
+				$('#makes_paragraph').slideUp('fast');
+				//$('#vehicle_type')[0].selectedIndex = -1;
+				$('#make')[0].selectedIndex = -1;
+				if($('#model').length > 0) {
+					$('#models_paragraph').slideUp('fast');
+					$('#model')[0].selectedIndex = -1;
+				}
+			}
+		});
+		/*
+		$('#vehicle_type').change(function() {
+			if($('#vehicle_type').val() != '') {
+				$('#makes_paragraph').slideDown('fast');
+				get_makes();
+			} else {
+				$('#makes_paragraph').slideUp('fast');
+				if($('#model').length < 1) {
+					$('#models_paragraph').slideUp('fast');
+					$('#model')[0].selectedIndex = -1;
+				}
+			}
+		});
+		*/
+		$('#make').change(function() {
+			if($('#make').val() != '') {
+				if($('#model').length < 1) {
+					var models_div = $('<p>').attr('class', 'text_elements').attr('id', 'models_paragraph').attr('style', 'display:none;').append('Model').append($('<br />'))
+					.append($('<select>').attr('id', 'model').attr('name', 'model').attr('class', 'select'));
+					$('#models').replaceWith(models_div);
+					$('#models_paragraph').slideDown('fast');
+				} else if(!$('#models_paragraph').is(':visible')) {
+					$('#models_paragraph').slideDown('fast');
+				}
+				get_models();
+			} else {
+				$('#models_paragraph').slideUp('fast');
+			}
+		});
+		
+		/*
+		$('#model').live('change', function() {
+			if($('#model').val() != '') {
+				if(!$('#vehicle_types_paragraph').is(':visible')) {
+					$('#vehicle_types_paragraph').slideDown('fast');
+				}	
+			} else {
+				if($('#vehicle_types_paragraph').is(':visible')) {
+					$('#vehicle_types_paragraph').slideUp('fast');
+				}
+			}
+		});
+		*/
+	});
+	
+	function get_models() {
+		var make;
+		if($('#make').val() == '' || $('#make').val() == null) {
+			make = 'all';	
+		} else {
+			make = $('#make').val();
+		}
+		$.ajax({
+			url: 'http://m.holidayautomotive.com/inc/ajax_requests.php',
+			data: ({'function' : 'get_models', 'status' : $('#newUsed').val(),/* 'vehicle_type' : $('#vehicle_type').val(),*/ 'make' : make, 'partner_id' : '999889753'}),
+			dataType: 'json',
+			cache: false,
+			type: 'GET',
+			success: function (j) {
+				for(x = $('#model')[0].length; x >= 0; x --) {
+					$('#model')[0].remove(x);
+				}
+				
+				$('#model')[0].add(new Option('--All--', ''), null);
+				for(x = 0; x < j.length; x ++ ) {
+					$('#model')[0].add(new Option(j[x]['model'], j[x]['model']), null);
+				}
+			}
+		});		
+	}
+	
+	function get_makes() {
+		$.ajax({
+			url: 'http://m.holidayautomotive.com/inc/ajax_requests.php',
+			data: ({'function' : 'get_makes', 'status' : $('#newUsed').val(),/* 'vehicle_type' : $('#vehicle_type').val(),*/ 'partner_id' : '999889753'}),
+			dataType: 'json',
+			cache: false,
+			type: 'GET',
+			success: function (j) {
+				for(x = $('#make')[0].length; x >= 0; x --) {
+					$('#make')[0].remove(x);
+				}
+				
+				$('#make')[0].add(new Option('--All--', ''), null);
+				for(x = 0; x < j.length; x ++ ) {
+					$('#make')[0].add(new Option(j[x]['make'], j[x]['make']), null);
+				}
+			}
+		});		
+	}
+	
+	/*
+	function get_vehicle_types() {
+		$.ajax({
+			url: 'http://m.holidayautomotive.com/inc/ajax_requests.php',
+			data: ({'function' : 'get_vehicle_types', 'status' : $('#newUsed').val(), 'partner_id' : '999889753'}),
+			dataType: 'json',
+			cache: false,
+			type: 'GET',
+			success: function (j) {
+				for(x = $('#vehicle_type')[0].length; x >= 0; x --) {
+					$('#vehicle_type')[0].remove(x);
+				}
+				
+				$('#vehicle_type')[0].add(new Option('--All--', ''), null);
+				for(x = 0; x < j.length; x ++ ) {
+					$('#vehicle_type')[0].add(new Option(j[x]['vehicle_type'], j[x]['vehicle_type']), null);
+				}
+			}
+		});		
+	}
+	*/
+	</script>
+	<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Holiday Automotive</title>
+		<meta http-equiv="Cache-Control" content="no-cache"/>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+		<link rel="shortcut icon" type="image/x-icon" href="http://m.holidayautomotive.com/landing/Holiday_Automotive//favicon.ico">
+		<link href="/landing/Holiday_Automotive/style.css" rel="stylesheet" type="text/css" />
+		<meta name="robots" content="noindex, nofollow" />
+		<link rel="canonical" href="http://www.holidayautomotive.com/" >
+
+	</head>
+	<body onorientationchange="updateOrientation();">
+			
+		<div align="center" id="heading">
+		<a href="http://m.holidayautomotive.com"><img alt="" src="http://m.holidayautomotive.com/images/partners/header-holidayautomotive3459612.png" width="100%"/></a>
+		</div>
+
+				
+		<div id="wrapper">
+ <img alt="" class="headerImg" src="http://m.holidayautomotive.com/landing/Holiday_Automotive//logo.jpg" />
+
+<!-- Text Chat Live Button Below -->
+	<!--  <a href="http://m.holidayautomotive.com/dealer_chat.php?"><img alt="" class="headerImg" src="
+	          http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/textchatlive.png" /></a> -->
+			  
+<div class="indexTopNav">
+	<a href="tel:(866)875-3224" style="text-decoration:none;">
+		<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/salesPhone.png" style="width:auto; height:23px;"  vspace="11" />
+		<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/nav-break.png" style="width:auto; height:23px;"  vspace="11" />
+	</a>
+	<a href="tel:(866)684-3912" style="text-decoration:none;">
+		<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/servicePhone.png"  style="width:auto; height:23px;"  vspace="11" />
+		<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/nav-break.png" style="width:auto; height:23px;"  vspace="11" />
+	</a>
+	<a href="tel:(866)684-3912" style="text-decoration:none;">
+		<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/partsPhone.png"  style="width:auto; height:23px;" vspace="11"/>
+	</a>
+</div>
+
+<div class="touchNav">
+		<a href="http://m.holidayautomotive.com/search.php?newUsed=New" style="margin-top:0px; text-align: left;">
+			<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/Search.png" style="width:30px;" />
+			<span style="font-size:16px; ">Search New</span>
+			<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/Arrow.png" style="float:right; width:30px; height:30px" /></a>
+
+		<a href="http://m.holidayautomotive.com/search.php?newUsed=Used" style="text-align: left;">
+			<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/Search.png" style="width:30px;" />
+			<span style="font-size:16px; ">Search Used</span>
+			<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/Arrow.png" style="float:right; width:30px; height:30px" /></a>
+		
+		<a href="http://m.holidayautomotive.com/map.php?did=3603" style="text-align: left;">
+			<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/Map.png" style="width:30px;" />
+			<span style="font-size:16px;">Map & Directions</span>
+			<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/Arrow.png" style="float:right; width:30px; height:30px" /></a>
+		
+		<a href="http://m.holidayautomotive.com/email_service.php?did=3603" style="text-align: left;">
+			<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/Date.png" style="width:30px; height:26px;" />
+			<span style="font-size:16px;">Schedule Service</span>
+			<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/Arrow.png" style="float:right; width:30px; height:30px" /></a>
+		
+		<a href="http://m.holidayautomotive.com/email_dealer.php?did=3603" style="text-align: left;">
+			<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/email.png" style="width:30px; height:26px;" />
+			<span style="font-size:16px;">Email Us Now!</span>
+			<img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/Arrow.png" style="float:right; width:30px; height:30px" /></a>
+</div>
+
+<table width="100%" border="0" class="tablestyle">
+	<tr>
+		<td align="center" >
+		  <a href="http://m.facebook.com/Holiday.Automotive?ref=nf"><img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/Facebook.png" style="margin-right:15px; width:32px; height:32px" /></a>
+		  <a href="http://mobile.twitter.com/holidayautofdl"><img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/Twitter.png" style="margin-right:15px; width:32px; height:32px" /></a>
+		  <a href="http://m.youtube.com/user/holidayautomotiveWI"><img src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/Youtube.png" style="margin-right:15px; width:90px; height:32px" /></a>
+<!-- Google+ Dynamic code for their icon -->
+		<!--  <a href="//plus.google.com/" rel="publisher" style="text-decoration:none;"><img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+"	style="border:0;width:32px;height:32px;"/></a> -->
+		</td>
+	</tr>
+</table>
+		
+		
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="http://m.holidayautomotive.com/landing/Holiday_Automotive//bookmark/prototype.js"></script>
+<script type="text/javascript" src="http://m.holidayautomotive.com/landing/Holiday_Automotive//bookmark/scriptaculous.js?load=effects,builder"></script>
+
+ 
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon-precomposed" href="http://m.holidayautomotive.com/landing/Holiday_Automotive//bookmark/apple-touch-icon.png" />
+    <script type="text/javascript" src="http://m.holidayautomotive.com/landing/Holiday_Automotive//bookmark/example.js"></script>
+     <script type="text/javascript" src="http://m.holidayautomotive.com/landing/Holiday_Automotive//bookmark/bookmark_bubble.js"></script>
+	<div align="center" class="footer">
+
+<br>
+<span style="text-align: center; position: relative;">
+
+							
+
+  <a href="http://www.holidayautomotive.com/?mobileview=false&rememberoption=true">View Full Site</a> | <!--Full Site Button-->
+  <a href="http://m.holidayautomotive.com/landing/Holiday_Automotive//disclaimer.php"> Disclaimer</a></br><!--Disclaimer Button-->
+  Powered by: <br><img id="footer" src="http://m.holidayautomotive.com/landing/Holiday_Automotive//indexIcons/footer_image.png"></a><!--Footer Image-->
+</span>
+
+<!-- Begining analytics Tag -->
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11306411-6']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<noscript>
+<img src="http://m.holidayautomotive.com/templates/ga.php?utmac=UA-11306411-6&amp;utmn=1587209179&amp;utmr=-&amp;utmp=%2F&amp;guid=ON" width="1" height="1" />
+</noscript>
+<!-- End analytics Tag -->
+
+	</div>

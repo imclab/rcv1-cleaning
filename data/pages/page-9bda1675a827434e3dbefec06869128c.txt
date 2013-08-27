@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Manheim - Buying and Selling Vehicles</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link href="/assets/base-23a0491d4a5905e2479d1f65705b30e0.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="/assets/content-5e94ad873ec24662ce86c5aec33ec0c2.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!--[if IE 6]>
+  <link href="/assets/ie6-2b245eafeb0c0d6c37c08ad2ce524d64.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+<link href="/assets/jquery-ui-eaabe83cc0133fd5f0b1e2a9e89d3c42.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+  <script src="/assets/jquery-1.8.2.min-8280d5a2ff27a8e84d52f6300d94cf08.js" type="text/javascript"></script>
+  <script src="/assets/jquery-ui-1.8.24.custom.min-b47f0c06cd29ee786d21efce084c4f6b.js" type="text/javascript"></script>
+  <script type="text/javascript">jQuery.noConflict();</script>
+  <script src="/assets/prototype-18b87e814b450ccc82dc83caefa731f0.js" type="text/javascript"></script>
+<script src="/assets/application-a63813a2f53484f1b2929222170422f3.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+      enablePowersearchAutocomplete("#keywordSearch", "Vehicle Keyword Search");
+      checkForAccountMessages();
+  });
+</script>
+
+    <script src="/assets/tsedge_instr-min-71f3791eb2e03109c2cc9efbd8274f6a.js" type="text/javascript"></script>
+
+
+  </head>
+
+<body id="productsPage" class="" onload="">
+  <div id="pageFrame">
+    <!-- page header -->
+<div id="pageHeader">
+
+  <!-- banner -->
+  <div id="banner">
+    <h1><a id="mdotcom_logo" href="/?WT.svl=m_hdr_mnav_mlogo"><span class="hiddenText">Manheim</span></a></h1>
+    <div id="utilityNav">
+      <ul>
+        <li id="utilAccountMessages" style="display: none;"><a href="#" onclick="javascript:getAllAccountMessages();"><span>View Account Alerts</span></a></li>
+        <li id="utilWelcome"><strong>Welcome,</strong><a href="/user_profile?WT.svl=m_hdr_gnav_profile"><span id="fullName"></span></a></li>
+        <li id="utilLogin"><a href="/login?WT.svl=m_hdr_gnav_login"><span>Login</span></a></li>
+        <li id="utilLogout"><a href="/logout?WT.svl=m_hdr_gnav_logout"><span>Logout</span></a></li>
+        <li id="utilHelp"><a href="/help/?WT.svl=m_hdr_gnav_help"><span>Help</span></a></li>
+        <li id="utilContact"><a href="/contact/?WT.svl=m_hdr_gnav_contactus"><span>Contact Us</span></a></li>
+      </ul>
+    </div>
+    <div id="vehicleSearch">
+      <form id="searchResult" name="keywordSearchForm" action="/members/powersearch/keywordSearchResults.do">
+        <input type="text" id="keywordSearch" name="searchTerms" value="Vehicle Keyword Search" onfocus="if (this.value == 'Vehicle Keyword Search') {$('keywordSearch').addClassName('on'); this.value='';}" onblur="if (this.value == '') {$('keywordSearch').removeClassName('on'); this.value='Vehicle Keyword Search';}"/>
+        <a href="#" onclick="executeKeywordSearch(true);return false;" class="btnAnchor btnTertiary"><span>Search</span></a>
+      </form>
+      <div class="vehicleNote">ex: ford mustang gt spoiler</div>
+    </div>
+  </div>
+  <!-- /banner -->
+
+  <script type="text/javascript">
+      jQuery("#searchResult #keywordSearch").keypress(function(e) {
+          var code;
+          if (!e) {
+              e = window.event;
+          }
+          if (e.keyCode) {
+             code = e.keyCode;
+          } else if (e.which) {
+             code = e.which;
+          } 
+          if (code == 13) {
+              executeKeywordSearch(true);
+              return false;
+          }
+      });
+  </script>
+
+  <script language="javascript" type="text/javascript">
+    if (typeof window.updateName == 'function' || typeof window.getFullName == 'function') {
+        updateName(getFullName());
+    }
+</script>
+
+  <!-- global nav -->
+  <div id="globalNav">
+    <ul class="nav">
+      <li id="homeTab"><a id="tab_home" href="/?WT.svl=m_hdr_mnav_home"><span>Home</span></a></li>
+      <li id="buyTab"><a id="tab_buy" href="/buy/?WT.svl=m_hdr_mnav_buy"><span>Buy</span></a>
+        <div onmouseover="actMenu('buyTab')" onmouseout="deactMenu('buyTab')">
+          <ul>
+            <li id="sales_schedule_item"><a id="tab_buy_simplified_sales" href="/sales_schedule?WT.svl=m_hdr_mnav_buy_ssp"><span>Sales Schedule</span></a>
+              <ul>
+                <li id="sales_schedule_simev_item">
+                  <a id="tab_buy_simplified_sales_simev" href="/sales_schedule?source=LIVELISTINGS&amp;WT.svl=m_hdr_mnav_buy_simev"><span>Simulcast Everywhere Sales</span></a>
+                </li>
+                <li id="sales_schedule_ove_item">
+                  <a id="tab_buy_simplified_sales_ove" href="/sales_schedule?source=OVE&amp;WT.svl=m_hdr_mnav_buy_oes"><span>OVE Event Sales</span></a>
+                </li>
+                <li id="sales_schedule_sim_item">
+                  <a id="tab_buy_simulcast" href="/secureredirect?product=Simulcast&WT.svl=m_hdr_mnav_buy_sim"><span>Simulcast</span></a>
+                </li>
+                <li id="sales_schedule_pre_sale_item">
+                  <a id="tab_buy_simplified_sales_pre_sale" href="/members/presale/control/?WT.svl=m_hdr_mnav_buy_presale"><span>Pre-Sale Inventory</span></a>
+                </li>
+              </ul>
+            </li>
+            <li><a id="tab_buy_ove" href="/secureredirect?product=OVE&amp;WT.svl=m_hdr_mnav_buy_ovecom" target="_blank"><span>OVE.com</span></a></li>
+            <li><a id="tab_buy_power_search" href="/members/powersearch/?WT.svl=m_hdr_mnav_buy_powersearch"><span>PowerSearch</span></a></li>
+            <li><a id="tab_buy_post_sale" href="/members/marketreport/control/?WT.svl=m_hdr_mnav_buy_postsale"><span>Post-Sale Results</span></a></li>
+            <li><a id="tab_buy_workbook" href="/members/powersearch/workbook.do?WT.svl=m_hdr_mnav_buy_workbook"><span>Workbook</span></a></li>
+            <li><a id="tab_buy_simulcast_watchlist" href="/secureredirect?product=SIMULCAST&amp;url=/simulcast/showMyProxyWatchRunSummaries.do?WT.svl=m_hdr_mnav_buy_simwatch"><span>Simulcast Watch &amp; Proxy List</span></a></li>
+            <li><a id="tab_buy_internet_mmr" href="javascript:NewInternetMMR('', 'm_hdr_mnav_buy_mmr');"><span>Internet MMR</span></a></li>
+            <li><a id="tab_buy_public_auctions" href="/publicauctions/?WT.svl=m_hdr_mnav_buy_publicauctions"><span>Public Auctions</span></a></li>
+            <li><a id="tab_buy_online_arbitration" href="/arbitration?WT.svl=m_hdr_mnav_buy_arbitration"><span>Online Arbitration Claims</span></a></li>
+          </ul>
+        </div>
+      </li>
+      <li id="sellTab"><a id="tab_sell" href="/sell/?WT.svl=m_hdr_mnav_sell"><span>Sell</span></a>
+        <div onmouseover="actMenu('sellTab')" onmouseout="deactMenu('sellTab')">
+          <ul>
+            <li><a id="tab_sell_ove" href="/secureredirect?product=OVE&amp;WT.svl=m_hdr_mnav_sell_ovecom" target="_blank"><span>OVE.com</span></a></li>
+            <li><a id="tab_sell_tools" href="/secureredirect?product=inventory&amp;url=inventory/search/?WT.svl=m_hdr_mnav_sell_sellertools"><span>Seller Tools</span></a>
+              <ul>
+                <li><a id="tab_sell_tools_add" href="/secureredirect?product=inventory&amp;url=listing_wizard/start&amp;WT.svl=m_hdr_mnav_sell_addvehicles"><span>Add Vehicles</span></a></li>
+                <li><a id="tab_sell_tools_inventory_manager" href="/secureredirect?product=inventory&amp;url=inventory/search/&amp;WT.svl=m_hdr_mnav_sell_invmgr"><span>Inventory Manager</span></a></li>
+                <li><a id="tab_sell_tools_view_auction_runs" href="/secureredirect?product=inventory&amp;url=view_runs&amp;WT.svl=m_hdr_mnav_sell_viewauctionruns"><span>View Auction Runs</span></a></li>
+                <li><a id="tab_sell_tools_order_condition_report" href="/secureredirect?product=inventory&amp;url=order_condition_reports/new&amp;WT.svl=m_hdr_mnav_sell_ocr"><span>Order Condition Report</span></a></li>
+                <li><a id="tab_sell_tools_selling_activity" href="/secureredirect?product=ove&amp;url=my_activity/selling_activity/live/&amp;WT.svl=m_hdr_mnav_sell_oveselling" target="_blank"><span>My OVE Selling Activity</span></a></li>
+              </ul>
+            </li>
+            <li><a id="tab_sell_post_sale" href="/members/marketreport/control/?WT.svl=m_hdr_mnav_sell_postsale"><span>Post-Sale Results</span></a></li>
+            <li><a id="tab_sell_simulcast" href="/secureredirect?product=Simulcastseller&amp;WT.svl=m_hdr_mnav_sell_simremote"><span>Simulcast Remote Seller</span></a></li>
+            <li><a id="tab_sell_simev" href="/secureredirect?product=LIVESALE&amp;url=seller_sales&amp;WT.svl=m_hdr_mnav_sell_simevremote"><span>Simulcast Everywhere Remote Seller</span></a></li>
+            <li><a id="tab_sell_internet_mmr" href="javascript:NewInternetMMR('', 'm_hdr_mnav_sell_mmr');"><span>Internet MMR</span></a></li>
+          </ul>
+        </div>
+      </li>
+      <li id="productsTab"><a id="tab_products" href="/products/?WT.svl=m_hdr_mnav_products"><span>Products</span></a>
+        <div onmouseover="actMenu('productsTab')" onmouseout="deactMenu('productsTab')">
+          <ul>
+            <li><a id="tab_products_buying_selling" href="/products/buying_selling?WT.svl=m_hdr_mnav_products_buysell"><span>Buying/Selling Vehicles</span></a></li>
+            <li><a id="tab_products_buying_selling_tools" href="/products/buying_selling_tools?WT.svl=m_hdr_mnav_products_buyselltools"><span>Tools for Buying/Selling</span></a></li>
+            <li><a id="tab_products_the_learning_center" href="/tlc?WT.svl=m_hdr_mnav_products_tlc"><span>The Learning Center</span></a></li>
+            <li><a id="tab_products_financing" href="/products/financing?WT.svl=m_hdr_mnav_products_mafs"><span>Inventory Financing</span></a></li>
+            <li><a id="tab_products_inspections" href="/products/inspections?WT.svl=m_hdr_mnav_products_inspections"><span>Inspections</span></a></li>
+            <li><a id="tab_products_frontline_services" href="/products/frontline_services?WT.svl=m_hdr_mnav_products_frontline"><span>Manheim Frontline</span></a></li>
+            <li><a id="tab_products_consulting" href="/products/consulting?WT.svl=m_hdr_mnav_products_consulting"><span>Consulting</span></a></li>
+            <li><a id="tab_products_specialty_auctions"  href="/products/specialty_auctions?WT.svl=m_hdr_mnav_products_specialty"><span>Specialty Auctions</span></a></li>
+            <li><a id="tab_products_exotic_highline" href="/products/exotic_highline?WT.svl=m_hdr_mnav_products_exotic"><span>Exotic Highline</span></a></li>
+            <li><a id="tab_products_heavy_trucks"  href="/products/heavy_trucks?WT.svl=m_hdr_mnav_products_heavytrucks"><span>Heavy Trucks</span></a></li>
+            <li><a id="tab_products_total_resource_auctions" href="/products/total_resource_auctions?WT.svl=m_hdr_mnav_products_tra"><span>Total Resource Auctions</span></a></li>
+            <li><a id="tab_products_public_auctions" href="/products/public_auctions?WT.svl=m_hdr_mnav_products_publicauctions"><span>Public Auctions</span></a></li>
+          </ul>
+        </div>
+      </li>
+      <li id="locationsTab"><a id="tab_locations" href="/locations/?WT.svl=m_hdr_mnav_locations"><span>Locations</span></a>
+        <div onmouseover="actMenu('locationsTab')" onmouseout="deactMenu('locationsTab')">
+          <ul>
+            <li><a id="tab_locations_north_america" href="/locations/?WT.svl=m_hdr_mnav_locations_namerica"><span>North America</span></a></li>
+            <li><a id="tab_locations_international" href="/international/?WT.svl=m_hdr_mnav_locations_intl"><span>International</span></a></li>
+            <li><a id="tab_locations_marketplace_policies" href="/market_policies/?WT.svl=m_hdr_mnav_locations_mktpolicies"><span>Marketplace Policies</span></a></li>
+          </ul>
+        </div>
+      </li>
+      <li id="myManheimTab"><a id="tab_my_manheim" href="/members/mymanheim/?WT.svl=m_hdr_mnav_mym"><span>My Manheim</span></a>
+        <div onmouseover="actMenu('myManheimTab')" onmouseout="deactMenu('myManheimTab')">
+          <ul>
+            <li><a id="tab_my_manheim_workbook" href="/members/powersearch/workbook.do?WT.svl=m_hdr_mnav_mym_workbook"><span>Workbook</span></a></li>
+            <li><a id="tab_my_manheim_simulcast_watchlist" href="/secureredirect?product=SIMULCAST&amp;url=/simulcast/showMyProxyWatchRunSummaries.do&amp;WT.svl=m_hdr_mnav_mym_simwatch"><span>Simulcast Watch &amp; Proxy List</span></a></li>
+            <li><a id="tab_my_manheim_my_account" href="/secureredirect?product=myaccount&amp;WT.svl=m_hdr_mnav_mym_myaccount"><span>myAccount</span></a></li>
+            <li id="my_purchases_list_item"><a id="tab_my_manheim_my_purchases" href="/settlement/my_purchases?WT.svl=m_hdr_mnav_mym_mypurchases"><span>My Purchases</span></a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- /global nav -->
+
+</div>
+<!-- /page header -->
+
+<!-- print header -->
+<img alt="" class="printOnly" id="printHeader" src="/assets/header-printable-bg-302e585098278b574f8e7e2331746e29.gif" />
+<!-- /print header -->
+
+
+    <div id="pageBody">
+      <div id="contentWrapper">
+        <div id="breadcrumb"><a href="/">Home</a><a href="/products/index">Products</a><span>Buying and Selling Vehicles</span></div>
+
+
+
+
+
+
+<h2 id='pageTitle'>Buying and Selling Vehicles</h2>
+
+<div id="pageUtils">
+  <ul>
+    
+    <li><a href="javascript:window.print();" class="print">Print</a></li>
+  </ul>
+</div>
+
+
+
+<div class="content"><div class="contentTopModule">
+	<div class="colOne">
+		<h3><span>The world's best wholesale marketplace</span></h3>
+		<p>When you buy and sell online or in the lanes with Manheim, you get more than the world's best wholesale marketplace.  You get a name you know and trust behind every transaction.</p>
+	</div>
+	<div class="colTwo advert"> <img alt="Buyingselling" src="/content_images/headers/buyingselling.jpg" /> </div>
+	<div class="clear">&nbsp;</div>
+</div>
+<div class="tabbedContentWrapper">
+	<ul id="tabs" class="subsection_tabs">
+		<li class="first"><a href="#auctionLane" class="auctionLane"><span>Auction Lane Sales</span></a></li>
+		<li><a href="#wholesaleMarket" class="wholesaleMarket"><span>Online Wholesale Marketplace</span></a></li>
+		<li><a href="#simulcast" class="simulcast"><span>Simulcast</span></a></li>
+        <li><a href="#simulcastEverwhere" class="simulcastEverwhere"><span>Simulcast Everywhere</span></a></li>
+		<li><a href="#ove" class="ove"><span>OVE.com</span></a></li>
+	</ul>
+	
+
+    
+    <!-- Auction Lane Sales -->
+	<div id="auctionLane" class="tabbedContent">
+		<div class="content"><h3>Auction Lane Sales</h3><img alt="Auction-lane-sales" class="floatR" src="/content_images/content/auction-lane-sales.png" />
+		<p>Auctions bring qualified buyers and motivated sellers together in an open, live, competitive environment. Professional auctioneers lead the bidding process. On average a vehicle is sold about every 30 seconds in each lane. </p>
+		<p>In the wholesale automobile remarketing industry, Manheim's 60 years of experience has established the auction standard across our 69 operating locations. </p>
+		<p>Recent enhancements like the Super Seller Program and Green Sales continue to make the auction lanes the most active part of the used car business. </p>
+		<h4>Buyer Benefits</h4>
+		<ul>
+			<li><strong>Wide Selection of Vehicles</strong>: At Manheim auctions, buyers are able to select from the largest selection of vehicles in the wholesale market.</li>
+			<li><strong>Manheim's Recognized Integrity</strong>: Information technology and a strong code of ethics minimize odometer rollbacks &amp; title laundering. Standards for frame damage and condition reports are more consistent industry-wide.</li>
+			<li><strong>Manheim-Facilitated Transactions</strong>: Professional arbitration is available if needed, so you can buy with confidence.</li>
+			<li><strong>Title Processing Convenience</strong></li>
+		</ul>
+		<h4>Seller Benefits</h4>
+		<ul>
+			<li><strong>Critical Mass of Buyers</strong>: Interested buyers = more bids = higher sales prices.</li>
+			<li><strong>Affordable Participation</strong>: Manheim's auction fees, as a percent of vehicle selling prices, are extremely low.</li>
+			<li><strong>Reconditioning Value</strong>: Manheim's reconditioning services enable sellers to maximize total return on investment.</li>
+			<li><strong>Fast Source of Cash</strong>: Consignors can convert inventory into cash quickly.</li>
+			<li><strong>Volume Sales</strong>: Sellers can move large volumes of similar vehicles without depressing prices.</li>
+			<li><strong>Guaranteed Payment</strong>: Manheim-facilitated transactions provide the security of payment.</li>
+		</ul></div>		
+	</div>       
+
+	<!-- Online Wholesale Marketplace -->
+	<div id="wholesaleMarket" class="tabbedContent">
+		<div class="content"><img alt="Manheimdotcom" class="floatR" src="/content_images/content/manheimDotCom.png" /><h3>Online Wholesale Marketplace</h3>
+		<p>Manheim's online solutions connect used vehicle buyers and sellers around the globe to the largest, most comprehensive physical and virtual wholesale marketplace for vehicles.</p>
+		<p>Customers include both used vehicle dealers and national vehicle remarketers. Our online tools help dealers research, buy, and sell used vehicles via Manheim.com, Manheim Simulcast and <a href="http://www.ove.com" target="_blank">OVE.com</a>. Our tools offer dealers access to the largest wholesale inventory, online and offline.</p>
+		<p>Manheim's website, Manheim.com, is a dealer's online source for the tools and information needed to quickly and easily locate vehicles, assess values, bid and buy vehicles online, and manage your Manheim account.</p>
+		<p>Through Manheim.com, users can access:</p>
+		<ul>
+			<li><a href="https://www.manheim.com/members/powersearch/?WT.svl=m_prod_buysell_owm_ps" target="_blank">PowerSearch</a>: The starting point to find vehicles and their values.</li>
+			<li><a href="https://www.manheim.com/sales_schedule?WT.svl=m_prod_buysell_owm_ss" target="_blank">Auction sales schedules</a>, including Specialty and Highline vehicles.</li><img alt="Mymanheim" class="floatR" src="/content_images/content/myManheim.png" />
+			<li><a href="https://inventory.manheim.com/order_condition_reports/new?WT.svl=m_prod_buysell_owm_cr" target="_blank">Condition Reports</a></li>
+			<li><a href="https://www.manheim.com/locations/?WT.svl=m_prod_buysell_owm_loc" target="_blank">Manheim location information</a></li>
+			<li><a href="https://simulcast.manheim.com/simulcast/showBuyerSales.do?WT.svl=m_prod_buysell_owm_sim" target="_blank">Manheim Simulcast</a></li>
+			<li><a href="https://www2.manheim.com/sales_schedule?source=LIVELISTINGS&WT.svl=m_prod_buysell_owm_simev" target="_blank">Simulcast Everywhere</a></li>
+			<li><a href="http://www.ove.com?WT.svl=m_prod_buysell_owm_ove" target="_blank">OVE.com</a></li>
+			<li><!--<a href="https://www.manheim.com/members/internetmmr/?WT.svl=m_prod_buysell_owm_mmr" target="_blank">--><a href="javascript:wtClickTrack('/buy/internetmmr/launch','Manheim%20-%20Buy%20-%20Open%20Internet%20MMR','MBP:LaunchMMR','launch_mmr');NewInternetMMR();">Manheim Market Report</a> (MMR)</li>
+			<li><a href="https://www.manheim.com/members/myaccount/?WT.svl=m_prod_buysell_owm_ma" target="_blank">myAccount</a></li>
+			<li><a href="https://www.manheim.com/members/marketreport/control/?WT.svl=m_prod_buysell_owm_psr" target="_blank">Post-sale results</a></li>
+		</ul>
+		<p><em><a href="https://www2.manheim.com/signup/step_one?WT.svl=m_prod_buysell_owm_reg&language_selected=en" target="_blank">Registration</a> is required to access the resources available on Manheim.com.</em></p>
+		<h4>Dealer Benefits</h4>
+		<ul>
+		  <li>Locate the vehicle you need quickly and easily.</li>
+		  <li>Assess condition/view condition reports.</li>
+		  <li>Research vehicle values through Manheim Market Report.</li>
+		  <li>Buy or sell vehicles conveniently from your desktop through Simulcast and OVE.com.</li>
+		  <li>View purchase/selling history and make online payments through myAccount.</li>
+		</ul></div>		
+	</div>
+
+  <!-- Simulcast -->
+	<div id="simulcast" class="tabbedContent">
+		<div class="content"><h3>Simulcast</h3><img alt="Simulcast application" class="floatR" src="/content_images/content/simulcast.jpg" />
+		<p>Accessible via Manheim.com, Manheim Simulcast enables customers to buy and sell online in live auction sales via real-time audio and video. For buyers, it's as if you're standing in the auction lanes. For sellers using the remote seller tool, it's as if you're "repping" on the block. </p>
+		<p>Manheim Simulcast provides customers with the world's largest online inventory for live auction sales. </p>
+		<h4>Dealer Benefits</h4>
+		<ul>
+			<li><strong>Peace of Mind</strong>: Manheim stands behind every transaction, so you can buy with confidence. Industry-leading electronic condition reports and optional post-sale inspections are also available.</li>
+			<li><strong>Work Smarter</strong>: Since you don't need to travel to the auction, you'll have more time to sell on your own lot.</li>
+			<li><strong>Unmatched Inventory Selection</strong>: Access to over 110,000 vehicles and 750 sales weekly at Manheim's North American locations.</li>
+			<li><strong>More Bidders/Buyers</strong>: Expand your reach and expose your inventory to a national audience.</li>
+			<li><strong>Remote Seller</strong>: Representing your vehicles online helps reduce If-Bids and No Sales and increases profits.</li>
+		</ul>
+		<p>Begin buying vehicles on <a href="/sales_schedule?WT.svl=m_bs_cms_sim_lk">Simulcast</a>.</p></div>		
+	</div>
+
+	<!-- Simulcast Everywhere -->
+	<div id="simulcastEverwhere" class="tabbedContent">
+		<div class="content"><h3>Simulcast Everywhere</h3><img alt="mySimulcastEverywhere logo" class="floatR" src="/content_images/content/mySimulcastEverywhere_4color_Horizontal192x64.jpg" />
+    <p><em>More inventory. More ways to close the deal.</em></p>
+	  <p>Get access to real-time auctions&mdash;anywhere&mdash;with Simulcast Everywhere. Our online auction sales platform lets franchised and independent dealers buy and sell off-site vehicles with a live auctioneer.</p>
+      <p>Get started buying vehicles on <a href="https://www2.manheim.com/sales_schedule?source=LIVELISTINGS&WT.svl=m_prod_buysell_simev_simev">Simulcast Everywhere</a>.</p>
+              <br />
+	  <h4>Seller Benefits</h4>
+      <ul>
+        <li><strong>Reduced costs</strong>: List from anywhere with no transport fees.</li>
+        <li><strong>Decreased selling times</strong>: Auctions complete in 30-60 seconds.</li>
+        <li><strong>Increased exposure</strong>: Go beyond the lanes and OVE.com.</li>
+      </ul>
+      <br />
+      <h4>Buyer Benefits</h4>
+      <ul>
+        <li><strong>Increased inventory</strong>: A broader pool of vehicles.</li>
+        <li><strong>Increased convenience</strong>: Bid from anywhere.</li>
+        <li><strong>Greater transparency</strong>: Guaranteed inspections from InSight or certified partners.</li>
+    </ul>
+    <p>Have questions? <a href="http://mymanheimeverywhere.com/?WT.mc_id=M-SIMEV" target="_blank">Learn more about Simulcast Everywhere here</a>.</p>
+      <div class="clear">&nbsp;</div></div>		
+  </div>
+
+  <!-- OVE.com -->
+	<div id="ove" class="tabbedContent">
+		<div class="content"><h3>OVE.com</h3><img alt="Ove" class="floatR" src="/content_images/content/ove.png" />
+		<p>OVE.com is Manheim's 24/7 online wholesale vehicle marketplace with the largest selection of inventory in the industry.  Sellers can remarket  inventory quickly and easily, and buyers save on time and travel expenses. </p>
+		<p>Buy now, or bid and make offers on the largest nationwide selection of wholesale inventory available. Physical auction locations across the U.S. facilitate each transaction on the site, guaranteeing titles and money, and providing arbitration if needed.  OVE.com is also the only online wholesale site in the industry with a standing "no questions asked" online buy back policy. </p>
+		<h4>Dealer Benefits</h4>
+		<ul>
+			<li><strong>Selection</strong>: More than 20,000 wholesale vehicles available online.</li>
+			<li><strong>Confidence</strong>: National buy back policy on qualifying purchases and guaranteed title transfers.   All transactions facilitated by brick-and-mortar auctions located across the US, meaning that support and services are never far away.</li>
+			<li><strong>Virtual Backlot</strong>: Our retail view screen allows you to show customers vehicles for sale online without showing them a price.</li>
+			<li><strong>Convenience</strong>: Buy and sell 24/7 using your Manheim.com ID and password.</li>
+			<li><strong>Save on Travel</strong>: Have more time on your lot to close deals.</li>
+		</ul>
+		<p>Buy vehicles now or 24/7 on <a href="/secureredirect?product=OVE&WT.svl=m_bs_cms_ove_lk">OVE.com</a>.</p>
+		<div class="clear">&nbsp;</div></div>		
+  </div>
+
+	
+
+	<div class="tabbedContentFooter">&nbsp;</div>
+	<script language="javascript" type="text/javascript">new Control.Tabs('tabs');</script>
+</div>
+
+</div>
+      </div>
+    </div>
+  </div>
+
+  
+
+<!-- footer -->
+<div id="pageFooter">
+  <div>
+    <div class="footer-social">
+      <a class="footer-facebook-icon" href="http://www.facebook.com/Manheim?WT.svl=m_footer_social-fb" target="_blank"></a>
+      <a class="footer-twitter-icon" href="https://twitter.com/Manheim_US?WT.svl=m_footer_social-tw" target="_blank"></a>
+      <a class="footer-youtube-icon" href="http://www.youtube.com/user/manheimjb?WT.svl=m_footer_social-yt" target="_blank"></a>
+    </div>
+    <p class="links">
+      <a href="/about/?WT.svl=m_footer_about">About Manheim</a>|
+      <a href="/products/buying_selling/?WT.svl=m_footer_prodsvcs">Products &amp; Services</a>|
+      <a href="/products/buying_selling_tools/?WT.svl=m_footer_ mob#mobile,pageFrame">Mobile Apps</a>|
+      <a href="http://jobs.manheim.com/?WT.svl=m_footer_careers" target="_blank">Careers</a>|
+      <a href="/international/?WT.svl=m_footer_intl">International</a>|
+      <a href="/links/?WT.svl=m_footer_partners">Partners</a>|
+      <a href="/tlc?WT.svl=m_footer_tlc">The Learning Center</a>|
+      <a href="/contact/?WT.svl=m_footer_cont">Contact Us</a>|
+      <a href="#" target="_new" onclick="oo_feedback.show();return false;" id="modal_feedback"><img src="/assets/oo_icon.gif" border="0" title="Feedback"> Feedback</a>
+
+    </p>
+    <p class="contact"><a href="mailto:info@manheim.com" class="emaillink">Email</a> or call Manheim Customer Care at 1-866-MANHEIM (626-4346), Mon-Sat 8a-12m and Sun 6p-10p ET</p>
+     <img align="right" alt="" class="printOnly" id="printFooter" src="/assets/page-frame-bottom-printable-bg-cfe50a94529ca411a44dada931c767ee.gif" />
+  </div>
+  <div class="footer-terms">
+    <p>By using this site, you accept the <a href="/agreement?WT.svl=m_footer_policy-visit">Visitor Agreement</a>, <a href="/privacy?WT.svl=m_footer_policy-priv">Privacy Policy</a>, and <a href="/market_policies/?WT.svl=m_footer_policy-mktplpol">Marketplace Policies</a>.</p>
+
+      <span class="copyright">&copy;2013&nbsp;Manheim. All rights reserved.</span>
+  </div>
+</div>
+<!-- /footer -->
+
+  <!-- tracking tag - DO NOT REMOVE -->
+      <script src="/assets/webtrends_dcs-ba9ced903eda6c97c1226d9601c141ad.js" type="text/javascript"></script>
+    <script src="/assets/session_id-ad59da58321923a7d8573334df4c9253.js" type="text/javascript"></script>
+
+    <script type="text/javascript" charset="utf-8">
+      injectSessionId();
+      var DCS={};
+      var WT={};
+      var DCSext={};
+      var dcsInit=new DcsInit("dcsyg3n5l00000oiq766izfwi_2g6f");
+    </script>
+
+    <script src="/assets/webtrends_functions-78e38b148cb9358787ca6c195aa25ae2.js" type="text/javascript"></script>
+
+    <noscript>
+      <img style="position: absolute; top:-500px;" name="DCSIMG" id="DCSIMG" src="https://statse.webtrendslive.com/dcsyg3n5l00000oiq766izfwi_2g6f/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.0.2" />
+    </noscript>
+
+  <!-- tracking -->
+
+<!--
+  code-revision: 090fdcae1f6fa41c5701bd5093e76c06221209fe
+  content-revision: 85540
+  environment: Live
+  server: man-dc3prod-web02.ove.local
+  language: en
+  search-engine: DEFAULT
+  -->
+    <!-- Start of DoubleClick Floodlight Tag: Please do not remove -->
+<script type="text/javascript">
+  function writeAdTag() {
+    var axel = Math.random() + "";
+    var a = axel * 10000000000000;
+    var dc_id = '262';
+    if (dc_id == '-1') {
+      var paths = new Array();
+      paths['/members/marketreport']='381';
+paths['/members/myaccount']='854';
+paths['/members/mymanheim']='812';
+paths['/members/powersearch']='265';
+paths['/members/powersearch/workbook.do']='621';
+paths['/members/presale']='341';
+paths['/publicauctions']='407';
+paths['/simulcast']='480';
+
+      dc_id = paths[window.location.pathname];
+      if (dc_id == null) {
+        for (var key in paths) {
+          if (window.location.pathname.indexOf(key) == 0) {
+            dc_id = paths[key];
+            break;
+          }
+        }
+      }
+    }
+ 
+    if (dc_id != null && dc_id != '-1') {
+      document.write('<iframe src="https://fls.doubleclick.net/activityi;src=2622225;type=manhe403;cat=manhe' + dc_id + ';ord=' + a + '?" width="1" height="1" frameborder="0"></iframe>');
+    }
+  }
+
+  jQuery(window).load(writeAdTag());
+</script>
+<noscript>
+  <iframe src="https://fls.doubleclick.net/activityi;src=2622225;type=manhe403;cat=manhe262;ord=1?" width="1" height="1" frameborder="0"></iframe>
+</noscript>
+<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+
+  <!-- BEGIN: OnlineOpinion v5.5.4
+* The following code is Copyright 1998-2012 Opinionlab, Inc.
+* All rights reserved. Unauthorized use is prohibited.
+* This product and other products of OpinionLab, Inc. are protected by U.S. Patent No. US 6606581, 6421724, 6785717 B1 and other patents pending.
+* http://www.opinionlab.com
+-->
+
+<!-- MAIN OL ENGINE -->
+<script language="javascript" type="text/javascript" charset="windows-1252" src="/onlineopinionV5/oo_engine.min.js"></script>
+<!-- FEEDBACK CONFIGURATION -->
+<script language="javascript" type="text/javascript" charset="windows-1252" src="/onlineopinionV5/oo_conf.js"></script>
+<noscript></noscript>
+<!-- END: OnlineOpinion v5.5.4 -->
+
+
+
+</body>
+</html>

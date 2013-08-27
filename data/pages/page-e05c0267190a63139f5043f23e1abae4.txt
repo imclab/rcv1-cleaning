@@ -1,0 +1,1470 @@
+
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xml:lang="en" lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+		<head itemscope itemtype="http://schema.org/Product" itemid="clientad">
+			
+				<script src="/js/MobileRedirection.js" type="text/javascript"></script>
+				
+				
+				<script type="text/javascript"> <!--
+					var IsRequestFromMobile = QueryStringIsRequestFromMobile("DTFS");                        
+					if (IsRequestFromMobile)
+						//this shd mean that "continue on this page break or continue statement will be used here"
+						//User is from mobile but want to see original version of this site.
+						{}
+					else {
+						var IsThisMobile = IsMobileRedirection();
+						if (IsThisMobile)
+							//this means here that this is treated as a first time mobile device request.
+							window.location = "http://m.franchise.com"+"/automotive-franchises.cfm"+"?";
+						else
+							//request is from PC browser, do not re direct
+							{}
+					} //-->
+				</script>
+				
+            <!-- socialize.js script should only be included once -->
+            
+
+<script type="text/javascript" src="http://cdn.gigya.com/js/socialize.js?apiKey=2_UnuagKwdsY2N-QAU2XrLvGT0gTkkjL6eUr-0rJTz1cy16iDqwplEffSHIkBKnlQI">
+	{
+		autoLogin: true //if user is logged into FB when visits site again will automatically be logged in
+		//to get above to work, need to also enable automatic session renewal for FB in the gigya admin
+		//FB Configuration screen (where you enter the FB app ID and Secret Key) - this option is only
+		//available after a cname has been configured for the site
+		//sessionExpiration:0 // expire the user login session when the browser closes
+		,connectWithoutLoginBehavior: 'alwaysLogin' //needs to be set to alwaysLogin to get gigya plugins to log the user into site
+		//,connectWithoutLoginBehavior: 'loginExistingUser'
+		,enabledProviders: 'facebook,twitter,linkedin' //',google,yahoo,messenger,foursquare' //default ist of providers for all plugins
+	}
+</script>
+<script type="text/javascript" src="/gigya/js/jquery-1.6.min.js"></script>	
+<script type="text/javascript" src="/gigya/js/json2.js"></script> 
+<script type="text/javascript" src="/gigya/js/gigya.js"></script>
+<script type="text/javascript" src="/gigya/js/jquery.cookie.js"></script>
+
+
+
+<style type="text/css" media="all">
+//for signin drop down in header
+#container-login {
+    width:780px;
+    margin:0 auto;
+    position: relative;
+}
+
+#content {
+    width:520px;
+    min-height:500px;
+}
+#topnav a:link, a:visited {
+    color:#27b;
+    text-decoration:none;
+}
+#topnav a:hover {
+    text-decoration:underline;
+}
+#topnav a img {
+    border-width:0;
+}
+#topnav {
+    padding:10px 0px 12px;
+    font-size:11px;
+    line-height:23px;
+    text-align:right;
+}
+#topnav a.customForm {
+    /*background:#88bbd4;*/
+    padding:4px 0 6px 6px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#000;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    *background:transparent url("images/signin-nav-bg-ie.png") no-repeat 0 0;
+    *padding:4px 12px 6px;
+}
+#topnav a.customForm:hover {
+    background:#59B;
+    *background:transparent url("images/signin-nav-bg-hover-ie.png") no-repeat 0 0;
+    *padding:4px 12px 6px;
+}
+#topnav a.customForm, #topnav a.customForm:hover {
+    *background-position:0 3px!important;
+}
+
+a.customForm {
+    position:relative;
+    /*margin-left:3px;*/
+}
+a.customForm span {
+   // background-image:url("images/toggle_down_light.png");
+    background-repeat:no-repeat;
+    background-position:100% 50%;
+    padding:4px 16px 6px 0;
+}
+#topnav a.menu-open {
+    background:#ddeef6!important;
+    color:#666!important;
+    outline:none;
+}
+#small_signup {
+    display:inline;
+    float:none;
+    line-height:23px;
+    margin:25px 0 0;
+    width:170px;
+}
+a.customForm.menu-open span {
+    //background-image:url("images/toggle_up_dark.png");
+    color:#789;
+}
+
+#signin_menu {
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-bottomleft:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+	border-radius:5px;
+    display:none;
+    background-color:#ddeef6;
+    position:absolute;
+    /*width:210px;*/
+    z-index:100;
+    border:1px transparent;
+    text-align:left;
+    padding:12px;
+    top: 48.5px;
+    right: 125px;
+    margin-top:20px;
+    margin-right: 0px;
+    *margin-right: -1px;
+    color:#789;
+    font-size:11px;
+}
+
+#signin_menu input[type=text], #signin_menu input[type=password] {
+    display:block;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border:1px solid #ACE;
+    font-size:13px;
+    margin:0 0 5px;
+    padding:5px;
+    width:203px;
+}
+#signin_menu p {
+    margin:0;
+}
+#signin_menu a {
+    color:#6AC;
+}
+#signin_menu label {
+    font-weight:normal;
+}
+#signin_menu p.remember {
+    padding:10px 0;
+}
+#signin_menu p.forgot, #signin_menu p.complete {
+    clear:both;
+    margin:5px 0;
+}
+#signin_menu p a {
+    color:#27B!important;
+}
+#signin_submit {
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    background:#384764 repeat-x scroll 0 0;
+    border:1px solid #384764;
+    color:#fff;
+    /*text-shadow:0 -1px 0 #39d;*/
+    padding:4px 10px 5px;
+    font-size:11px;
+    margin:0 5px 0 0;
+    font-weight:bold;
+}
+#signin_submit::-moz-focus-inner {
+padding:0;
+border:0;
+}
+#signin_submit:hover, #signin_submit:focus {
+    background-position:0 -5px;
+    cursor:pointer;
+}
+
+
+/* begin css tabs on adpage */
+/*10/16/12 - changed way tabs on adpage work so some of this css is obsolete.  Need to clean up.*/
+	ul#gigya-comments { /* general settings */
+	text-align: center; /* set to left, right or center */
+	margin: 1em 0 1em 0; /* set margins as desired */
+	font: bold 11px verdana, arial, sans-serif; /* set font as desired */
+	border-bottom: 1px solid #595959; /* set border COLOR as desired */
+	list-style-type: none;
+	padding: 3px 10px 3px 10px; /* THIRD number must change with respect to padding-top (X) below */
+	}
+	
+	ul#gigya-comments li { /* do not change */
+	display: inline;
+	
+	}
+	
+	li.tab1, li.tab2 { /* settings for selected tab */
+	border-bottom: 1px solid #fff; /* set border color to page background color */
+	background-color: #fff; /* set background color to match above border color */
+	
+	}
+	
+	#tab1 li.tab1 p, #tab2 li.tab2 p { /* settings for selected tab link */
+	background-color: #fff; /* set selected tab background color as desired */
+	color: #EC9700; /* set selected tab link color as desired */
+	position: relative;
+	top: 1px;
+	padding-top: 4px; /* must change with respect to padding (X) above and below */
+	}
+	
+	ul#gigya-comments li p { /* settings for all tab links */
+	padding: 3px 4px; /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above */
+	border: 1px solid #595959; /* set border COLOR as desired; usually matches border color specified in #tabnav */
+	background-color: #F6F6F6; /* set unselected tab background color as desired */
+	color: #666; /* set unselected tab link color as desired */
+	margin-right: 0px; /* set additional spacing between tabs as desired */
+	text-decoration: none;
+	border-bottom: none;
+	width:250px;
+	cursor:pointer;
+	}
+	
+	ul#gigya-comments a:hover { /* settings for hover effect */
+	background: #fff; /* set desired hover color */
+	}
+	
+	ul#gigya-comments li p.gigya-tab-selected {
+		background-color: #fff;
+		border-bottom:thin solid #fff;
+		color:#F7921E;
+	}
+	
+	ul#gigya-comments li p.gigya-tab-notselected {
+		background-color: green;
+	}		
+	
+	
+	/*add border around rating on adpage*/
+	#ratingDiv {
+		border: thin solid #CFCFCF;
+		padding:10px;
+	}
+/* end css tabs on adpage */
+/*gigya reg form*/
+#gigyaRegformwrapper #gigya-registration-form label {
+	display:block;
+	font-size:0.6em;
+	font-weight:bold;
+	margin:0px 0px 0 0px;
+	padding:0;
+	text-align:right;
+	width:140px;
+	color:#666;
+}
+#gigya-registration-form select {
+	width:170px;
+	height:23px;
+}	
+#gigya-registration-form select, #gigya-registration-form input {
+	color:#666;
+	float:left;
+	margin-top:10px;
+}	
+
+.gigyaFormSubButton:hover {
+	color:#d97901;
+}
+
+/*gigya share bar*/
+.gigyashare {
+	margin:0 0 15px 0;
+	width:575px;
+}
+
+/*adpage styles*/
+#gigya-adpagetopwrapper {
+	width:570px;
+	margin:0;
+}
+
+#gigya-adpagelogo, #gigya-adpagephoto {
+	width:49%;
+	text-align:center;
+	float:left;
+	margin:0;
+}
+
+.gigya-center {
+	margin: 0 auto;
+}
+
+#gigya-adpage-infoiconswrapper {
+	font-size:11px;
+	margin:10px;
+}
+
+#gigya-adpage-cashreqwrapper {
+	float:left;
+	width:180px;
+}
+
+#gigya-adpage-invrangewrapper {
+	float:left;
+	width:190px;
+}
+
+#gigya-adpage-bustypewrapper {
+	float:left;
+	width:170px;
+}
+
+.gigya-floatleft {
+	float:left;
+}
+
+.gigya-adpageinfoicons-text {
+	margin-top:8px;
+	color:#2F3D5A;
+}
+
+.gigya-adpagebold {
+	font-weight:bold;
+}
+
+#gigya-adpagemiddlewrapper {
+	width:565px;
+	border:6px solid #ededed;
+	margin: 10px auto;
+	background-color:#ededed;
+}
+
+#gigya-adpagecontent {
+	width:100%;
+	border:1px solid #DEDEDE;
+	margin:0 auto;
+	background-color:#fff;
+}
+
+.gigya-adpageHR {
+	background-color:#dedede;
+	color:#dedede;
+}
+
+#gigya-adpagecontentdetails {
+	text-align:left;
+	line-height:25px;
+}
+
+.gigya-adpagecontent-column {
+	font-size:9px;
+	width:180px;
+	float:left;
+}
+.gigya-adpagecontent-datapoint {
+	color:#2F3D5A;
+	font-weight:bold;
+	padding-right:3px;
+}
+#gigya-adpageform {
+	width:100%;
+	border:1px solid #DEDEDE;
+	margin:0 auto;
+	background-color:#fff;
+	margin-top:5px;
+}
+
+/*for home page activity feed
+#ActivityFeedDiv_EF_items {
+	width:150px;
+}
+#ActivityFeedDiv_EF_items a {
+	font-size:10px;
+	line-height:0px;	
+}
+#ActivityFeedDiv_EF_items img {
+	font-size:10px;
+	line-height:0px;
+	width:35px;
+	height:35px;
+}*/
+</style>
+
+
+	
+                <title>Automobile Franchises: Auto Repair, Car Parts &amp; Car Wash Franchises</title>    
+            
+			<meta name="description" content="Buy a Franchise in the car wash franchise or auto franchise industry. Search Franchise.com today to get started." />
+			<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+			<meta content="MSHTML 6.00.6000.16414" name="GENERATOR" />		
+			<meta name="google-site-verification" content="pYAv6S7bRbsOyY5Yat2p-KFwDNQMyDEnS7zY_6wI8sY" />	
+			<link href="https://plus.google.com/116062665647057399126" rel="publisher">	
+			
+			
+			
+			<meta property="og:title" content="Automobile Franchises: Auto Repair, Car Parts &amp; Car Wash Franchises" />
+			<meta property="og:type" content="organization" />
+			<!--<meta property="og:type" content="product" />-->
+			<meta property="og:image" content="http://www.franchise.com/franchise-company-logo.gif" />
+			<!--<meta property="og:image" content="http://www.franchise.com/images/video-series-buyers-guide.gif" />-->
+
+			<meta property="og:description" content="Buy a Franchise in the car wash franchise or auto franchise industry. Search Franchise.com today to get started." > 
+			<meta property="og:url" content="http://www.franchise.com/automotive-franchises.cfm" >
+
+			<!--<meta property="fb:app_id" content="430356266974805" />-->
+			<meta property="fb:admins" content="1568074660" />
+			<!--<meta property="og:locale" content="en_US" />-->
+			<!--<meta property="og:video" content="">-->
+			<meta property="og:site_name" content="Franchise.com">
+			<!--<meta property="og:video:type" content="">-->			
+
+			
+
+			<link href="http://www.franchise.com" rel="top" />
+			<link href="http://www.franchise.com/franchise-site-map.cfm" rel="toc" />
+			<link href="/styles/styles_combined2_main_redesign.css" rel="stylesheet" type="text/css" /> 
+			
+			<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+			<link rel="icon" type="image/ico" href="/favicon.ico" />
+			
+			
+			<link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.franchise.com/automotive-franchises.cfm" />
+
+			
+			<script src="/js/lib.js" type="text/javascript"></script>
+			
+			<script type="text/javascript" src="/js/addbookmark.js"></script>	
+			
+			
+			<script type="text/javascript" src="/js/dojo/dojo.js"></script>
+			
+			
+				<script type="text/javascript" src="/js/json.js"></script>
+			
+			<script type="text/javascript">
+				<!--
+				dojo.require("dojo.io.*");          // for Ajax requests
+				//-->
+			</script>
+			<script type="text/javascript" src="/js/globallibrary.js"></script>
+			<script type="text/javascript" src="/js/Tween.js"></script>
+			<script type="text/javascript" src="/js/franchise_list.js"></script>	
+			<script type="text/javascript" src="/js/check_cookies.js"></script>
+			
+			
+				<script type="text/javascript" src="/js/cookies.js"></script>
+				<script type="text/javascript" src="/js/logos.js"></script>
+			
+			
+			<script type="text/javascript" src="/windowfiles/dhtmlwindow.js">
+			/***********************************************
+			* DHTML Window Widget- Dynamic Drive (www.dynamicdrive.com)
+			* This notice must stay intact for legal use.
+			* Visit http://www.dynamicdrive.com/ for full source code
+			***********************************************/
+			</script>
+			
+			
+			<link rel="stylesheet" href="/royalslider/royalslider.css">
+			<link rel="stylesheet" href="/royalslider/royalslider-skins/default/default.css">
+			<link rel="stylesheet" href="/royalslider/royalslider-skins/iskin/iskin.css" />
+			<script src='/royalslider/jquery-1.10.2.min.js'></script>
+			<script src="/royalslider/jquery.easing.1.3.min.js"></script>
+			<script src="/royalslider/royal-slider-8.1.min.js"></script>	
+			
+			
+			<!-- CSS files -->
+			
+			
+			
+			
+			
+			
+			
+			<script type="text/javascript" src="/js/jquery.hoverIntent.minified.js"></script>
+			<script type="text/javascript" src="/js/flyoutHover.js"></script>
+							
+					
+			<script type="text/javascript" src="/js/subscribe_list.js"></script>	
+			<script src="/js/record_clicks.js" type="text/javascript"></script>
+			
+			<script type="text/javascript" src="/js/googlefix.js"></script>
+			
+			
+				<script type="text/javascript">
+					var addthis_config = {data_use_flash: false, data_track_clickback: true};
+					var addthis_pub  = 'franchise';
+					var addthis_logo = 'http://www.franchise.com/images/FcomLogo_200.gif';
+					var addthis_logo_color = '324972';
+					var addthis_brand = 'Franchise.com';
+					var addthis_offset_left = -45;
+					var addthis_hover_delay = 350;
+				</script>
+			
+				<script type="text/javascript" src="/js/mbox.js"></script>
+			
+			
+			<script type="text/javascript">
+			<!--
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-1758822-1']);
+			  _gaq.push(['_trackPageview']);
+			
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+			//-->
+			</script>
+		</head>
+
+<body class="bodyNoAdpage2">
+ 
+		
+		<div class="mboxDefault"></div>
+		
+<div id="layoutLogic"><!-- start of layoutLogic -->
+<div id="container">
+
+
+<div class="bodyNoAdpage">    
+
+
+
+<div id="leftalignguts"><!-- start of leftalign -->  
+	  
+		<div id="header"><!-- start of header -->
+			<div style="float:left;width:389px;"><a href="http://www.franchise.com/"><img src="/franchise-company-logo.gif" itemprop="logo" alt="Franchise.com, Franchises for Sale and Business Opportunities" width="389" height="65" border="0"/></a></div>
+		
+		
+			
+			<div class="topMenuBox" id="topmailinglist" style="width:500px;">
+				<div class="topMenu">				
+					<h1 style="color:#999;position:relative;text-align:right;font-size:11px;line-height:12px;margin-bottom:8px;font-weight:normal;">
+					Automobile Franchises: Auto Repair, Car Parts &amp; Car Wash Franchises</h1>
+					<ul class="menu5">
+					<!--this is the anylink menu-->
+					<li class="franchises"><a href="http://www.franchise.com/franchise-directory.cfm" class="drop">franchises</a>
+					<ul><li><a href="http://www.franchise.com/franchise/fast-food-restaurant/sandwich-delis/subway/company-information.cfm" onclick="javascript:recordclick(0,'top - Subway');">Subway Franchise For Sale </a></li><li><a href="http://www.franchise.com/franchise/fast-food-restaurant/pizza/little-caesars-enterprises/company-information.cfm" onclick="javascript:recordclick(0,'top - Little Caesars Enterprises');">Little Caesars Enterprises </a></li><li><a href="http://www.franchise.com/franchise/senior-elderly-healthcare/senior-care/visiting-angels/company-information.cfm" onclick="javascript:recordclick(0,'top - Visiting Angels');">Visiting Angels </a></li><li><a href="http://www.franchise.com/franchise/cleaning-maintenance/commercial/coverall-health-based-cleaning-system/company-information.cfm" onclick="javascript:recordclick(0,'top - Coverall Health-Based Cleaning System');">Coverall Health-Based Cleaning System </a></li><li><a href="http://www.franchise.com/franchise/senior-elderly-healthcare/senior-care/comfort-keepers/company-information.cfm" onclick="javascript:recordclick(0,'top - Comfort Keepers');">Comfort Keepers </a></li><li><a href="http://www.franchise.com/franchise/fast-food-restaurant/ice-cream/kona-ice/company-information.cfm" onclick="javascript:recordclick(0,'top - Kona Ice');">Kona Ice Franchise For Sale </a></li><li><a href="http://www.franchise.com/franchise/travel-transportation/cruise-planning/cruise-planners/company-information.cfm" onclick="javascript:recordclick(0,'top - Cruise Planners / American Express');">Cruise Planners / American Express </a></li><li><a href="http://www.franchise.com/franchise/cleaning-maintenance/commercial/west-sanitation/company-information.cfm" onclick="javascript:recordclick(0,'top - West Sanitation');">West Sanitation </a></li><li><a href="http://www.franchise.com/franchise/cleaning-maintenance/floor/redrhino-the-epoxy-flooring-company/company-information.cfm" onclick="javascript:recordclick(0,'top - REDRHINO:  The Epoxy Flooring Company');">REDRHINO:  The Epoxy Flooring Company </a></li><li><a href="http://www.franchise.com/franchise/automobile-car-wash/tools-accessories/batteries-plus/company-information.cfm" onclick="javascript:recordclick(0,'top - Batteries Plus Bulbs');">Batteries Plus Bulbs </a></li></ul>
+</li>
+					<li class="divider">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
+					<li class="states"><a href="http://www.franchise.com/franchises-usa-states.cfm" class="drop">franchises by state</a>
+					
+<ul>
+<li><a href="http://www.franchise.com/alabama/">Alabama </a></li>
+<li><a href="http://www.franchise.com/alaska/">Alaska </a></li>
+<li><a href="http://www.franchise.com/arizona/">Arizona </a></li>
+<li><a href="http://www.franchise.com/arkansas/">Arkansas </a></li>
+<li><a href="http://www.franchise.com/california/">California </a></li>
+<li><a href="http://www.franchise.com/colorado/">Colorado </a></li>
+<li><a href="http://www.franchise.com/connecticut/">Connecticut </a></li>
+<li><a href="http://www.franchise.com/delaware/">Delaware </a></li>
+<li><a href="http://www.franchise.com/district-of-columbia/">District of Columbia </a></li>
+<li><a href="http://www.franchise.com/florida/">Florida </a></li>
+<li><a href="http://www.franchise.com/georgia/">Georgia </a></li>
+<li><a href="http://www.franchise.com/hawaii/">Hawaii </a></li>
+<li><a href="http://www.franchise.com/idaho/">Idaho </a></li>
+<li><a href="http://www.franchise.com/illinois/">Illinois </a></li>
+<li><a href="http://www.franchise.com/indiana/">Indiana </a></li>
+<li><a href="http://www.franchise.com/iowa/">Iowa </a></li>
+<li><a href="http://www.franchise.com/kansas/">Kansas </a></li>
+<li><a href="http://www.franchise.com/kentucky/">Kentucky </a></li>
+<li><a href="http://www.franchise.com/louisiana/">Louisiana </a></li>
+<li><a href="http://www.franchise.com/maine/">Maine </a></li>
+<li><a href="http://www.franchise.com/maryland/">Maryland </a></li>
+<li><a href="http://www.franchise.com/massachusetts/">Massachusetts </a></li>
+<li><a href="http://www.franchise.com/michigan/">Michigan </a></li>
+<li><a href="http://www.franchise.com/minnesota/">Minnesota </a></li>
+<li><a href="http://www.franchise.com/mississippi/">Mississippi </a></li>
+<li><a href="http://www.franchise.com/missouri/">Missouri </a></li>
+<li><a href="http://www.franchise.com/montana/">Montana </a></li>
+<li><a href="http://www.franchise.com/nebraska/">Nebraska </a></li>
+<li><a href="http://www.franchise.com/nevada/">Nevada </a></li>
+<li><a href="http://www.franchise.com/new-hampshire/">New Hampshire </a></li>
+<li><a href="http://www.franchise.com/new-jersey/">New Jersey </a></li>
+<li><a href="http://www.franchise.com/new-mexico/">New Mexico </a></li>
+<li><a href="http://www.franchise.com/new-york/">New York </a></li>
+<li><a href="http://www.franchise.com/north-carolina/">North Carolina </a></li>
+<li><a href="http://www.franchise.com/north-dakota/">North Dakota </a></li>
+<li><a href="http://www.franchise.com/ohio/">Ohio </a></li>
+<li><a href="http://www.franchise.com/oklahoma/">Oklahoma </a></li>
+<li><a href="http://www.franchise.com/oregon/">Oregon </a></li>
+<li><a href="http://www.franchise.com/pennsylvania/">Pennsylvania </a></li>
+<li><a href="http://www.franchise.com/rhode-island/">Rhode Island </a></li>
+<li><a href="http://www.franchise.com/south-carolina/">South Carolina </a></li>
+<li><a href="http://www.franchise.com/south-dakota/">South Dakota </a></li>
+<li><a href="http://www.franchise.com/tennessee/">Tennessee </a></li>
+<li><a href="http://www.franchise.com/texas/">Texas </a></li>
+<li><a href="http://www.franchise.com/utah/">Utah </a></li>
+<li><a href="http://www.franchise.com/vermont/">Vermont </a></li>
+<li><a href="http://www.franchise.com/virginia/">Virginia </a></li>
+<li><a href="http://www.franchise.com/washington/">Washington </a></li>
+<li><a href="http://www.franchise.com/west-virginia/">West Virginia </a></li>
+<li><a href="http://www.franchise.com/wisconsin/">Wisconsin </a></li>
+<li><a href="http://www.franchise.com/wyoming/">Wyoming </a></li>
+</ul></li>
+					<li class="divider">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
+					<li class="industry"><a href="http://www.franchise.com/advertise-your-business.cfm" class="drop">advertise with us</a>
+					</li>
+					<li class="divider">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
+					<li><a href="http://www.franchise.com/franchise-site-map.cfm" class="topMenu">site map</a></li> 				
+					</ul>
+				</div>					
+				<!--start http://www.livehelpnow.net  -->
+				<div style="margin-left: 60px;">				
+					<div id="liveHelpDiv">			
+					<script type="text/javascript">
+					var lhnJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+					document.write(unescape("%3Cscript src='" + lhnJsHost + "www.livehelpnow.net/lhn/scripts/lhnvisitor.aspx?div=&amp;zimg=2274&amp;lhnid=9332&amp;iv=1&amp;iwidth=260&amp;iheight=24&amp;zzwindow=0&amp;d=0&amp;custom1=&amp;custom2=&amp;custom3=' type='text/javascript'%3E%3C/script%3E"));
+					</script>
+					<span style="display: inline-block; color: #cccccc; font-family: Tahoma; vertical-align: top;">&nbsp;&nbsp;&nbsp;|&nbsp;</span>
+					<div style="display: inline;">&nbsp;&nbsp;&nbsp;<a href="mailto:guidance@franchise.com?Subject=Franchise.com Web Advice Request"><img style="border: none;" src="/images/email-small.jpg" alt="email us"/></a></div><div style="float: right; font-family: Tahoma; font-size: 14px;height: 20px;margin-right: 50px; margin-top: 3px; width: 50px;text-decoration: none;"><a href="mailto:guidance@franchise.com?Subject=Franchise.com Web Advice Request" style="text-decoration: none; font: Tahoma; color: #1762B7; font-weight: bold; font-size: 10px;">&nbsp;&nbsp;Email Us</a></div>
+					</div>
+				</div>
+			</div> <!-- topMenuBox -->
+			
+			
+			
+			<div class="insideHdrMenu" style="margin-top:3px;">
+				
+                <div class="searchBar">					
+					<div class="searchBarText">Find Your Franchise:</div> 
+					<div class="searchBoxes" style="margin-top:-1px;"> 
+    <form id="FINDER" action="http://www.franchise.com/franchises-by-investment.cfm" method="post">
+
+
+
+
+<input type="hidden" name="page" value="category" />
+
+<select name="category_id" id="category_id" class="select3b">
+	<option value="0" selected>Select Category</option>
+	
+	<option value="635">Automotive Franchises</option>
+	
+	<option value="669">Beauty Franchises</option>
+	
+	<option value="636">Beverages Franchises</option>
+	
+	<option value="670">Business Opportunities</option>
+	
+	<option value="637">Business Services</option>
+	
+	<option value="638">Children Related</option>
+	
+	<option value="639">Cleaning &amp; Maintenance</option>
+	
+	<option value="640">Computer &amp; Internet</option>
+	
+	<option value="672">Earth Friendly</option>
+	
+	<option value="641">Education Franchises</option>
+	
+	<option value="642">Financial Services</option>
+	
+	<option value="644">Food Franchises</option>
+	
+	<option value="671">Health &amp; Fitness</option>
+	
+	<option value="647">Home Related</option>
+	
+	<option value="649">Low Investment</option>
+	
+	<option value="664">Master/Area Developers</option>
+	
+	<option value="666">Minority Focused</option>
+	
+	<option value="652">Pet Related</option>
+	
+	<option value="653">Photo &amp; Video</option>
+	
+	<option value="654">Printing Packing &amp; Shipping</option>
+	
+	<option value="656">Retail Franchises</option>
+	
+	<option value="657">SBA Approved</option>
+	
+	<option value="658">Senior Services</option>
+	
+	<option value="659">Sports and Recreation</option>
+	
+	<option value="660">Travel Franchises</option>
+	
+	<option value="662">Veterans Franchises</option>
+	
+	<option value="667">Women's Franchises</option>
+	
+	<option value="646">Work From Home</option>
+	
+</select>
+
+<select name="state_id" id="state_id" class="select2b">
+	<option value="0" selected>Select Location</option>
+	<option value="18">Alabama</option>
+	<option value="43">Alaska</option>
+	<option value="44">Arizona</option>
+	<option value="30">Arkansas</option>
+	<option value="10">California</option>
+	<option value="45">Colorado</option>
+	<option value="1">Connecticut</option>
+	<option value="12">Delaware</option>
+	<option value="13">Florida</option>
+	<option value="14">Georgia</option>
+	<option value="46">Hawaii</option>
+	<option value="47">Idaho</option>
+	<option value="24">Illinois  </option>       
+	<option value="25">Indiana</option>
+	<option value="31">Iowa</option>
+	<option value="32">Kansas</option>
+	<option value="26">Kentucky</option>
+	<option value="33">Louisiana</option>
+	<option value="3">Maine</option>
+	<option value="15">Maryland</option>
+	<option value="2">Massachusetts</option>
+	<option value="27">Michigan</option>
+	<option value="34">Minnesota</option>
+	<option value="36">Mississippi</option>
+	<option value="35">Missouri</option>
+	<option value="48">Montana</option>
+	<option value="38">Nebraska</option>
+	<option value="50">Nevada</option>
+	<option value="4">New Hampshire</option>
+	<option value="5">New Jersey</option>
+	<option value="49">New Mexico</option>
+	<option value="6">New York</option>
+	<option value="19">North Carolina</option>
+	<option value="37">North Dakota</option>
+	<option value="28">Ohio</option>
+	<option value="39">Oklahoma</option>
+	<option value="51">Oregon</option>
+	<option value="7">Pennsylvania</option>
+	<option value="8">Rhode Island</option>
+	<option value="20">South Carolina</option>
+	<option value="40">South Dakota</option>
+	<option value="41">Tennessee</option>
+	<option value="42">Texas</option>
+	<option value="53">Utah</option>
+	<option value="9">Vermont</option>
+	<option value="21">Virginia</option>
+	<option value="54">Washington</option>
+	<option value="11">Washington DC</option>
+	<option value="22">West Virginia</option>
+	<option value="29">Wisconsin</option>
+	<option value="52">Wyoming</option> 
+	<option value="101">Canada</option>
+	<option value="102">US Territories</option>
+	<option value="990">Not USA or Canada</option>
+</select>
+<input name="submit" type="image" src="/images/FinderGo.gif" alt="go" style="margin-top:1px;" />
+<input name="investment_low" type="hidden" value="0" />
+<input name="investment_high" type="hidden" value="5000000" />
+</form>
+</div>
+					<div id="smallCallUsImg"><img src="/images/Fcom-phone-number-small.jpg" alt="call us"/></div>
+					<div class="headerMenu">
+						
+	<div id="navigation" class="navigation">
+		<ul id="franchiseCategories">
+			<li><a id="franchiseByCategoryText" href="#">&nbsp;&nbsp;Franchises by Category</a>
+				<ul>
+					<li>
+						<div id="flyoutMenuBorder"></div><!-- end flyoutMenuBorder -->
+						<div id="flyoutMenu">	
+							<div id="menuLeft">
+							
+							<a href="http://www.franchise.com/automotive-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Automotive Franchises</a><br/>
+							
+							<a href="http://www.franchise.com/beauty-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Beauty Franchises</a><br/>
+							
+							<a href="http://www.franchise.com/beverage-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Beverages Franchises</a><br/>
+							
+							<a href="http://www.franchise.com/business-opportunities-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Business Opportunities</a><br/>
+							
+							<a href="http://www.franchise.com/business-services-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Business Services</a><br/>
+							
+							<a href="http://www.franchise.com/children-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Children Related</a><br/>
+							
+							<a href="http://www.franchise.com/cleaning-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Cleaning &amp; Maintenance</a><br/>
+							
+							</div>
+							
+							<div id="menuCenter">
+							
+							<a href="http://www.franchise.com/computer-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Computer &amp; Internet</a><br/>
+							
+							<a href="http://www.franchise.com/environmentally-conscious-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Earth Friendly</a><br/>
+							
+							<a href="http://www.franchise.com/education-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Education Franchises</a><br/>
+							
+							<a href="http://www.franchise.com/financial-services-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Financial Services</a><br/>
+							
+							<a href="http://www.franchise.com/food-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Food Franchises</a><br/>
+							
+							<a href="http://www.franchise.com/health-fitness-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Health &amp; Fitness</a><br/>
+							
+							<a href="http://www.franchise.com/home-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Home Related</a><br/>
+							
+							</div>
+							
+							<div id="menuRight">
+							
+							<a href="http://www.franchise.com/low-investment-franchises-cheap.cfm" class="flyoutListItem flyoutSubMenuLinks">Low Investment</a><br/>
+							
+							<a href="http://www.franchise.com/high-investment-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Master/Area Developers</a><br/>
+							
+							<a href="http://www.franchise.com/minority-owned-business.cfm" class="flyoutListItem flyoutSubMenuLinks">Minority Focused</a><br/>
+							
+							<a href="http://www.franchise.com/pet-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Pet Related</a><br/>
+							
+							<a href="http://www.franchise.com/photo-video-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Photo &amp; Video</a><br/>
+							
+							<a href="http://www.franchise.com/printing-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Printing Packing &amp; Shipping</a><br/>
+							
+							<a href="http://www.franchise.com/retail-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Retail Franchises</a><br/>
+							
+							</div>
+							
+							<div id="menuLast">
+							
+							<a href="http://www.franchise.com/sba-approved-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">SBA Approved</a><br/>
+							
+							<a href="http://www.franchise.com/senior-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Senior Services</a><br/>
+							
+							<a href="http://www.franchise.com/sports-recreation-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Sports and Recreation</a><br/>
+							
+							<a href="http://www.franchise.com/travel-transportation-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Travel Franchises</a><br/>
+							
+							<a href="http://www.franchise.com/veterans-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Veterans Franchises</a><br/>
+							
+							<a href="http://www.franchise.com/women-owned-businesses.cfm" class="flyoutListItem flyoutSubMenuLinks">Women's Franchises</a><br/>
+							
+							<a href="http://www.franchise.com/work-at-home-franchises.cfm" class="flyoutListItem flyoutSubMenuLinks">Work From Home</a><br/>
+							
+							<a href="http://www.franchise.com/franchise-opportunities.cfm" class="flyoutListItem flyoutSubMenuLinks">VIEW ALL</a>
+							</div>
+						</div>	
+					</li>
+				</ul> 
+			</li>
+		</ul>
+		<ul id="franchiseDirectories">
+			<li><a id="franchiseDirectory" class="flyoutMenuLinks" href="/franchise-directory.cfm"><span class="franchiseDirectoryText">Franchise Directory</span></a></li>
+		</ul>
+		<ul id="top25FranchiseOps">
+			<a id="top25Franchises" class="flyoutMenuLinks" href="/franchise-top-25.cfm"><span class="top25FranchisesText">Top 25 Franchises</span></a>
+		</ul>
+		<ul id="bigOpps">
+			<a id="bigOpportunities" class="flyoutMenuLinks" href="/franchise-big-opportunities.cfm"><span class="bigOpportunitiesText">Big Opportunities</span></a>
+		</ul>
+	</div>	
+	<div id="searchBox">
+		
+		<!-- Google CSE Search Box Begins  -->
+		<!-- Use of this code assumes agreement with the Google Custom Search Terms of Service. -->
+		<!-- The terms of service are available at http://www.google.com/cse/docs/tos.html -->
+		
+		<form action="http://www.franchise.com/search-franchises-for-sale.cfm" name="cse-search-box" id="cref_iframe">
+		  <input type="hidden" name="cref" value="http://www.franchise.com/cse-google-content.xml" />
+		  <input type="hidden" name="cx" value="011287350604301584583:gzfuopkqt1a" />
+          <input type="hidden" name="cof" value="FORID:11" />
+		  <div><input type="text" id="searchBoxText" name="q" size="30" maxlength="60" value="" onfocus="this.value=''"/></div>
+		  <div id="searchBoxTextSubmit"><input type="image" src="/images/search-button-blue.gif" name="submit" value="SEARCH" /></div>
+		</form>
+		
+		<!-- Google CSE Search Box Ends -->
+		
+	</div>
+	<div id="newsletter2">
+		<form action="javascript:" method="post" id="TML" onsubmit="addToSubscriberList('TML'); return false;">
+                 
+                 <input type="hidden" name="mailwho" value="fc" />
+                 <input type="hidden" name="client_id" value="0" />
+                 <input type="hidden" name="fcid" value="201308271723575507" />
+                 <input type="hidden" name="formid" value="TML" />
+                 <input type="hidden" name="radio_buttons_on" value="0" /> 
+                 <div>
+                         <input type="text" class="emailName" name="email_address" value="enter email here" alt="enter email here" size="40" onfocus="this.value=''" />
+                 </div>
+                 <div id="newsletterSubmit">
+                     <input type="image" src="/images/newsletter-button.jpg" name="submit" alt="receive franchise updates" onclick="var s=s_gi('fbogroupfranchise');s.linkTrackVars='events';s.linkTrackEvents='event9';s.events='event9';s.tl(this,'o','Newsletter Sign-Up');" />
+                 </div>                                   
+             </form>
+	</div>
+	
+			
+			
+					</div><!-- end of headerMenu -->
+				</div>
+            </div><!-- end of insideHdrMenu -->
+			<div style="clear:both"></div>
+			<div style="position:relative;top:0px;margin-right:0px;margin-top:-63px;width:508px;height:61px;background-image:url(/images/AutomotiveFranchiseCategory.jpg);background-repeat:no-repeat;background-position:top;z-index:-5;"></div>           
+			<div class="insideHdrInquire">
+				
+					<img src="/images/intExplore.gif" alt="Explore" />
+						     
+			</div>
+			            
+			
+				<div style="width:341px; float:right; margin:5px 2px; position:absolute; right:0;">
+					<div style="float:right;">        
+						<a href="http://www.facebook.com/pages/Franchisecom/139149249460775" target="_blank" style="margin-right: 10px; padding:0; float:left;"><img src="/images/fcom-facebook-small.gif" alt="Franchise.com on facebook" width="23" height="23" border="0" /></a>
+						<a href="http://twitter.com/franchisedotcom" target="_blank" style="margin-right: 10px; padding:0; float:left;"><img src="/images/fcom-twitter-small.gif" alt="Franchise.com on twitter" width="23" height="23" border="0" /></a>
+					</div>  
+					<div style="clear:both;"></div>  
+				</div>      
+			
+            
+			<div class="breadcrumbs" >
+				
+                    	
+						<a href="http://www.franchise.com/" class="breadLinks">Home</a>&nbsp;>&nbsp;
+						<a href="http://www.franchise.com/franchise-opportunities.cfm" class="breadLinks">Franchise Categories</a>
+						&nbsp;>&nbsp;
+						Automotive Franchises 	
+			</div><!--end of breadcrumbs -->
+            
+		</div><!-- end of header -->
+		
+	</div>
+	
+	<a name="ct" rel="nofollow"></a>
+	<div id="insideContent"><!-- start of insideContent -->
+		<div id="categoryPage">
+			<div class="catPageHdr">Automotive Franchises Franchises &amp; Business Opportunities</div>
+			<br />			
+			
+				<p class="catGray10Bold" style="padding-left:10px">
+					<b>Looking for a specific automotive franchises franchise? Narrow your search:</b>
+				
+					<a href="/rss/Automotive-Franchises.xml" target="_blank"><img src="/images/feed-icon-28x28.png" alt="RSS Feed" border="0" align="right"/></a>
+				</p>
+				<div class="catGray10Bold" style="margin-top:3px;margin-left:10px">					
+					
+					<a href="http://www.franchise.com/automobile-car-wash/oil-change.cfm" class="subCatLinks">Oil Change</a>
+					&nbsp;|&nbsp; 
+					<a href="http://www.franchise.com/automobile-car-wash/tools-accessories.cfm" class="subCatLinks">Tools &amp; Accessories</a>
+					&nbsp;|&nbsp; 
+					<a href="http://www.franchise.com/automobile-car-wash/transmission.cfm" class="subCatLinks">Transmission</a>
+					&nbsp;|&nbsp; 
+					<a href="http://www.franchise.com/automobile-car-wash/car-wash.cfm" class="subCatLinks">Car Wash</a>
+					&nbsp;|&nbsp; 
+					<a href="http://www.franchise.com/automobile-car-wash/auto-repair.cfm" class="subCatLinks">Auto Repair &amp; Detailing</a>
+					
+				</div>
+				<img src="/images/catLinkSeparator.gif" alt="separator" width="613" /> 				
+			<div class="catPagePara" style="margin-top:5px">
+				The automotive industry offers a multitude of profitable franchise opportunities for sale. Over the past decade, this industry has solidified its status as one of the largest industries globally. Rising car ownership trends, increased personalization and customization of automobiles and the proliferation of travelers on the roads are all contributing to the rise in auto products, accessories and services, along with the franchises that sell them. The wide variety of small business opportunities for sale in this industry include muffler and brake franchises, car repair franchises, oil change franchises, transmission franchises, car wash franchises, auto painting franchises, automotive parts franchises, car rental franchises, and auto detailing franchises. Plus, you do not typically need previous industry experience to qualify.
+			</div>
+									
+			<div class="catSortText" style="margin-left:10px;margin-top:15px;margin-bottom:10px;">
+				Sort by:<a href="/automotive-franchises.cfm?sort=alphaa" class="subCatSorts" rel="nofollow" style="padding-left:15px;">Company Name<img src="/images/spacer.gif" alt="" width="5" height="1" border="0" /><img src='/images/arrowdownOFF.gif' alt='sort decending' width='9' height='6' border='0' hspace='6' /><img src='/images/arrowupOff.gif' width='9' height='6' border='0' alt='' /></a>
+					<a href="/automotive-franchises.cfm?sort=investa" class="subCatSorts" rel="nofollow" style="padding-left:15px;padding-right:20px;">Cash Required<img src="/images/spacer.gif" alt="" width="5" height="1" border="0" /><img src='/images/arrowdownOFF.gif' alt='sort decending' width='9' height='6' border='0' hspace='6' /><img src='/images/arrowupOff.gif' width='9' height='6' border='0' alt='' /></a>
+				<!-- this is the link that executes the javascript to switch the image display to none-->
+				
+			</div>				
+<!--this is the list of clients-->			
+			<!-- use a counter here so we can number the entries and base the background color
+				switch on odd or even number.  Once this is put inside a loop, the javascript should work fine to hide the logos-->			
+			 						
+					<div class="catClientList" style='background-color:#f2f2f2;'>
+						
+						<div style="width:17px;height:100%;float:left">1.</div>
+						<div style="line-height:15px;">
+							<a href="http://www.franchise.com/franchise/automobile-car-wash/car-wash/superior-wash/company-information.cfm"  class="client"><b>Superior Wash</b></a><br />
+							<b>Cash Required  $30,000 - $40,000</b><br />
+							Own your own fleet truck washing franchise. Cater to the needs of mobile businesses in your area while working from either home or an office. 
+						</div>
+					</div>	
+										
+					<div class="catClientList" >
+						
+						<div style="width:17px;height:100%;float:left">2.</div>
+						<div style="line-height:15px;">
+							<a href="http://www.franchise.com/franchise/automobile-car-wash/building-construction/pirtek-usa/company-information.cfm"  class="client"><b>PIRTEK USA</b></a><br />
+							<b>Cash Required  $100,000 - $125,000</b><br />
+							Own a PIRTEK hoses and assemblies automotive franchise with 30 years of experience for a proven, strategic business system. 
+						</div>
+					</div>	
+										
+					<div class="catClientList" style='background-color:#f2f2f2;'>
+						
+						<div style="width:17px;height:100%;float:left">3.</div>
+						<div style="line-height:15px;">
+							<a href="http://www.franchise.com/franchise/house-and-home/home-improvement/global-garage/company-information.cfm"  class="client"><b>Global Garage</b></a><br />
+							<b>Cash Required  $50,000</b><br />
+							FUN business with multiple revenue streams, nationwide availability in a growing industry. Low investment and scalable to fit your needs and location; work from home, storefront or mobile! 
+						</div>
+					</div>	
+										
+					<div class="catClientList" >
+						
+						<div style="width:17px;height:100%;float:left">4.</div>
+						<div style="line-height:15px;">
+							<a href="http://www.franchise.com/business-opportunity/business-opportunities/consulting/fleet-services-international/company-information.cfm"  class="client"><b>Fleet Services International</b></a><br />
+							<b>Cash Required  $95,000</b><br />
+							Richard Petty, the King of Nascar through Petty's Garage has co-branded with Fleet Services International to become the national leader in commercial on-site fleet maintenance & repair.  Exclusive ter... 
+						</div>
+					</div>	
+										
+					<div class="catClientList" style='background-color:#f2f2f2;'>
+						
+						<div style="width:17px;height:100%;float:left">5.</div>
+						<div style="line-height:15px;">
+							<a href="http://www.franchise.com/franchise/automobile-car-wash/auto-repair/meineke-car-care-centers-inc/company-information.cfm"  class="client"><b>Meineke Car Care Centers, Inc.</b></a><br />
+							<b>Cash Required  $75,000</b><br />
+							Offering fast, courteous service in the merchandising of automotive exhaust systems, brakes, shock absorbers, struts, cv joints and oil changes.  Unique inventory control and group purchasing power en... 
+						</div>
+					</div>	
+										
+					<div class="catClientList" >
+						
+						<div style="width:17px;height:100%;float:left">6.</div>
+						<div style="line-height:15px;">
+							<a href="http://www.franchise.com/franchise/automobile-car-wash/auto-repair/carsmetics/company-information.cfm"  class="client"><b>CARSMETICS</b></a><br />
+							<b>Cash Required  $200,000</b><br />
+							Carsmetics has revolutionized the auto repair industry by ensuring that our customers get their vehicle and their life back on the road again quickly. Carsmetics understands that time and money are im... 
+						</div>
+					</div>	
+										
+					<div class="catClientList" style='background-color:#f2f2f2;'>
+						
+						<div style="width:17px;height:100%;float:left">7.</div>
+						<div style="line-height:15px;">
+							<a href="http://www.franchise.com/franchise/automobile-car-wash/auto-repair/novus-glass/company-information.cfm"  class="client"><b>Novus Glass</b></a><br />
+							<b>Cash Required  $14,000</b><br />
+							Are you ready to join the best glass repair and replacement franchise in the world? NOVUS Franchising is the perfect opportunity for people looking for a new career. 
+						</div>
+					</div>	
+										
+					<div class="catClientList" >
+						
+						<div style="width:17px;height:100%;float:left">8.</div>
+						<div style="line-height:15px;">
+							<a href="http://www.franchise.com/franchise/automobile-car-wash/tools-accessories/batteries-plus/company-information.cfm"  class="client"><b>Batteries Plus Bulbs</b></a><br />
+							<b>Cash Required  $150,000</b><br />
+							The largest, fastest-growing retail and B2B chain focused on the expanding $20+ billion battery category. 
+						</div>
+					</div>	
+										
+					<div class="catClientList" style='background-color:#f2f2f2;'>
+						
+						<div style="width:17px;height:100%;float:left">9.</div>
+						<div style="line-height:15px;">
+							<a href="http://www.franchise.com/franchise/automobile-car-wash/auto-repair/moran-industries-inc/company-information.cfm"  class="client"><b>Milex / Mr. Transmission</b></a><br />
+							<b>Cash Required  $60,000</b><br />
+							Join two award-winning automotive franchises in the multi-billion dollar automotive aftermarket business 
+						</div>
+					</div>	
+										
+					<div class="catClientList" >
+						
+						<div style="width:17px;height:100%;float:left">10.</div>
+						<div style="line-height:15px;">
+							<a href="http://www.franchise.com/franchise/automobile-car-wash/tools-accessories/rent-n-roll-custom-wheels-tires/company-information.cfm"  class="client"><b>Rent-N-Roll Custom Wheels & Tires</b></a><br />
+							<b>Cash Required  $175,000</b><br />
+							RNR is the leader in the Custom Wheel & Tires Industry and provides customers the tires and wheels they want by providing options and programs that take into consideration their financial situation. 
+						</div>
+					</div>	
+				
+			<div style="clear:both;margin-top:30px;margin-left:10px;margin-bottom:20px">
+				<a href="http://www.franchise.com/franchise-opportunities.cfm"><img src="/images/viewMoreCats.jpg" border="0" alt="View More Categories" height="33" width="285" /></a>
+			</div>			
+		</div>		
+		<!--this is the right nav of the category pages-->
+		<div id="categoryPageRightNav">			
+			
+<div class="catRightNavHdr">Opportunities You Should Know About:</div>
+	
+				
+		
+		<div class="catRightNavSpot">
+			<a href="http://www.franchise.com/franchise/fast-food-restaurant/food/doc-popcorn/company-information.cfm" class="client" ><b>Doc Popcorn</b></a><br />
+			<a href="http://www.franchise.com/franchise/fast-food-restaurant/food/doc-popcorn/company-information.cfm" ><img src="/assets/banners/DocPopcorn-banner-opps.gif" alt="Doc Popcorn" style="float:left;margin-right:5px;margin-top:3px;" width="85" height="65" /></a><p style="padding-top:3px;line-height:16px">Doc Popcorn - A Fun, Unique, Food Franchise Opportunity</p>
+		</div>
+				
+		
+		<div class="catRightNavSpot">
+			<a href="http://www.franchise.com/franchise/retail-store/candy/the-goldfather/company-information.cfm" class="client" ><b>GoldFather, The</b></a><br />
+			<a href="http://www.franchise.com/franchise/retail-store/candy/the-goldfather/company-information.cfm" ><img src="/assets/banners/goldfather-banner-opps.gif" alt="GoldFather, The" style="float:left;margin-right:5px;margin-top:3px;" width="85" height="65" /></a><p style="padding-top:3px;line-height:16px">Join the exciting precious metals trading industry today with a GoldFather's franchise!</p>
+		</div>
+	
+
+<div id="boeflyHeader">
+	<a href="http://www.boefly.com/sites/franchisefinance/" target="_blank"><img src="/images/fcom-right-side-boefly-banner.gif" id="boeflyImage"/></a>
+</div>
+<div class="catRightNavHdr" style="clear:both;margin-top:30px">Top Automotive Franchises Businesses</div>
+
+	<div class="catSponserBox">
+				
+
+		<a href="/franchise/automobile-car-wash/car-wash/superior-wash/company-information.cfm" ><img src="/assets/banners/SuperiorWash_banner_120.gif" border="0" alt="Superior Wash" width="120" height="60" style="float:right" /></a>
+		<p style="font-size:11px;"><b>Superior Wash</b></p>
+		<img src="/images/spacer.gif" height="7px" width="1px" alt="spacer" /><br />
+		<p>Type: Car Wash<br />Financial Assistance: 3rd Party</p>
+		<img src="/images/spacer.gif" height="4px" width="1px" alt="spacer" /><br />
+		<a href="/franchise/automobile-car-wash/car-wash/superior-wash/company-information.cfm" rel="nofollow" class="learnMore">Learn More</a>	
+	</div>		
+	
+	<div class="catSponserBox">
+				
+
+		<a href="/franchise/automobile-car-wash/auto-repair/moran-industries-inc/company-information.cfm" ><img src="/assets/banners/moran-banner-120.gif" border="0" alt="Milex / Mr. Transmission" width="120" height="60" style="float:right" /></a>
+		<p style="font-size:11px;"><b>Milex / Mr. Transmission</b></p>
+		<img src="/images/spacer.gif" height="7px" width="1px" alt="spacer" /><br />
+		<p>Type: Auto Repair &amp; Detailing<br />Financial Assistance: 3rd Party</p>
+		<img src="/images/spacer.gif" height="4px" width="1px" alt="spacer" /><br />
+		<a href="/franchise/automobile-car-wash/auto-repair/moran-industries-inc/company-information.cfm" rel="nofollow" class="learnMore">Learn More</a>	
+	</div>		
+	
+	<div class="catSponserBox">
+				
+
+		<a href="/franchise/automobile-car-wash/auto-repair/carsmetics/company-information.cfm" ><img src="/assets/banners/carsmetics-banner-120.gif" border="0" alt="CARSMETICS" width="120" height="60" style="float:right" /></a>
+		<p style="font-size:11px;"><b>CARSMETICS</b></p>
+		<img src="/images/spacer.gif" height="7px" width="1px" alt="spacer" /><br />
+		<p>Type: Auto Repair &amp; Detailing<br />Financial Assistance: 3rd Party</p>
+		<img src="/images/spacer.gif" height="4px" width="1px" alt="spacer" /><br />
+		<a href="/franchise/automobile-car-wash/auto-repair/carsmetics/company-information.cfm" rel="nofollow" class="learnMore">Learn More</a>	
+	</div>		
+	
+	<div class="catSponserBox">
+				
+
+		<a href="/franchise/automobile-car-wash/auto-repair/novus-glass/company-information.cfm" ><img src="/assets/banners/novus-banner-120.gif" border="0" alt="Novus Glass" width="120" height="60" style="float:right" /></a>
+		<p style="font-size:11px;"><b>Novus Glass</b></p>
+		<img src="/images/spacer.gif" height="7px" width="1px" alt="spacer" /><br />
+		<p>Type: Auto Repair &amp; Detailing<br />Financial Assistance: In House</p>
+		<img src="/images/spacer.gif" height="4px" width="1px" alt="spacer" /><br />
+		<a href="/franchise/automobile-car-wash/auto-repair/novus-glass/company-information.cfm" rel="nofollow" class="learnMore">Learn More</a>	
+	</div>		
+	
+	<div class="catSponserBox">
+				
+
+		<a href="/franchise/automobile-car-wash/tools-accessories/rent-n-roll-custom-wheels-tires/company-information.cfm" ><img src="/assets/banners/rent-n-roll-banner-120.jpg" border="0" alt="Rent-N-Roll Custom Wheels & Tires" width="120" height="60" style="float:right" /></a>
+		<p style="font-size:11px;"><b>Rent-N-Roll Custom Wheels & Tires</b></p>
+		<img src="/images/spacer.gif" height="7px" width="1px" alt="spacer" /><br />
+		<p>Type: Tools &amp; Accessories<br />Financial Assistance: 3rd Party</p>
+		<img src="/images/spacer.gif" height="4px" width="1px" alt="spacer" /><br />
+		<a href="/franchise/automobile-car-wash/tools-accessories/rent-n-roll-custom-wheels-tires/company-information.cfm" rel="nofollow" class="learnMore">Learn More</a>	
+	</div>		
+	
+	<div class="catSponserBox">
+				
+
+		<a href="/business-opportunity/business-opportunities/consulting/fleet-services-international/company-information.cfm" ><img src="/assets/banners/fleetservices-banner-120.gif" border="0" alt="Fleet Services International" width="120" height="60" style="float:right" /></a>
+		<p style="font-size:11px;"><b>Fleet Services International</b></p>
+		<img src="/images/spacer.gif" height="7px" width="1px" alt="spacer" /><br />
+		<p>Type: Consulting<br />Financial Assistance: 3rd Party</p>
+		<img src="/images/spacer.gif" height="4px" width="1px" alt="spacer" /><br />
+		<a href="/business-opportunity/business-opportunities/consulting/fleet-services-international/company-information.cfm" rel="nofollow" class="learnMore">Learn More</a>	
+	</div>		
+				
+              <div class="catRightNavHdr">Not Sure Where To Start?<br />Let us help</div>
+              <div style="width:220px">
+                  <a href="http://www.franchise.com/business-opportunity/business-opportunity/consulting/FranChoice/company-information.cfm" class="client">Get Your Personal Short List:</a><br />
+                  <p class="dkGray11">We can deliver franchises for sale that match your goals, experience and lifestyle, all at no cost to you!</p>
+                  <p align="right"><a href="http://www.franchise.com/business-opportunity/business-opportunity/consulting/FranChoice/company-information.cfm" class="boxItem">Start Now</a>&nbsp;&raquo;</p>
+              </div>
+            
+		</div><!--end of rightNav-->
+	</div><!-- end of insideContent -->
+<!-- SiteCatalyst code version: H.16.
+Copyright 1997-2008 Omniture, Inc. More info available at
+http://www.omniture.com -->
+
+<script type="text/javascript" language="javascript">
+	var s_account="fbogroupfranchise,fbogroupfranchise.com";
+</script>
+<script type="text/javascript" language="javascript" src="/js/Omniture/s_code.js"></script>
+<script type="text/javascript" language="javascript"><!--
+/* You may give each page an identifying name, server, and channel on
+the next lines. MAKE SURE ALL VARIABLES ARE IN lower case */
+s.pageName=""				// IE. "frc: frc: " + "home page"; OR "frc: frc " + "wsi lead from testimonial"
+s.server=""					// NOT IN USE
+s.channel=""				// pretty much the same as the s.pageName
+s.pageType=""				// NOT IN USE
+s.prop1="franchise.com"		// domain name
+s.prop2="franchise.com"		// company name
+s.prop3=""					// 3 - 20 NOT IN USE
+s.prop4=""
+s.prop5=""
+s.prop6=""
+s.prop7=""
+s.prop8=""
+s.prop9=""
+s.prop10=""
+s.prop11=""
+s.prop12=""
+s.prop13=""
+s.prop14=""
+s.prop15=""
+s.prop16=""
+s.prop17=""
+s.prop18=""
+s.prop19=""
+s.prop20=""
+/* Conversion Variables */
+s.campaign=""				// NOT IN USE
+s.state=""					// IE.  new hampshire
+s.zip=""
+s.events=""					/* event1= page with an inquiry form
+							   event2= lead form submitted
+							   event10= real lead
+							   event11= qualified lead
+							   event12= unqualified lead */
+s.products=""				/* on an adpage: s.products=";1-800-got-junk"
+							   on pif page: s.products=";subway,;7-eleven,;ups store"
+							   ad page submitted: s.products=";1-800-got-junk;;;event10=1|event11=1" (if qualified)
+							*/
+s.purchaseID=""				// NOT IN USE
+s.eVar1=""					// company name(s) for the ad page and submitted page
+s.eVar2="franchise.com"
+s.eVar3="franchise.com"
+s.eVar4=""				// NOT IN USE
+s.eVar5=""				// NOT IN USE
+s.eVar6=""
+s.eVar7=""				// single-lead or multi-select for both ad page and submitted page
+s.eVar8=""
+s.eVar9=""				// NOT IN USE
+s.eVar10=""				// city
+s.eVar11=""				// country
+s.eVar12=""				// available investment
+s.eVar13=""
+s.eVar14=""
+s.eVar15=""
+s.eVar16=""
+s.eVar17=""
+s.eVar18=""
+s.eVar19=""
+s.eVar20=""
+/* Hierarchy Variables */
+s.hier1=""
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+//var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+
+<!-- End SiteCatalyst code version: H.16. -->
+
+
+	<script type="text/javascript" language="javascript">
+	<!--
+	fajs="category";					//Pass fa value
+	activejs=0;
+	channeljs="category";
+	inProductionjs=1;
+	s.evar16="201308271723575507";
+	userip="199.16.172.157";
+	
+	pathArray = window.location.pathname.split( '/' );
+	
+	var i=pathArray.length;
+		
+	if (fajs == 'adpage') { 
+		/* Ad Pages */
+		// s.pageName="frc: frc: adpage "+pathArray[i-2].toLowerCase().replace(".cfm","")+" "+pathArray[i-1].toLowerCase().replace(".cfm","")
+		s.pageName="frc: frc: "+"adpage "+pathArray[i-2].toLowerCase().replace(".cfm","")+" "+pathArray[i-1].toLowerCase().replace(".cfm","")
+		s.channel="adpage-inactive"
+		s.events=""	//ONLY IF THE ADPAGE IS ACTIVE (see above)
+		if (activejs == 1){
+			s.evar7=""}   // single lead
+		}
+	else if (i == 3) { 
+		/* Subcat Pages and Franchise News Pages */
+		s.pageName="frc: frc: "+pathArray[i-2].toLowerCase()+" "+pathArray[i-1].toLowerCase().replace(".cfm","")
+		}
+	else if (i == 2) { 
+			/* Home Page, Top Level Pages, Category Pages, Etc. */
+			pageValue = pathArray[i-1].toLowerCase().replace(".cfm","");
+			if (pageValue.length == 0)pageValue = "homepage"
+			s.pageName="frc: frc: "+pageValue
+			
+			/* Information Request! */
+			//if (fajs == 'request' || fajs == 'request_ty' ||  fajs == 'franchise_request') {
+			if (channeljs == 'confirmation') {
+				s.events=""
+				s.evar7=""
+				s.events=""
+				s.evar7=""				
+				s.evar10=""
+				s.evar11=""
+				s.evar12=""
+				s.state=""
+				}
+		}
+	else { 
+		s.pageName="frc: frc: "+"home page"
+		}	
+		
+	
+	s.events="".toLowerCase()
+	s.evar1="UNK".toLowerCase()
+	s.products="UNK".toLowerCase()
+	s.channel="category".toLowerCase()
+	if (fajs == 'adpage') {
+		s.evar1=pathArray[i-2].toLowerCase().replace(".cfm","")			//Adpage, pass back client name
+		s.products=";"+pathArray[i-2].toLowerCase().replace(".cfm","")	//Adpage, pass back client name
+		}
+	
+ 	/*	window.alert("i = " + i + "\n" + "inProduction= " + inProductionjs 
+		+ "user ip= " + userip + "\n"
+		+ "\n" + "fa= " + fajs + "\n"
+	 	+ "s.prop1=" + s.prop1 + "\n"
+	    + "channel= " + s.channel + "\n"
+	    + "pagename= " + s.pageName + "\n"
+	    + "s.events=" + s.events + "\n"
+	    + "s.evar1=" + s.evar1 + "\n"
+		+ "s.evar7=" + s.evar7 + "\n"
+		+ "s.evar10=" + s.evar10 + "\n"
+		+ "s.evar11=" + s.evar11 + "\n"
+		+ "s.evar12=" + s.evar12 + "\n"
+		+ "s.evar16=" + s.evar16 + "\n"
+		+ "s.state=" + s.state + "\n"
+		+ "s.products=" + s.products); 		*/
+	
+	/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+	var s_code=s.t();if(s_code && inProductionjs)document.write(s_code);
+	//-->
+	</script>
+	
+    <div style="clear:both"></div>
+	
+</div>	
+ 
+    </div><!-- end leftalign --><div style="clear:left"></div>
+	
+<style type="text/css">
+	#footcontainer {
+		position:relative;width:79px;height:25px;margin-left:50px;
+	}
+	#footcontainer .facebookfoot {
+		position:absolute;
+		width:25px;
+		height:25px;
+		background:url(/images/socialSprite.png) 0 0;	
+		top:0;
+		left:0;
+	}
+	#footcontainer .twitterfoot {
+		position:absolute;
+		width:25px;
+		height:25px;
+		background:url(/images/socialSprite.png) -50px -50px;
+		left:27px;	
+		top:0;		
+	}
+	#footcontainer .linkedinfoot {
+		position:absolute;
+		width:25px;
+		height:25px;
+		background:url(/images/socialSprite.png) -25px -25px;
+		left:54px;
+		top:0;	
+	}		
+</style>
+
+
+
+<div id="footer"><!-- start of footer -->&nbsp;
+	<div id="footerrow1"><!-- start footerrow1 -->
+    	<div class="footerBoxLogo"> </div>
+		<div class="footerBox1">
+			<font class="footerHdr">LEARN ABOUT FRANCHISING</font><br />
+			<a href="http://www.franchise.com/franchise-glossary.cfm" class="footerLinks">Franchise Business Glossary</a><br />
+			<a href="http://www.franchise.com/small-business-information.cfm" class="footerLinks">Franchise Articles</a><br />
+			<a href="http://www.franchise.com/franchise-financing.cfm" class="footerLinks">Finance &amp; Start a Small Business</a><br/>
+			<a href="http://www.franchise.com/new-franchises-for-sale.cfm" class="footerLinks">New Franchises For Sale</a>
+		</div>	
+		<div class="footerBox2">
+			<font class="footerHdr">TOOLS AND RESOURCES</font><br />
+			<a href="http://www.franchise.com/business-franchising-events.cfm" class="footerLinks">Business &amp; Franchising Events</a><br />
+			<a href="http://www.franchise.com/franchisee-testimonials.cfm" class="footerLinks">Franchisee Testimonials</a><br/>
+			<a href="http://www.franchise.com/net-worth-calculator.cfm" class="footerLinks">Net Worth Calculator</a><br/>
+			<a href="http://www.franchise.com/franchise-news/frequently-asked-franchise-questions.cfm" class="footerLinks">Franchise FAQ's</a>
+   		</div>	
+		<div class="footerBox3">
+			<font class="footerHdr">COMPANY INFORMATION</font><br />
+			<a href="http://www.franchise.com/about-franchise.cfm" class="footerLinks">About Franchise.com</a><br />
+			<a href="http://www.franchise.com/advertise-your-business.cfm" class="footerLinks">Advertise With Us</a><br />
+			<a href="http://www.franchise.com/privacy-statement.cfm" class="footerLinks">Privacy Statement</a><br />
+			<a href="http://www.franchise.com/blog/" class="footerLinks" target="_blank">Franchise Blog</a>
+		</div>     
+	</div><!-- end footerrow1 -->
+	<div id="footerrow3"><!-- start footerrow3 -->
+		<div style="width:100px;margin:10px auto;">
+			<div id="footcontainer">
+				<span style="margin:-85px;color:#f2f2f2;font-weight:bold;font-family: Tahoma,Verdana;">Follow Us</span>
+				<a href="https://www.facebook.com/franchisedotcom?sk=wall" target="_blank"><div class="facebookfoot"></div></a>	
+				<a href="https://twitter.com/franchisedotcom" target="_blank"><div class="twitterfoot"></div></a>							
+			</div>
+		</div>
+	</div>		
+	<div id="footerrow2"><!-- start footerrow2 -->
+		<div style="width:260px;margin:0 auto;">
+			<a href="http://portsmouthchamber.org/cwi/businesses/bus_display.cfm?MID=5557" target="_blank"><img src="/images/portsmouth-chamber-of-commerce.gif" border="0" alt="Portsmouth Chamber of Commerce"></a>
+			<a href="http://www.franchise.org/franchisecom_supplier.aspx" target="_blank"><img src="/images/ifa.gif" border="0" alt="IFA"></a>
+		</div>
+	</div>
+
+    <div style="clear:both"></div>
+	
+	<div style="position:relative;padding-top:20px;width:850px;">
+		<a href="http://www.franchise.com/" class="footerMenu">Franchise.com Home</a>&nbsp;&nbsp;
+		<a href="http://www.franchise.com/disclaimer.cfm" class="footerMenu">Disclaimer</a>&nbsp;&nbsp;
+		<a href="http://www.franchise.com/franchise-site-map.cfm" class="footerMenu">Site Map</a>&nbsp;&nbsp;
+		<a href="http://www.franchise.com/contact-us.cfm" class="footerMenu">Contact Us</a>&nbsp;&nbsp;
+		<a href="http://www.franchise.com/rss/" class="footerMenu">RSS Directory</a>
+        <div class="tahoma11" style="padding-top:5px;padding-bottom:10px;">Copyright 1995-2013 Franchise.com</div>
+	</div>
+</div><!-- end of footer -->
+</div>	
+
+<div style="height:40px;margin-top:-40px;width:1054px;background:#869CB2 url('/images/left-right-borderBG.gif') repeat-y;"></div>
+  
+</div> 
+<div style="clear:left"></div>
+</div><!-- end of layoutLogic -->
+
+
+
+<img src="http://franchise.go2jump.org/aff_i?offer_id=1&aff_id=1" width="1" height="1" alt="" />
+<img src="http://franchise.go2jump.org/aff_i?offer_id=2&aff_id=1" width="1" height="1" alt="" />
+
+
+
+	
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	var google_conversion_id = 1060155415;
+	var google_conversion_language = "en";
+	var google_conversion_format = "3";
+	var google_conversion_color = "666666";
+	var google_conversion_label = "KHwVCL3npwIQl-DC-QM";
+	var google_conversion_value = 0;
+	/* ]]> */
+	</script>
+	<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
+	</script>
+	<noscript>
+	<div style="display:inline;">
+	<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1060155415/?label=KHwVCL3npwIQl-DC-QM&amp;guid=ON&amp;script=0"/>
+	</div>
+	</noscript>
+	
+	
+	
+	
+	
+	
+  
+</body>
+</html>		

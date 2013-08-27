@@ -1,0 +1,1485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link href="/images/_defaults.css" rel="stylesheet" type="text/css" />
+	<link href="/images/_layout_v2.css" rel="stylesheet" type="text/css" />
+
+<link href="/images/_layout_sky.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]><style type="text/css">@import url("/images/_defaults_ie6.css");</style><![endif]--> 
+	<script type="text/javascript">
+function isCheckedOnOff(InputName)
+{
+	if(document.getElementById(InputName).checked == true)
+		document.getElementById(InputName).checked = false;
+	else
+		document.getElementById(InputName).checked = true;
+}
+
+function openCloseTabs(element){
+	if(document.getElementById(element).style.display == 'none'){
+		document.getElementById(element).style.display = 'block';
+	}else{
+		document.getElementById(element).style.display = 'none';
+	}
+}
+function PopWindow(mypage, myname, w, h, scroll) 
+	{
+	var winl = (screen.width - w) / 2;
+	var wint = (screen.height - h) / 2;
+	/* winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+',scrollbars='+scroll+',resizable,status' */
+winprops = 'height='+h+',width='+w+',top='+120+',left='+winl+',scrollbars='+scroll+',resizable,status=no,toolbar=no,menubar=no';
+
+win = window.open(mypage, myname, winprops)
+/* if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); } */
+}
+</script>
+
+
+
+
+<script type="text/javascript">
+	function hideTabContent(element){
+		for(var x=1;x<30;x++){
+			if(document.getElementById(element+'_'+x) != null){
+				document.getElementById(element+'_'+x).style.display = 'none';
+			}
+		}
+	}
+	function showTabContent(tab,tabId,element,id){
+		hideTabContent(element);
+		changeTabBack(tab);
+		if(document.getElementById(element+'_'+id) != null){
+			document.getElementById(element+'_'+id).style.display = 'block';
+		}
+		if(document.getElementById(tab+'_'+tabId) != null){
+			document.getElementById(tab+'_'+tabId).style.backgroundImage = 'url(/images/tab_selected_back.jpg)';
+			document.getElementById(tab+'_'+tabId).style.color = '#407740';
+			document.getElementById(tab+'_'+tabId).style.fontWeight = 'bold';
+		}
+	}
+	function changeTabBack(element){
+		for(var x=1;x<30;x++){
+			if(document.getElementById(element+'_'+x) != null){
+				document.getElementById(element+'_'+x).style.backgroundImage = 'url(/images/tab_unselected_back.jpg)';
+				document.getElementById(element+'_'+x).style.color = '#666666';
+				document.getElementById(element+'_'+x).style.fontWeight = 'normal';
+			}
+		}
+	}
+	
+	
+	
+	
+	function hideTabContentCal(element){
+		for(var x=1;x<30;x++){
+			if(document.getElementById(element+'_'+x) != null){
+				document.getElementById(element+'_'+x).style.display = 'none';
+			}
+		}
+	}
+	function showTabContentCal(tab,tabId,element,id){
+		hideTabContentCal(element);
+		changeTabBackCal(tab);
+		if(document.getElementById(element+'_'+id) != null){
+			document.getElementById(element+'_'+id).style.display = 'block';
+		}
+		if(document.getElementById(tab+'_'+tabId) != null){
+			document.getElementById(tab+'_'+tabId).className = 'selectedtabCal';
+		}
+	}
+	function changeTabBackCal(element){
+		for(var x=1;x<30;x++){
+			if(document.getElementById(element+'_'+x) != null){
+				document.getElementById(element+'_'+x).className = 'unselectedtabCal';
+			}
+		}
+	}
+	
+	
+	function hideTabContentblogs(element){
+		for(var x=1;x<30;x++){
+			if(document.getElementById(element+'_'+x) != null){
+				document.getElementById(element+'_'+x).style.display = 'none';
+			}
+		}
+	}
+	function showTabContentblogs(tab,tabId,element,id){
+		hideTabContentblogs(element);
+		changeTabBackblogs(tab);
+		if(document.getElementById(element+'_'+id) != null){
+			document.getElementById(element+'_'+id).style.display = 'block';
+		}
+		if(document.getElementById(tab+'_'+tabId) != null){
+			document.getElementById(tab+'_'+tabId).className = 'selectedtabblogs';
+		}
+	}
+	function changeTabBackblogs(element){
+		for(var x=1;x<30;x++){
+			if(document.getElementById(element+'_'+x) != null){
+				document.getElementById(element+'_'+x).className = 'unselectedtabblogs';
+			}
+		}
+	}
+function toggle(div_id) {
+	var el = document.getElementById(div_id);
+	if ( el.style.display == 'none' ) {	el.style.display = 'block';}
+	else {el.style.display = 'none';}
+}
+function blanket_size(popUpDivVar) {
+	if (typeof window.innerWidth != 'undefined') {
+		viewportheight = window.innerHeight;
+	} else {
+		viewportheight = document.documentElement.clientHeight;
+	}
+	if ((viewportheight > document.body.parentNode.scrollHeight) && (viewportheight > document.body.parentNode.clientHeight)) {
+		blanket_height = viewportheight;
+	} else {
+		if (document.body.parentNode.clientHeight > document.body.parentNode.scrollHeight) {
+			blanket_height = document.body.parentNode.clientHeight;
+		} else {
+			blanket_height = document.body.parentNode.scrollHeight;
+		}
+	}
+	var blanket = document.getElementById('blanket');
+	blanket.style.height = blanket_height + 'px';
+	var popUpDiv = document.getElementById(popUpDivVar);
+	popUpDiv_height=blanket_height/2-150;
+	popUpDiv.style.top = 10 + '%';
+}
+function window_pos(popUpDivVar) {
+	if (typeof window.innerWidth != 'undefined') {
+		viewportwidth = window.innerHeight;
+	} else {
+		viewportwidth = document.documentElement.clientHeight;
+	}
+	if ((viewportwidth > document.body.parentNode.scrollWidth) && (viewportwidth > document.body.parentNode.clientWidth)) {
+		window_width = viewportwidth;
+	} else {
+		if (document.body.parentNode.clientWidth > document.body.parentNode.scrollWidth) {
+			window_width = document.body.parentNode.clientWidth;
+		} else {
+			window_width = document.body.parentNode.scrollWidth;
+		}
+	}
+	var popUpDiv = document.getElementById(popUpDivVar);
+	window_width=window_width/2-150;
+	popUpDiv.style.left = 20 + '%';
+}
+function popup(windowname) {
+	blanket_size(windowname);
+	window_pos(windowname);
+	toggle('blanket');
+	toggle(windowname);		
+}
+</script>
+
+<title>Arts/Entertainment - post-journal.com | News, Sports, Jobs, Community Information - Jamestown | Post-Journal</title><meta name="description" content="Arts/Entertainment" />
+<meta name="keywords" content="Jamestown, Chautauqua County, New York, Ellicott, Chautauqua Lake, Bush Industries, Cummins Inc., Jamestown Community College, Jamestown Business College, Jamestown Jammers baseball, Lucille Ball-Desi Arnaz Center" />
+
+	
+	<script type="text/javascript" src="http://partner.googleadservices.com/gampad/google_service.js">
+	</script>
+	<script type="text/javascript">
+	  GS_googleAddAdSenseService("ca-pub-0279219903859783");
+	  GS_googleEnableAllServices();
+	</script>
+	
+	<script type="text/javascript">
+		GA_googleAddAttr("SiteID", "PJJN");
+	</script>
+	
+	<script type="text/javascript">
+		GA_googleAddAttr("MSection", "arts_entertainment");
+	</script>
+	
+	
+		<script type="text/javascript">
+			GA_googleAddAttr("SubSection", "arts_entertainment");
+		</script>
+	
+				<script type="text/javascript">
+					GA_googleAddAttr("SLevel_1", "arts_entertainment");
+				</script>
+			
+	<script type="text/javascript">
+		GA_googleAddSlot("ca-pub-0279219903859783", "CMSv2_x94_0x0");
+GA_googleAddSlot("ca-pub-0279219903859783", "CMSv2_x95_74x60");
+GA_googleAddSlot("ca-pub-0279219903859783", "CMSv2_x40_234x60");
+GA_googleAddSlot("ca-pub-0279219903859783", "CMSv2_x41_234x60");
+GA_googleAddSlot("ca-pub-0279219903859783", "CMSv2_x42_234x60");
+GA_googleAddSlot("ca-pub-0279219903859783", "CMSv2_Top_728x90");
+GA_googleAddSlot("ca-pub-0279219903859783", "CMSv2_Middle_300x250");
+GA_googleAddSlot("ca-pub-0279219903859783", "CMSv2_Left_160x600");
+GA_googleAddSlot("ca-pub-0279219903859783", "CMSv2_Bottom_728x90");
+
+	</script>
+	<script type="text/javascript">
+	  GA_googleFetchAds();
+	</script>
+
+</head>
+<body>
+<div id="blanket" style="display:none;"></div>
+<div id="hdr">
+	<div id="hdrNav">
+		<div id="hdrNavL">Mobile: <a href="http://mobile.post-journal.com" title="Mobile Version">mobile.post-journal.com</a></div>
+		<div id="hdrNavR">
+	<span id="visitorNav">
+		<a href="https://www.post-journal.com/page/memberscreate.create/sign-in.html" title="Sign In">Sign In</a> | 
+		<a href="https://www.post-journal.com/page/memberscreate.create/create-an-account.html" title="Create an Account for The Post-Journal">Create an Account</a> | 
+	</span>
+	<span id="memberNav">
+		Welcome, <strong id="displayUsername"></strong>. <a href="https://www.post-journal.com/page/memberssecure.home/" title="My Account">My Account</a> | 
+		<a href="https://www.post-journal.com/page/memberslogin.actLogout/" title="Logout">Logout</a> | 
+	</span>
+	
+	<a href="/page/ecocat.list/online-store.html" title="Subscribe to The Post-Journal">Subscribe</a> | <a href="http://extras.post-journal.com/vnr/vnr.asp" title="Submit News to The Post-Journal">Submit News</a> | 
+		<a href="http://extras.post-journal.com/pdf/pdfpaper.asp">PDF edition</a> | 
+<a href="http://www.post-journal.com">Home</a>
+<a href="/page/syndrss.front/headline.xml" title="RSS Feed"><img src="/images/rss.gif" border="0" class="imgMiddle" alt="RSS" /></a>
+
+<script type="text/javascript">
+	var searchTerm = "DNAME=" ;
+	if (document.cookie.length > 0) { 
+		offset = document.cookie.indexOf(searchTerm);
+		if (offset != -1) {
+			offset += searchTerm.length;
+			var stopTerm = ';';
+			var stopPoint = document.cookie.indexOf(stopTerm, offset);
+			if ( stopPoint == -1 ) {
+				stopPoint = document.cookie.length;
+			}
+			var accountUsername = document.cookie.substring(offset,stopPoint);
+			/* additional check for cookie difference between browsers */
+			if ( unescape(document.cookie.substring(offset,offset+1)) != ';' ) {
+				showMember(accountUsername);
+			} else {
+				showGuest();
+			}
+		} else {
+			showGuest();
+		}							 
+	} else {
+		showGuest();
+	}
+	function showMember(accountUsername) {
+		document.getElementById('visitorNav').style.display = 'none';
+		document.getElementById('memberNav').style.display = '';
+		document.getElementById('displayUsername').innerHTML = accountUsername;
+	}
+	function showGuest() {
+		document.getElementById('visitorNav').style.display = '';
+		document.getElementById('memberNav').style.display = 'none';
+		document.getElementById('displayUsername').innerHTML = '';
+	}
+</script>
+</div>
+	</div>
+	<div id="hdrM">
+		<div id="hdrMLogo"><a href="http://www.post-journal.com" title="Home"><img src="/images/spacer.gif" border="0" width="250" height="96" /></a></div>
+		<div id="hdrMAd">
+	<script type="text/javascript">
+	  GA_googleFillSlot("CMSv2_Top_728x90");
+	</script>
+</div>
+	</div>
+</div>
+<div id="bdy">
+	<div id="bdyL"><img src="/images/spacer.gif" border="0" width="1" height="1" /></div>
+	<div id="bdyC">
+		<!-- Top Nav -->
+		<div id="navTopCap"><img src="/images/spacer.gif" border="0" width="1" height="1" /></div>
+		<div id="navTop"><a href="/page/category.detail/nav/5018/News.html" class="">News</a>&nbsp; <a href="/page/category.detail/nav/5070/Opinion.html" class="">Opinion</a>&nbsp; 
+			<a href="http://www.post-journal.com/page/category.detail/nav/5000/Sections.html" >Sections</a>&nbsp; <a href="/page/category.detail/nav/5019/Sports.html" class="">Sports</a>&nbsp; <a href="/page/category.detail/nav/5205/Lifestyles.html" class="">Lifestyles</a>&nbsp; <a href="/page/category.detail/nav/5068/Arts-Entertainment.html" class="">Arts/Entertainment</a>&nbsp; <a href="/page/category.detail/nav/5034/Ads.html" class="">Ads</a>&nbsp; 
+			<a href="http://hot-ads.com/browse/index.cfm?SID=NY&RGID=10000000000&CID=2" >Classifieds</a>&nbsp; 
+			<a href="http://jobs.post-journal.com" >Jobs</a>&nbsp; <a href="/page/category.detail/nav/5052/Extras.html" class="">Extras</a>&nbsp; 
+			<a href="http://cu.post-journal.com/" >CU</a>&nbsp; <a href="/page/category.detail/nav/5033/Contact-Us.html" class="">Contact Us</a> </div>
+		
+		
+		<!-- Breaking -->
+		
+
+	<div id="breakingNewsAjax"></div>
+	<script language="javascript">
+		var xmlhttp;
+		
+		function getBreaking() {
+			xmlhttp=GetXmlHttpObject();
+			if (xmlhttp==null) {
+				  alert ("Sorry, but I couldn't create an XMLHttpRequest");
+				  return;
+			}
+			
+			var url="/cached/layout.breakingNews.html";
+			url += '?sid='+Math.random();
+
+			xmlhttp.onreadystatechange=stateChanged;
+			xmlhttp.open('GET',url,true);
+			xmlhttp.send(null);
+				
+		}
+	
+		function GetXmlHttpObject() {
+			if (window.XMLHttpRequest) {
+			  /* code for IE7+, Firefox, Chrome, Opera, Safari */
+			  return new XMLHttpRequest();
+			}
+			if (window.ActiveXObject) {
+			  /* code for IE6, IE5 */
+			  return new ActiveXObject('Microsoft.XMLHTTP');
+			}
+			return null;
+		}
+		
+		function stateChanged() {
+			if (xmlhttp.readyState==4) {
+				if (xmlhttp.status == 200) {
+					document.getElementById('breakingNewsAjax').innerHTML = '';
+					document.getElementById('breakingNewsAjax').innerHTML=xmlhttp.responseText;
+				}
+			}
+		}
+		
+		getBreaking();
+	
+	</script>
+	
+<!-- Main Body -->
+<table id="mBdy" width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td id="mBdyLAd" valign="top">
+			<div id="navCat">
+				<h3>Arts/Entertainment</h3>
+				
+<ul>
+
+			<li><a href="/page/category.detail/nav/5018/News.html" class="">News</a></li>
+		
+			<li><a href="/page/category.detail/nav/5019/Sports.html" class="">Sports</a></li>
+		
+			<li><a href="/page/category.detail/nav/5205/Lifestyles.html" class="">Lifestyles</a></li>
+		
+			<li class="color_blue"><strong><a href="/page/category.detail/nav/5068/Arts-Entertainment.html" class="">Arts/Entertainment</a></strong></li>
+		
+			<li><a href="/page/category.detail/nav/5034/Ads.html" class="">Ads</a></li>
+		
+			<li><a href="/page/category.detail/nav/5052/Extras.html" class="">Extras</a></li>
+		
+		<li><a href="http://cu.post-journal.com/" >CU</a></li>
+	
+			<li><a href="/page/category.detail/nav/5033/Contact-Us.html" class="">Contact Us</a></li>
+		
+<div class="clearL"></div>
+</ul>
+
+			</div>
+			
+<div class="padBtm">
+	<script type="text/javascript">
+	  GA_googleFillSlot("CMSv2_Left_160x600");
+	</script>
+</div>
+
+		</td>
+		<td id="mBdyLC" valign="top">
+			
+<div id="navBCrumbs">
+	
+				/ <a href="/page/category.detail/nav/5068/Arts-Entertainment.html" title="Arts/Entertainment">Arts/Entertainment</a>
+			 
+	/
+</div>
+		<div class="padBtm"><img src="http://extras.post-journal.com/headers/arts.jpg" border="0" /></div>
+			<div id="navCatFlat">
+<ul>
+
+		<li><a href="http://affiliate.zap2it.com/tvlistings/ZCGrid.do?aid=nyjapj" >TV Listings</a></li>
+	
+		<li><a href="http://affiliate.zap2it.com/movies/mvhome.do?aid=nyjapj" >Movies</a></li>
+	
+		<li><a href="http://affiliate.zap2it.com/movies/mventertainment.do?aid=nyjapj" >Movie & TV News</a></li>
+	
+			<li><a href="/page/category.detail/nav/5011/Computer-Talk--Plugged-IN-.html" class="">Computer Talk (Plugged IN)</a></li>
+		
+		<li><a href="/page/calendars.listCal/cal/3/Community-Calendar.html" >Community Events Calendar</a></li>
+	
+<div class="clearL"></div>
+</ul>
+<div class="clear"></div></div>
+			
+<div class="cBdrHdrSm">
+	<div class="cBdrTLSm">&nbsp;</div>
+	<div class="cBdrTRSm">&nbsp;</div>
+	<div class="cBdrTCOSm">&nbsp;</div>
+</div>
+<div class="cBdrMainBig">
+	<a href="/page/content.detail/id/627157/All-Things-New-Shares-Music--Ministry-With-Jamestown.html?nav=5068" class="h1A" title="All Things New Shares Music, Ministry With Jamestown">All Things New Shares Music, Ministry With Jamestown</a>
+	<div class="contentShortL">
+	
+	<a href="/page/content.detail/id/627157/All-Things-New-Shares-Music--Ministry-With-Jamestown.html?nav=5068"><img src="/photos/news/md/627157_1.jpg" border="0" class="photo" /></a> 
+		<p><em class="dim">August 24, 2013</em> All Things New, a Florida-based band and local opener Good Little Giants entertained guests of the Willow Bay Theater Friday evenin. <a href="/page/content.detail/id/627157/All-Things-New-Shares-Music--Ministry-With-Jamestown.html?nav=5068" class="" title="All Things New Shares Music, Ministry With Jamestown">more&nbsp;&raquo;&raquo;</a></p>
+	
+	<div class="clearL"></div>
+	</div>
+	
+</div>
+<div class="cBdrFdr">
+	<div class="cBdrBL"><img src="/images/spacer.gif" border="0" width="1" height="1" /></div>
+	<div class="cBdrBR"><img src="/images/spacer.gif" border="0" width="1" height="1" /></div>
+	<div class="cBdrBC"><img src="/images/spacer.gif" border="0" width="1" height="5" /></div>
+</div>
+			
+<div class="cBdrHdrSm">
+	<div class="cBdrTLSm">&nbsp;</div>
+	<div class="cBdrTRSm">&nbsp;</div>
+	<div class="cBdrTCOSm">&nbsp;</div>
+</div>
+<div class="cBdrMainBig">
+	<div class="navPaginate">
+		page: | <a href="/page/category.displayall/nav/5068.html?startIndex=1#ptgats" title="1 - 20">1</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=21#ptgats" title="21 - 40">2</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=41#ptgats" title="41 - 60">3</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=61#ptgats" title="61 - 80">4</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=81#ptgats" title="81 - 100">5</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=101#ptgats" title="101 - 120">6</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=121#ptgats" title="121 - 140">7</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=141#ptgats" title="141 - 160">8</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=161#ptgats" title="161 - 180">9</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=181#ptgats" title="181 - 200">10</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=201#ptgats" title="201 - 220">11</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=221#ptgats" title="221 - 240">12</a> | <a href="#" title="Search Pages" onClick="popup('popUpDiv_status_searchCat')">Search</a> | 
+	</div>
+	<div id="popUpDiv_status_searchCat" class="popUpDiv_600" style="display:none;"><div class="cBdrMainBig">
+	<div class="bBorder_e padBtm">
+		<div class="cBdrHdrR txtSmall dim"><a href="#" onClick="popup('popUpDiv_status_searchCat')" title="Close">CLOSE</a></div>
+		<div class="cBdrHdrL"><h2 class="color_blue">Search: Arts/Entertainment</h2></div>
+	</div>
+	<form id="catSearch" action="/page/search.results" method="get">
+		<input type="hidden" name="nav" value="5068" />
+		<h5>I am looking for:</h5>
+		<div>
+			<input name="keywords" id="siteSearchBox" value="" autocomplete="off" type="text" size="18" maxlength="128" />
+				<strong class="dim txtSmaller">between</strong>
+			<input size="10" type="text" id="StartDate" name="StartDate" readonly="readonly" />
+			<a href="javascript:StartDate.popup();"><img src="/templates/calendar/img/cal.gif" width="16" height="16" border="0" alt="Click Here to Select Date"></a>
+				<strong class="dim txtSmaller">and</strong>
+			<input size="10" type="text" id="EndDate" name="EndDate" readonly="readonly" />
+			<a href="javascript:EndDate.popup();"><img src="/templates/calendar/img/cal.gif" width="16" height="16" border="0" alt="Click Here to Select Date"></a>
+			<input name="btnSiteSearch" type="submit" value="Search" class="fButton" />
+		
+		</div>
+		<input type="hidden" name="nav" value="5068" />
+	</form>
+</div><script type="text/JavaScript" src="/templates/calendar/calendar2.js"></script>
+
+<script type="text/javascript">
+	 /* create calendar object(s) just after form tag closed */
+	 /* specify form element as the only parameter (document.forms['formname'].elements['inputname']); */
+	 /* note: you can have as many calendar objects as you need for your application */
+	var StartDate = new calendar2(document.getElementById('StartDate'));
+		StartDate.year_scroll = true;
+		StartDate.time_comp = false;
+</script>
+
+
+<script type="text/javascript">
+	 /* create calendar object(s) just after form tag closed */
+	 /* specify form element as the only parameter (document.forms['formname'].elements['inputname']); */
+	 /* note: you can have as many calendar objects as you need for your application */
+	var EndDate = new calendar2(document.getElementById('EndDate'));
+		EndDate.year_scroll = true;
+		EndDate.time_comp = false;
+</script>
+</div>
+	<div class="contentList">
+	
+		<div class="bBorder_e popOut">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/627069/A-Second-Home.html?nav=5068"><img src="/photos/news/md/627069_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/627069/A-Second-Home.html?nav=5068" class="h3A" title="A Second Home">A Second Home</a>
+				<p><em class="dim">August 22, 2013</em> Rusted Root’s Liz Berlin will make a return to The Great Blue Heron grounds during Night Lights At The Heron. <a href="/page/content.detail/id/627069/A-Second-Home.html?nav=5068" class="" title="A Second Home">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e padSides">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/627070/Eilen-Jewell-To-Close-Belle-Bash-Summer-Concert-Series-Wednesday.html?nav=5068"><img src="/photos/news/md/627070_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/627070/Eilen-Jewell-To-Close-Belle-Bash-Summer-Concert-Series-Wednesday.html?nav=5068" class="h3A" title="Eilen Jewell To Close Belle Bash Summer Concert Series Wednesday">Eilen Jewell To Close Belle Bash Summer Concert Series Wednesday</a>
+				<p><em class="dim">August 22, 2013</em> After a summer of providing area residents with live music performed by nationally touring acts, the Belle Bash Summer Concert Series will celebrate the end of its season on Wednesday. <a href="/page/content.detail/id/627070/Eilen-Jewell-To-Close-Belle-Bash-Summer-Concert-Series-Wednesday.html?nav=5068" class="" title="Eilen Jewell To Close Belle Bash Summer Concert Series Wednesday">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e popOut">
+			<div class="contentShortL">
+				<a href="/page/content.detail/id/627071/Warrant-Pending.html?nav=5068" class="h3A" title="Warrant Pending">Warrant Pending</a>
+				<p><em class="dim">August 22, 2013</em> Area residents may be a tad disappointed to hear that Warrant, Firehouse, Hair Nation and Rob Base, which were originally scheduled to perform at the Jamestown Savings Bank Arena on Saturday, Aug. <a href="/page/content.detail/id/627071/Warrant-Pending.html?nav=5068" class="" title="Warrant Pending">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e padSides">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626959/And-The-Winner-Is----.html?nav=5068"><img src="/photos/news/md/626959_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626959/And-The-Winner-Is----.html?nav=5068" class="h3A" title="And The Winner Is ...">And The Winner Is ...</a>
+				<p><em class="dim">August 20, 2013</em> BEMUS POINT — After top-notch performances from four area residents, Michael Nugent, a 19-year-old from Lancaster, has been named the winner of Chautauqua Lake Voices. <a href="/page/content.detail/id/626959/And-The-Winner-Is----.html?nav=5068" class="" title="And The Winner Is ...">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e popOut">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626824/Saving-An-American-Icon.html?nav=5068"><img src="/photos/news/md/626824_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626824/Saving-An-American-Icon.html?nav=5068" class="h3A" title="Saving An American Icon">Saving An American Icon</a>
+				<p><em class="dim">August 17, 2013</em> America’s movie theaters must make costly upgrades by the end of the year in order to continue operating. <a href="/page/content.detail/id/626824/Saving-An-American-Icon.html?nav=5068" class="" title="Saving An American Icon">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e padSides">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626827/Howie-Mandel-Brings-Energetic-Comedy-To-Salamanca-Allegany-Casino.html?nav=5068"><img src="/photos/news/md/626827_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626827/Howie-Mandel-Brings-Energetic-Comedy-To-Salamanca-Allegany-Casino.html?nav=5068" class="h3A" title="Howie Mandel Brings Energetic Comedy To Salamanca Allegany Casino">Howie Mandel Brings Energetic Comedy To Salamanca Allegany Casino</a>
+				<p><em class="dim">August 17, 2013</em> SALAMANCA — The 2,400-capacity events center at Seneca Allegany Casino was nearly full of area residents laughing out loud with Howie Mandel Friday evening. <a href="/page/content.detail/id/626827/Howie-Mandel-Brings-Energetic-Comedy-To-Salamanca-Allegany-Casino.html?nav=5068" class="" title="Howie Mandel Brings Energetic Comedy To Salamanca Allegany Casino">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e popOut">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626759/Four-Remain.html?nav=5068"><img src="/photos/news/md/626759_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626759/Four-Remain.html?nav=5068" class="h3A" title="Four Remain">Four Remain</a>
+				<p><em class="dim">August 16, 2013</em> BEMUS POINT — SE93’s summer-long vocal competition is nearing the end of its season, and only four voices remain. The finale is set for Monday at 6:30 p.m. at the Floating Stage in Bemus Point. <a href="/page/content.detail/id/626759/Four-Remain.html?nav=5068" class="" title="Four Remain">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e padSides">
+			<div class="contentShortL">
+				<a href="/page/content.detail/id/626760/A-New-Frontier.html?nav=5068" class="h3A" title="A New Frontier">A New Frontier</a>
+				<p><em class="dim">August 16, 2013</em> Jenji Kohan, creator of “Weeds” and the new hit Netflix original series “Orange Is The New Black,” has chartered a course to the new frontier of digital media consumption. <a href="/page/content.detail/id/626760/A-New-Frontier.html?nav=5068" class="" title="A New Frontier">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e popOut">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626761/Local-Music-Legends-To-Be-Honored-In-New-Annual-Celebration.html?nav=5068"><img src="/photos/news/md/626761_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626761/Local-Music-Legends-To-Be-Honored-In-New-Annual-Celebration.html?nav=5068" class="h3A" title="Local Music Legends To Be Honored In New Annual Celebration">Local Music Legends To Be Honored In New Annual Celebration</a>
+				<p><em class="dim">August 16, 2013</em> Seven former area musicians have been selected to be honored during a new memorial celebration. A show MC’d by WRFA’s Ronnie Would, featuring live performances by Str8 Six, Day Old Soup, Brian K. <a href="/page/content.detail/id/626761/Local-Music-Legends-To-Be-Honored-In-New-Annual-Celebration.html?nav=5068" class="" title="Local Music Legends To Be Honored In New Annual Celebration">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e padSides">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626494/Dream-Come-True.html?nav=5068"><img src="/photos/news/md/626494_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626494/Dream-Come-True.html?nav=5068" class="h3A" title="Dream Come True">Dream Come True</a>
+				<p><em class="dim">August 10, 2013</em> More than 50 area youths recently traveled to Disney World with the DeMarco Sisters School of Dance to perform an American tribute. <a href="/page/content.detail/id/626494/Dream-Come-True.html?nav=5068" class="" title="Dream Come True">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e popOut">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626509/Good-Vibrations.html?nav=5068"><img src="/photos/news/md/626509_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626509/Good-Vibrations.html?nav=5068" class="h3A" title="Good Vibrations">Good Vibrations</a>
+				<p><em class="dim">August 10, 2013</em> CHAUTAUQUA — Summertime is the perfect time for music made in California, beach balls and Hawaiian shirts. <a href="/page/content.detail/id/626509/Good-Vibrations.html?nav=5068" class="" title="Good Vibrations">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e padSides">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626438/-An-Exciting-Time-.html?nav=5068"><img src="/photos/news/md/626438_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626438/-An-Exciting-Time-.html?nav=5068" class="h3A" title="‘An Exciting Time’">‘An Exciting Time’</a>
+				<p><em class="dim">August 9, 2013</em> It’s an exciting time for the Arts Council for Chautauqua County and the Reg Lenna Civic Center, as well as the local arts community. <a href="/page/content.detail/id/626438/-An-Exciting-Time-.html?nav=5068" class="" title="‘An Exciting Time’">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e popOut">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626399/A-Rejuvenating-Retreat.html?nav=5068"><img src="/photos/news/md/626399_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626399/A-Rejuvenating-Retreat.html?nav=5068" class="h3A" title="A Rejuvenating Retreat">A Rejuvenating Retreat</a>
+				<p><em class="dim">August 8, 2013</em> SHERMAN — Area residents are invited to the Great Blue Heron grounds in Sherman for an event which aims to help guests revive themselves. <a href="/page/content.detail/id/626399/A-Rejuvenating-Retreat.html?nav=5068" class="" title="A Rejuvenating Retreat">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e padSides">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626400/Howie-Mandel-Brings-His-Standup-Act-To-Salamanca.html?nav=5068"><img src="/photos/news/md/626400_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626400/Howie-Mandel-Brings-His-Standup-Act-To-Salamanca.html?nav=5068" class="h3A" title="Howie Mandel Brings His Standup Act To Salamanca">Howie Mandel Brings His Standup Act To Salamanca</a>
+				<p><em class="dim">August 8, 2013</em> SALAMANCA — Howie Mandel, the man who brought voice to classic characters such as Bobby Generic from “Bobby’s World,” Gizmo from “Gremlins” and Skeeter from “Muppet Babies,” will perform standup... <a href="/page/content.detail/id/626400/Howie-Mandel-Brings-His-Standup-Act-To-Salamanca.html?nav=5068" class="" title="Howie Mandel Brings His Standup Act To Salamanca">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e popOut">
+			<div class="contentShortL">
+				<a href="/page/content.detail/id/626401/-Days-Gone-Bye-.html?nav=5068" class="h3A" title="‘Days Gone Bye’">‘Days Gone Bye’</a>
+				<p><em class="dim">August 8, 2013</em> While biding my time until season four of AMC’s “The Walking Dead” releases in October, I decided to pick up a volume of the graphic novel, and I’m glad I did. <a href="/page/content.detail/id/626401/-Days-Gone-Bye-.html?nav=5068" class="" title="‘Days Gone Bye’">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e padSides">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626343/Fantastic-Four.html?nav=5068"><img src="/photos/news/md/626343_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626343/Fantastic-Four.html?nav=5068" class="h3A" title="Fantastic Four">Fantastic Four</a>
+				<p><em class="dim">August 6, 2013</em> BEMUS POINT — Only four singers remain in the Chautauqua Lake Voices vocal competition. <a href="/page/content.detail/id/626343/Fantastic-Four.html?nav=5068" class="" title="Fantastic Four">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e popOut">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626160/Developing-Drama.html?nav=5068"><img src="/photos/news/md/626160_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626160/Developing-Drama.html?nav=5068" class="h3A" title="Developing Drama">Developing Drama</a>
+				<p><em class="dim">August 3, 2013</em> For many area residents, Jamestown’s Drama Enrichment Program has acted as a positive influence, and has even inspired some to pursue careers in entertainment. <a href="/page/content.detail/id/626160/Developing-Drama.html?nav=5068" class="" title="Developing Drama">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e padSides">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626179/Ladies-Of-Laughter.html?nav=5068"><img src="/photos/news/md/626179_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626179/Ladies-Of-Laughter.html?nav=5068" class="h3A" title="Ladies Of Laughter">Ladies Of Laughter</a>
+				<p><em class="dim">August 3, 2013</em> Kathleen Madigan’s Friday evening performance may not have sold out the Reg Lenna Civic Center, but she did fill the theater with a sea of laughter and applause. <a href="/page/content.detail/id/626179/Ladies-Of-Laughter.html?nav=5068" class="" title="Ladies Of Laughter">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e popOut">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626180/SERVING--One-Joke-At-A-Time.html?nav=5068"><img src="/photos/news/md/626180_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626180/SERVING--One-Joke-At-A-Time.html?nav=5068" class="h3A" title="SERVING: One Joke At A Time">SERVING: One Joke At A Time</a>
+				<p><em class="dim">August 3, 2013</em> Area veterans and active duty personnel were treated to a old-fashioned war-time USO style comedy show featuring the GIs of Comedy Friday evening. <a href="/page/content.detail/id/626180/SERVING--One-Joke-At-A-Time.html?nav=5068" class="" title="SERVING: One Joke At A Time">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+		<div class="bBorder_e padSides">
+			<div class="contentShortL">
+				
+					<a href="/page/content.detail/id/626071/A-Mysterious-Transmission.html?nav=5068"><img src="/photos/news/md/626071_1.jpg" border="0" class="photo" width="150" /></a>
+				<a href="/page/content.detail/id/626071/A-Mysterious-Transmission.html?nav=5068" class="h3A" title="A Mysterious Transmission">A Mysterious Transmission</a>
+				<p><em class="dim">August 1, 2013</em> Although technology provides many conveniences, there are some things that are just better in real lif. <a href="/page/content.detail/id/626071/A-Mysterious-Transmission.html?nav=5068" class="" title="A Mysterious Transmission">more&nbsp;&raquo;&raquo;</a></p>
+				<div class="clearL"></div>
+			</div>
+		</div>
+	
+	</div>
+	<div class="navPaginate">
+		page: | <a href="/page/category.displayall/nav/5068.html?startIndex=1#ptgats" title="1 - 20">1</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=21#ptgats" title="21 - 40">2</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=41#ptgats" title="41 - 60">3</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=61#ptgats" title="61 - 80">4</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=81#ptgats" title="81 - 100">5</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=101#ptgats" title="101 - 120">6</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=121#ptgats" title="121 - 140">7</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=141#ptgats" title="141 - 160">8</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=161#ptgats" title="161 - 180">9</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=181#ptgats" title="181 - 200">10</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=201#ptgats" title="201 - 220">11</a> | <a href="/page/category.displayall/nav/5068.html?startIndex=221#ptgats" title="221 - 240">12</a> | <a href="#" title="Search Pages" onClick="popup('popUpDiv_status_searchCat')">Search</a> | 
+	</div>
+</div>
+<div class="cBdrFdr">
+	<div class="cBdrBL"><img src="/images/spacer.gif" border="0" width="1" height="1" /></div>
+	<div class="cBdrBR"><img src="/images/spacer.gif" border="0" width="1" height="1" /></div>
+	<div class="cBdrBC"><img src="/images/spacer.gif" border="0" width="1" height="5" /></div>
+</div>
+
+			
+<div class="cBdrHdr">
+	<div class="cBdrTL">&nbsp;</div>
+	<div class="cBdrTR">&nbsp;</div>
+	<div class="cBdrTC">
+		<div>
+			<div class="cBdrHdrR txtSmall dim"><a href="/page/calendars.listall/calendars.html">View All Calendars &raquo;</a></div>
+			<div class="cBdrHdrL"><a href="/page/syndRSS.frontCalendars/calendarEvents.xml?ID=3" title="RSS Top Calendar Events"><img src="/images/icon_RSS.gif" border="0" /></a> <h2 class="color_teal">Calendar</h2></div>
+		</div>
+	</div>
+</div>
+<div class="cBdrMainBig">
+	<div>
+		<div class="contentShort">
+			<img src="/photos/calendarsEvents/sm/4393.jpg" align="left" class="photo" border="0"  />
+			<p><strong>ALL THINGS NEW</strong> <em class="dim">August 23, 2013</em></p>
+			<p>Jeff Roberts and Assoc. signed artists, All Things New will be preforming with opening artists Good Little Giants at the Willow Bay Theater. The Willow Bay Theater is located at 21 E. 3rd Street in Jamestown, NY. The show will begin at 730 pm, doors will open at 7. <a href="/page/calendars.detail/cal/3/event/4393/ALL-THINGS-NEW.html?d=August%2023%2C%202013">more&nbsp;&raquo;</a></p>
+		</div>
+		<div class="clearL"></div>
+	</div>
+	
+		<h3>Community Calendar</h3>
+		<ul>
+		
+			<li><a href="/page/calendars.detail/cal/3/event/4393/ALL-THINGS-NEW.html?d=August%2023%2C%202013" title="ALL THINGS NEW">ALL THINGS NEW</a></li>
+		
+			<li><a href="/page/calendars.detail/cal/3/event/4394/JadersClub-Dance.html?d=August%2031%2C%202013" title="JadersClub Dance">JadersClub Dance</a></li>
+		
+			<li><a href="/page/calendars.detail/cal/3/event/4395/Oh--My-Aching-Feet--Helping-You-Help-Yourself-Seminar.html?d=September%2012%2C%202013" title="Oh, My Aching Feet: Helping You Help Yourself Seminar">Oh, My Aching Feet: Helping You Help Yourself Seminar</a></li>
+		
+		</ul>
+		<div class="viewMore"><a href="/page/calendars.listCal/cal/3/Community-Calendar-calendar.html" title="View All Community Calendar">View All Community Calendar &raquo;</a></div>
+	
+</div>
+<div class="cBdrFdr">
+	<div class="cBdrBL">&nbsp;</div>
+	<div class="cBdrBR">&nbsp;</div>
+	<div class="cBdrBC"><img src="/images/spacer.gif" border="0" width="1" height="5" /></div>
+</div>
+		</td>
+		<td id="mBdyRC" valign="top">
+			<div id="weatherMag">
+	<div id="weatherMagL">
+	<script type="text/javascript">
+	  GA_googleFillSlot("CMSv2_x95_74x60");
+	</script>
+</div>
+	<div id="weatherMagR"><div id="wx_module">
+   <a href="http://www.weather.com/weather/local/USNY0722">Jamestown Weather Forecast, NY</a>
+</div>
+
+<script type="text/javascript">
+
+   /* The location ID [wx_locID] may be changed as needed.  However, please update */
+   /* the link and text in the above wx_module to reflect any changes made. */
+   var wx_locID = 'USNY0722';
+
+   /* Please do not change the configuration value [wx_config] manually - your module */
+   /* will no longer function if you do.  If at any time you wish to modify this */
+   /* configuration please use the graphical configuration tool found at */
+   /* https://registration.weather.com/ursa/wow/step2 */
+   var wx_config='SZ=teaser*lnk=http|www.post-journal.com/page/weather.lg/*PID=1031326525*DN=www.post-journal.com*MD5=50ca2ef82593df53e0e4c896aa774ff5';
+
+   document.write('<scr'+'ipt src="'+document.location.protocol+'//wow.weather.com/weather/wow/module/'+wx_locID+'?config='+wx_config+'&proto='+document.location.protocol+'&target=wx_module"></scr'+'ipt>');
+</script> </div>
+	<div class="clear"></div>
+</div>
+
+
+
+<!-- Prime Time TV Grid -->
+	<!--COPY START -->
+
+	<style type="text/css">
+		/* DO NOT MODIFY */
+		.zcc-primetime {width:100%;}
+		/* END DO NOT MODIFY */
+
+		/* CUSTOMIZE PRESENTATION WITH THESE STYLES */
+		/* adjust width here */
+		#tms_widget_footer_wrap,
+		#zcc-wrap {
+			width: 300px;
+			margin: 0;
+		}
+
+		/* Adjust title font and properties */
+		#zcc-grid-label {
+			font: bold 16px Helvetica, Arial, sans-serif;
+			margin: 0 0 2px;
+			text-indent: 10px;
+		}
+
+		/* Adjust text within the grid */
+		.zcc-primetime {
+			border-collapse: collapse;
+			caption-side: top;
+			font-size: 10px;
+			color: #000;
+			table-layout: fixed;
+			border-top: 1px solid #999;
+			border-left: 1px solid #999;
+			margin: 0;
+		}
+
+		/* Adjust NEW attribute */
+		.zcc-sked-new,
+		.zcc-sked-live {
+			color: #EEE;
+			font-size: 10px;
+			font-weight: bold;
+			padding: 0px 3px;
+			text-transform: uppercase;
+		}
+		.zcc-sked-live {
+			background-color: #1B905B;
+		}
+		.zcc-sked-new {
+			background-color: #1E75BB;
+		}
+
+		.zcc-primetime td,
+		.zcc-primetime th {
+			border-right: 1px solid #859FC1;
+			border-bottom: 1px solid #859FC1;
+			padding: 3px 4px 5px;
+			overflow: hidden;
+			font-family: Verdana, sans-serif;
+		}
+		.zcc-primetime th {
+			padding: 3px 4px;
+			font-weight: normal;
+			text-align: left;
+		}
+		/* Adjust show titles within grid */
+		.zcc-primetime a {
+ 		        color: #004276 !important;
+		        font-weight: bold;
+		        text-decoration: none;
+		}
+		.zcc-primetime a:hover {
+			text-decoration: underline;
+		}
+		.zcc-primetime .zcc-station,
+		.zcc-primetime .zcc-station .zcc-callsign {
+			text-align: center;
+		}
+		.zcc-primetime .zcc-station img {
+			text-align: center;
+		}
+		#tms_widget_footer {
+			clear: both;
+			color: #999;
+			font-family: arial, sans-serif;
+			font-size: 9px;
+			line-height: 2;
+			text-align: right;
+			border-width: 0 1px 1px;
+			border-style: solid;
+			border-color: #999;
+			margin: 0;
+		}
+		#tms_widget_footer a:link,
+		#tms_widget_footer a:visited,
+		#tms_widget_footer a:hover,
+		#tms_widget_footer a:active {
+			color: #999;
+			text-decoration: none;
+		}
+		#tms_widget_footer a:hover {
+			color: #666;
+			text-decoration: underline;
+		}
+	</style>
+	<h2 id="zcc-grid-label">Tonight in Prime Time</h2>
+        <div id="zcc-wrap">
+            <script type="text/javascript" src="http://api.zap2it.com/tvlistings/webservices/primetimeGrid?rty=html&aid=nyjapj&zip=14702&stnlt=11484,11563,11953,11600,11714,16557"></script>
+        </div>
+	<div id="tms_widget_footer_wrap">
+		<div id="tms_widget_footer">
+
+			<a target="_blank" href="http://tvlistings.zap2it.com/">TV listings</a>
+			powered by <a target="_blank" href="http://www.zap2it.com/">Zap2it</a>
+		</div>
+	</div>
+	<!--COPY END -->
+<br />
+
+			
+			
+
+
+
+<script type="text/javascript">
+
+	var xmlhttpSearch = false;
+	var headingsArray = new Array();
+	var headingsIDArray = new Array();
+
+	
+	function getSearchXML() {
+		xmlhttpSearch=GetXmlHttpObjectSearch();
+		if (xmlhttpSearch==null) {
+			  alert ("Sorry, but I couldn't create an XMLHttpRequest");
+		}
+	
+		if (xmlhttpSearch) {
+			xmlhttpSearch.onreadystatechange = setheadingsArray;
+			xmlhttpSearch.open("GET", "/shared/localSearch/headings.xml", true);
+			xmlhttpSearch.send(null);
+		}
+		else {
+			alert("Sorry, but I couldn't create an XMLHttpRequest");
+		}
+	
+		function GetXmlHttpObjectSearch() {
+			if (window.XMLHttpRequest) {
+			  /* code for IE7+, Firefox, Chrome, Opera, Safari */
+			  return new XMLHttpRequest();
+			}
+			if (window.ActiveXObject) {
+			  /* code for IE6, IE5 */
+			  return new ActiveXObject('Microsoft.XMLHTTP');
+			}
+			return null;
+		}
+	}
+
+	function setheadingsArray() {
+		if (xmlhttpSearch.readyState == 4) {
+			if (xmlhttpSearch.status == 200) {
+				if (xmlhttpSearch.responseXML) {
+					var allHeadingss = xmlhttpSearch.responseXML.getElementsByTagName("item");
+					for (var i=0; i<allHeadingss.length; i++) {
+						headingsArray[i] = allHeadingss[i].getElementsByTagName("headingName")[0].firstChild;
+						headingsIDArray[i] = allHeadingss[i].getElementsByTagName("localSearchHeadingID")[0].firstChild;
+					}
+					searchBoxSuggest();
+				}
+			}
+		}
+	}
+
+	function searchBoxSuggest() {
+		if ( !headingsArray.length ) {
+			getSearchXML();
+		}
+		var str = document.getElementById("searchBox").value;
+		if (str != "") {
+			document.getElementById("popupsSearch").innerHTML = "";
+			document.getElementById("popupsSearch").style.display = '';
+		
+			for (var i=0; i<headingsArray.length; i++) {
+				var thisHeading = headingsArray[i].nodeValue;
+		
+				if (thisHeading.toLowerCase().indexOf(str.toLowerCase()) == 0) {
+					var thisHeadingID = headingsIDArray[i].nodeValue;
+					var tempDiv = document.createElement("div");
+					var titleURL = thisHeading.replace(/\&amp;/g,'&');
+					var titleURL = titleURL.replace(/[^0-9a-zA-Z]/g,'-');
+					tempDiv.innerHTML = thisHeading;
+					tempDiv.onclick = new Function('makeSearchChoice('+thisHeadingID+',this.innerHTML)');
+					/*tempDiv.onclick = function (){var titleURL = thisCurrentHeading.replace(/\&amp;/g,'&'); var titleURL = titleURL.replace(/[^0-9a-zA-Z]/g,'-'); window.location="/page/local.headDetail/id/" + thisHeadingID + "/" + titleURL + ".html";}; */
+					tempDiv.className = "suggestionsSearch";
+					tempDiv.style.cursor = "pointer";
+					document.getElementById("popupsSearch").appendChild(tempDiv);
+					document.getElementById("popupsSearch").style.backgroundColor='#fff';
+					document.getElementById("popupsSearch").style.border="1px solid #999"; 
+					document.getElementById("popupsSearch").style.height="250px";
+				}
+			}
+			if ( document.getElementById("popupsSearch").innerHTML.length == 0 ) {
+				document.getElementById("popupsSearch").style.display = 'none';
+			}
+		} else {
+			document.getElementById("popupsSearch").innerHTML = "";
+			document.getElementById("popupsSearch").style.display = "none";
+		}
+				
+	}
+	
+	function onBlurSearchSuggestions() {
+		if ( document.activeElement != document.getElementById("popupsSearch") ) {
+			var delay = 250;
+			setTimeout('hideSearchSuggestions()', delay);
+		}
+	}
+
+	function onBlurSearchResults() {
+		if ( document.activeElement != document.getElementById("searchBox") ) {
+			var delay = 250;
+			setTimeout('hideSearchSuggestions()', delay);
+		}
+	}
+
+	function hideSearchSuggestions() {
+		document.getElementById('popupsSearch').innerHTML = "";
+		document.getElementById('popupsSearch').style.display = 'none';
+	}
+	
+	document.onclick = onBlurSearchResults;
+
+	function makeSearchChoice(chosen,urlTitle) {
+		/* added catch to remove category name from search term */
+		if ( urlTitle.toLowerCase().search('<a>') != -1 ) {
+			var endPoint = urlTitle.toLowerCase().search('<a>');
+			var urlTitle = urlTitle.substr(0, endPoint-1);
+		}
+		/*var thisDiv = (evt) ? evt.target : window.event.srcElement; */
+		document.getElementById("popupsSearch").innerHTML = "";
+		/*var titleURL = urlTitle.replace(/\&amp;/g,'&');
+		var titleURL = titleURL.replace(/[^0-9a-zA-Z]/g,'-');
+		window.location="/page/local.headDetail/id/" + chosen + "/" + titleURL + ".html";*/
+		window.location="/page/local.searchBoxCatchAutocomplete/id/" + chosen + "/text/" + urlTitle;		
+		document.getElementById("popupsSearch").style.display = "none";
+		/*document.getElementById('searchBox').value = thisDiv.innerHTML.replace(/\&amp;/g,'&'); */
+		/*document.getElementById("popupsSearch").innerHTML = ""; */
+	}
+	
+</script>
+<div id="searchHeaderClass" class="cBdrHdr">
+	<div class="cBdrTLOn">&nbsp;</div>
+	<div class="cBdrTROn">&nbsp;</div>
+	<div class="cBdrTC"><h2 id="searchHeaderTitle" class="color_lBlue">&nbsp;</h2></div>
+</div>
+<div class="cBdrMain">
+	
+	<form id="frmSiteSearch" action="/page/search.results" method="get">
+		
+		<input type="hidden" name="nav" value="-1" />
+		<h5>I am looking for:</h5>
+		<div><input name="keywords" id="siteSearchBox" value="" autocomplete="off" type="text" size="24" maxlength="128" /> <input name="btnSiteSearch" type="submit" value="Search" class="fButton" /></div>
+		<div id="searchDateRange" class="txtSmaller" style="display:none;">
+			<strong class="dim">between:</strong><br />
+			<input size="10" type="text" id="StartDate" name="StartDate" readonly="readonly" />
+			<a href="javascript:StartDate.popup();"><img src="/templates/calendar/img/cal.gif" width="16" height="16" border="0" alt="Click Here to Select Date"></a>
+				<strong class="dim">and</strong>
+			<input size="10" type="text" id="EndDate" name="EndDate" readonly="readonly" />
+			<a href="javascript:EndDate.popup();"><img src="/templates/calendar/img/cal.gif" width="16" height="16" border="0" alt="Click Here to Select Date"></a>
+		</div>
+	</form>
+	<form id="frmWebSearch" style="display:none;" action="/page/search.resultsWeb" method="get">
+		<h5>I am looking for:</h5>
+		<div><input name="q" id="webSearchBox" value="" autocomplete="off" type="text" size="24" maxlength="128" /> <input name="btnWebSearch" type="submit" value="Search" class="fButton" /></div>
+	</form>
+
+	<form id="frmEzSearch" style="display:none;"  action="" method="get" enctype="application/x-www-form-urlencoded" name="NameSearch" target="_blank" class="odistyle28">
+		<h5>I am looking for:</h5>
+		<div><input name="name" id="ezSearchBox" value="" autocomplete="off" type="text" size="24" maxlength="128" /> <input name="btnEzSearch" type="submit" value="Search" class="fButton" /></div>
+	</form>
+
+
+
+	<div class="txtSmaller"><strong class="dim">in:</strong><br />
+		<input name="btnSearchSelect" type="radio" class="radioBtn" onclick="changeSearch('site');" id="btnSite">News, Blogs & Events 
+		<input name="btnSearchSelect" type="radio" class="radioBtn" onclick="changeSearch('web');" id="btnWeb">Web 
+		<input name="btnSearchSelect" type="radio" class="radioBtn" onclick="changeSearch('ez');" id="btnEz"><label id="btnEzLabel">EZToUse.com</label>
+	</div>
+	
+	<script type="text/javascript">
+	
+		function changeSearch(chosen) {
+			if (chosen == 'site') {
+				document.getElementById('searchHeaderClass').className = 'cBdrHdr';
+				document.getElementById('searchHeaderTitle').innerHTML = 'News, Blogs & Events';
+				document.getElementById('frmSiteSearch').style.display = '';
+				document.getElementById('frmWebSearch').style.display = 'none';
+				document.getElementById('frmEzSearch').style.display = 'none';
+				if ( document.getElementById('webSearchBox').value.length ) {
+					 document.getElementById('siteSearchBox').value =  document.getElementById('webSearchBox').value;
+					 document.getElementById('webSearchBox').value = '';
+				}
+				if ( document.getElementById('ezSearchBox').value.length ) {
+					 document.getElementById('siteSearchBox').value =  document.getElementById('ezSearchBox').value;
+					 document.getElementById('ezSearchBox').value = '';
+				}
+			}
+			if (chosen == 'web') {
+				document.getElementById('searchHeaderClass').className = 'cBdrHdr';
+				document.getElementById('searchHeaderTitle').innerHTML = 'Web Search';
+				document.getElementById('frmSiteSearch').style.display = 'none';
+				document.getElementById('frmWebSearch').style.display = '';
+				document.getElementById('frmEzSearch').style.display = 'none';
+				if ( document.getElementById('siteSearchBox').value.length ) {
+					 document.getElementById('webSearchBox').value =  document.getElementById('siteSearchBox').value;
+					 document.getElementById('siteSearchBox').value = '';
+				}
+				if ( document.getElementById('ezSearchBox').value.length ) {
+					 document.getElementById('webSearchBox').value =  document.getElementById('ezSearchBox').value;
+					 document.getElementById('ezSearchBox').value = '';
+				}
+			}
+			if (chosen == 'ez') {
+				document.getElementById('searchHeaderClass').className = 'cBdrHdr';
+				document.getElementById('searchHeaderTitle').innerHTML = 'EZToUse.com';
+				document.getElementById('frmSiteSearch').style.display = 'none';
+				document.getElementById('frmWebSearch').style.display = 'none';
+				document.getElementById('frmEzSearch').style.display = '';
+				if ( document.getElementById('siteSearchBox').value.length ) {
+					 document.getElementById('ezSearchBox').value =  document.getElementById('siteSearchBox').value;
+					 document.getElementById('siteSearchBox').value = '';
+				}
+				if ( document.getElementById('webSearchBox').value.length ) {
+					 document.getElementById('ezSearchBox').value =  document.getElementById('webSearchBox').value;
+					 document.getElementById('webSearchBox').value = '';
+				}
+			}
+		}
+		
+		if ( 0 == 0 ) {
+			changeSearch('site');
+			document.getElementById('btnSite').checked = true;
+			if ( 0 == 0 ) {
+				document.getElementById('btnEz').style.display = 'none';
+				document.getElementById('btnEzLabel').style.display = 'none';
+			}
+				
+		}
+
+		function getQuerystring(key, default_) {
+			if (default_==null) { 
+				default_=""; 
+			} 
+			var search = unescape(location.search); 
+			if (search == "") { 
+				return default_; 
+			} 
+			search = search.substr(1); 
+			var params = search.split("&"); 
+			for (var i = 0; i < params.length; i++) { 
+				var pairs = params[i].split("="); 
+				if(pairs[0] == key) { 
+					if ( pairs[0] == 'keywords' && pairs[1].length == 0 ) {
+						pairs[1] = ' ';
+					}
+					return pairs[1]; 
+				} 
+			} 
+			return default_; 
+		}	
+			
+		if (getQuerystring('keywords')) {
+			changeSearch('site');
+			document.getElementById('siteSearchBox').value = getQuerystring('keywords').replace(/\+/g," ").replace(/%2B/g," ");
+			document.getElementById('btnSite').checked = true;
+		}
+		if (getQuerystring('q')) {
+			changeSearch('web');
+			document.getElementById('webSearchBox').value = getQuerystring('q').replace(/\+/g," ").replace(/%2B/g," ");
+			document.getElementById('btnWeb').checked = true;
+		}
+		if (getQuerystring('StartDate')) {
+			document.getElementById('StartDate').value = getQuerystring('StartDate');
+		}
+		if (getQuerystring('EndDate')) {
+			document.getElementById('EndDate').value = getQuerystring('EndDate');
+		}
+		
+		var findFuseaction = "search.results" ;
+		fuseactionFound = window.location.href.indexOf(findFuseaction);
+		if (fuseactionFound != -1) {
+			if (document.getElementById('searchDateRange')){
+				document.getElementById('searchDateRange').style.display = '';
+			}
+		} else {	
+			if (document.getElementById('searchDateRange')){
+				document.getElementById('searchDateRange').style.display = 'none';
+			}
+		}
+	
+	</script>
+	
+	
+<script type="text/JavaScript" src="/templates/calendar/calendar2.js"></script>
+
+<script type="text/javascript">
+	if ( document.getElementById('StartDate') ) {
+		 /* create calendar object(s) just after form tag closed */
+		 /* specify form element as the only parameter (document.forms['formname'].elements['inputname']); */
+		 /* note: you can have as many calendar objects as you need for your application */
+		var StartDate = new calendar2(document.getElementById('StartDate'));
+			StartDate.year_scroll = true;
+			StartDate.time_comp = false;
+	}
+</script>
+
+
+<script type="text/javascript">
+	if ( document.getElementById('EndDate') ) {
+		 /* create calendar object(s) just after form tag closed */
+		 /* specify form element as the only parameter (document.forms['formname'].elements['inputname']); */
+		 /* note: you can have as many calendar objects as you need for your application */
+		var EndDate = new calendar2(document.getElementById('EndDate'));
+			EndDate.year_scroll = true;
+			EndDate.time_comp = false;
+	}
+</script>
+
+</div>
+<div class="cBdrFdr">
+	<div class="cBdrBL"><img src="/images/spacer.gif" border="0" width="1" height="1" /></div>
+	<div class="cBdrBR"><img src="/images/spacer.gif" border="0" width="1" height="1" /></div>
+	<div class="cBdrBC"><img src="/images/spacer.gif" border="0" width="1" height="5" /></div>
+</div>
+			
+			
+			<div class="cBdrHdr cBBg_topJobs" onclick="parent.location.href='http://www.chautauquanyjobs.com/',target='_top'" style="cursor:pointer;" title="VISIT: http://www.chautauquanyjobs.com/">
+				<div class="cBdrTLOn">&nbsp;</div>
+				<div class="cBdrTROn">&nbsp;</div>
+				<div class="cBdrTC"><h2 class="color_blue">Top Jobs</h2></div>
+			</div>
+			<div class="cBdrMain">
+				<ul>
+					
+					<li><a class="a_6" href="http://jobview.local-jobs.monster.com/?ch=nychautauqua/getjob.aspx?jobid=124652717" title="Food Service Helper">Food Service Helper</a></li>
+					
+					<li><a class="a_6" href="http://jobview.local-jobs.monster.com/?ch=nychautauqua/getjob.aspx?jobid=124950838" title="Cook">Cook</a></li>
+					
+					<li><a class="a_6" href="http://jobview.local-jobs.monster.com/?ch=nychautauqua/getjob.aspx?jobid=124941307" title="DESIGN ENGINEER & MAINTENANCE MILLWRIGHT">DESIGN ENGINEER & MAINTENANCE MILLWRIGHT</a></li>
+					
+					<li><a class="a_6" href="http://jobview.local-jobs.monster.com/?ch=nychautauqua/getjob.aspx?jobid=124332914" title="PRN Nurse Practitioner And Physician Assistant">PRN Nurse Practitioner And Physician Assistant</a></li>
+					
+					<li><a class="a_6" href="http://jobview.local-jobs.monster.com/?ch=nychautauqua/getjob.aspx?jobid=124832458" title="High School ELA Teacher">High School ELA Teacher</a></li>
+					
+					<li><a class="a_6" href="http://jobview.local-jobs.monster.com/?ch=nychautauqua/getjob.aspx?jobid=124685668" title="School Psychologist">School Psychologist</a></li>
+					
+					<li><a class="a_6" href="http://jobview.local-jobs.monster.com/?ch=nychautauqua/getjob.aspx?jobid=124685673" title="Credit Analyst">Credit Analyst</a></li>
+					
+					<li><a class="a_6" href="http://jobview.local-jobs.monster.com/?ch=nychautauqua/getjob.aspx?jobid=124950840" title="Certified Nursing Assistants">Certified Nursing Assistants</a></li>
+					
+					<li><a class="a_6" href="http://jobview.local-jobs.monster.com/?ch=nychautauqua/getjob.aspx?jobid=124867770" title="PER DIEM/CONTINUING SUBSTITUTE TEACHER">PER DIEM/CONTINUING SUBSTITUTE TEACHER</a></li>
+					
+					<li><a class="a_6" href="http://jobview.local-jobs.monster.com/?ch=nychautauqua/getjob.aspx?jobid=124904780" title="MAINTENANCE POSITIONS">MAINTENANCE POSITIONS</a></li>
+					
+				</ul>
+				<div class="viewMore"><a href="http://www.chautauquanyjobs.com/" title="View All Jobs">View All Jobs »</a></div>
+			</div>
+			<div class="cBdrFdr">
+				<div class="cBdrBL"><img src="/images/spacer.gif" border="0" width="1" height="1" /></div>
+				<div class="cBdrBR"><img src="/images/spacer.gif" border="0" width="1" height="1" /></div>
+				<div class="cBdrBC"><img src="/images/spacer.gif" border="0" width="1" height="5" /></div>
+			</div>
+		
+			<div class="adBlock_rightRail">
+	<script type="text/javascript">
+	  GA_googleFillSlot("CMSv2_Middle_300x250");
+	</script>
+</div>
+			
+			<div class="adBlock_rightRail">
+	<script type="text/javascript">
+	  GA_googleFillSlot("CMSv2_x40_234x60");
+	</script>
+</div>
+			<div class="adBlock_rightRail">
+	<script type="text/javascript">
+	  GA_googleFillSlot("CMSv2_x41_234x60");
+	</script>
+</div>
+			<div class="adBlock_rightRail">
+	<script type="text/javascript">
+	  GA_googleFillSlot("CMSv2_x42_234x60");
+	</script>
+</div>
+			
+							<script language="javascript">
+					if (typeof jQuery == 'undefined') {      
+						 document.write('<scr' + 'ipt src="/shared/js/jQuery/jquery.min.js" type="text/javascript"></scr' + 'ipt>');  
+					}					
+				</script>
+				<script src="/shared/js/googleFeedsAPI/jquery.jgfeed.js"></script>
+			
+				
+				<script type="text/javascript">
+					var feedSrc = escape("http://cu.post-journal.com/hack/feed.mg?Type=nickname&Data=post-journal&format=atom10");
+		
+					/* Parse feed */
+					$.jGFeed(feedSrc,
+					  function(feeds){
+						/* Check for errors */
+						if(!feeds){
+						  /* there was an error */
+						  return false;
+						}
+											
+						if ( !feeds.entries.length ) {
+						
+							return false;
+						
+						} else {
+			
+		
+							/* create smugmug listings */
+							for(var i=0; i<4; i++){
+								var entry = feeds.entries[i];
+							  
+								var container = document.getElementById("header");
+							  
+								  
+								var smugmug = document.getElementById("smugmugDisplay");
+								
+								var searchTermStart = "<img" ;
+								var searchTermEnd = ">" ;
+								
+								var smugHTML = 'no';
+								var smugContent = entry.content;
+								
+								if ( smugContent.indexOf(searchTermStart) != -1 ) {
+									var startPoint = smugContent.indexOf(searchTermStart);
+									var endPoint = smugContent.indexOf(searchTermEnd, startPoint);
+									var imgLink = smugContent.substring(startPoint,endPoint+1);
+									imgLink = imgLink.replace(/height=\".+\"/, 'height="50"');
+									imgLink = imgLink.replace(/width=\".+\"/, 'width="50"');
+									smugHTML = '<a href="' + entry.link + '" target="_blank">';
+									smugHTML += imgLink;
+									smugHTML += '</a>';
+									smugHTML += '<a href="' + entry.link + '" target="_blank">';
+									smugHTML += entry.title;
+									smugHTML += '</a>';
+								} else {
+									smugHTML = 'oops';
+								}
+		
+								var d = document.createElement('div');
+								d.className = 'photoTn';
+								d.innerHTML = smugHTML;
+								smugmug.appendChild(d);
+							}
+						}
+					}, 300);
+				</script>
+				 
+		 
+		 
+		 
+		 
+				<div class="cBdrHdr">
+					<div class="cBdrTL">&nbsp;</div>
+					<div class="cBdrTR">&nbsp;</div>
+					<div class="cBdrTC"><h2 class="color_lGreen">CU Galeries</h2><span style="float:right;" class="cBdrHdrR txtSmall dim"><a href="http://cu.post-journal.com/" title="View All CU Galleries">View All Galleries »</a></span></div>
+				</div>
+				<div class="cBdrMainBig">
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<td class="" valign="top">
+								<div id="header">
+									<div id="smugmugDisplay"></div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="cBdrFdr">
+					<div class="cBdrBL">&nbsp;</div>
+					<div class="cBdrBR">&nbsp;</div>
+					<div class="cBdrBC"><img src="/images/spacer.gif" border="0" width="1" height="5" /></div>
+				</div>
+
+
+
+
+<!-- Entertainment News -->
+<!-- COPY START -->
+
+<style type="text/css">
+	/* Do not modify these styles */
+	#ZapEdHeader { padding-left:6px; width:100%; }
+	#ZapEdFooter { font-family:Arial,Helvetica,sans-serif; color:#686868; font-size:10px; padding:1px 2px; margin-top:4px; }
+	#ZapEdHeader a, #ZapEdHeader a:link, #ZapEdHeader a:visited, #ZapEdHeader a:hover, #ZapEdFooter, #ZapEdFooter a, #ZapEdFooter a:link, #ZapEdFooter a:visited  { text-decoration:none !important; }
+	#ZapEdStories3 .ZElist  { margin:0px; padding:0px; }
+	#ZapEdStories3 .ZElistel  { list-style:none; padding:6px 4px; border-bottom:1px solid #ddd; clear:left; }
+	#ZapEdStories3 .ZEimageCon { height: 80px; }
+	#ZapEdStories3 .ZElistel .ZEheadline { }
+	#ZapEdStories3 .ZElistel .ZEexcerpt { }
+	#ZapEdStories3 .ZEimage { width:140px; height:79px; overflow:hidden; float:left; margin-right:3px; }
+	#ZapEdStories3 .ZEimage img { width:140px; height:auto; }
+	/*****************************/
+
+	/* Customize presentation with these styles */
+
+	/* Standard Styles: Set Widget width, font and main content here */
+	#ZapEd {
+			width:300px;
+			font-family: Arial,Helvetica,sans-serif;
+			font-size:14px;
+			}
+	#ZapEd a, #ZapEd a:link, #ZapEd a:visited {
+			color:#003399; /* font color of content/links */
+			}
+
+	/* Customize header here */
+	#ZapEdHeader {
+			border-bottom: 1px solid #450040; /* border: size style color */
+			font-size:28px;
+			}
+	#ZapEdHeader a, #ZapEdHeader a:link, #ZapEdHeader a:visited {
+			color:#fff;
+			}
+
+	/* Customize footer here */
+	#ZapEdFooter {
+			font-size:10px;
+			}
+	#ZapEdFooter a, #ZapEdFooter a:link, #ZapEdFooter a:visited {
+			color:#000;
+			font-size:10px;
+			}
+
+	/* Advanced Styles: Further customization of the Widget appearance */
+	#ZapEd { 
+			border:8px solid #003399; /* border around entire content: width type color */
+			}
+	#ZapEd a {
+			text-decoration:none; /* do not underline links */
+			}
+	#ZapEd a:hover { /* On mouse hover of links... */
+			text-decoration:underline; /* underline */
+			color:#444; /* change font color */
+			}
+	#ZapEdHeader {
+			font-family:Futura-CondensedMedium,Impact,sans-serif;
+			letter-spacing:-0.5px; /* spacing between letters */
+			text-transform:uppercase; /* make all characters upper-case */
+			background-color:#003399;
+			padding:0px; /* remove spacing between border and text */
+			}
+	#ZapEdFooter a:hover {
+			color:#686868 !important; /* on mouse hover: Always display gray text */
+			}
+
+	/* End style modifications */
+
+</style>
+
+<script type="text/JavaScript" src="http://blog.zap2it.com/frominsidethebox/zap2it-editorial-widget-images.js" charset="utf-8"></script>
+<div id="ZapEd">
+<div id="ZapEdHeader"><a href="http://blog.zap2it.com/frominsidethebox/" title="Fresh. News. Daily. What you need to know. When you need to know it.">Entertainment News</a></div>
+<div id="ZapEdStories3">&nbsp;</div>
+<div id="ZapEdFooter"><a href="http://blog.zap2it.com/frominsidethebox/" title="Television News">TV News by</a>&nbsp;&nbsp;<a href="http://www.zap2it.com"><img src="http://images.zap2it.com/html/zap2it-logo-100x20.gif" alt="Zap2it.com - What to Watch. Where to Watch It." title="Zap2it.com - What to Watch. Where to Watch It." width="100" height="20" border="0"></a></div><script type="text/javascript" src="http://api.zap2it.com/tvlistings/webservices/footer?fmt=widget"></script>
+</div>
+<script type="text/JavaScript">buildEdHTML("ZapEdStories3",1,5,0,0,"nyjapj",5);</script>
+<!-- COPY END -->
+<br />
+
+
+
+
+
+<!-- Community Events Calendar Promo -->
+<a href="http://www.post-journal.com/page/calendars.listCal/cal/3/Community-Calendar.html"><img src="http://extras.post-journal.com/ads/CommunityCalendar.jpg" border="0" /></a>    
+<br /><br />
+
+
+
+
+<!-- Savings Pirate Promo -->
+<a href="http://www.savingspirate.com/coupons.asp"><img src="http://extras.post-journal.com/ads/PirateRectangle.jpg" border="0" /></a>    
+<br /><br />
+
+
+
+
+
+
+
+		</td>
+	</tr>
+</table>	</div>
+	<div id="bdyR"><img src="/images/spacer.gif" border="0" width="1" height="1" /></div>
+	<div class="clear"></div>
+</div>
+
+<div class="adBlock_bottom">
+	<script type="text/javascript">
+	  GA_googleFillSlot("CMSv2_Bottom_728x90");
+	</script>
+
+	<script type="text/javascript">
+	  GA_googleFillSlot("CMSv2_x94_0x0");
+	</script>
+</div>
+
+<div class="footer">
+	<h4 class="color_white">The Post-Journal</h4>
+	<p>PO Box 3386 , Jamestown, NY 14702-3386 | 716-487-1111</p>
+	<p>&copy; 2013. All rights reserved.| <a href="/tos.html">Terms of Service and Privacy Policy</a></p>
+</div>
+</body>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">
+_uacct = "UA-3163196-1";
+urchinTracker();
+</script>
+</html> 

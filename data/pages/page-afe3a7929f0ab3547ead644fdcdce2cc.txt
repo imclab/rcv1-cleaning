@@ -1,0 +1,683 @@
+
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Passive Crossover Networks</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="Rating" content="General">
+<meta name="ROBOTS" content="ALL">
+<meta name="Revisit-After" content="7 days">
+<meta name="Description" content="How to construct high pass, low pass, and narrow band pass passive crossover filters and crossover networks">
+<meta name="KeyWords" content="coil, cap, capacitor, inductor, zobel, low pass, high pass, band pass, car audio, narrow band pass, impedance, calculator, low pass filter, high pass filter, band pass filter, passive, crossover,	passive crossovers, acoustical output, impedance, frequency, zobel, capacitor, coil, narrow band pass filter">
+<meta name="Author" content="volt">   
+<meta name="Distribution" content="global">
+<link rel="SHORTCUT ICON" href="http://www.the12volt.com/favicon.ico">
+<link rel="apple-touch-icon" href="http://www.the12volt.com/the12volt_iphone_icon.jpg"/>
+<link rel="STYLESHEET" href="http://www.the12volt.com/style/style.css" TYPE="text/css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#666699" alink="#666699" vlink="#666699" marginheight="0" marginwidth="0" leftmargin="0" topmargin="0">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="http://www.the12volt.com/javascripts/noframe.js" TYPE="text/javascript"></SCRIPT>
+
+<TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0">
+ <TR><TD COLSPAN="2" BGCOLOR="#333366" WIDTH="100%" HEIGHT="4"><A NAME="top"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=978 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></A></TD></TR>
+ <TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></TD></TR>
+ <TR>
+  <TD COLSPAN="2" BGCOLOR="#666699" WIDTH="100%" HEIGHT="1">
+   <TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0">
+    <TR>
+     <TD BGCOLOR="#666699" HEIGHT="98" WIDTH="255" valign="middle" style="padding-left:5px;padding-top:3px;padding-bottom:14px;height:98px;"><A HREF="http://www.the12volt.com/"><IMG SRC="http://www.the12volt.com/images/12vsmlogo_apr11.gif" WIDTH=250 HEIGHT=81 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers, Enthusiasts, and Do-It-Yourselfers since 1999" BORDER="0"></A></TD>
+     <td width="100%" align="center" valign="middle" bgcolor="#666699" style="padding-top:3px;padding-bottom:3px;">
+<a href="http://www.the12volt.com/installbay/findinstaller.asp" 
+title="Find an Installer Near You! - Add your listing to our Installer Database."><img 
+src="http://www.the12volt.com/banners/728x90rb_the12volt_com_Installer_Database.gif" border="0" width="728" height="90"
+alt="Find an Installer Near You! - Add your listing to our Installer Database."></a> 
+</td></TR></TABLE></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#333366" WIDTH="100%" HEIGHT="5"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#666699" WIDTH="100%" HEIGHT="20" VALIGN="middle">
+<TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0" ALIGN="center">
+<TR><TD CLASS="org" NOWRAP HEIGHT="20" style="padding-left:8px;">
+<A CLASS="Menub" HREF="http://www.the12volt.com/ohm/basics.asp" TITLE="Mobile Electronic Basics, Ohm&acute;s Law, Relays, Resistors, Diodes">Basics</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/caraudio/caraudio.asp" TITLE="Car Stereo and Mobile Video, Passive Crossovers, Subwoofer Enclosures, Subwoofer Wiring Wizard, Calculators, Tools">Car Audio</A> &#8226; 
+<A CLASS="Menub" HREF="http://www.the12volt.com/carsecurity/carsecurity.asp" TITLE="Alarm Wiring, Modules, Triggers, Accesories, Diagrams">Car Security</A> &#8226; 
+<A CLASS="Menub" HREF="http://www.the12volt.com/cruisecontrol/cruisecontrol.asp" TITLE="Electrical and Mechanical Connections, Micro Cruise Switch Settings">Cruise Controls</A> &#8226; 
+<A CLASS="Menub" HREF="http://www.the12volt.com/diodes/diodes.asp" TITLE="Blocking Diodes">Diodes</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/doorlocks/doorlocks.asp" TITLE="Door Lock Switch Types and Relay Diagrams">Door Locks</A> &#8226; 
+<A CLASS="Menub" HREF="http://www.the12volt.com/ohm/ohmslaw.asp" TITLE="Ohm&acute;s Law Formulas, Pie Chart, and Calculators">Ohm's Law</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/caraudio/cross.asp" TITLE="Passive Crossovers, Coils, Capacitors, Calculators, Low Pass Filters, High Pass Filters, Bandwidth Filters, Zobel">Passive Crossovers</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/relays/relays.asp" TITLE="Relays, Relay Wiring and Diagrams">Relays</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/resistors/resistors.asp" TITLE="Resistors, Color Bands and Calculator">Resistors</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/caraudio/boxes.asp" TITLE="Subwoofer Enclosures, Wiring and Calculators">Subwoofer Enclosures</A></TD>
+<TD NOWRAP ALIGN="right" WIDTH="100%" CLASS="org" style="padding-right:8px;"><A CLASS="Menubq" 
+HREF="http://www.the12volt.com/search/search.asp" title="Search the12volt.com">Search</A></TD>
+</TR></TABLE></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#333366" WIDTH="100%" HEIGHT="5"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#666699" WIDTH="100%" HEIGHT="20" VALIGN="middle">
+<TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0" ALIGN="center">
+<TR><TD CLASS="org" NOWRAP HEIGHT="20" style="padding-left:8px;">
+<A CLASS="Menub" HREF="http://www.the12volt.com/installbay/appguide.asp" TITLE="the12volt's Application Guide - Dozens of application guides in one!">Application Guides</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/info/diagrams.asp" TITLE="Index of Diagrams, Charts, Calculators, and Requested Info">Calculators, Charts, Diagrams</A> &#8226; 
+<A CLASS="Menub" HREF="http://www.the12volt.com/installbay/downloads.asp" TITLE="Download Manuals, Diagrams, Tech Tips and More!">Downloads/Manuals</A> &#8226; 
+<A CLASS="Menub" HREF="http://www.the12volt.com/installbay/findinstaller.asp" TITLE="Installer Database - Find an Installer">Find Installers</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/installbay" TITLE="Mobile Electronics Forums, It&acute;s Free and Easy to Join! Post Questions! Get Answers!">Forums</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/glossary/glossaryofterms/A.html" TITLE="Mobile Electronics Glossary">Glossary</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/caraudio/woofer_configurations.asp" TITLE="Subwoofer Wiring Wizard">Subwoofer Wiring</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/tools/tools.asp" TITLE="Recommended Tools and Equipment for the Shop and Installer">Tools</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/installbay/vehicles.html" TITLE="Vehicle Wiring Database">Vehicle Wiring</A></TD>
+<TD NOWRAP ALIGN="right" WIDTH="100%" CLASS="org" style="padding-right:8px;"><A CLASS="Menub" HREF="http://www.the12volt.com/installbay/last100.asp" TITLE="100 Most Recent Forum Topics">Recent Topics</A></TD>
+</TR></TABLE></TD></TR>
+
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#333366" WIDTH="100%" HEIGHT="5"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></TD></TR>
+
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" VALIGN="top">
+<TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0">
+<TR>
+<TD COLSPAN="1" BGCOLOR="#333366" WIDTH="180" VALIGN="top" ALIGN="center"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=180 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"><BR>&nbsp;
+
+<img src="http://www.the12volt.com/images/invisible.gif" width="160" height="610" border="0">
+<br><br>
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" ALIGN="center" width="160">
+<TR><TD bgcolor="#ffffff"><img src="http://www.the12volt.com/images/invisible.gif" width="160" height="1" border="0"></TD></TR>
+<TR><TD bgcolor="#666699"><img src="http://www.the12volt.com/images/invisible.gif" width="160" height="2" border="0"></TD></TR>
+<TR><TD bgcolor="#ffffff"><img src="http://www.the12volt.com/images/invisible.gif" width="160" height="1" border="0"></TD></TR>
+<TR><TD><img src="http://www.the12volt.com/images/invisible.gif" width="160" height="5" border="0"></TD></TR>
+</TABLE>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" ALIGN="center" width="156">
+<TR><TD CLASS="menuh">Mobile Electronics Basics</TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/diodes/diodes.asp" TITLE="Blocking Diodes">Diodes</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/glossary/glossaryofterms/A.html" TITLE="Mobile Electronics Glossary">Glossary of Terms</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/ohm/ohmslaw.asp" TITLE="Formulas - Pie Chart - Calculators">Ohm's Law</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/relays/relays.asp" TITLE="Relays, Wiring & Diagrams">Relays</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/resistors/resistors.asp" TITLE="Color Codes - Calculator">Resistors</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/tools/tools.asp" TITLE="Tools for the Shop & Installer">Tools and Equipment</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/info/recwirsz.asp" TITLE="Recommended Speaker, Power and Ground Wire Sizes">Wire Sizes</A></TD></TR>
+<TR><TD CLASS="menuh" style="padding-top:10px;">Car Audio &amp; Mobile Video</TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/caraudio/caraudio.asp" TITLE="Car Audio Introduction">Introduction</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/wireinfo/metra.asp" TITLE="Metra Application Guides">Metra Application Guides</A></TD></TR>
+<TR><TD style="padding-left:5px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/caraudio/boxcalcs.asp" TITLE="Parallel and Series Calculators">Parallel &amp; Series Calcs</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/caraudio/cross.asp" TITLE="Passive Crossovers Diagrams and Calculators">Passive Crossovers</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/caraudio/boxcalcs.asp" TITLE="Port Length Calculator">Port Length Calculators</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/caraudio/boxcalcs.asp" TITLE="Subwoofer Enclosure Calculators">Subwoofer Box Calculators</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/caraudio/boxes.asp" TITLE="Subwoofer Enclosures">Subwoofer&nbsp;Enclosure&nbsp;Types</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/caraudio/woofer_configurations.asp" TITLE="Subwoofer Wiring Wizard">Subwoofer Wiring Options</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/caraudio/thiele.asp" TITLE="Thiele - Small Paramaters">Thiele - Small Parameters</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/info/diagrams.asp#cs" TITLE="Miscellaneous Car Audio Applications">Miscellaneous</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/relays/relaydiagrams.asp" TITLE="Relay Diagrams - Quick Reference - Dozens of diagrams at your fingertips!">Relay Diagrams</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/vehicles.html" TITLE="Vehicle Wiring Information">Vehicle Wiring Database</A></TD></TR>
+<TR><TD CLASS="menuh" style="padding-top:10px;">Car Security &amp; Convenience</TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/carsecurity/carsecurity.asp" TITLE="Car Security Introduction">Introduction</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/carsecurity/page6.asp" TITLE="Alarm Accessoriess">Alarm Accessories</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/carsecurity/page1.asp" TITLE="Alarm Modules">Alarm Modules</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/carsecurity/page5.asp" TITLE="Alarm Sensors">Alarm Sensors</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/carsecurity/page2.asp" TITLE="Basic Connections">Basic Connections</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/relays/page4.asp" TITLE="Illuminated Entry">Illuminated Entry</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/relays/page4.asp" TITLE="Light Flash">Light Flash</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/doorlocks/doorlocks.asp" TITLE="Door Locks, Switch Types & Diagrams">Power Door Locks</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/relays/page2.asp" TITLE="Starter Interrupts">Starter Interrupts</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~24" TITLE="Car Alarm, Keyless Entry, and Remote Starter Pictorials">Pictorials</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/relays/relaydiagrams.asp" TITLE="Relay Diagrams - Quick Reference - Dozens of diagrams at your fingertips!">Relay Diagrams</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/vehicles.html" TITLE="Vehicle Wiring Information">Vehicle Wiring Database</A></TD></TR>
+<TR><TD CLASS="menuh" style="padding-top:10px;">Cruise Controls</TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/cruisecontrol/cruisecontrol.asp" TITLE="Cruise Control Introduction">Introduction</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/cruisecontrol/cruisecontrol.asp#hcb" TITLE="Electrical Connections">Electrical Connections</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/cruisecontrol/cruisecontrol.asp#mech" TITLE="Mechanical Connections">Mechanical Connections</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/cruisecontrol/cruisecontrol.asp#servo" TITLE="Micro Cruise Switch Settings">Servo Settings</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/cruisecontrol/cruisecontrol.asp#special" TITLE="VSS & Tachometer Information">VSS and Tach Info</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/vehicles.html" TITLE="Vehicle Wiring Information">Vehicle Wiring Databse</A></TD></TR>
+<TR><TD CLASS="menuh" style="padding-top:10px;">Forums</TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/default.asp" TITLE="Mobile Electronics Installation Forums">All Forums</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~11" TITLE="Buy & Sell Equipment">Buy & Sell Equipment</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~2" TITLE="Car Audio">Car Audio</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~22" TITLE="Car Audio Hot Topics">Car Audio Hot Topics</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~3" TITLE="Car Security & Convenience">Car Security &amp; Convenience</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~23" TITLE="Car Security & Convenience Hot Topics">Car Security Hot Topics</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~24" TITLE="Car Security & Convenience Pictorials">Car Security Pictorials</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~17" TITLE="Cellular & Communications">Cellular & Communications</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~10" TITLE="Cruise Controls">Cruise Controls</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~14" TITLE="Employment">Employment</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~16" TITLE="Fiberglass, Fabrication & Interiors">Fiberglass &amp; Fabrication</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~1" TITLE="General Discussion">General Discussion</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~18" TITLE="Lights, Neon, LEDs, HIDs">Lights, Neon, LEDs, HIDs</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~25" TITLE="Marine Electronics">Marine Electronics</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~4" TITLE="Miscellaneous - Off Topic">Miscellaneous</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~9" TITLE="Mobile Video, Navigation">Mobile Video &amp; Navigation</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~21" TITLE="Motorcycle Electronics">Motorcycle Electronics</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~19" TITLE="Music, Favorite Songs, Movies, Videos, Test CD's">Music, Favorite Songs</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~5" TITLE="Relays">Relays</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~20" TITLE="Rides & Systems Gallery">Rides &amp; Systems Gallery</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~7" TITLE="Vehicle Information Requests">Vehicle Information</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/last100.asp" TITLE="Last 100 Topics">Recent Forum Topics</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~15" TITLE="Forum Help & How To's">Forum Help & How To</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/forum_topics.asp~FID~12" TITLE="Notices">Forum &amp; Site Notices</A></TD></TR>
+<TR><TD CLASS="menuh" style="padding-top:10px;">General Information</TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/links/books.asp" TITLE="Recommended Books and DVDs">Books &amp; DVDs</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/info/diagrams.asp#cal" TITLE="Index of Calculators">Calculators</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/info/diagrams.asp" TITLE="Index of Charts">Charts</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/info/diagrams.asp" TITLE="Index of Diagrams">Diagrams</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/downloads.asp" TITLE="Download Manuals, Diagrams, Tech Tips and More!">Downloads - Manuals</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/findinstaller.asp" TITLE="Installer Database - Search and Add Installer Listings">Find an Installer</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay" TITLE="It&acute;s Free and Easy to Join! Post Questions! - Get Answers!">Forums - Q&amp;A</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/glossary/glossaryofterms/A.html" TITLE="Mobile Electronics Glossary">Glossary of Terms</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/insurance/insurance.asp" TITLE="Insurance for Car Stereos and Accessories">Insurance for Car Stereos</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/links/links.asp" TITLE="Includes Car Stereo, Mobile Video, Navigation, Car Alarm, and Cruise Control Manufacturers, Resources, & More!">Links</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/news/news.asp" TITLE="Mobile Technology News">Mobile Tech News</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/relays/relaydiagrams.asp" TITLE="Relay Diagrams - Quick Reference - Dozens of diagrams at your fingertips!">Relay Diagrams</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/appguide.asp" TITLE="the12volt's Application Guide - Dozens of application guides in one!">The Application Guide</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/vehicles.html" TITLE="Vehicle Wiring Information">Vehicle Wiring Database</A></TD></TR>
+<TR><TD CLASS="menuh" style="padding-top:10px;">Et Cetera</TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/about/about.asp" TITLE="About the12volt">About the12volt</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/index.asp" TITLE="Hurricane Katrina">Hurricane Katrina</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/links/linktous.asp" TITLE="Link to the12volt.com">Link to Us</A></TD></TR>
+<TR><TD style="padding-left:4px;"><A CLASS="Menua" HREF = "http://www.the12volt.com/installbay/donations.asp" TITLE="Support the12volt.com. Make a donation and link to us. Help support the free exchange of information for mobile electronics installers and enthusiasts.">Support Us</A></TD></TR>
+</TABLE>
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" ALIGN="center" width="160">
+<TR><TD><img src="http://www.the12volt.com/images/invisible.gif" width="160" height="5" border="0"></TD></TR>
+<TR><TD bgcolor="#ffffff"><img src="http://www.the12volt.com/images/invisible.gif" width="160" height="1" border="0"></TD></TR>
+<TR><TD bgcolor="#666699"><img src="http://www.the12volt.com/images/invisible.gif" width="160" height="2" border="0"></TD></TR>
+<TR><TD bgcolor="#ffffff"><img src="http://www.the12volt.com/images/invisible.gif" width="160" height="1" border="0"></TD></TR>
+</TABLE>
+<!--  -->
+
+<BR>
+<script language="JavaScript"> 
+function stopError() {
+      return true;
+}
+window.onerror = stopError;
+</script>
+&nbsp;</TD>
+<TD COLSPAN="1" BGCOLOR="#FFFFFF" WIDTH="100%" VALIGN="top">
+	 
+<TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0" ALIGN="center">
+<TR><td><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=14 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></td>
+<TD VALIGN="top" width="100%">
+<!-- Begin -->
+
+        <br><table border="0" cellspacing="0" cellpadding="0"><tr><td><h1>Car Audio / Passive Crossovers, Low Pass, Bandpass, Highpass Filters</h1></td></tr></table><br>
+<table border="0" cellspacing="0" cellpadding="0"><tr valign="top"><td style="padding-right:20px;">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4715180185807771";
+/* Car_Stereo_&amp;_Audio_Related */
+google_ad_slot = "5915379233";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+		<td>		
+<img align="right" src="http://www.the12volt.com/12voltimages/dampsml.jpg" border="0" alt="Passive Crossovers">
+        With the use of passive crossovers, 
+        you can drive a woofer, midbass, midrange, and tweeter or more in parallel on each
+        channel of an amplifier and maintain a safe load (impedance level) on the amplifier
+        across the entire frequency range. 
+        Each of these loudspeakers receive a particular range of frequencies determined
+        by one of three crossover filters:
+        <a href="#lp">low pass</a>,
+        <a href="#hp">high pass</a>, and
+        <a href="#bp">band pass</a>.
+
+        <br><br>
+		The components for these consist of coils and capacitors.
+        The value of coils and capacitors are selected by the desired crossover
+        frequency, which is determined by the efficient operating range of the loudspeaker,
+        the desired slope (rate of cuttoff per octave), and the frequency at which the crossover
+        components develop a particular impedance or resistance value in relationship to the
+        loudspeaker's impedance or resistance value. The values of coils and/or capacitors
+        used for a particular crossover frequency for a 4 ohm loudspeaker will <u>not</u> be
+        the same for a loudspeaker with a different impedance. </td>
+		</tr></table>&nbsp;
+
+<br><br>
+
+
+       <a name="lp"></a>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#000000" width="100%"><tr><td>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#FFFFFF" width="100%"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center" bgcolor="#FFFFFF">
+        <tr><td class="redb" colspan="1"><a href="#top"><img align="RIGHT" hspace="10" vspace="0" src="http://www.the12volt.com/images/uparrowb.gif" WIDTH=29 HEIGHT=18 BORDER=0 ALT="top of page"></a>
+         Low Pass Filters</td>
+        </tr>
+				    <tr>
+         <td>Low Pass
+         filters allow low frequencies to pass below a selected crossover
+         frequency, filtering out all frequencies above it. In a <u>first order</u> (6dB per octave)
+         filter, this consist of a coil in series with a loudspeaker.  Just below the crossover frequency,
+         the coil begins to add resistance to the circuit. At the crossover frequency enough
+         resistance has been added to equal the resistance of the loudspeaker and reduce the power by 3 dB
+         or 50 %. One octave above the crossover frequency, power has been reduced by 6 dB or 75%.
+         Each octave higher reduces the power by an additional 6 dB. The size of the coil will be
+         determined by the impedance of the loudspeaker(s) and the desired crossover point. The larger
+         the size or amount of inductance (millihenries, mHy) is, not physical size, the lower the low
+         pass frequency will be.<br>
+		 <center><img src="http://www.the12volt.com/12voltimages/lpass6db.gif" WIDTH=350 HEIGHT=149 BORDER=0 ALT="6 dB Low Pass Filter"></center>&nbsp;</td>
+        </tr>
+       </table></td></tr></table></td></tr></table>
+      <br>
+		    <a name="hp"></a>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#000000" width="100%"><tr><td>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#FFFFFF" width="100%"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center" bgcolor="#FFFFFF">
+        <tr><td class="redb" colspan="1"><a href="#top"><img align="RIGHT" hspace="10" vspace="0" src="http://www.the12volt.com/images/uparrowb.gif" WIDTH=29 HEIGHT=18 BORDER=0 ALT="top of page"></a>
+         High Pass Filters</td>
+        </tr>
+				    <tr>
+         <td>High Pass filters allow high frequencies above a selected crossover 
+         frequency to pass, filtering out all frequencies below it. In a <u>first order</u> (6dB per octave)
+         filter, this consist of a capacitor in series with a loudspeaker.  Just above the crossover frequency,
+         the capacitor begins to add resistance to the circuit. At the crossover frequency enough
+         resistance has been added to equal the resistance of the loudspeaker and reduce the power
+         by 3 dB or 50 %. One octave below the crossover frequency, power has been reduced by
+         6 dB or 75%. Each octave lower reduces the power by an additional 6 dB. The size of the
+         capacitor will be determined by the impedance of the loudspeaker(s) and the desired crossover point.
+         The smaller the size or value of a capacitor (microfarads, µfd or mfd) is, not physical size,
+         the higher the high pass frequency will be.<br>
+		 <center><img src="http://www.the12volt.com/12voltimages/hpass6db.gif" WIDTH=350 HEIGHT=149 BORDER=0 ALT="6 dB High Pass Filter"></center>&nbsp;</td>
+        </tr>
+       </table></td></tr></table></td></tr></table>
+      <br>
+		   <a name="bp"></a>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#000000" width="100%"><tr><td>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#FFFFFF" width="100%"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center" bgcolor="#FFFFFF">
+        <tr><td class="redb" colspan="1"><a href="#top"><img align="RIGHT" hspace="10" vspace="0" src="http://www.the12volt.com/images/uparrowb.gif" WIDTH=29 HEIGHT=18 BORDER=0 ALT="top of page"></a>
+         Band Pass Filters</td>
+        </tr>
+				    <tr>
+         <td>Band Pass filters allow a range of frequencies to pass above a selected
+         crossover frequency and below another selected crossover frequency, filtering out all
+         frequencies outside this band. In a <u>first order</u> (6dB per octave) filter,
+         this consist of a low pass filter (coil) and a high pass
+         filter (capacitor)  in series with a loudspeaker. 
+         <a href="http://www.the12volt.com/caraudio/cross.asp#nbp">Narrow Band Pass Filters</a> are to be used when the bandwidth
+         is less than two decades.<br>
+		 <center><img src="http://www.the12volt.com/12voltimages/bpass6db.gif" WIDTH=350 HEIGHT=149 BORDER=0 ALT="6 dB Band Pass Filter"></center>&nbsp;</td>
+        </tr>
+       </table></td></tr></table></td></tr></table>
+      <br>
+		   <a name="nbp"></a>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#000000" width="100%"><tr><td>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#FFFFFF" width="100%"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center" bgcolor="#FFFFFF">
+        <tr><td class="redb" colspan="1"><a href="#top"><img align="RIGHT" hspace="10" vspace="0" src="http://www.the12volt.com/images/uparrowb.gif" WIDTH=29 HEIGHT=18 BORDER=0 ALT="top of page"></a>
+         Narrow Band Pass Filters</td>
+        </tr>
+				    <tr>
+         <td>Narrow Band Pass filters are commonly used with mid-bass
+         loudspeakers. These allow a narrow band of frequencies to pass. The
+         bandwidth is considered to be narrow when the low pass frequency is less
+         than 10 to 20 times the high pass frequency ("<u>less than 1 or 2 decades</u>").
+         Different formulas apply to selecting coils and capacitors for a narrow band pass
+         filter. These <a href="http://www.the12volt.com/caraudio/crosscalc2.asp#nbpc">formulas</a>
+         should be used if the low pass frequency is less
+         than 20 times the high pass frequency, if not, distortion will be evident.
+
+         <br><br>Impedance rise occurs more often in midrange loudspeakers (usually at the upper
+         frequency range of the loudspeaker). Most of the time  the rise is well beyond the crossover
+         frequency and is not necessary to limit the high frequencies to it. If a 
+         <a href="http://www.the12volt.com/caraudio/cross.asp#zobel">Zobel</a> is not used,
+         only use a high pass filter and not a band pass filter.</td>
+        </tr>
+       </table></td></tr></table></td></tr></table>
+      <br><a name="zobel"></a>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#000000" width="100%"><tr><td>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#FFFFFF" width="100%"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center" bgcolor="#FFFFFF">
+        <tr><td class="redb" colspan="1"><a href="#top"><img align="RIGHT" hspace="10" vspace="0" src="http://www.the12volt.com/images/uparrowb.gif" WIDTH=29 HEIGHT=18 BORDER=0 ALT="top of page"></a>
+         Zobel</td>
+        </tr>
+				    <tr>
+         <td>A Zobel is a filter used to stabilized loudspeaker impedance in a
+         crossover-speaker circuit. This consists of a capacitor with a value equal
+         to one which gives a crossover frequency at the frequency where the impedance
+         has doubled, in series with a resistor which has a value equal to 1.25 times
+         the nominal loudspeaker impedance. This is connected parallel to the loudspeaker between the
+         loudspeaker and crossover. <a href="http://www.the12volt.com/caraudio/crosscalc3.asp#zobel">Zobel Calculator</a>
+         <br><center><img src="http://www.the12volt.com/12voltimages/zobel.gif" WIDTH=350 HEIGHT=149 BORDER=0 ALT="6 dB Narrow Band Pass Filter with Zobel"></center>
+		 <br>
+        <b>Loudspeaker manufacturers usually provide you with technical data 
+        containing an impedance curve and other information such as recommended
+        enclosure sizes, etc.</b></td>
+        </tr>
+       </table></td></tr></table></td></tr></table>
+      <br><a name="powera"></a>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#000000" width="100%"><tr><td>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#FFFFFF" width="100%"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center" bgcolor="#FFFFFF">
+        <tr><td class="redb" colspan="5"><a href="#top"><img align="RIGHT" hspace="10" vspace="0" src="http://www.the12volt.com/images/uparrowb.gif" WIDTH=29 HEIGHT=18 BORDER=0 ALT="top of page"></a>
+         Acoustical Output & Power</td>
+        </tr>
+				    <tr>
+         <td>Whenever two loudspeakers are playing the same
+         frequencies in phase, in the same location, there will be up to a 3 dB rise 
+         in the acoustical output. When crossovers are used, both the low pass filtered
+         loudspeaker and the high pass filtered loudspeaker are <u>down by 3 dB</u> at the crossover
+         frequency. Their combined output will be up to <u>3 dB higher</u> at the crossover point.
+         The net result is neither a rise or fall in resistance to the amplifer or acoustical output at the
+         crossover frequency as indicated by the yellow line between the low pass and high pass curves.
+         This means if both loudspeakers are 4 ohm, the amplifier will see a 4 ohm load below, at, and
+         above the crossover frequency (<a>*</a>excluding the natural impedance curves of the loudspeakers).
+       <br><br><center><img src="http://www.the12volt.com/12voltimages/5000hz.gif" WIDTH=356 HEIGHT=204 BORDER=0 ALT="5000 Hz Low Pass and High Pass Curve, 6 dB per Octave"></center><br>
+        <br>An amplifier rated at an output of 100 watts per channel into a 4 ohm load
+        will produce 50 watts per channel into an 8 ohm load, and only 25 watts into
+        a 16 ohm load. The same amplifier will also produce 200 watts per channel into
+        a 2 ohm load if the amplifier is capable of full output at a 2 ohm load. The crossover
+        not only separates the frequency ranges for the different loudspeakers in a speaker
+        system, but also separates these frequency ranges and impedance (resistance) ranges
+        for the amplifier.</td>
+        </tr>
+       </table></td></tr></table></td></tr></table>
+      <br><a name="power"></a>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#000000" width="100%"><tr><td>
+<table cellpadding="0" cellspacing="1" border="0" bgcolor="#FFFFFF" width="100%"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center" bgcolor="#FFFFFF">
+		      <tr><td colspan=4 class="redb" align="center">An Amplifier Rated at 100
+	       	Watts per Channel at 4 ohms which is Capable of Full Output at a 1 Ohm Load per Channel</td>
+	       	</tr>
+	        	 <tr align="center"><td class="gbardb">Load</td><td class="gbardb">Watts per Channel</td><td class="gbardb">% of Power at 4 ohms</td><td class="gbardb">dB change</td></tr>
+	        	 <tr align="center"><td class="gbarlt">1 ohm</td><td class="gbarlt">400</td><td class="gbarlt">400%</td><td class="gbarlt">+6</td></tr>
+	        	 <tr align="center"><td class="gbarlt">2 ohms</td><td class="gbarlt">200</td><td class="gbarlt">200%</td><td class="gbarlt">+3</td></tr>
+	        	 <tr align="center"><td class="gbarlt"><b>4 ohms</b></td><td class="gbarlt"><b>100</b></td><td class="gbarlt"><b>100%</b></td><td class="gbarlt"><b>0</b></td></tr>
+	        	 <tr align="center"><td class="gbarlt">8 ohms</td><td class="gbarlt">50</td><td class="gbarltr">down 50%</td><td class="gbarltr">-3</td></tr>
+	        	 <tr align="center"><td class="gbarlt">16 ohms</td><td class="gbarlt">25</td><td class="gbarltr">down 75%</td><td class="gbarltr">-6</td></tr>
+	        	 <tr align="center"><td class="gbarlt">32 ohms</td><td class="gbarlt">12.5</td><td class="gbarltr">down 87.5%</td><td class="gbarltr">-9</td></tr>
+	        	 <tr align="center"><td class="gbarlt">64 ohms</td><td class="gbarlt">6.25</td><td class="gbarltr">down 93.75%</td><td class="gbarltr">-12</td></tr>
+	        	 <tr align="center"><td class="gbarlt">128 ohms</td><td class="gbarlt">3.125</td><td class="gbarltr">down 96.875%</td><td class="gbarltr">-15</td></tr>
+	        	 <tr align="center"><td class="gbarlt">256 ohms</td><td class="gbarlt">1.5625</td><td class="gbarltr">down 98.4475%</td><td class="gbarltr">-18</td></tr>
+	       	  <tr align="center"><td class="gbarlt">512 ohms</td><td class="gbarlt">0.78125</td><td class="gbarltr">down 99.21875%</td><td class="gbarltr">-21</td></tr>
+         
+        <tr><td colspan="4"><br>In some cases it is necessary to increase the cut off rate or slope to higher than 6 dB
+         per octave (first order). With tweeters this is especially important. Low frequencies will damage
+         tweeters. Using a second order (12 dB per octave) or third order (18 dB per octave) high pass
+         filter will reduce the lower frequencies at a steeper rate than a first order filter. A tweeter with
+         a third order high pass filter with a crossover frequency of 5000 Hz 
+         driven by the 100 watt amplifier used in the
+         <a href="#power">power chart</a> above, will recieve about 1.6 watts at 2500 Hz
+         versus 25 watts with a first order filter at full output. The use of higher order filters allows
+         loudspeakers to be played at the limits of their efficiency. Higher order filters can also be beneficial
+         in compensating for natural peaks within the listening enviroment (vehicle).
+         <br><br><center><img src="http://www.the12volt.com/12voltimages/5000hz18.gif" WIDTH=356 HEIGHT=230 BORDER=0 ALT="5000 Hz Low Pass and High Pass Curve, 18 dB per Octave"></center>&nbsp;
+		 <br><br>Different orders may be used in your design. You can have a first order low pass
+         filter for a woofer, a third order narrow band pass filter for a mid-bass,
+         a second order band pass filter for a midrange, and a third order high pass filter
+         for a tweeter. 
+         When building passive crossovers, be sure to calculate for the correct impedance
+        of each loudspeaker. <b>Impedance is relative to frequency.</b></td>
+        </tr>
+       </table></td></tr></table></td></tr></table>
+        <br>
+		
+		<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr>
+		<td style="padding-right:10px;" align="right">
+		<strong><a href="http://www.the12volt.com/caraudio/cross6db.asp">Next - First Order Filters</a> <span class="org">&gt;&gt;</span></strong></td>
+		</tr></table>
+        <br>
+		<table cellspacing="0" cellpadding="0" border="0"><tr valign="top">
+        <td>
+        <b>Passive Crossovers:</b><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/cross.asp#lp">Low Pass Filters</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/cross.asp#hp">High Pass Filters</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/cross.asp#bp">Band Pass Filters</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/cross.asp#nbp">Narrow Band Pass Filters</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/cross.asp#powera">Acoustical Output & Power</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/cross6db.asp">First Order Filters</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/cross12db.asp">Second Order Filters</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/cross18db.asp">Third Order Filters</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/cross.asp#zobel">Zobel</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/cross2ohm.asp">2 Ohm Charts</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/cross4ohm.asp">4 Ohm Charts</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/cross8ohm.asp">8 Ohm Charts</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/crosscalc.asp">Formulas & Calculators</a></td>
+        <td width="15">&nbsp;</td>
+        <td>
+        <b>Car Audio:</b><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/glossary/glossary.asp">Glossary of Terms and Definitions</a><br>
+        <!-- <SPAN CLASS="org">&#8226;</SPAN> <A HREF="http://www.the12volt.com/installs/installs.asp">Installs</A> <BR> -->
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/ohm/ohmslaw.asp">Ohm's Law</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/cross.asp">Passive Crossovers & Calculators</a><br>
+		<span class="org">&#8226;</span> <a href="http://www.the12volt.com/wireinfo/metra.asp">Metra Application Guides</a><br>
+		<span class="org">&#8226;</span> <a href="http://www.the12volt.com/wiring/recwirsz.asp">Power and Ground Cable Sizes</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/boxes.asp">Subwoofer Enclosures & Calculators</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/woofer_configurations.asp">Subwoofer Wiring</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/installbay/appguide.asp" title="The Application Guide">the12volt's Application Guide</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/installbay">the12volt's Install Bay (forums)</a><br>
+        <span class="org">&#8226;</span> <a href="http://www.the12volt.com/caraudio/thiele.asp">Thiele - Small Parameters</a><br>
+		<span class="org">&#8226;</span> <a href="http://www.the12volt.com/tools/tools.asp">Tools &amp; Equipment</a></td>
+		<td width="15">&nbsp;</td>
+        <td>
+        <b>Basics:</b><br>
+           <span class="org">&#8226;</span> <a href="http://www.the12volt.com/diodes/diodes.asp">Diodes</a><br>
+           <span class="org">&#8226;</span> <a href="http://www.the12volt.com/ohm/ohmslaw.asp">Ohm's Law</a><br>
+           <span class="org">&#8226;</span> <a href="http://www.the12volt.com/relays/relays.asp">Relays</a><br>
+           <span class="org">&#8226;</span> <a href="http://www.the12volt.com/resistors/resistors.asp">Resistors</a><br>
+		   <span class="org">&#8226;</span> <a href="http://www.the12volt.com/tools/tools.asp">Tools &amp; Equipment</a>
+</td></tr>
+		</table><br>
+
+<div style="z-index:9;position:absolute;top:80;left:14;">
+<div style="width:248px;padding-top:0px;height:16px;white-space:nowrap;opacity:.9;filter:alpha(opacity=90);"><!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_google_plusone"></a> 
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_favorites"></a> 
+<a class="addthis_button_email"></a> 
+<a class="addthis_button_print"></a> 
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<!-- AddThis Button END --></div></div>
+
+<div style="position:absolute;top:159;left:9;">
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4daa0ea93acd0989"></script>
+   
+<br>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4715180185807771";
+/* 160x600, left top created 2/22/08 */
+google_ad_slot = "0254039897";
+google_ad_width = 160;
+google_ad_height = 600;
+google_page_url = "http://www.the12volt.com/caraudio/cross.asp";
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br><br>
+</div>
+
+<br><br>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-4715180185807771";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="8974884790";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "0000CC";
+google_color_url = "0000CC";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br><br>
+
+<!-- google_ad_section_start(weight=ignore) --> 
+<!-- //End -->
+</TD>
+<td><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=14 HEIGHT=1 ALT="ohm's law, resistors, relays, and more" BORDER="0"></td>
+</TR></TABLE></TD></TR>
+<TR><TD COLSPAN="1" BGCOLOR="#333366" WIDTH="180" VALIGN="top" align="center">
+<IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=180 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0">
+<div align="center" style="margin-bottom:16px;"><img 
+src="http://chart.apis.google.com/chart?cht=qr&chs=150x150&choe=UTF-8&chld=H&chl=http://www.the12volt.com/caraudio/cross.asp?" 
+border="0" alt=""></div></TD>
+<TD WIDTH="100%" valign="bottom">
+<div align="center">
+
+<table border="0" cellspacing="2" cellpadding="2" align="center">
+<tr><td align="center" class="head">Search the12volt.com</td></tr>
+<tr><td>
+<style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-bottom" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.com/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-4715180185807771:yfnngg-at4t" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="70" />
+        <input type="submit" name="sa" value="Search" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Custom Search
+  </div>
+</div>
+</td></tr></table>
+</div>
+</div>
+<TABLE ALIGN="center"><TR><TD colspan="9" valign="top" align="center" STYLE="font-size:8pt;font-family:arial,verdana; color:black;">
+<meta property="og:site_name" content="the12volt.com"/>
+<table border="0" cellspacing="0" cellpadding="2" align="center"><tr>
+<table border="0" cellspacing="0" cellpadding="2" style="width:290px;overflow:visible;">
+
+<td>Follow the12volt.com:</td>
+<td><a href="http://www.facebook.com/pages/the12voltcom/198505935867" target="_blank"><img src="http://www.the12volt.com/images/facebook-small.png" width="20" height="20" alt="Follow the12volt.com on Facebook" border="0"></a></td>
+<td><a href="http://www.twitter.com/the12volt" target="_blank"><img src="http://www.the12volt.com/images/twitter-small.png" alt="Follow the12volt.com on Twitter" border="0"/></a></td>
+<td><!-- Place this tag in the <head> of your document -->
+<link href="https://plus.google.com/106772733613786048589" rel="publisher" />
+<!-- Place this tag where you want the badge to render -->
+<a href="https://plus.google.com/106772733613786048589?prsrc=3" style="text-decoration:none;" target="_blank"><img src="https://ssl.gstatic.com/images/icons/gplus-32.png" alt="Follow the12volt.com on Google +" style="border:0;width:20px;height:20px;"/></a></td>
+</tr></table>
+<table border="0" cellspacing="0" cellpadding="2" align="center" style="margin-top:10px;">
+<tr><td valign="top" style="padding-right:2px;white-space:nowrap;">Share, print &amp; email this page:</td><td align="right"> 
+<div style="width:245px;padding-top:0px;height:22px;float:right;text-align:right;white-space:nowrap;"><!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_google_plusone"></a> 
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_favorites"></a> 
+<a class="addthis_button_email"></a> 
+<a class="addthis_button_print"></a> 
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+<!-- AddThis Button END --></div></td></tr></table>
+</TD></TR>
+<TR>
+<TD><SPAN STYLE="font-size:7pt;font-family:arial,verdana; color:black;">Tuesday, August 27, 2013</SPAN></TD>
+<TD>&#8226;</TD>
+<TD><SPAN STYLE="font-size:7pt;font-family:arial,verdana; color:black;">Copyright &copy; 1999-2013 the12volt.com</SPAN></TD>
+<TD>&#8226;</TD>
+<TD><A CLASS="copy" HREF = "https://www.paypal.com/xclick/business=the12volt%40the12volt.com&item_name=Donate+to+the12volt.com&no_note=1&tax=0&currency_code=USD" TITLE="Make a donation to the12volt.com" target="_blank"><SPAN STYLE="font-size:7pt;font-family:arial,verdana;">Donate to the12volt.com</SPAN></A></TD>
+<TD>&#8226;</TD>
+<TD><A CLASS="copy" HREF = "http://www.the12volt.com/privacy/privacy.asp"><SPAN STYLE="font-size:7pt;font-family:arial,verdana;">Privacy Policy</SPAN></A></TD>
+<TD>&#8226;</TD>
+<TD><A CLASS="copy" HREF = "http://www.the12volt.com/adv/default.asp"><SPAN STYLE="font-size:7pt;font-family:arial,verdana;">Advertising</SPAN></A></TD>
+<TD>&#8226;</TD>
+<td><a href="http://www.freesitemapgenerator.com/"><img
+ border="0" alt="Free Sitemap Generator"
+ style="border:0; margin:3px 3px 3px 3px; padding:0"
+ src="http://live.freesitemapgenerator.com/img/fsg1.gif"></a><script
+ language="javascript">
+/* FSG 0.96 script */ 
+var fsg_Live_date_package_version='0.96';
+var fsg_image = '';
+var fsg_serial = '0985c16579a024b096b1da1643e541f5';
+</script><script language="javascript"
+ src="http://live.freesitemapgenerator.com/scripts/fsg096.js"></script></td>
+</TR></TABLE></TD></TR></TABLE></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#333366" WIDTH="100%" HEIGHT="5"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#666699" WIDTH="100%" HEIGHT="20" VALIGN="middle">
+<TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0" ALIGN="center">
+<TR><TD CLASS="org" NOWRAP HEIGHT="20" style="padding-left:8px;">
+<A CLASS="Menub" HREF="http://www.the12volt.com/ohm/basics.asp" TITLE="Mobile Electronic Basics, Ohm&acute;s Law, Relays, Resistors, Diodes">Basics</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/caraudio/caraudio.asp" TITLE="Car Stereo and Mobile Video, Passive Crossovers, Subwoofer Enclosures, Subwoofer Wiring Wizard, Calculators, Tools">Car Audio</A> &#8226; 
+<A CLASS="Menub" HREF="http://www.the12volt.com/carsecurity/carsecurity.asp" TITLE="Alarm Wiring, Modules, Triggers, Accesories, Diagrams">Car Security</A> &#8226; 
+<A CLASS="Menub" HREF="http://www.the12volt.com/cruisecontrol/cruisecontrol.asp" TITLE="Electrical and Mechanical Connections, Micro Cruise Switch Settings">Cruise Controls</A> &#8226; 
+<A CLASS="Menub" HREF="http://www.the12volt.com/diodes/diodes.asp" TITLE="Blocking Diodes">Diodes</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/doorlocks/doorlocks.asp" TITLE="Door Lock Switch Types and Relay Diagrams">Door Locks</A> &#8226; 
+<A CLASS="Menub" HREF="http://www.the12volt.com/ohm/ohmslaw.asp" TITLE="Ohm&acute;s Law Formulas, Pie Chart, and Calculators">Ohm's Law</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/caraudio/cross.asp" TITLE="Passive Crossovers, Coils, Capacitors, Calculators, Low Pass Filters, High Pass Filters, Bandwidth Filters, Zobel">Passive Crossovers</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/relays/relays.asp" TITLE="Relays, Relay Wiring and Diagrams">Relays</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/resistors/resistors.asp" TITLE="Resistors, Color Bands and Calculator">Resistors</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/caraudio/boxes.asp" TITLE="Subwoofer Enclosures, Wiring and Calculators">Subwoofer Enclosures</A></TD>
+<TD NOWRAP ALIGN="right" WIDTH="100%" CLASS="org" style="padding-right:8px;"><A CLASS="Menubq" 
+HREF="http://www.the12volt.com/search/search.asp" title="Search the12volt.com">Search</A></TD>
+</TR></TABLE></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#333366" WIDTH="100%" HEIGHT="5"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#666699" WIDTH="100%" HEIGHT="20" VALIGN="middle">
+<TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0" ALIGN="center">
+<TR><TD CLASS="org" NOWRAP HEIGHT="20" style="padding-left:8px;">
+<A CLASS="Menub" HREF="http://www.the12volt.com/installbay/appguide.asp" TITLE="the12volt's Application Guide - Dozens of application guides in one!">Application Guides</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/info/diagrams.asp" TITLE="Index of Diagrams, Charts, Calculators, and Requested Info">Calculators, Charts, Diagrams</A> &#8226; 
+<A CLASS="Menub" HREF="http://www.the12volt.com/installbay/downloads.asp" TITLE="Download Manuals, Diagrams, Tech Tips and More!">Downloads/Manuals</A> &#8226; 
+<A CLASS="Menub" HREF="http://www.the12volt.com/installbay/findinstaller.asp" TITLE="Installer Database - Find an Installer">Find Installers</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/installbay" TITLE="Mobile Electronics Forums, It&acute;s Free and Easy to Join! Post Questions! Get Answers!">Forums</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/glossary/glossaryofterms/A.html" TITLE="Mobile Electronics Glossary">Glossary</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/caraudio/woofer_configurations.asp" TITLE="Subwoofer Wiring Wizard">Subwoofer Wiring</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/tools/tools.asp" TITLE="Recommended Tools and Equipment for the Shop and Installer">Tools</A> &#8226;
+<A CLASS="Menub" HREF="http://www.the12volt.com/installbay/vehicles.html" TITLE="Vehicle Wiring Database">Vehicle Wiring</A></TD>
+<TD NOWRAP ALIGN="right" WIDTH="100%" CLASS="org" style="padding-right:8px;"><A CLASS="Menub" HREF="http://www.the12volt.com/installbay/last100.asp" TITLE="100 Most Recent Forum Topics">Recent Topics</A></TD>
+</TR></TABLE></TD></TR>
+
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></TD></TR>
+<!-- -->
+<TR><TD COLSPAN="2" BGCOLOR="#333366" WIDTH="100%" HEIGHT="5"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=5 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></TD></TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#666699" WIDTH="100%" HEIGHT="1">
+<TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0">
+<TR>
+<TD BGCOLOR="#666699" HEIGHT="98" WIDTH="255" valign="middle" style="padding-left:5px;padding-top:4px;padding-bottom:4px;"><A HREF="http://www.the12volt.com/"><IMG SRC="http://www.the12volt.com/images/12vsmlogo_aug08.gif" WIDTH=250 HEIGHT=90 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers, Enthusiasts, and Do-It-Yourselfers since 1999 " BORDER="0"></A></TD>
+<TD WIDTH="100%" ALIGN="center" VALIGN="middle" BGCOLOR="#666699" style="padding-top:4px;padding-bottom:4px;">
+<a href="http://www.the12volt.com/installbay/donations.asp"><img 
+src="http://www.the12volt.com/banners/donate728x90rb.gif" width="728" height="90" border="0" alt="Donate to the12volt.com"></a>
+</TD></TR></TABLE></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#FFFFFF" WIDTH="100%" HEIGHT="1"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=1 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></TD></TR>
+<TR><TD COLSPAN="2" BGCOLOR="#333366" WIDTH="100%" HEIGHT="5"><IMG SRC="http://www.the12volt.com/images/invisible.gif" WIDTH=1 HEIGHT=5 ALT="the12volt.com - Free Technical Information for Mobile Electronics Installers since 1999" BORDER="0"></TD></TR>
+</TABLE>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-8079641-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<NOSCRIPT><DIV><B>It appears that you are using an older browser or your browser does not support JavaScript, or you have it disabled. This site takes advantage of newer features. High Color or better, and a 6.0 browser or the latest version is required with JavaScript and Style Sheets enabled. Don&#39;t miss out!</B><BR><BR></DIV></NOSCRIPT>
+<!-- google_ad_section_end -->
+
+</body>
+</html>

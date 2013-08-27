@@ -1,0 +1,847 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- ClipBucket v2 -->
+<meta name="copyright" content="ClipBucket - PHPBucket ClipBucket 2007 - 2013" />
+<meta name="author" content="Arslan Hassan - http://clip-bucket.com/arslan-hassan" />
+<link rel="shortcut icon" href="http://freetvall.com/favicon.ico"/>
+<link rel="icon" type="image/ico" href="http://freetvall.com/favicon.ico" />
+
+<!-- RSS FEEDS -->
+<link rel="alternate" type="application/rss+xml"
+				title="Recently added videos" href="http://freetvall.com/rss/recent" />
+<link rel="alternate" type="application/rss+xml"
+				title="Most Viewed Videos" href="http://freetvall.com/rss/views" />
+<link rel="alternate" type="application/rss+xml"
+				title="Top Rated Videos" href="http://freetvall.com/rss/rating" />
+<link rel="alternate" type="application/rss+xml"
+				title="Videos Being Watched" href="http://freetvall.com/rss/watching" />
+
+
+<meta name="keywords" content="tv online, live tv, freetvall, free satellite tv, live cricket, live sports, online tv stream, free tv online, live streaming, live tv, tv live" />
+<meta name="description" content="FreeTvAll provides free Internet Live TV channels. Watch Free TV &amp; Live Tv Stations from around the world on your computer, free Live Streaming from Anywhere" />
+<meta name="distribution" content="global" />
+
+
+<title>FreeTvAll.com - Watch Free All Live Tv Channels Online Anywhere - Arts and Entertainment  (Powered by FreeTvAll)</title>
+
+<link href="http://freetvall.com/styles/cbv2new/theme/main.css" rel="stylesheet" type="text/css" />
+
+<!-- Setting Template Variables -->
+<!-- Setting Template Variables -->
+
+
+<script type="text/javascript">
+var baseurl = 'http://freetvall.com';
+var imageurl = 'http://freetvall.com/styles/cbv2new/images';
+</script>
+
+<!-- Including JS Files-->
+   <script src="http://freetvall.com/js/jquery.js" type="text/javascript"></script>
+    
+    <script src="http://freetvall.com/js/jquery_plugs/cookie.js" type="text/javascript"></script>
+    <script src="http://freetvall.com/js/rating_update.js" type="text/javascript"></script>
+    <script src="http://freetvall.com/js/checkall.js" type="text/javascript"></script>
+    <script src="http://freetvall.com/js/functions.js" type="text/javascript"></script>
+    <script src="http://freetvall.com/js/bbcode_js/ed.js" type="text/javascript"></script>
+    <script src="http://freetvall.com/js/swfobject.obj.js" type="text/javascript"></script>
+ <!-- Including JS Files-->
+
+
+<!-- Including Headers -->
+                <!-- Ending Headers -->
+
+
+
+<script type="text/javascript">
+
+window.onload = function() {
+	load_quicklist_box();
+	ini_cookies();
+}
+
+</script>
+
+<!-- Including Plugin Headers -->
+	    	<script src="http://freetvall.com/js/embed_video_mod/functions.js" type="text/javascript"></script>    			    	
+<link href="http://freetvall.com/plugins/avatar_selection/avatar_selection.css" rel="stylesheet" type="text/css" />
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$('input[name=avatar_selection]:first').attr('checked','checked').parent().find('img').addClass('avatarSelected');
+
+	
+
+	$('input[name=avatar_selection]').bind('click',function(){ 
+
+	$('.avatarSelected').removeClass('avatarSelected');
+
+	$(this).parent().find('img').addClass('avatarSelected')})
+
+});
+</script>
+    <!-- Including Plugin Headers -->
+
+
+
+<script type="text/javascript">
+	
+	function ToggleView(obj) {
+		var obj = $(obj),
+			obj_id = obj.attr('id'),
+			parent = obj.parent().attr('id'),
+			target = $("#"+parent).next().attr('id');
+			//alert('#'+parent+' #'+target+' .grid_view');
+			if(obj_id == "grid") {
+				$('#'+parent+' + #'+target+' .grid_view').removeClass('list_view');
+				$.cookie("current_style","grid_view")
+				$('.vid_sp').hide();				
+			} else {
+				$('#'+parent+' + #'+target+' .grid_view').addClass('list_view');
+				$.cookie("current_style","list_view")
+				$('.vid_sp').show();				
+			}
+	}
+	
+$(document).ready(function() {					   
+	$('.user_login').hide();					   
+	
+	$('#user_login').toggle(
+		function() {
+			$('.user_login').slideDown('normal');
+		},
+		function() {
+			$('.user_login').slideUp('normal');
+		}
+								
+	);
+	
+//	$('#grid').click(
+//		function() {
+//			$('.grid_view').removeClass('list_view');
+//			$.cookie("current_style","grid_view")
+//			$('.vid_sp').hide();
+//		}
+//	);
+//	
+//	$('#list').click(
+//		function() {
+//			$('.grid_view').addClass('list_view');
+//			$.cookie("current_style","list_view")
+//			$('.vid_sp').show();
+//		}
+//	);	
+	
+	$('.tabs li').click(
+		function() {
+			$('.tabs li').removeClass('selected')
+			$(this).addClass('selected');
+		}
+	);
+	$('#lang_selector').click(function(){
+  //do redirection
+});
+
+	$('#lang_selector').change(function(){
+	  var optionSelectedValue = $('#lang_selector option:selected').val();
+	  if(optionSelectedValue)
+	  window.location = "?set_site_lang="+optionSelectedValue;
+	});
+	get_video('recent_viewed_vids','#index_vid_container');
+	
+});
+
+
+</script>
+
+
+<!--[if lte IE 6]>
+<style type="text/css">
+.clearfix { height: 1%; }
+</style>
+<![endif]-->
+
+<!--[if IE 7]>
+<link href="http://freetvall.com/styles/cbv2new/theme/ie7.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+
+<script type="text/javascript">var switchTo5x=false;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "8c695dcd-964f-4c61-8e19-e3bc5b112b14"}); </script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+
+
+<script language= JavaScript type="text/javascript"> 
+<!--
+ 
+//Disable right mouse click Script
+<!-- var message="Function Disabled!"; -->
+///////////////////////////////////
+function clickIE() {if (document.all) {alert(message);return false;}}
+function clickNS(e) {if
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {alert(message);return false;}}}
+if (document.layers)
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+document.oncontextmenu=new Function("return false")
+// -->
+</script>
+
+
+
+
+</head>
+
+<!-- Global Header Ends Here --><body>
+
+<!-- ADMIN BAR -->
+<!-- ADMIN BAR -->
+
+
+
+<!-- Including Commong header -->
+<div class="container_container">
+    <div id="container" class="clearfix">
+        <!-- Loading Quicklist Box -->
+<div id="quicklist_box"></div>
+
+<div id="header">
+	<div>
+    <a href="http://freetvall.com"><img src="http://freetvall.com/styles/cbv2new/images/dot.gif" alt="FreeTvAll.com - Watch Free All Live Tv Channels Online Anywhere - Arts and Entertainment  (Powered by FreeTvAll)" name="logo_icon" width="348" height="53" border="0" id="logo_icon" title="FreeTvAll.com - Watch Free All Live Tv Channels Online Anywhere - Arts and Entertainment  (Powered by FreeTvAll)"  class="logo"></a>
+</div> <!--LOGO END-->
+    <div class="login_con clearfix">
+        <div class="user_login clearfix">
+                	<a href="http://freetvall.com/forgot.php" class="forget" title="Forget Username/Password, Click Here"></a>
+            <form action="http://freetvall.com/signup.php" method="post" name="login" style="margin:0px; padding:0px;">
+                <input type="text" value="Username" id="username" name="username" onfocus="if(this.defaultValue == this.value) this.value = ''" onblur="if(this.value == '') this.value = this.defaultValue"  />
+                <input type="password" value="Password" id="password" name="password" onfocus="if(this.defaultValue == this.value) this.value = ''" onblur="if(this.value == '') this.value = this.defaultValue"  />                
+                <input type="submit" value="Login" id="login" name="login"  />
+                <input type="checkbox" name="rememberme" id="rememberme"  /> <span class="remember">Remember Me</span>
+			</form> 
+         
+        </div> <!--USER_LOGIN CLASS END-->
+      
+         <div id="user_login">
+            <a href="javascript:void(0)">
+                        	Login
+                
+            </a>
+        </div> <!--USER_LOGIN ID END-->
+    </div> <!--LOGIN_CON END-->    
+</div> <!--HEADER ID END-->
+
+<div class="top_tabs clearfix">
+    <ul>
+    	        
+                	            	<li><a href="http://freetvall.com"   >Home</a></li>
+                            	            	<li><a href="http://freetvall.com/videos"  class="selected"   >All Channels</a></li>
+                            	            	<li><a href="http://freetvall.com/page/18/jtv-sports"   >JTV SPORTS</a></li>
+                            	            	<li><a href="http://freetvall.com/channels"   >Members</a></li>
+                            	            	<li><a href="http://freetvall.com/signup"   >Signup</a></li>
+                            	            	<li><a href="http://freetvall.com/upload"   >Add Channel</a></li>
+                        </ul>
+	
+</div> <!--TOP_TABS END-->
+
+<div id="navi_con">
+    <div class="navi">
+        <ul>
+                
+        
+        	<li>Welcome Guest ! Please <a href="http://freetvall.com/signup.php">Login</a> or <a href="http://freetvall.com/signup.php">Register</a></li>
+             
+         </ul>
+<div class="search_con">
+    <div class="s_bg">	
+        <form action="http://freetvall.com/search_result.php" method="get" name="search" id="search" style="margin:0px; padding:0px;">               
+            <input name="query" id="query" type="text" class="searchbar" value="" />
+            <select name="type" class="s_type">
+                            <option value="videos" >videos</option>
+                            <option value="groups" >groups</option>
+                            <option value="users" >users</option>
+                        </select>                                                                 
+            <input name="submit" type="submit" class="searchbutton" value="Search" />
+        </form>
+    </div> <!--S_BG END-->    
+</div> <!--SEARCH_CON END-->
+    </div> <!--NAVI END-->
+</div> <!--NAVI_CON END-->        <div class="nav_shadow"></div>
+        <div id="content" style="">
+        
+        
+        
+        <!-- Message -->
+        
+
+
+
+
+                                        <center><div style="width:728px; margin:auto; margin-top:5px">
+<iframe src="http://freetvall.com/AD728.html" height="90" width="728" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+</div></center>
+
+<div class="vid_top_container">
+
+    <div class="video_title">Arts and Entertainment</div>
+    
+
+    <!-- START before_watch_player plugin -->
+        
+    <!-- END before_watch_player plugin anchor -->
+    
+    </div>
+
+
+<div class="watch_left">
+<!-- Player -->
+<div class="player_container" id="ep_video_container">
+    <!-- Player -->
+<div id="videoPlayer" class='video_player'>
+This content requires JavaScript and Macromedia Flash Player 7 or higher. <a href=http://www.macromedia.com/go/getflash/>Get Flash</a>
+</div>
+<script language="javascript">
+	var EmbedCode="<iframe src=\"http://livetvcafe.net/video/HH35W52S2RW8/Arts-and-Entertainment-Network\" marginheight=\"430\" marginwidth=\"658\" scrolling=\"no\" width=\"658\" height=\"430\"></iframe>";
+$('#videoPlayer').html(EmbedCode)
+</script>
+<!-- Player End -->
+</div>
+
+<!-- Actions -->
+<div class="video_actions_cont clearfix">
+    <div class="rating_container">
+    <div id="rating_container">
+<ul class="big_stars" id="rating_container_207">
+<li class="current-rating" style="width:100%"></li>
+<li>
+<a href="javascript:void(0)" class="one-star" onclick="rate('207','1','video')" onMouseOver="rating_over('Poor','')" onmouseout="rating_out('Rate this video','')"> </a>
+</li>
+<li>
+<a href="javascript:void(0)" class="two-stars" onclick="rate('207','2','video')" onMouseOver="rating_over('Bad','')" onmouseout="rating_out('Rate this video','')"> </a>
+</li>
+<li>
+<a href="javascript:void(0)" class="three-stars" onclick="rate('207','3','video')" onMouseOver="rating_over('Average','')" onmouseout="rating_out('Rate this video','')"> </a>
+</li>
+<li>
+<a href="javascript:void(0)" class="four-stars" onclick="rate('207','4','video')" onMouseOver="rating_over('Good','')" onmouseout="rating_out('Rate this video','')"> </a>
+</li>
+<li>
+<a href="javascript:void(0)" class="five-stars" onclick="rate('207','5','video')" onMouseOver="rating_over('Excellent','')" onmouseout="rating_out('Rate this video','')"> </a>
+</li>
+</ul>
+<div id="rating_result_container" align="center">Rate this video</div>
+</div>
+    </div>
+    <div class="actions clearfix">
+    <ul>
+    <li><a href="javascript:void(0)" onclick="slide_up_watch_video('#video_action_result_cont');add_to_fav('video','207');"><img src="http://freetvall.com/styles/cbv2new/images/dot.gif" class="add_to_fav" />Add to Favorites</a></li>
+      <li><a href="javascript:void(0)" onclick="slide_up_watch_video('#flag_item');$('#flag_item').slideToggle();"><img src="http://freetvall.com/styles/cbv2new/images/dot.gif" class="report_this" />Report this!</a></li>
+      <li><a href="javascript:void(0)" onclick="slide_up_watch_video('#share_form');$('#share_form').slideToggle();"><img src="http://freetvall.com/styles/cbv2new/images/dot.gif" class="add_to_play" />Share This</a></li>
+      <li><a href="javascript:void(0)" onclick="slide_up_watch_video('#playlist_form');$('#playlist_form').slideToggle();"><img src="http://freetvall.com/styles/cbv2new/images/dot.gif" class="share_this" />Add to Playlist</a></li>
+    </ul>
+
+    </div>
+
+</div>
+<!-- Actions End-->
+
+<!-- Action Result Container-->
+<div class="video_action_result_boxes">
+	<!-- Share This video -->
+<div id="share_form" class="action_box share_form clearfix" style="display:none">
+	<div class="action_box_title">Share this Video &#8212; <span class="cancel"><a href="javascript:void(0)" onclick="$('#share_form').slideUp();">cancel</a></span></div>
+    <div class="form_container">
+    <form id="share_form" name="share_form" method="post" action="" class="">
+        	<div class="form_left">
+           	  <label for="users">To <span class="example">(FreeTvAll.com - Watch Free All Live Tv Channels Online Anywhere usernames or emails)</span></label>
+              Seperate usernames and emails by comma
+              <input name="users" type="text" class="left_text_area" id="users" value="" size="45" />
+              <label for="message">Message <span class="example">optional</span></label>
+              <textarea name="message" id="message" cols="45" rows="5" class="left_text_area"></textarea>
+              <input name="objectid" id="objectid" type="hidden" value="207" />
+              <div align="right"><input type="button" name="send_content" value="Send" class="cb_button" onclick="submit_share_form('share_form','Video')"/></div>
+       		</div>
+            <div class="form_right">
+            	<div id="share_form_results" class="form_result" style="display:none"></div>
+            </div>
+
+      </form>
+    </div>
+</div>
+<!-- Share This video -->
+    <!-- Flag This video -->
+<div id="flag_item" class="action_box" style="display:none">
+	<div class="action_box_title">Flag this Video &#8212; <span class="cancel"><a href="javascript:void(0)" onclick="$('#flag_item').slideUp();">cancel</a></span></div>
+    <div class="form_container" align="center">
+    
+    <div class="form_result" id="flag_form_result" style="display:none"></div>
+    
+    <form id="flag_form" name="flag_form" method="post" action="" class="">
+    Please select the category that most closely reflects your concern about the video, so that we can review it and determine whether it violates our Community Guidelines or isn't appropriate for all viewers. Abusing this feature is also a violation of the Community Guidelines, so don't do it. 
+    	        <label for="select"></label>
+        <select name="select" name="flag_type" id="flag_type">
+        	        	<option value="0">Inappropriate Content</option>
+                    	<option value="1">Copyright infringement</option>
+                    	<option value="2">Sexual Content</option>
+                    	<option value="3">Violence or repulsive content</option>
+                    	<option value="4">Spam</option>
+                    	<option value="5">Disturbing</option>
+                    	<option value="6">Other</option>
+                    </select><br>
+        <input type="button" name="send_content" value="Flag This Video" class="cb_button" onclick="flag_object('flag_form','207','Video')"/>
+  	</form>
+    </div>
+</div>
+<!-- Flag This video -->
+    <div class="action_box" style="display:none" id="video_action_result_cont"></div>
+    <!-- Add To Playlist This video -->
+<div id="playlist_form" class="action_box" style="display:none" >
+	<div class="action_box_title">Add this Video to playlist &#8212; <span class="cancel"><a href="javascript:void(0)" onclick="$('#playlist_form').slideUp();">cancel</a></span></div>
+    <div class="form_container" align="center">
+    
+     <div class="form_result" id="playlist_form_result" style="display:none"></div>
+     
+    <form id="add_playlist_form" name="playlist_form" method="post" action="" class="">
+    Please select playlist name from following<br>
+	<select name="playlist_id" id="playlist_id">
+        </select> or <a href="javascript:void(0)" onClick="$('#add_playlist_form').css('display','none');$('#new_playlist_form').css('display','block')">create new playlist </a><br>
+
+    <input type="button" name="add_to_playlist" value="Add to playlist" class="cb_button" onclick="add_playlist('add','207','add_playlist_form')"/>
+    </form>
+    
+    <form id="new_playlist_form" name="new_playlist_form" method="post" action="" class="" style="display:none">
+        <label for="playlist_name">Enter Playlist name</label>
+        <input name="playlist_name" type="text" class="left_text_area" id="playlist_name" value="" size="45"  style="width:300px"/> or <a href="javascript:void(0)"  onClick="$('#add_playlist_form').css('display','block');$('#new_playlist_form').css('display','none')">Select from list </a><br>
+        <input type="button" name="add_new_playlist" value="Add new playlist" class="cb_button" onclick="add_playlist('new','207','new_playlist_form')"/>
+    </form>
+    </div>
+</div>
+<!-- Add To Playlist This video -->
+</div>
+<!-- Action Result Container End-->
+
+
+<!-- Video Stats-->
+<div class="video_details clearfix">
+<div  class="action_box"  id="video_detail_result_cont" style="margin-top:0px; margin-bottom:5px; display:none"></div>
+
+	<div class="vd_user_container" align="center">
+   		<a href="http://freetvall.com/user/admin"><img src="http://freetvall.com/images/avatars/1.png" alt="admin" class="account_thumb" /></a>
+        <ul>
+        	<li><a href="http://freetvall.com/user/admin">View Profile</a></li>
+        	<li><a href="http://freetvall.com/user_videos.php?user=admin">View Videos</a></li>
+        </ul>
+        <div align="center"><span class="small_button non_button" onclick="subscriber('1','subscribe_user','video_detail_result_cont')">Subscribe</span></div>
+    </div>
+    <div class="vd_details">
+
+<span class='st_facebook_vcount' displayText='Facebook'></span>
+<span class='st_twitter_vcount' displayText='Tweet'></span><span class='st_stumbleupon_vcount' displayText='Stumble'></span><span class='st_email_vcount' displayText='Email'></span><span class='st_sharethis_vcount' displayText='Share'></span><span class='st_plusone_vcount' displayText='Google +1'></span>
+
+    <div class="uploading_detail">
+    
+    	<a href="http://freetvall.com/user/admin">Uploaded by admin &#8212; 3 years ago</a>
+    </div>
+    <div class="vd_stats">
+        <ul>
+          <li>Views : <strong>30,140</strong></li>
+          <li>Live : <strong>24:00:00</strong></li>
+          <li>Comments :<strong> 0</strong></li>
+        </ul>
+    <div class="clearfix"></div> 
+    </div>
+
+    
+    	<div class="desc_cont">
+    	<div class="less_desc" id="less_desc">
+        	 <span class="upper_quote"></span>Watch Online Arts and Entertainment TV Live Streaming from USA .Watch A&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;E TV Live Streaming online. Watch Free Online A&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;E TV Channel. A&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;E TV is Live Broadcasting from USA.        </div>
+        <div class="more_desc" id="more_desc" style="display:none">
+        	 <span class="upper_quote"></span>Watch Online Arts and Entertainment TV Live Streaming from USA .Watch A&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;E TV Live Streaming online. Watch Free Online A&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;E TV Channel. A&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;E TV is Live Broadcasting from USA. <a href="javascript:void(0)" onclick="$('#more_desc').css('display','none');$('#less_desc').css('display','block');">Less</a>
+        </div>
+
+<center><li><a href="http://www.freegamesall.com/" target="_blank">
+			 <img src="http://1.bp.blogspot.com/-tAj2RjKIZeY/ThMEuSjdFHI/AAAAAAAAAMI/cLRq5OnaUUs/s1600/nnn.png" class="thumbImg thumbImgSize" title="Free Games All" /><br /></li></center>   
+        
+        </div>
+        
+        
+        <div class="tags_cats">
+    <div class="tags"><a href="http://freetvall.com/search_result.php?query=Real&type=videos">Real</a>, <a href="http://freetvall.com/search_result.php?query=Drama&type=videos">Drama</a>, <a href="http://freetvall.com/search_result.php?query=Life&type=videos">Life</a>, <a href="http://freetvall.com/search_result.php?query=A%26amp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3BE&type=videos">A&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;E</a>, <a href="http://freetvall.com/search_result.php?query=AE&type=videos">AE</a>, <a href="http://freetvall.com/search_result.php?query=USA&type=videos">USA</a>, <a href="http://freetvall.com/search_result.php?query=A%26amp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3Bamp%3BE+TV&type=videos">A&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;E TV</a>, <a href="http://freetvall.com/search_result.php?query=Arts+and+Entertainment&type=videos">Arts and Entertainment</a></div>
+    <div class="category">Category : <a href="http://freetvall.com/search_result.php?category[]=18&type=video">Others</a>,<a href="http://freetvall.com/search_result.php?category[]=4&type=video">United States</a></div>
+    </div>
+    
+    </div>
+    
+</div>
+<!-- Video Sttas-->
+
+<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FFreeTvAll&amp;width=670&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:670px; height:290px;" allowTransparency="true"></iframe>
+
+<center>
+<iframe src="http://freetvall.com/AD300.html" height="250" width="300" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe><iframe src="http://freetvall.com/AD300.html" height="250" width="300" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+</center>
+
+
+<!-- Video Comments -->
+<div id="commentsContainer">
+	<h2>Comments</h2>
+    <!-- Displaying Comments -->
+    	<div id="latest_comment_container">
+	<div align="center" class="no_comments">
+    	<em>No Comments</em>
+    </div>
+    </div>
+    
+        	<div class="add_comment_box" id="add_comment">
+<h2>Add Comment</h2>
+<div id="add_comment_result" class="action_box" style="display:none"></div>
+<form name="comment_form" method="post" action="" id="comment_form">
+	<input type="hidden" name="reply_to" id="reply_to" value="0">
+    <input type="hidden" name="obj_id" id="obj_id" value="207">
+	    <label for="name" class="label">Name</label>
+    <br>
+    <input type="text" name="name" id="name" class="input"><br>
+    <label for="email" class="label">Email (Wont` display)</label>
+    <br>
+    <input type="text" name="email" id="email"  class="input"><br>
+        <br>
+    
+             
+                    <label class="label" for="captcha">Verification Code</label><br />
+                <input type="text"  id="captcha" class="input name="cb_captcha" />
+           <div class="clearfix"></div>
+                <label class="label">&nbsp;</label>
+        <div class="input_container">
+            <img src="http://freetvall.com/plugins/signup_captcha/captcha.php" border=1 name="captcha" id="captcha_img_76a"/><br />
+               <a href="javascript:void(0)" onclick="javascript:reloadImage('http://freetvall.com/plugins/signup_captcha/captcha.php','captcha_img_76a');"> Refresh</a><input name="cb_captcha_enabled" type="hidden" id="cb_captcha_enabled" value="yes" />
+        </div>
+        <div class="clearfix"></div>
+                    
+            
+    <script>edToolbar('comment_box'); </script>
+    <textarea name="comment" id="comment_box" cols="45" rows="5"  class="input" ></textarea>
+    <input type="hidden" name="type" value="v" />
+    <br>
+    <div style="margin-top:5px"><input type="button" name="add_comment" id="add_comment_button" value="Add Comment " class="cb_button" onclick="add_comment_js('comment_form','v')"></div>
+</form>
+</div>        <div class="clearfix"></div>
+</div>
+<!-- Video Comments -->
+
+</div>
+
+
+
+<!-- Watch Right -->
+
+<div class="watch_right">
+	<div class="ads"><iframe src="http://freetvall.com/AD300.html" height="250" width="300" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe></div>   
+<div class="clearfix"></div>
+
+
+
+    <div style="margin:5px;"><a href="http://digg.com/submit?phase=2&url=http://freetvall.com/video/6UM6BWAGKX2A/Arts-and-Entertainment&title=Arts and Entertainment"><img src="http://freetvall.com/plugins/cb_modules/images/social_icons/digg.png" border="0"></a> <a href="http://del.icio.us/post?url=http://freetvall.com/video/6UM6BWAGKX2A/Arts-and-Entertainment&title=Arts and Entertainment"><img src="http://freetvall.com/plugins/cb_modules/images/social_icons/delicious.png" border="0"></a> <a href="http://www.stumbleupon.com/submit?url=http://freetvall.com/video/6UM6BWAGKX2A/Arts-and-Entertainment&title=Arts and Entertainment"><img src="http://freetvall.com/plugins/cb_modules/images/social_icons/stumbleupon.png" border="0"></a> <a href="http://reddit.com/submit?url=http://freetvall.com/video/6UM6BWAGKX2A/Arts-and-Entertainment&title=Arts and Entertainment"><img src="http://freetvall.com/plugins/cb_modules/images/social_icons/reddit.png" border="0"></a> <a href="http://technorati.com/cosmos/search.html?url=http://freetvall.com/video/6UM6BWAGKX2A/Arts-and-Entertainment"><img src="http://freetvall.com/plugins/cb_modules/images/social_icons/technorati.png" border="0"></a> <a href="http://www.facebook.com/share.php?u=http://freetvall.com/video/6UM6BWAGKX2A/Arts-and-Entertainment"><img src="http://freetvall.com/plugins/cb_modules/images/social_icons/facebook.png" border="0"></a> </div>
+    
+	
+    
+
+<embed src="http://livetvcafe.net/plugins/stream/clock.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" align="middle" allowFullScreen="true" type="application/x-shockwave-flash" width="100%" height="60"></embed>
+
+
+<!-- Playlist -->
+    
+
+<script type="text/javascript">
+pre_item='';
+next_item='';
+
+</script><!-- Playlist End-->
+
+
+<center><object width="300" height="370" id="obj_1313148781443"><param name="movie" value="http://freetvall.chatango.com/group"/><param name="AllowScriptAccess" VALUE="always"/><param name="AllowNetworking" VALUE="all"/><param name="AllowFullScreen" VALUE="true"/><param name="flashvars" value="cid=1313148781443&a=333333&b=100&c=FFFFFF&d=FFFFFF&k=666666&l=999999&s=1&t=0"/><embed id="emb_1313148781443" src="http://freetvall.chatango.com/group" width="300" height="370" allowScriptAccess="always" allowNetworking="all" type="application/x-shockwave-flash" allowFullScreen="true" flashvars="cid=1313148781443&a=333333&b=100&c=FFFFFF&d=FFFFFF&k=666666&l=999999&s=1&t=0"></embed></object></center>
+ 
+
+
+<!-- Getting Related videos -->
+
+<!-- Related Videos based on category, please remove * and also above smarty function -->
+
+
+<!-- Getting Related videos -->
+
+
+<!-- Getting List user videos -->
+
+<span class="watch_vids_head" onclick='$(this).toggleClass("watch_vids_head_closed");$("#user_vids").slideToggle("fast")'>More from admin</span>
+<div class="watch_vids_cont" id="user_vids">
+	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://freetvall.com/video/WA46XSMD9Y22/Zoom-Tv" alt="Zoom Tv" title="Zoom Tv">
+        <img src="http://freetvall.com/files/thumbs/128777004993255.jpg" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://freetvall.com/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'1')" title="add Zoom Tv to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://freetvall.com/video/WA46XSMD9Y22/Zoom-Tv">Zoom Tv</a><br>
+Views: 129,432<br>
+
+<a href="http://freetvall.com/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://freetvall.com/video/HKG6KX5BHUR2/Sky-News" alt="Sky News" title="Sky News">
+        <img src="http://freetvall.com/files/thumbs/12879130702a4fa.jpg" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://freetvall.com/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'2')" title="add Sky News to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://freetvall.com/video/HKG6KX5BHUR2/Sky-News">Sky News</a><br>
+Views: 47,180<br>
+
+<a href="http://freetvall.com/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://freetvall.com/video/O35WDD1GX151/India-Vision" alt="India Vision" title="India Vision">
+        <img src="http://freetvall.com/files/thumbs/1288026073dd3f3.gif" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://freetvall.com/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'3')" title="add India Vision to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://freetvall.com/video/O35WDD1GX151/India-Vision">India Vision</a><br>
+Views: 89,884<br>
+
+<a href="http://freetvall.com/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://freetvall.com/video/Y1SDB88Y6835/Star-News" alt="Star News" title="Star News">
+        <img src="http://freetvall.com/files/thumbs/1288027204e2319.jpg" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://freetvall.com/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'4')" title="add Star News to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://freetvall.com/video/Y1SDB88Y6835/Star-News">Star News</a><br>
+Views: 156,126<br>
+
+<a href="http://freetvall.com/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://freetvall.com/video/RHY5OSU1MSWR/NDTV-Khabar" alt="NDTV Khabar" title="NDTV Khabar">
+        <img src="http://freetvall.com/files/thumbs/12880816182f0af-3.jpg" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://freetvall.com/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'5')" title="add NDTV Khabar to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://freetvall.com/video/RHY5OSU1MSWR/NDTV-Khabar">NDTV Khabar</a><br>
+Views: 142,514<br>
+
+<a href="http://freetvall.com/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://freetvall.com/video/5Y2DD82N575X/NDTV-24x7" alt="NDTV 24x7" title="NDTV 24x7">
+        <img src="http://freetvall.com/files/thumbs/1288082892fda25.jpg" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://freetvall.com/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'6')" title="add NDTV 24x7 to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://freetvall.com/video/5Y2DD82N575X/NDTV-24x7">NDTV 24x7</a><br>
+Views: 56,875<br>
+
+<a href="http://freetvall.com/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://freetvall.com/video/B7USGSYR8SWW/Sun-News" alt="Sun News" title="Sun News">
+        <img src="http://freetvall.com/files/thumbs/1288083394d4f01.jpg" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://freetvall.com/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'7')" title="add Sun News to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://freetvall.com/video/B7USGSYR8SWW/Sun-News">Sun News</a><br>
+Views: 121,308<br>
+
+<a href="http://freetvall.com/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://freetvall.com/video/G3GKY9N8HRH8/Ten-Sports" alt="Ten Sports" title="Ten Sports">
+        <img src="http://freetvall.com/files/thumbs/1288117906cc295.jpg" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://freetvall.com/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'8')" title="add Ten Sports to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://freetvall.com/video/G3GKY9N8HRH8/Ten-Sports">Ten Sports</a><br>
+Views: 227,419<br>
+
+<a href="http://freetvall.com/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://freetvall.com/video/9HK21BG2GABB/India-Tv" alt="India Tv" title="India Tv">
+        <img src="http://freetvall.com/files/thumbs/128837079105b82.jpg" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://freetvall.com/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'9')" title="add India Tv to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://freetvall.com/video/9HK21BG2GABB/India-Tv">India Tv</a><br>
+Views: 213,023<br>
+
+<a href="http://freetvall.com/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box --><div class="clearfix"></div>
+</div>
+<!-- Getting List user videos -->
+
+<br>
+<iframe src="http://freetvall.com/AD300.html" height="250" width="300" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+
+<br>
+
+<li><a href="http://ifgames.net/" target="_blank">
+			 <img src="http://2.bp.blogspot.com/-yG8vidgZZ-0/UXkKP4T8oxI/AAAAAAAAAgQ/WRvl-EorVnI/s320/gme.jpg" class="thumbImg thumbImgSize" title="Free Online Games" /><br /></li>
+
+
+
+</div>
+
+<div class="clearfix"></div>                                        </div> <!--CONTENT END-->
+        <div class="clear"></div>
+        <div class="search_footer clearfix">
+            <div class="foot_s_con">
+                <div class="advance" title="Advanced Search"></div>
+                <form name="search-form" method="get" action="http://freetvall.com/search_result.php">
+                    <input type="text" name="query" value=""  />
+                    <input type="submit" value="Search" class="foot_s_btn" name="cbsearch" />
+                </form>     
+       
+            </div> <!--FOOT_S_CON END-->
+        </div> <!--SEARCH_FOOTER END-->
+        <div id="footer">
+            <div class="changer">
+            <div class="copyright">Powered By FreeTvAll</div> 
+			           
+                <div class="ch_left"></div>        	
+                <div class="ch_right"></div>
+            </div> <!--CHANGER END-->
+            <div class="ch_shadow"></div>
+            <!--FOOTER CLASS END-->
+            <div class="footer">
+	<div class="footer_copyr">
+    	&copy; FreeTvAll.com - Watch Free All Live Tv Channels Online Anywhere 2013
+   	</div>
+    <ul class="clearfix">
+    
+    	
+        
+                	            	<li><a href="http://freetvall.com"  >Home</a></li>
+                            	            	<li><a href="http://freetvall.com/contact"  >Contact Us</a></li>
+                            	            	<li><a href="http://freetvall.com/page/3/terms-of-serivce"  >Terms of services</a></li>
+                            	            	<li><a href="http://freetvall.com/page/4/disclaimer"  >Disclaimer</a></li>
+                        </ul>
+    <div class="clearfix"></div>
+
+
+<span style="display: none; visibility: hidden; height: 0px;"><script type="text/javascript" src="http://widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('9kzuk8l78aqr')</script></span>
+
+
+
+
+<!-- Histats.com  START  (standard)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15_gif.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="counter customizable free hit" ><script  type="text/javascript" >
+try {Histats.startgif(1,1288534,4,10045,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" alt="counter customizable free hit" target="_blank" ><div id="histatsC"><img border="0" src="http://s4is.histats.com/stats/i/1288534.gif?1288534&103"></div></a>
+</noscript>
+<!-- Histats.com  END  -->
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19595013-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+<b>All TV channels are third party links available free on the internet and we do not stream any of the channels for any information contact freetvall@gmail.com</b>
+
+
+
+
+    <div class="footer_sp"></div>
+    <div align="center"><!-- Do not remove this copyright notice -->
+Powered by <a href="http://clip-bucket.com/">ClipBucket</a> 2.0.91 | <a href="http://clip-bucket.com/arslan-hassan">Arslan Hassan</a>
+<!-- Do not remove this copyright notice --></div>
+</div>        </div> <!--FOOTER ID END-->
+    </div>
+</div>
+</body>
+</html>

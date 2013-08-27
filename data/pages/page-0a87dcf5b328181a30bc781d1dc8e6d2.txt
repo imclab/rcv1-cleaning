@@ -1,0 +1,1737 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- ClipBucket v2 -->
+<meta name="copyright" content="ClipBucket - PHPBucket ClipBucket 2007 - 2013" />
+<meta name="author" content="Arslan Hassan - http://clip-bucket.com/arslan-hassan" />
+<link rel="shortcut icon" href="http://livetvcafe.net/favicon.ico">
+<link rel="icon" type="image/ico" href="http://livetvcafe.net/favicon.ico" />
+
+<!-- RSS FEEDS -->
+<link rel="alternate" type="application/rss+xml"
+				title="Recently added videos" href="http://livetvcafe.net/rss/recent" />
+<link rel="alternate" type="application/rss+xml"
+				title="Most Viewed Videos" href="http://livetvcafe.net/rss/views" />
+<link rel="alternate" type="application/rss+xml"
+				title="Top Rated Videos" href="http://livetvcafe.net/rss/rating" />
+<link rel="alternate" type="application/rss+xml"
+				title="Videos Being Watched" href="http://livetvcafe.net/rss/watching" />
+
+
+<meta name="keywords" content="tv online, online free tv, livetvcafe, free satellite tv, live cricket, live sports, online tv stream, free tv online, live streaming, live tv stream, tv live" />
+<meta name="description" content="LiveTvCafe provides online free Live TV channels. Watch Free TV streams &amp; Live Tv Streams from around the world on your computer, free Live Streaming." />
+<meta name="distribution" content="global" />
+
+
+<title>LiveTvCafe.net - Watch Live Tv Channels Online Free - Arts and Entertainment Network  (Powered by FreeTvAll)</title>
+
+<link href="http://livetvcafe.net/styles/cbv2new/theme/main.css" rel="stylesheet" type="text/css" />
+
+<!-- Setting Template Variables -->
+<!-- Setting Template Variables -->
+
+
+<script type="text/javascript">
+var baseurl = 'http://livetvcafe.net';
+var imageurl = 'http://livetvcafe.net/styles/cbv2new/images';
+</script>
+
+<!-- Including JS Files-->
+   <script src="http://livetvcafe.net/js/jquery.js" type="text/javascript"></script>
+    
+    <script src="http://livetvcafe.net/js/jquery_plugs/cookie.js" type="text/javascript"></script>
+    <script src="http://livetvcafe.net/js/rating_update.js" type="text/javascript"></script>
+    <script src="http://livetvcafe.net/js/checkall.js" type="text/javascript"></script>
+    <script src="http://livetvcafe.net/js/functions.js" type="text/javascript"></script>
+    <script src="http://livetvcafe.net/js/bbcode_js/ed.js" type="text/javascript"></script>
+ <!-- Including JS Files-->
+
+
+<!-- Including Headers -->
+                    <!-- Ending Headers -->
+
+
+
+<script type="text/javascript">
+
+window.onload = function() {
+	load_quicklist_box();
+	ini_cookies();
+}
+
+</script>
+
+<!-- Including Plugin Headers -->
+	    	<script src="http://livetvcafe.net/js/embed_video_mod/functions.js"></script>    			    	
+<link href="http://livetvcafe.net/plugins/avatar_selection/avatar_selection.css" rel="stylesheet" type="text/css" />
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$('input[name=avatar_selection]:first').attr('checked','checked').parent().find('img').addClass('avatarSelected');
+
+	
+
+	$('input[name=avatar_selection]').bind('click',function(){ 
+
+	$('.avatarSelected').removeClass('avatarSelected');
+
+	$(this).parent().find('img').addClass('avatarSelected')})
+
+});
+</script>
+    	    	<!--Including Pak Player HTML -->
+<script src="http://livetvcafe.net/player/pak_player/pplayer.js" type="text/javascript"></script>    <!-- Including Plugin Headers -->
+
+
+
+<script type="text/javascript">
+	
+	function ToggleView(obj) {
+		var obj = $(obj),
+			obj_id = obj.attr('id'),
+			parent = obj.parent().attr('id'),
+			target = $("#"+parent).next().attr('id');
+			//alert('#'+parent+' #'+target+' .grid_view');
+			if(obj_id == "grid") {
+				$('#'+parent+' + #'+target+' .grid_view').removeClass('list_view');
+				$.cookie("current_style","grid_view")
+				$('.vid_sp').hide();				
+			} else {
+				$('#'+parent+' + #'+target+' .grid_view').addClass('list_view');
+				$.cookie("current_style","list_view")
+				$('.vid_sp').show();				
+			}
+	}
+	
+$(document).ready(function() {					   
+	$('.user_login').hide();					   
+	
+	$('#user_login').toggle(
+		function() {
+			$('.user_login').slideDown('normal');
+		},
+		function() {
+			$('.user_login').slideUp('normal');
+		}
+								
+	);
+	
+//	$('#grid').click(
+//		function() {
+//			$('.grid_view').removeClass('list_view');
+//			$.cookie("current_style","grid_view")
+//			$('.vid_sp').hide();
+//		}
+//	);
+//	
+//	$('#list').click(
+//		function() {
+//			$('.grid_view').addClass('list_view');
+//			$.cookie("current_style","list_view")
+//			$('.vid_sp').show();
+//		}
+//	);	
+	
+	$('.tabs li').click(
+		function() {
+			$('.tabs li').removeClass('selected')
+			$(this).addClass('selected');
+		}
+	);
+	$('#lang_selector').click(function(){
+  //do redirection
+});
+
+	$('#lang_selector').change(function(){
+	  var optionSelectedValue = $('#lang_selector option:selected').val();
+	  if(optionSelectedValue)
+	  window.location = "?set_site_lang="+optionSelectedValue;
+	});
+	get_video('recent_viewed_vids','#index_vid_container');
+	
+});
+
+
+</script>
+
+
+<!--[if lte IE 6]>
+<style type="text/css">
+.clearfix { height: 1%; }
+</style>
+<![endif]-->
+
+<!--[if IE 7]>
+<link href="http://livetvcafe.net/styles/cbv2new/theme/ie7.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+
+<script type="text/javascript">
+	<!--
+		if (top.location!= self.location) {
+			top.location = self.location.href
+		}
+	//-->
+</script>
+
+
+
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'8c695dcd-964f-4c61-8e19-e3bc5b112b14'});</script>
+
+
+<script language=JavaScript> 
+<!--
+ 
+//Disable right mouse click Script
+<!-- var message="Function Disabled!"; -->
+///////////////////////////////////
+function clickIE() {if (document.all) {alert(message);return false;}}
+function clickNS(e) {if
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {alert(message);return false;}}}
+if (document.layers)
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+document.oncontextmenu=new Function("return false")
+// -->
+</script>
+
+
+</head>
+
+<!-- Global Header Ends Here --><body>
+
+<!-- ADMIN BAR -->
+<!-- ADMIN BAR -->
+
+<!-- Including Commong header -->
+<div class="container_container">
+    <div id="container" class="clearfix">
+        <!-- Loading Quicklist Box -->
+<div id="quicklist_box"></div>
+
+<div id="header">
+	<div>
+    <a href="http://livetvcafe.net"><img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" alt="LiveTvCafe.net - Watch Live Tv Channels Online Free - Arts and Entertainment Network  (Powered by FreeTvAll)" name="logo_icon" width="348" height="53" border="0" id="logo_icon" title="LiveTvCafe.net - Watch Live Tv Channels Online Free - Arts and Entertainment Network  (Powered by FreeTvAll)"  class="logo"></a>
+</div> <!--LOGO END-->
+    <div class="login_con clearfix">
+        <div class="user_login clearfix">
+                	<a href="http://livetvcafe.net/forgot.php" class="forget" title="Forget Username/Password, Click Here"></a>
+            <form action="http://livetvcafe.net/signup.php" method="post" name="login" style="margin:0px; padding:0px;">
+                <input type="text" value="Username" id="username" name="username" onfocus="if(this.defaultValue == this.value) this.value = ''" onblur="if(this.value == '') this.value = this.defaultValue"  />
+                <input type="password" value="Password" id="password" name="password" onfocus="if(this.defaultValue == this.value) this.value = ''" onblur="if(this.value == '') this.value = this.defaultValue"  />                
+                <input type="submit" value="Login" id="login" name="login"  />
+                <input type="checkbox" name="rememberme" id="rememberme"  /> <span class="remember">Remember Me</span>
+			</form> 
+         
+        </div> <!--USER_LOGIN CLASS END-->
+      
+         <div id="user_login">
+            <a href="javascript:void(0)">
+                        	Login
+                
+            </a>
+        </div> <!--USER_LOGIN ID END-->
+    </div> <!--LOGIN_CON END-->    
+</div> <!--HEADER ID END-->
+
+<div class="top_tabs clearfix">
+    <ul>
+    	        
+                	            	<li><a href="http://livetvcafe.net"   >Home</a></li>
+                            	            	<li><a href="http://livetvcafe.net/videos"   >All Channels</a></li>
+                            	            	<li><a href="http://livetvcafe.net/page/20/tv-listings"   >What's on TV</a></li>
+                            	            	<li><a href="http://livetvcafe.net/channels"   >Members</a></li>
+                            	            	<li><a href="http://livetvcafe.net/signup"   >Signup</a></li>
+                            	            	<li><a href="http://livetvcafe.net/upload"   >Add Channel</a></li>
+                        </ul>
+	
+</div> <!--TOP_TABS END-->
+
+<div id="navi_con">
+    <div class="navi">
+        <ul>
+                
+        
+        	<li>Welcome Guest ! Please <a href="http://livetvcafe.net/signup.php">Login</a> or <a href="http://livetvcafe.net/signup.php">Register</a></li>
+             
+         </ul>
+<div class="search_con">
+    <div class="s_bg">	
+        <form action="http://livetvcafe.net/search_result.php" method="get" name="search" id="search" style="margin:0px; padding:0px;">               
+            <input name="query" id="query" type="text" class="searchbar" value="" />
+            <select name="type" class="s_type">
+                            <option value="videos" >videos</option>
+                            <option value="groups" >groups</option>
+                            <option value="users" >users</option>
+                        </select>                                 
+            <input name="submit" type="submit" class="searchbutton" value="Search" />
+        </form>
+    </div> <!--S_BG END-->    
+</div> <!--SEARCH_CON END-->
+    </div> <!--NAVI END-->
+</div> <!--NAVI_CON END-->        <div class="nav_shadow"></div>
+        <div id="content" style="">
+        
+        
+        
+        <!-- Message -->
+        
+
+
+
+
+                                        <center>
+<iframe src="http://livetvcafe.net/AD728.html" height="90" width="728" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+</div></center>
+
+<div class="vid_top_container">
+    <div class="video_title">Arts and Entertainment Network</div>
+    
+    <!-- START before_watch_player plugin -->
+        
+    <!-- END before_watch_player plugin anchor -->
+    
+    </div>
+
+
+<div class="watch_left">
+<!-- Player -->
+<div class="player_container" id="normal_player_cont">
+    <!-- Player -->
+<div id="videoPlayer" class='video_player'>
+This content requires JavaScript and Macromedia Flash Player 7 or higher. <a href=http://www.macromedia.com/go/getflash/>Get Flash</a>
+</div>
+<script language="javascript">
+	var EmbedCode="<IFRAME SRC=\"http://to-lo-po299.blogspot.com/2011/08/ae.html\" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO width=\"658\" height=\"430\"></IFRAME>";
+$('#videoPlayer').html(EmbedCode)
+</script>
+<!-- Player End -->
+</div>
+
+<!-- Actions -->
+<div class="video_actions_cont clearfix">
+    <div class="rating_container">
+    <div id="rating_container">
+<ul class="big_stars" id="rating_container_1085">
+<li class="current-rating" style="width:70%"></li>
+<li>
+<a href="javascript:void(0)" class="one-star" onclick="rate('1085','1','video')" onMouseOver="rating_over('Poor','')" onmouseout="rating_out('Rate this video','')"> </a>
+</li>
+<li>
+<a href="javascript:void(0)" class="two-stars" onclick="rate('1085','2','video')" onMouseOver="rating_over('Bad','')" onmouseout="rating_out('Rate this video','')"> </a>
+</li>
+<li>
+<a href="javascript:void(0)" class="three-stars" onclick="rate('1085','3','video')" onMouseOver="rating_over('Average','')" onmouseout="rating_out('Rate this video','')"> </a>
+</li>
+<li>
+<a href="javascript:void(0)" class="four-stars" onclick="rate('1085','4','video')" onMouseOver="rating_over('Good','')" onmouseout="rating_out('Rate this video','')"> </a>
+</li>
+<li>
+<a href="javascript:void(0)" class="five-stars" onclick="rate('1085','5','video')" onMouseOver="rating_over('Excellent','')" onmouseout="rating_out('Rate this video','')"> </a>
+</li>
+</ul>
+<div id="rating_result_container" align="center">Rate this video</div>
+</div>
+    </div>
+    <div class="actions clearfix">
+    <ul>
+    <li><a href="javascript:void(0)" onclick="slide_up_watch_video('#video_action_result_cont');add_to_fav('video','1085');"><img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" class="add_to_fav" />My Favorite!</a></li>
+      <li><a href="javascript:void(0)" onclick="slide_up_watch_video('#flag_item');$('#flag_item').slideToggle();"><img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" class="report_this" />Report</a></li>
+      <li><a href="javascript:void(0)" onclick="slide_up_watch_video('#share_form');$('#share_form').slideToggle();"><img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" class="add_to_play" />Share this</a></li>
+      <li><a href="javascript:void(0)" onclick="slide_up_watch_video('#playlist_form');$('#playlist_form').slideToggle();"><img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" class="share_this" />Add to Playlist</a></li>
+    </ul>
+
+    </div>
+
+</div>
+<!-- Actions End-->
+
+<!-- Action Result Container-->
+<div class="video_action_result_boxes">
+	<!-- Share This video -->
+<div id="share_form" class="action_box share_form clearfix" style="display:none">
+	<div class="action_box_title">Share this Video &#8212; <span class="cancel"><a href="javascript:void(0)" onclick="$('#share_form').slideUp();">cancel</a></span></div>
+    <div class="form_container">
+    <form id="share_form" name="share_form" method="post" action="" class="">
+        	<div class="form_left">
+           	  <label for="users">To <span class="example">(LiveTvCafe.net - Watch Live Tv Channels Online Free usernames or emails)</span></label>
+              Seperate usernames and emails by comma
+              <input name="users" type="text" class="left_text_area" id="users" value="" size="45" />
+              <label for="message">Message <span class="example">optional</span></label>
+              <textarea name="message" id="message" cols="45" rows="5" class="left_text_area"></textarea>
+              <input name="objectid" id="objectid" type="hidden" value="1085" />
+              <div align="right"><input type="button" name="send_content" value="Send" class="cb_button" onclick="submit_share_form('share_form','Video')"/></div>
+       		</div>
+            <div class="form_right">
+            	<div id="share_form_results" class="form_result" style="display:none"></div>
+            </div>
+
+      </form>
+    </div>
+</div>
+<!-- Share This video -->
+    <!-- Flag This video -->
+<div id="flag_item" class="action_box" style="display:none">
+	<div class="action_box_title">Flag this Video &#8212; <span class="cancel"><a href="javascript:void(0)" onclick="$('#flag_item').slideUp();">cancel</a></span></div>
+    <div class="form_container" align="center">
+    
+    <div class="form_result" id="flag_form_result" style="display:none"></div>
+    
+    <form id="flag_form" name="flag_form" method="post" action="" class="">
+    Please select the category that most closely reflects your concern about the video, so that we can review it and determine whether it violates our Community Guidelines or isn't appropriate for all viewers. Abusing this feature is also a violation of the Community Guidelines, so don't do it. 
+    	        <label for="select"></label>
+        <select name="select" name="flag_type" id="flag_type">
+        	        	<option value="0">Inappropriate Content</option>
+                    	<option value="1">Copyright infringement</option>
+                    	<option value="2">Sexual Content</option>
+                    	<option value="3">Violence or repulsive content</option>
+                    	<option value="4">Spam</option>
+                    	<option value="5">Disturbing</option>
+                    	<option value="6">Other</option>
+                    </select><br>
+        <input type="button" name="send_content" value="Flag This Video" class="cb_button" onclick="flag_object('flag_form','1085','Video')"/>
+  	</form>
+    </div>
+</div>
+<!-- Flag This video -->
+    <div class="action_box" style="display:none" id="video_action_result_cont"></div>
+    <!-- Add To Playlist This video -->
+<div id="playlist_form" class="action_box" style="display:none" >
+	<div class="action_box_title">Add this Video to playlist &#8212; <span class="cancel"><a href="javascript:void(0)" onclick="$('#playlist_form').slideUp();">cancel</a></span></div>
+    <div class="form_container" align="center">
+    
+     <div class="form_result" id="playlist_form_result" style="display:none"></div>
+     
+    <form id="add_playlist_form" name="playlist_form" method="post" action="" class="">
+    Please select playlist name from following<br>
+	<select name="playlist_id" id="playlist_id">
+        </select> or <a href="javascript:void(0)" onClick="$('#add_playlist_form').css('display','none');$('#new_playlist_form').css('display','block')">create new playlist </a><br>
+
+    <input type="button" name="add_to_playlist" value="Add to playlist" class="cb_button" onclick="add_playlist('add','1085','add_playlist_form')"/>
+    </form>
+    
+    <form id="new_playlist_form" name="new_playlist_form" method="post" action="" class="" style="display:none">
+        <label for="playlist_name">Enter Playlist name</label>
+        <input name="playlist_name" type="text" class="left_text_area" id="playlist_name" value="" size="45"  style="width:300px"/> or <a href="javascript:void(0)"  onClick="$('#add_playlist_form').css('display','block');$('#new_playlist_form').css('display','none')">Select from list </a><br>
+        <input type="button" name="add_new_playlist" value="Add new playlist" class="cb_button" onclick="add_playlist('new','1085','new_playlist_form')"/>
+    </form>
+    </div>
+</div>
+<!-- Add To Playlist This video -->
+</div>
+<!-- Action Result Container End-->
+
+
+<!-- Video Stats-->
+<div class="video_details clearfix">
+<div  class="action_box"  id="video_detail_result_cont" style="margin-top:0px; margin-bottom:5px; display:none"></div>
+
+	<div class="vd_user_container" align="center">
+   		<a href="http://livetvcafe.net/user/admin"><img src="http://livetvcafe.net/images/avatars/1.png" alt="admin" class="account_thumb" /></a>
+        <ul>
+        	<li><a href="http://livetvcafe.net/user/admin">View Profile</a></li>
+        	<li><a href="http://livetvcafe.net/user_videos.php?user=admin">View Videos</a></li>
+        </ul>
+        <div align="center"><span class="small_button non_button" onclick="subscriber('1','subscribe_user','video_detail_result_cont')">Subscribe</span></div>
+    </div>
+    <div class="vd_details">
+
+<span  class='st_facebook_vcount' displayText='Facebook'></span><span  class='st_twitter_vcount' displayText='Tweet'></span><span  class='st_stumbleupon_vcount' displayText='Stumble'></span><span  class='st_email_vcount' displayText='Email'></span><span  class='st_sharethis_vcount' displayText='Share'></span><span  class='st_plusone_vcount' ></span>
+
+    <div class="uploading_detail">
+    
+    	<a href="http://livetvcafe.net/user/admin">Uploaded by admin &#8212; 2 years ago</a>
+    </div>
+    <div class="vd_stats">
+        <ul>
+          <li>Views : <strong>153,522</strong></li>
+          <li>Duration : <strong>24:00:00</strong></li>
+          <li>Comments :<strong> 32</strong></li>
+        </ul>
+    <div class="clearfix"></div>    
+    </div>
+    
+    	<div class="desc_cont">
+    	<div class="less_desc" id="less_desc">
+        	 <span class="upper_quote"></span>Watch Arts and Entertainment Network Live Streaming Online from USA. Watch Free Arts and Entertainment Network Channel. Where can i watch Arts and Entertainment Network USA channel free streaming...<a href="javascript:void(0)" onclick="$('#less_desc').css('display','none');$('#more_desc').css('display','block');">More</a>        </div>
+        <div class="more_desc" id="more_desc" style="display:none">
+        	 <span class="upper_quote"></span>Watch Arts and Entertainment Network Live Streaming Online from USA. Watch Free Arts and Entertainment Network Channel. Where can i watch Arts and Entertainment Network USA channel free streaming Live. Watch Arts and Entertainment Network tv Live online. Arts and Entertainment Network is called A&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;E channel free live brroadcasting from USA. <a href="javascript:void(0)" onclick="$('#more_desc').css('display','none');$('#less_desc').css('display','block');">Less</a>
+        </div>
+
+<center><li><a href="http://www.freegamesall.com/" target="_blank">
+			 <img src="http://1.bp.blogspot.com/-tAj2RjKIZeY/ThMEuSjdFHI/AAAAAAAAAMI/cLRq5OnaUUs/s1600/nnn.png" class="thumbImg thumbImgSize" title="Free Games All" /><br /></li></center>   
+        
+        </div>
+        
+        
+        <div class="tags_cats">
+    <div class="tags"><a href="http://livetvcafe.net/search_result.php?query=US&type=videos">US</a>, <a href="http://livetvcafe.net/search_result.php?query=USA&type=videos">USA</a>, <a href="http://livetvcafe.net/search_result.php?query=Arts&type=videos">Arts</a>, <a href="http://livetvcafe.net/search_result.php?query=Entertainment&type=videos">Entertainment</a>, <a href="http://livetvcafe.net/search_result.php?query=Family&type=videos">Family</a>, <a href="http://livetvcafe.net/search_result.php?query=Tv+shows&type=videos">Tv shows</a>, <a href="http://livetvcafe.net/search_result.php?query=Arts+and+Entertainment+Network&type=videos">Arts and Entertainment Network</a></div>
+    <div class="category">Category : <a href="http://livetvcafe.net/search_result.php?category[]=18&type=video">Tv Shows</a>,<a href="http://livetvcafe.net/search_result.php?category[]=15&type=video">US Channels</a></div>
+    </div>
+    
+    </div>
+    
+</div>
+<!-- Video Sttas-->
+
+<center>
+<iframe src="http://livetvcafe.net/AD300.html" height="250" width="300" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe><iframe src="http://livetvcafe.net/AD300.html" height="250" width="300" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+</center>
+
+
+
+<!-- Video Comments -->
+<div id="commentsContainer">
+	<h2>Comments</h2>
+    <!-- Displaying Comments -->
+                        
+	<div id="comment_1900" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=89e082fc739aaff592155f9f20f104eb&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/MrMoe77">MrMoe77</a> commented 2 years ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('1900')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('1900')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">why are they not playing at all . Whats a plugin?<br />
+</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('1900','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('1900','down')">Thumbs Down</span><span id="comment_rating_1900" class="comment_rating">0</span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_1900" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>MrMoe77</em> | <a href="javascript:void(0)" onclick="delete_comment('1900','v')">Delete</a>
+    </div>                    
+	<div id="comment_2574" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/images/avatars/5364.jpg" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/mike64">mike64</a> commented 2 years ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('2574')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('2574')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">plz plz fix it</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('2574','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('2574','down')">Thumbs Down</span><span id="comment_rating_2574" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_2574" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>mike64</em> | <a href="javascript:void(0)" onclick="delete_comment('2574','v')">Delete</a>
+    </div>                    
+	<div id="comment_2778" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/plugins/avatar_selection/images/1327237033_avatar.png" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/simpleman7777">simpleman7777</a> commented 2 years ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('2778')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('2778')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">please fix all channel none working<br />
+</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('2778','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('2778','down')">Thumbs Down</span><span id="comment_rating_2778" class="comment_rating"><font color="#006600">+1</font></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_2778" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>simpleman7777</em> | <a href="javascript:void(0)" onclick="delete_comment('2778','v')">Delete</a>
+    </div>                    
+	<div id="comment_2957" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=308f534846c27d2d600c9cc1e64e8656&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_2957">tambyte</a> commented 2 years ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('2957')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('2957')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">Audio is good, but video just freezes right away. What&#8217;s up?</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('2957','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('2957','down')">Thumbs Down</span><span id="comment_rating_2957" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_2957" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>tambyte</em> | <a href="javascript:void(0)" onclick="delete_comment('2957','v')">Delete</a>
+    </div>                    
+	<div id="comment_2962" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/plugins/avatar_selection/images/1327237263_Mike.png" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/Reynaldo Relavo">Reynaldo Relavo</a> commented 2 years ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('2962')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('2962')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">bitaw dili man mo play!<br />
+</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('2962','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('2962','down')">Thumbs Down</span><span id="comment_rating_2962" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_2962" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>Reynaldo Relavo</em> | <a href="javascript:void(0)" onclick="delete_comment('2962','v')">Delete</a>
+    </div>                    
+	<div id="comment_3237" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=73a04cd79f77edd9a14b92090fe92b45&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_3237">loopy</a> commented 1 year ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('3237')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('3237')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">Why is A and E not working??!</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('3237','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('3237','down')">Thumbs Down</span><span id="comment_rating_3237" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_3237" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>loopy</em> | <a href="javascript:void(0)" onclick="delete_comment('3237','v')">Delete</a>
+    </div>                    
+	<div id="comment_3264" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/plugins/avatar_selection/images/1327237116_FE01.png" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/SURFACTOR777">SURFACTOR777</a> commented 1 year ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('3264')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('3264')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">SO NICE TO GET THESE SHOWS TX</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('3264','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('3264','down')">Thumbs Down</span><span id="comment_rating_3264" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_3264" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>SURFACTOR777</em> | <a href="javascript:void(0)" onclick="delete_comment('3264','v')">Delete</a>
+    </div>                    
+	<div id="comment_3517" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/images/avatars/5364.jpg" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/mike64">mike64</a> commented 1 year ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('3517')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('3517')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">not workingggggggggggggggggg</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('3517','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('3517','down')">Thumbs Down</span><span id="comment_rating_3517" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_3517" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>mike64</em> | <a href="javascript:void(0)" onclick="delete_comment('3517','v')">Delete</a>
+    </div>                    
+	<div id="comment_3526" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/plugins/avatar_selection/images/1327237116_FE01.png" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/SURFACTOR777">SURFACTOR777</a> commented 1 year ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('3526')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('3526')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">I GET ID AND BRAVO/WHERE IS DISCOVERY AND TRUTV? THANKS STYLE AND VH1 I CANT EVEN FIND? THANKS FOR DOIN UR BEST I KNOW /</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('3526','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('3526','down')">Thumbs Down</span><span id="comment_rating_3526" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_3526" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>SURFACTOR777</em> | <a href="javascript:void(0)" onclick="delete_comment('3526','v')">Delete</a>
+    </div>                    
+	<div id="comment_3527" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/plugins/avatar_selection/images/1327237116_FE01.png" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/SURFACTOR777">SURFACTOR777</a> commented 1 year ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('3527')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('3527')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">HEY DOES ANYONE KNOW IF ADOBE FLASH PLAYER IS ALL U NEED? OR IS THERE ANOTHER ONE OR CERTAIN CODECS U NEED/THAT BS THAT BLOCKS AND SAYS U NEED IS ALL CRAP/IT HAS NOTHING TO DO WITH GETTING TV HOLLA THANKS</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('3527','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('3527','down')">Thumbs Down</span><span id="comment_rating_3527" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_3527" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>SURFACTOR777</em> | <a href="javascript:void(0)" onclick="delete_comment('3527','v')">Delete</a>
+    </div>                    
+	<div id="comment_4970" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/plugins/avatar_selection/images/comix.png" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/pamela1686">pamela1686</a> commented 1 year ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('4970')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('4970')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">I think is a problem with the stream, because I use google crome, it has the flash player included and still a lot of channels are impossible for me to watch :(</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('4970','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('4970','down')">Thumbs Down</span><span id="comment_rating_4970" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_4970" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>pamela1686</em> | <a href="javascript:void(0)" onclick="delete_comment('4970','v')">Delete</a>
+    </div>                    
+	<div id="comment_5141" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=53147eed707f6d17150a4c1a36ab7a81&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_5141">trident gum </a> commented 1 year ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('5141')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('5141')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">plugin is adobe flash player means you may need it or to update it </div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('5141','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('5141','down')">Thumbs Down</span><span id="comment_rating_5141" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_5141" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>trident gum </em> | <a href="javascript:void(0)" onclick="delete_comment('5141','v')">Delete</a>
+    </div>                    
+	<div id="comment_5498" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/images/avatars/4439.png" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/krisleigh">krisleigh</a> commented 1 year ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('5498')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('5498')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">ok in the last two days the ads covering the screen don&#8217;t have a way to close them and they aren&#8217;t going away after 30 seconds on their own.  SO i have to watch it in full screen to make the ad go away so i can see the screen. I like to flip btwn screens and I can&#8217;t do tht with t like this.  so if u can fiz it please do! thank u </div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('5498','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('5498','down')">Thumbs Down</span><span id="comment_rating_5498" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_5498" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>krisleigh</em> | <a href="javascript:void(0)" onclick="delete_comment('5498','v')">Delete</a>
+    </div>                    
+	<div id="comment_5711" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_5711">Ramone</a> commented 1 year ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('5711')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('5711')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">I am so happy the homo channel is working thankyou </div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('5711','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('5711','down')">Thumbs Down</span><span id="comment_rating_5711" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_5711" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>Ramone</em> | <a href="javascript:void(0)" onclick="delete_comment('5711','v')">Delete</a>
+    </div>                    
+	<div id="comment_6013" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=7d96a5aad64ea314412c004f3541cd71&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_6013">Jan</a> commented 1 year ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('6013')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('6013')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">A&amp;E, History, Discovery, SpikeTV TCM, etc. are not working. </div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('6013','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('6013','down')">Thumbs Down</span><span id="comment_rating_6013" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_6013" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>Jan</em> | <a href="javascript:void(0)" onclick="delete_comment('6013','v')">Delete</a>
+    </div>                    
+	<div id="comment_6341" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/plugins/avatar_selection/images/1327237033_avatar.png" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/kaatskill">kaatskill</a> commented 1 year ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('6341')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('6341')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">Why ,when you click on the History or TruTV other shows appear instead of Pawn Stars etc. iON TV or a cartoon shows up instead,also AE,History,TruTV rarely work any more especially in the evening and early am.(1-3am) Are they being filtered out by the networks? Please answer as probably many others have the same problems and questions.</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('6341','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('6341','down')">Thumbs Down</span><span id="comment_rating_6341" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_6341" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>kaatskill</em> | <a href="javascript:void(0)" onclick="delete_comment('6341','v')">Delete</a>
+    </div>                    
+	<div id="comment_6848" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=d9799b4f353eb4580c5cfdb82b88d9e9&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_6848">jon</a> commented 1 year ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('6848')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('6848')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">works for me i get all the right channels never a problem<a href="null">null</a></div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('6848','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('6848','down')">Thumbs Down</span><span id="comment_rating_6848" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_6848" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>jon</em> | <a href="javascript:void(0)" onclick="delete_comment('6848','v')">Delete</a>
+    </div>                    
+	<div id="comment_6887" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=c6fad9d3d99a447128bdf3351c0531bd&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_6887">Miguel</a> commented 9 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('6887')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('6887')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">why ask to subscribe if none of the channels really work, shame on you...</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('6887','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('6887','down')">Thumbs Down</span><span id="comment_rating_6887" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_6887" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>Miguel</em> | <a href="javascript:void(0)" onclick="delete_comment('6887','v')">Delete</a>
+    </div>                    
+	<div id="comment_7365" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=244b4d6c08e1d26e1d26fe798ad84f6e&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_7365">prom dress</a> commented 9 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('7365')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('7365')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont"><a href="http://www.cardresses.com/">cheap prom dresses 2012</a></div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('7365','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('7365','down')">Thumbs Down</span><span id="comment_rating_7365" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_7365" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>prom dress</em> | <a href="javascript:void(0)" onclick="delete_comment('7365','v')">Delete</a>
+    </div>                    
+	<div id="comment_7407" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=2ee5027d2bb40ac20a1495364df956e2&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_7407">Mike</a> commented 8 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('7407')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('7407')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">so every time i come to view the A&amp;E (arts and entertainment channel) and couple others they are always offline!!! could ya fix this please.. and also the discovery channel is not always the english. a fix would be nice thanks.</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('7407','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('7407','down')">Thumbs Down</span><span id="comment_rating_7407" class="comment_rating">0</span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_7407" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>Mike</em> | <a href="javascript:void(0)" onclick="delete_comment('7407','v')">Delete</a>
+    </div>                    
+	<div id="comment_7494" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=2ee5027d2bb40ac20a1495364df956e2&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_7494">right here</a> commented 8 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('7494')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('7494')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">so now we have to be premium to watch a&amp;e network channel? that&#8217;s bulls**t, if i must say..</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('7494','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('7494','down')">Thumbs Down</span><span id="comment_rating_7494" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_7494" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>right here</em> | <a href="javascript:void(0)" onclick="delete_comment('7494','v')">Delete</a>
+    </div>                    
+	<div id="comment_7521" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/images/avatars/5364.jpg" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/mike64">mike64</a> commented 8 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('7521')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('7521')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">im with u on that it is bull s--t</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('7521','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('7521','down')">Thumbs Down</span><span id="comment_rating_7521" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_7521" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>mike64</em> | <a href="javascript:void(0)" onclick="delete_comment('7521','v')">Delete</a>
+    </div>                    
+	<div id="comment_7569" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/images/avatars/5364.jpg" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/mike64">mike64</a> commented 8 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('7569')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('7569')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">WERE IS A &amp; E?????????????????????????????????<br />
+THIS IS BULLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('7569','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('7569','down')">Thumbs Down</span><span id="comment_rating_7569" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_7569" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>mike64</em> | <a href="javascript:void(0)" onclick="delete_comment('7569','v')">Delete</a>
+    </div>                    
+	<div id="comment_7571" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=5798f8d2ab1d53f222d67d35a286822c&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_7571">gyminii</a> commented 8 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('7571')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('7571')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">A&amp;E is in a different language now...whats going on???!!!!</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('7571','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('7571','down')">Thumbs Down</span><span id="comment_rating_7571" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_7571" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>gyminii</em> | <a href="javascript:void(0)" onclick="delete_comment('7571','v')">Delete</a>
+    </div>                    
+	<div id="comment_7607" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=a05a922056498e551d83af01efc03cc5&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_7607">tracy</a> commented 8 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('7607')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('7607')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">just wondering whats up with the full screen mode....not working<br />
+</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('7607','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('7607','down')">Thumbs Down</span><span id="comment_rating_7607" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_7607" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>tracy</em> | <a href="javascript:void(0)" onclick="delete_comment('7607','v')">Delete</a>
+    </div>                    
+	<div id="comment_8285" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/plugins/avatar_selection/images/1327237033_avatar.png" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/Cocoabeach">Cocoabeach</a> commented 4 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('8285')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('8285')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">Just wondering why no english feed on A&amp;E </div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('8285','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('8285','down')">Thumbs Down</span><span id="comment_rating_8285" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_8285" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>Cocoabeach</em> | <a href="javascript:void(0)" onclick="delete_comment('8285','v')">Delete</a>
+    </div>                    
+	<div id="comment_8290" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/plugins/avatar_selection/images/1327237033_avatar.png" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/Cocoabeach">Cocoabeach</a> commented 4 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('8290')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('8290')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">Have to find new site. Have english channels</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('8290','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('8290','down')">Thumbs Down</span><span id="comment_rating_8290" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_8290" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>Cocoabeach</em> | <a href="javascript:void(0)" onclick="delete_comment('8290','v')">Delete</a>
+    </div>                    
+	<div id="comment_8291" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/plugins/avatar_selection/images/1327237033_avatar.png" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/Cocoabeach">Cocoabeach</a> commented 4 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('8291')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('8291')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">http://www.phstream.com/ has english a&amp;e</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('8291','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('8291','down')">Thumbs Down</span><span id="comment_rating_8291" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_8291" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>Cocoabeach</em> | <a href="javascript:void(0)" onclick="delete_comment('8291','v')">Delete</a>
+    </div>                    
+	<div id="comment_8343" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=f59cd4ad4ddf1f4e1469e8b9e65b1a3e&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_8343">arif cmkhanlall</a> commented 4 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('8343')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('8343')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">why tbs is,t working<br />
+</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('8343','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('8343','down')">Thumbs Down</span><span id="comment_rating_8343" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_8343" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>arif cmkhanlall</em> | <a href="javascript:void(0)" onclick="delete_comment('8343','v')">Delete</a>
+    </div>                    
+	<div id="comment_8389" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://www.gravatar.com/avatar.php?gravatar_id=2d82599773ba43865c92f1f07deda8fb&default=http%3A%2F%2Flivetvcafe.net%2Fstyles%2Fcbv2new%2Fimages%2Fthumbs%2Fno_avatar.png&size=140&rating=G&border=FF0000" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	         	                   
+            	
+        <a href="#comment_8389">peachez</a> commented 4 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('8389')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('8389')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">this is not the a&amp;e that i know!! where are the english shows!</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('8389','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('8389','down')">Thumbs Down</span><span id="comment_rating_8389" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_8389" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>peachez</em> | <a href="javascript:void(0)" onclick="delete_comment('8389','v')">Delete</a>
+    </div>                    
+	<div id="comment_9413" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/plugins/avatar_selection/images/1327237033_avatar.png" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/Cocoabeach">Cocoabeach</a> commented 2 months ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('9413')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('9413')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">Waste of time. Always in Spanish. Too bad. Was a great feed.</div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('9413','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('9413','down')">Thumbs Down</span><span id="comment_rating_9413" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_9413" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>Cocoabeach</em> | <a href="javascript:void(0)" onclick="delete_comment('9413','v')">Delete</a>
+    </div>                    
+	<div id="comment_10298" class="comment clearfix" >
+    <div class="user_com_thumb_con">
+    	<img src="http://livetvcafe.net/plugins/avatar_selection/images/1327237033_avatar.png" class="user_com_thumb"  />
+    </div>
+    <div class="comm_other">
+    	<div class="user_bar">
+        <div style="width:70%; float:left">
+        
+                        	                        	
+        <a href="http://livetvcafe.net/user/Clb1975">Clb1975</a> commented 6 days ago
+
+        </div>
+        <div style="width:28%; float:right" align="right"><a href="javascript:void(0)" onclick="to_reply('10298')">Reply</a> | <a href="javascript:void(0)" onclick="spam_comment('10298')">Spam</a>
+        
+        </div>
+        </div>
+        
+        <div class="comment_cont">place is bulls**t notice all the adds work and none of the channels do. </div>
+                <div class="comment_rating_cont"><span class="thumb_up" onclick="rate_comment('10298','up')">Thumbs Up</span><span class="thumb_down" onclick="rate_comment('10298','down')">Thumbs Down</span><span id="comment_rating_10298" class="comment_rating"></span></div>
+                
+    </div>
+    </div>
+    
+    <div id="spam_comment_10298" class="spam" style="display:none" >
+    	
+        
+    	Marked as spam, commented by <em>Clb1975</em> | <a href="javascript:void(0)" onclick="delete_comment('10298','v')">Delete</a>
+    </div>    <div id="latest_comment_container"></div>
+    
+        	<div class="add_comment_box" id="add_comment">
+<h2>Add Comment</h2>
+<div id="add_comment_result" class="action_box" style="display:none"></div>
+<form name="comment_form" method="post" action="" id="comment_form">
+	<input type="hidden" name="reply_to" id="reply_to" value="0">
+    <input type="hidden" name="obj_id" id="obj_id" value="1085">
+	    <label for="name" class="label">Name</label>
+    <br>
+    <input type="text" name="name" id="name" class="input"><br>
+    <label for="email" class="label">Email (Won't display)</label>
+    <br>
+    <input type="text" name="email" id="email"  class="input"><br>
+        <br>
+    
+             
+                    <label class="label" for="captcha">Verification Code</label><br />
+                <input type="text"  id="captcha" class="input name="cb_captcha" />
+           <div class="clearfix"></div>
+                <label class="label">&nbsp;</label>
+        <div class="input_container">
+            <img src="http://livetvcafe.net/plugins/signup_captcha/captcha.php" border=1 name="captcha" id="captcha_img_da7"/><br />
+               <a href="javascript:void(0)" onclick="javascript:reloadImage('http://livetvcafe.net/plugins/signup_captcha/captcha.php','captcha_img_da7');"> Refresh</a><input name="cb_captcha_enabled" type="hidden" id="cb_captcha_enabled" value="yes" />
+        </div>
+        <div class="clearfix"></div>
+                    
+            
+    <script>edToolbar('comment_box'); </script>
+    <textarea name="comment" id="comment_box" cols="45" rows="5"  class="input" ></textarea>
+    <input type="hidden" name="type" value="v" />
+    <br>
+    <div style="margin-top:5px"><input type="button" name="add_comment" id="add_comment_button" value="Add Comment " class="cb_button" onclick="add_comment_js('comment_form','v')"></div>
+</form>
+</div>        <div class="clearfix"></div>
+</div>
+<!-- Video Comments -->
+</div>
+
+
+
+<!-- Watch Right -->
+
+<div class="watch_right">
+	<div class="ads"><iframe src="http://livetvcafe.net/AD300.html" height="250" width="300" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe></div>   
+<div class="clearfix"></div>
+
+    <div style="margin:5px;"><a href="http://digg.com/submit?phase=2&url=http://livetvcafe.net/video/HH35W52S2RW8/Arts-and-Entertainment-Network&title=Arts and Entertainment Network"><img src="http://livetvcafe.net/plugins/cb_modules/images/social_icons/digg.png" border="0"></a> <a href="http://del.icio.us/post?url=http://livetvcafe.net/video/HH35W52S2RW8/Arts-and-Entertainment-Network&title=Arts and Entertainment Network"><img src="http://livetvcafe.net/plugins/cb_modules/images/social_icons/delicious.png" border="0"></a> <a href="http://www.stumbleupon.com/submit?url=http://livetvcafe.net/video/HH35W52S2RW8/Arts-and-Entertainment-Network&title=Arts and Entertainment Network"><img src="http://livetvcafe.net/plugins/cb_modules/images/social_icons/stumbleupon.png" border="0"></a> <a href="http://reddit.com/submit?url=http://livetvcafe.net/video/HH35W52S2RW8/Arts-and-Entertainment-Network&title=Arts and Entertainment Network"><img src="http://livetvcafe.net/plugins/cb_modules/images/social_icons/reddit.png" border="0"></a> <a href="http://technorati.com/cosmos/search.html?url=http://livetvcafe.net/video/HH35W52S2RW8/Arts-and-Entertainment-Network"><img src="http://livetvcafe.net/plugins/cb_modules/images/social_icons/technorati.png" border="0"></a> <a href="http://www.facebook.com/share.php?u=http://livetvcafe.net/video/HH35W52S2RW8/Arts-and-Entertainment-Network"><img src="http://livetvcafe.net/plugins/cb_modules/images/social_icons/facebook.png" border="0"></a> </div>
+    
+
+
+<embed src="http://livetvcafe.net/plugins/stream/clock.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" align="middle" allowFullScreen="true" type="application/x-shockwave-flash" width="100%" height="60"></embed>
+
+<!-- Playlist -->
+    
+
+<script type="text/javascript">
+pre_item='';
+next_item='';
+
+</script><!-- Playlist End-->
+
+<object width="300" height="400" id="obj_1313149166925"><param name="movie" value="http://livetvcafe.chatango.com/group"/><param name="AllowScriptAccess" VALUE="always"/><param name="AllowNetworking" VALUE="all"/><param name="AllowFullScreen" VALUE="true"/><param name="flashvars" value="cid=1313149166925&a=333333&b=100&c=FFFFFF&d=FFFFFF&k=666666&l=999999&s=1&t=0"/><embed id="emb_1313149166925" src="http://livetvcafe.chatango.com/group" width="300" height="400" allowScriptAccess="always" allowNetworking="all" type="application/x-shockwave-flash" allowFullScreen="true" flashvars="cid=1313149166925&a=333333&b=100&c=FFFFFF&d=FFFFFF&k=666666&l=999999&s=1&t=0"></embed></object>
+
+<!-- Getting Related videos -->
+
+<!-- Related Videos based on category, please remove * and also above smarty function -->
+
+
+<!-- Getting Related videos -->
+
+<!-- Getting List user videos -->
+
+<span class="watch_vids_head" onclick='$(this).toggleClass("watch_vids_head_closed");$("#user_vids").slideToggle("fast")'>More from admin</span>
+<div class="watch_vids_cont" id="user_vids">
+	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://livetvcafe.net/video/R76U19S14972/9x-Music" alt="9x Music" title="9x Music">
+        <img src="http://livetvcafe.net/files/thumbs/13066781721234f.-biggif" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'960')" title="add 9x Music to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://livetvcafe.net/video/R76U19S14972/9x-Music">9x Music</a><br>
+Views: 50,464<br>
+
+<a href="http://livetvcafe.net/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://livetvcafe.net/video/788DMN4MDON7/HLN" alt="HLN" title="HLN">
+        <img src="http://livetvcafe.net/files/thumbs/1329597871c5f84-1.jpg" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'1232')" title="add HLN to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://livetvcafe.net/video/788DMN4MDON7/HLN">HLN</a><br>
+Views: 112,408<br>
+
+<a href="http://livetvcafe.net/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://livetvcafe.net/video/NSODXS9N1Y1X/India-Vision" alt="India Vision" title="India Vision">
+        <img src="http://livetvcafe.net/files/thumbs/1306729428c362b.-biggif" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'961')" title="add India Vision to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://livetvcafe.net/video/NSODXS9N1Y1X/India-Vision">India Vision</a><br>
+Views: 24,799<br>
+
+<a href="http://livetvcafe.net/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://livetvcafe.net/video/2BYYRX1R7SG8/Star-News" alt="Star News" title="Star News">
+        <img src="http://livetvcafe.net/files/thumbs/1306729585d3d6c.-bigjpg" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'962')" title="add Star News to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://livetvcafe.net/video/2BYYRX1R7SG8/Star-News">Star News</a><br>
+Views: 69,705<br>
+
+<a href="http://livetvcafe.net/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://livetvcafe.net/video/HWDOMH8W3799/NDTV-Khabar" alt="NDTV Khabar" title="NDTV Khabar">
+        <img src="http://livetvcafe.net/files/thumbs/1306729780377dc.-bigjpg" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'963')" title="add NDTV Khabar to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://livetvcafe.net/video/HWDOMH8W3799/NDTV-Khabar">NDTV Khabar</a><br>
+Views: 96,930<br>
+
+<a href="http://livetvcafe.net/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://livetvcafe.net/video/7WMWRB836W41/NDTV-24x7" alt="NDTV 24x7" title="NDTV 24x7">
+        <img src="http://livetvcafe.net/files/thumbs/130672992708af6.-bigjpg" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'964')" title="add NDTV 24x7 to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://livetvcafe.net/video/7WMWRB836W41/NDTV-24x7">NDTV 24x7</a><br>
+Views: 31,112<br>
+
+<a href="http://livetvcafe.net/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://livetvcafe.net/video/KXHDS3N4O7OU/India-Tv" alt="India Tv" title="India Tv">
+        <img src="http://livetvcafe.net/files/thumbs/130673009112dda.-bigjpg" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'965')" title="add India Tv to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://livetvcafe.net/video/KXHDS3N4O7OU/India-Tv">India Tv</a><br>
+Views: 53,997<br>
+
+<a href="http://livetvcafe.net/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://livetvcafe.net/video/R8SK6U27A2U7/MAA-TV-Telugu" alt="MAA TV Telugu" title="MAA TV Telugu">
+        <img src="http://livetvcafe.net/files/thumbs/1306743388a45fd.-biggif" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'966')" title="add MAA TV Telugu to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://livetvcafe.net/video/R8SK6U27A2U7/MAA-TV-Telugu">MAA TV Telugu</a><br>
+Views: 81,153<br>
+
+<a href="http://livetvcafe.net/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box -->	
+<!-- Video Box -->
+<div class="watch_video_box">
+    <div class="watch_video_box_thumb" align="center"> 
+        <a href="http://livetvcafe.net/video/71M2X7AOMN4R/ETV-telugu" alt="ETV telugu" title="ETV telugu">
+        <img src="http://livetvcafe.net/files/thumbs/13067436581e8d6.-biggif" width="82" height="48" border="0"  /></a>
+        <div class="duration">24:00:00</div>
+        <img src="http://livetvcafe.net/styles/cbv2new/images/dot.gif" class="add_icon" onclick="add_quicklist(this,'967')" title="add ETV telugu to qucklist" alt="quicklist">
+    </div> 
+   	<div class="watch_video_box_details">
+    <a href="http://livetvcafe.net/video/71M2X7AOMN4R/ETV-telugu">ETV telugu</a><br>
+Views: 48,311<br>
+
+<a href="http://livetvcafe.net/user/admin" title="admin" alt="admin">admin</a>
+
+</div>
+    <!--VIDEO_THUMB END-->  
+</div>
+<!-- Video Box --><div class="clearfix"></div>
+</div>
+<!-- Getting List user videos -->
+
+	<!-- Displaying 300x250 Advertisment -->
+    <div class="ads"><iframe src="http://livetvcafe.net/AD300.html" height="250" width="300" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+</div> 
+
+</div>
+
+<div class="clearfix"></div>                                        </div> <!--CONTENT END-->
+        <div class="clear"></div>
+        <div class="search_footer clearfix">
+            <div class="foot_s_con">
+                <div class="advance" title="Advanced Search"></div>
+                <form name="search-form" method="get" action="http://livetvcafe.net/search_result.php">
+                    <input type="text" name="query" value=""  />
+                    <input type="submit" value="Search" class="foot_s_btn" name="cbsearch" />
+                </form>            
+            </div> <!--FOOT_S_CON END-->
+        </div> <!--SEARCH_FOOTER END-->
+        <div id="footer">
+            <div class="changer">
+            <div class="copyright">Powered By FreeTvAll</div> 
+			           
+                <div class="ch_left"></div>        	
+                <div class="ch_right"></div>
+            </div> <!--CHANGER END-->
+            <div class="ch_shadow"></div>
+            <!--FOOTER CLASS END-->
+            <div class="footer">
+	<div class="footer_copyr">
+    	&copy; LiveTvCafe.net - Watch Live Tv Channels Online Free 2013
+   	</div>
+    <ul class="clearfix">
+    
+    	
+        
+                	            	<li><a href="http://livetvcafe.net"  >Home</a></li>
+                            	            	<li><a href="http://livetvcafe.net/contact"  >Contact Us</a></li>
+                            	            	<li><a href="http://livetvcafe.net/page/1/about-us"  >About Us</a></li>
+                            	            	<li><a href="http://livetvcafe.net/page/3/terms-of-serivce"  >Terms of services</a></li>
+                            	            	<li><a href="http://livetvcafe.net/page/4/help"  >Help</a></li>
+                        </ul>
+    <div class="clearfix"></div>
+
+
+
+<!-- Histats.com  START  (standard)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15_gif.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="web statistic" ><script  type="text/javascript" >
+try {Histats.startgif(1,1516020,4,10042,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" alt="web statistic" target="_blank" ><div id="histatsC"><img border="0" src="http://s4is.histats.com/stats/i/1516020.gif?1516020&103"></div></a>
+</noscript>
+<!-- Histats.com  END  -->
+
+
+
+<span style="display: none; visibility: hidden; height: 0px;"><script type="text/javascript" src="http://widgets.amung.us/small.js"></script><script type="text/javascript">WAU_small('syurorb1fel8')</script></span>
+
+
+<b>All TV channels are third party links available free on the internet and we do not stream any of the channels for any information contact freetvall@gmail.com</b>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19595013-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+    <div class="footer_sp"></div>
+    <div align="center"><!-- Do not remove this copyright notice -->
+Powered by <a href="http://clip-bucket.com/">ClipBucket</a> 2.0.91 | <a href="http://clip-bucket.com/arslan-hassan">Arslan Hassan</a>
+<!-- Do not remove this copyright notice --></div>
+</div>        </div> <!--FOOTER ID END-->
+    </div>
+</div>
+</body>
+</html>

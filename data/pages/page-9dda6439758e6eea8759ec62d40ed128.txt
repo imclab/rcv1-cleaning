@@ -1,0 +1,1160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+        <title>AUTO CROSS INC : Home</title>
+
+    
+    
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<link href="/Content/Templates/13/CSS/Main.css?version=2" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .btmimg a:hover 
+        {
+	        color: #006EC6;  
+	        background-color:#fff;
+        } 
+        
+        .txtlink:hover 
+        {
+	        color: #006EC6;  
+	        background-color: #006EC6;
+        }
+    </style>
+	<script type="text/javascript" src="/Content/Templates/13/Scripts/jquery-1.7.2.min.js"></script>
+
+    <!-- CSS Files from TemplateVariations in the Database -->
+        <link href="/Content/Templates/13/CSS/Black.css" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript">
+        // Functions to run after document loads
+        $(function () {
+            // Disable submit button after submitting form (prevents double-clicks)
+            $('form').submit(function () {
+                $('input[type=submit]', this).attr('disabled', 'disabled');
+            });
+        });
+    </script>
+
+    
+    <script language="JavaScript" type="text/JavaScript">
+	<!--
+
+        function changeTab(id) {
+            var thisID = id;
+            var blockID = id + "_block";
+
+            document.getElementById('quickSearch').style.display = "none";
+            document.getElementById('advancedSearch').style.display = "none";
+
+            document.getElementById('quickSearch_block').style.display = "none";
+            document.getElementById('advancedSearch_block').style.display = "none";
+
+            document.getElementById(thisID).style.display = "block";
+            document.getElementById(blockID).style.display = "block";
+        }
+
+        $(function () {
+            $("#QSManufacturer").change(function () {
+                var Mfr = $("#QSManufacturer").val();
+
+                // Clear list of Models
+                $("#QSModel").empty();
+                $("#QSModel").append('<option value="" selected="selected">-- All --</option>');
+
+                // Hide the Model Drop-Down
+                $("#QSModel").css("display", "none");
+                $("#QSModel_Span").css("display", "");
+
+                // Do we have a manufacturer?
+                if (Mfr != null && Mfr != "") {
+                    $.getJSON('Home',
+                        { JSON_Models: Mfr },
+                        function (Models) {
+                            // Populate the drop-down list
+                            $.each(Models, function (index, model) {
+                                $("#QSModel").append($('<option/>', { value: model.Model, text: model.Model + " (" + model.Count + ")" }));
+                            });
+
+                            // Show the drop-down list
+                            $("#QSModel").css("display", "");
+                            $("#QSModel_Span").css("display", "none");
+                        }
+                    );
+                }
+            });
+
+            $("#QSModel").change(function () {
+                var Mfr = $("#QSManufacturer").val();
+                var Model = $("#QSModel").val();
+
+                // Clear list of SubModels
+                $("#QSSubModel").empty();
+                $("#QSSubModel").append('<option value="" selected="selected">-- All --</option>');
+
+                // Hide the Model Drop-Down
+                $("#QSSubModel").css("display", "none");
+                $("#QSSubModel_Span").css("display", "");
+
+                // Do we have a manufacturer?
+                if (Mfr != null && Mfr != "") {
+                    $.getJSON('Home',
+                    { JSON_SubModels: Model, Manufacturer: Mfr },
+                    function (Models) {
+                        // Populate the drop-down list
+                        $.each(Models, function (index, model) {
+                            $("#QSSubModel").append($('<option/>', { value: model.Model, text: model.Model + " (" + model.Count + ")" }));
+                        });
+
+                        // Show the drop-down list
+                        $("#QSSubModel").css("display", "");
+                        $("#QSSubModel_Span").css("display", "none");
+                    }
+                );
+                }
+            });
+
+            $("#ASManufacturer").change(function () {
+                var Mfr = $("#ASManufacturer").val();
+
+                // Clear list of Models
+                $("#ASModel").empty();
+                $("#ASModel").append('<option value="" selected="selected">-- All --</option>');
+
+                // Hide the Model Drop-Down
+                $("#ASModel").css("display", "none");
+                $("#ASModel_Span").css("display", "");
+
+                // Do we have a manufacturer?
+                if (Mfr != null && Mfr != "") {
+                    $.getJSON('Home',
+                        { JSON_Models: Mfr },
+                        function (Models) {
+                            // Populate the drop-down list
+                            $.each(Models, function (index, model) {
+                                $("#ASModel").append($('<option/>', { value: model.Model, text: model.Model + " (" + model.Count + ")" }));
+                            });
+
+                            // Show the drop-down list
+                            $("#ASModel").css("display", "");
+                            $("#ASModel_Span").css("display", "none");
+                        }
+                    );
+                }
+            });
+
+            $("#ASModel").change(function () {
+                var Mfr = $("#ASManufacturer").val();
+                var Model = $("#ASModel").val();
+
+                // Clear list of SubModels
+                $("#ASSubModel").empty();
+                $("#ASSubModel").append('<option value="" selected="selected">-- All --</option>');
+
+                // Hide the Model Drop-Down
+                $("#ASSubModel").css("display", "none");
+                $("#ASSubModel_Span").css("display", "");
+
+                // Do we have a manufacturer?
+                if (Mfr != null && Mfr != "") {
+                    $.getJSON('Home',
+                    { JSON_SubModels: Model, Manufacturer: Mfr },
+                    function (Models) {
+                        // Populate the drop-down list
+                        $.each(Models, function (index, model) {
+                            $("#ASSubModel").append($('<option/>', { value: model.Model, text: model.Model + " (" + model.Count + ")" }));
+                        });
+
+                        // Show the drop-down list
+                        $("#ASSubModel").css("display", "");
+                        $("#ASSubModel_Span").css("display", "none");
+                    }
+                );
+                }
+            });
+
+        });
+
+        function RunQuickSearch() {
+            // Redirect to the search results page
+            var Query = "?Reset=1&Manufacturer=" + $("#QSManufacturer").val() + "&Model=" + $("#QSModel").val() + "&SubModel=" + $("#QSSubModel").val();
+
+            location.href = "Inventory" + Query;
+        }
+
+        function RunAdvancedSearch() {
+            // Redirect to the search results page
+            var Query = "?Reset=1&Manufacturer=" + $("#ASManufacturer").val() + "&Model=" + $("#ASModel").val() + "&SubModel=" + $("#ASSubModel").val();
+            Query += "&MinYear=" + $("#yearFrom").val() + "&MaxYear=" + $("#yearTo").val();
+            Query += "&MinPrice=" + $("#priceFrom").val() + "&MaxPrice=" + $("#priceTo").val();
+            Query += "&MinOdometer=" + $("#mileageFrom").val() + "&MaxOdometer=" + $("#mileageTo").val();
+            Query += "&BodyStyle=" + $("#BodyStyle").val() + "&ExteriorColour=" + $("#ExteriorColour").val() + "&Transmission=" + $("#Transmission").val();
+            
+            location.href = "Inventory" + Query;
+        }
+		
+	//-->
+    </script>
+
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="bgpage">
+
+
+    <table width="960" border="0" align="center" cellpadding="0" cellspacing="0">
+
+	<tr>
+		<td class="tdbgcol" align="center">
+			
+			<table width="940" border="0" cellspacing="0" cellpadding="0">
+			
+				<tr>
+					<td>
+                            <!-- we have a logo -->
+                            <a href="Home"><img style="margin-top:0px;" src="http://metrolandsmb.123411.ca/Content/WebsiteContent/Logos/2/1358_940.jpg?version=2" width="940" height="100" /></a>
+                    </td>
+				</tr>
+				<tr>
+					<td style="padding-top:5px;padding-bottom:0px;" class="tdbgcol td-menu-bar">
+					    <div id="modernbricksmenu">
+					        <ul>
+					
+                                <!-- Page Links -->
+                                    <li id="current"><a href="Home" >Home</a></li>
+                                    <li ><a href="Inventory" >Our Inventory</a></li>
+                                    <li ><a href="Financing" >Financing</a></li>
+                                    <li ><a href="About" >About Us</a></li>
+                                    <li ><a href="Contact" >Contact Us</a></li>
+                                    <li ><a href="Map" >Location and Map</a></li>
+                                    <li ><a href="Service" >Service</a></li>
+                                    <li ><a href="Parts" >Parts</a></li>
+                                    <li ><a href="NewVehicles" style="border-right: none;">New Vehicles</a></li>
+                        
+					        </ul>
+
+                            <div class="social-media-icons">
+                            
+                            </div>
+
+					    </div>
+                    </td>
+				</tr>
+			</table>
+
+			
+		</td>
+	</tr>	
+  	<!-- BODY -->
+  	<tr> 
+    	<td align="center" valign="top">
+    		
+            <!-- CONTENT GOES HERE -->
+    		<div class="tdbgcol">
+               <div class="tdcontentbgcol"> 
+                    <center>
+
+
+<table width="920" border="0" cellspacing="0" cellpadding="0" bgcolor="White">
+    <tr>
+        <td style="padding-top: 10px;">
+            <!-- CONTENT -->
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="White">
+                <tr valign="top">
+                    <!-- LEFT COLUMN -->
+                    <td width="633">
+
+                        <!-- OPTIONAL IMAGE/BANNER -->
+
+                        
+                        <!-- NEWEST ARRIVALS -->
+                        <h2>
+                            Newest Arrivals at AUTO CROSS INC</h2>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr valign="top">
+                                
+                                    <!-- FEATURED CAR -->
+                                    <td width="150" height="100%" valign="top">
+                                    
+                                        <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" class="featuredVehicle">
+                                            <tr>
+                                                <td width="24" valign="top" height="50">
+                                                    <img src="/Content/Templates/13/Images/icon-new.jpg">
+                                                </td>
+                                                <td width="127" valign="top">
+                                                    <div class="photo">
+                                                        <a href="Vehicle?v=654-720154">
+                                                            <img src="http://metrolandsmb.123411.ca/sites/xxx-replace-xxx-1358/VehicleImage?v=58256698&w=120" width="120"></a></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" valign="top">
+                                                    <div class="info">
+                                                        <b></b><span class="title"><a href="Vehicle?v=654-720154">2008
+                                                            Pontiac Wave </a></span><span class="price">&bull;&nbsp;&nbsp;<strong>$</strong>5,450 + taxes<br />
+                                                                &bull;&nbsp;&nbsp;110,938 KM </span> <span class="mileage">
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    
+                                    </td>
+                                    <!-- END OF FEATURED CAR -->
+                                        <!-- SEPARATOR -->
+                                        <td class="linevert">
+                                            &nbsp;
+                                        </td>
+                                    <!-- FEATURED CAR -->
+                                    <td width="150" height="100%" valign="top">
+                                    
+                                        <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" class="featuredVehicle">
+                                            <tr>
+                                                <td width="24" valign="top" height="50">
+                                                    <img src="/Content/Templates/13/Images/icon-new.jpg">
+                                                </td>
+                                                <td width="127" valign="top">
+                                                    <div class="photo">
+                                                        <a href="Vehicle?v=654-692128">
+                                                            <img src="http://metrolandsmb.123411.ca/sites/xxx-replace-xxx-1358/VehicleImage?v=58256696&w=120" width="120"></a></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" valign="top">
+                                                    <div class="info">
+                                                        <b></b><span class="title"><a href="Vehicle?v=654-692128">2005
+                                                            Nissan Altima </a></span><span class="price">&bull;&nbsp;&nbsp;<strong>$</strong>5,750 + taxes<br />
+                                                                &bull;&nbsp;&nbsp;175,000 KM </span> <span class="mileage">
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    
+                                    </td>
+                                    <!-- END OF FEATURED CAR -->
+                                        <!-- SEPARATOR -->
+                                        <td class="linevert">
+                                            &nbsp;
+                                        </td>
+                                    <!-- FEATURED CAR -->
+                                    <td width="150" height="100%" valign="top">
+                                    
+                                        <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" class="featuredVehicle">
+                                            <tr>
+                                                <td width="24" valign="top" height="50">
+                                                    <img src="/Content/Templates/13/Images/icon-new.jpg">
+                                                </td>
+                                                <td width="127" valign="top">
+                                                    <div class="photo">
+                                                        <a href="Vehicle?v=654-644447">
+                                                            <img src="http://metrolandsmb.123411.ca/sites/xxx-replace-xxx-1358/VehicleImage?v=58256695&w=120" width="120"></a></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" valign="top">
+                                                    <div class="info">
+                                                        <b></b><span class="title"><a href="Vehicle?v=654-644447">1998
+                                                            Subaru Forester </a></span><span class="price">&bull;&nbsp;&nbsp;<strong>$</strong>3,850 + taxes<br />
+                                                                &bull;&nbsp;&nbsp;195,000 KM </span> <span class="mileage">
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    
+                                    </td>
+                                    <!-- END OF FEATURED CAR -->
+                                        <!-- SEPARATOR -->
+                                        <td class="linevert">
+                                            &nbsp;
+                                        </td>
+                                    <!-- FEATURED CAR -->
+                                    <td width="150" height="100%" valign="top">
+                                    
+                                        <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" class="featuredVehicle">
+                                            <tr>
+                                                <td width="24" valign="top" height="50">
+                                                    <img src="/Content/Templates/13/Images/icon-new.jpg">
+                                                </td>
+                                                <td width="127" valign="top">
+                                                    <div class="photo">
+                                                        <a href="Vehicle?v=654-737601">
+                                                            <img src="http://metrolandsmb.123411.ca/sites/xxx-replace-xxx-1358/VehicleImage?v=58256690&w=120" width="120"></a></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" valign="top">
+                                                    <div class="info">
+                                                        <b></b><span class="title"><a href="Vehicle?v=654-737601">2006
+                                                            Hyundai Santa Fe </a></span><span class="price">&bull;&nbsp;&nbsp;<strong>$</strong>6,900 + taxes<br />
+                                                                &bull;&nbsp;&nbsp;165,512 KM </span> <span class="mileage">
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    
+                                    </td>
+                                    <!-- END OF FEATURED CAR -->
+
+                                
+
+                            </tr>
+                        </table>
+                        <!-- END OF NEWEST ARRIVALS -->
+                        &nbsp;
+                        <h2>
+                            Search AUTO CROSS INC Used Car Inventory</h2>
+                        <!-- SEARCH BOX -->
+                        <div id="quickSearch" style="display: block;">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" background="/Content/Templates/13/Images/bg.jpg">
+                                <tr>
+                                    <td style="background: url(/Content/Templates/13/Images/bg-side.jpg) no-repeat;">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td>
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td>
+                                                                <img src="/Content/Templates/13/Images/box1.jpg">
+                                                            </td>
+                                                            <td style="color: #333333; font-size: 14px; font-weight: bold; padding-left: 8px;
+                                                                padding-right: 8px;" background="/Content/Templates/13/Images/box2.jpg">
+                                                                Quick Search            
+                                                            </td>
+                                                            <td>
+                                                                <img src="/Content/Templates/13/Images/box3.jpg">
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="color: #333333; font-size: 14px; font-weight: bold; font-weight: bold;
+                                                    padding-left: 14px; padding-right: 14px; ">
+                                                    <a class="nohover" href="javascript:changeTab('advancedSearch');">Advanced Search</a>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" align="center">
+                                                    <img src="/Content/Templates/13/Images/pointer-down.jpg">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>   
+                                    <td style="background: url(/Content/Templates/13/Images/bg-side.jpg) right no-repeat;" align="right">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="advancedSearch" style="display: none;">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" background="/Content/Templates/13/Images/bg.jpg">
+                                <tr>
+                                    <td style="background: url(/Content/Templates/13/Images/bg-side.jpg) no-repeat;">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td style="color: #333333; font-size: 14px; font-weight: bold; font-weight: bold;
+                                                    padding-left: 14px; padding-right: 14px;">
+                                                    <a class="nohover" href="javascript:changeTab('quickSearch');">Quick Search</a>
+                                                </td>
+                                                <td>
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td>
+                                                                <img src="/Content/Templates/13/Images/box1.jpg">
+                                                            </td>
+                                                            <td style="color: #333333; font-size: 14px; font-weight: bold; padding-left: 8px;
+                                                                padding-right: 8px;" background="/Content/Templates/13/Images/box2.jpg">
+                                                                Advanced Search
+                                                            </td>
+                                                            <td>
+                                                                <img src="/Content/Templates/13/Images/box3.jpg">
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" align="center">
+                                                </td>
+                                                <td valign="top" align="center">
+                                                    <img src="/Content/Templates/13/Images/pointer-down.jpg">
+                                                </td>
+                                                <td valign="top" align="center">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td style="background: url(/Content/Templates/13/Images/bg-side.jpg) right no-repeat;" align="right">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td background="/Content/Templates/13/Images/box4.jpg" valign="top">
+                                    <img src="/Content/Templates/13/Images/box4.jpg" width="9" height="1">
+                                </td>
+                                <td valign="top" class="bggrey" width="100%">
+                                    <div id="quickSearch_block" style="padding: 5px; display: block;">
+                                        <form action="/index.htm" name="quickSearch" method="post">
+                                        <input type="hidden" name="searchType" value="quickSearch">
+                                        <table width="100%" class="searchTable">
+                                            <tr>
+                                                <td width="33%">
+                                                    <div class="formField">
+                                                        <label for="make">
+                                                            Make</label>
+                                                        <div>
+                                                            
+                                                            <select name="QSManufacturer" id="QSManufacturer" style="width: 100%;" class="select" >
+                                                                <option value="" selected="selected">-- All --</option>
+                    
+                                                                        <option value="Acura">Acura (1)</option>
+                                                                        <option value="BMW">BMW (1)</option>
+                                                                        <option value="Buick">Buick (1)</option>
+                                                                        <option value="Chevrolet">Chevrolet (1)</option>
+                                                                        <option value="Chrysler">Chrysler (1)</option>
+                                                                        <option value="Dodge">Dodge (7)</option>
+                                                                        <option value="Ford">Ford (4)</option>
+                                                                        <option value="GMC">GMC (2)</option>
+                                                                        <option value="Honda">Honda (13)</option>
+                                                                        <option value="Hyundai">Hyundai (1)</option>
+                                                                        <option value="Isuzu">Isuzu (1)</option>
+                                                                        <option value="Jeep">Jeep (3)</option>
+                                                                        <option value="Kia">Kia (2)</option>
+                                                                        <option value="Lexus">Lexus (1)</option>
+                                                                        <option value="Mazda">Mazda (6)</option>
+                                                                        <option value="Mercedes-Benz">Mercedes-Benz (3)</option>
+                                                                        <option value="Nissan">Nissan (10)</option>
+                                                                        <option value="Pontiac">Pontiac (2)</option>
+                                                                        <option value="Saturn">Saturn (2)</option>
+                                                                        <option value="Subaru">Subaru (2)</option>
+                                                                        <option value="Toyota">Toyota (13)</option>
+                                                            </select>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td width="33%">
+                                                </td>
+                                                <td width="33%">
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td>
+                                                    <div class="formField">
+                                                        <label for="model">
+                                                            Model</label>
+                                                        <div>
+                                                            
+                                                            <select name="QSModel" id="QSModel" style="width: 100%; display: none;" class="select">
+                                                                <option value="" selected="selected">-- All --</option>
+                                                            </select>
+
+                                                            <span id="QSModel_Span">Please select a Make first.</span>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="formField">
+                                                        <label for="model">
+                                                            Trim</label>
+                                                        <div>
+                                                            
+                                                            <select name="QSSubModel" id="QSSubModel" style="width: 100%; display: none;" class="select">
+                                                                <option value="" selected="selected">-- All --</option>
+                                                            </select>
+
+                                                            <span id="QSSubModel_Span">Please select a Model first.</span>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                            
+                                        </table>
+                                        <p style="clear: both">
+                                        </p>
+                                        <div style="border-top: 1px dotted #ccc; margin-top: 11px; margin-bottom: 10px;">
+                                        </div>
+                                        <input type="button" name="actionType" value="Search" style="font-size: 16px" onclick="RunQuickSearch();">
+                                        </form>
+                                    </div>
+                                    <div id="advancedSearch_block" style="padding: 5px; display: none;">
+                                        <form action="/index.htm" name="advancedSearch" method="post">
+                                        <input type="hidden" name="searchType" value="advancedSearch">
+                                        <table width="100%" class="searchTable">
+                                            <tr>
+                                                <td width="33%">
+                                                    <div class="formField">
+                                                        <label for="make">
+                                                            Make</label>
+                                                        <div>
+                                                            <select name="ASManufacturer" id="ASManufacturer" style="width: 100%;" class="select" >
+                                                                <option value="" selected="selected">-- All --</option>
+                    
+                                                                        <option value="Acura">Acura (1)</option>
+                                                                        <option value="BMW">BMW (1)</option>
+                                                                        <option value="Buick">Buick (1)</option>
+                                                                        <option value="Chevrolet">Chevrolet (1)</option>
+                                                                        <option value="Chrysler">Chrysler (1)</option>
+                                                                        <option value="Dodge">Dodge (7)</option>
+                                                                        <option value="Ford">Ford (4)</option>
+                                                                        <option value="GMC">GMC (2)</option>
+                                                                        <option value="Honda">Honda (13)</option>
+                                                                        <option value="Hyundai">Hyundai (1)</option>
+                                                                        <option value="Isuzu">Isuzu (1)</option>
+                                                                        <option value="Jeep">Jeep (3)</option>
+                                                                        <option value="Kia">Kia (2)</option>
+                                                                        <option value="Lexus">Lexus (1)</option>
+                                                                        <option value="Mazda">Mazda (6)</option>
+                                                                        <option value="Mercedes-Benz">Mercedes-Benz (3)</option>
+                                                                        <option value="Nissan">Nissan (10)</option>
+                                                                        <option value="Pontiac">Pontiac (2)</option>
+                                                                        <option value="Saturn">Saturn (2)</option>
+                                                                        <option value="Subaru">Subaru (2)</option>
+                                                                        <option value="Toyota">Toyota (13)</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td width="33%">
+                                                    <div class="formField">
+                                                        <label for="year">
+                                                            Year Range</label>
+                                                        <div>
+                                                            <select class="select" name="yearFrom" id="yearFrom">
+                                                                <option value="0">-- All --</option>
+                                                                    <option value="2010">2010</option>
+                                                                    <option value="2009">2009</option>
+                                                                    <option value="2008">2008</option>
+                                                                    <option value="2007">2007</option>
+                                                                    <option value="2006">2006</option>
+                                                                    <option value="2005">2005</option>
+                                                                    <option value="2004">2004</option>
+                                                                    <option value="2003">2003</option>
+                                                                    <option value="2002">2002</option>
+                                                                    <option value="1999">1999</option>
+                                                                    <option value="1998">1998</option>
+                                                            </select>
+                                                            to
+                                                            <select class="select" name="yearTo" id="yearTo">
+                                                                <option value="0">-- All --</option>
+                                                                    <option value="2010">2010</option>
+                                                                    <option value="2009">2009</option>
+                                                                    <option value="2008">2008</option>
+                                                                    <option value="2007">2007</option>
+                                                                    <option value="2006">2006</option>
+                                                                    <option value="2005">2005</option>
+                                                                    <option value="2004">2004</option>
+                                                                    <option value="2003">2003</option>
+                                                                    <option value="2002">2002</option>
+                                                                    <option value="1999">1999</option>
+                                                                    <option value="1998">1998</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td width="33%">
+                                                    <div class="formField">
+                                                        <label for="bodyStyle">
+                                                            Body Style</label>
+                                                        <div>
+                                                            <select style="width: 100%;" class="select" name="bodyStyle" id="BodyStyle">
+                                                                <option value="">-- All --</option>
+                                                                    <option value="Convertible">Convertible</option>
+                                                                    <option value="Crossover">Crossover</option>
+                                                                    <option value="Hatchback">Hatchback</option>
+                                                                    <option value="MiniVan">MiniVan</option>
+                                                                    <option value="Sedan">Sedan</option>
+                                                                    <option value="Super Crew">Super Crew</option>
+                                                                    <option value="SUV">SUV</option>
+                                                                    <option value="Wagon">Wagon</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="formField">
+                                                        <label for="model">
+                                                            Model</label>
+                                                        <div>
+                                                            <select name="ASModel" id="ASModel" style="width: 100%; display: none;" class="select">
+                                                                <option value="" selected="selected">-- All --</option>
+                                                            </select>
+
+                                                            <span id="ASModel_Span">Please select a Make first.</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="formField">
+                                                        <label for="year">
+                                                            ($) Price Range</label>
+                                                        <div>
+                                                            <input style="width: 40%;" class="text" type="text" name="priceFrom" id="priceFrom" value="">
+                                                            to
+                                                            <input style="width: 40%;" class="text" type="text" name="priceTo" id="priceTo" value="">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="formField">
+                                                        <label for="exteriorColour">
+                                                            Exterior Colour</label>
+                                                        <div>
+                                                            <select style="width: 100%;" class="select" name="exteriorColour" id="ExteriorColour">
+                                                                <option value="">-- All --</option>
+                                                                    <option value="Beige">Beige</option>
+                                                                    <option value="Black">Black</option>
+                                                                    <option value="Blue">Blue</option>
+                                                                    <option value="Brown">Brown</option>
+                                                                    <option value="Dark Grey">Dark Grey</option>
+                                                                    <option value="Gold">Gold</option>
+                                                                    <option value="Green">Green</option>
+                                                                    <option value="Grey">Grey</option>
+                                                                    <option value="Orange">Orange</option>
+                                                                    <option value="Red">Red</option>
+                                                                    <option value="Silver">Silver</option>
+                                                                    <option value="White">White</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="formField">
+                                                        <label for="model">
+                                                            Trim</label>
+                                                        <div>
+                                                            <select name="ASSubModel" id="ASSubModel" style="width: 100%; display: none;" class="select">
+                                                                <option value="" selected="selected">-- All --</option>
+                                                            </select>
+
+                                                            <span id="ASSubModel_Span">Please select a Model first.</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="formField">
+                                                        <label for="year">
+                                                            (km) Mileage Range</label>
+                                                        <div>
+                                                            <input style="width: 40%;" class="text" type="text" name="mileageFrom" id="mileageFrom" value="">
+                                                            to
+                                                            <input style="width: 40%;" class="text" type="text" name="mileageTo" id="mileageTo" value="">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="formField">
+                                                        <label for="year">
+                                                            Transmission</label>
+                                                        <div>
+                                                            <select style="width: 100%;" class="select" name="transmission" id="Transmission">
+                                                                <option value="">-- All --</option>
+                                                                    <option value="Automatic">Automatic</option>
+                                                                    <option value="Manual">Manual</option>
+                                                                    <option value="Unknown">Unknown</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <p style="clear: both">
+                                        </p>
+                                        <div style="border-top: 1px dotted #ccc; margin-top: 10px; margin-bottom: 10px;">
+                                        </div>
+                                        <input type="button" name="actionType" value="Search" style="font-size: 16px" onclick="RunAdvancedSearch();">
+                                        </form>
+                                    </div>
+                                    
+                                </td>
+                                <td background="/Content/Templates/13/Images/box6.jpg" valign="top">
+                                    <img src="/Content/Templates/13/Images/box6.jpg" width="9" height="1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="/Content/Templates/13/Images/box7.jpg" width="9" height="11">
+                                </td>
+                                <td background="/Content/Templates/13/Images/box8.jpg">
+                                    <img src="/Content/Templates/13/Images/box8.jpg" width="18" height="11">
+                                </td>
+                                <td>
+                                    <img src="/Content/Templates/13/Images/box9.jpg" width="9" height="11">
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- END OF SEARCH BOX -->
+                        &nbsp;
+                    </td>
+                    <td width="10">
+                        &nbsp;
+                    </td>
+                    <!-- RIGHT COLUMN -->
+                    <td width="277">
+                        <!-- BROWSE VEHICLES BY MAKE -->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="9">
+                                    <img src="/Content/Templates/13/Images/box1.gif" width="9">
+                                </td>
+                                <td background="/Content/Templates/13/Images/box2.gif" class="boxtitle">
+                                    On Our Lot
+                                </td>
+                                <td width="9">
+                                    <img src="/Content/Templates/13/Images/box3.gif" width="9">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td background="/Content/Templates/13/Images/box4.gif" valign="top">
+                                    <img src="/Content/Templates/13/Images/box4.gif" width="9" height="1">
+                                </td>
+                                <td valign="top" class="bggrey">
+                                    <!--<div style="padding:10px;">-->
+                                    <div style="padding: 10px;">
+                                        <table width="100%">
+                                            
+                                                <tr>
+                                                    <td width="50%">
+                                                        &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Acura">Acura (1)</a>
+                                                    </td>
+                                                    
+                                                        <td width="50%">
+                                                            &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=BMW">BMW (1)</a>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%">
+                                                        &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Buick">Buick (1)</a>
+                                                    </td>
+                                                    
+                                                        <td width="50%">
+                                                            &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Chevrolet">Chevrolet (1)</a>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%">
+                                                        &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Chrysler">Chrysler (1)</a>
+                                                    </td>
+                                                    
+                                                        <td width="50%">
+                                                            &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Dodge">Dodge (7)</a>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%">
+                                                        &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Ford">Ford (4)</a>
+                                                    </td>
+                                                    
+                                                        <td width="50%">
+                                                            &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=GMC">GMC (2)</a>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%">
+                                                        &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Honda">Honda (13)</a>
+                                                    </td>
+                                                    
+                                                        <td width="50%">
+                                                            &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Hyundai">Hyundai (1)</a>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%">
+                                                        &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Isuzu">Isuzu (1)</a>
+                                                    </td>
+                                                    
+                                                        <td width="50%">
+                                                            &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Jeep">Jeep (3)</a>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%">
+                                                        &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Kia">Kia (2)</a>
+                                                    </td>
+                                                    
+                                                        <td width="50%">
+                                                            &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Lexus">Lexus (1)</a>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%">
+                                                        &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Mazda">Mazda (6)</a>
+                                                    </td>
+                                                    
+                                                        <td width="50%">
+                                                            &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Mercedes-Benz">Mercedes-Benz (3)</a>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%">
+                                                        &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Nissan">Nissan (10)</a>
+                                                    </td>
+                                                    
+                                                        <td width="50%">
+                                                            &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Pontiac">Pontiac (2)</a>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%">
+                                                        &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Saturn">Saturn (2)</a>
+                                                    </td>
+                                                    
+                                                        <td width="50%">
+                                                            &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Subaru">Subaru (2)</a>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%">
+                                                        &bull;&nbsp;&nbsp;<a href="Inventory?Reset=1&Manufacturer=Toyota">Toyota (13)</a>
+                                                    </td>
+                                                    
+                                                </tr>
+                                            
+                                        </table>
+                                    </div>
+                                    <!--</div>-->
+                                </td>
+                                <td background="/Content/Templates/13/Images/box6.gif" valign="top">
+                                    <img src="/Content/Templates/13/Images/box6.gif" width="9" height="1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="/Content/Templates/13/Images/box7.gif" width="9" height="11">
+                                </td>
+                                <td background="/Content/Templates/13/Images/box8.gif">
+                                    <img src="/Content/Templates/13/Images/box8.gif" width="18" height="11">
+                                </td>
+                                <td>
+                                    <img src="/Content/Templates/13/Images/box9.gif" width="9" height="11">
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- END OF BROWSE VEHICLES BY MAKE -->
+
+                        <!-- YouTube Video -->
+
+
+                        &nbsp;
+                        <!-- BROWSE VEHICLES BY TYPE -->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="display: none;">
+                            <tr>
+                                <td width="9">
+                                    <img src="/Content/Templates/13/Images/box1.gif" width="9">
+                                </td>
+                                <td background="/Content/Templates/13/Images/box2.gif" class="boxtitle">
+                                    Browse by Type
+                                </td>
+                                <td width="9">
+                                    <img src="/Content/Templates/13/Images/box3.gif" width="9">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td background="/Content/Templates/13/Images/box4.gif" valign="top">
+                                    <img src="/Content/Templates/13/Images/box4.gif" width="9" height="1">
+                                </td>
+                                <td valign="top" class="bggrey">
+                                    <!--<div style="padding:0px;">-->
+                                    <table width="100%" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td width="50%" align="center" style="padding: 5px;">
+                                                <a class="nohover" href="/used-cars/~~~~~convertible~~~~~~~~~~~~~~~~.htm">
+                                                    <img src="/Content/Templates/13/Images/body_convertible.gif">
+                                                    <p>
+                                                        Convertible</p>
+                                                </a>
+                                            </td>
+                                            <td width="50%" align="center" style="padding: 5px;">
+                                                <a class="nohover" href="/used-cars/~~~~~coupe~~~~~~~~~~~~~~~~.htm">
+                                                    <img src="/Content/Templates/13/Images/body_coupe.gif">
+                                                    <p>
+                                                        Coupe</p>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="padding: 5px;">
+                                                <a class="nohover" href="/used-cars/~~~~~hatchback~~~~~~~~~~~~~~~~.htm">
+                                                    <img src="/Content/Templates/13/Images/body_hatchback.gif">
+                                                    <p>
+                                                        Hatchback</p>
+                                                </a>
+                                            </td>
+                                            <td align="center" style="padding: 5px;">
+                                                <a class="nohover" href="/used-cars/~~~~~sedan~~~~~~~~~~~~~~~~.htm">
+                                                    <img src="/Content/Templates/13/Images/body_sedan.gif">
+                                                    <p>
+                                                        Sedan</p>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="padding: 5px;">
+                                                <a class="nohover" href="/used-cars/~~~~~suv~~~~~~~~~~~~~~~~.htm">
+                                                    <img src="/Content/Templates/13/Images/body_suv.gif">
+                                                    <p>
+                                                        SUV</p>
+                                                </a>
+                                            </td>
+                                            <td align="center" style="padding: 5px;">
+                                                <a class="nohover" href="/used-cars/~~~~~truck~~~~~~~~~~~~~~~~.htm">
+                                                    <img src="/Content/Templates/13/Images/body_truck.gif">
+                                                    <p>
+                                                        Truck</p>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="padding: 5px;">
+                                                <a class="nohover" href="/used-cars/~~~~~van~~~~~~~~~~~~~~~~.htm">
+                                                    <img src="/Content/Templates/13/Images/body_van.gif">
+                                                    <p>
+                                                        Van</p>
+                                                </a>
+                                            </td>
+                                            <td align="center" style="padding: 5px;">
+                                                <a class="nohover" href="/used-cars/~~~~~wagon~~~~~~~~~~~~~~~~.htm">
+                                                    <img src="/Content/Templates/13/Images/body_wagon.gif">
+                                                    <p>
+                                                        Wagon</p>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--</div>-->
+                                </td>
+                                <td background="/Content/Templates/13/Images/box6.gif" valign="top">
+                                    <img src="/Content/Templates/13/Images/box6.gif" width="9" height="1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="/Content/Templates/13/Images/box7.gif" width="9" height="11">
+                                </td>
+                                <td background="/Content/Templates/13/Images/box8.gif">
+                                    <img src="/Content/Templates/13/Images/box8.gif" width="18" height="11">
+                                </td>
+                                <td>
+                                    <img src="/Content/Templates/13/Images/box9.gif" width="9" height="11">
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- END OF BROWSE VEHICLES BY TYPE -->
+                    </td>
+                </tr>
+            </table>
+            <!-- END OF CONTENT -->
+        </td>
+    </tr>
+</table>
+<!-- END OF CONTENT -->
+</center>
+              </div>
+            </div>
+            <!-- END OF CONTENT -->
+    	</td>
+  	</tr>
+  	<tr> 
+    	<td align="center" valign="bottom">
+    		<div class="tdbgcol">
+               <div class="tdcontentbgcol"> 
+                    <center>	                        
+                         <table width="920" border="0" cellspacing="0" cellpadding="0">
+        		<tr> 
+          			<td background="/Content/Templates/13/Images/bg_gray.gif"  style="padding:5px">
+          				<table width="100%" cellpadding="0" cellspacing="0">
+          					<tr>
+          						<td >
+          							<b>AUTO CROSS INC</b> Quick Links<br />
+			          				
+                                    <!-- Page Links -->
+                                        <a class="footerlink" href="Home">Home</a>
+ |                                         <a class="footerlink" href="Inventory">Our Inventory</a>
+ |                                         <a class="footerlink" href="Financing">Financing</a>
+ |                                         <a class="footerlink" href="About">About Us</a>
+ |                                         <a class="footerlink" href="Contact">Contact Us</a>
+ |                                         <a class="footerlink" href="Map">Location and Map</a>
+ |                                         <a class="footerlink" href="Service">Service</a>
+ |                                         <a class="footerlink" href="Parts">Parts</a>
+ |                                         <a class="footerlink" href="NewVehicles">New Vehicles</a>
+                                   
+          						</td>
+          					</tr>
+          				</table>
+          				
+				    	
+            		</td>
+        		</tr>
+        		
+        		<tr> 
+          			<td>
+			        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td style="padding-left:5px; font-size:10px;color: #666666;" valign="middle" >AUTO CROSS INC &copy; 2013 - Toronto Used Car Dealer</td>
+								<td valign="middle" align="right" style=" text-align: right;">
+
+                                    <div style="display:block; float: right;" class="btmimg"><a href="http://www.autocatch.com" style="background-color: none;"><img src="/Content/Templates/13/Images/powered_by_AC.PNG" alt="Powered by Autocatch"/></a>
+                                    </div>
+                                    <div style="display:block; height: 25px; float: right; padding-left: 5px; font-size: 10px; margin-right: 5px;"><a href="http://www.autocatch.com" class="txtlink"><div style=" line-height: 23px;" >Used Cars</div></a></div> 
+
+                                </td>
+						  	</tr>
+						</table>         			
+          			</td>
+        		</tr>
+        	</table>
+                    </center>
+                </div>
+            </div>
+    	</td>
+  	</tr>
+  	<tr>
+  		<td class="tdbgcol">
+  		&nbsp;
+		</td>
+  	</tr>
+</table>
+
+
+                <!-- Piwik --> 
+                <script type="text/javascript">
+                    var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.123411.ca/~piwik/" : "http://piwik.123411.ca/");
+                    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+                </script>
+                <script type="text/javascript">
+                    try {
+                        var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1246);
+                        piwikTracker.trackPageView();
+                        piwikTracker.enableLinkTracking();
+                    } catch( err ) {}
+                </script>
+                <noscript>
+                    <p><img src="http://piwik.123411.ca/piwik.php?idsite=1246" style="border:0" alt="" /></p>
+                </noscript>
+                <!-- End Piwik Tracking Code -->
+            
+</body>
+</html>

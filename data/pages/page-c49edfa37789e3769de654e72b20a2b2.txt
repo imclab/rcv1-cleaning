@@ -1,0 +1,939 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>Certified Vehicle Inspections</title>
+
+
+
+<meta name="description" content="For more information about automotive pre-purchase inspections please contact Certified Vehicle Inspections today." />
+
+
+
+<meta name="keywords" content="prepurchase inspections, used car inspection, used car inspectons, used car inspections, pre-purchase inspection, salvage, salvage inspection, car inspections, vehicle inspection, vehicle inspections, used vehicle inspection, used vehicle inspections, inspection, PPI, copart inspection, copart, insurance auto auction, auto auction, car inspector, classic car inspection, exotic car inspection, ase master certified, dealer inspection, carfax report, carcheck, used vehicle, used car, certified vehicle inspections, exotic car inspections, heavy equipment inspections, boat inspections, boat inspection, maserati inspection, vintage car inspection, adesa inspections, high performance automotive inspection, IAAI inspections, IAA inspections, carchex inspections, toyota car inspections, honda car inspections, hyundai car inspections, hundai car inspections, acura car inspections, jeep, bmw car inspections, scion car inspections, lotus car inspections, mercedes car inspections, volks wagon car inspections, audi car inspections, ford car inspections, mitsubishi car inspections, subaru car inspections, nissan car inspections, lexus car inspections, infiniti car inspections, lamborgini car inspections, corvette car inspections, porsche car inspections, toyota, honda, hyundai, acura, jeep, bmw, scion, lotus, mercedes, volks wagon, audi, volkswagon, infiniti, lamborghini, corvette, ford, mitsubishi, subaru, nissan, lexus, porshe, prepurchase inspections, used car inspection, pre-purchase inspection, salvage, salvage inspection, car inspections, vehicle inspection, vehicle inspections, used vehicle inspection, used vehicle inspections, inspection, PPI, copart inspection, copart, insurance auto auction, auto auction, car inspector, classic car inspection, exotic car inspection, ase master certified, dealer inspection, carfax report, carcheck, used vehicle, used car, certified vehicle inspections, exotic car inspections, heavy equipment inspections, boat inspections, boat inspection, maserati inspection, vintage car inspection, adesa inspections, high performance automotive inspection, IAAI inspections, IAA inspections, carchex inspections, vehicle inspections florida, carfax scam, carfax, scam."/>
+
+
+
+<meta name="robots" content="index, follow" />
+
+<link title="Updates (Atom)" rel="alternate" type="application/atom+xml" href="http://www.certifiedvehicleinspections.net/updates_atom_1_0.xml" />
+
+<link title="Updates (RSS)" rel="alternate" type="application/rss+xml" href="http://www.certifiedvehicleinspections.net/updates_rss_2_0.xml" />
+
+<script id="snippet_FormWidget_0" type="text/javascript">
+
+var errorMessages = {ERR_REQUIRED:"Please fill in the required fields!", ERR_EMAIL:"Please enter a valid email address!"};
+
+var validationUtils = {empty:function (str) {
+
+return (/^\s*$/.test(str) || str == null || !isNaN(str));
+
+}};
+
+var validationFunctions = {validationRequired:function (f) {
+
+switch (f.type.toLowerCase()) {
+
+case "text":
+
+case "textarea":
+
+if (f.value == "") {
+
+return {valid:false, message:errorMessages.ERR_REQUIRED};
+
+} else {
+
+return {valid:true};
+
+}
+
+break;
+
+}
+
+}, validationEmail:function (f) {
+
+if (validationUtils.empty(f.value)) {
+
+return {"valid":true};
+
+} else {
+
+if (/^(([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)|)$/i.test(f.value)) {
+
+return {"valid":true};
+
+} else {
+
+return {valid:false, message:errorMessages.ERR_EMAIL};
+
+}
+
+}
+
+}};
+
+var validateForm = function (formParams) {
+
+var form, fieldId, field, errorDivId, em, validationResult, hasError;
+
+hasError = false;
+
+var clearError = function (id) {
+
+var f = document.getElementById(id);
+
+if (f) {
+
+f.className = "";
+
+}
+
+};
+
+var setError = function (id, message) {
+
+var f, em, newp, i, sb, errorClass;
+
+errorClass = formParams.fieldValidationParams[id].errorClass;
+
+if (!errorClass) {
+
+errorClass = formParams.errorClass;
+
+}
+
+if (!errorClass) {
+
+errorClass = "yodlecms_formError";
+
+}
+
+f = document.getElementById(id);
+
+if (f) {
+
+f.className = errorClass;
+
+}
+
+if (!document.getElementById(errorDivId)) {
+
+em = document.createElement("div");
+
+em.id = errorDivId;
+
+em.className = "yodlecms_formErrorDiv";
+
+newp = document.createElement("p");
+
+newp.appendChild(document.createTextNode(message));
+
+em.appendChild(newp);
+
+for (i = 0; i < form.getElementsByTagName("button").length; i += 1) {
+
+if (/submit/i.test(form.getElementsByTagName("button")[i].type)) {
+
+sb = form.getElementsByTagName("button")[i];
+
+sb.parentNode.insertBefore(em, sb);
+
+break;
+
+}
+
+}
+
+for (i = 0; i < form.getElementsByTagName("input").length; i += 1) {
+
+if (/image/i.test(form.getElementsByTagName("input")[i].type)) {
+
+sb = form.getElementsByTagName("input")[i];
+
+sb.parentNode.insertBefore(em, sb);
+
+break;
+
+}
+
+}
+
+}
+
+};
+
+if (formParams) {
+
+errorDivId = "yodlecms_" + formParams.formId + "_formErrorDiv";
+
+form = document.getElementById(formParams.formId);
+
+if (document.getElementById(errorDivId)) {
+
+em = document.getElementById(errorDivId);
+
+em.parentNode.removeChild(em);
+
+}
+
+if (formParams.fieldValidationParams) {
+
+for (fieldId in formParams.fieldValidationParams) {
+
+if (formParams.fieldValidationParams[fieldId].validationFunctions) {
+
+clearError(fieldId);
+
+for (validationIdx in formParams.fieldValidationParams[fieldId].validationFunctions) {
+
+validationResult = validationFunctions[formParams.fieldValidationParams[fieldId].validationFunctions[validationIdx]](document.getElementById(fieldId));
+
+if (!validationResult.valid) {
+
+setError(fieldId, validationResult.message);
+
+hasError = true;
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+return !hasError;
+
+};
+
+</script>
+
+<script type="text/javascript">var submit_swcwidget_36 = function() { document.getElementById("swcwidget_36").setAttribute("action", "/capture.weblead"); return validateForm({"formId":"swcwidget_36","errorClass":"yodlecms_formError","fieldValidationParams":{"swcwidget_36_0":{"validationFunctions":["validationRequired"]},"swcwidget_36_1":{"validationFunctions":["validationRequired","validationEmail"]},"swcwidget_36_2":{"validationFunctions":["validationRequired"]},"swcwidget_36_3":{"validationFunctions":[]},"swcwidget_36_4":{},"swcwidget_36_5":{}}}); };
+
+</script>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Michroma" />
+
+<script type="text/javascript" src="js/yodle-load-script.js"></script>
+
+<script type="text/javascript">
+
+// Load .js files that might conflict with the CMS 2.0 canvas below, using yodleLoadScript()
+
+yodleLoadScript('js/jquery-1.5.2.min.js');
+
+yodleLoadScript('js/site.js');
+
+</script>
+
+<link rel="StyleSheet" type="text/css" href="css/coupons.css" />
+
+<meta name="google-translate-customization" content="538e34e34a14953-2d0ce70a1ea6bad9-ga0d839bdd1050ada-23"></meta>
+
+</head>
+
+<body>
+
+
+
+<div id="container">
+
+<style type="text/css">
+GFont {
+	color: #0C0;
+}
+GFont {
+	color: #0F0;
+}
+.YB {
+	color: #FF0;
+	text-decoration: blink;
+	font-size: 24px;
+	font-style: italic;
+}
+#header .wrapper div center yb .YB .YB {
+	text-decoration: blink;
+}
+</style><div id="header">
+
+<div class="wrapper">
+
+<div>
+
+<div class="header-top">
+
+
+
+<div id="headerband">
+
+<div style="width: 50%; border: 1,00000,2;" class="yodlecms_column yodlecms_col_right1">
+
+
+
+<a href="index.php"></a>
+
+<h1><center>
+  <img src="../images/Logo.gif" width="619" height="129" alt="Certified Vehicle Inspections" />
+</center>
+
+
+<a href="https://www.facebook.com/CertifiedVehicleInspections"&amp;media=http%3A//www.certifiedvehicleinspections.com/images/LOGO.JPG&amp;description=For all of your pre-purchase used vehicle inspections needs." class="pin-it-button" count-layout="horizontal"><img src="navimages/facebook.png" width="30" height="30" /></a>
+
+<a href="http://www.twitter.com/inspectorauto" TARGET="_blank"><img src="navimages/twitter.png" alt="http://www.twitter.com/inspectorauto" width="30" height="30" title="http://www.buttonshut.com/" border="0"/></a>
+
+<g:plusone annotation="none"width="30" height="30"></g:plusone>
+
+</div>
+
+<div style="width: 50%" class="yodlecms_column yodlecms_col_right2">
+
+<div class="call">
+
+<h2>Call Today!</h2> 
+<h4><GFont>Closed Sundays</GFont></h4>
+<h3>8am - 8pm Eastern</h3>
+</br>
+<h3>(516) 847-5284</h3>
+
+<b><GFont>Nationwide Coverage</GFont> </b></br>
+<i>also including Alaska & Hawaii</i>
+
+
+
+<script type="text/javascript">
+
+(function() {
+
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+
+po.src = 'https://apis.google.com/js/plusone.js';
+
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+
+})();
+
+</script>
+
+</div>
+</div>
+
+
+<div style="clear: both"></div></div> 
+<center>
+<h2 class="YB">Ask about our storm damage appraisals!</h2></center>
+
+
+
+</div>
+<div class="topnav">
+
+<ul id="swcwidget_5_yodlecms_navbar">
+
+<li id="swcwidget_5_0"><a href="index.php">Home</a></li>
+
+<li id="swcwidget_5_1"><a href="login.php">Login Now!</a></li>
+
+<li id="swcwidget_5_2"><a href="about_us.php">About Us &amp; FAQ</a></li>
+
+<li id="swcwidget_5_3"><a href="auto_inspections.php">Auto Inspections</a></li>
+
+<li id="swcwidget_5_4"><a href="inspectors_wanted.php">Inspectors Wanted</a></li>
+
+<li id="swcwidget_5_5"><a href="contact_us.php" class="topnav">Contact Us</a></li>
+
+</ul></div></div></div>
+
+<center>
+
+<script type="text/javascript"><!--
+
+google_ad_client = "ca-pub-5017962281809552";
+
+/* Wide Ad */
+
+google_ad_slot = "8331529795";
+
+google_ad_width = 728;
+
+google_ad_height = 90;
+
+//-->
+
+</script>
+
+<script type="text/javascript"
+
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+
+</script>
+
+</center>
+
+
+
+<script type="text/javascript">
+
+
+
+  var _gaq = _gaq || [];
+
+  _gaq.push(['_setAccount', 'UA-22252853-1']);
+
+  _gaq.push(['_trackPageview']);
+
+
+
+  (function() {
+
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+  })();
+
+
+
+</script>
+
+<meta http-equiv="Cache-Control"
+	content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+</div>
+
+
+
+
+<!-- end of #header -->
+
+
+
+<div id="content">
+
+<div class="wrapper">
+
+<div>
+
+<div>
+
+<div>
+
+<div style="width: 638px" class="yodlecms_column yodlecms_col_right1 main">
+
+<div>
+
+<div>
+
+<div>
+
+<div class="top">
+
+<div>
+
+<div style="width: 198px" class="yodlecms_column yodlecms_col_right1 box box1">
+
+<div class="txtarea"><a href="../contact_us.php"><img alt="Contact Us" src="images/top3.jpg" /></a>
+
+<h3><a href="contact_us.php">Contact Us</a></h3></div></div>
+
+<div style="width: 198px" class="yodlecms_column yodlecms_col_right2 box box2">
+
+<div class="txtarea"><a href="../about_us.php"><img alt="About Us" src="images/top2.jpg" /></a>
+
+<h3><a href="about_us.php">About Us</a></h3></div></div>
+
+<div style="width: 198px" class="yodlecms_column yodlecms_col_right3 box box3">
+
+<div class="txtarea"><a href="../resources.php"><img alt="Business Associates" src="images/top1.jpg" /></a>
+
+<h3><a href="../resources.php">Business Associates</a></h3></div></div>
+
+<div style="clear: both"></div></div>
+
+
+</div>
+</div></div></div>
+
+<div class="main-content">
+
+<div>
+
+<center>
+<h2><center><font size="4"><strong>Is Carfax enough?</strong></font></center></h2>
+<object width="392" height="221"><param name="movie" value="http://www.youtube.com/v/HeA1doEIh4c?hl=en_US&amp;version=3&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/HeA1doEIh4c?hl=en_US&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<p>The simple answer is NO.  You should always get a certified vehicle inspector before buying a vehicle.  We check the car bumper to bumper before we approve it.  Nobody does a better job than us.</p>
+</center>
+
+
+<div><img style="width: 0px; height: 0px; visibility: hidden" border="0" alt="" width="0" height="0" src="http://c.gigcount.com/wildfire/IMP/CXNID=2000002.11NXC/bT*xJmx*PTEzMjEwMzgzNjE*ODYmcHQ9MTMyMTAzODM3NTAzNSZwPSZkPSZnPTImbz1hYTljMWFlMjUxZWY*MjFiOWIzYTYyMjI5/OGQ1ZGRhMCZvZj*w.gif" /><center>
+
+
+<object id="kaltura_player_1321038366" name="kaltura_player_1321038366" type="application/x-shockwave-flash" allowscriptaccess="always" allownetworking="all" allowfullscreen="true" data="http://cdnapi.kaltura.com/index.php/kwidget/wid/0_hdl520ql/uiconf_id/5590821" width="392" height="221">
+
+<param name="allowscriptaccess" value="always" />
+
+<param name="allownetworking" value="all" />
+
+<param name="allowfullscreen" value="true" />
+
+<param name="bgcolor" value="#000000" />
+
+<param name="movie" value="http://cdnapi.kaltura.com/index.php/kwidget/wid/0_hdl520ql/uiconf_id/5590821" />
+
+<param name="flashvars" value="autoPlay=false&amp;screensLayer.startScreenOverId=startScreen&amp;screensLayer.startScreenId=startScreen" /><a id="" href="http://corp.kaltura.com" >video platform</a><a id="" href="http://corp.kaltura.com/video_platform/video_management" >video management</a><a id="" href="http://corp.kaltura.com/solutions/video_solution" >video solutions</a><a id="" href="http://corp.kaltura.com/video_platform/video_publishing" >video player</a></object></center></div>
+
+<div class="indexintro">
+
+<h2><center><font size="4"><strong>Welcome To Certified Vehicle Inspections</strong></font></center></h2>
+
+<p><em><strong>Our goal is to provide our customers with accurate, unbiased, up to the minute information on any type of vehicle or motorcycle that you are considering purchasing, through any of today's marketplaces - local, long distance or online.</strong></em><br />
+
+<br />Certified Vehicle Inspections, Inc. (CVI) will send an ASE Master Certified Technician, factory-trained in your vehicle's make and model, to tell you exactly what you're about to purchase before buying that used car, truck or motorcycle. Hear from an expert if the vehicle is a solid, well-maintained vehicle. CVI is here to perform, in a professional, unbiased manner, a complete inspection providing all of the details you need to make an informed decision about the vehicle you are considering.</p>
+
+<p><br />
+
+Have a Ford? Get a Ford-trained technician. Have Mercedes? Get a Mercedes-trained technician. Have a Subaru? Get a Subaru trained technician. Have a Volkswagen? Get a Volkswagen trained technician. Have a Harley? Get a Harley-trained technician.well-informed decision about the vehicle you are about to purchase.</p>
+
+
+
+<p><center><span style="font-size: medium; font-weight: bold;"><strong>All of our techs are ASE certified for your vehicle's make.</strong><br />
+
+
+
+<strong>That's what makes us different</strong></span></center></p>
+
+
+
+<p><img style="font: inherit; font-size-adjust: inherit; font-stretch: inherit" title="" alt="" width="250" height="170" src="images/benz_before_body_shop.jpg" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img style="font: inherit; font-size-adjust: inherit; font-stretch: inherit" title="" alt="" width="250" height="170" src="images/benz_after_body_shop.jpg" /></p></div>
+
+<div></div>
+
+<p><em>Did you know that a vehicle that once looked like this......N</em><em>ow looks like this and could be sold to you without your knowledge. </em>Would you be able to tell? We can. </p>
+
+<p>An inspection by one of our ASE Master Certified Technicians could prevent you from buying a car like this. Many accidents are never reported. If two neighbors get into an accident, they are more likely to pay for the repairs privately, rather than call the police and insurance companies. So if the accident has never been reported, how will paying for a &quot;Car Report&quot; help? It won't, it's the key flaw in the system. Having a proper inspection of the vehicle can tell you if the vehicle you're interested in has been in a previous accident, and if it has, the quality of the repair work, both mechanically and structurally.</p>
+
+<p><span style="font-size: medium"><strong><font size="2"><em><center>Each year 400,000 totaled vehicles are back on the road again -Consumer Reports</center></em><br />
+
+<em><center>1 in 15 cars on the road today have been rebuilt from the salvage yard -ABC News 20/20</center></em></font></strong></span></p>
+
+<div></div>
+
+<p>&nbsp;</p>
+
+<div></div>
+
+<p><img id="inline_bJGmO4uRDll8" class="yodlecms_inlineimage" alt="" width="192" height="144" src="images/Sludgeinthevalvecoversfromlackofmaintainence2.jpg" /><img id="inline_FMISaB4lmOs8" class="yodlecms_inlineimage" alt="" width="191" height="143" src="images/Brokentransmissionringcouldhavebeencausedbuoverheati2.jpg" /><img src="images/Badgasolineormisfiringcondition2-1.jpg" alt="" name="inline_tznQcg8xf6Wd" width="191" height="143" class="yodlecms_inlineimage" id="inline_tznQcg8xf6Wd" /></p>
+
+<div></div>
+
+<p><em>Can you be sure they changed the oil? Did they maintain the transmission? Did they use the proper coolant?&nbsp;</em><strong>We Can Tell You</strong></p>
+
+<p>Our ASE Master Certified Technicians can notify you of any issues related to the vehicle so that you can make an informed decision to either purchase, negotiate or pass on the vehicle in question.<br />
+
+<span style="font-size: medium"><strong><em><font size="2">
+
+<br />
+
+<center>90% of vehicles have maintenance items not performed -National Car Care Council</center></font></em></strong></span></p>
+
+<div></div>
+
+<p>&nbsp;</p>
+
+<div></div>
+
+<p style="text-align: center"><img id="inline_k1HOXdEbE2k3" class="yodlecms_inlineimage" alt="" width="289" height="198" src="images/odometer-tamper_large2.jpg" /></p>
+
+<div>
+
+  <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Has this happened to you?</em></p>
+
+</div>
+
+<div></div>
+
+<p>Despite the change to digital odometers in newer cars, the average buyer would be unaware that odometer tampering would be taking place unless they knew what to look for and how to find it. Besides being a crime, this deception practice can be found only by expertly-trained technicians. Our ASE Master Certified Technicians have the knowledge and the experience to know immediately if your mileage has been tampered with.</p>
+
+<p><span style="font-size: medium"><em><strong><font size="2">1 in 4 cars on the road today have altered</font></strong></em></span><span style="font-size: medium"><font size="2"><em><strong> mileage -CBS News 60 Minutes</strong></em><br />
+
+<em><strong>50% of all leased cars for sale have rolled-back odometers -Jack Gillis, The Used Car Book</strong></em><br />
+
+<em><strong>Car titled and odometer statements can be illegally &quot;cleaned&quot; -Automotive News</strong></em></font></span></p>
+
+<div></div>
+
+<p>&nbsp;</p>
+
+<div></div>
+
+<p style="text-align: center"><img id="inline_TeBLVDB8HqyJ" class="yodlecms_inlineimage" alt="" width="278" height="208" src="images/Paintgaugeisusedtotestforrepainting2.jpg" /></p>
+
+<div>
+
+  <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Can you tell a well-kept vehicle from a new paint job?</em></p>
+
+  <p>&nbsp;</p>
+
+</div>
+
+<div></div>
+
+<p>Not always, and not if it's done right. Specially designed gauges in the hands of qualified inspectors can tell if the paint is thicker or thinner than it should be, indicating if a car has been repainted, and the quality of that paint job. This could hide many things on a vehicle that the average consumer would not be aware of because the car &quot;looks good&quot; you can be led to believe that this is a quality vehicle, or that quality repairs have been done, when in fact it may not be. This can happen whether a car is purchased from a dealer or an individual.<br />
+
+<span style="font-size: medium"><strong><em><font size="2">Each year there is over $35 Billion in vehicle accident damage; and over 40% of the repairs are substandard. - Farmers Insurance</font></em></strong></span></p></div></div></div>
+
+<div style="width: 246px" class="yodlecms_column yodlecms_col_right2 sidebar">
+
+<center>
+
+<div id="google_translate_element"></div><script type="text/javascript">
+
+function googleTranslateElementInit() {
+
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+
+}
+
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</center>
+
+        
+
+<div class="contact">
+
+<div>
+
+<div>
+
+<div class="contact-top">
+<center><img src="../images/getQuote.png" width="173" height="43" alt="get quote" /></center><br />
+</div></div></div></div>
+
+<div>
+
+<div>
+
+<div class="txtarea">
+
+<div>
+
+<h2>Our Services</h2></div>
+
+<div>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0"><a id="" href="http://certifiedvehicleinspections.com/witness.php" >Expert Witness Testimony</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0">Used Car Inspections</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0"><a id="" href="http://certifiedvehicleinspections.com/salvage_inspections.php" >Salvage Inspections</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0"><a id="" href="http://certifiedvehicleinspections.com/Classic_Cars.php" >Classic Car Inspections</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0">Exotic Car Inspections</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0">Boat Inspections</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0">Marine Inspections</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0">Motorcycle Inspections</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0"><a id="" href="http://certifiedvehicleinspections.com/heavy_equipment.php" >Heavy Equipment Inspections</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0">Auction inspections</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0">Pre-purchase inspections</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0">Warranty inspections</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0">Damage Appraisals</a></li></ul>
+
+</div></div></div></div>
+
+<div class="memberships">
+
+<h2>We Also Serve</h2></div>
+
+<div>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0">Brokers</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0">Warranty Companies</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0">Financial Institutions</a></li></ul>
+
+<ul id="swcwidget_78_yodlecms_navbar">
+
+<li id="swcwidget_78_0">Leasing Companies</a></li></ul>
+
+</div>
+
+
+
+
+
+<div class="hours">
+
+<h2 style="text-align: center">Business Hours</h2>
+
+<p style="text-align: center"><span style="font: inherit; font-size-adjust: inherit; font-stretch: inherit; color: #FF0;">6 Days a Week!</span></p>
+
+<p align="center"><span style="font: inherit; font-size-adjust: inherit; font-stretch: inherit; color: #0F0;">8 a.m. - 8 p.m. EST</span>&nbsp;</p>
+<p align="center">Closed Sundays</p>
+
+<p style="text-align: center">&nbsp;</p></div>
+
+<div class="whyus"></div>
+
+<h2 class="whyus">Why Choose Us?</h2>
+
+<div class="whyus"></div>
+
+<div class="whyus"></div>
+
+<div class="whyus">
+
+<ul>
+
+<li>Only ASE Master Certified Technicians</li>
+
+<li>Damage Appraisals Available</li>
+
+<li>AutoCheck Reports Available</li></ul>
+
+<center>
+
+
+
+<div class="hours">
+
+<h2 style="text-align: center">Our Sponsors</h2>
+
+<p style="text-align: center"><span style="font: inherit; font-size-adjust: inherit; font-stretch: inherit; color: #FF0;">
+
+<a href="http://www.jdoqocy.com/click-5787181-10418722">
+
+<img src="http://www.tqlkg.com/image-5787181-10418722" width="150" height="40" alt="AutoCheck logo" border="0"/></a>
+
+</p>
+
+<p style="text-align: center"><span id="yui_3_2_0_5_1341678298116580">Looking for a used car? Get a FREE VIN check at AutoCheckÂ®.</span></p>
+
+<p style="text-align: center">&nbsp;</p>
+
+
+
+</div>
+
+
+
+<script type="text/javascript"><!--
+
+google_ad_client = "ca-pub-5017962281809552";
+
+/* Tall ad */
+
+google_ad_slot = "2055492410";
+
+google_ad_width = 160;
+
+google_ad_height = 600;
+
+//-->
+
+</script>
+
+<script type="text/javascript"
+
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+
+</script>
+
+
+
+</center>
+
+
+
+</div></div>
+<div style="clear: both"></div></div></div></div>
+
+<div id="footer">
+  <div>
+    <div class="inner">
+      <div>
+        <div style="width: 250px" class="yodlecms_column yodlecms_col_right1 column column1">
+          <div class="txtarea">
+            <h2>Certified Vehicle Inspections</h2>
+            <p>You Need To Know What You're About To Buy</p>
+            <p>Nationwide Inspections</p>
+            <h3>(516) 847-5CVI (5284)</h3>
+          </div>
+        </div>
+        <div style="width: 250px" class="yodlecms_column yodlecms_col_right2 column column2">
+          <div>
+            <h2>Site Map</h2>
+          </div>
+          <div class="bottomnav">
+            <ul id="swcwidget_28_yodlecms_navbar">
+              <li id="swcwidget_28_0"><a href="index.php">Home</a></li>
+              <li id="swcwidget_28_1"><a href="about_us.php">About Us &amp; FAQ</a></li>
+              <li id="swcwidget_28_2"><a href="auto_inspections.php">Auto Inspections</a></li>
+              <li id="swcwidget_28_3"><a href="inspectors_wanted.php">Inspectors Wanted</a></li>
+              <li id="swcwidget_28_4"><a href="contact_us.php">Contact Us</a></li>
+              <li>For more information call (516)-521-0923</li>
+            </ul>
+          </div>
+        </div>
+        <div style="width: 248px" class="yodlecms_column yodlecms_col_right3 column column3">
+          <div class="payments">
+            <h2>We accept the following payment methods:</h2>
+            <ul id="paymentOptionsList-swcwidget_30">
+              <li><img alt="American Express" src="icon_payment_amex_small.png" /></li>
+              <li><img alt="Visa" src="icon_payment_visa_small.png" /></li>
+              <li><img alt="MasterCard" src="icon_payment_mastercard_small.png" /></li>
+              <li><img alt="PayPal" src="icon_payment_paypal_small.png" /></li>
+              <li><img alt="Discover" src="icon_payment_discover_small.png" /></li>
+            </ul>
+          </div>
+          <div class="txtarea">
+            <p>Copyright Certified Vehicle Inspections, All Rights reserved. | <a class="privacy-link" href="privacy_policy.html">Privacy Policy</a></p>
+          </div>
+        </div>
+        <div style="clear: both"></div>
+      </div>
+    </div>
+  </div>
+  <center>
+    <script type="text/javascript"><!--
+google_ad_client = "ca-pub-5017962281809552";
+/* Wide Ad */
+google_ad_slot = "8331529795";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+    </script>
+    <script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </center>
+</div>
+&nbsp;</div></div><!-- end of #content -->
+
+
+
+
+
+<div id="form-overlay"></div>
+
+<div id="form">
+
+<div>&nbsp;</div></div></div><!-- end of #container -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22252853-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+
+<script type="text/javascript" charset="utf-8">
+
+  var _ptq = _ptq || [];
+
+  var _punchtab_settings = {
+
+    key: "c3a73d9117079b83fac4ceac7d000d8d",
+
+    bar: {}
+
+  };
+
+
+
+
+  (function() {
+
+    var pt = document.createElement('script'); pt.type = 'text/javascript'; pt.async = true;
+
+    pt.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'static.punchtab.com/js/pt.js';
+
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pt, s);
+
+  })();
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=9" />
+    <link rel="shortcut icon" href="/Content/images/favicon.ico" type="image/x-icon" />
+    
+    <!-- Standard iPhone --> 
+    <link rel="apple-touch-icon" sizes="57x57" href="/Content/images/cc-icon-57x57.png" />
+    <!-- Retina iPhone --> 
+    <link rel="apple-touch-icon" sizes="114x114" href="/Content/images/cc-icon-114x114.png" />
+    <!-- Standard iPad --> 
+    <link rel="apple-touch-icon" sizes="72x72" href="/Content/images/cc-icon-72x72.png" />
+    <!-- Retina iPad --> 
+    <link rel="apple-touch-icon" sizes="144x144" href="/Content/images/cc-icon-144x144.png" />
+    
+
+    
+    <meta id="metaviewport" name="viewport" content="width=1200, initial-scale=1.0, minimum-scale=0.3, maximum-scale=3.0" /> 
+    <title>ŠKODA Car Configurator</title>
+
+    <link rel="stylesheet" href="/Content/reset.css?version=2.1.0.16192" media="all" />
+    <link rel="stylesheet" href="/Content/SkodaProOfficeFont/stylesheet.css?version=2.1.0.16192" media="all" />
+    <link rel="stylesheet" href="/Content/skoda-brand.css?version=2.1.0.16192" media="all" />
+    <link rel="stylesheet" href="/Content/htmlcc-alert.css?version=2.1.0.16192" media="all" />
+    <link rel="stylesheet" href="/Content/htmlcc-websize.css?version=2.1.0.16192" media="all" />
+    <link rel="stylesheet" href="/Content/htmlcc-tablet.css?version=2.1.0.16192" media="all" />
+    <!--[if IE]> <link rel="stylesheet" href="/Content/htmlcc-websize-ie-general-bugfix.css?version=2.1.0.16192" media="all" /> <![endif]-->
+    <!--[if lte IE 8]> <link rel="stylesheet" href="/Content/htmlcc-websize-ie8bugfix.css?version=2.1.0.16192" media="all" /> <![endif]-->
+    
+      
+
+    <script src="/Scripts/jquery-1.7.2.min.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/jquery.validate.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/jgestures.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/json2.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/vred/vred.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/hammer/hammer.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/hammer/jquery.hammer.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/hammer/jquery.specialevent.hammer.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/SkodaAuto/htmlcc.vred.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/SkodaAuto/string.libs.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/SkodaAuto/htmlcc.libs.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/SkodaAuto/htmlcc.alert.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/SkodaAuto/htmlcc.api.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/SkodaAuto/htmlcc.workflow.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/SkodaAuto/htmlcc.financial.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/SkodaAuto/htmlcc.garage.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script src="/Scripts/SkodaAuto/htmlcc.js?version=2.1.0.16192" type="text/javascript"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-41855294-1']);
+        //_gaq.push(['_trackPageview']);
+        _gaq.push(['_trackPageview', location.pathname + location.search + location.hash]);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>     
+
+</head>
+<body>
+    <div class="outer-main-container">
+        <div class="header"><header>
+            <div class="centered">
+                <div class="skoda-logo">
+                    <a href="http://www.skoda-auto.com" class="skoda-logo-href" target="_blank"><img src="/Content/Images/skoda-logo.png" alt="ŠKODA AUTO" /></a>
+                </div>
+            </div>
+        </header></div>
+        <div class="section"><section>
+            <div class="centered">
+                <div class="configurator-target web-size">
+                   The Car Configurator is loading. Please wait…                    
+                </div>
+            </div>
+        </section></div>
+        <div class="footer"><footer>
+            <div class="centered">
+                <div class="footer-text">
+                    &#169; ŠKODA AUTO 2013
+                </div>
+            </div>
+        </footer></div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // setting of translation source handler
+            String.resourceDataHandler = "/Resources/Index";
+            
+            // iframe check
+            var iframed = false;
+            try {
+                if (top.location.href !== window.location.href) {
+                    iframed = true;
+                }
+            } catch (e) {
+                // if you're in an iframe in a different domain, the top.location check
+                // results in a security exception
+                iframed = true;
+            }
+            if (iframed === true && location.href.match(/fra/i) == null) {
+                $('body').addClass('iframed');
+            }
+
+            var $cfg = $('div.configurator-target');
+
+            if (navigator.userAgent.match(/iPad/i) != null) {
+                $cfg.addClass('tablet');
+                $('body').append($cfg).find('div.outer-main-container').remove();
+                $('#metaviewport').attr('content', 'width=1024,user-scalable=no');
+            }
+
+            // run car configurator here
+            $cfg.htmlcc({
+                instance: 'cze',
+                salesprogram: 'cze',
+                culture: 'cs-cz',
+                model: '3t5',
+                carline: '69414',
+                versionUrl: '/Version',
+                configureUrl: '/ConfigureRefactored'
+            });
+        });
+    </script>
+</body>
+</html>
