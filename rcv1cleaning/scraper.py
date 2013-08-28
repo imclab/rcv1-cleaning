@@ -15,7 +15,7 @@ def main():
     files = get_url_list_files()
     for file in files:
         print '** Starting file', file
-        with open('/home/ghackeling/nsp/rcv1-cleaning/data/urls/%s' % file) as f:
+        with open('/home/data/urls/%s' % file) as f:
             urls = f.read().splitlines()
             for url in urls:
                 print '**** Starting URL', url, 'in file', file
@@ -35,7 +35,7 @@ def main():
                     hash = writeOut(url, r.text)
                     hashesList.append((url, hash))
 
-    out = open('/home/ghackeling/nsp/rcv1-cleaning/data/pages/urls-hashes.txt', 'w')
+    out = open('/home/data/pages/urls-hashes.txt', 'w')
     for hash in hashesList:
         out.write("%s\n" % hash)
     out.close()
@@ -46,7 +46,7 @@ def writeOut(url, document):
     if encoding is None:
         encoding = 'utf-8'
     hash = hashlib.md5(url).hexdigest()
-    out = open('/home/ghackeling/nsp/rcv1-cleaning/data/pages/page-%s.txt' % hash, 'w')
+    out = open('/home/data/pages/page-%s.txt' % hash, 'w')
     try:
         # document = document.decode(encoding, 'replace')
         out.write(document.encode('utf-8', 'replace'))
@@ -59,7 +59,7 @@ def writeOut(url, document):
 
 
 def get_url_list_files():
-    os.chdir("/home/ghackeling/nsp/rcv1-cleaning/data/urls")
+    os.chdir("/home/data/urls")
     files = []
     for file in os.listdir("."):
         if file.endswith(".txt"):
