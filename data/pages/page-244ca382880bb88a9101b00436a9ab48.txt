@@ -1,0 +1,734 @@
+<script type="text/javascript">
+
+info=[
+	["<a href='http://www.aamcoBlog.com' target='_blank' class='linkNews'>Visit our blog at InterAAct with AAMCO.</a>"],
+	["<!--a href='no_credit_check_financing_plans_for_auto_repair.asp' class='linkNews'>No Credit? No Problem at AAMCO!</a-->"],
+	["<!--a href='hotNews_keepFamilyCool.asp' class='linkNews' style='color: #3366FF;'>KEEP YOUR FAMILY COOL THIS SUMMER</a-->"]
+]
+
+step=1
+nextMessage=1
+
+function initTSV1(){
+tsvDisplay=document.getElementById("tsvcont")
+
+for(var i=0;i<2;i++){
+newDiv=document.createElement("DIV")
+newDiv.setAttribute("id","tsvdiv"+i)
+newDiv.onmouseover=function(){clearTimeout(timer)}
+newDiv.onmouseout=function(){scrollTSV1()}
+newDiv.style.position="absolute"
+newDiv.style.padding="0 5 10 5" // top right bottom left
+tsvDisplay.appendChild(newDiv)
+}
+
+tsvDv0=document.getElementById("tsvdiv0")
+tsvDv1=document.getElementById("tsvdiv1")
+tsvDv0.innerHTML=info[0]
+tsvDv1.innerHTML=info[1]
+
+tsvDv0.style.top=tsvDisplay.offsetHeight
+tsvDv1.style.top=tsvDisplay.offsetHeight+tsvDv0.offsetHeight+"px"
+
+scrollTSV1()
+}
+
+function scrollTSV1(){
+tsvDv0Pos=parseInt(tsvDv0.style.top)
+tsvDv1Pos=parseInt(tsvDv1.style.top)
+
+tsvDv0Pos-=step
+tsvDv1Pos-=step
+
+tsvDv0.style.top=tsvDv0Pos+"px"
+tsvDv1.style.top=tsvDv1Pos+"px"
+
+if(tsvDv0Pos< -tsvDv0.offsetHeight){
+
+nextMessage++
+if(nextMessage==info.length){nextMessage=0}
+tsvDv0.innerHTML=info[nextMessage]
+
+if(tsvDv1.offsetHeight<tsvDisplay.offsetHeight){
+
+if(tsvDv1.offsetTop<tsvDisplay.offsetHeight-tsvDv1.offsetHeight){
+tsvDv0.style.top=tsvDisplay.offsetHeight+"px"
+}
+else{
+tsvDv0.style.top=tsvDv1.offsetTop+tsvDv1.offsetHeight+"px"
+}
+
+}
+else{
+tsvDv0.style.top=tsvDv1.offsetTop+tsvDv1.offsetHeight+"px"
+}
+
+}
+
+if(tsvDv1Pos< -tsvDv1.offsetHeight){
+
+nextMessage++
+if(nextMessage==info.length){nextMessage=0}
+tsvDv1.innerHTML=info[nextMessage]
+
+if(tsvDv0.offsetHeight<tsvDisplay.offsetHeight){
+
+if(tsvDv0.offsetTop<tsvDisplay.offsetHeight-tsvDv0.offsetHeight){
+tsvDv1.style.top=tsvDisplay.offsetHeight+"px"
+}
+else{
+tsvDv1.style.top=tsvDv0.offsetTop+tsvDv0.offsetHeight+"px"
+}
+
+}
+else{
+tsvDv1.style.top= tsvDv0.offsetTop+tsvDv0.offsetHeight+"px"
+}
+
+}
+
+timer=setTimeout("scrollTSV1()",80)
+
+}
+
+// add onload="initTSV1()" to the opening BODY tag
+
+</script>
+<html>
+<head>
+	
+	<!--title>AAMCO Transmissions &amp; Total Car Care. The Experts in Transmissions, A/C, Brakes, Tune-Ups and more</title-->
+
+
+
+<title>AAMCO - The Experts in Transmissions, Car AC, Brakes Service, Tune-Ups & Total Car Care</title>
+<link rel="stylesheet" type="text/css" href="includes/aamcoHQ.css">
+<link rel="icon" href="images/IconAAMCOnew.ico" type="image/x-icon">
+<link rel="shortcut icon" href="images/IconAAMCOshort.ico" type="image/x-icon">
+
+</head>
+
+
+
+ 
+
+<body background="images/bgMain.jpg" onLoad="initTSV1()" leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
+<center>
+<!--[if gte IE 5]>
+<style type="text/css">
+.navmenu li
+{
+    float: left;
+    width: 8em;
+    behavior: url( ie_menus.htc );
+}
+</style>
+<![endif]-->
+
+<!--[if gte IE 5]><![if lt IE 8]>
+<style type="text/css">
+.navmenu li
+{
+  behavior: url( ie_menus.htc );
+}
+</style>
+<![endif]><![endif]-->
+
+<style type="text/css">
+	/*
+	Styling for CSS-based drop-down menus.
+
+	(C) Copyright 2006 Just Software Solutions Ltd.
+	Distributed under the Boost Software License, Version 1.0.
+		(See http://www.boost.org/LICENSE_1_0.txt)
+	*/
+
+
+
+	@media all{
+	.navmenu,
+	.navmenu ul,
+	.navmenu li
+	{
+		padding: 0px;
+		margin: 0px;
+	}
+	.navmenu > li
+	{
+		float: left;
+	}
+	.navmenu li
+	{
+		list-style-type: none;
+
+		font-family: calibri, Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #ffffff; font-weight: bold;
+		border-right: solid 1px #ffffff;
+		/*background-color: #5c7c98;*/
+		
+		padding: 0px;
+		height: 12px;
+		text-align: center;
+	}
+	.navmenu ul
+	{
+		display: none;
+		position: absolute;
+		margin-left: 0px;
+		margin-top: 0px;
+	}
+		.navmenu li:hover > ul
+	{
+		display: block;
+	}
+	.navmenu ul.parent_hover
+	{
+		display: block;
+	}
+	.navmenu a
+	{
+		color: #ffffff;
+		background: none;
+		display: block;
+		width: 100%;
+		text-decoration: none;
+	}
+		.navmenu li:hover
+	{
+		color: #ffffff;
+		background-color: #5c7c98;
+		/*background-color: #5c7c98;*/
+	}
+	.navmenu li.hover,
+		.navmenu a:hover
+	{
+		color: #ffffff;
+		background-color: #5c7c98;
+		text-decoration: none;
+		/*background-image: url( images/dropDownBG.png );*/
+	}
+	.navmenu ul ul
+	{
+		margin-top: -1.2em;
+		left: 99%;
+	}
+	.navmenu span
+	{
+		display: block;
+	}
+	.navmenu
+	{
+		float: left;
+		width: 100%;
+		color: black;
+
+	}
+	.endmenu
+	{
+		clear: left;
+	}
+	}
+</style>
+
+<attach event="onmouseover" handler="mouseover" />
+<attach event="onmouseout" handler="mouseout" />
+<script type="text/javascript">
+function mouseover()
+{
+  element.className += ' hover';
+  for(var x=0;x!=element.childNodes.length;++x)
+  {
+    if(element.childNodes[x].nodeType==1)
+    {
+      element.childNodes[x].className += 
+        ' parent_hover';
+    }
+  }
+}
+
+function mouseout()
+{
+  element.className =
+    element.className.replace(/ ?hover$/,'');
+  for(var x=0;x!=element.childNodes.length;++x)
+  {
+    if(element.childNodes[x].nodeType==1)
+    {
+      element.childNodes[x].className =
+      element.childNodes[x].className.replace
+        (/ ?parent_hover$/,'');
+    }
+  }
+}
+</script>
+
+
+<table width="866" border="0" cellspacing="0" cellpadding="0">
+	<tr>	
+		<td colspan="4" align="right"><img src="images/top1800.png" width="152" height="25" alt="" border="0" /></td>
+	</tr>
+	<tr style="background-image: url( images/m_topBG.png );">
+		<td width="23"><img src="images/topM_LC.png" width="23" height="24" alt="" border="0" /></td>
+		<td style="background-image: url( images/m_topBG.png );">
+			<ul class="navmenu">
+				<li style="width: 127px;"><a href="Transmission_and_total_car_care_service.asp">AAMCO SERVICES</a>
+					<ul>
+						<li style="background-color: none;">
+							<div style="width: 530px; filter: alpha(opacity=95); opacity:0.95; -moz-opacity:0.95;">
+								<table background="images/dropDownBG.png" style="padding-top: 15px;" width="530" cellpadding="0" cellspacing="0">
+									<tr>
+										<td class="textDropDown" valign="top" style="padding-left: 10px;" width="280">
+											<a href="Car_Transmission_Automatic_Manual_repair_and_Service.asp" class="linkDropdown"><b>Transmission</b></a><br/>
+											<a href="Rebuilt_Transmission_Auto-Man.asp" class="linkDropdown">Discover the difference of an AAMCO Rebuilt Transmission</a><br/>
+											<a href="Troubleshooting_Automatic_Transmission.asp" class="linkDropdown">Multi-Point Inspection &amp; Diagnostics Services</a><br/>
+											<a href="Auto_Transmission_Service_and_Clutch_Repair.asp" class="linkDropdown">Transmission Services</a><br/>
+											<a href="Transmission_Flush_Filter_Change-maintenance-service.asp" class="linkDropdown">Power Purge and Maintenance Services</a><br/>
+											<a href="4x4-Four_Wheel_Drive-TransmissionServices.asp" class="linkDropdown">Four-Wheel Drive (4x4) Services</a><br/>
+											<a href="Transmission_fluid_change_filter&flush-maintenance-service.asp" class="linkDropdown">Transmission Tips from AAMCO</a><br/>
+											<a href="Transmission_cost_repair_and_service.asp" class="linkDropdown">To Service or not to Service</a><br/>
+										</td>
+										<td class="textDropDown" valign="top" style="border-left: solid 1px #ffffff; padding-left: 10px;" width="250">
+											<a href="AAMCO_Total_Car_Care_Transmission_Brakes_and_more.asp" class="linkDropdown"><b>Total Car Care</b></a><br/>
+											<a href="Check_Engine_light_on-FREE_Check.asp" class="linkDropdown">Check Engine Light Service</a><br/>
+											<a href="AAMCO_ProtectCheck_Car_Maintenance.asp" class="linkDropdown">AAMCO Multi-Point Inspection</a><br/>
+											<a href="BRAKE_REPAIR_Service_for_your_Car.asp" class="linkDropdown">Brakes</a><br/>
+											<a href="Automotive_Repair_scheduled_Maintenance.asp" class="linkDropdown">Factory Recommended Maintenance</a><br/>
+											<a href="Automotive_Repair_scheduled_Maintenance.asp#09" class="linkDropdown">Oil, Lube &amp; Filter Changes</a><br/>
+											<a href="Air_Conditioning_repair_service-AAMCO.asp" class="linkDropdown">Auto Air Conditioning System (A/C)</a><br/>
+											<a href="Car_TuneUp_performance_Automotive_Fuel_Efficiency.asp" class="linkDropdown">Tune-Ups</a><br/>
+											<a href="Radiators_CoolingSystems.asp" class="linkDropdown">Radiators/Cooling Systems</a><br/>
+											<a href="Muffler_and_Exhaust_system_repair.asp" class="linkDropdown">Exhaust</a><br/>
+											<a href="Shock_and_Struts.asp" class="linkDropdown">Shock/Struts</a><br/>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</li>
+						<!--li><a href="services_trans.asp">Transmission</a></li>
+						<li><a href="services_transRebuilt.asp">Rebuilt Transmission</a></li-->
+						<!--li><a href="/database/">Database Design &gt;</a>
+							<ul>
+								<li><a href="/database/database-tip-use-an-artificial-primary-key.html" style="min-width: 12em">Use an artificial primary key</a></li>
+								<li><a href="/database/database-tip-use-parameterized-queries.html">Use parameterized queries</a></li>
+								<li><a href="/database/database_tip_use_transactions.html">Use transactions</a></li>
+							</ul>
+						</li>
+						<li><a href="/reviews/">Book reviews</a></li-->
+					</ul>
+				</li>
+				<li style="width: 46x; padding: 0px 6px;"><a href="javascript: void(0);">FLEET</a>
+					<ul>
+						<li>
+							<div style="width: 180px; filter: alpha(opacity=95); opacity:0.95; -moz-opacity:0.95;">
+								<table background="images/dropDownBG.png" style="padding-top: 5px; padding-bottom: 10px;" width="180" cellpadding="0" cellspacing="0">
+									<tr>
+										<td class="textDropDown" valign="top" style="padding-left: 10px;">
+											<a href="fleet/" target="_blank">AAMCO's Fleet services</a><br/>
+											<a href="fleet/apply_online.asp" target="_blank">Apply online</a><br/>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</li>
+						<!--li><a href="http://www.aamco.com/fleet/" target="_blank">AAMCO's Fleet services</li>
+						<li><a href="http://www.aamco.com/fleet/apply_online.htm" target="_blank">Apply online</a></li-->
+					</ul>
+				</li>
+				<li style="width: 82px;"><a href="AAMCO_extended_car-auto_warranty.asp">WARRANTIES</a></li>
+				<li style="width: 62px;"><a href="career_opportunities_information.asp">CAREERS</a></li>
+				<li style="width: 150px;"><a href="http://www.aamcofranchises.com/" target="_blank">FRANCHISE WITH AAMCO</a></li>
+				<li style="width: 161px;"><a href="storelocator/index.asp">FIND AN AAMCO NEAR YOU</a></li>
+				<li style="width: 144px;"><a href="rewards/index.html">AAMCO REWARDS CLUB</a></li>
+			</ul>
+		</td>
+		<!--td width="160" class="menuTop">
+			<div style="border-right: solid 1px #cacaca; height: 20px; vertical-align: middle;">
+				<a href="temp/index.html" class="textMtop">AUTO REPAIR SERVICES</a>
+			</div>
+		</td>
+		<td class="menuTop" width="45" style="border-right: solid 1px #cacaca;"><a href="javascript: void(0);" class="textMtop">FLEET</a></td>
+		<td class="menuTop" width="90" style="border-right: solid 1px #cacaca;"><a href="javascript: void(0);" class="textMtop">WARRANTIES</a></td>
+		<td class="menuTop" width="67" style="border-right: solid 1px #cacaca;"><a href="javascript: void(0);" class="textMtop">CAREERS</a></td>
+		<td class="menuTop" width="159" style="border-right: solid 1px #cacaca;"><a href="http://www.aamcofranchises.com/" target="_blank" class="textMtop">FRANCHISE WITH AAMCO</a></td>
+		<td class="menuTop" width="100" style="border-right: solid 1px #cacaca;"><a href="javascript: void(0);" class="textMtop">FIND A CENTER</a></td>
+		<td class="menuTop" width="230"><span style="font-size: 16px;">1.800.GO.AAMCO</span></td-->
+		<td align="right" width="26"><img src="images/topM_RC.png" width="26" height="24" alt="" border="0"/><br/></td>
+	</tr>
+	<!--tr>
+		<td><img src="images/topM_LC.png" width="23" height="24" alt="" border="0" /></td>
+		<td><a href="javascript: void(0);"><img src="images/topM_services.png" width="135" height="24" alt="AAMCO Services" border="0" /></a></td>
+		<td><a href="javascript: void(0);"><img src="images/topM_fleet.png" width="55" height="24" alt="Fleet" border="0" /></a></td>
+		<td><a href="javascript: void(0);"><img src="images/topM_warranties.png" width="106" height="24" alt="Warranties" border="0" /></a></td>
+		<td><a href="javascript: void(0);"><img src="images/topM_careers.png" width="77" height="24" alt="Careers" border="0" /></a></td>
+		<td><img src="images/topM_1800.png" width="139" height="24" alt="1.800.GO.AAMCO" border="0" /></td>
+		<td><a href="http://www.aamcotransmission.com/" target="_blank"><img src="images/topM_franchise.png" width="305" height="24" alt="FRANCHISE OPPORTUNITIES WITH AAMCO" border="0" /></a></td>
+		<td><img src="images/topM_RC.png" width="26" height="24" alt="" border="0"/><br/></td>
+	</tr-->
+</table>
+<table border="0" width="866" cellspacing="0" cellpadding="0">
+	
+<tr>
+        <td align="center" width="262" background="images/stage_bg.png" valign="top">
+            <img src="images/logo_notAnimated.png" width="262" height="179" border="0" alt="AAMCO Logo" />
+            <br/>
+            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="233" height="100" id="changingWords" align="middle">
+                <param name="allowScriptAccess" value="sameDomain" />
+                <param name="allowFullScreen" value="false" />
+                <param name="movie" value="flash/changingWords.swf" />
+                <param name="quality" value="high" />
+                <param name="wmode" value="transparent" />
+                <param name="bgcolor" value="#142d6a" />
+                <embed src="flash/changingWords.swf" quality="high" wmode="transparent" bgcolor="#000099" width="233" height="100" name="changingWords" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+            </object>
+        </td>
+        <td width="604" valign="top" background="images/stage_bg.png">
+            <img src="images/bigBan_family604x280.jpg" width="604" height="280" border="0" alt="Save up to 50% on Future AAMCO services ...With the AAMCO Rewards Club!" />
+        </td>
+    </tr>
+
+	<!--tr>
+		<td align="center" valign="top">
+			<a href="http://aamco.promo.eprize.com/anniversaryfb/?affiliate_id=dotcom_main" target="_blank">
+            	<img src="images/aamcosweepstakes_866x290-FinalWeek.png" align="absmiddle" title="Like us on Facebook for a chance to win a 2013 or 1963 Corvette - It's the final week" width="866" height="290" alt="Like us on Facebook for a chance to win a 2013 or 1963 Corvette - It's the final week" border="0" />
+            </a>
+		</td>
+	</tr-->
+	<tr>
+		<td colspan="2" style="height: 8px; background: #1c3d80"></td>
+	</tr>
+	<tr>
+	<td colspan="2" background="images/m_topBG.png" style="padding-left: 10px; height: 24px; border-left: solid 1px #1c3d80; border-right: solid 1px #1c3d80;">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+          	<tr>
+               	<td class="menuSub">
+                    	<b>Featured Services: </b>
+                    	<a href="Car_Transmission_Automatic_Manual_repair_and_Service.asp" class="linkSubMenu">Transmission Repair</a> | 
+                         <a href="BRAKE_REPAIR_Service_for_your_Car.asp" class="linkSubMenu">Brake Repair Service<!--Brakes &amp; Brake Repair Service--></a> | 
+                         <a href="Car_TuneUp_performance_Automotive_Fuel_Efficiency.asp" class="linkSubMenu">Car Tune-Up</a> | 
+                         <a href="Automotive_Repair_scheduled_Maintenance.asp#09" class="linkSubMenu">Oil Change</a> | 
+                         <a href="Muffler_and_Exhaust_system_repair.asp" class="linkSubMenu">Exhaust Services</a> | 
+                         <a href="Check_Engine_light_on-FREE_Check.asp" class="linkSubMenu">Check Engine Light</a> | 
+                         <!--a href="AAMCO_Total_Car_Care_Transmission_Brakes_and_more.asp" class="linkSubMenu">More</a-->
+                    </td>
+                    <td align="right" style="padding-right:15px; padding-top:3px;">
+                    	 <a href="http://www.youtube.com/aamcocarcare" target="_blank"><img src="images/iconYoutube.gif" border="0" width="16"  height="16" alt="Visit us on YouTube" title="Visit us on YouTube" /></a>&nbsp;
+                         <a href="http://www.facebook.com/AAMCO" target="_blank"><img src="images/iconFacebook.gif" border="0" width="16"  height="16" alt="Visit us on Facebook" title="Visit us on Facebook" /></a>&nbsp;
+                         <a href="http://twitter.com/aamco" target="_blank"><img src="images/iconTwitter.png" border="0" width="16"  height="16" alt="Follow us on Twitter" title="Follow us on Twitter" /></a>
+						 <a href="http://aamcoblog.wordpress.com" target="_blank"><img src="images/wpmini-blue.png" border="0" width="16"  height="16" alt="Follow us on Wordpress" title="Follow us on Wordpress" /></a>
+					</td>
+               </tr>
+          </table>
+	</td>
+</tr>
+</table>
+<table border="0" width="866" bgcolor="#ffffff" style="padding-top: 20px; border: solid 1px #1c3d80;" cellspacing="0" cellpadding="0">
+	<tr>
+		<td align="center">
+		    <table border="0" width="845" bgcolor="#ffffff" cellspacing="0" cellpadding="0">
+			<tr>
+			    <td colspan="5">
+                	<table border="0" cellspacing="0" cellpadding="0">
+                    	<tr>
+                            <td>
+                                <a href="http://aamcoblog.com/" class="linkCouponW" target="_blank">
+                                <img src="images/coupons/AAMCOpurpleheart2.png" width="564" height="164" border="0" alt="Click here for more info" title="Click here for more info" /></a>
+                             </td>
+                             <td width="7"></td>
+                             <td>
+                                <a href="rewards/index.html" class="linkCouponW" target="_blank">
+                                <img src="images/coupons/middleaamcocomcoupREWARDSprogram.png" width="277" height="164" border="0" alt="Click here for more info" title="Click here for more info" /></a>
+                             </td>
+                        </tr>
+                    </table>    
+			    </td>
+			</tr>
+			<tr>
+			    <td colspan="5" style="padding-top: 12px; padding-bottom: 12px;">
+				    <table border="0" width="845" height="24" style="background-color: #eeeeee; border: solid 1px #cccccc;" cellspacing="0" cellpadding="0">
+				    <tr>
+					    <td class="text" width="70" style="padding-left:10px;"><b>Hot News | </b></td>
+					    <td class="text">
+						    
+						 <script type="text/javascript">
+						    <!--
+						    /*
+						    // Realised by apachejeff
+						    var contents=new Array() // Your message list
+						    contents[0]="<a href='Automotive_Repair_scheduled_Maintenance.asp' class='linkNews'>Get your car ready for Fall & Winter Driving with maintenance specials from AAMCO!</a>"
+						    contents[1]="<!--a href='hotNews_keepFamilyCool.asp' class='linkNews'>KEEP YOUR FAMILY COOL THIS SUMMER</a-->"
+						    
+						    
+						    i=0; // Initialises i to zero
+						    pause=3000
+						    
+						    function change(){
+						    if(i>contents.length-1){// if i equals the length of the array contents reset i to zero
+						    i=0 
+						    }
+						    
+						    document.getElementById("example").innerHTML=contents[i]; // Show results at div id example
+						    i++
+						    timer=setTimeout("change()",pause) // repeat after set time
+						    }
+						    window.onload=change // run script when page has loaded
+						    //-->
+						    */
+						</script>
+
+						
+						
+						<!--DIV id="example" style="width:250px; height:20px; overflow:hidden"></DIV-->
+						<DIV id="tsvcont" style="position:relative; width:650px; height:20px; overflow:hidden"></DIV>
+						<!--div id="spage" style="position:relative;left:0px;top:0px;margin:0px; height:22px; background-color: #eeeeee; overflow:hidden;"></div>
+						<script language="javascript" charset="utf-8" src="hotNewsTicker_ticker.js"></script-->
+						 
+						<!--marquee behavior="scroll" class="text" height="22" direction="up" scrollamount="3" scrolldelay="50" onmouseover="this.stop();" onmouseout="this.start();" truespeed>
+						    <a href="hotNews_springtimeataamco.asp" class="linkNews">ITS SPRING CLEANING TIME AT AAMCO</a> | 
+						    <a href="hotNews_keepFamilyCool.asp" class="linkNews" style="color: #0066CC;">KEEP YOUR FAMILY COOL THIS SUMMER</a>
+						</marquee-->
+					    </td>
+				       </tr>
+				  </table>
+    
+			     </td>
+			</tr>
+			<tr style="background-image:url(images/m_topBG.png); height:24px">
+			    <td class="textW" align="center">
+				    <b>More from AAMCO</b>
+			     </td>
+			     <td width="7" align="center" style="border-right:dotted 1px #ffffff;"><img src="images/spacer.gif" width="1" height="24" alt="" border="0" /></td>
+			     <td class="textW" align="center">
+				    <b>NEW from AAMCO</b>
+			     </td>
+			     <td width="7" align="center" style="border-right:dotted 1px #ffffff;"><img src="images/spacer.gif" width="1" height="24" alt="" border="0" /></td>
+			     <td class="textW" align="center">
+				    <b>Find an AAMCO near you</b>
+			     </td>
+			</tr>
+		   <!-- Bottom Cubes -->
+			<tr>
+			    <td width="277" style="padding-top: 6px;">
+				<table border="0" width="277" cellspacing="0" cellpadding="0">
+				    <tr>
+					<td valign="top">
+					    <A onClick="javascript:window.open('http://server.iad.liveperson.net/hc/72620263/?cmd=file&file=visitorWantsToChat&site=72620263&referrer='+document.location,'chat72620263','width=472,height=320');return false;" href="http://server.iad.liveperson.net/hc/72620263/?cmd=file&file=visitorWantsToChat&site=72620263&byhref=1" target=chat72620263>
+					<img src="images/boxIMG_expert.png" width="109" height="94" alt="" border="0" /></a><br/></td>
+					<td valign="top" width="183" style="padding-top:13px; padding-left: 12px;" class="boxText">
+					    <A class="linkBox" onClick="javascript:window.open('http://server.iad.liveperson.net/hc/72620263/?cmd=file&file=visitorWantsToChat&site=72620263&referrer='+document.location,'chat72620263','width=472,height=320');return false;" href="http://server.iad.liveperson.net/hc/72620263/?cmd=file&file=visitorWantsToChat&site=72620263&byhref=1" target=chat72620263>
+					    <span class="boxTitle">CHAT WITH THE EXPERTS</span><br/>
+					    Chat Live with an ASE Certified technician.<br/>
+					    Available 9am-7pm EST, M-F<br/></a>
+					</td>
+				    </tr>
+				</table>
+				<table border="0" width="277" cellspacing="0" cellpadding="0">
+				    <tr>
+					<td valign="top">
+					    <a href="serviceAdvice_main.asp" class="linkBox" width="109">
+					    <img src="images/boxIMG_serviceAdvice.png" width="109" height="94" alt="" border="0" /></a><br/></td>
+					<td valign="top" width="183" style="padding-top:13px; padding-left: 12px;" class="boxText">
+					    <a href="serviceAdvice_main.asp" class="linkBox">
+					    <span class="boxTitle">SERVICE ADVICE</span><br/>
+					    Advice on Auto Care from our Master Technicians.<br/></a>
+					</td>
+				    </tr>
+				</table>
+				<table border="0" width="277" cellspacing="0" cellpadding="0">
+				    <tr>
+					<td valign="top">
+					    <!--a href="redirect_youtube.asp" target="_blank"-->
+					    <a href="http://www.gemoney.com/en/personal/for_your_ride/aamco.html" target="_blank">
+					    <img src="images/boxIMG_finance.png" width="109" height="94" alt="" border="0" /></a><br/></td>
+					<td valign="top" width="183" style="padding-top:13px; padding-left: 12px;" class="boxText">
+					    <a href="http://www.gemoney.com/en/personal/for_your_ride/aamco.html" class="linkBox" target="_blank">
+					    <span class="boxTitle">AAMCO CAR CARE ONE</span><br/>
+					    Finance Your Repair with 12 Months Special Financing.<br/></a>
+					</td>
+				    </tr>
+				</table>
+			     </td>
+			     <td width="7" style="border-right:dotted 1px #cccccc;"><img src="images/spacer.gif" width="1" height="24" alt="" border="0" /></td>
+			     <td align="center" style="padding: 6px 0px;">
+				<!--object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="230" height="290" id="iPhone" align="middle" title="AAMCO iGaauge">
+				    <param name="allowScriptAccess" value="sameDomain" />
+				    <param name="allowFullScreen" value="false" />
+				    <param name="movie" value="flash/iPhone/iPhone.swf" />
+				    <param name="menu" value="false" />
+				    <param name="quality" value="high" />
+				    <param name="scale" value="noscale" />
+				    <param name="wmode" value="transparent" />
+				    <param name="bgcolor" value="#ffffff" />
+				    <embed src="flash/iPhone/iPhone.swf" menu="false" quality="high" scale="showall" wmode="transparent" bgcolor="#ffffff" width="230" height="290" name="iPhone" align="middle" title="AAMCO iGaauge" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+				</object-->
+				<a href="rewards/index.html">
+				<img src="images/rewards-aamco-ad.png" width="230" height="286" alt="" border="0" /></a><br/>
+			     </td>
+			     <td width="7" style="border-right:dotted 1px #cccccc;"><img src="images/spacer.gif" width="1" height="24" alt="" border="0" /></td>
+			     <td background="images/local_bg.png" align="center">
+				<script type="text/javascript"> 
+ var xmlHttp; 
+	function GetXmlHttpObject()
+	{
+			if (window.XMLHttpRequest)
+			{
+			  // code for IE7+, Firefox, Chrome, Opera, Safari
+			  return new XMLHttpRequest();
+			}
+			if (window.ActiveXObject)
+			{
+			  // code for IE6, IE5
+			  return new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			return null;
+	}
+	function ajaxCheck() 
+	{  
+
+	   str = document.form1.citystate.value;
+	   	alert(str);
+		if (str.length==0)
+		{
+		  document.getElementById("citystate").value="";
+		  return;
+		}
+		xmlhttp=GetXmlHttpObject();
+		if (xmlhttp==null)
+		  {
+		  alert ("Your browser does not support XMLHTTP!");
+		  return;
+		  } 
+		var url="gethint.asp";
+		url=url+"?q="+str;
+		url=url+"&sid="+Math.random();
+		xmlhttp.onreadystatechange=stateChanged();
+		xmlhttp.open("GET",url,true);
+		xmlhttp.send(null);
+
+    } 
+	
+	function stateChanged()
+	{
+		//alert("in 2");
+			alert(xmlhttp.readyState);
+			alert(xmlhttp.responseText);
+		if (xmlhttp.readyState==4)
+		{
+			  document.form1.citystate.value=xmlhttp.responseText;
+		}
+	}
+	
+	function checkInput()
+	{
+		zipcode = 	document.form79.zipcode.value;	
+		If IsNumeric(zipcode) Then
+			document.form79.action="http://www.aamco.net/1/storelocator/index.asp"
+			document.form79.method = "GET";
+			document.form79.submit();
+			return true;
+		Else
+			alert("Please put only numbers in the zipcode field.");
+			return false;
+		End If
+
+	}
+	
+ </script>
+ <style type="text/css">
+ 	.inset {
+	background: #ffffff;
+	border: solid 1px #cccccc;
+	font-family: calibri, Verdana, Arial, Helvetica, sans-serif; font-size: 13px; color: #000000; font-weight: normal;
+	/*text-align: center;
+	padding: 20px 0;
+	margin-top: 40px;*/
+	/*                    Y  X  shade  color*/
+   -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,.7);
+   -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.7);
+   box-shadow: inset 0 1px 3px rgba(0,0,0,.74);
+	}
+ </style>
+
+<form style="margin:0px;" method="GET"  action="storelocator/index.asp"  name="form79" >
+<input type="hidden" name="citystate" value="">
+<input type="hidden" name="searchradius" value="25">
+<input type="hidden" name="searchon" value="zipcode">
+
+<table border="0" width="230" cellspacing="0" cellpadding="5">
+     <tr>
+          <td colspan="2" class="textLocal"><b>FIND YOUR CLOSEST AAMCO CENTER</b></td>
+     </tr>
+     <tr>
+          <td colspan="2" class="textLocal"><br/>Search by ZIP or Postal Code</td>
+     </tr>
+     <tr>
+          <td><input type="Text" class="inset" style="width: 113px; height: 22px;" name="zipcode" /></td>
+          <td><input type="Image" src="images/btn_go.png" name="btnGo"  /></td>
+     </tr>
+     <tr>
+          <td colspan="2"><hr size="3" color="#d0d6db" /></td>
+     </tr>
+     <tr>
+          <td colspan="2" class="textLocal">
+               Search by City &amp; State<br/>
+               (or City &amp; Province)
+          </td>
+     </tr>
+</form>
+<form method="GET" action="storelocator/index.asp" name="form80" >
+<input type="hidden" name="zipcode" value="">
+<input type="hidden" name="searchradius" value=25>
+<input type="hidden" name="searchon" value="citystate">
+     <tr>
+          <td><input type="Text" class="inset" style="width: 113px; height: 22px;" name="citystate"/></td>
+          <td><input type="Image" src="images/btn_go.png" name="btnGo" /></td>
+     </tr>
+</table>
+				
+</form>
+<br/>&nbsp;
+			     </td>
+			</tr>
+		   </table>
+		</td>
+	</tr>
+	
+</table>
+<script language="JavaScript">
+	var datetime= new Date();
+	var dateyear=datetime.getFullYear();
+</script>
+<img src="images/spacer.gif" alt="" width="5" height="5" border="0" /><br/>
+<table border="0" width="866" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="3" height="20" bgcolor="#99b6d7">&nbsp;</td>
+	</tr>
+	<tr bgcolor="#d7d7d7">
+		<td class="textFooter" width="560" height="85" style="border-right: solid 1px #c8c8c8; padding-left: 10px;">
+			AAMCO Centers are independently owned and operated.<br/>
+			* Various services, specials, or coupon offers are available at participating locations only.<br/>
+			Copyright&copy; 2009-<script>document.write(dateyear)</script> AAMCO Transmissions inc. All rights reserved.<br/>
+		</td>
+		<td class="textFooter" width="155" style="border-right: solid 1px #c8c8c8; padding-left: 10px;">
+			<a href="http://aamcoblog.com/" target="_blank" class="linkFooter">AAMCO Blog</a><br/>
+			<a href="fleet/" class="linkFooter" target="_blank">Fleet</a><br/>
+            <!--a href="javascript: void(0);" class="linkFooter" onclick="MyWindow=window.open('AAMCO_extended_car-auto_warranty.asp','MyWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=700,height=480'); return false;">Warranties</a><br/-->
+			<a href="AAMCO_extended_car-auto_warranty.asp" class="linkFooter">Warranties</a><br/>
+			<a href="career_opportunities_information.asp" class="linkFooter">Careers</a><br/>
+		</td>
+		<td class="textFooter" width="151" style="padding-left: 10px;">
+			<a href="Contact_AAMCO-car_repair_specialists.asp" class="linkFooter">Contact Us</a><br/>			
+			<a href="sitemap.asp" class="linkFooter">Site Map</a><br/>
+			<a href="privacyPolicy.asp" class="linkFooter">Privacy Policy</a><br/>
+		</td>
+	</tr>
+</table>
+<br/>&nbsp;
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+_uacct = "UA-2751254-1";
+urchinTracker();
+</script>
+</center>
+</body>
+</html>

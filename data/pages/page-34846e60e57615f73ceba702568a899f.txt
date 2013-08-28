@@ -1,0 +1,1193 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+
+<head>
+
+<script src="//cdn.optimizely.com/js/12312623.js"></script>
+
+
+<link rel="shortcut icon" href="http://static.worthpoint.com/images/wp20_favicon.png" />
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.worthpoint.com/js/modernizr.custom.44749.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="apple-itunes-app" content="app-id=480248429">
+
+
+<link href="http://static.worthpoint.com/css/worthpoint_2012.css" rel="stylesheet" type="text/css"/>
+<link href="/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="http://static.worthpoint.com/css/common.css" rel="stylesheet" type="text/css"/>
+
+<!--[if gt IE 6]>
+	<link href="/css/ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="text/javascript">
+
+    // Toggle login/logout button based on AJAX call to determine user session. Caching issue.
+    jQuery(document).ready(function()
+    {
+        var ssl = 'https:' == document.location.protocol;
+        var url;
+        if(ssl)
+            url = "/user2/loggedIn";
+        else
+            url = "/inventory/loggedIn";
+        jQuery.ajax({
+            type: "POST",
+            url: url,
+            dataType: "json",
+            async: false,
+            success: function(result){
+                if(result.loggedIn) {
+                    jQuery('#signOutBox').show();
+                    jQuery('#signInBox').hide();
+                }
+                else {
+                    jQuery('#signOutBox').hide();
+                    jQuery('#signInBox').show();
+                }
+            }
+        });
+
+    });
+</script>
+
+
+    
+    
+        
+            <title>COLLECTION OF ART AND LITERATURE BOOKS. </title>
+        
+    
+    <!-- Just for the Detail Page -->
+    
+        
+        
+            
+        
+        
+            <meta name="description" content=" 52/291-32 COLLECTION OF ART AND LITERATURE BOOKS. Including Degas, Goya, and various artists and authors $100/$150 Condition: No Specific Condition Recorded - Sold As Is  from Susanin&#39;s Auctions"/>
+        
+    
+
+
+
+    
+             <!-- This is handled by the detail itself now, please don't remove this if because the else at the bottom will break the detail page -->
+    
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="layout" content="worthPoint"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://www.worthpoint.com/worthopedia/collection-of-art-and-literature-books"/>
+    <meta property="og:image" content="http://images.worthpoint.com/files/susanins/tn/spr/52/291-32.JPG"/>
+    <meta property="og:site_name" content="Worthpoint"/>
+
+
+    <link rel="canonical" href="http://www.worthpoint.com/worthopedia/collection-of-art-and-literature-books" />
+    <link href="http://static.worthpoint.com/css/detail.css" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+		<link href="http://static.worthpoint.com/css/ie.css" rel="stylesheet" type="text/css" media="screen" />
+	<![endif]-->
+    <link href="http://static.worthpoint.com/css/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
+    <script src="http://static.worthpoint.com/js/jquery.fancybox-1.3.4.pack.js"></script>
+    <script>
+        var message = null;
+
+        jQuery(document).ready(function()
+        {
+            $("a[rel=fancy]").fancybox(
+                    {
+                        'transitionIn'		: 'none',
+                        'transitionOut'		: 'none',
+                        'titlePosition' 	: 'outside',
+                        'titleFormat'		: function(title, currentArray, currentIndex, currentOpts)
+                        {
+                            return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                        }
+                    });
+            jQuery('a.more').click(function()
+            {
+                jQuery(this).hide();
+                jQuery(this).next().slideDown();
+            });
+            jQuery('a.less').click(function()
+            {
+                jQuery(this ).parent('div.mores').slideUp();
+                jQuery(this).parent().prev('a.more').show();
+            });
+
+            jQuery.ajax({
+                type: "POST",
+                url: "/inventory/getPrice",
+                data: {
+                    'inventoryId':'1675464'
+                },
+                dataType: "json",
+                async: false,
+                success: function(result){
+                    if(result.loggedIn) {
+                        if(result.isFreeUser) {
+                            $('#upgradeAccountBox').css("display", "inline");
+                        }
+                        else if(result.accountStatus=='trial') {
+                            if(result.lookupsRemaining <= 0) {
+                                $('#priceNominal').html('You have used all your available trial lookups.')
+                                $('body').append($('#popOverActivate').html());
+                                setTimeout(function () {
+                                    $('#cmdActivate').click(function () {
+                                        $.get('/accountSetting/trialToMember', function (response) {
+                                            $('#cmdActivate').css('background', "url('http://static.worthpoint.com/images/activate-account/success.png') no-repeat center center");
+                                            setTimeout(function () {
+                                                location.reload();
+                                            }, 300);
+                                        });
+                                    });
+                                }, 100);
+
+                            }
+                            else {
+                                $('#priceNominal').show();
+                                $('#priceNominal').html(result.price);
+                            }
+                        }
+                        else {
+                            $('#priceNominal').show();
+                            $('#priceNominal').html(result.price);
+                        }
+                    }
+                    else {
+                        $('#signupLink').css("display", "inline");
+                    }
+                }
+            });
+
+        });
+        var scoreVar = "4";
+    </script>
+    <script type='text/javascript'>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        (function() {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') +
+                    '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        })();
+    </script>
+
+    <script type='text/javascript'>
+        googletag.cmd.push(function() {
+            googletag.defineSlot('/2427636/worthpoint_atf_leaderboard', [728, 90], 'div-gpt-ad-1347568023544-0').addService(googletag.pubads());
+            googletag.defineSlot('/2427636/worthpoint_atf_rectangle', [300, 250], 'div-gpt-ad-1347568023544-1').addService(googletag.pubads());
+            googletag.defineSlot('/2427636/worthpoint_btf_leaderboard', [728, 90], 'div-gpt-ad-1347568023544-2').addService(googletag.pubads());
+            googletag.defineSlot('/2427636/worthpoint_btf_rectangle', [300, 250], 'div-gpt-ad-1347568023544-3').addService(googletag.pubads());
+            
+            googletag.pubads().setTargeting('QC', "no");
+            googletag.pubads().setTargeting('Section', 'Worthopedia');
+            googletag.pubads().set("page_url", "http://www.worthpoint.com/worthopedia/collection-of-art-and-literature-books");
+            
+            googletag.pubads().setTargeting("Keywords",[ "collection", "art", "literature"]);
+            
+            googletag.pubads().setTargeting("Datasource", "Susanin's Auctions");
+            
+
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+
+    <style type="text/css">
+	    .smtxtdtl {
+	    	margin-top: 10px;
+	        border: 1px solid #eee;
+	        border-radius: 4px;
+	        padding: 5px 5px 0 10px;
+	        display: inline-block;
+	        font-size: 12px;
+	    }
+    </style>
+
+
+
+<!-- GA -->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2113658-1']);
+    
+    
+        _gaq.push(['_setCustomVar', 1, 'UserType', 'Anonymous', 2]);
+    
+    _gaq.push(['_trackPageview']);
+    _gaq.push(['_setCustomVar',
+        1,
+        'serverName',           // The top-level name for your online content categories.  Required parameter.
+        '',  // Sets the value of "Section" to "Life & Style" for this particular aricle.  Required parameter.
+        3                    // Sets the scope to page-level.  Optional parameter.
+    ]);
+
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+<!-- /GA -->
+
+<!-- Quantcast Tag, part 1 -->
+<script type="text/javascript">
+    var _qevents = _qevents || [];
+
+    (function() {
+        var elem = document.createElement('script');
+
+        elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+        elem.async = true;
+        elem.type = "text/javascript";
+        var scpt = document.getElementsByTagName('script')[0];
+        scpt.parentNode.insertBefore(elem, scpt);
+    })();
+</script>
+
+</head>
+
+<body onload="" class="yui-skin-sam">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-D5BQ"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-D5BQ');</script>
+<!-- End Google Tag Manager -->
+
+
+<div>
+      	
+    <!-- Header Div begins (navigation is included) -->
+        
+    
+<div id="header-wrapper" class="bg-two">
+   <div id="header">
+      <div class="wp-glow"></div>
+      <a href="/"><img src="http://static.worthpoint.com/images/wp_logo.png" alt="Worthpoint Logo" class="left wp-logo"></a>
+      
+      <div id="signInBox">
+         
+            <a href="http://www.worthpoint.com/worthopedia/collection-of-art-and-literature-books/price" class="unav sign-in-1" name="LoginOrLogout" rel="nofollow"><i class="icon-signin"></i>&nbsp;&nbsp;<span class="semibold">Sign In</span></a>
+         
+      </div>
+      <div id="signOutBox" style="display: none">
+         <a href="/logout/index" class="unav sign-in-1" name="LoginOrLogout"><i class="icon-signout"></i>&nbsp;&nbsp;<span class="semibold">Sign Out</a>
+         </span>
+      </div>
+      <!-- searchbar -->
+      <div id="searchhead">
+        
+
+<!-- searchbar -->
+	<span>
+    <form action="/inventory/search" method="get" >
+        <select id="search-selecthead">
+            <option selected="selected" value="query">Price Guide</option>
+            <option value="s">News/Articles</option>
+            <option value="keyword">Classifieds</option>
+        </select>
+        <input type="text" value="" name="query" class="sboxhead thin"/>
+        <select name="categoryurl" class="sboxhead thin" id="search-selecthead-right" >
+<option value="">All Categories</option>
+<option value="advertising" >Advertising</option>
+<option value="alcohol-smoking" >Alcohol &amp; Smoking</option>
+<option value="antiquities" >Antiquities</option>
+<option value="books-paper-magazines" >Books, Paper &amp; Magazines</option>
+<option value="ceramics" >Ceramics</option>
+<option value="coins-currency" >Coins &amp; Currency</option>
+<option value="entertainment" >Entertainment</option>
+<option value="ethnic-folk-native-american-art" >Ethnic, Folk &amp; Native American Art</option>
+<option value="fine-art" >Fine Art</option>
+<option value="firearms-and-accessories" >Firearms and Accessories</option>
+<option value="fraternal-political-organizations" >Fraternal, Political, Organizations</option>
+<option value="furniture-furnishings" >Furniture &amp; Furnishings</option>
+<option value="glass" >Glass</option>
+<option value="jewelry" >Jewelry</option>
+<option value="metals" >Metals</option>
+<option value="militaria-weapons" >Militaria &amp; Weapons</option>
+<option value="natural-history" >Natural History</option>
+<option value="sports" >Sports</option>
+<option value="stamps" >Stamps</option>
+<option value="textiles-clothing-accessories" >Textiles, Clothing &amp; Accessories</option>
+<option value="tools" >Tools</option>
+<option value="toys-dolls-games-puzzles" >Toys, Dolls, Games &amp; Puzzles</option>
+<option value="transportation-and-vehicles" >Transportation and Vehicles</option>
+</select>
+    <button class="sbuttonhead grad-two semibold" type="submit" id="searchsubmit">Go</button>
+                  </span>
+
+
+    </form>
+<!-- end searchbar -->
+      </div>
+      <!-- end searchbar -->
+      <!-- Navigation Div begins -->
+      
+		<ul id="nav" class="main-nav dropdown-horizontal">
+			  <li><a href="/news-articles-multimedia" class="dir">News & Multimedia</a>
+			    <ul>
+     			   <li><a  href="/news">News Stories</a></li>
+                   <li><a  href="/news-articles-multimedia">Feature Articles</a></li>
+                   <li><a  href="/multimedia">Video & Audio</a></li>
+			    </ul>
+			  </li>		  
+			  <li><a href="/worthopedia" class="dir">Value It</a>
+			    <ul>
+			      <li><a href="/worthopedia">Worthopedia&trade; Price Guide</a></li>
+			      <li><a href="/askWorthologist/index">Ask an Expert</a></li>
+			      <li><a href="/about/professional-valuation-services">Collection or Estate Appraisals</a></li>
+			    </ul>
+			  </li>		  
+			  <li><a href="/news-articles-multimedia" class="dir">Research It</a>
+			    <ul>
+			      <li><a href="/category/article">Articles</a></li>
+			    </ul>
+			  </li>		  
+			  <li><a href="/buy-sell" class="dir">Buy & Sell</a>
+			    <ul>
+			      <li><a href="/classifieds">Classifieds</a></li>
+                  <li><a href="/classfied/post">Post a Classified</a></li>
+			    </ul>
+			  </li>
+			  <li><a href="/upcoming-auctions" class="dir">Auctions & Events</a>
+			    <ul>
+			      <li><a href="/upcoming-auctions">Upcoming Auctions</a></li>
+			      <li><a href="/mainCalendar/maincalendar" rel="nofollow">Events Calendar</a></li>
+			    </ul>
+			  </li>
+			  <li class="no-border no-bshadow"><a href="/login/auth" class="dir">Resources</a>
+			    <ul>
+			      <li><a href="/search/findBusiness" rel="nofollow">Find a Business</a></li>
+			      <li><a href="/profile/index" rel="nofollow">My Profile</a></li>
+			      <li><a href="/friends/editfriends" rel="nofollow">My Friends</a></li>
+			      <li><a href="/forums/forum.php">Community Forums</a></li>
+			    </ul>
+			  </li>
+		</ul><!-- Navigation Div ends -->
+	
+
+
+      <!-- Navigation Div ends -->
+   </div>
+</div>
+<!-- end header-wrapper -->
+        		
+    <!-- Banners Div begins -->
+    
+    
+        
+
+
+<div class="banners-wrapper bg-one">
+    <div class="banners clearfix">
+
+        <table width="920" border="0" cellspacing="0" cellpadding="0" style="position:relative;left:10px;top:0px;">
+            <tr valign="top">
+                <td align="left">
+                    <div id='div-gpt-ad-1347568023544-0' style='width:728px; height:90px;'>
+        <script type='text/javascript'>
+                            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1347568023544-0'); });
+        </script>
+                    </div>
+                </td>
+
+                
+                    <td align="right">
+                        <a href="/user2/regStep1" rel="nofollow"><img src="http://static.worthpoint.com/images/cta-ribbon-top.png" alt="Start free trial"  class="head-trial-ribbon" border="0" width="193" height="151"/></a>
+                    </td>
+                
+
+                
+
+            </tr>
+        </table>
+
+    </div>
+</div><!-- end banners-wrapper -->
+
+
+    
+    
+
+    <!-- Content Div begins -->
+           	
+    
+
+
+<div id="content" align="left">
+    
+  <!--Content box begins -->
+  
+<tr>
+    <td>
+        <span class="bc">
+            <a href="/">Home</a> &gt;
+            <a href="/worthopedia">Worthopedia™</a> &gt;
+            
+            <div style="font-size:12px;display:inline;font-family:arial,helvetica,sans-serif">COLLECTION OF ART AND LITERATURE BOOKS. </div>
+        </span>
+    </td>
+    <td align="right" style="width: 250px;"><span style="font-style:italic; float:right;" class="terms"><a href="/terms-use" >Terms and Conditions</a> for using our site</span>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<table width="970" border="0" cellspacing="0" cellpadding="0" style="position:relative; top:10px;">
+<tr>
+<td>
+
+
+<div id="column1" class="box-four paddingLarge">
+    <! -- if item is not found, display the user with a message and some other relevant results -->
+    
+
+    
+        <h2>COLLECTION OF ART AND LITERATURE BOOKS. </h2>
+        <div id="c1r" class="cbox" style="float:left;">
+            <div id="node_image_gallery">
+                
+                    
+                        <a class="fbox" href="http://images.worthpoint.com/files/susanins/spr/52/291-32.JPG" rel="fancy" title="COLLECTION OF ART AND LITERATURE BOOKS. ">
+                            
+                                
+                                    
+                                        <img src="http://images.worthpoint.com/files/susanins/tn/spr/52/291-32.JPG" alt="Susanin's Auctions Image 1 COLLECTION OF ART AND LITERATURE BOOKS. "/>
+                                        <span>1</span>
+                                    
+                                
+                            
+                        </a>
+                    
+                
+            </div>
+        </div>
+        <div id="sold-details" class="left" style="">
+            <span id="sold" >
+                <span class="semibold">Sold For:</span>&nbsp;<span id="priceNominal" class="price-tag" style="display: none"></span>
+                <div id="signupLink" style="display: none">
+                    <a href="/user2/regStep1" rel="nofollow"><img src="http://static.worthpoint.com/images/trial-button-1.jpg" alt="Start FREE Trial!" align="absmiddle" border="0" /></a>
+                    <br/>or <a href="http://www.worthpoint.com/worthopedia/collection-of-art-and-literature-books/price" align="absmiddle" rel="nofollow"><span class="semibold">Sign In</span></a> to see what it&#39;s worth.
+                </div><br>
+                <div id="upgradeAccountBox" style="display: none">
+                    Click
+                    <a href="/accountSetting/updateMembership">here</a>
+                    to upgrade your account
+                </div>
+
+            </span>
+            <br>
+            <span class="semibold">Sold Date:</span>
+            <span id="dateSold">
+                10/20/2007
+            </span>
+            <br>
+            <span class="semibold">Channel:	</span>
+            Auction House
+            <br>
+            <span class="semibold">Source:</span>
+            
+                <a href="/source/susanins-auctions">
+                    Susanin's Auctions
+                </a>
+            <br>
+            
+            <br>
+            <div class="addthis_toolbox addthis_default_style left" style="float: left;">
+                <a class="addthis_button_facebook"></a>
+                <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
+                <a class="addthis_button_twitter"></a>
+                <a class="addthis_button_compact"></a>
+            </div>
+            <br><br>
+            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=worthpoint"></script>
+            <script type="text/javascript">
+                var addthis_config = {
+                    services_compact: 'email, facebook, twitter, print, more'
+                }
+            </script>
+        </div>
+        <div id="inventory-body" style="clear:left">
+             52/291-32 COLLECTION OF ART AND LITERATURE BOOKS. Including Degas, Goya, and various artists and authors $100/$150 Condition: No Specific Condition Recorded - Sold As Is  <!-- Offered by Susanin`s Auctions  -->  <!-- 5609966907007401037001220577733074084059085066050075.0288141173312308203880104140996401139856 -->
+        </div>
+        <div style="clear: left;">
+            <a id="clickme"><img src="http://static.worthpoint.com/images/flag.png"><span>Flag item for content or copyright.</span></a>
+            <script>
+                jQuery('#clickme').click(function() {
+                    jQuery('#clickme').hide();
+                    jQuery('#book').slideDown('slow', function() {
+                        // Animation complete.
+                    });
+                });
+            </script>
+            <div id="book" style="display:none; border: 1px solid #ccc; background:#fcfcfc; padding: 5px; margin-top:5px;">
+                <span class="pgray">
+                    If this item contains incorrect or inappropriate information please <a class="rednav" rel="nofollow" href="http://www.worthpoint.com/about-item-review?URL=http://www.worthpoint.com/worthopedia/collection-of-art-and-literature-books">contact us here to flag it for review.</a><br><br>
+
+                    If you are the originator/copyright holder of this photo/item and would prefer it be excluded from our community, <a class="rednav" rel="nofollow" href="http://www.worthpoint.com/about-item-removal?URL=http://www.worthpoint.com/worthopedia/collection-of-art-and-literature-books">contact us here for removal</a>.
+                </span>
+            </div>
+        </div>
+        <div class="smtxtdtl">
+            <p><img src="http://static.worthpoint.com/images/worthopedia-source-1.png" width="77" height="36" class="right"><span class="pgray"><i>Items in the Worthopedia are obtained exclusively from licensors and partners solely for our members’ research needs.</i></span></p>
+        </div>
+        <div class="detail-more-items">
+        
+
+	<div id="similarItems">
+		<h3 class="underline">View Similar Items</h3>
+		<div class="clearfix">
+
+	
+
+		
+			<a href="/worthopedia/chile-poet-gabriela-mistral-vintage-photo-c-arias">
+				<img src="http://worthopedia.s3.amazonaws.com/images/thumbnails/1/0307/07/1_a8cd1d54d09773ca9ee59f0f9b524959.jpg" alt="Chile Poet Gabriela Mistral Vintage Photo C.Arias 1940s"/>
+				<span>Chile Poet Gabriela Mistral Vintage Photo C.Arias 1940s</span>
+			</a>
+		
+	
+
+		
+			<a href="/worthopedia/1936-new-orleans-colored-schools-curriculum-grades-1">
+				<img src="http://worthopedia.s3.amazonaws.com/images/thumbnails/1/0807/03/1_69f21fd321b69341df1420eb4a2ca9de.jpg" alt="1936 New Orleans Colored Schools Curriculum Grades 1-4"/>
+				<span>1936 New Orleans Colored Schools Curriculum Grades 1-4</span>
+			</a>
+		
+	
+
+		
+			<a href="/worthopedia/jean-charlots-personal-copy-sacred-hula-1909">
+				<img src="http://worthopedia.s3.amazonaws.com/images/thumbnails/1/0208/10/1_a4924659996165abbe214884f0dce751.jpg" alt="JEAN CHARLOTS PERSONAL COPY - &quot;SACRED HULA&quot; 1909"/>
+				<span>JEAN CHARLOTS PERSONAL COPY - &quot;SACRED HULA&quot; 1909</span>
+			</a>
+		
+	
+
+		
+			<a href="/worthopedia/huge-vintage-lot-sawyers-viewmaster-reels">
+				<img src="http://worthopedia.s3.amazonaws.com/images/thumbnails/1/0207/03/1_6d3660f0ee71764dd8ca0bc9fef01440.jpg" alt="Huge Vintage Lot Sawyers Viewmaster Reels Projector"/>
+				<span>Huge Vintage Lot Sawyers Viewmaster Reels Projector</span>
+			</a>
+		
+	
+		</div> 
+	</div>
+
+
+        <!-- View More Matches from your Keyword -->
+
+
+
+        <div id="sample_results" name="sample_results" style="visibility:hidden;">
+            
+
+
+        </div>
+
+
+        <!-- 600x150 -->
+    
+        
+        
+            <div id="moreItems" class="">
+                <h3 class="underline">More Items from Susanin's Auctions</h3>
+                <div class=" clearfix">
+                    
+                        
+                        
+                            <a href="/worthopedia/georgian-style-mahogany-four-drawer-chest">
+                                <img src="http://images.worthpoint.com/files/susanins/tn/spr/56/6470-4.JPG" alt="GEORGIAN STYLE MAHOGANY FOUR DRAWER CHEST. " />
+                                <span>GEORGIAN STYLE MAHOGANY FOUR DRAWER CHEST. </span></a>
+                        
+                    
+                        
+                        
+                            <a href="/worthopedia/two-sets-of-nineteenth-century-sheet-music-3">
+                                <img src="http://images.worthpoint.com/files/susanins/tn/spr/52/6388-55.JPG" alt="TWO SETS OF NINETEENTH-CENTURY SHEET MUSIC LITHOGRAPHS. " />
+                                <span>TWO SETS OF NINETEENTH-CENTURY SHEET MUSIC LITHOGRAPHS. </span></a>
+                        
+                    
+                        
+                        
+                            <a href="/worthopedia/tibetan-style-polychrome-side-table">
+                                <img src="http://images.worthpoint.com/files/susanins/tn/spr/56/6440-6.JPG" alt="TIBETAN STYLE POLYCHROME SIDE TABLE. " />
+                                <span>TIBETAN STYLE POLYCHROME SIDE TABLE. </span></a>
+                        
+                    
+                        
+                        
+                            <a href="/worthopedia/henredon-mahogany-sleigh-bed">
+                                <img src="http://images.worthpoint.com/files/susanins/tn/spr/56/6434-8.JPG" alt="HENREDON MAHOGANY SLEIGH BED. " />
+                                <span>HENREDON MAHOGANY SLEIGH BED. </span></a>
+                        
+                    
+                </div>
+            </div>
+        
+    
+</div><!-- end detail more items -->
+
+
+<!-- End of more items -->
+<!-- Item Detail ends -->
+
+</div> <!-- // end column1 -->
+<div id="column2">
+    <div class="c2box">
+        <!-- worthpoint_atf_rectangle -->
+        <div id='div-gpt-ad-1347568023544-1' style='width:300px;'>
+            <script type='text/javascript'>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1347568023544-1'); });
+            </script>
+        </div>
+    </div>
+    <div class="c2box">
+        <!-- THis displays the worthpoint shopping assistant -->
+        <div id="shoppingAssistantFrameDiv">
+            
+            <form
+                    id="shopping_asst_post" target="shopping_assistant"
+                    method="post" action="/shoppingAssistant/index"
+            >
+                <input type="hidden" name="realPerson" value="true"/>
+                <input type="hidden" name="categoryId" value=""/>
+                <input type="hidden" name="keywords" value="collection art literature"/>
+            </form>
+            <script type='text/javascript'>
+                'collection art literature' && document.write('<iframe id="shopping_assistant" name="shopping_assistant" scrolling="auto" width="300" height="352" frameborder="0"></iframe>');
+            </script>
+            <script type="text/javascript">
+                document.getElementById('shopping_asst_post').submit();
+            </script>
+        </div>
+    </div>
+    <div class="c2box">
+        
+    </div>
+    <div class="c2box clearfix">
+        <!-- worthpoint_btf_rectangle -->
+        <div id='div-gpt-ad-1347568023544-3' style='width:300px; height:250px;'>
+            <script type='text/javascript'>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1347568023544-3'); });
+            </script>
+        </div>
+    </div>
+</div> <!-- // end detail-right -->
+</td>
+</tr>
+</table>
+
+
+
+<div class="box-four paddingLarge taxonomy">
+      <span class="pgray">
+          
+          		<a href="/worthopedia/category/advertising" title="Advertising" >Advertising |</a>
+          
+          		<a href="/worthopedia/category/alcohol-smoking" title="Alcohol & Smoking" >Alcohol & Smoking |</a>
+          
+          		<a href="/worthopedia/category/antiquities" title="Antiquities" >Antiquities |</a>
+          
+          		<a href="/worthopedia/category/books-paper-magazines" title="Books, Paper & Magazines" >Books, Paper & Magazines |</a>
+          
+          		<a href="/worthopedia/category/ceramics" title="Ceramics" >Ceramics |</a>
+          
+          		<a href="/worthopedia/category/coins-currency" title="Coins & Currency" >Coins & Currency |</a>
+          
+          		<a href="/worthopedia/category/entertainment" title="Entertainment" >Entertainment |</a>
+          
+          		<a href="/worthopedia/category/ethnic-folk-native-american-art" title="Ethnic, Folk & Native American Art" >Ethnic, Folk & Native American Art |</a>
+          
+          		<a href="/worthopedia/category/fine-art" title="Fine Art" >Fine Art |</a>
+          
+          		<a href="/worthopedia/category/firearms-and-accessories" title="Firearms and Accessories" >Firearms and Accessories |</a>
+          
+          		<a href="/worthopedia/category/fraternal-political-organizations" title="Fraternal, Political, Organizations" >Fraternal, Political, Organizations |</a>
+          
+          		<a href="/worthopedia/category/furniture-furnishings" title="Furniture & Furnishings" >Furniture & Furnishings |</a>
+          
+          		<a href="/worthopedia/category/glass" title="Glass" >Glass |</a>
+          
+          		<a href="/worthopedia/category/jewelry" title="Jewelry" >Jewelry |</a>
+          
+          		<a href="/worthopedia/category/metals" title="Metals" >Metals |</a>
+          
+          		<a href="/worthopedia/category/militaria-weapons" title="Militaria & Weapons" >Militaria & Weapons |</a>
+          
+          		<a href="/worthopedia/category/natural-history" title="Natural History" >Natural History |</a>
+          
+          		<a href="/worthopedia/category/sports" title="Sports" >Sports |</a>
+          
+          		<a href="/worthopedia/category/stamps" title="Stamps" >Stamps |</a>
+          
+          		<a href="/worthopedia/category/textiles-clothing-accessories" title="Textiles, Clothing & Accessories" >Textiles, Clothing & Accessories |</a>
+          
+          		<a href="/worthopedia/category/tools" title="Tools" >Tools |</a>
+          
+          		<a href="/worthopedia/category/toys-dolls-games-puzzles" title="Toys, Dolls, Games & Puzzles" >Toys, Dolls, Games & Puzzles |</a>
+          
+          		<a href="/worthopedia/category/transportation-and-vehicles" title="Transportation and Vehicles" >Transportation and Vehicles |</a>
+          
+      </span>
+</div>
+
+<!-- Content box ends -->
+<script>
+    hasSeBox = false;
+    function hideSimilarItems() {
+        var similarItems = document.getElementById("similarItems");
+        if (similarItems && hasSeBox) {
+            similarItems.style.display = 'none';
+            similarItems.style.visibility = 'hidden';
+        }
+    }
+
+    var b = document.referrer;
+    // for testing
+    //b ='http://www.google.com/url?q=%22antique+firearms';
+
+    seRegex = new RegExp("(altavista|google|ask|msn|yahoo|aol|mywebsearch|myway)\.", "i");
+
+    // don't try to parse on webmail URLs like mail.yahoo.com or gmail
+    if ((b.search(/mail\./i) == -1) && (b.search(seRegex) > 0)) {
+        b = escape(b);
+        var invid = '1675464';
+        var pathContext = '';
+        var urlString = ""
+        if (pathContext != null)
+            urlString = "http://www.worthpoint.com" + pathContext + "/inventory/moreMatches"
+        else
+            urlString = "http://www.worthpoint.com/inventory/moreMatches"
+        jQuery.get(urlString, {id :b ,invid:invid}, function(message) {
+            updateDetail(message);
+        });
+    }
+
+    function updateDetail(message) {
+        if (message.length > 1) {
+            hasSeBox = true
+            hideSimilarItems()
+        }
+        var data = message;
+        var fom = document.getElementById("sample_results");
+        fom.style.visibility = 'visible';
+        fom.innerHTML = data;
+
+    }
+
+</script>
+
+<!-- A Pop Up Login Modal -->
+
+
+<script type="text/javascript" src="http://static.worthpoint.com/js/jquery.simplemodal.1.4.1.min.js" > </script>
+
+
+<link href="http://static.worthpoint.com/static/css/modal.css" rel='stylesheet' type='text/css' />
+
+<!-- Facebook Checking -->
+		
+		
+	<script type="text/javascript">
+	  	var kindaLoggedIn = false;		
+		window.fbAsyncInit = function() {
+			FB.init({"appId":'130982950277104',"xfbml":true, "oauth" : true});
+			if (window.onloadRegister) {onloadRegister(function() {if (window.Arbiter) {Arbiter.inform("connect_sdk_loaded");}});}
+			
+			FB.getLoginStatus(function(o) { 			
+	           if (!o && o.status) return;
+	           if (o.status == 'connected') {
+	              	// USER IS LOGGED IN AND HAS AUTHORIZED APP
+					kindaLoggedIn = true;
+	           } else if (o.status == 'notConnected' || o.status == 'not_authorized') {
+	              	// USER IS LOGGED IN TO FACEBOOK (BUT HASN'T AUTHORIZED YOUR APP YET)
+	              	kindaLoggedIn = true;
+	           } else {
+	              // USER NOT CURRENTLY LOGGED IN TO FACEBOOK
+	           }
+	         });						
+		};
+	</script>
+   	<div id="fb-root"></div>	
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) {return;}
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#appId=130982950277104&xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<!-- Login Popup Modal -->
+<script type='text/javascript'>
+//jQuery.noConflict();
+jQuery(document).ready(function($) {	
+//   $('.sa-item.ebay').click(function (e) {
+
+	// $('#login').modal({
+	//     containerId:'login-modal',
+	//     overlayId:'login-overlay',
+	//   overlayClose:true});
+	
+   // Change the login
+   $('#newuser-a').click(function() {
+     $('#loginz').slideUp();
+      window.location = "/user2/regStep1";
+   });
+
+	$("#registerForm").submit(function(){
+		var success = false
+		jQuery.ajax({
+		   type: "POST",
+		   url: "/user2/saveRegistrationAjax",
+		   data : jQuery("#registerForm").serialize(),
+		   dataType: "json",
+		   async: false,
+		   success: function(result){			
+				if (result.success == true) {	
+					// Update with result.username the area that displays the user
+					kindaLoggedIn = true;
+					window.open($("#popupforwardUrl").val(), false);
+					jQuery.modal.close();
+				}
+				else {
+					var msg = "";
+					$.each(result.errors, function(i, value) { 	
+						msg += "<div class='error'>"+ value +"</div>"
+					});
+					$("#messageRegisterArea").html(msg + "<br/>");
+				}
+		   }
+		 });
+		return success;
+	})
+
+	$("#signInButton").click(function() {
+		$("#messageArea").html("");		
+		if (login()) {
+			// lets mark it kinda logged in.
+			kindaLoggedIn = true
+			// Close window and forward on the link					
+			window.open($("#popupforwardUrl").val(), false);
+			jQuery.modal.close();
+		}
+		else { 
+			// Display error message login unsuccssful
+			$("#messageArea").html("<div class='error'>Error logging in, either incorrect username or password.</div>");
+		}
+	});
+  });
+	function popupLoginModal(forwardUrl) {
+  		jQuery('#loginModal').modal({
+        	containerId:'login-modal',
+        	overlayId:'login-overlay',
+  		  	overlayClose:true,
+			persist:true
+		});
+     	$('#loginz').slideDown();
+      	$('#registerz').slideUp();		
+		jQuery("#popupforwardUrl").val(forwardUrl);
+  	};
+
+	function onFacebookLogin() {
+		// TODO if this ever does anything more advance you will have to check real statuses	
+		FB.getLoginStatus(function(o) { 			
+		   if (!o && o.status) return;
+		   if (o.status == 'connected') {
+		      	// USER IS LOGGED IN AND HAS AUTHORIZED APP
+				kindaLoggedIn = true;
+		   } else if (o.status == 'notConnected') {
+		      	// USER IS LOGGED IN TO FACEBOOK (BUT HASN'T AUTHORIZED YOUR APP YET)
+		      	kindaLoggedIn = true;
+		   } else {
+		      // USER NOT CURRENTLY LOGGED IN TO FACEBOOK
+		   }
+		 });			
+		if (kindaLoggedIn) {
+//			window.open($("#popupforwardUrl").val());
+			window.location = $("#popupforwardUrl").val();
+			jQuery.modal.close();
+		}
+	}	
+	
+	function login() {		
+		var success = false
+		jQuery.ajax({
+		   type: "POST",
+		   url: "/j_spring_security_check",
+		   data : jQuery("#loginForm").serialize(),
+		   dataType: "json",
+		   async: false,
+		   success: function(result){
+				if (result.success == true) {
+					// Update with result.username the area that displays the user
+					success = true;
+				}
+				else {
+					// display an error
+console.log("HERE BABY!!!");			
+					$("#loginErrorPane").html(result.error)
+					success = false;					
+				}
+		   }
+		 });		
+		return success;
+	}
+	
+</script>
+<!-- modal content -->
+ <div id="loginModal">
+     <div id="loginz">
+		<div id="messageArea">
+	 		
+		</div>
+     <div class="l-left">
+       <img src="http://static.worthpoint.com/static/images/wp_login.png" alt="Login to Worthpoint" />
+       <form id="loginForm" action="" method="POST">
+		  <input type="hidden" name="popupforwardUrl" value="" id="popupforwardUrl" />
+         <div class="l-input">
+           <label for="j_username">Username</label>
+           <input type="text" value="" name="j_username" id="j_username" />
+         </div>
+         <div class="l-input">
+           <label for="j_password">Password</label>
+           <input type="password" value="" name="j_password" id="j_password" /> 
+           <a class="forgot" href="/user/forgotPassword">Forgot Password?</a>
+         </div>
+         <div class="l-input submit">
+           <button type="button" name="j_submit" id="signInButton">Sign In</button>
+         </div>
+         <div class="newuser">
+           <span>New User?</span>&nbsp;<a id="newuser-a" href="#">Register today!</a>
+         </div>
+       </form>
+     </div>
+         <div class="l-right">
+          <div class="clearfix">
+            <span>Or login using another account:</span>
+            <p>
+				<div class="fb-login-button" data-show-faces="false" data-max-rows="0" onlogin="onFacebookLogin()"></div>
+			</p>
+          </div>
+          <div class="helps">
+            <a target="normal" href="http://help.worthpoint.com/support-center/index.php?x=&mod_id=2&root=191&id=684">Why do I need to login to see this item?</a><br />
+          </div>
+         </div>
+   </div>
+   <div id="registerz">
+     <img src="http://static.worthpoint.com/static/images/wp_reg.png" alt="Free Worthpoint Community Registration" />
+     <div class="l-left">
+        <form id="registerForm" method="POST" action="">
+          <div class="l-input">
+            <label for="r_username">Username</label>
+            <input type="text" value="" name="username" id="username" />
+          </div>
+          <div class="l-input">
+            <label for="r_email">Email</label>
+            <input type="text" value="" name="email" id="email" />
+          </div>
+          <div class="l-input">
+            <label for="r_password">Password</label>
+            <input type="password" value="" name="passwd" id="passwd" /> 
+          </div>
+          <div class="l-input">
+            <label style="display:none;" for="newsletter">Newsletter</label>
+            <input type="checkbox" checked="checked" name="subscribeNewsLetter" id="subscribeNewsLetter" />
+            <i>I would like to receive the weekly WorthPoint insider email newsletter.</i> 
+          </div>
+          <div class="l-input">
+            <button type="submit" name="r_submit">Create Account</button>
+          </div>
+        </form>
+      </div>
+      <div class="l-right">
+		<div id="messageRegisterArea">
+
+		</div>
+        <p>Joining is free and gives you access to our Community &amp; Forums.</p>
+
+        <p>If you are interested in our pricing data or other paid memberships, try our
+        <a href="/user2/regStep1">Full 7-day Free Trial Here.</a></p>
+        <p>By creating an account you agree to our <a href="javascript:void(window.open('http://www.worthpoint.com/terms-use','WorthPointTerms','scrollbars,resizable,width=600,height=500'))">Terms &amp; Conditions</a></p>
+      </div>
+   </div>   
+
+
+ <!-- preload the images -->
+ <div style='display:none'>
+   <img src="http://static.worthpoint.com/static/images/x.png" alt='' />
+ </div>   
+</div> <!-- // end login -->
+
+<!-- Content Div ends -->
+
+<script>message && alert(message);</script>
+
+<script src="http://static.worthpoint.com/js/cookies.js"></script>
+<script>
+    cookies.set('lastViewedItemId', '1675464');
+
+    $(document).ready(function () {
+        var $pn = $('#priceNominal');
+
+        // if there is a price and we are dealing with dollars
+        if($pn.length && $pn.html().indexOf('$') > -1) {
+            // calculate the inflation adjusted price
+            $.ajax({
+                dataType: 'html',
+                url     : '/data/cpi-u.txt'
+            }).done(function (raw) {
+                        var cpiTable = $.trim(raw.replace(/\n\n/mg, '\n')).split(/\n/);
+
+                        var firstYear = parseInt($.trim(cpiTable[0]).split(/\s+/)[0]);
+
+                        cpiTable = $.map(cpiTable, function (value) {
+                            var temp = $.trim(value).split(/\s+/);
+                            return [temp.slice(1, 13)];
+                        });
+
+                        var lastValue = parseFloat(cpiTable[cpiTable.length - 1].slice(-1)[0]);
+
+                        $('#priceAdjusted').html((function () {
+                            var dateArray = $('#dateSold').html().split(/\//);
+                            if(dateArray.length === 3) {
+                                var row = parseInt(dateArray[2]) - firstYear;
+                                var column = parseInt(dateArray[0].replace(/^0/, '')) - 1;
+                                var soldDateInflationMultiplier = cpiTable[row][column];
+
+                                var tempPrice = (parseFloat($pn.html().replace(/\W+/, '').replace(',', '')) * (1 + ((lastValue - soldDateInflationMultiplier) / lastValue)));
+
+                                return '$' + tempPrice.toString().match(/\d+\.\d{2}/);
+
+                            }
+                        })());
+
+                        $('#priceAdjustedContainer').css('visibility', 'visible');
+                    });
+        }
+        else {
+            // No point to use up the space for non-US dollar countries
+            $('#priceAdjustedContainer').hide();
+        }
+    });
+</script>
+
+<script type="text/html" id="popOverActivate">
+    <div class="absolute" style="top: 35%; left: 35%; width:400px;height:200px;border: 4px solid #fff; box-shadow: 0 0 60px #666;display:block; background: url('http://static.worthpoint.com/images/activate-account/stripe-bg.jpg') repeat center center #ffffff;">
+        <img id="closeUnlimited" class="absolute" src="http://static.worthpoint.com/static/images/close.png" style="top: -19px; right: -18px; cursor: pointer;" onclick="$(this).parent().fadeOut('slow');">
+        <div style="text-align:center; font-family: helvetica, arial, sans-serif;color:#523917;text-shadow:1px 0 0 #fff; font-size:16px; padding-top: 40px;">
+            Would you like to activate your account now?
+            <div id="cmdActivate" style="width:204px; height:41px; display:block; margin: 0 auto; background: url('http://static.worthpoint.com/images/activate-account/activate.png') no-repeat center center; padding-top:60px; cursor: pointer;">&nbsp;</div>
+        </div>
+    </div>
+</script>
+
+
+
+</div>
+
+
+    <!-- Footer Div begins (banner ad included) -->
+    
+    
+
+<div id="banners-two" class="banners-wrapper bg-one">
+
+	<div class="banners clearfix" style="padding-top:18px;">
+		<!-- Banner Ad begins -->
+		                    <span>
+		                        
+		                            <!-- worthpoint_btf_leaderboard -->
+		                            <div id='div-gpt-ad-1347568023544-2' style='width:728px; height:90px;' class="left">
+		                                <script type='text/javascript'>
+		                                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1347568023544-2'); });
+		                                </script>
+		                            </div>
+		                        
+		                    </span>
+		<!-- Banner Ad begins -->
+	</div>
+
+</div>
+
+<div id="footer-wrapper" class="bg-two">
+	<div id="footer" align="center">
+ 
+   				<div id="follow-footer">
+                    <span class="fancy">Follow us!</span><br><br>
+				    	<div style="display: inline-block; width: 220px; height: 20px; margin: 0 auto;">
+				        	<!-- AddThis Button BEGIN -->
+							<div class="addthis_toolbox addthis_default_style ">
+								<a class="addthis_button_facebook_like" fb:like:layout="standard" style="overflow:hidden; width:50px !important;"></a>
+								<a class="addthis_button_tweet" tw:via="Worthpoint" tw:count="none"></a>
+								<a class="addthis_button_pinterest_pinit"></a>
+								<a class="addthis_button_google_plusone" g:plusone:size="medium" g:plusone:count="false"></a> 
+							</div>
+							<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+							<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-510c32b538e3b082"></script>
+							<!-- AddThis Button END -->
+						</div>
+				</div>
+				<br><br>
+
+        <!-- Navigation begins here -->
+        <span>
+            <a class="unav" href="/about">About WorthPoint</a> | <a class="unav" href="/advertise-with-us">Advertising</a> | <a class="unav" href="/support-center/index.php">Help</a> | <a class="unav" href="/about-contact">Contact Us</a> | <a class="unav" href="/careers">Careers</a> | <a class="unav" href="/worthpoint-privacy-policy">Privacy Policy</a> | <a class="unav" href="/terms-use">Terms of Use</a><br><br>
+            <p>© 2013 - WorthPoint Corporation | 3525 Piedmont Road NE, Building 5, Suite 435, Atlanta, GA 30305 | 877.481.5750</p>
+        
+        
+        
+        
+    </div>
+</div>
+    
+</div>
+
+<script type="text/javascript">
+    <!-- //Added for help
+    function popup(mylink, windowname)
+    {
+        if (! window.focus)return true;
+        window.open(mylink, windowname, 'width=400,height=250,scrollbars=yes');
+
+        return false;
+    }
+
+    //-->
+</SCRIPT>
+
+
+
+<!-- Quantcast Tag, part 2 -->
+<script type="text/javascript">
+    _qevents.push( { qacct:"p-bbcrPgywai_SM"} );
+</script>
+<noscript>
+    <div style="display: none;"><img src="//pixel.quantserve.com/pixel/p-bbcrPgywai_SM.gif" height="1" width="1" alt="Quantcast"/></div>
+</noscript>
+
+
+
+</body>
+</html>

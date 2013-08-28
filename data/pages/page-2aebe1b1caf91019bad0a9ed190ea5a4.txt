@@ -1,0 +1,828 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>I-CAR - Collision Repair Training</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<link rel="stylesheet" type="text/css" href="/icar_includes/icar_alf.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="../icar_includes/ddsmoothmenu.js">
+
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+<style type="text/css">
+<!--
+body {
+	background-repeat: no-repeat;
+}
+.search_box_text {color : #555555;
+font-size : 10px;
+font-family : Verdana, Arial, Helvetica, sans-serif;
+text-align: center;
+font-style:normal;
+}
+
+#adr_state {visibility : inherit;
+color : #555555;
+font-size : 11px;
+float : center;
+clear : center;
+}
+#search_box {background-color : #ffffff;
+border : 1px solid #FFFFFF;
+}
+#search_box_align_rt {text-align : center;
+color : #555555;
+float : center;
+}
+#search_box_instructions {
+font-size : 9px;
+font-family : Verdana, Arial, Helvetica, sans-serif;
+font-style : underline;
+font-weight : normal;
+text-align : center;
+}
+#search_box_title {color : #0065BD;
+font-size : 18px;
+font-family :  Helvetica, Arial, sans-serif;
+font-weight : bold;
+line-height : 20px;
+text-align : center;
+padding-bottom : 2px;
+top : 0;
+}
+#search_programs {
+color : #555555;
+width : 150px;
+font-size : 11px;
+
+}
+#cntr-program-graphic2 {
+	position:absolute;
+	left:172px;
+	top:270px;
+	width:253px;
+	height:54px;
+}
+.style7 {
+	font-family: Helvetica, Arial;
+	font-size: 13px;
+	font-weight: bold;
+}
+.style8 {
+	font-family: Verdana, Helvetica, Arial;
+	font-size: 10px}
+a:link {
+	text-decoration: none;
+	color: #7F7F7F;
+}
+a:visited {
+	text-decoration: none;
+	color: #7F7F7F;
+}
+a:hover {
+	text-decoration: underline;
+	color: #0065BD;
+}
+a:active {
+	text-decoration: none;
+	color: #CCC;
+}
+.style11 {
+	color: #999999;
+	font-size: 13px;
+}
+.style13 {color: #FF3300}
+.style14 {color: #FF6600}
+.style18 {color: #ff0000}
+.style7.style11 p a u {
+	color: #FFFFFF;
+}
+.style9 {	
+	font-family: Helvetica, Arial;
+	color: #0065BD;
+	line-height:13px;
+	font-size: 12px;
+}
+.style91 {	font-family: Helvetica, Arial;
+	color: #7F7F7F;
+	line-height:13px;
+	font-size: 12px;
+}
+#Layer3 table tr td .style91 a {
+	color: #0065bd;
+	text-decoration: underline;
+}
+-->
+</style>
+<style type="text/css">
+
+a {
+	outline: none;
+}
+</style>
+
+<style type="text/css">
+/* rotator in-page placement */
+    div.rotator {
+	height:0px;
+	margin-left: 0px;
+
+}
+/* rotator css */
+	div.rotator ul li {
+	float:left;
+	position:absolute;
+	list-style: none;
+	left: 0px;
+	width: 590px;
+	top: 123px;
+}
+/* rotator image style */	
+	div.rotator ul li img {
+	border:0px solid #FFF;
+	padding: 0px;
+	background: #FFF;
+}
+    div.rotator ul li.show {
+	z-index:50
+}
+.search_box_text1 {color : #555555;
+font-size : 10px;
+font-family : Verdana, Arial, Helvetica, sans-serif;
+text-align: right;
+font-style:normal;
+}
+.style10 {font-size: 12px;
+	color: #999999;
+}
+.style92 {color: #FFFFFF }
+.style93 {
+	font-family: Helvetica, Arial;
+	font-size: 15px;
+	font-weight: bold;
+	color: #a7852b;
+}
+</style>
+
+
+
+<script type="text/javascript">
+
+function theRotator() {
+	//Set the opacity of all images to 0
+	$('div.rotator ul li').css({opacity: 0.0});
+	
+	//Get the first image and display it (gets set to full opacity)
+	$('div.rotator ul li:first').css({opacity: 1.0});
+		
+	
+	setInterval('rotate()',4000);
+	
+}
+
+function rotate() {	
+	//Get the first image
+	var current = ($('div.rotator ul li.show')?  $('div.rotator ul li.show') : $('div.rotator ul li:first'));
+
+    if ( current.length == 0 ) current = $('div.rotator ul li:first');
+
+	//Get next image, when it reaches the end, rotate it back to the first image
+	var next = ((current.next().length) ? ((current.next().hasClass('show')) ? $('div.rotator ul li:first') :current.next()) : $('div.rotator ul li:first'));
+	
+	//Un-comment the 3 lines below to get the images in random order
+	
+	//var sibs = current.siblings();
+    //var rndNum = Math.floor(Math.random() * sibs.length );
+    //var next = $( sibs[ rndNum ] );
+			
+
+	//Set the fade in effect for the next image, the show class has higher z-index
+	next.css({opacity: 0.0})
+	.addClass('show')
+	.animate({opacity: 1.0}, 1000);
+
+	//Hide the current image
+	current.animate({opacity: 0.0}, 1000)
+	.removeClass('show');
+	
+};
+
+
+
+$(document).ready(function() {		
+	//Load the slideshow
+	theRotator();
+	$('div.rotator').fadeIn(1000);
+    $('div.rotator ul li').fadeIn(1000); // tweek for IE
+});
+
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+function popitup(url) {
+	newwindow=window.open(url,'name','height=399,width=667');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+
+// -->
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17694430-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</script>
+          <script language=Javascript>
+function centerPopUp( url, name, width, height, scrollbars ) {
+ 
+    if( scrollbars == null ) scrollbars = "0"
+ 
+    str  = ""; 
+    str += "resizable=1,";
+    str += "scrollbars=" + scrollbars + ",";
+    str += "width=" + width + ",";
+    str += "height=" + height + ",";
+ 
+    if ( window.screen ) {
+        var ah = screen.availHeight - 30;
+        var aw = screen.availWidth - 10;
+ 
+        var xc = ( aw - width ) / 2;
+        var yc = ( ah - height ) / 2;
+ 
+        str += ",left=" + xc + ",screenX=" + xc;
+        str += ",top=" + yc + ",screenY=" + yc;
+    } 
+    window.open( url, name, str );
+} 
+                          </script>
+
+
+
+
+</head>
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>I-CAR Collision Repair Training | United States</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<link rel="stylesheet" type="text/css" href="icar_alf.css" />
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="ddsmoothmenu.js">
+
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "smoothmenu1", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+
+</script>
+<style type="text/css">
+<!--
+#icar_logo {visibility: visible; position: absolute; top: 24px; left: 10px }
+#collision {color: #9c9c9c; font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: normal; text-align: right; letter-spacing: 1px }
+#location {
+	visibility: visible;
+	position: absolute;
+	top: 8px;
+	left: 440px;
+	width: 340px;
+	height: 42px
+}
+#top_blue_line {font-size: 3px; background-color: #0065BD; visibility: visible; position: absolute; top: 0; left: 0; width: 767px; height: 3px }
+.search_box_text {color : #555555;
+font-size : 10px;
+font-family : Verdana, Arial, Helvetica, sans-serif;
+text-align: left;
+font-style:normal;
+}
+body {
+	background-image: url(/icar_includes/graphics/graphic_elements/sidebars/lt_blue_sidebar2.gif);
+}
+.style3 {color: #FF0000;
+	font-size: 9px;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<div id="icar_logo"> <a href="http://www.i-car.com"><img src="/icar_includes/graphics/logos/i_car_logos/i-car.gif" alt="I-CAR" height="32" width="102" border="0"></a></div>
+<form id="FORM1" method="post" action="https://my.i-car.com/eweb/DynamicPage.aspx?Site=myicarus" onClick="_gaq.push(['_trackEvent', 'youtube', 'myicar login',,, false]);">
+<div id="location">
+  <div>
+                <input type="hidden" name="URL_failed" value="DynamicPage.aspx?Site=myicarus&webcode=LoginRequired">
+                <input type="hidden" name="URL_success" value="https%3A%2F%2Fmy.i-car.com%2Feweb%2FMemberPage.aspx%3FSite%3Dmyicarus">
+  </div>
+  <table width="400">
+    <tr>
+      <td width="70" valign="bottom" class="search_box_text"><div align="center"><br />
+              <img src="../graphics/logos/i_car_logos/myicar_small.gif" alt="" width="62" height="22" /></div></td>
+      <td rowspan="2"><table id="eWebLoginControl_LoginTable" width="250" cellpadding="0" cellspacing="3">
+        <tr align="Left" valign="Bottom">
+          <td align="Left"><span class="search_box_text">Username </span></td>
+          <td align="Left"><span class="search_box_text">Password</span></td>
+        </tr>
+        <tr align="Left" valign="Bottom">
+          <td align="Left"><input name="myicaruslogin" type="text" size="11" maxlength="25"></td>
+          <td align="Left"><input name="myicaruspw" type="password" size="11" maxlength="25"></td>
+          <td align="left"><input type="image" name="submit" value="Login" title="Login" src="../graphics/home/login.gif" width="57" height="22" style="border-width:0px;" /></td>
+        </tr>
+        <tr>
+          <td colspan="3"><input name="eWebLoginControl$LoginGoHidden" type="hidden" id="eWebLoginControl_LoginGoHidden" />
+          
+                <span class="search_box_text">&nbsp;&nbsp;&nbsp;Forgot <a href="https://my.i-car.com/eweb/DynamicPage.aspx?WebCode=forgotusername&amp;site=myicarus">Username</a> or <a href="https://my.i-car.com/eweb/DynamicPage.aspx?WebCode=forgotpassword&amp;site=myicarus">Password</a></span></td>
+        </tr>
+      </table></td>
+    </tr>
+    <tr>
+      <td valign="middle" class="search_box_text"><div align="center"><a href="https://my.i-car.com/eweb/DynamicPage.aspx?WebCode=ICARNU&amp;action=add&amp;site=myicarus">Register</a></div></td>
+    </tr>
+  </table>
+  
+</div></form>
+
+<div id="Layer1" style="position:absolute; width:301px; height:65px; z-index:1; top: 10px; left: 136px;"><span class="style3"><strong></strong></span></div>
+<div id="top_blue_line"></div>
+
+<table width="767" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td height="77">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="0065BD"><div id="smoothmenu1" class="ddsmoothmenu">
+      <ul>
+         <li><a href="#">About<br>&nbsp; &nbsp; &nbsp;I-CAR
+          </a>
+            <ul>
+              <li><a href="http://www.i-car.com/html_pages/about/vision.shtml">The I-CAR Vision</a></li>
+              <li><a href="http://www.i-car.com/html_pages/about/events.shtml">Events &amp; Meetings</a></li>
+              <li><a href="http://www.i-car.com/html_pages/about/governance.shtml">About Us</a>
+                                 <ul>
+                    <li><a href="http://www.i-car.com/html_pages/about/governance/board_of_directors.shtml">International Board of Directors</a></li>
+                    <li><a href="http://www.i-car.com/html_pages/about/governance/recognition_council.shtml">Gold Class Professionals and Platinum Individuals Recognition Council</a></li>
+                    <li><a href="http://www.i-car.com/html_pages/about/governance/collision_repair_isac.shtml">Collision Repair Industry Segment Advisory Council</a></li>
+                    <li><a href="http://www.i-car.com/html_pages/about/governance/insurance_isac.shtml">Insurance Industry Segment Advisory Council</a></li>
+                    <li><a href="http://www.i-car.com/html_pages/about/governance/education_isac.shtml">Education Industry Segment Advisory Council</a>
+                     			</ul> 
+              <li><a href="http://www.i-car.com/html_pages/about/membership.shtml">Membership</a>
+                                 <ul>
+                    <li><a href="http://www.i-car.com/html_pages/about/membership/information.shtml">Membership Information and Application</a></li>
+                    <li><a href="http://www.i-car.com/html_pages/about/membership/member_list.shtml">Member Listing</a>
+                     			</ul>   
+              <li><a href="http://www.i-car.com/html_pages/about/international_partners.shtml">International Partners</a>
+                                <ul>
+                    <li><a href="http://www.i-car.com.au" target="_blank">Australia</a></li>                    
+                    <li><a href="http://www.aiacollisiontraining.ca" target="_blank">Canada</a></li>
+                    <li><a href="http://www.i-car.co.nz" target="_blank">New Zealand</a>
+                     			</ul>            
+              <li><a href="http://www.i-car.com/html_pages/about/consumer.shtml">Consumer Information</a></li>
+              <li><a href="http://www.i-car.com/html_pages/about/pressroom.shtml">Press Room</a></li>
+              <li><a href="http://www.i-car.com/html_pages/about/employment.shtml">Employment</a></li>
+              <li><a href="http://www.i-car.com/html_pages/about/contact.shtml">Contact Us</a></li>
+              <li><a href="https://my.i-car.com/eweb/?Site=myicarus"><em>my</em>I-CAR Login</a></li>
+              <li><a href="http://www.i-car.com/html_pages/policies.shtml">Policies</a></li>              
+            </ul>
+        </li>
+        <li><a href="#">I-CAR &nbsp;<br>&nbsp;Training</a>
+            <ul>
+              <li><a href="http://www.i-car.com/html_pages/training/roles2.shtml">Training for Your Role and I-CAR Course Catalog</a></li>
+              <li><a href="https://my.i-car.com/eweb/DynamicPage.aspx?site=publicus&webcode=classsearch">Find an Event</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training/online_courses.shtml">Online Training</a></li> 
+              <li><a href="http://www.i-car.com/html_pages/training/virtual_classroom.shtml">Virtual Classroom</a></li>               
+              <li><a href="http://www.i-car.com/html_pages/training_programs/welding.shtml">Welding Qualification Series</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training/equivalency_test_catalog.shtml">Equivalency Test</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training/intro_to_collision_repair.shtml">Intro to Collision Repair Series</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training/events.shtml">Training Events</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training/pricing.shtml">Pricing</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training/registration.shtml">Registration</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training/industry_training_alliance.shtml">Industry Training Alliance</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/continued_education.shtml">Continuing Education Programs</a></a>
+                  <ul>
+                    <li><a href="http://www.i-car.com/html_pages/training_programs/continued_education/ceu_florida.shtml">Florida</a></li>
+                    <li><a href="http://www.i-car.com/html_pages/training_programs/continued_education/ceu_idaho.shtml">Idaho</a></li>
+                    <li><a href="http://www.i-car.com/html_pages/training_programs/continued_education/ceu_new_hampshire.shtml">New Hampshire</a></li>
+                    <li><a href="http://www.i-car.com/html_pages/training_programs/continued_education/ceu_north_carolina.shtml">North Carolina</a></li>
+                    <li><a href="http://www.i-car.com/html_pages/training_programs/continued_education/ceu_oklahoma.shtml">Oklahoma</a></li>
+                    <li><a href="http://www.i-car.com/html_pages/training_programs/continued_education/ceu_texas.shtml">Texas</a></li>
+                    <li><a href="http://www.i-car.com/html_pages/training_programs/continued_education/ceu_utah.shtml">Utah</a></li>
+                    <li><a href="http://www.i-car.com/html_pages/training_programs/continued_education/ceu_wyoming.shtml">Wyoming</a>
+                     			</ul>
+              <li><a href="http://www.i-car.com/html_pages/training/ase_test_prep.shtml">ASE Test Preparation</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training/document_library.shtml">Applications and Documents</a></li>
+              <li><a href="https://my.i-car.com/eweb/?Site=myicarus"><em>my</em>I-CAR Login</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Training &nbsp;<br>
+          Recognition</a>
+            <ul>
+              <li><a href="http://www.i-car.com/html_pages/recognition/professional_dev_program.shtml">I-CAR&reg; Professional Development Program&trade;</a></li>
+              <li><a href="http://www.i-car.com/html_pages/recognition/platinum_individual.shtml">Platinum Individual&reg; Recognition</a></li>
+              <li><a href="http://www.i-car.com/html_pages/recognition/cr_gold_class.shtml">Collision Repair Gold Class Professionals&reg; Business Recognition</a></li>
+              <li><a href="http://www.i-car.com/html_pages/recognition/insurance_gold_class.shtml">Insurance Gold Class Professionals&reg; Business Recognition</a></li>     
+              <li><a href="http://www.i-car.com/html_pages/recognition/transcripts_certificates.shtml">Training Records and Certificates</a></li>
+              <li><a href="http://www.i-car.com/html_pages/recognition/marketing.shtml">Marketing Your Business</a></li>
+              <li><a href="http://www.i-car.com/html_pages/recognition/merchandise.shtml">Gold Class Professionals&reg; and Platinum Individual&reg; Merchandise</a></li>
+              <li><a href="https://my.i-car.com/eweb/?Site=myicarus"><em>my</em>I-CAR Login</a></li>
+            </ul>
+        </li>
+        <li><a href="#">OEM &nbsp;<br>
+          &nbsp;Training</a>
+            <ul>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/acura_training.shtml">Acura</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/audi_training.shtml">Audi</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/chrysler_training.shtml">Chrysler</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/ford_training.shtml">Ford</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/gm_training.shtml">GM</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/honda_training.shtml">Honda</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/infiniti_training.shtml">Infiniti</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/jaguar_training.shtml">Jaguar</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/jaguar_training.shtml">Land Rover</a></li> 
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/lexus_training.shtml">Lexus</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/nissan_training.shtml">Nissan</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/porsche_training.shtml">Porsche</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/toyota_training.shtml">Toyota</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/volvo_training.shtml">Volvo</a></li>
+              <li><a href="http://www.i-car.com/html_pages/training_programs/oem_training/vw_training.shtml">VW</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Technical &nbsp;<br>
+          &nbsp;Information</a>
+            <ul>
+              <li><a href="http://www.i-car.com/html_pages/technical_information/advantage.shtml">Advantage Online</a></li>
+              <li><a href="http://www.i-car.com/html_pages/technical_information/tech_inquiries.shtml">Top Technical Inquiries</a></li>
+              <li><a href="http://www.i-car.com/html_pages/technical_information/technical_info.shtml">Vehicle Makers Technical Information</a></li>
+              <li><a href="http://fms.i-car.com/airbag_matrix/fmpro?-db=matrixmd.fp5&-lay=vehicle_charts&-format=index.html&-view">Airbag Parts Replacement Charts</a></li>
+              <li><a href="http://fms.i-car.com/vehicle_technical_information/fmpro?-db=vehicle_section.fp5&-lay=vehicle_specific_sectioning&-format=index.html&-view">Partial Replacement Recommendations</a></li>
+              <li><a href="http://www.i-car.com/html_pages/technical_information/upcr.shtml">UPCR</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Schools and<br>
+           &nbsp; &nbsp; Colleges</a>
+            <ul>
+              <li><a href="http://www.i-car.com/html_pages/schools/professional_dev_program-ee.shtml">I-CAR&reg; Professional Development Program&trade; &ndash; Education Edition</a>
+                                 <ul>
+                    <li><a href="http://www.i-car.com/html_pages/schools/high_schools.shtml">High School</a></li>
+                    <li><a href="http://www.i-car.com/html_pages/schools/private_public_colleges.shtml">College</a>
+                     			</ul>    
+              <li><a href="http://www.i-car.com/html_pages/schools/schools_intro_to_cr.shtml">Intro to Collision Repair Series for Schools</a></li>
+              <li><a href="http://www.i-car.com/html_pages/schools/students_natef.shtml">Enhanced Curriculum/NATEF</a></li>
+              <li><a href="http://www.i-car.com/html_pages/schools/schools_pricing.shtml">Pricing</a></li>
+              <li><a href="http://www.i-car.com/html_pages/schools/school_recognition.shtml">School Recognition</a></li>
+              <li><a href="http://www.i-car.com/html_pages/schools/equivalency_test.shtml">Equivalency Test for Schools</a></li>
+              <li><a href="http://www.i-car.com/html_pages/schools/students_careers.shtml">Careers in Collision Repair</a></li>  
+              <li><a href="http://www.i-car.com/html_pages/schools/students_training.shtml">Training for a Career in Collision Repair</a></li>
+              <li><a href="http://www.i-car.com/html_pages/schools/academic_alliance.shtml">Academic Alliance</a></li>       
+              <li><a href="http://cumulus.i-car.com/instructor/login.asp">Instructor Technical Support</a></li>
+              <li><a href="http://www.i-car.com/html_pages/schools/downloads.shtml">Applications and Downloads</a></li>                                                                           
+            </ul>
+        </li>
+        <li><a href="#">I-CAR Volunteers <br />
+          &nbsp; &nbsp; &amp; Instructors</a>
+            <ul>
+              <li><a href="http://www.i-car.com/html_pages/volunteer_instructor/volunteer.shtml">The I-CAR Volunteer</a></li>
+              <li><a href="http://www.i-car.com/html_pages/volunteer_instructor/instructor.shtml">The I-CAR Instructor</a></li>
+              <li><a href="http://www.i-car.com/html_pages/volunteer_instructor/committees.shtml">About I-CAR Committees</a></li>
+              <li><a href="http://www.i-car.com/html_pages/volunteer_instructor/support.shtml">Volunteer &amp; Instructor Support Team</a></li>
+              <li><a href="http://www.i-car.com/html_pages/volunteer_instructor/committee_toolkit.shtml">Committee Marketing Tools</a></li>              
+              <li><a href="http://www.i-car.com/html_pages/volunteer_instructor/documents_downloads.shtml">Downloads</a></li>
+              <li><a href="http://www.i-car.com/html_pages/about/events/2013_vol_inst_conferences.shtml">Conferences</a></li> 
+            </ul>
+        </li>
+      </ul>
+      <br style="clear: left" />
+    </div></td>
+  </tr>
+  <tr>
+    <td height="2" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+<table width="767" height="340" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td rowspan="1" valign="top" width="50%"><em>
+        
+        
+      </em>
+        <table width="590" cellpadding="0" cellspacing="0" bgcolor="#ffffff" id="thisCell">
+          <tr>
+</head>
+<body>
+<div class="rotator">
+  <ul>
+    <li class="show"><a href="http://www.youtube.com/watch?v=efmBrlGvC8A" onClick="_gaq.push(['_trackEvent', 'youtube', 'SPS05 Promo',,, false]);" target="_blank"><img src="graphics/home/image24.jpg" width="590" height="240"  alt="SPS05 Promo" /></a></li>   
+    <li><a href="http://www.youtube.com/watch?v=qAq2MsLFjdI#!" onClick="_gaq.push(['_trackEvent', 'youtube', 'ADH01 Promo',,, false]);" target="_blank"><img src="graphics/home/image23.jpg" width="590" height="240"  alt="ADH01 Promo" /></a></li> 
+    <li><a href="http://www.i-car.com/html_pages/recognition/insurance_gold_class.shtml" onClick="_gaq.push(['_trackEvent', 'youtube', 'Gold Class Insurance Enhancements',,, false]);"><img src="graphics/home/image21b.jpg" width="590" height="240"  alt="Gold Class Enhancements" /></a></li>
+    <li><a href="http://www.i-car.com/html_pages/recognition/cr_gold_class.shtml" onClick="_gaq.push(['_trackEvent', 'youtube', 'Gold Class Enhancements',,, false]);"><img src="graphics/home/image19b.jpg" width="590" height="240"  alt="Gold Class Enhancements" /></a></li>
+    <li><a href="http://pdpclarity.i-car.com/home.php"  onClick="_gaq.push(['_trackEvent', 'youtube', 'PDP Clarity',,, false]);" target="_blank"><img src="graphics/home/image18.jpg" width="590" height="240"  alt="PDP Clarity" /></a></li>
+    <li><a href="javascript:centerPopUp( 'http://www.i-car.com/calculator/calc_pop.shtml', 'popup', 600, 497 )" onClick="_gaq.push(['_trackEvent', 'youtube', 'Gold Class Cost Calculator',,, false]);"><img src="graphics/home/image20.jpg" width="590" height="240"  alt="Gold Class Cost Calculator" /></a></li> 
+    <li><a href="http://www.i-car.com/html_pages/training/virtual_classroom.shtml" onClick="_gaq.push(['_trackEvent', 'youtube', 'Virtual Classroom',,, false]);"><img src="graphics/home/image16.jpg" width="590" height="240"  alt="Virtual Classroom" /></a></li>
+
+
+ 
+
+
+
+
+  </ul>
+</div>
+          </tr>
+      </table>
+        <p>&nbsp;</p></td>
+      <td width="50%" height="458" rowspan="1" valign="top"><form action="https://my.i-car.com/eweb/DynamicPage.aspx" method="get" name="ewebform" class="search_box_text" id="ewebform"  onsubmit="return validateFormOnSubmit(this)" onClick="_gaq.push(['_trackEvent', 'youtube', 'Class Search Button',,, false]);">
+          <table width="177" height="216px" border="0" cellspacing="0" cellpadding="0" id="search_box">
+            <tr>
+              <td height="35" valign="bottom" id="search_box_title">&nbsp;Live Class Search</td>
+            </tr>
+            <tr>
+              <td height="100" id="search_box_instructions"><table width="160" border="0" align="right" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="50" colspan="2" class="search_box_text"><select name="ses_title" id="search_programs">
+                        <option selected="selected" value="">Choose a Class</option>
+                        <option value="F5A29553-E333-4CFF-928D-9C23A7FE8BB3">ABR01 Anti-Lock Brakes and Traction Control Systems</option>
+                        <option value="1D703D1C-0CB4-4DC8-8478-3A54AFC1C7EC">ADH01 Adhesive Bonding</option>
+                        <option value="E58138AE-FC6D-4777-B3C2-F29797BF3E1B">AIR01 Air Conditioning</option>
+                        <option value="37E01947-918E-4E17-9FDE-85868F593B6F">ALI01 Aluminum-Intensive Vehicle Repairs</option>                        
+                        <option value="3D4C94E2-4A69-4C3C-B417-36181955C0B2">ALT01 Electric and Electric Hybrid Vehicles</option>
+                        <option value="1C49CC67-5B73-4545-9D50-FCBF52C6991E">ALT02 Hybrid Electric And Alternative Fuel Vehicles</option>
+                        <option value="6C0D0319-2F5A-4B12-A6EF-31F1B826B43A">BLU01 Blueprinting Process and Damage Discovery</option>
+                        <option value="BC3BF68B-087D-477F-97F2-09C9EE3B15E8">BRA01 Brakes</option>
+                        <option value="2477497C-4392-4758-ADFF-E862A3184ACD">CPS01 Corrosion Protection</option>
+                        <option value="92501E30-356C-4CAB-BBA6-82A1B253C6FA">CUS01 Customer Relations and Collision Repair</option>
+                        <option value="98C658FF-CA75-44E0-BF61-86459DF97BB2">CYC01 Overview of Cycle Time Improvements for the Collision Repair Process</option>
+                        <option value="0BCE16AD-B49F-4180-A547-5FC71B11B97E">DAM01 Vehicle Identification, Estimating Systems, and Terminology</option>
+                        <option value="55A9FD2B-CD9F-49DE-8F35-C5714C03C4F1">DAM03 Mechanical Systems Analysis</option>
+                        <option value="B6CBDB49-6724-46A2-974D-96CC59C415FC">DAM05 Aluminum Panels and Structures Damage Analysis</option>
+                        <option value="A89E82D6-1268-4810-8B82-BEE968A17D37">DAM06 Steering And Suspension Damage Analysis</option>
+                        <option value="9D439AD4-DA5E-49F1-BB61-3CC92DCFF78D">DAM07 Damage Analysis of Advanced Automotive Systems</option>
+                        <option value="3E265E38-D8C0-4375-8513-4C41311B5CC2">DAM08 Advanced Material Damage Analysis</option>
+                        <option value="51E10395-5226-49B7-B6C0-F62B10176AA6">DAM09 Hail, Theft, Vandalism Damage Analysis</option>
+                        <option value="26696DE4-C705-4622-9105-BE7CC9B2025B">DAM10 Exterior Panels Damage Analysis</option>
+                        <option value="F4D90BBD-6186-4E14-8869-AC396E4FA212">DAM11 Restraint Systems Damage Analysis</option>
+                        <option value="E034F557-272C-4421-9D06-44AF4B0E26F5">DAM12 Steel Structures Damage Analysis</option>
+                        <option value="52BC6004-7629-4DE6-822D-09EA0BC1C923">DCX01 Collision Repair Overview For Chrysler, Dodge, And Jeep Vehicles</option>
+                        <option value="07162607-C637-4A68-9D18-FFF9A0809F76">DRT01 Drivetrains and Engine Mounts</option>
+                        <option value="9AE377FA-B5F5-4F2F-9C6A-639A850DAB43">ELE01 Electrical Circuits and DVOM Usage</option>
+                        <option value="21581093-B953-4307-9310-1A0058EDCE28">ELE02 Diagnosis, Testing, and Repair of Common Electrical Loads</option>
+                        <option value="29677367-7495-48B2-910F-44BE5D41918D">ELE03 Fault Code Retrieval, Diagnosis, and Testing Electronic Systems</option>
+                        <option value="33E2A653-EAAE-45D6-BE87-82FB6C6271A5">EXT01 Bolted-On Part Replacement</option>
+                        <option value="C37CA24C-10A1-4B1F-9693-B15FE7F6E3AA">EXT02 Welded and Adhesively Bonded Panel Replacement</option>
+                        <option value="F0834C9D-73DE-47AA-ACE5-AA292D38BC7B">FCR01 Fundamentals of Collision Repair</option>
+                        <option value="59A25DD8-282C-43F8-B8F0-69761D255C61">FOM01 Automotive Foams</option>
+                        <option value="5A0B9C05-82D3-4159-A52B-1E83258C95DD">FOR05 Collision Repair for Ford and Lincoln Vehicles</option>                        
+                        <option value="24D1566B-E95D-4502-9DB7-60154332A3F6">FUE01 Fuel and Exhaust Systems</option>
+                        <option value="369F127C-73C1-4DD0-ACAD-AD29F3738DC1">GEN01 Collision Repair Overview for the Chevrolet Corvette Z06</option>
+                        <option value="199A1E9A-D7E2-48D0-BAAA-D47FDC7C40C2">GEN03 Collision Repair for General Motors Vehicles</option>
+                        <option value="F07A8818-21AF-4070-A906-1CB658D1483D">GLA01 Movable Glass</option>
+                        <option value="0DD7005A-53E1-45F3-B9F8-99DAFC766F5B">GLA02 Stationary Glass</option>
+                        <option value="8AD9DEC7-549B-449C-8E0C-96472456411E">HEA01 Heating and Cooling Systems</option>
+                        <option value="292C7DD6-42F1-46F9-865D-83919792EFE6">HON01 Collision Repair for Honda and Acura Vehicles</option>
+                        <option value="4B0B3C43-FA38-4FB1-9432-D09AA9A8F5AD">LSC01 Lighting, Starting, and Charging Systems</option>
+                        <option value="F1465B44-5255-481F-A497-3C56E749DEFE">MEA01 Measuring</option>
+                        <option value="5CDC99D7-EE9B-4C62-9C6D-C28116A2F90C">NEW10 Vehicle Technology and Trends 2010</option>
+                        <option value="AB229A8D-0146-4D57-A515-664CC18BF1E9">NEW11 Vehicle Technology and Trends 2011</option>
+						<option value="EFE9BAB9-D48D-4129-BCEB-C05125EF4676">NEW13 Vehicle Technology and Trends 2013</option>                     
+                        <option value="1CBFB093-397D-42C2-8554-09EDC48BFFFC">PLA03 Plastic and Composite Repair</option>
+                        <option value="384E3E45-FBB8-4FE2-8547-EBA60825ED62">POP01 Collision Repair for Select High Volume Vehicles</option>
+                        <option value="702E9074-86FE-4F5F-80E8-1B28B95E80A8">PRA01 Replacing Exterior Aluminum Panels</option>
+                        <option value="10F64A01-A7CF-4C14-B67E-8B3776881866">PWR01 Power Accessories</option>
+                        <option value="8D1CA3BF-6FE8-4E36-BD9B-35C6CDBD853E">QUA01 Inspecting Repairs for Quality Control</option>
+                        <option value="8A859E9A-416F-4DEC-9EBB-0A3306D59DA6">RCY01 Recycled Parts for Collision Repair</option>
+                        <option value="79DC332F-6F6C-45A5-84AB-69FC300FB86E">REF01 Refinishing Equipment and VOC Regulations</option>
+                        <option value="066560E2-5B53-4EF3-BA14-849D69CEFD70">REF02 Surface Preparation and Masking</option>
+                        <option value="C29EA503-F1C8-44A1-8A8F-25FAC0409E42">REF03 Color Theory, Application, Tinting, and Blending</option>
+                        <option value="9C0442FD-29AA-4064-9A4A-528FBB315E0A">REF04 Detailing</option>
+                        <option value="069FD694-2E47-4C7C-B6AD-4CA4E79C695C">REF07 Waterborne Products, Systems, and Application</option>
+                        <option value="97F1F779-7A89-4CF8-A8D3-B3D9A9CAE1A6">RES01 Restraints</option>
+                        <option value="1152E5C6-B507-4690-989E-6FD722175B79">RES02 Advanced Restraint Systems</option>
+                        <option value="715B0D11-DFDF-4E2E-BFD6-7C34A37B82E6">SPS01 Steel Unibody Front and Rear Rails, Floors, and Front Structure</option>
+                        <option value="7EA3CB0F-6B27-4478-A6BF-2836938D8574">SPS02 Steel Unibody, A-, B-, C-, D-Pillars, and Rocker Panels</option>
+                        <option value="E491F959-62EC-4A4C-8ABF-654519D47629">SPS03 Steel Full-Frame Sectioning</option>
+                        <option value="91BF6A52-CBD7-4E8E-ACA0-4A42CBC820BA">SPS05 Steel Sectioning Qualification Series</option>
+                        <option value="D8CBED5E-732C-4D4F-9803-2B199BC5059C">SPS06 Full-Frame Replacement</option>
+                        <option value="212B4EE4-0DD1-49E0-A8A7-EDD1E273CB93">SPS07 Steel Unitized Structures Technologies and Repair</option>
+                        <option value="86CDA2C9-CD17-40D6-972F-F57108951566">SPS08 Steel Full-Frame Technologies and Repair</option>
+                        <option value="8ab2d642-f32a-4f0b-b7f1-64852a1f2c8f">SPS09 Best Practices for High Strength Steel Repairs</option>                        
+                        <option value="C0A0D2D8-8B5F-4F8B-982C-64869A2A4C32">SSA01 Structural Straightening Aluminum</option>
+                        <option value="E91F0653-1476-48D8-802C-459A612DE229">SSS01 Structural Straightening Steel</option>
+                        <option value="9BD3A72F-C775-4853-AA0D-C68069CB2C71">STA01 Cosmetic Straightening Aluminum</option>
+                        <option value="7A844DB7-6D6A-413D-8BA0-8BEB0E7D9179">STE02 Suspension Systems</option>
+                        <option value="FBB31EAC-8B8B-4D75-B3FB-CE9531942E3D">STE03 Rack and Pinion and Parellelogram Steering Systems</option>
+                        <option value="72FD56D3-E4D0-44A6-BDED-633B539F7794">STE04 Wheel Alignment and Diagnostic Angles</option>
+                        <option value="6E7B989C-C4F8-4780-A058-10FDAE975396">STE05 Electronically Controlled Steering and Suspension Systems</option>
+                        <option value="52683884-C076-4B80-ADCA-9C6ABB7855DE">STS01 Cosmetic Straightening Steel</option>
+                        <option value="6EC8936D-A306-4A47-B0AC-CC7777AB2E23">TLS01 Compressed Air Systems, Vehicle Lifts, and Other Capital Equipment</option>
+                        <option value="013D3507-8883-49D3-B06D-3F45F71621E5">TOY01 Collision Repair for Toyota, Lexus, and Scion Vehicles</option>
+                        <option value="DBF2DB31-CDB9-43EC-9D6F-D4CBC7C15A82">TRM01 Trim and Hardware</option>
+                        <option value="67D665C5-1741-4FF9-BF37-597DBEA3F219">WCA03 Aluminum GMA (MIG) Welding Qualification Series</option>
+                        <option value="1925044A-40E6-498C-B7D3-66B8CDF56754">WCS03 Steel GMA (MIG) Welding Qualification Series</option>
+                        <option value="D9C89012-8698-45DA-B0D7-9EDA551FA507">WCS04 Squeeze-Type Resistance Spot Welding</option>
+                        <option value="34DEC708-1552-4126-8305-1EBA80371DF6">WCS05 Oxyacetylene/Plasma Arc Cutting</option>
+                        <option value="391F4D0A-797C-4CE8-8380-EF73B79F43D9">WKR01 Hazardous Materials, Personal Safety, and Refinish Safety</option>
+                        <option value="ADE56ABB-255A-4CD3-B8FA-E1B407ED884C">WNW01 Wind Noise and Water Leaks</option>
+                    </select></td>
+                </tr>
+                <tr>
+                  <td class="search_box_text" colspan="2"></td>
+                </tr>
+                <tr>
+                  <td width="80" class="search_box_text">&nbsp;&nbsp;&nbsp;ZIP CODE &nbsp;</td>
+                  <td width="80">                    
+                    <div align="left">
+                      <input name="adr_post_code" type="text" size="8" maxlength="8" />                  
+                    </div></td>
+                </tr>
+                <tr>
+                  <td height="50" colspan="2"><div align="center">
+                    <input name="c_2_2:ButtonFindGo" type="image" class="header_links" src="graphics/home/search_btn.gif" alt="Zip Code Search" align="middle" />
+                  </div></td>
+                </tr>
+                <tr>
+                  <td height="30" colspan="2" id="advanced_search"><div align="center"><a title="Advanced Search" href="https://my.i-car.com/eweb/DynamicPage.aspx?site=publicus&amp;webcode=classsearch&amp;adr_line2=f9994f3c-f72d-4d5c-9f8d-db2508334d6a"><u>Advanced Search</u></a> </div></td>
+                </tr>
+                <tr>
+                  <td height="30" colspan="2" class="style18" id="advanced_search2"><div align="center"></div>
+                  <hr /></td>
+                </tr>
+              </table></td>
+            </tr>
+          </table>
+          <input name="FromSearchControl" type="hidden" value="Yes" />
+          <input name="WebCode" type="hidden" value="classscheresults" />
+          <input name="Site" type="hidden" value="publicus" />
+          <input name="evt_title" type="hidden" />
+          <input name="cmt_name" type="hidden" />
+          <input name="coursetype" type="hidden" />
+          <input name="c12_oem_name" type="hidden" />
+          <input name="c04_state" type="hidden" />
+          <input name="adr_line2" type="hidden" value="f9994f3c-f72d-4d5c-9f8d-db2508334d6a" />
+        </form>
+      <p>&nbsp;</p></td>
+    </tr>
+    <tr>
+
+      <td valign="top" width="50%"></td>
+      <td valign="top" width="50%"></td>
+    </tr>
+<tr>
+      <td valign="top"></td>
+      <td valign="top"></td>
+</tr>
+  </tbody>
+</table>
+<div id="Layer3" style="position:absolute; width:190px; height:115px; z-index:3; left: 602px; top: 330px;">
+  <table width="190" border="0" align="center" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr>
+      <td width="190" colspan="2" valign="top"><form action="https://my.i-car.com/eweb/DynamicPage.aspx?" method="get" target="_blank" name="ewebform" id="search Test" onClick="_gaq.push(['_trackEvent', 'youtube', 'Gold Class Business Search Button',,, false]);">
+          <table width="97%"  border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td><table width="162"  border="0" align="left" cellpadding="0" cellspacing="0">
+                  <tr valign="top">
+                    <td height="100%" colspan="2">&nbsp;</td>
+                  </tr>
+                  <tr valign="top">
+                    <td height="100%" colspan="2"><input name="FromSearchControl" type="hidden" value="Yes" />
+                      <input name="Webcode" type="hidden" value="GoldClassSearchResultsExt" />
+                    <input name="Site" type="hidden" value="goldclass" /></td>
+                  </tr>
+                  <tr align="center">
+                    <td height="60" colspan="2" valign="bottom">
+                    <span class="style93"><img src="graphics/home/Gold_Class_110.jpg" alt="I-CAR Gold Class" width="110" height="57" /></span></td>
+                  </tr>
+                  <tr align="left">
+                    <td height="52" colspan="2"><div align="center"><span class="style92"><span class="style93">Locate
+                    a Gold Class business near you</span></span></div></td>
+                  </tr>
+                  <tr>
+                    <td width="54%"><div align="center" class="search_box_text">
+                    &nbsp;&nbsp;&nbsp;ZIP CODE &nbsp;</div></td>
+                    <td width="46%">
+                      <div align="left">
+                        <input name="ListSearchFor" type="text"size="8" maxlength="8" align="left" valign="top" />
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td height="50" colspan="2">                      <div align="center">
+                      <input name="c_2_2:ButtonFindGo2" type="image" class="header_links" src="graphics/home/search_button2.gif" alt="Zip Code Search" align="middle" />                    
+                    </div></td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table>
+      </form></td>
+    </tr>
+  </table>
+</div>
+<div id="Layer2" style="position:absolute; width:300px; height:115px; z-index:2; left: 276px; top: 371px;">
+  <table width="300" border="0" cellpadding="0" cellspacing="6">
+    <tr>
+      <td class="style7">News</td>
+    </tr>
+    <tr>
+      <td><img src="graphics/blue_fade_small.jpg" alt="" width="140" height="1" /></td>
+    </tr>
+    <tr>
+      <td class="style6"><a href="html_pages/about_icar/current_events_news/press_releases/2013_archives/080913a.shtml">I-CAR concludes 2013 Technology Conference, reveals first details on 2014 event</a></td>
+    </tr>
+    <tr>
+      <td class="style6"><a href="html_pages/about_icar/current_events_news/press_releases/2013_archives/080813a.shtml">2013 I-CAR awards winners honored for advancing training and professionalism in the collision repair industry</a></td>
+    </tr>
+    <tr>
+      <td class="style6"><a href="html_pages/about_icar/current_events_news/press_releases/2013_archives/080613a.shtml">I-CAR honors Tom Moreland with Chairman&rsquo;s Award</a></td>
+    </tr>
+    <tr>
+      <td class="style6"><a href="html_pages/about_icar/current_events_news/press_releases/2013_archives/072313b.shtml">I-CAR announces Repairability Technical Support initiative and new technical leaders</a></td>
+    </tr>
+    <tr>
+      <td class="style6"><a href="html_pages/about_icar/current_events_news/press_releases/2013_archives/072313a.shtml">I-CAR elevates Gold Class&trade; brand to recognize professionalism and training</a></td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:230px; height:115px; z-index:1; left: 15px; top: 371px;">
+  <table width="230" border="0" cellpadding="0" cellspacing="6">
+    <tr>
+      <td><span class="style7">Quick Links</span></td>
+    </tr>
+    <tr>
+      <td><img src="graphics/blue_fade_small.jpg" alt="" width="140" height="1" /></td>
+    </tr>
+    <tr>
+      <td class="style6"><a href="http://pdpclarity.i-car.com/home.php" target="_blank">Professional Development Program</a></td>
+    </tr>
+    <tr>
+      <td class="style6"><a href="html_pages/training/document_library.shtml">Applications and Documents</a></td>
+    </tr>
+    <tr>
+      <td class="style6"><a href="html_pages/recognition/cr_gold_class.shtml">Collision Repair Gold Class</a></td>
+    </tr>
+    <tr>
+      <td class="style6"><a href="html_pages/recognition/insurance_gold_class.shtml">Insurance Gold Class</a></td>
+    </tr>
+    <tr>
+      <td class="style6"><a href="http://collisioneducationfoundation.org" target="_blank">Collision Repair Education Foundation</a></td>
+    </tr>
+    <tr>
+      <td><span class="style6"><a href="html_pages/training/roles2.shtml">I-CAR Course Catalog</a></span></td>
+    </tr>
+    <tr>
+      <td class="style6"><a href="html_pages/training_programs/welding.shtml" class="style6">In-Shop Welding Qualification Series</a></td>
+    </tr>
+    <tr>
+      <td class="style6"><a href="https://plus.google.com/102062836570602424382" target="_blank">Find us on Google+</a></td>
+    </tr>
+  </table>
+</div>
+<table width="767" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="265"><img src="graphics/blue_fade.jpg" width="265" height="3" /></td>
+    <td width="237"><div align="center" class="style8"><a href="/html_pages/legal_disclaimer.shtml">Terms and Conditions</a> | <a href="/html_pages/privacy_statement.shtml">Privacy</a></a> | <a href="/html_pages/policies.shtml">Policies</a></div></td>
+    <td width="265"><div align="right"><img src="graphics/blue_fade_rt.jpg" width="265" height="3" /></div></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</html>

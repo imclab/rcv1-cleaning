@@ -1,0 +1,809 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
+	<head>
+		 
+		
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+		<!-- Used to verify webmaster tools -->
+		<meta name="verify-v1" content="P+G8uxo9s17ps+E2UEXOnJq/3f/XZ7YlokhyOPTrS2o=" />
+		<meta name="google-site-verification" content="_1cgFdB0a4CKV3i2uZ23L-DFRZjfqgeQ8Nbv0hBBdR4" />
+		<meta name="msvalidate.01" content="D9A1078FD2738539A86F85435761EBC9" />
+		<meta name="y_key" content="c8440d8af56defe4" />
+		
+		
+		
+		
+		
+		
+
+		
+		<title>Car Culture | U.S. News Best Cars</title>
+
+		<link type="text/css" rel="stylesheet" media="all" href="http://static.usnews.rankingsandreviews.com/css/yahoo-reset-font-min.rr1.css" />
+		<link type="text/css" rel="stylesheet" media="all" href="http://static.usnews.rankingsandreviews.com/css/base.rr51.css" />
+		<link type="text/css" rel="stylesheet" href="http://static.usnews.rankingsandreviews.com/css/jQuery/custom-theme/jquery-ui-1.8.20.custom.css" />
+		<link type="image/ico" rel="shortcut icon" href="http://static.usnews.rankingsandreviews.com/images/favicon.ico" />
+
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/jquery.cookie.js"></script>
+
+	    <script type="text/javascript">
+	       //global ad src for JS
+	       var gl_js_adsrc;
+	       
+	       var isrld = false;
+	       
+	       //track mob version collision
+	       var edata = null;
+	       var trackit = false;
+	       function mobcollision(fdata) {
+            	$.ajax({
+				  type: 'POST',
+				  url: '/ajax/moddesk/event/',
+				  data: fdata,
+				  success: function(data) {},
+				  dataType: "json",
+				  async:true
+			});
+           }
+            
+	       function mob_switch(obj) {
+	       	try {
+	       	   wt_track_event({category:'SwitchSite',action:'Mobile'});
+				$.cookie("usn_is_mob",null,{path:"/"});
+	           	$.cookie("usn_is_mob","Y",{path:"/"});
+	           	window.location.reload(true);
+	           } catch(ex) {
+	           	   console.log("Error:" + ex);
+	           } 
+	       }
+	       
+            try {
+            	//track mob version collision
+    	    	var event_val = "mobcookie-" + $.cookie("usn_is_mob") + ":mobtemplate-:rldflag-" + $.cookie("rldflg") +":isrld-" + isrld;
+    			edata = {'type':'desktop','value':event_val,'loc':document.URL};
+            	
+	            if(( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && $.cookie("usn_is_mob") == null)
+	               || $.cookie("usn_is_mob") == 'Y')  {
+	               	if ($.cookie("rldflg") == null && '' == 'True') {
+	                   $.cookie("rldflg",1,{path:"/"});
+	                   $.cookie("usn_is_mob",null,{path:"/"});
+	                   $.cookie("usn_is_mob","Y",{path:"/"});
+	                   isrld = true;
+	                   window.location.reload(true);
+	                }
+	                else if ('' == 'True') {
+	                	//track mob version collision
+	            		trackit = true;
+	                }
+	            }
+	       } catch(err) {
+               	var event_val = "mobcookie-" + $.cookie("usn_is_mob") + ":mobtemplate-:rldflag-" + $.cookie("rldflg") +":isrld-" + isrld + ':err-' + err;
+               	edata = {'type':'error-desktop','value':event_val,'loc':document.URL};
+               	trackit = true;
+	       	   	console.log("Error mob js detection: " + err);
+	       }
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            	//track mob version collision
+            	if (trackit) {
+            		mobcollision(edata);
+            	}
+            });
+            
+            if (!isrld) {
+                $.cookie("rldflg",null,{path:"/"});
+            }
+        </script>
+         
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/jquery.textbox-hinter.min.js"></script>
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/jquery.leanModal.min.js"></script>
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/jquery-ui-1.8.20.custom.min.js"></script>
+		<script type="text/javascript" src="/scripts/cars-trucks/used_vast.rr5.js"></script>
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/global_v2.rr2.js"></script>
+		<script type="text/javascript" src="/cars-trucks/dynamic_scripts/auto_finder.js"></script>
+		<script type="text/javascript" src="http://static.usnews.rankingsandreviews.com/scripts/cars-trucks/doubleClick.rr40.js"></script>
+
+		<script type="text/javascript">
+		    var show_allstate_widget = false;	
+		    function show_allstate_callback(is_blocked) {
+				if (is_blocked) {
+					show_allstate_widget = false;
+					$.cookie("show_allst",2,{ expires: 7,path: '/' });
+				}
+				else {
+					try {
+			            show_allstate_widget = Math.floor(Math.random()*2);
+			            var cookie_flag = show_allstate_widget ? 1 :2;
+			            $.cookie("show_allst",cookie_flag,{ path: '/' });
+			        }
+			        catch(err){ }
+				}
+			}
+	
+			function setup_allstate_widget_flag() {
+				if ($.cookie("show_allst") != null) {
+			        //Code to throttle allstate
+			       	show_allstate_widget = $.cookie("show_allst") == 1 ? true : false;
+			        return;
+			    }   	
+				$.ajax({
+					url: '/cars-trucks/aj/is_as_blocked/', 
+					async: false,
+					timeout: 600,
+					success: function(data) {
+				  		show_allstate_callback(data.blocked);
+				  	}
+				});
+			}		
+			
+			var template = -1;
+			template = 17;
+			// Double Click variables - TODO - These need to be set properly
+			ord = Math.random() * 10000000000000000;
+			product_details = '';
+			adParameters = '';
+			var rsTags = get_RS_tags();			
+		</script>
+		<script src="http://js.revsci.net/gateway/gw.js?csid=H05525&auto=t"></script>
+		
+		
+		
+	
+	<link rel="alternate" type="application/rss+xml" title="Daily Car News - U.S. News Rankings &amp; Reviews" href="http://usnews.rankingsandreviews.com/cars-trucks/feeds/daily-news-rss/" />
+	<link type="text/css" rel="stylesheet" media="all" href="http://static.usnews.rankingsandreviews.com/css/article.rr10.css" />		
+
+
+			
+		
+		
+			
+			
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+
+  var ga_accounts = [
+	
+	['', 'UA-1727688-8'] ,
+	
+	['b.', 'UA-11570513-1'] 
+	                 
+	]; 
+  
+  function wt_track_pageview(f_tracking_url) {
+	  for(var i in ga_accounts) {
+		  var gacct = ga_accounts[i];
+		  if (f_tracking_url != "") {
+			_gaq.push([ gacct[0] + "_trackPageview" , f_tracking_url ]);
+		  }
+		  else {
+			_gaq.push([ gacct[0] + "_trackPageview" ]);
+		  }
+	  }  
+  }
+  
+  function wt_track_event(event) {
+	  for(var i in ga_accounts) {
+		  var gacct = ga_accounts[i];
+		  _gaq.push([gacct[0] + '_setAccount', gacct[1]]);
+		  
+		  if('label' in event) {
+            _gaq.push(['_trackEvent', event.category, event.action, event.label]);
+		  } 
+		  else {
+			_gaq.push(['_trackEvent', event.category, event.action]);
+		  }
+		  setTimeout(null,100);
+	  } 
+	  setTimeout(function() {},100);
+  }
+  
+  function track_pageviews() {
+	  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+	  
+	  
+	  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+	  _gaq.push(['_setAccount', 'UA-1727688-8']);
+	  _gaq.push(['_setDomainName', '.rankingsandreviews.com']);
+	  
+	 	  
+	        _gaq.push(['_setCustomVar',1,'Site Type','Full',3]);
+	 	  
+	 	  
+	 	  if(typeof show_allstate_widget != 'undefined') {
+	 		  if (show_allstate_widget) _gaq.push(['_setCustomVar',2,'Ad Units','Allstate Widget',3]);  	 		  
+	 	  }
+	 	  
+		  
+		  	_gaq.push(['_trackPageview']);
+		  
+		  
+		  _gaq.push(['_trackPageLoadTime']);
+		  
+		  _gaq.push(['_setCampaignCookieTimeout', 86400000]);
+	  
+	  _gaq.push(['b._require', 'inpage_linkid', pluginUrl]);
+	  _gaq.push(['b._setAccount', 'UA-11570513-1']);
+	  _gaq.push(['b._setDomainName', '.rankingsandreviews.com']);
+	  
+	 	  
+	        _gaq.push(['_setCustomVar',1,'Site Type','Full',3]);
+	 	  
+	 	  
+	 	  if(typeof show_allstate_widget != 'undefined') {
+	 		  if (show_allstate_widget) _gaq.push(['_setCustomVar',2,'Ad Units','Allstate Widget',3]);  	 		  
+	 	  }
+	 	  
+		  
+		  	_gaq.push(['b._trackPageview']);
+		  
+		  
+		  _gaq.push(['b._trackPageLoadTime']);
+		  
+		  _gaq.push(['_setCampaignCookieTimeout', 86400000]);
+	  
+  }
+  track_pageviews();
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+			
+		
+		<!-- Start Visual Website Optimizer Code -->
+		<script type='text/javascript'>
+		var _vis_opt_account_id = 25361;
+		var _vis_opt_url = typeof(_vis_opt_url)=="undefined" ? document.URL : _vis_opt_url;
+		var _vis_opt_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+		document.write('<s' + 'cript src="' + _vis_opt_protocol + 
+		'dev.visualwebsiteoptimizer.com/deploy/js_visitor_settings.php?v=1&a='+_vis_opt_account_id+'&url='
+		+encodeURIComponent(_vis_opt_url)+'&random='+Math.random()+'" type="text/javascript">' + '<\/s' + 'cript>');
+		</script>
+		
+		<script type='text/javascript'>
+		if(typeof(_vis_opt_settings_loaded) == "boolean") { document.write('<s' + 'cript src="' + _vis_opt_protocol + 
+		'd5phz18u4wuww.cloudfront.net/vis_opt.js" type="text/javascript">' + '<\/s' + 'cript>'); }
+		// if your site already has jQuery 1.4.2, replace vis_opt.js with vis_opt_no_jquery.js above
+		</script>
+		
+		<script type='text/javascript'>
+		if(typeof(_vis_opt_settings_loaded) == "boolean" && typeof(_vis_opt_top_initialize) == "function") {
+		        _vis_opt_top_initialize(); vwo_$(document).ready(function() { _vis_opt_bottom_initialize(); });
+		}
+		</script>
+		<!-- End Visual Website Optimizer Code -->
+	</head>
+
+<body>
+	<script type="text/javascript">
+	  var _kiq = _kiq || [];
+	  (function(){
+	    setTimeout(function(){
+	    var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript'; 
+	    s.async = true; s.src = '//s3.amazonaws.com/ki.js/13866/4u-.js'; f.parentNode.insertBefore(s, f);
+	    }, 1);
+	  })();
+	</script>
+
+	<div id="header">
+		<div id="header2">
+			 <a href="http://www.usnews.com" id="logo">
+			 	<span>US News &amp; World Report</span>
+			 </a>
+			 <div id='auto-logo' onclick="location.href='/cars-trucks/'">&nbsp;</div>
+			 
+			 <div class="nav">
+				<ul>
+					<li class="first">
+						<a class="home" href="/cars-trucks/">Home</a>
+						<ul>
+							<li id="sn-cars" class=""><a href="/cars-trucks/">Cars</a></li>
+							<li class="list-divider">Other sections:</li>
+							<li id="sn-politics" class=""><a href="http://www.usnews.com/news">Politics &amp; Policy</a></li>
+							<li id="sn-health" class=""><a href="http://www.usnews.com/health">Health</a></li> 
+							<li id="sn-money" class=""><a href="http://www.usnews.com/money">Money</a></li>      
+							<li id="sn-education" class=""><a href="http://www.usnews.com/education">Education</a></li>
+							<li id="sn-science" class=""><a href="http://www.usnews.com/science">Science</a></li>
+							<li id="sn-travel" class=""><a href="http://travel.usnews.com">Travel</a></li>
+							<li id="sn-home" class="last"><a href="http://www.usnews.com">U.S. News Home</a></li>
+						</ul>
+					</li>
+					<li><a href="/cars-trucks/rankings/">Car Rankings</a></li>
+					<li><a href="/cars-trucks/browse/">New Cars</a></li>
+					<li><a href="/cars-trucks/used-cars/">Used Cars</a></li>
+					<li class="last"><a href="/cars-trucks/best-cars-blog/">News</a></li>
+				</ul>
+				
+				<div id="banner-share">
+					<a href="/cars-trucks/feeds/daily-news-rss/best-cars-blog/" target="_blank"><img src="/images/social/rss-sm-gray.png" alt="RSS Feed"></a>
+					<a href="http://www.facebook.com/usnewsbestcars" target="_blank"><img src="/images/social/facebook-sm-gray.png" alt="Facebook"></a>
+					<a href="http://twitter.com/#!/USNewsCars" target="_blank"><img src="/images/social/twitter-sm-gray.png" alt="Twitter"></a>
+		        </div>
+		        
+				
+					
+<form method="post" action="" id="auto-finder">
+	<fieldset>
+		<label>Find a Car:</label>
+	
+		<select name="auto_make" class="car_make" style="width: 108px;">
+			<option value="ALL BRANDS">-- All Makes --</option>
+			
+				<option value="acura">Acura</option>
+			
+				<option value="aston-martin">Aston Martin</option>
+			
+				<option value="audi">Audi</option>
+			
+				<option value="bmw">BMW</option>
+			
+				<option value="buick">Buick</option>
+			
+				<option value="cadillac">Cadillac</option>
+			
+				<option value="chevrolet">Chevrolet</option>
+			
+				<option value="chrysler">Chrysler</option>
+			
+				<option value="dodge">Dodge</option>
+			
+				<option value="ferrari">Ferrari</option>
+			
+				<option value="fiat">FIAT</option>
+			
+				<option value="ford">Ford</option>
+			
+				<option value="gmc">GMC</option>
+			
+				<option value="honda">Honda</option>
+			
+				<option value="hummer">Hummer</option>
+			
+				<option value="hyundai">Hyundai</option>
+			
+				<option value="infiniti">Infiniti</option>
+			
+				<option value="isuzu">Isuzu</option>
+			
+				<option value="jaguar">Jaguar</option>
+			
+				<option value="jeep">Jeep</option>
+			
+				<option value="kia">Kia</option>
+			
+				<option value="lamborghini">Lamborghini</option>
+			
+				<option value="land-rover">Land Rover</option>
+			
+				<option value="lexus">Lexus</option>
+			
+				<option value="lincoln">Lincoln</option>
+			
+				<option value="lotus">Lotus</option>
+			
+				<option value="maserati">Maserati</option>
+			
+				<option value="mazda">Mazda</option>
+			
+				<option value="mercedes-benz">Mercedes-Benz</option>
+			
+				<option value="mercury">Mercury</option>
+			
+				<option value="mini">MINI</option>
+			
+				<option value="mitsubishi">Mitsubishi</option>
+			
+				<option value="nissan">Nissan</option>
+			
+				<option value="pontiac">Pontiac</option>
+			
+				<option value="porsche">Porsche</option>
+			
+				<option value="ram">Ram</option>
+			
+				<option value="saab">Saab</option>
+			
+				<option value="saturn">Saturn</option>
+			
+				<option value="scion">Scion</option>
+			
+				<option value="smart">Smart</option>
+			
+				<option value="subaru">Subaru</option>
+			
+				<option value="suzuki">Suzuki</option>
+			
+				<option value="tesla">Tesla</option>
+			
+				<option value="toyota">Toyota</option>
+			
+				<option value="volkswagen">Volkswagen</option>
+			
+				<option value="volvo">Volvo</option>
+			
+		</select>
+	
+		<select name="auto_model" class="car_model" disabled="disabled" style="width: 115px;">
+			 <option value="-1">-- Model --</option>
+		</select>
+	
+		<select name="finder_year" class="car_year" disabled="disabled" style="width: 57px;">
+			<option value="-1">----</option>
+		</select>	
+		<a class="car_submit btn">GO</a>
+	</fieldset>
+	
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+			 </div><!--/#nav-->
+		</div><!--/#header2-->
+	 </div>
+ 	<script type="text/javascript">
+		$('.nav ul li.first').hover(
+			function(){ $('.nav ul ul').css('left','auto'); },
+			function(){ $('.nav ul ul').css('left','-999em'); }
+		);
+	</script>
+	
+	<div id="body" class="lg-gutter">
+		<ul id="breadcrumbs">
+			<li><a href='/cars-trucks/'>Home</a> <span>></span> </li><li>Car Culture</li>
+		</ul>
+		
+		<div id="top-banner">
+				
+	
+
+
+
+
+
+
+
+
+	<div class="banner pushdown" id="bannerId1" style="display:none;">
+		<script type="text/javascript">
+		
+		renderDoubleClickDynamic(1, adParameters,false);
+		
+		</script>
+		<script type="text/javascript">
+            adValidator("bannerId1");
+            setTimeout(function() {adValidator("bannerId1")},500);
+		</script>
+	</div>
+
+
+
+
+
+
+
+		</div>
+		
+		<div id="title-content">
+			
+		</div>
+		
+		<div id="content" class="daily-news-list ">
+			
+			
+	<h1>Car Culture</h1><!--  -->
+
+	
+		<div class="news-story">
+			<h2><a href="/cars-trucks/daily-news/110509-Mercedes-Benz-to-Discontinue-G55-AMG/">Mercedes-Benz to Discontinue G55 AMG</a></h2>
+			<p class="posted">Posted: May. 09, 2011 01:05:15 p.m.</p>
+			
+				
+					<img src="http://static.usnews.rankingsandreviews.com/images/article/201105/123622/2011_Mercedes-Benz_G500_medium.jpg" alt="" />			
+				
+			
+
+			<p><a href="/cars-trucks/browse/mercedes-benz/">Mercedes-Benz</a> announced last week that before it discontinues its iconic <a href="/cars-trucks/Mercedes-Benz_G55-AMG/">G55 AMG</a> SUV for the 2012 model year, it will release two special editions. Unfortunately, U.S. fans of the supercharged Gel&auml;ndewagen won&rsquo;t be able to get their hands on these special-edition upgrades, since they&rsquo;ll only be released in Europe. &ldquo;Americans will have to admire these special models of the G-Class from afar,&rdquo; writes Anita Leinert of <a href="http://www.insideline.com/mercedes-benz/g-class/mercedes-benz-g-class-special-models-debut.html" target="_blank" rel="nofollow">Inside Line</a>.</p>
+<p>So, if you&rsquo;ve always had your sights ...</p>
+		</div>
+	
+		<div class="news-story">
+			<h2><a href="/cars-trucks/daily-news/110418-Volkswagen-Officially-Unveils-2012-Beetle/">Volkswagen Officially Unveils 2012 Beetle</a></h2>
+			<p class="posted">Posted: Apr. 18, 2011 11:04:44 a.m.</p>
+			
+				
+					<img src="http://static.usnews.rankingsandreviews.com/images/article/201104/123577/2012_Volkswagen_Beetle_medium.jpg" alt="" />			
+				
+			
+
+			<p><a href="http://usnews.rankingsandreviews.com/cars-trucks/browse/volkswagen/">Volkswagen</a> officially unveiled the 2012 Beetle today, ahead of the New York International Auto Show. Pricing has not yet been released, but the Beetle&rsquo;s competitors include the <a href="http://usnews.rankingsandreviews.com/cars-trucks/Fiat_500/">Fiat 500</a> and the <a href="http://usnews.rankingsandreviews.com/cars-trucks/MINI_Cooper/">Mini Cooper</a>. The former is priced at $15,500 and the latter starts at $20,100, so shoppers should expect the price to fall within that range. One slightly confusing update to keep in mind is that Volkswagen has decided to drop the &ldquo;New&rdquo; from the Beetle&rsquo;s ...</p>
+		</div>
+	
+		<div class="news-story">
+			<h2><a href="/cars-trucks/daily-news/110316-Chrysler-Unveils-Imported-from-Detroit-Merch/">Chrysler Unveils 'Imported from Detroit' Merch</a></h2>
+			<p class="posted">Posted: Mar. 16, 2011 10:03:59 a.m.</p>
+			
+				
+					<img src="http://static.usnews.rankingsandreviews.com/images/article/201103/123519/Chrysler-ImportedFromDetroit-Medium.jpg" alt="" />			
+				
+			
+
+			<p>Well here&rsquo;s an alternative to that tired old FUBU hoodie that you&rsquo;ve been wearing around the house. &ldquo;Chrysler continues to capitalize on its hit Super Bowl TV commercial featuring Eminem, rolling out an expanded collection of "Imported from Detroit" gear that includes bumper stickers, hoodies and skull caps,&rdquo; writes <a href="http://www.insideline.com/chrysler/chrysler-beefs-up-imported-from-detroit-collection.html" target="_blank" rel="nofollow">Edmunds</a>. &ldquo;The collection also includes a new logo featuring the Joe Louis fist sculpture that dominates Jefferson Avenue in the Motor City and figured prominently in the commercial.&rdquo;</p>
+<p>The ...</p>
+		</div>
+	
+		<div class="news-story">
+			<h2><a href="/cars-trucks/Celebrity-Cars-You-Can-Afford-/">Celebrity Cars You Can Afford </a></h2>
+			<p class="posted">Posted: Sep. 27, 2010 12:09:38 p.m.</p>
+			
+				
+					<img src="http://static.usnews.rankingsandreviews.com/images/article/201009/123224/2011-MIni-Cooper-orange---med.jpg" alt="" />			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+
+			<p>It seems like most celebrities don&rsquo;t have a care in the world. They have loads of money, always look good, wear the snazziest clothes and drive the most expensive cars. Just ask Bird Man of the rap group Cash Money. Rather than donate to pressing world issues like Haiti relief, he recently dropped $2.5 million on a Bugatti Veyron. The average Joe probably doesn&rsquo;t even know what that is (it&rsquo;s a <em>really</em> fast car).</p>
+<p>Fortunately, some ...</p>
+		</div>
+	
+		<div class="news-story">
+			<h2><a href="/cars-trucks/daily-news/100628-Chrysler-to-Introduce-Manly-Minivan/">Chrysler to Introduce Manly Minivan</a></h2>
+			<p class="posted">Posted: Jun. 28, 2010 10:06:02 a.m.</p>
+			
+				
+					<img src="http://static.usnews.rankingsandreviews.com/images/article/201006/123018/Chrysler-medium2.jpg" alt="" />			
+				
+			
+
+			<p>As automakers battle for market share in the popular <a href="/cars-trucks/rankings/Muscle-Cars/">muscle car</a> and <a href="/cars-trucks/rankings/Affordable-Small-Cars/">small car</a> segments, an unlikely duel has emerged between <a href="/cars-trucks/rankings/Minivans/">minivans</a>. Toyota has launched a popular &ldquo;<a href="http://usnews.rankingsandreviews.com/cars-trucks/daily-news/100505-Toyota-Commercial-Sparks-YouTube-Sensation/">Swagger Wagon</a>&rdquo; campaign to position its <a href="/cars-trucks/Toyota_Sienna/2011/">Sienna</a> as a cool, more-modern take on the minivan. Now, there are reports that Dodge is exploring ways in which to make its <a href="/cars-trucks/Dodge_Grand-Caravan/2010/">Grand Caravan</a> manlier.</p>
+<p>The &ldquo;man van,&rdquo; as it&rsquo;s commonly referred to among Dodge insiders, may hit dealer lots within the next few months ...</p>
+		</div>
+	
+		<div class="news-story">
+			<h2><a href="/cars-trucks/daily-news/100623-California-to-Consider-Digital-License-Plates/">California to Consider Digital License Plates</a></h2>
+			<p class="posted">Posted: Jun. 23, 2010 11:06:26 a.m.</p>
+			
+				
+					<img src="http://static.usnews.rankingsandreviews.com/images/article/201006/123008/california-plate-medium.jpg" alt="" />			
+				
+			
+
+			<p>If California Democratic State Senator Curren Price has his way, residents&rsquo; cars may soon become moving billboards.</p>
+<p><a href="http://www.autoblog.com/2010/06/22/report-california-considering-digital-license-plates/" target="_blank" rel="nofollow">Autoblog</a> explains: &ldquo;In order to help close the state's $19.1 billion deficit, a study bill has been introduced that allows the DMV to explore the feasibility of digital license plates. The new tags would display the number when the car is moving, then show ads and public service announcements any time the car stops for more than a few seconds.&rdquo;</p>
+<p>Last ...</p>
+		</div>
+	
+		<div class="news-story">
+			<h2><a href="/cars-trucks/daily-news/100617-Rumor-2012-Miata-to-Feature-Rotary-Hybrid-Engine/">Rumor: 2012 Miata to Feature Rotary-Hybrid Engine</a></h2>
+			<p class="posted">Posted: Jun. 17, 2010 10:06:59 a.m.</p>
+			
+				
+					<img src="http://static.usnews.rankingsandreviews.com/images/article/201006/122997/2010-Mazda-MX-5-Miata-medium.jpg" alt="" />			
+				
+			
+
+			<p>Rumors are spreading that the next generation <a href="/cars-trucks/Mazda_MX-5-Miata/2010/">Mazda MX-5 Miata</a> will forgo its newly developed, light-weight Sky-G engine for a rotary-hybrid setup.</p>
+<p>According to <a href="http://www.motorauthority.com/blog/1046232_next-mazda-mx-5-to-go-rotary-hybrid-maybe-but-probably-not" target="_blank" rel="nofollow">Motor Authority</a>: &ldquo;Best&nbsp;Car, the Japanese enthusiast magazine, has let it &lsquo;leak&rsquo; that Mazda&nbsp;is planning to shovel a 1.2-liter or 1.3-liter rotary engine into the&nbsp;next MX-5, or Roadster as it's known in its home market. The twist? A&nbsp;hybrid&nbsp;drivetrain linked up with it.&rdquo;</p>
+<p>Upon first listen, the rumor seems plausible ...</p>
+		</div>
+	
+		<div class="news-story">
+			<h2><a href="/cars-trucks/daily-news/100602-James-Bond-s-1964-Aston-Martin-DB5-Hits-the-Auction-Block/">James Bond's 1964 Aston Martin DB5 Hits the Auction Block</a></h2>
+			<p class="posted">Posted: Jun. 02, 2010 10:06:32 a.m.</p>
+			
+				
+					<img src="http://static.usnews.rankingsandreviews.com/images/article/201006/122953/Aston-Martin-medium.jpg" alt="" />			
+				
+			
+
+			<p>Car collectors break out your checkbooks for a once-in-a-lifetime buy -- James Bond&rsquo;s 1964 Aston Martin DB5.</p>
+<p><a href="http://www.reuters.com/article/idUSTRE65049O20100601?feedType=RSS&amp;feedName=entertainmentNews&amp;utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+reuters%2Fentertainment+%28News+%2F+US+%2F+Entertainment%29" target="_blank" rel="nofollow">Reuters</a> reports, &ldquo;James Bond's 1964 Aston Martin DB5, dubbed by auto auctioneers RM Auctions on Tuesday as the &lsquo;world's most famous car,&rsquo; will go under the hammer in London in October and is expected to fetch over $5 million.&rdquo;</p>
+<p>And, believe it or not, Bond&rsquo;s ride still features all of the same villain-busting gadgets and weaponry employed by 007 in ...</p>
+		</div>
+	
+		<div class="news-story">
+			<h2><a href="/cars-trucks/daily-news/100514-BMW-Starts-Sexy-Ad-Campaign-Public-Restrooms-/">BMW Starts Sexy Ad Campaign...Public Restrooms?</a></h2>
+			<p class="posted">Posted: May. 14, 2010 10:05:40 a.m.</p>
+			
+				
+					<img src="http://static.usnews.rankingsandreviews.com/images/article/201005/122912/BMW-medium.jpg" alt="" />			
+				
+			
+
+			
+<p>Written in red lipstick on the bathroom mirror is the line, &ldquo;my body is absolutely stunning.&rdquo;&nbsp; Beneath the flirtatious note is a second line. It asks you to send a text message to a certain number, and promises photos.</p>
+<p>Would you do it?</p>
+<p>And if you did, would you be disappointed when the photos that came in response were glamour shots of&hellip; a car?</p>
+<p><a href="http://www.autoblog.com/2010/05/13/mirror-in-the-bathroom-bmw-canada-starts-sexy-new-ad-campaign-t/" target="_blank" rel="nofollow">Autoblog</a> reports that BMW of Canada &ldquo;will be launching a new ad campaign for the <a href="/cars-trucks/BMW_3-Series/2010/">3-Series ...</a></p>
+		</div>
+	
+		<div class="news-story">
+			<h2><a href="/cars-trucks/daily-news/100507-Americans-Have-Stopped-Buying-Sports-Cars/">Americans Have Stopped Buying Sports Cars</a></h2>
+			<p class="posted">Posted: May. 07, 2010 10:05:05 a.m.</p>
+			
+				
+					<img src="http://static.usnews.rankingsandreviews.com/images/article/201005/122894/2009-Chevrolet-Corvette-ZR1-medium.jpg" alt="" />			
+				
+			
+
+			
+<p>Would you like a gorgeous drop-top with a snarling V8 and responses that make you gasp?&nbsp; Would you like a classic roadster? Or maybe a road-hugging, rear-wheel-drive two-seater turbocharged coupe?&nbsp; Would you be willing to pay for it?&nbsp; If so, you&rsquo;re one of a lonely few right now.</p>
+<p>Americans aren&rsquo;t buying sports cars.</p>
+<p><a href="http://www.autoobserver.com/2010/05/chevrolet-camaro-winning-muscle-car-war-but-sports-cars-burned-by-downturn.html" target="_blank" rel="nofollow">Edmunds Auto Observer</a> reports, &ldquo;Muscle cars are moving okay, but the rest of the sports car market is stuck in neutral.&rdquo;&nbsp; Nationwide, Americans have bought ...</p>
+		</div>
+	
+
+	<p style="border-top: 1px dashed #CCC;padding-top: 5px;margin: 0px;font-size: 116%;font-weight: bold; text-align: right;">
+	
+	
+	
+		<a href="/cars-trucks/daily-news/culture/page1/">Next</a>
+	
+	</p>
+
+		</div>
+
+		<div id="sidebar">
+			
+			
+	
+
+
+
+
+
+
+
+
+
+
+	<div id="doubleclickTile2" style="display:none;" class="ad_right ad">
+		<span class="usn-label">advertisement</span>
+		<script type="text/javascript">
+		
+		renderDoubleClickDynamic(2, adParameters,false);
+		
+		</script>
+		<script type="text/javascript">
+			adValidator("doubleclickTile2");
+			setTimeout(function() {adValidator("doubleclickTile2")},500);
+		</script>
+	</div>
+
+
+
+
+		
+
+		</div>
+		
+		<div id="foot-content">
+			
+		</div>
+
+	</div>
+
+	<div id="footer">
+		<ul id="foot-nav">
+			<!-- show if mob capable -->
+			<li class="first mob-hide" style="display:None"><a href="" onclick="mob_switch(this);return false;"><strong>Mobile Site</strong></a></li>
+			<li class="mob-hide" style="display:None"><a href="/aboutUs/">About Us</a></li>
+			<!-- show else -->
+			<li class="first mob-show"><a href="/aboutUs/">About Us</a></li>
+			<!-- end show if mob capable -->
+			<li><a href="/methodology/">How We Rank New Cars</a></li>
+			<li><a href="/methodology-used/">How We Rank Used Cars</a></li>
+			<li><a rel="nofollow" href="/contactUs/">Contact Us</a></li>
+			<li><a href="/siteMap/">Site Map</a></li>
+			<li><a href="http://www.usnews.com/">U.S. News Home</a></li>
+		</ul>
+		<div id="copy-legal">Use of this Web site constitutes acceptance of our <a rel="nofollow" href="/termsAndConditions/">Terms and Conditions of Use and Privacy Policy</a>. Copyright 2007-2013 &copy; U.S. News Rankings &amp; Reviews</div>
+	</div>
+	
+	<!-- mob links -->
+    <script type="text/javascript">
+        try {
+        	if ($.cookie("usn_is_mob") != undefined) {
+        	       $('.mob-hide').show();
+        	       $('.mob-show').hide();
+        	}   
+        }
+        catch (ex) {
+        }
+    </script>
+	<!-- end mob links -->
+	
+	<!-- Begin comScore Tag -->
+<script type="text/javascript">document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));</script>
+<script type="text/javascript">COMSCORE.beacon({    c1:2,    c2:"11307981",    c3:"",    c4:escape(window.location),    c5:"",    c6:"autos",    c15:""  });</script><noscript>  <div><img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=11307981&amp;c3=&amp;c4=&amp;c5=&amp;c6=autos&amp;c15=&amp;cj=1" alt="comScore"/></div></noscript>
+<!-- End comScore Tag -->
+
+
+	
+	
+
+	<!-- Start Quantcast tag -->
+	<script type="text/javascript">
+	_qoptions={
+	qacct:"p-efoP1AkkGV9EU"
+	};
+	</script>
+	<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+	<noscript>
+	<img src="http://pixel.quantserve.com/pixel/p-efoP1AkkGV9EU.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+	</noscript>
+	<!-- End Quantcast tag -->
+	
+	<!-- crazyegg -->
+	<script type="text/javascript">document.write(unescape('%3Cscript type="text/javascript" src="'+document.location.protocol+'//dnn506yrbagrg.cloudfront.net/pages/scripts/0010/9297.js"%3E%3C%2Fscript%3E'))</script>
+	<!-- end crazy egg -->
+	
+	<!-- Begin BlueKai Tag -->
+	<iframe name="__bkframe" height="0" width="0" frameborder="0" src="javascript:void(0)"></iframe>
+	<script type="text/javascript" src="http://tags.bkrtx.com/js/bk-coretag.js"></script>
+	<script type="text/javascript">
+	if (gl_js_adsrc){
+		try {  
+			bk_addPageCtx("Year",(typeof(getAdParam(gl_js_adsrc,"yr"))!='undefined')?getAdParam(gl_js_adsrc,"yr"):'');
+			bk_addPageCtx("Model",(typeof(getAdParam(gl_js_adsrc,"mod"))!='undefined')?getAdParam(gl_js_adsrc,"mod"):'');
+			bk_addPageCtx("Make",(typeof(getAdParam(gl_js_adsrc,"mak"))!='undefined')?getAdParam(gl_js_adsrc,"mak"):'');
+			if (typeof(getAdParam(gl_js_adsrc,"body"))!='undefined') {
+				bk_addPageCtx("Body",(typeof(getAdParam(gl_js_adsrc,"body"))!='undefined')?getAdParam(gl_js_adsrc,"body"):'');
+			} else {
+				bk_addPageCtx("Body",(typeof(getAdParam(gl_js_adsrc,"type"))!='undefined')?getAdParam(gl_js_adsrc,"type"):'');
+			}
+			bk_addPageCtx("Type",(typeof(getAdParam(gl_js_adsrc,"type"))!='undefined')?getAdParam(gl_js_adsrc,"type"):'');
+			bk_addPageCtx("Style",(typeof(getAdParam(gl_js_adsrc,"style"))!='undefined')?getAdParam(gl_js_adsrc,"style"):'');
+			bk_addPageCtx("Section",(typeof(getAdParam(gl_js_adsrc,"prod"))!='undefined')?getAdParam(gl_js_adsrc, "prod"):'');
+			
+			bk_addPageCtx("Location",encodeURIComponent(document.location));
+			
+			
+			bk_ignore_meta = true;
+			bk_doJSTag(14415, 10);
+		}
+		catch (e) {console.error("bluekai error:" + e.message);}
+	}
+	</script>
+	<!-- End BlueKai Tag -->
+</body>
+
+</html>
+

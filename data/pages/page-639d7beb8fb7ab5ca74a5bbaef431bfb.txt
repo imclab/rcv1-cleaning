@@ -1,0 +1,529 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" >
+<!--dir-->
+
+<!--dt_top-->
+
+<html><head><title>WebRing: Entertainment & Arts, Movies, </title><META Name="revisit-after" Content="5 Days"><META Name="Description" Content="Entertainment & Arts, Movies, , Actors and Actresses@, Awards and Festivals, By Country, Cult and Classic, Fan Fiction@, Filmmaking, Genres, Independent, Movie Posters, Music, New Releases, Reviews, Screenwriting@, Soundtracks@, Titles, Trivia."><META Name="Keywords" Content="Entertainment & Arts, Movies, , Actors and Actresses@, Awards and Festivals, By Country, Cult and Classic, Fan Fiction@, Filmmaking, Genres, Independent, Movie Posters, Music, New Releases, Reviews, Screenwriting@, Soundtracks@, Titles, Trivia"><link rel="shortcut icon" href="/favicon.ico">
+<!--dirstyles-->
+<link href="http://img.webring.com/style.css" rel="stylesheet" type="text/css">
+<link href="http://img.webring.com/webring1.css" rel="stylesheet" type="text/css">
+<!--<link rel="stylesheet" type="text/css" href="http://hub.webring.org/css/wrf433858206c54cfc8cdfe10d6de713f9.css">-->
+<style type="text/css">
+<!--
+
+-->
+</style>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script language=javascript src="http://img.webring.com/wrjs1.js"></script>
+
+<script type="text/javascript">
+
+</script>
+
+<!-- discjs2 -->
+<script type="text/javascript">
+var off = -4;
+var of1 = -4;
+var of2 = -4;
+var data = [];
+var data1 = [];
+var clr = [];
+clr[0] = '#d6e003; bottom: 0px; right:';
+clr[1] = '#5d615f; color: white; top: 0px; left:';
+clr[2] = '#00b5e0; bottom: 0px; right:';
+clr[3] = '#5d615f; color: white; top: 0px; right:';
+clr[4] = '#00b5e0; top: 0px; right:';
+clr[5] = '#d6e003; top: 0px; left:';
+var maxl = 5;
+var maxl1 = 5;
+var maxl2 = 0;
+var imghost = 'http://img.webring.com';
+function DataInfo(id, title, iu)
+{
+	this.id = id;
+	this.title = title;
+	this.iu = iu;
+}
+	data[1] = new DataInfo('irwinallen',  'Irwin Allen ',  'http://img.webring.com/r/i/irwinallen/logo' );data[2] = new DataInfo('aladdin',  'Aladdin',  'http://img.webring.com/r/a/aladdin/logo' );data[3] = new DataInfo('iwl',  'The It&#39;s A Wonderful Life Webring - IAWL IWL',  'http://www.memorableplaces.com/iawlring/iawlone.jpg' );data[4] = new DataInfo('racetracksnewsi1',  'Racetrack&#39;s Newsies',  'http://img.webring.com/globe1.png' );data[5] = new DataInfo('moviesgalore',  'Movies Galore',  'http://blueopossum.homestead.com/Movies/1/thumbnailCAA9V770.jpg' );
+	data1[1] = new DataInfo('gbfansitering',  'Ghostbusters',  'http://img.webring.com/r/g/gbfansitering/logo' );data1[2] = new DataInfo('moviering',  'Movie HeAVEN :: The Movie Ring',  'http://img.webring.com/r/m/moviering/logo' );data1[3] = new DataInfo('moguls',  'The Centropolists',  '' );data1[4] = new DataInfo('nldvd',  'NL DVD',  'http://img.webring.com/globe1.png' );data1[5] = new DataInfo('theringofmoviepa',  'Ring Of Movie Sites',  'http://blueopossum.homestead.com/Movies/1/thumbnail.jpg' );
+</script>
+<!-- discjs.2-->
+<script language="JavaScript">
+<!--
+var el = []; 
+el[0] = 't1';
+el[1] = 't2';
+el[2] = 't3';
+el[3] = 't4';
+el[4] = 't5';
+el[5] = 't6';
+var el1 = []; 
+el1[0] = 'u1';
+el1[1] = 'u2';
+el1[2] = 'u3';
+el1[3] = 'u4';
+el1[4] = 'u5';
+el1[5] = 'u6';
+var numtimes = 0;
+function timeshift()
+{
+	var a; var b;
+	numtimes = numtimes + 1;
+	a = Math.floor(Math.random()*2) + 1;
+	b = Math.floor(Math.random()*2);
+	if (b == 0) {
+		shift(a, 5, el, data, 0, 100);
+	}
+	else if (b == 1) {
+		shift(-a, 5, el1, data1, 1, 100);
+	}
+	if (numtimes < 25) { timer = setTimeout("timeshift()", 2500);}
+}
+function shift(dir, num, elm, dt, wh, del)
+{
+	var i; var j; var k;
+	if (wh == 2)
+	{
+		of2 += dir;
+		if (of2 > maxl2 && dir >= 1) {of2 = of2 - maxl2;}
+		if (of2 < 1 && dir <= -1) {of2 = of2 + maxl2;}
+		i = of2;
+	}
+	else if (wh == 1)
+	{
+		of1 += dir;
+		if (of1 > maxl1 && dir >= 1) {of1 = of1 - maxl1;}
+		if (of1 < 1 && dir <= -1) {of1 = of1 + maxl1;}
+		i = of1;
+	}
+	else
+	{
+		off += dir;
+		if (off > maxl && dir >= 1) {off = off - maxl;}
+		if (off < 1 && dir <= -1) {off = off + maxl;}
+		i = off;
+	}
+
+	for (j = 0; j < num; j++)
+	{
+		k = j;
+		if (wh == 1) {k = 5 - j;}
+		document.getElementById(elm[j]).innerHTML='<a href="http://hub.webring.org/hub/' + dt[i].id + '" title="' + dt[i].title + '"><img style="display: inline-block" src="' + dt[i].iu + '"/></a><div class="DiscoverWebring-text" style="background: #5d615f; color: white; bottom: 0px; right: 0px">' + dt[i].title + '</div>';
+        i++;
+		if (wh == 2)
+		{
+        	if (i > maxl2) {i = 1;}
+		}
+		else if (wh == 1)
+		{
+        	if (i > maxl1) {i = 1;}
+		}
+		else
+		{
+        	if (i > maxl) {i = 1;}
+		}
+    }
+	if (numtimes > 1 && (dir == 5 || dir == -5)) {numtimes = 30; clearTimeout(timer);}
+}
+
+//timer = setTimeout("timeshift()", 6000);
+
+// -->
+</script>
+<style type="text/css">
+<!--
+.DiscoverWebring {
+    width: 130px;
+    height: 130px;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.DiscoverWebring img {
+    width: 130px;
+    height: 130px;
+    background: white;
+    border: 0px;
+}
+
+.DiscoverWebring a:hover {
+    opacity: 0.8;
+}
+
+.DiscoverWebring-text {
+    font-size: 11px;
+    padding: 1px;
+    display: inline-block;
+    position: absolute;
+    max-width: 118px;
+    overflow: hidden;
+    height: 14px;
+    opacity: 0.9;
+}
+-->
+</style>
+<!-- dirjs -->
+<script src="http://img.webring.com/tagcanvas.min.js" type="text/javascript"></script></head><body bgcolor="#ffffff" leftmargin=2 topmargin=2 rightmargin=0 bottommargin=0 marginwidth=2 marginheight=2  OnLoad="shift(5, 5, el, data, 0, 0); shift(5,5,el1,data1, 1, 0); shift(5,5,el2,data2, 2, 0); " >
+<div id=overlay  style="background: rgba(0, 0, 0, 0.3); position: fixed; width: 100%; height: 100%; z-index: 500; top: 0px; left: 0px; top: 0%; display: none;"></div>
+<div class="PageContainer" >
+<div class="Header">
+<div class="HeaderContainer">
+<div class="HeaderContent Center" >
+<div style="float: left; margin-left: -7px; position: absolute; z-index: 10">
+	<a href="http://hub.webring.org">
+	<img style="display: block; position: relative; width:150; height: 60px; top: -18px; left: -14px" src="http://img.webring.com/webringlogo.png" alt="" border="0"/>
+	</a>
+</div>
+<div id="LoginPanel" style="float: left; color: #e1e1e1; margin-left: 145px; position: absolute; z-index: 10; top: -5px;">
+<form  style="display: inline; margin-top: 0px;margin-bottom: 0px;" method="POST" ACTION="http://s2.webring.com/cgi-bin/hubsearch?search">
+<table cellpadding=0 cellspacing=0><tr><td valign=top>
+<input name=query type=text size=25 value="" style="height:29px; border-radius: 4px; font-size: 12px; border: 1px solid #2d3130; background: #f0f0f0 url('http://hub.webring.org/images/search_hi.png') no-repeat scroll 0pt 50%; padding-left: 28px;" title="Enter a few keywords to search with" onfocus="if (this.value == 'Search WebRing') this.value = '';">
+</td><td valign=middle>
+            
+            <input type="image" name="Submit" value="Go" src="http://hub.webring.org/images/SearchBarButton.png" title="Search all WebRing communities"> 
+            <input type="hidden" name="RingDesc" value=on checked>
+            <input type="hidden" name="Keywords" value=on checked>
+</td></tr></table>
+            </form>
+</div>
+<div id="LoginPanel" style="float: right; padding-top: 0px; margin-top: -10px; color:#e1e1e1; font-size: 13px;">
+<table cellpadding=0 cellspacing=0><tr>
+
+
+<td align=middle onMouseOver="this.style.backgroundColor='#777777'" onMouseOut="this.style.backgroundColor='transparent'">&nbsp;&nbsp;<a class="emfl" href="http://hub.webring.org/forums" title="View Forums"><img src="http://hub.webring.org/images/speech-bubbles-blue-and-red-139x91.png" height=25 border=0></a>&nbsp;&nbsp</td>
+<td align=middle onMouseOver="this.style.backgroundColor='#777777'" onMouseOut="this.style.backgroundColor='transparent'">&nbsp;&nbsp;<a class="emfl" href="http://dir.webring.org" title="Explore WebRings"><img src="http://hub.webring.org/images/header_icon_rings_l.png" height=25 border=0></a>&nbsp;&nbsp</td>
+
+<td align=middle onMouseOver="this.style.backgroundColor='#777777'" onMouseOut="this.style.backgroundColor='transparent'">&nbsp;&nbsp;<a class="emfl" href="http://www.webring.org/l/promo" title="Ad Central - Get Paid to Post"><img src="http://hub.webring.org/images/promo_l.png" height=25 border=0></a>&nbsp;&nbsp</td>
+<td id="li1" align=middle onMouseOver="this.style.backgroundColor='#777777'; document.getElementById('li3').style.color='#ffffff';document.getElementById('li2').style.backgroundColor='#777777'" onMouseOut="this.style.backgroundColor='transparent'; document.getElementById('li3').style.color='#eeeeee';document.getElementById('li2').style.backgroundColor='transparent'">&nbsp;<a class="emfl" href="#" onClick="toggleV('wrlogin');toggleV('overlay'); toggleV1('login2')" title="Login to WebRing" ><img src="http://hub.webring.org/images/LoginIcon.png" border=0></a> </td>
+<td name="li2" id="li2" align=middle onMouseOver="this.style.backgroundColor='#777777'; document.getElementById('li1').style.backgroundColor='#777777';document.getElementById('li3').style.color='#ffffff';" onMouseOut="this.style.backgroundColor='transparent'; document.getElementById('li3').style.color='#eeeeee';document.getElementById('li1').style.backgroundColor='transparent'" valign=middle style="font-size: 13px; "><a id="li3" style="text-decoration: none; color: #eeeeee; font-weight: bold;" href="#" onClick="toggleV('wrlogin'); toggleV('overlay'); toggleV1('login2'); document.logindata.login.focus();" title="Login with your WebRing account" >Login</a> &nbsp;
+</td><td><a class="HeaderGreenSignupButton" style="text-decoration: none; font-weight: bold;" href="#" onClick="toggleV('wrjoin'); toggleV('overlay'); toggleV1('login2'); document.joindata.email.focus();" title="Signup for WebRing" >Signup</a>
+</td>
+
+</tr></table>
+</div>
+
+</div>
+</div>
+</div>
+<!-- wr_loginF-->
+
+<div id=login2 style="position: absolute; left: 0px; z-index: 900; top: 00px; background: url('http://hub.webring.org/images/login_bg.png'); width: 100%; padding: 6px; margin-top: -280px;
+-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out; " align=center>
+<div class="PageContainer">
+<div style="padding-top: 17px; width: 100%; margin: auto; height: 70px; position: relative; left: -8px; ">
+<div class="HeaderContainer">
+<div class="HeaderContent Center">
+<div style="float: left; margin-left: -5px; position: absolute; z-index: 10">
+    <a href="http://hub.webring.org">
+    <img style="display: block; position: relative; width:210px; top: -23px; left: 8px" src="http://hub.webring.org/images/logo_wr.png" alt="WebRing Central" border="0"/>
+    </a>
+</div>
+</div></div>
+</div></div>
+
+<div id=wrlogin style="display: none; width: 750px; ">
+<div style="font-weight: bold; font-family: verdana, sans-serif; font-size: 13px; position: relative; top: -60px; color: #e0e0e0; text-align: right;">Not a member? It's Fast, Free and Easy! <a href="#" style="padding: 5px; text-decoration: none; background: url(http://hub.webring.org/images/button_bg_2.png) repeat-x; border-radius: 6px; margin-left: 16px; color: #ffffff; font-weight: bold;" onClick="toggleV('wrlogin');toggleV('wrjoin'); document.joindata.email.focus();"> Signup </a></div>
+<div style="font-size: 16px; position: relative; top: -16px; left: -348px;" >
+<b>Login</b> - with your existing account<br></div>
+<form id="logindata" name="logindata" method=post action="http://shout.webring.com/cgi-bin/login?login">
+<input type=hidden name="chkP" value="Y">
+<input name="fmt" type="hidden" id="fmt" value="json" >
+
+<input type="hidden" name="persistent" value="y" >
+
+
+
+
+
+<table style="position: relative; left: -120px;">
+<tr><td valign=top>
+<label for="login" class="inlined" style="font-size: 16px;">Email/Username</label>
+<input id="login" class="input-text" data-default="Email/Username" name="login" size="30" maxlength="42"  title="Email/Username" style="width: 270px; height: 40px; border-radius: 6px; border-color: #666666; border-style: solid; border-width: 1px; font-size: 18px; " >&nbsp;&nbsp;
+</td><td width=14></td><td valign=top>
+<label for="passwd" class="inlined" style="font-size: 16px;">Password</label>
+<input class="input-text" id="passwd" name="passwd" type="password" size="30" maxlength="32" style="width: 270px; height: 40px; border-radius: 6px; border-color: #666666; border-style: solid; border-width: 1px; font-size: 18px; " >
+</td><td width=14></td><td valign=top>
+<input id="submitlogin" name="submitlogin" type="submit" value="Login" style="background: url(http://hub.webring.org/images/button_bg_3.png) repeat-x; height: 39px; margin-top: -13px; border-radius: 6px; border-color: #666666; border-style: solid; border-width: 1px; width: 250px; font-size:18px; color: #000000; font-weight: bold;">
+</td></tr></table>
+<div style="text-align: right; margin-right: 100px;"><font size=-1><a style="text-decoration: none; color: #333333; position: relative; top: -20px;" href="http://new.webring.com/cgi-bin/info?help&new=1&done=http://dir.webring.org">Forgot your password?</a></font></div>
+<div id=errmsg name=errmsg style="color: red;"> </div>
+</form>
+<br><a href="#" style="text-decoration: none;" onClick="toggleV2('login2'); toggleV('overlay');">close this view</a>
+</div>
+
+<div id=wrjoin style="width: 650px; display: none;">
+<div style="font-size: 13px; position: relative; top: -60px; color: #f7f7f7; text-align: right;">Already a member? <a href="#" style="padding: 5px; text-decoration: none; background: url(http://hub.webring.org/images/button_bg_2.png) repeat-x; border-radius: 6px; margin-left: 16px; color: #ffffff; font-weight: bold;" onClick="toggleV('wrjoin');toggleV('wrlogin'); document.logindata.login.focus();"> Login </a></div>
+<br><form id="joindata" name="joindata" method=post action="http://new.webring.com/cgi-bin/quicksign?signup" style="margin-bottom: 2px;">
+<input type=hidden name="chkP" value="Y">
+<input type=hidden name="agree" value="1">
+<input type=hidden name="fast" value="y">
+<input type=hidden name="option" value="f">
+
+<table><tr><td valign=top>
+<label for="email" class="inlined" style="font-size: 18px;">Email</label>
+<input class="input-text" id= "email" name="email" size="30" maxlength="64" value="" style="height: 40px; border-radius: 6px; border-color: #666666; border-style: solid; border-width: 1px; font-size: 18px; " title="We use your email to manage your account and to keep you informed.  We never give out your email to others.">
+</td><td width=15px></td><td valign=top>
+<input id="submitjoin" name="submitjoin" type="submit" value="Let's Go" style="background: url(http://hub.webring.org/images/button_bg_3.png) repeat-x; height: 39px; margin-top: -13px; border-radius: 6px; border-color: #666666; border-style: solid; border-width: 1px; width: 250px; font-size:18px; color: #000000; font-weight: bold;">
+</td></tr></table>
+<br><br>By clicking the "Let's Go" button you agree to our <a style="text-decoration: none; color: #333333;" href="/h/terms" target=_blank>Terms of Service</a></span>
+<br><a href="#" style="text-decoration: none;" onClick="toggleV2('login2'); toggleV('overlay');">close this view</a>
+<br>
+</form></div>
+
+</div>
+
+<div style="width: 1020px; margin-left: auto; margin-right: auto; background: #1e6379; margin-top: -40px;"">
+<br><br><br>
+<br>
+<center><table cellpadding=0 cellspacing=0 background="http://img.webring.com/nl/dbg.png"><tr><td><a class="emfl" href="http://dir.webring.org"><img src="http://img.webring.com/nl/dhome.png" border=0></a></td><td><a style="text-decoration: none; color: #222222;" href="http://dir.webring.org/rw?d=Entertainment___Arts"><b>Entertainment & Arts</b></a></td><td><img src="http://img.webring.com/nl/dlarrow.png" border=0></td><td background="http://img.webring.com/nl/debg.png"><a style="text-decoration: none; color: #222222;" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies"><b>Movies</b></a></td><td><img src="http://img.webring.com/nl/dend.png" border=0></td></tr></table></center> 
+<center><img src="http://img.webring.com/nl/rings.png" border=0></span><br><!-- disc1.2-->
+<table cellpadding=0 cellspacing=0><tr><td>
+<a onClick="shift(-5, 5, el, data, 0, 1000);"><img src="http://img.webring.org/nl/srbtn.png" border=0></a>
+</td><td>
+<div class="DiscoverWebring" id="t1">
+h1
+</div>
+<div class="DiscoverWebring" id="t2">
+h1
+</div>
+<div class="DiscoverWebring" id="t3">
+h1
+</div>
+<div class="DiscoverWebring" id="t4">
+h1
+</div>
+<div class="DiscoverWebring" id="t5">
+h1
+</div>
+</td><td>
+<a onClick="shift(5, 5, el, data, 0, 1000);"><img src="http://img.webring.org/nl/slbtn.png" border=0></a>
+</td></tr>
+<tr><td>
+<a onClick="shift(-5, 5, el1, data1, 1, 1000);"><img src="http://img.webring.org/nl/srbtn.png" border=0></a>
+</td><td>
+<div class="DiscoverWebring" id="u1">
+h1
+</div>
+<div class="DiscoverWebring" id="u2">
+h1
+</div>
+<div class="DiscoverWebring" id="u3">
+h3
+</div>
+<div class="DiscoverWebring" id="u4">
+h4
+</div>
+<div class="DiscoverWebring" id="u5">
+h5
+</div>
+</td><td>
+<a onClick="shift(5, 5, el1, data1, 1, 1000);"><img src="http://img.webring.org/nl/slbtn.png" border=0></a>
+</td></tr>
+</table></center><br><br>
+		<!--dir_entries-->
+<br>
+<table width="100%" cellpadding=0 cellspacing=0><tr><td valign=top style="color: #e1e1e1;">
+
+<center>
+<span style="color: #90c900; font-size:25px; font-weight: bold;">See Rings in this category below, or select a more specific topic:</span>
+<table cellpadding=0 cellspacing=0 wdith="80%">
+<tr><td width="1%">&nbsp;</td><td width="31%" valign=top><br><ul>
+<!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Actors_and_Actresses/">Actors and Actresses@</a><br><!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies/Awards_and_Festivals">Awards and Festivals</a><br><!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies/By_Country">By Country</a><font face=arial size=-2>&nbsp;(10)</font><br><!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies/Cult_and_Classic">Cult and Classic</a><font face=arial size=-2>&nbsp;(17)</font><br><!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Humanities/Books_and_Writing/Fan_Fiction/Movies/">Fan Fiction@</a><br><!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies/Filmmaking">Filmmaking</a><font face=arial size=-2>&nbsp;(33)</font><br>
+</ul></td>
+
+<td width="1%">&nbsp;</td><td width="31%" valign=top><br><ul>
+<!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies/Genres">Genres</a><font face=arial size=-2>&nbsp;(193)</font><br><!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies/Independent">Independent</a><font face=arial size=-2>&nbsp;(11)</font><br><!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies/Movie_Posters">Movie Posters</a><font face=arial size=-2>&nbsp;(2)</font><br><!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies/Music">Music</a><br><!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies/New_Releases">New Releases</a><font face=arial size=-2>&nbsp;(2)</font><br><!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies/Reviews">Reviews</a><font face=arial size=-2>&nbsp;(12)</font><br>
+</ul></td>
+<td width="1%">&nbsp;</td><td width="31%" valign=top><br><ul>
+<!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies/Filmmaking/Screenwriting/">Screenwriting@</a><br><!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Music/Soundtracks/">Soundtracks@</a><br><!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies/Titles">Titles</a><font face=arial size=-2>&nbsp;(11)</font><br><!-- line_d.html -->
+<li><a class="emfl" href="http://dir.webring.org/rw?d=Entertainment___Arts/Movies/Trivia">Trivia</a><font face=arial size=-2>&nbsp;(2)</font><br>
+</ul></td>
+
+
+</tr></table></center>
+
+</td>
+</tr></table>
+
+<center><a href="http://new.webring.com/wrnewring?ycat=1600020948"><img src="http://img.webring.com/nl/cring.png" border=0></a>
+<br><br><table width="80%"><tr><td valign=top style="color: #00c4f4;">
+
+<!--dir_navbar.html-->
+<i style="color: #f7f7f7;">&nbsp;&nbsp;Showing 1 - 10 of 68</i>
+&nbsp;&nbsp;
+
+<span style="height: 18px; border-radius: 3px; background-color: 00aed9;">&nbsp;<a style="text-decoration: none; color: #ffffff;" href="rw?d=Entertainment___Arts/Movies/;t=t;o=a;page=1">Next&nbsp;10&nbsp;&gt;</a></span>
+<table>
+<!--line_r.html--><tr><td valign=top><table width="100%" style="background-color: #ffffff; border-radius: 6px;"><tr><td width="5%"><a class="emfb" target="_top" href="http://hub.webring.org/hub/theringofmoviepa" title="Ring Of Movie Sites"><img style="box-shadow: 3px 4px 6px #aaaaaa; border-radius: 5px;" src="http://blueopossum.homestead.com/Movies/1/thumbnail.jpg" border=0 height=90 alt="Featured Ring" width=90></a><br><br></td><td width=5></td><td valign=top><a class="emfb" target="_top" href="http://hub.webring.org/hub/theringofmoviepa" title="Ring Of Movie Sites" style="font-size: 16px;">Ring Of Movie Sites</b></a>&nbsp;<font size=-2><i style="color: #333333;">(123&nbsp;Sites,&nbsp;5 Hits)&nbsp;03/11/2001</i></font> <a href="http://hub.webring.org/user/silverpossum" class="emfb">silverpossum</a>
+<br><span class="style12" >If you have a movie website that you have created, you can submit it here. Please only submit pages that you feel are high quality, informative, or just plain fun. Websites must be related to movies.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</span></td></tr></table><br></td></tr>
+<!--line_r.html--><tr><td valign=top><table width="100%" style="background-color: #ffffff; border-radius: 6px;"><tr><td width="5%"><a class="emfb" target="_top" href="http://hub.webring.org/hub/moviesgalore" title="Movies Galore"><img style="box-shadow: 3px 4px 6px #aaaaaa; border-radius: 5px;" src="http://blueopossum.homestead.com/Movies/1/thumbnailCAA9V770.jpg" border=0 height=90 alt="Featured Ring" width=90></a><br><br></td><td width=5></td><td valign=top><a class="emfb" target="_top" href="http://hub.webring.org/hub/moviesgalore" title="Movies Galore" style="font-size: 16px;">Movies Galore</b></a>&nbsp;<font size=-2><i style="color: #333333;">(263&nbsp;Sites,&nbsp;3 Hits)&nbsp;06/19/2010</i></font> <a href="http://hub.webring.org/user/bluepossum" class="emfb">bluepossum</a>
+<br><span class="style12" >If you love movies, talk about movies, have a site about your favorite actor or actress, have a whole bunch of pictures of your favorite celebrity, what ever the case might be and you feel it is movie or actor/actress related or you want to hear about movies, actors or actresses feel free to join the ring!</p>
+</span></td></tr></table><br></td></tr>
+<!--line_r.html--><tr><td valign=top><table width="100%" style="background-color: #ffffff; border-radius: 6px;"><tr><td width="5%"></td><td width=5></td><td valign=top><a class="emfb" target="_top" href="http://hub.webring.org/hub/moguls" title="The Centropolists" style="font-size: 16px;">The Centropolists</b></a>&nbsp;<font size=-2><i style="color: #333333;">(4&nbsp;Sites,&nbsp;28 Hits)&nbsp;06/19/1998</i></font> <a href="http://hub.webring.org/user/fosterrm2" class="emfb">fosterrm2</a>
+<br><span class="style12" >For pages on Dean Devlin, Roland Emmerich, and Centropolis' film and television productions: The Visitor, Godzilla '98, Independence Day, Stargate, Universal Soldier, Moon 44, 13th Floor, The Mark, Fantastic Voyage, Supertanker, et cetera.  </span></td></tr></table><br></td></tr>
+<!--line_r.html--><tr><td valign=top><table width="100%" style="background-color: #ffffff; border-radius: 6px;"><tr><td width="5%"><a class="emfb" target="_top" href="http://hub.webring.org/hub/irwinallen" title="Irwin Allen "><img style="box-shadow: 3px 4px 6px #aaaaaa; border-radius: 5px;" src="http://img.webring.com/r/i/irwinallen/logo" border=0 height=90 alt="Featured Ring" width=90></a><br><br></td><td width=5></td><td valign=top><a class="emfb" target="_top" href="http://hub.webring.org/hub/irwinallen" title="Irwin Allen " style="font-size: 16px;">Irwin Allen </b></a>&nbsp;<font size=-2><i style="color: #333333;">(7&nbsp;Sites,&nbsp;310 Hits)&nbsp;12/31/1996</i></font> <a href="http://hub.webring.org/user/admins" class="emfb">admins</a>
+<br><span class="style12" >The World of Irwin Allen "Master of Disaster", a web ring for enthusiastic fans of the genial producer and director, his TV shows 'Voyage to the Bottom of the Sea', 'Lost in Space', 'The Time Tunnel' and 'Land of Giants',and of course his movies so espectaculars like: "Towering Inferno", "The Posidon Adventure", "Voyage to the Bottom of the Sea", "The Lost World" and many, many others...</span></td></tr></table><br></td></tr>
+<!--line_r.html--><tr><td valign=top><table width="100%" style="background-color: #ffffff; border-radius: 6px;"><tr><td width="5%"><a class="emfb" target="_top" href="http://hub.webring.org/hub/iwl" title="The It's A Wonderful Life Webring - IAWL IWL"><img style="box-shadow: 3px 4px 6px #aaaaaa; border-radius: 5px;" src="http://www.memorableplaces.com/iawlring/iawlone.jpg" border=0 height=90 alt="Featured Ring" width=90></a><br><br></td><td width=5></td><td valign=top><a class="emfb" target="_top" href="http://hub.webring.org/hub/iwl" title="The It's A Wonderful Life Webring - IAWL IWL" style="font-size: 16px;">The It's A Wonderful Life Webring - IAWL IWL</b></a>&nbsp;<font size=-2><i style="color: #333333;">(8&nbsp;Sites,&nbsp;128 Hits)&nbsp;12/31/1996</i></font> <a href="http://hub.webring.org/user/admins" class="emfb">admins</a>
+<br><span class="style12" >A special Webring for the most special of Movies! The It's A Wonderful Life Webring is a group of fans obsessed, entranced, thrilled by, or just in love with the movie, "It's A Wonderful Life". Our pages are wholesome tributes to the classic movie and those involved with it. We have no connection to any official entity involved with IAWL. Ring Started On December 9th, 1997 This description updated on October 16th, 2001 IWL IAWL</span></td></tr></table><br></td></tr>
+<!--line_r.html--><tr><td valign=top><table width="100%" style="background-color: #ffffff; border-radius: 6px;"><tr><td width="5%"><a class="emfb" target="_top" href="http://hub.webring.org/hub/nldvd" title="NL DVD"><img style="box-shadow: 3px 4px 6px #aaaaaa; border-radius: 5px;" src="http://img.webring.com/globe1.png" border=0 height=90 alt="Featured Ring" width=90></a><br><br></td><td width=5></td><td valign=top><a class="emfb" target="_top" href="http://hub.webring.org/hub/nldvd" title="NL DVD" style="font-size: 16px;">NL DVD</b></a>&nbsp;<font size=-2><i style="color: #333333;">(4&nbsp;Sites,&nbsp;11 Hits)&nbsp;06/23/2000</i></font> <a href="http://hub.webring.org/user/system2" class="emfb">system2</a>
+<br><span class="style12" >DUTCH: Deze web-ring brengt je naar andere Nederlandstalige site over DVD's, Films, Thuisbioscopen. In ieder geval pagina's waar je wat aan hebt. Lees wat de ervaringen zijn van andere DVD fanaten. ENGLISH TRANSLATION: These rings bring to you other DVD Dutch sites, covering Films, home movie theaters.  These pages have what you want.  Read about DVD Fans experiences.</span></td></tr></table><br></td></tr>
+<!--line_r.html--><tr><td valign=top><table width="100%" style="background-color: #ffffff; border-radius: 6px;"><tr><td width="5%"><a class="emfb" target="_top" href="http://hub.webring.org/hub/gbfansitering" title="Ghostbusters"><img style="box-shadow: 3px 4px 6px #aaaaaa; border-radius: 5px;" src="http://img.webring.com/r/g/gbfansitering/logo" border=0 height=90 alt="Featured Ring" width=90></a><br><br></td><td width=5></td><td valign=top><a class="emfb" target="_top" href="http://hub.webring.org/hub/gbfansitering" title="Ghostbusters" style="font-size: 16px;">Ghostbusters</b></a>&nbsp;<font size=-2><i style="color: #333333;">(4&nbsp;Sites,&nbsp;17 Hits)&nbsp;11/06/2001</i></font> <a href="http://hub.webring.org/user/system2" class="emfb">system2</a>
+<br><span class="style12" >Who ya gonna call? Ghostbusters! A ring for Fansites of the movie Ghostbusters and it's animated spinoffs! All I ask is that prospective members please add the navbar code to the page of the URL you submit, so it passes the code test for the webring navigation, and have a good, decent GB/RGB or EGB site, and you're in! Sites merging Ghostbusters and other series are also welcome, but you must have a decent amount of Ghostbusters material in it to join!</span></td></tr></table><br></td></tr>
+<!--line_r.html--><tr><td valign=top><table width="100%" style="background-color: #ffffff; border-radius: 6px;"><tr><td width="5%"><a class="emfb" target="_top" href="http://hub.webring.org/hub/racetracksnewsi1" title="Racetrack's Newsies"><img style="box-shadow: 3px 4px 6px #aaaaaa; border-radius: 5px;" src="http://img.webring.com/globe1.png" border=0 height=90 alt="Featured Ring" width=90></a><br><br></td><td width=5></td><td valign=top><a class="emfb" target="_top" href="http://hub.webring.org/hub/racetracksnewsi1" title="Racetrack's Newsies" style="font-size: 16px;">Racetrack's Newsies</b></a>&nbsp;<font size=-2><i style="color: #333333;">(5&nbsp;Sites,&nbsp;3 Hits)&nbsp;02/28/2002</i></font> <a href="http://hub.webring.org/user/admins" class="emfb">admins</a>
+<br><span class="style12" >This ring will take any newsies site that is appropriate (no adult content), especially Racetrack sites.  Da newsies a da world unite!!!</span></td></tr></table><br></td></tr>
+<!--line_r.html--><tr><td valign=top><table width="100%" style="background-color: #ffffff; border-radius: 6px;"><tr><td width="5%"></td><td width=5></td><td valign=top><a class="emfb" target="_top" href="http://hub.webring.org/hub/aladdin" title="Aladdin" style="font-size: 16px;">Aladdin</b></a>&nbsp;<font size=-2><i style="color: #333333;">(25&nbsp;Sites,&nbsp;235 Hits)&nbsp;09/16/1998</i></font> <a href="http://hub.webring.org/user/drawmove" class="emfb">drawmove</a>
+<br><span class="style12" >Visit a Whole New World, the world of Disney's Aladdin.
+
+</span></td></tr></table><br></td></tr>
+<!--line_r.html--><tr><td valign=top><table width="100%" style="background-color: #ffffff; border-radius: 6px;"><tr><td width="5%"><a class="emfb" target="_top" href="http://hub.webring.org/hub/moviering" title="Movie HeAVEN :: The Movie Ring"><img style="box-shadow: 3px 4px 6px #aaaaaa; border-radius: 5px;" src="http://img.webring.com/r/m/moviering/logo" border=0 height=90 alt="Featured Ring" width=90></a><br><br></td><td width=5></td><td valign=top><a class="emfb" target="_top" href="http://hub.webring.org/hub/moviering" title="Movie HeAVEN :: The Movie Ring" style="font-size: 16px;">Movie HeAVEN :: The Movie Ring</b></a>&nbsp;<font size=-2><i style="color: #333333;">(111&nbsp;Sites,&nbsp;340 Hits)&nbsp;12/31/1996</i></font> <a href="http://hub.webring.org/user/webusiness" class="emfb">webusiness</a>
+<br><span class="style12" >Members sites Showcase this extensive Movie Resource Base.</p>
+<p>This WebRing IS Everything Movies!</p>
+<p>So...sit back, grab some popcorn and watch the Show(case)!</p>
+</span></td></tr></table><br></td></tr></table>
+<br><br><!--dir_navbar.html-->
+<i style="color: #f7f7f7;">&nbsp;&nbsp;Showing 1 - 10 of 68</i>
+&nbsp;&nbsp;
+
+<span style="height: 18px; border-radius: 3px; background-color: 00aed9;">&nbsp;<a style="text-decoration: none; color: #ffffff;" href="rw?d=Entertainment___Arts/Movies/;t=t;o=a;page=1">Next&nbsp;10&nbsp;&gt;</a></span><br><br>
+</td><td width="18%" rowspan="6" valign="top">
+    <table width="100%" cellspacing="0" cellpadding="6">
+        <tr><td valign="top" >
+        <center><!-- sky -->
+<table cellspacing=0 cellpadding=0>
+<tr><td>
+<!--g160-->
+<script type="text/javascript"><!--
+google_ad_client = "pub-0697257997191693";
+google_alternate_ad_url = "http://new.webring.com/pop/160";
+google_ad_channel = "3177332707";
+google_ad_slot = "9741734292";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+
+</table><br><br></center>
+        </td>
+    </tr></table>
+    </td>
+</tr></table></center>
+
+
+<br><br>
+	<center><!-- botad -->
+<!-- g728 -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-0697257997191693";
+google_alternate_ad_url = "http://new.webring.com/pop/728";
+google_ad_slot = "1773051729";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</center>
+<dir></div><br><br>
+
+<!--copyright5.html -->
+<!--footerd-->
+<div id=wr_bubble_div style="width: 820px; position: absolute; top: 85px; left: 50%; margin-left: -390px; display:none;"><iframe name="wr_bubble"  id=wr_bubble width="820" height="590" scrolling="auto" align="top" frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" style="visibility:visible;"></iframe></div>
+
+
+<center><div>
+<a class="style1" href="http://www.webring.org/h/new" title="Find out what's new at WebRing">What's New</a> | 
+<a class="style1" href="http://www.webring.org/h/cool" title="See the most popular WebRing communities">Popular</a> | 
+<a class="style1" href="http://sh1.webring.com/cgi-bin/auction.pl" title="Visit Auction Central">Auctions</a> | 
+<a class="style1" href="http://pg.webring.com/cgi-bin/members/blogcategory.cgi" title="Visit WebRing member blogs!">Blogs</a> | 
+<a class="style1" href="http://webspace.webring.com/h/ppl" title="Explore WebRing Member Webspace Sites!">Webspace</a> | 
+<a class="style1" href="http://www.webring.org/h/forums" title="Read and post your thoughts on one of WebRing's many communty forums">Forums</a> 
+<br>
+
+<a style="font-family: tahoma; font-size: 14px; font-weight: bold; color: #f5f5f5; text-transform: none; text-decoration: none;"href="http://FamilynHome.org" title="Family and Home">Family & Home</a> |
+<a style="font-family: tahoma; font-size: 14px; font-weight: bold; color: #f5f5f5; text-transform: none; text-decoration: none;"  href="http://GamesnToys.org" title="Games and Toys">Games & Gaming</a> |
+<a style="font-family: tahoma; font-size: 14px; font-weight: bold; color: #f6f6f6; text-transform: none; text-decoration: none;"  href="http://YourTakeOnMusic.com" title="Music">Music</a> |
+<a style="font-family: tahoma; font-size: 14px; font-weight: bold; color: #f6f6f6; text-transform: none; text-decoration: none;"  href="http://YourTakeOnPets.com" title="Pet and Animal">Pets</a> |
+<a style="font-family: tahoma; font-size: 14px; font-weight: bold; color: #f5f5f5; text-transform: none; text-decoration: none;"  href="http://PoliticsnIssues.org" title="Politics, Issues and Cause">Politics</a> |
+<a style="font-family: tahoma; font-size: 14px; font-weight: bold; color: #f5f5f5; text-transform: none; text-decoration: none;"  href="http://ReligionWebRings.org" title="Religion and Spirituality">Religion</a> 
+
+<br>
+
+<a style="font-family: tahoma; font-size: 11px; color: #f5f5f5; text-transform: none; text-decoration: none;"href="http://ArtnArtists.org" title="Art and Artists">Art</a> |
+<a style="font-family: tahoma; font-size: 11px; color: #f5f5f5; text-transform: none; text-decoration: none;"href="http://BooksnWriting.org" title="Literature, Books and Writing">Literature</a> |
+<a style="font-family: tahoma; font-size: 11px; color: #f5f5f5; text-transform: none; text-decoration: none;"href="http://ComputersnInternet.org" title="Computers, Internet and Gadgets">Computers</a> | 
+<a style="font-family: tahoma; font-size: 11px; color: #f6f6f6; text-transform: none; text-decoration: none;"href="http://YourTakeOnEntertainment.com" title="Entertainment">Entertainment</a> |
+<a style="font-family: tahoma; font-size: 11px; color: #f6f6f6; text-transform: none; text-decoration: none;"  href="http://YourTakeOnFitness.com" title="Fitness, Health and Nutrition">Fitness</a> |
+<a style="font-family: tahoma; font-size: 11px; color: #f5f5f5; text-transform: none; text-decoration: none;"  href="http://HobbiesnCrafts.org" title="Hobbies, Crafts and Collecting">Hobbies & Crafts</a> |
+<a style="font-family: tahoma; font-size: 11px; color: #f6f6f6; text-transform: none; text-decoration: none;"  href="http://YourTakeOnScience.com" title="Science">Science</a> |
+<a style="font-family: tahoma; font-size: 11px; color: #f5f5f5; text-transform: none; text-decoration: none;" href="http://SportsnRec.org" title="Sports and Recreation">Sports & Rec</a> |
+<a style="font-family: tahoma; font-size: 11px; color: #f5f5f5; text-transform: none; text-decoration: none;" href="http://YourTakeOnTravel.com" title="Travel and Leisure">Travel</a>
+
+<br>
+<a class="style1" href="http://r360.com" title="R360.com - secure private online collaboration" target=_blank>Powered by R360</a> | 
+<a class="style1" href="http://www.webring.org/h/contact.html" title="Send us feedback">Contact Us</a> | 
+<div class="copyright">Copyright &copy; 2001-2010 WebRing&reg;, Inc. All rights reserved.
+        <a href="http://www.webring.com/h/terms">Terms of Service</a> - <a href="http://help.webring.com/help/">Help</a>  We collect personal information on this site.<br>To learn more about how we use your information, see our <a href="http://www.webring.com/h/privacy">Privacy Policy</a>
+    </div>
+</div>
+
+<!-- statcounter5-->
+<script type="text/javascript" language="javascript">
+var sc_project=747265; 
+var sc_partition=6; 
+var sc_security="be5b1c86"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+
+</center></body><script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-63nXtmnT1pPTo"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-63nXtmnT1pPTo.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript></html>

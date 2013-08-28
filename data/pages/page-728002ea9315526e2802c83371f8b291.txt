@@ -1,0 +1,3036 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+<!-- GLOBAL CSS -->
+    <script type="text/javascript">PAGESETUP = {VERSION: '2.1.2', timer: {start: (new Date()).getTime(), load_evt: -1}, yuicdn: 'http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/yui2',edmuicdn: 'http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/edmui', staticcdn: 'http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/', default_libs: ['http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/utilities.js']};</script><link rel="stylesheet" type="text/css" media="all" href="http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/edm.simple.css" />
+<link rel="stylesheet" type="text/css" href="http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/forums.css" />
+<link rel="stylesheet" type="text/css" href="http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/widgets.css" />
+<link rel="search" type="application/opensearchdescription+xml" title="Edmunds Car Forums" href="http://www.edmunds.com/forums/search-indexing.xml" />
+<link rel="alternate" type="application/rss+xml" title="Forums - Top 10 Discussions [RSS]" href="/topTenRSS" />
+
+</script>
+<script type="text/javascript">
+    var webAssetsServer = "http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/";
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
+// Open a window with a full tabbar width.
+function popWinTwo(strFile) {
+    window.open(strFile, "pop", "height=400,width=800,scrollbars,resizable,status,menubar");}
+</script>
+<meta name="description" content="Maintenance & Repair group in the car forums by Edmunds.com" />
+<meta name="keywords" content="Auto Repair" />
+<script language="javascript" type="text/javascript">
+//<![CDATA[ 
+var ed_req_make_raw = "";
+var ed_req_model_raw = "";
+var ed_req_category_raw = "Auto Repair";
+var ed_req_make = "";
+var ed_req_model = "";
+var ed_req_category = "autorepair";
+var ed_req_zipcode = "";
+var ed_req_category_list = ["autorepair"];
+var ed_req_type_list = [];
+//]]>
+</script>
+
+<script language="javascript" type="text/javascript">
+function ed_genDartFile(adtype) {
+    if ((adtype == "box" || adtype == "spotlight")) {
+        if (ed_req_model) {
+            return(ed_req_make + ".forums.dart");
+        } else if (ed_req_make) {
+            return("forums.make.dart");
+        } else {
+            return("forums.dart");
+        }
+    } else {
+        return("forums.dart");
+    }
+}
+
+function ed_genDartParams(adtype) {
+    var params = "";
+    if (adtype == "spotlight" && ed_req_model) {
+        params += "mdl=" + ed_req_model + ";";
+    } else {
+        if (ed_req_make) {
+            params += "make=" + ed_req_make + ";";
+        }
+        if (ed_req_model) {
+            params += "mdl=" + ed_req_model + ";";
+        }
+    }
+    for (var i = 0; i < ed_req_category_list.length; i++) {
+        params += "theme=" + ed_req_category_list[i] + ";";
+    }
+    for (var i = 0; i < ed_req_type_list.length; i++) {
+        params += "type=" + ed_req_type_list[i] + ";";
+    }
+    return(params);
+}
+
+function ed_genUParams(adtype) {
+    var params = "";
+    if (ed_req_make) {
+        params += ":make_" + ed_req_make;
+    }
+    if (ed_req_model) {
+        params += ":mdl_" + ed_req_model;
+    }
+    for (var i = 0; i < ed_req_category_list.length; i++) {
+        params += ":theme_" + ed_req_category_list[i];
+    }
+    for (var i = 0; i < ed_req_type_list.length; i++) {
+        params += ":type_" + ed_req_type_list[i];
+    }
+    return(params);
+}
+</script>
+
+
+<title>Maintenance &amp; Repair - Car Forums - Edmunds</title>
+</head>
+<body >
+<div id="edm_document">
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+PAGESETUP = PAGESETUP || {};
+PAGESETUP.scope = PAGESETUP.scope || {};
+PAGESETUP.scope.trackDataCallback = PAGESETUP.scope.trackDataCallback ||
+    function (tdata /*:Object*/) /*:void*/ {
+        function getCookie(c_name) {
+            if (document.cookie.length > 0) {
+              var c_start = document.cookie.indexOf(c_name + "=");
+              if (c_start != -1) {
+                c_start = c_start + c_name.length + 1;
+                var c_end = document.cookie.indexOf(";",c_start);
+                if (c_end == -1) c_end = document.cookie.length;
+                return unescape(document.cookie.substring(c_start,c_end));
+              }
+            }
+            return "";
+        }
+        tdata.edwcat = "forums";
+        tdata.edwpg = "forums_board_host" || "other";
+        tdata.ad_make = ed_req_make;
+        tdata.ad_model = ed_req_model;
+        var adSitename = ed_genDartFile('box');
+        var adKeys = ed_genDartParams('box') + ((PAGESETUP.scope.pageProps['keyvalues']) ? PAGESETUP.scope.pageProps['keyvalues'] : '');
+        var omEventValue = getCookie("forumsOmEventParam");
+        if (omEventValue) {
+            tdata.omnitureEventValue = omEventValue;
+            document.cookie = "forumsOmEventParam=; expires=" + new Date(0) + "; path=/; domain=.edmunds.com";
+        }
+        tdata.edwad = adSitename + ':' + adKeys.replace(/;/g, ":");
+    };
+//]]>
+</script>
+
+    <!--[if lt IE 9]><script src="http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/ie8-browser-compatibility.js"></script><![endif]-->
+    <!--[if lt IE 8]><script src="http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/ie7-browser-compatibility.js"></script><![endif]-->
+    <!--[if lt IE 7]><link rel="stylesheet" href="http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/edmunds.simple.ie6.css" type="text/css" media="all" /><![endif]-->
+    <meta name="apple-itunes-app" content="app-id=393630966">
+    <link rel="image_src" id="fbImageSrc" />
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function(){
+        PAGESETUP = PAGESETUP||{};
+        PAGESETUP.scope = PAGESETUP.scope || {};
+        PAGESETUP.scope.pageProps = PAGESETUP.scope.pageProps || {};
+        PAGESETUP.scope.pageProps.keyvalues = PAGESETUP.scope.pageProps.keyvalues || '';
+
+        PAGESETUP.scope.environmentURL = "http://www.edmunds.com";
+        PAGESETUP.scope.environmentEdwURL = 'http://edw.edmunds.com';
+        PAGESETUP.scope.secureEnvironmentURL = "https://secure.edmunds.com";
+		PAGESETUP.scope.staticContent = 'http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/';
+        PAGESETUP.scope.staticContentWro = 'http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/';
+        PAGESETUP.scope.damUrl = 'http://media.ed.edmunds-media.com';
+        PAGESETUP.scope.timestamp = new Date().getTime();
+        PAGESETUP.scope.dartTimestamp = PAGESETUP.scope.timestamp;
+        PAGESETUP.scope.path = '/global/header';
+
+        var tdata = {
+            ad_make:'',
+            edw_make_id: '',
+            ad_model:'',
+            edw_model_link_code:'',
+            ad_year:'',
+            edw_model_year_id:'',
+            edw_submodel_id:'',
+            ad_style:'',
+            ad_submodel:'',
+            mktid:'',
+            mktcat:'',
+            kw:''
+        };
+
+        tdata.offermaticTracking = false;
+
+
+            tdata.prop22 = 'Apr 7, 2010';
+
+
+
+            tdata.ad_tracking_submodel='';
+
+            PAGESETUP.scope.pageProps['sitename'] = '';
+
+
+
+
+		tdata.og_edwpg='_print';
+        tdata.og_edwcat='';
+		tdata.edwpg='_print';
+        tdata.edwcat='';
+
+        tdata.TRACKING_usein = '';
+
+        tdata.ad_keyvalues = '';
+
+        tdata.ad_usein = '';
+
+        tdata.TRACK_querystring='';
+        if (typeof(PAGESETUP.scope.trackDataCallback) == "function") {
+            PAGESETUP.scope.trackDataCallback(tdata);
+        }
+        PAGESETUP.scope.tracking_data = tdata;
+    })();
+</script>
+        <script type="text/javascript">
+            window.EDM = window.EDM||{};
+            EDM.PageValues = EDM.PageValues||{};
+            EDM.PageValues.page = {"name":"_print","category":"","webapp":"editorial-web","timestamp":"","pageViewId":"","cmsPlatform":"WIRED"}
+            EDM.PageValues.vehicle = {"make":"","model":"","submodel":"","submodelNiceName":"","styleId":"","year":"","type":"","useIn":"used","makeId":""}
+            EDM.PageValues.ads = {"app":"wired","networkCode":"75548861","cmsPlatform":"WIRED"}
+            EDM.PageValues.urls = {"www":"http://www.edmunds.com","dam":"http://media.ed.edmunds-media.com","edw":"http://edw.edmunds.com","staticContent":"http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/","wro":"http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/","pageFeedPath":"/global/header"}
+        </script>
+
+<script type="text/javascript">edomniacct = 'edmunds';</script>
+<script type="text/javascript" src="http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/global.js" charset="utf-8"></script>
+<script type="text/javascript">
+    window.googletag = window.googletag || {};
+    googletag.cmd = googletag.cmd || [];
+
+    (function () {
+        var gads = document.createElement("script");
+        gads.async = true;
+        gads.type = "text/javascript";
+        var useSSL = "https:" == document.location.protocol;
+        gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+        var node = document.getElementsByTagName("script")[0];
+        node.parentNode.insertBefore(gads, node);
+
+        googletag.cmd.push(function () {
+            EDM.Ads.Gpt.init();
+        });
+    })();
+</script>
+<script type="text/javascript">
+    if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+</script>
+<noscript>
+    <a href="http://www.omniture.com" title="Web Analytics">
+        <img src="http://edmunds.112.2O7.net/b/ss/edmunds/1/H.20.3--NS/0" height="0" width="0" />
+    </a>
+		<img src="http://edw.edmunds.com/edw/edw1x1.gif?Javascript=no" height="0" width="0" />
+	
+</noscript><!--/DO NOT REMOVE THIS COMMENT/-->
+<!-- End SiteCatalyst code version: H.20.3. --><div>
+    <div id="edm_header" class="span-24 tid">
+<a href="http://www.edmunds.com/" class="logo">edmunds.com</a>
+<div class="logo-tagline"><a href="http://www.edmunds.com/">Ask the <span>Car People.<sup>SM</sup></span></a></div>
+
+<div id="header_links">
+    <a class="fb-header" onClick='top.location.href="http://www.edmunds.com/era/secure/nlb/login.jsp?actionPerform=login-facebook&toUrl=" + encodeURIComponent(location.href); return false;'></a>
+    <a onClick='top.location.href="http://www.edmunds.com/era/secure/nlb/login.jsp?toUrl=" + encodeURIComponent(location.href); return false;' id="header_signin">Sign In</a> <b>|</b>
+    <a href="http://www.edmunds.com/mobile/featured.html">Mobile</a> | 
+    <a href="http://www.edmunds.com/help/">Help</a> |
+    <a href="http://www.edmunds.com/newsletter/">Newsletter</a> |
+    <a href="http://www.edmunds.com/dealers/">Dealers</a>
+</div>
+<div id="fb-root"></div>
+
+    <script type="text/javascript">
+        PAGESETUP.files.push('http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/decorator-simple.js');
+        PAGESETUP.files.push('http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/idm-fb.js');
+
+        PAGESETUP.addControl(function() {
+            var idmHost = 'http://www.edmunds.com';
+            EDMUNDS.FBConnect.init({idmHost:idmHost,appContext:'/era',protocol:location.protocol});
+            FB.init({appId: EDMUNDS.FBConnect.EDMUNDS_API_KEY, status: false, cookie: true, xfbml:false});
+        }, 'low');
+
+        // Added as result of relative paths in global.js module - we need absolute urls
+        PAGESETUP.addControl(function() {
+            var picSpan = document.getElementById('fb_pic');
+            /*Only Attempt to fetch the picture if the span exists: meaning that the user is logged into Edmunds.com*/
+            if(picSpan){
+                var imageSrc = EDMUNDS.FBConnect.getFbPicture();
+                /**
+                 * The following could fail at some point because facebook may return the secure url even for pic
+                 * If that is the case, simply modify the backend to deal the SSL Certificate.
+                 */
+                imageSrc = "http://www.edmunds.com/era/secure/FacebookImage.load.action?FB_URL=" + encodeURIComponent(imageSrc);
+                /*Holds the image to verify its existence*/
+                var tempImage = new Image();
+                tempImage.onload = function(){
+                    /*Image Exists set it*/
+                    picSpan.innerHTML = "<img src='" + imageSrc + "' alt='' height='19' />";
+                };
+                tempImage.onError = function(){
+                    imageSrc=null;
+                };
+                tempImage.src = imageSrc;
+            }
+        }, 'low');
+
+        PAGESETUP.addControl(function(t) {
+            PAGESETUP.scope.forumsLogout = function(toUrl){
+                var session = FB.getSession();
+                if(session){
+                    FB.logout(function(response) {
+                        PAGESETUP.scope.logoutHandler(response, toUrl);
+                    });
+                }else{
+                    PAGESETUP.scope.logoutHandler('', toUrl);
+                }
+            }
+
+            PAGESETUP.scope.logoutHandler = function(response, toUrl) {
+                EDMUNDS.FBConnect.clearUserInfo();
+                var tId = EDMUNDS.Util.getQueryString('tid');
+                var queryString = '';
+                if (tId) {
+                    queryString += ((queryString) ? '&tid=' : '?tid=');
+                    queryString += tId;
+                }
+
+                queryString += ((queryString) ? '&' : '?');
+                if(toUrl){//If set, it overrides the successUrl
+                    queryString += 'logoutSuccessUrl=' + toUrl;
+                }
+                location.href = 'http://www.edmunds.com/era/j_spring_security_logout' +  queryString;
+            }
+
+        }, 'normal');
+    </script>
+
+
+<div id="header_nav" class="yuimenubar"><div class="bd">
+    <ul class="primary whats-hot">
+
+        <li id="new_cars" class="shadow" shadow="New Cars"><a href="http://www.edmunds.com/new-cars/">New Cars</a>
+            <div class="yuimenu"><div class="bd">
+                <ul class="secondary">
+                    <li><a href="http://www.edmunds.com/calculators/">Calculators</a></li>
+                    <li><a href="http://www.edmunds.com/finder/car-finder-results.html">Car Finder</a></li>
+                    <li><a href="http://www.edmunds.com/car-comparisons/">Compare Cars</a></li>
+                    <li><a href="http://www.edmunds.com/dealer-reviews/">Find a Dealer</a></li>
+                    <li><a href="http://www.edmunds.com/calculators/simplified-pricing.html">Get Monthly Payment</a></li>
+                    <li><a href="http://www.edmunds.com/car-incentives/">Incentives & Rebates</a></li>
+                    <li><a href="http://www.edmunds.com/inventory/srp.html">Search Inventory</a></li>
+                    <li><a href="http://www.edmunds.com/tco.html">True Cost to Own<sup>&reg;</sup></a></li>
+                </ul>
+            </div></div>
+        </li>
+
+
+        <li id="used_cars" class="shadow" shadow="Used Cars"><a href="http://www.edmunds.com/used-cars/">Used Cars</a>
+            <div class="yuimenu"><div class="bd">
+                <ul class="secondary">
+                    <li><a href="http://www.edmunds.com/inventory/used/srp.html">Search Inventory</a></li>
+                    <li><a href="http://www.edmunds.com/appraisal/">Appraise Your Car</a></li>
+                    <li><a href="http://www.edmunds.com/certified-cars/">Certified Cars</a></li>
+                    <li><a href="http://www.edmunds.com/sell-car/">Selling Tips</a></li>
+                    <li><a href="http://www.edmunds.com/tco.html">True Cost to Own<sup>&reg;</sup></a></li>
+                </ul>
+            </div></div>
+        </li>
+
+
+        <li id="inventory" class="shadow" shadow="Inventory"><a href="http://www.edmunds.com/inventory/">Inventory</a>
+            <div class="yuimenu"><div class="bd">
+                <ul class="secondary">
+                    <li><a href="http://www.edmunds.com/inventory/srp.html">New Car Inventory</a></li>
+                    <li><a href="http://www.edmunds.com/inventory/used/srp.html">Used Car Inventory</a></li>
+                </ul>
+            </div></div>
+        </li>
+
+
+        <li id="car_reviews" class="shadow" shadow="Car Reviews"><a href="http://www.edmunds.com/car-reviews/">Car Reviews</a>
+            <div class="yuimenu"><div class="bd">
+                <ul class="secondary">
+                    <li><a href="http://www.edmunds.com/car-reviews/car-reviews-road-tests.html">Car Reviews and Road Tests</a></li>
+                    <li><a href="http://www.edmunds.com/car-reviews/track-tests/">Track Tests &amp; Suspension Walkarounds</a></li>
+                    <li><a href="http://www.edmunds.com/car-reviews/long-term-road-tests/">Long-Term Road Tests</a></li>
+                    <li><a href="http://www.edmunds.com/car-reviews/comparison-road-tests/">Comparison Road Tests</a></li>
+                    <li><a href="http://www.edmunds.com/auto-shows/">Auto Shows</a></li>
+                    <li><a href="http://www.edmunds.com/car-reviews/features/">Feature Stories</a></li>
+                    <li><a href="http://www.edmunds.com/car-reviews/best-cars.html">Best Cars Lists</a></li>
+                    <li><a href="http://www.edmunds.com/car-reviews/car-awards.html">Awards</a></li>
+                    <li><a href="http://www.edmunds.com/dealer-reviews/">Dealer Ratings and Reviews</a></li>
+                    <li><a href="http://www.edmunds.com/car-reviews/consumer-ratings-reviews.html">Read and Write Consumer Reviews</a></li>
+                </ul>
+            </div></div>
+        </li>
+
+
+        <li id="tips_advice" class="shadow" shadow="Tips & Advice"><a href="http://www.edmunds.com/cars/">Tips & Advice</a>
+            <div class="yuimenu"><div class="bd">
+                <ul class="secondary">
+                    <li><a href="http://www.edmunds.com/car-buying/">Buying a Car</a></li>
+                    <li><a href="http://www.edmunds.com/car-leasing/">Leasing a Car</a></li>
+                    <li><a href="http://www.edmunds.com/sell-car/">Selling a Car</a></li>
+                    <li><a href="http://www.edmunds.com/car-safety/">Family and Car Safety</a></li>
+                    <li><a href="http://www.edmunds.com/fuel-economy/">Fuel Economy & Green Cars</a></li>
+                    <li><a href="http://www.edmunds.com/car-technology/">Car Technology</a></li>
+                    <li><a href="http://www.edmunds.com/car-loan/">Auto Financing</a></li>
+                    <li><a href="http://www.edmunds.com/auto-insurance/">Auto Insurance</a></li>
+                    <li><a href="http://www.edmunds.com/auto-warranty/">Auto Warranty</a></li>
+                    <li><a href="http://www.edmunds.com/car-maintenance/">Car Maintenance</a></li>
+                    <li><a href="http://www.edmunds.com/driving-tips/">Driving Tips</a></li>
+                    <li><a href="http://answers.edmunds.com/">Answers</a></li>
+                </ul>
+            </div></div>
+        </li>
+
+
+        <li id="whats-hot" class="shadow" shadow="What's Hot"><a href="http://www.edmunds.com/whats-hot/">What's Hot</a>
+            <div class="yuimenu"><div class="bd">
+                <ul class="secondary">
+                    <li><a href="http://www.edmunds.com/car-news/">Car News</a></li>
+                    <li><a href="http://www.edmunds.com/car-pictures/">Car Pictures</a></li>
+                    <li><a href="http://www.edmunds.com/car-videos/">Car Videos</a></li>
+                    <li><a href="http://www.edmunds.com/forums/">Car Forums</a></li>
+                </ul>
+            </div></div>
+        </li>
+
+
+    </ul>
+</div></div>
+<div id="header_search">
+    <form action="http://www.edmunds.com/search/results.html" method="get" accept-charset="utf-8" id="header_form">
+        <div class="header_ac">
+            <input type="text" name="q" value="Search Site" id="header_text" />
+            <input type="hidden" name="src" value="usergen" />
+			<input type="hidden" name="ac" value="" />
+			<!--[if IE]>
+            <input type="image" src="http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/img/trans.png" id="header_submit" name="header_submit" />
+			<![endif]-->
+			<!--[if !IE]><!-->
+			<input type="image" src="data:image/gif;base64,R0lGODlhAQABAJECAP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw%3D%3D" id="header_submit" name="header_submit" />
+			 <!--<![endif]-->
+            <div id="header_ac_results"></div>
+        </div>
+    </form>
+</div>
+        <script type="text/javascript">
+            PAGESETUP.addControl(function() {
+                var links = YAHOO.util.Selector.query('a.canonicalLink'); /*get all canonicalLinks*/
+                for(i=0; i < links.length; i++){/*loop through links*/
+                    var qstringParam = 'data-qstring';
+                    if(links[i].getAttribute(qstringParam)){ /*verify attribute exists*/
+                        links[i].href = links[i].href + links[i].getAttribute(qstringParam); /*update href with query params*/
+                    }
+                }
+            });
+        </script>
+        <script type="text/javascript">
+            PAGESETUP.addControl(function() {
+                switch (EDMUNDS.Util.getQueryString('actionPerform')) {
+                    case 'account-activation':
+                        PAGESETUP.scope.modalPanel.launch({"url":"http://www.edmunds.com/era/lb/accountActivation.jsp"},"Account Activation", [550,365]);
+                        break;
+                    case 'reset-password':
+                        PAGESETUP.scope.modalPanel.launch({"url":"http://www.edmunds.com/era/secure/lb/resetPassword.jsp?email=" + EDMUNDS.Util.getQueryString('email')},"Reset Password", [550,305]);
+                        break;
+                    default:
+                }
+            }, 'low');
+        </script>
+        <script type="text/javascript">
+            PAGESETUP.addControl(function() {
+                var lmBlock = document.getElementById("learn-more-block");
+                var lmVehBlock = document.getElementById("learn-more-vehicles-block");
+                if (window.make_model_results && make_model_results) {
+                    lmVehBlock.innerHTML = make_model_results;
+                    lmBlock.style.display = "block";
+                }
+            }, 'normal');
+        </script>
+        </div>
+</div>
+<!--END global header-->
+
+<!-- START THIRD PARTY JS -->
+    <script type="text/javascript">
+        //PAGESETUP.files.push('%% site.WEB_ASSETS %%/js/forums/posteditor.js');
+        PAGESETUP.files.push('http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/third-party-js.js');
+    </script>
+<!-- END THIRD PARTY JS --><!-- END thrid party js macro -->
+
+
+<script type="text/javascript" language="javascript">
+PAGESETUP.addControl(function() {
+    // delete webxSess cookie with incorrect domain
+    EDMUNDS.Cookie.remove("webxSess", {path: "/"});
+    // Enables pop-up window for viewing profile info
+    // Initialize popup profiles.
+    YAHOO.forumsPopProfile.init();
+});
+// Global site-wide variables
+var app_name = "forums";
+</script>
+
+<!-- END CS HEADER -->
+
+<!-- BEGIN FORUMS CONTENT -->
+    <div id="topBoardLevel" class="span-24">
+<div class="span-24" id="pageheader">
+<div class="span-16 module tid" id="breadcrumb">
+    <div class="content">
+            <!-- webx.tpl backPath -->
+
+
+<a href="http://www.edmunds.com/forums">Forums</a> 
+<span class='delimiter'>&gt;</span>Maintenance &amp; Repair
+
+    </div>
+</div>
+
+<div id="saved_page_confirmation" class="span-24 module tid">
+You have saved this page <em>|</em> <span class="link" id="see_all_sp">See all saved pages</span>
+</div>
+<script type="text/javascript">
+    PAGESETUP.files.push('http://static.ed.edmunds-media.com/edmunds-webassets/1.47.22/js/page-header-min.js');
+</script>
+<script type="text/javascript">
+// Fix to convert relative urls to absolute
+PAGESETUP.addControl(function() {
+    var $D = YAHOO.util.Dom;
+    var $E = YAHOO.util.Event;
+    // Go to my save pages
+    $E.removeListener('see_all_sp', 'click');
+    $E.addListener('see_all_sp', 'click', function(){
+                window.parent.location.href=PAGESETUP.scope.environmentURL + '/era/secure/MyAccount.load.action?eraActiveTab=2';
+        });
+    // Save Page
+    $E.removeListener('tools_save', 'click');
+    $E.addListener('tools_save', 'click', function(){
+                if (!EDMUNDS.User.isLoggedIn()) {
+                        top.location.href=PAGESETUP.scope.environmentURL + "/era/secure/nlb/login.jsp?toUrl=" + encodeURIComponent(location.href);
+                        return;
+                }
+                window.edmundsSavedPagesLoginState = true;
+                var h =document.getElementsByTagName('head')[0],s=document.createElement('script');
+                s.type='text/javascript';
+                s.src=PAGESETUP.scope.environmentURL+'/era/scrapbook/load.jsp';
+                h.appendChild(s);
+    });
+    // replacement for email
+    // removing previous listener listener
+    if ($D.get('tools_email')) {
+        $E.removeListener('tools_email', 'click');
+    }
+
+   /*
+    * Email
+    * Uses email rest service to email a url to a recipient
+    * lazy load, destroys on exit
+    */
+    function emailAFriend2() {
+        // xhr success
+        var callback = {
+            success: function (o) {
+                // parse the json data
+                try {
+                    var respText = o.responseText;
+                    if (respText && respText.indexOf("<!DOCTYPE") == 0) {
+                        var doctypeEnd = respText.indexOf(">");
+                        if (doctypeEnd >= 0 && doctypeEnd < respText.length) {
+                            respText = respText.substring(doctypeEnd + 1);
+                        }
+                    }
+                    var response = YAHOO.lang.JSON.parse(respText);
+                } catch (err) {
+                    throw new Error('Email: JSON Parse failed');
+                }
+                if (response.status == 'pass') {
+                    document.getElementById('email_content').innerHTML =
+                    '<p>Thank You!</p><p> You have sent this page to: <em>' + response.recipients + '</em>.</p>';
+                    YAHOO.widget.Overlay.windowResizeHandler();
+                    /*
+                    tracking for email thank you
+                     */
+                    var emailTy_tracking = new ETRACKBASE(edw_tracking.getLastTrackingUrl());
+                    emailTy_tracking.clone(edw_tracking.copy());
+
+                    emailTy_tracking.set('edwpg', PAGESETUP.scope.emailEdwpg + '_thank_you' || 'other_email_friend_thank_you');
+                    emailTy_tracking.set('edwcat', PAGESETUP.scope.emailEdwcat || 'other');
+
+
+                    // fire edw event
+                    emailTy_tracking.set("edwtid", "email_friend.button.submit");
+                    emailTy_tracking.track('link_click', {
+                        pageload:1,
+                        parent: 'Email a Friend',
+                        link_type: 'overlay_window'
+                    });
+                    var data = {
+                        "tid":emailTy_tracking.get("edwtid"),
+                        "events":"",
+                        "pageName":"other_email_friend_thank_you",
+                        "channel":"other",
+                        "eVar1":"other"
+                    };
+                    s.refire(data);
+
+                } else if (response.status == 'fail') {
+                    var error_code = response.emailErrorHolder.errorCode;
+                    var error_message = '';
+                    // translate error message. see: {url: nick's confluence doc}
+                    switch(error_code) {
+                        case 'ERROR 2':
+                            error_message = ('Invalid sender email address.');
+                            break;
+                        case 'ERROR 5':
+                            error_message = ('Invalid recipient email address.');
+                            break;
+                        case 'ERROR 40':
+                            error_message = ('Emailing from this site is not supported.');
+                            break;
+                        default:
+                            error_message = ('Sorry, the email service is currently unavailable.');
+                            break;
+                    }
+                    email_error.innerHTML = error_message;
+                    $D.removeClass(email_error, 'nodisplay');
+                }
+            },
+            failure: function (o) {
+                if (!YAHOO.util.Connect.isCallInProgress(o)) {
+                    email_error.innerHTML = 'Sorry, the email service is currently unavailable.';
+                    $D.removeClass(email_error, 'nodisplay');
+                    throw new Error('Email: Async call failed');
+                }
+            }
+        };
+        // send the email
+        function sendEmail(emailAtom){
+            $D.addClass(email_error, 'nodisplay');
+            var sender = document.getElementById('email_sender');
+            var recipient = document.getElementById('email_recipient');
+            // temporary validation
+            sender.value = sender.value.replace(/^\s+/, '').replace(/\s+$/, ''); // trim
+            recipient.value = recipient.value.replace(/^\s+/, '').replace(/\s+$/, ''); // trim
+            if (sender.value.search(/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,4}$/) == -1) {
+                email_error.innerHTML = 'Invalid sender email address.*';
+                $D.removeClass(email_error, 'nodisplay');
+                return false;
+            }
+            if (recipient.value.search(/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,4}$/) == -1) {
+                email_error.innerHTML = 'Invalid recipient email address.*';
+                $D.removeClass(email_error, 'nodisplay');
+                return false;
+            }
+            var emailAtom = '/email/default-with-query'; // make var
+            var ccFlag = document.getElementById('email_cc').checked;
+            // build url
+var restUrl = '/WebX?mailer!to=' + recipient.value + '&from=' + sender.value + '&template=' + emailAtom +
+                          '&cc=' + ccFlag;
+restUrl += '&originalUrl=' + window.location.href.substring(7);
+// Encode the URI
+restUrl = encodeURI(restUrl);
+            // get
+            YAHOO.util.Connect.asyncRequest('GET', restUrl, callback);
+        }
+        // init email panel
+        email_panel = new YAHOO.widget.Panel('email_panel', { visible: false,
+                                                              fixedcenter: true,
+                                                              constraintoviewport: true,
+                                                              draggable: false,
+                                                              modal: true } );
+        var email_body = '' +
+            '<div class="span-16 module">' +
+                '<p class="module-title">Email This</p>' +
+                '<div class="content" id="email_content">' +
+                    '<p id="email_error" class="error nodisplay"></p>' +
+                    '<p class="title">Email a friend a link to: <em>' + document.title + '</em></p>' +
+                    '<label>Your Email Address (sender):</label>' +
+                    '<input type="text" name="email_sender" value="" id="email_sender" />' +
+                    '<label>Recipients\' Email Addresses:</label>' +
+                    '<input type="text" name="email_recipient" value="" id="email_recipient" />' +
+                    '<label>Send a copy to yourself: <input type="checkbox" name="email_cc" value="" id="email_cc" /></label>' +
+                    '<div class="submit">' +
+                        '<a href="javascript: void(0);" class="button" id="email_send"><span>Send</span></a>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+        email_panel.setBody(email_body);
+        email_panel.render(document.body);
+
+var emailClick_tracking = new ETRACKBASE(edw_tracking.getLastTrackingUrl());
+emailClick_tracking.clone(edw_tracking.copy());
+
+emailClick_tracking.set('edwpg', PAGESETUP.scope.emailEdwpg || 'other_email_friend');
+emailClick_tracking.set('edwcat', PAGESETUP.scope.emailEdwcat || 'other');
+
+
+        // fire edw event
+        emailClick_tracking.set("edwtid", "header_tools.text.Email");
+emailClick_tracking.track('link_click', {
+            pageload:1,
+            parent: 'Email a Friend',
+            link_type: 'overlay_window'
+        });
+var data = {
+"tid":emailClick_tracking.get("edwtid"),
+"events":"",
+"pageName":"other_email_friend",
+"channel":"other",
+"eVar1":"other"
+};
+s.refire(data);
+
+        // get error field
+        var email_error = document.getElementById('email_error');
+        // add send listener
+        $E.addListener('email_send', 'click', sendEmail);
+        email_panel.show();
+        // destroy panel upon close
+        email_panel.hideEvent.subscribe(function(){
+                $E.purgeElement('email_send');
+                window.setTimeout(function () {
+                    email_panel.destroy();
+                }, 100);
+            });
+    }
+    // add listener
+    if ($D.get('tools_email')) {
+        $E.addListener('tools_email', 'click', emailAFriend2);
+    }
+}, 'low');
+</script>
+</div>
+
+<!-- START COLUMN ONE -->
+    <div class="span-16">
+
+
+        
+
+
+
+<div class="header-advert">
+  
+<p align="center"><a href="http://www.edmunds.com/apps/redirector/RedirectController?rd_contractid=127&amp;rd_link=0&amp;rd_app=PL&amp;tid=edmunds..townhall.housead.greencar.1.*"
+TARGET="th_ad">
+<img src="http://static.ed.edmunds-media.com/edmunds-webassets/1.47.22/img/forums/GreenCar_ad_500x50.gif" border="0" alt="" />
+</a></p>
+</div>
+<div class="module forums">
+  <h2>Maintenance &amp; Repair</h2>
+</div>
+
+<!-- START FOLDER CONTENT -->
+<div class="module forums discussion-list tid" id="forums-folder-list">
+<!-- XXX Open Folder Description XXX --><p>Welcome to the Maintenance and Repair Message Board! <br /><br />Are You a "Wrench-a-Phobe"? Got a "Lemon" but can't make lemonade? Relax! You're among friends here! Ask questions, share secrets, stay informed!</p><ul class="forum-edit discussion-controls">
+</ul>
+
+<ul class="forum-edit">
+<li class="host">Your Host is <span class="profileLink"><a class="host" href="/WebX/.ee9203e/?viewUserProfile!vuserName=MrShift@Edmunds">MrShift@Edmunds</a></span> </li></ul>
+                            <div class="forums-boardview-searchbox"><form name="searchMakeForm" class="forums-search" method="post" action="/WebX/.ee9203e/?127" onsubmit="if (!this.keywords.value) { return false; }"> <input type="hidden" name="as_allin" value="msgtext" /> <input type="hidden" name="count" value="20" /> <h4>Discussions&nbsp;Page&nbsp;1&nbsp;of&nbsp;1</h4><input class="button small" type="submit" name="Submit" border="0" value="Search" /><input class="textfield" name="keywords" type="text" size="20" value="" /><label for="keywords">Search&nbsp;Maintenance &amp; Repair</label><input type="hidden" name="as_limit" value=".ee9203e" /></form><ul class="forums-pagination discussions-pagination"><li class="all">All&nbsp;Discussions&nbsp;Displayed</li></ul></div>
+                        <!-- ed_folderListInit -->
+                            <!-- folderListBefore -->
+
+                                                
+
+                  
+                                                                                        <h3>Maintenance &amp; Repair Forums</h3>
+        <table cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+        <td valign="top" width="50%" class="wrapper">
+        <table cellpadding="0" cellspacing="0" class="forums-list">
+    
+
+                    <tr class="first"><td>
+        <!-- Folder -->
+                <a href="/direct/view/.ee9a81a">Maintenance &amp; Repair - Archived Discussions</a>
+                    Total Posts: 58189    
+            </td></tr>
+
+                        </table>
+        </td>
+        <td valign="top" width="50%" class="wrapper">
+        <table cellpadding="0" cellspacing="0" border="0" class="forums-list">
+            
+    
+
+                                                    <tr><td style="background: #FFFFFF !important;">&nbsp;</td></tr>
+                </table>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        <div class="module forums discussion-list tid" id="forums-discussion-list">
+            
+                                        <ul class="forum-edit">
+    <li>                                    <a href="http://www.edmunds.com/era/secure/nlb/login.jsp?toUrl=http%3A%2F%2Ftownhall-talk.edmunds.com%2FWebX%3F29%40%40.ee9203e">Watch this Forum</a>                </li><li>
+</li></ul>
+</p>
+            
+                    <table>
+    
+        <!-- Discussion Header -->
+    <tbody>
+    <tr class="first">
+    <th class="discussion">Discussion&nbsp;Title</th>
+    <th>Last&nbsp;Post</th>
+    <th>Total</th>
+    <th>New</th>
+        </tr>
+
+        <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.f0fc288.f0fc25a" class="forumstitle">Lost? Ask a Host for Help!</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>8/18/13</td>
+        <td>            3000        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+        <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.f27587e.f275858" class="forumstitle">Edmunds Forums Survey</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                               
+                                                        
+                        
+            <td>5/16/13</td>
+        <td>            21        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                    <td class="title new">                                    <a href="/direct/view/.f258f92" class="forumstitle">A Mechanic's Life - Tales From Under the Hood</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>8/27/13</td>
+        <td>            4215        </td>
+        <td>            3        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef2398d" class="forumstitle">Got a Quick, Technical Question?</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>8/9/13</td>
+        <td>            5682        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.f220259" class="forumstitle">Online Repair Manuals</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                               
+                                                               
+                                                        
+                        
+            <td>6/6/13</td>
+        <td>            34        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef04201" class="forumstitle">How it Works! Welcome to Auto 101</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>2/29/12</td>
+        <td>            401        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ee9945e" class="forumstitle">Technical Service Bulletins</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>3/25/12</td>
+        <td>            549        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.efde067" class="forumstitle">Winter Driving - are you prepared?</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>12/2/11</td>
+        <td>            161        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ee9949a" class="forumstitle">Check Engine light</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>8/23/13</td>
+        <td>            1699        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef7aaa8" class="forumstitle">Fuel Systems -- Maintenance &amp; Repair</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>8/8/13</td>
+        <td>            197        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef062ac" class="forumstitle">Stop here! Let's talk about brakes</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>5/3/13</td>
+        <td>            2026        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef047b3" class="forumstitle">Fuel and Oil Additives</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>5/15/13</td>
+        <td>            1331        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef0c8e7" class="forumstitle">Climate Control Problems (Air Conditioning, Heat) - All Cars</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>7/20/13</td>
+        <td>            836        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef469d7" class="forumstitle">To Fix Up or Trade Up, That is the Question</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>7/13/13</td>
+        <td>            872        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef13c30" class="forumstitle">Idle or Stalling Problems - All Vehicles</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>7/10/13</td>
+        <td>            465        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef16a06" class="forumstitle">Maintenance &amp; Repair Costs</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                        
+                        
+            <td>2/11/11</td>
+        <td>            632        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef0627d" class="forumstitle">Electronic Gremlins - Electrical Problems That Are Driving You Crazy</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>5/20/13</td>
+        <td>            1159        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef2600f" class="forumstitle">Dealer Dis-Service  Horror Stories</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>4/27/13</td>
+        <td>            362        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef25dc2" class="forumstitle">Water Leaks -- How to Find and Fix</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>4/21/13</td>
+        <td>            465        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef5d797" class="forumstitle">Engine Removal</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>3/24/13</td>
+        <td>            44        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef790fb" class="forumstitle">Cooling Systems --  Problems &amp; Solutions (Radiator, Fan, etc)</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>3/23/13</td>
+        <td>            629        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef260af" class="forumstitle">Cleaning Leather/Cloth Interiors</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                        
+                        
+            <td>8/1/12</td>
+        <td>            130        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef189e7" class="forumstitle">What about fuel types &amp; gas mileage?</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>1/20/13</td>
+        <td>            297        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ee99470" class="forumstitle">Transmission Traumas?</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>6/9/12</td>
+        <td>            2455        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef7a9f4" class="forumstitle">Questions about Fuel Systems</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>9/3/12</td>
+        <td>            69        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef07658" class="forumstitle">Paint and Body Maintenance &amp; Repair</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>3/11/12</td>
+        <td>            1089        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ee9950a" class="forumstitle">Synthetic motor oil</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>7/3/12</td>
+        <td>            8935        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef1b502" class="forumstitle">&quot;No Start&quot; Problems</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>6/11/12</td>
+        <td>            802        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef25a41" class="forumstitle">First Oil Change</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>8/29/09</td>
+        <td>            113        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef009e4" class="forumstitle">Removing stickers, labels, decals, glue, sap...</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                               
+                                                        
+                        
+            <td>9/23/11</td>
+        <td>            150        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef224f6" class="forumstitle">Instrument Panel Problems</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>4/11/12</td>
+        <td>            94        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ee99594" class="forumstitle">Engine Oil - A slippery subject Part 2</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>4/2/12</td>
+        <td>            3583        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef7a9eb" class="forumstitle">All About Exhaust Systems</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>3/6/12</td>
+        <td>            142        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef18bb1" class="forumstitle">Oil change/fiascos</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>9/26/11</td>
+        <td>            1320        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef22c2e" class="forumstitle">Rust Never Sleeps -- Questions About Rust Problems</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>1/25/11</td>
+        <td>            67        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef48e89" class="forumstitle">Cold Weather Problems</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>1/15/11</td>
+        <td>            112        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef25b0c" class="forumstitle">Reputable Mechanics -- Separating Fact from Fiction</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>6/17/10</td>
+        <td>            93        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ee9951a" class="forumstitle">Animal/Pest Problems</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>5/19/10</td>
+        <td>            52        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ee9960b" class="forumstitle">Store Bought Waxes Part II (No Zaino Posts)</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>8/24/09</td>
+        <td>            3963        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef2245f" class="forumstitle">Dealer vs. independent shop?</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>2/12/08</td>
+        <td>            294        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ee95103" class="forumstitle">Tires, tires, tires</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>8/23/13</td>
+        <td>            7421        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef0922f" class="forumstitle">Daewoo Maintenance and Repair</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>4/22/13</td>
+        <td>            1366        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef955b9" class="forumstitle">Mitsubishi 3000GT help</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>8/18/13</td>
+        <td>            336        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.efd3d52" class="forumstitle">Shock and Strut Replacement -- Cheap, OEM, or Upgrade?</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>7/31/13</td>
+        <td>            189        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.f1b522a" class="forumstitle">Hybrid Vehicle Maintenance, Repair and Concerns</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>1/9/13</td>
+        <td>            187        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+        <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef54707.ef5458b" class="forumstitle">Warranty Claims Administration (Smart Shopper Board)</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>6/11/13</td>
+        <td>            169        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef04dcb" class="forumstitle">DVD/Entertainment Systems</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                               
+                                                        
+                        
+            <td>1/4/13</td>
+        <td>            409        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+        <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.f117e01.f117d5f" class="forumstitle">Right To Repair - A Hot Issue</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>2/4/13</td>
+        <td>            576        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ee950dd" class="forumstitle">RainX</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>5/17/13</td>
+        <td>            220        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef9895f" class="forumstitle">Owners Manuals</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>4/16/13</td>
+        <td>            68        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef0dd7b" class="forumstitle">BMW Z3 Maintenance &amp; Repair</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>12/28/12</td>
+        <td>            104        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef6421d" class="forumstitle">Automotive Science or Voodoo?</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>11/19/12</td>
+        <td>            117        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.efef0d8" class="forumstitle">Tire pressure monitors</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>10/22/12</td>
+        <td>            34        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.f221677" class="forumstitle">How to Remove a Stuck CD</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>10/8/12</td>
+        <td>            10        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ee9539b" class="forumstitle">Snow/Ice winter tires</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                               
+                                                        
+                        
+            <td>12/17/11</td>
+        <td>            784        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ee99646" class="forumstitle">Zaino Car Care Experiences</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>8/21/12</td>
+        <td>            6991        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef10a9b" class="forumstitle">Fog Lights</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>9/16/12</td>
+        <td>            70        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+        <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.f0aa245.ef5532b" class="forumstitle">Diesel Questions/Problems in General (non specific makes)</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>8/23/11</td>
+        <td>            166        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ee95374" class="forumstitle">Reverse Warning Systems &amp; Cameras</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>6/14/12</td>
+        <td>            139        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef017dc" class="forumstitle">Tire gauges</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>1/8/12</td>
+        <td>            77        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.eea74e7" class="forumstitle">Long Time Car Storage Tips</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>8/4/11</td>
+        <td>            63        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef8acde" class="forumstitle">Engine's burning oil - how much longer will it last?</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>3/20/11</td>
+        <td>            82        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.f0d0662" class="forumstitle">Tire Rack Problems</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                        
+                        
+            <td>7/20/08</td>
+        <td>            32        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+        <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.f110642.f110509" class="forumstitle">Finding a Salvage Yard</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>8/2/10</td>
+        <td>            25        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.f09caef" class="forumstitle">Alarm system keypad</a>            </td>
+    
+            
+            
+                                          
+
+                               
+                                                               
+                                                        
+                        
+            <td>11/27/07</td>
+        <td>            22        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+        
+    
+
+
+    <!-- Discussion 1 -->
+
+    <tr>
+                <td class="title">                                    <a href="/direct/view/.ef3c64e" class="forumstitle">iPod - In your car!</a>            </td>
+    
+            
+            
+                                          
+
+                        
+                        
+            <td>5/12/09</td>
+        <td>            50        </td>
+        <td>            &nbsp;        </td>
+
+            </tr>
+    <!-- End Discussion 1 -->
+
+
+            <!-- folderListAfter -->
+        </tbody>
+    </table>
+    <br clear="all" />
+    
+                                
+                
+    <div class="forums-boardview-searchbox"><form name="searchMakeForm" class="forums-search" method="post" action="/WebX/.ee9203e/?127" onsubmit="if (!this.keywords.value) { return false; }"> <input type="hidden" name="as_allin" value="msgtext" /> <input type="hidden" name="count" value="20" /> <h4>Discussions&nbsp;Page&nbsp;1&nbsp;of&nbsp;1</h4><input class="button small" type="submit" name="Submit" border="0" value="Search" /><input class="textfield" name="keywords" type="text" size="20" value="" /><label for="keywords">Search&nbsp;Maintenance &amp; Repair</label><input type="hidden" name="as_limit" value=".ee9203e" /></form><ul class="forums-pagination discussions-pagination"><li class="all">All&nbsp;Discussions&nbsp;Displayed</li></ul></div><ul class="watched-items-btn discussion"><li><a href="http://www.edmunds.com/era/secure/nlb/login.jsp?toUrl=http%3A%2F%2Ftownhall-talk.edmunds.com%2FWebX%3F38%40%40.ee9203e">Read New Posts</a></li><li><a href="http://www.edmunds.com/era/secure/nlb/login.jsp?toUrl=http%3A%2F%2Ftownhall-talk.edmunds.com%2FWebX%3F29%40%40.ee9203e">Watch this Forum</a></li><li class="last"><a href="http://www.edmunds.com/era/secure/nlb/login.jsp?toUrl=http%3A%2F%2Ftownhall-talk.edmunds.com%2FWebX%3Fbookmarks%40%40.ee9203e">My Watched Items</a></li></ul>
+                                        </div>
+</div>
+<!-- END COLUMN ONE -->
+
+<!-- START COLUMN TWO -->
+
+    <script language="javascript" type="text/javascript">
+     //<![CDATA[
+     var make_model_results = '';
+     //]]>
+    </script>
+
+<!-- sidebar -->
+<div id="column2" class="span-8">
+<script language="javascript" type="text/javascript">
+  PAGESETUP.scope.pageProps['sitename'] = ed_genDartFile('box');
+  PAGESETUP.scope.pageProps['keyvalues'] = ed_genDartParams('box') + ((PAGESETUP.scope.pageProps['keyvalues']) ? PAGESETUP.scope.pageProps['keyvalues'] : '');
+</script>
+    
+
+
+
+
+        <div class="span-8 module boxad">
+            <p class="title">Advertisement</p>
+            <div id="ad1">
+                <iframe id="ad1-iframe" name="ad1-iframe" border="0" marginwidth="0" marginheight="0" frameborder="0" height="250"  width="300" scrolling="no"></iframe>
+            </div>
+        </div>
+                <script type="text/javascript">
+                    PAGESETUP.addControl(function() {
+                        var elem = document.getElementById('ad1-iframe');
+                        if (elem) {
+                            if(EDMUNDS && EDMUNDS.Util && EDMUNDS.Util.getQueryString) {
+                                var disableall = EDMUNDS.Util.getQueryString('disableallthirdparty');
+                                var disableads = EDMUNDS.Util.getQueryString('disableallads');
+                                if (disableall == 'yes' || disableads == 'yes' || EDMUNDS.Util.getQueryString('disableadnumber') == 1) {
+                                    return;
+                                }
+                            }
+                            var props = PAGESETUP.scope.pageProps;
+                            var sitename = ''||props['sitename'];
+                            var entryKeyValues = encodeURI('');
+                            var ad = new EDMUNDS.AdUnit('ad1-iframe', sitename.toLowerCase(), props['keyvalues'].toLowerCase(), 'sz=300x250;tile=1;pos=1;zip=!ZIP;st=!STATE;dma=!DMA;'+ entryKeyValues, 'iframe', '300', '250', '');
+                            ad.outputAd();
+                        }
+                    }, 'low');
+                </script>
+
+
+<!-- START LOGIN PANE -->
+    
+<!-- START DISPLAYLOGIN PANE -->
+<div class="span-8 module forum-tools tid" id="forums-tools">
+ <p class="module-title">Forum Tools</p>
+ <div class="content">
+ <ul>
+   <li><a href="http://www.edmunds.com/era/secure/nlb/login.jsp?toUrl=http://townhall-talk.edmunds.com/WebX?bookmarks@@.ee9203e">My Watched Items</a></li>
+   <li><a href="http://www.edmunds.com/era/secure/nlb/login.jsp?toUrl=http://townhall-talk.edmunds.com/WebX?38@@.ee9203e">Read New Posts</a></li>
+   <li><a href="http://www.edmunds.com/era/secure/nlb/login.jsp?toUrl=http://townhall-talk.edmunds.com/WebX?viewUserProfile@@.ee9203e!vfullpage=1">My Recent Posts</a></li>
+   <li><a href="http://www.edmunds.com/era/secure/MyAccount.load.action?tab=profile&amp;toUrl=http%3A%2F%2Ftownhall-talk.edmunds.com%2FWebX%3F14%40%40.ee9203e&amp;fromUrl=http%3A%2F%2Ftownhall-talk.edmunds.com%2FWebX%3F14%40%40.ee9203e">Community Profile</a></li>
+   <li><a href="http://www.edmunds.com/era/secure/nlb/login.jsp?toUrl=http://townhall-talk.edmunds.com/WebX?25@@.ee9203e">Forum Preferences</a></li>
+ </ul>
+ </div>
+</div>
+
+<!-- END DISPLAYLOGIN PANE -->
+<!-- END LOGIN PANE -->
+    
+<div class="span-8">
+          
+<div  id="mostpopular" class="module tid">    <h3 class="module-title">Most Popular in Forums</h3>
+
+
+
+
+            
+<div class="content">
+    <ol>
+        <li><div style="padding: 6px">1. <a href="http://townhall-talk.edmunds.com/direct/view/.f26e704">The State of the US Auto Market</a></div>
+        <li><div style="padding: 6px">2. <a href="http://townhall-talk.edmunds.com/direct/view/.ef04fd8">Help Me Choose!</a></div>
+        <li><div style="padding: 6px">3. <a href="http://townhall-talk.edmunds.com/direct/view/.efe81db">Buying American Cars What Does It Mean?</a></div>
+        <li><div style="padding: 6px">4. <a href="http://townhall-talk.edmunds.com/direct/view/.ef6dade">Mystery car pix</a></div>
+        <li><div style="padding: 6px">5. <a href="http://townhall-talk.edmunds.com/direct/view/.f238a5d">How does gas at $4 and higher impact you?</a></div>
+    </ol>
+</div>
+
+
+
+
+</div><!-- #mostpopular . -->          
+<div  id="forums-search" class="span-8 module forums-search-simple tid">    <h3 class="module-title">Search Forums</h3>
+
+
+
+
+            
+<!-- Forums Search Section -->
+<div class="content">
+    Enter Keyword(s):
+    <form action="http://townhall-talk.edmunds.com/WebX?searchResults@@.ef14c39" method="post" name="thsearch">
+        <input class="textfield" type="text" maxlength="75" size="15" name="keywords"><br/>
+        <input type="submit" value="Search" name="submitsearch" class="button small">&nbsp;&nbsp;&nbsp;<a href="http://townhall-talk.edmunds.com/WebX?search@@.ef14c39">Advanced Search</a>
+    </form>
+</div>
+
+
+
+
+</div><!-- #forums-search . forums-search-simple -->          
+<div  id="forums-browse-block" class="span-8 module forums-browse-sidebar tid">    <h3 class="module-title">Browse by Category</h3>
+
+
+
+
+            
+<!-- Browse Forums by Vehicle Section -->
+<div class="content">
+<div>
+    Browse by Vehicle
+    <form action="" method="get" name="msearch">
+        <select onchange="updateModelSelect(this.form.model, this.options[this.selectedIndex].text, '');" name="make"><option value="">Select Make</option></select>  
+        <select name="model">
+            <option value="">Select Model</option>
+            <option value="">Any Model</option>
+        </select>
+
+        <input type="button" name="Go" value="Go" onclick="if (this.form.make.selectedIndex == 0) { return(false); } 
+            var newurl = '';
+            if (this.form.model.options[this.form.model.selectedIndex].value) {
+            newurl = 'http://townhall-talk.edmunds.com/WebX?ed_displayMakeModelRelatedDiscussions@@.ef14c39!make=' + escape(this.form.make.options[this.form.make.selectedIndex].value) + '&amp;model=' + escape(this.form.model.options[this.form.model.selectedIndex].value);
+            } else {
+            newurl = 'http://townhall-talk.edmunds.com/WebX?ed_displayMakeModelRelatedDiscussions@@.ef14c39!make=' + escape(this.form.make.options[this.form.make.selectedIndex].value);
+            }
+            navigateTo(newurl);
+            return(false);" class="button small"/>&nbsp;&nbsp;&nbsp;<span><a href="http://townhall-talk.edmunds.com/WebX?ed_displayMakeTopicIndex@@.ef14c39">View All Vehicles</a></span>
+        
+    </form>
+</div>
+
+<script language="javascript" type="text/javascript" src="http://www.edmunds.com/forums/vehiclemakemodelarray.js"></script>
+<script language="javascript" type="text/javascript" src="http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/vehmakemodel.js"></script>
+
+<script language="javascript" type="text/javascript">
+    PAGESETUP.addControl(function() {
+        updateMakeSelect(document.forms["msearch"].make, '');
+    }, 'normal');
+</script>
+
+<br />
+<div id="browseByBoard">
+Browse by Board
+<form method="post" action="">
+
+<select name="board" onchange="var url = this.form.board.options[this.form.board.selectedIndex].value;
+    if (url == '#') { return; }
+    var newurl = '';
+    newurl = 'http://townhall-talk.edmunds.com' + url;
+    navigateTo(newurl);
+    return(false);
+">
+
+<option value="#" selected="selected">Select a Board</option>
+<option value="/direct/view/.ee9202c">Automotive News</option>
+<option value="/direct/view/.ee92042">Classic Cars</option>
+<option value="/direct/view/.ee92044">Convertibles</option>
+<option value="/direct/view/.ee92044">Coupes</option>
+<option value="/direct/view/.f247101">Edmunds Support</option>
+<option value="/direct/view/.ee9c367">Finance</option>
+<option value="/direct/view/.ef0d616">Future Vehicles</option>
+<option value="/direct/view/.ee9a948">Hatchbacks</option>
+<option value="/direct/view/.ef27a26">Hybrid Vehicles</option>
+<option value="/direct/view/.ee9c367">Insurance</option>
+<option value="/direct/view/.ee9203e">Maintenance</option>
+<option value="/direct/view/.ef60953">Modifications</option>
+<option value="/direct/view/.f11d9f4">Motorsports</option>
+<option value="/direct/view/.f11d9fa">Off-Topic Chatter</option>
+<option value="/direct/view/.ee92032">Pickups</option>
+<option value="/direct/view/.ef17997">Prices Paid</option>
+<option value="/direct/view/.ee9203e">Repair</option>
+<option value="/direct/view/.ee9e22f">Sedans</option>
+<option value="/direct/view/.ee9c367">Smart Shopper</option>
+<option value="/direct/view/.ef60953">Speed Shop</option>
+<option value="/direct/view/.ee92034">SUVs</option>
+<option value="/direct/view/.ef60953">Tuning</option>
+<option value="/direct/view/.ee92030">Vans</option>
+<option value="/direct/view/.ee92038">Wagons</option>
+<option value="/direct/view/.ee9c367">Warranty</option>
+</select>
+</form>
+</div>
+
+<div id="browseByTopic">
+Browse by Topic
+<form name="tsearch" method="get" action="">
+
+<select name="topic" onchange="if (this.form.topic.selectedIndex == 0) { return(false); } 
+    var newurl = '';
+    var topic = escape(this.form.topic.options[this.form.topic.selectedIndex].value);
+    if (!topic) { return; }
+    newurl = 'http://townhall-talk.edmunds.com/WebX?ed_displayMakeModelRelatedDiscussions@@.ef14c39!make=CATS' + '&amp;model=' + topic;
+    navigateTo(newurl);
+    return(false);
+">
+
+<option value="">Select a Topic</option>
+
+<option value=""> =Buying &amp; Selling= </option>
+<option value="Car Buying">Car Buying</option>
+<option value="Car Comparisons">Car Comparisons</option>
+<option value="Car Financing">Car Financing</option>
+<option value="Car Leasing">Car Leasing</option>
+<option value="Car Selling">Car Selling</option>
+<option value="Car Values">Car Values</option>
+<option value="Car Warranties">Car Warranties</option>
+<option value="Certified Used (CPO)">Certified Used (CPO)</option>
+<option value="True Market Value (TMV)">True Market Value (TMV)</option>
+
+<option value=""> =Car Accessories= </option>
+<option value="Audio">Audio</option>
+<option value="Entertainment System">Entertainment System</option>
+<option value="Exterior">Exterior</option>
+<option value="Navigation System">Navigation System</option>
+<option value="Performance Mods">Performance Mods</option>
+<option value="Security System">Security System</option>
+<option value="Towing">Towing</option>
+<option value="Wheels">Wheels</option>
+
+<option value=""> =Car Insurance= </option>
+<option value="Accidents">Accidents</option>
+<option value="Buying Insurance">Buying Insurance</option>
+<option value="Insurance Claims">Insurance Claims</option>
+
+<option value=""> =Car Safety= </option>
+<option value="Child Passenger Safety">Child Passenger Safety</option>
+<option value="Crash Test Ratings">Crash Test Ratings</option>
+<option value="Safe Driving">Safe Driving</option>
+<option value="Safety Technology">Safety Technology</option>
+
+<option value=""> =Fuel Type / Drivetrain= </option>
+<option value="Alternative Fuels">Alternative Fuels</option>
+<option value="Biodiesel">Biodiesel</option>
+<option value="Diesel">Diesel</option>
+<option value="Ethanol">Ethanol</option>
+<option value="Hybrid Cars">Hybrid Cars</option>
+<option value="Electric Cars">Electric Cars</option>
+
+<option value=""> =Maintenance &amp; Repair= </option>
+<option value="Auto Body">Auto Body</option>
+<option value="Auto Repair">Auto Repair</option>
+<option value="Brakes">Brakes</option>
+<option value="Electrical">Electrical</option>
+<option value="Engine">Engine</option>
+<option value="Exhaust">Exhaust</option>
+<option value="Fuel Efficiency (MPG)">Fuel Efficiency (MPG)</option>
+<option value="Fuel System">Fuel System</option>
+<option value="Heating / Cooling">Heating / Cooling</option>
+<option value="Interior">Interior</option>
+<option value="Lights">Lights</option>
+<option value="Oil">Oil</option>
+<option value="Paint">Paint</option>
+<option value="Scheduled Maintenance">Scheduled Maintenance</option>
+<option value="Steering">Steering</option>
+<option value="Suspension">Suspension</option>
+<option value="Tires">Tires</option>
+<option value="Transmission">Transmission</option>
+
+<option value=""> =News &amp; Events= </option>
+<option value="Automotive News">Automotive News</option>
+<option value="Legislation">Legislation</option>
+<option value="Motorsports">Motorsports</option>
+<option value="Traffic Laws">Traffic Laws</option>
+<option value="Classic Cars">Classic Cars</option>
+<option value="Concept Cars">Concept Cars</option>
+<option value="Future Vehicle">Future Vehicle</option>
+</select>
+<a href="http://townhall-talk.edmunds.com/WebX?ed_displayMakeTopicIndex@@.ef14c39">View All Topics</a>
+</form>
+</div>
+</div>
+
+
+
+
+</div><!-- #forums-browse-block . forums-browse-sidebar -->          
+<div  id="learn-more-block" class="span-8 module learn-more tid">    <h3 class="module-title">Learn More, Do More</h3>
+
+
+
+
+            
+<div class="content">
+<div id="learn-more-vehicles-block">
+</div>
+<ul>
+<li>
+    <a href="http://www.edmunds.com/car-reviews/consumer-ratings-reviews.html">Write a Car Review</a>
+</li>
+<li>
+    <a href="http://www.edmunds.com/car-maintenance/guide-page.html">Maintenance Schedules</a>
+</li>
+<li>
+    <a href="http://www.edmunds.com/how-to/how-to-find-your-car-owners-manual-online.html?articleid=120189">Owner's Manuals</a>
+</li>
+<li>
+    <a href="http://www.edmunds.com/car-maintenance/guide-page.html">Vehicle Recall Information</a>
+</li>
+<li>
+    <a href="http://www.edmunds.com/car-incentives/?step=0&tid=edmunds.n.incentivesindex.incentives.1.1.*">Incentives &amp; Rebates</a>
+</li>
+<li>
+    <a href="http://www.edmunds.com/used-cars/">Used Car Appraiser</a>
+</li>
+</ul>
+</div>
+
+
+
+
+</div><!-- #learn-more-block . learn-more -->          
+<div  class="module community">    <h3 class="module-title">Edmunds Community</h3>
+
+
+
+
+            
+
+    <div class="answers item tid" id="answers_widget">
+    </div>
+
+<script type="text/javascript">
+    PAGESETUP.files.push('http://answers.edmunds.com/javascript/widget8js.aspx');
+    PAGESETUP.addControl(function() {
+        YAHOO.util.Dom.get('answers_widget').innerHTML = Answers.getHTML();
+    }, 'low');
+</script>
+
+
+
+</div><!-- # . community -->
+          
+
+
+
+
+
+        <div class="span-8 module boxad">
+            <p class="title">Advertisement</p>
+            <div id="ad2">
+                <iframe id="ad2-iframe" name="ad2-iframe" border="0" marginwidth="0" marginheight="0" frameborder="0" height="250"  width="300" scrolling="no"></iframe>
+            </div>
+        </div>
+                <script type="text/javascript">
+                    PAGESETUP.addControl(function() {
+                        var elem = document.getElementById('ad2-iframe');
+                        if (elem) {
+                            if(EDMUNDS && EDMUNDS.Util && EDMUNDS.Util.getQueryString) {
+                                var disableall = EDMUNDS.Util.getQueryString('disableallthirdparty');
+                                var disableads = EDMUNDS.Util.getQueryString('disableallads');
+                                if (disableall == 'yes' || disableads == 'yes' || EDMUNDS.Util.getQueryString('disableadnumber') == 1) {
+                                    return;
+                                }
+                            }
+                            var props = PAGESETUP.scope.pageProps;
+                            var sitename = ''||props['sitename'];
+                            var entryKeyValues = encodeURI('');
+                            var ad = new EDMUNDS.AdUnit('ad2-iframe', sitename.toLowerCase(), props['keyvalues'].toLowerCase(), 'sz=300x250;tile=3;pos=2;zip=!ZIP;st=!STATE;dma=!DMA;'+ entryKeyValues, 'iframe', '300', '250', '');
+                            ad.outputAd();
+                        }
+                    }, 'low');
+                </script>
+
+          
+
+
+
+
+<div class="span-8 module newsletter tid" id="newsletter">
+    <h2 class="module-title">Subscribe to Edmunds.com Newsletter</h2>
+    <form id="newsletter-subscribe-form">
+        <p class="blurb">Get the latest car buying tips &amp; advice and incentives &amp; rebates</p>
+        <div class="error" id="newsletter-message"></div>
+        <div class="content">
+            <label>Email</label>
+            <input type="text" name="email" value="" id="newsletter-email" />
+            <label>Confirm Email</label>
+            <input type="text" name="confirm_email" value="" id="newsletter-confirm_email" />
+            <button class="small button" name="submit-btn" type="button" value="Go" id="newsletter-submit-newsletter"><span>sign-up</span></button>
+        </div>
+        <input name="subscribeTo" id="newsletter-subscribeTo" type="hidden" value="1" />
+        <input name="subSourceName" id="newsletter-subSourceName" type="hidden" value="external_standard" />
+        <input name="nloptions" id="newsletter-nloptions" type="hidden" value="HTML" />
+        <input name="entryPoint" id="entryPoint" type="hidden" value="ed_widget" />
+        <input name="emailNames" id="emailNames" type="hidden" value="Edmunds.com Newsletter" />
+        <input name="messageType" id="messageType" type="hidden" value="email" />
+
+          <input name="promo" id="newsletter-promo" type="hidden" value="false">
+        <input name="toUrl" id="toUrl" type="hidden" value="" />
+    </form>
+</div>
+
+        <script type="text/javascript">
+            PAGESETUP.addControl(function() {
+                var $D = YAHOO.util.Dom;
+
+
+                PAGESETUP.scope.submitNewsletter = function(){
+                    $D.get('newsletter-message').style.display = 'block';
+                    if (checkFormFilled()) {
+                        $D.get('toUrl').value = location.href;
+                        var submitUrl = "http://www.edmunds.com/newsletter/";
+                        submitUrl += "?promo=" + $D.get('newsletter-promo').value;
+                        submitUrl += "&email=" + $D.get('newsletter-email').value.replace(/\s/gi,"");
+                        submitUrl += "&subscribeTo=" + $D.get('newsletter-subscribeTo').value;
+                        submitUrl += "&subSourceName=" + $D.get('newsletter-subSourceName').value;
+                        submitUrl += "&nloptions=" + $D.get('newsletter-nloptions').value;
+
+                                submitUrl += "&emailAddress=" + $D.get('newsletter-email').value.replace(/\s/gi,"");
+                        submitUrl += "&entryPoint=" + $D.get('entryPoint').value + '_' + PAGESETUP.scope.tracking_data.edwpg;
+                        submitUrl += "&emailNames=" + $D.get('emailNames').value;
+                        submitUrl += "&messageType=" + $D.get('messageType').value;
+                        if (PAGESETUP.scope.tracking_data && PAGESETUP.scope.tracking_data.edwpg) {
+                            submitUrl += '&edwpagereside=' + PAGESETUP.scope.tracking_data.edwpg;
+                        }
+                        submitUrl += "&toUrl=" + location.href;
+                        top.location.href = submitUrl;
+                    }
+                    return false;
+                }
+
+                YAHOO.util.Event.addListener('newsletter-submit-newsletter', 'click', PAGESETUP.scope.submitNewsletter);
+
+                var submitButton1 = new YAHOO.util.KeyListener('newsletter-email', { keys:13 }, {fn:PAGESETUP.scope.submitNewsletter} );
+                submitButton1.enable();
+                var submitButton2 = new YAHOO.util.KeyListener('newsletter-confirm_email', { keys:13 }, {fn:PAGESETUP.scope.submitNewsletter} );
+                submitButton2.enable();
+
+                function checkFormFilled () {
+                    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                    var email1 = $D.get('newsletter-email').value.replace(/\s/gi,"");
+                    var email2 = $D.get('newsletter-confirm_email').value.replace(/\s/gi,"");
+                    if (email1=="" && email2=="") {
+                        $D.get('newsletter-message').innerHTML = "Please add an email address";
+                        return false;
+                    }
+                    if(reg.test(email1) == false) {
+                        $D.get('newsletter-message').innerHTML = "Please enter a valid email address";
+                        return false;
+                    }
+                    if (email1!=email2) {
+                        $D.get('newsletter-message').innerHTML = "Value does not match";
+                        return false;
+                    }
+                    return true;
+                }
+
+            }, 'normal');
+        </script>
+
+</div>
+
+
+
+
+</div>
+<!-- end sidebar -->
+<!-- END COLUMN TWO -->
+
+</div>
+<!-- END FORUMS CONTENT -->
+
+<div id="edm_footer" class="span-24 tid">
+<div id="footer_hd">
+    <p>Explore Edmunds</p>
+    <div id="footer_search">
+	    <form action="http://www.edmunds.com/search/results.html" method="get" accept-charset="utf-8" id="footer_form">
+	        <div class="footer_ac">
+				<input type="text" name="q" value="Search Site" id="footer_text" />
+	            <input type="hidden" name="src" value="usergen" />
+				<input type="hidden" name="ac" value="" />
+	            <!--[if IE]>
+	            <input type="image" src="http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/img/trans.png" id="footer_submit" />
+				<![endif]-->
+				<!--[if !IE]><!-->
+				<input type="image" src="data:image/gif;base64,R0lGODlhAQABAJECAP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw%3D%3D" id="footer_submit" />
+				 <!--<![endif]-->
+	            <div id="footer_ac_results"></div>
+	        </div>
+	    </form>
+
+    </div>
+</div>
+<div id="footer_nav">
+    <div id="footer_nav_links"></div>
+            <script type="text/javascript">
+                PAGESETUP.addControl(function() {
+                    var n,
+                            links_code = '',
+                            obj = [{ parent: 'new_cars_footer_nav', anchor: 'http:||www;edmunds;com|new-cars|', label: 'New Cars', links: [ { subanchor: 'http:||www;edmunds;com|calculators|', sublabel: 'Calculators' }, { subanchor: 'http:||www;edmunds;com|finder|car-finder-results;html', sublabel: 'Car Finder' }, { subanchor: 'http:||www;edmunds;com|car-comparisons|', sublabel: 'Compare Cars' }, { subanchor: 'http:||www;edmunds;com|dealerships|', sublabel: 'Find a Dealer' }, { subanchor: 'http:||www;edmunds;com|calculators|simplified-pricing;html', sublabel: 'Get Monthly Payment' }, { subanchor: 'http:||www;edmunds;com|car-incentives|', sublabel: 'Incentives & Rebates' }, { subanchor: 'http:||www;edmunds;com|inventory|srp;html', sublabel: 'Search Inventory' }, { subanchor: 'http:||www;edmunds;com|tco;html', sublabel: 'True Cost to Own<sup\>&reg;</sup\>' } ]}, { parent: 'used_cars_footer_nav', anchor: 'http:||www;edmunds;com|used-cars|', label: 'Used Cars', links: [ { subanchor: 'http:||www;edmunds;com|inventory|used|srp;html', sublabel: 'Search Inventory' }, { subanchor: 'http:||www;edmunds;com|appraisal|', sublabel: 'Appraise Your Car' }, { subanchor: 'http:||www;edmunds;com|certified-cars|', sublabel: 'Certified Cars' }, { subanchor: 'http:||www;edmunds;com|sell-car|', sublabel: 'Selling Tips' }, { subanchor: 'http:||www;edmunds;com|tco;html', sublabel: 'True Cost to Own<sup\>&reg;</sup\>' } ]}, { parent: 'car_reviews_footer_nav', anchor: 'http:||www;edmunds;com|car-reviews|', label: 'Car Reviews', links: [ { subanchor: 'http:||www;edmunds;com|car-reviews|car-reviews-road-tests;html', sublabel: 'Car Reviews and Road Tests' }, { subanchor: 'http:||www;edmunds;com|car-reviews|track-tests|', sublabel: 'Track Tests &amp; Walkarounds' }, { subanchor: 'http:||www;edmunds;com|car-reviews|long-term-road-tests|', sublabel: 'Long-Term Road Tests' }, { subanchor: 'http:||www;edmunds;com|car-reviews|comparison-road-tests|', sublabel: 'Comparison Road Tests' }, { subanchor: 'http:||www;edmunds;com|auto-shows|', sublabel: 'Auto Shows' }, { subanchor: 'http:||www;edmunds;com|car-reviews|features|', sublabel: 'Feature Stories' }, { subanchor: 'http:||www;edmunds;com|car-reviews|best-cars;html', sublabel: 'Best Cars Lists' }, { subanchor: 'http:||www;edmunds;com|car-reviews|car-awards;html', sublabel: 'Awards' }, { subanchor: 'http:||www;edmunds;com|dealer-reviews|', sublabel: 'Dealer Ratings and Reviews' }, { subanchor: 'http:||www;edmunds;com|car-reviews|consumer-ratings-reviews;html', sublabel: 'Read &amp; Write Consumer Reviews' } ]}, { parent: 'tips_advice_footer_nav', anchor: 'http:||www;edmunds;com|cars|', label: 'Tips & Advice', links: [ { subanchor: 'http:||www;edmunds;com|car-buying|', sublabel: 'Buying a Car' }, { subanchor: 'http:||www;edmunds;com|car-leasing|', sublabel: 'Leasing a Car' }, { subanchor: 'http:||www;edmunds;com|sell-car|', sublabel: 'Selling a Car' }, { subanchor: 'http:||www;edmunds;com|car-safety|', sublabel: 'Family and Car Safety' }, { subanchor: 'http:||www;edmunds;com|fuel-economy|', sublabel: 'Fuel Economy & Green Cars' }, { subanchor: 'http:||www;edmunds;com|car-technology|', sublabel: 'Car Technology' }, { subanchor: 'http:||www;edmunds;com|car-loan|', sublabel: 'Auto Financing' }, { subanchor: 'http:||www;edmunds;com|auto-insurance|', sublabel: 'Auto Insurance' }, { subanchor: 'http:||www;edmunds;com|auto-warranty|', sublabel: 'Auto Warranty' }, { subanchor: 'http:||www;edmunds;com|driving-tips|', sublabel: 'Driving Tips' }, { subanchor: 'http:||answers;edmunds;com|', sublabel: 'Answers' } ]}, { parent: 'maintenance_footer_nav', anchor: 'http:||www;edmunds;com|car-maintenance|', label: 'Maintenance', links: [ { subanchor: 'http:||www;edmunds;com|car-maintenance|guide-page;html', sublabel: 'Maintenance Costs &amp; Recalls' }, { subanchor: 'http:||www;edmunds;com|tco;html', sublabel: 'True Cost to Own<sup\>&reg;</sup\>' }, { subanchor: 'http:||www;edmunds;com|repairshops|', sublabel: 'Find a Repair Shop' }, { subanchor: 'http:||www;edmunds;com|how-to|', sublabel: 'How-To Articles' }, { subanchor: 'http:||www;edmunds;com|car-care|', sublabel: 'Maintenance Articles' }, { subanchor: 'http:||www;edmunds;com|dealer-reviews|', sublabel: 'Dealer Service Reviews' } ]}, { parent: 'whats_hot_footer_nav', anchor: 'http:||www;edmunds;com|whats-hot|', label: 'What\'s Hot', links: [ { subanchor: 'http:||www;edmunds;com|car-news|', sublabel: 'Car News' }, { subanchor: 'http:||www;edmunds;com|car-pictures|', sublabel: 'Car Pictures' }, { subanchor: 'http:||www;edmunds;com|car-videos|', sublabel: 'Car Videos' }, { subanchor: 'http:||www;edmunds;com|forums|', sublabel: 'Car Forums' } ]}],
+                i = 0,
+                        n = 0;
+                while (i < obj.length) {
+                    links_code += '<ul id="' + obj[i].parent + '"><li class="first"><a href="' + obj[i].anchor.replace(/\|/ig,'/').replace(/\;/ig,'.') + '">' + obj[i].label + '<\/a><\/li>';
+                    while (n < obj[i].links.length) {
+                        if (obj[i].links[n].subanchor) {
+                            links_code += '<li><a href="' + obj[i].links[n].subanchor.replace(/\|/ig,'/').replace(/\;/ig,'.') + '">' + obj[i].links[n].sublabel + '<\/a><\/li>';
+                        }
+                        n++;
+                    }
+                    n = 0;
+                    links_code += '</ul>';
+                    i++;
+                }
+
+                YAHOO.util.Dom.get('footer_nav_links').innerHTML = links_code;
+                }, 'low');
+            </script>
+    <p class="links first" id="footer_links_first">
+    </p>
+    <p class="links">
+        <a href="http://www.edmunds.com/about/sitemap.html">Site Map</a> <b>|</b>
+        <a href="http://www.edmunds.com/glossary/">Glossary</a> <b>|</b>
+        <a href="http://www.edmunds.com/industry-center/">Industry News</a> <b>|</b>
+        <a href="http://www.edmunds.com/mobile/featured.html">About Mobile</a> <b>|</b>
+        <a href="http://developer.edmunds.com/">Developers</a>
+    </p>
+    <p class="copy">
+        &copy; Edmunds.com, Inc.
+    </p>
+</div>
+            <script type="text/javascript">
+                PAGESETUP.addControl(function() {
+                    var footer_links_obj = {};
+                            footer_links_obj.link0 = {secure:true,anchor:"https:||secure;edmunds;com|era|secure|MyAccount;load;action",label:"Account",pipe:"|"};
+                            footer_links_obj.link1 = {secure:false,anchor:"https:||help;edmunds;com",label:"Help",pipe:"|"};
+                            footer_links_obj.link2 = {secure:false,anchor:"http:||www;edmunds;com|about|",label:"About Us",pipe:"|"};
+                            footer_links_obj.link3 = {secure:false,anchor:"https:||help;edmunds;com|anonymous_requests|new",label:"Contact Us",pipe:"|"};
+                            footer_links_obj.link4 = {secure:false,anchor:"http:||www;edmunds;com|about|jobs|",label:"Jobs",pipe:"|"};
+                            footer_links_obj.link5 = {secure:false,anchor:"http:||www;edmunds;com|about|affiliate-program;html",label:"Affiliate Program",pipe:"|"};
+                            footer_links_obj.link6 = {secure:false,anchor:"http:||www;edmunds;com|dealers|",label:"Dealer Center",pipe:"|"};
+                            footer_links_obj.link7 = {secure:false,anchor:"http:||www;edmunds;com|about|privacy;html",label:"Privacy Statement",pipe:"|"};
+                            footer_links_obj.link8 = {secure:false,anchor:"http:||www;edmunds;com|about|visitor-agreement;html",label:"Visitor Agreement",pipe:"|"};
+                            footer_links_obj.link9 = {secure:false,anchor:"http:||www;edmunds;com|about|membership-agreement;html",label:"Membership Agreement",pipe:"|"};
+                            footer_links_obj.link10 = {secure:false,anchor:"http:||www;edmunds;com|about|privacy;html#adsonthirdpartysites",label:"Your Ad Choices"};
+                    var footer_links_container = document.getElementById('footer_links_first');
+                    var footer_links = new PAGESETUP.scope.footerLinks(footer_links_obj, footer_links_container);
+                }, 'scroll', 'edm_footer');
+            </script>
+<script type="text/javascript">
+    if(window.EDM && EDM.qLoader) {
+           window.onload = function(){EDM.qLoader.execute()};
+    } else {
+        document.write('<script type=\"text/javascript\" src=\"http://static.ed.edmunds-media.com/edmunds-webassets/1.47.56/wro/edmui.loader.js\" charset=\"utf-8\"\></script\>');
+    }
+</script>
+<script type="text/javascript">
+    (function() {
+        var query_vars = {};
+        PAGESETUP.scope.jsads = [];
+        function _getQueryString(elem) {
+            if (!query_vars.length) {
+                var aArgsTemp, aTemp, sQuery;
+                sQuery = window.location.search.substr(1, window.location.search.length);
+                if(sQuery.length < 1) {
+                    return '';
+                }
+
+                aArgsTemp = sQuery.split("&");
+                for(var i=0 ; i<aArgsTemp.length; i++) {
+                    aTemp = aArgsTemp[i].split("=");
+                    query_vars[aTemp[0]] = aTemp[1];
+                }
+            }
+            return query_vars[elem];
+        }
+        
+        function _addListener(el, eType, fn, uC) {
+            if (el.addEventListener) {
+                el.addEventListener(eType, fn, uC);
+                    return true;
+                } else if (el.attachEvent) {
+                    return el.attachEvent('on' + eType, fn);
+                } else {
+                el['on' + eType] = fn;
+            }
+        }
+        _addListener(window, 'load', function() {
+            if (_getQueryString('jstimer') == 'yes') {
+                var jstimer = document.getElementById('js-timer-div');
+                if (jstimer) {
+                    jstimer.innerHTML = 'Loader Chunk Exec Started:'+PAGESETUP.timer.chunk_exec_start+'<br />HTML is Parsed (after ad inclusion):'+PAGESETUP.timer.html+'<br />onload Event:'+PAGESETUP.timer.load_evt;
+                }
+            }
+
+			var elems = PAGESETUP.scope.jsads;
+            var cnt = elems.length;
+            for (var i=0; i<cnt; i++) {
+                var dest = document.getElementById(elems[i]);
+                var src = document.getElementById(elems[i]+'-cache');
+                if (dest && src) {
+                    var rt = document.getElementById(elems[i]+'-root');
+                    if (rt) {
+                        var jstags = rt.getElementsByTagName ('script');
+                        if (jstags && jstags[0]) {
+                            rt.removeChild(jstags[0]);
+                        }
+                    }
+                    if (src.style.height == '0px') {
+                        dest.parentNode.parentNode.removeChild(dest.parentNode);
+                        src.parentNode.removeChild(src);
+                    } else {
+                        dest.appendChild(src);
+                        src.style.display = '';
+                    }
+                }
+            }
+            if (document.getElementById('pushdown_open') && PAGESETUP.scope.customadparam) {
+                var exp_pushdown_open = new EDMUNDS.Expander;	
+            	var ck = EDMUNDS.Cookie.get('CUSTOMAD');
+            	if (ck && ck == 'viewed') {
+            	    exp_pushdown_open.init('pushdown_open', 0, 'Click to Expand', 0);
+            	    var mask = YAHOO.util.Dom.getElementsByClassName('mask', 'div', 'pushdown_open');
+            	    if (mask && mask[0]) {
+            	        mask[0].style.display = 'none';
+            	        mask[0].style.height = '0px';
+            	    }
+            	    exp_pushdown_open.close();
+            	} else {
+                   EDMUNDS.Cookie.set('CUSTOMAD', 'viewed', {expires: new Date(new Date().getTime() + 60*1000*PAGESETUP.scope.customadparam.ck_life), path: '/'});
+            	   exp_pushdown_open.init('pushdown_open', 0, 'Click to Expand');
+               	   setTimeout(function(){exp_pushdown_open.close();}, PAGESETUP.scope.customadparam.delay*1000);
+            	}
+            }
+        }, false);
+  	})();
+</script>
+
+<script type="text/javascript">
+  	if (PAGESETUP.thirdpartyids.length > 0) {
+        (function() {
+            var id = PAGESETUP.thirdpartyids.shift();
+            var file = PAGESETUP.thirdpartydetails[id].src;
+			PAGESETUP.scope = PAGESETUP.scope || {};
+			PAGESETUP.scope.thirdpartyids = PAGESETUP.scope.thirdpartyids || [];
+			PAGESETUP.scope.thirdpartyids.push(id+'-cache');
+			PAGESETUP.scope.jsads.push(id);
+			if (id && file) {
+			    document.write('<div id="' + id + '-cache' + '" style="display:none;"><div id="' + id + '-root' + '">');
+				document.write('<script type="text/javascript" src="' + file + '" ><\/script>');
+			}
+        })();
+    }
+</script>
+<script type="text/javascript">
+	document.write('</div></div>');
+</script>
+
+    <script type="text/javascript">PAGESETUP.timer.html = (new Date).getTime() - PAGESETUP.timer.start;</script>
+    <div id="js-timer-div"></div>
+</div>
+<!-- end global footer -->
+</div>
+
+</body>
+</html>

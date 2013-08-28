@@ -1,0 +1,1363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Automotive Industry Information</title>
+<link href="/css/style-layout.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/css/style-screen.css" rel="stylesheet" type="text/css" media="screen" />
+<!--[if lt IE 7]>
+	<link href="/css/style-layout-ie6.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+<!--[if lt IE 8]>
+	<link href="/css/style-layout-ie7.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+<link href="/css/style-print.css" rel="stylesheet" type="text/css" media="print" />
+<link href="/business/business.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+   
+ <!--Analytics Tracking Code-->
+ <!--Analytics Tracking Code-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/javascript/federated-analytics.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-42285881-1',  'doleta.gov']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+if (typeof jQuery != 'undefined') {
+  jQuery(document).ready(function($) {
+    var filetypes = /\.(zip|exe|dmg|pdf|doc.*|xls.*|ppt.*|mp3|txt|rar|wma|mov|avi|wmv|flv|wav)$/i;
+    var baseHref = '';
+    if (jQuery('base').attr('href') != undefined) baseHref = jQuery('base').attr('href');
+
+    jQuery('a').on('click', function(event) {
+      var el = jQuery(this);
+      var track = true;
+      var href = (typeof(el.attr('href')) != 'undefined' ) ? el.attr('href') :"";
+      var isThisDomain = href.match(document.domain.split('.').reverse()[1] + '.' + document.domain.split('.').reverse()[0]);
+      if (!href.match(/^javascript:/i)) {
+    	var elEv = []; elEv.value=0, elEv.non_i=false;
+        if (href.match(/^mailto\:/i)) {
+          elEv.category = "email";
+          elEv.action = "click";
+          elEv.label = href.replace(/^mailto\:/i, '');
+          elEv.loc = href;
+        }
+        else if (href.match(filetypes)) {
+          var extension = (/[.]/.exec(href)) ? /[^.]+$/.exec(href) : undefined;
+          elEv.category = "download";
+          elEv.action = "click-" + extension[0];
+          elEv.label = href.replace(/ /g,"-");
+          elEv.loc = baseHref + href;
+        }
+        else if (href.match(/^https?\:/i) && !isThisDomain) {
+          elEv.category = "external";
+          elEv.action = "click";
+          elEv.label = href.replace(/^https?\:\/\//i, '');
+          elEv.non_i = true;
+          elEv.loc = href;
+        }
+        else if (href.match(/^tel\:/i)) {
+          elEv.category = "telephone";
+          elEv.action = "click";
+          elEv.label = href.replace(/^tel\:/i, '');
+          elEv.loc = href;
+        }
+        else track = false;
+
+       	if (track) {
+          _gaq.push(['_trackEvent', elEv.category.toLowerCase(), elEv.action.toLowerCase(), elEv.label.toLowerCase(), elEv.value, elEv.non_i]);
+          if ( el.attr('target') == undefined || el.attr('target').toLowerCase() != '_blank') {
+            setTimeout(function() { location.href = elEv.loc; }, 400);
+            return false;
+	  }
+	}
+      }
+    });
+  });
+}
+</script>
+<!--CSS Styling-->
+<style>
+#navigation li.selected a { color: #fff; background-color: #4a7194; }
+#header_new {
+	float:left;  
+	background:url(/images/header_back_new.jpg) repeat-x; 
+	margin:0; 
+	padding:0;
+	width:90.1em;
+	heigth:120px;
+}
+form input {
+	background-color:#FFF;
+	border:1px #333333 solid;
+	color:#990000;
+	font-size:12px;
+	margin:0px;
+	text-align:left;
+	font-weight:bold;
+	margin-top:8px;
+}
+#q,  #login {
+	width:190px;
+	padding:2px 5px 2px 5px;
+	font-weight:normal;
+	margin:0;
+	}
+#eta-text a{
+	text-decoration:none;
+	font-size:18px;
+	color:#ffffff;
+	margin:0;
+	}
+#dol-text a{
+	text-decoration:none;
+	font-size:20px;
+	color:#ffffff;					
+}
+#top-links a, #top-links{
+	color:#FFF;
+	text-decoration:none;
+	font-size:12px;
+	margin:1px 0 0 0px;
+	text-align:right;
+	font-weight:bold;		
+}
+#search-stuff{
+	float:left;
+	width:435px;
+	margin:5px 0 8px 50px;
+	
+}
+#move-search-boxes{
+	text-align:right;
+	display:block;
+	margin-top:8px;
+}
+#logo_and_name img{
+	float:left;
+	padding:1px 10px 0 0 ;	
+}
+#logo_and_name{
+	width:500px;
+	height:40px;
+	float:left;
+	margin:11px 0 8px 10px;
+}
+#header_new #navi { 
+	float:left; 
+	background-color:transparent; 
+	font-size:12px; 
+	margin:4px 0 0 13px;
+	width:100%;
+}
+#header_new #navi ul li {
+	display: block; 
+	float:left; 
+	text-align:center;
+	list-style: none;
+	margin:1px 17px 0 3px;
+}
+#header_new #navi ul li a {
+	text-decoration:none; 
+	color:#fff;  
+	display:inline-block; 
+	border:0;
+	margin:0; 
+	vertical-align:middle; 
+	padding:8px;
+} 
+#header_new #navi ul li a:hover {
+	background-color:#ffffff; 
+	color:#990000; 
+	display:block;
+}
+#navi .navagation {
+	width:90px;
+	text-align:center;
+}
+#navi .navagation a {
+	text-align:center;
+}
+#q {margin:0px; height:15px;}
+#search-button{
+	background-color:#ffffff; 
+	font-size:12px; 
+	padding:2px 5px 2px 5px;
+	font-weight:normal;
+	margin:0px;
+	height:20px;
+	text-align:center;
+	vertical-align:top;
+	}		
+</style>
+
+<style type="text/css">
+.utilitybarright {
+text-align:right;
+color:#636363;
+float:right;
+width:30%;
+}
+</style>
+
+<link href="http://webapps.dol.gov/FSPublic/Content/W_Helpful.css" rel="stylesheet">
+
+
+<!--<script src="W_Helpful.js"></script>-->
+
+
+
+<script type="text/javascript">
+var W_Helpful = (function () {
+
+	var TRACKER_URL = 'http://webapps.dol.gov/FSPublic/Data.mvc/Log';
+	var Display_ = '<div id="W_Helpful" style="float:right">'
+		+ '<input type="hidden" id="ResponseYesNo" name="ResponseYesNo" value=""/>'
+		+ '<div id="W_Helpful_question_Div"><div class="W_Helpful_message"><b>'
+		+ '<img src="//www.dol.gov/images/page-rating-star.gif" alt="Feedback Star" id="W_Helpful_Star" />'
+		+ '<a href="javascript:void(0)" id="W_Helpful_question_Link" title="Click here to give your feedback about this page">Was this page helpful?</a></b></div></div>'
+
+		+ '<div id="W_Helpful_yesORno"  style="display:none;">'
+
+		+ '<div id="W_Helpful_yes"><input type="checkbox" id="W_Helpful_accurate-yes" style="vertical-align:middle;"/>'
+		+ '<label  id="xyzYes" for="W_Helpful_accurate-yes">Yes</label>&nbsp&nbsp</div>'
+
+		+ '<div id="W_Helpful_no"><input type="checkbox" id="W_Helpful_accurate-no" style="vertical-align:middle"/>'
+		+ '<label id="xyzNo" for="W_Helpful_accurate-no">No</label>&nbsp&nbsp</div>'
+		+ '</div>'
+		+ '<form>'
+		+ '<div id="W_Helpful_comment" style="display:none;">'
+		+ '<div class="W_Helpful_message" id="W_Helpful_message"><p><label for="W_Helpful_helpful-input">How can we make better? <br />(250 Character max.)</label></p></div><br/>'
+		+ '<textarea id="W_Helpful_helpful-input"></textarea>'
+		+ '<br/><br/><input id="W_Helpful_comment-submit" type="button" value="Submit"/>&nbsp&nbsp<input id="W_Helpful_comment-skip" type="button" value="Skip"/>'
+		+ '<br/><p><hr /></p><p class="feedback">We are collecting this info under OMB clearance number <br/>1225-0059</p>'
+		+ '</div>'
+		+ '</form>'
+
+		+ '<div id="W_Helpful_confirm" style="display:none;">'
+				+ '<p class="feedback" id="FBResponse" tabindex="0" role="alert" data-valmsg-summary="true"><strong>Thank you for your feedback!</strong></p><br/>'
+		+ '<p class="feedback">Please <a href="http://www.dol.gov/dol/contact/" style="text-decoration:underline;">Contact Us</a> if you have any other comments or questions!</p><br/>'
+		+ '<div id="W_Helpful_Close-Confirmation"><p class="feedback">x <a href="javascript:document.url" id="w_Helpful_Close" style="text-decoration:underline;">Close</a></p></div>'
+		+ '</div>'
+
+		+ '</div>';
+
+	var Display_UI = function (prependTo, after) {
+		if (after) 
+		{
+			$(prependTo).prepend(Display_);
+		}
+		else 
+		{
+			$(prependTo).append(Display_);
+		}
+		$('#W_Helpful').show();
+	}
+	return {
+		init: function (prependTo) {
+			
+			var attrName = location.hostname+location.pathname +".isSurveyComplete";
+			if(sessionStorage && sessionStorage.getItem(attrName))
+			{	
+				return;
+			}
+			
+			Display_UI(prependTo);
+
+			$('#W_Helpful_helpful-input').on('keydown', function(){
+
+				var limit = 250
+				var text = $('#W_Helpful_helpful-input').val();
+				var chars = text.length;
+
+				if(chars > limit)
+				{
+					var new_text = text.substr(0, limit);
+					$('#W_Helpful_helpful-input').val(new_text);
+				}
+			});
+
+
+			$('#W_Helpful_Close-Confirmation').on('click', function () {
+				$('#W_Helpful_question_Div').removeAttr("style");
+				var cssObj1 = {
+					'cursor':'pointer',
+					'width':'170px',
+					'font-size':'12px'
+				}
+				$('#W_Helpful_question_Div').css(cssObj1);
+
+				$('#W_Helpful_helpful-input').val('');
+				$('#W_Helpful_accurate-yes').removeAttr('checked');
+				$('#W_Helpful_accurate-no').removeAttr('checked');
+				W_Helpful.Hide('#W_Helpful_confirm');
+			});
+
+			$('#W_Helpful_comment-skip').on('click', function () {
+				W_Helpful.Show('#W_Helpful_confirm');
+				W_Helpful.Hide('#W_Helpful_comment');
+				setTimeout(function() { $('#FBResponse').attr('tabindex', 0).focus(); }, 1000); //ravi focus issue change from w_Helpful_Close to W_Helpful_confirm
+				$('#W_Helpful').remove();
+				
+				var attrName = location.hostname+location.pathname +".isSurveyComplete";
+				if(sessionStorage)
+				{
+					sessionStorage.setItem(attrName,true);
+				}
+			});
+
+			$("#W_Helpful_question_Link").bind( "click keydown", function (evt) {
+				var charCode = (evt.which) ? evt.which : evt.keyCode
+				if (charCode == '13' || charCode  == '0' || charCode == '1' || charCode == undefined) 
+				{
+					/*var cookie_ls = document.cookie;
+					if (cookie_ls.indexOf(document.location) < -1) 
+					{
+						return;
+					}
+					evt.preventDefault();*/
+
+					if( $('#W_Helpful_yesORno').is(':visible')) 
+					{
+						W_Helpful.Hide('#W_Helpful_yesORno');
+						var cssObj1 = 
+						{
+							'cursor':'pointer',
+							'width':'170px',
+							'font-size':'12px'
+						}
+						$('#W_Helpful_question_Div').css(cssObj1);
+						$('#W_Helpful_question_Div').removeAttr("style");
+						return;
+					}
+
+					if( $('#W_Helpful_comment').is(':visible')) 
+					{
+						return;
+					}
+
+					if( $('#W_Helpful_confirm').is(':visible')) 
+					{
+						return;
+					}
+					
+						//document.cookie = "ThisPageHasBeenReviewed=Yes";
+					var cssObj3 = 
+					{
+						'height':'20px',
+						'cursor':'pointer',
+						'width':'170px',
+						'font-size':'12px',
+						'border': '1px solid #D8D5D4',
+						'background-color':'#FAF8CC'
+					}
+			
+					$('#W_Helpful_question_Div').css(cssObj3); 
+
+					W_Helpful.Show('#W_Helpful_yesORno');
+
+					setTimeout(function() { $('#W_Helpful_accurate-yes').focus(); }, 1000);
+				}
+			});
+
+			$('#W_Helpful_accurate-yes').bind( "click keydown", function (evt) {
+				var charCode = (evt.which) ? evt.which : evt.keyCode
+				if (charCode == '13' || charCode  == '0' || charCode == '1' || charCode == undefined) 
+				{
+					//document.cookie = window.location.href;
+					//alert(window.location.href + " from " + document.referrer + "; path=/;")
+					$('#ResponseYesNo').val('yes');
+					W_Helpful.Hide('#W_Helpful_yesORno');
+					$("#W_Helpful_message").html("<p style=font-size:12px;text-align:Center><label style=font-size:12px for=W_Helpful_helpful-input><strong>Great, can we make it even better?</strong><br />(250 Character max.)</label></p>");
+					W_Helpful.TakeResponse('yes', '', 'q');
+					W_Helpful.Show('#W_Helpful_comment');
+					setTimeout(function() { $('#W_Helpful_helpful-input').focus(); }, 1000);
+				}
+			});
+
+			$('#W_Helpful_accurate-no').bind( "click keydown", function (evt) {
+				var charCode = (evt.which) ? evt.which : evt.keyCode
+				if (charCode == '13' || charCode  == '0' || charCode == '1' || charCode == undefined) 
+				{
+					//document.cookie = window.location.href;
+					$("#W_Helpful_message").html("<p style=font-size:12px;text-align:Center><label style=font-size:12px for=W_Helpful_helpful-input><strong>How can we make it better?</strong> <br />(250 Character max.)</label></p>");
+					$('#ResponseYesNo').val('no');
+					W_Helpful.Hide('#W_Helpful_yesORno');
+					W_Helpful.TakeResponse('no', '', 'q');
+					W_Helpful.Show('#W_Helpful_comment');
+					setTimeout(function() { $('#W_Helpful_helpful-input').focus(); }, 1000);
+				}
+			});
+
+			$('#W_Helpful_comment-submit').on('click', function () {
+				if (jQuery.trim($('#W_Helpful_helpful-input').val()) != '')
+				{
+					W_Helpful.TakeResponse($('#ResponseYesNo').val(), $('#W_Helpful_helpful-input').val(), 'c');
+				}
+				W_Helpful.Hide('#W_Helpful_comment');
+				W_Helpful.Show('#W_Helpful_confirm');
+				setTimeout(function() { $('#FBResponse').attr('tabindex', 0).focus(); }, 1000); //Ravi changes from w_Helpful_Close to W_Helpful_confirm
+				$('#W_Helpful').remove();
+				
+				var attrName = location.hostname+location.pathname +".isSurveyComplete";
+				if(sessionStorage)
+				{
+					sessionStorage.setItem(attrName,true);
+				}
+				
+			});
+		},
+		TakeResponse: function (quest, commt, PostType) {
+			var logTo = TRACKER_URL;
+			var pageUrl = document.URL;
+			if (typeof XDomainRequest != 'undefined') 
+			{
+				//alert("?dolurl=" + pageUrl + "&question=" + quest + "&suggestion=" + commt + "&posttype=" + PostType);
+				var xdr = new XDomainRequest();
+				xdr.open("GET", logTo + "?question=" + quest + "&suggestion=" + commt + "&posttype=" + PostType + "&dolurl=" + pageUrl);
+				xdr.send();
+				xdr.onload = function () {/*alert('Checking IE Response');*/}
+			} 
+			else 
+			{
+				$.getJSON(logTo, { dolurl: pageUrl, question: quest, suggestion: commt, posttype: PostType });
+			}
+		},
+		Hide: function (selector) {
+			$(selector).slideUp('slow');
+		},
+
+		Show: function (selector) {
+			$(selector).slideDown('slow');
+		}
+	}
+})();
+</script>
+
+<script type="text/JavaScript">
+  $(document).ready(function() {
+   W_Helpful.init('#fbcontent');
+  });
+</script>
+
+
+<!--end head style-->
+
+<div style="display:none;"><a href="#content">Skip to content</a></div>
+<div id="header_new">
+
+<div id="logo_and_name"> 
+  <a href="http://www.dol.gov/"><img src="/images/dol_sym.gif" width="47" height="47" border="0" alt="Seal of the United States Department of Labor"/></a>
+  
+  <span id="dol-text"><a href="http://www.dol.gov">UNITED STATES DEPARTMENT OF LABOR </a></span><br />
+
+<span id="eta-text"><a href="http://www.dol.gov">Employment & Training Administration</a></span>
+
+</div>
+
+
+
+<div id="search-stuff">
+
+ <div id="top-links"><a href="http://www.dol.gov/dol/siteindex.htm">A to Z</a> | <a href="http://www.doleta.gov/sitemap.cfm">Site Map</a> | <a href="http://webapps.dol.gov/dolfaq/dolfaq.asp">FAQs</a> | <a href="http://webapps.dol.gov/libraryforms/">Forms</a> | <a href="http://www.dol.gov/dol/aboutdol/main.htm">About DOL</a> | <a href="/contact.cfm">Contact Us</a> | <a href="http://www.dol.gov/dol/topic/Spanish-speakingTopic.htm">Español</a></div>
+  
+
+<br>
+
+<div id="move-search-boxes">
+       <form method="post" id="suggestion_form" name="suggestion_form" action="/gsearch.cfm" >
+     
+     <p>
+       <input type="text" id="q" name="q"  alt="Enter Search Term" title="Enter Search Term" value="Enter Search Term" onclick="this.value=''" >
+        <!--<input type="hidden" name="site" value="Doleta_Whole">
+       
+        <input type="hidden" name="output" value="xml_no_dtd">-->
+        
+        <input id="search-button" name="search" type="submit" alt="Search" title="Search" value="Search" />
+        
+      </p>
+       </form>
+    
+        <!--between search and emailbars-->
+
+         
+</div>
+
+</div>
+
+<script language="javascript1.2">
+	function highlightHeaderTab(element){
+		document.getElementById(element).style.backgroundColor='#FFFFFF';
+		document.getElementById(element).style.color='#990000';
+		document.getElementById(element).style.display='block';
+	}
+</script>
+
+
+<div id="navi">
+    <ul>
+      <li style="line-height:26px;" class="navagation"><a id="etainfo" href="/">ETA Home</a></li>
+       <li class="navagation"><a id="jobseekers" href="/jobseekers/">Find Job &amp; Career Info</a></li>
+       <li class="navagation"><a id="business" href="/business/">Business &amp; Industry</a></li>
+       <li class="navagation"><a id="usworkforce" href="/usworkforce/">Workforce Professionals</a></li>
+       <li class="navagation"><a id="grants" href="/grants/">Grants &amp; Contracts</a></li>
+       <li style="line-height:26px;" class="navagation"><a id="tradeact" href="/tradeact/">TAA Program</a></li>
+      <li class="navagation"><a id="foriegnNew" href="http://www.foreignlaborcert.doleta.gov/">Foreign Labor Certification</a></li>
+
+    <li class="navagation"><a id="performance" href="/performance/">Performance &amp; Results</a></li>
+       <li class="navagation"><a id="regions" href="/regions/">Regions &amp; States</a></li>
+    </ul>
+ </div>
+
+ 
+ <div style="background-color:#FFF;" id="crumb">
+  
+
+
+
+&nbsp;
+
+
+  <a href="/"> ETA Home</a>
+
+      &nbsp;
+    
+        <a href="/BRG/">Division of Strategic Investments></a>
+      
+      &nbsp;
+    
+        <a href="/BRG/Indprof/">Industry Profiles></a>
+      
+      &nbsp;
+    
+<script type="text/javascript">
+   	var Page_title = document.title.split(",")
+   	//alert(Page_title[0]);
+   	if (Page_title[0] == "Division of Policy")
+   	{
+   		document.write(Page_title[0] + ", " + Page_title[1] + ", " + Page_title[2])
+	}
+	else if (Page_title[0] == "Testimony of DOL Officials before the 110th Congress")
+	{
+		document.write("Testimony of DOL Officials")
+	}
+	else
+	{
+   		document.write(Page_title[0])
+	}
+	</script>
+&nbsp; 
+
+    <span class="utilitybarright">
+				<span id="fbcontent" style="float:right"></span>		
+			</span>
+            
+            
+
+    
+  
+
+
+</div>
+
+
+
+</div> <!--ends header div-->
+  <div id="container">
+     <div id="sidenav">
+
+<span><a href="/BRG/Contact.cfm">Contact Us</a></span>
+<hr /> 
+<span>Solutions for Business</span>
+<ul>
+	<li><a href="/business/pws.cfm">Workforce Investment System</a></li>
+    <li><a href="/business/GovernmentIncentives.cfm">Government Incentives, Tax Credits, and Assistance</a></li>
+    <li><a href="/business/WorkforceInformation.cfm">Workforce and Career Information</a></li>
+    <li><a href="/business/SolutionsToBuild.cfm">Workforce Solutions</a></li>
+    <li><a href="/business/TrainingEducation.cfm">Education and Training</a></li>
+</ul>
+<hr />
+<span>ETA Initiatives</span>
+<ul>  
+  <li><a href="/business/ARRA_Grants.cfm">ARRA Grants</a></li>  
+ <li><a href="/TAACCCT">Trade Adjustment Assistance Community College and Career Training grants (TAACCCT)</a></li> 
+  <li><a href="/business/H1B_Tech_Skills.cfm">  
+  H-1B Technical Skills Training Grants</a></li>
+  <li><a href="/BRG/GreenJobs/">Green Jobs Initiatives</a></li>
+  <li><a href="/BRG/IndProf/Health.cfm">Health Care Initiatives</a></li>
+  <li><a href="/business/Community-BasedJobTrainingGrants.cfm">Community-Based Job Training Grants</a></li>
+ <li><a href="/business/business_archive.cfm">Archives</a></li>   
+</ul>
+<hr />
+<span><a href="/reports/">Publications Library</a></span>
+<hr /> 
+<span><a href="/BRG/Business_Solutions/resources.cfm">Other Resources</a></span>
+<ul>
+   <li><a href="/leave-doleta.cfm?target=http://www.careeronestop.org/ReEmployment">ReEmployement Portal</a></li>
+   <li><a href="/leave-doleta.cfm?target=http://www.workforce3one.org">Workforce<sup>3</sup>One</a></li>
+    <li><a href="/leave-doleta.cfm?target=http://www.careeronestop.org/CompetencyModel/">  Competency Models</a></li>
+      <li><a href="/leave-doleta.cfm?target=http://www.onetcenter.org/">O*Net</a></li>      
+      <li><a href="/leave-doleta.cfm?target=http://www.careeronestop.org">Career One-Stop</a></a></li> 
+      <li><a href="/leave-doleta.cfm?target=http://myskillsmyfuture.org">     
+      MySkills MyFuture</a></li>
+      <li><a href="/business/sustainability_toolkit.cfm">
+      Sustainability Toolkit</a></li>
+      <li><a href="https://ojttoolkit.workforce3one.org/">
+      OJT Toolkit</a></li>
+      <li><a href="http://wdr.doleta.gov/directives/"> 
+      ETA Advisories</a></li>      
+</ul>
+</div>  
+</ul>
+
+    <div id="content"><a name="content"></a>
+
+<h1>Automotive Industry</h1>
+  
+  <p><strong>Local Solutions with National Applications to Address Automotive Industry Workforce Needs</strong></p>
+  <div id="local"><p class="lead">Additional Automotive<br />Industry Information</p><ul>
+	<li><a href="automotive_profile.cfm">Profile</a></li>
+	<li><a href="../pdf/automotive.pdf">Profile - PDF Version</a></li>
+	<li><a href="automotive_investment.cfm">Investments</a></li>
+	<li><a href="../pdf/Automotive_Final_Report.pdf">Report</a></li>
+	<li><a href="automotive_grantproducts.cfm">Grant Products</a></li>
+  </ul>
+  </div>
+	<p> In September 2004, the U.S. Department of Labor has announced  a <a href="automotive_investment.cfm">series of new investments</a> totaling more than $6.3 
+	million to address the workforce needs of the automotive industry.  Over the past two years, the U.S. Department of Labor has invested $5.6 million dollars to 
+	assist automotive workers to quickly and efficiently transition to new production processes as well as to develop industry-standard automotive technician 
+	training programs at technical high schools.</p>
+	<p>DOL has sought to understand and implement industry-identified strategies to confront critical workforce shortages.  It has listened to employers representing 
+	dealerships, manufacturers, and suppliers, industry association representatives, educators, the public workforce system, and others associated with the automotive 
+	industry regarding some of their efforts to identify challenges and implement effective workforce strategies.  DOL's Employment and Training Administration is 
+	supporting comprehensive business, education, and workforce development partnerships that have developed innovative approaches that address the workforce needs 
+	of business while also effectively helping workers find good jobs with good wages and promising career pathways in the automotive industry.</p>
+	<p>This set of workforce solutions is based on the automotive industry's priorities that address issues such as:</p>
+		<ul>
+		  <li>expanding the pipeline of youth entering the automotive industry;</li>
+		  <li>helping alternative labor pools gain industry-defined skills and competencies;</li>
+		  <li>developing alternative training strategies, such as apprenticeship, distance learning, and accelerated training, for training automotive professionals; </li>
+		  <li>developing tools and curriculum for enhancing the skills of automotive professionals for nationwide distribution;</li>
+		  <li>enhancing the capacity of educational institutions to train to industry-defined competencies;</li>
+		  <li>developing industry-defined career ladders and lattices and corresponding competency models and curriculum; </li>
+		  <li>developing strategies to retain and help incumbent workers move into higher level positions; and</li>
+		  <li>assisting transitioning individuals from declining industries to high growth industries by building on their existing skills and training them for high 
+		  growth automotive occupations.</li>
+		</ul>
+		<p>The grants are intended to provide genuine solutions, leadership, and models for partnerships that can be replicated in different parts of the country.</p>
+	   
+	   
+   </div>
+</div>
+<div id="footer">
+<div id="fdate"> 
+      
+      <div style="float:left;">Created: March 27, 2004</div>
+      <div style="float:right">Updated: January 07, 2010</div>
+      </div>
+<div style="clear:both;"></div>
+<div id="fone"><a href="http://www.dol.gov/dol/foia/main.htm">Freedom of Information Act</a> | <a href="http://www.doleta.gov/privacy.cfm">Privacy &amp; Security Statement</a> | <a href="http://www.dol.gov/dol/disclaim.htm">Disclaimers</a> | <a href="http://webapps.dol.gov/feedback/feedbacksurvey.aspx">Customer Survey</a> | <a href="http://www.dol.gov/dol/aboutdol/website-policies.htm">Important Web Site Notices</a></div>
+  <div id="ftwo"> <strong>Employment and Training Administration</strong><br />U.S. Department of Labor | Frances Perkins Building, 200 Constitution Ave., NW, Washington, DC 20210<br />
+  <a href="/"> www.doleta.gov</a> | Telephone: 1-877-US-2JOBS (1-877-872-5627)
+ | TTY: 1-877-889-5627 | Fax: 1-202-693-2726 | <a href="/contact.cfm">Contact Us</a></div>
+</div>
+<div>
+<!-- START OF SDC Advanced Tracking Code -->
+<!-- Copyright (c) 1996-2005 WebTrends Inc.  All rights reserved. -->
+<!-- V7.5 -->
+<!-- $DateTime: 2005/07/28 12:03:13 $ -->
+<SCRIPT LANGUAGE="Javascript"><!--
+var gService = true;
+var gTimeZone = -5;
+// Code section for Enable First-Party Cookie Tracking
+function dcsCookie(){
+	if (typeof(dcsOther)=="function"){
+		dcsOther();
+	}
+	else if (typeof(dcsPlugin)=="function"){
+		dcsPlugin();
+	}
+	else if (typeof(dcsFPC)=="function"){
+		dcsFPC(gTimeZone);
+	}
+}
+function dcsGetCookie(name){
+	var pos=document.cookie.indexOf(name+"=");
+	if (pos!=-1){
+		var start=pos+name.length+1;
+		var end=document.cookie.indexOf(";",start);
+		if (end==-1){
+			end=document.cookie.length;
+		}
+		return unescape(document.cookie.substring(start,end));
+	}
+	return null;
+}
+function dcsGetCrumb(name,crumb){
+	var aCookie=dcsGetCookie(name).split(":");
+	for (var i=0;i<aCookie.length;i++){
+		var aCrumb=aCookie[i].split("=");
+		if (crumb==aCrumb[0]){
+			return aCrumb[1];
+		}
+	}
+	return null;
+}
+function dcsFPC(offset){
+	if (typeof(offset)=="undefined"){
+		return;
+	}
+	var name=gFpc;
+	var dCur=new Date();
+	dCur.setTime(dCur.getTime()+(dCur.getTimezoneOffset()*60000)+(offset*3600000));
+	var dExp=new Date(dCur.getTime()+315360000000);
+	var dSes=new Date(dCur.getTime());
+	if (document.cookie.indexOf(name+"=")!=-1){
+		var id=dcsGetCrumb(name,"id");
+		var lv=parseInt(dcsGetCrumb(name,"lv"));
+		var ss=parseInt(dcsGetCrumb(name,"ss"));
+		if ((id==null)||(id=="null")||isNaN(lv)||isNaN(ss)){
+			return;
+		}
+		WT.co_f=id;
+		WT.vt_f="0";
+		WT.vt_f_a="0";
+		var dLst=new Date(lv);
+		dSes.setTime(ss);
+		if ((dCur.getTime()>(dLst.getTime()+1800000))||(dCur.getTime()>(dSes.getTime()+28800000))){
+			dSes.setTime(dCur.getTime());
+			WT.vt_f_s="1";
+		}
+		if ((dCur.getDay()!=dLst.getDay())||(dCur.getMonth()!=dLst.getMonth())||(dCur.getYear()!=dLst.getYear())){
+			WT.vt_f_d="1";
+		}
+	}
+	else{
+		var tmpname=name+"_TMP=";
+		document.cookie=tmpname+"1";
+		if (document.cookie.indexOf(tmpname)!=-1){
+			document.cookie=tmpname+"; expires=Thu, 01-Jan-1970 00:00:01 GMT";
+			if ((typeof(gWtId)!="undefined")&&(gWtId!="")){
+				WT.co_f=gWtId;
+				WT.vt_f="0";
+			}
+			else if ((typeof(gTempWtId)!="undefined")&&(gTempWtId!="")){
+				WT.co_f=gTempWtId;
+				WT.vt_f="1";
+			}
+			else{
+				WT.co_f="2";
+				var cur=dCur.getTime().toString();
+				for (var i=2;i<=(32-cur.length);i++){
+					WT.co_f+=Math.floor(Math.random()*16.0).toString(16);
+				}
+				WT.co_f+=cur;
+				WT.vt_f="1";
+			}
+			WT.vt_f_a=(typeof(gWtAccountRollup)!="undefined")?"0":"1";
+			WT.vt_f_s="1";
+			WT.vt_f_d="1";
+		}
+		else{
+			WT.vt_f="2";
+			WT.vt_f_a="2";
+			return;
+		}
+	}
+	WT.co_f=escape(WT.co_f);
+	WT.vt_sid=WT.co_f+"."+dSes.getTime();
+	var expiry="";
+	document.cookie=name+"="+"id="+WT.co_f+":lv="+dCur.getTime().toString()+":ss="+dSes.getTime().toString()+expiry+"; path=/"+(((typeof(gFpcDom)!="undefined")&&(gFpcDom!=""))?("; domain="+gFpcDom):(""));
+}
+
+// Code section for Use the new first-party cookie generated with this tag.
+var gFpc="WT_FPC";
+var gWtId="";
+var gTempWtId="";
+if (gService){
+	var gConvert=true;
+}
+
+function dcsAdv(){
+	dcsFunc("dcsET");
+	dcsFunc("dcsCookie");
+	dcsFunc("dcsAdSearch");
+}
+
+//-->
+</SCRIPT>
+<!-- END OF SDC Advanced Tracking Code -->
+
+<!-- START OF SmartSource Data Collector TAG -->
+<!-- Copyright (c) 1996-2005 WebTrends Inc.  All rights reserved. -->
+<!-- V7.5 -->
+<!-- $DateTime: 2005/06/29 17:35:36 $ -->
+<SCRIPT LANGUAGE="Javascript"><!--
+gVersion="1.0";
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="Javascript1.1"><!--
+gVersion="1.1";
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="Javascript1.2"><!--
+gVersion="1.2";
+var RE={"%09":/\t/g,"%20":/ /g,"%23":/\#/g,"%26":/\&/g,"%2B":/\+/g,"%3F":/\?/g,"%5C":/\\/g};
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="Javascript1.3"><!--
+gVersion="1.3";
+if (window.ActiveXObject){
+	var gFV="";
+	for (var gVer=2;gVer<=10;gVer++){
+		try{
+			var gFlash = eval("new ActiveXObject('ShockwaveFlash.ShockwaveFlash."+gVer+"');");
+			if (gFlash){
+				gFV=gVer+".0";
+				break;
+			}
+		}
+		catch(e){
+		}
+	}
+}
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="Javascript1.4"><!--
+gVersion="1.4";
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="Javascript1.5"><!--
+gVersion="1.5";
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript"><!--
+var gImages=new Array;
+var gIndex=0;
+var DCS=new Object();
+var WT=new Object();
+var DCSext=new Object();
+var gQP=new Array();
+
+var gDomain="statse.webtrendslive.com";
+var gDcsId="dcsnvpr5q4twkf78wbyah6lf3_1j8f";
+
+if ((typeof(gConvert)!="undefined")&&gConvert&&(document.cookie.indexOf(gFpc+"=")==-1)){
+	document.write("<SCR"+"IPT Language='JavaScript' SRC='"+"http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+gDomain+"/"+gDcsId+"/wtid.js"+"'></SCR"+"IPT>");
+}
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="Javascript"><!--
+function dcsVar(){
+	var dCurrent=new Date();
+	WT.tz=dCurrent.getTimezoneOffset()/60*-1;
+	if (WT.tz==0){
+		WT.tz="0";
+	}
+	WT.bh=dCurrent.getHours();
+	WT.ul=navigator.appName=="Netscape"?navigator.language:navigator.userLanguage;
+	if (typeof(screen)=="object"){
+		WT.cd=navigator.appName=="Netscape"?screen.pixelDepth:screen.colorDepth;
+		WT.sr=screen.width+"x"+screen.height;
+	}
+	if (typeof(navigator.javaEnabled())=="boolean"){
+		WT.jo=navigator.javaEnabled()?"Yes":"No";
+	}
+	if (document.title){
+		WT.ti=document.title;
+	}
+	WT.js="Yes";
+	if (typeof(gVersion)!="undefined"){
+		WT.jv=gVersion;
+	}
+
+	WT.sp="@@SPLITVALUE@@";
+	DCS.dcsdat=dCurrent.getTime();
+	DCS.dcssip=window.location.hostname;
+	DCS.dcsuri=window.location.pathname;
+	DCS.dcscfg="00000004";
+	if (window.location.search){
+		DCS.dcsqry=window.location.search;
+	}
+
+	if (document.body&&document.body.addBehavior){
+		document.body.addBehavior("#default#clientCaps");
+		if (document.body.connectionType){
+			WT.ct=document.body.connectionType;
+		}
+		document.body.addBehavior("#default#homePage");
+		WT.hp=document.body.isHomePage(location.href)?"1":"0";
+	}
+	if (parseInt(navigator.appVersion)>3){
+		if ((navigator.appName=="Microsoft Internet Explorer")&&document.body){
+			WT.bs=document.body.offsetWidth+"x"+document.body.offsetHeight;
+		}
+		else if (navigator.appName=="Netscape"){
+			WT.bs=window.innerWidth+"x"+window.innerHeight;
+		}
+	}
+	WT.fi="No";
+	if (window.ActiveXObject){
+		if ((typeof(gFV)!="undefined")&&(gFV.length>0)){
+			WT.fi="Yes";
+			WT.fv=gFV;
+		}
+	}
+	else if (navigator.plugins&&navigator.plugins.length){
+		for (var i=0;i<navigator.plugins.length;i++){
+			if (navigator.plugins[i].name.indexOf('Shockwave Flash')!=-1){
+				WT.fi="Yes";
+				WT.fv=navigator.plugins[i].description.split(" ")[2];
+				break;
+			}
+		}
+	}
+	WT.sp="@@SPLITVALUE@@";
+	DCS.dcsdat=dCurrent.getTime();
+	DCS.dcssip=window.location.hostname;
+	DCS.dcsuri=window.location.pathname;
+	if (window.location.search){
+		DCS.dcsqry=window.location.search;
+		if (gQP.length>0){
+			for (var i=0;i<gQP.length;i++){
+				var pos=DCS.dcsqry.indexOf(gQP[i]);
+				if (pos!=-1){
+					var front=DCS.dcsqry.substring(0,pos);
+					var end=DCS.dcsqry.substring(pos+gQP[i].length,DCS.dcsqry.length);
+					DCS.dcsqry=front+end;
+				}
+			}
+		}
+	}
+	if ((window.document.referrer!="")&&(window.document.referrer!="-")){
+		if (!(navigator.appName=="Microsoft Internet Explorer"&&parseInt(navigator.appVersion)<4)){
+			DCS.dcsref=window.document.referrer;
+		}
+	}
+}
+
+function A(N,V){
+	return "&"+N+"="+dcsEscape(V);
+}
+
+function dcsEscape(S){
+	if (typeof(RE)!="undefined"){
+		var retStr = new String(S);
+		for (R in RE){
+			retStr = retStr.replace(RE[R],R);
+		}
+		return retStr;
+	}
+	else{
+		return escape(S);
+	}
+}
+
+function dcsLoadHref(evt){
+	if ((typeof(gHref)!="undefined")&&(gHref.length>0)){
+		window.location=gHref;
+		gHref="";
+	}
+}
+
+function dcsCreateImage(dcsSrc){
+	if (document.images){
+		gImages[gIndex]=new Image;
+		if ((typeof(gHref)!="undefined")&&(gHref.length>0)){
+			gImages[gIndex].onload=gImages[gIndex].onerror=dcsLoadHref;
+		}
+		gImages[gIndex].src=dcsSrc;
+		gIndex++;
+	}
+	else{
+		document.write('<IMG BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1" SRC="'+dcsSrc+'">');
+	}
+}
+
+function dcsMeta(){
+	var elems;
+	if (document.all){
+		elems=document.all.tags("meta");
+	}
+	else if (document.documentElement){
+		elems=document.getElementsByTagName("meta");
+	}
+	if (typeof(elems)!="undefined"){
+		for (var i=1;i<=elems.length;i++){
+			var meta=elems.item(i-1);
+			if (meta.name){
+				if (meta.name.indexOf('WT.')==0){
+					WT[meta.name.substring(3)]=meta.content;
+				}
+				else if (meta.name.indexOf('DCSext.')==0){
+					DCSext[meta.name.substring(7)]=meta.content;
+				}
+				else if (meta.name.indexOf('DCS.')==0){
+					DCS[meta.name.substring(4)]=meta.content;
+				}
+			}
+		}
+	}
+}
+
+function dcsTag(){
+	var P="http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+gDomain+(gDcsId==""?'':'/'+gDcsId)+"/dcs.gif?";
+	for (N in DCS){
+		if (DCS[N]) {
+			P+=A(N,DCS[N]);
+		}
+	}
+	for (N in WT){
+		if (WT[N]) {
+			P+=A("WT."+N,WT[N]);
+		}
+	}
+	for (N in DCSext){
+		if (DCSext[N]) {
+			P+=A(N,DCSext[N]);
+		}
+	}
+	if (P.length>2048&&navigator.userAgent.indexOf('MSIE')>=0){
+		P=P.substring(0,2040)+"&WT.tu=1";
+	}
+	dcsCreateImage(P);
+}
+
+function dcsFunc(func){
+	if (typeof(window[func])=="function"){
+		window[func]();
+	}
+}
+
+
+function dcsMultiTrack(){
+	for (var i=0;i<arguments.length;i++){
+		if (arguments[i].indexOf('WT.')==0){
+				WT[arguments[i].substring(3)]=arguments[i+1];
+				i++;
+		}
+		if (arguments[i].indexOf('DCS.')==0){
+				DCS[arguments[i].substring(4)]=arguments[i+1];
+				i++;
+		}
+		if (arguments[i].indexOf('DCSext.')==0){
+				DCSext[arguments[i].substring(7)]=arguments[i+1];
+				i++;
+		}
+	}
+	var dCurrent=new Date();
+	DCS.dcsdat=dCurrent.getTime();
+	dcsTag();
+}
+
+
+dcsVar();
+dcsMeta();
+dcsFunc("dcsAdv");
+dcsTag();
+//-->
+</SCRIPT>
+
+<NOSCRIPT>
+<IMG ALT="" BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1" SRC="http://statse.webtrendslive.com/dcsnvpr5q4twkf78wbyah6lf3_1j8f/njs.gif?dcsuri=/nojavascript&amp;WT.js=No">
+</NOSCRIPT>
+<!-- END OF SmartSource Data Collector  TAG -->
+
+<script type="text/javascript">
+function findpdf(){
+
+   var l = document.links;
+
+   function check(){
+      var dest = this.pathname;
+      var title = this.firstChild.data;
+      dcsMultiTrack('DCS.dcsuri',dest,'WT.ti',title);
+   }
+
+   for (i = 0; i < l.length; i++){
+      if(l[i].pathname.match(/\.pdf/)){
+         if(!l[i].onclick){
+            l[i].onclick=check;
+         }
+      }
+   }
+} // end findpdf
+
+findpdf();
+
+
+function findmp3(){
+
+   var l = document.links;
+
+   function check(){
+      var dest = this.pathname;
+      var title = this.firstChild.data;
+      dcsMultiTrack('DCS.dcsuri',dest,'WT.ti',title);
+   }
+
+   for (i = 0; i < l.length; i++){
+      if(l[i].pathname.match(/\.mp3/)){
+         if(!l[i].onclick){
+            l[i].onclick=check;
+         }
+      }
+   }
+} // end findmp3
+
+findmp3();
+
+
+function findwav(){
+
+   var l = document.links;
+
+   function check(){
+      var dest = this.pathname;
+      var title = this.firstChild.data;
+      dcsMultiTrack('DCS.dcsuri',dest,'WT.ti',title);
+   }
+
+   for (i = 0; i < l.length; i++){
+      if(l[i].pathname.match(/\.wav/)){
+         if(!l[i].onclick){
+            l[i].onclick=check;
+         }
+      }
+   }
+} // end findwav
+
+findwav();
+
+
+function findmov(){
+
+   var l = document.links;
+
+   function check(){
+      var dest = this.pathname;
+      var title = this.firstChild.data;
+      dcsMultiTrack('DCS.dcsuri',dest,'WT.ti',title);
+   }
+
+   for (i = 0; i < l.length; i++){
+      if(l[i].pathname.match(/\.mov/)){
+         if(!l[i].onclick){
+            l[i].onclick=check;
+         }
+      }
+   }
+} // end findmov
+
+findmov();
+
+function findwmf(){
+
+   var l = document.links;
+
+   function check(){
+      var dest = this.pathname;
+      var title = this.firstChild.data;
+      dcsMultiTrack('DCS.dcsuri',dest,'WT.ti',title);
+   }
+
+   for (i = 0; i < l.length; i++){
+      if(l[i].pathname.match(/\.wmf/)){
+         if(!l[i].onclick){
+            l[i].onclick=check;
+         }
+      }
+   }
+} // end findwmf
+
+findavi();
+
+function findavi(){
+
+   var l = document.links;
+
+   function check(){
+      var dest = this.pathname;
+      var title = this.firstChild.data;
+      dcsMultiTrack('DCS.dcsuri',dest,'WT.ti',title);
+   }
+
+   for (i = 0; i < l.length; i++){
+      if(l[i].pathname.match(/\.avi/)){
+         if(!l[i].onclick){
+            l[i].onclick=check;
+         }
+      }
+   }
+} // end findavi
+
+findavi();
+
+function findpps(){
+
+   var l = document.links;
+
+   function check(){
+      var dest = this.pathname;
+      var title = this.firstChild.data;
+      dcsMultiTrack('DCS.dcsuri',dest,'WT.ti',title);
+   }
+
+   for (i = 0; i < l.length; i++){
+      if(l[i].pathname.match(/\.pps/)){
+         if(!l[i].onclick){
+            l[i].onclick=check;
+         }
+      }
+   }
+} // end findpps
+
+findpps();
+
+function findppt(){
+
+   var l = document.links;
+
+   function check(){
+      var dest = this.pathname;
+      var title = this.firstChild.data;
+      dcsMultiTrack('DCS.dcsuri',dest,'WT.ti',title);
+   }
+
+   for (i = 0; i < l.length; i++){
+      if(l[i].pathname.match(/\.ppt/)){
+         if(!l[i].onclick){
+            l[i].onclick=check;
+         }
+      }
+   }
+} // end findppt
+
+findppt();
+
+function findram(){
+
+   var l = document.links;
+
+   function check(){
+      var dest = this.pathname;
+      var title = this.firstChild.data;
+      dcsMultiTrack('DCS.dcsuri',dest,'WT.ti',title);
+   }
+
+   for (i = 0; i < l.length; i++){
+      if(l[i].pathname.match(/\.ram/)){
+         if(!l[i].onclick){
+            l[i].onclick=check;
+         }
+      }
+   }
+} // end findram
+
+findram();
+
+function findrm(){
+
+   var l = document.links;
+
+   function check(){
+      var dest = this.pathname;
+      var title = this.firstChild.data;
+      dcsMultiTrack('DCS.dcsuri',dest,'WT.ti',title);
+   }
+
+   for (i = 0; i < l.length; i++){
+      if(l[i].pathname.match(/\.rm/)){
+         if(!l[i].onclick){
+            l[i].onclick=check;
+         }
+      }
+   }
+} // end findrm
+
+findrm();
+
+function findwmv(){
+
+   var l = document.links;
+
+   function check(){
+      var dest = this.pathname;
+      var title = this.firstChild.data;
+      dcsMultiTrack('DCS.dcsuri',dest,'WT.ti',title);
+   }
+
+   for (i = 0; i < l.length; i++){
+      if(l[i].pathname.match(/\.wmv/)){
+         if(!l[i].onclick){
+            l[i].onclick=check;
+         }
+      }
+   }
+} // end findwmv
+
+findwmv();
+
+function findxls(){
+
+   var l = document.links;
+
+   function check(){
+      var dest = this.pathname;
+      var title = this.firstChild.data;
+      dcsMultiTrack('DCS.dcsuri',dest,'WT.ti',title);
+   }
+
+   for (i = 0; i < l.length; i++){
+      if(l[i].pathname.match(/\.xls/)){
+         if(!l[i].onclick){
+            l[i].onclick=check;
+         }
+      }
+   }
+} // end findxls
+
+findxls();
+
+</script> <!-- START OF SmartSource Data Collector TAG -->
+<!-- Copyright (c) 1996-2010 WebTrends Inc.  All rights reserved. -->
+<!-- Version: 8.6.2 -->
+<!-- Tag Builder Version: 3.0  -->
+<!-- Created: 2/23/2010 2:11:47 PM -->
+<script src="/scripts/webtrends.js" type="text/javascript"></script>
+<!-- Warning: The two script blocks below must remain inline. Moving them to an external -->
+<!-- JavaScript include file can cause serious problems with cross-domain tracking.      -->
+<script type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends();
+//]]>>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://63.88.32.236/dcs8rfs616ckcqu9bwp7a1dbc_8e9x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;DCS.dcscfg=1&amp;WT.tv=8.6.2"/></div>
+</noscript>
+<!-- END OF SmartSource Data Collector TAG -->
+
+</div>
+</div>
+<div style="clear:both"></div>
+</body>
+</html>

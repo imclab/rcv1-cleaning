@@ -1,0 +1,765 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-US" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head"><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /><meta content="text/javascript" http-equiv="Content-Script-Type" /><meta content="text/css" http-equiv="Content-Style-Type" /><meta id="MetaDescription" name="DESCRIPTION" content="Need to get your car fixed? Browse our huge directory to find the best auto repair shops in your area. Helpful ratings and reviews!" /><meta id="MetaKeywords" name="KEYWORDS" content="auto repair,car repair,repair car,auto repair shop,auto repair shops,automotive repair shop,car repair shop,car repair shops" /><meta id="MetaAuthor" name="AUTHOR" content="AutoRepair.net" /><meta name="RESOURCE-TYPE" content="DOCUMENT" /><meta name="DISTRIBUTION" content="GLOBAL" /><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW" /><meta name="REVISIT-AFTER" content="1 DAYS" /><meta name="RATING" content="GENERAL" /><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" /><style id="StylePlaceholder" type="text/css"></style><link id="APortals__default_" rel="stylesheet" type="text/css" href="/Portals/_default/default.css" /><link id="SkinCSS" rel="stylesheet" type="text/css" href="portals/_default/skins/RapidDD-Generic/DBQCSS.axd" /><link id="APortals_14_" rel="stylesheet" type="text/css" href="/Portals/14/portal.css" />
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/Resources/Shared/Scripts/jquery/jquery.min.js" ></script>   
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js" type="text/javascript"></script>
+     
+    <link rel="alternate" type="application/rss+xml" title="autorepair.netRSS Feed" href="http://www.autorepair.net/rss/" /><link href="/Portals/_default/Skins/_default/WebControlSkin/Default/TabStrip.Default.css" rel="stylesheet" type="text/css" /><link href="/Portals/_default/Skins/_default/WebControlSkin/Default/RibbonBar/RibbonBar.Default.css" rel="stylesheet" type="text/css" /><link href="/Portals/_default/Skins/_default/WebControlSkin/Default/RibbonBar/TabStrip.Default.css" rel="stylesheet" type="text/css" /><title>
+	Find Auto Repair Shops In Your Area | AutoRepair.net
+</title></head>
+<body id="Body">
+        
+<form name="Form" method="post" action="/" id="Form" enctype="multipart/form-data">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE4NTEwNDUyOTcPZBYGZg8WAh4EVGV4dAV5PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAxLjAgVHJhbnNpdGlvbmFsLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL1RSL3hodG1sMS9EVEQveGh0bWwxLXRyYW5zaXRpb25hbC5kdGQiPmQCAQ9kFhACBA8WAh4HVmlzaWJsZWhkAgUPFgIeB2NvbnRlbnQFgwFOZWVkIHRvIGdldCB5b3VyIGNhciBmaXhlZD8gQnJvd3NlIG91ciBodWdlIGRpcmVjdG9yeSB0byBmaW5kIHRoZSBiZXN0IGF1dG8gcmVwYWlyIHNob3BzIGluIHlvdXIgYXJlYS4gSGVscGZ1bCByYXRpbmdzIGFuZCByZXZpZXdzIWQCBg8WAh8CBXxhdXRvIHJlcGFpcixjYXIgcmVwYWlyLHJlcGFpciBjYXIsYXV0byByZXBhaXIgc2hvcCxhdXRvIHJlcGFpciBzaG9wcyxhdXRvbW90aXZlIHJlcGFpciBzaG9wLGNhciByZXBhaXIgc2hvcCxjYXIgcmVwYWlyIHNob3BzZAIHDxYEHwIFKENvcHlyaWdodCAyMDEwIGJ5IERvdE5ldE51a2UgQ29ycG9yYXRpb24fAWhkAggPFgQfAmQfAWhkAgkPFgIfAgUOQXV0b1JlcGFpci5uZXRkAgwPFgIfAgUNSU5ERVgsIEZPTExPV2QCFQ8WAh8ABXg8bGluayByZWw9ImFsdGVybmF0ZSIgdHlwZT0iYXBwbGljYXRpb24vcnNzK3htbCIgdGl0bGU9ImF1dG9yZXBhaXIubmV0UlNTIEZlZWQiIGhyZWY9Imh0dHA6Ly93d3cuYXV0b3JlcGFpci5uZXQvcnNzLyIgLz5kAgIPZBYCAgEPZBYEAgQPZBYCZg9kFg4CAQ9kFgJmD2QWAmYPFgIfAWgWBAIBD2QWCAIDDxBkZBYAZAIHDxYCHwFoZAIJDxYCHwFoZAILD2QWAmYPDxYGHghJbWFnZVVybAUUL2ltYWdlcy9jb2xsYXBzZS5naWYeDUFsdGVybmF0ZVRleHQFCE1pbmltaXplHgdUb29sVGlwBQhNaW5pbWl6ZWRkAgMPZBYEAgEPFCsAAhQrAAIPFgQeBFNraW4FB0RlZmF1bHQeE0VuYWJsZUVtYmVkZGVkU2tpbnNoZBAWBGYCAQICAgMWBBQrAAJkZBQrAAJkZBQrAAIPFgIfAWhkZBQrAAIPFgIfAWhkZA8WBGZmZmYWAQVuVGVsZXJpay5XZWIuVUkuUmFkVGFiLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDEwLjIuNzEzLjM1LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTEyMWZhZTc4MTY1YmEzZDRkFgQCAg8PFgIfAWhkZAIDDw8WAh8BaGRkAgMPFCsAAmQVBAhQYWdlSG9tZQtQYWdlQ3VycmVudAhQYWdlU2l0ZQ5QYWdlSG9zdFN5c3RlbRYEAgIPDxYCHwFoZGQCAw8PFgIfAWhkZAIDD2QWAgICD2QWAmYPZBYCAgEPD2QWAh4FY2xhc3MFC01vZEROTkhUTUxDZAIFD2QWAgICD2QWAmYPZBYCAgEPD2QWAh8IBQtNb2RETk5IVE1MQ2QCCQ9kFgYCAg9kFgRmDw8WAh8BaGRkAgIPZBYCAgEPD2QWAh8IBRRNb2REQlFDb250ZW50U2xpZGVyQxYCAgEPZBYEAgEPFgIeC18hSXRlbUNvdW50AgUWCmYPZBYCZg8VBihMYXdtYWtlcnMgV2VpZ2ggaW4gb24gQXV0byBSZXBhaXIgRGViYXRlLi9wb3J0YWxzLzE0L0ltYWdlcy9BdXRvU2l6ZS94cWdrd29maHp3a2JfbC5qcGc1L25ld3MvbGF3bWFrZXJzLXdlaWdoLWluLW9uLWF1dG8tcmVwYWlyLWRlYmF0ZS0xMzU3MS8oTGF3bWFrZXJzIFdlaWdoIGluIG9uIEF1dG8gUmVwYWlyIERlYmF0ZWJXaXRoIGxhd3MgZGVsaXZlcmluZyBjb25mbGljdGluZyBtZXNzYWdlcywgc3RhdGUgbGF3bWFrZXJzIGFyZSB0cnlpbmcgdG8gZGV0ZXJtaW5lIGhvdyB0byBwcm9jZWVkLjUvbmV3cy9sYXdtYWtlcnMtd2VpZ2gtaW4tb24tYXV0by1yZXBhaXItZGViYXRlLTEzNTcxL2QCAQ9kFgJmDxUGJUF1dG8gUmVwYWlyIFNob3AgT2ZmZXJpbmcgRnJlZSBBZHZpY2UuL3BvcnRhbHMvMTQvSW1hZ2VzL0F1dG9TaXplL3ZubXJranhnc2p1eF9sLmpwZzIvbmV3cy9hdXRvLXJlcGFpci1zaG9wLW9mZmVyaW5nLWZyZWUtYWR2aWNlLTEzNTQyLyVBdXRvIFJlcGFpciBTaG9wIE9mZmVyaW5nIEZyZWUgQWR2aWNl7AFJdCBpcyByZXBvcnRlZCB0aGF0IHRoZSBhdXRvIHJlcGFpciBpbmR1c3RyeSB3aWxsIGJyaW5nIGluIGFuIGVzdGltYXRlZCA1MyBtaWxsaW9uIGRvbGxhcnMgYnkgdGhlIHllYXIgMjAxNS4gU3R1ZGllcyBzaG93IHRoYXQgY29uc3VtZXJzIGFyZSBhbHNvIGtlZXBpbmcgdGhlaXIgY2FycyBsb25nZXIsIHJlc3VsdGluZyBpbiBwb3RlbnRpYWwgaGlnaGVyIGNvc3RzIGZvciByZXBhaXIgYW5kIG1haW50ZW5hbmNlLjIvbmV3cy9hdXRvLXJlcGFpci1zaG9wLW9mZmVyaW5nLWZyZWUtYWR2aWNlLTEzNTQyL2QCAg9kFgJmDxUGJUhhaWwgRGFtYWdlIFNlbmRzIE1hbnkgdG8gUmVwYWlyIFNob3AuL3BvcnRhbHMvMTQvSW1hZ2VzL0F1dG9TaXplL25lYnpmYWtkdXFzZl9sLmpwZzIvbmV3cy9oYWlsLWRhbWFnZS1zZW5kcy1tYW55LXRvLXJlcGFpci1zaG9wLTEzNDkzLyVIYWlsIERhbWFnZSBTZW5kcyBNYW55IHRvIFJlcGFpciBTaG9whwFEdXJpbmcgdGhlIHN1bW1lciBtb250aHMgaXQgaXMgbm90IHVuY29tbW9uIGZvciBpbnN1cmFuY2UgY29tcGFuaWVzIGFuZCBhdXRvIGJvZHkgc2hvcHMgdG8gZmllbGQgbWFueSBjbGFpbXMgZm9yIGRhbWFnZSBjYXVzZWQgYnkgaGFpbC4yL25ld3MvaGFpbC1kYW1hZ2Utc2VuZHMtbWFueS10by1yZXBhaXItc2hvcC0xMzQ5My9kAgMPZBYCZg8VBhVSZXBhaXIgU2hvcCBvbiBXaGVlbHMuL3BvcnRhbHMvMTQvSW1hZ2VzL0F1dG9TaXplL2hoZGV3d3pmcWhqZ19sLmpwZyIvbmV3cy9yZXBhaXItc2hvcC1vbi13aGVlbHMtMTM0OTQvFVJlcGFpciBTaG9wIG9uIFdoZWVsc7cBQ3VzdG9tZXJzIGxvb2tpbmcgdG8gaGF2ZSB0aGVpciBjYXIgcmVwYWlyZWQgaW4gUmFjaW5lIG5vdyBoYXZlIGFuIG9wdGlvbiBvZiBoYXZpbmcgdGhlIGNhciByZXBhaXIgc2hvcCBjb21lIHRvIHRoZW0uIFN0ZXZlIFBmYWZmIHN0YXJ0ZWQgUGZhZmbigJlzIEdhcmFnZSB0byBHbywgYSBtb2JpbGUgcmVwYWlyIHNob3AuIi9uZXdzL3JlcGFpci1zaG9wLW9uLXdoZWVscy0xMzQ5NC9kAgQPZBYCZg8VBiFBdm9pZGluZyBDb21tb24gQXV0byBSZXBhaXIgU2NhbXMuL3BvcnRhbHMvMTQvSW1hZ2VzL0F1dG9TaXplL2pxZHpjdWhheml1d19sLmpwZy4vbmV3cy9hdm9pZGluZy1jb21tb24tYXV0by1yZXBhaXItc2NhbXMtMTM0NDgvIUF2b2lkaW5nIENvbW1vbiBBdXRvIFJlcGFpciBTY2Ftc4kBV2hpbGUgbW9zdCBtZWNoYW5pY3MgcnVuIHBlcmZlY3RseSBob25lc3Qgc2hvcHMsIHRoZXJlIGFyZSB0aGluZ3MgdGhhdCBjb25zdW1lcnMgbmVlZCB0byBrbm93IGJlZm9yZSB0YWtpbmcgdGhlaXIgY2FyIHRvIHRoZSByZXBhaXIgc2hvcC4uL25ld3MvYXZvaWRpbmctY29tbW9uLWF1dG8tcmVwYWlyLXNjYW1zLTEzNDQ4L2QCAw8WAh8JAgUWCmYPZBYCZg8VAwExLi9wb3J0YWxzLzE0L0ltYWdlcy9BdXRvU2l6ZS94cWdrd29maHp3a2JfdC5qcGcoTGF3bWFrZXJzIFdlaWdoIGluIG9uIEF1dG8gUmVwYWlyIERlYmF0ZWQCAQ9kFgJmDxUDATIuL3BvcnRhbHMvMTQvSW1hZ2VzL0F1dG9TaXplL3ZubXJranhnc2p1eF90LmpwZyVBdXRvIFJlcGFpciBTaG9wIE9mZmVyaW5nIEZyZWUgQWR2aWNlZAICD2QWAmYPFQMBMy4vcG9ydGFscy8xNC9JbWFnZXMvQXV0b1NpemUvbmViemZha2R1cXNmX3QuanBnJUhhaWwgRGFtYWdlIFNlbmRzIE1hbnkgdG8gUmVwYWlyIFNob3BkAgMPZBYCZg8VAwE0Li9wb3J0YWxzLzE0L0ltYWdlcy9BdXRvU2l6ZS9oaGRld3d6ZnFoamdfdC5qcGcVUmVwYWlyIFNob3Agb24gV2hlZWxzZAIED2QWAmYPFQMBNS4vcG9ydGFscy8xNC9JbWFnZXMvQXV0b1NpemUvanFkemN1aGF6aXV3X3QuanBnIUF2b2lkaW5nIENvbW1vbiBBdXRvIFJlcGFpciBTY2Ftc2QCBA9kFgZmDw8WAh8BaGRkAgIPZBYCAgIPFgIfAWgWBmYPFgIfBQUERWRpdGQCAQ8WAh8FBQZVcGRhdGVkAgIPFgIfBQUGQ2FuY2VsZAIED2QWAgIBDw9kFgIfCAUZTW9kREJRQ29udGVudExpc3REeW5hbWljQxYCAgEPZBYCZg8WAh8ABboYPGRpdiBjbGFzcz0icG9zdCI+Cgk8ZGl2IGNsYXNzPSJ0aHVtYiI+CgkJPGEgaHJlZj0iL25ld3Mvb25lLW1hbi1hdXRvLXJlcGFpci1zaG9wLW9wZW5zLWluLXdlc3QtbG9uZ3ZpZXctMTMzNzkvIj48aW1nIHNyYz0ifi9wb3J0YWxzLzE0L0ltYWdlcy9BdXRvU2l6ZS9iYnJ2eGRna3BneHNfcy5qcGciIGFsdD0iIiB0aXRsZT0iIiBib3JkZXI9IjAiPjwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iY29udGVudCI+CiAgICAgICAgIDxhIGhyZWY9Ii9uZXdzLyIgc3R5bGU9ImZvbnQtc2l6ZToxMXB4OyI+TmV3czwvYT4KCQk8aDI+PGEgaHJlZj0iL25ld3Mvb25lLW1hbi1hdXRvLXJlcGFpci1zaG9wLW9wZW5zLWluLXdlc3QtbG9uZ3ZpZXctMTMzNzkvIj5PbmUgTWFuIEF1dG8gUmVwYWlyIFNob3AgT3BlbnMgaW4gV2VzdCBMb25ndmlldzwvYT48L2gyPgoJCTxwPkpvaG4gS29ybmJ1cnN0IHRvb2sgaGlzIDE1IHllYXJzIG9mIGF1dG8gcmVwYWlyIGV4cGVyaWVuY2UgYW5kIG9wZW5lZCBoaXMgb3duIHNob3AgaW4gV2VzdCBMb25ndmlldywgV2FzaGluZ3Rvbi4gVGhlIG5hbWUgb2YgdGhlIHNob3AgaXMgSyZLIEF1dG8gUmVwYWlyLiBUaGUgc2hvcCBvcGVuZWQgaW4gbWlkLU1heS48L3A+CiAgICAgICAgPGRpdiBjbGFzcz0ic29jaWFsIiBzdHlsZT0iZmxvYXQ6bGVmdCI+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzPSdzdF9mYmxpa2VfaGNvdW50JyBkaXNwbGF5VGV4dD0nRmFjZWJvb2sgTGlrZScgc3RfdXJsPSJodHRwOi8vW1BvcnRhbDpVcmxdL25ld3Mvb25lLW1hbi1hdXRvLXJlcGFpci1zaG9wLW9wZW5zLWluLXdlc3QtbG9uZ3ZpZXctMTMzNzkvIj48L3NwYW4+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzPSdzdF90d2l0dGVyX2hjb3VudCcgZGlzcGxheVRleHQ9J1R3ZWV0JyBzdF91cmw9Imh0dHA6Ly9bUG9ydGFsOlVybF0vbmV3cy9vbmUtbWFuLWF1dG8tcmVwYWlyLXNob3Atb3BlbnMtaW4td2VzdC1sb25ndmlldy0xMzM3OS8iPjwvc3Bhbj4KICAgICAgICAgICAgPHNwYW4gY2xhc3M9J3N0X3BsdXNvbmVfaGNvdW50JyBkaXNwbGF5VGV4dD0nR29vZ2xlICsxJyBzdF91cmw9Imh0dHA6Ly9bUG9ydGFsOlVybF0vbmV3cy9vbmUtbWFuLWF1dG8tcmVwYWlyLXNob3Atb3BlbnMtaW4td2VzdC1sb25ndmlldy0xMzM3OS8iPjwvc3Bhbj4KPHNwYW4gY2xhc3M9J3N0X3BpbnRlcmVzdF9oY291bnQnIGRpc3BsYXlUZXh0PSdQaW50ZXJlc3QnIHN0X3VybD0iaHR0cDovL1tQb3J0YWw6VXJsXSI+PC9zcGFuPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImJvdHRvbS1idXR0b24iIHN0eWxlPSJmbG9hdDpyaWdodDtwYWRkaW5nLXRvcDo1cHg7Ij4KICAgICAgICAgICAgPGEgaHJlZj0iL25ld3Mvb25lLW1hbi1hdXRvLXJlcGFpci1zaG9wLW9wZW5zLWluLXdlc3QtbG9uZ3ZpZXctMTMzNzkvIj5SRUFEIE1PUkUgJmd0OyZndDs8L2E+CiAgICAgICAgPC9kaXY+Cgk8L2Rpdj4KCTxkaXYgY2xhc3M9ImNsZWFyIj48L2Rpdj4KPC9kaXY+PGRpdiBjbGFzcz0icG9zdCI+Cgk8ZGl2IGNsYXNzPSJ0aHVtYiI+CgkJPGEgaHJlZj0iL25ld3MvYXV0by1yZXBhaXItc2hvcC1yZXZva2VkLW9mLWxpY2Vuc2UtMTI2MjIvIj48aW1nIHNyYz0ifi9wb3J0YWxzLzE0L0ltYWdlcy9BdXRvU2l6ZS92Znh2YWVoeXNzbXJfcy5qcGciIGFsdD0iIiB0aXRsZT0iIiBib3JkZXI9IjAiPjwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iY29udGVudCI+CiAgICAgICAgIDxhIGhyZWY9Ii9uZXdzLyIgc3R5bGU9ImZvbnQtc2l6ZToxMXB4OyI+TmV3czwvYT4KCQk8aDI+PGEgaHJlZj0iL25ld3MvYXV0by1yZXBhaXItc2hvcC1yZXZva2VkLW9mLWxpY2Vuc2UtMTI2MjIvIj5BdXRvIFJlcGFpciBTaG9wIFJldm9rZWQgb2YgTGljZW5zZTwvYT48L2gyPgoJCTxwPlF1aW5jeSBhdXRvIHJlcGFpciBzaG9wIGlzIG9mZmljaWFsbHkgb3V0IG9mIGJ1c2luZXNzLCBhY2NvcmRpbmcgdG8gdGhlIHN0YXRlISBCdXNpbmVzcyBvd25lciBKYW1lcyBEZW5uaXMgQ29yZXkgb2YgQ29yZXnigJlzIEF1dG9tb3RpdmUgYW5kIFNtb2cgaXMgZm91bmQgaW4gRWFzdCBRdWluY3kuIEhlIHdhcyBmaW5lZCBmb3IgdmFyaW91cyB2aW9sYXRpb25zIHRoYXQgbm93IGFtb3VudHMgdG8gJDksMzkwIGZvciBpbnZlc3RpZ2F0aW9ucyBhbmQgY291cnQgY29zdHMuIEFzIG9mIGxhc3QuLi48L3A+CiAgICAgICAgPGRpdiBjbGFzcz0ic29jaWFsIiBzdHlsZT0iZmxvYXQ6bGVmdCI+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzPSdzdF9mYmxpa2VfaGNvdW50JyBkaXNwbGF5VGV4dD0nRmFjZWJvb2sgTGlrZScgc3RfdXJsPSJodHRwOi8vW1BvcnRhbDpVcmxdL25ld3MvYXV0by1yZXBhaXItc2hvcC1yZXZva2VkLW9mLWxpY2Vuc2UtMTI2MjIvIj48L3NwYW4+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzPSdzdF90d2l0dGVyX2hjb3VudCcgZGlzcGxheVRleHQ9J1R3ZWV0JyBzdF91cmw9Imh0dHA6Ly9bUG9ydGFsOlVybF0vbmV3cy9hdXRvLXJlcGFpci1zaG9wLXJldm9rZWQtb2YtbGljZW5zZS0xMjYyMi8iPjwvc3Bhbj4KICAgICAgICAgICAgPHNwYW4gY2xhc3M9J3N0X3BsdXNvbmVfaGNvdW50JyBkaXNwbGF5VGV4dD0nR29vZ2xlICsxJyBzdF91cmw9Imh0dHA6Ly9bUG9ydGFsOlVybF0vbmV3cy9hdXRvLXJlcGFpci1zaG9wLXJldm9rZWQtb2YtbGljZW5zZS0xMjYyMi8iPjwvc3Bhbj4KPHNwYW4gY2xhc3M9J3N0X3BpbnRlcmVzdF9oY291bnQnIGRpc3BsYXlUZXh0PSdQaW50ZXJlc3QnIHN0X3VybD0iaHR0cDovL1tQb3J0YWw6VXJsXSI+PC9zcGFuPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImJvdHRvbS1idXR0b24iIHN0eWxlPSJmbG9hdDpyaWdodDtwYWRkaW5nLXRvcDo1cHg7Ij4KICAgICAgICAgICAgPGEgaHJlZj0iL25ld3MvYXV0by1yZXBhaXItc2hvcC1yZXZva2VkLW9mLWxpY2Vuc2UtMTI2MjIvIj5SRUFEIE1PUkUgJmd0OyZndDs8L2E+CiAgICAgICAgPC9kaXY+Cgk8L2Rpdj4KCTxkaXYgY2xhc3M9ImNsZWFyIj48L2Rpdj4KPC9kaXY+PGRpdiBzdHlsZT0iZmxvYXQ6cmlnaHQiPjxhIGhyZWY9Ii9hcnRpY2xlcy8iPlZJRVcgTU9SRSAmZ3Q7Jmd0OzwvYT48L2Rpdj4KPGRpdiBjbGFzcz0iY2xlYXIiPjwvZGl2PmQCBg8PFgIfAWhkFgICAg9kFgICAg8WAh8BaBYGZg8WAh8FBQRFZGl0ZAIBDxYCHwUFBlVwZGF0ZWQCAg8WAh8FBQZDYW5jZWxkAgsPZBYGAgIPZBYEZg8PFgIfAWhkZAICD2QWAgIBDw9kFgIfCAUSTW9kREJRQ2l0eUxpc3RNYXBDFgICAQ9kFgpmDxYCHwAFQzxoMSBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyI+RmluZCBDYXIgUmVwYWlyIFNob3BzIE5lYXIgWW91PC9oMT5kAgQPFgIfAAUOUG9wdWxhciBDaXRpZXNkAgYPFgIfCQIsFlgCAQ9kFgJmDxUBIjxhIGhyZWY9Ii9hdGxhbnRhLWdhLyI+QXRsYW50YTwvYT5kAgIPZBYCZg8VASA8YSBocmVmPSIvYXVzdGluLXR4LyI+QXVzdGluPC9hPmQCAw9kFgJmDxUBJjxhIGhyZWY9Ii9iYWx0aW1vcmUtbWQvIj5CYWx0aW1vcmU8L2E+ZAIED2QWAmYPFQEePGEgaHJlZj0iL2Jyb254LW55LyI+QnJvbng8L2E+ZAIFD2QWAmYPFQEkPGEgaHJlZj0iL2Jyb29rbHluLW55LyI+QnJvb2tseW48L2E+ZAIGD2QWAmYPFQEiPGEgaHJlZj0iL2J1ZmZhbG8tbnkvIj5CdWZmYWxvPC9hPmQCBw9kFgJmDxUBJjxhIGhyZWY9Ii9jaGFybG90dGUtbmMvIj5DaGFybG90dGU8L2E+ZAIID2QWAmYPFQEiPGEgaHJlZj0iL2NoaWNhZ28taWwvIj5DaGljYWdvPC9hPmQCCQ9kFgJmDxUBKDxhIGhyZWY9Ii9jaW5jaW5uYXRpLW9oLyI+Q2luY2lubmF0aTwvYT5kAgoPZBYCZg8VASY8YSBocmVmPSIvY2xldmVsYW5kLW9oLyI+Q2xldmVsYW5kPC9hPmQCCw9kFgJmDxUBJDxhIGhyZWY9Ii9jb2x1bWJ1cy1vaC8iPkNvbHVtYnVzPC9hPmQCDA9kFgJmDxUBIDxhIGhyZWY9Ii9kYWxsYXMtdHgvIj5EYWxsYXM8L2E+ZAIND2QWAmYPFQEgPGEgaHJlZj0iL2RlbnZlci1jby8iPkRlbnZlcjwvYT5kAg4PZBYCZg8VASI8YSBocmVmPSIvZGV0cm9pdC1taS8iPkRldHJvaXQ8L2E+ZAIPD2QWAmYPFQEiPGEgaHJlZj0iL2VsLXBhc28tdHgvIj5FbCBQYXNvPC9hPmQCEA9kFgJmDxUBMjxhIGhyZWY9Ii9mb3J0LWxhdWRlcmRhbGUtZmwvIj5Gb3J0IExhdWRlcmRhbGU8L2E+ZAIRD2QWAmYPFQEoPGEgaHJlZj0iL2ZvcnQtd29ydGgtdHgvIj5Gb3J0IFdvcnRoPC9hPmQCEg9kFgJmDxUBIjxhIGhyZWY9Ii9ob3VzdG9uLXR4LyI+SG91c3RvbjwvYT5kAhMPZBYCZg8VASw8YSBocmVmPSIvaW5kaWFuYXBvbGlzLWluLyI+SW5kaWFuYXBvbGlzPC9hPmQCFA9kFgJmDxUBLDxhIGhyZWY9Ii9qYWNrc29udmlsbGUtZmwvIj5KYWNrc29udmlsbGU8L2E+ZAIVD2QWAmYPFQEmPGEgaHJlZj0iL2xhcy12ZWdhcy1udi8iPkxhcyBWZWdhczwvYT5kAhYPZBYCZg8VASo8YSBocmVmPSIvbG9zLWFuZ2VsZXMtY2EvIj5Mb3MgQW5nZWxlczwvYT5kAhcPZBYCZg8VASg8YSBocmVmPSIvbG91aXN2aWxsZS1reS8iPkxvdWlzdmlsbGU8L2E+ZAIYD2QWAmYPFQEiPGEgaHJlZj0iL21lbXBoaXMtdG4vIj5NZW1waGlzPC9hPmQCGQ9kFgJmDxUBHjxhIGhyZWY9Ii9taWFtaS1mbC8iPk1pYW1pPC9hPmQCGg9kFgJmDxUBJjxhIGhyZWY9Ii9taWx3YXVrZWUtd2kvIj5NaWx3YXVrZWU8L2E+ZAIbD2QWAmYPFQEqPGEgaHJlZj0iL21pbm5lYXBvbGlzLW1uLyI+TWlubmVhcG9saXM8L2E+ZAIcD2QWAmYPFQEkPGEgaHJlZj0iL25ldy15b3JrLW55LyI+TmV3IFlvcms8L2E+ZAIdD2QWAmYPFQEiPGEgaHJlZj0iL29ybGFuZG8tZmwvIj5PcmxhbmRvPC9hPmQCHg9kFgJmDxUBLDxhIGhyZWY9Ii9waGlsYWRlbHBoaWEtcGEvIj5QaGlsYWRlbHBoaWE8L2E+ZAIfD2QWAmYPFQEiPGEgaHJlZj0iL3Bob2VuaXgtYXovIj5QaG9lbml4PC9hPmQCIA9kFgJmDxUBKDxhIGhyZWY9Ii9waXR0c2J1cmdoLXBhLyI+UGl0dHNidXJnaDwvYT5kAiEPZBYCZg8VASQ8YSBocmVmPSIvcG9ydGxhbmQtb3IvIj5Qb3J0bGFuZDwvYT5kAiIPZBYCZg8VASg8YSBocmVmPSIvc2FjcmFtZW50by1jYS8iPlNhY3JhbWVudG88L2E+ZAIjD2QWAmYPFQEqPGEgaHJlZj0iL3NhaW50LWxvdWlzLW1vLyI+U2FpbnQgTG91aXM8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ASs8YSBocmVmPSIvd2VzdC12aXJnaW5pYS8iPldlc3QgVmlyZ2luaWE8L2E+ZAIyD2QWAmYPFQEjPGEgaHJlZj0iL3dpc2NvbnNpbi8iPldpc2NvbnNpbjwvYT5kAjMPZBYCZg8VAR88YSBocmVmPSIvd3lvbWluZy8iPld5b21pbmc8L2E+ZAIMDxYCHwAFXDxhIGhyZWY9Ii9hdXRvLXJlcGFpci1zZXJ2aWNlcy8iIGNsYXNzPSJmdWxsLWJ1dHRvbiI+QnJvd3NlIENhciBSZXBhaXIgU2hvcHMgTmVhciBZb3Ugwrs8L2E+ZAIED2QWBGYPDxYCHwFoZGQCAg9kFgICAQ8PZBYCHwgFEU1vZERCUUFCVGV4dEhUTUxDFgICAQ9kFgJmDxYCHwAFwQI8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+PCEtLQpnb29nbGVfYWRfY2xpZW50ID0gImNhLXB1Yi00MTMwMjE2NTAyMjQ2MDI1IjsKLyogQXV0b1JlcGFpci5uZXQsIEhQLCAzMDB4MjUwLCBJc2xhbmQgKi8KZ29vZ2xlX2FkX3Nsb3QgPSAiMzkxNjEwMjA2MiI7Cmdvb2dsZV9hZF93aWR0aCA9IDMwMDsKZ29vZ2xlX2FkX2hlaWdodCA9IDI1MDsKLy8tLT4KPC9zY3JpcHQ+CjxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0IgpzcmM9Imh0dHA6Ly9wYWdlYWQyLmdvb2dsZXN5bmRpY2F0aW9uLmNvbS9wYWdlYWQvc2hvd19hZHMuanMiPgo8L3NjcmlwdD5kAgYPZBYEZg8PFgIfAWhkZAICD2QWAgIBDw9kFgIfCAULTW9kRE5OSFRNTENkAg0PZBYCAgIPZBYCZg9kFgICAQ8PZBYCHwgFC01vZEROTkhUTUxDZAIPDxYCHwgFFkxvZ2luUGFuZSBETk5FbXB0eVBhbmVkAgoPFCsAAhQrAANkZGRkZBgBBSBkbm4kY3RyMTcxNSRDaXR5TGlzdE1hcE1vZHVsZSRtdg8PZAIBZA==" />
+</div>
+
+
+<script src="/js/dnncore.js" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=t9ICJ5S7L3fnOtFxQoMYkYtqX9zUi_R0JFP6mPLBmbIKVAl2kKB3fAzRuMmTWciHsoudp1JCQILPZGqNu9y9-1Msn4-he0ySuEypNV_dRBCxC27YCNWedaSFJIDLPe55cjLSn-tR-UGS0tx-Hnb6fOSba-Ty1ej1qWm9fg2&amp;t=ffffffff940d030f" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+	
+	
+
+<div id="fb-root"></div>
+<script>    
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=275075312506103";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));
+</script>
+
+<script src="/portals/_default/skins/RapidDD-Generic/js/scripts.js" type="text/javascript"></script>
+<script src="/portals/_default/skins/RapidDD-Generic/js/coda-slider.1.1.1.pack.js" type="text/javascript"></script>
+<script src="/portals/_default/skins/RapidDD-Generic/js/jquery-easing-compatibility.1.2.pack.js" type="text/javascript"></script>
+<script src="/portals/_default/skins/RapidDD-Generic/js/jquery-easing-1.3.pack.js" type="text/javascript"></script>
+<script src="/portals/_default/skins/RapidDD-Generic/js/jquery.uniform.js" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="/portals/_default/skins/RapidDD-Generic/uniform.default.css" />
+
+<div style="margin:auto; text-align:center; background-color:#FFFFFF; width:1101px;">
+    <div id="dnn_ControlPanel">
+
+</div>
+</div>
+
+<div id="wrapper">
+		
+	<div id="dnn_header">           
+
+	<div id="dnn_ctr1712_ContentPane"><!-- Start_Module_1712 --><div id="dnn_ctr1712_ModuleContent" class="ModDNNHTMLC">
+	<div id="dnn_ctr1712_HtmlModule_lblContent" class="Normal">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+	    <td valign="bottom">	
+		    <a href="http://www.autorepair.net"><img src="/portals/14/images/logo.png" alt="" title=""></a>
+	    </td>
+			
+	    <td valign="bottom" width="450">							
+				    <input id="search-what" class="default-value" value="Find what?" size="27" onkeyup="if(event.keyCode == 13){$('#search-de').click();}" type="text">
+				    <input id="search-where" name="" class="default-value" value="Find where?" size="27" onkeyup="if(event.keyCode == 13){$('#search-de').click();}" type="text">
+				    <input class="small-circle-button" value="GO" onclick="window.location='/search/?what=' + document.getElementById('search-what').value + '&amp;where=' + document.getElementById('search-where').value;return false;" type="submit">                                     
+			    <div class="clear"></div>
+			    <div id="header-social">
+				    <div style="text-align: center;"><strong><em>Welcome to AutoRepair.net! <a href="#" id="login-modal-button">Log in</a> or <a href="#" id="join-modal-button">Join</a> the community.</em></strong>
+                        <div class="social-buttons">
+                            <span class="st_fblike_hcount" displaytext="Facebook Like" st_url="http://www.facebook.com/pages/FindAutoRepair/308544852566882"></span>
+                            <span class="st_twitter_hcount" displaytext="Tweet" st_url="http://www.autorepair.net"></span>
+                            <span class="st_plusone_hcount" displaytext="Google +1" st_url="http://www.autorepair.net"></span>
+<span class='st_pinterest_hcount' displayText='Pinterest' st_url="http://www.autorepair.net"></span>
+                        </div>
+                    </div>
+			    </div>		
+		    </td>
+	    </tr>
+    </tbody>
+</table>
+</div>
+
+</div><!-- End_Module_1712 --></div>
+</div><!-- end #header -->
+		
+	<div id="container">
+        		
+		<div id="dnn_menu">				
+		<div id="dnn_ctr1713_ContentPane"><!-- Start_Module_1713 --><div id="dnn_ctr1713_ModuleContent" class="ModDNNHTMLC">
+	<div id="dnn_ctr1713_HtmlModule_lblContent" class="Normal">
+	<ul>
+	<li class="first"><a href="http://www.autorepair.net">Home</a></li>
+	<li><a href="http://www.autorepair.net/auto-repair-services/">Auto Repair Services</a></li>
+    <li><a href="/auto-repair-resources/">Auto Repair Resources</a></li><li><a href="/news/">News</a></li>
+</ul>
+</div>
+
+</div><!-- End_Module_1713 --></div>
+</div><!-- end #menu -->
+			
+		<div id="breadcrumbs">
+		    <div id="breadcrumb">
+			    
+ 
+		    </div>
+        </div>
+		
+		<div id="dnn_ContentPane">   
+             
+		
+<div class="block">
+    <div id="dnn_ctr1719_ContentPane"><!-- Start_Module_1719 --><div id="dnn_ctr1719_ModuleContent" class="ModDBQContentSliderC">
+	
+
+<div class="slider-wrap">
+	<div id="main-photo-slider" class="csw">
+		<div class="panelContainerOverflow" style="overflow: hidden;width: 626px; height: 470px;">
+		<div class="panelContainer">
+			
+	                   <div class="panel" title='Lawmakers Weigh in on Auto Repair Debate'>
+	                       <div class="wrapper">
+					        <img src="/portals/14/Images/AutoSize/xqgkwofhzwkb_l.jpg" alt="" />
+	                           <div class="photo-meta-data">
+						        <h2><a href="/news/lawmakers-weigh-in-on-auto-repair-debate-13571/">Lawmakers Weigh in on Auto Repair Debate</a></h2>
+						        <p>With laws delivering conflicting messages, state lawmakers are trying to determine how to proceed.</p>
+						        <div class="bottom-button"><a href="/news/lawmakers-weigh-in-on-auto-repair-debate-13571/">READ MORE &gt;&gt;</a></div>
+					        </div>
+				        </div>
+			        </div>
+	               
+	                   <div class="panel" title='Auto Repair Shop Offering Free Advice'>
+	                       <div class="wrapper">
+					        <img src="/portals/14/Images/AutoSize/vnmrkjxgsjux_l.jpg" alt="" />
+	                           <div class="photo-meta-data">
+						        <h2><a href="/news/auto-repair-shop-offering-free-advice-13542/">Auto Repair Shop Offering Free Advice</a></h2>
+						        <p>It is reported that the auto repair industry will bring in an estimated 53 million dollars by the year 2015. Studies show that consumers are also keeping their cars longer, resulting in potential higher costs for repair and maintenance.</p>
+						        <div class="bottom-button"><a href="/news/auto-repair-shop-offering-free-advice-13542/">READ MORE &gt;&gt;</a></div>
+					        </div>
+				        </div>
+			        </div>
+	               
+	                   <div class="panel" title='Hail Damage Sends Many to Repair Shop'>
+	                       <div class="wrapper">
+					        <img src="/portals/14/Images/AutoSize/nebzfakduqsf_l.jpg" alt="" />
+	                           <div class="photo-meta-data">
+						        <h2><a href="/news/hail-damage-sends-many-to-repair-shop-13493/">Hail Damage Sends Many to Repair Shop</a></h2>
+						        <p>During the summer months it is not uncommon for insurance companies and auto body shops to field many claims for damage caused by hail.</p>
+						        <div class="bottom-button"><a href="/news/hail-damage-sends-many-to-repair-shop-13493/">READ MORE &gt;&gt;</a></div>
+					        </div>
+				        </div>
+			        </div>
+	               
+	                   <div class="panel" title='Repair Shop on Wheels'>
+	                       <div class="wrapper">
+					        <img src="/portals/14/Images/AutoSize/hhdewwzfqhjg_l.jpg" alt="" />
+	                           <div class="photo-meta-data">
+						        <h2><a href="/news/repair-shop-on-wheels-13494/">Repair Shop on Wheels</a></h2>
+						        <p>Customers looking to have their car repaired in Racine now have an option of having the car repair shop come to them. Steve Pfaff started Pfaff’s Garage to Go, a mobile repair shop.</p>
+						        <div class="bottom-button"><a href="/news/repair-shop-on-wheels-13494/">READ MORE &gt;&gt;</a></div>
+					        </div>
+				        </div>
+			        </div>
+	               
+	                   <div class="panel" title='Avoiding Common Auto Repair Scams'>
+	                       <div class="wrapper">
+					        <img src="/portals/14/Images/AutoSize/jqdzcuhaziuw_l.jpg" alt="" />
+	                           <div class="photo-meta-data">
+						        <h2><a href="/news/avoiding-common-auto-repair-scams-13448/">Avoiding Common Auto Repair Scams</a></h2>
+						        <p>While most mechanics run perfectly honest shops, there are things that consumers need to know before taking their car to the repair shop.</p>
+						        <div class="bottom-button"><a href="/news/avoiding-common-auto-repair-scams-13448/">READ MORE &gt;&gt;</a></div>
+					        </div>
+				        </div>
+			        </div>
+	               		
+		</div>
+		</div>
+	</div>
+
+	<div id="movers-row">
+        
+                <div class="thumb-wrap">
+                    <div class="arrow-up"></div>
+                    <div class="img-crop">
+                        <a href="#1" class="cross-link"><img src="/portals/14/Images/AutoSize/xqgkwofhzwkb_t.jpg" class="nav-thumb" alt="temp-thumb"></a>
+                    </div> 
+                    Lawmakers Weigh in on Auto Repair Debate
+                </div>
+            
+                <div class="thumb-wrap">
+                    <div class="arrow-up"></div>
+                    <div class="img-crop">
+                        <a href="#2" class="cross-link"><img src="/portals/14/Images/AutoSize/vnmrkjxgsjux_t.jpg" class="nav-thumb" alt="temp-thumb"></a>
+                    </div> 
+                    Auto Repair Shop Offering Free Advice
+                </div>
+            
+                <div class="thumb-wrap">
+                    <div class="arrow-up"></div>
+                    <div class="img-crop">
+                        <a href="#3" class="cross-link"><img src="/portals/14/Images/AutoSize/nebzfakduqsf_t.jpg" class="nav-thumb" alt="temp-thumb"></a>
+                    </div> 
+                    Hail Damage Sends Many to Repair Shop
+                </div>
+            
+                <div class="thumb-wrap">
+                    <div class="arrow-up"></div>
+                    <div class="img-crop">
+                        <a href="#4" class="cross-link"><img src="/portals/14/Images/AutoSize/hhdewwzfqhjg_t.jpg" class="nav-thumb" alt="temp-thumb"></a>
+                    </div> 
+                    Repair Shop on Wheels
+                </div>
+            
+                <div class="thumb-wrap">
+                    <div class="arrow-up"></div>
+                    <div class="img-crop">
+                        <a href="#5" class="cross-link"><img src="/portals/14/Images/AutoSize/jqdzcuhaziuw_t.jpg" class="nav-thumb" alt="temp-thumb"></a>
+                    </div> 
+                    Avoiding Common Auto Repair Scams
+                </div>
+            
+		<div class="clear"></div>
+	</div>				
+</div>
+</div><!-- End_Module_1719 --></div>
+</div>
+<div class="main-title"><span id="dnn_ctr1720_dnnTITLE_lblTitle" class="Head">Recent Posts</span>
+
+
+</div>
+<div class="block">
+    <div id="dnn_ctr1720_ContentPane"><!-- Start_Module_1720 --><div id="dnn_ctr1720_ModuleContent" class="ModDBQContentListDynamicC">
+	<div class="post">
+	<div class="thumb">
+		<a href="/news/one-man-auto-repair-shop-opens-in-west-longview-13379/"><img src="/portals/14/Images/AutoSize/bbrvxdgkpgxs_s.jpg" alt="" title="" border="0"></a>
+	</div>
+	<div class="content">
+         <a href="/news/" style="font-size:11px;">News</a>
+		<h2><a href="/news/one-man-auto-repair-shop-opens-in-west-longview-13379/">One Man Auto Repair Shop Opens in West Longview</a></h2>
+		<p>John Kornburst took his 15 years of auto repair experience and opened his own shop in West Longview, Washington. The name of the shop is K&K Auto Repair. The shop opened in mid-May.</p>
+        <div class="social" style="float:left">
+            <span class='st_fblike_hcount' displayText='Facebook Like' st_url="http://www.autorepair.net/news/one-man-auto-repair-shop-opens-in-west-longview-13379/"></span>
+            <span class='st_twitter_hcount' displayText='Tweet' st_url="http://www.autorepair.net/news/one-man-auto-repair-shop-opens-in-west-longview-13379/"></span>
+            <span class='st_plusone_hcount' displayText='Google +1' st_url="http://www.autorepair.net/news/one-man-auto-repair-shop-opens-in-west-longview-13379/"></span>
+<span class='st_pinterest_hcount' displayText='Pinterest' st_url="http://www.autorepair.net"></span>
+        </div>
+        <div class="bottom-button" style="float:right;padding-top:5px;">
+            <a href="/news/one-man-auto-repair-shop-opens-in-west-longview-13379/">READ MORE &gt;&gt;</a>
+        </div>
+	</div>
+	<div class="clear"></div>
+</div><div class="post">
+	<div class="thumb">
+		<a href="/news/auto-repair-shop-revoked-of-license-12622/"><img src="/portals/14/Images/AutoSize/vfxvaehyssmr_s.jpg" alt="" title="" border="0"></a>
+	</div>
+	<div class="content">
+         <a href="/news/" style="font-size:11px;">News</a>
+		<h2><a href="/news/auto-repair-shop-revoked-of-license-12622/">Auto Repair Shop Revoked of License</a></h2>
+		<p>Quincy auto repair shop is officially out of business, according to the state! Business owner James Dennis Corey of Corey’s Automotive and Smog is found in East Quincy. He was fined for various violations that now amounts to $9,390 for investigations and court costs. As of last...</p>
+        <div class="social" style="float:left">
+            <span class='st_fblike_hcount' displayText='Facebook Like' st_url="http://www.autorepair.net/news/auto-repair-shop-revoked-of-license-12622/"></span>
+            <span class='st_twitter_hcount' displayText='Tweet' st_url="http://www.autorepair.net/news/auto-repair-shop-revoked-of-license-12622/"></span>
+            <span class='st_plusone_hcount' displayText='Google +1' st_url="http://www.autorepair.net/news/auto-repair-shop-revoked-of-license-12622/"></span>
+<span class='st_pinterest_hcount' displayText='Pinterest' st_url="http://www.autorepair.net"></span>
+        </div>
+        <div class="bottom-button" style="float:right;padding-top:5px;">
+            <a href="/news/auto-repair-shop-revoked-of-license-12622/">READ MORE &gt;&gt;</a>
+        </div>
+	</div>
+	<div class="clear"></div>
+</div><div style="float:right"><a href="/articles/">VIEW MORE &gt;&gt;</a></div>
+<div class="clear"></div>
+
+<div class="pagination">
+	
+<div style="font-size:80%;">
+    <div style="float:left;width:100px;">
+        
+    </div>
+
+    <div style="float:right;width:500px;text-align:right;">
+        
+        
+    </div>
+</div>
+<div style="clear:both"></div>
+</div>
+</div><!-- End_Module_1720 --></div>
+</div></div><!-- end #main -->
+			
+		<div id="dnn_sidebar">
+		
+<div class="block location" style="font-size: 11px;">
+    <div id="dnn_ctr1715_ContentPane"><!-- Start_Module_1715 --><div id="dnn_ctr1715_ModuleContent" class="ModDBQCityListMapC">
+	<h1 style="text-align: center;">Find Car Repair Shops Near You</h1>
+
+
+
+<div class="city-list-map">
+    <p><strong>Popular Cities</strong></p>
+    
+            <ul class="">
+        
+		    <li><a href="/atlanta-ga/">Atlanta</a></li>
+        
+		    <li><a href="/austin-tx/">Austin</a></li>
+        
+		    <li><a href="/baltimore-md/">Baltimore</a></li>
+        
+		    <li><a href="/bronx-ny/">Bronx</a></li>
+        
+		    <li><a href="/brooklyn-ny/">Brooklyn</a></li>
+        
+		    <li><a href="/buffalo-ny/">Buffalo</a></li>
+        
+		    <li><a href="/charlotte-nc/">Charlotte</a></li>
+        
+		    <li><a href="/chicago-il/">Chicago</a></li>
+        
+		    <li><a href="/cincinnati-oh/">Cincinnati</a></li>
+        
+		    <li><a href="/cleveland-oh/">Cleveland</a></li>
+        
+		    <li><a href="/columbus-oh/">Columbus</a></li>
+        
+		    <li><a href="/dallas-tx/">Dallas</a></li>
+        
+		    <li><a href="/denver-co/">Denver</a></li>
+        
+		    <li><a href="/detroit-mi/">Detroit</a></li>
+        
+		    <li><a href="/el-paso-tx/">El Paso</a></li>
+        
+		    <li><a href="/fort-lauderdale-fl/">Fort Lauderdale</a></li>
+        
+		    <li><a href="/fort-worth-tx/">Fort Worth</a></li>
+        
+		    <li><a href="/houston-tx/">Houston</a></li>
+        
+		    <li><a href="/indianapolis-in/">Indianapolis</a></li>
+        
+		    <li><a href="/jacksonville-fl/">Jacksonville</a></li>
+        
+		    <li><a href="/las-vegas-nv/">Las Vegas</a></li>
+        
+		    <li><a href="/los-angeles-ca/">Los Angeles</a></li>
+        
+		    <li><a href="/louisville-ky/">Louisville</a></li>
+        
+		    <li><a href="/memphis-tn/">Memphis</a></li>
+        
+		    <li><a href="/miami-fl/">Miami</a></li>
+        
+		    <li><a href="/milwaukee-wi/">Milwaukee</a></li>
+        
+		    <li><a href="/minneapolis-mn/">Minneapolis</a></li>
+        
+		    <li><a href="/new-york-ny/">New York</a></li>
+        
+		    <li><a href="/orlando-fl/">Orlando</a></li>
+        
+		    <li><a href="/philadelphia-pa/">Philadelphia</a></li>
+        
+		    <li><a href="/phoenix-az/">Phoenix</a></li>
+        
+		    <li><a href="/pittsburgh-pa/">Pittsburgh</a></li>
+        
+		    <li><a href="/portland-or/">Portland</a></li>
+        
+		    <li><a href="/sacramento-ca/">Sacramento</a></li>
+        
+		    <li><a href="/saint-louis-mo/">Saint Louis</a></li>
+        
+		    <li><a href="/saint-paul-mn/">Saint Paul</a></li>
+        
+		    <li><a href="/san-antonio-tx/">San Antonio</a></li>
+        
+		    <li><a href="/san-diego-ca/">San Diego</a></li>
+        
+		    <li><a href="/san-francisco-ca/">San Francisco</a></li>
+        
+		    <li><a href="/san-jose-ca/">San Jose</a></li>
+        
+		    <li><a href="/seattle-wa/">Seattle</a></li>
+        
+		    <li><a href="/tampa-fl/">Tampa</a></li>
+        
+		    <li><a href="/tucson-az/">Tucson</a></li>
+        
+		    <li><a href="/washington-dc/">Washington</a></li>
+        
+            </ul>
+        
+    
+</div>
+<div class="clear"></div>
+<div class="center">-- <a href="#" onclick="CityListMapToggleCities();return false;">View <span id="city-map-more-less">More</span></a> --</div>
+
+
+        <div id="city-map-popular-cities" class="city-list-map post-load-hide">
+            <br />
+            <p><strong style="color: rgb(57, 106, 49);">States</strong></p>
+            
+                    <ul class="">
+                
+		            <li><a href="/alabama/">Alabama</a></li>
+                
+		            <li><a href="/alaska/">Alaska</a></li>
+                
+		            <li><a href="/arizona/">Arizona</a></li>
+                
+		            <li><a href="/arkansas/">Arkansas</a></li>
+                
+		            <li><a href="/california/">California</a></li>
+                
+		            <li><a href="/colorado/">Colorado</a></li>
+                
+		            <li><a href="/connecticut/">Connecticut</a></li>
+                
+		            <li><a href="/delaware/">Delaware</a></li>
+                
+		            <li><a href="/district-of-columbia/">District of Columbia</a></li>
+                
+		            <li><a href="/florida/">Florida</a></li>
+                
+		            <li><a href="/georgia/">Georgia</a></li>
+                
+		            <li><a href="/hawaii/">Hawaii</a></li>
+                
+		            <li><a href="/idaho/">Idaho</a></li>
+                
+		            <li><a href="/illinois/">Illinois</a></li>
+                
+		            <li><a href="/indiana/">Indiana</a></li>
+                
+		            <li><a href="/iowa/">Iowa</a></li>
+                
+		            <li><a href="/kansas/">Kansas</a></li>
+                
+		            <li><a href="/kentucky/">Kentucky</a></li>
+                
+		            <li><a href="/louisiana/">Louisiana</a></li>
+                
+		            <li><a href="/maine/">Maine</a></li>
+                
+		            <li><a href="/maryland/">Maryland</a></li>
+                
+		            <li><a href="/massachusetts/">Massachusetts</a></li>
+                
+		            <li><a href="/michigan/">Michigan</a></li>
+                
+		            <li><a href="/minnesota/">Minnesota</a></li>
+                
+		            <li><a href="/mississippi/">Mississippi</a></li>
+                
+		            <li><a href="/missouri/">Missouri</a></li>
+                
+		            <li><a href="/montana/">Montana</a></li>
+                
+		            <li><a href="/nebraska/">Nebraska</a></li>
+                
+		            <li><a href="/nevada/">Nevada</a></li>
+                
+		            <li><a href="/new-hampshire/">New Hampshire</a></li>
+                
+		            <li><a href="/new-jersey/">New Jersey</a></li>
+                
+		            <li><a href="/new-mexico/">New Mexico</a></li>
+                
+		            <li><a href="/new-york/">New York</a></li>
+                
+		            <li><a href="/north-carolina/">North Carolina</a></li>
+                
+		            <li><a href="/north-dakota/">North Dakota</a></li>
+                
+		            <li><a href="/ohio/">Ohio</a></li>
+                
+		            <li><a href="/oklahoma/">Oklahoma</a></li>
+                
+		            <li><a href="/oregon/">Oregon</a></li>
+                
+		            <li><a href="/pennsylvania/">Pennsylvania</a></li>
+                
+		            <li><a href="/rhode-island/">Rhode Island</a></li>
+                
+		            <li><a href="/south-carolina/">South Carolina</a></li>
+                
+		            <li><a href="/south-dakota/">South Dakota</a></li>
+                
+		            <li><a href="/tennessee/">Tennessee</a></li>
+                
+		            <li><a href="/texas/">Texas</a></li>
+                
+		            <li><a href="/utah/">Utah</a></li>
+                
+		            <li><a href="/vermont/">Vermont</a></li>
+                
+		            <li><a href="/virginia/">Virginia</a></li>
+                
+		            <li><a href="/washington/">Washington</a></li>
+                
+		            <li><a href="/west-virginia/">West Virginia</a></li>
+                
+		            <li><a href="/wisconsin/">Wisconsin</a></li>
+                
+		            <li><a href="/wyoming/">Wyoming</a></li>
+                
+                    </ul>
+                
+        </div>
+    
+
+<div class="clear"></div>
+<br />
+<a href="/auto-repair-services/" class="full-button">Browse Car Repair Shops Near You »</a>
+
+<script type="text/javascript">
+    function CityListMapToggleCities() {
+        $('#city-map-popular-cities').toggle(200);
+        if ($('#city-map-more-less').text() == "Less") {
+            $('#city-map-more-less').text('More');
+        } else {
+            $('#city-map-more-less').text('Less');
+        }
+    }
+</script>
+</div><!-- End_Module_1715 --></div>
+</div>
+
+<div id="dnn_ctr2290_ContentPane" class="mod-content-pane"><!-- Start_Module_2290 --><div id="dnn_ctr2290_ModuleContent" class="ModDBQABTextHTMLC">
+	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4130216502246025";
+/* AutoRepair.net, HP, 300x250, Island */
+google_ad_slot = "3916102062";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div><!-- End_Module_2290 --></div>
+<div class="bottom-margin-container">
+    <div id="dnn_ctr1717_ContentPane"><!-- Start_Module_1717 --><div id="dnn_ctr1717_ModuleContent" class="ModDNNHTMLC">
+	<div id="dnn_ctr1717_HtmlModule_lblContent" class="Normal">
+	<div class="bottom-margin-container">
+<div class="fb-like-box" data-href="http://www.facebook.com/pages/FindAutoRepair/308544852566882" data-width="300" data-height="290" data-show-faces="true" data-stream="false" data-header="true"></div></div>
+
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 4,
+  interval: 30000,
+  width: 300,
+  height: 300,
+  theme: {
+    shell: {
+      background: '#ffb50e',
+      color: '#000000'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#000000',
+      links: '#0000ff'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    behavior: 'all'
+  }
+}).render().setUser('FindAutoRepair').start();
+</script>
+</div>
+
+</div><!-- End_Module_1717 --></div>
+</div></div><!-- end #sidebar -->
+		
+		<div class="clear"></div>
+	</div><!-- end #container -->	
+		
+</div><!-- end #wrapper -->
+
+<div id="footer-wrapper">
+    <div id="dnn_footer">	  
+    <div id="dnn_ctr1714_ContentPane"><!-- Start_Module_1714 --><div id="dnn_ctr1714_ModuleContent" class="ModDNNHTMLC">
+	<div id="dnn_ctr1714_HtmlModule_lblContent" class="Normal">
+	<table border="0" cellpadding="10" cellspacing="0" width="100%">
+<tbody>
+    <tr>
+		<td valign="top" width="180">
+			<ul class="menu">	
+				<li><a href="http://www.autorepair.net">HOME</a></li>
+				<li><a href="http://www.autorepair.net/auto-repair-services/">AUTO REPAIR SERVICES</a></li>
+				<li><a href="http://www.autorepair.net/news/">NEWS</a></li>
+				<li><a href="http://www.autorepair.net/auto-repair-resources/">AUTO REPAIR RESOURCES</a></li>
+				<li><a href="http://www.autorepair.net/faq/">FAQ</a></li>
+				<li><a href="http://www.autorepair.net/contact-us/">CONTACT</a></li>
+                                <li><a href="http://www.autorepair.net/sitemap/">SITEMAP</a></li>
+			</ul>
+		</td>
+					
+		<td valign="top" width="250">
+			<div class="title">RECENT ARTICLES</div>
+			<ul><li><a href="/news/lawmakers-weigh-in-on-auto-repair-debate-13571/">Lawmakers Weigh in on Auto Repair Debate</a></li><li><a href="/news/auto-repair-shop-offering-free-advice-13542/">Auto Repair Shop Offering Free Advice</a></li><li><a href="/news/hail-damage-sends-many-to-repair-shop-13493/">Hail Damage Sends Many to Repair Shop</a></li><li><a href="/news/repair-shop-on-wheels-13494/">Repair Shop on Wheels</a></li><li><a href="/news/avoiding-common-auto-repair-scams-13448/">Avoiding Common Auto Repair Scams</a></li></ul>
+		</td>
+					
+		<td valign="top" width="245">
+			<h2>SIGN UP</h2>
+			<p style="font-size: 16px;">Get the latest auto repair news<br> delivered straight to your inbox</p>
+			<p>
+				</p>
+					<input name="" value="Enter your email address" class="footer-enter-email default-value" id="newsletter-email" onkeyup="if(event.keyCode == 13){$('#newsletter-signup-button').click();}" size="30" type="text">
+					<input class="small-circle-button" value="GO" onclick="SaveNewsletter();return false;" id="newsletter-signup-button" type="submit"><img id="newsletter-image" style="width: 1px; height: 1px;" src="/NewsletterSignup.aspx" alt="">													
+			<p></p>
+		</td>
+					
+		<td valign="top" width="200">
+			<h2>FIND US</h2>
+			<p><a href="http://www.facebook.com/pages/FindAutoRepair/308544852566882" target="_blank"><img src="/portals/_default/skins/RapidDD-Generic/img/footer-facebook.png" alt="Facebook" title="Facebook"></a>
+					<a href="https://twitter.com/#%21/FindAutoRepair/" target="_blank"><img src="/portals/_default/skins/RapidDD-Generic/img/footer-twitter.png" alt="Twitter" title="Twitter"></a>
+					<a href=""><img src="/portals/_default/skins/RapidDD-Generic/img/footer-share.png" alt="Share" title="Share"></a></p>
+			<ul class="menu2">
+				<li><a href="http://www.autorepair.net/privacy-policy/">PRIVACY POLICY</a></li>
+				<li><a href="http://www.autorepair.net/terms-of-use/">TERMS OF USE</a></li>
+                        </ul>
+                        <br>
+                      <p>© 2012 AutoRepair.net</p>
+		</td>
+	</tr>
+</tbody>
+</table>
+<script type="text/javascript">
+var clicky_site_ids = clicky_site_ids || [];
+clicky_site_ids.push(66589336);
+(function() {
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//static.getclicky.com/js';
+  ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+})();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66589336ns.gif" /></p></noscript>
+
+</div>
+
+</div><!-- End_Module_1714 --></div>
+</div><!-- end #footer -->
+</div>
+
+<div id="dnn_LoginPane" class="LoginPane DNNEmptyPane">
+</div>
+
+<script type="text/javascript">    var switchTo5x = true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">    stLight.options({ publisher: "ur-26ec659b-3157-94bd-a716-8c99328eacff" }); </script>
+
+<script type="text/javascript">
+	$("#mypcal-quickform select, #mypcal-quickform input:checkbox, #mypcal-quickform input:file").uniform();
+</script>
+	<input name="ScrollTop" type="hidden" id="ScrollTop" />
+	<input name="__dnnVariable" type="hidden" id="__dnnVariable" />
+	
+
+
+<script type="text/javascript">
+//<![CDATA[
+document.getElementById('breadcrumbs').setAttribute('style','display:none');//]]>
+</script>
+</form>
+    
+		<!-- LOGIN modal content -->
+		<div id="login-modal-content" style="display: none;">
+			
+			<!-- LOGIN -->
+			<div id="login-content">
+				<div class="left-column">
+					<div class="title">Use a connected account</div>
+					
+					<ul class="login-options">
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/facebook-icon.png" alt="Facebook" /> Facebook</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/twitter-icon.png" alt="Twitter" /> Twitter</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/aol-icon.png" alt="AOL." /> AOL.</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/google-icon.png" alt="Google" /> Google</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/yahoo-icon.png" alt="Yahoo" /> Yahoo</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/linkedin-icon.png" alt="LinkedIn" /> LinkedIn</a></li>
+						<li class="last"><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/hotmail-icon.png" alt="Hotmail" /> Hotmail</a></li>
+					</ul>
+				</div>
+				
+				<div class="right-column">
+					<div class="title2">Login</div>
+					
+					<p><label for="username">Username or email</label>
+					<input type="text" name="username" size="30" /></p>
+					
+					<p><label for="password">Password</label>
+					<input type="password" size="30" /></p>
+					
+					<p><span style="font-size: 11px;"><em><a href="">Forgot your password?</a></em></span></p>
+					
+					<p><input type="submit" value="Log in" /></p>
+					
+					<p><input type="checkbox" /> Remember me</p>
+				
+					<p>...or <a href="#" id="join-modal-button-next">create an account</a></p>
+				</div>
+			</div>
+			
+			<!-- JOIN -->
+			<div id="join-content">
+				<div class="left-column">
+					<div class="title">Connect an account</div>
+					
+					<ul class="login-options">
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/facebook-icon.png" alt="Facebook" /> Facebook</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/twitter-icon.png" alt="Twitter" /> Twitter</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/aol-icon.png" alt="AOL." /> AOL.</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/google-icon.png" alt="Google" /> Google</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/yahoo-icon.png" alt="Yahoo" /> Yahoo</a></li>
+						<li><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/linkedin-icon.png" alt="LinkedIn" /> LinkedIn</a></li>
+						<li class="last"><a href=""><img src="/Portals/_default/Skins/RapidDD-Generic/img/login/hotmail-icon.png" alt="Hotmail" /> Hotmail</a></li>
+					</ul>
+				</div>
+				
+				<div class="right-column">
+					<div class="title2">Join</div>
+					
+					<p><label for="username">Username</label>
+					<input type="text" name="username" size="30" /></p>
+					
+					<p><label for="email">Email</label>
+					<input type="text" name="email" size="30" /></p>
+					
+					<p><label for="password">Password</label>
+					<input type="password" name="password" size="30" /></p>
+					
+					<p><label for="password2">Confirm password</label>
+					<input type="password" name="password2" size="30" /></p>
+			
+					<p><input type="submit" value="Register" /></p>
+				</div>
+			</div>
+				
+			<div class="clear"></div>
+						
+		</div>
+			
+		<script type='text/javascript' src='/Portals/_default/Skins/RapidDD-Generic/js/jquery.simplemodal.js'></script>
+		<script type='text/javascript' src='/Portals/_default/Skins/RapidDD-Generic/js/login.js'></script>
+    	<script src="/portals/_default/skins/RapidDD-Generic/js/view-more-less.js" type="text/javascript"></script>
+    
+   
+</body>
+</html>

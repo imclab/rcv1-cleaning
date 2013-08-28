@@ -224,9 +224,9 @@ HSW.ads.render("TopBanner");
 		<ul tabpage="0" class="arrows">
 			<li tab="1" class="textRight paddingVertical2 paddingRight1 paddingLeft4 bold borderBottom4 colorText1">Artwork</li>
 			<li tab="2" class="textRight paddingVertical2 paddingRight1 paddingLeft4 bold borderBottom4 colorText1">Circus Arts</li>
-			<li tab="3" class="textRight paddingVertical2 paddingRight1 paddingLeft4 bold borderBottom4 colorText2 colorFill1 colored">Comic Books</li>
+			<li tab="3" class="textRight paddingVertical2 paddingRight1 paddingLeft4 bold borderBottom4 colorText1">Comic Books</li>
 			<li tab="4" class="textRight paddingVertical2 paddingRight1 paddingLeft4 bold borderBottom4 colorText1">Literature</li>
-			<li tab="5" class="textRight paddingVertical2 paddingRight1 paddingLeft4 bold borderBottom4 colorText1">Theater</li>
+			<li tab="5" class="textRight paddingVertical2 paddingRight1 paddingLeft4 bold borderBottom4 colorText2 colorFill1 colored">Theater</li>
 		</ul>
 	</div>
 	<div class="unit unitLast colorFill1">
@@ -297,11 +297,11 @@ HSW.ads.render("TopBanner");
 	</div>
 </div>
 			</li>
-			<li tabcontent="3" class="paddingHorizontal1">
+			<li tabcontent="3" class="paddingHorizontal1" style="display:none;">
 <div class="borderBottom1 paddingVertical1">
 <div class="media">
 	<a class="img" href="http://entertainment.howstuffworks.com/arts/comic-books"  omnivars="&c25=CategoryLanding : What's Inside &v39=CategoryLanding : What's Inside " omni="Arts Category Landing : What's Inside : Comic Books : Ctr 1">
-		<img src="http://static.ddmcdn.com/gif/spacer.gif" data-src="http://static.ddmcdn.com/gif/e-movies-comic-book-heroes-90x130.jpg" class="image6 lazy" />
+		<img src="http://static.ddmcdn.com/gif/spacer.gif" data-src="http://static.ddmcdn.com/gif/e-movies-comic-book-heroes-90x130.jpg" class="image6  onDemand" />
 			</a>
 	<div class="bd">
 		<h2 class="regular"><a href="http://entertainment.howstuffworks.com/arts/comic-books"  omnivars="&c25=CategoryLanding : What's Inside &v39=CategoryLanding : What's Inside " omni="Arts Category Landing : What's Inside : Comic Books : Ctr 2">Comic Books</a></h2><p class="marginClearBottom">Comic books have been brought to life in popular Hollywood movies such as 'Batman.' Learn about popular comic books and comic book heroes.
@@ -364,11 +364,11 @@ HSW.ads.render("TopBanner");
 	</div>
 </div>
 			</li>
-			<li tabcontent="5" class="paddingHorizontal1" style="display:none;">
+			<li tabcontent="5" class="paddingHorizontal1">
 <div class="borderBottom1 paddingVertical1">
 <div class="media">
 	<a class="img" href="http://entertainment.howstuffworks.com/arts/theater"  omnivars="&c25=CategoryLanding : What's Inside &v39=CategoryLanding : What's Inside " omni="Arts Category Landing : What's Inside : Theater : Ctr 1">
-		<img src="http://static.ddmcdn.com/gif/spacer.gif" data-src="http://static.ddmcdn.com/gif/e-arts-theatre-90x130.jpg" class="image6  onDemand" />
+		<img src="http://static.ddmcdn.com/gif/spacer.gif" data-src="http://static.ddmcdn.com/gif/e-arts-theatre-90x130.jpg" class="image6 lazy" />
 			</a>
 	<div class="bd">
 		<h2 class="regular"><a href="http://entertainment.howstuffworks.com/arts/theater"  omnivars="&c25=CategoryLanding : What's Inside &v39=CategoryLanding : What's Inside " omni="Arts Category Landing : What's Inside : Theater : Ctr 2">Theater</a></h2><p class="marginClearBottom">Delivering an ovation-worthy performance involves much more than just acting. Learn how costumes, lighting, music and special effects help to bring the stage to life.</p><a class="bold" href="http://entertainment.howstuffworks.com/arts/theater"  omnivars="&c25=CategoryLanding : What's Inside &v39=CategoryLanding : What's Inside " omni="Arts Category Landing : What's Inside : Theater : Ctr 3">See more&nbsp;&raquo;</a>	</div>
@@ -1415,7 +1415,7 @@ else
 <script type="text/javascript">
 /* <![CDATA[ */
 (function()
-{var counter=1;HSW.ui.tabs({widget:$('#WhatsInside'),currentTab:'3',onSelectTab:function()
+{var counter=1;HSW.ui.tabs({widget:$('#WhatsInside'),currentTab:'5',onSelectTab:function()
 {var $currentTabImg=this.widget.find("li[tabcontent='"+this.currentTab+"'] .onDemand");$currentTabImg.displayImage('onDemand');this.widget.find("li[tab='"+this.previousTab+"']").removeClass('colorText2 colorFill1 colored').addClass('colorText1');this.widget.find("li[tabcontent='"+this.previousTab+"']").hide();this.widget.find("li[tab='"+this.currentTab+"']").removeClass('colorText1').addClass('colorText2 colorFill1 colored');this.widget.find("li[tabcontent='"+this.currentTab+"']").show();},onClick:function()
 {if(HSW.ads)
 {HSW.ads.refresh();}

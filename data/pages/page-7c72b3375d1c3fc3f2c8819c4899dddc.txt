@@ -102,8 +102,8 @@ var food_from = 1;
 var hot_from = 1;
 var ourPicks_from = 1;
 var targetID; // keep this in global scope so jquery ajax function can access it
-var totalMusicEvents =12;
-var totalArtsEvents = 32;
+var totalMusicEvents =16;
+var totalArtsEvents = 33;
 var loadMoreArts = 1;
 var loadMoreMusic = 1;
 
@@ -114,7 +114,7 @@ function addClick( activity,objectID,objectType,organizationID,theLink){
 	var objectID = objectID;
 	var objectType = objectType;
 	var organizationID = organizationID;
-	var dateTime = '2013-08-26 18:28:24';
+	var dateTime = '2013-08-27 16:16:52';
 	var theLink = theLink;
 	
 	var theData= "userID=" + userID + "&objectID=" + objectID + "&objectType=" + objectType + "&organizationID=" + organizationID + "&dateTime=" + dateTime + "&link=" + theLink + "&activity=" + activity;
@@ -150,7 +150,7 @@ function getNextEvents( eventType){
 	
 //addClick($userID,$objectID,$objectType,$organizationID,$dateTime,$link,$activity)
 
-var startDate = '2013-08-26';
+var startDate = '2013-08-27';
 var endDate = '';
 var from=0;
 var doTheAjaxCall = 1;
@@ -264,7 +264,7 @@ function addEventReminder(){
 	var eventID = $("#reminderForm_eventID").val();
 	var objectType = 2;
 	var organizationID = "";
-	var dateTime = '2013-08-26 18:28:24';
+	var dateTime = '2013-08-27 16:16:52';
 	var eventDate		= '';
 	var eventTitle		= $("#reminderForm_eventTitle").val();
 	var reminderEmail = $("#reminderEmail").val();
@@ -1070,42 +1070,42 @@ Sep 17  - 6:00 pm </span>
 
 <!-- EVENT DATE -->
 <span class="date">
-Oct 11  thru Oct 13 </span>
+Oct 04  - 8:00 pm </span>
 <!-- MAIN IMAGE THUMBNAIL -->
-<a href="/events/event.php?e=5690" title="View Event Details">
+<a href="/events/event.php?e=5858" title="View Event Details">
 
-<img itemprop="image" src="../media/6015/small.jpg" alt="L'elisir d'amore (The Elixir of Love) Wilmington Delaware" title="L'elisir d'amore (The Elixir of Love)"/>
+<img itemprop="image" src="../media/6229/small.jpg" alt="Aoife O'Donvan featuring special guest The Sweater Set Wilmington Delaware" title="Aoife O'Donvan featuring special guest The Sweater Set"/>
 
 </a>
 
 <div id="loading"></div>
 
 <!-- SECONDARY CATEGORIES -->
-<h2>Classical &amp; Opera</h2>
+<h2>Country, Folk</h2>
 
 <!-- EVENT TITLE -->
-<h3 itemprop="name"><a itemprop="url" href="/events/event.php?e=5690" title="View Event Details">L'elisir d'amore (The Elixir of Love)</a></h3>
+<h3 itemprop="name"><a itemprop="url" href="/events/event.php?e=5858" title="View Event Details">Aoife O'Donvan featuring special guest The Sweater Set</a></h3>
 
 <!-- PLACE TITLE -->
-<h4 itemprop="location">The Grand Opera House</h4>
+<h4 itemprop="location">live @ the baby grand</h4>
 
 <div class="eventActions">
   
   <div class="floatleft">
       	
         <!--  add to mywilmington link -->
-<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5690" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5858" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
 </div><!--floatleft-->
 <div class="floatright">
       
 <!-- SHARE LINK -->
-<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5690" st_title="L'elisir d'amore (The Elixir of Love)"></span>
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5858" st_title="Aoife O'Donvan featuring special guest The Sweater Set"></span>
       
 <!-- set reminder link -->
       <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
       
             <!-- TICKETING LINK -->
-      <a href="http://operade.org/SeasonsTickets/LElisir-damore-The-Elixir-of-Love.htm" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick(4,5690,2,73,'http://operade.org/SeasonsTickets/LElisir-damore-The-Elixir-of-Love.htm');"><span class="custom reminder">Buy Tickets for Event</span></a>
+      <a href="http://www.ticketsatthegrand.org/Performance?Perf_no=2934" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick(4,5858,2,37,'http://www.ticketsatthegrand.org/Performance?Perf_no=2934');"><span class="custom reminder">Buy Tickets for Event</span></a>
   	  </div><!--floatright-->
   
 </div><!--eventActions-->
@@ -1118,7 +1118,59 @@ Oct 11  thru Oct 13 </span>
 
 </li>
 				
-<li class="seeAllEvents"  id="seeAllMusicEvents_button"><a href="events/?searchCategory=2"><span id="getMoreMusic_label">See More <br />Our Picks</span></a></li> 
+<li class="musicEvent" id="event1">
+
+<!-- EVENT DATE -->
+<span class="date">
+Oct 10  - 8:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/event.php?e=5864" title="View Event Details">
+
+<img itemprop="image" src="../media/6231/small.jpg" alt="Hey Marseilles and The Apache Relay Wilmington Delaware" title="Hey Marseilles and The Apache Relay"/>
+
+</a>
+
+<div id="loading"></div>
+
+<!-- SECONDARY CATEGORIES -->
+<h2>Folk, Pop/Rock</h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a itemprop="url" href="/events/event.php?e=5864" title="View Event Details">Hey Marseilles and The Apache Relay</a></h3>
+
+<!-- PLACE TITLE -->
+<h4 itemprop="location">live @ the baby grand</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+      	
+        <!--  add to mywilmington link -->
+<a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink5864" ><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+</div><!--floatleft-->
+<div class="floatright">
+      
+<!-- SHARE LINK -->
+<span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/event.php?e=5864" st_title="Hey Marseilles and The Apache Relay"></span>
+      
+<!-- set reminder link -->
+      <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>
+      
+            <!-- TICKETING LINK -->
+      <a href="http://www.ticketsatthegrand.org/Performance?Perf_no=2910" class="icon icon-tickets eventTicketLink tooltipreminder" target="_blank" onClick="addClick(4,5864,2,37,'http://www.ticketsatthegrand.org/Performance?Perf_no=2910');"><span class="custom reminder">Buy Tickets for Event</span></a>
+  	  </div><!--floatright-->
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+    
+</div><!--eventFlags-->
+
+</li>
+				
+<li class="getMoreEvents"  id="getMoreMusicEvents_button"><a href="javascript:" onClick="getNextEvents( 2)"><span id="getMoreMusic_label">See more <br />IN Picks</span></a></li> 
 	  
                     
 </ul><!--eventList-->
@@ -1183,7 +1235,7 @@ Oct 11  thru Oct 13 </span>
 <span class="date">
 <meta itemprop="startDate" content="2013-01-01T10:00">
 <meta itemprop="endDate" content="2015-12-31T13:45"> 
-Aug 26  thru Sep 05 </span>
+Aug 27  thru Sep 05 </span>
 <!-- MAIN IMAGE THUMBNAIL -->
 <a href="/events/event.php?e=5672" title="View Event Details">
 <img src="../media/6000/small.jpg" alt="Pint for a Pint Wilmington Delaware" title="Pint for a Pint" />
@@ -1238,7 +1290,7 @@ Aug 26  thru Sep 05 </span>
 <span class="date">
 <meta itemprop="startDate" content="2013-01-01T10:00">
 <meta itemprop="endDate" content="2015-12-31T13:45"> 
-Aug 26  thru Sep 02 </span>
+Aug 27  thru Sep 02 </span>
 <!-- MAIN IMAGE THUMBNAIL -->
 <a href="/events/event.php?e=5532" title="View Event Details">
 <img src="../media/5878/small.jpg" alt="Water's Extreme Journey Wilmington Delaware" title="Water's Extreme Journey" />
@@ -1293,7 +1345,7 @@ Aug 26  thru Sep 02 </span>
 <span class="date">
 <meta itemprop="startDate" content="2013-01-01T10:00">
 <meta itemprop="endDate" content="2015-12-31T13:45"> 
-Aug 26  thru Sep 14 </span>
+Aug 27  thru Sep 14 </span>
 <!-- MAIN IMAGE THUMBNAIL -->
 <a href="/events/1913menu" title="View Event Details">
 <img src="../media/719/small.jpg" alt="$19.13 Lunch Menu Wilmington Delaware" title="$19.13 Lunch Menu" />
@@ -1321,61 +1373,6 @@ Aug 26  thru Sep 14 </span>
       
       <!-- SHARE LINK -->
       <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/1913menu" st_title="$19.13 Lunch Menu"></span>
-   
-<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
-     
-    
-            
-  </div>
-  
-</div><!--eventActions-->
-
-<div class="eventFlagDiv">
-
-    
-<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
-
-<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
-
-</div><!--eventFlags-->
-
-</li>
-				
-
-<li class="artsEvent" id="event1">
-
-<!-- E V E N T     D A T E -->
-<span class="date">
-<meta itemprop="startDate" content="2013-01-01T10:00">
-<meta itemprop="endDate" content="2015-12-31T13:45"> 
-Aug 26  thru Oct 28 </span>
-<!-- MAIN IMAGE THUMBNAIL -->
-<a href="/events/Urban-Farm-Market" title="View Event Details">
-<img src="../media/5971/small.jpg" alt="12th &amp; Brandywine Urban Farm Market Wilmington Delaware" title="12th &amp; Brandywine Urban Farm Market" />
-</a>
- <div id="loading"></div>
-<!-- SECONDARY CATEGORIES -->
-<h2>Food &amp; Drink, Garden, Nature </h2>
-
-<!-- EVENT TITLE -->
-<h3 itemprop="name"><a  itemprop="url" href="/events/Urban-Farm-Market" title="View Event Details">12th &amp; Brandywine Urban Farm Market</a></h3>
-
-<!-- PLACE TITLE -->
-<h4>12th &amp; Brandywine Urban Farm Market</h4>
-
-<div class="eventActions">
-  
-  <div class="floatleft">
-  
-         <!--  add to mywilmington link -->
-		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink2758"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
-             
-  </div>
-  
-  <div class="floatright">
-      
-      <!-- SHARE LINK -->
-      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/Urban-Farm-Market" st_title="12th &amp; Brandywine Urban Farm Market"></span>
    
 <a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
      
@@ -1737,6 +1734,61 @@ Sep 01  - 12:30 pm </span>
 <span class="date">
 <meta itemprop="startDate" content="2013-01-01T10:00">
 <meta itemprop="endDate" content="2015-12-31T13:45"> 
+Sep 02  - 4:00 pm </span>
+<!-- MAIN IMAGE THUMBNAIL -->
+<a href="/events/Urban-Farm-Market" title="View Event Details">
+<img src="../media/5971/small.jpg" alt="12th &amp; Brandywine Urban Farm Market Wilmington Delaware" title="12th &amp; Brandywine Urban Farm Market" />
+</a>
+ <div id="loading"></div>
+<!-- SECONDARY CATEGORIES -->
+<h2>Food &amp; Drink, Garden, Nature </h2>
+
+<!-- EVENT TITLE -->
+<h3 itemprop="name"><a  itemprop="url" href="/events/Urban-Farm-Market" title="View Event Details">12th &amp; Brandywine Urban Farm Market</a></h3>
+
+<!-- PLACE TITLE -->
+<h4>12th &amp; Brandywine Urban Farm Market</h4>
+
+<div class="eventActions">
+  
+  <div class="floatleft">
+  
+         <!--  add to mywilmington link -->
+		        <a href="/myWilmington/mylogin.php" class="icon icon-calendar tooltipcalendar"><span class="custom calendar">Use this calendar to plan your entertainment on a daily, weekly and monthly basis</span></a><a href="/myWilmington/mylogin.php" class="icon icon-addmywilmington tooltipcalendar" id="addToMyWilmingtonLink2758"><span class="custom calendar">Click, save &amp; customize your personal entertainment schedule</span></a>
+             
+  </div>
+  
+  <div class="floatright">
+      
+      <!-- SHARE LINK -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/events/Urban-Farm-Market" st_title="12th &amp; Brandywine Urban Farm Market"></span>
+   
+<a href="/myWilmington/mylogin.php" class="icon icon-setReminder tooltipreminder"><span class="custom reminder">Send yourself a notice of an upcoming event</span></a>   
+     
+    
+            
+  </div>
+  
+</div><!--eventActions-->
+
+<div class="eventFlagDiv">
+
+    
+<span title="Our Pick" class="eventFlag ourPick">Our Pick</span>
+
+<!--<span title="You'll Like This" class="eventFlag yourPick">You'll Like This</span>--><!-- show if any of this event's categories match the logged in user's preferences-->
+
+</div><!--eventFlags-->
+
+</li>
+				
+
+<li class="artsEvent" id="event1">
+
+<!-- E V E N T     D A T E -->
+<span class="date">
+<meta itemprop="startDate" content="2013-01-01T10:00">
+<meta itemprop="endDate" content="2015-12-31T13:45"> 
 Sep 04  thru Sep 22 </span>
 <!-- MAIN IMAGE THUMBNAIL -->
 <a href="/events/event.php?e=5571" title="View Event Details">
@@ -1919,26 +1971,26 @@ Sep 06  - 12:00 pm </span>
 </li>
 <li>
 <!-- place main image, small size -->
-<a itemprop="url" href="/places/place.php?p=106" title="View Place Details">
-<img itemprop="image" src="../media/389/small.jpg" width="160" height="120" alt="LOMA Coffee Wilmington Delaware" title="LOMA Coffee">
+<a itemprop="url" href="/places/place.php?p=101" title="View Place Details">
+<img itemprop="image" src="../media/440/small.jpg" width="160" height="120" alt="Iron Hill Brewery Wilmington Delaware" title="Iron Hill Brewery">
 </a>
  <div id="loading"></div>
 <!-- primary category -->
-<h2>Cafe &amp; Coffee</h2>
+<h2>Bars &amp; Taverns, Restaurant</h2>
 
 <!-- place name -->
-<h3 itemprop="name"><a href="/places/place.php?p=106" title="View Event Details">LOMA Coffee</a></h3>
+<h3 itemprop="name"><a href="/places/place.php?p=101" title="View Event Details">Iron Hill Brewery</a></h3>
 
 <!-- place address -->
 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-<h4><span itemprop="streetAddress">239 N Market St</span></h4>
+<h4><span itemprop="streetAddress">710 Justison Street</span></h4>
 
 <div class="eventActions">
   
   <div class="floatright">
       
 <!-- share link: need to add URL for event detail page and title of event below -->
-      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=106" st_title="LOMA Coffee"></span>
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=101" st_title="Iron Hill Brewery"></span>
       
   
   </div>
@@ -1949,86 +2001,26 @@ Sep 06  - 12:00 pm </span>
 </li>
 <li>
 <!-- place main image, small size -->
-<a itemprop="url" href="/places/place.php?p=107" title="View Place Details">
-<img itemprop="image" src="../media/412/small.jpg" width="160" height="120" alt="Luigi Vitrone's Pastabilities Restaurant Wilmington Delaware" title="Luigi Vitrone's Pastabilities Restaurant">
+<a itemprop="url" href="/places/place.php?p=93" title="View Place Details">
+<img itemprop="image" src="../media/370/small.jpg" width="160" height="120" alt="Big Fish Grill on the Riverfront Wilmington Delaware" title="Big Fish Grill on the Riverfront">
 </a>
  <div id="loading"></div>
 <!-- primary category -->
 <h2>Restaurant</h2>
 
 <!-- place name -->
-<h3 itemprop="name"><a href="/places/place.php?p=107" title="View Event Details">Luigi Vitrone's Pastabilities Restaurant</a></h3>
+<h3 itemprop="name"><a href="/places/place.php?p=93" title="View Event Details">Big Fish Grill on the Riverfront</a></h3>
 
 <!-- place address -->
 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-<h4><span itemprop="streetAddress">415 N. Lincoln Street</span></h4>
+<h4><span itemprop="streetAddress">720 Justison St.</span></h4>
 
 <div class="eventActions">
   
   <div class="floatright">
       
 <!-- share link: need to add URL for event detail page and title of event below -->
-      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=107" st_title="Luigi Vitrone's Pastabilities Restaurant"></span>
-      
-  
-  </div>
-  
-</div><!--eventActions-->
-</div> <!-- Schema Address -->
-
-</li>
-<li>
-<!-- place main image, small size -->
-<a itemprop="url" href="/places/place.php?p=39" title="View Place Details">
-<img itemprop="image" src="../media/1443/small.jpg" width="160" height="120" alt="Cafe Mezzanotte Wilmington Delaware" title="Cafe Mezzanotte">
-</a>
- <div id="loading"></div>
-<!-- primary category -->
-<h2>Bars &amp; Taverns, Cafe &amp; Coffee, Restaurant</h2>
-
-<!-- place name -->
-<h3 itemprop="name"><a href="/places/place.php?p=39" title="View Event Details">Cafe Mezzanotte</a></h3>
-
-<!-- place address -->
-<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-<h4><span itemprop="streetAddress">1007 N. Orange St.</span></h4>
-
-<div class="eventActions">
-  
-  <div class="floatright">
-      
-<!-- share link: need to add URL for event detail page and title of event below -->
-      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=39" st_title="Cafe Mezzanotte"></span>
-      
-  
-  </div>
-  
-</div><!--eventActions-->
-</div> <!-- Schema Address -->
-
-</li>
-<li>
-<!-- place main image, small size -->
-<a itemprop="url" href="/places/place.php?p=304" title="View Place Details">
-<img itemprop="image" src="../media/2600/small.jpg" width="160" height="120" alt="DiMeo's Wilmington Delaware" title="DiMeo's">
-</a>
- <div id="loading"></div>
-<!-- primary category -->
-<h2>Restaurant</h2>
-
-<!-- place name -->
-<h3 itemprop="name"><a href="/places/place.php?p=304" title="View Event Details">DiMeo's</a></h3>
-
-<!-- place address -->
-<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-<h4><span itemprop="streetAddress">831 N. Market Street</span></h4>
-
-<div class="eventActions">
-  
-  <div class="floatright">
-      
-<!-- share link: need to add URL for event detail page and title of event below -->
-      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=304" st_title="DiMeo's"></span>
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=93" st_title="Big Fish Grill on the Riverfront"></span>
       
   
   </div>
@@ -2069,56 +2061,26 @@ Sep 06  - 12:00 pm </span>
 </li>
 <li>
 <!-- place main image, small size -->
-<a itemprop="url" href="/places/place.php?p=50" title="View Place Details">
-<img itemprop="image" src="../media/419/small.jpg" width="160" height="120" alt="Qdoba - Wilmington Wilmington Delaware" title="Qdoba - Wilmington">
+<a itemprop="url" href="/places/place.php?p=304" title="View Place Details">
+<img itemprop="image" src="../media/2600/small.jpg" width="160" height="120" alt="DiMeo's Wilmington Delaware" title="DiMeo's">
 </a>
  <div id="loading"></div>
 <!-- primary category -->
 <h2>Restaurant</h2>
 
 <!-- place name -->
-<h3 itemprop="name"><a href="/places/place.php?p=50" title="View Event Details">Qdoba - Wilmington</a></h3>
+<h3 itemprop="name"><a href="/places/place.php?p=304" title="View Event Details">DiMeo's</a></h3>
 
 <!-- place address -->
 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-<h4><span itemprop="streetAddress">837 N Market Street</span></h4>
+<h4><span itemprop="streetAddress">831 N. Market Street</span></h4>
 
 <div class="eventActions">
   
   <div class="floatright">
       
 <!-- share link: need to add URL for event detail page and title of event below -->
-      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=50" st_title="Qdoba - Wilmington"></span>
-      
-  
-  </div>
-  
-</div><!--eventActions-->
-</div> <!-- Schema Address -->
-
-</li>
-<li>
-<!-- place main image, small size -->
-<a itemprop="url" href="/places/columbus-inn" title="View Place Details">
-<img itemprop="image" src="../media/1370/small.jpg" width="160" height="120" alt="Columbus Inn Wilmington Delaware" title="Columbus Inn">
-</a>
- <div id="loading"></div>
-<!-- primary category -->
-<h2>Bars &amp; Taverns, Restaurant</h2>
-
-<!-- place name -->
-<h3 itemprop="name"><a href="/places/columbus-inn" title="View Event Details">Columbus Inn</a></h3>
-
-<!-- place address -->
-<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-<h4><span itemprop="streetAddress">2216 Pennsylvania Avenue</span></h4>
-
-<div class="eventActions">
-  
-  <div class="floatright">
-      
-<!-- share link: need to add URL for event detail page and title of event below -->
-      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/columbus-inn" st_title="Columbus Inn"></span>
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=304" st_title="DiMeo's"></span>
       
   
   </div>
@@ -2159,26 +2121,86 @@ Sep 06  - 12:00 pm </span>
 </li>
 <li>
 <!-- place main image, small size -->
-<a itemprop="url" href="/places/Mollys-ice-cream" title="View Place Details">
-<img itemprop="image" src="../media/3547/small.jpg" width="160" height="120" alt="Molly's Old Fashioned Ice Cream and Deli Wilmington Delaware" title="Molly's Old Fashioned Ice Cream and Deli">
+<a itemprop="url" href="/places/place.php?p=105" title="View Place Details">
+<img itemprop="image" src="../media/395/small.jpg" width="160" height="120" alt="Kelly's Logan House Wilmington Delaware" title="Kelly's Logan House">
 </a>
  <div id="loading"></div>
 <!-- primary category -->
-<h2>Cafe &amp; Coffee, Restaurant</h2>
+<h2>Bars &amp; Taverns, Restaurant</h2>
 
 <!-- place name -->
-<h3 itemprop="name"><a href="/places/Mollys-ice-cream" title="View Event Details">Molly's Old Fashioned Ice Cream and Deli</a></h3>
+<h3 itemprop="name"><a href="/places/place.php?p=105" title="View Event Details">Kelly's Logan House</a></h3>
 
 <!-- place address -->
 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-<h4><span itemprop="streetAddress">928 Justison Street</span></h4>
+<h4><span itemprop="streetAddress">1701 Delaware Ave.</span></h4>
 
 <div class="eventActions">
   
   <div class="floatright">
       
 <!-- share link: need to add URL for event detail page and title of event below -->
-      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/Mollys-ice-cream" st_title="Molly's Old Fashioned Ice Cream and Deli"></span>
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=105" st_title="Kelly's Logan House"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/place.php?p=437" title="View Place Details">
+<img itemprop="image" src="../media/5628/small.jpg" width="160" height="120" alt="Two Stones Pub - Wilmington Wilmington Delaware" title="Two Stones Pub - Wilmington">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Bars &amp; Taverns, Restaurant</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/place.php?p=437" title="View Event Details">Two Stones Pub - Wilmington</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">2502 Foulk Road</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=437" st_title="Two Stones Pub - Wilmington"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/place.php?p=49" title="View Place Details">
+<img itemprop="image" src="../media/2595/small.jpg" width="160" height="120" alt="Ernest &amp; Scott Taproom Wilmington Delaware" title="Ernest &amp; Scott Taproom">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Bars &amp; Taverns, Restaurant</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/place.php?p=49" title="View Event Details">Ernest &amp; Scott Taproom</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">902 N. Market Street</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=49" st_title="Ernest &amp; Scott Taproom"></span>
       
   
   </div>
@@ -2219,26 +2241,56 @@ Sep 06  - 12:00 pm </span>
 </li>
 <li>
 <!-- place main image, small size -->
-<a itemprop="url" href="/places/place.php?p=43" title="View Place Details">
-<img itemprop="image" src="../media/386/small.jpg" width="160" height="120" alt="Extreme Pizza Wilmington Delaware" title="Extreme Pizza">
+<a itemprop="url" href="/places/place.php?p=39" title="View Place Details">
+<img itemprop="image" src="../media/1443/small.jpg" width="160" height="120" alt="Cafe Mezzanotte Wilmington Delaware" title="Cafe Mezzanotte">
 </a>
  <div id="loading"></div>
 <!-- primary category -->
-<h2>Restaurant</h2>
+<h2>Bars &amp; Taverns, Cafe &amp; Coffee, Restaurant</h2>
 
 <!-- place name -->
-<h3 itemprop="name"><a href="/places/place.php?p=43" title="View Event Details">Extreme Pizza</a></h3>
+<h3 itemprop="name"><a href="/places/place.php?p=39" title="View Event Details">Cafe Mezzanotte</a></h3>
 
 <!-- place address -->
 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-<h4><span itemprop="streetAddress">201 N Market Street</span></h4>
+<h4><span itemprop="streetAddress">1007 N. Orange St.</span></h4>
 
 <div class="eventActions">
   
   <div class="floatright">
       
 <!-- share link: need to add URL for event detail page and title of event below -->
-      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=43" st_title="Extreme Pizza"></span>
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=39" st_title="Cafe Mezzanotte"></span>
+      
+  
+  </div>
+  
+</div><!--eventActions-->
+</div> <!-- Schema Address -->
+
+</li>
+<li>
+<!-- place main image, small size -->
+<a itemprop="url" href="/places/place.php?p=68" title="View Place Details">
+<img itemprop="image" src="../media/390/small.jpg" width="160" height="120" alt="FireStone Roasting House Wilmington Delaware" title="FireStone Roasting House">
+</a>
+ <div id="loading"></div>
+<!-- primary category -->
+<h2>Bars &amp; Taverns, Restaurant</h2>
+
+<!-- place name -->
+<h3 itemprop="name"><a href="/places/place.php?p=68" title="View Event Details">FireStone Roasting House</a></h3>
+
+<!-- place address -->
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<h4><span itemprop="streetAddress">110 South West Street</span></h4>
+
+<div class="eventActions">
+  
+  <div class="floatright">
+      
+<!-- share link: need to add URL for event detail page and title of event below -->
+      <span class="st_sharethis_custom icon" displayText="Share" st_url="http://www.inwilmingtonde.com/places/place.php?p=68" st_title="FireStone Roasting House"></span>
       
   
   </div>

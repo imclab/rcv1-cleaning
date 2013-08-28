@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+	<link rel='canonical' href='http://www.koreaboo.com/index.html' />
+
+	<title>Koreaboo - breaking celebrity k-pop news portal</title>
+	<link rel="alternate" type="application/rss+xml" title="Koreaboo" href="http://www.koreaboo.com/rss.php" />
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css' />
+
+	<link href='http://www.koreaboo.com/styles/global.css' rel='stylesheet' type='text/css' />
+
+	<link href='http://www.koreaboo.com/styles/home.css' rel='stylesheet' type='text/css' />
+	<link href="http://www.koreaboo.com/styles/lightbox.css" rel="stylesheet" />
+
+	<link href="http://www.koreaboo.com/styles/nivo-slider.css" rel="stylesheet" type="text/css" />
+	<link href="http://www.koreaboo.com/forum/public/style_css/css_4/ipb_editor.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.koreaboo.com/forum/public/style_css/css_4/ipcontent.css" />
+
+	<script type='text/javascript'>
+		jsDebug = 0; /* Must come before JS includes */
+		USE_RTE = 0;
+		DISABLE_AJAX = parseInt(0); /* Disables ajax requests where text is sent to the DB; helpful for charset issues */
+		inACP   = false;
+	</script>
+
+	<script src="http://koreaboo.com/scripts/ga.php?hostname=koreaboo.com" type="text/javascript"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+	<script src="http://www.koreaboo.com/js/lightbox.js"></script>
+	<script type="text/javascript" language="Javascript">
+		var j = jQuery.noConflict();
+	</script>
+	<!-- <script src="http://www.koreaboo.com/scripts/twitter.js" type="text/javascript"></script> -->
+
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/prototype/1.6/prototype.js'></script>
+		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8/scriptaculous.js?load=effects,dragdrop,builder'></script>
+	<script type='text/javascript' src='http://www.koreaboo.com/forum/public/min/index.php?ipbv=31006&amp;charset=UTF-8&amp;f=public/js/ipb.js,public/js/ips.quickpm.js,public/js/ips.editor.js,cache/lang_cache/1/ipb.lang.js' charset='UTF-8'></script>
+	<script type='text/javascript'>
+	//<![CDATA[
+		/* ---- URLs ---- */
+		ipb.vars['base_url'] 			= 'http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&';
+		ipb.vars['board_url']			= 'http://www.koreaboo.com/forum';
+		ipb.vars['loading_img'] 		= 'http://www.koreaboo.com/forum/public/style_images/Koreaboo/loading.gif';
+		ipb.vars['active_app']			= 'ccs';
+		ipb.vars['upload_url']			= 'http://www.koreaboo.com/forum/uploads';
+		/* ---- Member ---- */
+		ipb.vars['member_id']			= parseInt( 0 );
+		ipb.vars['is_supmod']			= parseInt( 0 );
+		ipb.vars['is_admin']			= parseInt( 0 );
+		ipb.vars['secure_hash'] 		= '880ea6a14ea49e853634fbdc5015a024';
+		ipb.vars['session_id']			= '2e97af6b8ad74a185bbd1d947de72c73';
+		ipb.vars['can_befriend']		= true;
+		ipb.vars['twitter_id']			= 0;
+		ipb.vars['fb_uid']				= 0;
+		/* ---- cookies ----- */
+		ipb.vars['cookie_id'] 			= '';
+		ipb.vars['cookie_domain'] 		= '.koreaboo.com';
+		ipb.vars['cookie_path']			= '/';
+		/* ---- Rate imgs ---- */
+		ipb.vars['rate_img_on']			= 'http://www.koreaboo.com/forum/public/style_images/Koreaboo/bullet_star.png';
+		ipb.vars['rate_img_off']		= 'http://www.koreaboo.com/forum/public/style_images/Koreaboo/bullet_star_off.png';
+		ipb.vars['rate_img_rated']		= 'http://www.koreaboo.com/forum/public/style_images/Koreaboo/bullet_star_rated.png';
+		/* ---- Uploads ---- */
+		ipb.vars['swfupload_swf']		= 'http://www.koreaboo.com/forum/public/js/3rd_party/swfupload/swfupload.swf';
+		ipb.vars['swfupload_enabled']	= true;
+		ipb.vars['use_swf_upload']		= ( '' == 'flash' ) ? true : false;
+		ipb.vars['swfupload_debug']		= false; /* SKINNOTE: Turn off for production */
+		/* ---- other ---- */
+		ipb.vars['live_search_limit'] 	= 4;
+		ipb.vars['highlight_color']		= "#ade57a";
+		ipb.vars['charset']				= "UTF-8";
+		ipb.vars['use_rte']				= 1;
+		ipb.vars['image_resize']		= 1;
+		ipb.vars['image_resize_force']  = 0;
+		ipb.vars['seo_enabled']			= 0;
+		
+		/* Templates/Language */
+		ipb.templates['ajax_loading'] 	= "<div id='ajax_loading'>" + ipb.lang['loading'] + "</div>";
+		ipb.templates['close_popup']	= "<img src='http://www.koreaboo.com/forum/public/style_images/Koreaboo/close_popup.png' alt='x' />";
+		ipb.templates['rss_shell']		= new Template("<ul id='rss_menu'>#{items}</ul>");
+		ipb.templates['rss_item']		= new Template("<li><a href='#{url}' title='#{title}'>#{title}</a></li>");
+		ipb.templates['resized_img']	= new Template("<span>Resized to #{percent}% (was #{width} x #{height}) - Click image to enlarge</span>");
+		ipb.templates['m_add_friend']	= new Template("<a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;app=members&amp;module=profile&amp;section=friends&amp;do=add&amp;member_id=#{id}' title='Add as Friend'><img src='http://www.koreaboo.com/forum/public/style_images/Koreaboo/user_add.png' alt='Add as Friend' /></a>");
+		ipb.templates['m_rem_friend']	= new Template("<a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;app=members&amp;module=profile&amp;section=friends&amp;do=remove&amp;member_id=#{id}' title='Remove Friend'><img src='http://www.koreaboo.com/forum/public/style_images/Koreaboo/user_delete.png' alt='Remove Friend' /></a>");
+		ipb.templates['autocomplete_wrap'] = new Template("<ul id='#{id}' class='ipb_autocomplete' style='width: 250px;'></ul>");
+		ipb.templates['autocomplete_item'] = new Template("<li id='#{id}'><img src='#{img}' alt='' width='#{img_w}' height='#{img_h}' />&nbsp;&nbsp;#{itemvalue}</li>");
+		ipb.templates['page_jump']		= new Template("<div id='#{id}_wrap' class='ipbmenu_content'><h3 class='bar'>Jump to page</h3><input type='text' class='input_text' id='#{id}_input' size='8' /> <input type='submit' value='Go' class='input_submit add_folder' id='#{id}_submit' /></div>");
+	//]]>
+	</script>
+	
+	<script type="text/javascript" src="http://www.koreaboo.com/scripts/jquery.nivo.slider.js"></script>
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+</head>
+
+<body id='ipboard_body'>
+<!-- <script type="text/javascript">var _kiq = _kiq || [];</script>
+<script type="text/javascript" src="//s3.amazonaws.com/ki.js/14784/2K2.js" async="true"></script> -->
+<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+	FB.init({appId: '117106681655169', status: true, cookie: true, xfbml: true});
+};
+(function() {
+	var e = document.createElement('script');
+	e.async = true;
+	e.src = document.location.protocol + 	'//connect.facebook.net/en_US/all.js';
+	document.getElementById('fb-root').appendChild(e);
+}());
+</script>
+	
+<div id="loginBar">
+	<div class="container">
+
+		<div id="login">
+			Welcome! <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;app=core&amp;module=global&amp;section=login' class="login">Login</a>
+			<a href="http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;app=core&amp;module=global&amp;section=register" class="signup">Signup</a>
+		</div>
+
+		<h2><a href="http://www.koreaboo.com">Koreaboo.com</a> breaking kpop celebrity gossip & korean news portal.</h2>
+	</div>
+</div>
+
+<div class="container">
+	<div id="header">
+		<h1><a href="http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;app=ccs&amp;" title="home">Website Title</a></h1>
+		<ul id="nav">
+			<li class="selected"><a href="http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;app=ccs&amp;">News</a></li>
+			<li><a href="http://www.flickr.com/photos/koreaboo/show/">Gallery</a></li>
+			
+		</ul>
+		
+		<div>
+			<form method='post' action='http://www.koreaboo.com/'>
+				<input type='hidden' name='do' value='search' />
+				<input type='text' name='search_value' class='search' />
+				<input type='submit' value='Search' class='searchButton' />
+			</form>
+		</div>
+	</div>
+
+	
+	<div id="contentColumn">
+			<div id="topStorySwitcher" class="filterBar">
+</div>
+
+<div class="topStory">
+	<div class="storyBox">
+		<div class="triangle"></div>
+		<div id="article_21169" class="nivo-html-caption">
+				<h3><a href="http://www.koreaboo.com/index.html/_/comeback/g-dragon-reveals-release-date-and-2nd-image-tea-r21169" class="storyLink">G-Dragon reveals release date and 2nd image tea...</a></h3>
+				<p>Shortly after releasing his first image teaser for his upcoming album, "Coup D'état" on the 26th, Big Bang leader G-Dragon has unveiled the official release date, which was accompanied by his 2nd image teaser.<br />
+<br />
+Released via YG-Life on Augus... <a href="http://www.koreaboo.com/index.html/_/comeback/g-dragon-reveals-release-date-and-2nd-image-tea-r21169" class="imgLink">Continue reading</a></p>
+		</div>
+
+
+		<div id="article_21166" class="nivo-html-caption">
+				<h3><a href="http://www.koreaboo.com/index.html/_/music-video/kara-releases-1st-mv-teaser-for-damaged-la-r21166" class="storyLink">KARA releases 1st MV teaser for &#34;Damaged La...</a></h3>
+				<p>Soon after releasing three sets of image teasers, each showcasing a different concept, KARA has released the first video teaser for their title track "Damaged Girl" on their upcoming 4th studio album, "Full Bloom."<br />
+<br />
+The members are seen wal... <a href="http://www.koreaboo.com/index.html/_/music-video/kara-releases-1st-mv-teaser-for-damaged-la-r21166" class="imgLink">Continue reading</a></p>
+		</div>
+
+
+		<div id="article_21164" class="nivo-html-caption">
+				<h3><a href="http://www.koreaboo.com/index.html/_/music-video/teen-top-releases-teen-top-class-ep-r21164" class="storyLink">Teen Top releases &#34;Teen Top Class&#34; EP +...</a></h3>
+				<p>Since releasing their 1st studio album in the first half of this year, Teen Top has been busily preparing their next mini-album, "Teen Top Class," which was finally released on August 26th. <br />
+<br />
+Filled with a whooping 6 tracks, the song "Rocki... <a href="http://www.koreaboo.com/index.html/_/music-video/teen-top-releases-teen-top-class-ep-r21164" class="imgLink">Continue reading</a></p>
+		</div>
+
+
+		<div id="article_21160" class="nivo-html-caption">
+				<h3><a href="http://www.koreaboo.com/index.html/_/comeback/btob-releases-concept-images-for-september-come-r21160" class="storyLink">BTOB releases concept images for September come...</a></h3>
+				<p>BTOB is gearing up for a September comeback.<br />
+<br />
+On the morning of August 23rd, Cube Entertainment revealed through their Twitter and Facebook Page account concept images for BTOB's 3rd mini-album's 1st single, "When I Was Your Man." Their upc... <a href="http://www.koreaboo.com/index.html/_/comeback/btob-releases-concept-images-for-september-come-r21160" class="imgLink">Continue reading</a></p>
+		</div>
+
+	</div>
+	
+	<div id="slider" class="nivoSlider" style="width: 690px">
+		<a href="http://www.koreaboo.com/index.html/_/comeback/g-dragon-reveals-release-date-and-2nd-image-tea-r21169" class="imgLink">
+		
+			<img src="http://www.koreaboo.com/forum/uploads/8f9563b045645cb2f4d2d55caf0e5396.jpg" title="#article_21169" style="height: 250px" />
+		
+		</a>
+
+
+		<a href="http://www.koreaboo.com/index.html/_/music-video/kara-releases-1st-mv-teaser-for-damaged-la-r21166" class="imgLink">
+		
+			<img src="http://www.koreaboo.com/forum/uploads/89e3f3cc7aa7b42e25d286ad72daef9f.jpg" title="#article_21166" style="height: 250px" />
+		
+		</a>
+
+
+		<a href="http://www.koreaboo.com/index.html/_/music-video/teen-top-releases-teen-top-class-ep-r21164" class="imgLink">
+		
+			<img src="http://www.koreaboo.com/forum/uploads/3163fd1162a76e8bf0f7414d3101332b.jpg" title="#article_21164" style="height: 250px" />
+		
+		</a>
+
+
+		<a href="http://www.koreaboo.com/index.html/_/comeback/btob-releases-concept-images-for-september-come-r21160" class="imgLink">
+		
+			<img src="http://www.koreaboo.com/forum/uploads/df0a828c44ad4c452abd83e3ba0676d1.jpg" title="#article_21160" style="height: 250px" />
+		
+		</a>
+
+	</div>
+</div>
+
+<script>
+j('#slider').nivoSlider({
+	effect: 'fade',
+	controlNav: false,
+	directionNav: false,
+	pauseOnHover:true,
+	pauseTime:5000,
+	controlNav: true,
+});
+</script>
+
+<div class="filterBar">
+	<ul>
+		<li class="selected"><a href="http://www.koreaboo.com">All News</a></li>
+		<li><a href="http://www.koreaboo.com/_/rumours">Rumours</a></li>
+		<li><a href="http://www.koreaboo.com/_/gossip">Gossip</a></li>
+		<li><a href="http://www.koreaboo.com/_/music">Music</a></li>
+		<li><a href="http://www.koreaboo.com/_/comeback">Comeback</a></li>
+		<li><a href="http://www.koreaboo.com/_/shows">Shows</a></li>
+		<li><a href="http://www.koreaboo.com/_/dramas">Dramas</a></li>
+		<li><a href="http://www.koreaboo.com/_/movies">Movies</a></li>
+		<li><a href="http://www.koreaboo.com/_/editorial">Editorial</a></li>
+	</ul>
+</div>
+
+
+	<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+	<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/debuts/k-pop-star-lee-michelle-to-make-her-m-r21170" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/87452218b946feade61419b070214bc5.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/debuts/k-pop-star-lee-michelle-to-make-her-m-r21170">&#34;K-Pop Star&#34; Lee Michelle to make her m...</a></h4>
+			<p>SBS "K-Pop Star" contestant Lee Michelle (22) will be officially making her debut as a musical actress.<br />
+<br />
+According to a Pink Spoon representative, Lee Michelle will take the stage as part of the cast of the musical, "I Love You, Sudan," sta...<a href="http://www.koreaboo.com/index.html/_/debuts/k-pop-star-lee-michelle-to-make-her-m-r21170">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 27 2013 05:49 PM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/debuts/k-pop-star-lee-michelle-to-make-her-m-r21170" data-text="&#34;K-Pop Star&#34; Lee Michelle to make her m..." data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/debuts/k-pop-star-lee-michelle-to-make-her-m-r21170" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/debuts/k-pop-star-lee-michelle-to-make-her-m-r21170#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/comeback/g-dragon-reveals-release-date-and-2nd-image-tea-r21169" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/fc3f3f90510e5f85a640dde815393786.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/comeback/g-dragon-reveals-release-date-and-2nd-image-tea-r21169">G-Dragon reveals release date and 2nd image tea...</a></h4>
+			<p>Shortly after releasing his first image teaser for his upcoming album, "Coup D'état" on the 26th, Big Bang leader G-Dragon has unveiled the official release date, which was accompanied by his 2nd image teaser.<br />
+<br />
+Released via YG-Life on Augus...<a href="http://www.koreaboo.com/index.html/_/comeback/g-dragon-reveals-release-date-and-2nd-image-tea-r21169">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 27 2013 05:25 PM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/comeback/g-dragon-reveals-release-date-and-2nd-image-tea-r21169" data-text="G-Dragon reveals release date and 2nd image tea..." data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/comeback/g-dragon-reveals-release-date-and-2nd-image-tea-r21169" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/comeback/g-dragon-reveals-release-date-and-2nd-image-tea-r21169#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/charts/sunmi-achieves-all-kill-status-within-24-h-r21168" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/82390c56a73b95636c8d928dc3bc16cc.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/charts/sunmi-achieves-all-kill-status-within-24-h-r21168">Sunmi achieves all-kill status within &#34;24 H...</a></h4>
+			<p>After 3 years and 7 months since leaving Wonder Girls, Sunmi's first solo album immediately entered first place following its official release on August 26th.<br />
+<br />
+"24 Hours" was released at noon today and has officially gained the title of an ...<a href="http://www.koreaboo.com/index.html/_/charts/sunmi-achieves-all-kill-status-within-24-h-r21168">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 26 2013 05:04 PM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/charts/sunmi-achieves-all-kill-status-within-24-h-r21168" data-text="Sunmi achieves all-kill status within &#34;24 H..." data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/charts/sunmi-achieves-all-kill-status-within-24-h-r21168" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/charts/sunmi-achieves-all-kill-status-within-24-h-r21168#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/shows/idols-gather-for-cheongju-running-man-r21167" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/5caa3e4d403c87fb71736dd50d5220fd.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/shows/idols-gather-for-cheongju-running-man-r21167">Idols gather for Cheongju &#34;Running Man&#34;...</a></h4>
+			<p>An array of idols have gathered in Cheongju recently to take part of a episode recording for the popular SBS variety show, "Running Man."<br />
+<br />
+On August 26th, the news of the special recording for "Running Man" was spread throughout several SNS...<a href="http://www.koreaboo.com/index.html/_/shows/idols-gather-for-cheongju-running-man-r21167">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 26 2013 04:23 PM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/shows/idols-gather-for-cheongju-running-man-r21167" data-text="Idols gather for Cheongju &#34;Running Man&#34;..." data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/shows/idols-gather-for-cheongju-running-man-r21167" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/shows/idols-gather-for-cheongju-running-man-r21167#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/music-video/kara-releases-1st-mv-teaser-for-damaged-la-r21166" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/0b77ce477ee235efa52510d285e8e956.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/music-video/kara-releases-1st-mv-teaser-for-damaged-la-r21166">KARA releases 1st MV teaser for &#34;Damaged La...</a></h4>
+			<p>Soon after releasing three sets of image teasers, each showcasing a different concept, KARA has released the first video teaser for their title track "Damaged Girl" on their upcoming 4th studio album, "Full Bloom."<br />
+<br />
+The members are seen wal...<a href="http://www.koreaboo.com/index.html/_/music-video/kara-releases-1st-mv-teaser-for-damaged-la-r21166">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 26 2013 04:26 AM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/music-video/kara-releases-1st-mv-teaser-for-damaged-la-r21166" data-text="KARA releases 1st MV teaser for &#34;Damaged La..." data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/music-video/kara-releases-1st-mv-teaser-for-damaged-la-r21166" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/music-video/kara-releases-1st-mv-teaser-for-damaged-la-r21166#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/comeback/g-dragon-releases-1st-image-teaser-for-cou-r21165" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/0a7606b16492b5e4ed9e8803c725369f.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/comeback/g-dragon-releases-1st-image-teaser-for-cou-r21165">G-Dragon releases 1st image teaser for &#34;Cou...</a></h4>
+			<p>Following the solo comeback of Big Bang's Seungri, group leader G-Dragon will soon be making his return to the scene with a new album. <br />
+<br />
+On August 26th, the first image teaser for G-Dragon's "Coup D'état" was released via YG-Life, his inten...<a href="http://www.koreaboo.com/index.html/_/comeback/g-dragon-releases-1st-image-teaser-for-cou-r21165">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 26 2013 04:14 AM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/comeback/g-dragon-releases-1st-image-teaser-for-cou-r21165" data-text="G-Dragon releases 1st image teaser for &#34;Cou..." data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/comeback/g-dragon-releases-1st-image-teaser-for-cou-r21165" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/comeback/g-dragon-releases-1st-image-teaser-for-cou-r21165#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/music-video/teen-top-releases-teen-top-class-ep-r21164" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/4d2eb5b48b6e7f334cc4cd4e070695ff.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/music-video/teen-top-releases-teen-top-class-ep-r21164">Teen Top releases &#34;Teen Top Class&#34; EP +...</a></h4>
+			<p>Since releasing their 1st studio album in the first half of this year, Teen Top has been busily preparing their next mini-album, "Teen Top Class," which was finally released on August 26th. <br />
+<br />
+Filled with a whooping 6 tracks, the song "Rocki...<a href="http://www.koreaboo.com/index.html/_/music-video/teen-top-releases-teen-top-class-ep-r21164">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 26 2013 03:53 AM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/music-video/teen-top-releases-teen-top-class-ep-r21164" data-text="Teen Top releases &#34;Teen Top Class&#34; EP +..." data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/music-video/teen-top-releases-teen-top-class-ep-r21164" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/music-video/teen-top-releases-teen-top-class-ep-r21164#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/music-shows/exo-takes-2nd-win-for-growl-on-sbs-in-r21163" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/6d181fe7bb1262ad502de358102005f5.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/music-shows/exo-takes-2nd-win-for-growl-on-sbs-in-r21163">EXO takes 2nd win for &#34;Growl&#34; on SBS In...</a></h4>
+			<p>For the August 25th episode of SBS Inkigayo, Big Bang's Seungri takes on his last comeback stage, performing "Gotta Talk To You" and "GG BE." Henry returns with his latest digital single "1,4,3" featuring Super Junior's Donghae and Eunhyuk. Other comeb...<a href="http://www.koreaboo.com/index.html/_/music-shows/exo-takes-2nd-win-for-growl-on-sbs-in-r21163">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 25 2013 02:39 PM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/music-shows/exo-takes-2nd-win-for-growl-on-sbs-in-r21163" data-text="EXO takes 2nd win for &#34;Growl&#34; on SBS In..." data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/music-shows/exo-takes-2nd-win-for-growl-on-sbs-in-r21163" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/music-shows/exo-takes-2nd-win-for-growl-on-sbs-in-r21163#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/music-video/beast-releases-how-to-love-mv-r21162" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/bced9ef459acd1fcd254326e267991ba.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/music-video/beast-releases-how-to-love-mv-r21162">BEAST releases &quot;How To Love&quot; MV</a></h4>
+			<p>On August 25th, BEAST released a special music video for their medium-tempo ballad track "How To Love" especially for their fans, B2UTY.<br />
+<br />
+Unlike most music videos, "How To Love" features a slideshow gallery of BEAST during their concerts, p...<a href="http://www.koreaboo.com/index.html/_/music-video/beast-releases-how-to-love-mv-r21162">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 25 2013 02:22 PM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/music-video/beast-releases-how-to-love-mv-r21162" data-text="BEAST releases &quot;How To Love&quot; MV" data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/music-video/beast-releases-how-to-love-mv-r21162" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/music-video/beast-releases-how-to-love-mv-r21162#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/comeback/ladies-code-release-image-teaser-for-upcom-r21161" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/e16c5221a9dd60e6b56bacbae3233a2b.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/comeback/ladies-code-release-image-teaser-for-upcom-r21161">Ladies&#39; Code release image teaser for upcom...</a></h4>
+			<p>Ladies' Code has release the first image teaser for their upcoming mini-album, "Pretty Pretty" on August 23rd. <br />
+<br />
+Unlike the title of their mini-album, the teaser takes on an "ugly" concept. The members can be seen wearing giant glasses on t...<a href="http://www.koreaboo.com/index.html/_/comeback/ladies-code-release-image-teaser-for-upcom-r21161">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 25 2013 12:45 AM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/comeback/ladies-code-release-image-teaser-for-upcom-r21161" data-text="Ladies&#39; Code release image teaser for upcom..." data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/comeback/ladies-code-release-image-teaser-for-upcom-r21161" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/comeback/ladies-code-release-image-teaser-for-upcom-r21161#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/comeback/btob-releases-concept-images-for-september-come-r21160" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/50da6106b26aa2b86c794c31d5ec7cb1.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/comeback/btob-releases-concept-images-for-september-come-r21160">BTOB releases concept images for September come...</a></h4>
+			<p>BTOB is gearing up for a September comeback.<br />
+<br />
+On the morning of August 23rd, Cube Entertainment revealed through their Twitter and Facebook Page account concept images for BTOB's 3rd mini-album's 1st single, "When I Was Your Man." Their upc...<a href="http://www.koreaboo.com/index.html/_/comeback/btob-releases-concept-images-for-september-come-r21160">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 25 2013 12:40 AM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/comeback/btob-releases-concept-images-for-september-come-r21160" data-text="BTOB releases concept images for September come..." data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/comeback/btob-releases-concept-images-for-september-come-r21160" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/comeback/btob-releases-concept-images-for-september-come-r21160#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/comeback/kara-transforms-into-queens-for-4th-studio-albu-r21159" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/15ce5bf1659298036de88ee65df949fe.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/comeback/kara-transforms-into-queens-for-4th-studio-albu-r21159">KARA transforms into Queens for 4th studio albu...</a></h4>
+			<p>KARA will be making their return with the release of their 4th studio album "Full Bloom" next week, and has released their third set of image teasers via their official Facebook Page and Naver Music on August 23rd.<br />
+<br />
+Transforming into Queens...<a href="http://www.koreaboo.com/index.html/_/comeback/kara-transforms-into-queens-for-4th-studio-albu-r21159">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 24 2013 11:59 PM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/comeback/kara-transforms-into-queens-for-4th-studio-albu-r21159" data-text="KARA transforms into Queens for 4th studio albu..." data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/comeback/kara-transforms-into-queens-for-4th-studio-albu-r21159" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/comeback/kara-transforms-into-queens-for-4th-studio-albu-r21159#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/music-video/after-school-releases-heaven-japanese-mv-r21158" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/402b6fec20a050be60ce8a7dfdbeae8c.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/music-video/after-school-releases-heaven-japanese-mv-r21158">After School releases &quot;Heaven&quot; Japanese MV</a></h4>
+			<p>Soon after completing their Korean activities with the track "First Love" in the first half of 2013, After School is prepping to continue promotions in Japan with their new upcoming single release, "Heaven."<br />
+<br />
+Their 5th Japanese single "Heav...<a href="http://www.koreaboo.com/index.html/_/music-video/after-school-releases-heaven-japanese-mv-r21158">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 24 2013 11:27 PM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/music-video/after-school-releases-heaven-japanese-mv-r21158" data-text="After School releases &quot;Heaven&quot; Japanese MV" data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/music-video/after-school-releases-heaven-japanese-mv-r21158" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/music-video/after-school-releases-heaven-japanese-mv-r21158#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/music-shows/exo-wins-on-mbc-music-core-other-performances-r21157" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/13331f608a6a7b52d27527c83fec991a.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/music-shows/exo-wins-on-mbc-music-core-other-performances-r21157">EXO wins on MBC Music Core + other performances</a></h4>
+			<p>For the August 24, 2013 episode of MBC Music Core, Big Bang's Seungri took up the stage with his new track "Gotta Talk To You," Sunmi held her debut solo stage, and NU'EST returned with their newest track. On the other hand, BEAST held their last stage...<a href="http://www.koreaboo.com/index.html/_/music-shows/exo-wins-on-mbc-music-core-other-performances-r21157">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 24 2013 11:19 PM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/music-shows/exo-wins-on-mbc-music-core-other-performances-r21157" data-text="EXO wins on MBC Music Core + other performances" data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/music-shows/exo-wins-on-mbc-music-core-other-performances-r21157" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/music-shows/exo-wins-on-mbc-music-core-other-performances-r21157#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+
+		<div class="story">
+			<a href="http://www.koreaboo.com/index.html/_/music-shows/exo-takes-2nd-win-for-growl-on-kbs-mu-r21156" class="image">
+				<div class="triangle"></div>
+				
+					<img src="http://www.koreaboo.com/forum/uploads/bc5f34fe5226b3b3cbdd170a6f85e6d8.jpg" style="height: 150px; width: 150px;" />
+				
+			</a>
+			<h4><a href="http://www.koreaboo.com/index.html/_/music-shows/exo-takes-2nd-win-for-growl-on-kbs-mu-r21156">EXO takes 2nd win for &#34;Growl&#34; on KBS Mu...</a></h4>
+			<p>For the August 23, 2013 episode of KBS Music Bank, comeback performers included Big Bang's Seungri and Sunmi, who makes her solo debut with "24 Hours."<br />
+<br />
+Other performers for the night included EXO, Crayon Pop, BEAST, B.A.P, ZE:A, Koyote, VI...<a href="http://www.koreaboo.com/index.html/_/music-shows/exo-takes-2nd-win-for-growl-on-kbs-mu-r21156">read more</a><br /></p>
+			<span class="bold">Submitted:</span> <span class="italic">Aug 23 2013 11:00 PM by</span> <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=26'>Uni</a>
+			<div class="social">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.koreaboo.com/index.html/_/music-shows/exo-takes-2nd-win-for-growl-on-kbs-mu-r21156" data-text="EXO takes 2nd win for &#34;Growl&#34; on KBS Mu..." data-count="horizontal" data-via="koreaboo">Tweet</a>
+				<span><fb:like href="http://www.koreaboo.com/index.html/_/music-shows/exo-takes-2nd-win-for-growl-on-kbs-mu-r21156" layout="button_count"></fb:like></span>
+				<a href="http://www.koreaboo.com/index.html/_/music-shows/exo-takes-2nd-win-for-growl-on-kbs-mu-r21156#comments" class="comments">0 Comments</a>
+			</div>
+		</div>
+	
+	<br style="clear: both;" />
+<span style="display: none;">18112</span>
+<div id="pagination">
+	<span>Page 1 of 1208</span>
+	<ul>
+
+
+		<li class="selected"><a href='http://www.koreaboo.com/index.html?p=1'>1</a></li>
+
+
+		<li><a href='http://www.koreaboo.com/index.html?p=2'>2</a></li>
+
+
+		<li><a href='http://www.koreaboo.com/index.html?p=3'>3</a></li>
+
+
+		<li><a href='http://www.koreaboo.com/index.html?p=4'>4</a></li>
+
+
+		<li><a href='http://www.koreaboo.com/index.html?p=5'>5</a></li>
+
+
+		<li><a href='http://www.koreaboo.com/index.html?p=6'>6</a></li>
+
+
+		<li><a href='http://www.koreaboo.com/index.html?p=7'>7</a></li>
+
+
+		<li><a href='http://www.koreaboo.com/index.html?p=8'>8</a></li>
+
+
+		<li><a href='http://www.koreaboo.com/index.html?p=9'>9</a></li>
+
+<li><a href='http://www.koreaboo.com/index.html?p=2'>Next</a></li>
+<li><a href='http://www.koreaboo.com/index.html?p=1208'>Last</a></li>
+	</ul>
+</div>
+		<div id="contentFooter">
+			<div class="triangle"></div>
+			<div id="col1" style="word-wrap: break-word;"><h5>Recent Comments</h5>
+
+<ul>
+	<li>is it just me  or did I have the same dream  holly cow  it was reality   omg   everything happen I was there in my dream  tha...<span>By <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=23213'>shineepower</a> on <a href='http://www.koreaboo.com/index.html/_/music-video/exo-releases-wolf-drama-version-mvs-r21056#comment23928' rel='bookmark' title='EXO releases &quot;Wolf&quot; drama version MVs'>EXO releases &quot;Wolf&quot; drama version MVs</a></span></li>
+
+
+	<li>UNhappy I was liking The seeYa... now there already changing up ehat the heck CCM? - -&quot; annoyed<span>By <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=754'>Princess</a> on <a href='http://www.koreaboo.com/index.html/_/general/core-contents-media-announces-line-up-changes-i-r21042#comment23927' rel='bookmark' title='Core Contents Media announces line-up changes i...'>Core Contents Media announces line-up changes i...</a></span></li>
+
+
+	<li>krstal<span>By <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=23213'>shineepower</a> on <a href='http://www.koreaboo.com/index.html/_/dramas/fxs-krystal-confirmed-for-a-role-on-upco-r21028#comment23926' rel='bookmark' title='f(x)&#39;s Krystal confirmed for a role on upco...'>f(x)&#39;s Krystal confirmed for a role on upco...</a></span></li>
+
+</ul>
+
+<br /></div>
+			<div id="col2" style="word-wrap: break-word;"><h5>&nbsp;</h5><h5></h5>
+
+<ul>
+	<li>Well thats good in my opinion it was a good move on her part 10 years with YG and it seems like they didnt really give her mu...<span>By <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=754'>Princess</a> on <a href='http://www.koreaboo.com/index.html/_/general/gummys-contract-with-yg-entertainment-expires-r21034#comment23925' rel='bookmark' title='Gummy&#39;s contract with YG Entertainment expires'>Gummy&#39;s contract with YG Entertainment expires</a></span></li>
+
+
+	<li>My favorite for this first half of 2013 is Davichi Turtle, Just The Two Of Us &amp; Missing You Today&#33; Hahah :D<span>By <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=754'>Princess</a> on <a href='http://www.koreaboo.com/index.html/_/editorial/koreaboo-staff-music-picks-first-half-of-2013-r20975#comment23924' rel='bookmark' title='Koreaboo Staff Music Picks: First Half of 2013...'>Koreaboo Staff Music Picks: First Half of 2013...</a></span></li>
+
+
+	<li>Ooooh, Hyunjae. Their visuals are the best, but I think the song is a bit too bland.<span>By <a href='http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;showuser=23621'>EunByuL</a> on <a href='http://www.koreaboo.com/index.html/_/music-video/korean-band-eden-to-make-its-japanese-debut-wi-r21015#comment23923' rel='bookmark' title='Korean band EDEN to make its Japanese debut  wi...'>Korean band EDEN to make its Japanese debut  wi...</a></span></li>
+
+</ul>
+
+<br /></div>
+			<br style="clear:both" />
+		</div>
+		<div id="footer">
+			<ul id="footerNav">
+				<li><a href="http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;app=ccs&amp;">Home</a></li>
+				<li><a href="http://www.koreaboo.com/partners.html">Partners</a></li>
+				<li><a href="http://www.koreaboo.com/about.html">About Us</a></li>
+				<li><a href="mailto:contact@koreaboo.com">Advertise</a></li>
+				<li><a href="mailto:contact@koreaboo.com">Contact</a></li>
+			</ul>
+			<div>
+				<span>&copy;2013 Koreaboo - Design by</span><a href="http://www.chopeh.com">Chopeh</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="contentSidebar">
+	<div class="sidebarBlock">
+		<h2>Stay Connected</h2><span class="koreabooNews">Get Koreaboo news straight to your inbox</span>
+
+		<form action="http://koreaboo.us2.list-manage.com/subscribe/post?u=57f19e5caa2249e350e18d7bd&amp;id=afdadc134b" method="post" target="_blank">
+			<input name="EMAIL" type="text" class="newsletter" value="Enter your email address&hellip;" onfocus="if(this.value==this.defaultValue) this.value='';" onblur="if(this.value=='') this.value=this.defaultValue;" />
+			<input name="subscribe" type="submit" class="newsletterButton" value="Sign Up" />
+		</form>
+		
+		<iframe src="http://www.facebook.com/plugins/likebox.php?id=229023931411&amp;width=142&amp;connections=0&amp;stream=false&amp;header=false&amp;height=62"scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:210px; height:65px;float:left;"allowtransparency="true"></iframe>
+		<a href="http://twitter.com/koreaboo" target="_blank" class="Twitter">Twitter</a>
+		<a href="http://www.koreaboo.com/rss.php" class="RSS">RSS</a>
+		<br style="clear:both" />
+	</div>
+	
+	<div class="sidebarBlock">
+		<h2>Contribute</h2>
+		<p id="contribute">
+			<a href="http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;app=ccs&amp;do=add&amp;category=" class="icon"><img src="http://www.koreaboo.com/forum/ccs_files/images/submit-story.png" width="43px" height="46px" /></a>
+			<a href="http://www.koreaboo.com/forum/index.php?s=2e97af6b8ad74a185bbd1d947de72c73&amp;app=ccs&amp;do=add&amp;category=" class="storyLink">Submit a story</a>
+			<span>Have a tip instead? <a href="mailto:tips@koreaboo.com">Submit it!</a></span>
+		</p>
+	</div>
+	
+	 
+
+	<div class="sidebarBlock">
+	<h2>Koreaboo Last.fm</h2>
+	<p id="last-fm">
+             <a href="#" class="icon"><img src="http://koreaboo.com/uploads/lastfm.png" width="43px" height="43px" /></a>
+<br />
+        		<span>Join Koreaboo's music community at Last.fm and get your favourite artist on the charts!
+<a href="http://www.last.fm/group/Koreaboo">Join the group.</a></span>
+        </p>
+</div>
+
+	<!-- <div class="sidebarBlock">
+		<h2>Twitter Stream <a href="http://twitter.com/#!/search/%40koreaboo" target="_blank" class="twtr-link">(@koreaboo)</a></h2>
+		<div class="mask"></div>
+		<p>
+			<script type='text/javascript'>
+			//<!CDATA[
+			new TWTR.Widget({version: 2,type: 'search',search: '@koreaboo',rpp: 6,interval: 6000,title: 'Koreaboo.com',subject: '',height: 500,width: 300,theme: {shell: {background: 'transparent',color: '#ffffff'},tweets: {background: '#ffffff',color: '#666',links: '#e74c74'}},features: {scrollbar: false,loop: false,live: true,hashtags: true,timestamp: true,avatars: true,toptweets: false,behavior: 'all'}}).render().start();
+			//]]>
+			</script>
+		</p>
+		<div class="twtr-footer">
+			<a href="http://twitter.com/#!/search/%40koreaboo" target="_blank">&hellip;More Tweets</a>
+		</div>
+	</div> -->
+	
+	
+</div>
+<script type="text/javascript" src="http://platform.tumblr.com/v1/share.js"></script>
+</body>
+</html>

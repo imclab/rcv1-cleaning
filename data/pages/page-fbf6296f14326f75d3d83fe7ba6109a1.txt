@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type" />
+		<title>Products</title>
+
+    <link rel="stylesheet" type="text/css" href="http://paramount-automotive.com/design/css/percentage_new.css" />
+    <link rel="stylesheet" type="text/css" href="http://paramount-automotive.com/design/css/nds_new.css" />
+    <link rel="stylesheet" type="text/css" href="http://paramount-automotive.com/design/css/dswidget_new.css" />
+    <link type="text/css" rel="stylesheet" href="http://paramount-automotive.com/design/css/style_new.css" />
+	<!--[if IE 7]>
+		<link rel="stylesheet" href="http://paramount-automotive.com/design/css/ie7.css" type="text/css" media="screen" />
+	<![endif]-->
+	<!--[if IE 6]>
+		<link rel="stylesheet" href="http://paramount-automotive.com/design/css/ie6.css" type="text/css" media="screen" />
+	<![endif]-->
+	<!--[if IE 8]>
+		<link rel="stylesheet" href="http://paramount-automotive.com/design/css/ie8.css" type="text/css" media="all" />
+	<![endif]-->
+	
+	
+
+<script type="text/javascript" language="javascript" src="http://paramount-automotive.com/secure/javascript/jquery/jquery.min.js"></script>
+
+
+
+<script type="text/javascript" language="javascript">
+<!--
+
+function recalculatePageHeight(){
+	//make the middle content as tall as the tallest widget column	
+	var contentLeftHeight = $('#content-left').height();
+	var contentMiddleHeight = $('#content-middle').height();
+	var contentRightHeight = $('#content-right').height();
+	$('#content-middle').height('');
+
+	if((contentMiddleHeight < contentLeftHeight) || (contentMiddleHeight < contentRightHeight)){
+		if(contentLeftHeight > contentRightHeight){
+			$('#content-middle').height(contentLeftHeight);
+		} else {
+			$('#content-middle').height(contentRightHeight);
+		}
+	} else {
+		//$('#content-middle').height(contentMiddleHeight);
+	}
+}
+
+$(document).ready(function(){
+	});
+
+/**
+ * Anything that is put here will be run once the page is completely loaded.  Meaning all images have been completely loaded, etc.
+ */
+$(window).load(function(){
+	recalculatePageHeight();
+});
+
+//-->
+</script>	
+	<!-- Begin Template Layout CSS -->
+<link rel="stylesheet" type="text/css" href="http://paramount-automotive.com/css/layouts/product-detail-layout-5.css" />
+<!-- End Template Layout CSS -->	<style type="text/css" media="screen">
+body, td {
+   font-size: 12px;
+}
+
+#categoryGrid, .sprice, .form-label, a, .items, .subtotal, .top {
+   font-size: 12px;
+}
+
+#categoryGrid .title a, #categoryGrid h2, #categoryList h2 {
+   color: #CCCCCC;
+   font-size: 12px;
+}
+
+#productGrid h2, #productGrid .title a, #productGrid .details, #productGrid #topOptions, #productGrid #btmOptions, #productList h2, #productList .title a, #productList .details {
+   color: #CCCCCC;
+   font-size: 12px;
+}
+
+#viewCart #crossSell a, #viewCart #crossSell .title a {
+   color: #CCCCCC;
+}
+
+#productDetail h2, #productDetail #extraDetails, #productDetail .myerror, #productDetail #productDescription, #productTabSection-description, #productDetail #productsRelated .title a, #productDetail #productsRelated .details .sprice, #productDetail #productTabSection-related_products .title a, #productDetail #productTabSection-related_products .details .sprice {
+   color: #CCCCCC;
+   font-size: 12px;
+}
+
+</style>
+<style type="text/css" media="screen">
+#widgetCategories, #widgetCategories a, #widgetCategories .top, #widgetCategories .body ul li a {
+   font-size: 16px;
+}
+
+#widgetCurrency .body select, #widgetCurrency .top {
+   font-size: 12px;
+}
+
+#widgetCurrency .top {
+   font-family: ;
+   font-size: 12px;
+}
+
+#widgetFeatured, #widgetFeatured .top {
+   font-size: 12px;
+}
+
+#widgetFeatured .top, #widgetFeatured .noItems {
+   font-family: ;
+   font-size: 12px;
+}
+
+#widgetFeatured a, #widgetFeatured .body .all-link a, #widgetFeatured .body .all-link a:hover, #widgetFeatured .body .title a, #widgetFeatured .body .title a:hover, #widgetFeatured .myerror, #widgetFeatured .sprice {
+   font-size: 12px;
+}
+
+#widgetFooter, #widgetFooter a, #widgetFooter .nav ul li a, #widgetFooter .nav .title, #widgetFooter .actionItems a {
+   font-size: 12px;
+}
+
+#widgetFooter .top {
+   font-family: ;
+   font-size: 12px;
+}
+
+#widgetInformation, #widgetInformation a, #widgetInformation .top, #widgetInformation .body ul li a, .widgetCustomProductListInformationStyle, .widgetCustomProductListInformationStyle a, .widgetCustomProductListInformationStyle .top {
+   font-family: ;
+   font-size: 12px;
+}
+
+#widgetLanguage .body select, #widgetLanguage .top {
+   font-size: 12px;
+}
+
+#widgetLanguage .top {
+   font-family: ;
+   font-size: 12px;
+}
+
+#widgetNewArrivals, #widgetNewArrivals .top {
+   font-size: 12px;
+}
+
+#widgetNewArrivals a, #widgetNewArrivals .body .all-link a, #widgetNewArrivals .body .all-link a:hover, #widgetNewArrivals .body .title a, #widgetNewArrivals .body .title a:hover, #widgetNewArrivals .myerror, #widgetNewArrivals .sprice {
+   font-size: 12px;
+}
+
+#widgetNewArrivals .top {
+   font-family: ;
+   font-size: 12px;
+}
+
+#widgetRewardPoints, #widgetRewardPoints .top {
+   font-size: 12px;
+}
+
+#widgetRewardPoints a {
+   font-size: 12px;
+}
+
+#widgetSearch, #widgetSearch .body .field input, #widgetSearch .top {
+   font-size: 12px;
+}
+
+#widgetSearch a, #widgetSearch .advanced a {
+   font-size: 12px;
+}
+
+#widgetSearch .top {
+   font-family: ;
+   font-size: 12px;
+}
+
+#widgetSidebar, #widgetSidebar .top a, #widgetSidebar .body .items, #widgetSidebar .body .subtotal {
+   font-size: 14px;
+}
+
+#widgetSidebar .top, #widgetSidebar .top a {
+   font-family: ;
+   font-size: 14px;
+}
+
+#widgetSidebar .items, #widgetSidebar .subtotal {
+   font-size: 14px;
+}
+
+#widgetSidebar a {
+   font-size: 14px;
+}
+
+#widgetSidebarDetailed, #widgetSidebarDetailed .top a {
+   font-size: 12px;
+}
+
+#widgetSidebarDetailed .top {
+   font-family: ;
+   font-size: 12px;
+}
+
+#widgetSidebarDetailed a, #widgetSidebarDetailed .items, #widgetSidebarDetailed .price, #widgetSidebarDetailed td {
+   font-size: 12px;
+}
+
+#widgetSubscribe .body .field input, #widgetSubscribe .body .button  a, #widgetSubscribe .top {
+   font-size: 12px;
+}
+
+#widgetSubscribe .top {
+   font-family: ;
+   font-size: 12px;
+}
+
+#widgetSpecials, #widgetSpecials .top, #widgetSpecials a {
+   font-size: 12px;
+}
+
+#widgetSpecials .top, #widgetSpecials .noItems {
+   font-family: ;
+   font-size: 12px;
+}
+
+#widgetSpecials a, #widgetSpecials .myerror, #widgetSpecials .sprice, #widgetSpecials .body .title a, #widgetSpecials .body .all-link a {
+   font-size: 12px;
+}
+
+#widgetTopSellers, #widgetTopSellers .top {
+   font-size: 12px;
+}
+
+#widgetTopSellers .top, #widgetTopSellers .noItems {
+   font-family: ;
+   font-size: 12px;
+}
+
+#widgetTopSellers a, #widgetTopSellers .body .all-link a, #widgetTopSellers .body .all-link a:hover, #widgetTopSellers .body .title a, #widgetTopSellers .body .title a:hover, #widgetTopSellers .myerror, #widgetTopSellers .sprice {
+   font-size: 12px;
+}
+
+#widgetVendors, #widgetVendors a, #widgetVendors .top, .widgetCustomProductListVendorStyle, .widgetCustomProductListVendorStyle a, .widgetCustomProductListVendorStyle .top {
+   font-family: ;
+   font-size: 12px;
+}
+
+#widgetShopByPrice select, #widgetShopByPrice .body select, #widgetShopByPrice .top {
+   font-size: 12px;
+}
+
+#widgetShopByPrice .top {
+   font-family: ;
+   font-size: 12px;
+}
+
+</style>
+<style type="text/css" media="screen">.popup {
+
+	position: absolute;
+
+	width: 400px;
+
+	overflow: auto;
+
+	border: 1px solid #000000;
+
+	background-color: #CCCCCC;
+
+	z-index: 2;
+
+	visibility: hidden;
+
+	padding: 5px;
+
+	font-weight: normal;
+
+	text-align: left;
+
+	font-size: 11px;
+
+	color: #000000;
+
+	line-height: 100%;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="container">
+    <div id="header">
+		<div id="logo-box">
+			<div id="logo"><a href="http://paramount-automotive.com/cart.php"><img alt="" src="http://paramount-automotive.com/design/images/logo_new.png" /></a></div>
+        </div>
+        <div id="header-image">&nbsp;</div>
+    </div>
+	<div id="nav">
+		<div id="topNav">
+			<div class="center">
+				<div id="topNavTab_1" class="link">
+					<a href="http://paramount-automotive.com/cart.php?m=content&amp;page=1">Home</a>
+				</div>
+				<div class="spacer">&nbsp;</div>
+				<div id="topNavTab_2" class="link">
+					<a href="http://www.facebook.com/ParamountAutomotive" target="_blank">Facebook</a>
+				</div>
+				<div class="spacer"></div>
+				<div id="topNavTab_3" class="link">
+					<a href="http://paramount-automotive.com/cart.php?m=content&amp;page=12">Where to Buy</a>
+				</div>
+                <div class="spacer">&nbsp;</div>
+				<div id="topNavTab_3" class="link">
+					<a href="http://paramount-automotive.com/cart.php?m=content&amp;page=14">Giveaways</a>
+				</div>
+				<div class="spacer">&nbsp;</div>
+				<div id="topNavTab_4" class="link">
+					<a href="http://paramount-automotive.com/cart.php?m=content&amp;page=4">About Us</a>
+				</div>
+				<div class="spacer">&nbsp;</div>
+				<div id="topNavTab_5" class="link">
+					<a href="http://paramount-automotive.com/cart.php?m=content&amp;page=5">Contact Us</a>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div id="content">
+        <div id="content-left">
+			            
+
+			            
+<script type="text/javascript" language="JavaScript">
+<!--
+
+function catWidgetTree(id, url){
+    var elem = 'categoryId_'+id;
+
+    if(!document.getElementById(elem)){
+        return;
+    }
+
+    if(document.getElementById(elem).style.display=='none'){
+        document.getElementById(elem).style.display = 'block';
+
+                    //var url = 'http://paramount-automotive.com/cart.php?m=product_list&c='+id;
+            window.location.href = url;
+        
+    } else {
+        document.getElementById(elem).style.display = 'none';
+
+    }
+}
+
+function catWidgetColors(id, color){
+    var elem = 'categoryId_'+id;
+    if(!document.getElementById(elem)){
+        return;
+    }
+
+    document.getElementById(elem).style.backgroundColor = color;
+}
+
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<body onLoad="MM_preloadImages('/paramount-search-btn-2.jpg','/work/paramount automotive/live/design/css-images/paramount-search-btn-2.jpg')">
+
+<div id="widgetCategories" class="ccWidget ccWidgetList"  >
+	
+			<div class="top">
+
+										
+Products
+		</div>
+	
+	<div class="body"  >
+		
+											<ul>
+											<li ><a href="http://paramount-automotive.com/cart.php?m=product_list&amp;c=12">Off Road</a></li>
+											<li ><a href="http://paramount-automotive.com/cart.php?m=product_list&amp;c=10">Restyling</a></li>
+											<li  class="last"><a href="http://paramount-automotive.com/cart.php?m=product_list&amp;c=11">Work Force</a></li>
+									</ul>
+						</div>
+
+
+
+
+<div class="top">Search By Vehicle</div>
+<div class="body">
+<iframe scrolling="no" frameborder="0" target="_top" allowtransparency="true" 
+src="//catalog.paramount-automotive.com/?c=Vehicle&m=widget&name=widget" 
+style="width: 186px; height: 145px; visibility: visible;" onload="setWidget()"></iframe>
+
+
+</div>
+
+
+<div class="btm"></div>
+
+	</div>
+		</div>
+        <div id="content-middle">
+<!--
+	Note: if you choose to edit this template, you will be doing so at your own risk.  These templates are overwritten on upgrades.
+	If you choose to edit these templates, please know you will have to re-do any changes you make directly to this template after
+	an upgrade.  To avoid this issue, try using just the css for your design.
+-->
+
+<script type="text/javascript" language="JavaScript">
+<!--
+
+function getPage(requestedPage, filler, viewAll) {
+	//if we're on the homepage, we're not looking at a category so the pagination shouldn't take me to the product list
+	    	document.digiSHOP2.m.value = "";
+        document.digiSHOP2.target = "_self";
+    document.digiSHOP2.pageNumber.value = requestedPage;
+    document.digiSHOP2.viewAll.value = viewAll;
+
+    document.digiSHOP2.submit();
+    return false;
+}
+
+function goThere(url){
+   window.location.href = url;
+}
+
+//-->
+</script>
+
+<div id="categoryList">
+
+   
+           <div class="homepagecontent">
+            <p>
+<link rel="stylesheet" type="text/css" href=" http://paramount-automotive.com/design/css/style_new.css " /> <script type="text/javascript" src="javascript/jquery.min.js"></script>   <script type="text/javascript" src="javascript/jquery.sexyslider.min.js"></script>    <script type="text/javascript">
+    $(document).ready(function() {
+      $("#slider").SexySlider({
+        width     : 740,
+        height    : 228,
+        delay     : 3000,
+        strips    : 15,
+        autopause : true,
+        navigation: '#navigation',
+        control   : '#control',
+        effect    : 'cascade'
+      });
+    });
+  </script></p>
+<div id="wrapper">
+<div id="navigation">&nbsp;</div>
+<div id="slider"><img src="assets/slide_1.jpg" alt="" /> <img src="assets/slide_2.jpg" alt="" /> <img src="assets/slide_3.jpg" alt="" /> <img src="assets/slide_4.jpg" alt="" /> <img src="assets/slide_5.jpg" alt="" /><img src="assets/slide_6.jpg" alt="" /></div>
+<div id="control">&nbsp;</div>
+</div>
+<p><img src="http://paramount-automotive.com/design/css-images/choose-main-header.jpg" alt="" /></p>
+<div id="main-cats">
+<p><a href="http://paramount-automotive.com/cart.php?m=product_list&amp;c=12"><img src="http://paramount-automotive.com/design/css-images/main-offroad.jpg" alt="" /></a></p>
+<div id="main-offroad-text"><strong><span style="font-size: small; "><span style="color: rgb(255, 204, 0); ">PARAMOUNT OFFROAD: <br />
+</span></span></strong><span style="font-size: small; "><span style="color: rgb(255, 255, 255); ">NOW AVAILABLE!  New Jeep L.E.D. Bumpers.  Our new / innovative line high impact textured black bumpers now feature Pre-Mounted LED - Ultra2 Lighting.  Available for JK/TJ/YJ.</span></span></div>
+<p><a href="http://paramount-automotive.com/cart.php?m=product_list&amp;c=10 "><img src="http://paramount-automotive.com/design/css-images/main-restyle.jpg" alt="" /></a></p>
+<div id="main-restyle-text"><strong><span style="font-size: small; "><span style="color: rgb(255, 204, 0); ">PARAMOUNT RESTYLING: <br />
+</span></span></strong><span style="font-size: small; "><span style="color: rgb(255, 255, 255); ">The Paramount Restyling line now features the All New Raptor F-150 Carbon Fiber look alike grille!  Now you can get the Ford Raptor SVT Look, without the cost.  Available For 09-On F-150&rsquo;s.</span></span></div>
+<p><a href="http://paramount-automotive.com/cart.php?m=product_list&amp;c=11"><img src="http://paramount-automotive.com/design/css-images/main-workforce.jpg" alt="" /></a></p>
+<div id="main-workforce-text"><strong><span style="font-size: small; "><span style="color: rgb(255, 204, 0); ">PARAMOUNT WORKFORCE: <br />
+</span></span></strong><span style="font-size: small; "><span style="color: rgb(255, 255, 255); ">Truck Racks and Bumpers designed to perform and give your truck a style all your own at the same time!  Our Workforce division carries a full line of product of all major makes and models.  </span></span></div>
+</div>
+<div id="media-events-bg"><img src="http://paramount-automotive.com/design/css-images/media-buy-bg.jpg" alt="" /></div>
+<div id="media-events-text">
+<p><span style="font-size: small; ">Throughout 2012, we have already been proud supporters of events such as the 60Th Anniversary Of Jeepers Rubicon, Big Bear Forest Fest, Jeep Jamboree and much more. 2013 is sure to be a blast, and we look forward to seeing you all at these events and up-coming tradeshows. Be sure to keep up with all Paramount Offroad&trade;, Paramount Restyling&trade; and Paramount Workforce&trade; happenings, right here at Paramount-Automotive.com!</span></p>
+</div>
+<div id="dotted-line"><img src="http://paramount-automotive.com/design/css-images/dotted-line.png" alt="" /></div>
+<div id="jeep"><img src="http://paramount-automotive.com/design/css-images/jeep.png" alt="" /></div>
+<div id="bigbear"><img src="http://paramount-automotive.com/design/css-images/big-bear.jpg" alt="" /></div>
+<div id="where-to-buy-text">
+<p><span style="font-size: small; ">The following merchants and retailers are authorized sellers and distributors of Paramount Automotive related products. In the very near future you will be able to search for retailers based on your zip code, as well as look up product by year, make and vehicle model type.</span></p>
+</div>
+<div id="amazon"><img src="http://paramount-automotive.com/design/css-images/Amazon-Logo-White.png" alt="" /></div>
+<div id="summit"><img src="http://paramount-automotive.com/design/css-images/summitlogo.png" alt="" /></div>
+<div id="stylintrucks"><img src="http://paramount-automotive.com/design/css-images/stylintrucks_logo-white.png" alt="" /></div>
+<div id="quadratec"><img src="http://paramount-automotive.com/design/css-images/Quadratec.png" alt="" /></div>
+                    </div>
+   
+
+   
+
+   
+
+</div></div>
+        <div id="content-right">&nbsp;</div>
+        </div>
+        <div id="footer">
+
+<div id="widgetFooter">
+   	
+	
+									
+			<div class="actionItems">
+									<a href="#"  >Off Road</a>
+					|
+
+														<a href="#"  >Restyling</a>
+					|
+
+														<a href="#"  >Work Force</a>
+					
+									</div>
+		   	
+<style type="text/css">
+.hotspot-container .hotspota {
+    width: 60px; height: 60px;
+    position: absolute;
+    top: 10px; /* Top coord of hotspot (relative to parent, bottom: 20px is also valid) */
+    left: 875px; /* Left coord of hotspot (right: 20px is also valid); */
+}
+
+.hotspot-container .hotspotb {
+    width: 60px; height: 60px;
+    position: absolute;
+    top: 10px; /* Top coord of hotspot (relative to parent, bottom: 20px is also valid) */
+    left: 780px; /* Left coord of hotspot (right: 20px is also valid); */
+}
+.hotspot-container .hotspotc {
+    width: 60px; height: 60px;
+    position: absolute;
+    top: 10px; /* Top coord of hotspot (relative to parent, bottom: 20px is also valid) */
+    left: 680px; /* Left coord of hotspot (right: 20px is also valid); */
+}
+
+</style>
+<div class="hotspot-container">
+    <a href="http://www.facebook.com/ParamountAutomotive" class="hotspota" target="_blank"></a>
+    <a href="http://www.youtube.com/ParamountAutomotive1" class="hotspotb" target="_blank"></a>
+    <a href="http://www.twitter.com/PARAMOUNT_AUTO" class="hotspotc" target="_blank"></a>
+
+</div>
+
+   	<div class="copyright">
+      	
+      								<br/>
+			
+
+
+          	
+							<br/>
+			            
+            Web Design
+            
+      	   	</div>
+
+            
+        	        
+        	        
+        	                <div class="nav">
+                 	<div class="title">Information</div>
+
+					<ul>
+																					<li><a href="http://paramount-automotive.com/cart.php?m=content&amp;page=2"  >Privacy Policy</a></li>
+																												<li><a href="http://paramount-automotive.com/cart.php?m=content&amp;page=3"  >Terms of Use</a></li>
+																		</ul>
+                </div>
+                        </div>        </div>
+        <p>&nbsp;</p>
+        </div>
+    </body>
+</html>

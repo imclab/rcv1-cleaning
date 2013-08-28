@@ -1,0 +1,714 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>
+Car Auction Sites - Car Selling Websites - Car Buying Websites</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Car auction sites to buy and sell cars. Car selling websites to sell new or used cars. Car buying websites to buy cars online. Car auctions online to bid, sell, and buy cars for sale.">
+<meta name="keywords" content="car auction sites, car selling websites, car buying websites, used cars for sale, car loans"><link rel="stylesheet" type="text/css" href="themes/global.css">
+<script type="text/javascript" src="JsHttpRequest/JsHttpRequest.js"></script>
+<script type="text/javascript" src="scripts/jsencode.js"></script>
+
+<script type="text/javascript" src="jquery/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="jquery/js/jquery.blockUI.js"></script>
+
+<link rel="stylesheet" type="text/css" href="jquery/css/swfupload.css">
+<script type="text/javascript" src="jquery/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="jquery/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="jquery/swfupload/handlers.js"></script>
+
+<script type="text/javascript" src="jquery/js/jquery.jclock.js"></script>
+<script type="text/javascript" src="jquery/js/jquery.clock.js"></script>
+<script type="text/javascript" src="jquery/js/jquery.countdown.min.js"></script>
+
+<script type="text/javascript" src="jquery/tiny_mce/jquery.tinymce.js"></script>
+
+<script type="text/javascript" src="themes/ultra/main.js"></script>
+
+<script type="text/javascript">
+	var relative_path = '';
+	var sc_title = 'Shipping Calculator';
+	var site_theme = 'ultra';
+	var upl_progress_msg = 'Uploading, please wait...';
+	var closed_msg = 'Closed';
+	var day_msg = 'Day';
+	var days_msg = 'Days';
+	var h_msg = 'h';
+	var m_msg = 'm';
+	var s_msg = 's';
+	var na_msg = 'N/A';
+	var save_msg = 'Save';	
+	var edit_msg = 'Edit';
+	var processing_bulk_msg = 'The file has been uploaded.<br>Processing your listings. Please wait, this might take a few minutes...';
+	var processing_msg = 'Please wait, processing...';
+	
+		var location_reload = false;
+		
+	var s_usr = '0';
+	
+
+	function confirm_refresh()
+	{
+		var is_confirmed = confirm('Are you sure you want to proceed?');
+	
+		if (is_confirmed) {
+			return true;
+		}
+		else
+		{
+			window.location.reload();
+		}
+	
+		return is_confirmed;
+	}
+	
+	var currenttime = 'August 27, 2013 16:33:18';
+	var serverdate=new Date(currenttime);
+	
+	function padlength(what){
+		var output=(what.toString().length==1)? "0"+what : what;
+		return output;
+	}
+	
+	function displaytime(){
+		serverdate.setSeconds(serverdate.getSeconds()+1)
+		var timestring=padlength(serverdate.getHours())+":"+padlength(serverdate.getMinutes())+":"+padlength(serverdate.getSeconds());
+		document.getElementById("servertime").innerHTML=timestring;
+	}
+	
+	// swf upload code snippet for the bulk upload function
+	var swfu;
+	
+	window.onload = function () {	
+				setInterval("displaytime()", 1000);
+		
+	 	$.unblockUI();
+	 	
+	 	$('#form_bulk_list_all, #form_bulk_delete_all, #form_bulk_list_proceed').bind('click', function() {	
+			$.blockUI({ message: '<p style="padding: 10px; font-size: 16px; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold;">' + processing_msg + '</p>' });
+		}); 		
+		
+		// load tinymce for all text areas which need to have wysiwyg enabled - v6.10 upgrade on Innova.
+		$('textarea.tinymce').tinymce({
+			// Location of TinyMCE script
+			script_url : '' + 'jquery/tiny_mce/tiny_mce_src.js',
+
+			// General options
+			theme : "advanced",
+         relative_urls: false,
+         remove_script_host: false,
+         
+			// Theme options
+			theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,formatselect,fontselect,fontsizeselect",
+			theme_advanced_buttons2 : "cut,copy,paste,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,forecolor,backcolor,|,hr,removeformat,visualaid,|,sub,sup",
+			theme_advanced_buttons3 : "",
+			theme_advanced_toolbar_location : "top",
+			theme_advanced_toolbar_align : "left",
+			theme_advanced_statusbar_location : "bottom",
+			theme_advanced_resizing : false
+
+		});
+
+			
+		var bulk_upload_page = document.getElementById('spanButtonPlaceholder');
+		
+		if (bulk_upload_page != null)
+		{
+			swfu = new SWFUpload({
+				// Backend settings
+				upload_url: "ajax_files/bulk_uploader.php",
+				file_post_name: "bulk_file",
+		
+				// Flash file settings
+				file_size_limit : "50 MB",
+				file_types : "*.csv;*.txt",			// or you could use something like: "*.doc;*.wpd;*.pdf",
+				file_types_description : "CSV Files",
+				file_upload_limit : "1",
+				file_queue_limit : "1",
+		
+				// Event handler settings
+				swfupload_loaded_handler : swfUploadLoaded,
+		
+				file_dialog_start_handler: fileDialogStart,
+				file_queued_handler : fileQueued,
+				file_queue_error_handler : fileQueueError,
+				file_dialog_complete_handler : fileDialogComplete,
+		
+				//upload_start_handler : uploadStart,	// I could do some client/JavaScript validation here, but I don't need to.
+				upload_progress_handler : uploadProgress,
+				upload_error_handler : uploadError,
+				upload_success_handler : uploadSuccess,
+				upload_complete_handler : uploadComplete,
+		
+				// Button Settings
+				button_image_url : "jquery/img/XPButtonUploadText_61x22.png",
+				button_placeholder_id : "spanButtonPlaceholder",
+				button_width: 61,
+				button_height: 22,
+		
+				// Flash Settings
+				flash_url : "jquery/swfupload/swfupload.swf",
+		
+				custom_settings : {
+					progress_target : "fsUploadProgress",
+					upload_successful : false
+				},
+		
+				// Debug settings
+				debug: false
+			});
+		}
+	
+	};	
+</script>
+
+<script type="text/javascript" src="jquery/global.js"></script>
+
+
+<!--[if lt IE 8]><style>
+.wraptocenter span {
+    display: inline-block;
+    height: 100%;
+}
+</style><![endif]-->
+<link href="themes/ultra/style.css" rel="stylesheet" type="text/css">
+<script src="themes/ultra/SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<link href="themes/ultra/SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css">
+<script src="themes/ultra/SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
+<link href="themes/ultra/SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+ background-image: url(themes/ultra/img/subbg.gif);
+}
+.TabbedPanelsTab {
+ BACKGROUND: url(themes/ultra/img/tabg2.gif) no-repeat right top;
+}
+.TabbedPanelsTab a {
+ BACKGROUND: url(themes/ultra/img/tabg1.gif) no-repeat left top;
+}
+.TabbedPanelsTabSelected {
+ BACKGROUND: url(themes/ultra/img/tabbrown2.gif) no-repeat right top;
+}
+.TabbedPanelsTabSelected a {
+ BACKGROUND: url(themes/ultra/img/tabbrown1.gif) no-repeat left top;
+}
+.placebid {
+	font-size: 18px;
+	font-weight: bold;
+	height: 38px;
+}
+.lb {
+	border-right: 1px solid #111212;
+	border-left: 1px solid #606468;
+	font-size: 11px;
+	font-weight: bold;
+	background-image: url(themes/ultra/img/subbg.gif);
+}
+.lb a {
+	color: #ffffff;
+	text-decoration: none;
+}
+.lb a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+.db {
+	font-size: 11px;
+	font-weight: bold;
+	border-right: 1px solid #111212;
+	border-left: 1px solid #606468;
+	background-image: url(themes/ultra/img/db_bg.gif);
+}
+.db a {
+	color: #ffffff;
+	text-decoration: none;
+}
+.db a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+.today {
+background: #ffffff url(themes/ultra/img/listedtoday.gif) top right no-repeat;
+}
+.day {
+background: #ffffff url(themes/ultra/img/day.gif) bottom left no-repeat;
+}
+.hour {
+background: #ffffff url(themes/ultra/img/hour.gif) bottom left no-repeat;
+}
+.hl_item1 {
+	border: 2px solid #ffa500;
+}
+-->
+</style>
+
+</head>
+<body bgcolor="#f5f6f7">
+<table width="980" border="0" align="center" cellpadding="10" cellspacing="0">
+<tr>
+   <td>
+   <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr valign="bottom">
+         <td style="padding-bottom: 10px;"><a href="http://www.carauctionbid.com/index.php"><img src="images/probidlogo.gif" alt="Car Auction Sites" border="0"></a></td>
+         <td width="100%" valign="bottom" style="padding-left: 15px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+               <tr height="60">
+                  <td nowrap style="border-left: 1px solid #cccccc; padding-left: 15px; padding-top: 8px;" class="mainmenu" width="100%"><div style="padding-bottom: 3px;">
+                        Aug. 27, 2013                        <span id="servertime"></span></div>
+                                          Welcome! &nbsp;
+                     <a href="http://www.carauctionbid.com/login.php">LOGIN</a> or 
+                     <a href="http://www.carauctionbid.com/register.php">REGISTER</a>
+                                          &nbsp;&nbsp;&nbsp;
+                     <div><img src="themes/ultra/img/pixel.gif" width="200" height="1"></div></td>
+						<td nowrap style="padding-right: 10px;" class="smallfont">[ <a href="search.php">Advanced Search</a> ]</td>
+												<td nowrap style="padding-right: 10px;"><!-- AddThis Button BEGIN -->
+		<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;pub=xa-4a83d52479e9d5ed"><img src="https://s7.addthis.com/static/btn/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0" align="middle" /></a><script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js?pub=xa-4a83d52479e9d5ed"></script>
+		<!-- AddThis Button END --></td>
+						                                    <td nowrap align="center">&nbsp;&nbsp;<a href="http://www.carauctionbid.com/english,change_language,index"><img src="themes/ultra/img/english.gif" border="0" alt="english" align="middle"></a>&nbsp;&nbsp;</td>
+                                    <td><div align="center"><a href="rss_feed.php"><img src="themes/ultra/img/system/rss.gif" border="0" align="absmiddle" hspace="10"></a></div>
+                     </td>
+               </tr>
+            </table>
+            <div><img src="themes/ultra/img/pixel.gif" width="1" height="10"></div></td>
+      </tr>
+   </table>
+   <table width="100%" border="0" cellspacing="0" cellpadding="0" background="themes/ultra/img/subbg.gif">
+      <tr align="center">
+         <td width="6" style="border-right: 1px solid #111212;"><a href="http://www.carauctionbid.com/index.php"><img src="themes/ultra/img/home_i.gif" width="49" height="49" border="0"></a></td>
+         <td nowrap width="13%"  class="lb" ONMOUSEOVER="this.className='db';" ONMOUSEOUT="this.className='lb';">
+         	<ul id="MenuBarCategories" class="MenuBarHorizontal">
+               <li style="background-color: transparent;">
+               	<a style="background-color: transparent; color: #ffffff; border: 0px;" class="MenuBarItemSubmenu" href="categories.php">CATEGORIES</a>
+                  
+               	<ul>
+
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/acura-car-auctions,category,1866,parent_id,categories" title="Acura Car Auctions Online" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Acura Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/alfa-romeo-car-auctions,category,1867,parent_id,categories" title="Alfa Romeo Car Auctions Online" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Alfa Romeo Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/amc-car-auctions,category,1868,parent_id,categories" title="Amc Car Auctions Online" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Amc Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/aston-martin-auctions,category,1869,parent_id,categories" title="Aston Martin Car Auctions Online" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Aston Martin Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/audi-car-auctions,category,1870,parent_id,categories" title="Audi car auctions online" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Audi Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/bentley-car-auctions,category,1871,parent_id,categories" title="Bentley Car Auctions Online" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Bentley Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/bmw-car-auctions,category,1872,parent_id,categories" title="Bmw Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Bmw Car Auctions         (<strong>2</strong>)</a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/buick-car-auctions,category,1873,parent_id,categories" title="Buick car auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Buick Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/cadillac-car-auctions,category,1874,parent_id,categories" title="Cadillac car auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Cadillac Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/car-electronics,category,2622,parent_id,categories"  alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Car Electronics         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/chevrolet-car-auctions,category,1875,parent_id,categories" title="Chevrolet Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Chevrolet Car Auctions         (<strong>3</strong>)</a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/chrysler-car-auctions,category,1876,parent_id,categories" title="Chrysler Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Chrysler Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/classic-car-auctions,category,2619,parent_id,categories" title="Classic car auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Classic Car Auctions         (<strong>2</strong>)</a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/datsun-car-auctions,category,1877,parent_id,categories" title="Datsun Auctions" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Datsun Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/dodge-car-auctions,category,1878,parent_id,categories" title="Dodge Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Dodge Car Auctions         (<strong>1</strong>)</a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/ferrari-car-auctions,category,1879,parent_id,categories"  alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Ferrari Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/ford-car-auctions,category,1880,parent_id,categories" title="Ford Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Ford Car Auctions         (<strong>-1</strong>)</a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/gmc-car-auctions,category,1881,parent_id,categories" title="GMC Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">GMC Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/honda-car-auctions,category,1882,parent_id,categories" title="Honda Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Honda Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/hummer-auctions,category,2296,parent_id,categories" title="Hummer Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Hummer Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/hyundai-car-auctions,category,1883,parent_id,categories" title="Hyundai Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Hyundai Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/infiniti-car-auctions,category,1884,parent_id,categories" title="Infiniti Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Infiniti Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/isuzu-car-auctions,category,1885,parent_id,categories" title="Isuzu Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Isuzu Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/jaguar-car-auctions,category,1886,parent_id,categories" title="Jaguar Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Jaguar Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/jeep-auctions,category,1887,parent_id,categories" title="Jeep Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Jeep Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/kia-car-auctions,category,1888,parent_id,categories" title="Kia Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Kia Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/lamborghini-auctions,category,1889,parent_id,categories" title="Lamborghini Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Lamborghini Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/land-rover-auctions,category,1890,parent_id,categories" title="Land Rover Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Land Rover Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/lexus-car-auctions,category,1891,parent_id,categories" title="Lexus car auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Lexus Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/lincoln-car-auctions,category,1892,parent_id,categories" title="Lincoln Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Lincoln Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/lotus-car-auctions,category,1893,parent_id,categories" title="Lotus Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Lotus Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/maserati-car-auctions,category,1894,parent_id,categories" title="Maserati Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Maserati Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/maybach-auctions,category,1895,parent_id,categories" title="Maybach Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Maybach Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/mazda-auctions,category,1896,parent_id,categories" title="Mazda Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Mazda Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/mercedes-benz-auctions,category,1897,parent_id,categories" title="Mercedes Benz Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Mercedes Benz Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/mercury-car-auctions,category,1898,parent_id,categories" title="Mercury car auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Mercury Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/mini-car-auctions,category,1899,parent_id,categories" title="Mini Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Mini Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/mitsubishi-car-auctions,category,1900,parent_id,categories" title="Mitsubishi Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Mitsubishi Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/nissan-car-auctions,category,1901,parent_id,categories" title="Nissan Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Nissan Car Auctions         (<strong>2</strong>)</a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/oldsmobile-car-auctions,category,1902,parent_id,categories" title="Oldsmobile auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Oldsmobile Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/other-car-makes,category,1903,parent_id,categories"  alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Other Car Makes         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/plymouth-car-auctions,category,1904,parent_id,categories" title="Plymouth Car Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Plymouth Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/pontiac-car-auctions,category,1905,parent_id,categories" title="Pontiac car auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Pontiac Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/porsche-car-auctions,category,1906,parent_id,categories" title="Porsche car auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Porsche Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/rolls-royce-auctions,category,1907,parent_id,categories" title="Rolls Royce Auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Rolls Royce Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/saab-car-auctions,category,1908,parent_id,categories" title="Saab auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Saab Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/saturn-car-auctions,category,1909,parent_id,categories" title="Saturn car auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Saturn Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/scion-car-auctions,category,1910,parent_id,categories" title="Scion car auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Scion Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/scooters,category,2623,parent_id,categories"  alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Scooters         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/subaru-car-auctions,category,1911,parent_id,categories" title="Subaru car auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Subaru Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/toyota-car-auctions,category,1912,parent_id,categories" title="Toyota car auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Toyota Car Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/volkswagen-auctions,category,1913,parent_id,categories" title="Volkswagen car auction" alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Volkswagen Auctions         </a>
+   </li>
+      <li><a style="font-size: 11px; font-weight: normal;" href="http://www.carauctionbid.com/volvo-car-auctions,category,1914,parent_id,categories"  alt=""><img src="themes/ultra/img/arrow.gif" border="0" hspace="4">Volvo Car Auctions         </a>
+   </li>
+   </ul>
+               </li>
+            </ul></td>
+                           <td nowrap class="lb" ONMOUSEOVER="this.className='db';" ONMOUSEOUT="this.className='lb';" width="13%">&nbsp;<a href="http://www.carauctionbid.com/sell_item,redirect,login">SELL</a>&nbsp;</td>
+         			         <!-- Members Area Menu -->
+         <td nowrap  class="lb" ONMOUSEOVER="this.className='db';" ONMOUSEOUT="this.className='lb';"  width="13%">
+	         <ul id="MenuBar1" class="MenuBarHorizontal">
+	            <li style="background-color: transparent;"><a style="background-color: transparent; color: #ffffff; border: 0px;" href="members_area.php">
+	               MEMBERS AREA	               </a>
+	               <ul>
+	                  	                  	                  <li><a href="http://www.carauctionbid.com/login.php" class="MenuBarItem"><img src="themes/ultra/img/ico_login.gif" align='absmiddle' id="icomenu" border="0">
+	                     LOGIN	                     </a></li>
+	                  <li><a href="http://www.carauctionbid.com/register.php" class="MenuBarItem"><img src="themes/ultra/img/ico_register.gif" align='absmiddle' id="icomenu" border="0">
+	                     REGISTER	                     </a></li>
+	                  	               </ul>
+	            </li>
+	         </ul>
+			</td>
+      
+	      <!-- EOF MEMBERS AREA MENU -->
+	      	      			<td nowrap class="lb" ONMOUSEOVER="this.className='db';" ONMOUSEOUT="this.className='lb';" width="13%">
+				&nbsp;<a href="http://www.carauctionbid.com/stores.php">STORES</a>&nbsp;</td>
+												 
+						<td nowrap class="lb" ONMOUSEOVER="this.className='db';" ONMOUSEOUT="this.className='lb';"  width="13%">
+				&nbsp;<a href="http://www.carauctionbid.com/wanted_ads.php">WANTED ADS</a>&nbsp;</td>
+						         <td nowrap  class="lb" ONMOUSEOVER="this.className='db';" ONMOUSEOUT="this.className='lb';"  width="13%">
+         	<ul id="MenuBarHelp" class="MenuBarHorizontal">
+               <li style="background-color: transparent;"> <a style="background-color: transparent; color: #ffffff; border: 0px;" href="http://www.carauctionbid.com/help,page,content_pages">
+                  HELP                  </a>
+                  <ul>
+                     <li><a class="MenuBarItem" href="http://www.carauctionbid.com/help,page,content_pages"><img src="themes/ultra/img/ico_faq.gif" align='absmiddle' id="icomenu" border="0">
+                        HELP                        </a></li>
+                     <li><a class="MenuBarItem" href="http://www.carauctionbid.com/faq,page,content_pages"><img src="themes/ultra/img/ico_faq.gif" align='absmiddle' id="icomenu" border="0">
+                        FAQ                        </a></li>
+                                                               <li><a class="MenuBarItem" href="http://www.carauctionbid.com/contact_us,page,content_pages"><img src="themes/ultra/img/ico_contact.gif" align='absmiddle' id="icomenu" border="0">
+                        CONTACT US                        </a></li>
+                                                               <li><a class="MenuBarItem" href="http://www.carauctionbid.com/site_fees.php"><img src="themes/ultra/img/ico_fees.gif" align='absmiddle' id="icomenu" border="0">
+                        SITE FEES                        </a></li>
+                                       </ul>
+               </li>
+            </ul></td>
+         <form action="auction_search.php" method="post">
+            <input type="hidden" name="option" value="basic_search">
+            <td class="lb" nowrap width="100%" align="right" style="border-right: 0px;"><input type="text" size="20" name="basic_search" style="background-image: url(themes/ultra/img/searchbg.gif); height: 20px; border: 0px;padding-left: 10px; padding-top: 2px;"></td>
+            <td nowrap  style="padding-right: 10px;"><input name="form_basic_search" type="image" src="themes/ultra/img/search.gif" border="0"></td>
+         </form>
+         <td width="6"><img src="themes/ultra/img/sub2.gif" width="5" height="49"></td>
+      </tr>
+   </table>
+   <div><img src="themes/ultra/img/pixel.gif" width="1" height="10"></div>
+   <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+   <tr>
+      <td width="10"><img src="themes/ultra/img/c1.gif" width="10" height="10"></td>
+      <td width="100%" style="border-top: 1px solid #bbbbbb;"><img src="themes/ultra/img/pixel.gif" width="1" height="1"></td>
+      <td width="10"><img src="themes/ultra/img/c2.gif" width="10" height="10"></td>
+   </tr>
+   <tr>
+      <td width="10" style="border-left: 1px solid #bbbbbb;"><img src="themes/ultra/img/pixel.gif" width="1" height="1"></td>
+      <td width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+         <tr valign="top">
+            <td width="100%">
+					<div align="center" style="padding-top: 3px; padding-bottom: 3px;"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-0743412565610844";
+/* Top */
+google_ad_slot = "5358665695";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><br>
+<center><b><font color="red">Only Featured Auctions Have Cars Under $5000</center></font></b>
+<table width='100%' border='0' cellspacing='0' cellpadding='0'>
+        <tr>
+        <td width='5'><img src='themes/ultra/img/partb1.gif' width='5' height='35'></td>
+        <td width='100%' class='partb' background='themes/ultra/img/partb_bg.gif'>Featured Auctions [ <span class="sell"><a href="http://www.carauctionbid.com/featured,option,auctions_show">View All</a></span> ]</td>
+        <td width='5'><img src='themes/ultra/img/partb2.gif' width='5' height='35'></td>
+        </tr>
+        </table>
+        <div><img src='themes/ultra/img/pixel.gif' width='1' height='3'></div><table width="100%" border="0" cellpadding="0" cellspacing="3" >
+      <tr>
+            <td width="33.3333333333%" align="center" valign="top"></td>
+            <td width="33.3333333333%" align="center" valign="top"></td>
+            <td width="33.3333333333%" align="center" valign="top"></td>
+         </tr>
+   </table>
+<div><img src="themes/ultra/img/pixel.gif" width="1" height="10"></div>
+<div id="TabbedPanels1" class="TabbedPanels">
+   <ul class="TabbedPanelsTabGroup">
+            <li class="TabbedPanelsTab" tabindex="0"><a href="javascript:void(0);"><div><img src="themes/ultra/img/pixel.gif" width="1" height="9" border="0"></div>Recently Listed Auctions</a></li>
+      		      <li class="TabbedPanelsTab" tabindex="0"><a href="javascript:void(0);"><div><img src="themes/ultra/img/pixel.gif" width="1" height="9" border="0"></div>Ending Soon</a></li>
+      				      <li class="TabbedPanelsTab" tabindex="0"><a href="javascript:void(0);"><div><img src="themes/ultra/img/pixel.gif" width="1" height="9" border="0"></div>Wanted Ads</a></li>
+               </ul>
+   <div class="TabbedPanelsContentGroup" >
+		      <div class="TabbedPanelsContent">
+         <br>
+         <table width="100%" border="0" cellspacing="1" cellpadding="3">
+			            <tr height="15" valign="top">
+				               <td width="33%"><table width="100%" border="0" cellpadding="3" cellspacing="1" class="border ">
+                     <tr height="215">
+                        <td align="center" class=""><a href="http://www.carauctionbid.com/1999-chevy-silverado,name,115753,auction_id,auction_details"><img src="thumbnail.php?pic=uplimg/img_A_113942_545956e0af5c05841b20d5a3f8ff94b5.jpg&w=100&sq=Y" border="0" width="100" alt="1999 Chevy Silverado"></a> <br>
+                           <div class="c1feat"><a href="http://www.carauctionbid.com/1999-chevy-silverado,name,115753,auction_id,auction_details">1999 Chevy Silverado</a></div>
+                           <br>
+                           Start Time: Aug. 22, 2013 15:16:57                           <br>
+                           Start Bid: USD 4,500.00									<br>
+                           <br>
+                           <a href="http://www.carauctionbid.com/115753,auction_id,1999-chevy-silverado,name,buy_out"><img src="themes/ultra/img/system/buyitnow25.gif" border="0" align="absmiddle" alt="Buy Out"></a> <b>For <font color="green">USD 5,400.00</font></b> &nbsp;                        </td>
+                     </tr>
+                  </table></td>
+				                           <td width="33%"><table width="100%" border="0" cellpadding="3" cellspacing="1" class="border ">
+                     <tr height="215">
+                        <td align="center" class=" hl_item1"><a href="http://www.carauctionbid.com/2008-nissan-350zx-custom,name,115733,auction_id,auction_details"><img src="thumbnail.php?pic=http://www.autabuy.com/Photos/407841_217955468.jpg&w=100&sq=Y" border="0" width="100" alt="2008 NISSAN 350ZX CUSTOM"></a> <br>
+                           <div class="c1feat"><a href="http://www.carauctionbid.com/2008-nissan-350zx-custom,name,115733,auction_id,auction_details">2008 NISSAN 350ZX CUSTOM</a></div>
+                           <br>
+                           Start Time: Jul. 25, 2013 21:56:39                           <br>
+                           Start Bid: USD 19,000.00									<br>
+                           <br>
+                                                   </td>
+                     </tr>
+                  </table></td>
+				            </tr>
+                                 </table>
+         <div align="right" style="padding: 5px;" class="contentfont"><a href="http://www.carauctionbid.com/recent,option,auctions_show">View All</a></div>
+      </div>
+				      <div class="TabbedPanelsContent">
+         <br>
+         <table width="100%" border="0" cellspacing="1" cellpadding="3">
+			            <tr height="15" valign="top">
+                           <td width="33%"><table width="100%" border="0" cellpadding="3" cellspacing="1" class='border 
+						 
+						'>
+                     <tr height="215">
+                        <td align="center" class=" hl_item1"><a href="http://www.carauctionbid.com/2008-nissan-350zx-custom,name,115733,auction_id,auction_details"><img src="thumbnail.php?pic=http://www.autabuy.com/Photos/407841_217955468.jpg&w=100&sq=Y" border="0" width="100" alt="2008 NISSAN 350ZX CUSTOM"></a> <br>
+                           <div class="c1feat"><a href="http://www.carauctionbid.com/2008-nissan-350zx-custom,name,115733,auction_id,auction_details">2008 NISSAN 350ZX CUSTOM</a></div>
+                           <br>
+                           Time Left: 23 Days, 5h 23m                           <br>
+                           Currently: USD 19,000.00                           <br>
+                           <br>
+                                                   </td>
+                     </tr>
+                  </table></td>
+                                       <td width="33%"><table width="100%" border="0" cellpadding="3" cellspacing="1" class='border 
+						 
+						'>
+                     <tr height="215">
+                        <td align="center" class=""><a href="http://www.carauctionbid.com/1999-chevy-silverado,name,115753,auction_id,auction_details"><img src="thumbnail.php?pic=uplimg/img_A_113942_545956e0af5c05841b20d5a3f8ff94b5.jpg&w=100&sq=Y" border="0" width="100" alt="1999 Chevy Silverado"></a> <br>
+                           <div class="c1feat"><a href="http://www.carauctionbid.com/1999-chevy-silverado,name,115753,auction_id,auction_details">1999 Chevy Silverado</a></div>
+                           <br>
+                           Time Left: 50 Days, 22h 43m                           <br>
+                           Currently: USD 4,500.00                           <br>
+                           <br>
+                           <a href="http://www.carauctionbid.com/115753,auction_id,1999-chevy-silverado,name,buy_out"><img src="themes/ultra/img/system/buyitnow25.gif" border="0" align="absmiddle" alt="Buy Out"></a> <b>For <font color="green">USD 5,400.00</font></b> &nbsp;                        </td>
+                     </tr>
+                  </table></td>
+                        </tr>
+                                 </table>
+         <div align="right" style="padding: 5px;" class="contentfont"><a href="http://www.carauctionbid.com/ending,option,auctions_show">View All</a></div>
+      </div>
+						      <div class="TabbedPanelsContent"> <br>
+         <table width="100%" border="0" cellspacing="1" cellpadding="3">
+			            <tr height="15" valign="top">
+				               <td width="33%"><table width="100%" border="0" cellpadding="3" cellspacing="1"  class="border">
+                     <tr height="215">
+                        <td align="center"><a href="http://www.carauctionbid.com/acura-nsx,name,247,wanted_ad_id,wanted_details"><img src="themes/ultra/img/system/noimg.gif" border="0" width="100" alt="Acura NSX"></a> <br>
+                           <div class="c1feat"><a href="http://www.carauctionbid.com/acura-nsx,name,247,wanted_ad_id,wanted_details">
+                              Acura NSX                              </a></div>
+                           <br>
+                           Start Time: Jul. 10, 2013 23:57:42                           <br>
+                        </td>
+                     </tr>
+                  </table></td>
+				            </tr>
+                                 </table>
+         <div align="right" style="padding: 5px;" class="contentfont"><a href="http://www.carauctionbid.com/wanted_ads.php">View All</a></div>
+      </div>
+		         </div>
+</div>
+</td>
+<td width="10"><img src="themes/ultra/img/pixel.gif" width="10" height="1"></td>
+<td>   <table width='100%' border='0' cellspacing='0' cellpadding='0'>
+        <tr>
+        <td width='5'><img src='themes/ultra/img/party1.gif' width='5' height='35'></td>
+        <td width='100%' class='party' background='themes/ultra/img/party_bg.gif'>Site News</td>
+        <td width='5'><img src='themes/ultra/img/party2.gif' width='5' height='35'></td>
+        </tr>
+        </table>
+        <div><img src='themes/ultra/img/pixel.gif' width='1' height='3'></div>   
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+		<tr> 
+		<td><img src="themes/ultra/img/arrow.gif" hspace="4"></td> 
+		<td width="100%" class="smallfont"><b>Jul. 01, 2013</b></td> 
+	</tr> 
+	<tr> 
+		<td></td> 
+		<td class="smallfont"><a href="http://www.carauctionbid.com/news,page,83,topic_id,content_pages">Best Car Insurance</a></td> 
+	</tr>
+		<tr> 
+		<td><img src="themes/ultra/img/arrow.gif" hspace="4"></td> 
+		<td width="100%" class="smallfont"><b>Feb. 27, 2012</b></td> 
+	</tr> 
+	<tr> 
+		<td></td> 
+		<td class="smallfont"><a href="http://www.carauctionbid.com/news,page,67,topic_id,content_pages">Free $100 Gas Card</a></td> 
+	</tr>
+		<tr>
+		<td></td>
+		<td class="contentfont" align="right"><b><a href="http://www.carauctionbid.com/news,page,content_pages">View All</a></b>&nbsp;</td>
+	</tr>
+ </table>
+   <div><img src='themes/ultra/img/pixel.gif' width='1' height='10'></div>
+         <noscript>
+   Javascript not supported   </noscript>
+      <table width='100%' border='0' cellspacing='0' cellpadding='0'>
+        <tr>
+        <td width='5'><img src='themes/ultra/img/partg1.gif' width='5' height='35'></td>
+        <td width='100%' class='partb' background='themes/ultra/img/partg_bg.gif'>Site Status</td>
+        <td width='5'><img src='themes/ultra/img/partg2.gif' width='5' height='35'></td>
+        </tr>
+        </table>
+        <div><img src='themes/ultra/img/pixel.gif' width='1' height='3'></div>   <table width='100%' border='0' cellpadding='2' cellspacing='1' class='border'>
+      <tr class='c1'>
+         <td width='20%' align='center'><b>
+            2452            </b></td>
+         <td width='80%'>&nbsp;
+            registered users</td>
+      </tr>
+      <tr class='c2'>
+         <td width='20%' align='center'><b>
+            2            </b></td>
+         <td width='80%'>&nbsp;
+            live auctions</td>
+      </tr>
+            <tr class='c1'>
+         <td width='20%' align='center'><b>
+            1            </b></td>
+         <td width='80%'>&nbsp;
+            live wanted ads</td>
+      </tr>
+                  <tr class='c2'>
+         <td width='20%' align='center'><b>
+            2            </b></td>
+         <td width='80%'>&nbsp;
+            active stores</td>
+      </tr>
+            <tr class='c1'>
+         <td width='20%' align='center'><b>
+            5            </b></td>
+         <td width='80%'>&nbsp;
+            online users</td>
+      </tr>
+   </table>
+   <div><img src='themes/ultra/img/pixel.gif' width='1' height='10'></div>
+      <div align="center" style="padding-top: 3px; padding-bottom: 3px;"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-0743412565610844";
+/* carauctionside */
+google_ad_slot = "8702282195";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>   <div><img src="themes/ultra/img/pixel.gif" width="170" height="1"></div>
+</td>
+</tr>
+</table>
+
+         	</td>
+               <td width="10" style="border-right: 1px solid #bbbbbb;"><img src="themes/ultra/img/pixel.gif" width="1" height="1"></td>
+            </tr>
+            <tr>
+               <td width="10"><img src="themes/ultra/img/c3.gif" width="10" height="10"></td>
+               <td width="100%" style="border-bottom: 1px solid #bbbbbb;"><img src="themes/ultra/img/pixel.gif" width="1" height="1"></td>
+               <td width="10"><img src="themes/ultra/img/c4.gif" width="10" height="10"></td>
+            </tr>
+         </table>
+
+         <div><img src="themes/ultra/img/pixel.gif" width="1" height="5"></div>
+         <div align="center">
+                     </div>
+         <div><img src="themes/ultra/img/pixel.gif" width="1" height="5"></div>
+         <div align="center" style="padding: 5px;" class="footerfont">
+      		<a href="http://www.carauctionbid.com/index.php">HOME</a>
+								| <a href="http://www.carauctionbid.com/sell_item,redirect,login">SELL</a>
+								| <a href="http://www.carauctionbid.com/register.php">REGISTER</a>
+				| <a href="http://www.carauctionbid.com/login.php">LOGIN</a>
+				| <a href="http://www.carauctionbid.com/help,page,content_pages">HELP</a>
+				| <a href="http://www.carauctionbid.com/faq,page,content_pages">FAQ</a>
+				            | <a href="http://www.carauctionbid.com/site_fees.php">SITE FEES</a>
+                                                | <a href="http://www.carauctionbid.com/contact_us,page,content_pages">CONTACT US</a>
+                         | <a href="http://www.carauctionbid.com/custom_page,page,76,topic_id,content_pages">FAST CAR LOANS</a> 			</div>
+         <div align="center" class="footerfont1"> Copyright &copy;2012 <b><a href="http://www.carauctionbid.com/" target="_blank">Car Auction Sites</a></b>. 
+            All Rights Reserved. Designated trademarks and brands are the property of their respective owners.<br>
+            Use of this Web site constitutes acceptance of the Terms & Conditions.
+            <b>Car Auction Sites - Car Selling Websites - Car Buying Websites</b><br><br> 
+
+Car Auction Sites for new and used cars. Our marketplace is one of the top places to bid, buy, sell new and used cars online. We have car auctions in Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, Florida,Georgia,Hawaii, Idaho, Illinois,Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Ohio, Oklahoma, Oregon,Pennsylvania, Rhode Island, South Carolina ,South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin,Wyoming. 
+<br><br>
+Car Selling Websites for buyers and sellers. Sell your car fast and easy. Reach thousands of buyers daily for fraction the cost of other car sites. Car Buying Websites for classic cars, muscle cars, and motorcycles. Find the car of your dreams for thousands of dollars less. Simply register, bid, and win. 
+<br><br>
+We have helped thousands of people save their hard earned bucks.The information about vehicles displayed on Carauctionbid.com pages is provided to us by individual sellers or third parties. Carauctionbid.com is not responsible for the accuracy of this information. Further, Carauctionbid.com does not warrant or make any representation concerning the accuracy, likely results, or reliability of the use of the materials on its internet web site or otherwise relating to such materials or on any sites linked to this site. <a href=http://www.carauctionbid.com/locations>Car Auction Locations</a> <a href=http://www.carauctionsinga.net>Car auctions in ga</a>
+            </b>
+                        <a href="http://www.carauctionbid.com/terms,page,content_pages">TERMS & CONDITIONS</a>
+                         
+            and <a href="http://www.carauctionbid.com/privacy,page,content_pages">PRIVACY POLICY</a>
+                     
+         </div>
+		</td>
+   </tr>
+</table>
+<script type="text/javascript">
+<!--
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+var MenuBarCategories = new Spry.Widget.MenuBar("MenuBarCategories", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+var MenuBarHelp = new Spry.Widget.MenuBar("MenuBarHelp", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+//-->
+</script>
+<script type="text/javascript">
+<!--
+var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+//-->
+</script>
+</body></html>

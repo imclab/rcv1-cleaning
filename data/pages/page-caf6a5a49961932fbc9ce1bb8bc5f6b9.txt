@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>WHDH 7NEWS NBC Boston Entertainment News, Celebrity Gossip, Movie Trailers, TV and Music.</title>
+<meta name="publisher" content="New England News Station Boston Channel 7 WHDH-TV WHDH"/>
+<meta name="author" content=""/>
+<meta name="description" content="7News has the latest TV news, celebrity gossip, music and movie reviews. View movie trailers and find local theatre listing and show times." />
+<meta name="keywords" content="Entertainment News, Celebrity Gossip, Movie Trailers, TV, Music, 7NBC, NBC, Heroes, The Office, 30 Rock"/>
+<meta name="categories" content="News, Boston News"/>
+<meta name="WT.cg_s" content="Boston News"/>
+<meta name="WT.cg_n" content="News"/>
+<meta name="WT.ti" content="WHDH 7NEWS Boston/Regional News, Weather, Traffic, Sports, Entertainment Coverage."/><meta name="DCSext.mtype" content="detail"/>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="ROBOTS" content="ALL" />
+<meta name="Copyright" content="Copyright (c) 2013 Sunbeam Television Corp." />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta name="Rating" content="General" />
+<meta name="revisit-after" content="1 Days" />
+<meta property="article:publisher" content="https://www.facebook.com/7News" />
+<meta name="doc-class" content="Living Document" />
+<meta name="twitter:site" content="@7News">
+<meta name="twitter:creator" content="@7News">
+<meta name="twitter:image:width" content="750">
+<meta name="twitter:image:height" content="560">
+<script type="text/javascript" src="http://www1.whdh.com/js/jq/jquery-1.3.2.min.js"></script><script type="text/javascript" src="http://www1.whdh.com/js/jq/jquery.ui/jquery-ui-1.7.2.custom.min.js-off"></script><link rel="stylesheet" type="text/css" href="http://www1.whdh.com/js/jq/jquery.ui/css/test/jquery-ui-1.7.2.custom.css" media="all" /><script src="http://www.google.com/jsapi"></script><script>google.load('swfobject','2.2');</script><script type="text/javascript" src="http://www1.whdh.com/js/jq/jquery.bgiframe/jquery.bgiframe-2.1.1.min.js"></script><script type="text/javascript" src="http://www1.whdh.com/js/jq/jquery.cookie.min.js"></script><script type="text/javascript" src="http://www1.whdh.com/js/jq/jquery.hoverIntent-r5.min.js"></script><script type="text/javascript" src="http://wn.whdh.com/global/video/flash/WNVideo.asp"></script>
+<!--[if IE]><script src="http://www1.whdh.com/js/google/excanvas.compiled.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="/css/sunbeam09.css?v24" media="screen" /><link rel="stylesheet" type="text/css" href="http://www1.whdh.com/css/sunbeam09-p.css?v19a" media="print" /><script type="text/javascript" src="/js/sunbeam12.js?v4"></script>
+
+<script type="text/javascript" src="http://wn.whdh.com/global/video/flash/WNVideo.asp"></script>
+
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/css/sunbeam09ie6.css?v16" />
+<![endif]-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3368691-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+	
+		jQuery(function($) {
+    // Debug flag
+    var debugMode = false;
+
+    // Default time delay before checking location
+    var callBackTime = 100;
+
+    // # px before tracking a reader
+    var readerLocation = 150;
+
+    // Set some flags for tracking & execution
+    var timer = 0;
+    var scroller = false;
+    var endContent = false;
+    var didComplete = false;
+
+    // Set some time variables to calculate reading time
+    var startTime = new Date();
+    var beginning = startTime.getTime();
+    var totalTime = 0;
+
+    // Track the aticle load
+    if (!debugMode) {
+        _gaq.push(['_trackEvent', 'Reading', 'ArticleLoaded', '', , true]);
+    }
+
+    // Check the location and track user
+    function trackLocation() {
+        bottom = $(window).height() + $(window).scrollTop();
+        height = $(document).height();
+
+        // If user starts to scroll send an event
+        if (bottom > readerLocation && !scroller) {
+            currentTime = new Date();
+            scrollStart = currentTime.getTime();
+            timeToScroll = Math.round((scrollStart - beginning) / 1000);
+            if (!debugMode) {
+                _gaq.push(['_trackEvent', 'Reading', 'StartReading', '', timeToScroll]);
+            } else {
+                alert('started reading ' + timeToScroll);
+            }
+            scroller = true;
+        }
+
+        // If user has hit the bottom of the content send an event
+        if (bottom >= $('.copy').scrollTop() + $('.copy').innerHeight() && !endContent) {
+            currentTime = new Date();
+            contentScrollEnd = currentTime.getTime();
+            timeToContentEnd = Math.round((contentScrollEnd - scrollStart) / 1000);
+            if (!debugMode) {
+                _gaq.push(['_trackEvent', 'Reading', 'ContentBottom', '', timeToContentEnd]);
+            } else {
+                alert('end content section '+timeToContentEnd);
+            }
+            endContent = true;
+        }
+
+        // If user has hit the bottom of page send an event
+        if (bottom >= height && !didComplete) {
+            currentTime = new Date();
+            end = currentTime.getTime();
+            totalTime = Math.round((end - scrollStart) / 1000);
+            if (!debugMode) {
+                if (totalTime < 60) {
+                    _gaq.push(['_setCustomVar', 5, 'ReaderType', 'Scanner', 2]);
+                } else {
+                    _gaq.push(['_setCustomVar', 5, 'ReaderType', 'Reader', 2]);
+                }
+                _gaq.push(['_trackEvent', 'Reading', 'PageBottom', '', totalTime]);
+            } else {
+                alert('bottom of page '+totalTime);
+            }
+            didComplete = true;
+        }
+    }
+
+    // Track the scrolling and track location
+    $(window).scroll(function() {
+        if (timer) {
+            clearTimeout(timer);
+        }
+
+        // Use a buffer so we don't call trackLocation too often.
+        timer = setTimeout(trackLocation, callBackTime);
+    });
+});</script></head><body class='whdh twocol'>
+<div id="fb-root"></div><script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '157934746841', // App ID
+      channelUrl : '//www1.whdh.com/channel.php', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script><div id='wrapper'><div id='header'><div class='w'><div id='topad728x90'>
+<script language='JavaScript' type='text/javascript' src='http://as1.whdh.com/pan/adx.js'></script>
+<script language='JavaScript' type='text/javascript'>
+<!--
+   if (!document.phpAds_used) document.phpAds_used = ',';
+   phpAds_random = new String (Math.random()); phpAds_random = phpAds_random.substring(2,11);
+   document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+   document.write ("http://as1.whdh.com/pan/adjs.php?n=" + phpAds_random);
+   document.write ("&amp;what=zone:30&amp;target=_parent");
+   document.write ("&amp;exclude=" + document.phpAds_used);
+   if (document.referrer)
+      document.write ("&amp;referer=" + escape(document.referrer));
+   document.write ("'><" + "/script>");
+//-->
+</script><noscript><a href='http://as1.whdh.com/pan/adclick.php?n=86138ce5' target='_parent'><img src='http://as1.whdh.com/pan/adview.php?what=zone:30&amp;n=86138ce5' border='0' alt=''/></a></noscript>
+	</div><a href='http://www1.whdh.com'><img id="header-logo" src="http://www1.whdh.com/images/theme12/header-logo-whdh-12.png" alt="whdh.com - 7News - Boston" usemap="#logomap" /></a><map name="logomap"><area shape="rect" coords="269,64,318,82" href="http://www.cw56.com/" alt="Visit cw56.com" /></map></div></div><div id='topnav' class='hassubnav' ><div class='w'><ul><li><a href="http://www1.whdh.com">Home</a></li><li class='on' ><a href="http://www1.whdh.com/news/">News</a></li><li><a href="http://www1.whdh.com/weather/">Weather</a></li><li><a href="http://www1.whdh.com/video/">Video</a></li><li><a href="http://www1.whdh.com/features/">Special Reports</a></li><li><a href="http://www1.whdh.com/news/main/sports/">Sports</a></li><li><a href="http://www1.whdh.com/news/main/politics/">Politics</a></li><li><a href="http://www1.whdh.com/traffic/">Traffic</a></li><li><a href="http://www1.whdh.com/newsteam/">News Team</a></li></ul><form id='topsearch' action='/search'><div class='ui-helper-clearfix'><a href="http://www.facebook.com/7NEWS" target="_blank"><img src="http://www1.whdh.com/images/icons/fb18.gif" alt="7News on Facebook" /></a><a href="http://www.twitter.com/7News" target="_blank"><img src="http://www1.whdh.com/images/icons/twitter19.gif" alt="7News on Twitter" /></a><input type="text" class='txt' name="q" size="18" value="" /><input type='button' value='' title='Search whdh.com' class='btn' onclick="$(this).closest('form').submit();" /></div></form></div></div><div id='subnav'><div class='w'><div class='w2'><ul><li class='first'><a href="http://www1.whdh.com/news/main/local/">Top Local</a></li><li><a href="http://www1.whdh.com/news/main/local/boston/">Metro Boston</a></li><li><a href="http://www1.whdh.com/news/main/local/metro-west/">Metro West</a></li><li><a href="http://www1.whdh.com/news/main/local/north/">North</a></li><li><a href="http://www1.whdh.com/news/main/local/south/">South</a></li><li><a href="http://www1.whdh.com/news/main/local/worcester-area/">Worcester</a></li><li><a href="http://www1.whdh.com/news/main/local/capeandislands/">Cape &amp; Islands</a></li><li><a href="http://www1.whdh.com/news/main/national/">National</a></li><li><a href="http://www1.whdh.com/news/main/world/">World</a></li><li><a href="http://www1.whdh.com/news/main/entertainment/">Entertainment</a></li><li><a href="http://www1.whdh.com/news/main/must-see/">Must See</a></li></ul></div></div></div><div id='cont-wrapper'><div class='w'>
+<div id='breaking' style='display:none;'></div><script>
+    $(document).ready(function(){ $.ajax({url:'/breaking',success:function(data){ if(data){$('#breaking').html(data).show();}}}); });
+    </script>
+
+<div id='maincol' class='column'>
+
+
+<div  class='rbox'><div class="rbox-t"><div class="first"><ul class="rbox-t-links"><li><a href="http://www1.whdh.com/rss/" title="RSS Feeds"><img src="/images/icons/rss14.gif" height="14" width="14" /></a></li></ul><h3>Entertainment</h3></div></div><div class="rbox-c-w"><div class='rbox-c' style='padding:0;'><div class='topstory' style='padding:12px 16px 1px 16px;margin-bottom:5px;'><a href="http://www1.whdh.com/news/articles/entertainment/10011530075453/bass-nixes-n-sync-reunion-dishes-on-miley-cyrus/" class="a-img"><img src="http://www1.whdh.com/images/news_articles/210x118/130827_nsync_reunion.jpg" alt="Bass nixes &#039;N Sync reunion; dishes on Miley Cyrus" width='210' /></a><div style="min-height:108px;"><h2><a href="http://www1.whdh.com/news/articles/entertainment/10011530075453/bass-nixes-n-sync-reunion-dishes-on-miley-cyrus/">Bass nixes 'N Sync reunion; dishes on Miley Cyrus</a></h2><p>NEW YORK -- Don't get your heart set on anything more than the 90-second `N Sync reunion seen on the MTV Video Music Awards. The performance marked the first time the band played...</p></div><div><div style='float:right;color:#9a9a9a;font-size:90%;'>Updated: Today at 7:59 am EDT</div><div style='font-size:90%;'><a href='http://www1.whdh.com/news/articles/entertainment/10011530075453/bass-nixes-n-sync-reunion-dishes-on-miley-cyrus/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/10011530075453/bass-nixes-n-sync-reunion-dishes-on-miley-cyrus/','Bass nixes &#039;N Sync reunion; dishes on Miley Cyrus')" onmouseout="ShareLinkClose()" >Share</a></div></div></div><ul class='main-list'><li class='odd ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011531799611/"><img src='http://www1.whdh.com/images/news_articles/116x65/110629_selena_gomes.jpg' alt='Selena Gomez: Don&#039;t ask what Swift said at VMAs' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011531799611/'>Selena Gomez: Don't ask what Swift said at VMAs</a></h2><p>LOS ANGELES -- Did Taylor Swift really utter an expletive to Selena Gomez when One Direction and former love interest Harry Styles took the stage for the MTV Video Music Awards?
+
+</p><div><div class='text-posted'>Updated: Today at 12:46 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011531799611/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011531799611/','Selena Gomez: Don&#039;t ask what Swift said at VMAs')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='even ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011530119077/"><img src='http://www1.whdh.com/images/news_articles/116x65/100413_kate_Gosselin.jpg' alt='Kate Gosselin sues ex over book, alleges hacking' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011530119077/'>Kate Gosselin sues ex over book, alleges hacking</a></h2><p>PHILADELPHIA -- Former reality TV star Kate Gosselin filed a lawsuit Monday accusing her ex-husband of stealing her hard drive and hacking into her phone and computer to get material for a tell-all book.
+
+</p><div><div class='text-posted'>Updated: Today at 8:06 am EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011530119077/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011530119077/','Kate Gosselin sues ex over book, alleges hacking')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='odd ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011530112915/"><img src='http://www1.whdh.com/images/news_articles/116x65/080408_bob_dylan.jpg' alt='Music Review: Another portrait of Bob Dylan' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011530112915/'>Music Review: Another portrait of Bob Dylan</a></h2><p>Bob Dylan, "Another Self Portrait (1969-1971): The Bootleg Series Vol. 10" (Columbia)
+
+</p><div><div class='text-posted'>Updated: Today at 8:05 am EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011530112915/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011530112915/','Music Review: Another portrait of Bob Dylan')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='even ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011530105423/"><img src='http://www1.whdh.com/images/news_articles/116x65/130827_nsync_reunion.jpg' alt='Bass nixes &#039;N Sync reunion; dishes on Miley Cyrus' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011530105423/'>Bass nixes 'N Sync reunion; dishes on Miley Cyrus</a></h2><p>NEW YORK -- Don't get your heart set on anything more than the 90-second `N Sync reunion seen on the MTV Video Music Awards. The performance marked the first time the band played together in 11 years, and also the last time they'll do it, at least for a while.
+
+</p><div><div class='text-posted'>Updated: Today at 8:04 am EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011530105423/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011530105423/','Bass nixes &#039;N Sync reunion; dishes on Miley Cyrus')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='odd ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011530110420/"><img src='http://www1.whdh.com/images/news_articles/116x65/061211_music.jpg' alt='Robinson pays tribute to Motown&#039;s chief of charm' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011530110420/'>Robinson pays tribute to Motown's chief of charm</a></h2><p>DETROIT -- She didn't sing a note or write a lick of a lyric, but Smokey Robinson contends that Maxine Powell was as essential to Motown Records' operation as the legendary label's songwriters, producers and musicians.
+
+</p><div><div class='text-posted'>Updated: Today at 8:05 am EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011530110420/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011530110420/','Robinson pays tribute to Motown&#039;s chief of charm')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='even ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011530116019/"><img src='http://www1.whdh.com/images/news_articles/116x65/100412_Oprah_biography.jpg' alt='Winfrey, Foxx to join March on Washington events' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011530116019/'>Winfrey, Foxx to join March on Washington events</a></h2><p>WASHINGTON -- Oprah Winfrey, Jamie Foxx and Forest Whitaker are among the celebrities joining three presidents this week to mark the 50th anniversary of the March on Washington.
+
+</p><div><div class='text-posted'>Updated: Today at 8:06 am EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011530116019/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011530116019/','Winfrey, Foxx to join March on Washington events')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='odd ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/10011516143929/"><div class='hasvideo' onclick="window.location=$(this).parent().attr('href');"></div><img src='http://www1.whdh.com/images/news_articles/116x65/130826_Miley_Cyrus_VMAs.jpg' alt='Miley Cyrus, Justin Timberlake own the MTV VMAs' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/10011516143929/'>Miley Cyrus, Justin Timberlake own the MTV VMAs</a></h2><p>NEW YORK -- Miley Cyrus' memorable moment at the MTV Video Music Awards may not have been good for her, but it was great for MTV and social media.</p><div><div class='text-posted'>Updated: Yesterday at 11:49 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/10011516143929/#?autoStart'>Video</a> | <a href='http://www1.whdh.com/news/articles/entertainment/10011516143929/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/10011516143929/','Miley Cyrus, Justin Timberlake own the MTV VMAs')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='even ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011526122764/"><img src='http://www1.whdh.com/images/news_articles/116x65/Music_Generic.jpg' alt='Robinson pays tribute to Motown&#039;s chief of charm' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011526122764/'>Robinson pays tribute to Motown's chief of charm</a></h2><p>DETROIT -- A chief architect of "the Motown sound" is paying tribute to another pioneer responsible for developing the charm, grace and style of the legendary Detroit label's roster of artists.</p><div><div class='text-posted'>Updated: Yesterday at 9:00 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011526122764/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011526122764/','Robinson pays tribute to Motown&#039;s chief of charm')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='odd ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011526109455/"><img src='http://www1.whdh.com/images/news_articles/116x65/070804_james_brown.jpg' alt='James Brown biopic to be filmed in Mississippi' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011526109455/'>James Brown biopic to be filmed in Mississippi</a></h2><p>JACKSON, Miss. -- Tate Taylor, the Mississippi native who directed "The Help," said Monday that he'll make a biographical feature film about James Brown in the state, starting this fall.</p><div><div class='text-posted'>Updated: Yesterday at 8:58 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011526109455/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011526109455/','James Brown biopic to be filmed in Mississippi')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='even ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011516526675/"><img src='http://www1.whdh.com/images/news_articles/116x65/130818_Forest_Whitaker_The_Butler.jpg' alt='&#039;The Butler&#039; stays on top with $17 million' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011516526675/'>'The Butler' stays on top with $17 million</a></h2><p>NEW YORK -- "Lee Daniels' The Butler" served up a second helping at the box office, topping the weekend with $17 million according to studio estimates Sunday.</p><div><div class='text-posted'>Updated: 08/25/13 at 6:25 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011516526675/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011516526675/','&#039;The Butler&#039; stays on top with $17 million')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='odd ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011516518796/"><img src='http://www1.whdh.com/images/news_articles/116x65/130619_michelle_obama_daughters_in_ireland.jpg' alt='Michelle Obama, daughters see &#039;Trip to Bountiful&#039;' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011516518796/'>Michelle Obama, daughters see 'Trip to Bountiful'</a></h2><p>NEW YORK -- Michelle Obama and her daughters caught Broadway's "The Trip to Bountiful" after spending part of the day watching tennis at the U.S. Open.</p><div><div class='text-posted'>Updated: 08/25/13 at 6:19 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011516518796/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011516518796/','Michelle Obama, daughters see &#039;Trip to Bountiful&#039;')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='even ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011516507392/"><img src='http://www1.whdh.com/images/news_articles/116x65/book_generic.jpg' alt='New biography claims more Salinger books due out' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011516507392/'>New biography claims more Salinger books due out</a></h2><p>NEW YORK -- The authors of a new J.D. Salinger biography are claiming they have cracked one of publishing's greatest mysteries: What "The Catcher in the Rye" novelist was working on during the last half century of his life.</p><div><div class='text-posted'>Updated: 08/25/13 at 6:17 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011516507392/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011516507392/','New biography claims more Salinger books due out')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='odd ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011516496533/"><img src='http://www1.whdh.com/images/news_articles/116x65/070408_obituary.jpg' alt='Julie Harris, Broadway star, dies at 87' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011516496533/'>Julie Harris, Broadway star, dies at 87</a></h2><p>NEW YORK -- Julie Harris, one of Broadway's most honored performers, whose roles ranged from the flamboyant Sally Bowles in "I Am a Camera" to the reclusive Emily Dickinson in "The Belle of Amherst," died Saturday. She was 87.</p><div><div class='text-posted'>Updated: 08/25/13 at 6:16 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011516496533/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011516496533/','Julie Harris, Broadway star, dies at 87')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='even ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011508168339/"><img src='http://www1.whdh.com/images/news_articles/116x65/patrick_dempsey.jpg' alt='Patrick Dempsey out of Tully&#039;s Coffee venture' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011508168339/'>Patrick Dempsey out of Tully's Coffee venture</a></h2><p>SEATTLE -- Actor Patrick Dempsey and his business partner in the venture that acquired Tully's Coffee out of bankruptcy have dissolved their partnership.</p><div><div class='text-posted'>Updated: 08/24/13 at 7:08 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011508168339/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011508168339/','Patrick Dempsey out of Tully&#039;s Coffee venture')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='odd ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011508196132/"><img src='http://www1.whdh.com/images/news_articles/116x65/061005_film_generic.jpg' alt='Wong Kar-wai has a hit with &#039;The Grandmaster&#039;' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011508196132/'>Wong Kar-wai has a hit with 'The Grandmaster'</a></h2><p>LOS ANGELES -- Wong Kar-wai swears he's seen people fly. The acclaimed Hong Kong director crossed China meeting 100 kung fu masters as research for "The Grandmaster," his new film about Bruce Lee's teacher.</p><div><div class='text-posted'>Updated: 08/24/13 at 7:12 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011508196132/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011508196132/','Wong Kar-wai has a hit with &#039;The Grandmaster&#039;')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='even ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011508158030/"><img src='http://www1.whdh.com/images/news_articles/116x65/070817_cemetery.jpg' alt='Funeral held for author Elmore Leonard in Michigan' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011508158030/'>Funeral held for author Elmore Leonard in Michigan</a></h2><p>BIRMINGHAM, Mich. -- Mike Lupica moved his tie out of the way and undid a few buttons of his dress shirt to reveal a simple black T-shirt that read: "Not now. I'm writing."</p><div><div class='text-posted'>Updated: 08/24/13 at 7:06 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011508158030/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011508158030/','Funeral held for author Elmore Leonard in Michigan')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='odd ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/10011507696797/"><img src='http://www1.whdh.com/images/news_articles/116x65/070426_Alec_Baldwin.jpg' alt='Alec Baldwin and wife give birth to daughter in NY' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/10011507696797/'>Alec Baldwin and wife give birth to daughter in NY</a></h2><p>NEW YORK -- Actor Alec Baldwin and his wife have given birth to a baby girl in New York.</p><div><div class='text-posted'>Updated: 08/24/13 at 5:49 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/10011507696797/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/10011507696797/','Alec Baldwin and wife give birth to daughter in NY')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='even ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011500086824/"><img src='http://www1.whdh.com/images/news_articles/116x65/130823_North_West_Kim_and_kanye_baby.jpg' alt='Kanye West unveils photo of baby on TV&#039;s `Kris&#039;' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011500086824/'>Kanye West unveils photo of baby on TV's `Kris'</a></h2><p>LOS ANGELES -- Baby North West has made her television debut.</p><div><div class='text-posted'>Updated: 08/23/13 at 10:36 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011500086824/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011500086824/','Kanye West unveils photo of baby on TV&#039;s `Kris&#039;')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='odd ui-helper-clearfix'><div class='a-img'><a href="http://www1.whdh.com/news/articles/entertainment/21011500124347/"><img src='http://www1.whdh.com/images/news_articles/116x65/080616_Paula_Deen.jpg' alt='Sides agree to drop Paula Deen discrimination suit' width='116' height='65'  /></a></div><div class='text'><h2><a href='http://www1.whdh.com/news/articles/entertainment/21011500124347/'>Sides agree to drop Paula Deen discrimination suit</a></h2><p>SAVANNAH, Ga. -- Lawyers signed a deal Friday to drop a discrimination and sexual harassment lawsuit against celebrity cook Paula Deen, who was dumped by the Food Network and other business partners after she said under oath that she had used racial slurs in the past.</p><div><div class='text-posted'>Updated: 08/24/13 at 7:10 pm EDT</div><div class='text-links'><a href='http://www1.whdh.com/news/articles/entertainment/21011500124347/#viewercomments'>Comments</a> | <a href="javascript:void(0);" onclick="ShareLink(this,'http://www1.whdh.com/news/articles/entertainment/21011500124347/','Sides agree to drop Paula Deen discrimination suit')" onmouseout="ShareLinkClose()" >Share</a></div></div></div></li><li class='even ui-helper-clearfix'>Page: &nbsp; 1 &nbsp;&nbsp; <a href="http://www1.whdh.com/news/main/entertainment/2/">2</a> &nbsp;&nbsp; <a href="http://www1.whdh.com/news/main/entertainment/3/">3</a> &nbsp;&nbsp; <a href="http://www1.whdh.com/news/main/entertainment/4/">4</a> &nbsp;&nbsp; <a href="http://www1.whdh.com/news/main/entertainment/5/">5</a> &nbsp;&nbsp; <a href="http://www1.whdh.com/news/main/entertainment/6/">6</a> &nbsp;&nbsp; <a href="http://www1.whdh.com/news/main/entertainment/7/">7</a> &nbsp;&nbsp; <a href="http://www1.whdh.com/news/main/entertainment/8/">8</a> &nbsp;&nbsp; <a href="http://www1.whdh.com/news/main/entertainment/9/">9</a> &nbsp;&nbsp; <a href="http://www1.whdh.com/news/main/entertainment/10/">10</a> &nbsp;</li></ul></div></div><div class="rbox-b"><div class="first"></div></div></div>
+</div><!-- // end: maincol -->
+
+
+<div id='sidecol' class='column'>
+
+<div style='margin-bottom:5px;display:block;'>
+<script language='JavaScript' type='text/javascript' src='http://as1.whdh.com/pan/adx.js'></script>
+<script language='JavaScript' type='text/javascript'>
+<!--
+   if (!document.phpAds_used) document.phpAds_used = ',';
+   phpAds_random = new String (Math.random()); phpAds_random = phpAds_random.substring(2,11);
+   document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+   document.write ("http://as1.whdh.com/pan/adjs.php?n=" + phpAds_random);
+   document.write ("&amp;what=zone:262&amp;target=_parent");
+   document.write ("&amp;exclude=" + document.phpAds_used);
+   if (document.referrer)
+      document.write ("&amp;referer=" + escape(document.referrer));
+   document.write ("'><" + "/script>");
+//-->
+</script><noscript><a href='http://as1.whdh.com/pan/adclick.php?n=8c997915' target='_parent'><img src='http://as1.whdh.com/pan/adview.php?what=zone:262&amp;n=8c997915' border='0' alt=''/></a></noscript>
+	</div>
+<div  class='rbox'><div class="rbox-t"><div class="first"><ul class="rbox-t-links"><li><a href="http://www1.whdh.com/video/player">[&nbsp;more video&nbsp;]</a></li></ul><h3>Latest Entertainment</h3></div></div><div class="rbox-c-w"><div class='rbox-c' style='padding-left:2px;padding-right:0px;padding-top:9px;'><div id='video-1878s'></div></div></div><div class="rbox-b"><div class="first"></div></div></div><script type="text/javascript">$('#video-1878s').load('/includes/elements/sidecol_video_box.php?c=92061&827152');</script>
+
+<div class='ad'>
+<script language='JavaScript' type='text/javascript' src='http://as1.whdh.com/pan/adx.js'></script>
+<script language='JavaScript' type='text/javascript'>
+<!--
+   if (!document.phpAds_used) document.phpAds_used = ',';
+   phpAds_random = new String (Math.random()); phpAds_random = phpAds_random.substring(2,11);
+   document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+   document.write ("http://as1.whdh.com/pan/adjs.php?n=" + phpAds_random);
+   document.write ("&amp;what=zone:27&amp;target=_parent");
+   document.write ("&amp;exclude=" + document.phpAds_used);
+   if (document.referrer)
+      document.write ("&amp;referer=" + escape(document.referrer));
+   document.write ("'><" + "/script>");
+//-->
+</script><noscript><a href='http://as1.whdh.com/pan/adclick.php?n=1f2e60ee' target='_parent'><img src='http://as1.whdh.com/pan/adview.php?what=zone:27&amp;n=1f2e60ee' border='0' alt=''/></a></noscript>
+	</div>
+
+
+<div  class='rbox'><div class="rbox-t"><div class="first"><ul class="rbox-t-links"><li class='tablink tablink-0 on'><a href="http://www1.whdh.com/features/">[&nbsp;more&nbsp;]</a></li></ul><ul class='rbox-t-tabs'><li class=' first  on ' onclick='rbox_tab(this,0);' title='SPECIAL REPORTS'>SPECIAL REPORTS</li></ul></div></div><div class="rbox-c-w"><div><h3 class='printonly'>SPECIAL REPORTS</h3><div class='rbox-c ' style="padding:0 0 6px 0;;" ><div class='split-lists split-lists-last split-lists-first ui-helper-clearfix'><div class='column column-first'><a href="http://www1.whdh.com/features/articles/healthcast/MI140344/doctors-should-warn-kids-about-tobacco/"  style='display:block;float:left;margin-right:10px;'><div class="hasvideo hasvideo-medium"></div><img src='http://www1.whdh.com/images/features/whdh/116x65/130826_Teen_Smoking.jpg' width='116' height='65' style='border:1px solid #848484;' /></a><a href="http://www1.whdh.com/features/main/healthcast/"><h3><a href="http://www1.whdh.com/features/articles/healthcast/MI140344/doctors-should-warn-kids-about-tobacco/">Health: Doctors should warn kids about tobacco</a></h3></a></div><div class='column column-first'><ul class='list'><li style='margin-right:5px;'><a href="http://www1.whdh.com/features/articles/hank/MI140334/" title="Hank: Navy Yard Follow: owners have till Oct. 31">Hank: Navy Yard Follow: owners have till Oct. 31</a></li><li style='margin-right:5px;'><a href="http://www1.whdh.com/features/articles/healthcast/MI140321/" title="Health: Could the food you eat shorten your life span?">Health: Could the food you eat shorten your life span?</a></li><li style='margin-right:5px;'><a href="http://www1.whdh.com/features/articles/hank/MI140320/" title="Hank: Century-old graveyard discovered">Hank: Century-old graveyard discovered</a></li><li style='margin-right:5px;'><a href="http://www1.whdh.com/features/articles/healthcast/MI140309/" title="Health: New Lyme disease estimate: 300,000 cases a year">Health: New Lyme disease estimate: 300,000 cases a year</a></li><li style='margin-right:5px;'><a href="http://www1.whdh.com/features/articles/hank/MI140307/" title="Hank: Navy Yard Follow: More Time to Move">Hank: Navy Yard Follow: More Time to Move</a></li></ul></div></div></div></div></div><div class="rbox-b"><div class="first"></div></div></div>
+
+<div class='ad'>
+<script language='JavaScript' type='text/javascript' src='http://as1.whdh.com/pan/adx.js'></script>
+<script language='JavaScript' type='text/javascript'>
+<!--
+   if (!document.phpAds_used) document.phpAds_used = ',';
+   phpAds_random = new String (Math.random()); phpAds_random = phpAds_random.substring(2,11);
+   document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+   document.write ("http://as1.whdh.com/pan/adjs.php?n=" + phpAds_random);
+   document.write ("&amp;what=zone:264&amp;target=_parent");
+   document.write ("&amp;exclude=" + document.phpAds_used);
+   if (document.referrer)
+      document.write ("&amp;referer=" + escape(document.referrer));
+   document.write ("'><" + "/script>");
+//-->
+</script><noscript><a href='http://as1.whdh.com/pan/adclick.php?n=9eb65d78' target='_parent'><img src='http://as1.whdh.com/pan/adview.php?what=zone:264&amp;n=9eb65d78' border='0' alt=''/></a></noscript>
+	</div><div  class='rbox'><div class="rbox-t"><div class="first"><h2>Interactives</h2></div></div><div class="rbox-c-w"><div class='rbox-c'>
+
+	<ul class="list">
+	<li><a href="http://www1.whdh.com/news/interactive/whitey-bulger/">Whitey Bulger</a></li>
+	<li><a href="http://www1.whdh.com/news/interactive/obama-second-term">President Obama Second Term</a></li>
+	<li><a href="http://www1.whdh.com/news/interactive/gun-control">Gun Control</a></li>
+	<li><a href="http://www1.whdh.com/news/interactive/pope-benedict">Pope Benedict XVI</a></li>
+	
+	</ul>
+
+	</div></div><div class="rbox-b"><div class="first"></div></div></div>
+
+<div  class='rbox'><div class="rbox-t"><div class="first"><h2>Local Event Calendars</h2></div></div><div class="rbox-c-w"><div class='rbox-c'><ul class="list"><li><a href="http://www1.whdh.com/events/kids">Kids Events</a></li>
+<li><a href="http://www1.whdh.com/events/">Community Events</a></li>
+</ul></div></div><div class="rbox-b"><div class="first"></div></div></div>
+<script>document.write("<div id='acc1' style='display:none;'></div>");$('#acc1').load('/includes/elements/accordion_whdh?1377631256').show();</script>
+
+</div><!-- // end: sidecol -->
+
+
+<div id='footer'><ul>
+        <li class='first'><a href='http://www1.whdh.com/privacypolicy'>Privacy Policy</a></li>
+        <li><a href='http://www1.whdh.com/primetime/'>Program Schedule</a></li>
+        <li><a href='http://www1.whdh.com/events/'>Community Calendar</a></li>
+        <li><a href='http://www1.whdh.com/sales/'>Advertise with Us</a></li>
+        <li><a href='http://www1.whdh.com/jobs/'>Job Openings</a></li>
+        <li><a href='http://www1.whdh.com/jobs/internships'>Internships</a></li>
+        </ul><ul style='padding-top:0;margin-top:0;'>
+        <li  class='first'><a href='http://www1.whdh.com/expedient'>Expedient</a></li>
+        <li><a href='http://www1.whdh.com/termsofuse'>Terms of Use</a></li>
+        <li><a href='http://www1.whdh.com/contact/'>Contact Us</a></li>
+        <li><a href='http://www1.whdh.com/contact/closed-caption-concerns'>Closed Caption Concerns</a></li>
+        <li><a href='https://stations.fcc.gov/station-profile/whdh' target='_blank'>FCC Public File</a></li>
+        <li><a href='http://www1.whdh.com/eeo-public-file-reports/' target='_blank'>EEO Public File Reports</a></li>
+
+        </ul><p>Copyright &copy;2013 Sunbeam Television Corp.</p></div><!-- // end: footer --></div></div><!-- // end: cont-wrapper --></div><!-- // end: wrapper -->
+<script type="text/javascript">
+            $(document).ready(function(){$.getScript('https://apis.google.com/js/plusone.js');});
+            $(document).ready(function(){if(window.location.hostname=='www1.whdh.com'){$.getScript("http://tcr.tynt.com/javascripts/Tracer.js?user=d3v01sGwir4l5cadbi-bnq&s=70");}});
+            </script>
+</body></html>

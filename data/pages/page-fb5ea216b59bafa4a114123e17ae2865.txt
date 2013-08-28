@@ -1,0 +1,401 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="google-site-verification" content="apyqU1WHBWStnJQ8tl1j9i-x2e32IvxQPIN9-TyCi0U" /><title>
+	VMFA: Calendar: Calendar &amp; Events
+</title><script id="EktronJS" type="text/javascript" src="/WorkArea/java/ektron.js"></script><script id="EktronSiteDataJS" type="text/javascript" src="/WorkArea/java/ektron.site-data.js.ashx"></script><script id="EktronJsonJS" type="text/javascript" src="/WorkArea/java/ektron_json.js"></script><script id="EktronDmsMenuJS" type="text/javascript" src="/WorkArea/DmsMenu/DmsMenu.js"></script><script id="EktronUICoreJS" type="text/javascript" src="/WorkArea/java/plugins/ui/ektron.ui.core.js"></script><script id="EktronDatePickerJs" type="text/javascript" src="/WorkArea/java/plugins/ui/ektron.ui.datepicker.js"></script><link id="EktronRegisteredCss" rel="stylesheet" type="text/css" href="/workarea/csslib/ektronCss.ashx?id=EktronModalCss+EktronWorkareaCss" /><meta name="DC.title" content="" />
+<meta name="DC.format" content="text/html" />
+<meta name="DC.language" content="en-US" />
+<meta name="DC.description" content="" />
+<meta name="DC.contributor" content=" " />
+<meta name="DC.identifier" content="http://www.vmfa.state.va.us/templates/CalendarList.aspx?id=8589934746" />
+<meta name="DC.date" content="0001-01-01" />
+<link rel="stylesheet" type="text/css" media="screen, projection" href="/styles/general.css" />
+    
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen, projection" href="/styles/ie7.css" /><![endif]-->
+    <!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen, projection" href="/styles/ie6.css" /><![endif]-->
+    <link rel="stylesheet" type="text/css" media="print" href="/styles/print.css" /><link rel="shortcut icon" type="image/x-icon" href="/images/vmfa.ico" /><link rel="icon" type="image/x-icon" href="/images/vmfa.ico" /><link rel="image_src" href="http://sbvmfa.fe-works.com/images/vmfa-logo-block.jpg" />
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            inputClick();
+            inputBlur();
+            var ajaxImage = "<div class=\"ajaxLoadingInfo\"><img src=\"/images/ajax-loader.gif\" class=\"ajaxLoadVMFA\" alt=\"loading\" /><br/><p>Loading</p></div>";
+            $.ajax({
+                url: '/Handlers/CalendarCategories.ashx?action=ShowCalendarCategories',
+                cache: false,
+                success: function (data) {
+                    $('#calCategories').html(data);
+                },
+                error: function (data) {
+                    $('#calCategories').html(data);
+                }
+            });
+            $('#calCategories a').live('click', function () {
+                $('#calendarBox').html(ajaxImage);
+                $(this).parent("li").toggleClass('selected');
+                var selectedIds = selectedCalendarCat();
+                var selectedNames = selectedCatName();
+                if (selectedIds != undefined) {
+                    $('#clr').show();
+                }
+                $.ajax({
+                    url: '/Handlers/CalendarCategories.ashx?action=FilterCalendarItems&calendar_Catids=' + selectedIds + '&startDate=' + $('#ctl00_phContent_startDate_tbDate').val() + '&endDate=' + $('#ctl00_phContent_endDate_tbDate').val() + '&calendar_Catnames=' + selectedNames,
+                    cache: false,
+                    success: function (data) {
+                        $('#calendarBox').html(data);
+                    },
+                    error: function (data) {
+                        $('#calendarBox').html(data);
+                    }
+                });
+            });
+            $('#clr').click(function () {
+                $('#clr').hide();
+                $('#calCategories li').removeClass('selected');
+                $('#calendarBox').html(ajaxImage);
+                $.ajax({
+                    url: '/Handlers/CalendarCategories.ashx?action=FilterCalendarItems&calendar_Catids=&calendar_Catnames=&startDate=' + $('#ctl00_phContent_startDate_tbDate').val() + '&endDate=' + $('#ctl00_phContent_endDate_tbDate').val(),
+                    cache: false,
+                    success: function (data) {
+                        $('#calendarBox').html(data);
+                    },
+                    error: function (data) {
+                        $('#calendarBox').html(data);
+                    }
+                });
+            });
+            $('#btnGo').click(function () {
+                $('#calendarBox').html(ajaxImage);
+                $('#clr').hide();
+                var selectedIds = selectedCalendarCat();
+                var selectedNames = selectedCatName();
+                if (selectedIds != undefined) {
+                    $('#clr').show();
+                }
+                $.ajax({
+                    url: '/Handlers/CalendarCategories.ashx?action=CustomDates&calendar_Catids=' + selectedIds + '&startDate=' + $('#ctl00_phContent_startDate_tbDate').val() + '&endDate=' + $('#ctl00_phContent_endDate_tbDate').val() + '&calendar_Catnames=' + selectedNames,
+                    cache: false,
+                    success: function (data) {
+                        $('#calendarBox').html(data);
+                    },
+                    error: function (data) {
+                        $('#calendarBox').html(data);
+                    }
+                });
+            });
+        });
+        function selectedCalendarCat() {
+            var calendarCatIds;
+            $("#calCategories li").each(function () {
+                if ($(this).hasClass('selected')) {
+                    if (calendarCatIds == undefined) {
+                        calendarCatIds = $(this).attr('id');
+                    }
+                    else {
+                        calendarCatIds += "," + $(this).attr('id');
+                    }
+                }
+            });
+            return calendarCatIds;
+        }
+        function selectedCatName() {
+            var calendarCatNames = "";
+            $("#calCategories li").each(function () {
+                if ($(this).hasClass('selected')) {
+                    if ($(this).attr('id') != -1 && $(this).attr('id') != 0) {
+                        if (calendarCatNames == "") {
+                            calendarCatNames = $(this).text();
+                        }
+                        else {
+                            calendarCatNames += ", " + $(this).text();
+                        }
+                    }
+                }
+            });
+            return calendarCatNames;
+        }
+        function inputClick() {
+            var image = "<img src=\"/images/ico-vmfa-close.gif\" alt=\"close calendar\" height=\"20\" width=\"20\" />"
+            $("input").focus(function () {
+                $(this).parent(".DatePickerContainer").append("<a href=\"javascript:void(0);\" title=\"Close Date Picker\" class=\"closeCalendarVmfa\">" + image + "</a>");
+            });
+            $("input").blur(function () {
+                $(".closeCalendarVmfa").remove();
+               
+            });
+        }
+        var intervalBlur = null;
+       
+        function inputBlur() {
+            $("#ctl00_phContent_startDate_tbDate").blur(function () {
+                var endDateValue = $("#ctl00_phContent_endDate_tbDate").val();
+                if (endDateValue == "") {
+                    intervalBlur = setInterval(function () { modifyDate() }, 400);
+                }
+
+                //$("#ctl00_phContent_endDate_tbDate").datepicker("setDate", date);
+            });
+        }
+        function modifyDate() {
+            var date = $("#ctl00_phContent_startDate_tbDate").val();
+            var endDateValue = $("#ctl00_phContent_endDate_tbDate").val();
+            $("#ctl00_phContent_endDate_tbDate").val(date);
+            clearInterval(intervalBlur);
+            //alert(date);
+        }
+    </script>
+
+</head>
+<body>
+    <form name="aspnetForm" method="post" action="/Calendar/" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNTUzNDI0MDg1D2QWAmYPZBYCAgMQZGQWBAIDD2QWDAICDxYCHgRUZXh0BdoFPHVsPjxsaT48YSBocmVmPSIvVmlzaXQvSG91cnNfK19BZG1pc3Npb24uYXNweCI+SG91cnMgKyBBZG1pc3Npb248L2E+PC9saT48bGk+PGEgaHJlZj0iL0NhbGVuZGFyLyI+Q2FsZW5kYXIgKyBFdmVudHM8L2E+PC9saT48bGk+PGEgaHJlZj0iL1Zpc2l0L0RpcmVjdGlvbnNfK19QYXJraW5nLmFzcHgiPkRpcmVjdGlvbnMgKyBQYXJraW5nPC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii9WaXNpdC9Ub3Vycy9Ub3Vycy5hc3B4Ij5Ub3VyczwvYT48L2xpPjxsaT48YSBocmVmPSIvVmlzaXQvR2FsbGVyeV9NYXBzL0dhbGxlcnlfTWFwcy5hc3B4Ij5HYWxsZXJ5IE1hcHMgJiBBY3Rpdml0aWVzPC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii9WaXNpdC9QbGFuX0FoZWFkL1BsYW5fQWhlYWQuYXNweCI+UGxhbiBBaGVhZDwvYT48L2xpPjxsaT48YSBocmVmPSIvVmlzaXQvVk1GQV9BZnRlcl9EYXJrL1ZNRkFfQWZ0ZXJfRGFyay5hc3B4Ij5WTUZBIEFmdGVyIERhcms8L2E+PC9saT48bGk+PGEgaHJlZj0iL1Zpc2l0L0RpbmluZ18rX0ZhY2lsaXR5X1JlbnRhbHMvRGluaW5nXytfRmFjaWxpdHlfUmVudGFscy5hc3B4Ij5EaW5pbmcgKyBGYWNpbGl0eSBSZW50YWxzPC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii9WaXNpdC9BYm91dF9WTUZBL0Fib3V0X1ZNRkEuYXNweCI+QWJvdXQgVk1GQTwvYT48L2xpPjxsaT48YSBocmVmPSIvVmlzaXQvTGlicmFyeS9MaWJyYXJ5LmFzcHgiPkxpYnJhcnk8L2E+PC9saT48L3VsPmQCAw8WAh8ABZsCPHVsPjxsaT48YSBocmVmPSIvRXhoaWJpdGlvbnMvQXRfVGhlX011c2V1bS9BdF90aGVfTXVzZXVtLmFzcHgiPkF0IFRoZSBNdXNldW08L2E+PC9saT48bGk+PGEgaHJlZj0iL0V4aGliaXRpb25zL1VwY29taW5nL1VwY29taW5nLmFzcHgiPlVwY29taW5nPC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii9FeGhpYml0aW9ucy9QYXN0L1Bhc3QuYXNweCI+UGFzdDwvYT48L2xpPjxsaT48YSBocmVmPSIvRXhoaWJpdGlvbnMvVHJhdmVsaW5nL1RyYXZlbGluZy5hc3B4Ij5UcmF2ZWxpbmc8L2E+PC9saT48L3VsPmQCBA8WAh8ABcgHPHVsPjxsaT48YSBocmVmPSIvQ29sbGVjdGlvbnMvQWJvdXRfdGhlX0NvbGxlY3Rpb24vQWJvdXRfdGhlX0NvbGxlY3Rpb24uYXNweCI+QWJvdXQgdGhlIENvbGxlY3Rpb248L2E+PC9saT48bGk+PGEgaHJlZj0iL0NvbGxlY3Rpb25zL0FmcmljYW4vIj5BZnJpY2FuIEFydDwvYT48L2xpPjxsaT48YSBocmVmPSIvQ29sbGVjdGlvbnMvQW1lcmljYW4vIj5BbWVyaWNhbiBBcnQ8L2E+PC9saT48bGk+PGEgaHJlZj0iL0NvbGxlY3Rpb25zL0FuY2llbnRBbWVyaWNhbi8iPkFuY2llbnQgQW1lcmljYW4gQXJ0PC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii9Db2xsZWN0aW9ucy9BbmNpZW50LyI+QW5jaWVudCBBcnQ8L2E+PC9saT48bGk+PGEgaHJlZj0iL0NvbGxlY3Rpb25zL0RlY29Ob3V2ZWF1LyI+QXJ0IERlY28gJmFtcDsgIEFydCBOb3V2ZWF1PC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii9Db2xsZWN0aW9ucy9FYXN0QXNpYW4vIj5FYXN0IEFzaWFuIEFydDwvYT48L2xpPjxsaT48YSBocmVmPSIvQ29sbGVjdGlvbnMvRW5nbGlzaFNpbHZlci8iPkVuZ2xpc2ggU2lsdmVyPC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii9Db2xsZWN0aW9ucy9FdXJvcGVhbi8iPkV1cm9wZWFuIEFydDwvYT48L2xpPjxsaT48YSBocmVmPSIvQ29sbGVjdGlvbnMvRmFiZXJnZS8iPkZhYmVyZ8OpPC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii9Db2xsZWN0aW9ucy9Tb3V0aEFzaWFuLyI+U291dGggQXNpYW4gQXJ0PC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii9Db2xsZWN0aW9ucy9FYXJseS0yMHRoLUNlbnR1cnktRXVyb3BlYW4iPkVhcmx5IDIwdGgtQ2VudHVyeSBFdXJvcGVhbiBBcnQ8L2E+PC9saT48bGk+PGEgaHJlZj0iL0NvbGxlY3Rpb25zLzIwdGhDZW50dXJ5LyI+TWlkIHRvIExhdGUgMjB0aC1DZW50dXJ5IEFydDwvYT48L2xpPjxsaT48YSBocmVmPSIvQ29sbGVjdGlvbnMvMjFzdENlbnR1cnkvIj4yMXN0LUNlbnR1cnkgQXJ0PC9hPjwvbGk+PC91bD5kAgUPFgIfAAXmAzx1bD48bGk+PGEgaHJlZj0iL0xlYXJuL0tpZHNfK19GYW1pbGllcy9LaWRzXytfRmFtaWxpZXMuYXNweCI+S2lkcyArIEZhbWlsaWVzPC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii9MZWFybi9UZWVucy9UZWVucy5hc3B4Ij5UZWVuczwvYT48L2xpPjxsaT48YSBocmVmPSIvTGVhcm4vQ29sbGVnZS9Db2xsZWdlLmFzcHgiPkNvbGxlZ2U8L2E+PC9saT48bGk+PGEgaHJlZj0iL0xlYXJuL0VkdWNhdG9ycy9lZHVjYXRvcnMuYXNweCI+RWR1Y2F0b3JzPC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii9MZWFybi9BZHVsdHMvQWR1bHRzLmFzcHgiPkFkdWx0czwvYT48L2xpPjxsaT48YSBocmVmPSIvTGVhcm4vU3RhdGV3aWRlX1Byb2dyYW1zL1N0YXRld2lkZV9Qcm9ncmFtcy5hc3B4Ij5TdGF0ZXdpZGUgUHJvZ3JhbXM8L2E+PC9saT48bGk+PGEgaHJlZj0iaHR0cDovL3d3dy52bWZhLXJlc291cmNlcy5vcmcvIj5FZHVjYXRpb25hbCBSZXNvdXJjZXM8L2E+PC9saT48L3VsPmQCBg8WAh8ABfABPHVsPjxsaT48YSBocmVmPSIvU3VwcG9ydC9NZW1iZXJzaGlwL01lbWJlcnNoaXAuYXNweCI+TWVtYmVyc2hpcDwvYT48L2xpPjxsaT48YSBocmVmPSIvU3VwcG9ydC9XYXlzX3RvX0dpdmUvV2F5c190b19HaXZlLmFzcHgiPldheXMgdG8gR2l2ZTwvYT48L2xpPjxsaT48YSBocmVmPSIvU3VwcG9ydC9Db3Jwb3JhdGVfR2l2aW5nL0NvcnBvcmF0ZV9HaXZpbmcuYXNweCI+Q29ycG9yYXRlIEdpdmluZzwvYT48L2xpPjwvdWw+ZAIHDxYCHwAFjAI8dWw+PGxpPjxhIGhyZWY9Ii9TaG9wL0Fib3V0X3RoZV9TaG9wLmFzcHgiPkFib3V0IHRoZSBTaG9wPC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii9TaG9wL0ZlYXR1cmVkX1Byb2R1Y3RzL0ZlYXR1cmVkX1Byb2R1Y3RzLmFzcHgiPkZlYXR1cmVkIFByb2R1Y3RzPC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii9TaG9wL0V2ZW50cy9FdmVudHMuYXNweCI+RXZlbnRzPC9hPjwvbGk+PGxpPjxhIGhyZWY9Imh0dHA6Ly9iaXQubHkvdkZKUUVGIj5TaG9wIE9ubGluZTwvYT48L2xpPjwvdWw+ZAIFD2QWBgIJDxYCHwAFbjxoMj5UdWUsIEF1ZyAyNywgMjAxMyAtIFRodSwgU2VwIDI2LCAyMDEzPC9oMj5TaG93aW5nIGFsbCBldmVudHMuIENob29zZSBjYXRlZ29yaWVzIG9uIGxlZnQgdG8gZmlsdGVyIHJlc3VsdHMuZAILD2QWAgIBDxYCHwAFrGQ8ZGQ+PGRpdiBjbGFzcz0iY2FsZW5kYXJDb2xSaWdodCI+VHVlLCBBdWcgMjcsJm5ic3A7Jm5ic3A7MTAgJm5kYXNoOyAxMSBhbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iLzIwMTMvTGFuZFNlYWFuZFNreS5hc3B4Ij5MYW5kLCBTZWEsIGFuZCBTa3k8L2E+PGRpdiBjbGFzcz0idm1mYUV2ZW50VHlwZSI+PHZhciBjbGFzcz0iZXZlbnRUeXBlIj48L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5UaHUsIEF1ZyAyOSwmbmJzcDsmbmJzcDsxMCAmbmRhc2g7IDExIGFtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvMjAxMy9MYW5kU2VhYW5kU2t5LmFzcHgiPkxhbmQsIFNlYSwgYW5kIFNreTwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPjwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPlRodSwgQXVnIDI5LCZuYnNwOyZuYnNwOzYgJm5kYXNoOyA5IHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9NdXNpYy9KYXp6X0NhZsOpLmFzcHgiPkphenogQ2Fmw6k8L2E+PGRpdiBjbGFzcz0idm1mYUV2ZW50VHlwZSI+PHZhciBjbGFzcz0iZXZlbnRUeXBlIj5FdmVuaW5nIEV2ZW50cywgTXVzaWM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5UaHUsIEF1ZyAyOSwmbmJzcDsmbmJzcDs2OjMwICZuZGFzaDsgNzozMCBwbSZuYnNwfCZuYnNwOzxiPjxpPjxzcGFuPlNvbGQgb3V0PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9UYWxrcy9TdG9yaWVzX29mX2FuX0FydF9EZXRlY3RpdmVfX0JlaGluZF90aGVfU2NlbmVzX2F0X0FudGlxdWVzX1JvYWRzaG93LmFzcHgiPlN0b3JpZXMgb2YgYW4gQXJ0IERldGVjdGl2ZTogQmVoaW5kIHRoZSBTY2VuZXMgYXQgQW50aXF1ZXMgUm9hZHNob3c8L2E+PGRpdiBjbGFzcz0idm1mYUV2ZW50VHlwZSI+PHZhciBjbGFzcz0iZXZlbnRUeXBlIj5FdmVuaW5nIEV2ZW50cywgVGFsa3M8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5GcmksIEF1ZyAzMCwmbmJzcDsmbmJzcDs1ICZuZGFzaDsgNzozMCBwbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iL0NhbGVuZGFyX2FuZF9FdmVudHMvRXZlbmluZ19FdmVudHMvVGVhY2hlcl9PcGVuX0hvdXNlLmFzcHgiPlRlYWNoZXIgT3BlbiBIb3VzZTwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPkV2ZW5pbmcgRXZlbnRzLCBFZHVjYXRvciBQcm9ncmFtczwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPkZyaSwgQXVnIDMwLCZuYnNwOyZuYnNwOzUgJm5kYXNoOyA4OjMwIHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9XZWVrZW5kL0ZyaWRheV9BcnRfX19XaW5lLmFzcHgiPkZyaWRheSBBcnQgJmFtcDsgV2luZTwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPkV2ZW5pbmcgRXZlbnRzLCBXZWVrZW5kLCBUb3VyczwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPlN1biwgU2VwIDEsJm5ic3A7Jm5ic3A7MSAmbmRhc2g7IDQgcG08Yj48aT48c3Bhbj48L3NwYW4+PC9iPjwvaT48YnIvPjxhIGhyZWY9Ii9DYWxlbmRhcl9hbmRfRXZlbnRzL0tpZHNfUHJvZ3JhbXMvT3Blbl9TdHVkaW9fU3VuZGF5cy5hc3B4Ij5PcGVuIFN0dWRpbyBTdW5kYXlzPC9hPjxkaXYgY2xhc3M9InZtZmFFdmVudFR5cGUiPjx2YXIgY2xhc3M9ImV2ZW50VHlwZSI+S2lkcyBQcm9ncmFtcywgRmFtaWx5IFByb2dyYW1zPC92YXI+PC9kaXY+PC9kaXY+PC9kZD48ZGQ+PGRpdiBjbGFzcz0iY2FsZW5kYXJDb2xSaWdodCI+VGh1LCBTZXAgNSwmbmJzcDsmbmJzcDs2ICZuZGFzaDsgOSBwbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iL0NhbGVuZGFyX2FuZF9FdmVudHMvTXVzaWMvSmF6el9DYWbDqS5hc3B4Ij5KYXp6IENhZsOpPC9hPjxkaXYgY2xhc3M9InZtZmFFdmVudFR5cGUiPjx2YXIgY2xhc3M9ImV2ZW50VHlwZSI+RXZlbmluZyBFdmVudHMsIE11c2ljPC92YXI+PC9kaXY+PC9kaXY+PC9kZD48ZGQ+PGRpdiBjbGFzcz0iY2FsZW5kYXJDb2xSaWdodCI+RnJpLCBTZXAgNiwmbmJzcDsmbmJzcDs1ICZuZGFzaDsgNjozMCBwbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iL0NhbGVuZGFyX2FuZF9FdmVudHMvVGVlbl9Qcm9ncmFtcy9TeW1ib2xpY19TdGlsbF9MaWZlcy5hc3B4Ij5TeW1ib2xpYyBTdGlsbCBMaWZlczwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPlRlZW4gUHJvZ3JhbXM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5GcmksIFNlcCA2LCZuYnNwOyZuYnNwOzUgJm5kYXNoOyA4OjMwIHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9XZWVrZW5kL0ZyaWRheV9BcnRfX19XaW5lLmFzcHgiPkZyaWRheSBBcnQgJmFtcDsgV2luZTwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPkV2ZW5pbmcgRXZlbnRzLCBXZWVrZW5kLCBUb3VyczwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPkZyaSwgU2VwIDYsJm5ic3A7Jm5ic3A7NiAmbmRhc2g7IDggcG08Yj48aT48c3Bhbj48L3NwYW4+PC9iPjwvaT48YnIvPjxhIGhyZWY9Ii9DYWxlbmRhcl9hbmRfRXZlbnRzL1dlZWtlbmQvRmlyc3RfRnJpZGF5c19fUGVyZm9ybWluZ19BcnRzLmFzcHgiPkZpcnN0IEZyaWRheXM6IFBlcmZvcm1pbmcgQXJ0czwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPkV2ZW5pbmcgRXZlbnRzLCBXZWVrZW5kLCBNdXNpYzwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPlNhdCwgU2VwIDcsJm5ic3A7Jm5ic3A7NyAmbmRhc2g7IDExIHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9XZWVrZW5kL0FSVHJhZ2VvdXMuYXNweCI+QVJUcmFnZW91czwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPkV2ZW5pbmcgRXZlbnRzLCBXZWVrZW5kPC92YXI+PC9kaXY+PC9kaXY+PC9kZD48ZGQ+PGRpdiBjbGFzcz0iY2FsZW5kYXJDb2xSaWdodCI+VHVlLCBTZXAgMTAsJm5ic3A7Jm5ic3A7MTAgJm5kYXNoOyAxMSBhbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iL0NhbGVuZGFyX2FuZF9FdmVudHMvUHJlc2Nob29sX1Byb2dyYW1zL0FuaW1hbHNfYWxsX092ZXIuYXNweCI+QW5pbWFscyBhbGwgT3ZlcjwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPlByZXNjaG9vbCBQcm9ncmFtczwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPlR1ZSwgU2VwIDEwLCZuYnNwOyZuYnNwOzExICZuZGFzaDsgMTE6MzAgYW08Yj48aT48c3Bhbj48L3NwYW4+PC9iPjwvaT48YnIvPjxhIGhyZWY9Ii9DYWxlbmRhcl9hbmRfRXZlbnRzL1dlZWtlbmQvM19pbl8zMF9fQ2F0Y2hpbmdfU2lnaHQuYXNweCI+MyBpbiAzMDogQ2F0Y2hpbmcgU2lnaHQ8L2E+PGRpdiBjbGFzcz0idm1mYUV2ZW50VHlwZSI+PHZhciBjbGFzcz0iZXZlbnRUeXBlIj5XZWVrZW5kLCBUYWxrczwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPlR1ZSwgU2VwIDEwLCZuYnNwOyZuYnNwOzEgJm5kYXNoOyAyOjMwIHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9BcnRfSGlzdG9yeV9DbGFzc2VzL0J1ZGRoaXN0X0FydF9hbmRfSWNvbm9ncmFwaHkuYXNweCI+QnVkZGhpc3QgQXJ0IGFuZCBJY29ub2dyYXBoeTwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPkFkdWx0IENsYXNzZXMsIEFydCBIaXN0b3J5IENsYXNzZXM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5UdWUsIFNlcCAxMCwmbmJzcDsmbmJzcDsyICZuZGFzaDsgMyBwbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iL0NhbGVuZGFyX2FuZF9FdmVudHMvUHJlc2Nob29sX1Byb2dyYW1zL0FuaW1hbHNfYWxsX092ZXIuYXNweCI+QW5pbWFscyBhbGwgT3ZlcjwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPlByZXNjaG9vbCBQcm9ncmFtczwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPlRodSwgU2VwIDEyLCZuYnNwOyZuYnNwOzExIGFtICZuZGFzaDsgMTIgcG08Yj48aT48c3Bhbj48L3NwYW4+PC9iPjwvaT48YnIvPjxhIGhyZWY9Ii9DYWxlbmRhcl9hbmRfRXZlbnRzL1ByZXNjaG9vbF9Qcm9ncmFtcy9UaWNrbGVkX2J5X1RleHR1cmUuYXNweCI+VGlja2xlZCBieSBUZXh0dXJlPC9hPjxkaXYgY2xhc3M9InZtZmFFdmVudFR5cGUiPjx2YXIgY2xhc3M9ImV2ZW50VHlwZSI+UHJlc2Nob29sIFByb2dyYW1zPC92YXI+PC9kaXY+PC9kaXY+PC9kZD48ZGQ+PGRpdiBjbGFzcz0iY2FsZW5kYXJDb2xSaWdodCI+VGh1LCBTZXAgMTIsJm5ic3A7Jm5ic3A7NDoxNSAmbmRhc2g7IDYgcG08Yj48aT48c3Bhbj48L3NwYW4+PC9iPjwvaT48YnIvPjxhIGhyZWY9Ii9DYWxlbmRhcl9hbmRfRXZlbnRzL0tpZHNfUHJvZ3JhbXMvTXlfU3VtbWVyX1N0b3J5IS5hc3B4Ij5NeSBTdW1tZXIgU3RvcnkhPC9hPjxkaXYgY2xhc3M9InZtZmFFdmVudFR5cGUiPjx2YXIgY2xhc3M9ImV2ZW50VHlwZSI+S2lkcyBQcm9ncmFtczwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPlRodSwgU2VwIDEyLCZuYnNwOyZuYnNwOzQ6MTUgJm5kYXNoOyA2IHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9LaWRzX1Byb2dyYW1zL1BlcnNwZWN0aXZlX0RyYXdpbmcuYXNweCI+UGVyc3BlY3RpdmUgRHJhd2luZzwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPktpZHMgUHJvZ3JhbXM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5UaHUsIFNlcCAxMiwmbmJzcDsmbmJzcDs2ICZuZGFzaDsgOSBwbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iL0NhbGVuZGFyX2FuZF9FdmVudHMvTXVzaWMvSmF6el9DYWbDqS5hc3B4Ij5KYXp6IENhZsOpPC9hPjxkaXYgY2xhc3M9InZtZmFFdmVudFR5cGUiPjx2YXIgY2xhc3M9ImV2ZW50VHlwZSI+RXZlbmluZyBFdmVudHMsIE11c2ljPC92YXI+PC9kaXY+PC9kaXY+PC9kZD48ZGQ+PGRpdiBjbGFzcz0iY2FsZW5kYXJDb2xSaWdodCI+VGh1LCBTZXAgMTIsJm5ic3A7Jm5ic3A7NjozMCAmbmRhc2g7IDcgcG08Yj48aT48c3Bhbj48L3NwYW4+PC9iPjwvaT48YnIvPjxhIGhyZWY9Ii9DYWxlbmRhcl9hbmRfRXZlbnRzL1dlZWtlbmQvM19pbl8zMF9fQ2F0Y2hpbmdfU2lnaHQuYXNweCI+MyBpbiAzMDogQ2F0Y2hpbmcgU2lnaHQ8L2E+PGRpdiBjbGFzcz0idm1mYUV2ZW50VHlwZSI+PHZhciBjbGFzcz0iZXZlbnRUeXBlIj5XZWVrZW5kLCBUYWxrczwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPkZyaSwgU2VwIDEzLCZuYnNwOyZuYnNwOzUgJm5kYXNoOyA2OjMwIHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9UZWVuX1Byb2dyYW1zL1N5bWJvbGljX1N0aWxsX0xpZmVzLmFzcHgiPlN5bWJvbGljIFN0aWxsIExpZmVzPC9hPjxkaXYgY2xhc3M9InZtZmFFdmVudFR5cGUiPjx2YXIgY2xhc3M9ImV2ZW50VHlwZSI+VGVlbiBQcm9ncmFtczwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPkZyaSwgU2VwIDEzLCZuYnNwOyZuYnNwOzUgJm5kYXNoOyA4OjMwIHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9XZWVrZW5kL0ZyaWRheV9BcnRfX19XaW5lLmFzcHgiPkZyaWRheSBBcnQgJmFtcDsgV2luZTwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPkV2ZW5pbmcgRXZlbnRzLCBXZWVrZW5kLCBUb3VyczwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPkZyaSwgU2VwIDEzLCZuYnNwOyZuYnNwOzYgJm5kYXNoOyA4IHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9XZWVrZW5kL1NlY29uZF9GcmlkYXlzX19XaW5lX1Rhc3RpbmcuYXNweCI+U2Vjb25kIEZyaWRheXM6IFdpbmUgVGFzdGluZzwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPkV2ZW5pbmcgRXZlbnRzLCBXZWVrZW5kPC92YXI+PC9kaXY+PC9kaXY+PC9kZD48ZGQ+PGRpdiBjbGFzcz0iY2FsZW5kYXJDb2xSaWdodCI+U2F0LCBTZXAgMTQsJm5ic3A7Jm5ic3A7MSAmbmRhc2g7IDQgcG08Yj48aT48c3Bhbj48L3NwYW4+PC9iPjwvaT48YnIvPjxhIGhyZWY9Ii9DYWxlbmRhcl9hbmRfRXZlbnRzL1dlZWtlbmQvQ2VsZWJyYXRlX3RoZV9BcnRfb2ZfTGF0aW5fQW1lcmljYV9fUGVydSEuYXNweCI+Q2VsZWJyYXRlIHRoZSBBcnQgb2YgTGF0aW4gQW1lcmljYTogUGVydSE8L2E+PGRpdiBjbGFzcz0idm1mYUV2ZW50VHlwZSI+PHZhciBjbGFzcz0iZXZlbnRUeXBlIj5XZWVrZW5kLCBLaWRzIFByb2dyYW1zLCBGYW1pbHkgUHJvZ3JhbXM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5UdWUsIFNlcCAxNywmbmJzcDsmbmJzcDsxMCAmbmRhc2g7IDExIGFtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9QcmVzY2hvb2xfUHJvZ3JhbXMvQW5pbWFsc19hbGxfT3Zlci5hc3B4Ij5BbmltYWxzIGFsbCBPdmVyPC9hPjxkaXYgY2xhc3M9InZtZmFFdmVudFR5cGUiPjx2YXIgY2xhc3M9ImV2ZW50VHlwZSI+UHJlc2Nob29sIFByb2dyYW1zPC92YXI+PC9kaXY+PC9kaXY+PC9kZD48ZGQ+PGRpdiBjbGFzcz0iY2FsZW5kYXJDb2xSaWdodCI+VHVlLCBTZXAgMTcsJm5ic3A7Jm5ic3A7MiAmbmRhc2g7IDMgcG08Yj48aT48c3Bhbj48L3NwYW4+PC9iPjwvaT48YnIvPjxhIGhyZWY9Ii9DYWxlbmRhcl9hbmRfRXZlbnRzL1ByZXNjaG9vbF9Qcm9ncmFtcy9BbmltYWxzX2FsbF9PdmVyLmFzcHgiPkFuaW1hbHMgYWxsIE92ZXI8L2E+PGRpdiBjbGFzcz0idm1mYUV2ZW50VHlwZSI+PHZhciBjbGFzcz0iZXZlbnRUeXBlIj5QcmVzY2hvb2wgUHJvZ3JhbXM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5UdWUsIFNlcCAxNywmbmJzcDsmbmJzcDs2ICZuZGFzaDsgOCBwbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iL0NhbGVuZGFyX2FuZF9FdmVudHMvTWVtYmVyX0V2ZW50cy9UaGVfRm9jdXNfU2VyaWVzX19BbWVyaWNhbi5hc3B4Ij5UaGUgRm9jdXMgU2VyaWVzOiBBbWVyaWNhbjwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPk1lbWJlciBFdmVudHM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5XZWQsIFNlcCAxOCwmbmJzcDsmbmJzcDsxMSBhbSAmbmRhc2g7IDEyIHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9QcmVzY2hvb2xfUHJvZ3JhbXMvUG9zaXRpdmVseV9TZW5zYXRpb25hbCEuYXNweCI+UG9zaXRpdmVseSBTZW5zYXRpb25hbCE8L2E+PGRpdiBjbGFzcz0idm1mYUV2ZW50VHlwZSI+PHZhciBjbGFzcz0iZXZlbnRUeXBlIj5QcmVzY2hvb2wgUHJvZ3JhbXM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5XZWQsIFNlcCAxOCwmbmJzcDsmbmJzcDsxICZuZGFzaDsgMjozMCBwbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iL0NhbGVuZGFyX2FuZF9FdmVudHMvQXJ0X0hpc3RvcnlfQ2xhc3Nlcy9Qb3N0bW9kZXJuaXNtXzEwMS5hc3B4Ij5Qb3N0bW9kZXJuaXNtIDEwMTwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPkFydCBIaXN0b3J5IENsYXNzZXM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5XZWQsIFNlcCAxOCwmbmJzcDsmbmJzcDs0OjMwICZuZGFzaDsgNjozMCBwbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iL0NhbGVuZGFyX2FuZF9FdmVudHMvVGVlbl9Qcm9ncmFtcy9LaW5ldGljX1NjdWxwdHVyZS5hc3B4Ij5LaW5ldGljIFNjdWxwdHVyZTwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPlRlZW4gUHJvZ3JhbXM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5UaHUsIFNlcCAxOSwmbmJzcDsmbmJzcDs0OjE1ICZuZGFzaDsgNiBwbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iL0NhbGVuZGFyX2FuZF9FdmVudHMvS2lkc19Qcm9ncmFtcy9DaXRpZXNfX19TaGFwZXMuYXNweCI+Q2l0aWVzICZhbXA7IFNoYXBlczwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPktpZHMgUHJvZ3JhbXM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5UaHUsIFNlcCAxOSwmbmJzcDsmbmJzcDs2ICZuZGFzaDsgOSBwbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iL0NhbGVuZGFyX2FuZF9FdmVudHMvTXVzaWMvSmF6el9DYWbDqS5hc3B4Ij5KYXp6IENhZsOpPC9hPjxkaXYgY2xhc3M9InZtZmFFdmVudFR5cGUiPjx2YXIgY2xhc3M9ImV2ZW50VHlwZSI+RXZlbmluZyBFdmVudHMsIE11c2ljPC92YXI+PC9kaXY+PC9kaXY+PC9kZD48ZGQ+PGRpdiBjbGFzcz0iY2FsZW5kYXJDb2xSaWdodCI+VGh1LCBTZXAgMTksJm5ic3A7Jm5ic3A7NiAmbmRhc2g7IDc6MTUgcG08Yj48aT48c3Bhbj48L3NwYW4+PC9iPjwvaT48YnIvPjxhIGhyZWY9Ii9DYWxlbmRhcl9hbmRfRXZlbnRzL0V2ZW5pbmdfRXZlbnRzL0RpZ19EZWVwLmFzcHgiPkRpZyBEZWVwPC9hPjxkaXYgY2xhc3M9InZtZmFFdmVudFR5cGUiPjx2YXIgY2xhc3M9ImV2ZW50VHlwZSI+RXZlbmluZyBFdmVudHMsIEFydCBIaXN0b3J5IENsYXNzZXM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5GcmksIFNlcCAyMCwmbmJzcDsmbmJzcDsxICZuZGFzaDsgMiBwbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iL0NhbGVuZGFyX2FuZF9FdmVudHMvVGFsa3MvSG93X19fZG9feW91X2FwcGx5X2Zvcl9hX1ZNRkFfZmVsbG93c2hpcF8uYXNweCI+SG93Li4uZG8geW91IGFwcGx5IGZvciBhIFZNRkEgZmVsbG93c2hpcD88L2E+PGRpdiBjbGFzcz0idm1mYUV2ZW50VHlwZSI+PHZhciBjbGFzcz0iZXZlbnRUeXBlIj5UYWxrczwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPkZyaSwgU2VwIDIwLCZuYnNwOyZuYnNwOzUgJm5kYXNoOyA4OjMwIHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9XZWVrZW5kL0ZyaWRheV9BcnRfX19XaW5lLmFzcHgiPkZyaWRheSBBcnQgJmFtcDsgV2luZTwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPkV2ZW5pbmcgRXZlbnRzLCBXZWVrZW5kLCBUb3VyczwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPkZyaSwgU2VwIDIwLCZuYnNwOyZuYnNwOzYgJm5kYXNoOyA4IHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9XZWVrZW5kL1RoaXJkX0ZyaWRheXNfX1RhbmdvX0FmdGVyX1dvcmsuYXNweCI+VGhpcmQgRnJpZGF5czogVGFuZ28gQWZ0ZXIgV29yazwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPkV2ZW5pbmcgRXZlbnRzLCBXZWVrZW5kLCBNdXNpYzwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPlNhdCwgU2VwIDIxLCZuYnNwOyZuYnNwOzEgJm5kYXNoOyA0IHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9XZWVrZW5kL0FuaW1lX2luX2FfRGF5LmFzcHgiPkFuaW1lIGluIGEgRGF5PC9hPjxkaXYgY2xhc3M9InZtZmFFdmVudFR5cGUiPjx2YXIgY2xhc3M9ImV2ZW50VHlwZSI+V2Vla2VuZCwgVGVlbiBQcm9ncmFtczwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+PGRkPjxkaXYgY2xhc3M9ImNhbGVuZGFyQ29sUmlnaHQiPlNhdCwgU2VwIDIxLCZuYnNwOyZuYnNwOzEgJm5kYXNoOyA0IHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9XZWVrZW5kL0ludGVyYWN0aXZlX0FuaW1hbHMuYXNweCI+SW50ZXJhY3RpdmUgQW5pbWFsczwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPldlZWtlbmQsIEtpZHMgUHJvZ3JhbXM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5UdWUsIFNlcCAyNCwmbmJzcDsmbmJzcDsxMCAmbmRhc2g7IDExIGFtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9QcmVzY2hvb2xfUHJvZ3JhbXMvQW5pbWFsc19hbGxfT3Zlci5hc3B4Ij5BbmltYWxzIGFsbCBPdmVyPC9hPjxkaXYgY2xhc3M9InZtZmFFdmVudFR5cGUiPjx2YXIgY2xhc3M9ImV2ZW50VHlwZSI+UHJlc2Nob29sIFByb2dyYW1zPC92YXI+PC9kaXY+PC9kaXY+PC9kZD48ZGQ+PGRpdiBjbGFzcz0iY2FsZW5kYXJDb2xSaWdodCI+VHVlLCBTZXAgMjQsJm5ic3A7Jm5ic3A7MiAmbmRhc2g7IDMgcG08Yj48aT48c3Bhbj48L3NwYW4+PC9iPjwvaT48YnIvPjxhIGhyZWY9Ii9DYWxlbmRhcl9hbmRfRXZlbnRzL1ByZXNjaG9vbF9Qcm9ncmFtcy9BbmltYWxzX2FsbF9PdmVyLmFzcHgiPkFuaW1hbHMgYWxsIE92ZXI8L2E+PGRpdiBjbGFzcz0idm1mYUV2ZW50VHlwZSI+PHZhciBjbGFzcz0iZXZlbnRUeXBlIj5QcmVzY2hvb2wgUHJvZ3JhbXM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5XZWQsIFNlcCAyNSwmbmJzcDsmbmJzcDsxMSBhbSAmbmRhc2g7IDEyIHBtPGI+PGk+PHNwYW4+PC9zcGFuPjwvYj48L2k+PGJyLz48YSBocmVmPSIvQ2FsZW5kYXJfYW5kX0V2ZW50cy9QcmVzY2hvb2xfUHJvZ3JhbXMvUG9zaXRpdmVseV9TZW5zYXRpb25hbCEuYXNweCI+UG9zaXRpdmVseSBTZW5zYXRpb25hbCE8L2E+PGRpdiBjbGFzcz0idm1mYUV2ZW50VHlwZSI+PHZhciBjbGFzcz0iZXZlbnRUeXBlIj5QcmVzY2hvb2wgUHJvZ3JhbXM8L3Zhcj48L2Rpdj48L2Rpdj48L2RkPjxkZD48ZGl2IGNsYXNzPSJjYWxlbmRhckNvbFJpZ2h0Ij5UaHUsIFNlcCAyNiwmbmJzcDsmbmJzcDs0OjE1ICZuZGFzaDsgNiBwbTxiPjxpPjxzcGFuPjwvc3Bhbj48L2I+PC9pPjxici8+PGEgaHJlZj0iL0NhbGVuZGFyX2FuZF9FdmVudHMvS2lkc19Qcm9ncmFtcy9JbXByZXNzaW9uaXNtX1BhaW50aW5nLmFzcHgiPkltcHJlc3Npb25pc20gUGFpbnRpbmc8L2E+PGRpdiBjbGFzcz0idm1mYUV2ZW50VHlwZSI+PHZhciBjbGFzcz0iZXZlbnRUeXBlIj5LaWRzIFByb2dyYW1zPC92YXI+PC9kaXY+PC9kaXY+PC9kZD48ZGQ+PGRpdiBjbGFzcz0iY2FsZW5kYXJDb2xSaWdodCI+VGh1LCBTZXAgMjYsJm5ic3A7Jm5ic3A7NiAmbmRhc2g7IDkgcG08Yj48aT48c3Bhbj48L3NwYW4+PC9iPjwvaT48YnIvPjxhIGhyZWY9Ii9DYWxlbmRhcl9hbmRfRXZlbnRzL011c2ljL0phenpfQ2Fmw6kuYXNweCI+SmF6eiBDYWbDqTwvYT48ZGl2IGNsYXNzPSJ2bWZhRXZlbnRUeXBlIj48dmFyIGNsYXNzPSJldmVudFR5cGUiPkV2ZW5pbmcgRXZlbnRzLCBNdXNpYzwvdmFyPjwvZGl2PjwvZGl2PjwvZGQ+ZAIPD2QWAgIBD2QWAmYPDxYCHgVUaXRsZQUBIGRkZNqguV1ynrc96YjI4HlTtXZAlBju" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCgLVi7qqDwLY5MexCwKO5aiKBAKkn9P2DgKjhI2ABQK1mZYkAoG+080EAs+Zl5AJAviTvZwIAuno5gHf7U4FNr2F4s2I3ie9G52bzjERSw==" />
+</div>
+    <div id="breadcrumbBox">
+        
+    
+
+    </div>
+    <div id="wrapper">
+        
+<div id="header">
+    <div id="actionNavBox">
+        <ul>
+            <li id="shareThis">
+                <!-- AddThis Button BEGIN -->
+                <a href="http://www.addthis.com/bookmark.php?v=250&amp;pub=xa-4b13f6c44e1e94c5" class="addthis_button_compact">
+                    Share</a>
+
+                <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pub=xa-4b13f6c44e1e94c5"></script>
+
+                <!-- AddThis Button END -->
+            </li>
+            <li id="printThis"><a href="#">Print</a></li>
+        </ul>
+    </div>
+    <!-- /actionNavBox -->
+    <div id="logoBox">
+        <a href="/default.aspx">
+            <img src="/images/vmfa-logo-large.png" alt="Virginia Museum of Fine Arts VMFA Logo" /></a></div>
+    <!-- /logobox -->
+    <div id="utilityNavBox">
+        <ul>
+            <li class="replace"><a href="http://reservations.vmfa.museum/state/Info.aspx?EventID=51" target="_blank">Exhibition Tickets</a></li>
+            <li class="replace"><a href="/Support/Membership/">Membership</a></li>
+            <li class="replace"><a href="/Support/Contributions/VMFA_Annual_Fund.aspx">Give</a></li>
+            <li class="replace"><a href="/Calendar/">Calendar &amp; Events</a></li>
+            <li><span  class="replace">Search:</span> <span id="searchArea">
+                <input name="ctl00$SiteHeader$search" type="text" id="ctl00_SiteHeader_search" title="Search Virginia Museum of Fine Arts" class="mainSearchText" />
+                <input type="submit" name="ctl00$SiteHeader$searchicon" value="" id="ctl00_SiteHeader_searchicon" class="mainSearchBtn" />
+            </span></li>
+        </ul>
+    </div>
+    <!-- /utilityNavBox -->
+    <div id="mainNavBox">
+        <ul>
+            <li id="mainNav1" class=""><a href="/Visit/">Visit</a>
+                <ul><li><a href="/Visit/Hours_+_Admission.aspx">Hours + Admission</a></li><li><a href="/Calendar/">Calendar + Events</a></li><li><a href="/Visit/Directions_+_Parking.aspx">Directions + Parking</a></li><li><a href="/Visit/Tours/Tours.aspx">Tours</a></li><li><a href="/Visit/Gallery_Maps/Gallery_Maps.aspx">Gallery Maps & Activities</a></li><li><a href="/Visit/Plan_Ahead/Plan_Ahead.aspx">Plan Ahead</a></li><li><a href="/Visit/VMFA_After_Dark/VMFA_After_Dark.aspx">VMFA After Dark</a></li><li><a href="/Visit/Dining_+_Facility_Rentals/Dining_+_Facility_Rentals.aspx">Dining + Facility Rentals</a></li><li><a href="/Visit/About_VMFA/About_VMFA.aspx">About VMFA</a></li><li><a href="/Visit/Library/Library.aspx">Library</a></li></ul>
+            </li>
+            <li id="mainNav2" class=""><a href="/Exhibitions/">Exhibitions</a>
+                <ul><li><a href="/Exhibitions/At_The_Museum/At_the_Museum.aspx">At The Museum</a></li><li><a href="/Exhibitions/Upcoming/Upcoming.aspx">Upcoming</a></li><li><a href="/Exhibitions/Past/Past.aspx">Past</a></li><li><a href="/Exhibitions/Traveling/Traveling.aspx">Traveling</a></li></ul>
+            </li>
+            <li id="mainNav3" class=""><a href="/Collections/">Collections</a>
+                <ul><li><a href="/Collections/About_the_Collection/About_the_Collection.aspx">About the Collection</a></li><li><a href="/Collections/African/">African Art</a></li><li><a href="/Collections/American/">American Art</a></li><li><a href="/Collections/AncientAmerican/">Ancient American Art</a></li><li><a href="/Collections/Ancient/">Ancient Art</a></li><li><a href="/Collections/DecoNouveau/">Art Deco &amp;  Art Nouveau</a></li><li><a href="/Collections/EastAsian/">East Asian Art</a></li><li><a href="/Collections/EnglishSilver/">English Silver</a></li><li><a href="/Collections/European/">European Art</a></li><li><a href="/Collections/Faberge/">Fabergé</a></li><li><a href="/Collections/SouthAsian/">South Asian Art</a></li><li><a href="/Collections/Early-20th-Century-European">Early 20th-Century European Art</a></li><li><a href="/Collections/20thCentury/">Mid to Late 20th-Century Art</a></li><li><a href="/Collections/21stCentury/">21st-Century Art</a></li></ul>
+            </li>
+            <li id="mainNav4" class=""><a href="/Learn/">Learn</a>
+                <ul><li><a href="/Learn/Kids_+_Families/Kids_+_Families.aspx">Kids + Families</a></li><li><a href="/Learn/Teens/Teens.aspx">Teens</a></li><li><a href="/Learn/College/College.aspx">College</a></li><li><a href="/Learn/Educators/educators.aspx">Educators</a></li><li><a href="/Learn/Adults/Adults.aspx">Adults</a></li><li><a href="/Learn/Statewide_Programs/Statewide_Programs.aspx">Statewide Programs</a></li><li><a href="http://www.vmfa-resources.org/">Educational Resources</a></li></ul>
+            </li>
+            <li id="mainNav5" class=""><a href="/Support/">Support</a>
+                <ul><li><a href="/Support/Membership/Membership.aspx">Membership</a></li><li><a href="/Support/Ways_to_Give/Ways_to_Give.aspx">Ways to Give</a></li><li><a href="/Support/Corporate_Giving/Corporate_Giving.aspx">Corporate Giving</a></li></ul>
+            </li>
+            <li id="mainNav6" class=""><a href="/Shop/">Shop</a>
+                <ul><li><a href="/Shop/About_the_Shop.aspx">About the Shop</a></li><li><a href="/Shop/Featured_Products/Featured_Products.aspx">Featured Products</a></li><li><a href="/Shop/Events/Events.aspx">Events</a></li><li><a href="http://bit.ly/vFJQEF">Shop Online</a></li></ul>
+            </li>
+        </ul>
+    </div>
+    <!-- /mainNavBox -->
+</div>
+<!-- /header -->
+
+        <div id="content">
+            
+<div class="calendarFixPadding">
+    <div id="twoColumnsBox">
+        <div id="col1">
+            <div class="rangeContainer">
+                <h2>
+                    </h2>
+                <h3 class="padMore">
+                    <strong>Browse by Date</strong></h3>
+                <h3>
+                    Start Date:</h3>
+                <span id="ctl00_phContent_startDate_DatePickerContainer" class="DatePickerContainer">
+	
+	<input name="ctl00$phContent$startDate$tbDate" type="text" id="ctl00_phContent_startDate_tbDate" class="DatePicker_input" />
+</span>
+<input name="ctl00$phContent$startDate$ctl00$phContent$startDateEktronClientManager" type="hidden" id="ctl00_phContent_startDate_ctl00_phContent_startDateEktronClientManager" value="EktronJS,EktronUICoreJS,EktronDatePickerJs" /><script id="ctl00_phContent_startDateEktronScriptBlock" type="text/javascript"><!--//--><![CDATA[//><!--
+
+                            Ektron.ready(function(event, eventName)
+                            {
+$ektron('.DatePickerContainer input.DatePicker_input').datepicker();
+
+
+
+                                setTimeout("$ektron('#ctl00_phContent_startDateEktronScriptBlock').remove()", 1);
+                            });
+                            
+//--><!]]>
+</script>
+                <h3>
+                    End Date <span>(optional)</span></h3>
+                <span id="ctl00_phContent_endDate_DatePickerContainer" class="DatePickerContainer">
+	
+	<input name="ctl00$phContent$endDate$tbDate" type="text" id="ctl00_phContent_endDate_tbDate" class="DatePicker_input" />
+</span>
+<input name="ctl00$phContent$endDate$ctl00$phContent$endDateEktronClientManager" type="hidden" id="ctl00_phContent_endDate_ctl00_phContent_endDateEktronClientManager" value="EktronJS,EktronUICoreJS,EktronDatePickerJs" /><script id="ctl00_phContent_endDateEktronScriptBlock" type="text/javascript"><!--//--><![CDATA[//><!--
+
+                            Ektron.ready(function(event, eventName)
+                            {
+$ektron('.DatePickerContainer input.DatePicker_input').datepicker();
+
+
+
+                                setTimeout("$ektron('#ctl00_phContent_endDateEktronScriptBlock').remove()", 1);
+                            });
+                            
+//--><!]]>
+</script>
+                <br />
+                <input type="button" id="btnGo" class="buttonLink" value="Go" onclick="return(false);"/>
+            </div>
+            <div class="vmfaCategoryList">
+                <h3>
+                    <strong>Select Categories<br /> Below to Filter Results</strong></h3>
+                <a id="clr" href="javascript:void(0);" style="display: none;">Show all events</a>
+                <ul class="secondaryNav roundedButtons" id="calCategories">
+                </ul>
+            </div>
+            <div id="ctl00_phContent_leftNavContent">
+	
+</div>
+        </div>
+        <div id="col2">
+            
+            <div id="subCol1">
+                <div id="calendarBox">
+                    <h2>Tue, Aug 27, 2013 - Thu, Sep 26, 2013</h2>Showing all events. Choose categories on left to filter results.
+                    
+<dl>
+    <dt></dt>
+    <dd><div class="calendarColRight">Tue, Aug 27,&nbsp;&nbsp;10 &ndash; 11 am<b><i><span></span></b></i><br/><a href="/2013/LandSeaandSky.aspx">Land, Sea, and Sky</a><div class="vmfaEventType"><var class="eventType"></var></div></div></dd><dd><div class="calendarColRight">Thu, Aug 29,&nbsp;&nbsp;10 &ndash; 11 am<b><i><span></span></b></i><br/><a href="/2013/LandSeaandSky.aspx">Land, Sea, and Sky</a><div class="vmfaEventType"><var class="eventType"></var></div></div></dd><dd><div class="calendarColRight">Thu, Aug 29,&nbsp;&nbsp;6 &ndash; 9 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Music/Jazz_Café.aspx">Jazz Café</a><div class="vmfaEventType"><var class="eventType">Evening Events, Music</var></div></div></dd><dd><div class="calendarColRight">Thu, Aug 29,&nbsp;&nbsp;6:30 &ndash; 7:30 pm&nbsp|&nbsp;<b><i><span>Sold out</span></b></i><br/><a href="/Calendar_and_Events/Talks/Stories_of_an_Art_Detective__Behind_the_Scenes_at_Antiques_Roadshow.aspx">Stories of an Art Detective: Behind the Scenes at Antiques Roadshow</a><div class="vmfaEventType"><var class="eventType">Evening Events, Talks</var></div></div></dd><dd><div class="calendarColRight">Fri, Aug 30,&nbsp;&nbsp;5 &ndash; 7:30 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Evening_Events/Teacher_Open_House.aspx">Teacher Open House</a><div class="vmfaEventType"><var class="eventType">Evening Events, Educator Programs</var></div></div></dd><dd><div class="calendarColRight">Fri, Aug 30,&nbsp;&nbsp;5 &ndash; 8:30 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Weekend/Friday_Art___Wine.aspx">Friday Art &amp; Wine</a><div class="vmfaEventType"><var class="eventType">Evening Events, Weekend, Tours</var></div></div></dd><dd><div class="calendarColRight">Sun, Sep 1,&nbsp;&nbsp;1 &ndash; 4 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Kids_Programs/Open_Studio_Sundays.aspx">Open Studio Sundays</a><div class="vmfaEventType"><var class="eventType">Kids Programs, Family Programs</var></div></div></dd><dd><div class="calendarColRight">Thu, Sep 5,&nbsp;&nbsp;6 &ndash; 9 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Music/Jazz_Café.aspx">Jazz Café</a><div class="vmfaEventType"><var class="eventType">Evening Events, Music</var></div></div></dd><dd><div class="calendarColRight">Fri, Sep 6,&nbsp;&nbsp;5 &ndash; 6:30 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Teen_Programs/Symbolic_Still_Lifes.aspx">Symbolic Still Lifes</a><div class="vmfaEventType"><var class="eventType">Teen Programs</var></div></div></dd><dd><div class="calendarColRight">Fri, Sep 6,&nbsp;&nbsp;5 &ndash; 8:30 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Weekend/Friday_Art___Wine.aspx">Friday Art &amp; Wine</a><div class="vmfaEventType"><var class="eventType">Evening Events, Weekend, Tours</var></div></div></dd><dd><div class="calendarColRight">Fri, Sep 6,&nbsp;&nbsp;6 &ndash; 8 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Weekend/First_Fridays__Performing_Arts.aspx">First Fridays: Performing Arts</a><div class="vmfaEventType"><var class="eventType">Evening Events, Weekend, Music</var></div></div></dd><dd><div class="calendarColRight">Sat, Sep 7,&nbsp;&nbsp;7 &ndash; 11 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Weekend/ARTrageous.aspx">ARTrageous</a><div class="vmfaEventType"><var class="eventType">Evening Events, Weekend</var></div></div></dd><dd><div class="calendarColRight">Tue, Sep 10,&nbsp;&nbsp;10 &ndash; 11 am<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Preschool_Programs/Animals_all_Over.aspx">Animals all Over</a><div class="vmfaEventType"><var class="eventType">Preschool Programs</var></div></div></dd><dd><div class="calendarColRight">Tue, Sep 10,&nbsp;&nbsp;11 &ndash; 11:30 am<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Weekend/3_in_30__Catching_Sight.aspx">3 in 30: Catching Sight</a><div class="vmfaEventType"><var class="eventType">Weekend, Talks</var></div></div></dd><dd><div class="calendarColRight">Tue, Sep 10,&nbsp;&nbsp;1 &ndash; 2:30 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Art_History_Classes/Buddhist_Art_and_Iconography.aspx">Buddhist Art and Iconography</a><div class="vmfaEventType"><var class="eventType">Adult Classes, Art History Classes</var></div></div></dd><dd><div class="calendarColRight">Tue, Sep 10,&nbsp;&nbsp;2 &ndash; 3 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Preschool_Programs/Animals_all_Over.aspx">Animals all Over</a><div class="vmfaEventType"><var class="eventType">Preschool Programs</var></div></div></dd><dd><div class="calendarColRight">Thu, Sep 12,&nbsp;&nbsp;11 am &ndash; 12 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Preschool_Programs/Tickled_by_Texture.aspx">Tickled by Texture</a><div class="vmfaEventType"><var class="eventType">Preschool Programs</var></div></div></dd><dd><div class="calendarColRight">Thu, Sep 12,&nbsp;&nbsp;4:15 &ndash; 6 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Kids_Programs/My_Summer_Story!.aspx">My Summer Story!</a><div class="vmfaEventType"><var class="eventType">Kids Programs</var></div></div></dd><dd><div class="calendarColRight">Thu, Sep 12,&nbsp;&nbsp;4:15 &ndash; 6 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Kids_Programs/Perspective_Drawing.aspx">Perspective Drawing</a><div class="vmfaEventType"><var class="eventType">Kids Programs</var></div></div></dd><dd><div class="calendarColRight">Thu, Sep 12,&nbsp;&nbsp;6 &ndash; 9 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Music/Jazz_Café.aspx">Jazz Café</a><div class="vmfaEventType"><var class="eventType">Evening Events, Music</var></div></div></dd><dd><div class="calendarColRight">Thu, Sep 12,&nbsp;&nbsp;6:30 &ndash; 7 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Weekend/3_in_30__Catching_Sight.aspx">3 in 30: Catching Sight</a><div class="vmfaEventType"><var class="eventType">Weekend, Talks</var></div></div></dd><dd><div class="calendarColRight">Fri, Sep 13,&nbsp;&nbsp;5 &ndash; 6:30 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Teen_Programs/Symbolic_Still_Lifes.aspx">Symbolic Still Lifes</a><div class="vmfaEventType"><var class="eventType">Teen Programs</var></div></div></dd><dd><div class="calendarColRight">Fri, Sep 13,&nbsp;&nbsp;5 &ndash; 8:30 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Weekend/Friday_Art___Wine.aspx">Friday Art &amp; Wine</a><div class="vmfaEventType"><var class="eventType">Evening Events, Weekend, Tours</var></div></div></dd><dd><div class="calendarColRight">Fri, Sep 13,&nbsp;&nbsp;6 &ndash; 8 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Weekend/Second_Fridays__Wine_Tasting.aspx">Second Fridays: Wine Tasting</a><div class="vmfaEventType"><var class="eventType">Evening Events, Weekend</var></div></div></dd><dd><div class="calendarColRight">Sat, Sep 14,&nbsp;&nbsp;1 &ndash; 4 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Weekend/Celebrate_the_Art_of_Latin_America__Peru!.aspx">Celebrate the Art of Latin America: Peru!</a><div class="vmfaEventType"><var class="eventType">Weekend, Kids Programs, Family Programs</var></div></div></dd><dd><div class="calendarColRight">Tue, Sep 17,&nbsp;&nbsp;10 &ndash; 11 am<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Preschool_Programs/Animals_all_Over.aspx">Animals all Over</a><div class="vmfaEventType"><var class="eventType">Preschool Programs</var></div></div></dd><dd><div class="calendarColRight">Tue, Sep 17,&nbsp;&nbsp;2 &ndash; 3 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Preschool_Programs/Animals_all_Over.aspx">Animals all Over</a><div class="vmfaEventType"><var class="eventType">Preschool Programs</var></div></div></dd><dd><div class="calendarColRight">Tue, Sep 17,&nbsp;&nbsp;6 &ndash; 8 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Member_Events/The_Focus_Series__American.aspx">The Focus Series: American</a><div class="vmfaEventType"><var class="eventType">Member Events</var></div></div></dd><dd><div class="calendarColRight">Wed, Sep 18,&nbsp;&nbsp;11 am &ndash; 12 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Preschool_Programs/Positively_Sensational!.aspx">Positively Sensational!</a><div class="vmfaEventType"><var class="eventType">Preschool Programs</var></div></div></dd><dd><div class="calendarColRight">Wed, Sep 18,&nbsp;&nbsp;1 &ndash; 2:30 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Art_History_Classes/Postmodernism_101.aspx">Postmodernism 101</a><div class="vmfaEventType"><var class="eventType">Art History Classes</var></div></div></dd><dd><div class="calendarColRight">Wed, Sep 18,&nbsp;&nbsp;4:30 &ndash; 6:30 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Teen_Programs/Kinetic_Sculpture.aspx">Kinetic Sculpture</a><div class="vmfaEventType"><var class="eventType">Teen Programs</var></div></div></dd><dd><div class="calendarColRight">Thu, Sep 19,&nbsp;&nbsp;4:15 &ndash; 6 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Kids_Programs/Cities___Shapes.aspx">Cities &amp; Shapes</a><div class="vmfaEventType"><var class="eventType">Kids Programs</var></div></div></dd><dd><div class="calendarColRight">Thu, Sep 19,&nbsp;&nbsp;6 &ndash; 9 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Music/Jazz_Café.aspx">Jazz Café</a><div class="vmfaEventType"><var class="eventType">Evening Events, Music</var></div></div></dd><dd><div class="calendarColRight">Thu, Sep 19,&nbsp;&nbsp;6 &ndash; 7:15 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Evening_Events/Dig_Deep.aspx">Dig Deep</a><div class="vmfaEventType"><var class="eventType">Evening Events, Art History Classes</var></div></div></dd><dd><div class="calendarColRight">Fri, Sep 20,&nbsp;&nbsp;1 &ndash; 2 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Talks/How___do_you_apply_for_a_VMFA_fellowship_.aspx">How...do you apply for a VMFA fellowship?</a><div class="vmfaEventType"><var class="eventType">Talks</var></div></div></dd><dd><div class="calendarColRight">Fri, Sep 20,&nbsp;&nbsp;5 &ndash; 8:30 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Weekend/Friday_Art___Wine.aspx">Friday Art &amp; Wine</a><div class="vmfaEventType"><var class="eventType">Evening Events, Weekend, Tours</var></div></div></dd><dd><div class="calendarColRight">Fri, Sep 20,&nbsp;&nbsp;6 &ndash; 8 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Weekend/Third_Fridays__Tango_After_Work.aspx">Third Fridays: Tango After Work</a><div class="vmfaEventType"><var class="eventType">Evening Events, Weekend, Music</var></div></div></dd><dd><div class="calendarColRight">Sat, Sep 21,&nbsp;&nbsp;1 &ndash; 4 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Weekend/Anime_in_a_Day.aspx">Anime in a Day</a><div class="vmfaEventType"><var class="eventType">Weekend, Teen Programs</var></div></div></dd><dd><div class="calendarColRight">Sat, Sep 21,&nbsp;&nbsp;1 &ndash; 4 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Weekend/Interactive_Animals.aspx">Interactive Animals</a><div class="vmfaEventType"><var class="eventType">Weekend, Kids Programs</var></div></div></dd><dd><div class="calendarColRight">Tue, Sep 24,&nbsp;&nbsp;10 &ndash; 11 am<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Preschool_Programs/Animals_all_Over.aspx">Animals all Over</a><div class="vmfaEventType"><var class="eventType">Preschool Programs</var></div></div></dd><dd><div class="calendarColRight">Tue, Sep 24,&nbsp;&nbsp;2 &ndash; 3 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Preschool_Programs/Animals_all_Over.aspx">Animals all Over</a><div class="vmfaEventType"><var class="eventType">Preschool Programs</var></div></div></dd><dd><div class="calendarColRight">Wed, Sep 25,&nbsp;&nbsp;11 am &ndash; 12 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Preschool_Programs/Positively_Sensational!.aspx">Positively Sensational!</a><div class="vmfaEventType"><var class="eventType">Preschool Programs</var></div></div></dd><dd><div class="calendarColRight">Thu, Sep 26,&nbsp;&nbsp;4:15 &ndash; 6 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Kids_Programs/Impressionism_Painting.aspx">Impressionism Painting</a><div class="vmfaEventType"><var class="eventType">Kids Programs</var></div></div></dd><dd><div class="calendarColRight">Thu, Sep 26,&nbsp;&nbsp;6 &ndash; 9 pm<b><i><span></span></b></i><br/><a href="/Calendar_and_Events/Music/Jazz_Café.aspx">Jazz Café</a><div class="vmfaEventType"><var class="eventType">Evening Events, Music</var></div></div></dd>
+</dl>
+
+                </div>
+            </div>
+            <div id="subCol2">
+                <div class="vmfaHours">
+                    <div id="ctl00_phContent_museumHours">
+	<h3 class="replace">Museum Hours</h3>
+<p><strong>Daily</strong> 10 am – 5 pm <br /><strong>Thu + Fri</strong> until 9 pm</p>
+</div>
+                </div>
+                <div id="ctl00_phContent_exhibitions" class="sideExhibitionBoxVMFA">
+                    <h3 class="replace">
+                        Current Exhibitions
+                    </h3>
+                    <span id="ctl00_phContent_ExhibitionsSummary_Exhibits"><ul><li><a href="/exhibitions/visions-from-the-congo.aspx">Visions from the Congo: Ancestral Contact</a></li><li><strong><span class="dateTimeExhibit"></span></strong></li><li class="location">Evans Court</li></ul><ul><li><a href="/Exhibitions/Nooter/">Native American Art: The Robert and Nancy Nooter Collection</a></li><li><strong><span class="dateTimeExhibit"></span></strong></li><li class="location">Ancient American Galleries</li></ul><ul><li><a href="/gallery-rotation/early-20th-century-european-art.aspx">Early 20th-Century European Art</a></li><li><strong><span class="dateTimeExhibit"></span></strong></li><li class="location">Early 20th-Century European Art Galleries</li></ul><ul><li><a href="/exhibitions/studio-school/">Studio School Exhibitions</a></li><li><strong><span class="dateTimeExhibit"></span></strong></li><li class="location">Studio School Gallery</li></ul><ul><li><a href="/exhibitions/fellowship/">Fellowship Exhibitions</a></li><li><strong><span class="dateTimeExhibit"></span></strong></li><li class="location"></li></ul><ul><li><a href="/loans/rembrandt.aspx">Spotlight Loan: Rembrandt</a></li><li><strong><span class="dateTimeExhibit">Dec 01, 2012</span><span class="dateTimeExhibit">  –  Dec 01, 2013</span></strong></li><li class="location">European Baroque Art Gallery</li></ul><ul><li><a href="/exhibitions/japanese-dolls.aspx">Japanese Dolls</a></li><li><strong><span class="dateTimeExhibit">May 09, 2013</span><span class="dateTimeExhibit">  –  Sep 29, 2013</span></strong></li><li class="location">Works on Paper Gallery</li></ul><ul><li><a href="/exhibitions/vogel-collection.aspx">The Dorothy and Herbert Vogel Collection: Fifty Works for Fifty States</a></li><li><strong><span class="dateTimeExhibit">Jul 27, 2013</span><span class="dateTimeExhibit">  –  Oct 20, 2013</span></strong></li><li class="location">Evans Court</li></ul><input name="ctl00$phContent$ExhibitionsSummary$Exhibits$ctl00$phContent$ExhibitionsSummary$ExhibitsEktronClientManager" type="hidden" id="ctl00_phContent_ExhibitionsSummary_Exhibits_ctl00_phContent_ExhibitionsSummary_ExhibitsEktronClientManager" value="EktronJS,EktronJsonJS,EktronDmsMenuJS" /></span>
+
+                </div>
+                <div>
+                    <span id="ctl00_phContent_RelatedRightRailContent"><input name="ctl00$phContent$RelatedRightRailContent$ctl00$phContent$RelatedRightRailContentEktronClientManager" type="hidden" id="ctl00_phContent_RelatedRightRailContent_ctl00_phContent_RelatedRightRailContentEktronClientManager" value="EktronJS,EktronJsonJS,EktronDmsMenuJS" /></span>
+                    <span id="ctl00_phContent_RelatedContacts"><input name="ctl00$phContent$RelatedContacts$ctl00$phContent$RelatedContactsEktronClientManager" type="hidden" id="ctl00_phContent_RelatedContacts_ctl00_phContent_RelatedContactsEktronClientManager" value="EktronJS,EktronJsonJS,EktronDmsMenuJS" /></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+        </div>
+        <!-- /content -->
+        
+<div id="footer">
+    <div id="ctl00_SiteFooter_Footer">
+	<ul id="footerListLeft">
+<li id="subscribe"><a title="Subscribe to E-news" href="http://eepurl.com/v-fa5">Subscribe to E-News</a> </li>
+<!--<li><a title="Site Map" href="/Site_Map.aspx">Site Map</a>&#160;</li>--><li><a title="Hours" href="/Hours">Hours</a> </li>
+<li><a title="Directions" href="/WorkArea/linkit.aspx?LinkIdentifier=id&amp;ItemID=2147483849">Directions</a> </li>
+<li><a title="Contact" href="/Visit/About_VMFA/Contact.aspx ">Organizational Charts &amp; Contacts</a> </li>
+<li><a title="Jobs" href="/Jobs/">Jobs</a> </li>
+<li><a title="Press Room" href="/pressroom">Press</a> </li>
+<!--<li><a title="Blog (new window)" href="http://virginiamuseum.blogspot.com/" target="_blank">Blog</a>&#160;</li>--></ul>
+<ul id="footerListRight">
+<li><a title="Privacy Policy" href="/privacy.aspx">Privacy Policy</a> </li>
+<li><a title="Freedom of Information" href="/Freedom_of_Information.aspx">Freedom of Information</a> </li>
+<li><a title="Copyright" href="/WorkArea/linkit.aspx?LinkIdentifier=id&amp;ItemID=8589934651&amp;libID=8589934649">Copyright</a> </li>
+<li><a title="Accessibility" href="/Accessibility.aspx">Accessibility</a> |</li>
+<li id="datapoint"><a title="View VMFA Expenditures" href="http://datapoint.apa.virginia.gov/exp/exp_checkbook_agency.cfm?AGYCODE=238">Expenditures</a> </li>
+</ul>
+</div>
+</div>
+<!-- /footer -->
+
+<div id="google_translate_element">
+    <p>
+        Translate:</p>
+</div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en'
+  }, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<div id="infoBox">
+    <div id="ctl00_SiteFooter_InfoBox">
+	<ul>
+<li>Free Admission</li>
+<li>Virginia Museum of Fine Arts</li>
+<li>200 N. Boulevard, Richmond, VA 23220-4007</li>
+<li>804.340.1400</li>
+</ul>
+</div>
+</div>
+<!-- /infoBox -->
+
+    </div>
+    <!-- /wrapper -->
+    </form>
+    <script type="text/javascript" src="/scripts/jquery.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-plugins.js"></script>
+    <script type="text/javascript" src="/scripts/actions.js"></script> 
+    <div id="ctl00_googleContent">
+	<script type="text/javascript"><!--
+
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+--></script> <script type="text/javascript"><!--
+
+try {
+var pageTracker = _gat._getTracker("UA-2101329-1");
+pageTracker._setLocalRemoteServerMode();
+pageTracker._trackPageview();
+} catch(err) {}
+--></script>
+</div> 
+    
+
+    
+</body>
+</html>

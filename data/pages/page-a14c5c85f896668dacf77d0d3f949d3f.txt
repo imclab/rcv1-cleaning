@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/Base.dwt.php" codeOutsideHTMLIsLocked="true" -->
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="events Aberdeen South Dakota, Aberdeen SD" /><meta name="description" content="Aberdeen South Dakota events." />	<!-- InstanceBeginEditable name="doctitle" -->
+	<title>Aberdeen South Dakota events | arts and entertainment</title>
+	<!-- InstanceEndEditable -->
+<link rel="shortcut icon" href="/blueFavicon.ico" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.allaberdeen.net/rss/events/arts and entertainment/" />	<link rel="stylesheet" type="text/css" href="/css/siteStyles.css" />
+	<link rel="stylesheet" type="text/css" href="/css/sponsorship.php?sponsorID=2" />
+	<link rel="stylesheet" type="text/css" href="/css/multibox.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="/css/printStyles.css" />
+	<style>
+		<!--[if IE 7]>.accordionEl .divideLine { margin: 5px 10px 0 -20px; }<![endif]-->
+.tool-title {  color: #407088; }.calTool-title {  color: #E5ECEF; }	</style>
+	<script type="text/javascript" src="/javascript/siteScripts.js"></script>
+	<script type="text/javascript" src="/javascript/mootools.js"></script>
+	<script type="text/javascript" src="/javascript/swfobject.js"></script>
+	<script type="text/javascript" src="/javascript/multibox.js"></script>
+	<script type="text/javascript" src="/javascript/overlay.js"></script>
+	<!--<script type="text/javascript" src="/javascript/slideshow.js"></script>-->
+	<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+	<script type="text/javascript">
+		//
+		window.addEvent('domready', function() {
+MM_preloadImages('/images/blueGradientOver.gif', '/images/greenGradientOver.gif', '/images/purpleGradientOver.gif', '/images/redGradientOver.gif', '/images/greyGradientOver.gif', '/images/goingTrueOver.gif', '/images/goingFalseOver.gif', '/images/searchButtonOver.gif', '/images/leftArrowOver.gif', '/images/rightArrowOver.gif');			document.box = new MultiBox('mb', { showControls: false, useOverlay: false });
+			document.contestBox = new MultiBox('mb2', { showControls: false, useOverlay: false, openFromLink: false });
+
+			var trig = $$('h6.atStart'); 
+			var box = $$('div.atStart');
+			//
+			document.accordion = new Accordion(trig, box, {
+				opacity: false,
+				show: 0,
+				transition: Fx.Transitions.Quint.easeOut,
+				onActive: function(toggler, element){ toggler.setStyle('color', '#FFFFFF'); },
+				onBackground: function(toggler, element){ toggler.setStyle('color', '#EEEEEE'); }
+			}, $('menu'));
+			//
+			trig[0].addEvent('mouseover', function(){ 
+					trig[0].setStyle('background', 'url(/images/blueGradientOver.gif)');
+					document.accordionSection = 0;
+					document.accordionTimer = window.setTimeout('menuChange()',500);
+				});
+			trig[0].addEvent('mouseout', function(){ 
+				trig[0].setStyle('background', 'url(/images/blueGradient.gif)');
+				clearTimeout(document.accordionTimer);
+				document.accordionSection = -1; });
+			trig[1].addEvent('mouseover', function(){ 
+					trig[1].setStyle('background', 'url(/images/blueGradientOver.gif)');
+					document.accordionSection = 1;
+					document.accordionTimer = window.setTimeout('menuChange()',500);
+				});
+			trig[1].addEvent('mouseout', function(){ 
+				trig[1].setStyle('background', 'url(/images/blueGradient.gif)');
+				clearTimeout(document.accordionTimer);
+				document.accordionSection = -1; });
+			trig[2].addEvent('mouseover', function(){ 
+					trig[2].setStyle('background', 'url(/images/blueGradientOver.gif)');
+					document.accordionSection = 2;
+					document.accordionTimer = window.setTimeout('menuChange()',500);
+				});
+			trig[2].addEvent('mouseout', function(){ 
+				trig[2].setStyle('background', 'url(/images/blueGradient.gif)');
+				clearTimeout(document.accordionTimer);
+				document.accordionSection = -1; });
+			trig[3].addEvent('mouseover', function(){ 
+					trig[3].setStyle('background', 'url(/images/blueGradientOver.gif)');
+					document.accordionSection = 3;
+					document.accordionTimer = window.setTimeout('menuChange()',500);
+				});
+			trig[3].addEvent('mouseout', function(){ 
+				trig[3].setStyle('background', 'url(/images/blueGradient.gif)');
+				clearTimeout(document.accordionTimer);
+				document.accordionSection = -1; });
+			
+						document.category="1";
+						document.offset=0;
+						document.color="blue";
+						document.viewDate="2013-08-27";
+						document.viewMonth="08";
+						document.viewYear="2013";
+				document.eventsOffset=0;
+				document.eventsPerList=10;
+				if (document.category == "todaysEventsList") {
+					document.eventScrollerInterval = setInterval("scrollList('date', document.eventsOffset+document.eventsPerList)", 6000);
+				} else {
+					document.eventScrollerInterval = 0;
+				}
+				var currentLocation = window.location.toString();
+				var anchorStart = currentLocation.lastIndexOf('#');
+				if (anchorStart > 0) {
+					var anchorText = currentLocation.substring(anchorStart+1,currentLocation.length);
+					var anchorTextArray = anchorText.split("&");
+					var i = 0;
+					while (anchorTextArray[i]) {
+						var currentSplit = anchorTextArray[i].split("=");
+						if (currentSplit[0] == 'eventsOffset') {
+							if (document.userID != undefined) {
+								changeList('', parseInt(currentSplit[1]), document.userID);
+								} else {
+									changeList('', parseInt(currentSplit[1]));
+							}
+						}
+						//
+						i++;
+					}
+				}			// Tips
+			var tips = new Tips($$('.tips'), {	
+				maxTitleChars: 100,
+				showDelay: 1000,
+				hideDelay: 250,
+				fixed: false,
+				initialize:function(){
+					this.fx = new Fx.Style(this.toolTip, 'opacity', {duration: 500, wait: false}).set(0);
+				},
+				onShow: function(toolTip) {
+					this.fx.start(1);
+				},
+				onHide: function(toolTip) {
+					this.fx.start(0);
+				}
+			});
+			// Tips
+			var tips = new Tips($$('.fastTips'), {	
+				maxTitleChars: 100,
+				showDelay: 0,
+				hideDelay: 250,
+				fixed: false,
+				initialize:function(){
+					this.fx = new Fx.Style(this.toolTip, 'opacity', {duration: 500, wait: false}).set(0);
+				},
+				onShow: function(toolTip) {
+					this.fx.start(1);
+				},
+				onHide: function(toolTip) {
+					this.fx.start(0);
+				}
+			});
+			//
+			//eventImg1 = new Slideshow('eventImg1', { type: 'fade', duration: [2000, 5000], width: 200, height: 120, images: ['guitar200.jpg', 'party200.jpg', 'rooster200.jpg'], hu: 'uploads/' });
+		});
+	</script>
+</head>
+<body class="twoColLiqRtHdr" >
+<div id="backgroundCap"><a href="/sponsorship/forward/?sponsorID=2" target="_blank"><img src="/images/spacer.gif" id="sponsorImage" width="900" height="140" /></a></div><div id="containerBorder">
+		<div id="container">
+			<div id="header">
+				<img src="/images/siteCornerMaskTR.png" class="roundedCornerTR" />
+				<img src="/images/siteCornerMaskTL.png" class="roundedCornerTL" />
+<div id="weatherDiv"><div class="weatherTemp"><img src="/images/weatherBoxL.gif" style="float: left;" /><p class="label greyText">temp</p><p class="entry greyText"><b>90&deg;F</b> (32&deg;C)</p><img src="/images/weatherBoxR.gif" /></div><div class="weatherCond"><img src="/images/weatherBoxL.gif" style="float: left;" /><p class="label greyText">current conditions</p><p class="entry greyText"><b>fair</b></p><img src="/images/weatherBoxR.gif" /></div></div><h1><a href="/"><img src="/images/blueLogo.gif" alt="allAberdeen.net beta" /></a></h1><div id="mainNav"><div class="navSearch"><form action="/search/" method="get" id="headerSearchForm" onsubmit="return submitMainNavSearch()"><input type="text" name="q" id="mainNavSearchInput" class="navSearchInput" value="search" onblur="blurMainNavSearch()" onfocus="focusMainNavSearch()" /><img src="/images/searchButton.gif" id="mainNavSearchSubmit" onclick="if (submitMainNavSearch()) $('headerSearchForm').submit();" onmouseover="MM_swapImage('mainNavSearchSubmit','','/images/searchButtonOver.gif',1)" onmouseout="MM_swapImage('mainNavSearchSubmit','','/images/searchButton.gif',1)" /></form></div><div style="position: relative; width: 519px;"><img src="/images/cornerMaskTR.png" class="roundedCornerTR" /><img src="/images/cornerMaskTL.png" class="roundedCornerTL" /><table cellpadding="0" cellspacing="0"><tr><td><div class="blueHeading navButton" id="mainNavEvents" onclick="window.location='/events/'" onmouseover="$('mainNavEvents').setStyle('background', 'url(/images/blueGradientOver.gif)')" onmouseout="$('mainNavEvents').setStyle('background', 'url(/images/blueGradient.gif)')"><img src="/images/greyPlus.gif" class="currentPlus" /><h6><a href="/events/">events</a></h6></div></td><td><div class="greenHeading navButton" id="mainNavCoupons" onclick="window.location='/coupons/'" onmouseover="$('mainNavCoupons').setStyle('background', 'url(/images/greenGradientOver.gif)')" onmouseout="$('mainNavCoupons').setStyle('background', 'url(/images/greenGradient.gif)')"><h6><a href="/coupons/">coupons</a></h6></div></td><td><div class="purpleHeading navButton" id="mainNavBulletins" onclick="window.location='/bulletins/'" onmouseover="$('mainNavBulletins').setStyle('background', 'url(/images/purpleGradientOver.gif)')" onmouseout="$('mainNavBulletins').setStyle('background', 'url(/images/purpleGradient.gif)')"><h6><a href="/bulletins/">bulletins</a></h6></div></td><td><div class="greyHeading navButton" id="mainNavHelp" onclick="window.location='/help/'" onmouseover="$('mainNavHelp').setStyle('background', 'url(/images/greyGradientOver.gif)')" onmouseout="$('mainNavHelp').setStyle('background', 'url(/images/greyGradient.gif)')"><h6><a href="/help/">help</a></h6></div></td></tr></table><img src="/images/cornerMaskBR.png" class="roundedCornerBR" /><img src="/images/cornerMaskBL.png" class="roundedCornerBL" /></div></div><div id="headerImage"><div class="blueBG75" style="height: 10px; width: 860px;"></div></div>			</div>
+			<div id="rightColumn">
+<div id="userContent"><img src="/images/cornerMaskTR.png" class="roundedCornerTR" /><img src="/images/cornerMaskTL.png" class="roundedCornerTL" /><h6 class="greyHeading userAccordion">access my account</h6>
+							<div class="accordionEl">
+								<form name="loginForm" id="sideLoginForm" action="/login/submit/" method="post" onsubmit="return submitLogin();">
+									<input type="image" src="/images/spacer.gif" alt="Submit" style="position: absolute;" />
+									
+									<input type="hidden" name="login" id="login" value="0" />
+									<input type="hidden" name="returnPath" value="/events/arts%20and%20entertainment/" />
+									
+									<input type="text" name="email" id="username" class="loginInput" value="email" onblur="blurLoginEmail()" onfocus="focusLoginEmail()" maxlength="255" />
+									<input type="password" name="password" id="password" class="loginInput" value="password" onblur="blurLoginPassword()" onfocus="focusLoginPassword()" maxlength="255" />
+								</form>
+							</div>
+									
+							<div class="greySubHeadline loginFooter">
+								<p class="fltrt"><a href="javascript: $('sideLoginForm').submit();"><b>login</b></a></p><p><a href="/signUp/">sign up</a> | <a href="/help/">help</a></p>
+							</div><img src="/images/cornerMaskBR.png" class="roundedCornerBR" /><img src="/images/cornerMaskBL.png" class="roundedCornerBL" /></div><div class="contentWrapper"><img src="/images/cornerMaskTR.png" class="roundedCornerTR" /><img src="/images/cornerMaskTL.png" class="roundedCornerTL" /><div class="headlineDiv greyHeadline"><h1>social links</h1></div><div class="greyBorder"><div id="socialFeed"><div class="activityObj"><a href="http://facebook.com/pages/allAberdeen.net/353333491176" target="_blank"><img src="http://www.allaberdeen.net/images/facebook14.gif" alt="facebook" width="14" height="14" /></a><p class="title"><a href="http://facebook.com/pages/allAberdeen.net/353333491176" target="_blank">become a fan</a></p></div><div class="divideLine"><img src="/images/spacer.gif" /></div><div class="activityObj"><a href="http://twitter.com/allAberdeen" target="_blank"><img src="http://www.allaberdeen.net/images/twitter16.gif" alt="twitter" width="16" height="16" /></a><p class="title"><a href="http://twitter.com/allAberdeen" target="_blank">follow on twitter</a></p></div><div class="divideLine"><img src="/images/spacer.gif" /></div><div class="activityObj"><a href="http://delicious.com/post" onclick="window.open('http://delicious.com/post?v=5&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;"><img src="http://www.allaberdeen.net/images/delicious16.gif" alt="facebook" width="14" height="14" /></a><p class="title"><a href="http://delicious.com/post" onclick="window.open('http://delicious.com/post?v=5&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;">add to Delicious</a></p></div></div></div><img src="/images/greyCornerMaskBR.png" class="roundedCornerBR" /><img src="/images/greyCornerMaskBL.png" class="roundedCornerBL" /></div>			</div>
+			<div id="mainContent">
+				<div id="leftColumn">
+<div id="menu" class="accordion"><img src="/images/cornerMaskTR.png" class="roundedCornerTR" /><img src="/images/cornerMaskTL.png" class="roundedCornerTL" /><h6 class="blueHeading atStart"><a href="/events/arts and entertainment/">arts & entertainment</a></h6><div class="accordionEl blueBG atStart"><ul><li><a href="/events/arts and entertainment/art/" class="blueLink">art <span class="eventNum">(2)</span></a></li><div class="divideLine blueBG75"><img src="/images/spacer.gif" /></div><p><a href="/events/arts and entertainment/art/artist receptions/" class="blueLink">artist receptions <span class="eventNum">(1)</span></a></p><p><a href="/events/arts and entertainment/art/exhibitions/" class="blueLink">exhibitions <span class="eventNum">(1)</span></a></p><li><a href="/events/arts and entertainment/dance/" class="blueLink">dance <span class="eventNum">(3)</span></a></li><li><a href="/events/arts and entertainment/festivals/" class="blueLink">festivals <span class="eventNum">(7)</span></a></li><li><a href="/events/arts and entertainment/literature/" class="blueLink">literature <span class="eventNum">(2)</span></a></li><li><a href="/events/arts and entertainment/music/" class="blueLink">music <span class="eventNum">(2)</span></a></li><div class="divideLine blueBG75"><img src="/images/spacer.gif" /></div><p><a href="/events/arts and entertainment/music/live/" class="blueLink">live <span class="eventNum">(2)</span></a></p><li><a href="/events/arts and entertainment/socials/" class="blueLink">socials <span class="eventNum">(4)</span></a></li><li><a href="/events/arts and entertainment/theatre/" class="blueLink">theatre <span class="eventNum">(12)</span></a></li><div class="divideLine blueBG75"><img src="/images/spacer.gif" /></div><p><a href="/events/arts and entertainment/theatre/movies/" class="blueLink">movies <span class="eventNum">(11)</span></a></p><p><a href="/events/arts and entertainment/theatre/plays/" class="blueLink">plays <span class="eventNum">(1)</span></a></p></ul></div><h6 class="blueHeading atStart"><a href="/events/business and retail/">business & retail</a></h6><div class="accordionEl blueBG atStart"><ul><li><a href="/events/business and retail/special events/" class="blueLink">special events <span class="eventNum">(3)</span></a></li></ul></div><h6 class="blueHeading atStart"><a href="/events/society and learning/">society & learning</a></h6><div class="accordionEl blueBG atStart"><ul><li><a href="/events/society and learning/education/" class="blueLink">education <span class="eventNum">(40)</span></a></li><div class="divideLine blueBG75"><img src="/images/spacer.gif" /></div><p><a href="/events/society and learning/education/academics/" class="blueLink">academics <span class="eventNum">(4)</span></a></p><p><a href="/events/society and learning/education/art/" class="blueLink">art <span class="eventNum">(1)</span></a></p><p><a href="/events/society and learning/education/health/" class="blueLink">health <span class="eventNum">(19)</span></a></p><p><a href="/events/society and learning/education/special events/" class="blueLink">special events <span class="eventNum">(5)</span></a></p><p><a href="/events/society and learning/education/specialty/" class="blueLink">specialty <span class="eventNum">(9)</span></a></p><p><a href="/events/society and learning/education/workshops/" class="blueLink">workshops <span class="eventNum">(2)</span></a></p><li><a href="/events/society and learning/fundraising/" class="blueLink">fundraising <span class="eventNum">(1)</span></a></li><li><a href="/events/society and learning/government/" class="blueLink">government <span class="eventNum">(1)</span></a></li><li><a href="/events/society and learning/nonprofit/" class="blueLink">nonprofit <span class="eventNum">(18)</span></a></li><div class="divideLine blueBG75"><img src="/images/spacer.gif" /></div><p><a href="/events/society and learning/nonprofit/meetings/" class="blueLink">meetings <span class="eventNum">(5)</span></a></p><p><a href="/events/society and learning/nonprofit/special events/" class="blueLink">special events <span class="eventNum">(13)</span></a></p><li><a href="/events/society and learning/religion/" class="blueLink">religion <span class="eventNum">(13)</span></a></li><div class="divideLine blueBG75"><img src="/images/spacer.gif" /></div><p><a href="/events/society and learning/religion/meetings/" class="blueLink">meetings <span class="eventNum">(2)</span></a></p><p><a href="/events/society and learning/religion/ministry/" class="blueLink">ministry <span class="eventNum">(1)</span></a></p><p><a href="/events/society and learning/religion/special events/" class="blueLink">special events <span class="eventNum">(1)</span></a></p><p><a href="/events/society and learning/religion/worship/" class="blueLink">worship <span class="eventNum">(9)</span></a></p><li><a href="/events/society and learning/support groups/" class="blueLink">support groups <span class="eventNum">(6)</span></a></li></ul></div><h6 class="blueHeading atStart"><a href="/events/sports and leisure/">sports & leisure</a></h6><div class="accordionEl blueBG atStart"><ul><li><a href="/events/sports and leisure/athletics/" class="blueLink">athletics <span class="eventNum">(4)</span></a></li><div class="divideLine blueBG75"><img src="/images/spacer.gif" /></div><p><a href="/events/sports and leisure/athletics/baseball/" class="blueLink">baseball <span class="eventNum">(1)</span></a></p><p><a href="/events/sports and leisure/athletics/basketball/" class="blueLink">basketball <span class="eventNum">(2)</span></a></p><p><a href="/events/sports and leisure/athletics/hockey/" class="blueLink">hockey <span class="eventNum">(1)</span></a></p><li><a href="/events/sports and leisure/hunting/" class="blueLink">hunting <span class="eventNum">(2)</span></a></li></ul></div><img src="/images/cornerMaskBR.png" class="roundedCornerBR" /><img src="/images/cornerMaskBL.png" class="roundedCornerBL" /></div><div class="accordion"><img src="/images/cornerMaskTR.png" class="roundedCornerTR" /><img src="/images/cornerMaskTL.png" class="roundedCornerTL" /><h6 class="greyHeading">contribute</h6>
+				<div class="accordionEl greyBorder">
+						<ul>
+							<li class="blueLI"><a href="/events/addNew/" class="blueLink">add an event</a></li><li class="greenLI"><a href="/coupons/signUp/" class="mb greenLink" title="add a coupon">add a coupon</a></li><li class="purpleLI"><a href="/bulletins/signUp/" class="mb purpleLink" title="add a bulletin">add a bulletin</a></li></ul>
+				</div><img src="/images/greyCornerMaskBR.png" class="roundedCornerBR" /><img src="/images/greyCornerMaskBL.png" class="roundedCornerBL" /></div>				</div>
+				<div id="centerColumn">
+					
+
+					<!-- InstanceBeginEditable name="Migrate Content" -->
+<div class="contentWrapper"><img src="/images/cornerMaskTR.png" class="roundedCornerTR" /><img src="/images/cornerMaskTL.png" class="roundedCornerTL" /><div class="headlineDiv blueHeadline"><h1><a href="/events/">events</a> | <a href="/events/arts%20and%20entertainment/">arts & entertainment</a></h1></div><div class="subHeadlineDiv blueSubHeadline"><h6 class="fltrt" id="rightSubHeadline"><a href="/rss/events/arts and entertainment/">rss</a></h6><h6 id="leftSubHeadline">view: <a href="?display=calendar">calendar</a> | <a href="?display=list">list</a> | <b>text</b> | <a href="?display=map">map</a></h6></div><div class="blueBorder"><div class="textPageColumn" style="margin-bottom: 20px;"><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/art/exhibitions/event/39099/" class="blueLink summary url">"Family in Focus: Moments Captured" Photography Exhibit</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-01T08:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/111/" class="blueLink fn org url">Dacotah Prairie Museum</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.464284430446284" /></span><span class="longitude"><span class="value-title" title="-98.48779678344727" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/theatre/movies/event/38915/" class="blueLink summary url">2 Guns</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-27T16:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/62/" class="blueLink fn org url">Carmike Cinemas</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.46166577080991" /></span><span class="longitude"><span class="value-title" title="-98.44149112701416" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/theatre/movies/event/39127/" class="blueLink summary url">Lee Daniels' The Butler</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-27T16:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/62/" class="blueLink fn org url">Carmike Cinemas</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.46166577080991" /></span><span class="longitude"><span class="value-title" title="-98.44149112701416" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/theatre/movies/event/39252/" class="blueLink summary url">The Mortal Instruments: City of Bones</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-27T16:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/62/" class="blueLink fn org url">Carmike Cinemas</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.46166577080991" /></span><span class="longitude"><span class="value-title" title="-98.44149112701416" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/theatre/movies/event/38947/" class="blueLink summary url">We're the Millers</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-27T16:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/62/" class="blueLink fn org url">Carmike Cinemas</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.46166577080991" /></span><span class="longitude"><span class="value-title" title="-98.44149112701416" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/theatre/movies/event/38998/" class="blueLink summary url">Elysium</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-27T16:15-05:00" /></span><p class="listingInfo vcard"><a href="/locations/62/" class="blueLink fn org url">Carmike Cinemas</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.46166577080991" /></span><span class="longitude"><span class="value-title" title="-98.44149112701416" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/theatre/movies/event/39126/" class="blueLink summary url">Kick-Ass 2</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-27T16:15-05:00" /></span><p class="listingInfo vcard"><a href="/locations/62/" class="blueLink fn org url">Carmike Cinemas</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.46166577080991" /></span><span class="longitude"><span class="value-title" title="-98.44149112701416" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/theatre/movies/event/38982/" class="blueLink summary url">Percy Jackson: Sea of Monsters</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-27T16:15-05:00" /></span><p class="listingInfo vcard"><a href="/locations/62/" class="blueLink fn org url">Carmike Cinemas</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.46166577080991" /></span><span class="longitude"><span class="value-title" title="-98.44149112701416" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/theatre/movies/event/39031/" class="blueLink summary url">Planes</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-27T16:30-05:00" /></span><p class="listingInfo vcard"><a href="/locations/62/" class="blueLink fn org url">Carmike Cinemas</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.46166577080991" /></span><span class="longitude"><span class="value-title" title="-98.44149112701416" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/theatre/movies/event/39295/" class="blueLink summary url">You're Next</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-27T16:30-05:00" /></span><p class="listingInfo vcard"><a href="/locations/62/" class="blueLink fn org url">Carmike Cinemas</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.46166577080991" /></span><span class="longitude"><span class="value-title" title="-98.44149112701416" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/literature/event/24665/" class="blueLink summary url">Book 'Em</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-27T18:30-05:00" /></span><p class="listingInfo vcard"><a href="/locations/42/" class="blueLink fn org url">Alexander Mitchell Public Library</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.45940820798084" /></span><span class="longitude"><span class="value-title" title="-98.48174571990967" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/theatre/movies/event/39125/" class="blueLink summary url">Jobs</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-27T19:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/62/" class="blueLink fn org url">Carmike Cinemas</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.46166577080991" /></span><span class="longitude"><span class="value-title" title="-98.44149112701416" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/theatre/movies/event/39128/" class="blueLink summary url">Paranoia</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-27T19:15-05:00" /></span><p class="listingInfo vcard"><a href="/locations/62/" class="blueLink fn org url">Carmike Cinemas</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.46166577080991" /></span><span class="longitude"><span class="value-title" title="-98.44149112701416" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/music/live/event/35845/" class="blueLink summary url">FINAL FRIDAYS</a></b></p><span class="dtstart"><span class="value-title" title="2013-08-30T18:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/3894/" class="blueLink fn org url">THE WARD PLAZA DOWNTOWN EVENT CENTER</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.4640743" /></span><span class="longitude"><span class="value-title" title="-98.4880526" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/theatre/plays/event/39211/" class="blueLink summary url">ACT presents the Girl Singers in "Broadway's Best!"</a></b></p><span class="dtstart"><span class="value-title" title="2013-09-04T19:30-05:00" /></span><p class="listingInfo vcard"><a href="/locations/17/" class="blueLink fn org url">Capitol Theatre</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.460582151933096" /></span><span class="longitude"><span class="value-title" title="-98.48775386810303" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/festivals/event/36916/" class="blueLink summary url">Fallout Art and Music Festival</a></b></p><span class="dtstart"><span class="value-title" title="2013-09-06T18:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/2867/" class="blueLink fn org url">Downtown Main Street</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.4630975" /></span><span class="longitude"><span class="value-title" title="-98.4880726" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/festivals/event/36917/" class="blueLink summary url">Fallout Art and Music Festival</a></b></p><span class="dtstart"><span class="value-title" title="2013-09-07T15:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/2867/" class="blueLink fn org url">Downtown Main Street</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.4630975" /></span><span class="longitude"><span class="value-title" title="-98.4880726" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/socials/event/38523/" class="blueLink summary url">Kiwanis Ice Cream Social</a></b></p><span class="dtstart"><span class="value-title" title="2013-09-08T13:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/95/" class="blueLink fn org url">Melgaard Park</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.444811" /></span><span class="longitude"><span class="value-title" title="-98.480602" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/festivals/event/38465/" class="blueLink summary url">Northeastern South Dakota Celtic Faire and Games</a></b></p><span class="dtstart"><span class="value-title" title="2013-09-21T10:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/27/" class="blueLink fn org url">Brown County Fairgrounds</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.48883973131902" /></span><span class="longitude"><span class="value-title" title="-98.49200248718262" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/art/artist receptions/event/34266/" class="blueLink summary url">James Valley Model Railroad Association Open House</a></b></p><span class="dtstart"><span class="value-title" title="2013-09-21T13:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/2253/" class="blueLink fn org url">Old Milwaukee Road depot</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.474838" /></span><span class="longitude"><span class="value-title" title="-98.4880939" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/dance/event/36062/" class="blueLink summary url">Friends of Dance - NCMD</a></b></p><span class="dtstart"><span class="value-title" title="2013-09-27T20:30-05:00" /></span><p class="listingInfo vcard"><a href="/locations/53/" class="blueLink fn org url">VFW</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.468889364417095" /></span><span class="longitude"><span class="value-title" title="-98.50427627563477" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/festivals/event/32627/" class="blueLink summary url">Fall Living History Festival</a></b></p><span class="dtstart"><span class="value-title" title="2013-09-28T10:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/3759/" class="blueLink fn org url">Granary Rural Cultural Center</a>, <span class="adr"><span class="locality">Groton</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.5305622" /></span><span class="longitude"><span class="value-title" title="-98.1937135" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/festivals/event/38990/" class="blueLink summary url">St. Mary's Annual Bazaar & Dinner</a></b></p><span class="dtstart"><span class="value-title" title="2013-10-05T15:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/25/" class="blueLink fn org url">Roncalli High School</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.479958" /></span><span class="longitude"><span class="value-title" title="-98.474585" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/literature/event/39121/" class="blueLink summary url">AAUW Annual Used Book Sale</a></b></p><span class="dtstart"><span class="value-title" title="2013-10-11T07:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/263/" class="blueLink fn org url">Super City Mall</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.459171" /></span><span class="longitude"><span class="value-title" title="-98.457168" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/socials/event/33026/" class="blueLink summary url">Haunted Walking Tour</a></b></p><span class="dtstart"><span class="value-title" title="2013-10-22T18:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/3/" class="blueLink fn org url">Alonzo Ward Hotel</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.463863045153346" /></span><span class="longitude"><span class="value-title" title="-98.48835468292236" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/dance/event/36063/" class="blueLink summary url">Friends of Dance - Peter Franck</a></b></p><span class="dtstart"><span class="value-title" title="2013-10-25T20:30-05:00" /></span><p class="listingInfo vcard"><a href="/locations/53/" class="blueLink fn org url">VFW</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.468889364417095" /></span><span class="longitude"><span class="value-title" title="-98.50427627563477" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/socials/event/33027/" class="blueLink summary url">Trick or Treat on Main Street</a></b></p><span class="dtstart"><span class="value-title" title="2013-10-31T15:00-05:00" /></span><p class="listingInfo vcard"><a href="/locations/2867/" class="blueLink fn org url">Downtown Main Street</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.4630975" /></span><span class="longitude"><span class="value-title" title="-98.4880726" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/festivals/event/26905/" class="blueLink summary url">Winterfest</a></b></p><span class="dtstart"><span class="value-title" title="2013-11-16T10:00-06:00" /></span><p class="listingInfo vcard"><a href="/locations/14/" class="blueLink fn org url">Aberdeen Civic Arena</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.462689169514704" /></span><span class="longitude"><span class="value-title" title="-98.48483562469482" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/festivals/event/26907/" class="blueLink summary url">Winterfest</a></b></p><span class="dtstart"><span class="value-title" title="2013-11-17T11:00-06:00" /></span><p class="listingInfo vcard"><a href="/locations/14/" class="blueLink fn org url">Aberdeen Civic Arena</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.462689169514704" /></span><span class="longitude"><span class="value-title" title="-98.48483562469482" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/dance/event/38019/" class="blueLink summary url">Friends of Dance - Double S Duo</a></b></p><span class="dtstart"><span class="value-title" title="2013-11-22T20:30-06:00" /></span><p class="listingInfo vcard"><a href="/locations/53/" class="blueLink fn org url">VFW</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.468889364417095" /></span><span class="longitude"><span class="value-title" title="-98.50427627563477" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/music/live/event/38561/" class="blueLink summary url">The REASON Christmas </a></b></p><span class="dtstart"><span class="value-title" title="2013-12-06T19:00-06:00" /></span><p class="listingInfo vcard"><a href="/locations/4578/" class="blueLink fn org url">ARC (Formerly Aberdeen Civic Theater)</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.4630881" /></span><span class="longitude"><span class="value-title" title="-98.4852253" /></span></span></p></div><div class="vevent"><p style="margin: 10px 0 0 0;"><b><a href="/events/arts and entertainment/socials/event/35604/" class="blueLink summary url">Winefest Renaissance 2014</a></b></p><span class="dtstart"><span class="value-title" title="2014-04-12T18:30-05:00" /></span><p class="listingInfo vcard"><a href="/locations/3895/" class="blueLink fn org url">THE WARD PLAZA DOWNTOWN EVENT CENTER &amp; DOWNTOWN ABERDEEN</a>, <span class="adr"><span class="locality">Aberdeen</span> <span class="region">SD</span></span><span class="geo"><span class="latitude"><span class="value-title" title="45.4640743" /></span><span class="longitude"><span class="value-title" title="-98.4880526" /></span></span></p></div></div></div><img src="/images/blueCornerMaskBR.png" class="roundedCornerBR" /><img src="/images/blueCornerMaskBL.png" class="roundedCornerBL" /></div>					<!-- InstanceEndEditable -->
+					
+					
+					
+					<div id="pageSpacer"><img src="/images/spacer.gif" /></div>
+						<div style="float: left;">
+						</div>
+			</div></div>
+			<!-- This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats -->
+			<br class="clearfloat" />
+			
+			<div id="clearFooter"><img src="/images/spacer.gif" /></div>
+			<img src="/images/siteCornerMaskBR.png" class="roundedCornerBR" />
+			<img src="/images/siteCornerMaskBL.png" class="roundedCornerBL" />
+		</div>
+	<div id="footer">
+		<img src="/images/siteCornerMaskTR.png" class="roundedCornerTR" />
+		<img src="/images/siteCornerMaskTL.png" class="roundedCornerTL" />
+		
+		<div class="greyBorder75">
+			<div class="greyBG75"><p class="fltrt"><a href="/contact/">contact us</a> | <a href="http://allcitiesnetwork.com/api/" target="_blank">API</a> | <a href="/policies/">terms of use</a> | <a href="/policies/#privacy">privacy policy</a></p><p>&copy;2007-13 <a href="http://allcitiesnetwork.com">allCitiesNetwork</a> |<span class="listingInfo"> all content submitted by registered users</span></p></div>
+
+<table cellpadding="0" cellspacing="0" class="footerTable">
+				<tr>
+					<td valign="top">
+						<p><b><a href="/events/">events in Aberdeen</a></b></p><p><a href="/events/arts and entertainment/">arts & entertainment</a></p><p><a href="/events/business and retail/">business & retail</a></p><p><a href="/events/society and learning/">society & learning</a></p><p><a href="/events/sports and leisure/">sports & leisure</a></p></td><td valign="top">
+						<p><b><a href="/coupons/">coupons in Aberdeen</a></b></p></td><td valign="top">
+						<p><b><a href="/bulletins/">bulletins in Aberdeen</a></b></p><p><a href="/bulletins/business/">business</a></p></td><td valign="top">
+						<p><b class="greyText">directory</b></p>
+						<p><a href="/pages/">business/organizations</a></p>
+						<p><a href="/users/">users</a></p>
+						<p><a href="/locations/">locations</a></p><p style="margin-top: 20px;"><b class="greyText">on the web</b></p><p><a href="http://twitter.com/allAberdeen" target="_blank">twitter</a></p><p><a href="http://facebook.com/pages/allAberdeen.net/353333491176" target="_blank">facebook</a></p></td>
+					<td valign="top">
+						<p><b class="greyText">support</b></p>
+						<p><a href="/help/">help</a></p>
+						<p><a href="/learnMore/">learn more</a></p>
+						<p><a href="/signUp/">sign up</a></p>
+						<p><a href="/sponsorship/">sponsorship</a></p>
+						<p><a href="/widgets/">widgets</a></p>
+					</td>
+				</tr>
+			</table>	
+			<div class="greyBG75"><p class="fltrt">presented by <a href="http://www.aberdeen-chamber.com/" target="_blank">Aberdeen Area Chamber of Commerce</a></p><p>&nbsp;</p></div>
+		</div>
+		
+		<img src="/images/siteCornerMaskBR.png" class="roundedCornerBR" />
+		<img src="/images/siteCornerMaskBL.png" class="roundedCornerBL" />
+	</div>
+	</div>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		var pageTracker = _gat._getTracker("UA-2513621-1");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+	</script>
+</body>
+<!-- InstanceEnd --></html>

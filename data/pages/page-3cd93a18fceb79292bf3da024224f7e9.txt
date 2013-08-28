@@ -1,0 +1,1199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<base href='http://fineartamerica.com/profiles/'>
+<html>
+<head>
+<title>Dlucci Arts - Fine Art</title>
+<meta name="description" content="Hello and welcome to my Gallery page with Fine Art America! A little about me - I am a bit of an eclectic personality and believe my art reflects that! My acrylic and watercolor pieces are a mix of Impressionism and Expressionism! I am a colorful per">
+<meta name="keywords" content="Dlucci Arts Original Artwork, Dlucci Arts Fine Art Prints, Giclee Prints, Fine Art for Sale, Fine Art America, FineArtAmerica, FineArtAmerica.com">
+<link rel='stylesheet' type='text/css' href='../stylesheet.css?1377632052'>
+<link rel='stylesheet' type='text/css' href='../stylesheetwidescreen.css?1377632052'>
+<link rel='alternate' type='application/rss+xml' title='New Artwork  - Dlucci Arts' href='http://fineartamerica.com/rss/artwork/dlucci-arts'>
+<link rel='alternate' type='application/rss+xml' title='Fine Art Blog - Dlucci Arts' href='http://fineartamerica.com/rss/blogs/dlucci-arts'>
+<link rel='alternate' type='application/rss+xml' title='Fine Art Events - Dlucci Arts' href='http://fineartamerica.com/rss/events/dlucci-arts'>
+
+<link rel='canonical' href='http://fineartamerica.com/profiles/dlucci-arts.html'>
+  
+
+
+<style>
+
+	.titlebar	{
+					float: left; 
+					width: 85%; 
+					clear: both; 
+					padding-left: 5px; 
+					padding-right: 5px; 
+					padding-top: 2px; 
+					padding-bottom: 2px; 
+					border: 1px solid #999999; 
+					background-color: #445577;
+				}
+				
+	.titlebar p	{	color: #FFFFFF;
+				}
+
+	.menu2 {	float: left;
+				background-color: #FFFFFF;
+				height: 18px;
+				overflow: hidden;
+				border: 1px solid #999999;
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+				box-shadow: 5px 5px 8px #999999;				
+				font: 8pt arial;
+				padding-left: 5px;
+				padding-top: 2px;
+				color: #FFFFFF;
+			}
+			
+	.space {	float: left;
+				width: 10px;
+				height: 21px;
+				overflow: hidden;
+				border-bottom: 1px solid #999999;
+				font: 8pt arial;
+			}
+
+	.menu1 {	float: left;
+				background-color: #445577;
+				height: 19px;
+				overflow: hidden;
+				border: 1px solid #999999;
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+				border-bottom: none;
+				box-shadow: 5px 5px 8px #999999;
+				font: 8pt arial;
+				padding-left: 5px;
+				padding-top: 2px;
+			}
+
+	.menu1 a:link	{color: #FFFFFF;}
+	.menu1 a:hover	{color: #FFFFFF;}
+	.menu1 a:visited	{color: #FFFFFF;}
+			
+	.menu2 a:link	{color: #335599;}
+	.menu2 a:hover	{color: #335599;}
+	.menu2 a:visited	{color: #335599;}
+			
+</style>
+<script type='text/javascript' src='../globalscripts.js'></script>
+<script type='text/javascript' src='http://apis.google.com/js/plusone.js'></script>
+<script type='text/javascript'>
+
+	function confirmdelete(id)
+	{
+		result = confirm ('Are you sure you want to delete this piece of art?');
+		
+		if (result == true)
+		{
+			locationstring = "/profiles/dlucci-arts.html?tab=artwork&deleteartworkid="+id + "&page=";
+			document.location = locationstring;	
+		}
+		
+	}
+
+	function confirmdeleteevent(id)
+	{
+		result = confirm ('Are you sure you want to delete this event?');
+		
+		if (result == true)
+		{
+			locationstring = "/profiles/dlucci-arts.html?deleteeventid="+id;
+			document.location = locationstring;	
+		}
+		
+	}
+
+
+	function expand()
+	{
+		object = document.getElementById("artworkdiv");
+		
+		object.style.height = "";
+		object.style.overflow = "visible";
+
+
+	}
+
+	function collapse()
+	{
+		object = document.getElementById("artworkdiv");
+		
+		object.style.height = "175px";
+		object.style.overflow = "auto";
+
+
+	}
+
+	function expandevent()
+	{
+		object = document.getElementById("eventdiv");
+		
+		object.style.height = "";
+		object.style.overflow = "visible";
+
+
+	}
+
+	function collapseevent()
+	{
+		object = document.getElementById("eventdiv");
+		
+		object.style.height = "20px";
+		object.style.overflow = "auto";
+
+
+	}
+
+	function expandgallery()
+	{
+		object = document.getElementById("gallerydiv");
+		
+		object.style.height = "";
+		object.style.overflow = "visible";
+
+
+	}
+
+	function collapsegallery()
+	{
+		object = document.getElementById("gallerydiv");
+		
+		object.style.height = "110px";
+		object.style.overflow = "auto";
+
+
+	}
+
+	image1 = new Image();
+	image1.src = "../ArtistHeadshotDefault.jpg";
+
+	var i = 250;
+
+	function shrinktop()
+	{
+		object = document.getElementById("topdiv");
+		object.style.height = i + 'px';
+		object.style.padding = '0px';
+		
+		i = i - 10;
+		
+		if (i >= 0)
+		{
+			setTimeout('shrinktop()',10);
+		}
+	}
+
+	function showcompletebiography()
+	{
+		document.getElementById('biographydiv').style.maxHeight = '';
+		document.getElementById('biographydiv').style.overflowY = '';
+		document.getElementById('showbiography').style.visibility = 'hidden';
+	}
+
+	function loadexternalscripts()
+	{	
+		document.getElementById('stumbledivbottom1').style.visibility = 'visible';
+		document.getElementById('stumblediv1').appendChild(document.getElementById('stumbledivbottom1'));
+	}	
+	
+</script>
+
+
+
+</head>
+
+<body onLoad='loadexternalscripts();'>
+
+<div id='outerdiv'>
+
+
+
+<div id='headerdiv' style="width: 100%; height: 100px; overflow: hidden; padding-top: 2px; background-color: #EEEEEE; background-image: url('https://fineartamerica.com/BackgroundTextureGray.gif'); background-repeat: repeat-x;">
+
+	<div style='float: left; width: 220px; height: 95px; border: none;'>
+		
+		<a href='http://fineartamerica.com'><img src='https://fineartamerica.com/LogoFineArtAmericaTransparent2012.png' style='float: left; padding-left: 15px; padding-top: 10px; width: 198px; height: 72px; border: none;' alt='Fine Art America - Buy Art and Sell Art Online' title='Fine Art America - Buy Art and Sell Art Online'></a>
+		
+		<script type='text/javascript'>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2746940-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+		
+	</div>	
+
+
+
+
+	<div style='float: left; margin-top: 7px; width: 200px;'><a href='http://fineartamerica.com/art/all/all/all/anne+geddes'><img style='float: left; border: none; width: 53px; height: 70px; margin-top: 8px; margin-left: 30px;' src='https://fineartamerica.com/LogoHeaderAnneGeddesVertical.png' alt='Anne Geddes Prints' title='Anne Geddes Prints'></a><div style='float: left; margin-top: 2px; width: 75px; padding-left: 3px; padding-top: 17px; text-align: center;'><p style='float: left; width: 100%; font: 8pt arial;'>Introducing the <a href='http://fineartamerica.com/art/all/all/all/anne+geddes' style='font: 8pt arial; text-decoration: underline;'>Anne Geddes</a> Collection</p>
+</div>
+</div><div id='headerextraspacediv' style='float: left;'>
+<a href='http://fineartamerica.com/moneybackguarantee.html'><img src='https://fineartamerica.com/LogoHeaderSatisfactionGuaranteeTransparent.png' style='float: left; width: 60px; height: 60px; padding-top: 5px; border: none;'></a>
+<div style='float: left; width: 140px; padding-left: 5px; padding-top: 12px; text-align: center;'>
+<p style='float: left; width: 100%; font: 8pt arial;'>Every purchase includes a <a href='http://fineartamerica.com/moneybackguarantee.html' style='font: 8pt arial; text-decoration: underline;'>money-back guarantee</a>.</p>
+<p style='float: left; width: 100%; padding-top: 4px; font: 9pt arial; font-weight: bold;'>312-238-9009</p>
+</div>
+</div>
+
+	<div style="float: right; width: 518px; overflow: hidden; padding-right: 5px; padding-top: 10px;">
+		
+		<div style='float: left; width: 395px; padding-top: 2px; padding-left: 0px;'>
+
+			<style>
+			
+				a.headernavigationlink:link {padding-left: 2px; padding-right: 2px; letter-spacing: 2px; font: 12pt arial; font-weight: bold; color: #444444; text-decoration: none; text-shadow: 2px 2px 4px #888888; padding-bottom: 5px;}
+				a.headernavigationlink:visited {padding-left: 2px; padding-right: 2px; letter-spacing: 2px; font: 12pt arial; font-weight: bold; color: #444444; text-decoration: none; text-shadow: 2px 2px 4px #888888; padding-bottom: 5px;}
+				a.headernavigationlink:hover {padding-left: 2px; padding-right: 2px; letter-spacing: 2px; font: 12pt arial; font-weight: bold; color: #000000; text-decoration: none; text-shadow: 2px 2px 4px #888888; padding-bottom: 5px; border-bottom: 2px solid #666666; box-shadow: 0px 8px 8px -6px #777777;}
+
+			</style>
+
+			<div style='float: left; width: 100%; padding-top: 28px; padding-bottom: 15px;'>
+				<p style='float: left; padding-left: 0px; font: 12pt arial;'><a class='headernavigationlink' onmouseover="javascript: mopen('mshop');" onmouseout="mclosetime()" href='http://fineartamerica.com/art/all/all/all?filter=featured' style='letter-spacing: 1px;'>SHOP</a></p>
+				<p style='float: left; padding-left: 18px; font: 12pt arial;'><a class='headernavigationlink' onmouseover="mclose()" href='http://fineartamerica.com/sell-art-online.html'>SELL</a></p>
+				<p style='float: left; padding-left: 18px; font: 12pt arial;'><a class='headernavigationlink' onmouseover="mclose()" href='http://fineartamerica.com/create-art-online.html' style='letter-spacing: 0px;'>CREATE</a></p>
+				<p style='float: left; padding-left: 18px; font: 12pt arial;'><a class='headernavigationlink' onmouseover="mclose()" href='http://fineartamerica.com/art/all/all/special+promotions' style='letter-spacing: 0px;'>LIMITED</a></p>
+				<p style='float: left; padding-left: 18px; font: 12pt arial;'><a class='headernavigationlink' onmouseover="mclose()" href='http://fineartamerica.com/tourfineartamerica/introduction.html'>TOUR</a></p>
+			</div>
+			
+			<div id='mshop' onmouseover='mcancelclosetime();' onmouseout='mclosetime();' style='position: absolute; z-index: 2000; width: 760px; margin-top: 70px; margin-left: -250px; visibility: hidden;'>
+				<div style='float: left; width: 55px; height: 6px; margin-left: 250px; overflow: hidden; background-color: #335599;'>&nbsp;</div>
+				<div style='float: left; width: 700px; padding: 25px; margin-top: 0px; background-color: #FAFAFA; border: 1px solid #AAAAAA; border-radius: 6px; box-shadow: 0px 5px 20px #444444; background-color: #FFFFFF;'>
+					
+					<div style='float: left; width: 100%;'>
+
+						<!-- Products -->
+						<div style='float: left; width: 100%; padding-top: 0px;'>	
+					
+							<div style='float: left; width: 100%; padding-bottom: 5px; margin-bottom: 15px; border-bottom: 1px solid #999999;'>
+								<p style='float: left; font: 10pt arial; font-weight: bold; color: #444444; text-shadow: 1px 1px 2px #BBBBBB;'><a href='http://fineartamerica.com/artdirectory.html' style='font: 10pt arial; font-weight: bold; color: #444444; text-shadow: 1px 1px 2px #BBBBBB;'>Products</a></p>
+								<p style='float: right; padding-top: 2px; font: 9pt arial;'><a href='http://fineartamerica.com/artdirectory.html' style='font: 9pt arial; color: #335599; text-decoration: none;'>View All</a></p>
+							</div>
+
+							<div style='float: left; width: 100%;'>
+								
+								<div style='float: left; width: 70px; text-align: center;'>
+
+									<div style='float: left; width: 100%; height: 60px; overflow: hidden;'>
+										<a href='http://fineartamerica.com/art/all/all/canvas+prints'><img src='https://fineartamerica.com/images/NavigationProductCanvasPrint.jpg' style='display: inline-block; margin: auto; padding-left: 5px; border: none;'></a>
+									</div>
+									
+									<p style='float: left; width: 100%; font: 9pt arial; color: #444444;'><a href='http://fineartamerica.com/art/all/all/canvas+prints' style='font: 9pt arial; font-weight: bold; color: #335599'>Canvas Prints</a></p>
+
+								</div>
+
+								<div style='float: left; width: 70px; padding-left: 10px; text-align: center;'>
+									
+									<div style='float: left; width: 100%; height: 60px; overflow: hidden;'>
+										<a href='http://fineartamerica.com/art/all/all/framed+prints'><img src='https://fineartamerica.com/images/NavigationProductFramedPrint.jpg' style='display: inline-block; margin: auto; padding-left: 5px; border: none;'></a>
+									</div>
+									
+									<p style='float: left; width: 100%; font: 9pt arial; color: #444444;'><a href='http://fineartamerica.com/art/all/all/framed+prints' style='font: 9pt arial; font-weight: bold; color: #335599'>Framed Prints</a></p>
+								
+								</div>
+
+								<div style='float: left; width: 70px; padding-left: 10px; text-align: center;'>
+									
+									<div style='float: left; width: 100%; height: 60px; overflow: hidden;'>
+										<a href='http://fineartamerica.com/art/all/all/greeting+cards'><img src='https://fineartamerica.com/images/NavigationProductGreetingCard.jpg' style='display: inline-block; margin: auto; padding-left: 5px; padding-top: 5px; border: none;'></a>
+									</div>
+									
+									<p style='float: left; width: 100%; font: 9pt arial; color: #444444;'><a href='http://fineartamerica.com/art/all/all/greeting+cards' style='font: 9pt arial; font-weight: bold; color: #335599'>Greeting Cards</a></p>
+								
+								</div>							
+								
+								<div style='float: left; width: 70px; padding-left: 10px; text-align: center;'>
+									
+									<div style='float: left; width: 100%; height: 60px; overflow: hidden;'>
+										<a href='http://fineartamerica.com/art/all/all/acrylic+prints'><img src='https://fineartamerica.com/images/NavigationProductAcrylicPrint.jpg' style='display: inline-block; margin: auto; padding-left: 5px; border: none;'></a>
+									</div>
+									
+									<p style='float: left; width: 100%; font: 9pt arial; color: #444444;'><a href='http://fineartamerica.com/art/all/all/acrylic+prints' style='font: 9pt arial; font-weight: bold; color: #335599'>Acrylic Prints</a></p>
+								
+								</div>							
+
+								<div style='float: left; width: 70px; padding-left: 10px; text-align: center;'>
+									
+									<div style='float: left; width: 100%; height: 60px; overflow: hidden;'>
+										<a href='http://fineartamerica.com/art/all/all/metal+prints'><img src='https://fineartamerica.com/images/NavigationProductMetalPrint.jpg' style='display: inline-block; margin: auto; padding-left: 5px; border: none;'></a>
+									</div>
+									
+									<p style='float: left; width: 100%; font: 9pt arial; color: #444444;'><a href='http://fineartamerica.com/art/all/all/metal+prints' style='font: 9pt arial; font-weight: bold; color: #335599'>Metal Prints</a></p>
+								
+								</div>									
+								
+								<div style='float: left; width: 70px; padding-left: 10px; text-align: center;'>
+									
+									<div style='float: left; width: 100%; height: 60px; overflow: hidden;'>
+										<a href='http://fineartamerica.com/art/all/all/prints'><img src='https://fineartamerica.com/images/NavigationProductArtPrint.jpg' style='display: inline-block; margin: auto; padding-left: 5px; border: none;'></a>
+									</div>
+									
+									<p style='float: left; width: 100%; font: 9pt arial; color: #444444;'><a href='http://fineartamerica.com/art/all/all/prints' style='font: 9pt arial; font-weight: bold; color: #335599'>Art Prints</a></p>
+								
+								</div>								
+
+								<div style='float: left; width: 70px; padding-left: 10px; text-align: center;'>
+									
+									<div style='float: left; width: 100%; height: 60px; overflow: hidden;'>
+										<a href='http://fineartamerica.com/art/all/all/posters'><img src='https://fineartamerica.com/images/NavigationProductPoster.jpg' style='display: inline-block; margin: auto; padding-left: 5px; border: none;'></a>
+									</div>
+									
+									<p style='float: left; width: 100%; font: 9pt arial; color: #444444;'><a href='http://fineartamerica.com/art/all/all/posters' style='font: 9pt arial; font-weight: bold; color: #335599'>Posters</a></p>
+								
+								</div>
+
+								<div style='float: left; width: 60px; padding-left: 10px; text-align: center;'>
+									
+									<div style='float: left; width: 100%; height: 60px; overflow: hidden;'>
+										<a href='http://fineartamerica.com/art/all/all/originals'><img src='https://fineartamerica.com/images/NavigationProductOriginal.jpg' style='display: inline-block; margin: auto; padding-left: 0px; border: none;'></a>
+									</div>
+									
+									<p style='float: left; width: 100%; font: 9pt arial; color: #444444;'><a href='http://fineartamerica.com/art/all/all/originals' style='font: 9pt arial; font-weight: bold; color: #335599'>Originals</a></p>
+								
+								</div>								
+								
+								<div style='float: left; width: 60px; padding-left: 10px; text-align: center;'>
+									
+									<div style='float: left; width: 100%; height: 60px; overflow: hidden;'>
+										<a href='http://fineartamerica.com/artdirectory.html'><img src='https://fineartamerica.com/images/NavigationProductMoreProducts.jpg' style='display: inline-block; margin: auto; padding-left: 5px; padding-top: 5px; border: none;'></a>
+									</div>
+									
+									<p style='float: left; width: 100%; font: 9pt arial; color: #444444;'><a href='http://fineartamerica.com/artdirectory.html' style='font: 9pt arial; font-weight: bold; color: #335599'>More</a></p>
+								
+								</div>
+								
+							</div>
+						
+						</div>
+						
+
+						<!-- Categories -->
+						<div style='float: left; width: 100%; padding-top: 25px;'>	
+							
+							<div style='float: left; width: 100%; padding-top: 0px; padding-bottom: 5px;  border-bottom: 1px solid #999999;'>
+								<p style='float: left; font: 10pt arial; font-weight: bold; color: #444444; text-shadow: 1px 1px 2px #BBBBBB;'><a href='http://fineartamerica.com/art/all/all/all' style='font: 10pt arial; font-weight: bold; color: #444444; text-shadow: 1px 1px 2px #BBBBBB;'>Categories</a></p>
+								<p style='float: right; padding-top: 2px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all' style='font: 9pt arial; color: #335599; text-decoration: none;'>View All</a></p>
+							</div>		
+
+							<div style='float: left; width: 100%; padding-top: 15px;'>
+								
+								<div style='float: left; width: 130px;'>
+
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all?filter=featured' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Featured</a></p>
+									
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all?filter=bestsellers' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Best Sellers</a></p>
+															
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all?filter=recentlysold' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Recently Sold</a></p>
+
+								</div>
+
+								<div style='float: left; width: 130px; padding-left: 25px;'>
+
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all?filter=recentlyadded' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Recently Uploaded</a></p>
+									
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all?filter=mostcomments' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Most Comments</a></p>
+									
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all?filter=mostvotes' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Most Votes</a></p>
+															
+
+								</div>
+
+								<div style='float: left; width: 130px; padding-left: 25px;'>
+									
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/artworktags.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Popular Keywords</a></p>
+
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/newartwork.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Today's Uploads</a></p>
+									
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/newcomments.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Today's Comments</a></p>
+															
+
+								</div>							
+
+								<div style='float: left; width: 130px; padding-left: 25px;'>
+
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/artworkbycolor.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Colors</a></p>
+
+								</div>
+								
+							</div>
+							
+						</div>	
+						
+						
+						<!-- Subjects -->
+						<div style='float: left; width: 100%; padding-top: 25px;'>
+
+							<div style='float: left; width: 100%; padding-bottom: 5px; border-bottom: 1px solid #999999;'>
+								<p style='float: left; font: 10pt arial; font-weight: bold; color: #444444; text-shadow: 1px 1px 2px #BBBBBB;'><a href='http://fineartamerica.com/subjects.html' style='font: 10pt arial; font-weight: bold; color: #444444; text-shadow: 1px 1px 2px #BBBBBB;'>Subjects</a></p>
+								<p style='float: right; padding-top: 2px; font: 9pt arial;'><a href='http://fineartamerica.com/subjects.html' style='font: 9pt arial; color: #335599; text-decoration: none;'>View All</a></p>
+							</div>						
+
+							<div style='float: left; width: 100%; padding-top: 15px;'>
+								<div style='float: left; width: 120px;'>
+
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/abstract/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Abstract</a></p>
+									
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/animals/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Animals</a></p>
+															
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/celebrities/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Celebrities</a></p>
+
+								</div>
+
+								<div style='float: left; width: 120px; padding-left: 25px;'>
+
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/cities/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Cities</a></p>
+									
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/floral/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Flowers</a></p>
+															
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/food+and+beverage/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Food & Beverage</a></p>
+
+								</div>							
+								
+								<div style='float: left; width: 120px; padding-left: 25px;'>
+
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/landmarks/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Landmarks</a></p>
+
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/landscapes/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Landscapes</a></p>
+									
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/music/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Music</a></p>
+																						
+								</div>	
+
+								<div style='float: left; width: 120px; padding-left: 25px;'>
+
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/portraits/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Portraits</a></p>
+
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/science+fiction/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Science Fiction</a></p>
+									
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/skylines/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Skylines</a></p>
+																								
+								</div>	
+								
+								<div style='float: left; width: 120px; padding-left: 25px;'>
+				
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/surrealism/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Surrealism</a></p>
+
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/steampunk/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Steampunk</a></p>
+									
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/subjects.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>More...</a></p>
+									
+								</div>
+							</div>
+							
+						</div>
+
+						
+						<!-- Collections -->
+						<div style='float: left; width: 100%; padding-top: 25px;'>
+							
+							<div style='float: left; width: 100%; padding-bottom: 5px; border-bottom: 1px solid #999999;'>
+								<p style='float: left; font: 10pt arial; font-weight: bold; color: #444444; text-shadow: 1px 1px 2px #BBBBBB;'><a href='http://fineartamerica.com/collections.html' style='font: 10pt arial; font-weight: bold; color: #444444; text-shadow: 1px 1px 2px #BBBBBB;'>Collections</a></p>
+								<p style='float: right; padding-top: 2px; font: 9pt arial;'><a href='http://fineartamerica.com/collections.html' style='font: 9pt arial; color: #335599; text-decoration: none;'>View All</a></p>
+							</div>		
+
+							<div style='float: left; width: 100%; padding-top: 15px;'>
+								<div style='float: left; width: 120px;'>
+
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/anne+geddes' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Anne Geddes</a></p>
+								
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/college+town' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>College Town</a></p>
+									
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/fairy+tales' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Fairy Tales</a></p>
+															
+								</div>
+
+								<div style='float: left; width: 120px; padding-left: 25px;'>
+
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/interior+designers' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Interior Designers</a></p>
+								
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/national+geographic' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>National Geographic</a></p>								
+								
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/pop+art' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Pop Art</a></p>
+									
+								</div>
+
+								<div style='float: left; width: 120px; padding-left: 25px;'>
+
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/modern+movie+posters' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Movie Posters</a></p>
+								
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/modern+masters' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Modern Master</a></p>
+										
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/old+masters' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Old Masters</a></p>
+
+								</div>							
+
+								<div style='float: left; width: 120px; padding-left: 25px;'>
+									
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/rolling+stone+magazine+covers' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Rolling Stone</a></p>
+															
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/science+collection' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Science Collection</a></p>
+
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/steampunk' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Steampunk</a></p>
+
+								</div>	
+								
+								<div style='float: left; width: 120px; padding-left: 25px;'>
+									
+									<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/stocktrek+images' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Stocktrek Images</a></p>
+															
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/art/all/all/all/university+icons' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>University Icons</a></p>
+
+									<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/collections.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>More...</a></p>
+
+								</div>									
+								
+							</div>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+
+
+			<div id='msell' onmouseover='mcancelclosetime();' onmouseout='mclosetime();' style='position: absolute; z-index: 2000; width: 470px; margin-top: 75px; margin-left: 0px; visibility: hidden;'>
+				<div style='float: left; width: 70px; height: 6px; margin-left: 80px; overflow: hidden; background-color: #335599;'>&nbsp;</div>
+				<div style='float: left; width: 418px; padding: 25px; margin-top: 0px; background-color: #FAFAFA; border: 1px solid #444444; border-radius: 6px; box-shadow: 0px 5px 8px #AAAAAA;'>
+					
+					<div style='float: left; width: 100%;'>
+					
+						<p style='float: left; width: 100%; font: 10pt arial; font-weight: bold; padding-bottom: 5px; margin-bottom: 15px; border-bottom: 1px solid #999999; color: #444444;'>Transform Your Images Into an Online Business</p>
+					
+						<p style='float: left; width: 100%; font: 9pt arial;'>Fine Art America is the world's most powerful sales and marketing tool for photographers and visual artists.</p>
+						<p style='float: left; width: 100%; padding-top: 15px; font: 9pt arial;'>Simply <a href='http://fineartamerica.com/openanaccount.html' style='font: 9pt arial; color: #335599; text-decoration: underline;'>open an account</a>, upload your images, set your prices for all our available <a href='http://fineartamerica.com/artdirectory.html' style='font: 9pt arial; color: #335599; text-decoration: underline;'>products</a>, and you're instantly in business!&nbsp;&nbsp;&nbsp;FAA provides you with an e-commerce website, fulfills your orders for you, and sends you your profits each month.</p>
+						
+						<div style='float: left; width: 100%; padding-top: 15px;'>
+							<p style='float: left; padding-left: 90px;'><a class='button' href='http://fineartamerica.com/openanaccount.html' style='margin-right: 0px;'><span style='width: 200px; color: #000000; font-weight: bold;'>Join Now</span></a></p>
+						</div>
+					
+						<p style='float: left; width: 100%; padding-top: 20px; font: 9pt arial;'>FAA is the fastest growing art site in the world with 80,000+ <b>international</b> members and hundreds of thousands of <a href='http://fineartamerica.com/art-website-reviews.html' style='font: 9pt arial; color: #335599; text-decoration: underline;'>daily visitors</a>.</p>
+											
+					</div>
+
+					<div style='float: left; width: 100%; padding-top: 35px;'>
+					
+						<p style='float: left; width: 100%; font: 10pt arial; font-weight: bold; padding-bottom: 5px; margin-bottom: 15px; border-bottom: 1px solid #999999; color: #444444;'>Sales & Marketing Features</p>
+					
+						<div style='float: left; width: 50%;'>
+
+							<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/your-own-website.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Your FAA Profile Page</a></p>					
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/sell-prints-online.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Sell Prints & Greeting Cards</a></p>
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/beautiful-artwork-pages.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Beautiful Artwork Pages</a></p>
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/spectacular-image-rendering.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>3D Image Rendering</a></p>		
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/artwork-menus.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>PDF Sales Sheets</a></p>					
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/unlimited-images-and-galleries.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Unlimited Images & Galleries</a></p>
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/full-resolution-previews.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Full Resolution Previews</a></p>
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/visitor-tracking.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Visitor Tracking</a></p>								
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/comment-tracking.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Comment Tracking</a></p>
+						</div>
+
+						<div style='float: left; width: 50%;'>
+							
+							<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/two-websites-in-one.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Your Own Branded Website</a></p>
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/facebook-shopping-cart.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Sell on Facebook</a></p>					
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/amazon.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Sell on Amazon</a></p>
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/abc-licensing.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Sell on TV</a></p>							
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/e-mail-marketing.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>E-Mail Marketing</a></p>		
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/events-calendar.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Events Promotion</a></p>					
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/press-releases.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Press Releases</a></p>
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/sales-manager.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Sales Manager</a></p>
+							<p style='float: left; width: 100%; padding-top: 5px; font: 9pt arial;'><a href='http://fineartamerica.com/tourfineartamerica/artist-control-panel.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Control Panel</a></p>								
+						
+						</div>
+						
+					</div>
+
+					<div style='float: left; width: 100%; padding-top: 35px;'>
+					
+						<p style='float: left; width: 100%; font: 10pt arial; font-weight: bold; padding-bottom: 5px; margin-bottom: 15px; border-bottom: 1px solid #999999; color: #444444;'>If you read nothing else...</p>
+						
+						<p style='float: left; width: 100%; padding-top: 0px; font: 9pt arial;'><a href='http://fineartamerica.com/selling-art-online-2011-04.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Why Every Artist / Photographer Needs an Online Order Fulfillment Partner</a></p>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+
+
+			<div id='mcreate' onmouseover='mcancelclosetime();' onmouseout='mclosetime();' style='position: absolute; z-index: 2000; width: 490px; margin-top: 75px; margin-left: 0px; visibility: hidden;'>
+				<div style='float: left; width: 70px; height: 6px; margin-left: 158px; overflow: hidden; background-color: #335599;'>&nbsp;</div>
+				<div style='float: left; width: 438px; padding: 25px; margin-top: 0px; background-color: #FAFAFA; border: 1px solid #444444; border-radius: 6px; box-shadow: 0px 5px 8px #AAAAAA;'>
+					
+					<div style='float: left; width: 100%;'>
+					
+						<p style='float: left; width: 100%; font: 10pt arial; font-weight: bold; padding-bottom: 5px; margin-bottom: 15px; border-bottom: 1px solid #999999; color: #444444;'>Transform Your Images Into Museum Quality Masterpieces</p>
+					
+						<a href='http://fineartamerica.com/create-art-online.html'><img src='https://fineartamerica.com/NavigationCreateLogo.jpg' style='float: left; width: 416px; height: 60px; border: none;'></a>
+						
+						<div style='float: left; width: 100%; padding-top: 15px;'>
+							<div style='float: left; width: 80px;'>
+								<p style='float: left; width: 100%; font: 9pt arial;'><a href='http://fineartamerica.com/create-art-online.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>Upload a digital image</a> to Fine Art America.</p>
+							</div>
+
+							<div style='float: left; width: 80px; padding-left: 25px;'>
+								<p style='float: left; width: 100%; font: 9pt arial;'>Configure your image as a <a href='http://fineartamerica.com/fineartcanvasprints.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>canvas print</a>, <a href='http://fineartamerica.com/framedprints.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>framed print</a>, <a href='http://fineartamerica.com/greetingcards.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>greeting card</a>, and more.</p>
+							</div>
+
+							<div style='float: left; width: 100px; padding-left: 35px;'>
+								<p style='float: left; width: 100%; font: 9pt arial;'>Fine Art America fulfills your order within 2 - 3 business days and ships it to you anywhere in the world.</p>
+							</div>
+	
+							<div style='float: left; width: 80px; padding-left: 30px;'>
+								<p style='float: left; width: 100%; font: 9pt arial;'>A museum-quality masterpieces arrives on your doorstep, ready-to-hang, with a <a href='http://fineartamerica.com/moneybackguarantee.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>30-day money-back guarantee</a>.</p>
+							</div>
+							
+						</div>	
+						
+						<div style='float: left; width: 100%; padding-top: 25px;'>
+							<p style='float: left; width: 100%; font: 9pt arial; text-align: center;'>Get Started</p>
+							<p style='float: left; padding-left: 102px; padding-top: 5px;'><a class='button' href='http://fineartamerica.com/create-art-online.html' style='margin-right: 0px;'><span style='width: 200px; color: #000000; font-weight: bold;'>Upload Now</span></a></p>
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+
+
+			<div id='mlimitedtime' onmouseover='mcancelclosetime();' onmouseout='mclosetime();' style='position: absolute; z-index: 2000; width: 470px; margin-top: 75px; margin-left: 0px; visibility: hidden;'>
+				<div style='float: left; width: 70px; height: 6px; margin-left: 250px; overflow: hidden; background-color: #335599;'>&nbsp;</div>
+				<div style='float: left; width: 418px; padding: 25px; margin-top: 0px; background-color: #FAFAFA; border: 1px solid #444444; border-radius: 6px; box-shadow: 0px 5px 8px #AAAAAA;'>
+					
+					<div style='float: left; width: 100%;'>
+					
+						<p style='float: left; width: 100%; font: 10pt arial; font-weight: bold; padding-bottom: 5px; margin-bottom: 15px; border-bottom: 1px solid #999999; color: #444444;'>Limited Time Promotions</p>		
+					</div>
+
+					<div style='float: left; width: 190px;'>
+					
+						<p style='float: left; width: 100%; font: 9pt arial;'>Each day, the members of Fine Art America pick their favorite images and offer them for sale in limited quantities at <a href='http://fineartamerica.com/art/all/all/special+promotions' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>substantial discounts</a>.</p>
+
+						<p style='float: left; width: 100%; padding-top: 25px; font: 9pt arial;'>Own a museum-quality masterpiece from one of the world's greatest living artists for a fraction of the normal price.</p>
+						
+						<div style='float: left; width: 100%; padding-top: 25px;'>
+							<p style='float: left; padding-left: 25px; padding-top: 5px;'><a class='button' href='http://fineartamerica.com/art/all/all/special+promotions' style='margin-right: 0px;'><span style='width: 100px; color: #000000; font-weight: bold;'>Start Shopping</span></a></p>
+						</div>
+						
+					</div>
+					
+					<a href='http://fineartamerica.com/art/all/all/special+promotions'><img src='https://fineartamerica.com/images/NavigationProductLimitedTimeOnly.jpg' style='float: right; border: none;'></a>
+					
+				</div>
+				
+			</div>
+
+
+			<div id='mtour' onmouseover='mcancelclosetime();' onmouseout='mclosetime();' style='position: absolute; z-index: 2000; width: 470px; margin-top: 75px; margin-left: 0px; visibility: hidden;'>
+				<div style='float: left; width: 70px; height: 6px; margin-left: 338px; overflow: hidden; background-color: #335599;'>&nbsp;</div>
+				<div style='float: left; width: 418px; padding: 25px; margin-top: 0px; background-color: #FAFAFA; border: 1px solid #444444; border-radius: 6px; box-shadow: 0px 5px 8px #AAAAAA;'>
+					
+					<div style='float: left; width: 100%;'>
+					
+						<p style='float: left; width: 100%; font: 10pt arial; font-weight: bold; padding-bottom: 5px; margin-bottom: 25px; border-bottom: 1px solid #999999; color: #444444;'>Take a Tour of the World's Fastest Growing Art Site</p>		
+					</div>
+
+					<div style='float: left; width: 190px;'>
+					
+						<p style='float: left; width: 100%; font: 9pt arial;'>Fine Art America is the world's fastest growing online art site.</p>
+
+						<p style='float: left; width: 100%; padding-top: 20px; font: 9pt arial;'>Each day, hundreds of thousands of visitors stop by to browse our collection of <a href='http://fineartamerica.com/art/all/all/all' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>2,000,000+</a> images, each of which has been uploaded by a living <a href='http://fineartamerica.com/artistdirectory.html' style='font: 9pt arial; font-weight: normal; text-decoration: underline; color: #335599'>artist / photographer</a>.</p>
+
+						<p style='float: left; width: 100%; padding-top: 20px; font: 9pt arial;'>Each image can be purchased as a canvas print, framed print, greeting card, and more.</p>
+																		
+					</div>
+					
+					<a href='http://fineartamerica.com/tourfineartamerica/introduction.html'><img src='https://fineartamerica.com/images/NavigationProductTour.jpg' style='float: right; border: 1px solid #999999; box-shadow: -5px 5px 8px #AAAAAA'></a>
+
+					<p style='float: left; width: 100%; padding-top: 20px; font: 9pt arial;'>FAA fulfills each order, delivers museum quality masterpieces to buyers all over the world, and sends the profits to the artists / photographers.</p>
+					
+					<div style='float: left; width: 100%; padding-top: 25px;'>
+						<p style='float: left; padding-left: 90px; padding-top: 5px;'><a class='button' href='http://fineartamerica.com/tourfineartamerica/introduction.html' style='margin-right: 0px;'><span style='width: 200px; color: #000000; font-weight: bold;'>Take the Tour</span></a></p>
+					</div>
+						
+				</div>
+				
+			</div>
+			
+		</div>
+
+		<div style='float: right; width: 100px; padding-top: 18px;'>
+
+			<p style='float: right; padding-right: 23px; padding-top: 1px; font: 11pt arial; font-weight: bold;'><a href='http://fineartamerica.com/shoppingcart.html' style='color: #444444; font: 11pt arial; font-weight: bold; letter-spacing: 1px; text-shadow: 1px 1px 2px #BBBBBB;'>CART</a></p>
+			<a href='http://fineartamerica.com/shoppingcart.html'><img src='https://fineartamerica.com/ShoppingCartSmallTransparent.png' style='float: right; width: 23px; height: 19px; border: none; padding-right: 3px;'></a>			
+
+			<div style='float: left; width: 100%; padding-top: 5px;'>
+<select id='currencyid' name='currencyid' onChange='javascript: window.location = "http://fineartamerica.com/profiles/dlucci-arts.html?currencyid=" + document.getElementById("currencyid").value;' style='float: right; width: 70px; margin-top: 2px; margin-right: 20px; font: 8pt arial; color: #666666; border: 1px solid #AAAAAA; border-radius: 4px;'>
+<option value='AUD' >AUD ($)</option>
+<option value='CAD' >CAD ($)</option>
+<option value='EUR' >EUR (&euro;)</option>
+<option value='GBP' >GBP (&pound;)</option>
+<option value='JPY' >JPY (&yen;)</option>
+<option value='USD' selected>USD ($)</option>
+</select>
+</div>
+			
+			
+			
+						
+		</div>		
+		
+	</div>
+	
+	
+</div><div style="position: relative; z-index: 1000; float: left; width: 100%; height: 31px; background-image: url('https://fineartamerica.com/images-dynamic/thin-455469'); background-repeat: repeat-x;">
+	
+	<div style='float: left; width: 650px; padding-left: 15px; border: 1px solid #444444; border-left: none; border-right: none;'>
+	
+		<ul id="sddm">
+			<li>
+				<a href="http://fineartamerica.com/index.html" style="width: 50px; background-image: none;" onmouseover="mclose()">Home</a>
+			</li>
+			<li>
+				<a href="http://fineartamerica.com/loginchoosetype.php" style="width: 50px;" onmouseover="mopen('m2')" onmouseout="mclosetime()">Login</a>
+				<div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+					<a href="http://fineartamerica.com/artists/index.php">Artists / Photographers</a>
+					<a href="http://fineartamerica.com/galleries/index.php">Galleries</a>
+					<a href="http://fineartamerica.com/collectors/collectorprofile.php">Collectors</a>
+				</div>    
+			</li>
+			<li>
+				<a href="http://fineartamerica.com/art/all/all/all?filter=featured" style="width: 50px;" onmouseover="mopen('m3')" onmouseout="mclosetime()">Shop</a>
+				<div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+
+					<span style='float: left; display: block; width: 550px; border: none;'>
+						
+						<span style='float: left; width: 100%; padding-top: 10px;'>
+							<span style='float: left; display: block; width: 160px; padding-left: 5px;'>
+								<p style='width: 150px; font: 9pt arial; padding-bottom: 4px; margin-left: 10px; margin-bottom: 5px; color: #FFFFFF; border-bottom: 1px solid #999999;'><a href='http://fineartamerica.com/art/all/all/all?filter=featured' style='background-image: none; margin-left: -10px; font: 9pt arial;'>Images</a></p>
+								<a href="http://fineartamerica.com/art/all/all/all?filter=featured" style='background-image: none;'>View All</a>
+								<a href="http://fineartamerica.com/art/all/all/all?filter=featured" style='background-image: none;'>Featured</a>
+								<a href="http://fineartamerica.com/art/all/all/all?filter=bestsellers" style='background-image: none;'>Best Sellers</a>
+								<a href="http://fineartamerica.com/art/all/all/all?filter=recentlysold" style='background-image: none;'>Recently Sold</a>
+								<a href="http://fineartamerica.com/newartwork.html" style='background-image: none;'>Today's New Uploads</a>
+								<a href="http://fineartamerica.com/newcomments.html" style='background-image: none;'>Today's New Comments</a>
+							</span>
+							
+							<span style='float: left; display: block; width: 160px; padding-left: 25px;'>	
+								<p style='width: 150px; font: 9pt arial; padding-bottom: 4px; margin-left: 10px; margin-bottom: 5px; color: #FFFFFF; border-bottom: 1px solid #999999;'><a href='http://fineartamerica.com/artdirectory.html' style='background-image: none; margin-left: -10px; font: 9pt arial;'>Products</a></p>
+								<a href="http://fineartamerica.com/art/all/all/canvas+prints" style='background-image: none;'>Canvas Prints</a>
+								<a href="http://fineartamerica.com/art/all/all/framed+prints" style='background-image: none;'>Framed Prints</a>
+								<a href="http://fineartamerica.com/art/all/all/prints" style='background-image: none;'>Art Prints</a>
+								<a href="http://fineartamerica.com/art/all/all/posters" style='background-image: none;'>Posters</a>
+								<a href="http://fineartamerica.com/art/all/all/greeting+cards" style='background-image: none;'>Greeting Cards</a>
+								<a href="http://fineartamerica.com/artdirectory.html" style='background-image: none;'>More...</a>
+							</span>
+
+							<span style='float: left; display: block; width: 160px; padding-left: 25px;'>
+								<p style='width: 150px; font: 9pt arial; padding-bottom: 4px; margin-left: 10px; margin-bottom: 5px; color: #FFFFFF; border-bottom: 1px solid #999999;'><a href='http://fineartamerica.com/artdirectory.html' style='background-image: none; margin-left: -10px; font: 9pt arial;'>Medium</a></p>						
+								<a href="http://fineartamerica.com/art/photographs/all/all" style='background-image: none;'>Photographs</a>
+								<a href="http://fineartamerica.com/art/paintings/all/all" style='background-image: none;'>Paintings</a>   			
+								<a href="http://fineartamerica.com/art/digital+art/all/all" style='background-image: none;'>Digital Art</a>
+								<a href="http://fineartamerica.com/art/drawings/all/all" style='background-image: none;'>Drawings</a> 								
+								<a href="http://fineartamerica.com/art/mixed+media/all/all" style='background-image: none;'>Mixed Media</a>
+								<a href="http://fineartamerica.com/artdirectory.html" style='background-image: none;'>More...</a>
+							</span>
+						</span>
+						
+						<span style='float: left; width: 100%; padding-top: 15px; padding-bottom: 5px;'>
+							
+							<span style='float: left; display: block; width: 160px; padding-left: 5px;'>
+								<p style='width: 150px; font: 9pt arial; padding-bottom: 4px; margin-left: 10px; margin-bottom: 5px; color: #FFFFFF; border-bottom: 1px solid #999999;'><a href='http://fineartamerica.com/subjects.html' style='background-image: none; margin-left: -10px; font: 9pt arial;'>Subjects</a></p>						
+								<a href="http://fineartamerica.com/art/all/animals/all" style='background-image: none;'>Animals</a>   			
+								<a href="http://fineartamerica.com/art/all/cities/all" style='background-image: none;'>Cities</a>
+								<a href="http://fineartamerica.com/art/all/landscapes/all" style='background-image: none;'>Landscapes</a>
+								<a href="http://fineartamerica.com/art/all/pop+art/all" style='background-image: none;'>Pop Art</a>		
+								<a href="http://fineartamerica.com/subjects.html" style='background-image: none;'>More...</a>
+							</span>
+							
+							<span style='float: left; display: block; width: 160px; padding-left: 25px;'>	
+								<p style='width: 150px; font: 9pt arial; padding-bottom: 4px; margin-left: 10px; margin-bottom: 5px; color: #FFFFFF; border-bottom: 1px solid #999999;'><a href='http://fineartamerica.com/collections.html' style='background-image: none; margin-left: -10px; font: 9pt arial;'>Collections</a></p>
+								<a href="http://fineartamerica.com/art/all/all/all/college+town" style='background-image: none;'>College Town</a>
+								<a href="http://fineartamerica.com/art/all/all/all/fairy+tales" style='background-image: none;'>Fairy Tales</a>
+								<a href="http://fineartamerica.com/art/all/all/all/modern+masters" style='background-image: none;'>Modern Masters</a>
+								<a href="http://fineartamerica.com/art/all/all/all/modern+movie+posters" style='background-image: none;'>Movie Posters</a>
+								<a href="http://fineartamerica.com/art/all/all/all/national+geographic" style='background-image: none; display: none;'>National Geographic</a>
+								<a href="http://fineartamerica.com/collections.html" style='background-image: none;'>More...</a>
+							</span>							
+
+							<span style='float: left; display: block; width: 160px; padding-left: 25px;'>	
+								<p style='width: 150px; font: 9pt arial; padding-bottom: 4px; margin-left: 10px; margin-bottom: 5px; color: #FFFFFF; border-bottom: 1px solid #999999;'><a href='http://fineartamerica.com/artworktags.html' style='background-image: none; margin-left: -10px; font: 9pt arial;'>Extra</a></p>
+								<a href="http://fineartamerica.com/artworkbycolor.html" style='background-image: none;'>Search by Color</a>        	 	       	 	
+								<a href="http://fineartamerica.com/artworktags.html" style='background-image: none;'>Popular Keywords</a>
+								<a href="http://fineartamerica.com/recentprintsales.html" style='background-image: none;'>Recently Sold Prints</a>
+								<a href="http://fineartamerica.com/recentgreetingcardsales.html" style='background-image: none;'>Recently Sold Greeting Cards</a>
+								<a href="http://fineartamerica.com/print-instagram.html" style='background-image: none;'>Print Instagram on Canvas</a>
+							</span>
+						</span>
+						
+					</span>
+
+				</div>    
+			</li>
+			<li>
+				<a href="http://fineartamerica.com/artistdirectory.html" style="width: 60px;" onmouseover="mopen('m4')" onmouseout="mclosetime()">Artists</a>
+				<div id="m4" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+					<a href="http://fineartamerica.com/artistdirectory.html">All Artists / Photographers</a>
+					<a href="http://fineartamerica.com/newartists.html">Today's New Artists / Photographers</a>
+					<a href="http://fineartamerica.com/openanaccount.html">Join</a>
+				</div>    
+			</li>
+			<li>
+				<a href="http://fineartamerica.com/gallerydirectory.html" style="width: 65px;" onmouseover="mclose()">Galleries</a> 
+			</li>
+
+			<li>
+				<a href="http://fineartamerica.com/upcomingevents.html" style="width: 60px;" onmouseover="mclose()">Events</a> 
+			</li>
+
+			<li>
+				<a href="http://fineartamerica.com/groups.html" style="width: 60px;" onmouseover="mclose()">Groups</a> 
+			</li>
+			
+			<li>
+				<a href="http://fineartamerica.com/discussions.html" style="width: 80px;" onmouseover="mopen('m8')" onmouseout="mclosetime()">Community</a>
+				<div id="m8" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+					<a href="http://fineartamerica.com/discussions.html">Discussions</a>
+					<a href="http://fineartamerica.com/groups.html">Groups</a>
+					<a href="http://fineartamerica.com/contests.html">Contests</a>
+					<a href="http://fineartamerica.com/upcomingevents.html">Events</a>
+					<a href="http://fineartamerica.com/jobopenings.html">Jobs</a>
+					<a href="http://fineartamerica.com/blogs.html">Blogs</a>
+					<a href="http://fineartamerica.com/chat.html">Chat</a>
+					<a href="http://fineartamerica.com/graphs.html">Graphs (FAA)</a>
+					<a href="http://fineartamerica.com/graphsartistwebsites.html">Graphs (Websites)</a>
+					<a href="http://fineartamerica.com/activity.html">Activity</a>
+					<a href="http://fineartamerica.com/dailyrecognition.html">Activity Leaders</a>
+					<a href='http://fineartamerica.com/onlinemembers.html'>Who's Online?</a>	
+				</div>    
+			</li>
+
+			<li>
+				<a href="http://fineartamerica.com/contests.html" style="width: 70px;" onmouseover="mclose()">Contests</a> 
+			</li>
+
+			<li>
+				<a href="http://fineartamerica.com/announcements.html" style="width: 50px;" onmouseover="mopen('m9')" onmouseout="mclosetime()">News</a>
+				<div id="m9" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+					<a href="http://fineartamerica.com/announcements.html">Fine Art America Announcements</a>
+					<a href="http://fineartamerica.com/pressreleasedirectory.html">Member Press Releases</a>				
+					<!--<a href="http://fineartamerica.com/activity.html">Today's New Content</a>-->
+				</div>    
+			</li>
+			<li>
+				<a href="http://fineartamerica.com/aboutthissite.html" style="width: 55px;" onmouseover="mopen('m10')" onmouseout="mclosetime()">About</a>
+				<div id="m10" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+					<a href="http://fineartamerica.com/aboutthissite.html">About Fine Art America</a>
+					<a href="http://fineartamerica.com/announcements.html">Fine Art America Announcements</a>
+					<a href="http://fineartamerica.com/tourfineartamerica/introduction.html">Take a Tour</a>
+					<a href="http://fineartamerica.com/membershipplans.html">Membership Plans</a>
+					<a href="http://fineartamerica.com/openanaccount.html">Join</a>
+					<a href="http://fineartamerica.com/contactus.html?tab=faq">FAQ</a>
+					<a href="http://fineartamerica.com/videotutorials.html" style="display: none;">Video Tutorials</a>
+					<a href="http://fineartamerica.com/customframes.html">Custom Frames</a>
+					<a href="http://fineartamerica.com/fineartprints.html">Fine Art Prints</a>
+					<a href="http://fineartamerica.com/acrylic-prints.html">Acrylic Prints</a>
+					<a href="http://fineartamerica.com/canvas-prints.html">Canvas Prints</a>
+					<a href="http://fineartamerica.com/framed-prints.html">Framed Prints</a>
+					<a href="http://fineartamerica.com/metal-prints.html">Metal Prints</a>
+					<a href="http://fineartamerica.com/greeting-cards.html">Greeting Cards</a>				
+					<a href="http://fineartamerica.com/fineartcanvasprints.html">Stretched Canvas</a>
+					<a href="http://fineartamerica.com/ordersamplekit.html">Sample Kits</a>
+					<a href="http://fineartamerica.com/printprices.html">Paper / Canvas Prices</a>
+					<a href="http://fineartamerica.com/returnsstep1.html?newrma=true">Returns</a>
+					<a href="http://fineartamerica.com/contactus.html">Contact Us</a>
+				</div>    
+			</li>
+			
+		</ul>
+
+	</div>
+
+	<div style='float: right; width: 253px; height: 31px; padding-right: 10px; background-image: url("https://fineartamerica.com/NavigationThick.jpg"); background-repeat: repeat-x;'>
+<div style='float: left; width: 150px; overflow: hidden; padding-top: 5px; padding-left: 5px;'>
+<form id='searchformheader' name='searchformheader' method='POST' action='http://fineartamerica.com/art/all/all/all' style='float: left; width: 100%; overflow: hidden;'>
+<input style='float: left; border: 1px solid #444444; border-radius: 2px; font-size: 8pt; width: 120px; height: 16px; padding: 1px; padding-left: 5px; margin: 0px; color: #666666; box-shadow: none;' onClick='javascript: this.value = "";' type='text' name='searchtag' size='20' value='search'><a href='javascript: document.searchformheader.submit();' style='font: 10pt arial; font-weight: bold; color: #FFFFFF; text-decoration: none;'><img src='https://fineartamerica.com/ArrowSearchRight.jpg' style='float: left; width: 15px; height: 20px; border: none; padding-left: 5px; padding-top: 0px;'></a></form></div><p style='float: right; padding-right: 15px; padding-top: 8px; font: 8pt arial; color: #FFFFFF;'><a href='http://fineartamerica.com/openanaccount.html' style='font: 8pt arial; font-weight: normal; color: #FFFFFF; text-decoration: none;'>JOIN</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href='http://fineartamerica.com/loginchoosetype.php' style='font: 8pt arial; font-weight: normal; color: #FFFFFF; text-decoration: none;'>LOGIN</a></p></div>
+<img style='float: right; width: 40px; height: 31px;' src='https://fineartamerica.com/TransitionRound.png' alt='Sell Art Online' title='Sell Art Online'>
+
+</div><div id='maindiv' style='width: 915px; padding: 0px; padding-top: 25px; padding-bottom: 25px; margin: auto; overflow: hidden;'>
+<div style='float: left; width: 220px; margin-right: 20px;'>
+<div style='float: left; width: 100%; min-height: 70px;'>
+<h1 style='float: left; width: 100%; margin: 0px; padding: 0px; font: 20pt arial; font-weight: bold;'>Dlucci Arts</h1><p style='float: left; width: 100%; padding-bottom: 10px; font: 9pt arial;'>Harrison, NY - United States</p>
+</div>
+<div style='float: left; width: 100%;'>
+<a href='http://dlucci-arts.fineartamerica.com'><img src='../images/gallerylogos/dlucci-arts-1358797329-logo1.jpg' alt='Dlucci Arts - Fine Art Gallery' title='Dlucci Arts - Fine Art Gallery' style='float: left; width: 149px; height: 200px; padding: 10px; border: 1px solid #444444; border-radius: 4px; box-shadow: 8px 8px 12px #CCCCCC;'></a></div>
+<div style='float: left; width: 100%; padding-top: 10px;'>
+<p style='float: left; width: 100%; font: 9pt arial;'>Dlucci Arts - Fine Art Gallery</p></div>
+<div style='float: left; width: 100%; padding-top: 0px;'>
+<p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Member Since: 08/07/2011</p></div>
+<div style='float: left; width: 100%; padding-top: 15px;'>
+<img src='../LogoAddToWatchList.jpg' style='float: left; padding-right: 10px;'><p style='float: left; padding-top: 3px;'><a href='../addtowatchlist.html?watchgalleryid=7749'><u>Add to Watch List</u></a></p>
+</div>
+<div style='float: left; width: 100%; padding-top: 6px;'>
+<img src='../LogoFAAEMailSmall.jpg' style='float: left; width: 18px; height: 13px; padding-right: 10px;'><p style='float: left; padding-top: 0px;'><a href='../subscribememberemaillist.html?memberidtype=galleryid&memberid=7749' style='font: 8pt arial; text-decoration: underline;'>Join E-Mail List</a></p>
+</div>
+<div style='float: left; width: 100%; padding-top: 5px;'>
+<img src='../IconWebsite.jpg' style='float: left; width: 18px; height: 18px; padding-right: 10px;'><p style='float: left; padding-top: 2px;'><a href='http://' rel='nofollow' target='_blank' style='font: 8pt arial; text-decoration: underline;'>Visit Website</a></p>
+</div>
+<div style='float: left; width: 100%; padding-top: 5px;'>
+<img src='../LogoFAAEMailSmall.jpg' style='float: left; width: 18px; height: 13px; padding-right: 10px;'><p style='float: left; padding-top: 0px;'><a href='../sendemail.html?galleryid=7749' style='font: 8pt arial; text-decoration: underline;'>Contact</a></p>
+</div>
+<div style='float: left; width: 100%; padding-top: 20px;'>
+<div id='biographydiv' style='float: left; width: 200px; ; overflow-x: hidden; padding-top: 20px; border-top: 1px solid #999999;'>
+<p style='float: left; width: 100%; font: 9pt arial; color: #444444;'>Hello and welcome to my Gallery page with Fine Art America! A little about me - I am a bit of an eclectic personality and believe my art reflects that! My acrylic and watercolor pieces are a mix of Impressionism and Expressionism! I am a colorful person and have been told that that comes through in my work! I hope you enjoy my gallery. Best Wishes, Danielle (Dee) Colucci (If you have a question about any of my works please call 914 909 5141)</p>
+</div>
+</div>
+<div style='float: left; width: 200px; padding-top: 20px; border-top: 1px solid #999999; margin-top: 20px;'>
+<div style='float: left; width: 100%;'>
+<div style='float: left; width: 65px; overflow: hidden;'>
+<iframe src='http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffineartamerica.com%2Fprofiles%2Fdlucci-arts.html&amp;send=false&amp;layout=box_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=90' scrolling='no' frameborder='0' style='float: left; border:none; overflow:hidden; width:60px; height:90px;' allowTransparency='true'></iframe>
+</div>
+<div style='float: left; width: 75px; overflow: hidden;'>
+<a href='http://twitter.com/share' class='twitter-share-button' data-count='vertical' data-via='fineartamerica' data-text="Dlucci Arts: http://fineartamerica.com/profiles/dlucci-arts.html">Tweet</a><script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script>
+</div>
+<div id='stumblediv1' style='float: left; width: 60px; overflow: hidden;'>
+</div>
+</div>
+<div style='float: left; width: 100%; padding-top: 0px;'>
+<div style='float: left; width: 55px; overflow: hidden;'>
+<g:plusone size='tall'></g:plusone>
+</div>
+</div>
+</div>
+<div style='float: left; width: 200px; padding-top: 20px; border-top: 1px solid #999999; margin-top: 20px;'>
+<div style='float: left; width: 100%; padding-top: 10px; overflow: hidden;'>
+<a href='http://fineartamerica.com/rss/artwork/dlucci-arts'>
+<img src='../RSSLogoSmall.jpg' style='float: left; width: 13px; height: 13px; border: none;'></a><p style='float: left; padding-left: 10px; width: 80px;'><a href='http://fineartamerica.com/rss/artwork/dlucci-arts'>Artwork Feed</a></p>
+</div>
+<div style='float: left; width: 100%; padding-top: 5px; overflow: hidden;'>
+<a href='http://fineartamerica.com/rss/events/dlucci-arts'>
+<img src='../RSSLogoSmall.jpg' style='float: left; width: 13px; height: 13px; border: none;'></a><p style='float: left; padding-left: 10px; width: 80px;'><a href='http://fineartamerica.com/rss/events/dlucci-arts'>Events Feed</a></p>
+</div>
+<div style='float: left; width: 100%; padding-top: 5px; overflow: hidden;'>
+<a href='http://fineartamerica.com/rss/blogs/dlucci-arts'>
+<img src='../RSSLogoSmall.jpg' style='float: left; width: 13px; height: 13px; border: none;'></a><p style='float: left; padding-left: 10px; width: 80px;'><a href='http://fineartamerica.com/rss/blogs/dlucci-arts'>Blog Feed</a></p>
+</div>
+</div>
+</div>
+<div id='profilepagerightdiv' style='float: left; margin-bottom: 10px;'><div style='float: left; width: 100%; padding-top: 8px; min-height: 750px;'><div style='float: left; width: 100%;'><div class='menu1' style='width: 50px;'><a href='http://fineartamerica.com/profiles/dlucci-arts.html?tab=artwork'>Images</a></div><div class='space' style='width: 10px;'>&nbsp;</div><div class='menu2' style='width: 55px;'><a href='http://fineartamerica.com/profiles/dlucci-arts.html?tab=artworkgalleries'>Galleries</a></div><div class='space' style='width: 10px;'>&nbsp;</div><div class='menu2' style='width: 40px;'><a href='http://fineartamerica.com/profiles/dlucci-arts.html?tab=events'>Events</a></div><div class='space' style='width: 10px;'>&nbsp;</div><div class='menu2' style='width: 40px;'><a href='http://fineartamerica.com/profiles/dlucci-arts.html?tab=blog'>Blogs</a></div><div class='space' style='width: 10px;'>&nbsp;</div><div class='menu2' style='width: 55px;'><a href='http://fineartamerica.com/profiles/dlucci-arts.html?tab=favorites'>Favorites</a></div><div class='space' style='width: 10px;'>&nbsp;</div><div class='menu2' style='width: 60px;'><a href='http://fineartamerica.com/profiles/dlucci-arts.html?tab=watchlist'>Watch List</a></div><div class='space' style='width: 10px;'>&nbsp;</div><div class='menu2' style='width: 50px;'><a href='http://fineartamerica.com/profiles/dlucci-arts.html?tab=groups'>Groups</a></div><div class='space' style='width: 10px;'>&nbsp;</div><div class='menu2' style='width: 50px;'><a href='http://fineartamerica.com/profiles/dlucci-arts.html?tab=press'>Press</a></div><div class='space' style='width: 10px;'>&nbsp;</div><div class='menu2' style='width: 55px;'><a href='http://fineartamerica.com/profiles/dlucci-arts.html?tab=contests'>Contests</a></div><div class='space' style='width: 10px;'>&nbsp;</div><div class='space' style='width: 62px;'>&nbsp;</div></div><script type='text/javascript'>
+	
+	function newHttpReq()
+	{
+		var newRequest = null;
+		
+		try
+		{
+			newRequest = new XMLHttpRequest();
+		}
+		catch(trymicrosoft)
+		{
+			try
+			{
+				newRequest = new ActiveXObject("Msxml2.XMLHTTP");
+			}
+			catch(othermicrosoft)
+			{
+				try
+				{
+					newRequest = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				catch(failed)
+				{
+					newRequest = null;
+				}			
+			}
+		}
+		
+		return newRequest;
+	
+	}	
+	
+	var request = newHttpReq();
+	var originalhtml = '';
+	var originalposition = '';
+
+	function initiatechange(id,position)
+	{
+		var url = '../members/queryartwork.php?initiatechangeid=' + id + '&position=' + position;		
+
+		originalposition = id;		
+		originalhtml = document.getElementById('change[' + id + ']').innerHTML;
+
+		document.getElementById('change[' + id + ']').innerHTML = "<img src='../Searching.gif' style='float: left;'>";
+		
+     	if((request.readyState != 4) && (request.readyState != 0))
+     	{
+			request.abort();
+			request = newHttpReq();
+     	}
+
+		request.open('GET',url,true);
+     	request.onreadystatechange = updateinitiatechange;
+     	request.send(null);			
+	
+		return;
+
+	}	
+
+	function updateinitiatechange()
+	{
+		//cancelposition();
+	
+   		try 
+		{
+			if(request.readyState == 4)
+			{
+			}
+		
+			if(request.status == 200)
+			{
+			}
+		}
+		catch (e)
+		{
+			return;
+		}
+   
+   
+   		if (request.readyState == 4)
+   		{
+   			if(request.status == 200)
+   			{   
+				var response = request.responseText.split(",");
+				originalposition = response[0];
+				document.getElementById('change[' + originalposition + ']').innerHTML = response[1];
+   			}
+   		}
+	}
+
+	function cancelposition()
+	{	
+				
+		if(originalposition != '' && originalposition != null)
+		{
+			document.getElementById('change[' + originalposition + ']').innerHTML = originalhtml;
+			originalposition = '';
+			originalhtml = '';
+		}
+	}	
+
+	function changeposition(id)
+	{	
+		var targetposition = document.getElementById('newposition[' + id + ']').value;
+	
+		var url = '../profiles/dlucci-arts.html?action=move&page=&artworkid=' + id + '&targetposition=' + targetposition;		
+
+		document.location = url;
+
+	}	
+
+	var fadecounter;
+	var t;
+	
+
+	function detectsaveddiv()
+	{
+
+		if(document.getElementById('saveddiv'))
+		{
+			fadecounter = 100;
+			setTimeout("fadeoutprogress()",2500);
+		}
+	}
+
+
+	function fadeoutprogress()
+	{
+
+		var object = document.getElementById('saveddiv');	
+		object.style.filter = "alpha(opacity = " + fadecounter*1 + ")";
+		object.style.opacity = fadecounter*0.01;
+
+		fadecounter -= 1;
+
+		if (fadecounter > 0)
+		{
+			t = setTimeout("fadeoutprogress()", 10);
+		}
+		else
+		{
+			object.parentNode.removeChild(object);
+		}
+
+	}
+	
+	function submitportfoliosearch()
+	{
+		document.getElementById('portfoliosearchform').submit();
+	}
+	
+</script>	
+	
+<div id='profilepagerightdivinnertop' class='titlebar' style='float: left; padding-top: 4px; padding-bottom: 4px; padding-left: 7px; padding-right: 7px; clear: both; border-top: none;'><p style='float: left; font: 8pt arial; color: #FFFFFF;'><a href='../profiles/dlucci-arts.html?tab=artwork&page=1&initiatesearch=true' style='font: 8pt arial; text-decoration: none; color: #FFFFFF;'>Search Within This Portfolio</a></p>
+<p style='float: left; font: 8pt arial; color: #FFFFFF;'>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Image Count = 29</p><a style='float: right; padding-right: 10px; margin-left: 10px; color: #FFFFFF;' href='dlucci-arts.html?page=2'>Next</a><a style='float:right; margin-left:10px; color: #FFFFFF;' href='dlucci-arts.html?page=2'>2</a><p style='color: #FFFFFF; float:right; margin-left: 10px;'><font color='#EEA10C'>[</font>1<font color='#EEA10C'>]</font></p><p style='float: right; color: #FFFFFF;'>Previous</p><p style='float: left; width: 1px; overflow: hidden;'>&nbsp;</p></div><div id='profilepagerightdivinnerbottom' style='float: left; min-height: 750px; border: 1px solid #AAAAAA; border-top: none; padding-left: 30px; padding-top: 30px; padding-bottom: 15px; background-color: #EEEEEE; background-image: url("http://fineartamerica.com/BackgroundTextureGray.gif"); background-repeat: repeat;'><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/sophees-static-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small-5/sophees-static-danielle-colucci.jpg' title='Danielle Colucci - Sophee's Static' alt='Danielle Colucci - Sophee's Static' style='float: left; width: 144px; height: 180px; border: 1px solid #999999; border-radius: 0px; box-shadow: 8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/sophees-static-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Sophee's Static</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/violet-eyes-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small-5/violet-eyes-danielle-colucci.jpg' title='Danielle Colucci - Violet Eyes' alt='Danielle Colucci - Violet Eyes' style='float: left; width: 144px; height: 180px; border: 1px solid #999999; border-radius: 0px; box-shadow: 0px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/violet-eyes-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Violet Eyes</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 0px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/warhol-meets-lichtenstein-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small/warhol-meets-lichtenstein-danielle-colucci.jpg' title='Danielle Colucci - Warhol Meets Lichtenstein' alt='Danielle Colucci - Warhol Meets Lichtenstein' style='float: left; width: 147px; height: 180px; border: 1px solid #999999; border-radius: 0px; box-shadow: -8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/warhol-meets-lichtenstein-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Warhol Meets Lichtenstein</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/the-crooner-danielle-colucci-.html'><img src='http://images.fineartamerica.com/images-small-5/the-crooner-danielle-colucci-.jpg' title='Danielle Colucci  - The Crooner' alt='Danielle Colucci  - The Crooner' style='float: left; width: 106px; height: 180px; border: 1px solid #999999; border-radius: 0px; box-shadow: 8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/the-crooner-danielle-colucci-.html' style='font: 10pt arial; text-decoration: none;'>The Crooner</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci </p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/james-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small-5/james-danielle-colucci.jpg' title='Danielle Colucci - James' alt='Danielle Colucci - James' style='float: left; width: 135px; height: 180px; border: 1px solid #999999; border-radius: 0px; box-shadow: 0px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/james-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>James</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 0px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/lady-and-the-tramp-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small-5/lady-and-the-tramp-danielle-colucci.jpg' title='Danielle Colucci - Lady and The Tramp' alt='Danielle Colucci - Lady and The Tramp' style='float: left; width: 142px; height: 180px; border: 1px solid #999999; border-radius: 0px; box-shadow: -8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/lady-and-the-tramp-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Lady and The Tramp</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/jimmy-hendrix-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small-5/jimmy-hendrix-danielle-colucci.jpg' title='Danielle Colucci - Jimmy Hendrix' alt='Danielle Colucci - Jimmy Hendrix' style='float: left; width: 170px; height: 131px; border: 1px solid #999999; border-radius: 0px; box-shadow: 8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/jimmy-hendrix-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Jimmy Hendrix</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/classic-gal-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small/classic-gal-danielle-colucci.jpg' title='Danielle Colucci - Classic-gal' alt='Danielle Colucci - Classic-gal' style='float: left; width: 142px; height: 180px; border: 1px solid #999999; border-radius: 0px; box-shadow: 0px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/classic-gal-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Classic-gal</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 0px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/ode-to-the-beatles-danielle-.html'><img src='http://images.fineartamerica.com/images-small-5/ode-to-the-beatles-danielle-.jpg' title='Danielle  - Ode To The Beatles' alt='Danielle  - Ode To The Beatles' style='float: left; width: 170px; height: 137px; border: 1px solid #999999; border-radius: 0px; box-shadow: -8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/ode-to-the-beatles-danielle-.html' style='font: 10pt arial; text-decoration: none;'>Ode To The Beatles</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle </p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/fertility-tree-of-life-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small/fertility-tree-of-life-danielle-colucci.jpg' title='Danielle Colucci - Fertility Tree of Life' alt='Danielle Colucci - Fertility Tree of Life' style='float: left; width: 170px; height: 127px; border: 1px solid #999999; border-radius: 0px; box-shadow: 8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/fertility-tree-of-life-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Fertility Tree of Life</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/whimsical-tree-dee-colucci.html'><img src='http://images.fineartamerica.com/images-small/whimsical-tree-dee-colucci.jpg' title='Dee Colucci - Whimsical Tree' alt='Dee Colucci - Whimsical Tree' style='float: left; width: 139px; height: 180px; border: 1px solid #999999; border-radius: 0px; box-shadow: 0px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/whimsical-tree-dee-colucci.html' style='font: 10pt arial; text-decoration: none;'>Whimsical Tree</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Dee Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 0px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/tree-of-life-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small-5/tree-of-life-danielle-colucci.jpg' title='Danielle Colucci - Tree of Life' alt='Danielle Colucci - Tree of Life' style='float: left; width: 170px; height: 126px; border: 1px solid #999999; border-radius: 0px; box-shadow: -8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/tree-of-life-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Tree of Life</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/nyc-in-my-dreams-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small-5/nyc-in-my-dreams-danielle-colucci.jpg' title='Danielle Colucci - NYC In My Dreams' alt='Danielle Colucci - NYC In My Dreams' style='float: left; width: 170px; height: 127px; border: 1px solid #999999; border-radius: 0px; box-shadow: 8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/nyc-in-my-dreams-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>NYC In My Dreams</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/french-bistro-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small-5/french-bistro-danielle-colucci.jpg' title='Danielle Colucci - French Bistro' alt='Danielle Colucci - French Bistro' style='float: left; width: 170px; height: 128px; border: 1px solid #999999; border-radius: 0px; box-shadow: 0px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/french-bistro-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>French Bistro</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 0px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/happy-little-houses-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small/happy-little-houses-danielle-colucci.jpg' title='Danielle Colucci - Happy Little Houses' alt='Danielle Colucci - Happy Little Houses' style='float: left; width: 170px; height: 137px; border: 1px solid #999999; border-radius: 0px; box-shadow: -8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/happy-little-houses-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Happy Little Houses</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/scorned-woman-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small/scorned-woman-danielle-colucci.jpg' title='Danielle Colucci - Scorned Woman' alt='Danielle Colucci - Scorned Woman' style='float: left; width: 170px; height: 129px; border: 1px solid #999999; border-radius: 0px; box-shadow: 8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/scorned-woman-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Scorned Woman</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/la-bella-blue-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small-5/la-bella-blue-danielle-colucci.jpg' title='Danielle Colucci - La Bella Blue' alt='Danielle Colucci - La Bella Blue' style='float: left; width: 170px; height: 137px; border: 1px solid #999999; border-radius: 0px; box-shadow: 0px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/la-bella-blue-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>La Bella Blue</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 0px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/lady-in-red-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small-5/lady-in-red-danielle-colucci.jpg' title='Danielle Colucci - Lady In Red' alt='Danielle Colucci - Lady In Red' style='float: left; width: 170px; height: 135px; border: 1px solid #999999; border-radius: 0px; box-shadow: -8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/lady-in-red-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Lady In Red</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/red-e-for-dinner-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small/red-e-for-dinner-danielle-colucci.jpg' title='Danielle Colucci - Red E For Dinner' alt='Danielle Colucci - Red E For Dinner' style='float: left; width: 170px; height: 126px; border: 1px solid #999999; border-radius: 0px; box-shadow: 8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/red-e-for-dinner-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Red E For Dinner</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/say-cheese-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small/say-cheese-danielle-colucci.jpg' title='Danielle Colucci - Say Cheese' alt='Danielle Colucci - Say Cheese' style='float: left; width: 170px; height: 125px; border: 1px solid #999999; border-radius: 0px; box-shadow: 0px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/say-cheese-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Say Cheese</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 0px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/yellow-and-blue-orchid-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small/yellow-and-blue-orchid-danielle-colucci.jpg' title='Danielle Colucci - Yellow and Blue Orchid' alt='Danielle Colucci - Yellow and Blue Orchid' style='float: left; width: 123px; height: 180px; border: 1px solid #999999; border-radius: 0px; box-shadow: -8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/yellow-and-blue-orchid-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Yellow and Blue Orchid</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/peacock-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small-5/peacock-danielle-colucci.jpg' title='Danielle Colucci - Peacock' alt='Danielle Colucci - Peacock' style='float: left; width: 135px; height: 180px; border: 1px solid #999999; border-radius: 0px; box-shadow: 8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/peacock-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Peacock</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 30px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/just-cluckin-around-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small/just-cluckin-around-danielle-colucci.jpg' title='Danielle Colucci - Just Cluckin Around' alt='Danielle Colucci - Just Cluckin Around' style='float: left; width: 170px; height: 120px; border: 1px solid #999999; border-radius: 0px; box-shadow: 0px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/just-cluckin-around-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Just Cluckin Around</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div><div style='float: left; width: 190px; margin-right: 0px; border: none;'><div style='float: left; width: 100%; height: 240px; border: none;'><a href='../featured/abstract-orchid-danielle-colucci.html'><img src='http://images.fineartamerica.com/images-small/abstract-orchid-danielle-colucci.jpg' title='Danielle Colucci - Abstract Orchid' alt='Danielle Colucci - Abstract Orchid' style='float: left; width: 170px; height: 113px; border: 1px solid #999999; border-radius: 0px; box-shadow: -8px 8px 12px #AAAAAA;'></a><div style='float: left; width: 100%; overflow: hidden; padding-top: 5px; margin: auto;'>
+<p style='float: left; width: 100%; padding-top: 5px; font: 10pt arial;'><a href='../featured/abstract-orchid-danielle-colucci.html' style='font: 10pt arial; text-decoration: none;'>Abstract Orchid</a></p><p style='float: left; width: 100%; padding-top: 2px; font: 8pt arial; color: #666666;'>Danielle Colucci</p></div>
+</div></div></div><div id='profilepagerightdivinnertop' class='titlebar' style='float: left; padding-top: 4px; padding-bottom: 4px; padding-left: 7px; padding-right: 7px; clear: both; border-top: none;'><p style='float: left; font: 8pt arial; color: #FFFFFF;'><a href='../profiles/dlucci-arts.html?tab=artwork&page=1&initiatesearch=true' style='font: 8pt arial; text-decoration: none; color: #FFFFFF;'>Search Within This Portfolio</a></p>
+<p style='float: left; font: 8pt arial; color: #FFFFFF;'>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Image Count = 29</p><a style='float: right; padding-right: 10px; margin-left: 10px; color: #FFFFFF;' href='dlucci-arts.html?page=2'>Next</a><a style='float:right; margin-left:10px; color: #FFFFFF;' href='dlucci-arts.html?page=2'>2</a><p style='color: #FFFFFF; float:right; margin-left: 10px;'><font color='#EEA10C'>[</font>1<font color='#EEA10C'>]</font></p><p style='float: right; color: #FFFFFF;'>Previous</p><p style='float: left; width: 1px; overflow: hidden;'>&nbsp;</p></div></div></div></div>
+</div>
+<div style='float: left; width: 100%; height: 1px; overflow: hidden; visibility: hidden;'>
+<div id='stumbledivbottom1' style='float: left;'><script src='http://www.stumbleupon.com/hostedbadge.php?s=5'></script></div>
+</div>
+
+</body>
+
+</html>

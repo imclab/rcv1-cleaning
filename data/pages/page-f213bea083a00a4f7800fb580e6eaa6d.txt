@@ -1,0 +1,113 @@
+<style type="text/css"> 
+@charset "UTF-8";
+
+.error_dialog_container {
+	font-family: Arial, Helvetica, "Sans Serif";
+	color: #0CF;
+
+	background-color: #ecf6fd;
+	border: solid 1px #a0d2e9;
+	padding: 43px 62px;
+	color: #252525;
+	width: 555px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	min-height: 281px;
+}
+
+#top_message {
+	margin:0;
+	padding:0;	
+}
+
+#top_message h1 {
+	margin-bottom: 0;
+	float: left;
+	text-decoration:none;
+	font-size:35px;
+	color:#1a4978;
+	font-weight:normal;
+	padding: 0;
+}
+
+.error_statement {
+	border-top: 1px solid #A0D2E9;
+	padding-top: 20px;
+}
+
+#long_description {
+	font-size:25px;
+	color:#0e6ba6;
+	font-weight:normal;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+
+.action_options {
+	padding-top:10px;
+}
+
+.action_options .button {
+	background-color:#2789BF;
+
+	background-repeat:repeat-x;
+	border:1px solid #0076A7;
+	cursor:pointer;
+	display:block;
+	float:left;
+	height:30px;
+	margin:0;
+	padding:0 10px;
+	margin-right:6px;
+	margin-bottom:40px;
+}
+
+.button a {
+	color:#FFFFFF;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:14px;
+	font-weight:normal;
+	text-decoration:none;	
+	line-height: 28px;
+}
+</style> 
+
+<div class="error_dialog_container"> 
+    <div class="error_statement" style="border-top: 0 !important;">
+<!-- BEGIN -->
+<!--big><b>Oops.</b></big><br/-->
+It looks like you've been very active on Manta&mdash;and that's great! Do us a favor and confirm you are human by filling out the bold type below.	<br/><br/>
+	<img id="captchaImage" />
+        <br/>
+        <input id="captchaInput" />
+        <button id="submitObject">Compare</button>
+        <br/><br/>
+        Incident Id: 521d1e1feab75
+        <script type="text/javascript">
+    this.SBM = {}; SBM.mode = "frmrld"; SBM.smbt = function () { if (SBM.mode=="frm") { SBM.captchaVld.value = VCO.smbt(); SBM.captchaInput.value = SBM.inputObj.value; var oSbmtFrm = document.getElementById("sbmtfrm"); oSbmtFrm.sbbSubmit(); } else { var captchaStr = SBM.inputObj.value; var exdate = new Date(); exdate.setDate(exdate.getDate() + 1); document.cookie = "cnfc=" + escape(captchaStr) + ";path=/; expires=" + exdate.toGMTString()+"; domain=.manta.com"; document.cookie = "pvstr=" + escape(VCO.smbt()) + ";path=/; expires=" + exdate.toGMTString()+"; domain=.manta.com"; window.location.reload(true); } }; SBM.init = function() { var imgObj = document.getElementById("captchaImage"); SBM.inputObj = document.getElementById("captchaInput"); var submitObj = document.getElementById("submitObject"); submitObj.onclick = function () { SBM.smbt(); }; imgObj.src = '/sbbi/?sbbpg=captcha'; imgObj.alt = "CAPTCHA"; SBM.inputObj.type = "text"; SBM.inputObj.autocomplete = "off"; SBM.inputObj.onkeypress = function (event) { VCO.sbfr(event); }; SBM.inputObj.onkeyup= function (event) { VCO.vke(event) }; var bodyObj = document.getElementsByTagName("body")[0]; SBM.captchaVld = document.createElement ("input"); SBM.captchaVld.type = "hidden"; SBM.captchaVld.name="pairvaluestr"; SBM.captchaInput = document.createElement ("input"); SBM.captchaInput.type = "hidden"; if (SBM.mode=="frm") { var submitFrm = document.createElement ("form"); bodyObj.appendChild(submitFrm); submitFrm.id = "sbmtfrm"; submitFrm.method = "post"; submitFrm.action=""; submitFrm.sbbSubmit = submitFrm.submit; submitFrm.appendChild(SBM.captchaInput); submitFrm.appendChild(SBM.captchaVld);  } else { bodyObj.appendChild(SBM.captchaVld); bodyObj.appendChild(SBM.captchaInput); } SBM.captchaInput.id = "kboautxnzy"; SBM.captchaInput.name = "captchastring"; }; SBM.init();
+    this.VCO = {}; VCO.at=Math.round((new Date()).getTime() / 1000); VCO.oFld = SBM.captchaInput; VCO.oVFld = SBM.inputObj; VCO.bt=VCO.at; VCO.dc=""; VCO.ccdv = function (kc) { var kcArr = [[48,10],[17,26],[32,26]]; var x=0; for (var i=0; i<kcArr.length; i++) { x=x+kcArr[i][0]; if (kc>=x) { if (kc<x+kcArr[i][1]) return 1; } else break; } return 0; }; VCO.cmp = function (kc) { var ochar = VCO.oVFld.value.substr(VCO.oVFld.value.length-1,1); if (ochar.toUpperCase().charCodeAt(0)==kc) return 1; else { return 0; } }; VCO.vke = function (e) { var kc; var d; if (window.event) kc = window.event.keyCode; else if (e) kc = e.which; else return; if (kc == 13) SBM.smbt(); else if (VCO.ccdv(kc)) { var ct = Math.round((new Date()).getTime() / 1000); var tt = (ct - VCO.bt); var dk=VCO.oFld.id; VCO.dc = VCO.dc + (VCO.cmp(kc)?dk.charAt(tt>(dk.length-2)?dk.length-2:tt):dk.charAt(dk.length-1)); VCO.bt=ct; } }; VCO.sbfr = function (e) { var kc; if (window.event) kc = window.event.keyCode; else if (e) kc = e.which; else return; if (kc == 13) SBM.smbt(); return true; }; VCO.ac = function () { var cst=""; var gc; var gs=""; for (l=97; l<122; l++) { cst += String.fromCharCode(l); } var l=0; while (l<VCO.oVFld.value.length) { gc = cst.charAt(Math.floor(Math.random()*25)); if (VCO.oFld.id.indexOf(gc)==-1) { l++; gs+=gc; } } return gs; }; VCO.csv = function() { if (VCO.dc=="") return true; var i; var dk=VCO.oFld.id; var dkl = dk.length-1; for (i=0; i<VCO.dc.length; i++) { if (dk.indexOf(VCO.dc.charAt(i))<dkl) return false; } return true; }; VCO.smbt = function() { VCO.at = Math.round((new Date()).getTime() / 1000)-VCO.at; return VCO.at+"/"+(VCO.csv()?VCO.ac():VCO.dc); }; 
+</script>
+
+<!-- END -->
+<!-- BUTTONS -->
+	<div class="action_options">
+		<div class="button"><a href="/">Manta Home</a></div>
+		<div class="button"><a href="/coms2/page_about_manta_contact">Contact Us</a></div>
+	</div>
+<!-- /BUTTONS -->
+    </div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10299948-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+

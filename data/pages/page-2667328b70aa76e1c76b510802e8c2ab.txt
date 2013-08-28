@@ -1,0 +1,839 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+
+<head>
+	<meta name="google-site-verification" content="ysicNvG46UnTl8MZIoQ1SpBAD_5F5nRooSJ6-yE9SV4" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="http://www.typepad.com/" />
+	
+
+	
+	
+	<link rel="stylesheet" href="http://blogs.cars.com/kickingtires/styles2.css" type="text/css" />
+
+
+	<link rel="alternate" type="application/atom+xml" title="Atom" href="http://blogs.cars.com/kickingtires/atom.xml" />
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://blogs.cars.com/kickingtires/index.rdf" />
+
+
+<script type="text/javascript" src="http://www.cars.com/js/lib/jquery/1_3_2/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.cars.com/js/cars/lib.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+   $('a[href*=flickr]').each(function() {
+     linkClass = "lightbox";
+     entryTitle = $(this).parents('.entry').children('.entry-header').text();
+	$(this).attr('class',linkClass);	
+	$(this).attr('rel',entryTitle);	
+    }); 
+});
+</script>
+
+
+<script type="text/javascript" src="/js/jquery.lightbox.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $('.lightbox').lightbox();
+$('.lightbox').click(function () { 
+         try {trackLink(this, 'Flickr_Images: ' +$(this).attr('rel'))} catch (e) {};
+        });
+  });
+</script>
+
+<script type="text/javascript" src="http://www.cars.com/js/cars/carsAdTagGenerator.js"></script>
+
+<script type="text/javascript">
+function turnip() {
+             var make = "";
+             make = $("select#navmakes_dropdown").val();
+             if (make != "no") {
+                  blogurl = "http://blogs.cars.com/kickingtires/";
+                  window.location.href = blogurl + make;
+             }
+}
+</script>
+
+<link rel="stylesheet" href="/js/thickbox.css" type="text/css" media="screen" />
+
+
+
+	<title>2013 Ford Shelby GT500 Convertible at the 2012 Chicago Auto Show - KickingTires</title>
+        <link  rel="canonical"  href="http://blogs.cars.com/kickingtires/2012/02/2013-ford-shelby-gt500-convertible-at-the-2012-chicago-auto-show.html" />
+	<link rel="start" href="http://blogs.cars.com/kickingtires/" title="Home" />
+	<link rel="prev" href="http://blogs.cars.com/kickingtires/2012/02/kia-trackster-concept-at-the-2012-chicago-auto-show.html" title="Kia Track'ster Concept at the 2012 Chicago Auto Show" />
+	<link rel="next" href="http://blogs.cars.com/kickingtires/2012/02/kia-adds-sx-limited-trim-to-2012-optima.html" title="Kia Adds SX Limited Trim to 2012 Optima" />
+
+        <link rel="stylesheet" href="http://blogs.cars.com/kickingtires/learnMore.css" type="text/css" />
+<script type="text/javascript" src="http://www.cars.com/configurator/js/lib/jquery/jquery.vsprintf.js"></script>
+<script type="text/javascript">
+var msrpHeader = 'MSRP';
+var VEHICLE_ROW_TEMPLATE = '<tr><td style="font-weight:bold;text-align:left;width:45%">%(vehicle)s</td><td class="right">%(msrpRange)s</td><td>%(mpgCity)s%(mpgHwy)s</td></tr><tr class="borderless"><td colspan="3"><a href="http://www.cars.com/go/search/provideZip.jsp?mknm=%(make)s&mdnm=%(model)s&year=%(year)d&tracktype=%(tracktype)s">Find This Car Near You</a> | <a href="http://www.cars.com/go/crp/research.jsp?year=%(year)d&makeid=%(carsmake)d&modelid=%(carsmodel)d"> Research and Compare</a></td></tr>';
+
+$(function() {
+
+var vehicleQuery = '';
+$('.carsReference').each(function() {
+    vehicleQuery += '&vehicle=' + $(this).text();
+});
+
+if (vehicleQuery.length > 0) {
+    $.getJSON('http://www.cars.com/go/crp2/json/fromCarsMulti.jsp?callback=?'+vehicleQuery, function(vehicleList) {
+        if (typeof vehicleList == 'undefined' || vehicleList.length == 0) return;
+        
+        var tableContent = '';
+        $.each(vehicleList, function(index, vehicle) {
+            if (!vehicle.isNew) msrpHeader = 'Original MSRP';
+            tableContent += $.sprintf(VEHICLE_ROW_TEMPLATE, {
+                'vehicle': vehicle.year+' '+vehicle.make+' '+vehicle.model,
+                'make': vehicle.make,
+                'model': vehicle.model,
+                'year': vehicle.year,
+                'msrpRange': vehicle.modelInfo.startingMSRP.min == vehicle.modelInfo.startingMSRP.max? vehicle.modelInfo.startingMSRP.minFormatted : vehicle.modelInfo.startingMSRP.minFormatted+' - '+vehicle.modelInfo.startingMSRP.maxFormatted,
+                'carsmake': vehicle.ids.carscom.make,
+                'carsmodel': vehicle.ids.carscom.model,
+                'mpgCity': vehicle.modelInfo.mpgCity.max > 0? vehicle.modelInfo.mpgCity.max+' city' : 'NA',
+                'mpgHwy': vehicle.modelInfo.mpgHwy.max > 0? ' / '+vehicle.modelInfo.mpgHwy.max+' highway' : '',
+                'tracktype': vehicle.isNew? 'newcc' : 'usedcc'
+            });
+        });
+        $('div#NextPrev').before('<div id="learnMore"><h3>Learn More on Cars.com</h3><table cellspacing="0" cellpadding=0" border="0" width="100%"><tr><th colspan="2" class="right">'+msrpHeader+'</th><th>Fuel Economy</th></tr>'+tableContent+'</table></div>');
+        $('#learnMore').show();
+        if ($.browser.msie) {
+            $('div.google_units').prepend($('#google_ads_frame1').remove().css('position','relative'));
+            $('div.google_units ins').remove();
+        }
+    });
+}
+
+});
+</script>
+
+	
+</head>
+<body class="layout-two-column-right">
+
+
+	
+
+	<div id="container">
+		<div id="container-inner" class="pkg">
+
+<script type="text/javascript" src="/js/querystring.js"></script>
+<script type="text/javascript" src="/js/cookies.js"></script>
+<script type="text/javascript">
+// Syntax: http://adamv.com/dev/javascript/querystring
+var qs = new Querystring();
+var affvalue = qs.get("aff");
+// Make sure to put spaces around each name
+var nopersist = " usatoday recycler carskbb msn msnbc forbesautos ketv tribe drivered driveone automotv iaguide whypay carprice fsbo cp capone ";
+// Syntax: http://techpatterns.com/downloads/javascript_cookies.php
+// remember, these are the possible parameters for Set_Cookie:
+// name, value, expires, path, domain, secure
+// If test if there is an affiliate value, and said value is not in the list of affiliates that shouldn't get a cookie
+if (affvalue == "cartalk") { var duration = 1 }
+else if (nopersist.indexOf(" " + affvalue + " ") > -1 ) { 1 }
+else { var duration = 21 }
+if ( affvalue ) Set_Cookie( 'affiliate', affvalue, duration, '/', '.cars.com', '' );
+if ( !(Get_Cookie('affiliate')) || Get_Cookie('affiliate') == "null" ) Set_Cookie( 'affiliate', 'national', duration, '/', '.cars.com', '' );
+</script>
+<div id="carsHeader">
+
+<!-- leaderboard here -->
+<div id="leaderboard">
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript"> 
+   CARS.adtag.drop({'sz':'728x90'});
+</SCRIPT>
+</div>
+
+<a href="/kickingtires/"><div id="headerLink"></div></a>
+<a href="http://www.cars.com"><div id="carsLogo"></div></a>
+</div>
+
+	
+			<div id="pagebody">
+				<div id="pagebody-inner" class="pkg">
+					<div id="alpha">
+						<div id="alpha-inner" class="pkg">
+							<!-- entry -->
+
+
+<div class="entry" id="entry-6a00d83451b3c669e20168e6fc3a85970c">
+	
+		<h1 class="entry-header">2013 Ford Shelby GT500 Convertible at the 2012 Chicago Auto Show</h1>
+	
+	<div class="entry-content">
+		<div class="entry-body">
+			<p><img alt="2013Shelbygt500vert" border="0" class="asset  asset-image at-xid-6a00d83451b3c669e2016761fb29ee970b" src="http://blogs.cars.com/.a/6a00d83451b3c669e2016761fb29ee970b-800wi" title="2013Shelbygt500vert" /></p>
+<ul>
+<li><strong>Competes with:</strong> Chevrolet Camaro ZL1 convertible</li>
+<li> <strong>Looks like: </strong>A faster way to get a suntan</li>
+<li> <strong>Drivetrain:</strong> 650-hp, supercharged 5.8-liter V-8 with six-speed manual transmission; rear-wheel drive</li>
+<li> <strong>Hits dealerships:</strong> Early summer 2012 </li>
+</ul>
+<p>Despite the balmy winter temperatures in Chicago this year, the convertible season is still a few months away. Ford is gearing up for top-down driving by launching a new convertible variant of its high-powered Mustang: the Shelby GT500.</p>
+<p><strong><a href="http://www.cars.com/autoshows/chicago/" target="_self"> More 2012 Chicago Auto Show Coverage </a></strong></p>
+<p>First shown in coupe form at the L.A. Auto Show last year, the Shelby GT500 convertible uses the same supercharged V-8 engine that delivers an impressive 650 horsepower and a top track speed of more than 200 mph.</p>
+
+		</div>
+		
+			<a id="more"></a>
+				
+<p>The convertible features the same muscled styling cues as the Shelby GT500 coupe, including a bulging hood, front splitter and unique grille with the Cobra badge. The rear incorporates revised versions of the familiar three-element taillights that the regular Mustang gains for 2013, too. The general silhouette is essentially the same as the Mustang convertible&#39;s, and the soft-top is powered and lined.</p>
+<p>With 650 hp, the Shelby GT500 convertible packs 100 hp more than the 2012 version, and with the optional Performance Package, Ford claims the car is 3.5 seconds faster around Sebring International Raceway. The package features adjustable Bilstein dampers with Normal and Sport modes. Brembo-brand brakes feature six-piston front calipers, larger rotors and special brake pads. For more performance, buyers can add a Track Package with extra cooling for engine oil, the rear differential and manual transmission.</p>
+		
+	</div>
+<div id="entryFooter">
+   <div class="header"></div>
+<div class="shareButtons">
+<!-- FACEBOOK LIKE BUTTON -->
+<div class="fbLike">
+<iframe src="http://www.facebook.com/plugins/like.php?href=http://blogs.cars.com/kickingtires/2012/02/2013-ford-shelby-gt500-convertible-at-the-2012-chicago-auto-show.html&amp;layout=button_count&amp;show_faces=false&amp;width=80&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=20" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:20px;" allowTransparency="true"></iframe>
+</div>
+<!-- END FACEBOOK LIKE BUTTON -->
+</div>
+  <div class="content">
+	By <a href="mailto:ask-MHanley@cars.com">Mike Hanley</a> | February  8, 2012 | <a href="http://blogs.cars.com/kickingtires/2012/02/2013-ford-shelby-gt500-convertible-at-the-2012-chicago-auto-show.html#comments">Comments (1)</a></div>
+
+        
+       <div class="content" id="tag">
+        <div class="rule"></div>
+Tags: <a href="http://blogs.cars.com/kickingtires/2012/"><!--http://blogs.cars.com/kickingtires/2012/ -->2012</a>, <a href="http://blogs.cars.com/kickingtires/2012-chicago-auto-show/"><!--http://blogs.cars.com/kickingtires/2012-chicago-auto-show/ -->2012 Chicago Auto Show</a>, <a href="http://blogs.cars.com/kickingtires/auto-show/"><!--http://blogs.cars.com/kickingtires/auto-show/ -->Auto Show</a>, <a href="http://blogs.cars.com/kickingtires/chicago/"><!--http://blogs.cars.com/kickingtires/chicago/ -->Chicago</a>, <a href="http://blogs.cars.com/kickingtires/chicago-auto-show/"><!--http://blogs.cars.com/kickingtires/chicago-auto-show/ -->Chicago Auto Show</a>, <a href="http://blogs.cars.com/kickingtires/ford/"><!--http://blogs.cars.com/kickingtires/ford/ -->Ford</a>, <a href="http://blogs.cars.com/kickingtires/ford-mustang/"><!--http://blogs.cars.com/kickingtires/ford-mustang/ -->Ford Mustang</a>
+</div>
+<!-- -->
+<div class="bottom"></div>
+</div>		
+			
+</div>
+
+
+<div id="NextPrev">
+
+<a id="previouspost" href="http://blogs.cars.com/kickingtires/2012/02/kia-trackster-concept-at-the-2012-chicago-auto-show.html"><span><img src="/images/arrowOrangeSmall1.gif" width="4" height="7">&nbsp;Previous</span></a>
+
+</MTIfEntryPrevious>
+
+
+
+
+<a id="nextpost" href="http://blogs.cars.com/kickingtires/2012/02/kia-adds-sx-limited-trim-to-2012-optima.html"><span>Next&nbsp;<img src="/images/arrowOrangeSmall2.gif" width="4" height="7"></span></a>
+
+</MTIfEntryNext>
+
+
+</div>
+
+<!--
+
+-->
+
+
+	<a id="comments"></a>
+	<div class="comments">
+		<h3 class="comments-header">Comments&nbsp;<img src="/images/commentBubble1.gif" /></h3>
+		<div class="comments-content">
+
+<div class="comment-upper"></div>
+		<div class="inside">	
+<!-- comment list -->
+
+  
+	<a id="c6a00d83451b3c669e2016302af5bb6970d"></a>
+	<div class="comment" id="comment-6a00d83451b3c669e2016302af5bb6970d">
+             <div id="comment-by">
+              <a rel="nofollow" target="_blank" title="http://autoauctionsinmichigan.info/" href="http://autoauctionsinmichigan.info/">Auto Auctions</a>
+             </div>
+
+		 <div id="comment-postdate">
+			<a href="http://blogs.cars.com/kickingtires/2012/02/2013-ford-shelby-gt500-convertible-at-the-2012-chicago-auto-show.html#comment-6a00d83451b3c669e2016302af5bb6970d">Mar 10, 2012 4:41:42 PM</a></div>
+
+		<div class="comment-content">
+			<p>Such a nice car!!</p>
+		</div>
+
+        <div class="bottom-mid"><img src="/images/lowerrule.gif" border="0" height="9" width="490"></div>
+
+
+ </div>
+
+   
+ 	
+</div>		
+</div>
+ <div class="bottom-sides"></div>
+	</div>
+<!-- comment form -->
+
+	<script type="text/javascript" src="http://static.typepad.com/.shared:vdcb131d:typepad:en_us/js/comments.js"></script>
+        <script type="text/javascript" src="http://blogs.cars.com/js/comment-slider.js"></script>
+	<script type="text/javascript">hostName = '.cars.com';</script>
+
+	<form id="comment-form"
+		method="post" action="http://www.typepad.com/t/comments">
+		<input type="hidden" name="entry_id" value="6a00d83451b3c669e20168e6fc3a85970c" />
+
+		<div class="comments-open">
+			<h2 class="comments-open-header">Post a Comment&nbsp;<img src="/images/commentBubble2.gif" /></h2>
+
+			<div class="comments-open-content">
+<div class="rules-container">
+  <div class="mover">
+  <h3 id="post-rules-heading">Please remember a few rules before posting comments:</h3>
+<ul>
+<li>If you don't want people to see your email address, simply type in the URL of your favorite website or leave the field empty.</li>
+<li>Do not mention specific car dealers by name. Feel free to mention your city, state and brand.</li>
+<li>Try to be civil to your fellow blog readers. This blog is not a fan or enthusiast forum, it is meant to help people during the car-buying process and during the time between purchases, so shoppers can keep a pulse on the market.</li>
+<li>Stay on topic. We want to hear your opinions and thoughts, but please only comment about the specified topic in the blog post.</li>
+</ul>
+</div>
+<div class="comment-pusher" id="slideToggle">view posting rules</div>
+</div>
+				
+
+				
+					<script type="text/javascript" src="http://www.typepad.com/t/comments?__mode=check_login"></script>
+
+					<p id="comments-open-login" style="display: block;">
+						
+							If you have a TypeKey or TypePad account, please
+							<a href="https://www.typekey.com/t/typekey/login?v=1.0&t=a35b4f90e1ffb6e064ca6c6e0759420195b4d207&lang=en_US&_return=http%3A%2F%2Fblogs.cars.com%2Fkickingtires%2F2012%2F02%2F2013-ford-shelby-gt500-convertible-at-the-2012-chicago-auto-show.html&_portal=typepad">Sign In</a>
+						
+					</p>
+
+					<p id="comments-open-logout" style="display: none;">
+						You are currently signed in as
+						<span id="commenter-name">(nobody)</span>.
+						<a href="http://blogs.cars.com/.services/sitelogout?to=https%3A%2F%2Fwww.typekey.com%2Ft%2Ftypekey%2F%3F__mode%3Dlogout%26_return%3Dhttp%253A%252F%252Fblogs.cars.com%252Fkickingtires%252F2012%252F02%252F2013-ford-shelby-gt500-convertible-at-the-2012-chicago-auto-show.html">Sign Out</a>
+					</p>
+				
+
+				
+                                     <div class="comment-upper"></div>
+                               
+                                       <div class="inside-comment-form">
+					<div id="comments-open-data">
+						<p>
+							<label for="comment-author">Name:</label>
+							<input id="comment-author" name="author" size="30" />
+						</p>
+						<p>
+							<label for="comment-email">Email Address:</label>
+							<input id="comment-email" name="email" size="30" />
+						</p>
+						<p>
+							<label for="comment-url">URL:</label>
+							<input id="comment-url" name="url" size="30" />
+						</p>
+						<p>
+							<label for="comment-bake-cookie"><input type="checkbox"
+								id="comment-bake-cookie" name="bakecookie" value="1" />
+								Remember personal info?</label>
+						</p>
+					</div>
+				
+
+				<p id="comments-open-text"
+					
+					>
+					<label for="comment-text">Comments:</label>
+					<textarea id="comment-text" name="text" rows="10" cols="30"></textarea>
+				</p>
+			</div>
+                        </div>
+			<div id="comments-open-footer" class="comments-open-footer">
+                         
+				<input type="submit" name="preview" id="comment-preview" value="&nbsp;Preview&nbsp;"/>
+				<input type="submit" name="post" id="comment-post" value="&nbsp;Post&nbsp;" />
+			</div>
+		</div>
+	</form>
+
+	
+		<script type="text/javascript">
+			commentSignIn();
+		</script>
+	
+
+
+<div class="bottom-sides"></div>
+
+
+
+<!-- DoubleClick Floodlight Tag -->
+<script type="text/javascript">
+  var axel = Math.random() + "";
+  var a = axel * 10000000000000;
+  document.write('<iframe src="http://fls.doubleclick.net/activityi;src=2388676;type=exter655;cat=45_in229;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+</script>
+<noscript>
+  <iframe src="http://fls.doubleclick.net/activityi;src=2388676;type=exter655;cat=45_in229;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+</noscript>
+
+						</div>
+					</div>
+					<div id="beta">
+						<div id="beta-inner" class="pkg">
+							<!-- sidebar -->
+<table width="390px" border="0">
+  <tr>
+<td valign="top">
+
+
+
+
+<!-- sidebar -->
+
+<div id="carsRightRail">
+
+<script>
+
+addNamespace('CARS.gSearch');
+
+CARS.gSearch = {
+// defaults
+page: 1, qTerm: '', form: 'form.gSearch-form', resultsContainer:'div#gSearch-results-container',
+// functions
+	init: function() {
+		$(CARS.gSearch.form).each(function(index) {
+			var that = this;
+			this.id = this.id || 'form-' + String((new Date()).getTime()).replace(/\D/gi,'');
+			$(this).submit(function() {
+				CARS.gSearch.page = 1;
+				CARS.gSearch.query(CARS.gSearch.page,that); 
+				return false; 
+			});
+			$("a#blog-search",this).click(function() { CARS.gSearch.query(CARS.gSearch.page,that); return false; });
+		});
+		// There should only be one results pane on the page, but use .each() here for safety's sake
+		$(CARS.gSearch.resultsContainer).each(function(index) {
+			var that = this;
+			$('a.next',this).click(function() {
+				CARS.gSearch.page += 1;
+				CARS.gSearch.query(CARS.gSearch.page);
+				return false;
+			});
+			$('a.previous',this).click(function() {
+				CARS.gSearch.page -= 1;
+				CARS.gSearch.query(CARS.gSearch.page);
+				return false;
+			});
+			$('a.close',this).click(function() {
+				$(that).hide('slow');
+				return false;
+			});		
+		});
+	},
+	query: function(page,w) {
+		CARS.utility.logit(w);
+		if (typeof(w) !== 'undefined') { CARS.gSearch.qTerm = w.q.value; }
+		CARS.gSearch.page = page || 1;
+		var that = $('#gSearch-results-container');
+		$.getJSON("http://www.cars.com/go/blogs/google-search-data/kickingtires.jsp?callback=?", { q: CARS.gSearch.qTerm, pg: CARS.gSearch.page }, function(data) {
+			var container = $("#gSearch-results", that);
+                        $("#gSearchTitle strong").text(CARS.gSearch.qTerm);
+			container.empty();
+			$.each(data.results, function(i,result) {
+				container.append("<div class=\"result\"><a href=\"" + result.url + "\">" + result.title + " </a><p>" + result.snippet + "</p></div>");
+				
+			});
+			that.show('slow');
+		});
+
+	}
+}
+</script>
+
+<div id="gSearch-container">
+
+<div id="gSearch-results-container">
+<div class="right"><a id="close" class="close" href="">Close</a></div>
+<h2>Search Results</h2>
+<h3 id="gSearchTitle">KickingTires Search Results for <strong></strong></h3>
+<div id="gSearch-results"></div>
+
+<div id="gSearch-footer">
+<a id="prev" class="previous" href="">Previous</a> | 
+<a id="next" class="next" href="">Next</a>
+</div>
+</div>
+<div id="gSearch-form-container">
+<h4>Search Kicking Tires</h4>
+<form class="gSearch-form" id="miniForm" action="" method="get">
+<input type="hidden" name="start" value="0" />
+<input id="q" name="q" type="text" /> <input type="image" src="/images/search-button.gif" />
+</form>
+</div>
+
+<script type="text/javascript">
+CARS.gSearch.init();
+</script>
+
+</div>
+
+<!-- category Links go here -->
+
+<div id="header">
+<div class="headerTR">
+<h3>Categories</h3></div>
+</div>
+
+<div id="moduleLinks">
+<div class="mod-inside">
+  <ul>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/about-us.html">About Us</a></li>
+
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/best-sellers/">Best Sellers</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/car_buying/">Car Buying</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/car_gadgets/">Car Gadgets</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/car_reviews/">Car Reviews</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/car-seat-check/">Car Seat Checks</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/family/">Family News</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/hybridsalternative_fuels/">Hybrids/Alternative Fuels</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/incentives/">Incentives</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/in_the_news/">In The News</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/long-term-test-cars/">Long-Term Test Cars</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/movers_and_losers/">Movers and Losers</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/multicar-challenges.html">Multicar Challenges</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/photo-gallery/">Photo Galleries</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/recalls/">Recalls</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/safety/">Safety</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/video/">Video</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2013-new-york-auto-show/">2013 New York Auto Show</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2013-chicago-auto-show/">2013 Chicago Auto Show</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2013-detroit-auto-show/">2013 Detroit Auto Show</a></li>
+<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2012-los-angeles-auto-show/">2012 L.A. Auto Show</a></li>
+
+
+
+
+
+
+</ul>
+</div>
+<div class="module-bottom"></div>
+</div>
+
+<!-- cars.com site Links go here-->
+
+<div id="header">
+<div class="headerTR">
+<h3>Cars.com Links</h3></div>
+</div>
+
+<div id="moduleLinks">
+<div class="mod-inside">
+<ul>
+<li><a href="http://www.cars.com/go/crp/index.jsp">Research a Vehicle</a></li>
+<li><a href="http://www.cars.com/go/buyIndex.jsp">Search for New & Used</a></li>
+<li><a href="http://siy.cars.com/siy/zipEntry.jsp">List Your Vehicle for Sale</a></li>
+<li><a href="http://www.cars.com/go/advice/index.jsp">Read Automotive Advice</a></li>
+<li><a href="http://research.cars.com/go/crp/reviewsIndex.jsp">Read Expert Reviews</a></li>
+<li><a href="http://www.cars.com/go/crp/consrevwidget.jsp">Review Your Own Car</a></li>
+<li><a href="http://www.cars.com/dealerreviews/">Review Your Dealership</a></li>
+<li class="borderBottom"><a href="http://www.cars.com/go/criteriaSearch/lifestyles.jsp">Find Cars That Fit Your Life</a></li>
+<li><a href="http://www.cars.com/marketplace/">Find Insurance, Parts and More</a></li>
+</ul>
+</div>
+<div class="module-bottom"></div>
+</div>
+
+
+<!-- div class="promoTile">
+<a href="http://www.cars.com/go/advice/Story.jsp?section=top&story=topScary&subject=more"><img src="/images/scarycars.gif" alt="Top 10 Scary Cars" width="163" height="93" border="0" /></a>
+</div -->
+<!-- div class="promoTile">
+<a href="http://www.surveyconsole.com/console/TakeSurvey?id=247397"><img src="/images/surveyButton.gif" alt="Kicking Tires Reader Survey" width="160" height="75" border="0" /></a>
+</div -->
+<!-- div class="promoTile">
+<a href="http://www.cars.com/go/features/autoshows/coverageIndexI.jsp?autoshow=New+York&autoshowyear=2007"><img src="/images/NewYorkAutoShow-Button.gif" alt="2007 New York Auto Show coverage" width="164" height="75" border="0" /></a>
+</div -->
+<!-- div class="promoTile">
+<a href="http://www.cars.com/go/features/autoshows/coverageIndexI.jsp?autoshow=Chicago&autoshowyear=2007"><img src="/images/ChicagoAutoShow-Button.gif" alt="2007 Chicago Auto Show coverage" width="160" height="75" border="0" /></a>
+</div -->
+<!-- div class="promoTile">
+<a href="http://www.cars.com/go/features/autoshows/coverageIndexI.jsp?autoshow=Detroit&autoshowyear=2007"><img src="/images/detroit_Button.gif" alt="2007 Detroit Auto Show coverage" width="160" height="75" border="0" /></a>
+</div -->
+<!-- div class="promoTile">
+<a href="http://www.cars.com/go/features/autoshows/coverageIndexI.jsp?autoshow=Los+Angeles&autoshowyear=2007"><img src="/images/2007LA_blogTile.gif" alt="2007 Los Angeles Auto Show coverage" width="160" height="75" border="0" /></a>
+</div -->
+<!-- div class="promoTile">
+<a href="http://www.cars.com/go/advice/Story.jsp?section=top&story=bondCars&subject=more"><img src="/images/007_teaser.gif" alt="Top 007 Cars" width="160" height="75" border="0" /></a>
+</div -->
+<!--<div class="promoTile">
+<a href="http://blogs.cars.com/kickingtires/gm_employee_pricing/"><img src="http://blogs.cars.com/kickingtires/images/incentivebadge.jpg" alt="GM Incentives Promotion" width="164" height="75" border="0" /></a>
+</div>-->
+<!--<div class="promoTile">
+<a href="http://blogs.cars.com/kickingtires/2009/02/get-kickingtires-on-your-iphone.html"><img src="/images/iphonemsg1.jpg" alt="Kicking Tires on iPhone" width="219" height="73" border="0" /></a>
+</div>-->
+
+<div class="promoTile">
+<a href="http://blogs.cars.com/kickingtires/2010/02/carscom-launches-free-iphone-app-.html"><img src="/images/KT_iphoneteaser_text.jpg" alt="KickingTires iPhone App" width="220" height="197" border="0" /></a>
+</div>
+
+<div class="promoTile">
+<a href="http://ask.cars.com/"><img src="/images/askKTPromoButton1.jpg" alt="Ask.cars.com" width="219" height="60" border="0" /></a>
+</div>
+
+<!-- Kicking Tires Recent Comments Module-->
+<div id="header">
+<div class="headerTR">
+	<h3>Recent Comments</h3></div>
+  </div>
+<div class="moduleLinks">
+   <div class="mod-inside">
+	<div id="recent-commentLinks">
+		<ul class="module-list">
+			
+				<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2013/08/kias-hamsters-hit-the-gym-with-lady-gaga.html">Kia's Hamsters Hit the Gym With Lady Gaga</a>&nbsp;by
+  <a href="http://blogs.cars.com/kickingtires/2013/08/kias-hamsters-hit-the-gym-with-lady-gaga.html#comment-6a00d83451b3c669e20192acc9ecd9970d">Dee G</a></li>
+			
+				<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2013/08/2014-toyota-corolla-starts-at-17610.html">2014 Toyota Corolla Starts at $17,610</a>&nbsp;by
+  <a href="http://blogs.cars.com/kickingtires/2013/08/2014-toyota-corolla-starts-at-17610.html#comment-6a00d83451b3c669e201901f0ade07970b">Tony</a></li>
+			
+				<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2012/09/2013-honda-accord-trim-breakdown.html">2013 Honda Accord: Explaining The Trim Levels</a>&nbsp;by
+  <a href="http://blogs.cars.com/kickingtires/2012/09/2013-honda-accord-trim-breakdown.html#comment-6a00d83451b3c669e201901f0ab71c970b">Ravi Jay // @nycmixing</a></li>
+			
+				<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2013/08/what-to-drive-to-your-high-school-reunion.html">What to Drive to Your High School Reunion</a>&nbsp;by
+  <a href="http://blogs.cars.com/kickingtires/2013/08/what-to-drive-to-your-high-school-reunion.html#comment-6a00d83451b3c669e2019105006421970c">responder</a></li>
+			
+				<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2012/04/scion-xb-and-xd-to-be-discontinued.html">Scion xB and xD to Be Discontinued</a>&nbsp;by
+  <a href="http://blogs.cars.com/kickingtires/2012/04/scion-xb-and-xd-to-be-discontinued.html#comment-6a00d83451b3c669e201901f0a8e53970b">HikingMike</a></li>
+			
+				<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2013/08/carscom-reviews-the-2013-chrysler-200.html">Cars.com Reviews the 2013 Chrysler 200</a>&nbsp;by
+  <a href="http://blogs.cars.com/kickingtires/2013/08/carscom-reviews-the-2013-chrysler-200.html#comment-6a00d83451b3c669e20192acc9877f970d">skippydog</a></li>
+			
+				<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2013/08/2014-toyota-corolla-starts-at-17610.html">2014 Toyota Corolla Starts at $17,610</a>&nbsp;by
+  <a href="http://blogs.cars.com/kickingtires/2013/08/2014-toyota-corolla-starts-at-17610.html#comment-6a00d83451b3c669e20192acc9853e970d">skippydog</a></li>
+			
+				<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2013/08/study-fort-collins-colo-has-safest-drivers-dc-remains-worst.html">Study: Fort Collins, Colo., Has Safest Drivers; D.C. Remains Worst</a>&nbsp;by
+  <a href="http://blogs.cars.com/kickingtires/2013/08/study-fort-collins-colo-has-safest-drivers-dc-remains-worst.html#comment-6a00d83451b3c669e2019105004ef7970c">Scott Bundi</a></li>
+			
+				<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2013/06/chevy-buick-gmc-add-two-years-free-service-on-new-cars.html">Chevy, Buick, GMC Add Two Years of Free Service on New Cars</a>&nbsp;by
+  <a href="http://blogs.cars.com/kickingtires/2013/06/chevy-buick-gmc-add-two-years-free-service-on-new-cars.html#comment-6a00d83451b3c669e20192acc9596a970d">Jensen Mott</a></li>
+			
+				<li class="module-list-item"><a href="http://blogs.cars.com/kickingtires/2013/08/kias-hamsters-hit-the-gym-with-lady-gaga.html">Kia's Hamsters Hit the Gym With Lady Gaga</a>&nbsp;by
+  <a href="http://blogs.cars.com/kickingtires/2013/08/kias-hamsters-hit-the-gym-with-lady-gaga.html#comment-6a00d83451b3c669e201901f0a3de9970b">greentraveler</a></li>
+			
+		</ul>
+    </div>
+	</div>
+<div class="module-bottom"></div>
+</div>
+
+
+<div class="module-syndicate module">
+	<div class="module-content">
+		
+<a href="http://blogs.cars.com/kickingtires/index.rdf"><img src="/images/rss1.gif" border="0"> Subscribe to our feed</a>
+<br />
+<a href="mailto:tips@cars.com"><img src="/images/email.gif" border="0"> Email us your tips!</a>
+
+	</div>
+</div>
+
+
+
+
+</div>
+
+<td valign="top"><div id="AdRail">
+<div class="railAd">
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript"> 
+   CARS.adtag.drop({'sz':'160x600'});
+</SCRIPT> 
+</div>
+</div></td>
+  </tr>
+</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+
+<div id="Footer" style="height: 270px; padding-top: 20px;">
+ <div class="center">
+   <div class="footerColumn" style="left: 0px;">
+     <h6><a href="http://www.cars.com/go/buyIndex.jsp">Buy</a></h6>
+     <ul>
+        <li><a href="http://www.cars.com/go/buyIndex.jsp">Search for New & Used Cars</a></li>
+        <li><a href="http://www.cars.com/go/buyIndex.jsp">Build a New Car</a></li>
+        <li><a href="http://www.cars.com/go/dealersearch/index.jsp">Find Car Dealers Near You</a></li>
+        <li><a href="http://www.cars.com/go/espanol/">Buscar en Espanol</a></li>
+     </ul>
+   </div>
+
+   <div class="footerColumn" style="left: 240px;">
+     <h6><a href="http://siy.cars.com/siy/index.jsp">Sell</a></h6>     
+      <ul>
+        <li><a href="http://siy.cars.com/siy/index.jsp">List Your Car for Sale</a></li>
+        <li><a href="http://www.cars.com/go/advice/Story.jsp?section=sell&subject=how_sell&story=sellPrep&referer=advice">How to Sell Your Car</a></li>
+        <li><a href="http://www.cars.com/go/kbb/kbbInput.jsp">How Much Is Your Car Worth?</a></li>
+        <li><a href="http://siy.cars.com/siy/qsg/faqGeneralInfo.jsp">Frequently Asked Questions</a></li>
+     </ul>
+   </div>
+   <div class="footerColumn" style="left: 480px;">
+     <h6><a href="http://www.cars.com/go/crp/index.jsp">Research</a></h6>     
+      <ul>
+        <li><a href="http://research.cars.com/go/crp/index.jsp">Research a Specific Car</a></li>
+        <li><a href="http://www.cars.com/go/compare/index.jsp">Compare Cars Side-by-Side</a></li>
+        <li><a href="http://research.cars.com/go/crp/reviewsIndex.jsp">Read Expert Reviews</a></li>
+        <li><a href="http://www.cars.com/go/criteriaSearch/lifestyles.jsp">Find Cars That Match Your Lifestyle</a></li>
+     </ul>
+   </div>
+
+   <div class="footerColumn" style="left: 720px;">
+     <h6><a href="http://www.cars.com/go/newsIndex.jsp">Shopping Advice</a></h6>     
+      <ul>
+        <li><a href="http://www.cars.com/go/advice/Section.jsp?section=buy">For Buying a Car</a></li>
+        <li><a href="http://www.cars.com/go/advice/Section.jsp?section=fin">For Financing a Car</a></li>
+        <li><a href="http://www.cars.com/go/advice/Section.jsp?section=top">Top 10 Car Lists</a></li>
+        <li><a href="http://www.cars.com/go/advice/Story.jsp?section=fuel&subject=fuelList&story=mpgClass">Gas Mileage Lists</a></li>
+     </ul>
+   </div>
+
+ </div>
+
+
+<div class="footerBottom" style="position: relative; width: 960px; margin-left: auto; margin-right: auto; text-align: center; top: 150px;">
+ <p>
+<a href="http://www.cars.com/" target="_top">Cars.com Home</a> | 
+<a href="http://www.cars.com/go/about/index.jsp" target="_top">About Cars.com</a> | <a href="http://www.cars.com/careers/" target="_top">Employment Opportunities</a> | <a href="http://www.cars.com/go/about/us.jsp?section=C&content=deal" target="_top">Become a Cars.com Dealer</a>
+ </p>
+ <p>
+By using this site, you agree to our <a href="http://www.cars.com/go/about/tos.jsp" target="_top">terms of service</a> | <a href="http://www.cars.com/go/about/tos.jsp" target="_top">&copy;2013 Cars.com</a> | <a href="http://www.cars.com/go/about/privacy.jsp" target="_top">Privacy Statement</a>
+ </p>
+
+</div>
+</div>
+
+
+<img src="http://ad.yieldmanager.com/pixel?id=118974&t=2" />
+
+<script type="text/javascript" src="http://www.cars.com/includes/bidiq/bidiqCookieDropper.js"></script>
+
+<!-- SiteCatalyst code version: H.11.
+Copyright 1997-2007 Omniture, Inc. More info available at
+http://www.omniture.com -->
+<script language="JavaScript" src="http://www.cars.com/js/omniture/s_code.js"></script>
+<script language="JavaScript"><!--
+s_clven.pageName="";
+s_clven.server="";
+s_clven.channel="";
+s_clven.pageType="";
+s_clven.prop1="";
+s_clven.prop2="";
+/* E-commerce Variables */
+s_clven.campaign="";
+s_clven.state="";
+s_clven.zip="";
+s_clven.events="";
+s_clven.events="";
+s_clven.products="";
+s_clven.purchaseID="";
+s_clven.eVar1="";
+s_clven.eVar2="";
+/* Get Page Name */
+s_clven.defaultPage="KT-home-or-cat" // filename to add when none exists
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s_clven.t();if(s_code)document.write(s_code);document.close();//--></script>
+<!-- End SiteCatalyst code version: H.11. -->
+<script type="text/javascript">
+<!--
+var extra_happy = Math.floor(1000000000 * Math.random());
+document.write('<img src="http://www.typepad.com/t/stats?blog_id=345700&amp;user_id=823772&amp;page=' + escape(location.href) + '&amp;referrer=' + escape(document.referrer) + '&amp;i=' + extra_happy + '" width="1" height="1" alt="" style="position: absolute; top: 0; left: 0;" />');
+// -->
+</script>
+
+
+<!-- Start Quantcast tag -->
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">_qoptions = { tags:"typepad.extended" }; _qacct="p-fcYWUmj5YbYKM"; quantserve();</script>
+<noscript>
+<a href="http://www.quantcast.com/p-fcYWUmj5YbYKM" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-fcYWUmj5YbYKM.gif?tags=typepad.extended" style="display: none" border="0" height="1" width="1" alt="Quantcast"/></a>
+</noscript>
+<!-- End Quantcast tag -->
+
+<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+<script type="text/javascript">
+var captchaImgAttempts = 0;
+var allowAnonComments = '0';
+var registrationRequired = 0;
+var registrationOptional = 1;
+var emailRequired = 0;
+var useAvatars = 0;
+
+var showSignInMessaging = 0;
+var jsonURL = "/.services/json-rpc";
+
+var captchaSrc = "/.services/captcha?code_encrypted=";
+var alertCommentCannotBeBlank = "You can not leave an empty comment. Please enter some text in the Comment field.";
+var alertEditingExpired = "Sorry, you're no longer allowed to edit this comment. You may have taken too much time before submitting your edit or someone may have already replied to it.";
+
+var alertAuthorCannotBeBlank = "Name must not be blank.";
+var alertEmailCannotBeBlank = "Email Address must not be blank.";
+var alertAuthorAndEmailCannotBeBlank = "Name and email address are both required!";
+var alertEmailIsInvalid = "The Email Address you entered is invalid. Please enter a valid email address.";
+var alertUnauthorizedAction = "The comments on this post are closed.";
+var msgPostReplyTo = "Reply to ";  
+var msgInReplyTo = "In reply to ";
+var msgPostAComment = "Post a comment ";
+var atpCommentsPath = "/.shared/js/atpcomments_yui.js?v=5";
+var hasChanged = 0;
+var hostName = ".cars.com";
+var tp_comment_token = "1377642179-64b55b37ece27e101a55c2c1e09476c2cc6df583:6K6ipKYdt3IJPA3D";
+
+var use_recaptcha = 1;
+var recaptcha_publickey = "6Ldg1s4SAAAAAEvvZX2ILFkWp7KB-jjdL4v0JV2e";
+var isPage = 0;
+var blog_xid = "6a00d83451b3c669e200d8341c52e153ef";
+var xid = "";
+var injectCode = '<div id=\"comment-preview\" class=\"hiddenBox\">\n\t<h3 id=\"header-verify-comment\" class=\"comments-header hiddenBox\">Verify your Comment<\/h3>\n    <h3 id=\"header-preview-comment\" class=\"comments-header hiddenBox\">Previewing your Comment<\/h3>\n\t<div class=\"comments-content\">\n\t\t<div class=\"comment\">\n\t\t\t<div id=\"comment-preview-content\" class=\"comment-content\">\n\t\t\t<\/div>\n\t\t\t<p class=\"comment-footer\">\n\t\t\t\tPosted by: \n\t\t\t\t<span id=\"comment-preview-author\"><\/span>&nbsp;|&nbsp;<span id=\"comment-preview-datetime\"><\/span>\n\t\t\t<\/p>\n\t\t<\/div>\n\t<\/div>\n<\/div>\n<div id=\"comment-preview-confirmation\" class=\"hiddenBox yellowBox\">\n    <p>This is only a preview. Your comment has not yet been posted.<\/p>\n   \t<form id=\"comment-preview-form\"\n   \t\tmethod=\"post\"\n   \t\tonsubmit=\"atpComments.interceptPost(1); return false;\">\n\t\t<input type=\"submit\" name=\"post\" id=\"comment-confirm-post\" value=\"&nbsp;Post&nbsp;\" onclick=\"atpComments.interceptPost(1); return false;\"/>\t\t    \n\t\t<input type=\"submit\" name=\"edit\" id=\"comment-edit\" value=\"&nbsp;&nbsp;Edit&nbsp;&nbsp;\" onclick=\"atpComments.previewOnly(2); return false;\"/>\n        <span id=\"previewFormSpinner\" class=\"hiddenBox\"><img src=\"/.shared/images/spinner.gif\" alt=\"Working...\" /><\/span>\n\t<\/form>\n<\/div>\n<div id=\"comment-error\" class=\"hiddenBox redBox\">\t    \n   Your comment could not be posted. Error type: <span id=\"comment-error-msg\"><\/span> \n<\/div>\t\n<div id=\"comment-complete\" class=\"hiddenBox yellowGreenBox\">\n    Your comment has been posted. <a href=\"javascript:void 0;\" onclick=\"window.location.hash=\'#comment-form\';window.location.reload(false)\">Post another comment<\/a>\n<\/div>\t\n<div id=\"comment-captcha\" class=\"hiddenBox yellowBox\">\t\n    <div id=\"captchaText\">\n\t    <p id=\"captchaFailMsg\" class=\"captchaErrorText hiddenBox\">The letters and numbers you entered did not match the image. Please try again.<\/p>\t    \t        \n\t    <p>As a final step before posting your comment, enter the letters and numbers you see in the image below. This prevents automated programs from posting comments.<\/p>\n\t    <p><span id=\"comment-captcha-viewalt\">Having trouble reading this image? <a href=\"#comment-captcha\" onClick=\"atpComments.generateReCaptcha();\">View an alternate.<\/a><\/span><\/p>\n    <\/div>\n    <form id=\"comment-captcha-form\" \n\t\t  method=\"post\"\n\t\t  onsubmit=\"atpComments.submitWithReCaptcha(); return false;\">\n    <div id=\"recaptcha_content\">\n      <noscript>\n        <iframe src=\"6Ldg1s4SAAAAAEvvZX2ILFkWp7KB-jjdL4v0JV2e\" height=\"300\" width=\"500\" frameborder=\"0\"><\/iframe><br />\n        <textarea name=\"recaptcha_challenge_field\" rows=\"3\" cols=\"40\"><\/textarea>\n        <input type=\'hidden\' name=\'recaptcha_response_field\' value=\'manual_challenge\' />\n      <\/noscript>\n    <\/div>\n  <script type=\"text/javascript\">\n    $(document).ready(function() {\n        Recaptcha.create(\"6Ldg1s4SAAAAAEvvZX2ILFkWp7KB-jjdL4v0JV2e\",\n                         \"recaptcha_content\", {\n                             theme: \"red\",\n                             callback: Recaptcha.focus_response_field\n        });\n    });\n  <\/script>\n        <p>\n            <input type=\"submit\" name=\"continue\" id=\"captcha-continue\" value=\"&nbsp;Continue&nbsp;\" />\n            <span id=\"captchaFormSpinner\" class=\"commentSpinner hiddenBox\"><img src=\"/.shared/images/spinner.gif\" alt=\"Working...\" /><\/span>\n        <\/p>\n    <\/form>\n<\/div>\n'; 
+var entryPermalink = "http://blogs.cars.com/kickingtires/2012/02/2013-ford-shelby-gt500-convertible-at-the-2012-chicago-auto-show.html";
+var inlineReply = document.createElement("div");
+var commentFooterLinks;
+var commentHeader;
+var commentReplyXID;
+var commentReplyAuthor;
+var commentReplyComplete;
+var inlineReplyLoaded = 0;
+var commentFormNum = undefined; /* Deprecated but still exists in advanced template sets, so must be defined */
+
+function xidToCommentPermalink (entryUrl, xid) {
+    return entryUrl + "?cid=" + xid + "#comment-" + xid;
+}
+
+
+/* Deprecated advanced template functions */
+function handleSubmit() { return true; };
+function handleChange() { return true; };
+</script>
+<script type="text/javascript" src="/.shared/js/yui/yuiloader-beta-min.js"></script>
+<script type="text/javascript" src="/.shared/js/atpcomments.js?v=5"></script>
+
+<!-- Begin comScore Tag -->
+<script>
+document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js'%3E%3C/script%3E"));
+</script>
+<script>
+COMSCORE.beacon({
+  c1: 2,
+  c2: "6035669",
+  c3: "",
+  c4: "http://blogs.cars.com/kickingtires/2012/02/2013-ford-shelby-gt500-convertible-at-the-2012-chicago-auto-show.html",
+  c5: "",
+  c6: "",
+  c15: ""
+});
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/b?c1=2&c2=6035669&c3=&c4=http%3A%2F%2Fblogs.cars.com%2Fkickingtires%2F2012%2F02%2F2013-ford-shelby-gt500-convertible-at-the-2012-chicago-auto-show.html&c5=&c6=&c15=&cv=1.3&cj=1" style="display:none" width="0" height="0" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+</body>
+</html>
+<!-- ph=1 -->

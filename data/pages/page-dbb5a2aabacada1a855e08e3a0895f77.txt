@@ -1,0 +1,827 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<link rel="shortcut icon" href="/sites/birmingham365.org/icons/favicon.ico" type="image/x-icon" />
+<title>Arts, Sports, Culture & Entertainment: Things to Do in Birmingham, Alabama | Birmingham365</title>
+<meta name="description" content="Birmingham365.org is a source for finding current events, education-related programs, and arts and cultural happenings in central Alabama." />
+<meta name="keywords" content="Birmingham365, arts, education programs, greater Birmingham, Birmingham, Alabama, things to do, Culturalliance, Greater Birmingham Cultural Alliance, Birmingham events calendar, Birmingham events, things to do in birmingham, Birmingham region, things to do in birmingham al" />
+
+<link rel="stylesheet" href="/css/reset.css" type="text/css" media="screen, projection, print"/>
+<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection"/>
+<link rel="stylesheet" href="/css/jquery-ui-1.8.18.custom.css" type="text/css" media="screen, projection"/>
+<link rel="stylesheet" href="/css/jquery.qtip.min.css" type="text/css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="/js/fancybox/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/js/fancybox/fancybox/style.css" />
+<link rel="stylesheet" type="text/css" href="/sites/birmingham365.org/css/custom/dynamic_css_file.css" media="screen, projection"/>
+<link rel="stylesheet" href="/sites/birmingham365.org/css/custom/screen-override.css" type="text/css" media="screen, projection"/>
+
+<link rel="stylesheet" href="/css/print.css" type="text/css" media="print"/>
+<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="/js/scripts.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/fancybox/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="/site/spotlight_box/spotlight.css" /><link rel="stylesheet" type="text/css" href="/sites/birmingham365.org/spotlight_box/spotlight.css" /><script type="text/javascript" src="/site/spotlight_box/spotlight.js"></script><script> $.getScript("/sites/birmingham365.org/spotlight_box/spotlight_box.js"); </script>
+<script type="text/javascript" src="/js/jquery.semantictabs.js"></script>
+<script type="text/javascript" src="/js/jquery.qtip.min.js"></script>
+<!-- DAMON: Updated paths to js and css files in IE conditionals. Now point to specific versions of IE instead of using "lte" versions. -->
+<!--[if IE]>
+<script type="text/javascript" src="/js/ie.js"></script>
+<link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen, projection"/>
+<![endif]-->
+<!--[if IE 8]>
+<script type="text/javascript" src="/js/ie8.js"></script>
+<link rel="stylesheet" href="/css/ie8.css" type="text/css" media="screen, projection"/>
+<![endif]-->
+<!--[if IE 7]>
+<script type="text/javascript" src="/js/ie7.js"></script>
+<link rel="stylesheet" href="/css/ie7.css" type="text/css" media="screen, projection"/>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="/js/DD_belatedPNG_0.0.7a-min.js"></script>
+<script type="text/javascript" src="/js/ie6.js"></script>
+<link rel="stylesheet" href="/css/ie6.css" type="text/css" media="screen, projection"/>
+<![endif]-->
+	<script src="/js/jquery.corner.src.js" type="text/javascript" charset="utf-8"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			$("a.various3").fancybox({
+
+				'width'				: 960,
+
+				'height'			: 850,
+
+				'autoScale'			: false,
+
+				'transitionIn'		: 'elastic',
+
+				'transitionOut'		: 'elastic',
+
+				'scrolling'			: 'no',
+
+				'type'				: 'iframe'
+
+			});
+
+			$("a.photo_up").fancybox({
+
+				'width'				: 960,
+
+				'height'			: 850,
+
+				'autoScale'			: false,
+
+				'transitionIn'		: 'elastic',
+
+				'transitionOut'		: 'elastic',
+
+				'scrolling'			: 'no',
+
+				'type'				: 'iframe',
+
+				onClosed: function () {
+				            window.location.reload(true);
+        		}
+
+			});
+
+			$("a.video_up").fancybox({
+
+				'width'				: 960,
+
+				'height'			: 850,
+
+				'autoScale'			: false,
+
+				'transitionIn'		: 'elastic',
+
+				'transitionOut'		: 'elastic',
+
+				'scrolling'			: 'no',
+
+				'type'				: 'iframe',
+
+				onClosed: function () {
+				            window.location.reload(true);
+        		}
+
+			});
+
+
+$('a.login-photo').click(function() {
+  next_window = 'a.photo_up';
+    window.after_login = function() {
+
+        //window.location.reload(true);
+        $('#login').hide();
+        $(next_window).trigger('click');
+
+    }
+});
+
+$('a.login-video').click(function() {
+  next_window = 'a.video_up';
+});
+
+    $('a.login-photo').fancybox({
+        type: 'inline',
+        href: '#login',
+        autoDimensions: true,
+        autoResize: true,
+        transitionOut: 'none',
+        onClosed: function () {
+            $('#login').hide();
+        },
+        onStart: function() {
+            $('#fancybox-content').addClass('no-border');
+            $('#login').width(605);
+            $('#login').show();
+        }
+
+     });
+
+    $('a.login-video').fancybox({
+        type: 'inline',
+        href: '#login',
+        autoDimensions: true,
+        autoResize: true,
+        transitionOut: 'none',
+        onClosed: function () {
+            $('#login').hide();
+        },
+        onStart: function() {
+            $('#fancybox-content').addClass('no-border');
+            $('#login').width(605);
+            $('#login').show();
+        }
+
+
+    });
+
+
+		});
+
+	</script>
+
+
+<script type="text/javascript" src="/js/roundedno.js"></script>
+<script type="text/javascript">
+ $(document).ready(function() {
+   $('#search_section input[type=image]').attr('src', 'http://birmingham365.org/sites/birmingham365.org/images/btn-go.gif');
+
+ });
+
+var site_width = 988;
+</script>
+</head>
+<body id="home" class=""  style=" background-position: top center; background-repeat: no-repeat;">
+<script language="JavaScript">
+
+ function openNewWindow() {
+ popupWin = window.open('http://www.birmingham365.org/fbconnect',
+ 'open_window',
+ 'location,status,dependent,width=400,height=660, left=0, top=0')
+ }
+ </script>
+<!-- Member login section -->
+<div id="member_login_bar">
+<div id="member_login_bar_inner" class="">
+<span id="member_login_todays_date">
+<!-- <table height=30><tr><td>
+Tuesday, Aug 27, 2013</td></tr></table> -->
+</span>
+
+
+<a onclick="javascript:openNewWindow();  return false" href="http://www.birmingham365.org/fbconnect"><img id='facelogo_id' src="/images/icon-fb_signin.gif" width="15" height="15" border="0" align="top" /> &nbsp;<b>Sign in with Facebook</b></a>
+
+ &nbsp; | &nbsp;<a href="/user/login"><b>Login</b></a> &nbsp; | &nbsp;
+																			<a href="/index.php/user/login"><b>Create Account</b></a>
+						
+</div></div>
+
+
+<div id="main">
+  <div id="masthead">
+  <div id='inner_masthead'><style> 
+#box988 {width: 990px; height:150px; position:relative;}
+#box550 {
+	width: 547px;
+	height:144px;
+	position:absolute;
+	top: 0px;
+	left: 10px;
+	z-index: 3;
+}
+</style>
+ 
+<div id=box988>
+
+  <a href="/"><img src="http://birmingham365.org/sites/birmingham365.org/templates/header/header.jpg" border="0" usemap="#Map">
+  <map name="Map">
+    <area shape="rect" coords="646,3,976,19" href="http://www.cultural-alliance.com" target="_blank" alt="Cultural Alliance of Greater Birmingham">
+    <area shape="rect" coords="892,76,933,116" href="http://www.facebook.com/bhm365" target="_blank" alt="Facebook">
+    <area shape="rect" coords="935,76,974,116" href="https://twitter.com/bhm365" target="_blank" alt="Twitter">
+    <area shape="rect" coords="880,119,978,141" href="/page/weather" alt="Local Weather">
+  </map>
+  </a>
+<!--  <div style="position:absolute; left:0px; top:0px;"><a href="/">
+<img id=bcal src='/images/B365_anim_logo.gif?121212'
+onmouseover="document.getElementById('bcal').src='/images/B365_anim_logo2.gif?232323'" 
+onmouseout="document.getElementById('bcal').src='/images/B365_anim_logo.gif?242424'">
+</a>-->
+
+<div id=box550>
+ <iframe id='ae68b733' name='ae68b733' src='http://ads.artsopolis.com/www/delivery/afr.php?zoneid=1206&cb=INSERT_RANDOM_NUMBER_HERE' frameborder='0' scrolling='no' width='547' height='144'><a href='http://ads.artsopolis.com/www/delivery/ck.php?n=ad99f1c7&cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=1206&cb=INSERT_RANDOM_NUMBER_HERE&n=ad99f1c7' border='0' alt='' /></a></iframe>
+</div>
+</div>
+<script>
+$(document).ready(function () {	
+
+// Extract the sub-categories from under the MORE buttons
+$('#main_nav > li > ul > li').find('ul.more_tabs').each(function(){
+    var list = $(this).children('li');
+    var list_rev = list.get().reverse();
+    $(this).parent('li').removeClass('more_tabs').replaceWith(list_rev);   
+});
+
+});
+</script></div>
+  
+  <div id='alternate_inner_masthead' style='display:none'></div>
+  <div id='alternate_infobar' style='display:none'></div>
+  </div>
+
+
+  <div id="header" class=" events_only ">
+      <ul id="main_nav" class="events_only">
+       
+       <li><a href="#" onClick="location.href='/categories/index/9/0/PLACES';">PLACES</a><ul><li><a href="/categories/index/9/1365/PLACES_MUSEUMS_+_ATTRACTIONS">- MUSEUMS + ATTRACTIONS</a></li><li><a href="/categories/index/9/1653/PLACES_PARKS">- PARKS</a></li><li><a href="/categories/index/9/1367/PLACES_ACTIVITIES">- ACTIVITIES</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/13/0/ART_+_STAGE';">ART + STAGE</a><ul><li><a href="/categories/index/13/1407/ART_+_STAGE_THEATRE">- THEATRE</a></li><li><a href="/categories/index/13/1409/ART_+_STAGE_DANCE">- DANCE</a></li><li><a href="/categories/index/13/1411/ART_+_STAGE_VISUAL_ARTS">- VISUAL ARTS</a></li><li><a href="/categories/index/13/1663/ART_+_STAGE_CRAFTS_+_TRADITIONAL_ARTS">- CRAFTS + TRADITIONAL ARTS</a></li><li><a href="/categories/index/13/1105/ART_+_STAGE_SPOKEN_WORD">- SPOKEN WORD</a></li><li><a href="/categories/index/13/1107/ART_+_STAGE_COMEDY">- COMEDY</a></li><li><a href="/categories/index/13/1655/ART_+_STAGE_AUDITIONS_CALLS_FOR_SUBMISSION">- AUDITIONS / CALLS FOR SUBMISSION</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/3/0/MUSIC';">MUSIC</a><ul><li><a href="/categories/index/3/1021/MUSIC_ACOUSTIC_FOLK_WORLD">- ACOUSTIC / FOLK / WORLD</a></li><li><a href="/categories/index/3/1023/MUSIC_CLASSICAL_OPERA">- CLASSICAL / OPERA</a></li><li><a href="/categories/index/3/1109/MUSIC_DANCE_DJ">- DANCE / DJ</a></li><li><a href="/categories/index/3/1025/MUSIC_GOSPEL_SACRED">- GOSPEL / SACRED MUSIC</a></li><li><a href="/categories/index/3/1027/MUSIC_JAZZ_BLUES">- JAZZ / BLUES</a></li><li><a href="/categories/index/3/1029/MUSIC_POP_ROCK_COUNTRY">- POP / ROCK / COUNTRY</a></li><li><a href="/categories/index/3/1031/MUSIC_R+B_HIP-HOP">- R+B / HIP-HOP</a></li><li><a href="/categories/index/3/1095/MUSIC_BROADWAY">- BROADWAY</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/6/0/BOOKS_+_FILM';">BOOKS + FILM</a><ul><li><a href="/categories/index/6/1101/BOOKS_+_FILM_LITERATURE">- LITERATURE</a></li><li><a href="/categories/index/6/1103/BOOKS_+_FILM_FILM">- FILM</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/10/0/SPORTS_+_REC';">SPORTS + REC</a><ul><li><a href="/categories/index/10/1369/SPORTS_+_REC_PROFESSIONAL_SPORTS">- PROFESSIONAL SPORTS</a></li><li><a href="/categories/index/10/1371/SPORTS_+_REC_COLLEGE_SPORTS">- COLLEGE SPORTS</a></li><li><a href="/categories/index/10/1373/SPORTS_+_REC_K-12_SPORTS">- K-12 SPORTS</a></li><li><a href="/categories/index/10/1375/SPORTS_+_REC_COMMUNITY_SPORTS">- COMMUNITY SPORTS</a></li><li><a href="/categories/index/10/1377/SPORTS_+_REC_OUTDOOR_RECREATION">- OUTDOOR RECREATION</a></li><li><a href="/categories/index/10/1379/SPORTS_+_REC_INDOOR_RECREATION">- INDOOR RECREATION</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/8/0/SPECIAL_EVENTS';">SPECIAL EVENTS</a><ul><li><a href="/categories/index/8/999/SPECIAL_EVENTS_FESTIVALS">- FESTIVALS</a></li><li><a href="/categories/index/8/1001/SPECIAL_EVENTS_FUNDRAISERS_+_GALAS">- FUNDRAISERS + GALAS</a></li><li><a href="/categories/index/8/1829/SPECIAL_EVENTS_GREAT_FOR_FAMILIES">- GREAT FOR FAMILIES</a></li><li><a href="/categories/index/8/1827/SPECIAL_EVENTS_RETAIL_SHOPPING">- RETAIL SHOPPING</a></li><li><a href="/categories/index/8/1003/SPECIAL_EVENTS_OTHER">- OTHER SPECIAL EVENTS</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/32/0/FUN_FOR_ALL_AGES';">FUN FOR ALL AGES</a><ul><li><a href="/categories/index/32/1831/FUN_FOR_ALL_AGES_FOR_ADULTS">- FOR ADULTS</a></li><li><a href="/categories/index/32/1011/FUN_FOR_ALL_AGES_FOR_KIDS">- FOR KIDS</a></li><li><a href="/categories/index/32/1651/FUN_FOR_ALL_AGES_FOR_TEENS">- FOR TEENS</a></li><li><a href="/categories/index/32/1833/FUN_FOR_ALL_AGES_FOR_SENIORS_(55+)">- FOR SENIORS (55+)</a></li><li><a href="/categories/index/32/1013/FUN_FOR_ALL_AGES_FOR_ALL_AGES">- FOR ALL AGES</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/33/0/EAT_+_DRINK';">EAT + DRINK</a></li><li><a href="#" onClick="location.href='/categories/index/41/0/FREE';">FREE</a></li><li><a href="#" onClick="location.href='/categories/index/7/0/ACCESSIBLE';">ACCESSIBLE</a></li><li><a href="#" onClick="location.href='/categories/index/52/0/BUSINESS_+_INDUSTRY';">BUSINESS + INDUSTRY</a><ul><li><a href="/categories/index/52/1657/BUSINESS_+_INDUSTRY_MEETINGS_+_EVENTS">- MEETINGS + EVENTS</a></li><li><a href="/categories/index/52/1659/BUSINESS_+_INDUSTRY_PROFESSIONAL_DEVELOPMENT">- PROFESSIONAL DEVELOPMENT</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/5/0/CIVIC_+_COMMUNITY';">CIVIC + COMMUNITY</a><ul><li><a href="/categories/index/5/1383/CIVIC_+_COMMUNITY_GOVERNMENT">- GOVERNMENT</a></li><li><a href="/categories/index/5/1393/CIVIC_+_COMMUNITY_GROUPS">- CIVIC + COMMUNITY GROUPS</a></li><li><a href="/categories/index/5/1391/CIVIC_+_COMMUNITY_NEIGHBORHOODS">- NEIGHBORHOODS</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/11/0/CLASSES_+_LECTURES';">CLASSES + LECTURES</a><ul><li><a href="/categories/index/11/1967/CLASSES_+_LECTURES_FINANCIAL_EDUCATION">- FINANCIAL EDUCATION</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/51/0/FAITH-BASED';">FAITH-BASED</a><ul><li><a href="/categories/index/51/1769/FAITH-BASED_PROGRAMS_+_EVENTS">- PROGRAMS + EVENTS</a></li><li><a href="/categories/index/51/1767/FAITH-BASED_RELIGIOUS_SERVICES">- RELIGIOUS SERVICES</a></li><li><a href="/categories/index/51/1771/FAITH-BASED_OTHER">- OTHER</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/31/0/HEALTH_+_WELLNESS';">HEALTH + WELLNESS</a></li><li><a href="#" onClick="location.href='/categories/index/4/0/HISTORY_+_HERITAGE';">HISTORY + HERITAGE</a><ul><li><a href="/categories/index/4/1835/HISTORY_+_HERITAGE_CIVIL_RIGHTS">- CIVIL RIGHTS</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/36/0/HOME_+_GARDEN';">HOME + GARDEN</a></li><li><a href="#" onClick="location.href='/categories/index/42/0/LIBRARIES';">LIBRARIES</a><ul><li><a href="/categories/index/42/1097/LIBRARIES_PUBLIC__IN_JEFFCO">- PUBLIC LIBRARIES IN JEFFCO</a></li><li><a href="/categories/index/42/1099/LIBRARIES_OTHER">- OTHER LIBRARIES</a></li></ul></li><li><a href="#" onClick="location.href='/categories/index/34/0/MULTICULTURAL';">MULTICULTURAL</a></li><li><a href="#" onClick="location.href='/categories/index/45/0/NATURE_+_ENVIRONMENT';">NATURE + ENVIRONMENT</a></li><li><a href="#" onClick="location.href='/categories/index/54/0/SEASONAL';">SEASONAL</a><ul><li><a href="/categories/index/54/1837/SEASONAL_HALLOWEEN_+_FALL_FESTIVALS">- HALLOWEEN + FALL FESTIVALS</a></li><li><a href="/categories/index/54/1839/SEASONAL_HAPPY_HOLIDAYS">- HAPPY HOLIDAYS</a></li><li><a href="/categories/index/54/1843/SEASONAL_BLACK_HISTORY_MONTH">- BLACK HISTORY MONTH</a></li><li><a href="/categories/index/54/1841/SEASONAL_4TH_OF_JULY">- 4TH OF JULY</a></li><li><a href="/categories/index/54/1845/SEASONAL_SCHOOL_BREAK_CAMPS_+_ACTIVITIES">- SCHOOL BREAK CAMPS + ACTIVITIES</a></li></ul></li>
+       
+    </ul>
+    <!-- End #main_nav -->
+    <!-- End #search_section -->
+  </div>
+	
+  <!-- End #header -->
+  <div id="content">
+          <div id="search_section">
+<h2>Find an <strong>Event</strong></h2>    
+<script type="text/javascript">
+<!--
+//create the dates for search links
+var myDate = new Date();
+day0 = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+//add a day to the date
+var myDate = new Date();
+myDate.setDate(myDate.getDate() + 1);
+day1 = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+//add 7
+var myDate = new Date();
+myDate.setDate(myDate.getDate() + 7);
+day7 = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+//add 14
+var myDate = new Date();
+myDate.setDate(myDate.getDate() + 14);
+day14 = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+//add 30
+var myDate = new Date();
+myDate.setDate(myDate.getDate() + 30);
+day30 = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+var myDate = new Date();
+
+// Find Friday
+diff = 5 - myDate.getDay();
+
+myDate.setDate(myDate.getDate() + diff);
+we_start = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+// ...and end on Sunday
+myDate.setDate(myDate.getDate() + 2);
+we_end = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+
+var month = myDate.getMonth() + 1
+var day = myDate.getDate()
+var year = myDate.getFullYear()
+//document.write(day14);
+//document.write(year + "-" + month + "-" + day)
+//-->
+</script>
+<div class="search_wrapper">
+<style>
+	.ui-autocomplete-loading { background: white url('/images/ui-anim_basic_16x16.gif') right center no-repeat; }
+	.ui-autocomplete { background:#FFF; border: 1px solid #B0B1B3; }
+	.ui-autocomplete-type {
+		border-top: 1px solid #CCCCCC;
+		clear:both;
+		color:#999;
+		text-transform: capitalize;
+		padding: .2em .4em;
+		line-height: 1.5;
+		text-align:right;
+	}
+	.ui-autocomplete-type:first-child { border: 0; }
+	.ui-menu .ui-menu-item a { text-align: left; }
+</style>
+<div class="search_section_inner search_section_keyword">
+    <form action="/search/results/keyword/1/events/none/up/" method="post" id="form_search_keywords">
+        <input type="hidden" name="submitted_search" value="true" />
+        <input type="hidden" name="search_type" value="keyword" />
+        <input type="hidden" name="item_type" value="events" />
+        <label>Search by keyword, organization or venue:</label>
+        <input name="keywords" id="keywords" type="text" title="" style="position: relative; z-index: 10;"  />
+
+<input src="/images/go-button_97.png" type="image" class="button" />
+
+
+        <p class="advanced_search_link"><a href="/advanced_search/">Advanced Search &raquo;</a></p>
+    </form>
+</div>
+
+
+<div class="search_section_inner search_section_date">
+    <form action="/search/results/keyword/1/events/date/up/none/none/none/" method="post" id="form_search_dates">
+        <input type="hidden" name="submitted_search" value="true" />
+        <input type="hidden" name="search_type" value="keyword" />
+        <input type="hidden" name="item_type" value="events" />
+        <label>Search by date:</label>
+
+        <input onChange="updtent()" name="dateBegin" id="start" type="text" title="08/09/2013" style="position: relative; z-index: 10;" />
+        <input onChange="updtent()" name="dateEnd" id="end" type="text" title="08/09/2013" style="position: relative; z-index: 10;" />
+
+<!--
+        <input name="dateBegin" id="start" type="text" title="Start date" style="position: relative; z-index: 10;" />
+        <input name="dateEnd" id="end" type="text" title="End date" style="position: relative; z-index: 10;" />
+-->
+
+<input src="/images/go-button_97.png" type="image" class="button" />
+    </form>
+</div>
+<script type="text/javascript">
+// Add the Type over the menu items
+$.widget( "custom.catcomplete", $.ui.autocomplete, {
+	_renderMenu: function( ul, items ) {
+		var self = this,
+			currentType = "";
+		$.each( items, function( index, item ) {
+			if ( item.type != currentType ) {
+				ul.append( "<li class='ui-autocomplete-type'>" + item.type + "</li>" );
+				currentType = item.type;
+			}
+			self._renderItem( ul, item );
+		});
+	}
+});
+
+function keywords_go(href, search) {
+	if(search == 1) {
+		var action = $('#form_search_keywords').attr('action');
+		href = action + href;
+	}
+	document.location.href = href;
+	return false;
+}
+
+$(function() {
+	$( "#keywords").catcomplete({
+		source: "/search/suggest/",
+		minLength: 2,
+		select: function( event, ui ) {
+			if(ui.item.href) {
+				keywords_go( ui.item.href );
+			} else {
+				keywords_go( ui.item.label, 1 );
+			}
+		},
+		delay: 300
+	});
+});
+	
+<!-- // Submit the search form with Get
+$('#form_search_keywords').submit(function(e){
+	var keywords = $('#keywords').val();
+	var action = $('#form_search_keywords').attr('action');
+	document.location.href = action + keywords;
+	e.preventDefault();
+	return false;
+});
+//-->
+
+<!-- // Submit the search form with Get
+$('#form_search_dates').submit(function(e){
+	var dateBegin = $('#start').val();
+	dateBegin = $.datepicker.formatDate('yy-mm-dd', new Date(dateBegin));
+	var dateEnd = $('#end').val();
+	dateEnd = $.datepicker.formatDate('yy-mm-dd', new Date(dateEnd));
+	if(dateEnd	 == 'NaN-NaN-NaN') { dateEnd   = 'none'; }
+	if(dateBegin == 'NaN-NaN-NaN') { dateBegin = 'none'; }
+	var action = $('#form_search_dates').attr('action');
+	document.location.href = action + dateBegin + "/" + dateEnd;
+	e.preventDefault();
+	return false;
+});
+//-->
+</script>
+<div class="search_section_inner search_section_date_range">
+    <label>Search by date range:</label>
+    <script type="text/javascript">
+        document.write("<a href='/search/results/keyword/1/events/date/up/none/none/none/" + day0 +"/" + day0 +"/none/none/none/none'>Today</a>");
+        document.write("<a href='/search/results/keyword/1/events/date/up/none/none/none/" + day1 +"/" + day1 +"/none/none/none/none'>Tomorrow</a>");
+        document.write("<a href='/search/results/keyword/1/events/date/up/none/none/none/" + we_start +"/" + we_end +"/none/none/none/none'>Weekend</a>");
+    </script>
+				Next:
+    <script>
+        document.write("<a href='/search/results/keyword/1/events/date/up/none/none/none/" + day0 +"/" + day7 +"/none/none/none/none'>7</a>");
+        document.write("<a href='/search/results/keyword/1/events/date/up/none/none/none/" + day0 +"/" + day14 +"/none/none/none/none'>14</a>");
+        document.write("<a href='/search/results/keyword/1/events/date/up/none/none/none/" + day0 +"/" + day30 +"/none/none/none/none'>30</a>");
+    </script> days
+</div>
+
+<div class="search_section_inner search_section_filters"><!--{searchFilters}--></div>
+
+<p class="list-event">
+    Do you have an event you'd like to have listed?
+</p>
+<a href="/page/submit_event/" class="submit-listing" ><img src="/images/submit_listing_97.png" /></a>
+
+</div>
+</div>
+
+  <div id="content_main_container">
+  	<ul id="maincolumnlistA" class="sortable maincolumn"></ul>
+    <div id="content_main">
+	  
+      <div id="home_spotlight" style="height:250px"><div id="spotlight-1"></div></div>
+<!-- End #home_spotlight -->
+    <ul id="maincolumnlistC" class="sortable maincolumn"></ul>
+<div id="home_featured_events"><ul><li id="column_one"><h3><a href="/categories/index/8/0/">Family</a></h3><ul>      <li><a href="/event/detail/441775493/RACE_Are_We_So_Different"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441775493/race_subpage_medium_medium.jpg" width="120" height="150"  alt="RACE: Are We So Different?" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441775493/RACE_Are_We_So_Different">RACE: Are We So Different?</a></h4>        <p>Presented by <a href="/org/detail/220153480/McWane_Science_Center">McWane Science Center</a> at <a href="/venue/detail/745/McWane_Science_Center">McWane Science Center</a><br />          05/18/13 - 09/02/13</p>      </li>      <li><a href="/event/detail/441783955/22nd_Annual_Labor_Day_Celebration_and_Moon_Pie_Eatin_Contest"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441783955/tannehill_medium.jpg" width="120" height="181"  alt="22nd Annual Labor Day Celebration and Moon Pie Eatin' Contest" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441783955/22nd_Annual_Labor_Day_Celebration_and_Moon_Pie_Eatin_Contest">22nd Annual Labor Day Celebration and Moon Pie Eatin' Contest</a></h4>        <p>Presented by <a href="/org/detail/220160713/Tannehill_Ironworks_Historical_State_Park">Tannehill Ironworks Historical State Park</a> at <a href="/venue/detail/833/Tannehill_Ironworks_Historical_State_Park">Tannehill Ironworks Historical State Park</a><br />          09/02/13</p>      </li>      <li><a href="/event/detail/441797200/Family_Night_with_The_Fable_Factory"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441797200/sept_family_night_medium.jpg" width="120" height="155"  alt="Family Night with The Fable Factory" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441797200/Family_Night_with_The_Fable_Factory">Family Night with The Fable Factory</a></h4>        <p>Presented by <a href="/org/detail/220159911/Vestavia_Hills_Library_in_the_Forest">Vestavia Hills Library in the Forest</a> at <a href="/venue/detail/785/Vestavia_Hills_Library_in_the_Forest">Vestavia Hills Library in the Forest</a><br />          09/10/13</p>      </li>      <li><a href="/event/detail/441623847/Art_On_Stage"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441623847/baa_medium.jpg" width="120" height="61"  alt="Art On Stage" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441623847/Art_On_Stage">Art On Stage</a></h4>        <p>Presented by <a href="/org/detail/220156537/Birmingham_Art_Association">Birmingham Art Association</a> and <a href="/org/detail/695/Birmingham_Museum_of_Art">Birmingham Museum of Art</a> at <a href="/venue/detail/696/Birmingham_Museum_of_Art">Birmingham Museum of Art</a><br />          09/21/13</p>      </li>      <li><a href="/event/detail/441795521/Banned_Books_ReadaThon"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441795521/banned_books_medium.jpg" width="120" height="181"  alt="Banned Books Read-a-Thon" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441795521/Banned_Books_ReadaThon">Banned Books Read-a-Thon</a></h4>        <p>Presented by <a href="/org/detail/690/Desert_Island_Supply_Co_DISCO">Desert Island Supply Co. (DISCO)</a> at <a href="/venue/detail/1490/Desert_Island_Supply_Co_DISCO">Desert Island Supply Co. (DISCO)</a><br />          09/21/13 - 09/22/13</p>      </li></ul></li><li id="column_two"><h3><a href="/categories/index/13/0/">Art + Stage</a></h3><ul>      <li><a href="/event/detail/441788966/Burn7_ArtMusicDanceFest"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441788966/burningman_medium.jpg" width="120" height="172"  alt="Burn7 ArtMusicDanceFest" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441788966/Burn7_ArtMusicDanceFest">Burn7 ArtMusicDanceFest</a></h4>        <p>Presented by <a href="/org/detail/220191834/Burningham_Birmingham">Burningham Birmingham</a> at <a href="/venue/detail/872/Oak_Mountain_State_Park_">Oak Mountain State Park </a><br />          09/07/13</p>      </li>      <li><a href="/event/detail/441796413/UAB_Media_Studies_presents_Birmingham_Movement_A_Screening_of_Student_Films_"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441796413/screeningpic_medium.jpg" width="120" height="80"  alt="UAB Media Studies presents &acirc;��Birmingham Movement: A Screening of Student Films&acirc;�� " style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441796413/UAB_Media_Studies_presents_Birmingham_Movement_A_Screening_of_Student_Films_">UAB Media Studies presents “Birmingham Movement: A Screening of Student Films” </a></h4>        <p>Presented by UAB Media Studies and <a href="/org/detail/220181779/UAB_College_of_Arts_and_Sciences">UAB College of Arts and Sciences</a> at <a href="/venue/detail/120/Alys_Robinson_Stephens_Performing_Arts_Center">Alys Robinson Stephens Performing Arts Center</a><br />          09/10/13</p>      </li>      <li><a href="/event/detail/441777714/The_Room_Live_on_Stage"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441777714/roomposter_medium.jpg" width="120" height="156"  alt="The Room: Live on Stage" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441777714/The_Room_Live_on_Stage">The Room: Live on Stage</a></h4>        <p>Presented by <a href="/org/detail/220189588/Glass_Half_Theatre">Glass Half Theatre</a> at <a href="/venue/detail/728/Bottletree_Cafe">Bottletree Cafe</a><br />          09/11/13</p>      </li>      <li><a href="/event/detail/441788461/Kevin_James"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441788461/kevin_james_medium.jpg" width="120" height="67"  alt="Kevin James" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441788461/Kevin_James">Kevin James</a></h4>        <p>Presented by LiveNation at <a href="/venue/detail/272/Alabama_Theatre">Alabama Theatre</a><br />          09/15/13</p>      </li>      <li><a href="/event/detail/441779632/Jeanne_Robertson_FABulously_Funny_Tour"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441779632/black_sweater_hi_res_copy_medium.jpg" width="120" height="150"  alt="Jeanne Robertson &quot;FABulously Funny&quot; Tour" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441779632/Jeanne_Robertson_FABulously_Funny_Tour">Jeanne Robertson "FABulously Funny" Tour</a></h4>        <p>Presented by <a href="/org/detail/220151407/Alabama_Theatre">Alabama Theatre</a> at <a href="/venue/detail/272/Alabama_Theatre">Alabama Theatre</a><br />          09/20/13</p>      </li></ul></li><li id="column_three"><h3><a href="/categories/index/3/0/">Music</a></h3><ul>      <li><a href="/event/detail/441792447/The_Woggles_Muck_and_the_Mires_The_Nowhere_Squares"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441792447/the_woggles_medium.jpg" width="120" height="80"  alt="The Woggles/ Muck and the Mires/ The Nowhere Squares" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441792447/The_Woggles_Muck_and_the_Mires_The_Nowhere_Squares">The Woggles/ Muck and the Mires/ The Nowhere Squares</a></h4>        <p>Presented by <a href="/org/detail/220162231/Bottletree_Cafe">Bottletree Cafe</a> at <a href="/venue/detail/728/Bottletree_Cafe">Bottletree Cafe</a><br />          08/29/13</p>      </li>      <li><a href="/event/detail/441791515/The_Great_Book_of_John_New_Madrid_The_Dirty_Lungs"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441791515/iron_city_medium.jpg" width="86" height="150"  alt="The Great Book of John, New Madrid, The Dirty Lungs" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441791515/The_Great_Book_of_John_New_Madrid_The_Dirty_Lungs">The Great Book of John, New Madrid, The Dirty Lungs</a></h4>        <p>Presented by <a href="/org/detail/220184423/Iron_City_Bham">Iron City Bham</a> at <a href="/venue/detail/1514/Iron_City_Bham">Iron City Bham</a><br />          09/05/13</p>      </li>      <li><a href="/event/detail/441793223/Eric_Essix"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441793223/eric_essix_medium.jpg" width="120" height="120"  alt="Eric Essix" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441793223/Eric_Essix">Eric Essix</a></h4>        <p>Presented by <a href="/org/detail/418/Alys_Robinson_Stephens_Performing_Arts_Center">Alys Robinson Stephens Performing Arts Center</a> at <a href="/venue/detail/120/Alys_Robinson_Stephens_Performing_Arts_Center">Alys Robinson Stephens Performing Arts Center</a><br />          09/19/13</p>      </li>      <li><a href="/event/detail/441794161/Hurray_for_the_Riff_Raff_Spirit_Family_Reunion_Tumbleweeds"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441794161/hurray_for_the_riff_raff_medium.jpg" width="120" height="80"  alt="Hurray for the Riff Raff / Spirit Family Reunion / Tumbleweeds" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441794161/Hurray_for_the_Riff_Raff_Spirit_Family_Reunion_Tumbleweeds">Hurray for the Riff Raff / Spirit Family Reunion / Tumbleweeds</a></h4>        <p>Presented by <a href="/org/detail/220162231/Bottletree_Cafe">Bottletree Cafe</a> at <a href="/venue/detail/728/Bottletree_Cafe">Bottletree Cafe</a><br />          09/23/13</p>      </li>      <li><a href="/event/detail/441793915/Grace_Potter_The_Nocturnals_"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441793915/grace_potter_and_the_nocturnals_medium.jpg" width="120" height="115"  alt="Grace Potter &amp; The Nocturnals " style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441793915/Grace_Potter_The_Nocturnals_">Grace Potter & The Nocturnals </a></h4>        <p>Presented by <a href="/org/detail/220184423/Iron_City_Bham">Iron City Bham</a> at <a href="/venue/detail/1514/Iron_City_Bham">Iron City Bham</a><br />          09/25/13</p>      </li></ul></li><li id="column_four"><h3><a href="/categories/index/8/0/">Special Events</a></h3><ul>      <li><a href="/event/detail/441747646/Muddy_Mama_5k_Talladega"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441747646/muddymamalogo_medium.jpg" width="120" height="92"  alt="Muddy Mama 5k - Talladega" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441747646/Muddy_Mama_5k_Talladega">Muddy Mama 5k - Talladega</a></h4>        <p>Presented by <a href="/org/detail/220184879/Ugly_Dog_Events">Ugly Dog Events</a> at <a href="/venue/detail/797/Talladega_Superspeedway">Talladega Superspeedway</a><br />          08/31/13</p>      </li>      <li><a href="/event/detail/441782330/The_Color_Run"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441782330/color_run_medium.jpg" width="120" height="154"  alt="The Color Run" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441782330/The_Color_Run">The Color Run</a></h4>        <p>Presented by <a href="/org/detail/220154354/Barber_Motorsports_Park">Barber Motorsports Park</a> at <a href="/venue/detail/839/Barber_Vintage_Motorsports_Museum">Barber Vintage Motorsports Museum</a><br />          09/02/13</p>      </li>      <li><a href="/event/detail/441793879/Monkey_C_Monkey_Run_5k_and_1_Mile_Fun_Run"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441793879/monkey_c_monkey_picture_2012_medium.jpg" width="120" height="80"  alt="Monkey C Monkey Run 5k and 1 Mile Fun Run" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441793879/Monkey_C_Monkey_Run_5k_and_1_Mile_Fun_Run">Monkey C Monkey Run 5k and 1 Mile Fun Run</a></h4>        <p>Presented by <a href="/org/detail/220162375/Camp_SmileAMile">Camp Smile-A-Mile</a> at <a href="/venue/detail/849/Homewood_Central_Park">Homewood Central Park</a><br />          09/07/13</p>      </li>      <li><a href="/event/detail/441719274/The_33rd_Original_Birmingham_Oktoberfest_2013"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441719274/oktoberfest_europa_medium.jpg" width="120" height="107"  alt="The 33rd Original Birmingham Oktoberfest 2013" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441719274/The_33rd_Original_Birmingham_Oktoberfest_2013">The 33rd Original Birmingham Oktoberfest 2013</a></h4>        <p>Presented by <a href="/org/detail/220169465/FDSK_German_Culture_Club">FDSK German Culture Club</a> at <a href="/venue/detail/936/Das_Haus_German_Club">Das Haus: German Club</a><br />          09/12/13 - 09/14/13</p>      </li>      <li><a href="/event/detail/441792931/Birmingham_International_Street_Fair"><div id="event_image"><img class="event_image" src="http://www.birmingham365.org/sites/birmingham365.org/images/event/441792931/bhmintlstfair13_medium.jpg" width="120" height="120"  alt="Birmingham International Street Fair" style = "float: left; margin-right: 8px; border: 0px;" /></div></a>        <h4><a href="/event/detail/441792931/Birmingham_International_Street_Fair">Birmingham International Street Fair</a></h4>        <p>Presented by <a href="/org/detail/220164931/Birmingham_Multicultural_Association">Birmingham Multicultural Association</a> at <a href="/venue/detail/873/Linn_Park">Linn Park</a><br />          09/14/13</p>      </li></ul></li></ul></div>
+<!-- End #home_featured_events -->
+    </div>
+    <!-- End #content_main -->
+    <ul id="maincolumnlistB" class="sortable maincolumn"></ul>
+	</div>
+    <div id="content_sub">
+      <ul id="sidecolumnlist" class="sortable">
+	<!-- DAMON: Removed class="window" from this LI as it is not really needed. -->
+<li id="sidecolumnitem_10049" class="window">
+        <h2 class="handle">Featured Sections</h2>
+    <p><p style="text-align: center; "><a href="http://birmingham365.org/categories/index/41/0"><img width="60" height="56" border="0" align="middle" alt="Free Events" title="Check Out These Free Events" src="/sites/birmingham365.org/images/local/icon-free.jpg" /></a>&nbsp;&nbsp;<a target="_blank" href="http://localtreasures.birmingham365.org/"><img width="60" height="56" border="0" align="middle" title="Discover The Region&rsquo;s Local Treasures" alt="Local Treasures" src="/sites/birmingham365.org/images/local/treasure_icon.jpg" /></a>&nbsp;&nbsp;<a href="http://activeculture.info/landing.asp"><img width="60" height="56" border="0" align="middle" title="The Smart Directory: Just for K-12 Teachers" alt="Smart Directory" src="/sites/birmingham365.org/images/local/icon-smartdir.jpg" /></a></p></p>
+</li>
+
+<li id="sidecolumnitem_4563" class="advertisement" >
+        <!--/* Openads Javascript Tag v2.4.2 */-->
+    <!--/*
+      * The backup image section of this tag has been generated for use on a
+      * non-SSL page. If this tag is to be placed on an SSL page, change the
+      *   'http://ads.artsopolis.com/www/delivery/...'
+      * to
+      *   'https://ads.artsopolis.com/www/delivery/...'
+      *
+      * This noscript section of this tag only shows image banners. There
+      * is no width or height in these banners, so if you want these tags to
+      * allocate space for the ad before it shows, you will need to add this
+      * information to the <img> tag.
+      *
+      * If you do not want to deal with the intricities of the noscript
+      * section, delete the tag (from <noscript>... to </noscript>). On
+      * average, the noscript tag is called from less than 1% of internet
+      * users.
+      */-->
+
+    <script type='text/javascript'><!--//<![CDATA[
+       var m3_u = (location.protocol=='https:'?'https://ads.artsopolis.com/www/delivery/ajs.php':'http://ads.artsopolis.com/www/delivery/ajs.php');
+       var m3_r = Math.floor(Math.random()*99999999999);
+       if (!document.MAX_used) document.MAX_used = ',';
+       document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+       document.write ("?zoneid=741&amp;block=1");
+       document.write ('&amp;cb=' + m3_r);
+       if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+       document.write ("&amp;loc=" + escape(window.location));
+       if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+       if (document.context) document.write ("&context=" + escape(document.context));
+       if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+       document.write ("'><\/scr"+"ipt>");
+    //]]>--></script><noscript><a href='http://ads.artsopolis.com/www/delivery/ck.php?n=ac0184cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=5&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ac0184cc' border='0' alt='' /></a></noscript>
+</li>
+ 
+
+<li id="sidecolumnitem_4271" class="advertisement" >
+        <!--/* Openads Javascript Tag v2.4.2 */-->
+    <!--/*
+      * The backup image section of this tag has been generated for use on a
+      * non-SSL page. If this tag is to be placed on an SSL page, change the
+      *   'http://ads.artsopolis.com/www/delivery/...'
+      * to
+      *   'https://ads.artsopolis.com/www/delivery/...'
+      *
+      * This noscript section of this tag only shows image banners. There
+      * is no width or height in these banners, so if you want these tags to
+      * allocate space for the ad before it shows, you will need to add this
+      * information to the <img> tag.
+      *
+      * If you do not want to deal with the intricities of the noscript
+      * section, delete the tag (from <noscript>... to </noscript>). On
+      * average, the noscript tag is called from less than 1% of internet
+      * users.
+      */-->
+
+    <script type='text/javascript'><!--//<![CDATA[
+       var m3_u = (location.protocol=='https:'?'https://ads.artsopolis.com/www/delivery/ajs.php':'http://ads.artsopolis.com/www/delivery/ajs.php');
+       var m3_r = Math.floor(Math.random()*99999999999);
+       if (!document.MAX_used) document.MAX_used = ',';
+       document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+       document.write ("?zoneid=733&amp;block=1");
+       document.write ('&amp;cb=' + m3_r);
+       if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+       document.write ("&amp;loc=" + escape(window.location));
+       if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+       if (document.context) document.write ("&context=" + escape(document.context));
+       if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+       document.write ("'><\/scr"+"ipt>");
+    //]]>--></script><noscript><a href='http://ads.artsopolis.com/www/delivery/ck.php?n=ac0184cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=5&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ac0184cc' border='0' alt='' /></a></noscript>
+</li>
+ 
+
+<!-- DAMON: Removed class="window" from this LI as it is not really needed. -->
+<li id="sidecolumnitem_10045" class="window">
+        <h2 class="handle">Sponsors</h2>
+    <p><p style="text-align: left;"><span style="font-size: small;"><strong><span style="color: rgb(102, 102, 102);">Featured Partner</span></strong></span></p>
+<hr />
+<div style="text-align: center;"><iframe width="250" scrolling="no" height="104" frameborder="0" id="af43dd5f" name="af43dd5f" src="http://ads.artsopolis.com/www/delivery/afr.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE"><a href='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' _fcksavedurl='http://ads.artsopolis.com/www/delivery/ck.php?n=a755534a&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' _fcksavedurl='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=743&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a755534a' border='0' alt='' /></a></iframe></div></p>
+</li>
+
+<li id="sidecolumnitem_4273" class="advertisement" >
+        <!--/* Openads Javascript Tag v2.4.2 */-->
+    <!--/*
+      * The backup image section of this tag has been generated for use on a
+      * non-SSL page. If this tag is to be placed on an SSL page, change the
+      *   'http://ads.artsopolis.com/www/delivery/...'
+      * to
+      *   'https://ads.artsopolis.com/www/delivery/...'
+      *
+      * This noscript section of this tag only shows image banners. There
+      * is no width or height in these banners, so if you want these tags to
+      * allocate space for the ad before it shows, you will need to add this
+      * information to the <img> tag.
+      *
+      * If you do not want to deal with the intricities of the noscript
+      * section, delete the tag (from <noscript>... to </noscript>). On
+      * average, the noscript tag is called from less than 1% of internet
+      * users.
+      */-->
+
+    <script type='text/javascript'><!--//<![CDATA[
+       var m3_u = (location.protocol=='https:'?'https://ads.artsopolis.com/www/delivery/ajs.php':'http://ads.artsopolis.com/www/delivery/ajs.php');
+       var m3_r = Math.floor(Math.random()*99999999999);
+       if (!document.MAX_used) document.MAX_used = ',';
+       document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+       document.write ("?zoneid=735&amp;block=1");
+       document.write ('&amp;cb=' + m3_r);
+       if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+       document.write ("&amp;loc=" + escape(window.location));
+       if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+       if (document.context) document.write ("&context=" + escape(document.context));
+       if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+       document.write ("'><\/scr"+"ipt>");
+    //]]>--></script><noscript><a href='http://ads.artsopolis.com/www/delivery/ck.php?n=ac0184cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=5&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ac0184cc' border='0' alt='' /></a></noscript>
+</li>
+ 
+
+<!-- DAMON: Removed class="window" from this LI as it is not really needed. -->
+<li id="sidecolumnitem_10047" class="window">
+        <h2 class="handle">More Fun</h2>
+    <p><p style="text-align: center;"><img border="0" width="280" height="86" src="/sites/birmingham365.org/images/local/icon-morefun.jpg" alt="" /></p>
+<p style="text-align: left;"><a href="http://www.birmingham365.org/categories/index/14/1821" target="_self"><span style="color: rgb(153, 153, 153);"><span style="font-size: large;">labor day weekend</span></span></a></p>
+<p style="text-align: left;"><span style="color: rgb(153, 153, 153);"><span style="font-size: large;"><a href="http://www.birmingham365.org/categories/index/14/1906" target="_self">civil rights:&nbsp;50 years forward</a></span></span></p>
+<p><span style="color: rgb(153, 153, 153); "><span style="font-size: large; "><span style="color: rgb(153, 153, 153); "><span style="color: rgb(153, 153, 153); "><a href="/categories/index/14/1093" target="_self">cheap date ideas</a></span></span></span></span><font size="4" color="#999999"><br />
+</font></p>
+<p><a href="/categories/index/14/1091" style="font-size: large; "><span style="color: rgb(153, 153, 153); ">local music scene</span></a></p>
+<p><span style="font-size: large;"><span style="color: rgb(128, 128, 128);"><a href="/categories/index/14/1089"><span style="color: rgb(153, 153, 153); ">after-work happenings</span></a></span></span><span style="color: rgb(153, 153, 153); "><font size="4"><br />
+</font></span></p>
+<p><a href="http://www.alabama.travel/road-trips/all" target="_blank"><span style="color: rgb(153, 153, 153); "><span style="font-size: large; ">regional day trips</span></span></a></p></p>
+</li>
+
+<li id="sidecolumnitem_5161" class="advertisement" >
+        <!--/* Openads Javascript Tag v2.4.2 */-->
+    <!--/*
+      * The backup image section of this tag has been generated for use on a
+      * non-SSL page. If this tag is to be placed on an SSL page, change the
+      *   'http://ads.artsopolis.com/www/delivery/...'
+      * to
+      *   'https://ads.artsopolis.com/www/delivery/...'
+      *
+      * This noscript section of this tag only shows image banners. There
+      * is no width or height in these banners, so if you want these tags to
+      * allocate space for the ad before it shows, you will need to add this
+      * information to the <img> tag.
+      *
+      * If you do not want to deal with the intricities of the noscript
+      * section, delete the tag (from <noscript>... to </noscript>). On
+      * average, the noscript tag is called from less than 1% of internet
+      * users.
+      */-->
+
+    <script type='text/javascript'><!--//<![CDATA[
+       var m3_u = (location.protocol=='https:'?'https://ads.artsopolis.com/www/delivery/ajs.php':'http://ads.artsopolis.com/www/delivery/ajs.php');
+       var m3_r = Math.floor(Math.random()*99999999999);
+       if (!document.MAX_used) document.MAX_used = ',';
+       document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+       document.write ("?zoneid=737&amp;block=1");
+       document.write ('&amp;cb=' + m3_r);
+       if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+       document.write ("&amp;loc=" + escape(window.location));
+       if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+       if (document.context) document.write ("&context=" + escape(document.context));
+       if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+       document.write ("'><\/scr"+"ipt>");
+    //]]>--></script><noscript><a href='http://ads.artsopolis.com/www/delivery/ck.php?n=ac0184cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=5&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ac0184cc' border='0' alt='' /></a></noscript>
+</li>
+ 
+
+<li id="sidecolumnitem_5165" class="advertisement" >
+        <!--/* Openads Javascript Tag v2.4.2 */-->
+    <!--/*
+      * The backup image section of this tag has been generated for use on a
+      * non-SSL page. If this tag is to be placed on an SSL page, change the
+      *   'http://ads.artsopolis.com/www/delivery/...'
+      * to
+      *   'https://ads.artsopolis.com/www/delivery/...'
+      *
+      * This noscript section of this tag only shows image banners. There
+      * is no width or height in these banners, so if you want these tags to
+      * allocate space for the ad before it shows, you will need to add this
+      * information to the <img> tag.
+      *
+      * If you do not want to deal with the intricities of the noscript
+      * section, delete the tag (from <noscript>... to </noscript>). On
+      * average, the noscript tag is called from less than 1% of internet
+      * users.
+      */-->
+
+    <script type='text/javascript'><!--//<![CDATA[
+       var m3_u = (location.protocol=='https:'?'https://ads.artsopolis.com/www/delivery/ajs.php':'http://ads.artsopolis.com/www/delivery/ajs.php');
+       var m3_r = Math.floor(Math.random()*99999999999);
+       if (!document.MAX_used) document.MAX_used = ',';
+       document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+       document.write ("?zoneid=739&amp;block=1");
+       document.write ('&amp;cb=' + m3_r);
+       if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+       document.write ("&amp;loc=" + escape(window.location));
+       if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+       if (document.context) document.write ("&context=" + escape(document.context));
+       if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+       document.write ("'><\/scr"+"ipt>");
+    //]]>--></script><noscript><a href='http://ads.artsopolis.com/www/delivery/ck.php?n=ac0184cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=5&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ac0184cc' border='0' alt='' /></a></noscript>
+</li>
+ 
+
+<li id="sidecolumnitem_5351" class="advertisement" >
+        <!--/* Openads Javascript Tag v2.4.2 */-->
+    <!--/*
+      * The backup image section of this tag has been generated for use on a
+      * non-SSL page. If this tag is to be placed on an SSL page, change the
+      *   'http://ads.artsopolis.com/www/delivery/...'
+      * to
+      *   'https://ads.artsopolis.com/www/delivery/...'
+      *
+      * This noscript section of this tag only shows image banners. There
+      * is no width or height in these banners, so if you want these tags to
+      * allocate space for the ad before it shows, you will need to add this
+      * information to the <img> tag.
+      *
+      * If you do not want to deal with the intricities of the noscript
+      * section, delete the tag (from <noscript>... to </noscript>). On
+      * average, the noscript tag is called from less than 1% of internet
+      * users.
+      */-->
+
+    <script type='text/javascript'><!--//<![CDATA[
+       var m3_u = (location.protocol=='https:'?'https://ads.artsopolis.com/www/delivery/ajs.php':'http://ads.artsopolis.com/www/delivery/ajs.php');
+       var m3_r = Math.floor(Math.random()*99999999999);
+       if (!document.MAX_used) document.MAX_used = ',';
+       document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+       document.write ("?zoneid=833&amp;block=1");
+       document.write ('&amp;cb=' + m3_r);
+       if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+       document.write ("&amp;loc=" + escape(window.location));
+       if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+       if (document.context) document.write ("&context=" + escape(document.context));
+       if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+       document.write ("'><\/scr"+"ipt>");
+    //]]>--></script><noscript><a href='http://ads.artsopolis.com/www/delivery/ck.php?n=ac0184cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.artsopolis.com/www/delivery/avw.php?zoneid=5&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ac0184cc' border='0' alt='' /></a></noscript>
+</li>
+ 
+
+
+
+
+
+      </ul>
+    </div>
+    <!-- End #content_sub -->
+    <div id="site_info">
+      <ul id="footerlist" class="sortable">
+	
+
+
+
+<!-- DAMON: Removed class="window" from this LI as it is not really needed. -->
+<li id="footeritem_10025"
+        >
+        <h2 class="handle">Premier Partners & Sponsors</h2>
+    <p style="text-align: left;"><span style="font-size: small;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="color: rgb(145, 147, 150); ">BROUGHT TO YOU BY:&nbsp;</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong></span><span style="color: rgb(145, 147, 150); "><strong><span style="font-size: small; ">PREMIER PARTNERS:</span></strong></span></p>
+<p style="text-align: left; ">&nbsp; &nbsp; &nbsp;&nbsp;<a target="_blank" href="http://www.cultural-alliance.com/"><img border="0" align="absMiddle" width="200" hspace="25" height="45" src="/sites/birmingham365.org/images/local/CulturalAllianceofGreaterBham.jpg" alt="" /></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="http://www.birminghamchamber.com/" target="_blank"><img border="0" align="absMiddle" width="190" hspace="10" height="79" src="/sites/birmingham365.org/images/local/bbalogo.jpg" vspace="10" alt="" /></a>&nbsp; &nbsp;<strong><a href="http://www.flybirmingham.com/" target="_blank"><img src="/sites/birmingham365.org/images/local/Aiport%20Logo%20White%20Space.jpg" width="200" height="102" align="absMiddle" hspace="10" alt="" /></a></strong> &nbsp; &nbsp;<a href="http://www.foundationbirmingham.org/" target="_blank"><img border="0" align="absMiddle" width="140" hspace="10" height="80" src="/sites/birmingham365.org/images/local/CFGB_vert.jpg" vspace="10" alt="" /></a></p></li> 
+
+<!-- DAMON: Removed class="window" from this LI as it is not really needed. -->
+<li id="footeritem_10161"
+        >
+        <h2 class="handle">Strategic Partners</h2>
+    <p style="text-align: left; "><span style="font-size: small; "><span style="color: rgb(145, 147, 150); "><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; STRATEGIC PARTNERS:</strong></span></span></p>
+<p style="text-align: center; "><strong><a href="http://bhammag.com" target="_blank"><i>Birmingham </i>magazine</a>&nbsp; &nbsp; &nbsp; &nbsp;<a href="http://wbhm.org" target="_blank">WBHM 90.3</a>&nbsp; &nbsp; &nbsp;&nbsp;</strong><strong>&nbsp;</strong><strong><a href="http://weldbham.com" target="_blank">Weld for Birmingham</a></strong></p>
+<p style="text-align: center; "><i><a href="http://www.birmingham365.org/page/partners" target="_blank">Learn more about these partners.</a></i></p></li> 
+
+<!-- DAMON: Removed class="window" from this LI as it is not really needed. -->
+<li id="footeritem_10163"
+    class="footer"    >
+        <h2 class="handle">Footer Links</h2>
+    <ul>
+    <li><span style="font-family: Arial;"><strong><span style="font-size: small;">RESOURCES</span></strong></span></li>
+    <li><a href="/categories/index/41/0">Free Events</a></li>
+    <li><a href="http://visitor.r20.constantcontact.com/manage/optin/ea?v=0018GC6MpVjY0QO1P5UQuOo2U7q2t8gSPFpPhqM0kPVaHwtBoHITj9Ma_9NMcimOnGXlJPC3VRaQt87_v5dGp9-0A%3D%3D" onclick="window.open(this.href,'BirminghamBuzzNewsletter','resizable=yes,location=no,menubar=no,scrollbars=yes,status=no,toolbar=no,fullscreen=no,dependent=no,width=1000,height=800,status'); return false">Birmingham Buzz</a></li>
+    <li><a href="/page/plan_experience">Plan Your Experience</a></li>
+    <li><a href="http://www.alabama.travel" target="_blank">Sweet Home Alabama</a></li>
+    <li><a href="http://www.birminghambusinessalliance.com" target="_blank">Business in the Region</a></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+    <li><span style="font-family: Arial;"><strong><span style="font-size: small;">SUBMIT<br />
+    </span></strong></span></li>
+    <li><a href="/page/submit_event">Submit an Event</a></li>
+    <li><a href="/submit/org">Add an Organization</a></li>
+    <li><a onclick="openReportWindow()" href="#">Submit Listing Change</a></li>
+    <li><a href="/user/login">Login/Create an Account</a></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+    <li><span style="font-family: Arial;"><strong><span style="font-size: small;">DIRECTORIES</span></strong></span></li>
+    <li><a href="/profile/listing/">Artist Profiles</a></li>
+    <li><a href="/org/listing/">Cultural Organizations</a></li>
+    <li><a href="/venue/listing/">Venues</a></li>
+    <li><a href="http://www.activeculture.info/educationalSearch.asp">The Smart Directory</a></li>
+    <li><a href="http://localtreasures.birmingham365.org/">Local Treasures</a></li>
+    <li><a href="/video/listing/">Video Central</a></li>
+    <li><a href="/page/news/">News &amp; Media Reviews</a></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+    <li><span style="font-family: Arial;"><strong><span style="font-size: small;">ABOUT</span></strong></span></li>
+    <li><a href="/page/contact_us">Contact Us</a></li>
+    <li><a href="/page/overview">Overview</a></li>
+    <li><a href="/page/partners">Our Partners &amp; Donors</a></li>
+    <li><a href="/page/advertise">Cooperative Marketing</a></li>
+    <li><a href="/page/privacy_policy">Privacy Policy</a></li>
+</ul></li> 
+
+<!-- DAMON: Removed class="window" from this LI as it is not really needed. -->
+<li id="footeritem_10165"
+        >
+        <h2 class="handle">Artsopolis Network</h2>
+    <p style="text-align: center; font-family: Arial,Helvetica,sans-serif; font-size: 11px;"><span style="color: rgb(128, 128, 128);"><b><a href="http://artsopolisnetwork.com" target="_blank"><span style="color: rgb(0, 0, 0); ">Artsopolis Network Members</span></a></b></span><span style="color: rgb(218, 128, 32);"><b>:</b></span><span style="color: rgb(128, 128, 128);"><b>&nbsp;</b></span><a href="http://www.nowplayingaustin.com/" target="_blank"><span style="color: rgb(128, 128, 128);">  Austin TX   </span></a><span style="color: rgb(128, 128, 128);">  | <a href="http://birmingham365.org/" target="_blank"><span style="color: rgb(128, 128, 128);"> Birmingham AL  </span></a> | <a href="http://myndarts.com" target="_blank"><span style="color: rgb(128, 128, 128);">Bismarck ND  </span></a> | <a href="http://artsboston.org" target="_blank"><span style="color: rgb(128, 128, 128);">Boston MA</span></a> | <a href="http://www.charlottecultureguide.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Charlotte NC</span></a> | <a href="http://www.peakradar.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Colorado Springs CO</span></a> | <a href="http://onecolumbiasc.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Columbia SC</span></a> | <a href="http://myndarts.com" target="_blank"><span style="color: rgb(128, 128, 128);">Fargo ND</span></a> | <a href="http://flagstaff.showup.com" target="_blank"><span style="color: rgb(128, 128, 128);">Flagstaff AZ</span></a> | <a href="http://www.geneseefun.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Flint MI</span></a> | <a href="http://www.artscalendar.com" target="_blank"><span style="color: rgb(128, 128, 128);">Ft Lauderdale FL</span></a> |&nbsp;</span><br />
+<span style="color: rgb(128, 128, 128);"> <a href="http://www.worthgoing.com" target="_blank"><span style="color: rgb(128, 128, 128);">Fort Worth TX</span></a> | <a href="http://myndarts.com" target="_blank"><span style="color: rgb(128, 128, 128);">Grand Forks ND</span></a> | <a href="http://www.gotriadscene.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Greensboro NC</span></a> | <a href="http://www.artshound.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Houston TX</span></a> |&nbsp;<a href="http://www.kalamazooarts.org" target="_blank"><span style="color: rgb(128, 128, 128);">Kalamazoo MI</span></a> | <a href="http://www.ovations365.com" target="_blank"><span style="color: rgb(128, 128, 128);">Macon GA</span></a> | <a href="http://events.artsmemphis.org/" target="_blank"><span style="color: rgb(128, 128, 128);">Memphis TN</span></a> | <a href="http://milwaukee365.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Milwaukee WI</span></a> | <a href="http://myndarts.com" target="_blank"><span style="color: rgb(128, 128, 128);">Minot ND</span></a> | <a href="http://www.montereybay365.com" target="_blank"><span style="color: rgb(128, 128, 128);">Monterey CA</span></a> | <a href="http://www.nowplayingnashville.com" target="_blank"><span style="color: rgb(128, 128, 128);">Nashville TN</span></a> | <a href="http://www.nowplayingdn.org" target="_blank"><span style="color: rgb(128, 128, 128);">Norfolk VA</span></a> |&nbsp;<a href="http://www.sparkoc.com" target="_blank"><span style="color: rgb(128, 128, 128);">Orange County CA</span></a> | <br />
+<a href="http://palmbeachcounty.artscalendar.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Palm Beach County FL </span></a> | <a href="http://phillyfunguide.com" target="_blank"><span style="color: rgb(128, 128, 128);">Philadelphia PA </span></a> | <a href="http://www.arttixri.com" target="_blank"><span style="color: rgb(128, 128, 128);">Providence RI</span></a> | <a href="http://www.inlandarts.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Riverside CA</span></a> | <a href="http://www.sacramento365.com/" target="_blank"><span style="color: rgb(128, 128, 128);">Sacramento CA</span></a> | <a href="http://aroundthecloud.org/" target="_blank"><span style="color: rgb(128, 128, 128);"> Saint Cloud MN</span></a> | <a href="http://www.sahearts.com" target="_blank"><span style="color: rgb(128, 128, 128);">San Antonio TX</span></a> | <a href="http://www.livesv.com" target="_blank"><span style="color: rgb(128, 128, 128);">San Jose CA</span></a> |&nbsp;<a href="http://www.stcroixsplash.org" target="_blank"><span style="color: rgb(128, 128, 128);">St. Croix Valley MN/WI</span></a>  | <a href="http://www.seattleperforms.com" target="_blank"><span style="color: rgb(128, 128, 128);">Seattle WA</span></a> | <a href="http://www.artstampabay.com" target="_blank"><span style="color: rgb(128, 128, 128);">Tampa Bay FL</span></a> | <a href="http://www.nowplayingutah.com" target="_blank"><span style="color: rgb(128, 128, 128);">Utah</span></a></span></p></li> 
+
+      </ul>
+    </div>
+    <!-- End #site_info -->
+  </div>
+  <!-- End #content -->
+</div>
+<!-- End #main -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4035645-45']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<div class="footercode">
+    <p style="text-align: center;"><span style="color: rgb(145, 147, 150); "><span style="font-size: smaller; ">&copy; 2013 - Cultural Alliance of Greater Birmingham | 1731 1st Ave N # 190  Birmingham, AL 35203</span></span></p>
+</div>
+<script type="text/javascript" src="/js/fancybox/fancybox/jquery.fancybox-1.3.4.pack.js"></script><script type="text/javascript" src="/js/featured_events.js"></script><link rel="stylesheet" type="text/css" href="/js/fancybox/fancybox/jquery.fancybox-1.3.4.css" media="screen" /><link rel="stylesheet" type="text/css" href="/js/fancybox/fancybox/style.css" /> </body>
+
+</html>

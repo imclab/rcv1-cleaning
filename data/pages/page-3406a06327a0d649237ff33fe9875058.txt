@@ -1,0 +1,74 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title></title>
+
+		<script language="javascript" type="text/javascript" src="/Content/Common/Js/jquery.js" ></script>
+		<script language="javascript" type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript">
+			$(function () {
+				var options = { timeout: 60000 };
+				var cookieEnabled = (navigator.cookieEnabled) ? true : false;
+				if (!cookieEnabled) {
+					var isFirst = '/inventory.aspx?_vstatus=3&_used=true'.lastIndexOf('?') == -1;
+					var ur = '/inventory.aspx?_vstatus=3&_used=true';
+					ur += (isFirst) ? '?' : '&';
+					ur += '_cookiedisabled=true';
+					location.href = ur;
+				} else {
+					if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(geolocation_success, geolocation_handleError, options);
+					} else {
+						geolocation_handleError(null);
+					}
+				}
+			});
+
+			function geolocation_success(position) {
+				var lat = position.coords.latitude;
+				var lon = position.coords.longitude;
+				var latlng = new google.maps.LatLng(lat, lon);
+				var geocoder = new google.maps.Geocoder();
+				var country = null;
+				var state = null;
+				var IP = '3339758749';
+				var cookieLocation = IP + '~' + lat + '~' + lon + '~';
+
+				geocoder.geocode({ location: latlng },
+					function (results, status) {
+						if (status == google.maps.GeocoderStatus.OK) {
+							var result = results[0].address_components;
+
+							for (var i = 0; i < result.length; ++i) {
+								if (result[i].types[0] == "country") {
+									country = result[i].short_name;
+								}
+								if (result[i].types[0] == "administrative_area_level_1") {
+									state = result[i].long_name;
+								}
+							}
+						}
+
+						if (country != null && country == 'US' && state != null) {
+							cookieLocation += state;
+						} else {
+							cookieLocation += 'undefined';
+						}
+						$.cookie('EBizAutosGalleryCookieUserLocation', cookieLocation, { path: "/" });
+						location.href = '/inventory.aspx?_vstatus=3&_used=true';
+					});
+			};
+
+			function geolocation_handleError(error) {
+				$.cookie('EBizAutosGalleryCookieUserLocation', 'undefined', { path: "/" });
+				location.href = '/inventory.aspx?_vstatus=3&_used=true';
+			};
+		</script>
+	</head>
+	<body>
+	 
+	</body>
+</html>

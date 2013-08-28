@@ -1,0 +1,516 @@
+<html>
+<head>
+	<title>Tupelo Automobile Museum</title>
+	<meta name="keywords" content="antique cars, classic cars, collector cars,  tupelo, automobile, museum, auto, tupelo auto museum, tupelo automobile museum,  mississippi, frank spain, max barryhill, rare, collectible, elvis, packard, packards, tucker, brass cars, hot rods, mustang, benz, duesenberg, viper, jaguar, great race, leslie, non-profit, educational, foundation, free, downloads, backgrounds, pics, pictures, aim icons, coloring, coloring book, interactive, history, automobile history">
+	<meta name=description content="The Tupelo Automobile Museum collection includes over 150 rare cars. This is a listing of over 100 cars currently on display in the museum.">
+	<script>
+	<!--
+	// preloads
+	img1 = new Image();
+	img1.src = "images/shell/link_home2.jpg";
+	img2 = new Image();
+	img2.src = "images/shell/link_collection2.jpg";
+	img3 = new Image();
+	img3.src = "images/shell/link_foundation2.jpg";
+	img4 = new Image();
+	img4.src = "images/shell/link_elvis2.jpg";
+	img5 = new Image();
+	img5.src = "images/shell/link_functions2.jpg";
+	img6 = new Image();
+	img6.src = "images/shell/link_special2.jpg";
+	img7 = new Image();
+	img7.src = "images/shell/link_kids2.jpg";
+	img8 = new Image();
+	img8.src = "images/shell/link_contact2.jpg";
+	img9 = new Image();
+	img9.src = "images/shell/link_store2.jpg";
+	//menu collection
+	img10 = new Image();
+	img10.src = "images/menus/link_menu_overview2.jpg";
+	img11 = new Image();
+	img11.src = "images/menus/link_menu_collection2.jpg";
+	img12 = new Image();
+	img12.src = "images/menus/link_menu_monthly2.jpg";
+	img13 = new Image();
+	img13.src = "images/menus/link_menu_featured2.jpg";
+	img14 = new Image();
+	img14.src = "images/menus/link_menu_news2.jpg";
+	
+	// timeouts
+	var to_menu_collection = null;
+	var to_menu_fun = null;
+	
+	function get_obj(obj, is_style) {
+		if (is_style) {
+			if (document.getElementById) {
+				return document.getElementById(obj).style;
+			} else if (document.all) {
+				return document.all[obj].style;
+			} else if (document.layers) {
+				return document.layers[obj];
+			}
+		} else {
+			if (document.getElementById) {
+				return document.getElementById(obj);
+			} else if (document.all) {
+				return document.all[obj];
+			} else if (document.layers) {
+				return document.layers[obj];
+			}
+		}
+	}
+	function show(obj) {
+		get_obj(obj, 1).visibility = "visible";
+		if (obj == "div-collection") {
+			clearTimeout(to_menu_collection);
+		}
+		if (obj == "div-fun") {
+			clearTimeout(to_menu_fun);
+		}
+	}
+	function hide(obj) {
+		get_obj(obj, 1).visibility = "hidden";
+	}
+	function start_timer(obj) {
+		if (obj == "div-collection") {
+			to_menu_collection = setTimeout("hide('div-collection')", 300);
+		}
+		if (obj == "div-fun") {
+			to_menu_fun = setTimeout("hide('div-fun')", 300);
+		}
+	}
+	function highlight(obj, dir) {
+		dir = !dir ? "shell" : dir;
+		get_obj(obj, 0).src = "images/" + dir + "/link_" + obj + "2.jpg";
+	}
+	function unhighlight(obj, dir) {
+		dir = !dir ? "shell" : dir;
+		get_obj(obj, 0).src = "images/" + dir + "/link_" + obj + "1.jpg";
+	}
+	//POPUP
+	function pop(url, title, w, h) {
+		params = "width=" + w + ",height=" + h + ",scrolbars=no,menubars=no,resizable=no,statusbar=no";
+		window.open(url, title, params);
+	}
+	-->
+	</script>
+	<style type=text/css>
+	<!--
+	body {
+		margin:0;
+		background:#dcd8c2;
+		scrollbar-arrow-color:#486A64;
+  scrollbar-base-color:#3C0B11;
+  scrollbar-shadow-color:#F3F3F3;
+  scrollbar-face-color:#c1ba8e;
+  scrollbar-highlight-color:#F3F3F3;
+  scrollbar-dark-shadow-color:#FFFFFF;
+  scrollbar-3d-light-color:#3C0B11;
+	}
+	body, font, a, td, p {
+		font-family:Arial;
+		font-size:12px;
+	}
+	#div-collection {
+		z-index:3;
+		position:absolute;
+		visibility:hidden;
+		top:108px;
+		left:129px;
+	}
+	#div-fun {
+		z-index:4;
+		position:absolute;
+		visibility:hidden;
+		top:293px;
+		left:129px;
+	}
+	
+	#shell-out {
+		text-align:left;
+		padding:13px;
+		position:relative;
+		width:775px;
+		background:#C1B98F;
+	}
+	#shell-in {
+		padding:15px;
+		position:relative;
+		width:749px;
+		background:#DCD8C2;
+	}
+	#menu {
+		z-index:1;
+		position:absolute;
+		top:0px;
+		left:0px;
+		width:133px;
+		height:448px;
+		background:url('shell/menu_bg.jpg');
+	}
+	#logo {
+		z-index:1;
+		position:absolute;
+		top:0px;
+		left:297px;
+		width:183px;
+		height:105px;
+		background:url('shell/logo.jpg');
+	}
+	#extra-shadow {
+		position:absolute;
+		top:356px;
+		left:-66px;
+	}
+	.menu-links {
+		z-index:2;
+		position:absolute;
+		left:27px;
+		width:97px;
+		height:16px;
+	}
+	#content {
+		text-align:left;
+		position:relative;
+		margin-left:114px;
+		width:604px;
+		background:#C1B98F;
+		border:1px #486A64 solid;
+	}
+	font.spacer {
+		font-size:1px;
+	}
+	font.head {
+		font-family:arial;
+		font-size:16px;
+		color:#486A64;
+		font-weight:bold;
+	}
+	
+	a {
+	color:#486a64;
+	font-family:Arial;
+	font-size:11px;
+	font-weight:bold;
+	text-decoration:none;
+}
+a:hover {
+	color:#633;
+}
+	
+	-->
+	</style>
+	
+</head>
+<body>
+<center>
+
+
+<!----[ BEGIN SHELL ]---->
+  <div id="shell-out"> 
+    <!----[ BEGIN ABSOLUTELY POSITIONED ELEMENTS ]---->
+    <div id="menu"> <font class=spacer>&nbsp;</font> </div>
+    <div id="logo"> <font class=spacer>&nbsp;</font> </div>
+    <!----[ BEGIN LINKS ]---->
+    <div class="menu-links" style="top:76px;"> <a href="index.php" onMouseOver="highlight('home');" 
+onMouseOut="unhighlight('home');"> <img id=home src="images/shell/link_home1.jpg" width=97 height=16 border=0> 
+      </a> </div>
+    <div class="menu-links" style="top:113px;"> <a href=# onMouseOver="highlight('collection'); show('div-collection');" onMouseOut="unhighlight('collection'); start_timer('div-collection');"> 
+      <img id=collection src="images/shell/link_collection1.jpg" width=97 height=16 border=0> 
+      </a> </div>
+    <div class="menu-links" style="top:150px;"> <a href="foundation.php" onMouseOver="highlight('foundation');" onMouseOut="unhighlight('foundation');"> 
+      <img id=foundation src="images/shell/link_foundation1.jpg" width=97 height=16 border=0> 
+      </a> </div>
+    <div class="menu-links" style="top:186px;"> <a href="elvis.php" onMouseOver="highlight('elvis');" onMouseOut="unhighlight('elvis');"> 
+      <img id=elvis src="images/shell/link_elvis1.jpg" width=97 height=16 border=0> 
+      </a> </div>
+    <div class="menu-links" style="top:223px;"> <a href="functions.php" onMouseOver="highlight('functions');" onMouseOut="unhighlight('functions');"> 
+      <img id=functions src="images/shell/link_functions1.jpg" width=97 height=16 border=0> 
+      </a> </div>
+    <div class="menu-links" style="top:260px;"> <a href="special.php" onMouseOver="highlight('special');" onMouseOut="unhighlight('special');"> 
+      <img id=special src="images/shell/link_special1.jpg" width=97 height=16 border=0> 
+      </a> </div>
+    <div class="menu-links" style="top:297px;"> <a href="#" onMouseOver="highlight('fun'); show('div-fun');" onMouseOut="unhighlight('fun'); start_timer('div-fun');"> 
+      <img id=fun src="images/shell/link_fun1.jpg" width=97 height=16 border=0> 
+      </a> </div>
+    <div class="menu-links" style="top:334px;"> <a href="contact.php" onMouseOver="highlight('contact');" onMouseOut="unhighlight('contact');"> 
+      <img id=contact src="images/shell/link_contact1.jpg" width=97 height=16 border=0> 
+      </a> </div>
+    <div class="menu-links" style="top:371px;"> <a href="fun_stuff.php" onMouseOver="highlight('store');" onMouseOut="unhighlight('store');"> 
+      <img id=store src="images/shell/link_store1.jpg" width=97 height=16 border=0> 
+      </a> </div>
+    <!----[ END LINKS ]---->
+    <!----[ BEGIN MENU COLLECTION ]---->
+    <div id=div-collection onMouseOver="show('div-collection');" onMouseOut="start_timer('div-collection');"> 
+      <table border=0 cellspacing=0 cellpadding=0>
+        <tr> 
+          <td valign=top><img src="images/menus/connector1.jpg" width=7 height=6 style="margin-top:10px;"></td>
+          <td valign=top> <table border=0 cellspacing=0 cellpadding=0>
+              <!----[ MENU LINK OVERVIEW ]---->
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_top.jpg" width=84 height=5></td>
+              </tr>
+              <tr> 
+                <td align=right><img src="images/menus/bar_left.jpg" width=4 height=17></td>
+                <td> <a href="overview.php" onMouseOver="highlight('menu_overview', 'menus');" onMouseOut="unhighlight('menu_overview', 'menus');"> 
+                  <img id=menu_overview src="images/menus/link_menu_overview1.jpg" width=76 height=17 border=0></a></td>
+                <td><img src="images/menus/bar_right.jpg" width=4 height=17></td>
+              </tr>
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_bot.jpg" width=84 height=7></td>
+              </tr>
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/connector2.jpg" width=6 height=4></td>
+              </tr>
+              <!----[ MENU LINK COLLECTION ]---->
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_top.jpg" width=84 height=5></td>
+              </tr>
+              <tr> 
+                <td align=right><img src="images/menus/bar_left.jpg" width=4 height=17></td>
+                <td> <a href="list.php" onMouseOver="highlight('menu_collection', 'menus');" onMouseOut="unhighlight('menu_collection', 'menus');"> 
+                  <img id=menu_collection src="images/menus/link_menu_collection1.jpg" width=76 height=17 border=0></td>
+                <td><img src="images/menus/bar_right.jpg" width=4 height=17></td>
+              </tr>
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_bot.jpg" width=84 height=7></td>
+              </tr>
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/connector2.jpg" width=6 height=4></td>
+              </tr>
+              <!----[ MENU LINK MONTHLY ]---->
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_top.jpg" width=84 height=5></td>
+              </tr>
+              <tr> 
+                <td align=right><img src="images/menus/bar_left.jpg" width=4 height=17></td>
+                <td> <a href="monthly.php" onMouseOver="highlight('menu_monthly', 'menus');" onMouseOut="unhighlight('menu_monthly', 'menus');"> 
+                  <img id=menu_monthly src="images/menus/link_menu_monthly1.jpg" width=76 height=17 border=0></td>
+                <td><img src="images/menus/bar_right.jpg" width=4 height=17></td>
+              </tr>
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_bot.jpg" width=84 height=7></td>
+              </tr>
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/connector2.jpg" width=6 height=4></td>
+              </tr>
+              <!----[ MENU LINK FEATURED ]---->
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_top.jpg" width=84 height=5></td>
+              </tr>
+              <tr> 
+                <td align=right><img src="images/menus/bar_left.jpg" width=4 height=17></td>
+                <td> <a href="javascript:pop('featured_cars/1886.php', 'FeaturedCars', '606', '330');" onMouseOver="highlight('menu_featured', 'menus');" onMouseOut="unhighlight('menu_featured', 'menus');"> 
+                  <img id=menu_featured src="images/menus/link_menu_featured1.jpg" width=76 height=17 border=0></td>
+                <td><img src="images/menus/bar_right.jpg" width=4 height=17></td>
+              </tr>
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_bot.jpg" width=84 height=7></td>
+              </tr>
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/connector2.jpg" width=6 height=4></td>
+              </tr>
+              <!----[ MENU LINK NEWS ]---->
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_top.jpg" width=84 height=5></td>
+              </tr>
+              <tr> 
+                <td align=right><img src="images/menus/bar_left.jpg" width=4 height=17></td>
+                <td> <a href="news.php" onMouseOver="highlight('menu_news', 'menus');" onMouseOut="unhighlight('menu_news', 'menus');"> 
+                  <img id=menu_news src="images/menus/link_menu_news1.jpg" width=76 height=17 border=0></td>
+                <td><img src="images/menus/bar_right.jpg" width=4 height=17></td>
+              </tr>
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_bot.jpg" width=84 height=7></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+    </div>
+    <div id="extra-shadow"> <img src="images/shell/extra_shadow2.jpg" border=0> 
+    </div>
+    <!----[ END MENU COLLECTION ]---->
+	
+	<!----[ BEGIN MENU FUN ]---->
+    <div id=div-fun onMouseOver="show('div-fun');" onMouseOut="start_timer('div-fun');"> 
+      <table border=0 cellspacing=0 cellpadding=0>
+        <tr> 
+          <td valign=top><img src="images/menus/connector1.jpg" width=7 height=6 style="margin-top:10px;"></td>
+          <td valign=top> <table border=0 cellspacing=0 cellpadding=0>
+              <!----[ MENU LINK KIDS ]---->
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_top.jpg" width=84 height=5></td>
+              </tr>
+              <tr> 
+                <td align=right><img src="images/menus/bar_left.jpg" width=4 height=17></td>
+                <td> <a href="kids.php" onMouseOver="highlight('menu_kids_garage', 'menus');" onMouseOut="unhighlight('menu_kids_garage', 'menus');"> 
+                  <img id=menu_kids_garage src="images/menus/link_menu_kids_garage1.jpg" width=76 height=17 border=0></a></td>
+                <td><img src="images/menus/bar_right.jpg" width=4 height=17></td>
+              </tr>
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_bot.jpg" width=84 height=7></td>
+              </tr>
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/connector2.jpg" width=6 height=4></td>
+              </tr>
+              <!----[ MENU LINK DOWNLOADS ]---->
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_top.jpg" width=84 height=5></td>
+              </tr>
+              <tr> 
+                <td align=right><img src="images/menus/bar_left.jpg" width=4 height=17></td>
+                <td> <a href="fun_stuff.php" onMouseOver="highlight('menu_downloads', 'menus');" onMouseOut="unhighlight('menu_downloads', 'menus');"> 
+                  <img id=menu_downloads src="images/menus/link_menu_downloads1.jpg" width=76 height=17 border=0></td>
+                <td><img src="images/menus/bar_right.jpg" width=4 height=17></td>
+              </tr>
+              <tr> 
+                <td colspan=3 align=center><img src="images/menus/bar_bot.jpg" width=84 height=7></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+    </div>
+    <!----[ END MENU FUN ]---->
+	
+    <!----[ END ABSOLUTELY POSITIONED ELEMENTS ]---->
+    <table border=0 cellspacing=0 cellpadding=0 height=448 width=100%>
+      <tr> 
+        <td valign=top> <div id="shell-in"> 
+            <table border=0 cellspacing=0 cellpadding=0 height=422 width=100%>
+              <tr> 
+                <td valign=top> <div id="content"> 
+                    <table cellspacing=0 cellpadding=0 height=422 width=100%>
+                      <tr> 
+                        <td valign=top>
+                          <!----[ BEGIN CONTENT ]---->
+                          <table border=0 cellspacing=0 cellpadding=6 width=100%>
+                            <tr> 
+                              <td width=33% valign=top style="padding-left:8px;"> 
+                                <font class=head> Automobile List: </font> <p style="width:135px; padding-left:4px;"> 
+                                  <b>Here is a list of displayed cars in the collection:</b></p>
+                                1886 Benz<br>
+                                1899 Knox Porcupine<br>
+                                1902 Olds<br>
+                                1903 Cadillac<br>
+                                1904 Reo<br>
+                                1904 White Steamer Model D<br>
+                                1905 Delauney Belleville<br>
+                                1906 Queen<br>
+                                1907 International High Wheeler<br>
+                                1907 Ford Model R<br>
+                                1908 Glide<br>
+                                1908 Firestone Columbus<br>
+                                1910 Paterson<br>
+                                1910 Haynes Model 19<br>
+                                1911 Brush<br>
+                                1911 Sears Buggy<br>
+                                1912 Cartercar<br>
+                                1913 Westcott<br>
+                                1913 Minerva Knight<br>
+                                1914 Saxon<br>
+                                1915 Trumbull<br>
+                                1915 Studebaker<br>
+                                1915 Lozier<br>
+                                1915 Winton<br>
+                                1916 Owen Magnetic<br>
+                                1916 Auburn Chummy<br>
+                                1917 Hupmobile<br>
+                                1917 Pierce Arrow<br>
+                                1918 Stanley Steamer<br>
+                                1920 Apperson Jackrabbit V-8<br>
+                                1921 Packard Twin 6 Town Car<br>
+                                1921 Wasp<br>
+                                1923 Brewster<br>
+                                1923 Marmon 1926 Hispano Suiza<br></td>
+                              <td width=33% valign=top> <p style="padding-top:88px;"> 
+                                  1927 Ford "T"<br>
+                                  1927 Stutz<br>
+                                  1928 Franklin<br>
+                                  1928 Hispano Suiza Town Car<br>
+                                  1929 Pierce Arrow<br>
+                                  1920 Cord L-29<br>
+                                  1929 Packard<br>
+                                  1929 Duesenberg Model J<br>
+                                  1931 Rolls Royce<br>
+                                  1931 Lincoln Town Car<br>
+                                  1932 Nash 8-Cyl<br>
+                                  1933 Morgan Trike<br>
+                                  1935 Packard<br>
+                                  1936 Lagonda<br>
+                                  1936 Bentley<br>
+                                  1937 Chrysler Air Flow<br>
+                                  1937 Alvis<br>
+                                  1938 MG <br>
+                                  1939 Cadillac V-16 Limo<br>
+                                  1939 Graham<br>
+                                  1939 Ford Convertible<br>
+                                  1940 Buick Super Convertible<br>
+                                  1941 Lincoln Zephyr <br>
+                                  1941 Ford Woodie Wagon<br>
+                                  1948 Tucker<br>
+                                  1948 Jaguar Mark IV Convertible<br>
+                                  1949 Triumph 2000<br>
+                                  1951 Talbot Logo T-26<br>
+                                  1953 Chevrolet 210 Convertible<br>
+                                  1954 Buick Roadmaster Convertible<br>
+                                  1954 Kaiser Darrin Convertible<br>
+                                  1954 Chrysler Imperial<br>
+                                  1954 Mercury Sun Valley<br>
+                                  1955 Messerschmit </p></td>
+                              <td valign=top style="padding-top:34px;"> <p> 1955 
+                                  Packard Caribbean Convertible<br>
+                                  1955 Jaguar XK 140<br>
+                                  1957 Dodge Royale Convertible<br>
+                                  1957 Corvette Convertible S.C.<br>
+                                  1957 Chevrolet Bel Air Convertible<br>
+                                  1957 Mercury Turnpike Cruiser<br>
+                                  1957 BMW Isetta<br>
+                                  1957 Ford Skyliner<br>
+                                  1958 Packard<br>
+                                  1959 Edsel Corsair Convertible<br>
+                                  1960 Mercedes 190 Convertible<br>
+                                  1963 Leslie Special Convertible<br>
+                                  &nbsp;(Great Race Car)<br>
+                                  1964 Avanti S.C.<br>
+                                  1964 Mustang Convertible<br>
+                                  1965 Corvair Monza Convertible<br>
+                                  1967 Roth Wishbone<br>
+                                  1967 Mercedes 300 SE/C<br>
+                                  1967 Citroen 2CV<br>
+                                  1969 Corvette<br>
+                                  1970 Lincoln<br>
+                                  1971 Dodge Charger<br>
+                                  1972 Mercedes 450SL Convertible<br>
+                                  1974 Volkswagen Super<br>
+                                  1974 Jensen Interceptor Convertible<br>
+                                  1974 Porsche 914 Convertible<br>
+                                  1976 Lincoln Mark IV (Elvis)<br>
+                                  1977 Corvette<br>
+                                  1977 Pontiac Trans Am<br>
+                                  1981 Delorean DMC<br>
+                                  1982 Barister Corvette (Liberace)<br>
+                                  1982 Maserati Quattroporte<br>
+                                  1983 Camarovette<br>
+                                  1984 Aston Martin Lagonda<br>
+                                  1985 Triton Aero Car<br>
+                                  1986 Jaguar XJS<br>
+                                  1994 Dodge Viper (12 Miles) </p></td>
+                            </tr>
+                          </table>
+                          <!----[ END CONTENT ]---->
+                        </td>
+                      </tr>
+                    </table>
+                  </div></td>
+              </tr>
+            </table>
+          </div></td>
+      </tr>
+    </table>
+  </div>
+<!----[ END SHELL ]---->
+
+
+</center>
+</body>
+</html>

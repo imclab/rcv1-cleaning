@@ -1,0 +1,749 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="HeadTag"><meta charset="utf-8" />
+<script type="text/javascript">
+	docCookies = {
+		getItem: function (sKey) {
+			if (!sKey || !this.hasItem(sKey)) { return null; }
+			return unescape(document.cookie.replace(new RegExp("(?:^|.*;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*"), "$1"));
+		},
+		setItem: function (sKey, sValue, vEnd, sPath, sDomain, bSecure) {
+			if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/.test(sKey)) { return; }
+			var sExpires = "";
+			if (vEnd) {
+				switch (typeof vEnd) {
+					case "number": sExpires = "; max-age=" + vEnd; break;
+					case "string": sExpires = "; expires=" + vEnd; break;
+					case "object": if (vEnd.hasOwnProperty("toGMTString")) { sExpires = "; expires=" + vEnd.toGMTString(); } break;
+				}
+			}
+			document.cookie = escape(sKey) + "=" + escape(sValue) + sExpires + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "") + (bSecure ? "; secure" : "");
+		},
+		removeItem: function (sKey, sPath, sDomain) {
+			if (!sKey || !this.hasItem(sKey)) { return; }
+			var oExpDate = new Date();
+			oExpDate.setDate(oExpDate.getDate() - 1);
+			if (vEnd) {
+				switch (typeof vEnd) {
+					case "number": sExpires = "; max-age=" + vEnd; break;
+					case "string": sExpires = "; expires=" + vEnd; break;
+					case "object": if (vEnd.hasOwnProperty("toGMTString")) { sExpires = "; expires=" + vEnd.toGMTString(); } break;
+				}
+			}
+			document.cookie = escape(sKey) + "=; expires=" + oExpDate.toGMTString() + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "");
+		},
+		hasItem: function (sKey) { return (new RegExp("(?:^|;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie); }
+	};
+
+	function getParameterByName(name) {
+		name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+		var regexS = "[\\?&]" + name + "=([^&#]*)";
+		var regex = new RegExp(regexS);
+		var results = regex.exec(window.location.search);
+		if (results == null)
+			return "";
+		else
+			return decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+
+	function addDays(myDate, days) {
+		return new Date(myDate.getTime() + days * 24 * 60 * 60 * 1000);
+	}
+
+	if (getParameterByName("fullsite") == "on") {
+		var exdate = new Date();
+		exdate.setDate(exdate.getDate() + 90);
+		docCookies.setItem("wsifullsite", "on", exdate.toUTCString(), "/", "tafensw.edu.au");
+	}
+	else {
+		if (docCookies.getItem("wsifullsite") != "on") {
+			if (/(iphone|ipod|ipad|android|blackberry|windows ce|palm|symbian)/i.test(navigator.userAgent)) {
+				document.location.href = "http://m.wsi.tafensw.edu.au" + document.location.pathname + document.location.search;
+			}
+		}
+		else {
+			var exdate = new Date();
+			exdate.setDate(exdate.getDate() + 90);
+			docCookies.setItem("wsifullsite", "on", exdate.toUTCString(), null, "tafensw.edu.au");
+		}
+	}
+</script>
+<meta name="google-site-verification" content="XDU0YVc5EsSphKn0eAd2bi_ARX8yoYkAULypu_1q_bg" /><link href="/favicon.ico" rel="SHORTCUT ICON" />
+<!--[if lt IE 9]>
+<script src="/scripts/html5shiv.js"></script>
+<![endif]-->
+<!--[if lte IE 8]>
+<link rel="stylesheet" type="text/css" href="/styles/IE8.css" />
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="/styles/IE7.css" />
+<![endif]-->
+<link href="/styles/core.css" rel="stylesheet" type="text/css" /><link href="/styles/extras.css" rel="stylesheet" type="text/css" /><link href="/styles/newslider.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/scripts/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript" src="/scripts/jquery.prettyPhoto.js" charset="utf-8"></script>
+<link rel="stylesheet" href="/styles/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+<script type="text/javascript" src="/Scripts/jquery.text-overflow.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$(".dropDownBox").click(function (e) {
+			e.stopPropagation();
+			$(".dropDownList:visible").not($(this).next(".dropDownList")).hide();
+			$(this).next(".dropDownList").slideToggle(400);
+		});
+		$("html").click(function (e) {
+			$(".dropDownList:visible").hide();
+		});
+	});
+	function PopupCenter(pageURL, title, w, h) {
+		var left = (screen.width / 2) - (w / 2);
+		var top = (screen.height / 2) - (h / 2);
+		var targetWin = window.open(pageURL, title, 'channelmode=no, fullscreen=no, toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, titlebar=yes, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+	}
+</script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-2494484-1']);
+	_gaq.push(['_setDomainName', 'tafensw.edu.au']);
+	_gaq.push(['_setAllowLinker', true]);
+	_gaq.push(['_trackPageview']);
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+<link rel="canonical" href="http://wsi.tafensw.edu.au/specialist-centres/design-creative-arts-and-entertainment/"></link><title>
+	Design, Creative Arts and Entertainment 
+</title></head>
+<body>
+	<div id="fb-root"></div>
+	<script>	(function (d, s, id) {
+			//if (navigator.appVersion.indexOf("MSIE 7.") == -1) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=299895880070902";
+				fjs.parentNode.insertBefore(js, fjs);
+			//}
+		} (document, 'script', 'facebook-jssdk'));</script>
+	<form method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="Form">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTgxNDkyMTk3NGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFFmN0bDAwJGN0bDAwJFNpdGVTZWFyY2gFPGN0bDAwJGN0bDAwJENvbnRlbnRQbGFjZUhvbGRlciR3dWNGaW5kQ291cnNlJGJ0bkNvdXJzZVNlYXJjaA==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form'];
+if (!theForm) {
+    theForm = document.Form;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=2AEVofAkCMHuiRVy_qW_GI66LtY0yoKO66tQ3YkbaUfG-ZyhTA-pv1jKOZBDe-tzj1KXBqG6_XD-zQICJEdGIpq0NW41&amp;t=635094650958743867" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=gXYgx5E-65np_chZaU3gkBI1T8L7ZlORdp5FkGlF_H8AZ-MGada6AHAqq4a-GqB5Z-HT9g-g28MFfZwUKddZEbesZKCgaMvZWyIqGNpmP8w_B5zJMZlXMnB5-iXndTs3N2Cy13ylnVueRWqdLwLlOSnCGIo1&amp;t=ffffffffb9f9f042" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Gufiwbsc3yuyoEBK_nF7hNz4yz9pjZByxor4pvEsOz24nM3kdkJuI02jIFKXdTNzz-8F7nePBiJR3GWgIP1ZFBmP-Z3EPyLvhnCljGBq-EvV3Bi4mobBFimIbRjc80_l3HD2EE-1g6aUTJVedgr6_LiyuMSeWBuodrLxKelWI9mipWO60&amp;t=47727e12" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=vrA-bBPBrHoJ14R0IhgNy0EJ6f_R3qTOHzMAInoCiXyKMMCaM_bmUT0xyeYAt6-VV-q9GVE6qcUO7Awuxn3LkPtCR5YulQA03wmL8Ak7JSaCpifCjp7qqBPytO3peu94_mtiV0gfypBogqHKQw4Tewj4ZS5fnylDZS9aj878eCBVaRac0&amp;t=47727e12" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+	<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$ScriptManager', 'Form', [], [], [], 90, 'ctl00$ctl00');
+//]]>
+</script>
+
+	
+	<div class="wrapper">
+		<div class="container">
+			<header>
+				<a class="masthead_logo_click" href="/"></a>
+				<a class="right" href="/" target="_blank"><img src="/images/TAFElogo.png" alt="WSI website" border="0" /></a>
+				<a class="contact right" href="/contact-us/">Contact Us</a>
+				<div class="dropDownBox signIn right noBorders">Sign In</div>
+				<div class="dropDownList boxShadowDark borderDark allCorners" style="position: absolute; left: 680px;top: 35px;">
+					<ul>
+						<li><span class="topCorners">Students</span></li>
+						<li><a href="http://www.tafensw.edu.au/eservices/" target="_blank">Student e-Services</a></li>
+						<li><a href="http://student.det.nsw.edu.au/" target="_blank">Student Portal</a></li>
+						<li><a href="http://careersconnect.wsi.tafensw.edu.au" target="_blank">careersconnect@wsi</a></li>
+						<li><a href="http://wsionline.wsi.tafensw.edu.au/" target="_blank">WSI Online</a></li>
+						<li><a href="http://www.westernsydneyinstitute.wikispaces.net" target="_blank">WSI Wikispaces</a></li>
+						<li><a href="http://wsieportfolio.wsi.tafensw.edu.au/" target="_blank">WSI ePortfolio</a></li>
+						<li><span>Employers</span></li>
+						<li><a href="https://www.tafensw.edu.au/emp/" target="_blank">Employer e-Services</a></li>
+						<li><a href="http://careersconnect.wsi.tafensw.edu.au/employers/" target="_blank">careersconnect@wsi</a></li>
+						<li><a href="http://www.workforcedevelopment.edu.au/your-business/health-check/business-health-check/" target="_blank">Business Health Check</a></li>
+						<li><span>Staff</span></li>
+						<li><a href="https://staff.det.nsw.edu.au" target="_blank">My TAFE – DEC Portal</a></li>
+						<li><a href="http://myemail.det.nsw.edu.au" target="_blank">Webmail</a></li>
+						<li><a href="http://wsi.tafensw.edu.au/tvet-online/" target="_blank">TVET Online</a></li>
+						<li><a href="https://webconf.det.nsw.edu.au/" target="_blank">Adobe Connect</a></li>
+					</ul>
+				</div>
+				<div id="SiteSearchContainer" class="searchSiteBox right" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;SiteSearch&#39;)">
+	
+					<div id="valsSearch" style="display:none;">
+
+	</div>
+					<input type="image" name="ctl00$ctl00$SiteSearch" id="SiteSearch" class="right" src="/images/searchBtt.png" alt="Site Search" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$SiteSearch&quot;, &quot;&quot;, true, &quot;Search&quot;, &quot;&quot;, false, false))" />
+					<label for="SiteSearchText" id="lblSiteSearchText" style="display: none;">Search site</label>
+					<input name="ctl00$ctl00$SiteSearchText" type="text" id="SiteSearchText" class="searchSiteInput" />
+					<span id="valSearch" style="display:none;"></span>
+				
+</div>
+				<nav class="left mainMenu">
+					<ul>
+						<li><a id="lnkMenuCourses" href="/courses-and-careers/" style="border-bottom-left-radius:5px; border-top-left-radius:5px">Courses</a></li>
+						<li><a id="lnkMenuEnrolling" href="/enrolling/">Enrolling</a></li>
+						<li><a id="lnkMenuStudents" href="/students/">Students</a></li>
+						<li><a id="lnkMenuColleges" href="/colleges-and-specialist-centres/">Colleges</a></li>
+						<li><a id="lnkMenuSpecialistCentres" class="selected" href="/specialist-centres/">Specialist Centres</a></li>
+						<li><a id="lnkMenuAboutWSI" href="/about-wsi/" style="margin-right:1px; border-bottom-right-radius:5px; border-top-right-radius:5px">About WSI</a></li>
+					</ul>
+				</nav>
+				<div class="clear"></div>
+			</header>
+			
+
+	<div class="whiteBg topCorners boxShadow topMargin15">
+		<article class="content left facultyId98">
+			<section>
+				<div id="ContentPlaceHolder_panTitleImage" class="landingPageTopImg allCorners">
+	<img id="ContentPlaceHolder_imgTitleImage" class="landing_page_top_img" src="/Handlers/MenuTitleImage.ashx?mid=1616" alt="Specialist Centres" style="width:630px;" />
+					<h1>Design, Creative Arts and Entertainment </h1>
+				
+</div>
+				
+	<nav class="breadcrumb">
+		<ul>
+			<li><a href="/">Home </a></li>
+			
+					<li><a href="/specialist-centres/">Specialist Centres</a></li>
+				
+			<li>Design, Creative Arts and Entertainment </li>
+		</ul>
+		<div style="clear:both"></div>
+	</nav>
+
+				<h2>Design, Creative Arts and Entertainment </h2>
+			</section>
+			
+
+	
+
+<section>
+	
+	<nav class="relatedItems right allCorners">
+		<h3>Related Items</h3>
+		
+                <ul>
+            
+                <li><a id="ContentPlaceHolder_ContentPlaceHolder_ctl00_Submenus_repCareerPath_lnkCareerPath_0" href="/courses-and-careers/course-search/?careerpathid=295">Fine Arts</a></li>
+            
+                <li><a id="ContentPlaceHolder_ContentPlaceHolder_ctl00_Submenus_repCareerPath_lnkCareerPath_1" href="/courses-and-careers/course-search/?careerpathid=296">Graphic Arts and Design</a></li>
+            
+                <li><a id="ContentPlaceHolder_ContentPlaceHolder_ctl00_Submenus_repCareerPath_lnkCareerPath_2" href="/courses-and-careers/course-search/?careerpathid=297">Music and Entertainment</a></li>
+            
+                <li><a id="ContentPlaceHolder_ContentPlaceHolder_ctl00_Submenus_repCareerPath_lnkCareerPath_3" class="noBorders bottomCorners" href="/courses-and-careers/course-search/?careerpathid=298">Photography</a></li>
+            
+                </ul>
+            
+	</nav>
+
+	
+			<div id="ContentPlaceHolder_ContentPlaceHolder_ctl00_Repeater1_panStyle_0">
+	
+				<a name="id_2362"></a>
+				
+				<p>This is an exciting industry due to constant developments, opportunities for creativity and strong customer focus. This industry contributes to Australian culture and intersects with a number of other industries such as business, manufacturing and retail. <br />
+<br />
+Creative Arts careers include work as an artist, art dealer, curator, photographer, musician, music business manager, sound and lighting engineer, actor, production manager and much more. <br />
+<br />
+The areas of Graphic Arts and Design include interior design and decoration, multimedia, and graphic design. </p>
+				
+
+				
+			
+</div>
+			<div style="clear: left;"></div>
+		
+			<div id="ContentPlaceHolder_ContentPlaceHolder_ctl00_Repeater1_panStyle_1">
+	
+				<a name="id_508"></a>
+				
+				
+						<a href="/resource/file/882/music.jpg" target="_blank" rel='main_7257'>
+							<img alt="Music Student" class="imgLeft" src="/resource/image/882/music.jpg?w=110" />
+						</a>
+					
+						<script type="text/javascript" charset="utf-8">
+							$(document).ready(function () {
+								$("a[rel^='main_7257']").prettyPhoto({ animation_speed: 'normal', deeplinking: false, theme: 'facebook', slideshow: 3000, autoplay_slideshow: false, social_tools: false });
+							});
+						</script> 
+					<p><a href="http://entertainment.wsi.tafensw.edu.au/" target="_blank">WSI&nbsp;Entertainment</a>&nbsp;incorporates music studies, live production and lighting, Music production and recording, music business and performing arts. The state-of-the-art facilities at&nbsp;WSI Entertainment in Nirimba feature some high quality and cutting-edge equipment that are currently used in the music industry. <br />
+<br />
+Visit this site to gain access to course information, audition advice, details about orientations and information sessions, expression of interest forms and applications, videos about teaching section and information on state of the art facilities and equipment used at <a href="http://entertainment.wsi.tafensw.edu.au" target="_blank">WSI Entertainment Nirimba</a>.</p>
+				
+
+				
+			
+</div>
+			<div style="clear: left;"></div>
+		
+			<div id="ContentPlaceHolder_ContentPlaceHolder_ctl00_Repeater1_panStyle_2">
+	
+				<a name="id_440"></a>
+				
+				
+						<a href="/resource/file/819/img0016.gif" target="_blank" rel='main_7283'>
+							<img alt="Art Work" class="imgRight" src="/resource/image/819/img0016.gif?w=110" />
+						</a>
+					
+						<script type="text/javascript" charset="utf-8">
+							$(document).ready(function () {
+								$("a[rel^='main_7283']").prettyPhoto({ animation_speed: 'normal', deeplinking: false, theme: 'facebook', slideshow: 3000, autoplay_slideshow: false, social_tools: false });
+							});
+						</script> 
+					<p><a href="http://nadc.wsi.tafensw.edu.au" target="_blank">Nepean Arts &amp; Design Centre (NADC)</a>&nbsp;at Nepean College (Kingswood Campus) offers a unique and friendly learning atmosphere that enables both staff and students to pursue excellence in teaching and learning within a wide range of arts and design disciplines. </p>
+<p>Be inspired, visit the&nbsp;<a href="http://nadc.wsi.tafensw.edu.au/">NADC web site</a>&nbsp;and view past works showcased&nbsp;by our Design, Photoimagine and Fine Arts students, while on the site: </p>
+<ul>
+    <li>view courses on offer </li>
+    <li>visit our virtual gallery </li>
+    <li>attend an exhibition at the Trapeziem Gallery </li>
+    <li>read profiles about our dedicated staff. </li>
+</ul>
+				
+
+				
+			
+</div>
+			<div style="clear: left;"></div>
+		
+			<div id="ContentPlaceHolder_ContentPlaceHolder_ctl00_Repeater1_panStyle_3">
+	
+				<a name="id_5490"></a>
+				
+				<h3>“Signs are everywhere in our day-to-day life: to regulate traffic, advertise businesses or promote products.”</h3>
+<p>At the Western Sydney Institute Signage Centre at Mt Druitt you will learn on the latest technology required to produce a range of signs and visual display materials. The Signage Centre provides the latest Nationally Recognised Training for the Signage industry.</p>
+<iframe width="544" height="300" src="http://player.vimeo.com/video/64120002?byline=0&amp;portrait=0&amp;color=78B01D" frameborder="0"></iframe>
+<p> &nbsp; </p>
+				
+
+				
+			
+</div>
+			<div style="clear: left;"></div>
+		
+			<div id="ContentPlaceHolder_ContentPlaceHolder_ctl00_Repeater1_panStyle_4" class="cmsTestimonial">
+	
+				<a name="id_2347"></a>
+				<h3>60 seconds with Tom Groves</h3>
+				
+						<a href="/resource/file/3045/tom-groves.jpg" target="_blank" rel='main_6128'>
+							<img alt="Tom Groves" class="imgLeft" src="/resource/image/3045/tom-groves.jpg?w=110" />
+						</a>
+					
+						<script type="text/javascript" charset="utf-8">
+							$(document).ready(function () {
+								$("a[rel^='main_6128']").prettyPhoto({ animation_speed: 'normal', deeplinking: false, theme: 'facebook', slideshow: 3000, autoplay_slideshow: false, social_tools: false });
+							});
+						</script> 
+					<p><strong>Course studied: Advanced Diploma of Graphic Design and Communication</strong></p>
+<p>Tom Groves chose to study the Diploma and Advanced Diploma of Graphic Design to combine his interests in technology, art and design. Enjoying the hands-on aspects of creating work in his TAFE studies, Tom gained the skills and experience necessary to pursue his career as a graphic designer. He is now employed as a creative art worker for the Sydney Symphony Orchestra and as a freelance graphic designer.</p>
+<p>"I am very at home in the design industry. One day I would like to focus on work to do with my interests in contemporary art, music, design, fashion and culture."</p>
+<p><strong>My WSI… "has wonderful teachers, modern facilities and familiar faces around campus."</strong></p>
+				
+
+				
+			
+</div>
+			<div style="clear: left;"></div>
+		
+
+	
+
+	
+	
+
+</section>
+
+	
+
+	
+
+
+
+			<section class="socialNetworkLinks"><div class="fb-like" data-send="false" data-width="450" data-show-faces="false" data-font="arial"></div></section>
+
+			
+
+		</article>
+
+		<div class="sidebar right">
+			
+
+<aside class="finder courseFinder allCorners">
+	<h2>Put yourself in a course</h2>
+	<div id="ContentPlaceHolder_wucFindCourse_FindCourseContainer" class="horMargin15" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;ContentPlaceHolder_wucFindCourse_btnCourseSearch&#39;)">
+	
+		<div id="ContentPlaceHolder_wucFindCourse_valsCourseSearch" style="display:none;">
+
+	</div>
+		<input type="image" name="ctl00$ctl00$ContentPlaceHolder$wucFindCourse$btnCourseSearch" id="ContentPlaceHolder_wucFindCourse_btnCourseSearch" class="right" src="/images/rightArrowCourseSearch.png" alt="Course Search" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$ContentPlaceHolder$wucFindCourse$btnCourseSearch&quot;, &quot;&quot;, true, &quot;CourseSearch&quot;, &quot;&quot;, false, false))" />
+		<input name="ctl00$ctl00$ContentPlaceHolder$wucFindCourse$txtCourseSearch" type="text" id="ContentPlaceHolder_wucFindCourse_txtCourseSearch" class="searchCourseInput" />
+		<span id="ContentPlaceHolder_wucFindCourse_valCourseSearch" style="display:none;"></span>
+	
+</div>
+</aside>
+<aside class="finder careerFinder allCorners">
+	<h2>Put yourself in a career path</h2>
+	<div class="dropDownBox selectCareer horMargin15">select your career path</div>
+	<div class="dropDownList boxShadowDark borderDark allCorners findCourse">
+		
+				<ul>
+			
+				<li><a href="/specialist-centres/animal-studies-and-horse-industry/">Animal Studies and Horse Industry</a></li>
+			
+				<li><a href="/specialist-centres/automotive-logistics-maritime-and-transport/">Automotive, Logistics, Maritime and Transport</a></li>
+			
+				<li><a href="/specialist-centres/building-industry/">Building Industry</a></li>
+			
+				<li><a href="/specialist-centres/business-services-and-management/">Business Services and Management</a></li>
+			
+				<li><a href="/specialist-centres/community-services-and-health/">Community Services and Health</a></li>
+			
+				<li><a href="/specialist-centres/design-creative-arts-and-entertainment/">Design, Creative Arts and Entertainment</a></li>
+			
+				<li><a href="/specialist-centres/electrotechnology-engineering-and-manufacturing/">Electrotechnology, Engineering and Manufacturing</a></li>
+			
+				<li><a href="/specialist-centres/environment-and-the-land/">Environment and the Land</a></li>
+			
+				<li><a href="/specialist-centres/hairdressing-and-beauty/">Hairdressing and Beauty</a></li>
+			
+				<li><a href="/specialist-centres/hospitality-tourism-and-events/">Hospitality, Tourism and Events</a></li>
+			
+				<li><a href="/specialist-centres/information-technology-and-library-services/">Information Technology and Library Services</a></li>
+			
+				<li><a href="/specialist-centres/preparation-for-work-and-study/">Preparation for Work and Study</a></li>
+			
+				<li><a href="/specialist-centres/sport-and-recreation/">Sport and Recreation</a></li>
+			
+				<li><a href="/specialist-centres/vocational-and-further-study-pathways/">Vocational and Further Study Pathways</a></li>
+			
+				</ul>
+			
+	</div>
+</aside>
+<aside class="finder collegeFinder allCorners">
+	<h2>Put yourself in a college</h2>
+	<div class="dropDownBox selectCareer horMargin15">choose your college</div>
+	<div class="dropDownList boxShadowDark borderDark allCorners findCourse">
+		<ul>
+			<li><a href="/colleges-and-specialist-centres/blacktown/">Blacktown</a></li>
+			<li><a href="/colleges-and-specialist-centres/blue-mountains/">Blue Mountains</a></li>
+			<li><a href="/colleges-and-specialist-centres/mount-druitt/">Mount Druitt</a></li>
+			<li><a href="/colleges-and-specialist-centres/nepean/">Nepean</a></li>
+			<li><a href="/colleges-and-specialist-centres/nirimba/">Nirimba</a></li>
+			<li><a href="/colleges-and-specialist-centres/richmond/">Richmond</a></li>
+			<li><a href="/colleges-and-specialist-centres/the-hills/">The Hills</a></li>
+			<li><a href="/colleges-and-specialist-centres/oten/">OTEN Distance Education</a></li>
+		</ul>
+	</div>
+</aside>
+
+
+			
+				 <aside class="mediaBox allCorners border">
+					<h2>Specialist Centres</h2>
+					<nav class="sidebarNav">
+						
+							<ul>
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_0" href="/specialist-centres/animal-studies-and-horse-industry/">Animal Studies and Horse Industry</a></li>
+							
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_1" href="/specialist-centres/automotive-logistics-maritime-and-transport/">Automotive, Logistics, Maritime and Transport </a></li>
+							
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_2" href="/specialist-centres/building-industry/">Building Industry </a></li>
+							
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_3" href="/specialist-centres/business-services-and-management/">Business Services and Management </a></li>
+							
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_4" href="/specialist-centres/community-services-and-health/">Community Services and Health </a></li>
+							
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_5" class="selected" href="/specialist-centres/design-creative-arts-and-entertainment/">Design, Creative Arts and Entertainment </a></li>
+							
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_6" href="/specialist-centres/electrotechnology-engineering-and-manufacturing/">Electrotechnology, Engineering and Manufacturing </a></li>
+							
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_7" href="/specialist-centres/environment-and-the-land/">Environment and the Land </a></li>
+							
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_8" href="/specialist-centres/hairdressing-and-beauty/">Hairdressing and Beauty </a></li>
+							
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_9" href="/specialist-centres/hospitality-tourism-and-events/">Hospitality, Tourism and Events </a></li>
+							
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_10" href="/specialist-centres/information-technology-and-library-services/">Information Technology and Library Services </a></li>
+							
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_11" href="/specialist-centres/preparation-for-work-and-study/">Preparation for Work and Study </a></li>
+							
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_12" href="/specialist-centres/sport-and-recreation/">Sport and Recreation </a></li>
+							
+						
+							<li><a id="ContentPlaceHolder_rptMenu_lnkNavigateUrl_13" href="/specialist-centres/vocational-and-further-study-pathways/">Vocational and Further Study Pathways </a></li>
+							
+						
+							</ul>
+						
+					</nav>
+				</aside>
+			
+			
+		</div>
+		<div class="clear"></div>
+	</div>
+
+
+		</div>
+		<footer>
+			<div class="container boxShadowDark bottomCorners">
+				
+						<nav class="left">
+							<h3>Enrolling</h3>
+							<ul>
+								
+										<li><a id="FooterMenu_FooterSubmenu_0_lnkMenu_0" href="/courses-and-careers/course-and-career-guide/">Course and Career Guide</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_0_lnkMenu_1" href="/courses-and-careers/course-enquiries/">Course Enquiry</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_0_lnkMenu_2" href="/courses-and-careers/course-vacancies/">Course Vacancies</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_0_lnkMenu_3" href="/enrolling/how-to-enrol/">How to Enrol</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_0_lnkMenu_4" href="/enrolling/fees-and-financial-assistance/fees-and-charges/">Paying for Your Course</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_0_lnkMenu_5" href="/courses-and-careers/special-promotions/">Special Promotions</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_0_lnkMenu_6" href="/enrolling/vet-fee-help-student-loans/">VET FEE-HELP</a></li>
+									
+							</ul>
+						</nav>
+					
+						<nav class="left">
+							<h3>Colleges</h3>
+							<ul>
+								
+										<li><a id="FooterMenu_FooterSubmenu_1_lnkMenu_0" href="/colleges-and-specialist-centres/blacktown/">Blacktown</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_1_lnkMenu_1" href="/colleges-and-specialist-centres/blue-mountains/">Blue Mountains</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_1_lnkMenu_2" href="/colleges-and-specialist-centres/mount-druitt/">Mount Druitt</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_1_lnkMenu_3" href="/colleges-and-specialist-centres/nepean/">Nepean</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_1_lnkMenu_4" href="/colleges-and-specialist-centres/nirimba/">Nirimba</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_1_lnkMenu_5" href="/colleges-and-specialist-centres/richmond/">Richmond</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_1_lnkMenu_6" href="/colleges-and-specialist-centres/the-hills/">The Hills</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_1_lnkMenu_7" href="/colleges-and-specialist-centres/oten/">OTEN</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_1_lnkMenu_8" href="http://bisc.edu.au" target="_blank">BISC</a></li>
+									
+							</ul>
+						</nav>
+					
+						<nav class="left">
+							<h3>Student Services</h3>
+							<ul>
+								
+										<li><a id="FooterMenu_FooterSubmenu_2_lnkMenu_0" href="/students/support-services/counselling-and-careers/">Counselling &amp; Careers</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_2_lnkMenu_1" href="/students/support-services/disabilities-support/">Disability Support</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_2_lnkMenu_2" href="/students/support-services/indigenous-students/">Indigenous Students</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_2_lnkMenu_3" href="http://wsiinternational.tafensw.edu.au/" target="_blank">International Students</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_2_lnkMenu_4" href="http://wsilibraries.tafensw.edu.au">Library Services</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_2_lnkMenu_5" href="/students/students/">Online Learning</a></li>
+									
+							</ul>
+						</nav>
+					
+						<nav class="left">
+							<h3>About WSI</h3>
+							<ul>
+								
+										<li><a id="FooterMenu_FooterSubmenu_3_lnkMenu_0" href="/about-wsi/news-and-media-centre/calendar-of-events/">Calendar</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_3_lnkMenu_1" href="/students/students/public-transport/">How to Find Us</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_3_lnkMenu_2" href="/about-wsi/about-us/jobs/">Jobs@wsi</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_3_lnkMenu_3" href="/about-wsi/news-and-media-centre/">News and Media Centre</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_3_lnkMenu_4" href="http://www.mywsi.com.au" target="_blank">myWSI.com.au</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_3_lnkMenu_5" accesskey="0" href="/about-wsi/publications-and-reports/accessibility/">Accessibility</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_3_lnkMenu_6" href="/about-wsi/publications-and-reports/copyright-and-disclaimer/">Copyright</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_3_lnkMenu_7" accesskey="8" href="/about-wsi/publications-and-reports/access-to-information/">Privacy</a></li>
+									
+										<li><a id="FooterMenu_FooterSubmenu_3_lnkMenu_8" accesskey="4" href="/sitemap.aspx">Site Map</a></li>
+									
+							</ul>
+						</nav>
+					
+				<address class="right">
+					<div>
+						<div class="left">
+							<div class="fb-like left" data-href="http://www.facebook.com/tafewsi" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-font="arial"></div>
+							<div class="clear"></div>
+							<ul class="topMargin15">
+								<li><a href="http://www.facebook.com/tafewsi" style="display:inline;" target="_blank"><img alt="Facebook" style="display:inline;" src="/images/fbIcon.png" width="16" height="16" align="absmiddle"></a> <a href="http://www.facebook.com/tafewsi" style="display:inline;" target="_blank">Facebook</a></li>
+								<li><a href="http://twitter.com/wsitafe" style="display:inline;" target="_blank"><img alt="Twitter" style="display:inline;" src="/images/twIcon.png" width="16" height="16" align="absmiddle"></a> <a href="http://twitter.com/wsitafe" style="display:inline;" target="_blank">Twitter</a></li>
+								<li><a href="http://www.youtube.com/user/tafewsi" style="display:inline;" target="_blank"><img alt="Youtube" style="display:inline;" src="/images/ytIcon.png" width="16" height="16" align="absmiddle"></a> <a href="http://www.youtube.com/user/tafewsi" style="display:inline;" target="_blank">YouTube</a></li>
+								<li class="verMargin15"><a href="http://m.wsi.tafensw.edu.au/" style="display:inline;"><img alt="Mobile Site" style="display:inline;" src="/images/mobileIcon.png" width="17" height="17" align="absmiddle"></a> <a href="http://m.wsi.tafensw.edu.au/" style="display:inline;">Mobile Site</a></li>
+							</ul>
+						</div>
+						<div class="right">
+							<p><strong>Western Sydney Institute</strong><br>
+								2-10 O'Connell St<br>
+								Kingswood NSW 2747</p>
+							<p>131 870<br>
+								(to contact colleges)</p>
+							<p>(02) 9208 9999<br>
+								(interstate callers)</p>
+						</div>
+					</div>
+				</address>
+				<div style="clear:both"></div>
+				<div class="footerAwards">
+					<img alt="Australian Training Awards 2011 Winner Skills for Sustainability - Education Institution Award" src="/images/award2011.png" width="298" height="76">
+					<img alt="2012 Australia Tourism Awards Winner" src="/images/awardTourism.png" width="133" height="76"> 
+					<img alt="Green Gown Australasia Award Winner" src="/images/awardGreenGown.png" width="167" height="76">
+				</div>
+			</div>
+		</footer>
+	</div>
+	
+	
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("valsSearch"), document.getElementById("ContentPlaceHolder_wucFindCourse_valsCourseSearch"));
+var Page_Validators =  new Array(document.getElementById("valSearch"), document.getElementById("ContentPlaceHolder_wucFindCourse_valCourseSearch"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var valsSearch = document.all ? document.all["valsSearch"] : document.getElementById("valsSearch");
+valsSearch.showmessagebox = "True";
+valsSearch.showsummary = "False";
+valsSearch.displaymode = "SingleParagraph";
+valsSearch.validationGroup = "Search";
+var valSearch = document.all ? document.all["valSearch"] : document.getElementById("valSearch");
+valSearch.controltovalidate = "SiteSearchText";
+valSearch.errormessage = "Please enter some keywords to search for";
+valSearch.display = "None";
+valSearch.validationGroup = "Search";
+valSearch.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+valSearch.initialvalue = "";
+var ContentPlaceHolder_wucFindCourse_valsCourseSearch = document.all ? document.all["ContentPlaceHolder_wucFindCourse_valsCourseSearch"] : document.getElementById("ContentPlaceHolder_wucFindCourse_valsCourseSearch");
+ContentPlaceHolder_wucFindCourse_valsCourseSearch.showmessagebox = "True";
+ContentPlaceHolder_wucFindCourse_valsCourseSearch.showsummary = "False";
+ContentPlaceHolder_wucFindCourse_valsCourseSearch.displaymode = "SingleParagraph";
+ContentPlaceHolder_wucFindCourse_valsCourseSearch.validationGroup = "CourseSearch";
+var ContentPlaceHolder_wucFindCourse_valCourseSearch = document.all ? document.all["ContentPlaceHolder_wucFindCourse_valCourseSearch"] : document.getElementById("ContentPlaceHolder_wucFindCourse_valCourseSearch");
+ContentPlaceHolder_wucFindCourse_valCourseSearch.controltovalidate = "ContentPlaceHolder_wucFindCourse_txtCourseSearch";
+ContentPlaceHolder_wucFindCourse_valCourseSearch.errormessage = "Please enter some keywords to search for";
+ContentPlaceHolder_wucFindCourse_valCourseSearch.display = "None";
+ContentPlaceHolder_wucFindCourse_valCourseSearch.validationGroup = "CourseSearch";
+ContentPlaceHolder_wucFindCourse_valCourseSearch.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ContentPlaceHolder_wucFindCourse_valCourseSearch.initialvalue = "";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+document.getElementById('valsSearch').dispose = function() {
+    Array.remove(Page_ValidationSummaries, document.getElementById('valsSearch'));
+}
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ContentPlaceHolder_wucFindCourse_valsCourseSearch').dispose = function() {
+    Array.remove(Page_ValidationSummaries, document.getElementById('ContentPlaceHolder_wucFindCourse_valsCourseSearch'));
+}
+
+document.getElementById('valSearch').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('valSearch'));
+}
+
+document.getElementById('ContentPlaceHolder_wucFindCourse_valCourseSearch').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder_wucFindCourse_valCourseSearch'));
+}
+//]]>
+</script>
+</form>
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		var google_conversion_id = 982047124;
+		var google_custom_params = window.google_tag_params;
+		var google_remarketing_only = true;
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+	<noscript>
+	<div style="display:inline;"><img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/982047124/?value=0&amp;guid=ON&amp;script=0"/></div>
+	</noscript>
+</body>
+</html>

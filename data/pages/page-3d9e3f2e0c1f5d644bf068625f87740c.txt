@@ -1,0 +1,483 @@
+
+
+<html>
+<head>
+<title>Honda Automotive Parts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="Honda, Honda Parts, genuine honda parts,honda accessories,accessory,honda auto parts online,car parts,auto parts,automotive parts,auto parts store,discount,online,aftermarket,remanufactured parts,honda specials,civic,accord,prelude,crv,passport,delsol,odyssey,s2000,pilot,4X4,ex,dx,lx,hx,si,genuine,dealer,dealership,car,abs modulators, alternators, automatic transmissions, brake calipers, driveshaft, power steering racks, starters">
+<meta name="description" content="Honda Automotive Parts sells genuine Honda parts and Honda accessories at wholesale prices. We also provide information about new and pre-owned vehicles, services, sales, parts, hours, directions and much more.">
+<LINK REL="StyleSheet" TYPE="text/css" HREF="mws.css">
+<style>
+.box {FONT-WEIGHT: bold; display: inline; border: 1px #336699 solid; font-size: 10px; color: #003399; clip:      rect(   )}
+
+.headerlabel {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Tahoma;TEXT-DECORATION: none
+}
+.headerlabel:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Tahoma;TEXT-DECORATION: none
+}
+.headerlabel:hover {
+	TEXT-TRANSFORM: none; FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #FFFFFF; FONT-FAMILY: Tahoma;TEXT-DECORATION: none
+}
+
+.loginlabel {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #6484ab; FONT-FAMILY: Tahoma
+}
+.txtbx {
+	BORDER-RIGHT: #9bb1bf 1px solid; BORDER-TOP: #9bb1bf 1px solid; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 10px; BORDER-LEFT: #9bb1bf 1px solid; COLOR: #1d5087; PADDING-TOP: 4px; BORDER-BOTTOM: #9bb1bf 1px solid; FONT-FAMILY: Tahoma; HEIGHT: 21px
+}
+Error{  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px;  color:red; font-weight:normal;}
+</style>
+<script>
+function fnonmouseover(con)
+{
+	con.style.backgroundImage="url(/images/blueback.gif)";
+}
+function fnonmouseout(con)
+{
+	con.style.backgroundImage="";
+}
+
+</script>
+<SCRIPT LANGUAGE="javascript">
+function textboxKeyPress(field,evt)
+{
+   var keycode =evt.which ? evt.which :evt.keyCode ? evt.keyCode : 0;
+   document.getElementById ? evt.keyCode : 0;
+   if((keycode==13 && !evt.shiftKey))
+   {
+
+if((((field=='2')&&(funcatesearch()))||(field=='0')&&(funvinsearch()))||((field=='1')&&(funpartsearch())))
+	{document.frmhome.submit();}
+   }
+}
+function form1Handler(form){
+   form.inputstate.value = "1"
+   form.method="post"
+   form.action="catdisplay.jsp"
+   form.submit ()
+   }
+function funpartsearch()
+{
+  var check = Trim(document.frmhome.srchwords.value);
+// if(document.frmhome.rdparts.checked==true)
+ {
+
+  if((document.frmhome.srchwords.value=="") || (document.frmhome.srchwords.value==0) ||(document.frmhome.srchwords.value=="Enter Part Number --"))
+   {
+      alert("Enter Part number.");
+      document.frmhome.srchwords.focus();
+      return false;
+   }
+  else  
+	{
+       var notvalid="_%";
+       var valid="";
+      if(check.length==3)
+       {
+         for (var i=0;i<=2;i++)
+            {
+              var temp=notvalid.indexOf(check.substring(i,i+1));
+              if(temp==-1)
+               {valid=valid + check.substring(i,i+1);}
+            }
+       }
+       else if(check.length>3)
+       {
+         var count=0;
+         for (var i=0;i<=check.length-1;i++)
+            {
+             var temp=notvalid.indexOf(check.substring(i,i+1));
+             if(temp!=-1)count+=1;
+            }
+         if(count>1)
+         {
+             for (var i=0;i<=check.length-1;i++)
+                {
+                  var temp=notvalid.indexOf(check.substring(i,i+1));
+                  if(temp==-1)
+                   {valid=valid + check.substring(i,i+1);}
+                }
+          }
+          else{valid=check;}
+       }
+       else
+       {
+         valid=check;
+       }
+
+       document.frmhome.srchwords.value=valid;
+       if(valid.length<3)
+       {
+		alert("Part number should be atleast 3 characters");
+		document.frmhome.srchwords.select();
+		document.frmhome.srchwords.focus();
+		return false;
+       }
+  }
+ }
+ /*else
+ if((document.frmhome.srchwords.value=="") || (document.frmhome.srchwords.value==0))
+       {
+        alert("Enter description.");
+        document.frmhome.srchwords.focus();
+        return false;
+       }
+*/
+         document.frmhome.srchwords.value=check;
+//       document.frmhome.search.value="sku";
+//         if(document.getElementById("rddesc").checked==true)
+  //       {document.frmhome.search.value=document.getElementById("rddesc").value;}
+//         else {document.frmhome.search.value=document.getElementById("rdparts").value;}
+//	   document.frmhome.search.value=document.getElementById("rdparts").value;
+	   document.frmhome.search.value="sku";
+	   document.frmhome.action = "srchrslts.jsp";
+         return true;
+}
+function funvinsearch()
+{
+	if((document.frmhome.vinnosrch.value=="")||(document.frmhome.vinnosrch.value==0)||(document.frmhome.vinnosrch.value=='Enter VIN Number ---'))
+	{
+		alert("Enter VIN number.");
+		document.frmhome.vinnosrch.focus();
+		return false;
+	}
+	if(document.frmhome.vinnosrch.value.length<17)
+	{
+		alert("Invalid VIN number.");
+		document.frmhome.vinnosrch.focus();
+        document.frmhome.vinnosrch.select();
+		return false;
+	}
+    document.frmhome.action = "vinsrchrslt.jsp";
+	return true;
+}
+function funcatesearch()
+{
+      if(document.frmhome.catcgry1.value=="")
+	{
+	   alert("Select Model.");
+	   document.frmhome.catcgry1.focus();
+	   return false;
+	}
+  	document.frmhome.inputstate.value = "1"
+      document.frmhome.action="catdisplay.jsp";
+   return true;
+}
+
+function Trim(Untrimmed)
+{
+	var Trimmed = '';
+	for (var i = 0; i < Untrimmed.length; i++)
+	{
+         	if (Untrimmed.charCodeAt(i)!=32)
+		{
+            Trimmed += Untrimmed.substring(i, i+1);
+		}
+	}
+	return Trimmed;
+}
+function fnfocus()
+{
+  document.frmhome.vinnosrch.focus();
+}
+function fnfocus1()
+{
+  document.frmhome.srchwords.focus();
+}
+function fnfocus2()
+{
+  document.frmhome.catcgry1.focus();
+}
+function partdisp()
+{
+  if(document.frmhome.srchwords.value=="")
+  {document.frmhome.srchwords.value="Enter Part Number --";}
+}
+function vindisp()
+{
+  if(document.frmhome.vinnosrch.value=="")
+  {document.frmhome.vinnosrch.value="Enter VIN Number ---";}
+}
+
+</script>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" Onload="fnfocus2();">
+
+<form name="frmhome" method="get" >
+<input type="hidden" name="search">
+  
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr> 
+    <td colspan="2" valign="top" ><img src="images/MajesticHondaLogo.gif" width="539" height="44"></td>
+    <td width="704" background="images/logo_background.gif" align="right" valign="bottom" > 
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr align="right" valign="bottom"> 
+          <td height="40"><img src="images/Head_hlogo.gif" width="239" height="32"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td width="127" bgcolor="#333399" valign="top"><font color="#FFFFFF" face="Arial" size="2"><img src="images/head_split2.gif" width="113" height="20"></font></td>
+    <td width="412" bgcolor="#333399" align="left" ><font color="#FFFFFF" face="Arial" size="2">HondaAutomotiveParts.com *</font></td>
+    <td width="704" bgcolor="#333399" align="right" valign="top">&nbsp;</td>
+  </tr>
+  <tr valign="top" bgcolor="#333399"> 
+    <td colspan="3" height="17" align="right"><a class="bcell" href="/home.htm" title="Home">Home</a> 
+      <font color="#5C9BCF" size="2">|</font> <a  class="bcell" href="/contact.htm"  
+title="Contact Us">Contact Us</a> <font color="#5C9BCF" size="2">|</font> <a class="bcell" href="/about.htm"  
+title="About Majestic Honda">About</a> <font color="#5C9BCF" size="2">|</font> <a class="bcell" href="/faq.htm" title="Frequently Asked Questions">FAQ</a> 
+      <font color="#5C9BCF" size="2">|</font> <a class="bcell" href="/warrant.htm"
+title="Warranty Information">Warranty</a> <font color="#5C9BCF" size="2">|</font> <a class="bcell" href="/shipping_rates.htm" 
+title="Shipping Information" >Shipping</a> <font color="#5C9BCF" size="2">|</font><a class="bcell" href="/disclaimer.html"  title="Disclaimer">Disclaimer</a>&nbsp; 
+    </td>
+  </tr>
+</table>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family: verdana; font-size: 10px;">
+  <tr> 
+    <td height="20" width="90%" align="right" > 
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td nowrap colspan="3">
+            <font color="#5C9BCF" size="2"> </font><a class="headbcell" href="PartsSearch.jsp" title="Search for Honda Parts">
+                Honda Parts</a>
+            <font color="#5C9BCF" size="2"> | </font><a class="headbcell" href="accsearch.jsp" title="Search for Honda Accessories">
+                Honda Accessories</a>
+            <font color="#5C9BCF" size="2"> | </font><a class="headbcell" href="specials.jsp" title="View and Purchase Honda Specials">
+                Honda Specials</a>&nbsp;&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+    <td height="20" width="10%" align="center" >
+<table border="0" cellspacing="0" cellpadding="0" style="font-family: verdana; font-size: 10px;">
+  <tr align="center">
+    <td height="20">
+      <table border="0" cellspacing="0" cellpadding="0" width="100%" height="19">
+        <tr> 
+          <td style="font-family: verdana; font-size: 10px;" nowrap valign="middle" align="center" width="17%"> 
+            <table border="0" cellspacing="1" cellpadding="0" align="left">
+              <tr bgcolor="#F2F2F2"> 
+                <td nowrap height="18" style="cursor:hand;"> &nbsp;<a class="chkout" href="shpcart.jsp" title="Shopping Cart is empty"><img src="images/spcart.gif" width="20" height="14" align="absmiddle" border="0"> 
+                  <font color="#006699">[Qty&nbsp;0]&nbsp;</font>&nbsp;&nbsp; </a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table></td>
+  </tr>
+</table>
+    
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr valign="top">
+      <td height="46" align="center" width="100%">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/H.gif">
+          <tr align="center">
+            <td height="40">&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td height="2" align="center" width="100%">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="35" align="center" width="100%"><font face="Verdana" size="4" color="#006699"><b>Locate
+        your parts 3 different ways </b></font></td>
+    </tr>
+<!--
+    <tr>
+      <td height="35" align="center" width="100%"><font face="Verdana" size="4" color="#006699"><b>VIN Number is the most accurate way! </b></font></td>
+    </tr>
+-->
+    <tr align="center" valign="top">
+      <td height="174" width="100%">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr align="center">
+            <td width="83%" nowrap height="141"> &nbsp;&nbsp;&nbsp;
+              <table border="0" cellspacing="10" cellpadding="0">
+                <tr>
+                  <td nowrap>
+                    <select name="catcgry1" class="box"  onKeyUp="textboxKeyPress('2',event);" onChange ="form1Handler(this.form)">
+                      <option value="" selected>Choose Model</option>
+                      
+                      <option value="ACCORD"> ACCORD</option>
+                      
+                      <option value="ACCORD HYBRID"> ACCORD HYBRID</option>
+                      
+                      <option value="ACCORD PLUG-IN"> ACCORD PLUG-IN</option>
+                      
+                      <option value="CIVIC"> CIVIC</option>
+                      
+                      <option value="CIVIC 1200"> CIVIC 1200</option>
+                      
+                      <option value="CIVIC 4WD"> CIVIC 4WD</option>
+                      
+                      <option value="CIVIC HYBRID"> CIVIC HYBRID</option>
+                      
+                      <option value="CIVIC NGV"> CIVIC NGV</option>
+                      
+                      <option value="CR-V"> CR-V</option>
+                      
+                      <option value="CR-Z"> CR-Z</option>
+                      
+                      <option value="CROSSTOUR"> CROSSTOUR</option>
+                      
+                      <option value="CRX"> CRX</option>
+                      
+                      <option value="DEL SOL"> DEL SOL</option>
+                      
+                      <option value="ELEMENT"> ELEMENT</option>
+                      
+                      <option value="FIT"> FIT</option>
+                      
+                      <option value="FIT EV"> FIT EV</option>
+                      
+                      <option value="INSIGHT"> INSIGHT</option>
+                      
+                      <option value="N600 SEDAN"> N600 SEDAN</option>
+                      
+                      <option value="ODYSSEY"> ODYSSEY</option>
+                      
+                      <option value="PASSPORT"> PASSPORT</option>
+                      
+                      <option value="PILOT"> PILOT</option>
+                      
+                      <option value="PRELUDE"> PRELUDE</option>
+                      
+                      <option value="RIDGELINE"> RIDGELINE</option>
+                      
+                      <option value="S2000"> S2000</option>
+                      
+                      <option value="Z600 COUPE"> Z600 COUPE</option>
+                      
+                    </select>
+                    <input type="hidden" name="inputstate">
+                  </td>
+                  <td valign="middle" style="FONT-SIZE: 11px; COLOR: #f0b74d; "nowrap><b>-
+                    OR -</b></td>
+                  <td nowrap>
+                    <input class=box name="srchwords" size=18 maxlength="25" onKeyUp="textboxKeyPress('1',event);"  value="Enter Part Number --" onClick="this.value = '';" onBlur="partdisp();">
+                    <a href="javascript:document.frmhome.submit()"  onClick="return funpartsearch();">
+                    <img src="images/searchbtn.gif" width="39" height="30" align="absmiddle" border="0" alt="Click to Search Parts"></a>
+                  </td>
+                  <td valign="middle" style="FONT-SIZE: 11px; COLOR: #f0b74d;" nowrap><b>-
+                    OR -</b></td>
+                  <td nowrap>
+                    <input class=box size=18
+                              name=vinnosrch maxlength="17" onKeyUp="textboxKeyPress('0',event);" value="Enter VIN Number ---" onClick="this.value = '';" onBlur="vindisp();" >
+                    <a href="javascript:document.frmhome.submit()"  onClick="return funvinsearch();">
+                    <img src="images/searchbtn.gif" width="39" height="30" align="absmiddle" border="0" alt="Click to Search VIN#"></a>
+                  </td>
+                </tr>
+                <tr align="center">
+                  <td nowrap colspan="5"> 
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="83%" align="center" height="33" >&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td height="138" width="100%">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/H_Original.gif">
+          <tr align="center">
+            <td height="40">&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<script language="JavaScript">
+function popWin()	{
+	var popWin= open("/mail.html","windowName",'nostatus,resizable=no,width=300,height=250,top=100,left=150');
+}
+function sendmail()	{
+	var sendmail= open("/auto/jsp/mws/QandA.jsp","windowName",'nostatus,resizable=no,width=400,height=250,top=100,left=150');
+}
+</script>
+<table cellspacing=0 cellpadding=0 width="100%" border=0 >
+  <tr align="right"> 
+    <td><a class="bcellfooter" href="/home.htm" title="Home">Home</a> <font color="#5C9BCF" size="2">|</font> 
+      <a  class="bcellfooter" href="/contact.htm"  
+title="Contact Us">Contact Us</a> <font color="#5C9BCF" size="2">|</font> <a class="bcellfooter" href="/about.htm"  
+title="About Majestic Honda">About</a> <font color="#5C9BCF" size="2">|</font> <a class="bcellfooter" href="/faq.htm" title="Frequently Asked Questions">FAQ</a> 
+      <font color="#5C9BCF" size="2">|</font> <a class="bcellfooter" href="/warrant.htm"
+title="Warranty Information">Warranty</a> <font color="#5C9BCF" size="2">|</font> <a class="bcellfooter" href="/shipping_rates.htm" 
+title="Shipping Information" >Shipping</a> <font color="#5C9BCF" size="2">|</font> <a class="bcellfooter" href="/disclaimer.html"  title="Disclaimer">Disclaimer</a>&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td height="4"><img src="/auto/jsp/mws/images/spacer.gif" width="10" height="2"></td>
+  </tr>
+</table>
+<table cellspacing=0 cellpadding=0 width="100%" border=0>
+  <tr> 
+    <td  valign=top width="26%" height="2"> 
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td valign="top" class=design_footer><b><font face="Verdana" size="1">Hondaautomotiveparts.com</font></b> 
+            <font face="Verdana" size="1"><br>
+            Majestic Honda, Route 146,<br>
+            Lincoln, RI 02865<br>
+            P:&nbsp;1-800-341-4113 </font></td>
+          <td valign="top">&nbsp; </td>
+        </tr>
+      </table>
+    </td>
+    <td colspan="2" height="2" valign="middle" align="right"> 
+      <table border="0" cellspacing="1" cellpadding="0" width="49">
+        <tr align="center" bgcolor="#FFFFFF"> 
+          <td height="12"> 
+            <table border="0" cellspacing="0" cellpadding="1" width="197">
+              <tr align="right"> 
+                <td nowrap height="23">&nbsp;&nbsp<a href="#" onClick="sendmail();" class="footer_bottom" title="Send Questions"><img src="/auto/jsp/mws/images/send.jpg" width="29" height="17" align="absmiddle" border="0" alt="Send Questions">Send Questions</a>&nbsp;<font color="#5C9BCF" size="2">|</font> 
+                  <script language="JavaScript">
+			<!--
+			if (navigator.appName == 'Microsoft Internet Explorer' && parseInt(navigator.appVersion) >= 4)
+			{
+			 var favoriteurl=window.location.href;
+			 document.write('<a title="Bookmark us" class=\"footer_bottom\" href=\"#\" onclick=\"javascript:window.external.AddFavorite(favoriteurl,document.title)\">');
+			 document.write('Bookmark us</a>');
+			}else
+			{var msg = "Bookmark this page";
+			 if(navigator.appName == "Netscape") msg += "  (CTRL-D)";
+			 document.write('<font face=\"arial\" size=\"1\" color=\"#0086DF\">');
+			 document.write(msg);
+			 document.write('</font>');
+			}
+			//-->
+	</script>
+                  <font color="#5C9BCF" size="2">|</font> <a href="#" onClick="popWin();" class="footer_bottom" title="Join mail list">Join 
+                  mail list </a>&nbsp;&nbsp;</td>
+              </tr>
+              <tr align="right"> 
+                <td nowrap><a title="Shop Acura Parts Online" href="http://www.acuraautomotiveparts.org" target="_blank" class="Performlink1"> 
+                  Shop Acura Parts Online</a>&nbsp;&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td width="1%" height="2" align="right" valign="middle">&nbsp;</td>
+    <td width="1%" height="2" align="right" valign="middle">&nbsp;</td>
+    <td width="11%" align="right" height="2" valign="middle"><a href="http://www.softwareglobal.net/" target="_blank"><img src="/auto/jsp/mws/images/online_bluebg.gif" width="104" height="23" border="0" alt="Software Global -- OnlineNow" align="top"></a></td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+	    <title>Mesa Arts Center - Performing Arts - Shows - Concerts -Theater - Art Gallery - Mesa, AZ - Phoenix, Arizona - www.mesaartscenter.com</title>    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <meta name="keywords" content="mesa arts center, performing arts, shows, theater, theatre, art gallery, events, concerts, art activities, art classes, music, Broadway, dance, comedy, family, shows, things to do in mesa, phoenix, arizona, AZ" />
+    <meta name="description" content="Concerts, performing arts, events, art activities, music, dance, shows, comedy, and more are all at Mesa Arts Center's theaters in Mesa near Phoenix, Arizona!" />
+    		<link type="text/css" rel="stylesheet" href="/styles/mesaartscenter.css"/>
+	<!--[if lte IE 7]><link type="text/css" rel="stylesheet" href="/styles/ie7.css"/><![endif]-->
+
+	<!--[if lte IE 6]><link type="text/css" rel="stylesheet" href="/styles/ie6.css"/><![endif]-->
+
+    	<script language="JavaScript" src="/scripts/tdd/script.js" type="text/javascript"></script>
+	<script language="JavaScript" src="/scripts/jquery-1.5.1.min.js" type="text/javascript"></script>
+	<script language="JavaScript" src="/scripts/jquery-ui-1.8.11.custom.min.js" type="text/javascript"></script>
+	<script language="JavaScript" src="/scripts/sifr.js" type="text/javascript"></script>
+	<link type="text/css" rel="stylesheet" href="/styles/sifr.css"/>
+	
+	
+	<script type="text/javascript" language="javascript" src="/scripts/prettyPhoto/js/jquery.prettyPhoto.js"></script>
+		<script type="text/javascript" language="javascript" src="/scripts/email-prompt.php"></script>
+		<link type="text/css" rel="stylesheet" href="/scripts/overcast/jquery-ui-1.8.11.custom.css"/>	
+    <link type="text/css" rel="stylesheet" href="/scripts/prettyPhoto/css/prettyPhoto.css"/>	
+	<link rel="stylesheet" type="text/css" href="/styles/print.css" media="print" />
+			<script type="text/javascript" language="JavaScript">
+		//<![CDATA[
+
+		var ggl = {
+			src: '/images/gr-gothic-light.swf'
+		}
+
+		sIFR.activate(ggl);
+
+		sIFR.replace(ggl, {
+			selector: 'h2.section_header',
+			wmode: 'transparent',
+			css : [ '.sIFR-root { color: #990000; font-size: 25px; text-transform: uppercase; }'],
+			tuneHeight: (-7)
+		});
+		
+		var ggb = {
+			src: '/images/gr-gothic-black.swf'
+		}
+
+		sIFR.activate(ggb);
+
+		sIFR.replace(ggb, {
+			selector: '#secondary_body h1,#event_body h1.capitalize',
+			wmode: 'transparent',
+			css : [ '.sIFR-root { color: #363636; font-size: 18px; text-transform: uppercase; leading: -5; }'],
+			tuneHeight: (-7)
+		});
+		
+		sIFR.replace(ggb, {
+			selector: '#event_body h1.no_capitals',
+			wmode: 'transparent',
+			css : [ '.sIFR-root { color: #363636; font-size: 18px; leading: -5; }'],
+			tuneHeight: (-7)
+		});
+		
+		sIFR.replace(ggb, {
+			selector: '#secondary_body h2,#event_body h2',
+			wmode: 'transparent',
+			css : [ '.sIFR-root { color: #363636; font-size: 13px; leading: -3;}'],
+			tuneHeight: (-5)
+		});
+		
+		$(document).ready(function() {
+		
+			$('#top_nav li a').mouseover(function() {
+	
+				$('.subnav').css('display','none');
+				$('.subnav_tab').css('display','none');
+				
+				var show_tab = $(this).parent().attr('id').replace('_nav','_subnav_tab');
+				var show_subnav = show_tab.replace('_tab','');
+				var nav_item_pos = $(this).parent().position();
+			
+				if(show_subnav.replace('_subnav','') != open_menu)
+				{
+					$('#'+show_tab).css('display','block');
+					$('#'+show_tab).css('left',(nav_item_pos.left+7)+'px');
+					$('#'+show_subnav).css('display','block');
+					open_menu = show_subnav.replace('_subnav','');
+				}
+			
+			});
+			
+			$('.menu').mouseout(function() {
+				var menu_parts = $(this).attr('id').split('_');
+				if(tab_timeout_id == null && subnav_timeout_id ==  null)
+					hideMenu(menu_parts[0]);
+					
+				open_menu = '';
+			});
+			
+			$('.menu').mouseover(function() {
+				window.clearTimeout(tab_timeout_id);
+				window.clearTimeout(subnav_timeout_id);
+				tab_timeout_id = null;
+				subnav_timeout_id  = null;
+			});
+			
+			$('.inactive_slide').fadeOut();			
+				
+			$('a.slideshow_link').each(function() {
+				if($(this).attr('href') == '#pbsvideos')
+				{
+					$("a[rel^='prettyPhoto']").prettyPhoto({ 
+						social_tools: false,
+						theme: 'facebook',
+						changepicturecallback: function () {
+							$('.pp_play').css('display','none');
+						}
+					});
+					
+					var pbsVideos = new Array(
+							'http://www.azpbs.org/as3/p/eight.swf?height=315&width=500&flashVars=quality%3Dhigh%26name%3Dbasic%20player%26align%3Dmiddle%26allowScriptAccess%3DsameDomain%26allowFullScreen%3Dtrue&amp;vidId=4506',
+							'http://www.azpbs.org/as3/p/eight.swf?height=315&width=500&flashVars=quality%3Dhigh%26name%3Dbasic%20player%26align%3Dmiddle%26allowScriptAccess%3DsameDomain%26allowFullScreen%3Dtrue&amp;vidId=4583',
+							'http://www.azpbs.org/as3/p/eight.swf?height=315&width=500&flashVars=quality%3Dhigh%26name%3Dbasic%20player%26align%3Dmiddle%26allowScriptAccess%3DsameDomain%26allowFullScreen%3Dtrue&amp;vidId=4688',
+							'http://www.azpbs.org/as3/p/eight.swf?height=315&width=500&flashVars=quality%3Dhigh%26name%3Dbasic%20player%26align%3Dmiddle%26allowScriptAccess%3DsameDomain%26allowFullScreen%3Dtrue&amp;vidId=4745'
+					);
+					
+					var pbsTitles = new Array (
+							'Mesa Arts Center\'s Festival of Creativity',
+							'Contra Tiempo',
+							'Mesa Takes Flight Festival',
+							'Jazz From A to Z'
+					);
+
+					var pbsCaptions = new Array (
+							'Click the gray arrows to watch all four MAC Outreach videos!<br>Next: Contra Tiempo',
+							'Click the gray arrows to watch all four MAC Outreach videos!<br>Next: Mesa Takes Flight Festival',
+							'Click the gray arrows to watch all four MAC Outreach videos!<br>Next: Jazz From A to Z',
+							'Click the gray arrows to watch all four MAC Outreach videos!<br>Next: Mesa Arts Center\'s Festival of Creativity'
+					);
+						
+					$(this).bind('click',function() {
+						$.prettyPhoto.open(pbsVideos,pbsTitles,pbsCaptions);
+					});
+				}
+				
+				if(location.hash == 'pbsvideos')
+					$('#slide_show_link_1').triggerHandler('click');
+			});
+		
+			$("a[rel^='prettyPhoto']").prettyPhoto({ social_tools : false, overlay_gallery: false, allow_resize: false });
+			
+			
+		});
+		
+		var tab_timeout_id = null;
+		var subnav_timeout_id  = null;
+		
+		var open_menu = '';
+		
+		function hideMenu(menu_id) {
+			tab_timeout_id = window.setTimeout("$('#"+menu_id+"_subnav_tab').css('display','none');",500);
+			subnav_timeout_id = window.setTimeout("$('#"+menu_id+"_subnav').css('display','none');",500);
+		}
+		
+		
+		
+		
+		var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-18705770-1']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+		//]]!>
+		</script>
+				<script language='JavaScript'>
+		 var prd=new Date(),pru=Date.UTC(prd.getUTCFullYear(),prd.getUTCMonth(),prd.getUTCDay(),prd.getUTCHours(),prd.getUTCMinutes(),prd.getUTCSeconds(),prd.getUTCMilliseconds());
+		 var pr_eid=pru+Math.random();
+		 var pr_event='';
+		 var pr_item='';
+		 var pr_quantity='';
+		 var pr_value='';
+		 document.write("<img width='1' height='1' src='http://ev.ads.pointroll.com/event/?ss=2102990E-3A2E-4C8E-895E-A2CB091C8967&av=5682&eid="+pr_eid+"&ev="+pr_event+"&item="+pr_item+"&q="+pr_quantity+"&val="+pr_value+"&r="+Math.random()+"'>");
+		</script>
+		  </head>
+  <body>
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-FVGN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-FVGN');</script>
+		<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=418494458181233";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	  	<div id="outer">
+		<div id="inner">
+			<div id="page">
+				<div id="content">
+	<div id="inner_content">
+						  	<div id="homepage_static_features" class="top_features">
+				<a href="/index.php/shows/performing-live"><img src="/sysimg/phoenix-mesa-performing-arts-performing-live-feature.jpg" border="0" id="red_feature_1" class="red_feature" /></a>
+						<a href="/index.php/getinvolved/donate"><img src="/sysimg/phoenix-mesa-performing-arts-support-us-feature.jpg" border="0" id="red_feature_2" class="red_feature" /></a>
+						<a href="http://1emain.blogspot.com/" rel="external" onclick="this.target = '_blank';"><img src="/sysimg/MAC_OfficialBlog_1.jpg" border="0" id="red_feature_3" class="red_feature" /></a>
+			</div>
+
+	<div id="homepage_slideshow" class="slideshow show_shuttle">
+		<div id="prev_slide" class="show_shuttle"><img src="/images/mesa-arts-center-home-prev-slide.png" alt="Previous Story" id="prev_slide_arrow" class="show_shuttle" /></div>
+		<div id="next_slide" class="show_shuttle"><img src="/images/mesa-arts-center-home-next-slide.png" alt="Next Story" id="next_slide_arrow" class="show_shuttle" /></div>
+		<div id="white_bar"></div>
+		
+																																															<img src="/sysimg/MC-1217-Remix-Remaster_597x383.jpg" border="0" class="slideshow_image show_shuttle" id="slide_show_image_1" />
+				<a href="http://www.mesaartscenter.com/index.php/events/free-events/ReMix" class="show_shuttle slideshow_link" id="slide_show_link_1"></a>				<div class="slide_text" id="slide_show_text_1">
+					<span class="slide_headline_bold">COME CELEBRATE WITH US! </span>					<br />
+					Free Festival  |  Come help us kick-off our new season! &nbsp;<span>&gt;</span>				</div>
+																				<img src="/sysimg/BVSC_hmpg_597x383.jpg" border="0" class="slideshow_image show_shuttle inactive_slide" id="slide_show_image_2" />
+				<a href="http://www.mesaartscenter.com/index.php/shows/performing-live/buenavistasocialclub" class="show_shuttle slideshow_link inactive_slide" id="slide_show_link_2"></a>				<div class="slide_text inactive_slide" id="slide_show_text_2">
+					<span class="slide_headline_bold">EXPERIENCE A NIGHT AT THE CLUB</span>					<br />
+					Buena Vista Social Club  |  Sep 15  |  7:30PM&nbsp;<span>&gt;</span>				</div>
+																				<img src="/sysimg/BottomsUp_597x383_hmpg.gif" border="0" class="slideshow_image show_shuttle inactive_slide" id="slide_show_image_3" />
+				<a href="http://www.mesaartscenter.com/index.php/shows/performing-live/201314jazzseries" class="show_shuttle slideshow_link inactive_slide" id="slide_show_link_3"></a>				<div class="slide_text inactive_slide" id="slide_show_text_3">
+					<span class="slide_headline_bold">BOTTOMS UP!</span>					<br />
+					John Clayton, Rodney Whitaker & Victor Wooten  |  Sep 27  |  7:30PM&nbsp;<span>&gt;</span>				</div>
+																				<img src="/sysimg/JonBatiste_hmpg_597x383.jpg" border="0" class="slideshow_image show_shuttle inactive_slide" id="slide_show_image_4" />
+				<a href="http://www.mesaartscenter.com/index.php/shows/performing-live/jonbatisteandstayhuman" class="show_shuttle slideshow_link inactive_slide" id="slide_show_link_4"></a>				<div class="slide_text inactive_slide" id="slide_show_text_4">
+					<span class="slide_headline_bold">AN EXCITING NIGHT OF JAZZ & STYLE</span>					<br />
+					Jon Batiste & Stay Human Band  |  Oct 10  |  7:30PM&nbsp;<span>&gt;</span>				</div>
+																				<img src="/sysimg/UnderTheStreelamp_597x383_hmpg.jpg" border="0" class="slideshow_image show_shuttle inactive_slide" id="slide_show_image_5" />
+				<a href="http://www.mesaartscenter.com/index.php/shows/performing-live/underthestreetlamppbs" class="show_shuttle slideshow_link inactive_slide" id="slide_show_link_5"></a>				<div class="slide_text inactive_slide" id="slide_show_text_5">
+					<span class="slide_headline_bold">RETRO NEVER SOUNDED SO NOW</span>					<br />
+					Under The Streetlamp  |  Oct 11  |  8:00PM&nbsp;<span>&gt;</span>				</div>
+																				<img src="/sysimg/Wolves_597x383_hmpg2.jpg" border="0" class="slideshow_image show_shuttle inactive_slide" id="slide_show_image_6" />
+				<a href="http://www.mesaartscenter.com/index.php/shows/performing-live/hiddenlifeofwolves" class="show_shuttle slideshow_link inactive_slide" id="slide_show_link_6"></a>				<div class="slide_text inactive_slide" id="slide_show_text_6">
+					<span class="slide_headline_bold">THE HIDDEN LIFE OF WOLVES</span>					<br />
+					Jim and Jamie Dutcher  |  Oct 16  |  7:30PM&nbsp;<span>&gt;</span>				</div>
+																				<img src="/sysimg/TheTenors_597x383_hmpg.jpg" border="0" class="slideshow_image show_shuttle inactive_slide" id="slide_show_image_7" />
+				<a href="http://www.mesaartscenter.com/index.php/shows/performing-live/thetenors" class="show_shuttle slideshow_link inactive_slide" id="slide_show_link_7"></a>				<div class="slide_text inactive_slide" id="slide_show_text_7">
+					<span class="slide_headline_bold">LEAD WITH YOUR HEART TOUR</span>					<br />
+					The Tenors  |  Oct 19  |  8:00PM&nbsp;<span>&gt;</span>				</div>
+																				<img src="/sysimg/Alton_hmpg_597x383.jpg" border="0" class="slideshow_image show_shuttle inactive_slide" id="slide_show_image_8" />
+				<a href="http://www.mesaartscenter.com/index.php/shows/performing-live/altonbrownlive" class="show_shuttle slideshow_link inactive_slide" id="slide_show_link_8"></a>				<div class="slide_text inactive_slide" id="slide_show_text_8">
+					<span class="slide_headline_bold">THE INEVITABLE EDIBLE TOUR</span>					<br />
+					Alton Brown Live  |  Oct 20  |  7:30PM&nbsp;<span>&gt;</span>				</div>
+																																																																																																																																																																																														<img src="/sysimg/Classes-597x383.jpg" border="0" class="slideshow_image show_shuttle inactive_slide" id="slide_show_image_9" />
+				<a href="/visual-arts-classes-performing-arts-classes-learn.html" class="show_shuttle slideshow_link inactive_slide" id="slide_show_link_9"></a>				<div class="slide_text inactive_slide" id="slide_show_text_9">
+					<span class="slide_headline_bold">WE'VE GOT CLASS</span>					<br />
+					over 300 classes open : Aug 2&nbsp;<span>&gt;</span>				</div>
+																				<img src="/sysimg/TheaterPic.jpg" border="0" class="slideshow_image show_shuttle inactive_slide" id="slide_show_image_10" />
+				<a href="/index.php/getinvolved/membership" class="show_shuttle slideshow_link inactive_slide" id="slide_show_link_10"></a>				<div class="slide_text inactive_slide" id="slide_show_text_10">
+					<span class="slide_headline_bold">ENJOY MEMBERSHIP REWARDS</span>					<br />
+					New members save 20% &nbsp;<span>&gt;</span>				</div>
+																									<img src="/sysimg/597x283kidssailsstars.jpg" border="0" class="slideshow_image show_shuttle inactive_slide" id="slide_show_image_11" />
+				<a href="/index.php/shows/performing-live" class="show_shuttle slideshow_link inactive_slide" id="slide_show_link_11"></a>				<div class="slide_text inactive_slide" id="slide_show_text_11">
+					<span class="slide_headline_bold">THE CENTER OF IT ALL</span>					<br />
+					discover the excitement&nbsp;<span>&gt;</span>				</div>
+																				<img src="/sysimg/SlideshwImg.jpg" border="0" class="slideshow_image show_shuttle inactive_slide" id="slide_show_image_12" />
+				<a href="/index.php/visitmac/eats-arts" class="show_shuttle slideshow_link inactive_slide" id="slide_show_link_12"></a>				<div class="slide_text inactive_slide" id="slide_show_text_12">
+					<span class="slide_headline_bold">Art and Dine in Downtown Mesa</span>					<br />
+					Have a ticket? Get a discount!&nbsp;<span>&gt;</span>				</div>
+						</div>
+	<div id="homepage_dynamic_features">
+									<div class="homepage_feature first">
+				
+<div class="image_wrap"><a href="/index.php/misc/about/affiliates"><img src="/sysimg/ResidentCompanies_1.jpg" border="0"  /></a></div><h3>Resident Companies</h3>Amazing arts organizations
+<a href="/index.php/misc/about/affiliates">Details&gt;</a>				</div>
+												<div class="homepage_feature">
+				
+<div class="image_wrap"><a href="http://www.azmnh.org/Home.aspx" rel="external" onclick="target = '_blank';"><img src="/sysimg/arizona-museum-natural-history-mesa-feature.jpg" border="0"  /></a></div><h3>Natural History</h3>Don't read it, live it!
+<a href="http://www.azmnh.org/Home.aspx" rel="external" onclick="target = '_blank';">Details&gt;</a>				</div>
+												<div class="homepage_feature">
+				
+<div class="image_wrap"><a href="/download.php/classes/downloadables/fall-art-classes-catalog"><img src="/sysimg/Mesa-Fall-Art-Class-2013-brochure.jpg" border="0"  /></a></div><h3>FALL CLASSES CATALOG</h3>Brush up on your art skills
+<a href="/download.php/classes/downloadables/fall-art-classes-catalog">Download Now></a>				</div>
+												<div class="homepage_feature">
+				
+<div class="image_wrap"><a href="http://www.mesaartscenter.com/sysfile/file-1a7b9b6a973176084d424cde56f35e6a-file.pdf" rel="external" onclick="target = '_blank';"><img src="/sysimg/SeasonBrochure_download.jpg" border="0"  /></a></div><h3>'13-14 SEASON BROCHURE</h3>CLICK TO DOWNLOAD NOW!
+<a href="http://www.mesaartscenter.com/sysfile/file-1a7b9b6a973176084d424cde56f35e6a-file.pdf" rel="external" onclick="target = '_blank';">Details&gt;</a>				</div>
+												<div class="homepage_feature">
+				
+<div class="image_wrap"><a href="http://apps.mesaaz.gov/survey/Survey.aspx?id=1072"><img src="/sysimg/BeHeard_170x104_homefeature.jpg" border="0"  /></a></div><h3>BE HEARD!</h3>We Want Your Opinion
+<a href="http://apps.mesaaz.gov/survey/Survey.aspx?id=1072">Details&gt;</a>				</div>
+						</div>
+	<div id="homepage_upcoming_news">
+		<div id="homepage_upcoming">
+			<h3>Upcoming</h3>
+			<div class="homepage_news_box">
+								<div class="homepage_news_item">
+					<h4>Grease</h4>
+					<p> Here is Rydell High's senior class of 1959 duck-tailed, hot-rodding "Burger Palace Boys" and... <a href="/index.php/shows/theater/grease2013">click&gt;</a></p>
+				</div>
+								<div class="homepage_news_item">
+					<h4>Satinder Sartaaj</h4>
+					<p> A multi-gifted artist,song writer, singer, composer and poet. Today Dr.Satinder Sartaaj... <a href="/index.php/shows/music-concerts/satindersartaajlive">click&gt;</a></p>
+				</div>
+								<div class="homepage_news_item">
+					<h4>Dr. Cesar Lozano</h4>
+					<p>   THIS PROGRAM WILL BE DELIVERED IN SPANISH   
+ &nbsp; 
+ Dr. Cesar Lozano is an innovation... <a href="/index.php/shows/Special-Engagements/cesarlozano">click&gt;</a></p>
+				</div>
+								<div class="homepage_news_item">
+					<h4>The Odyssey</h4>
+					<p> ARIZONA PREMIERE! The Odyssey Adapted by Charlie Bethel from the Epic Poem by Homer 
+ &nbsp;... <a href="/index.php/shows/theater/theodyssey">click&gt;</a></p>
+				</div>
+							</div>
+		</div>
+		<div id="homepage_news">
+			<h3>News</h3>
+			<div class="homepage_news_box">
+				
+																										<div class="homepage_news_item">
+								<h4>WHAT'S NEW AT THE MESA ARTS CENTER</h4>
+								<p> Mesa Arts Center is set to kick off an exciting new season and has several new conveniences,... <a href="/index.php/misc/about/press-room/inthenews/whatsnewatthemesaartscenter">click&gt;</a></p>
+							</div>
+																															<div class="homepage_news_item">
+								<h4>ALTON BROWN LIVE! THE EDIBLE INEVITABLE TOUR</h4>
+								<p> Alton Brown, Iron Chef host and renowned television personality is 
+ taking his brand of quirky... <a href="/index.php/misc/about/press-room/inthenews/altonbrownlive">click&gt;</a></p>
+							</div>
+																															<div class="homepage_news_item">
+								<h4>MESA ARTS CENTER OFFERS STEAM MACHINE INVENTION CAMP & SUMMER ART CAMPS FOR KIDS</h4>
+								<p> Summer is officially in full swing and the Mesa Arts Center has a limited number of openings for... <a href="/index.php/misc/about/press-room/inthenews/mesaartscenterofferssteammachineinventioncamp">click&gt;</a></p>
+							</div>
+																															<div class="homepage_news_item">
+								<h4>MESA ARTS CENTER RECEIVES $300,000 GRANT FROM ARTPLACE AMERICA</h4>
+								<p>  The grant will fund an expanded community gathering place at Mesa Arts Center featuring... <a href="/index.php/misc/about/press-room/inthenews/artplacegrant">click&gt;</a></p>
+							</div>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</div>
+		</div>
+		<div id="facebook">
+			<div id="like_box"><fb:like-box href="http://www.facebook.com/mesaartscenteraz" width="275" height="520" show_faces="true" border_color="#363636" stream="true" header="true"></fb:like-box></div>
+		</div>
+		<div id="spotify">
+			<iframe src="https://embed.spotify.com/?uri=spotify:user:mesaartscenter:playlist:2SQ650mCrr89MmVpUdzJfP" width="566" height="80" frameborder="0" allowtransparency="true"></iframe>
+			<div id="spotify_text">
+				<a href="http://www.spotify.com" rel="external" onclick="this.target = '_blank';"><img src="/images/spotify-logo.gif" alt="Spotify" /></a>
+				 <p>Hearing is believing!  Listen to a sample of the upcoming shows at Mesa Arts Center.  You&rsquo;ll want to get your ears...and the rest of your body...down here. Listen, then get your tickets before they&rsquo;re gone.</p>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" language="JavaScript">
+	//<![CDATA[
+		var red_feature_1 = '/sysimg/phoenix-mesa-performing-arts-performing-live-feature-over.jpg';
+		var red_feature_2 = '/sysimg/phoenix-mesa-performing-arts-support-us-feature-over_1.jpg';
+		var red_feature_3 = '/sysimg/MAC_OfficialBlog_1Active.jpg';
+		
+		var shuttle_timeout_id = null;
+		var slide_timeout_id = null;
+		var current_slide = 1;
+		var total_slides = 12;
+	
+		$(document).ready(function() {
+			$('.red_feature').mouseover(function () {
+				var src_tmp = $(this).attr('src');
+				eval('var src_set = '+$(this).attr('id')+';');
+				
+				$(this).attr('src',src_set);
+				eval($(this).attr('id')+" = '"+src_tmp+"'");
+				
+			});
+			
+			$('.red_feature').mouseout(function () {
+				var src_tmp = $(this).attr('src');
+				eval('var src_set = '+$(this).attr('id')+';');
+				
+				$(this).attr('src',src_set);
+				eval($(this).attr('id')+" = '"+src_tmp+"'");
+				
+			});
+			
+			$('#homepage_slideshow').mouseover(function() {
+					$('#next_slide img').fadeIn();
+					$('#prev_slide img').fadeIn();
+			});
+			
+			$('.show_shuttle').mouseover(function () {
+				window.clearTimeout(shuttle_timeout_id);
+				shuttle_timeout_id = null;
+				
+				window.clearTimeout(slide_timeout_id);
+				slide_timeout_id = null;
+			});
+			
+			$('.show_shuttle').mouseout(function() {
+				if(shuttle_timeout_id == null)
+					shuttle_timeout_id = window.setTimeout("$('#next_slide img').fadeOut(); $('#prev_slide img').fadeOut();", 300);
+					
+				if(slide_timeout_id == null)
+					slide_timeout_id = window.setTimeout('loopSlides();',5000);
+			});
+			
+			$('#next_slide img').click(function () {
+				current_slide++;
+				if(current_slide > total_slides)
+					current_slide = 1;
+					
+				showSlide(current_slide);
+			});
+			
+			$('#prev_slide img').click(function () {
+				current_slide--;
+				if(current_slide == 0)
+					current_slide = total_slides;
+					
+				showSlide(current_slide);
+			});
+			
+			$('.homepage_feature').mouseover(function () {
+				$(this).addClass('selected_feature');
+			});
+			
+			$('.homepage_feature').mouseout(function () {
+				$(this).removeClass('selected_feature');
+			});
+			
+			slide_timeout_id = window.setTimeout('loopSlides();',5000);
+			
+		});
+		
+		function showSlide(slide) {
+			$('.slideshow_image').fadeOut();
+			$('.slide_text').fadeOut();
+			$('.slideshow_link').fadeOut();
+			
+			$('#slide_show_image_'+slide).fadeIn();
+			$('#slide_show_text_'+slide).fadeIn();
+			$('#slide_show_link_'+slide).fadeTo('fast','0.01');
+		}
+		
+		function loopSlides() {
+			if(slide_timeout_id != null)
+			{
+				$('#next_slide img').triggerHandler('click');
+				slide_timeout_id = window.setTimeout('loopSlides();',5000);
+			}
+		}
+		
+	//]]!>
+	</script>
+					</div>
+</div>
+				<div id="header">
+	<a href="/index.php"><img src="/images/mesa-arts-center-performing-arts-logo.png" id="header_logo" /></a>
+	
+	<ul id="top_links" class="no_print">
+						<li><a href="https://boxoffice.mesaartscenter.com/online/donations.asp?" onclick="this.target = '_blank'">Donate</a></li>
+								<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://boxoffice.mesaartscenter.com/online/shoppingCart.asp" onclick="this.target = '_blank'">Cart</a></li>
+								<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/index.php/misc/calendar">Calendar</a></li>
+								<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/index.php/misc/about">About</a></li>
+								<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/facility-rentals-rent-theater-mesa.html">Rentals</a></li>
+								<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/index.php/misc/signup">Signup</a></li>
+					</ul>
+	<div id="search_form" class="no_print">
+		<form method="get" action="/index.php/misc/search">
+		<input type="text" id="search_box" size="15" value="SEARCH" name="search" onfocus="if(this.value == 'SEARCH') this.value = '';" onblur="if(this.value == '') this.value= 'SEARCH';" />
+		<input type="image" src="/images/search-box-arrow.gif">
+		</form>
+	</div>
+	
+		
+	<ul id="top_nav" class="no_print">
+																														<li id="shows_nav" style="width: 100px;" class="menu"><a href="/performing-arts-concerts-shows-theater-mesa.html" style="width: 100px;" class="menu">Shows</a></li>
+																																				<li id="classes_nav" style="width: 128px;" class="menu"><img src="/images/mesa-arts-center-performing-arts-navigation-divider.png" id="divider_2" alt="|"><a href="/visual-arts-classes-performing-arts-classes-learn.html" style="width: 105px;" class="menu">Classes</a></li>
+																																				<li id="events_nav" style="width: 114px;" class="menu"><img src="/images/mesa-arts-center-performing-arts-navigation-divider.png" id="divider_3" alt="|"><a href="/festival-event-concert-mesa-arizona.html" style="width: 91px;" class="menu">Events</a></li>
+																																				<li id="museum_nav" style="width: 114px;" class="menu"><img src="/images/mesa-arts-center-performing-arts-navigation-divider.png" id="divider_4" alt="|"><a href="/art-exhibitions-contemporary-art-gallery.html" style="width: 91px;" class="menu">Museum</a></li>
+																																				<li id="outreach_nav" style="width: 142px;" class="menu"><img src="/images/mesa-arts-center-performing-arts-navigation-divider.png" id="divider_5" alt="|"><a href="/index.php/outreach" style="width: 119px;" class="menu">Outreach</a></li>
+																																				<li id="getinvolved_nav" style="width: 184px;" class="menu"><img src="/images/mesa-arts-center-performing-arts-navigation-divider.png" id="divider_6" alt="|"><a href="/volunteer-donate-membership-mesa-arts.html" style="width: 161px;" class="menu">Get Involved</a></li>
+																																				<li id="visitmac_nav" style="width: 100px;" class="menu"><img src="/images/mesa-arts-center-performing-arts-navigation-divider.png" id="divider_7" alt="|"><a href="/index.php/visitmac" style="width: 77px;" class="menu">Visit</a></li>
+																																									</ul>
+	</div>
+									<div style="width: 100px;" class="subnav_tab menu no_print first_tab" id="shows_subnav_tab"><div class="menu" style="width: 100px;"><a href="/performing-arts-concerts-shows-theater-mesa.html" style="width: 100px;" id="shows_nav_tab_a" class="menu">Shows</a></div></div>
+			<ul class="subnav menu no_print" id="shows_subnav">
+				
+																											<li class="menu first"id="shows_all_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/misc/calendar?fullcalendar=230" id="shows_all_subnav_a" class="menu">Full Calendar</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="shows_classical-music_pipe">|</li>												<li class="menu"id="shows_classical-music_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/shows/classical-music" id="shows_classical-music_subnav_a" class="menu">Classical</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="shows_jazz-blues-music_pipe">|</li>												<li class="menu"id="shows_jazz-blues-music_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/shows/jazz-blues-music" id="shows_jazz-blues-music_subnav_a" class="menu">Jazz / Blues</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="shows_music-concerts_pipe">|</li>												<li class="menu"id="shows_music-concerts_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/shows/music-concerts" id="shows_music-concerts_subnav_a" class="menu">Concerts</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="shows_family_pipe">|</li>												<li class="menu"id="shows_family_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/shows/family" id="shows_family_subnav_a" class="menu">Family</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="shows_theater_pipe">|</li>												<li class="menu"id="shows_theater_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/shows/theater" id="shows_theater_subnav_a" class="menu">Theater / Comedy</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="shows_Special-Engagements_pipe">|</li>												<li class="menu"id="shows_Special-Engagements_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/shows/Special-Engagements" id="shows_Special-Engagements_subnav_a" class="menu">Special Events</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="shows_NatgeoLive_mesa_pipe">|</li>												<li class="menu"id="shows_NatgeoLive_mesa_subnav">&nbsp;&nbsp;&nbsp;<a href="/natgeolive" id="shows_NatgeoLive_mesa_subnav_a" class="menu">Nat Geo</a>&nbsp;&nbsp;&nbsp;</li>
+																																																																							<li style="width: 10px" class="menu" id="shows_affiliates_pipe">|</li>												<li class="menu"id="shows_affiliates_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/shows/affiliates" id="shows_affiliates_subnav_a" class="menu">Resident Companies</a>&nbsp;&nbsp;&nbsp;</li>
+																																													</ul>
+											<div style="width: 151px;" class="subnav_tab menu no_print" id="classes_subnav_tab"><div class="menu" style="width: 151px;"><a href="/visual-arts-classes-performing-arts-classes-learn.html" style="width: 151px;" id="classes_nav_tab_a" class="menu">Classes</a></div></div>
+			<ul class="subnav menu no_print" id="classes_subnav">
+				
+																																				<li class="menu first"id="classes_kidclasses_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/classes/kidclasses" id="classes_kidclasses_subnav_a" class="menu">Kid Classes</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="classes_adultclasses_pipe">|</li>												<li class="menu"id="classes_adultclasses_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/classes/adultclasses" id="classes_adultclasses_subnav_a" class="menu">Adult Classes</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="classes_camp-kids_pipe">|</li>												<li class="menu"id="classes_camp-kids_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/classes/camp-kids" id="classes_camp-kids_subnav_a" class="menu">Kids Camps</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="classes_arts-workshops_pipe">|</li>												<li class="menu"id="classes_arts-workshops_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/classes/arts-workshops" id="classes_arts-workshops_subnav_a" class="menu">Workshops</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="classes_arts-instructor-bios_pipe">|</li>												<li class="menu"id="classes_arts-instructor-bios_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/classes/arts-instructor-bios" id="classes_arts-instructor-bios_subnav_a" class="menu">Instructor Bios</a>&nbsp;&nbsp;&nbsp;</li>
+																																																						</ul>
+											<div style="width: 137px;" class="subnav_tab menu no_print" id="events_subnav_tab"><div class="menu" style="width: 137px;"><a href="/festival-event-concert-mesa-arizona.html" style="width: 137px;" id="events_nav_tab_a" class="menu">Events</a></div></div>
+			<ul class="subnav menu no_print" id="events_subnav">
+				
+																																													<li class="menu first"id="events_events-festivals-drop_subnav">&nbsp;&nbsp;&nbsp;<a href="http://www.mesaartscenter.com/festival-event-concert-mesa-arizona.html" id="events_events-festivals-drop_subnav_a" class="menu">Events/Festivals</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="events_facility-rental_pipe">|</li>												<li class="menu"id="events_facility-rental_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/misc/about/facilityrental" id="events_facility-rental_subnav_a" class="menu">Facility Rental</a>&nbsp;&nbsp;&nbsp;</li>
+																																				</ul>
+											<div style="width: 137px;" class="subnav_tab menu no_print" id="museum_subnav_tab"><div class="menu" style="width: 137px;"><a href="/art-exhibitions-contemporary-art-gallery.html" style="width: 137px;" id="museum_nav_tab_a" class="menu">Museum</a></div></div>
+			<ul class="subnav menu no_print" id="museum_subnav">
+				
+																											<li class="menu first"id="museum_past-exhibits_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/museum/past-exhibits" id="museum_past-exhibits_subnav_a" class="menu">Past Exhibits</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="museum_currentexhibits_pipe">|</li>												<li class="menu"id="museum_currentexhibits_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/museum/currentexhibits" id="museum_currentexhibits_subnav_a" class="menu">Current Exhibits</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="museum_upcoming-art-exhibits_pipe">|</li>												<li class="menu"id="museum_upcoming-art-exhibits_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/museum/upcoming-art-exhibits" id="museum_upcoming-art-exhibits_subnav_a" class="menu">Upcoming Exhibits</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="museum_education-tours_pipe">|</li>												<li class="menu"id="museum_education-tours_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/museum/education-tours" id="museum_education-tours_subnav_a" class="menu">Tours & Education</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="museum_about_pipe">|</li>												<li class="menu"id="museum_about_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/museum/about" id="museum_about_subnav_a" class="menu">Galleries</a>&nbsp;&nbsp;&nbsp;</li>
+																																			<li style="width: 10px" class="menu" id="museum_mcamembership_pipe">|</li>												<li class="menu"id="museum_mcamembership_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/museum/mcamembership" id="museum_mcamembership_subnav_a" class="menu">Membership</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="museum_employment_pipe">|</li>												<li class="menu"id="museum_employment_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/museum/employment" id="museum_employment_subnav_a" class="menu">Work Here</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="museum_artist-opportunities_pipe">|</li>												<li class="menu"id="museum_artist-opportunities_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/museum/artist-opportunities" id="museum_artist-opportunities_subnav_a" class="menu">Artist Opportunities</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="museum_special-event-venue-mesa_pipe">|</li>												<li class="menu"id="museum_special-event-venue-mesa_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/misc/about/facilityrental" id="museum_special-event-venue-mesa_subnav_a" class="menu">Special Events</a>&nbsp;&nbsp;&nbsp;</li>
+																																																															</ul>
+											<div style="width: 165px;" class="subnav_tab menu no_print" id="outreach_subnav_tab"><div class="menu" style="width: 165px;"><a href="/index.php/outreach" style="width: 165px;" id="outreach_nav_tab_a" class="menu">Outreach</a></div></div>
+			<ul class="subnav menu no_print" id="outreach_subnav">
+				
+																											<li class="menu first"id="outreach_School_Shows_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/outreach/School_Shows" id="outreach_School_Shows_subnav_a" class="menu">School Shows</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="outreach_nat-geo-live-school-shows_pipe">|</li>												<li class="menu"id="outreach_nat-geo-live-school-shows_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/outreach/nat-geo-live-school-shows" id="outreach_nat-geo-live-school-shows_subnav_a" class="menu">Nat Geo School Shows</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="outreach_JazzFromAtoZ_pipe">|</li>												<li class="menu"id="outreach_JazzFromAtoZ_subnav">&nbsp;&nbsp;&nbsp;<a href="http://jazzfromatoz.mesaartscenter.com/index.php" id="outreach_JazzFromAtoZ_subnav_a" class="menu">Jazz From A to Z</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="outreach_outreach-programs_pipe">|</li>												<li class="menu"id="outreach_outreach-programs_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/outreach/outreach-programs" id="outreach_outreach-programs_subnav_a" class="menu">Outreach Programs</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="outreach_fieldtrips_pipe">|</li>												<li class="menu"id="outreach_fieldtrips_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/outreach/fieldtrips" id="outreach_fieldtrips_subnav_a" class="menu">Field Trips</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="outreach_teaching-artist-opportunities_pipe">|</li>												<li class="menu"id="outreach_teaching-artist-opportunities_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/outreach/teaching-artist-opportunities" id="outreach_teaching-artist-opportunities_subnav_a" class="menu">Work with Us</a>&nbsp;&nbsp;&nbsp;</li>
+																																				</ul>
+											<div style="width: 207px;" class="subnav_tab menu no_print" id="getinvolved_subnav_tab"><div class="menu" style="width: 207px;"><a href="/volunteer-donate-membership-mesa-arts.html" style="width: 207px;" id="getinvolved_nav_tab_a" class="menu">Get Involved</a></div></div>
+			<ul class="subnav menu no_print" id="getinvolved_subnav">
+				
+																																				<li class="menu first"id="getinvolved_donate_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/getinvolved/donate" id="getinvolved_donate_subnav_a" class="menu">Donate</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="getinvolved_volunteer_pipe">|</li>												<li class="menu"id="getinvolved_volunteer_subnav">&nbsp;&nbsp;&nbsp;<a href="/volunteer-donate-time" id="getinvolved_volunteer_subnav_a" class="menu">Volunteer</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="getinvolved_membership_pipe">|</li>												<li class="menu"id="getinvolved_membership_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/getinvolved/membership" id="getinvolved_membership_subnav_a" class="menu">Membership</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="getinvolved_sponsor_pipe">|</li>												<li class="menu"id="getinvolved_sponsor_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/getinvolved/sponsor" id="getinvolved_sponsor_subnav_a" class="menu">Sponsors</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="getinvolved_foundation_pipe">|</li>												<li class="menu"id="getinvolved_foundation_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/getinvolved/foundation" id="getinvolved_foundation_subnav_a" class="menu">MAC Foundation</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="getinvolved_cultural-advisory-board_pipe">|</li>												<li class="menu"id="getinvolved_cultural-advisory-board_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/getinvolved/cultural-advisory-board" id="getinvolved_cultural-advisory-board_subnav_a" class="menu">Advisory Board</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="getinvolved_perform-exhibit_pipe">|</li>												<li class="menu"id="getinvolved_perform-exhibit_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/getinvolved/perform-exhibit" id="getinvolved_perform-exhibit_subnav_a" class="menu">Exhibit/Perform</a>&nbsp;&nbsp;&nbsp;</li>
+																																																														<li style="width: 10px" class="menu" id="getinvolved_Members_Login_pipe">|</li>												<li class="menu"id="getinvolved_Members_Login_subnav">&nbsp;&nbsp;&nbsp;<a href="https://boxoffice.mesaartscenter.com/Online/login.asp?targetPage=maintainaccount.asp%3Fmenu_id%3DA0392930-B42B-4FFD-941E-B41352063514" id="getinvolved_Members_Login_subnav_a" class="menu">Members Login</a>&nbsp;&nbsp;&nbsp;</li>
+																											</ul>
+											<div style="width: 123px;" class="subnav_tab menu no_print" id="visitmac_subnav_tab"><div class="menu" style="width: 123px;"><a href="/index.php/visitmac" style="width: 123px;" id="visitmac_nav_tab_a" class="menu">Visit</a></div></div>
+			<ul class="subnav menu no_print" id="visitmac_subnav">
+				
+																																				<li class="menu first"id="visitmac_directions_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/visitmac/directions" id="visitmac_directions_subnav_a" class="menu">Getting Here</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="visitmac_seatingcharts_pipe">|</li>												<li class="menu"id="visitmac_seatingcharts_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/visitmac/seatingcharts" id="visitmac_seatingcharts_subnav_a" class="menu">Seating</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="visitmac_concessions_pipe">|</li>												<li class="menu"id="visitmac_concessions_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/visitmac/concessions" id="visitmac_concessions_subnav_a" class="menu">Concessions</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="visitmac_groupsales_pipe">|</li>												<li class="menu"id="visitmac_groupsales_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/visitmac/groupsales" id="visitmac_groupsales_subnav_a" class="menu">Groups</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="visitmac_store_pipe">|</li>												<li class="menu"id="visitmac_store_subnav">&nbsp;&nbsp;&nbsp;<a href="/macstore" id="visitmac_store_subnav_a" class="menu">MAC Store</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="visitmac_policies_pipe">|</li>												<li class="menu"id="visitmac_policies_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/visitmac/policies" id="visitmac_policies_subnav_a" class="menu">Policies</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="visitmac_adainfo_pipe">|</li>												<li class="menu"id="visitmac_adainfo_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/visitmac/adainfo" id="visitmac_adainfo_subnav_a" class="menu">Accessibility</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="visitmac_local-resources_pipe">|</li>												<li class="menu"id="visitmac_local-resources_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/visitmac/local-resources" id="visitmac_local-resources_subnav_a" class="menu">Local Resources</a>&nbsp;&nbsp;&nbsp;</li>
+																																																					<li style="width: 10px" class="menu" id="visitmac_eats-arts_pipe">|</li>												<li class="menu"id="visitmac_eats-arts_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/visitmac/eats-arts" id="visitmac_eats-arts_subnav_a" class="menu">Eats + Arts</a>&nbsp;&nbsp;&nbsp;</li>
+																										<li style="width: 10px" class="menu" id="visitmac_tours_pipe">|</li>												<li class="menu"id="visitmac_tours_subnav">&nbsp;&nbsp;&nbsp;<a href="/index.php/misc/about/campus-tours" id="visitmac_tours_subnav_a" class="menu">Tours</a>&nbsp;&nbsp;&nbsp;</li>
+																		</ul>
+						
+<ul id="bottom_nav" class="no_print">
+		<li><a href="/performing-arts-concerts-shows-theater-mesa.html">Shows</a></li>
+				<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/visual-arts-classes-performing-arts-classes-learn.html">Classes</a></li>
+				<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/festival-event-concert-mesa-arizona.html">Events</a></li>
+				<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/art-exhibitions-contemporary-art-gallery.html">Museum</a></li>
+				<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/index.php/outreach">Outreach</a></li>
+				<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/volunteer-donate-membership-mesa-arts.html">Get Involved</a></li>
+				<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/index.php/visitmac">Visit</a></li>
+																								</ul>
+
+<div id="footer" class="no_print">
+	<div id="location">
+		<a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=1+East+Main+Street,+Mesa,+AZ&aq=0&sll=37.0625,-95.677068&sspn=50.291089,87.626953&ie=UTF8&hq=&hnear=1+E+Main+St,+Mesa,+Arizona+85201&z=17" rel="external" onclick="this.target = '_blank'"><img src="/images/mesa-arts-center-performing-arts-footer-map.gif" id="footer_map" alt="Map to Mesa Arts Center" /></a>		<span id="company_name">Mesa Arts Center</span>
+		<span id="company_box_office">Box Office: (480) 644.6500</span>
+		One East Main Street<br />
+		Mesa, Arizona 85201
+	</div>
+	
+	<ul id="bottom_links">
+		<li><a href="/images/macim/mesa-arts-center-interactive-map-2.swf?width=700&height=690" rel="prettyPhoto">Interactive Map</a></li>
+						<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/index.php/misc/contact" >Contact Us</a></li>
+								<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/index.php/misc/about/press-room" >Press Room</a></li>
+								<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/index.php/misc/termsofuse" >Terms</a></li>
+								<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/index.php/misc/privacypolicy" >Privacy</a></li>
+								<li>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/index.php/misc/site-map" >Site Map</a></li>
+						
+	</ul>
+	<div id="social_icons">
+<a class="asocnetwrk" href="http://1emain.blogspot.com/" onClick="window.open('http://1emain.blogspot.com/');return(false);" title="blogger"><img src="/images/social-networking/24x24/blogger.png" width="24" height="24" alt="wordpress" /></a><a class="asocnetwrk" href="http://www.facebook.com/mesaartscenteraz" onClick="window.open('http://www.facebook.com/mesaartscenteraz');return(false);" title="Facebook"><img src="/images/social-networking/24x24/facebook.png" width="24" height="24" alt="Facebook" /></a><a class="asocnetwrk" href="http://twitter.com/MesaArtsCenter" onClick="window.open('http://twitter.com/MesaArtsCenter');return(false);" title="Twitter"><img src="/images/social-networking/24x24/twitter.png" alt="Twitter" /></a><a class="asocnetwrk" href="https://foursquare.com/v/mesa-arts-center/46916e00f964a520a3481fe3" onClick="window.open('https://foursquare.com/v/mesa-arts-center/46916e00f964a520a3481fe3');return(false);" title="foursquare"><img src="/images/social-networking/24x24/foursquare.png" alt="foursquare" /></a><a class="asocnetwrk" href="http://instagram.com/mesaartscenter" onClick="window.open('http://instagram.com/mesaartscenter');return(false);" title="instagram"><img src="/images/social-networking/24x24/instagram.png" alt="instagram" /></a><a class="asocnetwrk" href="http://www.youtube.com/user/MesaArtsCenter" onClick="window.open('http://www.youtube.com/user/MesaArtsCenter');return(false);" title="YouTube"><img src="/images/social-networking/24x24/youtube.png" width="24" height="24" alt="YouTube" /></a><a class="asocnetwrk" href="http://pinterest.com/mesaartscenter/" onClick="window.open('http://pinterest.com/mesaartscenter/');return(false);" title="pinterest"><img src="/images/social-networking/24x24/pinterest.png" alt="pinterest" /></a></div>	<a href="http://www.mesaaz.gov" rel="external" onclick="this.target = '_blank';"><img src="/images/mesa-arts-center-performing-arts-city-logo.gif" alt="City of Mesa" id="city_of_mesa" /></a>
+    <div id="copyright">&copy; 2011 City of Mesa. All Rights Reserved.</div>
+		
+	<div id="sponsors">
+									<a href="http://www.mesaartscenter.com/index.php/events/free-events/SundayOutdoorConcerts"rel="external" onclick="target = '_blank';"><img src="/sysimg/3-FOR-FREE-Logo.jpg" alt="Target" class="first" id="sponsor_target-sponsor" /></a>																<a href="http://www.azarts.gov/"rel="external" onclick="target = '_blank';"><img src="/sysimg/arizona-commission-on-the-arts-mesa-arts-center-sponsor.jpg" alt="Arizona Commission on the Arts" id="sponsor_aca-sponsor" /></a>																<a href="http://www.azblue.com/"rel="external" onclick="target = '_blank';"><img src="/sysimg/blue-cross-blue-shield-mesa-arts-center-sponsor.jpg" alt="Blue Cross Blue Shield" id="sponsor_blue-sponsor" /></a>																					<a href="http://www.swambulance.com/"rel="external" onclick="target = '_blank';"><img src="/sysimg/southwest-ambulance-mesa-arts-center-sponsor.jpg" alt="Southwest Ambulance" id="sponsor_southwestambulance" /></a>																<a href="http://www.srpnet.com/"rel="external" onclick="target = '_blank';"><img src="/sysimg/srp-mesa-arts-center-sponsor.jpg" alt="SRP" id="sponsor_srp-sponsor" /></a>																<a href="https://www.wellsfargo.com/"rel="external" onclick="target = '_blank';"><img src="/sysimg/wells-fargo-mesa-arts-center-sponsor.jpg" alt="Wells Fargo" id="sponsor_WF-Sponsor" /></a>																<a href="http://www.boeing.com/"rel="external" onclick="target = '_blank';"><img src="/sysimg/boeing-mesa-arts-center-sponsor.jpg" alt="Boeing" id="sponsor_boeing-sponsor" /></a>																																				<a href="http://artworks.arts.gov/"><img src="/sysimg/ArtWorks.jpg" alt="ArtWorks" id="sponsor_artworks-sponsor" /></a>															</div>
+	<map id="_buickgmc" name="buickgmc">
+	<area shape="rect" coords="0,0,25,35" href="http://www.buick.com/" alt="buick" title="buick" target="_blank" />
+	<area shape="rect" coords="26,0,66,35" href="http://www.gmc.com/" alt="gmc" title="gmc" target="_blank" />
+	</map>
+	</div>
+<a href="http://www.vilocity.com" rel="external" onclick="this.target = '_blank';"><img src="/images/mesa-arts-center-performing-arts-page-bottom-built-with-vilocity.png" alt="Built With Vilocity" id="page_bottom" class="no_print" /></a>			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	adroll_adv_id = "YTGDYTN2OJESXCQF7AT5YR";
+	adroll_pix_id = "G6FLPVMLQVG3BPRG2BM6XU";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){ oldonload() } };
+	}());
+	</script>
+	
+  </body>
+</html>

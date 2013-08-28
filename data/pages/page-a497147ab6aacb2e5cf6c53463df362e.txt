@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>‘Baby Boomer’ humor on tap | www.theirregular.com | The Irregular</title>
+  <script type="text/javascript">
+    var SoMsg = function (e) { 
+            var da = e.data;
+            if(da.indexOf('/addev')>-1) ShowAddEvent(e.data); //no frame
+            if(da.indexOf('read/')>-1) ShowEvent(e.data); //no frame
+    } 
+    if (window.addEventListener) 
+        window.addEventListener("message", SoMsg, false); 
+    else 
+        attachEvent("onmessage", SoMsg) 
+
+    function CloseEvent() { 
+        var bg = document.getElementById('bgShadow'); 
+        var dia = document.getElementById('fgDialog'); 
+        bg.style.display = "none"; 
+        dia.style.display = "none"; 
+        dia.innerHTML = ''; 
+        return false; 
+    }
+
+    function ShowAddEvent(content) { 
+        var bg = document.getElementById('bgShadow'); 
+        var dia = document.getElementById('fgDialog'); 
+        var a = content && content.length > 5 ? content.substr(0, 5) : ""; 
+        var http = a && a.indexOf('http') > -1; 
+
+            dia.innerHTML = "<table width='100%' height='100%'>" 
+       + "<tr><td align='center' valign='middle' width='555px' height='600px'>"
+       + "<div class='headingFormatDescription borderStyle' style='margin-top:50px;height:44px;'>Submit An Event <img src='https://www.squaredout.com/Content/images2/widget/templates/close.png' height='27' width='27' border='0' style='float:right;padding:7px;' onclick='return CloseEvent();' class='exit close'/></div>"
+       + "<iframe src='" + content + "'" 
+       + " frameborder='0'" 
+       + " height='600px'" 
+       + " width='595px'"
+       + " scrolling='no'" 
+       + " id='SquaredOut'" 
+       + " marginheight='0'"
+       + " marginwidth='0'></iframe>" 
+       + "</td></tr></table>"; 
+        bg.style.display = ""; 
+        dia.style.display = ""; 
+    } 
+
+    function ShowEvent(content) {
+        var bg = document.getElementById('bgShadow'); 
+        var dia = document.getElementById('fgDialog');  
+        var a = content && content.length > 5 ? content.substr(0, 5) : "";  
+        var json = a && a.indexOf('{') > -1;  
+        var http = a && a.indexOf('http') > -1;  
+        if (json)  
+            dia.innerHTML = "<table width='100%' height='100%'>" 
+       + "<tr><td onclick='CloseEvent()' align='center' valign='middle' width='100%' height='100%'>" 
+       + "<div style='background-color:white;width:400px;height:20px;border:1px solid black;'><a href='#' onclick='return CloseEvent();'>CLOSE WINDOW</a><br/><br/></div>" 
+       + "<div id='' style='background-color:white;height:550px;width:400px;border:1px solid black;overflow:auto;'>" 
+       + Format(content)
+       + "</div>" 
+       + "</td></tr></table>"; 
+        else if (http)  //need to pass ReadEvent PageRequest (url) to fill frame 
+            dia.innerHTML = "<table width='100%' height='100%'>" 
+       + "<tr><td align='center' valign='middle' width='520px' height='655px'>" 
+       + "<div class='headingFormatDescription' style='height:44px;width:500px;'>Event Details <img src='https://www.squaredout.com/Content/images2/widget/templates/close.png' height='27' width='27' border='0' style='float:right;padding:7px;' onclick='return CloseEvent();' class='exit close'/></div>" 
+       + "<iframe src='" + content + "'" 
+       + " frameborder='0'" 
+       + " height='655px'" 
+       + " width='520px'" 
+       + " scrolling='no'" 
+       + " id='SquaredOut'" 
+       + " marginheight='0'" 
+       + " marginwidth='0'></iframe>" 
+       + "</td></tr></table>"; 
+        bg.style.display = ""; 
+        dia.style.display = ""; 
+    } 
+
+    function Format(content) { 
+        var data = JSON.parse(content); 
+        var ret = ''; 
+        for (i in data) { 
+            ret += ('<b>' + i + ':</b> ' + data[i] + '<br/>') 
+        } 
+        return ret; 
+    } 
+</script> 
+
+<style type="text/css"> 
+    #bgShadow 
+    { 
+        z-index: 10000; 
+        filter: alpha(opacity=50); /*older IE*/ 
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50); /* IE */ 
+        -moz-opacity: .50; /*older Mozilla*/
+        -khtml-opacity: 0.5; /*older Safari*/ 
+        opacity: 0.5; /*supported by current Mozilla, Safari, and Opera*/ 
+        background-color: #000000; 
+        position: fixed; 
+        top: 0px; 
+        left: 0px; 
+        width: 100%; 
+        height: 100%; 
+        color: #666; 
+        text-align: center; 
+        vertical-align: middle; 
+    } 
+    #fgDialog 
+    { 
+        z-index: 10001; 
+        position: fixed;
+        top: 0px; 
+        left: 0px; 
+        width: 100%; 
+        height: 100%; 
+        color: #666; 
+        text-align: center; 
+        vertical-align: middle; 
+    } 
+    .headingFormatDescription {
+	width:555px;
+	height:44px;
+	background: #f9f9f9;
+	background-image: -webkit-linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
+	background-image: -moz-linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
+	background-image: -o-linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
+	background-image: -ms-linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
+	background-image: linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f9f9f9', EndColorStr='#e9e9e9');
+
+	border-bottom:1px solid #bababa;
+
+	-webkit-box-shadow:
+		inset 0px -1px 0px #fff,
+		0px 1px 3px rgba(0,0,0,.08);
+	-moz-box-shadow:
+		inset 0px -1px 0px #fff,
+		0px 1px 3px rgba(0,0,0,.08);
+	box-shadow:
+		inset 0px -1px 0px #fff,
+		0px 1px 3px rgba(0,0,0,.08);
+
+font-size:18px; 
+font-weight:bold; 
+text-align:left; 
+line-height:44px; 
+padding-left:10px; 
+padding-right:10px; 
+
+color:#1ca5ec; 
+text-shadow:0px 1px 0px #fff; 
+    } 
+    .borderStyle { 
+        border-top:10px solid #666; 
+border-left:10px solid #666; 
+border-right:10px solid #666; 
+     }
+</style>  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/sites/all/themes/custom/oht_v5/favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/www.theirregular.com/files/css/css_b8741d979f6c683c33ac9c73cd18107b.css" />
+<link type="text/css" rel="stylesheet" media="screen,projection" href="/sites/www.theirregular.com/files/css/css_b8d49ae7771afb2d483e36e14fde9fef.css" />
+<link type="text/css" rel="stylesheet" media="print" href="/sites/www.theirregular.com/files/css/css_04d1b4e40ac1d9282f139dc05b8c0ddb.css" />
+  <script type="text/javascript" src="/sites/www.theirregular.com/files/js/js_ea808186680af86574ca6f83d8789564.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "lightbox2": { "rtl": 0, "file_path": "/(\\w\\w/)sites/www.theirregular.com/files", "default_image": "/sites/all/modules/lightbox2/images/brokenimage.jpg", "border_size": 10, "font_color": "000", "box_color": "fff", "top_position": "", "overlay_opacity": "0.8", "overlay_color": "000", "disable_close_click": true, "resize_sequence": 0, "resize_speed": 400, "fade_in_speed": 400, "slide_down_speed": 600, "use_alt_layout": false, "disable_resize": false, "disable_zoom": false, "force_show_nav": false, "show_caption": true, "loop_items": false, "node_link_text": "", "node_link_target": false, "image_count": "Image !current of !total", "video_count": "Video !current of !total", "page_count": "Page !current of !total", "lite_press_x_close": "press \x3ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\x3e\x3ckbd\x3ex\x3c/kbd\x3e\x3c/a\x3e to close", "download_link_text": "", "enable_login": false, "enable_contact": false, "keys_close": "c x 27", "keys_previous": "p 37", "keys_next": "n 39", "keys_zoom": "z", "keys_play_pause": "32", "display_image_size": "", "image_node_sizes": "(\\.preview)", "trigger_lightbox_classes": "img.inline,img.preview, img.image-preview,img._original, img.image-_original", "trigger_lightbox_group_classes": "", "trigger_slideshow_classes": "", "trigger_lightframe_classes": "", "trigger_lightframe_group_classes": "", "custom_class_handler": 0, "custom_trigger_classes": "", "disable_for_gallery_lists": true, "disable_for_acidfree_gallery_lists": true, "enable_acidfree_videos": true, "slideshow_interval": 5000, "slideshow_automatic_start": true, "slideshow_automatic_exit": true, "show_play_pause": true, "pause_on_next_click": false, "pause_on_previous_click": true, "loop_slides": false, "iframe_width": 600, "iframe_height": 400, "iframe_border": 1, "enable_video": false }, "nice_menus_options": { "delay": 800, "speed": 1 } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var timed=0;function hidePDF(){$("#Section_PDFDisplay").slideUp("normal");}$(document).ready(function(){$("#PDFDisplayLink,#Section_PDFDisplay").bind("mouseenter",function(){clearTimeout(timed);if($("#Section_PDFDisplay").css("display")=="none")$("#Section_PDFDisplay").slideDown("normal");});$("#PDFDisplayLink,#Section_PDFDisplay").bind("mouseleave",function(){if($("#Section_PDFDisplay").css("display")!="none")timed=setTimeout("hidePDF()",500);});});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var timednews=0;function hideNews(){$("#Section_NewsUpdate").slideUp("normal");}$(document).ready(function(){$("#NewsUpdateLink,#Section_NewsUpdate").bind("mouseenter",function(){clearTimeout(timednews);if($("#Section_NewsUpdate").css("display")=="none")$("#Section_NewsUpdate").slideDown("normal");});$("#NewsUpdateLink,#Section_NewsUpdate").bind("mouseleave",function(){if($("#Section_NewsUpdate").css("display")!="none")timednews=setTimeout("hideNews()",500);});});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+$(document).ready(function(){$("#search-theme-form, #search-form").submit(function(){$("#search input[type=submit], #search-form input[type=submit]").val("Search  ").attr("disabled", "disabled");$("#search input[type=submit], #search-form input[type=submit]").css("background-position","50px -18px");});});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+$(document).ready(function() { $(".image-preview").after("<span class=zoom></span>"); });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var a2a_config=a2a_config||{},da2a={done:false,html_done:false,script_ready:false,script_load:function(){var a=document.createElement('script'),s=document.getElementsByTagName('script')[0];a.type='text/javascript';a.async=true;a.src='http://static.addtoany.com/menu/page.js';s.parentNode.insertBefore(a,s);da2a.script_load=function(){};},script_onready:function(){da2a.script_ready=true;if(da2a.html_done)da2a.init();},init:function(){for(var i=0,el,target,targets=da2a.targets,length=targets.length;i<length;i++){el=document.getElementById('da2a_'+(i+1));target=targets[i];a2a_config.linkname=target.title;a2a_config.linkurl=target.url;if(el)a2a.init('page',{target:el});da2a.done=true;}}};a2a_config.tracking_callback=['ready',da2a.script_onready];
+//--><!]]>
+</script>
+  <!--[if lt IE 8]><link rel="stylesheet" href="/sites/all/themes/custom/oht_v5/css/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+  
+  <link rel='alternate' type='application/rss+xml' title='RSS' href='/news.xml' />
+</head>
+<body>
+<div class="container">
+  <div class="span-24 last" id="topnav">
+    <div id="block-menu-menu-topnav" class="block block-menu ">
+  <ul class="menu"><li class="leaf first TopNav_Default"><a href="/user/login" title="">Login</a></li>
+<li class="leaf TopNav_Default"><a href="/user" title="">Profile</a></li>
+<li class="leaf TopNav_Default"><a href="http://www.our-hometown.com/public/submitemail.php?publisher=www.theirregular.com" title="" id="NewsUpdateLink">Get News Updates</a><div class="Section NewsUpdate" id="Section_NewsUpdate"><form action="http://www.our-hometown.com/public/submitemail.php" method="post">For local <a href="/public/newsletter_help.htm">news delivered via email</a> enter address here:<br /><input type="text" name="email" size="20" /><input type="hidden" name="publisher" value="www.theirregular.com" /><input type="submit" value="Submit" /></form></div><a style="display: none;"></a></li>
+<li class="leaf TopNav_Default"><a href="http://m.theirregular.com" title="">Mobile</a></li>
+<li class="leaf TopNav_Default"><a href="/newspanel" title="">Tablet</a></li>
+<li class="leaf TopNav_Default"><a href="/news/2011-02-09/PDF" title="" id="PDFDisplayLink">Print Edition</a><div class="Section PDFDisplay" id="Section_PDFDisplay"><div class="PDFDisplay-div"><div><a href="/pageview/pages/2011-02-09">PageView</a></div><div><a href="/news/2011-02-09/pdf/flip">Flip</a></div><div><a href="/news/2011-02-09/PDF">PDF</a></div></div><a href="/news/2011-02-09/PDF"><img alt="2011-02-09 digital edition" src="/sites/www.theirregular.com/files/PDF/2011-02-09/Page_001-150px.gif" /></a></div><a style="display: none;"></a></li>
+<li class="leaf last TopNav_Default"><a href="/calendar" title="">Calendar</a></li>
+</ul></div>
+  </div>
+  <div class="clear span-24 last" id="logo">
+    <div id="block-block-1" class="block block-block ">
+  <center>
+<table cellspacing="2" cellpadding="0" align="center">
+    <tbody>
+        <tr>
+            <td align=center><center><a href="/"><img border="0" alt="" src="/styles/logo.gif" /></a></center></td>
+        </tr>
+    </tbody>
+</table>
+</center></div>
+  </div>
+    <div class="clear span-24 last append-bottom" id="navigation">
+    <div id="block-menu-secondary-links" class="block block-menu ">
+  <ul class="menu"><li class="leaf first Marketplace_Heading">Marketplace:</li>
+<li class="leaf Marketplace_Default"><a href="/marketplace/miscellaneous?publisher=Irregular&amp;filter=misc" title=""><style="border:1px; 000000;"> Miscellaneous </style></a></li>
+<li class="leaf Marketplace_Default"><a href="/marketplace/real%20estate?publisher=Irregular&amp;filter=real_estate" title="">Real Estate</a></li>
+<li class="leaf Marketplace_Default"><a href="/marketplace/health?publisher=Irregular&amp;filter=health" title="">Health</a></li>
+<li class="leaf Marketplace_Default"><a href="/marketplace/dining%20and%20entertainment?publisher=Irregular&amp;filter=dining_entertainment" title="">Dining & Entertainment</a></li>
+<li class="leaf last Marketplace_Heading"><a href="/common/Misc/About_Us.html" title="">About Us</a></li>
+</ul></div>
+  </div>
+    <div class="span-24 last" id="above-content">
+      </div>
+    <div class="span-3" id="leftnavigation">
+    <div id="block-menu-primary-links" class="block block-menu ">
+  <ul class="menu"><li class="leaf first Primary_Header">News</li>
+<li class="leaf Primary_Default"><a href="/news/2011-02-09/Front_Page" title="">Front Page</a></li>
+<li class="leaf Primary_Default"><a href="/news/2011-02-09/Community_%2528and%2529_Local_News" title="">Community & Local News</a></li>
+<li class="leaf Primary_Default"><a href="/news/2011-02-09/Arts_%2528and%2529_Entertainment" title="">Arts & Entertainment</a></li>
+<li class="leaf Primary_Default"><a href="/news/2011-02-09/Op-Ed" title="">Op-Ed</a></li>
+<li class="leaf Primary_Default"><a href="/news/2011-02-09/Letters" title="">Letters</a></li>
+<li class="leaf Primary_Default"><a href="/news/2011-02-09/Obituaries" title="">Obituaries</a></li>
+<li class="leaf Primary_Default"><a href="/news/2011-02-09/Sports_%2528and%2529_Outdoors" title="">Sports & Outdoors</a></li>
+<li class="leaf Primary_Default"><a href="/news/2011-02-09/Irregular_regulars" title="">Irregular Regulars</a></li>
+<li class="leaf Primary_Default"><a href="/news/2011-02-09/News_from_our_Schools" title="">News from our Schools</a></li>
+<li class="leaf Primary_Default"><a href="/documents/MMSummer" title=""><img src="/styles/MMS.gif"><br>Maine Mountain Summer 2013</a></li>
+<li class="leaf Primary_Default"><a href="/documents/Summer2013" title=""><img src="/styles/Summer2013.gif"><br>Summertime Guide 2013</a></li>
+<li class="leaf Primary_Default"><a href="/documents/Backyard2013" title=""><img src="/styles/Backyard2013.gif"><br>Maine Mountain Backyard 2013</a></li>
+<li class="leaf Primary_Default"><a href="/documents/Snowmobiling2013" title=""><img src="/styles/Snowmobiling.gif"><br>Snowmobiling 2013</a></li>
+<li class="leaf Primary_Default"><a href="/documents/Whiteout" title=""><img src="/styles/Whiteout.gif"><br>Whiteout!</a></li>
+<li class="leaf Primary_Default"><a href="/documents/Sugarloafer" title=""><img src="/sites/www.theirregular.com/files/PDF/Sugarloafer/Page_001-90px.gif"><br>Sugarloafer Vol. 17 Iss. 7</a></li>
+<li class="leaf Primary_Default"><a href="/documents/MMF2012" title=""><img src="/styles/MMF12.gif"><br>Maine Mountain Fall</a></li>
+<li class="leaf Primary_Default"><a href="/news/2011-02-09/Western_Mountain_Activities" title="">Western Mountain Activities</a></li>
+<li class="leaf Primary_Default"><a href="/common/classifieds/" title="">Classified Advertising</a></li>
+<li class="leaf Primary_Default"><a href="/common/backtracks/" title="">BackTracks: Irregular gems</a></li>
+<li class="leaf Primary_Default"><a href="/common/public_notices/" title="">Public Notices</a></li>
+<li class="leaf Primary_Default"><a href="/advertisers?publisherid=Irregular" title="">Advertiser Index</a></li>
+<li class="leaf Primary_Default"><a href="/taxonomy/term/23?Criteria=&quot;maine energy&quot;&amp;publisher=Irregular&amp;collection=Irregular2008" title="">Maine Energy & the Future Archives</a></li>
+<li class="leaf Primary_Default"><a href="/common/studentinspiration/" title="">Student Inspiration Corner</a></li>
+<li class="leaf Primary_Default"><a href="/common/Misc/Contact_Us.html" title="">Contact Us</a></li>
+<li class="leaf Primary_Default"><a href="/classifiedorder?publisher=Irregular" title="">Classified Order</a></li>
+<li class="leaf Primary_Default"><a href="/subscribe?publisherid=Irregular" title="">Subscribe</a></li>
+<li class="collapsed Primary_Default"><a href="/common/archive.html" title="">Archive</a></li>
+<li class="leaf last Primary_Centered">Copyright© 2008-2013<br>The Irregular<br>All Rights Reserved</li>
+</ul></div>
+  </div>
+    <div class="span-15 border last" id="main-column">
+    <div class="span-15 last" id="above-main-content"></div>
+    <div class="span-15 last clear">
+                            </div>
+    <div class="span-15 last" id="content"><div id="node-36795" class="node">
+<div class="story-extra span-15 last">
+      <div class="terms-cont span-5"><div class="terms terms-inline"><span>2011-02-09 / Arts &amp; Entertainment</span></div></div>
+    <div class="social-buttons span-10 last">
+  	<div class="facebook-button span-1">
+  	  <div id="fb-root"></div><script src="https://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://www.theirregular.com//news/2011-02-09/Arts_%2528and%2529_Entertainment/Baby_Boomer_humor_on_tap.html" send="false" layout="button_count" width="90" show_faces="false" font="arial"></fb:like>
+  	</div>
+    <div class="gplus-button span-1">
+  	  <g:plusone size="medium"></g:plusone>
+  	  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+  	</div>
+    <div class="twitter-button span-2">
+      <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+    <div class="print-link">
+    <a href="#" onclick="win=window.open(window.location.href.replace('#','') + '?print=1', 'win', 'resizable=no;status=no;scroll=no;help=no;center=yes;width=460;height=300;menubar=no;directories=no;location=no;modal=yes');win.focus();return false;">
+      <img style="border: none; vertical-align: middle;" src="/misc/custom/print.png" alt="Print article "/>
+      Print
+    </a>
+    </div>
+  </div>
+</div>
+<div class="span-15"><h2 class="story-title">
+      ‘Baby Boomer’ humor on tap  </h2>
+</div>
+
+<div class="clear content clear-block">
+    <p><span class="inline inline-left"><a href="/node/36794"><img src="http://www.theirregular.com/sites/www.theirregular.com/files/images/2011-02-09/8p1.preview.jpg" alt="
+Baby Boomers Karen Morgan and Nancy Witter will perform &amp;ldquo;Shaken &amp;amp; Stirred&amp;rdquo; Feb. 9 at the Shipyard on Sugarloaf. " title="
+Baby Boomers Karen Morgan and Nancy Witter will perform &amp;ldquo;Shaken &amp;amp; Stirred&amp;rdquo; Feb. 9 at the Shipyard on Sugarloaf. "  class="image image-preview " width="250" height="249" /></a><span class="caption" style="width: 248px;">
+Baby Boomers Karen Morgan and Nancy Witter will perform &ldquo;Shaken &amp; Stirred&rdquo; Feb. 9 at the Shipyard on Sugarloaf. </span></span>CARRABASSETT VALLEY &mdash; &ldquo;Shaken &amp; Stirred&rdquo; a special &ldquo;Boomer Humor&rdquo; comedy performance will be held at the Shipyard Brew Haus in the Sugarloaf Inn Wednesday, Feb. 9 at 8 p.m.</p>
+<p>Baby Boomers Karen Morgan (Sirius Satellite Radio, NESN) and Nancy Witter (Lifetime, Dr. Oz) will present &ldquo;hilarious comedy about family, friends and life while &lsquo;aging disgracefully.&rsquo;&rdquo;</p>
+<p>Tickets are $20 each ($5 of the ticket price will benefit Casting for Recovery). </p><div class="image-clear"></div></p></div>
+<p><a href="#">Return to top</a></p>
+<ul class="links inline"><li class="comment_forbidden first"></li>
+<li class="addtoany last"><span>
+		<a class="da2a_button" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.theirregular.com%2Fnews%2F2011-02-09%2FArts_%2528and%2529_Entertainment%2FBaby_Boomer_humor_on_tap.html&amp;linkname=%E2%80%98Baby%20Boomer%E2%80%99%20humor%20on%20tap" id="da2a_1"><img src="/sites/all/modules/addtoany/images/share_save_171_16.png" width="171" height="16" alt="Share this"/></a>
+		<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+da2a.script_load();
+//--><!]]>
+</script>
+		</span></li>
+</ul></div>
+</div>
+    <div class="span-15 last" id="below-content"></div>
+  </div>
+      <div class="span-6 last" id="right-column">
+    <div id="block-search-0" class="block block-search ">
+  <form action="/news/2011-02-09/Arts_%28and%29_Entertainment/Baby_Boomer_humor_on_tap.html"  accept-charset="UTF-8" method="post" id="search-block-form">
+<div><div id="search" class="container-inline">
+  <div class="form-item" id="edit-search-block-form-1-wrapper">
+ <label for="edit-search-block-form-1"> </label>
+ <input type="text" maxlength="128" name="search_block_form" id="edit-search-block-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-submit-1" value="Search"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-16c50fcd67e5e3934eed21c3c92a081a" value="form-16c50fcd67e5e3934eed21c3c92a081a"  />
+<input type="hidden" name="form_id" id="edit-search-block-form" value="search_block_form"  />
+  <div class="archive"><a href="/common/archive.html">Browse Archives</a></div>
+</div>
+
+</div></form>
+</div>
+<div id="block-ohtnav-20" class="block block-ohtnav ">
+  <center><b><a href="http://www.facebook.com/pages/Kingfield-ME/The-Original-Irregular/89823561268">Be our fan on Facebook!</a></b></center><br /><br /></div>
+<div id="block-ohtdisplayad-0" class="block block-ohtdisplayad ">
+  <a href="http://www.theirregular.com/ROP/large/BlueFlameGas.htm"><img src="/ROP/small/BlueFlameGas.gif?R" alt="" title="" /></a><br /><br /><a href="http://www.theirregular.com/ROP/large/RangeleyLakesBuildersSupply.htm"><img src="/ROP/small/RangeleyLakesBuildersSupply.gif?R" alt="" title="" /></a><br /><br /><a href="http://www.theirregular.com/ROP/large/CentralBoiler.htm"><img src="/ROP/small/CentralBoiler.gif?R" alt="" title="" /></a><br /><br /><a href="http://www.theirregular.com/ROP/large/BrackettsPlumbing.htm"><img src="/ROP/small/BrackettsPlumbing.gif?R" alt="" title="" /></a><br /><br /><a href="http://www.theirregular.com/ROP/large/ColeHarrisonInsurance.htm"><img src="/ROP/small/ColeHarrisonInsurance.gif?R" alt="" title="" /></a><br /><br /><a href="http://www.theirregular.com/ROP/large/WesternMainePharmacy.htm"><img src="/ROP/small/WesternMainePharmacy.gif?R" alt="" title="" /></a><br /><br /></div>
+  </div>
+      <div class="span-24 clear last" id="footer">
+    <div id="block-ohtnav-1" class="block block-ohtnav ">
+  
+  <div class="Section OHT" id="OHTSection">
+		<a style="text-decoration: none;" href="http://www.our-hometown.com">
+		<img src="/misc/custom/OHTLogo.png" alt="Our-Hometown newspaper services" border="0"/><br />
+		Newspaper web site content management software and services</a>
+		<br /><br />
+		<a href="http://www.our-hometown.com/dmca.htm"><img src="/misc/custom/dmca.gif" border="0" width="80" height="16" alt="DMCA Notices" /></a>
+	</div></div>
+  </div>
+  </div>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+da2a.targets=[
+{title:'‘Baby Boomer’ humor on tap',url:'http://www.theirregular.com/news/2011-02-09/Arts_%28and%29_Entertainment/Baby_Boomer_humor_on_tap.html'}];
+da2a.html_done=true;if(da2a.script_ready&&!da2a.done)da2a.init();da2a.script_load();
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _paq = _paq || [];(function(){var u=(("https:" == document.location.protocol) ? "https://stats.our-hometown.com/" : "http://stats.our-hometown.com/");_paq.push(["setSiteId", "120"]);_paq.push(["setTrackerUrl", u+"piwik.php"]);_paq.push(["setDoNotTrack", 1]);_paq.push(["trackPageView"]);_paq.push(["enableLinkTracking"]);var d=document,g=d.createElement("script"),s=d.getElementsByTagName("script")[0];g.type="text/javascript";g.defer=true;g.async=true;g.src=u+"piwik.js";s.parentNode.insertBefore(g,s);})();
+//--><!]]>
+</script>
+</body>
+</html>

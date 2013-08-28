@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>Auto Repair | Veteran Owned Business Directory</title>
+<meta name="description" content="Veteran Owned Businesses (VOB), Active Duty Military, Reservists and Service Disabled Veteran Owned Companies (SDVOSB) of the United States Army, Air Force, Marines, Navy, Coast Guard and National Guard specializing in auto repair including garages, parts, rebuilding and more." />
+<meta name="keywords" content=" Auto Repair Automotive Stores, Dealers, Products  Veteran Owned Business" />
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />	
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link href="/includes/styles/screen.css" rel="stylesheet" type="text/css" media="screen" />
+		<script src="/includes/javascript/jquery/jquery.js" type="text/javascript"></script>
+		<script src="/includes/javascript/jquery/jquery.livequery.js" type="text/javascript"></script>
+		<base href="http://www.veteranownedbusiness.com" />
+		<script type="text/javascript">
+		
+			// Ready!
+			$(document).ready( function() {
+				
+				$('#state').livequery('change', function() {
+					$('#county_list').val('');
+					$('#city_list').val('');
+					$('#b_panel').attr('action', 'browse.php');
+					$('#b_panel').trigger('submit');
+					$(this).html('<option>Loading...</option>');
+				}); //End #state_list OPTION CLICK
+				
+				$('#county').livequery('change', function() {
+					$('#city_list').val('');
+					$('#b_panel').attr('action', 'browse.php');
+					$('#b_panel').trigger('submit');
+					$(this).html('<option>Loading...</option>');
+				}); //End #county_list OPTION CLICK
+				
+				$('#city').livequery('change', function() {
+					$('#b_panel').attr('action', 'browse.php');
+					$('#b_panel').trigger('submit');
+					$(this).html('<option>Loading...</option>');
+				}); //End #city_list OPTION CLICK
+				
+				$('#b_panel A').livequery('click', function() {
+					var el = $(this);
+					$(el).html('<img src="includes/styles/images/spinner.gif" />');
+					$.post('includes/layout/display_search_results.php', $("#b_panel").serialize(), function(data) {
+						$('#business_listings').replaceWith( data );
+						$(el).html('Search');
+					}); //End POST
+					return false;
+				}); //End #submit CLICK
+				
+				$('#b_panel INPUT').livequery('keypress', function(e) {
+					if (e.which == 13) { 
+						return false;
+					}
+				}); //End #b_panel INPUT Keypress
+				
+			}); // End Ready!
+		
+		</script>
+		
+	<link rel="stylesheet" media="screen" href="/includes/menu/superfish.css" /> 
+ 
+		<script src="/includes/menu/hoverIntent.js"></script> 
+        <script src="/includes/menu/superfish.js"></script> 
+         
+        <script> 
+         
+            $(document).ready(function(){ 
+                $("ul.sf-menu").superfish(); 
+            }); 
+         
+        </script>
+		
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6928621-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script></head>
+	
+	<body>
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=139331096142750";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="header">
+  <div id="header_content">
+		<div id="header_links"><a href="/">home</a> | <a href="/myvob/">MyVOB</a> | <a href="/legal.php">legal</a> | <a href="/contact.php">contact</a> | <strong>(877) VOB-List </strong></div>
+		<br />
+		<div class="header_search">
+			<form action="/search.php" method="get">
+        <a href="/advanced_search.php">Advanced Search Option (click here)</a>
+        <input type="text" name="search" id="search" size="20" />
+        <input type="hidden" name="catsearch" id="catsearch" value="yes" />
+        <input type="submit" value="Search" />
+			</form>
+		</div>
+    <div id="header_tagline">Over 33,000,000 pages viewed<br />
+      <span>15,000+ VOSB &amp; SDVOSB members</span>
+	</div>
+
+		<a href="/"><img src="/images/Veteran-Owned-Business-Logo.png" alt="Veteran Owned Business Logo | VOB | SDVOSB" name="header_logo" border="0" id="header_logo" /></a>	</div>	
+  
+<div id="menu">
+      <div id="menu_inner">
+        <ul id="sample-menu-1" class="sf-menu sf-js-enabled sf-shadow">
+          <li>
+            <a href="/" title="Veteran Owned Business Directory" class="sf-with-ul">Directory<span class="sf-sub-indicator"> »</span></a>
+            <ul style="display: none; visibility: hidden;">
+              <li><a href="/signup_plans.php" title="Sign Up For Your Free Membership Today!">Join (Sign Up - It's FREE!)</a></li>
+                         <li><a href="/" title="Search Veteran Owned Businesses By Industries, Categories and Service/Product Offerings">VOBs by Category</a></li>
+              <li><a href="/?mode=geo" title="Search Veteran Owned Businesses and SDVOSBs / DVBEs by State, County, City and Zip">VOBs by State</a></li>
+              <li><a href="/advanced_search.php?search=&business_name=&type=IFV&city=&county=&state=&postal_code=&miles_of_postal_code=&s=1" title="Search Military Spouse Owned Businesses Only">Military Spouse Owned Businesses Only Search</a></li>
+              <li><a href="/172/nonprofit-and-free-help" title="Search Only Nonprofit Section">Nonprofit Members Who Help Veterans, Active Duty Military And Their Families</a></li>
+                         <li><a href="/advanced_search.php?type=SDV" title="Search Only For Service Disabled Veteran Owned Businesses / DVBEs">SDVOSB Only Search</a></li>
+              <li><a href="/advanced_search.php" title="Advanced Search Option">Advanced VOB Search</a></li>
+              <li><a href="/sponsors.php" title="See Enhanced Listings and Spotlight Sponsors">Enhanced Listings and Spotlight Sponsors</a></li>
+                 <li><a href="/998/franchising-opportunities-for-military-veterans" title="Franchises Owned By Military Veterans">Franchises Owned By Military Veterans</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/comment.php" title="Resources for Veteran Owned Businesses" class="sf-with-ul">Resources<span class="sf-sub-indicator"> »</span></a>
+            <ul style="display: none; visibility: hidden;">
+            <li><a href="/comment.php" title="Questions? or Comments?">Have a Question or Comment?</a></li>
+              <li><a href="/blog/category/veteran-owned-business-contracting-101" title="Veteran Owned Small Business Contracting Series">Veteran Owned Small Business Contracting Series</a></li>
+              <li><a href="/faq.php" title="Frequently Asked Questions About Veteran Owned Business">VOB Membership FAQs</a></li>
+                  <li><a href="/1611/veterans-service-offices" title="Veterans Service Center Office Locations">Veterans Service Center Office Locations</a></li>
+              <li><a href="/va-phone-numbers.php" title="Important VA Phone Numbers">VA Phone Numbers</a></li>
+           <li><a href="/va-websites-nationwide.php" title="Nationwide VA Websites">VA Websites Around The United States</a></li>
+            <li><a href="/vamc-state-contact-information.php" title="Veterans Administration Medical Centers (VAMC) Links Page">VA Medical Centers Links, Facebook Pages and Twitter Accounts</a></li>
+            <li><a href="/veteran-owned-business-numbers-by-state.php" title="Veteran Owned Business Numbers by State">Veteran Owned Business Numbers by State</a></li>
+            <li><a href="/veteran-owned-businesses-facts.php" title="Veteran Owned Business Facts By State">Veteran Owned Business State Facts and Percentages</a></li>
+            <li><a href="/1118/american-legion-posts" title="American Legion Posts">American Legion Posts</a></li><br />
+      <li><a href="/1449/disabled-american-veterans-dav-chapters" title="Disabled American Veterans Chapters">Disabled American Veterans Chapters</a></li><br />
+      <li><a href="/1355/veterans-of-foreign-wars-vfw-posts" title="Veterans of Foreign Wars (VFW) Posts">Veterans of Foreign Wars (VFW) Posts</a></li>
+      <li><a href="/blog/ptsd-resources/" title="PTSD Resources">PTSD Resources</a></li>
+   
+               
+                     </ul>
+                       <li>
+            <a href="/VOB_reciprocal_link.php" title="Veteran Owned Business Badges" class="sf-with-ul">VOB Badge<span class="sf-sub-indicator"> »</span></a>
+            <ul style="display: none; visibility: hidden;">
+			<li><a href="/VOB_reciprocal_link.php" title="Veteran Owned Business Badges">Get your FREE Veteran Owned Business Badge</a></li>
+                 <li><a href="/referral.php" title="Veteran Owned Business Exposure">Share VOB</a></li>
+              <li><a href="/social_media.php" title="Veteran Owned Business' Social Networks">Social Media</a></li>
+            </ul>
+          <li>
+            <a href="/blog/veterans-employment-resources/" title="Veterans Employment Resources" class="sf-with-ul">Jobs for Veterans<span class="sf-sub-indicator"> »</span></a>
+            <ul style="display: none; visibility: hidden;">
+             <li><a href="/blog/veterans-employment-resources/" title="Veterans Job Opportunities">Veterans Job Opportunities</a></li>
+                 <li><a href="/blog/category/veterans-employment-news/" title="Veterans Employment News">Veterans Employment News</a></li>
+              <li><a href="/blog/category/veterans-employment-news/veterans-employment-events/" title="Veterans Employment Events">Veterans Employment Events</a></li>
+                  <li><a href="/blog/veterans-job-bank" title="Veterans Job Bank">Job Opportunities for Veterans</a></li>
+                       <li><a href="/blog/veterans-employment-links" title="Veterans Hire Veterans Employment Resources">Veterans Hire Veterans Employment Resources</a></li>
+                        <li><a href="/blog/va-vocational-rehabilitation-program" title="VA Vocational Rehabilitation Employment Overview: Enrollment, Links, Application">VA Vocational Rehabilitation Employment Program</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/service_comments.php" title="Veteran Owned Business Military Tribute Section" class="sf-with-ul">Military Tribute<span class="sf-sub-indicator"> »</span></a>
+            <ul style="display: none; visibility: hidden;">
+            <li><a href="/service_comments.php" title="Veteran Owned Business Military Tribute Section">Veteran Owned Business Military Tributes</a></li>
+                 <li><a href="/military-holidays-observances.php" title="United States Military Holidays and Observances">U.S. Military Holidays and Observances</a></li>
+                 <li><a href="/usaf-history.php" title="History and Important Dates for the United States Air Force">U.S. Air Force (USAF) History and Anniversaries</a></li>
+				 <li><a href="/army-history.php" title="History and Important Dates for the United States Army">U.S. Army History and Anniversaries</a></li>
+				 <li><a href="/usn-history.php" title="History and Important Dates for the United States Navy">U.S. Navy (USN) History and Anniversaries</a></li>
+				 <li><a href="/usmc-history.php" title="History and Important Dates for the United States Marine Corps">U.S. Marine Corps (USMC) History and Anniversaries</a></li>
+				 <li><a href="/uscg-history.php" title="History and Important Dates for the United States Coast Guard">U.S. Coast Guard (USCG) History and Anniversaries</a></li>
+				 <li><a href="/other-uniformed-services.php" title="History and Important Dates for other United States Uniformed Services">Other U.S. Uniformed Services History and Anniversaries</a></li>
+                 <li><a href="/blog/va-marks-82-years-of-service-to-americas-veterans/" title="History of the Veterans Administration">History of the Veterans Administration</a></li>
+                 <li><a href="/blog/june-6th-2012-is-the-68th-anniversary-of-the-d-day-invasion/" title="History of D-Day and the D-Day Invasion">History of D-Day and the D-Day Invasion</a></li>
+                 <li><a href="/military-quotes.php" title="Military Quotes By Branch">Military Quotes By Branch</a></li>
+                  <li><a href="/history-of-the-american-legion.php" title="History of how the American Legion got started">History of the American Legion</a></li>
+                     </ul>
+          
+                                               <li>
+            <a href="/blog/" title="Veteran Owned Business News" class="sf-with-ul">VOB News<span class="sf-sub-indicator"> »</span></a>
+            <ul style="display: none; visibility: hidden;">
+            <li><a href="/blog/" title="VOB and SDVOSB News Blog">VOB and SDVOSB News Blog</a></li>
+           <li><a href="/blog/category/discount-and-freebies-for-veterans-and-active-duty-military/" title="Veterans Discounts and Active Duty Military Freebies">Veterans Discounts and Military Freebies</a></li>
+                <li><a href="/blog/feed/rss/" title="Subscribe to the Veteran Owned Business News Feed">Subscribe to the VOB News Feed</a></li>
+                <li><a href="/blog/category/news/sdvosb-publications/vetlikeme-issues/" title="View the latest edition of the SDVOSB Newsletter VetLikeMe">View VetLikeMe SDVOSB Newsletters</a></li>
+                  <li><a href="/blog/president-task-force-veterans-businesses/" title="Empowering Veterans Through Entrepreneurship Report">Empowering Veterans Through Entrepreneurship Report</a></li>
+              <li><a href="/blog/category/contracting/" title="SDVOSB / DVBE and VOB / VOSB Contracting Opportunities">Contracting Opportunities</a></li>
+             <li><a href="/blog/category/contracting/sdvosb-set-aside-contracting/" title="Contract Set Asides For Service Disabled Veteran Owned Businesses / DVBEs">SDVOSB / DVBE Set-a-Sides</a></li> 
+                  <li><a href="/blog/category/news/va-vosb-news/" title="News From The Department of Veterans Affairs Related To Veteran Owned Businesses">Veterans Administration VOSB News</a></li> 
+                  <li><a href="/blog/category/sdvosb-events/" title="Events for Service Disabled Veteran Owned Businesses and Veteran Owned Businesses">SDVOSB/DVBE/VOB/VOSB Events</a></li> 
+                    <li><a href="/blog/ptsd-resources/" title="Post-Tramuatic Stress Disorder Resources">PTSD Resources List</a></li>
+                    
+            </ul>
+          </li>
+           <li><a href="/myvob/" title="Veteran Owned Business Member Login Area">myVOB Login</a></li>
+   <li>
+          <a href="/corporate.php" title="Veteran Owned Business Corporate Information" class="sf-with-ul">Corporate Info<span class="sf-sub-indicator"> »</span></a>
+            <ul style="display: none; visibility: hidden;">
+              <li><a href="/sponsorship.php" title="Veteran Owned Business Sponsorship">Sponsorship Info</a></li>
+               <li><a href="/contact.php" title="Veteran Owned Business Contact Information">Contact Info</a></li>
+                   <li><a href="/vob_news.php" title="Veteran Owned Business Corporate News">VOB Corporate News</a></li>
+                    <li><a href="/veteran-owned-business-mission-statement.php" title="Veteran Owned Business' Mission">The Mission of The Veteran Owned Business Project</a></li>
+            </ul></li></ul></div>
+    </div>
+<div class="clear"></div>
+</div>		<div id="main_container">
+			
+			<div id="content">
+				<div id="left_listing_content">
+  <p><a href="/"><img src="../../images/vob-directory-browse.jpg" alt="Browse the official Veteran Owned Business Directory" width="200" height="257" border="0" /></a>
+    <a href="/signup_plans.php"><img src="../../images/vob-join.jpg" alt="Get your Veteran Owned Business Directory free listing now!" width="200" height="43" border="0" /></a> </p>
+
+  <div class="info_box">
+    <h2>Auto Repair</h2>
+<p>Veteran Owned Businesses (VOB), Active Duty Military, Reservists and Service Disabled Veteran Owned Companies (SDVOSB) of the United States Army, Air Force, Marines, Navy, Coast Guard and National Guard specializing in auto repair including garages, parts, rebuilding and more.</p>
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style">
+      <a href="http://www.addthis.com/bookmark.php?v=250" class="addthis_button_compact">Share</a>
+      <span class="addthis_separator">|</span>
+      <a class="addthis_button_facebook"></a>
+      <a class="addthis_button_myspace"></a>
+      <a class="addthis_button_google"></a>
+      <a class="addthis_button_twitter"></a>
+      <a class="addthis_button_email"></a>
+      <a class="addthis_button_favorites"></a>
+    </div>
+		  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js?pub=xa-4a3807854fc189ba"></script>
+    <!-- AddThis Button END -->
+    
+    
+  </div>
+<!--[if lte IE 6]><![if gte IE 7]><![endif]-->
+  <div style="padding-bottom: 5px; height: 32px;">
+  <div style="float:left; width: 50%;padding-top: 2px;">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-text="Check out VeteranOwnedBusiness.com to search nearly 16,000 businesses owned by military veterans!" data-count="horizontal" data-via="VeteranOwned">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div>
+  <div style="float:left; width: 50%;">
+  <g:plusone></g:plusone>
+  </div>
+  </div>
+  <div class="fb-like" data-href="http://www.facebook.com/VeteranOwnedBusiness" data-send="true" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+  <!--[if lte IE 6]><![endif]><![endif]-->
+      <a href="/referral.php" target="_blank"><img src="/images/tell-a-friend.png" width="200" height="66" alt="Click here to share our Veteran Owned Business Directory friends" /></a>
+  <p class="traffic">This page has been visited 2184 times.</p>  
+  <div id="soc-net">
+    <p>
+       <a href="http://www.facebook.com/VeteranOwnedBusiness" target="_blank"><img src="/images/soc-facebook.png" alt="Facebook - Become a Fan" border="0" /></a><a href="http://twitter.com/VeteranOwned" target="_blank"><img src="/images/soc-twitter.png" alt="Twitter - Follow Us" /></a><img src="/images/soc-text.png" alt="Connect with VOB online!" />  </p>
+</div>
+
+	<a href="/newsletter.php"><img src="../../images/newsletter-button-200px.png" width="200" height="202" alt="Click here to sign up for the VOB Newsletter." /></a>
+	  
+    <div id="ad_block">
+
+
+</div>  
+  <div class="aff_area">
+    <script type="text/javascript"><!--
+google_ad_client = "pub-0259972811441671";
+/* 200x200, created 12/30/08 */
+google_ad_slot = "2656341728";
+google_ad_width = 200;
+google_ad_height = 200;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>  </div>
+   <!-- Twitter Live Feed -->
+	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+	<script>
+  new TWTR.Widget({
+    version: 2,
+    type: 'profile',
+    rpp: 3,
+    interval: 6000,
+    width: 200,
+    height: 300,
+    theme: {
+      shell: {
+        background: '#244674',
+        color: '#ffffff'
+      },
+      tweets: {
+        background: '#ffffff',
+        color: '#000000',
+        links: '#337cd6'
+      }
+    },
+    features: {
+      scrollbar: true,
+      loop: false,
+      live: false,
+      hashtags: true,
+      timestamp: true,
+      avatars: true,
+      behavior: 'all'
+    }
+  }).render().setUser('veteranowned').start();
+  </script>
+
+	  <div align="center"></div>
+</div>
+				<div id="listing_area">
+				<h2>Browse Veteran Owned Businesses</h2>
+				<ul class="breadcrumbs"><li><a href="/">All Categories &raquo;</a></li><li><a href="/119/stores-dealers-products">Stores, Dealers, Products &raquo;</a></li><li><a href="/196/automotive">Automotive &raquo;</a></li><li>Auto Repair</li></ul><div id="browse_panel">
+	<h2 class="listings">Filter results</h2>
+	
+	<form id="b_panel">
+		<h4>Filter Location</h4>
+		<p>
+		State: 
+			<select id="state" name="state" ><option value="">Select state</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">District of Columbia</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option>	</select>
+		</p>
+		<p>County: 
+			<select id="county" name="county" disabled="disabled"><p style="display:none;">SELECT county 
+			FROM businesses, business_categories 
+			WHERE business_categories.business = businesses.id
+			AND business_categories.category = '740' AND state = '' GROUP BY county 
+			ORDER BY county</p><option value="">Select county</option>	</select>
+		</p>
+		<p>City: 
+			<select id="city" name="city" disabled="disabled"><p style="display:none;">SELECT city 
+			FROM businesses, business_categories 
+			WHERE business_categories.business = businesses.id
+			AND business_categories.category = '740' AND state = '' AND ( LOWER(county) = '' OR LOWER(county) = '') GROUP BY city 
+			ORDER BY city</p><option value="">Select city</option>	</select>
+		</p>
+		<input type="hidden" name="category" value="740" />
+		<h4>Search within this category.</h4>
+		<p>
+		<a href="#search" id="search_in" >Search</a>
+		<input type="text" class="search_in" id="search_in" name="search" />
+		</p> 
+		</form>
+		<img src="images/usa50out.png" id="us_map" />
+</div><div id="business_listings"> <h2 class="listings">Business Listings</h2><p style="font-weight: bold;">Look for the <img src="/images/money.png" /> icon to find special VOB offers.</p><table class="listings"><tr class="top_level_listing"><td><a  class="business_logo" href="/business/5007/daddios-garage-llc"><img src="http://www.veteranownedbusiness.com/includes/php/logo.php?b=5007&amp;t=1" alt="Daddio's Garage, LLC" title="Daddio's Garage, LLC" class="business_logo" /></a><a href="/business/5007/daddios-garage-llc">Daddio's Garage, LLC</a> | <span class="info">Northbrook, IL 60062<br />Daddio's Garage is a family owned auto repair business specializing in honest & affordable repair & restoration services. Located in ...</span></td></tr><tr class="top_level_listing"><td><a  class="business_logo" href="/business/8683/lexus-of-atlantic-city"><img src="http://www.veteranownedbusiness.com/includes/php/logo.php?b=8683&amp;t=1" alt="Lexus of Atlantic City" title="Lexus of Atlantic City" class="business_logo" /></a><a href="/business/8683/lexus-of-atlantic-city">Lexus of Atlantic City</a> | <span class="info">Egg Harbor Township, NJ 08234<br /><img src="/images/money.png" alt="This listing includes a special offer!" title="This listing includes a special offer!" style="padding: 4px 2px 8px 0; float:left;"/> Lexus of Atlantic City is proud to serve South New Jersey in our Pursuit to Perfection in Sales and Service. Lexus of Atlantic City carries ...</span></td></tr><tr class="top_level_listing"><td><a  class="business_logo" href="/business/8677/lexus-of-cherry-hill"><img src="http://www.veteranownedbusiness.com/includes/php/logo.php?b=8677&amp;t=1" alt="Lexus of Cherry Hill" title="Lexus of Cherry Hill" class="business_logo" /></a><a href="/business/8677/lexus-of-cherry-hill">Lexus of Cherry Hill</a> | <span class="info">Mount Laurel, NJ 08054<br /><img src="/images/money.png" alt="This listing includes a special offer!" title="This listing includes a special offer!" style="padding: 4px 2px 8px 0; float:left;"/> Lexus of Cherry Hill is proud to serve South New Jersey in our Pursuit to Perfection in Sales and Service. Lexus of Cherry Hill carries a ...</span></td></tr><tr class="top_level_listing"><td><a  class="business_logo" href="/business/8676/liberty-toyota-scion"><img src="http://www.veteranownedbusiness.com/includes/php/logo.php?b=8676&amp;t=1" alt="Liberty Toyota Scion" title="Liberty Toyota Scion" class="business_logo" /></a><a href="/business/8676/liberty-toyota-scion">Liberty Toyota Scion</a> | <span class="info">Burlington Township, NJ 08016<br /><img src="/images/money.png" alt="This listing includes a special offer!" title="This listing includes a special offer!" style="padding: 4px 2px 8px 0; float:left;"/> Liberty Toyota Scion is proud to serve South New Jersey with quality Toyota and Scion Sales and Service. Liberty Toyota is in a new state ...</span></td></tr><tr class="top_level_listing"><td><a  class="business_logo" href="/business/8681/shore-toyota-scion"><img src="http://www.veteranownedbusiness.com/includes/php/logo.php?b=8681&amp;t=1" alt="Shore Toyota Scion" title="Shore Toyota Scion" class="business_logo" /></a><a href="/business/8681/shore-toyota-scion">Shore Toyota Scion</a> | <span class="info">Mays Landing, NJ 08330<br /><img src="/images/money.png" alt="This listing includes a special offer!" title="This listing includes a special offer!" style="padding: 4px 2px 8px 0; float:left;"/> Shore Toyota Scion is proud to serve South New Jersey with quality Toyota and Scion Sales and Service. Come in to see the Newly designed ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/5001/1st-choice-collison-llc">1st Choice Collison, LLC</a> | <span class="info">Rockville, MD 20852<br />1st Choice Collision is a new collision center in Rockville (North Bethesda), MD.  1st Choice Collision offers first class customer ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/1302/a-anthonys-mobile-vehicle-service-inc">A. Anthony's Mobile Vehicle Service, Inc.</a> | <span class="info">Laurel, MD 20707<br />A. Anthony's is a full service auto & truck repair/maintenance facility. We service all makes & models of foreign & domestic cars & trucks ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/756/acme-paint-body">ACME Paint & Body</a> | <span class="info">Fayetteville, TN 37334<br />ACME Paint & Body. Auto body Collision & Painting repair. Custom paint & fabrication. Mobile electronics sales & custom installation. ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/5327/adr-towing">ADR Towing</a> | <span class="info">Troy, IL 62294<br />ADR Towing: Auto and Light Truck Repair Mechanical
+Auto and Heavy Duty Truck Towing Auto Body Collision Repair Tire, Brakes, Air ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/3801/agape-diy-auto-maintenance-repair-llc">Agape DIY Auto Maintenance & Repair LLC</a> | <span class="info">Phoenix, AZ 85040<br />Agape DIY Auto Maintenance & Repair LLC. I assist and provide equipment, parts, and tools to Do it Yourself mechanics.</span></td></tr><tr class="top_level_listing"><td><a href="/business/11470/american-dream-towing-recovery">American Dream Towing & Recovery</a> | <span class="info">Geneva, IL 60134<br />American Dream Towing & Recovery is primarily a tractor/trailer repair shop but we do not discriminate, we can fix anything!  We are both ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/7772/auto-ems">Auto EMS</a> | <span class="info">Cleveland Heights, OH 44121<br />Auto EMS:
+
+ASE & VW CERTIFIED TECHNICIANS
+Servicing the Cleveland / Akron / Medina areas All domestic & foreign makes & models service & ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/12787/auto-glass-shop-dayton">Auto Glass Shop - Dayton</a> | <span class="info">Dayton, OH 45424<br />Auto Glass Shop - Dayton is a windshield repair and service company that offers mobile auto glass service. 
+
+We also offer do it yourself ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/12765/auto-glass-shop-springfield">Auto Glass Shop - Springfield</a> | <span class="info">Springfield, MA 01128<br />Auto Glass Shop - Springfield is a windshield repair and service company that offers mobile auto glass service.
+
+We also offer do it ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/6461/auto-group-1-diagnostics">Auto Group 1 Diagnostics</a> | <span class="info">Rockledge, FL 32955<br />Auto Group 1 Diagnostics specializes in Automotive Repair and Service, Electronics Diagnostics with Dealer Level and Advanced Electronic ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/376/automotive-alternator-starter-co">Automotive Alternator Starter Co.</a> | <span class="info">Westland, MI 48135<br />Automotive Alternator Starter Co. Starter Alternator Rebuilding, Street Rod and Performance Supply.</span></td></tr><tr class="top_level_listing"><td><a href="/business/12128/automotive-diagnostic-systems-inc">Automotive Diagnostic Systems, Inc.</a> | <span class="info">Seffner, FL 33584<br />Automotive Diagnostic Systems, Inc. provides general automotive repair, both foreign and domestic.
+
+Automotive Diagnostic Systems, Inc. is ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/14969/biddles-auto-llc">Biddles Auto LLC</a> | <span class="info">Derby, KS 67037<br />Biddles Auto LLC providing general automotive services to the local community. 
+
+20% Military Discount to fellow veterans, reservists, and ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/2986/blue-mountain-collision-center">Blue Mountain Collision Center</a> | <span class="info">Grand Terrace, CA 92313<br />Blue Mountain Collision Center does all auto body, painting, collision, & frame repairs. </span></td></tr><tr class="top_level_listing"><td><a href="/business/6775/bobbitt-boys">Bobbitt Boys</a> | <span class="info">Pilesgrove, NJ 08098<br />Bobbitt Boys is a full service auto repair and towing business. Established in 1982. Both owners, father and son, are military veterans.  ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/13116/bzs-tire-shop">BZ's Tire Shop</a> | <span class="info">Seguin, TX 78155<br />BZ's Tire Shop sells & services all types and sizes of tires and rims.  
+
+Provides mobile tire service. Performs wheel alignments, brake ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/1434/cart-care-llc">Cart Care, LLC.</a> | <span class="info">Honolulu, HI 96814<br />Cart Care, LLC. Mobile, On-site repair, maintenance and service to both electric or gas golf, utility, carts to include all makes and ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/4379/city-radiator-exchange">City Radiator Exchange</a> | <span class="info">Lafayette, OR 97127<br />City Radiator Exchange offers Complete (mobile) Radiator and Cooling system repair.</span></td></tr><tr class="top_level_listing"><td><a href="/business/9689/derks-autowerkes">Derk's Autowerkes</a> | <span class="info">Quincy, IL 62301<br />Derk's Autowerkes is a full service auto repair shop specializing in foreign and performance car's.  </span></td></tr><tr class="top_level_listing"><td><a href="/business/738/dicks-speedotach-inc">Dick's Speed-O-Tach, Inc. </a> | <span class="info">Phoenix, AZ 85014<br />Dick's Speed-O-Tach, Inc. is a speedometer service and sales automotive facility that specializes in all foreign and domestic automotive ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/1638/dj-souders-associates">DJ Souders & Associates</a> | <span class="info">Charles Town, WV 25414<br />DJ Souders & Associates. Management & Maintenance, Building Maintenance, Automotive Repair Shop, Residential Home loans, VA Guarantee loan ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/8981/elite-lexus-repair-service-center">Elite Lexus Repair Service Center</a> | <span class="info">San Diego, CA 92126<br />Elite Lexus Repair Service Center is the only independent Lexus Service Center in San Diego to hire complete staff certified and trained by ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/2352/emertech-mobile-auto-services">EmerTech Mobile Auto Services</a> | <span class="info">Clarksville, TN 37042<br />EmerTech Mobile Auto Services offers a mobile auto repair, restoration, or maintenance service to customers 24/7 throughout the greater ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/13344/european-performance">European Performance</a> | <span class="info">Stafford, TX 77477<br />European Performance specializes in European automotive service and repair.</span></td></tr><tr class="top_level_listing"><td><a href="/business/14987/excellence-auto-service">Excellence Auto Service</a> | <span class="info">Gardner, KS 66030<br />Excellence Auto Service does everything automotive related. 2/24000mi warranty means you can have confidence in the work we do.</span></td></tr><tr class="top_level_listing"><td><a href="/business/2437/golf-auto-glass">Golf Auto Glass</a> | <span class="info">Tarpon Springs, FL 34689<br />Golf Auto Glass is a full line auto glass repair and replacement company. We replace all glass in car's, truck's, rv's, and heavy ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/4974/good-works-auto-repair">Good Works Auto Repair</a> | <span class="info">Mesa, AZ 85206<br />Good Works Auto Repair is a full-service owner-operated, automotive repair, maintenance, and brake service shop serving Tempe, Mesa, ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/13743/hs-radiator-repair-co">H&S Radiator Repair Co.</a> | <span class="info">Marion, IA 52302<br />H&S Radiator Repair Co. is a small family owned & operated business that has been serving communities & surrounding counties, since 1979. ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/4559/honest1-auto-care">Honest-1 Auto Care</a> | <span class="info">Gresham, OR 97030<br />Honest-1Â® Auto Care is committed to providing you with a wide range of high quality automotive services. Along with providing the best ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/8864/honolulu-auto-service">Honolulu Auto Service</a> | <span class="info">Honolulu, HI 96819<br />Honolulu Auto Service provides Automotive General Service and Repair & Vintage/Classic Car/Hot Rod Modification/Customization.</span></td></tr><tr class="top_level_listing"><td><a href="/business/2542/j-f-transmissions">J & F Transmissions</a> | <span class="info">Midwest City, OK 73110<br />J & F Transmissions Rebuilds Transmissions, Military Discounts and Payment Plans, our prices leave more money in your pocket.</span></td></tr><tr class="top_level_listing"><td><a href="/business/8721/j-j-autobody-repair-inc">J & J Autobody Repair Inc.</a> | <span class="info">Lakewood, WA 98499<br />J & J Autobody Repair Inc. offers quality collision repair that includes a Limited Lifetime Warranty. We have Direct Repair contracts with ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/8600/jacks-garage">Jack's Garage</a> | <span class="info">Costa Mesa, CA 92626<br />Jack's Garage: Fords only, offers Full Service Automotive Repair Specializing In Ford Cars and Light Duty Trucks, including Lincoln and ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/11059/james-auto-glass">James' Auto Glass</a> | <span class="info">Harker Heights, TX 76548<br />James' Auto Glass is a windshield repair and replacement company. Free estimates. Free mobile service. Military discounts.</span></td></tr><tr class="top_level_listing"><td><a href="/business/1713/jeffersonville-towing-lockouts">Jeffersonville Towing & Lockouts</a> | <span class="info">Jeffersonville, IN 47131<br />Jeffersonville Towing & Lockouts. Flatbed Towing, Wheel Lift Towing, Motorcycle Towing, Trailer Towing (fifth wheel, gooseneck), Lockouts, ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/9259/jeses-mobile-ac-llc">Jese's Mobile AC, LLC.</a> | <span class="info">Harker Heights, TX 76548<br />Jese's Mobile AC, LLC. is a automotive air conditioning/heating repair service that repairs your vehicles in the comforts of your own home ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/4760/jovans-mobile-lube">Jovan's Mobile Lube</a> | <span class="info">Fayetteville, NC 28314<br />Jovan's Mobile Lube. We're mobile so we'll come to you. You can enjoy your time while we service you motor vehicles and equipment. Veteran ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/8879/king-automotive">King Automotive</a> | <span class="info">King, NC 27021<br />King Automotive specializes in automotive and light truck repair. We service all makes and models. We do everything from oil changes to ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/3639/louisville-aamco-transmissions">Louisville AAMCO Transmissions</a> | <span class="info">Louisville, KY 40207<br />The World's Largest Transmission Specialists - Louisville AAMCO is proud to be one of the more than 850 AAMCO Transmission and Complete Car ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/9777/marsaus">Marsau's</a> | <span class="info">Sterling, CO 80751<br />Marsau's is an 83 year old successful auto parts business and more. 8 experienced employees and owner is 70 and wants to retire. We are a ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/11256/mechanix-automotive">Mechanix Automotive</a> | <span class="info">Boca Raton, FL 33433<br />Mechanix Automotive provides:
+
+*Heating and Air conditioning repair
+*Check Engine Light 
+*Obd2 1996-2012 vehicles
+*Diagnostic ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/13849/meineke-car-care-center-emmaus">Meineke Car Care Center - Emmaus</a> | <span class="info">Emmaus, PA 18049<br />Meineke Car Care Center - Emmaus is an auto repair center serving the Lehigh, PA area.
+
+At Meineke, our trained technicians will do a FREE* ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/6745/mighty-motors">Mighty Motors</a> | <span class="info">York, SC 29745<br />Mighty Motors specializes in automotive repair, service, sales, and towing. Over 20 years experience. ASE certified Master Auto Technician. ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/13595/northern-european-automotive">Northern European Automotive</a> | <span class="info">Concord, NH 03301<br />Northern European Automotive is central New Hampshire's top tuning and repair center.
+
+Whether you require a tune up, a full engine ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/11171/pacheco-worldwide-automotive">Pacheco Worldwide Automotive</a> | <span class="info">Del Rio, TX 78840<br />Pacheco Worldwide Automotive is a Complete Auto Repair Facility serving the Del Rio, Texas area.</span></td></tr><tr class="top_level_listing"><td><a href="/business/7054/quality-car-center">Quality Car Center</a> | <span class="info">Buffalo Grove, IL 60089<br />Quality Car Center is a family owned mechanic repair shop and car wash. One stop shop for all your cars needs.</span></td></tr><tr class="top_level_listing"><td><a href="/business/10781/ratliff-auto-services">Ratliff Auto Services</a> | <span class="info">Aberdeen, NC 28315<br />Ratliff Auto Services opened it's doors March 16, 2012. Our mission is to provide reliable and affordable vehicle maintenance to all of our ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/2101/reliable-auto-service-inc">Reliable Auto Service, Inc.</a> | <span class="info">Lakewood, CO 80214<br />Reliable Auto Service, Inc. Independent auto repair.  Full service shop.  We offer free brake checks and free A/C Checks.  All work is ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/7416/rogue-diesel-services">Rogue Diesel Services</a> | <span class="info">Watford City, ND 58854<br />Rogue Diesel Services specializes in commercial truck, trailer and heavy equipment repair.</span></td></tr><tr class="top_level_listing"><td><a href="/business/2004/sasser-custom-exhaust">Sasser Custom Exhaust</a> | <span class="info">New Lenox, IL 60451<br />Sasser Custom Exhaust. Honest friendly full service auto repair, diagnostics, specializes in emissions and exhaust including mandrel pipe ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/9833/sk-rv-services">Sk RV Services</a> | <span class="info">Kyle, TX 78640<br />Sk RV Services is a Veteran offering his skills in RV troubleshooting, repairs and consultation.
+
+AC cleaning & troubleshooting
+* ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/6548/sos-diesel-service">SOS Diesel Service</a> | <span class="info">Hattiesburg, MS 39402<br />SOS Diesel Service specializes in all aspects of diesel truck repair and high-performance diesel mechanics, parts and service.
+
+SOS Diesel ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/14131/southwest-auto-truck-repair">Southwest Auto & Truck Repair</a> | <span class="info">Mesa, AZ 85204<br />At Southwest Auto and Truck Repair, our number one goal is complete customer satisfaction. Every day, with every customer, we focus on ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/8607/speedy-transmission-centers">Speedy Transmission Centers</a> | <span class="info">Knoxville, TN 37919<br />Speedy Transmission Centers is a National level Franchise, that has been the Franchise of the Year several times in years past.  
+
+We ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/4153/stanley-spring-suspension-of-san-antonio-llc">Stanley Spring & Suspension of San Antonio, LLC.</a> | <span class="info">San Antonio, TX 78219<br />Stanley Spring & Suspension of San Antonio, LLC is a full service Spring & Suspension business-selling all types of springs for heavy to ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/11840/subsonic-motorsports">Subsonic Motorsports</a> | <span class="info">Norwich, CT 06360<br />Subsonic Motorsports is the all inclusive speed and performance shop in Southeastern Connecticut. 
+
+Our facility in Norwich CT is fully ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/896/the-hitch-man-inc">The Hitch Man, Inc</a> | <span class="info">Waldorf, MD 20601<br />The Hitch Man, Inc is a veteran owned small business offering trailers and quality automotive products and installation by certified ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/1863/truck-xtreme">Truck Xtreme</a> | <span class="info">Boise, ID 83705<br />Truck Xtreme is a full service automotive shop that does everything from diesel repair to hot rod performance. We also have a full line of ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/10905/united-auto-air">United Auto Air</a> | <span class="info">Corpus Christi, TX 78408<br />United Auto Air is a general automotive repair shop providing  major and minor repairs to include AC repair.</span></td></tr><tr class="top_level_listing"><td><a href="/business/1928/waverly-auto-care">Waverly Auto Care</a> | <span class="info">Lansing, MI 48911<br />Waverly Auto Care. Full Service Auto Repair Shop.  We fix foreign & domestic, everything from brakes, electrical, A/C, engine repair, ...</span></td></tr><tr class="top_level_listing"><td><a href="/business/13157/windshield-surgeon">Windshield Surgeon</a> | <span class="info">Ontario, CA 91764<br />Windshield Surgeon offers no-cost windshield repair for customers that maintain full coverage vehicle insurance. 
+
+We offer repairs for ...</span></td></tr></table></div>				</div>
+				<div class="clear"></div>
+			</div>
+			<div id="right_content">
+	<style type="text/css">
+<!--
+.style1 {
+	color: #0000FF;
+	font-weight: bold;
+}
+-->
+</style>
+<div id="homepage_signup" class="info_box">
+						<h2>Sign up for your free VOB listing!</h2>
+						<p>Is your small business or company owned by a veteran (VOB), active duty military, reservist, service disabled veteran (SDVOSB) or military or veteran spouse of the United States Army (USARMY),
+						  Air Force (USAF), Marine Corp (USMC), Navy (USN), Coast Guard (USCG) or National Guard?</p>
+						<p>Join
+						  nearly <em><strong>16,000</strong></em> other veteran owned small businesses (VOSB) already listed
+						  and get your company's profile potentially seen by millions of fellow veterans,
+						  government agencies, prime contractors, sub contractors, corporate purchasing departments and every day consumers who strongly and proudly support veterans businesses
+						  and are right now looking for your products and services
+<span class="style1">Join VOB... it's FREE!</span></p>
+                        <p align="center">
+						<a href="signup_plans.php"><img src="/images/sign_up_now.png" alt="Click this button to get your company's free listing" /></a>
+						<br />
+	Already a member?  <a href="/myvob/">login here </a>						<br />
+						Have a question? <strong>(877) VOB-List</strong> </p>
+						<p align="center"><strong>Nonprofit Organizations</strong> <a href="signup.php?plan=4" title="Nonprofit Organizations - Sign Up Here!">sign up here</a> </p>
+</div>    
+    <a href="/advanced_search.php?type=SDV"><img src="/images/sdvosb-search-button.png" width="250" height="145" alt="Click here to search VeteranOwnedBusiness.com solely for Service Disabled Veteran Owned Businesses (SDVOSBs)" /></a>
+    
+	
+	<a href="/newsletter.php"><img src="../../images/newsletter-button-250px.png" width="250" height="150" alt="Sign Up for your VOB Newsletter" /></a>
+    
+			<div id="sponsor_spotlight">
+				<div class="top">
+				<img src="includes/php/logo.php?b=12547&t=1" />
+				<h3><a href="/business/12547/522-digital-llc">522 Digital, LLC</a></h3>
+				</div>
+				<div class="offer">
+				<a id="sponsor_spotlight_link" href="/business/12547/522-digital-llc">522 Digital - A digital marketing firm</a>
+				</div>
+			</div>
+		<div id="ad_block">
+
+<a href="http://www.veteranownedbusiness.com/web_services.php" target="_blank" class="ad"><img src="includes/php/display_ad.php?id=14" class="ad" /></a><a href="http://www.veteranownedbusiness.com/sponsorship.php" target="_blank" class="ad"><img src="includes/php/display_ad.php?id=15" class="ad" /></a><a href="http://www.tkqlhce.com/1a107kjspjr68D9CACG687BDB9C7" target="_blank" onmouseover="window.status='http://www.ringcentral.com';return true;" onmouseout="window.status=' ';return true;"><img src="http://www.veteranownedbusiness.com/includes/php/display_ad.php?id=20" alt="RingCentral Virtual PBX." /></a><img src="http://www.lduhtrp.net/hq105jy1qwuFHMILJLPFHGKMKILG" width="1" height="1" border="0"/>
+</div><div class="info_box"><h2>Newest VOB Member Profiles</h2> <ul id="new_listings"><li><a href="/business/14987/excellence-auto-service">Excellence Auto Service</a><br /> Gardner, KS | 9:42am May 14th</li><li><a href="/business/14969/biddles-auto-llc">Biddles Auto LLC</a><br /> Derby, KS | 1:24pm May 11th</li><li><a href="/business/14131/southwest-auto-truck-repair">Southwest Auto &amp; Truck Repair</a><br /> Mesa, AZ | 3:52pm Jan 28th</li><li><a href="/business/13849/meineke-car-care-center-emmaus">Meineke Car Care Center - Emmaus</a><br /> Emmaus, PA | 8:05am Dec 19th</li><li><a href="/business/13743/hs-radiator-repair-co">H&amp;S Radiator Repair Co.</a><br /> Marion, IA | 10:44am Dec 7th</li></ul></div><div id="service_benefits" class="info_box"><h2>Comments on the Military and Business Ownership...</h2>
+				<p class="quote">&#8220;Enhanced management skills.&#8221;</p>
+				<p class="signature">Harry LaSha Gray<br /><a href="/business/363/celebration-dj-llc">Celebration DJ, LLC</a></p>
+				<a class="view_all"href="service_comments.php">View all Comments</a>
+			</div><div id="location_browser" class="info_box"><h2>Browse by state</h2><ul><li><a href="/740/auto-repair/az">Arizona</a></li><li><a href="/740/auto-repair/ca">California</a></li><li><a href="/740/auto-repair/co">Colorado</a></li><li><a href="/740/auto-repair/ct">Connecticut</a></li><li><a href="/740/auto-repair/fl">Florida</a></li><li><a href="/740/auto-repair/hi">Hawaii</a></li><li><a href="/740/auto-repair/id">Idaho</a></li><li><a href="/740/auto-repair/il">Illinois</a></li><li><a href="/740/auto-repair/in">Indiana</a></li><li><a href="/740/auto-repair/ia">Iowa</a></li><li><a href="/740/auto-repair/ks">Kansas</a></li><li><a href="/740/auto-repair/ky">Kentucky</a></li><li><a href="/740/auto-repair/md">Maryland</a></li><li><a href="/740/auto-repair/ma">Massachusetts</a></li><li><a href="/740/auto-repair/mi">Michigan</a></li><li><a href="/740/auto-repair/ms">Mississippi</a></li><li><a href="/740/auto-repair/nh">New Hampshire</a></li><li><a href="/740/auto-repair/nj">New Jersey</a></li><li><a href="/740/auto-repair/nc">North Carolina</a></li><li><a href="/740/auto-repair/nd">North Dakota</a></li><li><a href="/740/auto-repair/oh">Ohio</a></li><li><a href="/740/auto-repair/ok">Oklahoma</a></li><li><a href="/740/auto-repair/or">Oregon</a></li><li><a href="/740/auto-repair/pa">Pennsylvania</a></li><li><a href="/740/auto-repair/sc">South Carolina</a></li><li><a href="/740/auto-repair/tn">Tennessee</a></li><li><a href="/740/auto-repair/tx">Texas</a></li><li><a href="/740/auto-repair/wa">Washington</a></li><li><a href="/740/auto-repair/wv">West Virginia</a></li></ul><div class="clear"></div></div><div class="aff_area">
+		<script type="text/javascript"><!--
+google_ad_client = "pub-0259972811441671";
+/* 250x250, created 11/9/09 */
+google_ad_slot = "5437265884";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<!--[if lte IE 6]><![if gte IE 7]><![endif]-->
+<div style="padding-bottom: 5px; height: 32px;">
+  <div style="float:left; width: 50%;padding-top: 2px;">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-text="Check out VeteranOwnedBusiness.com to search nearly 15,000 businesses owned by military veterans!" data-count="horizontal" data-via="VeteranOwned">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div>
+  <div style="float:left; width: 50%;">
+	<g:plusone></g:plusone>
+  </div>
+  </div>
+<div class="fb-like" data-href="http://www.facebook.com/VeteranOwnedBusiness" data-layout="button_count" data-send="true" data-width="250" data-show-faces="false"></div>
+<!--[if lte IE 6]><![endif]><![endif]-->
+    <p><a href="http://www.facebook.com/VeteranOwnedBusiness" target="_blank"><img src="/images/soc-facebook.png" alt="Facebook - Become a Fan" border="0" /></a><a href="http://twitter.com/VeteranOwned" target="_blank"><img src="/images/soc-twitter.png" alt="Twitter - Follow Us" /></a><img src="/images/soc-text.png" alt="Connect with VOB online!" /> </p>
+
+
+    <p>&nbsp;</p>
+</div>
+			</div>
+		<div id="footer_outer">
+	<div id="footer">
+  		<div id="footer_menu">
+			<p><a href="/" title="Free Directory of VOSBs and SDVOSBs">VOB Directory</a> | <a href="corporate.php">Corporate</a> | <a href="legal.php">Legal</a> | <a href="comment.php">Questions/Comments</a> | <a href="veteran-owned-business-mission-statement.php" title="The Mission of The Veteran Owned Business Project">VOB's Mission</a> | <a href="privacy.php">Privacy Policy</a> | <a href="vob_news.php" title="Veteran Owned Business News and SDVOSB News">VOB News</a> | <a href="http://www.facebook.com/VeteranOwnedBusiness" title="Veteran Owned Business Directory's Facebook Fan Page" target="_blank">VOB on Facebook</a> | <a href="http://twitter.com/VeteranOwned" title="Veteran-Owned Business Directory's Twitter Page" target="_blank">VOB  on Twitter</a> | <a href="sponsors.php">Sponsors</a></p>
+        </div>
+        <div id="footer_inner">
+    	  <p><strong><em>Free Directory of Small Businesses Owned By United States Military Veterans </em></strong>| VeteranOwnedBusiness.com &copy; 2005 - 2013<br />
+	  Buy Veteran Owned Businesses VOB | Active Duty Military | Reservists | Service Disabled Veterans SDVOB / SDVOSB / DVBE
+    	  <p>
+   		  <p>&nbsp;</p>
+      		<p>Call Veteran Owned Business Toll Free: (877) 862-5478 | Army USArmy | Air Force USAF | Marines USMC | Navy USN | National Guard | Coast Guard USCG |	  Add your <a href="http://www.veteranownedbusiness.com/signup_plans.php" title="Free Veteran-Owned Small Business Listing">Veteran-Owned Small Business</a> VOSB or SDVOSB to our FREE Military Veteran-Owned  Business Directory | Veteran Owned Business Certification | Veterans Business News | Veteran Business Owners | Veterans In Business</p>
+   		  <p>&nbsp;</p>
+            <p>Search a list of <a href="http://www.veteranownedbusiness.com/index.php?mode=geo">Veteran Owned Small Businesses by state</a>: <a href="http://www.veteranownedbusiness.com/al" title="Alabama Military Veteran Owned Businesses Directory">Alabama</a>, <a href="http://www.veteranownedbusiness.com/ak" title="Alaska Military Veteran Owned Businesses Directory">Alaska,</a> <a href="http://www.veteranownedbusiness.com/az" title="Arizona Military Veteran Owned Businesses Directory">Arizona,</a> <a href="http://www.veteranownedbusiness.com/ar">Arkansas,</a> <a href="http://www.veteranownedbusiness.com/ca">California,</a> <a href="http://www.veteranownedbusiness.com/co">Colorado,</a> <a href="http://www.veteranownedbusiness.com/ct">Connecticut</a>, <a href="http://www.veteranownedbusiness.com/de">Delaware</a>, <a href="http://www.veteranownedbusiness.com/dc">District of Columbia</a>, <a href="http://www.veteranownedbusiness.com/fl">Florida</a>, <a href="http://www.veteranownedbusiness.com/ga" target="_blank">Georgia</a>, <a href="http://www.veteranownedbusiness.com/hi">Hawaii</a>, <a href="http://www.veteranownedbusiness.com/id">Idaho</a>, <a href="http://www.veteranownedbusiness.com/il">Illinois</a>, <a href="http://www.veteranownedbusiness.com/in">Indiana</a>, <a href="http://www.veteranownedbusiness.com/ia">Iowa</a>, <a href="http://www.veteranownedbusiness.com/ks">Kansas</a>, <a href="http://www.veteranownedbusiness.com/ky">Kentucky</a>, <a href="http://www.veteranownedbusiness.com/la">Louisiana</a>, <a href="http://www.veteranownedbusiness.com/me">Maine</a>, <a href="http://www.veteranownedbusiness.com/md">Maryland</a>,<a href="http://www.veteranownedbusiness.com/ma"> Massachusetts</a>, <a href="http://www.veteranownedbusiness.com/mi">Michigan</a>, <a href="http://www.veteranownedbusiness.com/mn">Minnesota</a>, <a href="http://www.veteranownedbusiness.com/ms">Mississippi</a>, <a href="http://www.veteranownedbusiness.com/mo">Missouri</a>, <a href="http://www.veteranownedbusiness.com/mt">Montana</a>, <a href="http://www.veteranownedbusiness.com/ne">Nebraska</a>, <a href="http://www.veteranownedbusiness.com/nv">Nevada</a>, <a href="http://www.veteranownedbusiness.com/nh">New Hampshire</a>, <a href="http://www.veteranownedbusiness.com/nj">New Jersey</a>, <a href="http://www.veteranownedbusiness.com/nm">New Mexico</a>, <a href="http://www.veteranownedbusiness.com/ny">New York</a>, <a href="http://www.veteranownedbusiness.com/nc">North Carolina</a>, <a href="http://www.veteranownedbusiness.com/nd">North Dakota</a>, <a href="http://www.veteranownedbusiness.com/oh">Ohio</a>, <a href="http://www.veteranownedbusiness.com/ok">Oklahoma</a>, <a href="http://www.veteranownedbusiness.com/or">Oregon</a>, <a href="http://www.veteranownedbusiness.com/pa">Pennsylvania</a>, <a href="http://www.veteranownedbusiness.com/ri">Rhode Island</a>, <a href="http://www.veteranownedbusiness.com/sc">South Carolina</a>, <a href="http://www.veteranownedbusiness.com/sd">South Dakota</a>, <a href="http://www.veteranownedbusiness.com/tn">Tennessee</a>, <a href="http://www.veteranownedbusiness.com/tx">Texas</a>, <a href="http://www.veteranownedbusiness.com/ut">Utah</a>, <a href="http://www.veteranownedbusiness.com/vt">Vermont</a>, <a href="http://www.veteranownedbusiness.com/va">Virginia</a>, <a href="http://www.veteranownedbusiness.com/wa">Washington</a>, <a href="http://www.veteranownedbusiness.com/wv">West Virginia</a>, <a href="http://www.veteranownedbusiness.com/wi">Wisconsin</a>, <a href="http://www.veteranownedbusiness.com/wy">Wyoming</a> | <a href="http://www.veteranownedbusiness.com/advanced_search.php?search=&amp;business_name=&amp;type=SDV&amp;city=&amp;county=&amp;state=&amp;postal_code=&amp;miles_of_postal_code=&amp;s=1">SDVOSB Company Directory</a> | <a href="http://www.veteranownedfranchise.com" title="Veteran Owned Franchise" target="_blank">Veteran Owned Franchise</a></p>
+	  </div>
+  		<div class="footer_logo">
+  			<p><a href="/business/16/ewareness"><img src="/images/stamp.png" width="177" height="60" alt="Publisher of Veteran Owned Business" /></a></p>
+  		</div>
+	</div>
+</div>
+<div class="clear"></div>	</body>
+	
+<html>

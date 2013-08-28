@@ -1,0 +1,1250 @@
+
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">-->
+<html>
+<head>
+<title>New York Foundation for the Arts (NYFA)</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+<meta name="description" content="A national resource for awards, services, and information for artists and arts organizations.">
+<META NAME="abstract" CONTENT="information resource for artists in all disciplines on grants and opportunities">
+<meta name="keywords" content="art, arts, artist, artists, arts organization, arts organizations, non profit, art service organization, foundation, NYFA, New York State Council on the Arts, New York City Department of Cultural Affairs, NYC, New York City, New York State, Brooklyn, Queens, Staten Island, Manhattan, The Bronx, Westchester, donor, philanthropy, grant, grants, granting, grantmaking, information, service, NYFA Current, NYFA Learning, NYFA Source, Fiscal Sponsorship, Outreach, Chalkboard, Jobs in the Arts, Opportunities and Services for Artists, Event Listings, classified, classifieds, job, jobs, full time, part time, intern, internship, freelance, volunteer, opportunity, event, Business of Art, NYFA Quarterly, Arts Wire, Artswire, immigrant artist, emergency resource, Artists' Fellowships, Strategic Opportunity Stipends, Urban Artist Initiative, technology resource, management, fundraising, Leaders Circle, cash flow loans, revolving loan program, Building Up Infrastructure Levels for Dance, BUILD, donor services, support for artists, money for artists, residency, residencies, art magazine, art news, keep current with the future, arts management, information and research, awards and creative development, fiscal agent, The Gift, donation, donate, donor, funding, endowment, composer, painter, sculptor, choreographer, dancer, writer, poet, architect, filmmaker, photographer, film, video, playwright, screenwriter, design, craft, crafts, computer art, digital art, printmaker, folk artist, drawing, literature, music, dance, performing art, visual art, theatre, theater, performance art, NYFA Current">
+<!-- begin nav_bar-->
+
+<script type="text/javascript">
+isMac = (navigator.appVersion.indexOf("Mac")!=-1) ? true : false;
+//NS4 = (document.layers) ? true : false;
+if (isMac)
+	self.location="default_mac.asp";
+</script>
+
+<!--<script src="http://jquery.com/src/jquery-latest.pack.js"></script>-->
+<script src="jquery.js"></script>
+<link rel="stylesheet" media="screen,projection" type="text/css" href="inc_menu.css" />
+<script language="javascript">AC_FL_RunContent = 0;</script>
+<script src="AC_RunActiveContent.js" language="javascript"></script>
+
+
+<script type="text/javascript">
+var temp_id = '0';
+var cur_id;
+
+if(temp_id==1)
+	cur_id = 0;
+else if(temp_id == 2)
+	cur_id = 1;
+else if(temp_id==5)
+	cur_id = 2;
+else if (temp_id == 3)
+	cur_id = 3;
+else if (temp_id == 10)
+	cur_id = 4
+else
+	cur_id = 99;
+
+// set the id of global navigation container
+gnContainer = $('globalNav');
+
+// set the image path
+gnImages = "http://www.nyfa.org/graphics/";
+
+// gnActive refers to the active drop down menu, so we start it off as null
+gnActive = null;
+
+// check for object and embeds?
+gnOE = 'true';
+
+// the onload event, in most cases navInit should be added to whatever javascript initialization is already in place
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      oldonload();
+      func();
+    }
+  }
+}
+addLoadEvent(navInit);
+
+// launches the global navigation
+function navInit() {
+	navGetImages();			
+	version=0
+
+	if (navigator.appVersion.indexOf("MSIE")!=-1){
+	document.execCommand("BackgroundImageCache",false,true)
+	temp=navigator.appVersion.split("MSIE")
+	version=parseFloat(temp[1])
+	}
+	
+	if (typeof gnAlt == 'undefined') {
+	gnAlt = 'false'
+	}
+
+	var h2s = getElementsByClass('globalNav',gnContainer,'H2');
+	for (var i=0; i < h2s.length; i++)
+	{
+		if (h2s[i].id == "activeLink")
+		{
+			gnCategory = i;
+		}
+	}
+
+	if (typeof gnCategory == 'undefined') {
+	gnCategory = '6'
+	}
+
+	if (typeof gnFlash == 'undefined') {
+		if (gnOE == 'true') {
+			var objects = document.getElementsByTagName('OBJECT');
+			var embeds = document.getElementsByTagName('EMBED');
+			if ((objects.length >= 1) || (embeds.length >= 1))
+			{
+				gnFlash = 'true';
+			}
+			else
+			{
+				gnFlash = 'false';
+			}
+		}
+		else
+		{
+			gnFlash = 'false';
+		}
+	}
+
+	if ($('marqueeFlashContent'))
+	{
+		gnFlash = 'false';
+	}
+
+	if (((navigator.appVersion.indexOf('Mac') != -1) && (gnFlash == 'true')) || ((navigator.appVersion.indexOf('MSIE')!=-1) && (version<=5.4)) || (gnAlt == 'true'))
+	{
+	navAltInit();
+	}
+	else
+	{
+	navRegInit();
+		if (version==5.5) {
+			var uls = getElementsByClass('globalNavList',gnContainer,'ul');
+			for (var i = 0; i < uls.length; i++) 
+			{
+				var lis = uls[i].getElementsByTagName('li');
+				for (var j = 0; j < lis.length; j++)
+				{
+					lis[j].style.display = 'inline';
+				}
+			}
+		}
+	}
+}
+
+// prepares the alternate version of the global navigation with only top level functionality
+function navAltInit() {
+
+	var hrefs = getElementsByClass('globalNavLink',gnContainer,'A');
+	var imgs = getElementsByClass('globalNavImage',gnContainer,'IMG');
+	var divs = getElementsByClass('globalNavContent',gnContainer,'DIV');
+	for (var i=0; i < imgs.length; i++)
+	{
+		if (i == gnCategory)
+		{
+		divs[i].style.display = "none";
+		imgs[i].src=gnImages+"globalNav"+i+"Image_on.gif";
+		}
+		else
+		{
+			divs[i].style.display = "none";
+			
+			if(i==cur_id){
+				eval("imgs[i].onmouseout = function() {return (this.src='"+gnImages+"globalNav"+i+"Image_set.gif');}");		
+				eval("hrefs[i].onblur = function() {return (this.firstChild.src='"+gnImages+"globalNav"+i+"Image_set.gif');}");		
+			}
+			else{
+				eval("imgs[i].onmouseout = function() {return (this.src='"+gnImages+"globalNav"+i+"Image_off.gif');}");		
+				eval("hrefs[i].onblur = function() {return (this.firstChild.src='"+gnImages+"globalNav"+i+"Image_off.gif');}");
+			}
+			eval("hrefs[i].onfocus = function() {return (this.firstChild.src='"+gnImages+"globalNav"+i+"Image_on.gif');}");
+			eval("imgs[i].onmouseover = function() {return (this.src='"+gnImages+"globalNav"+i+"Image_on.gif');}");		
+		}
+	}
+}
+
+// prepares the regular version of the global navigation with full functionality
+function navRegInit() {
+	
+	var hrefs = getElementsByClass('globalNavLink',gnContainer,'A');
+	var imgs = getElementsByClass('globalNavImage',gnContainer,'IMG');
+	var divs = getElementsByClass('globalNavContent',gnContainer,'DIV');
+	var uls = getElementsByClass('globalNavList',gnContainer,'UL');
+	
+	gnTotal = hrefs.length-1;
+
+	for (var i=0; i < hrefs.length; i++)
+	{
+		hrefs[i].id = "globalNav"+i;
+
+		if (i == gnCategory)
+		{
+			imgs[i].src=gnImages+"globalNav"+i+"Image_on.gif";
+		}
+		imgs[i].id = "globalNav"+i+"Image";
+		divs[i].id = "globalNav"+i+"Content";
+		uls[i].id = "globalNav"+i+"List";
+		
+		//eval("hrefs[i].onkeydown = function(event) {return primaryArrows(event,"+i+");}");
+		eval("hrefs[i].onmouseout = function(event) {return collapse(event,this);}");
+		eval("hrefs[i].onmouseover = function() {return dropDown("+i+");}");
+		eval("hrefs[i].onfocus = function() {return dropDown("+i+");}");
+		eval("divs[i].onmouseout = function(event) {return collapse(event,this);}");
+		
+		var flyouts = getElementsByClass('flyout',divs[i],'DIV');
+		var lis = uls[i].getElementsByTagName('LI');
+		for (var j = 0; j < lis.length; j++)
+		{
+			flyouts[j].id = "g"+i+"n"+j;
+			flyouts[j].style.display = "none";
+			
+			eval("lis[j].onmouseover = function() {flyoutInit('g"+i+"n"+j+"',this)};");
+			eval("lis[j].onmouseout =  function() {clearTimeout(gnTime);};");	
+			//eval("lis[j].firstChild.onfocus = function() {return (this.parentNode.style.backgroundColor='#F99F63');}");
+			//eval("lis[j].firstChild.onblur = function() {return (this.parentNode.style.backgroundColor='#F8863A');}");
+			//eval("lis[j].firstChild.onkeydown = function(event) {return secondaryArrows(event,this.parentNode,"+i+");}");
+		}
+		
+		var lc = last_child(uls[i]);		
+		var lcfc = first_child(lc);
+		eval("lcfc.onfocus = function() {return makeActiveDrop(this.parentNode,"+i+");}");
+	}
+	var fc = first_child($('lastLink'));
+	var fcnb = node_before($('lastLink'));	
+	var fcnbfc = first_child(fcnb);
+	
+	eval("fc.onblur = function(event) {return collapseAlso();}");
+	eval("fcnbfc.onfocus = function(event) {return makeActiveDrop(this.parentNode,"+gnTotal+");}");
+	eval("$('globalNav0').onblur = function(event) {return collapseAlso();}");
+	eval("$('firstLink').firstChild.onfocus = function(event) {return makeActiveDrop(this.parentNode,'0');}");
+}
+
+// last link shows rollover color and drops menu on focus
+function makeActiveDrop(el,active) {
+	dropDown(active);
+	el.style.backgroundColor='#F99F63';
+}
+
+// handles the arrow key functionality on the top level of the navigation
+function primaryArrows(e,active)
+{
+	var code;
+	if (!e) var e = window.event;
+	if (e.keyCode) code = e.keyCode;
+	else if (e.which) code = e.which;
+
+	if (code == '37')
+	{
+		e.returnValue = false;
+		var previousid = active-1;
+		if(active != '0'){$('globalNav'+previousid).focus()};
+	}
+	if (code == '39')
+	{
+		e.returnValue = false;
+		var nextid = active+1;
+		if(active != gnTotal){$('globalNav'+nextid).focus()};
+	}
+	if (code == '40')
+	{
+		e.returnValue = false;
+		var fc = first_child($('globalNav'+active+'List'));
+		var fcfc = first_child(fc);
+		fcfc.focus();
+	}
+}
+
+// handles the arrow key functionality on the secondary level of the navigation
+function secondaryArrows(e,active,dropdown)
+{
+	var code;
+	if (!e) var e = window.event;
+	if (e.keyCode) code = e.keyCode;
+	else if (e.which) code = e.which;
+
+	if (code == '38')
+	{
+		e.returnValue = false;
+		if (node_before(active))
+		{	
+			var nb = node_before(active);
+			var nbfc = first_child(nb);
+			nbfc.focus();
+		}
+		else
+		$('globalNav'+gnActive).focus();
+	}
+
+	if (code == '37')
+	{
+		e.returnValue = false;
+		var previousid = dropdown-1;
+		if(dropdown != '0')
+		{
+			$('globalNav'+previousid).focus();
+			dropDown(previousid);
+		}
+	}
+
+	if (code == '39')
+	{
+		e.returnValue = false;
+		var nextid = dropdown+1;
+		if(dropdown != gnTotal)
+		{
+			$('globalNav'+nextid).focus();
+			dropDown(nextid);
+		}
+	}
+	
+	if (code == '40')
+	{
+		e.returnValue = false;
+		if (node_after(active))
+		{	
+			var na = node_after(active);
+			var nafc = first_child(na);
+			nafc.focus();
+		}
+	}
+}
+
+// fires the drop downs
+function dropDown(gnDown) {
+	
+	if (gnActive == null || !(gnActive == gnDown))
+	{	
+		collapseAlso();
+
+		$('globalNav'+gnDown+'Image').src = gnImages+'globalNav'+gnDown+'Image_on.gif';
+
+		if (navigator.appVersion.indexOf("MSIE")!=-1) {
+			if (version<=6)  {
+				var selects = document.getElementsByTagName('SELECT');
+				for (var i = 0; i < selects.length; i++)
+				{
+					selects[i].style.visibility='hidden';
+				}
+			}
+		}
+
+		changeOpac(0,'globalNav'+gnDown+'List');
+		
+		$('globalNav'+gnDown+'Content').style.left='auto';
+		
+		opacity('globalNav'+gnDown+'List');
+
+		gnActive = gnDown;
+	}
+}
+
+// decides whether to collapse a drop down when the user leaves the area
+function collapse(e,handler) {
+	if (!e) var e = window.event
+	if(isMouseLeaveOrEnter(e,handler)) {
+		var tg = $('globalNav'+gnActive+'Content')
+		var tz = $('globalNav'+gnActive)
+		var relTarg = e.relatedTarget || e.toElement;
+		while (relTarg && relTarg != tg && relTarg != tz && relTarg.nodeName != 'BODY')
+		relTarg = relTarg.parentNode
+		if (relTarg == tg || relTarg == tz) return;		
+		collapseAlso();				
+	}
+}
+
+// collapses a drop down
+function collapseAlso() {
+	if (gnActive != null)
+	{
+		$('globalNav'+gnActive+'Content').style.left='-1000em';
+		for (var i = 0; i < gnTotal+1; i++)
+		{	
+			if (i != gnCategory)
+			{				
+				if(i==cur_id)
+					$('globalNav'+i+'Image').src = gnImages+'globalNav'+i+'Image_set.gif';
+				else
+					$('globalNav'+i+'Image').src = gnImages+'globalNav'+i+'Image_off.gif';
+			}
+		}
+		flyin();
+		gnActive = null;
+	}
+	if (navigator.appVersion.indexOf("MSIE")!=-1) {
+		if (version<=6)  {
+			var selects = document.getElementsByTagName('SELECT');
+			for (var i = 0; i < selects.length; i++)
+			{
+				selects[i].style.visibility='visible';
+			}
+		}
+	}
+}
+
+// takes in the information needed to fire a flyout
+function flyoutInit(gnFlyoutIntake,gnListIntake){
+	gnFlyout = gnFlyoutIntake;
+	gnList = gnListIntake;
+	gnTime = setTimeout("flyout()",300);
+}
+
+// fires a flyout
+function flyout(){
+
+	flyin();
+
+	//gnList.style.backgroundColor = '#F99F63';	
+
+	changeOpac(0,gnFlyout);
+	
+	//$(gnFlyout).style.display='block';
+
+	//height(gnFlyout);
+}
+
+// clears flyouts and active colors
+function flyin() {
+	if (gnActive != null)
+	{
+		var lis = $('globalNav'+gnActive+'List').getElementsByTagName('li');		
+		for (var j = 0; j < lis.length; j++)
+		{
+			lis[j].style.backgroundColor = '#F8863A';
+		}
+		var activeDiv = $('globalNav'+gnActive+'Content');
+		var flyouts = getElementsByClass('flyout',activeDiv,'div');
+		for (var i = 0; i < flyouts.length; i++)
+		{
+		flyouts[i].style.display='none';
+		}
+	}
+}
+
+// handles the opacity shift
+function opacity(id) {
+
+	var speed = 40;
+    var timer = 0; 
+
+	for(i = 0; i <= 90; i=i+10)
+	{
+		setTimeout("changeOpac(" + i + ",'" + id + "')",(timer * speed));
+		timer++;
+	}
+}
+
+// handles the height plus opacity shift
+function height(id) {
+
+	var speed = 16;
+    var timer = 0;
+	
+	var maxHeight = $(id).offsetHeight;
+	
+	heightStep = maxHeight/100
+
+	changeHeight(0,id)
+
+	for(var x=0; x<=100; x=x+5)
+	{
+		setTimeout("changeHeight(" + x + ",'" + id + "')",(timer * speed));
+		setTimeout("changeOpac(" + x + ",'" + id + "')",(timer * speed));
+		timer++;
+	}
+}
+
+//change the opacity for different browsers
+function changeOpac(opacity, id) {
+	var object = $(id).style;
+    object.opacity = (opacity / 100);
+    object.MozOpacity = (opacity / 100);
+    object.KhtmlOpacity = (opacity / 100);
+    object.filter = "alpha(opacity=" + opacity + ")";
+}
+
+// changes the height of the flyout
+function changeHeight(currentHeight, id) {
+	var sync = heightStep*currentHeight;
+    $(id).style.height = sync + "px";
+}
+
+// preload the navigation rollover images
+function navGetImages() {
+	img0=new Image()
+	img0.src=gnImages+"globalNav0Image_on.gif"
+	img1=new Image()
+	img1.src=gnImages+"globalNav1Image_on.gif" 
+	img2=new Image()
+	img2.src=gnImages+"globalNav2Image_on.gif" 
+	img3=new Image()
+	img3.src=gnImages+"globalNav3Image_on.gif" 
+	img4=new Image()
+	img4.src=gnImages+"globalNav4Image_on.gif" 
+	img5=new Image()
+	img5.src=gnImages+"globalNav5Image_on.gif" 
+	/*img6=new Image()
+	img6.src=gnImages+"globalNav6Image_on.gif"*/
+}
+
+// a simple get elements by id function
+function $() {
+	if (arguments.length == 1) return get$(arguments[0]);
+	var elements = [];
+	$c(arguments).each(function(el){
+		elements.push(get$(el));
+	});
+	return elements;
+	function get$(el){
+		if (typeof el == 'string') el = document.getElementById(el);
+		return el;
+	}
+}
+
+// a simple get elements by class function
+function getElementsByClass(searchClass,node,tag) {
+	var classElements = new Array();
+	if ( node == null )
+		node = document;
+	if ( tag == null )
+		tag = '*';
+	var els = node.getElementsByTagName(tag);
+	var elsLen = els.length;
+	var pattern = new RegExp("(^|\\s)"+searchClass+"(\\s|$)");
+	for (i = 0, j = 0; i < elsLen; i++) {
+		if ( pattern.test(els[i].className) ) {
+			classElements[j] = els[i];
+			j++;
+		}
+	}
+	return classElements;
+}
+
+// determines if the mouse actually left the content box in order to handle event bubbling issues
+function isMouseLeaveOrEnter(e,handler)
+{	
+	var reltg = e.relatedTarget ? e.relatedTarget : e.type == 'mouseout' ? e.toElement : e.fromElement;
+	while (reltg && reltg != handler) reltg = reltg.parentNode;
+	return (reltg != handler);
+}
+
+function is_all_ws( nod )
+{
+  // Use ECMA-262 Edition 3 String and RegExp features
+  return !(/[^\t\n\r ]/.test(nod.data));
+}
+
+function is_ignorable( nod )
+{
+  return ( nod.nodeType == 8) || // A comment node
+         ( (nod.nodeType == 3) && is_all_ws(nod) ); // a text node, all ws
+}
+
+function node_before( sib )
+{
+  while ((sib = sib.previousSibling)) {
+    if (!is_ignorable(sib)) return sib;
+  }
+  return null;
+}
+
+function node_after( sib )
+{
+  while ((sib = sib.nextSibling)) {
+    if (!is_ignorable(sib)) return sib;
+  }
+  return null;
+}
+
+function last_child( par )
+{
+  var res=par.lastChild;
+  while (res) {
+    if (!is_ignorable(res)) return res;
+    res = res.previousSibling;
+  }
+  return null;
+}
+
+function first_child( par )
+{
+  var res= par.firstChild;
+  while (res) {
+	if (!is_ignorable(res)) return res;
+	res = res.nextSibling;
+  } 	
+  return null;
+}
+</script>
+<script type="text/javascript">
+addLoadEvent(navInit);
+</script>
+<!--<script src="style_select.js"></script>-->
+
+    <link rel="stylesheet" type="text/css" href="includes/nyfa_styles_ie.css" />
+
+
+
+</head>
+<body>
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0" width="711" align="center">
+<tr>
+	<td>
+		<table border="0" cellspacing="0" cellpadding="0" width="711">
+		<tr>
+			<td><a href="default.asp"><img src="graphics/nyfa_logo.jpg" border="0" alt="Home"></a></td>
+			<form name="search" method="post" action="search_results.asp">
+			<td valign="bottom">
+				<table cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td colspan="3" align="right">
+                        <a href="http://www.facebook.com/NYFAface" target="_blank"><img src="/images_uploaded/facebookicon.gif" height="20" width="20" border="0" alt="NYFA on Facebook"></A> 
+                        <a href=" http://www.linkedin.com/groups/Art-Jobs-Resources-4684732?gid=4684732&trk=hb_side_g" target="_blank"><img src="/images_uploaded/linkedinicon.jpg" height="20" width="20" border="0" alt="NYFA on LinkedIn"></A> 
+                        <A HREF="http://twitter.com/nyfacurrent" target="_blank"><img src="/images_uploaded/twittericon.gif"  height="20" width="20" border="0" alt="NYFA on Twitter"></A> 
+                        <A HREF="http://vimeo.com/user1480128" target="_blank"><img src="/images_uploaded/vimeoicon.gif"  height="20" width="20" border="0" alt="NYFA on Vimeo"></A>
+					</td>
+				</tr>
+				<tr>
+					<td valign="bottom"><img src="graphics/search.jpg" border="0" alt="Search"></td>
+					<td><input type="text" name="Search" class="searchbox"></td>
+					<td valign="bottom"><a href="javascript:document.search.submit();"><img src="graphics/button_go.jpg" border="0" alt="Go"></a></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="9"><img src="graphics/spacer.gif"></td>
+		</tr></form>
+		<tr>
+			<td colspan="2" class="search">
+				</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td height="4"><img src="graphics/spacer.gif"></td>
+</tr>
+<tr>
+	<td>
+		<table border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center">
+		<tr>
+			<td valign="top" align="left">
+				<div id="globalNav">
+					<h2 class="globalNav" style="left:0px;">
+						<a class="globalNavLink" href="level1.asp?id=1">
+							<img src="graphics/globalNav0Image_off.gif" class="globalNavImage" alt="For Artists"
+							title="For Artists" /></a></h2>
+					<div class="globalNavContent">
+						<ul class="globalNavList">
+							
+								<li class="cat"  id="firstLink" style="border-top:0;"
+								><b>Information</b></li>
+							
+							<li >
+								<a href="level2.asp?id=54&fid=1">> NYFA Classifieds</a></li>
+							
+							<li >
+								<a href="level2.asp?id=47&fid=1">> NYFA Source<br>the resource for artists</a></li>
+							
+							<li >
+								<a href="level2.asp?id=189&fid=1">> NYFA National</a></li>
+							
+							<li >
+								<a href="level2.asp?id=17&fid=1">> NYFA News</a></li>
+							
+							<li >
+								<a href="level2.asp?id=76&fid=1">> NYFA Learning / Professional Development</a></li>
+							
+							<li >
+								<a href="level2.asp?id=157&fid=1">> NYFA Podcast</a></li>
+							
+							<li >
+								<a href="level2.asp?id=51&fid=1">> Business of Art Articles</a></li>
+							
+							<li >
+								<a href="level2.asp?id=82&fid=1">> NYFA Quarterly Archives</a></li>
+							
+							<li >
+								<a href="level2.asp?id=173&fid=1">> The NYFA Collection: 25 Years of New York New Music</a></li>
+							
+								<li class="cat" ><br><b>Awards</b></li>
+							
+							<li >
+								<a href="level2.asp?id=202&fid=1">> NYFA Emergency Relief Fund</a></li>
+							
+							<li >
+								<a href="level2.asp?id=1&fid=1">> Artists' Fellowships</a></li>
+							
+							<li >
+								<a href="level2.asp?id=195&fid=1">> Artists' Residency / Exchange</a></li>
+							
+							<li >
+								<a href="level2.asp?id=194&fid=1">> Governors Island Art Fair 2012</a></li>
+							
+							<li >
+								<a href="level2.asp?id=197&fid=1">> DUMBO Arts Festival 2012</a></li>
+							
+								<li class="cat" ><br><b>Services</b></li>
+							
+							<li >
+								<a href="level2.asp?id=44&fid=1">> Fiscal Sponsorship</a></li>
+							
+							<li >
+								<a href="level2.asp?id=145&fid=1">> Immigrant Artist Program</a></li>
+							
+							<li >
+								<a href="level2.asp?id=165&fid=1">> NYFA Space</a></li>
+							
+							<li >
+								<a href="level2.asp?id=158&fid=1">> Affordable Workspace for Artists and Organizations</a></li>
+							
+						</ul>
+						<div class="tertiary">
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+						</div>
+					</div>
+
+					<h2 class="globalNav" style="left:94px;"><a class="globalNavLink" href="level1.asp?id=2">
+						<img src="graphics/globalNav1Image_off.gif" class="globalNavImage" alt="For Organizations" title="For Organizations" /></a></h2>
+					<div class="globalNavContent" style="margin-left:94px;">
+						<ul class="globalNavList">
+							
+								<li class="cat"  style="border-top:0;"
+								><b>Information</b></li>
+							
+							<li><a href="level2.asp?id=54&fid=2">> NYFA Classifieds</a></li>
+							
+							<li><a href="level2.asp?id=17&fid=2">> NYFA News</a></li>
+							
+							<li><a href="level2.asp?id=65&fid=2">> Management & Fundraising Resources</a></li>
+							
+								<li class="cat" ><br><b>Awards</b></li>
+							
+							<li><a href="level2.asp?id=78&fid=2">> BUILD: NYC Dance Company Grants</a></li>
+							
+							<li><a href="level2.asp?id=139&fid=2">> New York Theater Program</a></li>
+							
+								<li class="cat" ><br><b>Services</b></li>
+							
+							<li><a href="level2.asp?id=2&fid=2">> Fiscal Sponsorship</a></li>
+							
+							<li><a href="level2.asp?id=170&fid=2">> Curatorial Services</a></li>
+							
+							<li><a href="level2.asp?id=190&fid=2">> Mock Panels for Educators</a></li>
+							
+							<li><a href="level2.asp?id=158&fid=2">> Affordable Workspace for Artists and Organizations</a></li>
+							
+							<li><a href="level2.asp?id=165&fid=2">> NYFA Space</a></li>
+							
+							<li><a href="level2.asp?id=24&fid=2">> Cash Flow Loans</a></li>
+							
+							<li><a href="level2.asp?id=196&fid=2">> Professional Development for Arts Administrators</a></li>
+							
+						</ul>
+						<div class="tertiary">
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+						</div>
+					</div>
+
+					<h2 class="globalNav" style="left:234px;"><a class="globalNavLink" href="level1.asp?id=5">
+						<img src="graphics/globalNav2Image_off.gif" class="globalNavImage" alt="About NYFA" title="About NYFA" /></a></h2>
+					<div class="globalNavContent" style="margin-left:234px;">
+						<ul class="globalNavList">
+							
+							<li><a href="level2.asp?id=152&fid=5">> Our Mission</a></li>
+							
+							<li><a href="level2.asp?id=7&fid=5">> Contact Us</a></li>
+							
+							<li><a href="level2.asp?id=149&fid=5">> Map & Directions</a></li>
+							
+							<li><a href="level2.asp?id=121&fid=5">> Staff</a></li>
+							
+							<li><a href="level2.asp?id=109&fid=5">> Board of Directors</a></li>
+							
+							<li><a href="level2.asp?id=110&fid=5">> Artists' Advisory Committee</a></li>
+							
+							<li><a href="level2.asp?id=156&fid=5">> Meet a NYFA Artist Interview Archives</a></li>
+							
+							<li><a href="level2.asp?id=169&fid=5">> NYFA Events</a></li>
+							
+							<li><a href="level2.asp?id=192&fid=5">> NYFA Informational Video</a></li>
+							
+							<li><a href="level2.asp?id=81&fid=5">> NYFA Names You Know</a></li>
+							
+							<li><a href="level2.asp?id=182&fid=5">> NYFA Hall of Fame</a></li>
+							
+							<li><a href="level2.asp?id=186&fid=5">> NYFA Annual Benefit</a></li>
+							
+							<li><a href="level2.asp?id=143&fid=5">> Past Programs, Studies & Projects</a></li>
+							
+							<li><a href="level2.asp?id=114&fid=5">> Our Supporters</a></li>
+							
+							<li><a href="level2.asp?id=214&fid=5">> Biennial Report 2011-2012</a></li>
+							
+							<li><a href="level2.asp?id=50&fid=5">> Financial Statements</a></li>
+							
+							<li><a href="level2.asp?id=37&fid=5">> Site Credits & Terms of Use</a></li>
+							
+							<li><a href="level2.asp?id=146&fid=5">> Facebook Page</a></li>
+							
+						</ul>
+						<div class="tertiary">
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+						</div>
+					</div>
+
+					<h2 class="globalNav" style="left:320px;"><a class="globalNavLink" href="level1.asp?id=3">
+						<img src="graphics/globalNav3Image_off.gif" class="globalNavImage" alt="Contribute to NYFA" title="Contribute to NYFA" /></a></h2>
+					<div class="globalNavContent" style="margin-left:320px;">
+						<ul class="globalNavList">
+							
+							<li><a href="level2.asp?id=174&fid=3">> Individual Gifts and Giving Circles</a></li>
+							
+							<li><a href="level2.asp?id=183&fid=3">> Biennial Report 2011-2012</a></li>
+							
+							<li><a href="level2.asp?id=186&fid=3">> NYFA Annual Benefit</a></li>
+							
+							<li><a href="level2.asp?id=198&fid=3">> NYFA Young Patrons Circle</a></li>
+							
+							<li><a href="level2.asp?id=13&fid=3">> How NYFA Serves Artists: Core Programs</a></li>
+							
+							<li><a href="level2.asp?id=10&fid=3">> The Artist Fund</a></li>
+							
+							<li><a href="level2.asp?id=114&fid=3">> Our Supporters</a></li>
+							
+							<li><a href="level2.asp?id=50&fid=3">> Financial Statements</a></li>
+							
+						</ul>
+						<div class="tertiary">
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+						</div>
+					</div>
+
+				<h2 class="globalNav" style="left:453px;"><a class="globalNavLink" href="level1.asp?id=10">
+						<img src="graphics/globalNav4Image_off.gif" class="globalNavImage" alt="Contribute to Sponsorship"
+						title="Contribute to Sponsorship" /></a></h2>
+					<div class="globalNavContent" style="margin-left:453px;">
+						<ul class="globalNavList">
+							
+							<li><a href="level2.asp?id=2&fid=10">> Fiscal Sponsorship</a>
+								</li>
+							
+							<li><a href="level2.asp?id=125&fid=10">> Contribute to Sponsorship</a>
+								</li>
+							
+							<li><a href="level2.asp?id=50&fid=10">> Financial Statements</a>
+								</li>
+							
+						</ul>
+						<div class="tertiary">
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+							<div class="flyout" style="background:none;"></div>
+							
+						</div>
+					</div>
+
+					 <h2 class="globalNav" style="left:638px;">
+
+						<a class="globalNavLink" href="#" onClick="window.open('http://www.patronmail.com/pmailweb/PatronSetup?fid=3339','','width=700,height=700,scrollbars,location');">
+
+						<img src="graphics/globalNav5Image_off.gif" class="globalNavImage" border="0"></a></h2>
+						<div class="globalNavContent" style="margin-left:-638px;">
+							<ul class="globalNavList">
+								<li><a href="t">e</a></li>
+								<li><a href="e">r</a></li>
+								<li id="lastLink"><a href="t">w</a></li>
+							</ul>
+							<div class="tertiary">
+								<div class="flyout" style="background:none;"></div>
+								<div class="flyout" style="background:none;"></div>
+								<div class="flyout" style="background:none;"></div>
+							</div>
+						</div>
+				</div>
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+<!-- end of nav_bar -->
+
+<table border="0" cellspacing="0" cellpadding="0" width="711">
+<tr>
+	<td valign="top">
+		<table border="0" cellspacing="0" cellpadding="0" width="100%">
+		<tr>
+			<td width="231" class="nyfanow" valign="top"><img src="graphics/nyfa_now.jpg" alt="NYFA Now">
+				<table cellspacing="0">
+				<tr>
+                	<td><img src="graphics/spacer.gif" height="5"></td>
+                </tr>
+				
+				<tr>
+					<td><a href="http://www.nyfa.org/nyfa_current_detail.asp?id=17&fid=1&curid=946">> Meet A NYFA Artist: Myra Melford</a></td>
+				</tr>
+				<tr>
+                	<td><img src="graphics/spacer.gif" height="5"></td>
+                </tr>
+				
+				<tr>
+					<td><a href="http://www.nyfa.org/nyfa_current_detail.asp?id=17&fid=1&curid=948">> NYFA and CFLAC: An Exchange with Chinese Arts Leaders</a></td>
+				</tr>
+				<tr>
+                	<td><img src="graphics/spacer.gif" height="5"></td>
+                </tr>
+				
+				<tr>
+					<td><a href="http://www.nyfa.org/nyfa_current_detail.asp?id=17&fid=1&curid=944">> NYFA Awards $3.5 Million to 33 Theaters Through The Andrew W. Mellon Foundation New York Theater Program </a></td>
+				</tr>
+				<tr>
+                	<td><img src="graphics/spacer.gif" height="5"></td>
+                </tr>
+				
+				<tr>
+					<td><a href="http://www.nyfa.org/level2.asp?id=78&fid=2">> NYFA 2012-2013 BUILD Awardees Announced</a></td>
+				</tr>
+				<tr>
+                	<td><img src="graphics/spacer.gif" height="5"></td>
+                </tr>
+				
+				<tr>
+					<td><a href="http://www.nyfa.org/level2.asp?id=174&fid=3">> Make a gift to NYFA</a></td>
+				</tr>
+				<tr>
+                	<td><img src="graphics/spacer.gif" height="5"></td>
+                </tr>
+				
+				</table>
+			</td>
+            <td width="3"><img src="graphics/spacer.gif"></td>
+            <td valign="top" width="470"  height="100%" style="background-color: #463f3f;">
+            	<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+                <tr>
+                    <td bgcolor="#000" align="center" valign="middle" height="240">
+                    
+                        <!-- START OF THE PLAYER EMBEDDING TO COPY-PASTE -->
+                        <embed
+                        src="/homepage_files/player-licensed.swf"
+                        width="477"
+                        height="240"
+                        bgcolor="undefined"
+                        allowscriptaccess="always"
+                        allowfullscreen="true"
+                        wmode="transparent"
+                        flashvars="file=/homepage_files/OdedHirschtest15.mp4&link=http://www.nyfa.org/level4.asp?id=504&fid=1&sid=1&tid=15&skin=/homepage_files/modieus.swf&volume=50&controlbar=over&dock=false&autostart=true&displayclick=link&repeat=always&stretching=uniform&type=video"
+                        />
+                        <!-- END OF THE PLAYER EMBEDDING -->
+                    
+                    </td>
+                </tr>
+                
+                <tr bgcolor="#000" height="17">
+                    <td valign="top" align="center"><span style="color:#FFFFFF;font-size:11px;">Oded Hirsch, 50 Blue, 2009. 2012 Video/Film NYFA Artist Fellow.</span></td>
+                </tr>
+                
+                <tr>
+                    <td height="3" style="background-color: #FFFFFF;"><img src="graphics/spacer.gif"></td>
+                </tr>
+                <tr>
+                    <td class="exp_nyfa" valign="middle">
+                        <a href="level1.asp?id=5"><img src="graphics/nyfa_blurb.jpg" alt="Experience NYFA" border="0"></a></td>
+                </tr>
+            	</table>
+			</td>
+        </tr>
+    	</table>
+	</td>
+</tr>
+<tr>
+    <td height="3"><img src="graphics/spacer.gif"></td>
+</tr>
+<tr>
+	<td valign="top">
+    	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+		<tr>
+        	<td valign="top"  width="231">
+            	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+            	<tr>
+                    <td valign="top" bgcolor="#463f3f" width="231">
+                        <script language="javascript">
+                        if (AC_FL_RunContent == 0) {
+                            alert("This page requires AC_RunActiveContent.js.");
+                        } else {
+                            AC_FL_RunContent(
+                                'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0',
+                                'width', '231',
+                                'height', '310',
+                                'src', 'menu',
+                                'quality', 'high',
+                                'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+                                'align', 'middle',
+                                'play', 'true',
+                                'loop', 'true',
+                                'scale', 'showall',
+                                'wmode', 'transparent',
+                                'devicefont', 'false',
+                                'id', 'menu',
+                                'bgcolor', '#463f3f',
+                                'name', 'menu',
+                                'menu', 'true',
+                                'allowFullScreen', 'false',
+                                'allowScriptAccess','sameDomain',
+                                'movie', 'menu',
+                                'salign', ''
+                                ); //end AC code
+                        }
+                        </script>
+                    <noscript>
+                    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="231" height="310" id="menu" align="middle">
+                    <param name="allowScriptAccess" value="sameDomain" />
+                    <param name="allowFullScreen" value="false" />
+                    <param name="movie" value="menu.swf" /><param name="loop" value="false" />
+                    <param name="menu" value="false" />
+                    <param name="quality" value="high" />
+                    <param name="wmode" value="transparent" />
+                    <param name="bgcolor" value="#463f3f" />
+                    <embed src="menu.swf" loop="false" menu="false" quality="high"  bgcolor="#463f3f"
+                    width="231" height="310" name="menu" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" wmode="transparent"
+                    type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                    </object>
+                    </noscript>
+                    </td>
+                 </tr>
+                 <tr>
+                 	 <td height="3"><img src="graphics/spacer.gif"></td>
+                 </tr>
+                 <tr>
+                 	<td><a href="/advertising"><img src="graphics/nyfa_advertising_button.jpg" border="0"></a></td>
+                 </tr>
+                 </table>
+            </td>
+            <td width="3"><img src="graphics/spacer.gif"></td>
+            <td align="center" bgcolor="#000000" background="works_uploaded/JodieLynKeeChow_Homepage-txt-2.jpg" class="home_image">
+                <div id="home_image">
+                <a href="nyfa_artists.asp?id=7" style="color:#ffffff;text-decoration:none;">
+                    <img src="graphics/spacer.gif" border="0" width="455" height="270"></a>
+                </div>
+            </td>
+		</tr>
+        </table>
+	</td>
+</tr>
+</table>
+<!-- Sponsors & Footer -->
+
+<link href="includes/nyfa_styles.css" rel="stylesheet" type="text/css">
+<table width="711" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td colspan="2"><img src="graphics/spacer.gif" height="7"></td>
+</tr>
+<tr>
+	<td valign="top"><img src="graphics/footer.gif" border="0">
+		<a href="level2.asp?id=7&fid=5"><img src="graphics/contact_info.gif" border="0"></a>
+		<a href="sitemap.asp?id=8"><img src="graphics/sitemap.gif" border="0"></a>
+		<a href="level2.asp?id=37&fid=5"><img src="graphics/site_credits.gif" border="0"></a>
+	</td>
+	<td class="footer">&copy; 1994-2013 NYFA</td>
+</tr>
+</table><br>
+
+<table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	
+	<td ><a href="http://www.nysca.org" target="_blank"><img src="images_uploaded/nysca.gif" border="0"></a></td>
+		
+	<td ><a href="http://www.nyc.gov/html/dcla/html/home/home.shtml" target="_blank"><img src="images_uploaded/DCAlogothumbnail.jpg" border="0"></a></td>
+		
+	<td ><a href="" target="_blank"><img src="images_uploaded/spacer-home.gif" border="0"></a></td>
+		
+	<td ><a href="http://www.continental.com" target="_blank"><img src="images_uploaded/united_3p_color_web_r.png" border="0"></a></td>
+		
+	<td align="right"><a href="http://camt.artsnet.org" target="_blank"><img src="images_uploaded/camt.jpg" border="0"></a></td>
+		
+</tr>
+
+</table>
+
+<table width="710" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td><br><img src="graphics/sponsor_footer.jpg" border="0"></td>
+</tr>
+</table>
+
+
+<!-- END Sponsors & Footer -->
+</div>
+
+
+<form action="email_article.asp" method="post" name="emailform">
+	<input type="hidden" name="email_link" value="">
+	<input type="hidden" name="email_title" value="">
+</form>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-10101078-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+    <script type="text/javascript" src="/google_outbound_links.js"></script>
+</body>
+</html>

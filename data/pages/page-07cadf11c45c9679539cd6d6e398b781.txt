@@ -1,0 +1,308 @@
+<script language="JavaScript">
+<!--
+function Validate()
+{
+	if(document.frmLogin.strLogin.value == '')
+	{
+		alert('Please enter your Login ID.');
+		document.frmLogin.strLogin.focus();
+		return false;	
+	}
+	if(document.frmLogin.strPassword.value == '')
+	{
+		alert('Please enter your Password.');
+		document.frmLogin.strPassword.focus();
+		return false;	
+	}
+}
+//-->
+</script>
+
+
+<html>
+<head>
+
+<title>iCARumba - Auto repair, car services and automotive shops</title>
+
+
+
+
+
+<meta name="description" content="iCARumba provides free information on auto and car repair. Look up info in our car care and repair library, troubleshoot automotive problems, find auto shops and mechanics near you, make appointments online and more.">
+
+<meta name="keywords" content="car repair, auto repair, automotive repair, repair, service, vehicle, truck, pickup, carrepair, autorepair, air conditioning, auto air conditioning, car air conditioning, repair flush replace air conditioning, car battery, change car battery, car battery care, car battery maintenance, car batteries, car brakes, change car brakes, car brake care, car brake, car brakes repair, replace car brakes, car brakes repairs, Brakes, car care, car care manual, online car care manual, do it yourself car care, how to care for cars, car care guide, car care troubleshooting, oil change, oil changes, car oil change, get an oil change, tune up, tune-up, auto maintenance, auto maintenance manual, preventative maintenance, Mechanics, car mechanics, auto mechanics, car mechanic, auto repair, auto repair advice, auto repair manual, Car wheel, car wheels, car wheel repair, replace car wheel, tune up, tune ups, tune-up, tune-ups, car tune up, transmission repair, change transmission, transmission repair manual, Car tire, car tires, car tire repair, Car shocks, car struts, car shocks repair, replace car shocks, replace car struts, car strut repair, oil change, get an oil change, iCARumba, I carumba, icar umba, iCARumba.com, www.icarumba.com, carumba, caramba, curumba">
+
+<script language="javascript">
+
+var strDefault = "<i>Welcome to iCARumba!</i> With just a few clicks you can  <b>get expert advice</b> on auto repair, <b>find shops</b> and <b>make appointments</b>, <b>save money</b> on car services  <b>and more</b>.";
+
+function cacheImages()
+{
+    // cache mouse over images
+    Splash1 = new Image(1, 1);Splash1.src = '/images/ICAR/find_on.gif';
+    Splash2 = new Image(1, 1);Splash2.src = '/images/ICAR/get_on.gif';
+    Splash3 = new Image(1, 1);Splash3.src = '/images/ICAR/deals_on.gif';
+    Splash4 = new Image(1, 1);Splash4.src = '/images/ICAR/sign_on.gif';
+    Splash5 = new Image(1, 1);Splash5.src = '/images/ICAR/ref_on.gif';
+//    Splash6 = new Image(1, 1);Splash6.src = '/images/ICAR/market_on.gif';
+    Splash7 = new Image(1, 1);Splash7.src = '/images/ICAR/industry_on.gif';
+    Splash8 = new Image(1, 1);Splash8.src = '/images/ICAR/auto_pro_sign_in_on.gif';
+}
+
+function showDesc(el,hilite)
+{
+    if (document.all == null)
+        return false;
+
+    if (el != null)
+    {
+        if (hilite)
+            el.src = '/images/ICAR/' + el.name + '_on.gif';
+        else
+            el.src = '/images/ICAR/' + el.name + '_off.gif';
+    }
+
+    myObj = document.all.showDesc
+    if (window.event.type == "mouseover"){
+
+       switch (window.event.srcElement.id){
+       case "opt1":
+          myObj.innerHTML = "<b>Easily find auto shops</b> near you -- and <b>make an appointment online</b>. See shop details, map, customer satisfaction ratings, and more. <b>Click now to find a shop.</b>";
+          break;
+       case "opt2":
+          myObj.innerHTML = "<b>Need common service</b> like an oil change or brake job? Shops often offer money-saving specials on common jobs - and we help you find them. <b>Click now to find great deals.</b>";
+          break;
+       case "opt3":
+          myObj.innerHTML = "Got a car problem? <b>Ask the doctor</b>  <i>Dr.CARumba</i>, that is, our advice center where you can use smart troubleshooting tools or link up to our car repair forums. <b> Click now to get expert advice.</b>";
+          break;
+       case "opt4":
+          myObj.innerHTML = "<b>Whats your car-care need</b>: Convenience? Quality? Price? We give you the knowledge and tools to <b>be in charge</b> of every car service experience. <b>Click to now learn more.</b>";
+          break;
+
+       case "opt5":
+          myObj.innerHTML = "<b>Easily find auto shops</b> near you -- and <b>make an appointment online</b>. See shop details, map, customer satisfaction ratings, and more. <b>Click now to find a shop.</b>";
+          break;
+
+       case "opt6":
+          myObj.innerHTML = "Got a car problem? <b>Ask the doctor</b>  <i>Dr.CARumba</i>, that is, our advice center where you can use interactive troubleshooting tools or e-mail our auto pros.<b> Click now to get expert advice.</b>";
+          break;
+
+       case "opt7":
+          myObj.innerHTML = "<b>Need common service</b> like an oil change or brake job? Shops often offer money-saving specials on common jobs - and we help you find them. <b>Click now to find great deals.</b>";
+          break;
+
+       case "opt8":
+          myObj.innerHTML = "Create a personal <i>myCARumba</i> page for <b>even more car-care resources</b>. Well store your service records, send service and recall alerts -- and <i>everything is free</i>! <b>Click now to sign up.</b>";
+
+          break;
+
+       case "opt9":
+          myObj.innerHTML = "<b>Get information galore</b> about car care! Research repair or maintenance questions in our Car Care Encyclopedia, browse story archives and more. <b>Click now to visit the library.</b>";
+
+          break;
+
+//		case "opt10":
+//		  myObj.innerHTML = "<b>Find financing, insurance, parts, accessories</b> or any other car ownership need, provided by our carefully selected affiliates and partners. <b>Click now to go to Marketplace.</b>";
+//		  break;
+
+       case "opt11":
+          myObj.innerHTML = "Get new customers. Reduce phone time. Save money. Find business tools and a huge community marketplace ... <b>thats <i>proCARumba</i>, for industry pros</b>. Click to learn more.";
+          break;
+
+       case "opt12":
+          myObj.innerHTML = "<b>Take our quick Site Tour</b> to see just how iCARumba makes car care easier, smarter, better and less expensive.";
+          break;
+
+       case "opt13":
+          myObj.innerHTML = "Click now to see a simple list of <b>more than 40 ways</b> iCARumba will make car care easier than you might ever have imagined.";
+          break;
+
+       case "opt14":
+          myObj.innerHTML = "Create a personal <i>myCARumba</i> page for <b>even more car-care tools and resources</b>. Well store your service records, send service and recall alerts, and more. <b>And everything is free!</b>";
+          break;
+
+
+       }
+    }
+    else{
+       myObj.innerHTML = strDefault;
+     }
+
+}
+
+function set_focus(){
+    document.frmLogin.strLogin.focus();
+    cacheImages();
+
+}
+
+</script>
+
+</head>
+<style><!--
+a:visited:hover{color:#ff9900;}
+.frmTag { font-size: 9px; font-family: verdana, arial, geneva}
+.login {font-size: 10px; font-family: verdana, arial, geneva; color:#ffffff;}
+.main {font-size: 11px; font-family: verdana, arial, geneva; color:#000000;}
+.mainwhite {font-size: 11px; font-family: verdana, arial, geneva; color:#ffffff;}
+--></style>
+
+<body alink="#cc3333" vlink="#ffffff" link="#ffffff" bgcolor="#6666cc" onLoad="set_focus(); "  LEFTMARGIN="0" TOPMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0">
+
+
+<!--container consists of four columns in the first table, with some nested tables for layout, aligned left because of the logo. Table is non-expanding.
+
+The second table is the three invitation buttons Please keep at least a paragraph space between bottom of table and any text links like copyrights which are along the bottom.-->
+
+
+<table width="775" height="361" border="0" cellpadding="0" cellspacing="0">
+<tr>
+    <td width="136" valign="top">
+        <img src="/images/ICAR/1_1.gif" width="136" height="62" alt="" border="0"><br>
+        <img src="/images/ICAR/t.gif" width="136" height="38" border="0"><br>
+        <a href="/icarumba/schedulejobwizard/default.asp"><img name="find" src="/images/ICAR/find_off.gif" ID="opt5" onmouseover="showDesc(this,true)" onmouseout="showDesc(this,false)" width="136" height="22"  border="0" alt="Find a Shop"></a><br>
+        <a href="/icarumba/whatswrongwizard/default.asp"><img name="get" src="/images/ICAR/get_off.gif" ID="opt6" onmouseover="showDesc(this,true)" onmouseout="showDesc(this,false)" width="136" height="22"  border="0" alt="Get Expert Advice"></a><br>
+        <a href="/icarumba/greatdeals/default.asp"><img name="deals" src="/images/ICAR/deals_off.gif" ID="opt7" onmouseover="showDesc(this,true)" onmouseout="showDesc(this,false)" width="136" height="22" alt="Find Great Deals" border="0"></a><br>
+        <a href="/mycarumba/signup/myca_signup_register.asp"><img name="sign" src="/images/ICAR/sign_off.gif" ID="opt8" onmouseover="showDesc(this,true)" onmouseout="showDesc(this,false)" width="136" height="20" alt="Sign Up" border="0"></a><br>
+        <a href="/icarumba/resourcecenter/default.asp"><img name="ref" src="/images/ICAR/ref_off.gif" ID="opt9" onmouseover="showDesc(this,true)" onmouseout="showDesc(this,false)" width="136" height="20"  border="0" alt="Reference Library"></a><br>
+        <a><img name="blank1" src="/images/ICAR/fill_blank1.gif"  width="136" height="20"  border="0"></a><br>
+		<a href="/procarumbaguest/default.asp"><img name="industry" src="/images/ICAR/industry_off.gif" ID="opt11" onmouseover="showDesc(this,true)" onmouseout="showDesc(this,false)" width="136" height="21" border="0" alt="Industry Pro?"></a><br>
+<!-- insert home page ad
+        <a href="/icarumba/marketplace/default.asp"><img name="market" src="/images/ICAR/fill_blank1.gif" ID="opt10" onmouseover="showDesc(this,true)" onmouseout="showDesc(this,false)" width="136" height="20"  border="0" alt="Marketplace"></a><br>
+	<img src="/images/ICAR/1_8b.gif" width="136" height="11" border="0"><A TARGET="_New" HREF="http://clk.atdmt.com/IGM/go/crmbxmei00100001igm/direct/01/"><img src="/images/ICAR/1_9_free_coupons.gif" width="136" height="103" border="0"></a></td>
+-->
+	<a href="/icarumba/sweepstakes/contesthome.asp"><img src="/images/ICAR/1_9.gif" width="136" height="103" border="0"></a></td>
+
+    <td width="224" valign="top">
+        <img src="/images/ICAR/2_1.gif" width="224" height="99" alt="Finally, Care Care Made Easy!" border="0"><br>
+        <a href="/icarumba/schedulejobwizard/default.asp"><img src="/images/ICAR/2_2.gif" ID="opt1" onmouseover="showDesc(null,true)" onmouseout="showDesc(null,false)" width="224" height="156"  border="0" alt="Quality Convenience"></a><br>
+        <a href="/icarumba/greatdeals/default.asp"><img src="/images/ICAR/2_3.gif" ID="opt2" onmouseover="showDesc(null,true)" onmouseout="showDesc(null,false)" width="224" height="106"  border="0" alt="Save Money"></a></td>
+
+    <td width="205" valign="top">
+        <img src="/images/ICAR/3_1.gif" width="205" height="99" alt="" border="0"><br>
+        <a href="/icarumba/whatswrongwizard/default.asp"><img src="/images/ICAR/3_2.gif"  ID="opt3" onmouseover="showDesc(null,true)" onmouseout="showDesc(null,false)" width="205" height="156" alt="Get Smarter about Car Repair" border="0"></a><br>
+
+        <table bgcolor="#ffffff" width="205" height="81" border="0" cellpadding="0" cellspacing="0">
+            <tr><td bgcolor="#ffffff" ID="showDesc" width="205" height="81" valign="top" class="main">
+            <script language="JavaScript">
+                document.write (strDefault);
+            </script>
+            </td></tr>
+        </table>
+
+        <img src="/images/ICAR/3_3.gif" width="205" height="25" alt="" border="0"></td>
+
+    <td width="210" valign="top" align="left">
+<form name="frmLogin" method="post" action="/mycarumba/login/default.asp" onSubmit="return Validate();" >
+        <table width="204" height="122" border="0" cellpadding="0" cellspacing="0" valign="top" align="left">
+	    <tr>
+                <td rowspan="3" width="96" height="122" valign="top" align="left"><img src="/images/ICAR/4_1.gif" width="96" height="142" border="0"></td>
+                <td colspan="2" valign="top" height="85" width="108" class="login" align="left">
+                    Login:<br>
+                    <input type="text" name="strLogin" value="" maxlength="64" size="12"><br>
+                    Password:<br>
+                    <input type="password" name="strPassword" maxlength="8" size="12"></td>
+            </tr>
+            <tr>
+                <td height="37" width="70" valign="top" align="left"><img src="/images/ICAR/4_2.gif" width="70" height="37" border="0"></td>
+                <td width="38" valign="top" align="left"><INPUT Type="image" src="/images/ICAR/4_3.gif" width="38" height="37" border="0" alt="Sign In"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="login" align="left" valign="top"><img src="/images/ICAR/t.gif" height="20" align="left" width="1"><a href="/procarumbaguest/default.asp" onMouseover="document.autopro.src='/images/ICAR/auto_pro_sign_in_on.gif'" onMouseout="document.autopro.src='/images/ICAR/auto_pro_sign_in.gif'"><img border="0" src="/images/ICAR/auto_pro_sign_in.gif" name="autopro"></a></td>
+            </tr>
+            
+            <tr>
+                <td align="left" valign="top" colspan="2">
+                <a href="/icarumba/marketing/personalized.asp"><img src="/images/ICAR/4_4.gif" ALT="Fully Personalized" ID="opt4" onmouseover="showDesc(null,true)" onmouseout="showDesc(null,false)"  width="124" height="139" border="0"></a></td>
+            </tr>            
+            <tr>
+                <td width="64" height="80" valign="top" align="left"><img src="/images/ICAR/4_5.gif" width="64" height="80" border="0"></td>
+                <td width="151" valign="top" class="mainwhite" align="left">
+                    <i><a ID="opt4" onmouseover="showDesc(null,true)" onmouseout="showDesc(null,false)" style="text-decoration:none" href="/icarumba/marketing/personalized.asp">...and iCARumba services are completely <b>FREE</b>!</i></a>
+                </td>
+            </tr>
+        </table>
+
+    </td>
+</tr>
+</table>
+
+<table width="775" height="57" border="0" cellpadding="0" cellspacing="0">
+
+    <tr>
+        <td width="534" height="57" valign="top"><img src="/images/ICAR/5_1.gif" width="534" height="57" border="0"></td>
+         
+        <td width="72" valign="top"><a href="#" OnClick="window.open('/icarumba/tour/index.asp','','toolbar=yes,width=790,height=480,status=yes,scrollbars=yes,resize=yes,location=yes,menubar=yes')"><img src="/images/ICAR/5_2.gif" ID="opt12" onmouseover="showDesc(null,true)" onmouseout="showDesc(null,false)" width="72" height="57" alt="Take a Tour" border="0"></a></td>
+
+        <td width="71" valign="top"><a href="/icarumba/marketing/benefits.asp"><img src="/images/ICAR/5_3.gif" width="71" ID="opt13" onmouseover="showDesc(null,true)" onmouseout="showDesc(null,false)" height="57" alt="Tell me More" border="0"></a></td>
+    </tr>
+
+</table>
+
+<!--	' for Meinike ad -->
+
+<table width="775" height="57" border="0" cellpadding="0" cellspacing="0">
+
+    <tr>
+    <br>
+        <td width="100%" valign="middle" align="center">
+        <font face="verdana, arial, geneva" color="#ffffff" size="-2">
+        <b>Welcome to iCARumba</b>, the auto services and car repair site! <a href="/icarumba/schedulejobwizard/default.asp">Find shops</a>, garages and mechanics,
+        <br><a href="/icarumba/whatswrongwizard/default.asp">get expert automotive advice</a>, <a href="/icarumba/greatdeals/default.asp">find great deals</a> on car services, browse automobile maintenance
+        <br>information in our car care <a href="/icarumba/resourcecenter/default.asp">reference library</a>, and more. Take our <a href="#" OnClick="window.open('/icarumba/tour/index.asp','','toolbar=yes,width=790,height=480,status=yes,scrollbars=yes,resize=yes,location=yes,menubar=yes')">site tour</a> for a quick preview.
+        <br><br></td>
+    </tr>
+
+
+    <tr>
+        <td width="100%" valign="middle" align="center">
+        <font face="verdana, arial, geneva" color="#aaaaaa" size="-2">&nbsp;Copyright&nbsp;&copy;1999-2007,&nbsp;iCARumba,&nbsp;Inc.&nbsp;All&nbsp;Rights&nbsp;Reserved.&nbsp;|&nbsp;<a href="/icarumba/about/default.asp">About&nbsp;iCARumba</a>&nbsp;|&nbsp;<a href="/icarumba/terms/icar_terms_default.asp">Terms&nbsp;of&nbsp;Service</a>&nbsp;|&nbsp;<a href="/icarumba/terms/icar_terms_privacypolicy.asp">Privacy&nbsp;Policy</a>&nbsp;|&nbsp;<a href="/icarumba/terms/icar_terms_disclaimer.asp">Disclaimer</a></font>
+        </td>
+    </tr>
+    <!--
+    <tr>
+        <td width="100%" valign="middle" align="center">
+        <font face="verdana, arial, geneva" size="-2" class="bottomLinks">&nbsp;<a href="/icarumba/support/default.asp" class="bottomLinks">Customer Support</a>&nbsp;|&nbsp;<a href="/icarumba/about/default.asp" class="bottomLinks">About iCARumba</a>&nbsp;|&nbsp;<a href="/icarumba/jobs/default.asp" class="bottomLinks">Jobs@iCARumba</a>&nbsp;|&nbsp;<a href="/icarumba/contact/default.asp" class="bottomLinks">Contact Us</a>&nbsp;|&nbsp;<a href="/icarumba/sitemap/default.asp" class="bottomLinks">Site Map</a>&nbsp;|&nbsp;<a href="/procarumbaguest/default.asp" class="bottomLinks">proCARumba</a>&nbsp;</font>
+        </td>
+    </tr>
+    -->
+</table>
+</form>
+
+
+
+<!--Put the doorway pages links below so that spiders can pick them up-->
+ 
+<a href="/info/air-conditioning.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/battery.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/brake.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/care.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/change-oil-tune-up.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/maintenance.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/mechanics.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/repair-advice.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>
+<a href="/info/auto-car-air-conditioning.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/auto-car-battery.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/auto-car-mechanics.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/auto-maintenance.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/auto-repair-advice.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/brakes.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/car-care.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/car-maintenance.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/car-repair-advice.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/oil-change.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/preventative-maintenance.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/preventive-maintenance.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/shocks-struts.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/tires.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/transmission-repair.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/tune-up.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/wheel-alignment.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/info/wheels.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>	
+<a href="/icarumba/default.asp"><img src="/images/icar/doorway/space.gif" border="0"></a>
+<a href="/info/auto-service.htm"><img src="/images/icar/doorway/space.gif" border="0"></a>
+</body>
+</html>
+
+
+

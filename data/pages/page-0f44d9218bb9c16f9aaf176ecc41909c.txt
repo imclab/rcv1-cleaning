@@ -1,0 +1,781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- DEFINITIONS: The conditional statements are for IE -->
+
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<!--[if gte IE 9]><!--><html itemscope itemtype="http://schema.org/Article" xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]-->
+
+<!-- --------------------------------------------- START HEAD TAG: All stylesheets, js, metadata, etc. -->
+<head>
+
+<!-- WEB FONTS: Allows use of the Rokkitt and Nixie font styles -->
+<link href='http://fonts.googleapis.com/css?family=Nixie+One|Rokkitt:400,700' rel='stylesheet' type='text/css'>
+
+<!-- HEADER SCRIPT: Styles and metadata -->
+<!-- STYLESHEETS -->
+
+<link href="http://youth.ag.org/global/styles.css" rel="stylesheet" type="text/css" />
+<link href="http://finearts.ag.org/styles.css" rel="stylesheet" type="text/css" />
+
+<!-- ICONS -->
+
+<link rel="shortcut icon" href="http://youth.ag.org/global/images/favicons/fa.ico" />
+<link rel="apple-touch-icon" href="http://youth.ag.org/global/images/touch-icons/fa.png"/>
+
+<!-- METADATA -->
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<!-- Facebook -->
+
+<meta property="og:title" content="National Youth Ministries - Fine Arts"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="http://youth.ag.org/global/images/logos/fa-fb.png"/>
+<meta property="og:url" content="http://www.faf.ag.org/index.cfm?"/>
+<meta property="og:site_name" content="National Youth Ministries - Fine Arts"/>
+
+<!-- Google -->
+
+<meta itemprop="name" content="National Youth Ministries">
+<meta itemprop="description" content="National Youth Ministries - Fine Arts">
+<meta itemprop="image" content="http://youth.ag.org/global/images/logos/fa-color.png">
+
+<!-- PAGE TITLE -->
+<title>Fine Arts | Orlando13 Home</title>
+
+<!-- SCRIPTS -->
+
+<!-- HTML5 structural elements in IE -->
+<!--[if lt IE 9]> <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+<script src="http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js" type="text/javascript"></script>
+
+<!-- --------------------------------------------- BODY SCRIPTS -->
+
+<!-- Site Scripts -->
+
+
+<link rel="stylesheet" href="http://youth.ag.org/global/scripts/accordian/accordian.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/javascript" src="http://youth.ag.org/global/scripts/flexslider.js"></script>
+<script type="text/javascript" src="http://youth.ag.org/global/scripts/hover.js"></script>
+<script type="text/javascript" src="http://youth.ag.org/global/scripts/scrollto.js"></script>
+<script type="text/javascript" src="http://youth.ag.org/global/scripts/tooltip.js"></script>
+<script type="text/javascript" src="http://youth.ag.org/global/scripts/fitvids.js"></script>
+
+<!-- Animations and Actions -->
+
+<script>
+$(document).ready(function() {
+	
+	$(".menu-btn").hoverIntent(
+	   function () {
+		   $(this).children("span.open-menu").animate({opacity: 1.0}, 200);},
+	   function () {
+		   $(this).children("span.open-menu").animate({opacity: 0.5}, 200);}
+	);
+	
+	$(".menu-btn").toggle(
+	   function () {
+		   $("span.close-menu").animate({marginLeft: "0em", opacity: 1.0}, 200);
+		   $("nav.header-nav").slideDown(300);},
+	   function () {
+		   $("span.close-menu").animate({marginLeft: "-0.2em", opacity: 0}, 200);
+		   $("nav.header-nav").slideUp(300);}
+	);
+	
+	$("a.contact-btn").toggle(
+	    function () {
+		   $("article.contact").slideDown(300);
+		   $.scrollTo( $("article.contact"), 400 );},
+	   function () {
+		   $("article.contact").slideToggle(300);
+		   return false;}
+	);
+	
+	$("a.network-btn").click(function () {
+		$.scrollTo( $("div.main-twitter"), 400 );
+		return false;}
+	);
+	
+	$(".poptip").tipTip({maxWidth: "200px", defaultPosition: "top"});
+	
+});
+</script>
+   <!-- JQUERY ACCORDION --> 
+  <script>
+    $(function() {
+
+        var icons = {
+            header: "ui-icon-circle-arrow-e",
+            activeHeader: "ui-icon-circle-arrow-s"
+        };
+        $( "#accordionl" ).accordion({
+		 collapsible: true,
+		 heightStyle: "content",
+            icons: icons
+        });
+        $( "#toggle" ).button().click(function() {
+            if ( $( "#accordionl" ).accordion( "option", "icons" ) ) {
+                $( "#accordionl" ).accordion( "option", "icons", null );
+            } else {
+                $( "#accordionl" ).accordion( "option", "icons", icons );
+            }
+        });
+    });
+    </script>
+    
+      <script>
+    $(function() {
+
+        var icons = {
+            header: "ui-icon-circle-arrow-e",
+            activeHeader: "ui-icon-circle-arrow-s"
+        };
+        $( "#accordionr" ).accordion({
+		 collapsible: true,
+		 heightStyle: "content",
+            icons: icons
+        });
+        $( "#toggle" ).button().click(function() {
+            if ( $( "#accordionr" ).accordion( "option", "icons" ) ) {
+                $( "#accordionr" ).accordion( "option", "icons", null );
+            } else {
+                $( "#accordionr" ).accordion( "option", "icons", icons );
+            }
+        });
+    });
+    </script>
+    
+    
+
+
+<script src="scripts/jquery.fancyCountdown.js" type="text/javascript"></script>
+<script src="scripts/cufon-yui.js" type="text/javascript"></script>
+<script src="scripts/Harabara_700.font.js" type="text/javascript"></script>
+
+<!-- Animations and Actions -->
+
+<script>
+$(document).ready(function() {
+	
+	$('.flexslider').flexslider({
+		animation: "slide",
+		slideshow: true,
+		slideshowSpeed: 7000,
+		animationDuration: 600,
+		directionNav: false,
+		controlNav: true,
+		touchSwipe: true,
+		prevText: "&laquo;",
+		nextText: "&raquo;",
+		animationLoop: true
+    });
+	
+	//init plugin
+	$('#fancyCountdown').fancyCountdown({
+		year:2012,
+		month:8,
+		day:6,
+		hour:8,
+		minute:59,
+		second:59,
+		timezone:-6,
+		captions:false,
+		fillColor:'#9b2a1b',
+		digitUnitWidth:25,
+		digitUnitHeight:30,
+		colonUnitWidth:15,
+		topDigitOffset:1,
+		bottomDigitOffset:1,
+		dayDigitsAmount:2,
+		callback:targetReached
+	});
+	
+	function targetReached() {
+		$('#fancyCountdown').fancyCountdown({
+	    digits:{days:false,hours:false,minutes:false,seconds:false}
+		});
+	};
+	
+});
+</script>
+
+</head>
+<!-- --------------------------------------------- END HEAD TAG -->
+
+<!-- --------------------------------------------- START BODY TAG -->
+<body>
+
+<!-- --------------------------------------------- START MAIN HEADER TAG -->
+<header class="main-header">
+
+    <div class="main-menu">
+  <div class="main-connect"> 
+ <a href="#" class="contact-btn poptip" title="CONTACT">
+    <img src="http://youth.ag.org/global/images/icons/comment-dark.png" /></a>
+    &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+     <a href="#" class="network-btn poptip" title="NETWORK">
+  <img src="http://youth.ag.org/global/images/icons/network-dark.png" /></a>
+  &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+
+    <a href="http://gospelpublishing.com/store/startcat.cfm?cat=sAGYOUTHMN&mastercat=&path=sAGYOUTHMN" class="poptip" title="STORE">
+    <img src="http://youth.ag.org/global/images/icons/store-dark.png" /></a>
+    &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+    <a href="http://youth.ag.org/nym/search.cfm" class="poptip" title="SEARCH">
+    <img src="http://youth.ag.org/global/images/icons/search-dark.png" /></a></div>
+  <div class="menu-btn">
+  <img src="http://youth.ag.org/global/images/menu-logo.png" /> 
+  <span class="open-menu">menu <span class="close-menu">&#215;</span></span></div>
+</div>
+
+    
+    <nav class="main-navigation header-nav">
+    <ul>
+   <li><a href="http://youth.ag.org">nym</a>
+       <ul>
+         <li><a href="http://youth.ag.org/nym/about.cfm">about</a></li>
+         <li><a href="http://youth.ag.org/nym/staff">staff</a></li>
+         <!--<li><a href="#">advertise</a></li>-->
+         <li><a href="http://youth.ag.org/events">events</a></li>
+         <li><a href="http://youth.ag.org/nym/openings">openings</a></li>
+      </ul>
+   </li>
+   
+   <li><a href="http://youthalive.ag.org">win</a>
+      <ul>
+         <li><a href="http://youthalive.ag.org/pzp">prayer zone</a></li>
+         <li><a href="http://youthalive.ag.org/campusmissionary">campus missions</a></li>
+         <li><a href="http://youthalive.ag.org/campusclubs">campus clubs</a></li>
+         <li><a href="http://youthalive.ag.org/seven">seven project</a></li>
+         <li><a href="http://youthalive.ag.org/1month">one month</a></li>
+      </ul>
+   </li>
+   
+   <li><a href="http://youth.ag.org/discipleship">build</a>
+      <ul>
+         <li><a href="http://youth.ag.org/fire">fire</a></li>
+         <li><a href="http://biblequiz.ag.org/">bible quiz</a></li>
+         <li><a href="http://faf.ag.org/">fine arts</a></li>
+         <li><a href="http://oncourse.ag.org/">oncourse</a></li>
+      </ul>
+   </li>
+   
+   <li><a href="#">send</a>
+      <ul>
+         <li><a href="http://stl.ag.org/">speed the light</a></li>
+         <li><a href="http://aim.ag.org/">aim</a></li>
+         <li><a href="http://stl.ag.org/team">team stl</a></li>
+         <!--<li><a href="http://stl.ag.org/stl-day">stl day</a></li>-->
+      </ul>
+   </li>
+   
+   <li><a href="#">lead</a>
+      <ul>
+         <li><a href="http://momentum.ag.org/">momentum</a></li>
+         <li><a href="http://thefiftytwo.com/">the 52</a></li>
+         <!--<li><a href="#">dreaming 2015</a></li>-->
+         <li><a href="http://youth.ag.org/lead/district">district leaders</a></li>
+      </ul>
+   </li>
+   
+   <li><a href="#">equip</a>
+      <ul>
+         <!--<li><a href="#">resource map</a></li>-->
+         <li><a href="http://youth.ag.org/resources">resources</a></li>
+         <!--<li><a href="#">digisources</a></li>-->
+         <li><a href="http://youth.ag.org/media">media</a></li>
+      </ul>
+   </li>
+
+</ul>
+    </nav>
+
+</header>
+<!-- --------------------------------------------- END MAIN HEADER TAG -->
+
+<!-- --------------------------------------------- START CONTACT TAG -->
+<article class="contact">
+
+   <section class="wrapper">
+   <h2>Quick Directory</h2>
+   
+      <ul class="quick-connect">
+      
+         <li>
+         
+            <h3>NYM</h3>
+            <p>
+            <a href="#" onclick="return false;" class="small-btn"><img src="http://youth.ag.org/global/images/icons/phone-light.png" /></a> 417.862.2781 X4030<br />
+            <a href="mailto:youth@ag.org" class="small-btn"><img src="http://youth.ag.org/global/images/icons/email-light.png" /> youth@ag.org</a>
+            </p>
+            <br />
+            <h3>WIN</h3>
+            <p>
+            <a href="#" onclick="return false;" class="small-btn"><img src="http://youth.ag.org/global/images/icons/phone-light.png" /></a> 417.862.2781 X4084<br />
+            <a href="mailto:ya@ag.org" class="small-btn"><img src="http://youth.ag.org/global/images/icons/email-light.png" /> ya@ag.org</a>
+            </p>
+         
+         </li>
+         
+         <li>
+         
+            <h3>BUILD</h3>
+            <p>
+            <a href="#" onclick="return false;" class="small-btn"><img src="http://youth.ag.org/global/images/icons/phone-light.png" /></a> 417.862.2781 X4041<br />
+            <a href="mailto:faf@ag.org" class="small-btn"><img src="http://youth.ag.org/global/images/icons/email-light.png" /> faf@ag.org</a>
+            </p>
+            <br />
+            <h3>SEND</h3>
+            <p>
+            <a href="#" onclick="return false;" class="small-btn"><img src="http://youth.ag.org/global/images/icons/phone-light.png" /></a> 417.862.2781 X4039<br />
+            <a href="mailto:stl@ag.org" class="small-btn"><img src="http://youth.ag.org/global/images/icons/email-light.png" /> stl@ag.org</a>
+            </p>
+         
+         </li>
+      
+      </ul>
+   
+   </section>
+   
+   <section class="wrapper contact-form">
+      
+   </section>
+   <br clear="all" />
+</article>
+<!-- --------------------------------------------- END CONTACT TAG -->
+
+<!-- --------------------------------------------- START SITE HEADER TAG -->
+<header class="site-header">
+   <div class="wrapper">
+   
+      <img src="http://youth.ag.org/global/images/logos/fa-color.png" />
+      <h2><a href="http://youth.ag.org">national youth ministries</a>: <a href="http://youth.ag.org/discipleship">build</a></h2>
+      
+      <h1>FINE ARTS</h1>
+       
+       <div class="site-connect">
+       <a href="http://www.facebook.com/AGFineArts" title="FINE ARTS FACEBOOK" target="_blank" class="poptip"><img src="http://youth.ag.org/global/images/icons/facebook-dark.png" /></a>
+       <a href="http://twitter.com/#!/AG_FAF" class="poptip" title="FINE ARTS TWITTER" target="_blank"><img src="http://youth.ag.org/global/images/icons/twitter-dark.png" /></a>
+       <a href="http://rss.ag.org/feeds/4039.xml" class="poptip" title="SUBSCRIBE TO REG" target="_blank"><img src="http://youth.ag.org/global/images/icons/rss-dark.png" /></a>
+      </div>
+       
+      <nav class="site-navigation">
+         <ul>
+           <li><a href="http://finearts.ag.org/">home</a></li>
+           <li><a href="http://finearts.ag.org/rules.cfm">rules &amp; criteria</a></li>
+           <li><a href="http://finearts.ag.org/registration.cfm">registration</a></li>
+           <li><a href="http://finearts.ag.org/kappatau">kappa tau</a></li>
+           <li><a href="http://finearts.ag.org/resources.cfm">resources</a></li>
+           <li><a href="http://finearts.ag.org/leaders.cfm">leaders</a></li>
+           <li><a href="http://finearts.ag.org/past-festivals">past festivals</a></li>
+           
+           <li><a href="http://finearts.ag.org/contests.cfm">contests</a></li>
+           <li><a href="http://finearts.ag.org/deploy.cfm">deploy</a></li>
+         </ul>
+      </nav>
+      
+   </div>
+</header>
+<!-- --------------------------------------------- END SITE HEADER TAG -->
+
+<!-- --------------------------------------------- START SITE SPLASH TAG -->
+<article class="splash">
+
+   <section class="wrapper">
+     
+     <div class="flex-container">
+  <div class="flexslider">
+    <ul class="slides">
+      <li> <a href="http://faf.ag.org/registration.cfm" target="_blank"><img src="http://youth.ag.org/events/images/slides/orlando.jpg" border="0" /></a>
+        <p class="flex-caption"> <strong>Fine Arts 2013: Orlando</strong><br />
+          This year, our theme is FINISH/ED.  Join us in Orlando, August 5-9, for National Youth Convention featuring the National Fine Arts Festival and AIM Outreach.  We cannot wait to see you there! </p>
+      </li>
+      <li> <img src="http://faf.ag.org/images/slides/rulebook.jpg" />
+        <p class="flex-caption"> <strong>Got Questions?</strong><br />
+          The FAF Rulebook has answers! Be sure and read the <a class="small-btn btn" href="http://finearts.ag.org/rules.cfm?targetBay=a1dd8ed0-3d61-4d40-9371-6574402aaecf&ModID=2&Process=DisplayArticle&RSS_RSSContentID=20394&RSS_OriginatingChannelID=1196&RSS_OriginatingRSSFeedID=4038&RSS_Source=">rulebook</a> before you come to Fine Arts! If you have a question that isn't answered in the rulebook, visit our FAF <a class="small-btn btn" href="http://www.facebook.com/AGFineArts">Facebook page</a> and one of our amazing staff will help you figure it out! </p>
+      </li>
+      
+         
+       <li> <img src="http://stl.ag.org/images/slides/LIMITLESSmainslide.jpg" />
+        <p class="flex-caption"> <strong>New STL Theme: LIMITLESS</strong><br />
+          Check out video and art for the new 2013 STL theme! <a class="small-btn btn" href="http://youth.ag.org/media/stl/?limitless">Watch Now &raquo;</a> </p>
+      </li>
+      
+      
+     
+    </ul>
+  </div>
+</div>
+
+     
+   </section>
+   
+   <section class="wrapper">
+     
+     <ul class="sidebar">
+    <li>
+         <div class="wrapper">
+         <h2>Orlando 2013 Info:</h2>
+         
+         <!--
+         <p>
+         <a class="small-btn btn" href="http://finearts.ag.org/registration.cfm?targetBay=8326cd7d-f3bb-430f-a6c9-a4104b2bba34&amp;ModID=2&amp;Process=DisplayArticle&amp;RSS_RSSContentID=20398&amp;RSS_OriginatingChannelID=1196&amp;RSS_OriginatingRSSFeedID=4039&amp;RSS_Source=">Registration &raquo;</a> 
+         <a class="small-btn btn" href="http://finearts.ag.org/registration.cfm?targetBay=8326cd7d-f3bb-430f-a6c9-a4104b2bba34&amp;ModID=2&amp;Process=DisplayArticle&amp;RSS_RSSContentID=20396&amp;RSS_OriginatingChannelID=1196&amp;RSS_OriginatingRSSFeedID=4039&amp;RSS_Source=">Housing &raquo;</a>
+         
+         <a class="small-btn btn" href="http://finearts.ag.org/registration.cfm?targetBay=8326cd7d-f3bb-430f-a6c9-a4104b2bba34&amp;ModID=2&amp;Process=DisplayArticle&amp;RSS_RSSContentID=20397&amp;RSS_OriginatingChannelID=1196&amp;RSS_OriginatingRSSFeedID=4039&amp;RSS_Source=">FAQS &raquo;</a>
+         
+         </p>
+         <br />
+         <p>
+         COUNTDOWN TO LOUISVILLE
+         
+         <div id="fancyCountdown">
+          </div>
+         </p>
+         --> 
+         
+            <a class="btn lrg-btn" href="http://faf.ag.org/results/">Results &raquo;</a>
+            
+            <a class="btn lrg-btn" href="http://faf.ag.org/downloads/ORLANDO13PROGRAMFINAL.pdf">Program &raquo;</a>
+            
+             <a class="btn lrg-btn" href="http://generalcouncil.ag.org/watch-now/live/">LIVE! &raquo;</a>
+         
+        
+         
+         </div>
+    </li>
+    <li>
+        <div class="wrapper">
+        <h2>Fine Arts Twitter</h2>
+
+		<script type="text/javascript" charset="utf-8">
+              getTwitters('site-twitter', { 
+                  id: 'AG_FAF', 
+                  clearContents: true, 
+                  count: 1, 
+                  withFriends: true,
+                  ignoreReplies: false,
+                  template: '<span class="prefix"><img height="40" width="40" src="%user_profile_image_url%" style="float:left; margin-right:0.5em;" /> <a href="http://twitter.com/%user_screen_name%">%user_name%</a> said: </span> <span class="status">"%text%"</span> <span class="time"><a href="http://twitter.com/%user_screen_name%/statuses/%id_str%">%time%</a></span>'
+              });
+            </script>
+            
+            <div class="tweets" id="site-twitter"><p>Fine Arts Twitter is temporarily unavailable. Follow Fine Arts on Twitter <a href="http://twitter.com/#!/AG_FAF">here</a></p></div>
+        
+        </div>
+    </li>
+</ul>
+     
+   </section>
+   
+<br clear="all" />
+</article>
+<!-- --------------------------------------------- END SITE SPLASH TAG -->
+
+<!-- --------------------------------------------- START SITE CONTENT TAG -->
+<article class="site-content">
+
+    <section class="title">
+       <h1>What is Fine Arts?</h1>
+       
+           <p>
+           Fine Arts Festival is a discipleship tool of national youth ministries designed to "help students discover, develop and deploy their ministry gifts."{ts '2013-08-27 14:29:46'}
+           </p>
+
+    </section>
+
+    <section class="wrapper">
+       
+       <p>
+          Beginning in September each year, over 65,000 junior and senior high school students begin preparing their entries for the District and National Fine Arts Festivals. Students may enter as many as 61 categories offered in 8 main divisions: Art, Communication, Dance, Drama, Exhibition, Instrumental, Vocal, and Writing.</p>
+      <p><strong>Tentative</strong> Future Festival Dates</p>
+       <ul>
+         <li>July 28 - August 1, 2014</li>
+         <li>August 3-7, 2015</li>
+         <li>August 1-5, 2016</li>
+         <li>August 7-11, 2017</li>
+         <li>August 6-10, 2018</li>
+         <li>August 5-9, 2019</li>
+         <li>August 3-7, 2020</li>
+       </ul>
+      <p class="small">&nbsp;</p>
+       <p class="small"><em>*These  dates are tentative. Actual dates will be announced at the prior Festival.</em><br />
+         <em>**Locations  for these dates will be announced at the prior Festival. </em></p>
+       <p>&nbsp; </p>
+          
+          <p><a class="med-btn" href="downloads/FineArtsStrategy.pdf">
+      <img src="http://youth.ag.org/global/images/icons/document-dark.png" /> Fine Arts Strategy</a></p>
+          <p><a class="med-btn" href="downloads/99-ways-to-deploy.pdf">
+          <img src="http://youth.ag.org/global/images/icons/document-dark.png" /> 99 Ways for Students to Deploy Their Gifts</a></p>
+          
+          
+          
+          
+       
+    </section>
+    
+    <section class="wrapper">
+       
+       <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=238658402849328";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like-box" data-href="http://www.facebook.com/AGFineArts" data-width="292" data-show-faces="true" data-stream="true" data-header="true"></div>
+               
+    </section>
+    <br clear="all" />
+</article>
+<!-- --------------------------------------------- END SITE CONTENT TAG -->
+
+<!-- --------------------------------------------- START SITE FOOTER TAG -->
+<footer class="site-footer">
+   <section class="wrapper">
+      <h3>Contact</h3>
+      <p>
+       Fine Arts Offices<br />
+        <a href="#" onclick="return false;" class="small-btn"><img src="http://youth.ag.org/global/images/icons/phone-dark.png" /></a> 417.862.2781 X4458<br />
+        <a href="#" onclick="return false;" class="small-btn"><img src="http://youth.ag.org/global/images/icons/phone-dark.png" /></a> 877-462-8592<br />
+        <a href="#" onclick="return false;" class="small-btn"><img src="http://youth.ag.org/global/images/icons/phone-dark.png" /></a> 417.779.0019 x.6474  <br/>
+       <a href="mailto:faf@ag.org" class="small-btn"><img src="http://youth.ag.org/global/images/icons/email-dark.png" /> faf@ag.org</a>
+       <br />
+       Fax:  855.611.8959
+       <br />
+       Mailing Address: 
+       <br />
+       National Fine Arts Festival
+       <br />
+       1445 N. Boonville Ave
+       <br />
+       Springfield, MO 65802
+
+       </p>
+   </section>
+   
+   <section class="wrapper">
+      <h3>Media</h3>
+      <a class="med-btn" href="http://youth.ag.org/media/finearts"><img src="http://youth.ag.org/global/images/icons/video-dark.png" /> Fine Arts Media</a>
+
+      <!--<h3>Discover</h3>
+      <p>
+      <a class="med-btn btn blocky shady" href="http://youth.ag.org/fire/firestarters"><img src="http://youth.ag.org/global/images/logos/fire-light.png" /> FIRE Starters</a><br />
+      <a class="med-btn btn blocky shady" href="http://thefiftytwo.com"><img src="http://youth.ag.org/global/images/logos/52-light.png" /> the52</a>
+      </p>-->
+   </section>
+   
+   <section class="wrapper">
+      <h3>Store</h3>
+      <a class="med-btn" href="http://gospelpublishing.com/store/startcat.cfm?cat=sAGYOUTHMN&mastercat=&path=sAGYOUTHMN"><img src="http://youth.ag.org/global/images/icons/store-dark.png" /> NYM Store</a>
+   </section>
+   
+   <section class="wrapper">
+      <h3>Share</h3>
+      
+          <!-- Facebook Share -->
+      
+          <div id="fb-root"></div>
+		  <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#appId=148711568555104&xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+          
+          <div class="fb-like" data-send="false" data-layout="box_count" data-width="50" data-show-faces="false"></div>
+          
+          <!-- Twitter Button -->
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.faf.ag.org/index.cfm?" data-count="vertical">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+          
+          <!-- Google Plus Button -->
+          <script type="text/javascript">
+			(function() {
+			  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			  po.src = 'https://apis.google.com/js/plusone.js';
+			  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			})();
+		  </script>
+          
+          <g:plusone size="tall" annotation="bubble"></g:plusone>
+          
+   </section>
+   
+   
+   <br clear="all" />
+</footer>
+<!-- --------------------------------------------- END SITE FOOTER TAG -->
+
+<!-- --------------------------------------------- START MAIN FOOTER TAG -->
+<footer class="main-footer">
+   <section class="wrapper">
+   <h2>Site Map</h2>
+   
+    <nav class="main-navigation footer-nav">
+    <ul>
+   <li><a href="http://youth.ag.org">nym</a>
+       <ul>
+         <li><a href="http://youth.ag.org/nym/about.cfm">about</a></li>
+         <li><a href="http://youth.ag.org/nym/staff">staff</a></li>
+         <!--<li><a href="#">advertise</a></li>-->
+         <li><a href="http://youth.ag.org/events">events</a></li>
+         <li><a href="http://youth.ag.org/nym/openings">openings</a></li>
+      </ul>
+   </li>
+   
+   <li><a href="http://youthalive.ag.org">win</a>
+      <ul>
+         <li><a href="http://youthalive.ag.org/pzp">prayer zone</a></li>
+         <li><a href="http://youthalive.ag.org/campusmissionary">campus missions</a></li>
+         <li><a href="http://youthalive.ag.org/campusclubs">campus clubs</a></li>
+         <li><a href="http://youthalive.ag.org/seven">seven project</a></li>
+         <li><a href="http://youthalive.ag.org/1month">one month</a></li>
+      </ul>
+   </li>
+   
+   <li><a href="http://youth.ag.org/discipleship">build</a>
+      <ul>
+         <li><a href="http://youth.ag.org/fire">fire</a></li>
+         <li><a href="http://biblequiz.ag.org/">bible quiz</a></li>
+         <li><a href="http://faf.ag.org/">fine arts</a></li>
+         <li><a href="http://oncourse.ag.org/">oncourse</a></li>
+      </ul>
+   </li>
+   
+   <li><a href="#">send</a>
+      <ul>
+         <li><a href="http://stl.ag.org/">speed the light</a></li>
+         <li><a href="http://aim.ag.org/">aim</a></li>
+         <li><a href="http://stl.ag.org/team">team stl</a></li>
+         <!--<li><a href="http://stl.ag.org/stl-day">stl day</a></li>-->
+      </ul>
+   </li>
+   
+   <li><a href="#">lead</a>
+      <ul>
+         <li><a href="http://momentum.ag.org/">momentum</a></li>
+         <li><a href="http://thefiftytwo.com/">the 52</a></li>
+         <!--<li><a href="#">dreaming 2015</a></li>-->
+         <li><a href="http://youth.ag.org/lead/district">district leaders</a></li>
+      </ul>
+   </li>
+   
+   <li><a href="#">equip</a>
+      <ul>
+         <!--<li><a href="#">resource map</a></li>-->
+         <li><a href="http://youth.ag.org/resources">resources</a></li>
+         <!--<li><a href="#">digisources</a></li>-->
+         <li><a href="http://youth.ag.org/media">media</a></li>
+      </ul>
+   </li>
+
+</ul>
+    </nav>
+   
+   </section>
+   
+   <section class="wrapper">
+   
+   <h2>Latest Tweets:</h2>
+   
+      <div class="wrapper full-width main-twitter">
+      
+		<script type="text/javascript" charset="utf-8">
+          getTwitters('nym-twitter', { 
+              id: 'AG_Youth', 
+              clearContents: true, 
+              count: 1, 
+              withFriends: true,
+              ignoreReplies: false,
+              template: '<span class="prefix"><img height="40" width="40" src="%user_profile_image_url%" style="float:left; margin:0em 0.5em 0em 0.5em;" /> <a href="http://twitter.com/%user_screen_name%">%user_name%</a> said: </span> <span class="status">"%text%"</span> <span class="time"><a href="http://twitter.com/%user_screen_name%/statuses/%id_str%">%time%</a></span>'
+          });
+        </script>
+        
+        <div class="tweets" id="nym-twitter"><p>The NYM Twitter is temporarily unavailable.</p></div>
+        
+      </div>
+      
+      <div class="wrapper full-width footer-links">
+     <h2>Connect</h2>
+     <a href="http://www.facebook.com/pages/AG-National-Youth-Ministries/291502234200725" class="med-btn btn"><img src="http://youth.ag.org/global/images/icons/facebook-light.png" /></a>
+     <a href="http://twitter.com/#!/AG_Youth" class="med-btn btn"><img src="http://youth.ag.org/global/images/icons/twitter-light.png" /></a>
+     <a href="http://www.youtube.com/user/AGNationalYouth/feed" class="med-btn btn"><img src="http://youth.ag.org/global/images/icons/video-light.png" /></a>
+     </div>
+   
+      <div class="wrapper half-width">
+      <small>
+      Assemblies of God<br />
+      National Youth Ministries<br />
+      1445 N. Boonville Ave.<br />
+      Springfield, MO 65802
+      </small>
+      </div>
+      
+      <div class="wrapper half-width">
+      <a href="#" onclick="return false;" class="small-btn"><img src="http://youth.ag.org/global/images/icons/phone-light.png" /></a> 417.862.2781<br />
+      <a href="#" onclick="return false;" class="small-btn"><img src="http://youth.ag.org/global/images/icons/document-light.png" /></a> 417.862.1693<br />
+      <a href="#" onclick="return false;" class="small-btn"><img src="http://youth.ag.org/global/images/icons/email-light.png" /></a> <a href="mailto:youth@ag.org">youth@ag.org</a>
+     </div>
+     
+</section>
+   
+<br clear="all" />
+</footer>
+
+<footer class="copyright">
+   <section class="wrapper">
+   &copy;2013, The General Council of the Assemblies of God. | All Rights Reserved
+   </section>
+</footer> <a name="top"></a><script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td bgcolor="black" align="left"><a href="mailto:johnbeacon@ag.org"><img src="http://ag.org/agbar/images/dot_clear.gif" width="1" height="1" border="0"></a><a href="http://ag.org/" target="_top"><img height="21" width="163" src="http://ag.org/agbar/images/ag_header_agusa.gif" border="0" alt="Assemblies of God USA"></a></td>
+    <td align="center" bgcolor="black">
+
+<!-- Begin THANKSGIVING Closure Notice -->
+
+<!-- End THANKSGIVING Closure Notice -->
+
+<!-- Begin CHRISTMAS Closure Notice -->
+
+<!-- End CHRISTMAS Closure Notice -->
+
+
+<!-- Begin MAINTENANCE CLOSURE Notice -->
+
+<!-- End MAINTENANCE CLOSURE Notice -->
+
+<!-- Begin DONATE HAITI Notice -->
+
+<!-- End DONATE HAITI Notice -->
+ 
+<!-- Begin AGPASSPORT Offline Notice -->
+
+<!-- End AGPASSPORT Offline Notice -->
+ </td>
+    <td bgcolor="black" align="right">
+	
+      <a href="http://ag.org/top/search.cfm" target="_top"><img src="http://ag.org/agbar/images/ag_header_search.gif" width="44" height="21" alt="Search" border="0"></a><img src="http://ag.org/agbar/images/ag_header_divider.gif" width="8" height="21" border="0"><a href="http://ag.org/top/help/" target="_top"><img src="http://ag.org/agbar/images/ag_header_siteguide.gif" width="62" height="21" border="0" alt="Site Guide"></a><img src="http://ag.org/agbar/images/ag_header_divider.gif" width="8" height="21" border="0"><a href="http://gospelpublishing.com/"><img src="http://ag.org/agbar/images/ag_header_store.gif" alt="Store" width="34" height="21" border="0"></a><img src="http://ag.org/agbar/images/ag_header_divider.gif" width="8" height="21" border="0"><a href="http://ag.org/top/contact.cfm" target="_top"><img src="http://ag.org/agbar/images/ag_header_contactus.gif" width="68" height="21" border="0" alt="Contact Us"></a>    </td>
+  </tr>
+</table>
+
+
+
+<!-- --------------------------------------------- END MAIN FOOTER TAG -->
+
+
+
+</body>
+<!-- --------------------------------------------- END BODY TAG -->
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<title>Home | Used Auto Parts | HollanderParts</title>
+        <script type="text/javascript">
+            //global variables used throughout site in external javascript files defined here
+            var isYardAdmin = "False";
+            var userLoginName = "";
+            var UserName = "";
+        </script>
+
+        
+        
+        <meta name="description" content=" Shop from over 157 million high quality used auto parts, car parts, truck parts, engines, transmissions, etc., from high quality salvage yards."/>
+        <meta name="keywords" content=" Used Auto Parts, Used Car Parts, Used Truck Parts, Auto Parts, Car Parts, Truck Parts, Auto Body Parts, Engine, Transmission, Wheel, Rim, Lights, Bumper"/>
+        <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jquery.migrate/jquery-migrate-1.1.0.min.js " type="text/javascript"></script-->
+        <script type="text/javascript" src="/Scripts/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="/Scripts/jquery-migrate-1.1.1.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js" type="text/javascript"></script>
+
+        <script src="/Scripts/common.js" type="text/javascript"></script>
+        <script src="/Scripts/search.banner.js" type="text/javascript"></script>
+        <script src="//ajax.microsoft.com/ajax/jquery.validate/1.8/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.js" type="text/javascript"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+        <script src="/Scripts/GetCartStats.js" type="text/javascript"></script>
+        
+        
+
+        <link href="/Hollander/NavBar.css" rel="stylesheet" type="text/css" />
+        <link href="/Content/css/search.banner.css" rel="stylesheet" type="text/css" />
+        <link href="/Content/css/search.accordion.css" rel="stylesheet" type="text/css" />
+        <link href="/Content/css/loading-overlay.css" rel="stylesheet" type="text/css" />
+        <link href="/Hollander/NavBar.css" rel="stylesheet" type="text/css" />
+        <link href="/Hollander/HollanderParts.css" rel="stylesheet" type="text/css" />
+        <link href="/Hollander/HollanderPartsTables.css" rel="stylesheet" type="text/css" />
+	    <link href="/Hollander/style.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="/content/CSS/jquery-ui-1.8.18.custom.css" rel="stylesheet" type="text/css" />
+	    <!--[if IE]><link rel="stylesheet" href="/Hollander/ie.css" type="text/css" media="screen" title="no title" charset="utf-8" /><![endif]-->
+	    <!--[if IE 8]><link rel="stylesheet" href="/Hollander/ie8.css" type="text/css" media="screen" title="no title" charset="utf-8" /><![endif]-->
+	    <!--[if IE 9]><link rel="stylesheet" href="/Hollander/ie9.css" type="text/css" media="screen" title="no title" charset="utf-8" /><![endif]-->
+        
+
+
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-33623294-1']);
+            //Begin Tracking the year, make and model 4/15/13 ejk
+            _gaq.push(['_setDomainName', 'none']);
+            //End Tracking the year, make and model 4/15/13 ejk
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+            //Begin Tracking the year, make and model 4/15/13 ejk
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                    })(window, document, 'script', '//www.google-analytics.com/analytics.js', '_gaTracker');
+
+                    _gaTracker('create', 'UA-33623294-2', 'hollanderparts.com');
+                    _gaTracker('send', 'pageview');
+                    //End Tracking the year, make and model 4/15/13 ejk
+            </script>
+            
+    </head>
+
+    <body class="home">
+        <div id="container">
+            <!-- Begin Header Area -->
+                
+
+
+
+
+<script type="text/javascript">
+    $(document.getElementsByTagName('div')[0]).ready(function () {
+        updateRegisteredLocationCookie("");
+        
+        setCookieForHeader('xx');
+        loadSignInOut('xx');
+    });
+</script>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        var year = urlParams['year'];
+        var make = urlParams['make'];
+        var model = urlParams['model'];
+        var vin = urlParams['vin'];
+        $('.clickAndWait').bind('click', function () {
+            ShowWaiting();
+        });
+        PartsMenu.Initialize($('#banner-linksInMenu'), $('.searchButton'), $('#selectInMenu'), false);
+        PartsMenuIndexPage.Initialize($('#banner-links'), "", $('#select'), false);
+    });
+
+
+
+
+    function accordion2(id) {
+        $('ul#menu').hide();
+        localStorage['parttypedesc'] = $('#' + id + ' a:first').text();
+       // alert(localStorage['parttypedesc']);
+        getApplications('', '', id, '');
+       // document.getElementById("menu").style.visibility = 'visible';
+        //Begin Tracking the Accordian selection 5/08/13 ejk
+        _gaq.push(['_setCustomVar', 3, 'Application', id, 3]);
+        //End Tracking the Accordian selection 5/08/13 ejk
+    }
+
+    function getApplications(year, model, parttype, salvageYardId) {
+        //alert(localStorage['category']);
+        var ctl = document.getElementById(parttype);
+        var value = ctl.innerHTML;
+        if (value.indexOf('<ul>') == -1) {
+            var lastFive = parttype.substr(parttype.length - 3);
+
+            var url = "/Home/GetApplicationsMenu?year=" + '' + "&make=" + '' + "&model=" + '' + "&parttype=" + lastFive + "&posx=172&posy=100&salvageYardId=" + '' + "&parttypeName=" + localStorage['parttypedesc'] + "&category=" + localStorage['category'] + "&vendor=" + '';
+            $.ajax({
+                url: url,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#' + parttype).html(value + result);
+                    AttachWaitingEvent();
+                }
+            });
+        }
+    }
+</script>
+
+
+<input type="hidden" id="hdnVendorDetails" value="" />
+<input type="hidden" id="hdnVehicleDetails" value="" />
+<input type="hidden" id="hdnLocation" value="" />
+<div class="mainHeader">
+    <div class="headerTop">
+        <div class="logo">
+            <a href="/Home" title="Go Back to Hollander Parts home page">
+                <img src="/Hollander/images/HPLogo_whiteorng.gif" alt="Hollander Parts dot com logo" width="389" height="43"/>
+            </a>
+</div>
+        <div class="logoutLogin">
+                    <a href="https://www.Hollanderparts.com/Account/Login" class="signIn">Sign in</a>
+	    </div>
+        <div class="Cartcontainer">
+            <div class="cartSummaryContainer">
+<div class="centerCartSummary">
+    <div class="itemCountHolder"><span id="Cart_Items_Count">0</span> <span id="itemText">items</span></div>
+    <div class="subTotalHolder">Total: <span id="Cart_Items_Subtotal">$0.00</span></div>
+</div>                <div class="rightCartSummary">
+                    <a href="https://www.Hollanderparts.com/Cart" title="Go to the Hollander Parts Shopping Cart">
+                        <img alt="Go to the Hollander Parts Shopping Cart" src="/Hollander/images/Buttons/cart.png" />
+                    </a>
+	        </div>
+	        </div>
+	        </div>
+        </div>
+    <div class="headerBottom">
+        
+        <!--added a check for channel type and yardid since we were showing the work center for all registered users and it should just be yard admins PDC 5/30/2103  Bug Number 8544-->
+            <div class="nonAdminButtons">
+                    <span class="navButtonHolder"><a id="homeButton" class="navButton inactive" href="/home" title="Go to the Hollander Parts home page">&nbsp;</a></span>
+                    <span class="navButtonHolder"><a id="searchButton" class="navButton inactive searchButton"  href="javascript:void(0);" title="Search for used auto parts">&nbsp;</a></span>
+                    <span class="navButtonHolder"><a id="sellerButton" class="navButton inactive" href="/SellerDirectory" title="Search for a used auto parts seller">&nbsp;</a></span>
+            </div>
+</div>
+
+    <div class="LineBuffer">
+          &nbsp;
+        </div>
+
+    <div class="LineBar">
+      &nbsp;
+    </div>
+
+</div>
+    <div class="loginRow">
+        <div id="centeredmenu">
+            <ul onmouseover="ChangeColorOnMouseOver()" onmouseout="ChangeColorOnMouseOut()">
+                
+                        <li id="AccountBannerSignInOut" style="width: 500px; font-weight: bold; top: .7em; left: .6em;">Welcome, <a href="https://www.Hollanderparts.com/Account/Login" style="cursor: hand; cursor: pointer; background-color: transparent; border: none; font-weight: bold; color: #C25E00; z-index: 0;">Sign in</a>
+                        or <a href="https://www.Hollanderparts.com/Account/Register" style="cursor: hand; cursor: pointer; background-color: transparent; border: none; font-weight: bold; color: #C25E00; z-index: 0;">Register</a>
+                        </li>
+                
+                <li id="AccountBannerNonAdmin" style="width: 180px;display:none;"><a href="#">
+                    <label style="font-size: 90%;">Welcome,&nbsp;<label id="NameLabel" style="color: #C25E00;"></label></label><br />
+                    Manage Account&nbsp;&#9660;</a>
+                     <ul>
+                            <li class="AccountLineItem"><a href="/Account/Register">Account Details</a></li>
+                        <li class="AccountLineItem"><a href="/customer/orders">My Orders</a></li>
+                            <li class="AccountLineItem"><a href="https://www.hollanderparts.com/Account/ChangePassword">Change Password</a></li>
+                        <li><a href="#" onclick="javascript:SignOut();">Sign Out</a></li>
+                     </ul>
+                  </li>
+               </ul>
+        </div>
+
+
+        <div id="hovemenumaincontainer">
+	        <div class="hovemenucontainer">
+		        <div class="hovemenuheader">
+		          <p>&nbsp;</p>
+		        </div>
+	        </div>
+	        <div class="hovemenucontainer">
+		        <div class="hovemenufooter">
+		          <p>&nbsp;</p>
+		        </div>
+	        </div>
+        </div>
+
+</div>
+
+<div id="banner-linksInMenu"><!-- class="links"-->
+	    <div id="boxesInMenu">
+        <div id="dialogInMenu" class="window" style="display: none;">
+			    <div class="close">
+                <a href="#" onclick="PartsMenu.Close()" class="closeImg"></a>
+			    </div>
+			        <div id="dialog-linksInMenu" class="YrMkMlHeader">Search for Parts</div>
+                    <div id="optionOne">
+                        <div class="optionTitle">
+				            <span id="vendorName"></span>
+				            Option 1: Search by <span class="year2">Year</span>
+				            &nbsp;>&nbsp;<span class="make2">Make</span>
+				            &nbsp;>&nbsp;<span class="model2">Model</span>
+                        </div>
+  			            <div class="step" id="stepInMenu"></div>
+			            <div id="selectInMenu">
+                        </div>
+                    </div>
+            <div id="divVINSearchInMenu" style="margin: 0px; padding: 0px;">
+                        <div class="orTextSearchBox">-OR-</div>
+                        <div id="optionTwo">
+                            <div class="optionTitle">Option 2: Search By VIN</div>
+                            <div class="vinTableHolder">
+                                <div class="vinText">
+                                    <span class="enterVin">Enter VIN:&nbsp;</span>
+                                    <input id="VIN" type="text" onfocus="this.select()" />
+                                </div>
+                                <div class="vinButton">
+                            <a href="javascript:void(0);" onclick="PartsMenu.GetYearMakeModelByVIN()">
+                                <img alt="Search" src="/Hollander/Buttons/Search.png" />
+                                    </a>                        
+                                </div>
+                                <div class="vinMessage" id="lblVinMessageInMenu"></div>
+                            </div>
+                        </div>
+                    </div>
+		    </div>
+	    </div>
+    </div>
+
+            <!-- End Header Area -->
+
+            <!-- Begin Page Body -->
+            <section>
+             
+
+<script type="text/javascript">
+    var i = 0;
+    var timer;
+    var path = new Array();
+    // LIST OF SLIDES
+    path[0] = "/Hollander/images/HomePageBanner_NoScroll.png";
+    path[1] = "/Hollander/images/HomePageBanner_Summit.png";
+    path[2] = "/Hollander/images/WheelWheelCoverBanner5.jpg";
+
+    function swapImage() {
+        document.getElementById("slide").src = path[i];
+
+        //change the onclick event here base on 0 or 1
+        if (i == 1) {
+            $('#bannerAnchor').attr('href', 'http://www.regonline.com/builder/site/Default.aspx?EventID=1201241'); //javascript:newRegWindow() - old function to get there
+            $('#bannerAnchor').attr('target', '_blank');
+            $('#bannerAnchor').removeAttr('onclick');
+        }
+        else if (i == 2) {
+            $('#bannerAnchor').attr('href', 'https://hollanderinterchange.net/catalog/index.php');
+            $('#bannerAnchor').attr('target', '_blank');
+            $('#bannerAnchor').removeAttr('onclick');
+        }
+        else {
+            $('#bannerAnchor').removeAttr('href');
+            $('#bannerAnchor').removeAttr('target');
+            $('#bannerAnchor').css('cursor','pointer').attr('href','javascript:PartsMenu.GetYears()');
+            }
+        if (i < path.length - 1) i++;
+        else i = 0;
+
+        timer = setTimeout("swapImage()", 5000);
+        }
+    function stopShow() {
+        clearTimeout(timer);
+    }
+    function runShow() {
+        swapImage();
+    }
+
+    // Popup window code
+    function newRegWindow() {
+        popupWindow = window.open(
+		'http://www.regonline.com/builder/site/Default.aspx?EventID=1201241', 'popUpWindow', 'height=900,width=1000,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+    }
+    $(document).ready(function () {
+        GetCartStatsPSR();
+        GetCartStatsForHeader();
+        runShow();
+    });
+
+</script>
+<style type="text/css">
+    .Homepagecontainer {
+        width: 100%;
+        display: table;
+    }
+
+    .HomepageHollanderAccountA {
+        width: 740px;
+        background: none;
+        display: table-cell;
+        padding-left: 18px;
+                    }
+
+    .HomepageHollanderAccountB {
+        background: none;
+        display: table-cell;
+        padding-left: 0px;
+        vertical-align: middle;
+            }
+            
+    .Homepageheader {
+        width: 100%;
+        background: none;
+        display: table-cell;
+        padding-left: 18px;
+    } 
+</style>
+
+
+<div id="search-container" style="background-color: transparent;">
+</div>
+<!-- #banner -->
+
+
+<div id="main">
+
+                
+
+    <br />
+                                                                  
+    <div class="Homepagecontainer">
+        <div class="HomepageHollanderAccountA">
+                <a id="bannerAnchor" href="javascript:PartsMenu.GetYears()">
+                    <img id="slide" class="search" onmouseover="stopShow()" onmouseout="runShow()" src="/Hollander/images/HomePageBanner_NoScroll.png" width="720px" height="220px" />
+                </a>
+        </div>
+        <div class="HomepageHollanderAccountB">
+                <a href="https://www.hollanderparts.com/Account/Register")">
+                    <img width="240px;" style="cursor: pointer;" src="../../Hollander/images/BecomeaMember.png" />
+                </a>
+        </div>
+    </div>
+
+    <div class="Homepagecontainer">
+        <div class="Homepageheader">
+            <p>&nbsp;</p>
+        </div>
+    </div>
+
+    <div class="Homepagecontainer">
+        <div class="Homepageheader">
+            <p style="font-size: 16px;padding-bottom:10px">
+                Recycled parts are good for your car, the environment and your wallet.  HollanderParts.com, powered by 
+                <br />
+                EDEN, gives you instant access to millions of high-quality used auto parts from a trusted network of licensed
+                <br />
+                Automotive Recyclers.
+            </p>
+        </div>
+    </div>
+
+
+
+    <div id="banner-links" class="links">
+        <div id="boxes">
+            <div id="dialog" class="window">
+                <div class="close">
+                </div>
+                <div id="dialog-links" class="YrMkMlHeader">Search for Parts</div>
+                <div id="optionOne">
+                    <div class="optionTitle">
+                        <span id="vendorName"></span>
+                        Option 1: Search by <span class="year">Year</span>
+                        &nbsp;>&nbsp;<span class="make">Make</span>
+                        &nbsp;>&nbsp;<span class="model">Model</span>
+                    </div>
+                    <div id="step"></div>
+                    <div id="select">
+                    </div>
+                </div>
+                <div id="divVINSearch" style="margin: 0px; padding: 0px;">
+                    <div class="orTextSearchBox">-OR-</div>
+                    <div id="optionTwo">
+                        <div class="optionTitle">Option 2: Search By VIN</div>
+                        <div class="vinTableHolder">
+                            <div class="vinText">
+                                <span class="enterVin">Enter VIN:&nbsp;</span>
+                                <input id="VIN_Home" type="text" onfocus="this.select()" />
+                            </div>
+                            <div class="vinButton">
+                                <a href="javascript:void(0);" onclick="PartsMenuIndexPage.GetYearMakeModelByVIN()">
+                                    <img alt="Search" src="/Hollander/Buttons/Search.png" />
+                                </a>
+                            </div>
+                            <div class="vinMessage" id="lblVinMessage"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    <script type="text/javascript">
+        $('#boxes .window').css({
+            position: 'relative',
+            top: '10px',
+            left: '10px',
+            display: 'block'
+        });
+    </script>
+    </div>
+<!-- #main -->
+
+            </section>
+            <!-- End Page Body-->
+
+
+            <!-- Begin Footer -->
+            
+<!-- footer for anonymous user role-->
+<div class="footercontainer" id="footercontainerfade">
+    <div class="footerTop">
+        <div class="footerColumn colOne">
+            <span class="columnTitle">Search For Parts</span>
+            <ul>
+               <li><a href="javascript:void(0)" id="searchByYearMakeModel" class="searchButton">By Year, Make & Model</a></li>
+                <li><a href="javascript:void(0);" id="searchByVin" class="searchButton">By VIN</a></li>
+                <li><a href="Home/Directory">By Seller</a></li>
+                <li><a href="used-auto-parts/">All Used Auto Parts</a></li>
+            </ul>
+        </div>
+        <div class="footerColumn colTwo">
+            <span class="columnTitle">Orders</span>
+            <ul>
+                <li><a href="Cart">Cart</a></li>
+            </ul>
+        </div>
+        <div class="footerColumn colThree">
+            <span class="columnTitle">Account</span>
+            <ul>
+                        <li><a href="https://www.hollanderparts.com/Home/SignIn">Sign In</a></li>
+                        <li><a href="https://www.hollanderparts.com/Home/Register">Register</a></li>
+                        <li><a href="https://www.hollanderparts.com/Home/ForgotPassword">Forgot your Password</a></li>
+            </ul>
+        </div>
+        <div class="footerColumn colFour">
+            <span class="columnTitle">Find a Seller</span>
+            <ul>
+                <li><a href="Home/Directory?tab=1">By Business Name</a></li>
+                <li><a href="Home/Directory?tab=2">By City & State</a></li>
+                <li><a href="Home/Directory?tab=2">By Zip Code</a></li>
+            </ul>
+        </div>
+        <div class="footerColumn colFive">
+            <span class="columnTitle">Contact Us</span>
+            <ul>
+                <li><a href="Home/ContactUs" id="supportEmail">Support</a></li>
+                <li><a href="Home/ContactUs" id="webAdminEmail">Web Administrator</a></li>
+            </ul>
+        </div>
+        <div class="footerColumn colSix">
+            <span class="columnTitle">Legal</span>
+            <ul>
+                <li><a href="Home/AboutUs">About Us</a></li>
+                <li><a href="Home/Terms">Terms of Use</a></li>
+                <li><a href="Home/Privacy">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </div>
+	<div class="footerBottom">
+        <div class="footerBottomLeft">
+            &nbsp;
+        </div>
+        <div class="footerBottomRight">
+            <div class="copyright">&copy; 2013 Hollander, Inc. All Rights Reserved.</div>
+        </div>
+    </div>
+</div>
+<div id="blocker" style="display: none;">        
+    <div>
+        <img width="70px" height="70px" src="/Content/Images/wheelanimation.gif">
+    </div>
+</div>
+<script type="text/javascript">
+    //mask email addresses in footer/hinder spammers
+    function maskEmail() {
+        var linkText = $(this).html();
+        switch (linkText) {
+            case "Support":
+                $(anchor).attr('href', 'mailto:support@hollanderparts.com');
+                break;
+            case "Web Administrator":
+                $(anchor).attr('href', 'mailto:admin@hollanderparts.com');
+                break;
+            default:
+                break;
+        }
+    }
+    $(document).ready(function () {
+        $('#supportEmail, #webAdminEmail').click(function () {
+            maskEmail($(this));
+        });
+    });
+</script>            <!-- End Footer -->
+        </div>
+
+    <!-- footer area javascript - script that executes after the page loads, or isn't used during .ready() or onload -->
+        
+    <!-- Server Name = HOL-CLOUDWEB3 -->
+             <!--script src="Scripts/Common.js" type="text/javascript"></script-->
+    <div>
+    <div id="yourinfo"></div>
+    <input type="hidden" id="hidUserLatitude" value="" />
+    <input type="hidden" id="hidUserLongitude" value="" />
+    <input type="hidden" id="hidUserZip" value="" />
+    </div>
+    <div id="locationCookie"></div>
+
+<!--===================================================Start HTML5 Location Finder=======================================================-->
+<!--script type="text/javascript" src="/scripts/jquery-1.9.1.min.js"></script>
+<script src="/scripts/jquery-migrate-1.1.1.js" type="text/javascript"></script-->
+<script type="text/javascript">
+    
+    function GetLocationHTML5() {
+        // test for presence of geolocation
+        if (navigator && navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(geo_success, geo_error);
+
+        } else {
+            error('HTML5 Geolocation is not supported.');
+        }
+    }
+
+    function geo_success(position) {
+        $('#hidUserLatitude').val(position.coords.latitude.toString());
+        $('#hidUserLongitude').val(position.coords.longitude.toString());
+        setUpZip('HTML5')    
+    }
+
+    // The PositionError object returned contains the following attributes:
+    // code: a numeric response code
+    // PERMISSION_DENIED = 1
+    // POSITION_UNAVAILABLE = 2
+    // TIMEOUT = 3
+    // message: Primarily for debugging. It's recommended not to show this error
+    // to users.
+    function geo_error(err) {
+        if (err.code == 1) {
+            error('HTML5: The user denied the request for location information.')
+        } else if (err.code == 2) {
+            error('HTML5: Your location information is unavailable.')
+        } else if (err.code == 3) {
+            error('HTML5: The request to get your location timed out.')
+        } else {
+            error('HTML5: An unknown error occurred while requesting your location.')
+        }
+    }
+ 
+</script>
+<!--===================================================End HTML5 Location Finder=========================================================-->
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (getCookie("auto-location") == null) {
+            GetLocationHTML5();
+        }
+    });
+</script>
+
+    <script type="text/javascript">
+        function setUpZip(locationType) {
+            getZipInfo($('#hidUserLatitude').val(), $('#hidUserLongitude').val());
+            //alert("About to print location info");
+            //debugger;
+            //printLatLong(locationType, $('#hidUserLatitude').val(), $('#hidUserLongitude').val(), $('#hidUserZip').val());
+        }
+    </script>
+
+     <script type="text/javascript">
+         function getZipInfo(latitude, longitude) {
+            //get the zip info from the lat and long info
+            var lat = latitude.toString().replace("-", "");
+            var long = longitude.toString().replace("-", "");
+            productUrl = "/Home/GetPostalCodeFromLatAndLong?latitude=" + lat + "&longitude=" + long;
+            $.ajax({
+                //type: "GET",
+                async: false,
+                url: productUrl,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (xml) {
+
+                    //parse out the values
+                    //[{ "Key": "PostalCode", "Value": "55340 " }, { "Key": "CountryCd", "Value": "U" }, { "Key": "StateOrProvince", "Value": "MN" }, { "Key": "City", "Value": "Hamel" }, { "Key": "NorthLatitude", "Value": "45.078480" }, { "Key": "WestLongitude", "Value": "93.578580" }, { "Key": "PostalCodeLength", "Value": "5"}]
+                    var json_parsed = $.parseJSON(xml);
+
+                    var postalcode = json_parsed[0].Value;
+                    var countryCode = json_parsed[1].Value;
+                    var stateOrProvince = json_parsed[2].Value;
+                    var city = json_parsed[3].Value;
+                    var responseLat = json_parsed[4].Value;
+                    var responseLong = json_parsed[5].Value;
+                    var postalCodeLength = json_parsed[6].Value;
+
+                    updateAutoDectectLocationCookie(latitude, longitude, city, stateOrProvince, postalcode);
+                    //document.cookie = "location=" + latitude + "|" + longitude + "|" + city + "|" + stateOrProvince + "|" + postalcode + "|automatic";
+                    //alert(getCookie("auto-location"));
+                    //alert(getLocationCookiePostalCode());
+                    $('#hidUserLatitude').val(latitude);
+                    $('#hidUserLongitude').val(longitude);
+                    $('#hidUserZip').val(postalcode);
+
+                    if (getCookie("auto-location") != null) {
+                        $("#locationCookie").val = "<!--" + getCookie("auto-location") + "-->";
+                        //alert(getCookie("auto-location"));
+                    }
+                }
+            });
+        }
+
+        // output lat and long
+        function printLatLong(locatorType, lat, long, postalCode) {
+            $('div#yourinfo').append('<br>' + locatorType + ' Lat: ' + lat + ' Long: ' + long + ' Postal Code: ' + postalCode + ' -->');
+//            $('div#yourinfo').append('<!-- ' + locatorType + ' -->' + '<!-- Lat: ' + lat);
+//            $('div#yourinfo').append(' Long: ' + long);
+//            $('div#yourinfo').append(' Postal Code: ' + postalCode + ' -->');
+            $("div#locationCookie").append("<!--" + getCookie("auto-location") + "-->");
+        }
+
+        function error(msg) {
+            $('div#yourinfo').append('<br><!--' + msg + '-->');
+        }
+    </script>
+
+    </body>
+</html>

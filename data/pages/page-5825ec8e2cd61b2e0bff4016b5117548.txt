@@ -1,0 +1,693 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="cars, car sales, online, online car sales, nigeria, lagos, abuja, port harcourt, buy cars, sell cars, buy and sell cars online, cars in nigeria, nigerian, car dealer" http-equiv="keywords" />
+<meta name="description" http-equiv="description" content="1000carsales is the leading online marketplace for buying and selling cars in Nigeria. It's a meeting place for car dealers and individuals who want to sell their cars, with interested buyers, both individual and corporate" />
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+<title>1000carsales V2 - The leading online marketplace for buying and selling cars in Nigeria</title>
+<script type="text/javascript" src="/js/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="/js/ui/ui.core.js"></script>
+<script type="text/javascript" src="/js/form.js"></script>
+<script type="text/javascript" src="/js/ui/ui.autocomplete.js"></script>
+<script type="text/javascript" src="/js/ui/ui.draggable.js"></script>
+<script type="text/javascript" src="/js/ui/ui.resizable.js"></script>
+<script type="text/javascript" src="/js/ui/ui.dialog.js"></script>
+<script type="text/javascript" src="/js/ui/ui.datepicker.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script src="/js/ga.js" language="javascript"></script>
+<link href="/css/themes/base/ui.all.css" rel="stylesheet" type="text/css" />
+<link href="/css/themes/base/ui.resizable.css" rel="stylesheet" type="text/css" />
+<link href="/css/main.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript">  //var disqus_developer = true; </script>
+</head>
+
+<body>
+<script language="javascript">
+
+//var doLogin;
+//	
+//function login() {
+//	var doCheckLogin = function() {
+//		//alert("Here");
+//		checkLogin();
+//	}
+//	
+//	var loginDialogOptions = {
+//			show: true,
+//			hide: true,
+//			autoOpen: false,
+//			height:400,
+//			modal: true,
+//			dialogClass: "Easel_dialog",
+//			position: 'center',
+//			close: doCheckLogin
+//		}
+//
+//	var uri = "/";
+//	$("#Contents").hide();
+//	//alert("Login");
+//	$("#Dialog1").dialog('destroy');
+//	$("#Dialog1").html("").dialog(loginDialogOptions);
+//	$("#Dialog1").dialog('option', 'title', 'User Login');
+//	$("#Dialog1").dialog('option', 'open', function() {
+//		$(this).html("<div class='Easel_loading'><img src='/images/loading.gif' alt='loading...' /><br />Loading...</div>").load("/auth/login/ajax/1", '', function() {
+//			$("#AjaxLoginForm #URL").val(uri);
+//			$("#AjaxLoginForm").attr("action", "/auth/login/ajax/1");
+//			ajaxform("#AjaxLoginForm", "#Dialog1", '', '');
+//		});
+//	});
+//
+//		$("#Dialog1").dialog('option', 'close', function() {
+//			checkLogin();
+//		});
+//
+//	$("#Dialog1").dialog('open');
+//		
+//}
+//
+//function checkLogin() {
+//			//alert("/");
+//	if ($("#Success").length > 0) {
+//		if ($("#Success").val()=='1') {
+//			$(this).dialog("destroy");
+//			$("#Contents").slideDown("medium").html("<div class='Easel_loading'><img src='/images/loading.gif' alt='loading...' /><br />Loading...</div>").load("//ajax/1");
+//			$("#UserPanelNotLoggedIn").slideUp("fast", function() {
+//				$("#UserPanelLoggedIn").slideDown("medium");			
+//			});
+//		}
+//		else {
+//			login();
+//		}
+//	}
+//	else {
+//		login();
+//	}
+//}
+//
+//function initRegistration() {
+//	$("#QuickRegisterLink").attr("href", "#").click(function() {
+//		//alert("click");
+//		$("#Dialog1").html("<div class='Easel_loading'><img src='/images/loading.gif' alt='loading...' /><br />Loading...</div>").load("/auth/quick-register", '', function() {
+//			
+//		});
+//		return false;
+//	});
+//}
+
+
+$(function() {
+	$("h1").prepend("<span></span>");
+	
+	$("#NavSearch > a").toggle(function() {
+		$("#NavSearchPanel").slideDown("medium", function() {
+			$("#Search").focus().select().click(function() {
+				$(this).select();	
+			});				
+		});
+	}, function() {
+		$("#NavSearchPanel").slideUp("fast");
+	});
+//	
+	$("#NavSearchPanel .headingClose").click(function() {
+		$("#NavSearchPanel").slideUp("fast");
+	});
+	
+	var t;
+	$("#NavBlock > ul > li").hover(function() {
+		var nav = $(this).find("div.Subnav");
+		t = setTimeout(function() {
+			//alert(nav.html());
+			nav.slideDown("medium");
+		}, 500);
+	}, function() {
+		clearTimeout(t);
+		var nav = $(this).find("div.Subnav");
+		setTimeout(function() {
+			nav.slideUp("medium");		
+		}, 1000);
+	});
+	
+	$("#GaragePanel h3").toggle(function() {
+		$("#GaragePanel > div").slideDown("medium");
+		$("#GaragePanel > h3 > img").attr("src", "/images/expanded_arrow.png");
+	}, function() {
+		$("#GaragePanel > div").slideUp("fast");
+		$("#GaragePanel > h3 > img").attr("src", "/images/collapsed_arrow.png");
+	});
+	
+	//if (doLogin) login();
+	
+	$("#UserPanelNotLoggedIn").show();
+	$("#UserPanelLoggedIn").hide();
+});
+
+</script>
+
+	<div id="HeaderRow">
+        <div id="Header">
+            <a href="/" title="1000carsales.com V2"><img src="/images/logo.png" alt="1000carsales.com" /></a>
+            <div id="UserToolbox">
+            	<span id="UserPanelLoggedIn" class="hidden">
+                	<span id="UserPanelMyAccount"> <a href="/garage" title="Access your account">My Garage</a> </span> | <span id="UserPanelMessages"> <a href="/garage/messages" title="Retrieve your messages and notifications">Messages</a> </span> | <span id="Logout"><a href="/auth/logout" title="Logout"> Logout </a></span>
+                </span>
+                <span id="UserPanelNotLoggedIn" class="">
+                	<span id="UserPanelLogin"><a id="LoginLink" href="/auth/login" title="Login to your account">Login</a> </span> | <span id="UserPanelRegister"> <a id="LoginLink" href="/auth/quick-register" title="Register for free">Register</a> </span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div id="Navbar">
+    	<div id="NavBlock">
+            <div id="NavSearch">
+                <a href="#" title="Search 1000carsales.com"><img src="/images/icons/search.png" alt="Search" /> Search</a>
+                <div class="darkPanel" id="NavSearchPanel">
+                    <h3><span class="headingClose" title="Close">X</span>Search Options</h3>
+                    <form action="/cars/" method="get" id="NavSearchForm" name="NavSearchForm" target="_self"> 
+                    	<ul>
+                        	<li><label>
+                                <input type="text" id="Search" name="Search" value="Search" /></label>
+                            </li>
+                            <li id="SearchIn"><strong>SEARCH IN: </strong>
+                                <label><input type="radio" value="all" id="SearchFilter" name="SearchFilter" />All</label>
+                                <label><input type="radio" value="cars" id="SearchFilter" name="SearchFilter" checked="checked" />Cars</label>
+                                <label><input type="radio" value="parts" id="SearchFilter" name="SearchFilter" />Parts</label>
+                            </li>
+
+                            <li>
+                                <label>Min Price: <strong>N</strong> <input type="text" id="MinPrice" name="MinPrice" title="Minimum Price" class="narrowText" /></label> &nbsp;&nbsp;
+                                <label>Max Price: <strong>N</strong> <input type="text" id="MaxPrice" name="MaxPrice" title="Maximum Price" class="narrowText" /></label>
+                            </li>
+
+                            <li>
+                                <label>Year: &nbsp;</label>
+                                    <select id="YearFrom" name="YearFrom" title="Minimum Model Year">
+                                     	<option value="">....</option>
+                                    	                                        <option value="1920">1920</option>
+                                                                                <option value="1921">1921</option>
+                                                                                <option value="1922">1922</option>
+                                                                                <option value="1923">1923</option>
+                                                                                <option value="1924">1924</option>
+                                                                                <option value="1925">1925</option>
+                                                                                <option value="1926">1926</option>
+                                                                                <option value="1927">1927</option>
+                                                                                <option value="1928">1928</option>
+                                                                                <option value="1929">1929</option>
+                                                                                <option value="1930">1930</option>
+                                                                                <option value="1931">1931</option>
+                                                                                <option value="1932">1932</option>
+                                                                                <option value="1933">1933</option>
+                                                                                <option value="1934">1934</option>
+                                                                                <option value="1935">1935</option>
+                                                                                <option value="1936">1936</option>
+                                                                                <option value="1937">1937</option>
+                                                                                <option value="1938">1938</option>
+                                                                                <option value="1939">1939</option>
+                                                                                <option value="1940">1940</option>
+                                                                                <option value="1941">1941</option>
+                                                                                <option value="1942">1942</option>
+                                                                                <option value="1943">1943</option>
+                                                                                <option value="1944">1944</option>
+                                                                                <option value="1945">1945</option>
+                                                                                <option value="1946">1946</option>
+                                                                                <option value="1947">1947</option>
+                                                                                <option value="1948">1948</option>
+                                                                                <option value="1949">1949</option>
+                                                                                <option value="1950">1950</option>
+                                                                                <option value="1951">1951</option>
+                                                                                <option value="1952">1952</option>
+                                                                                <option value="1953">1953</option>
+                                                                                <option value="1954">1954</option>
+                                                                                <option value="1955">1955</option>
+                                                                                <option value="1956">1956</option>
+                                                                                <option value="1957">1957</option>
+                                                                                <option value="1958">1958</option>
+                                                                                <option value="1959">1959</option>
+                                                                                <option value="1960">1960</option>
+                                                                                <option value="1961">1961</option>
+                                                                                <option value="1962">1962</option>
+                                                                                <option value="1963">1963</option>
+                                                                                <option value="1964">1964</option>
+                                                                                <option value="1965">1965</option>
+                                                                                <option value="1966">1966</option>
+                                                                                <option value="1967">1967</option>
+                                                                                <option value="1968">1968</option>
+                                                                                <option value="1969">1969</option>
+                                                                                <option value="1970">1970</option>
+                                                                                <option value="1971">1971</option>
+                                                                                <option value="1972">1972</option>
+                                                                                <option value="1973">1973</option>
+                                                                                <option value="1974">1974</option>
+                                                                                <option value="1975">1975</option>
+                                                                                <option value="1976">1976</option>
+                                                                                <option value="1977">1977</option>
+                                                                                <option value="1978">1978</option>
+                                                                                <option value="1979">1979</option>
+                                                                                <option value="1980">1980</option>
+                                                                                <option value="1981">1981</option>
+                                                                                <option value="1982">1982</option>
+                                                                                <option value="1983">1983</option>
+                                                                                <option value="1984">1984</option>
+                                                                                <option value="1985">1985</option>
+                                                                                <option value="1986">1986</option>
+                                                                                <option value="1987">1987</option>
+                                                                                <option value="1988">1988</option>
+                                                                                <option value="1989">1989</option>
+                                                                                <option value="1990">1990</option>
+                                                                                <option value="1991">1991</option>
+                                                                                <option value="1992">1992</option>
+                                                                                <option value="1993">1993</option>
+                                                                                <option value="1994">1994</option>
+                                                                                <option value="1995">1995</option>
+                                                                                <option value="1996">1996</option>
+                                                                                <option value="1997">1997</option>
+                                                                                <option value="1998">1998</option>
+                                                                                <option value="1999">1999</option>
+                                                                                <option value="2000">2000</option>
+                                                                                <option value="2001">2001</option>
+                                                                                <option value="2002">2002</option>
+                                                                                <option value="2003">2003</option>
+                                                                                <option value="2004">2004</option>
+                                                                                <option value="2005">2005</option>
+                                                                                <option value="2006">2006</option>
+                                                                                <option value="2007">2007</option>
+                                                                                <option value="2008">2008</option>
+                                                                                <option value="2009">2009</option>
+                                                                                <option value="2010">2010</option>
+                                                                                <option value="2011">2011</option>
+                                                                                <option value="2012">2012</option>
+                                                                                <option value="2013">2013</option>
+                                                                            </select>
+                                     To 
+                                     
+                                     <select id="YearTo" name="YearTo" title="Maximum Model Year">
+                                     	<option value="">....</option>
+                                    	                                        <option value="1920">1920</option>
+                                                                                <option value="1921">1921</option>
+                                                                                <option value="1922">1922</option>
+                                                                                <option value="1923">1923</option>
+                                                                                <option value="1924">1924</option>
+                                                                                <option value="1925">1925</option>
+                                                                                <option value="1926">1926</option>
+                                                                                <option value="1927">1927</option>
+                                                                                <option value="1928">1928</option>
+                                                                                <option value="1929">1929</option>
+                                                                                <option value="1930">1930</option>
+                                                                                <option value="1931">1931</option>
+                                                                                <option value="1932">1932</option>
+                                                                                <option value="1933">1933</option>
+                                                                                <option value="1934">1934</option>
+                                                                                <option value="1935">1935</option>
+                                                                                <option value="1936">1936</option>
+                                                                                <option value="1937">1937</option>
+                                                                                <option value="1938">1938</option>
+                                                                                <option value="1939">1939</option>
+                                                                                <option value="1940">1940</option>
+                                                                                <option value="1941">1941</option>
+                                                                                <option value="1942">1942</option>
+                                                                                <option value="1943">1943</option>
+                                                                                <option value="1944">1944</option>
+                                                                                <option value="1945">1945</option>
+                                                                                <option value="1946">1946</option>
+                                                                                <option value="1947">1947</option>
+                                                                                <option value="1948">1948</option>
+                                                                                <option value="1949">1949</option>
+                                                                                <option value="1950">1950</option>
+                                                                                <option value="1951">1951</option>
+                                                                                <option value="1952">1952</option>
+                                                                                <option value="1953">1953</option>
+                                                                                <option value="1954">1954</option>
+                                                                                <option value="1955">1955</option>
+                                                                                <option value="1956">1956</option>
+                                                                                <option value="1957">1957</option>
+                                                                                <option value="1958">1958</option>
+                                                                                <option value="1959">1959</option>
+                                                                                <option value="1960">1960</option>
+                                                                                <option value="1961">1961</option>
+                                                                                <option value="1962">1962</option>
+                                                                                <option value="1963">1963</option>
+                                                                                <option value="1964">1964</option>
+                                                                                <option value="1965">1965</option>
+                                                                                <option value="1966">1966</option>
+                                                                                <option value="1967">1967</option>
+                                                                                <option value="1968">1968</option>
+                                                                                <option value="1969">1969</option>
+                                                                                <option value="1970">1970</option>
+                                                                                <option value="1971">1971</option>
+                                                                                <option value="1972">1972</option>
+                                                                                <option value="1973">1973</option>
+                                                                                <option value="1974">1974</option>
+                                                                                <option value="1975">1975</option>
+                                                                                <option value="1976">1976</option>
+                                                                                <option value="1977">1977</option>
+                                                                                <option value="1978">1978</option>
+                                                                                <option value="1979">1979</option>
+                                                                                <option value="1980">1980</option>
+                                                                                <option value="1981">1981</option>
+                                                                                <option value="1982">1982</option>
+                                                                                <option value="1983">1983</option>
+                                                                                <option value="1984">1984</option>
+                                                                                <option value="1985">1985</option>
+                                                                                <option value="1986">1986</option>
+                                                                                <option value="1987">1987</option>
+                                                                                <option value="1988">1988</option>
+                                                                                <option value="1989">1989</option>
+                                                                                <option value="1990">1990</option>
+                                                                                <option value="1991">1991</option>
+                                                                                <option value="1992">1992</option>
+                                                                                <option value="1993">1993</option>
+                                                                                <option value="1994">1994</option>
+                                                                                <option value="1995">1995</option>
+                                                                                <option value="1996">1996</option>
+                                                                                <option value="1997">1997</option>
+                                                                                <option value="1998">1998</option>
+                                                                                <option value="1999">1999</option>
+                                                                                <option value="2000">2000</option>
+                                                                                <option value="2001">2001</option>
+                                                                                <option value="2002">2002</option>
+                                                                                <option value="2003">2003</option>
+                                                                                <option value="2004">2004</option>
+                                                                                <option value="2005">2005</option>
+                                                                                <option value="2006">2006</option>
+                                                                                <option value="2007">2007</option>
+                                                                                <option value="2008">2008</option>
+                                                                                <option value="2009">2009</option>
+                                                                                <option value="2010">2010</option>
+                                                                                <option value="2011">2011</option>
+                                                                                <option value="2012">2012</option>
+                                                                                <option value="2013">2013</option>
+                                                                             </select>
+                                 
+                            </li>
+
+                            <input type="submit" value="Search" id="SearchButton" name="SearchButton" />
+                            <br clear="all" />
+                    	</ul>
+                    </form>
+               </div>
+            </div>
+            <ul>
+                <li><a href="/" title="Home">Home</a></li>
+                <li>
+                	<div class="Subnav">
+                    	<ul>
+                        	<li><a href="/cars/sell" title="Sell a car">Sell a car</a></li>
+                        	<li><a href="/cars/" title="Buy a car">Buy  a car</a></li>
+                        	<li><a href="/cars/background-check" title="Request a background check on a car">Investigate a car</a></li>
+                        </ul>
+                    </div> <a href="/cars/">Cars</a>
+                </li>
+                <li>
+                	<div class="Subnav">
+                    	<ul>
+                        	<li><a href="/parts/request" title="Request a part">Request a part</a></li>
+                        	<li><a href="/parts/" title="Shop for parts">Shop for parts</a></li>
+                        </ul>
+                    </div> <a href="/parts/">Parts</a>
+                </li>
+                <li>
+                	<div class="Subnav">
+                    	<ul>
+                        	<li><a href="/zone/talkzone" title="Discussion Forums &amp; Blogs">Talkzone</a></li>
+                        	<li><a href="/zone/polls" title="Opinion Polls">Opinion Polls</a></li>
+                        	<li><a href="/zone/xx" title="Xpert Xchange">Xpert Xchange</a></li>
+                        	<li><a href="/zone/newsletters" title="Newsletters">Newsletters</a></li>
+                        </ul>
+                    </div> <a href="/zone/talkzone" >The Zone</a>
+                </li>
+                <li>
+                	<div class="Subnav">
+                    	<ul>
+                        	<li><a href="/help/troubleshooting" title="Troubleshooting Guide">Troubleshooting Guide</a></li>
+                        	<li><a href="/help/faqs" title="Frequently Asked Questions">Frequently Asked Questions</a></li>
+                        	<li><a href="/help/ttk" title="Things to know when buying a new car">Things to know</a></li>
+                        	<li><a href="/help/advice" title="Advice to users">Advice to Users</a></li>
+                        </ul>
+                    </div> <a href="/help/">Help &amp; Support</a>
+                </li>
+                <li><a href="/contact/">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="Main">
+    	<div id="LeftCol">
+        	            
+                        
+            
+        	<div id="NavigationPanel" class="panel">
+        		<h3>Navigation</h3>
+                <ul>
+                	<li><a href="/marketplace" title="The Marketplace">The Marketplace</a></li>
+                	<li><a href="/zone" title="The Zone">The Zone</a></li>
+                	<li><a href="/docs/ttk" title="Things to note when buying a new car">Things to note when buying</a></li>
+                	<li><a href="/docs/troubleshooting" title="Troubleshooting Guide &amp; Frequently Asked Questions">Troubleshooting Guide &amp; FAQs</a></li>
+                	<li><a href="/docs/howto" title="How to use this site">How to use this site</a></li>                    
+                	<li><a href="/docs/advice" title="Advice to users">Advice to users</a></li>
+                    <li><a href="/docs/privacy" title="Privacy Policy">Privacy Policy</a></li>
+                    <li><a href="/docs/terms" title="Terms &amp; Conditions of Use">Terms &amp; Conditions of use</a></li>
+                </ul>
+            </div>
+
+        	<div id="AdvertisementPanel" class="panel">
+        		<h3>Advertisement</h3>
+                <a href="http://www.46km.com" title="www.46km.com" onClick="recordOutboundLink(this, 'Adverts', '46km.com'); return false;"><img src="/images/advertize.jpg" width="190" height="350"></a>
+            </div>
+        </div>
+                
+        <div id="Contents" class="home">
+        	<div id="BannerAdvert">
+                    <img src="/images/free-listings.jpg" alt="WorldFalcon" width="720" />
+            </div>
+            
+            
+<div id="ShowcasePanel">
+	<img src="/images/banner.jpg" width="730" alt="Redesigned, turbocharged...1000carsales V2"/>
+</div>
+
+<div id="MiddleCol">    
+    <div id="HomeCarsPanel" class="panel">
+        <h3><a href="/cars/">Latest Cars</a></h3>
+        <ul class="itemList">
+                    <li>
+                <div class="itemTitle"><span class="price">N500,000</span> <span class="title"><a href="/cars/car/id/270813062123">2009 Toyota land cruiser</a></span></div>
+                <div class="itemSummary">
+                    <span class="image"><a href="/cars/car/id/270813062123">
+                                                        <img src="/images/cars/270813062123/2010 LANDCRUISER.jpg" width="80" alt="thumb" />
+                                                        </a>
+                            
+                    </span>
+                    <span class="description">
+                        ABDULLAHI INDE DIKKO COMPTROLLER IN THE NIGERIA CUSTOM AREA COMMAND IN IDIRIKO BORDER HAS JUST MADE AN ANNOUNCEMENT TO THE GENERAL PUBLIC FOR AN AUCTION CURRENT ... 
+                        <span class='detailsLink'><a href="/cars/car/id/270813062123">View Details</a></span>
+                    </span>
+                    <br clear="all" />
+                </div>
+                
+            </li>
+                    <li>
+                <div class="itemTitle"><span class="price">N600,000</span> <span class="title"><a href="/cars/car/id/270813061716">2008 Toyota hi lux 4X4</a></span></div>
+                <div class="itemSummary">
+                    <span class="image"><a href="/cars/car/id/270813061716">
+                                                        <img src="/images/cars/270813061716/4070_p17oe3f39afn8u2shtsb4kqea3.jpg" width="80" alt="thumb" />
+                                                        </a>
+                            
+                    </span>
+                    <span class="description">
+                        ABDULLAHI INDE DIKKO COMPTROLLER IN THE NIGERIA CUSTOM AREA COMMAND IN IDIRIKO BORDER HAS JUST MADE AN ANNOUNCEMENT TO THE GENERAL PUBLIC FOR AN AUCTION CURRENT ... 
+                        <span class='detailsLink'><a href="/cars/car/id/270813061716">View Details</a></span>
+                    </span>
+                    <br clear="all" />
+                </div>
+                
+            </li>
+                    <li>
+                <div class="itemTitle"><span class="price">N800,000</span> <span class="title"><a href="/cars/car/id/270813061039">2009 Toyota hiace bus</a></span></div>
+                <div class="itemSummary">
+                    <span class="image"><a href="/cars/car/id/270813061039">
+                                                        <img src="/images/cars/270813061039/2010 HIACE.jpg" width="80" alt="thumb" />
+                                                        </a>
+                            
+                    </span>
+                    <span class="description">
+                        ABDULLAHI INDE DIKKO COMPTROLLER IN THE NIGERIA CUSTOM AREA COMMAND IN IDIRIKO BORDER HAS JUST MADE AN ANNOUNCEMENT TO THE GENERAL PUBLIC FOR AN AUCTION CURRENT ... 
+                        <span class='detailsLink'><a href="/cars/car/id/270813061039">View Details</a></span>
+                    </span>
+                    <br clear="all" />
+                </div>
+                
+            </li>
+                    <li>
+                <div class="itemTitle"><span class="price">N1,100,000</span> <span class="title"><a href="/cars/car/id/270813025630">2009 Honda element</a></span></div>
+                <div class="itemSummary">
+                    <span class="image"><a href="/cars/car/id/270813025630">
+                                                        <img src="/images/cars/270813025630/2004 HONDA ELEMENT 1.jpg" width="80" alt="thumb" />
+                                                        </a>
+                            
+                    </span>
+                    <span class="description">
+                        GREETINGS TO EVERY ONE OF YOU THAT IS READING THIS ADVERTISEMENT ONLINE MY NAME IS MR SANUSI  PETER BORN IN 1971 CURRENTLY WORKING HAS HEAD OF TRADE & TARIFF DE ... 
+                        <span class='detailsLink'><a href="/cars/car/id/270813025630">View Details</a></span>
+                    </span>
+                    <br clear="all" />
+                </div>
+                
+            </li>
+                    <li>
+                <div class="itemTitle"><span class="price">N1,100,000</span> <span class="title"><a href="/cars/car/id/270813023759">2009 Honda element</a></span></div>
+                <div class="itemSummary">
+                    <span class="image"><a href="/cars/car/id/270813023759">
+                                                        <img src="/images/cars/270813023759/2004 ACCORD 1.jpg" width="80" alt="thumb" />
+                                                        </a>
+                            
+                    </span>
+                    <span class="description">
+                        GREETINGS TO EVERY ONE OF YOU THAT IS READING THIS ADVERTISEMENT ONLINE MY NAME IS MR SANUSI  PETER BORN IN 1971 CURRENTLY WORKING HAS HEAD OF TRADE & TARIFF DE ... 
+                        <span class='detailsLink'><a href="/cars/car/id/270813023759">View Details</a></span>
+                    </span>
+                    <br clear="all" />
+                </div>
+                
+            </li>
+                </ul>
+    </div>
+    
+    <div id="HomeMarketplacePanel" class="panel">
+        <h3><a href="/parts/">Parts / Accessories</a></h3>
+        <form action="/parts/" id="PartsForm" name="PartsForm" method="get">
+  
+        </form>
+    </div>
+</div>
+
+<div id="RightCol">
+
+	<div id="HomeTalkZone" class="panel">
+    	<h3><a href="/zone/talkzone" title="Talk Zone">Talk Zone</a></h3>
+        	<ul class="itemList">
+			            <li>
+                <span class="rubric"><a href="/zone/topics/subject/2" title="Cars">Cars</a></span>
+                <div class="itemTitle"><span class="title"><a href="/zone/post/id/57">advert</a></span></div>
+                <div class="itemSummary"><span class="description">i want to advertise my car on this web site how do i go about it. the car is in nigeria now from the state thank  you
+ <span class='detailsLink'><a href="/zone/post/id/57">Read Post</a></span></span></span></div>
+            </li>
+                        <li>
+                <span class="rubric"><a href="/zone/topics/subject/1" title="General">General</a></span>
+                <div class="itemTitle"><span class="title"><a href="/zone/post/id/41">PATNERSHIP</a></span></div>
+                <div class="itemSummary"><span class="description">I WANT TO PARTNER WITH YOU IN SELLING CARS ACROSS THROUGH SEARCH WEBSITES. HOW DO I PROCEED <span class='detailsLink'><a href="/zone/post/id/41">Read Post</a></span></span></span></div>
+            </li>
+                        <li>
+                <span class="rubric"><a href="/zone/topics/subject/1" title="General">General</a></span>
+                <div class="itemTitle"><span class="title"><a href="/zone/post/id/34">Convertibles</a></span></div>
+                <div class="itemSummary"><span class="description">Does anybody know a good mechanic who can fix and service a convertible top. I have a SAAB 93 convertible 2001 that need to be fixed. Pls Help <span class='detailsLink'><a href="/zone/post/id/34">Read Post</a></span></span></span></div>
+            </li>
+                    	</ul>
+    </div>
+
+	<div id="HomeOpinionPolls" class="panel">
+    	<h3>Opinion Polls</h3>
+    </div>
+
+</div>
+
+<div id="IEMessage">
+    <h1>Internet Explorer Compatibility Notice</h1>
+    <img src="/images/alert.png" class="left" />
+    <p>This site is not yet fully compatible with Internet Explorer. To have the most enjoyable user experience on this site, please use a more compliant browser. Any of the browsers below will allow you full access to all the new features on this site.</p>
+    <p>We apologize for the inconvenience, but for your security and comfort, please download and use one of the browsers listed below:</p>
+    <ul id="BrowserList">
+        <li>
+            <a href="http://www.mozilla.com/">
+                <img src="/images/ff.png" /><br />
+                Mozilla Firefox
+            </a>
+        </li>
+        <li>
+            <a href="http://www.google.com/chrome/">
+                <img src="/images/chrome.png" /><br />
+                Google Chrome
+            </a>
+        </li>
+        <li>
+            <a href="http://www.apple.com/safari/">
+                <img src="/images/safari.png" /><br />
+                Safari
+            </a>
+        </li>
+        <li>
+            <a href="http://www.opera.com/">
+                <img src="/images/opera.png" /><br />
+                Opera
+            </a>
+        </li>
+    </ul>
+    <br clear="all" />
+</div>
+<script type="text/javascript">
+$(function() {
+
+	//alert(navigator.appName);
+	if(navigator.appName=="Microsoft Internet Explorer") {
+			//alert("Good");
+		var IEDialogOptions = {
+			show: true,
+			hide: true,
+			width: 800,
+			autoOpen: false,
+			dialogClass: "dialog",
+			title: 'Special Announcement',
+			position: 'center',
+			modal: true
+		};
+		$("#IEMessage").dialog(IEDialogOptions);
+		$("#IEMessage").dialog("open");
+
+	}
+
+});
+</script>
+
+            
+        </div>
+    <br clear="all" />
+    </div>
+	
+    <div id="Footer">
+    	&copy;Copyright 2011 1000carsales LLC. All rights reserved.
+    </div>
+
+<div id="Dialog1" class="dialog">
+
+</div>
+
+<div id="Dialog2" class="dialog">
+
+</div>
+
+<div id="Dialog3" class="dialog">
+
+</div>
+
+<div id="Dialog4" class="dialog">
+
+</div>
+
+<div id="Hidden" class="hidden">
+
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22426191-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

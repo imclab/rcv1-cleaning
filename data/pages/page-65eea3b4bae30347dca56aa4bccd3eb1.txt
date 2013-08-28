@@ -1,0 +1,418 @@
+
+<!-- #HEAD -->
+<html>
+<head>
+<title>쥬니어네이버 :: '수수께끼'</title>
+<script language=javascript src="/jrdir/skin/flashContents.js"></script>
+
+<link rel="stylesheet" type="text/css" href="http://image.jr.naver.com/jrsearch/css/jrnaver.css">
+<link rel="stylesheet" type="text/css" href="http://image.jr.naver.com/jrsearch/css/jrnaver2.css">
+<link rel="stylesheet" type="text/css" href="http://image.jr.naver.com/jrsearch/css/jrnaver3.css">
+
+<script language=javascript>
+<!--
+function OpenWin(url) 
+{
+    window.open(url, "jrsearch", "width=780,height=620,resizable=no,menubar=no,statusbar=no,scrollbars=no");
+    return false;
+}
+function menu_window(src) {
+    cWind = window.open("/blank.html", "", "width=300,height=400,status=no,toolbar=no,menubar=no");
+    pS = src;
+    return false;
+}
+function window_option() {
+    cWind.window.document.all.Div_hid.innerHTML = "<img src='"+pS+"' border=0 name=imghid>"
+    cWind.window.document.title = "쥬니어네이버 이미지검색" ;
+}
+// Retrieve the value of the cookie with the specified name.
+function GetCookie(sName) {
+  // cookies are separated by semicolons
+  var aCookie = document.cookie.split("; ");
+  for (var i=0; i < aCookie.length; i++) {
+    // a name/value pair (a crumb) is separated by an equal sign
+    var aCrumb = aCookie[i].split("=");
+    if (sName == aCrumb[0]) 
+      return unescape(aCrumb[1]);
+  }
+
+  // a cookie with the requested name does not exist
+  return null;
+}
+page_uid = GetCookie("page_uid");
+session_id = GetCookie("_naver_usersession_");
+function goCR (o, l, p) {
+
+    var evt, sx = sy = px = py = -1 ; 
+    try { evt = window.event ; } catch (e) {} 
+    try { sx=evt.clientX-document.body.clientLeft, sy=evt.clientY-document.body.clientTop ; } catch (e) {} 
+    try { px=document.body.scrollLeft+(sx<0?0:sx), py=document.body.scrollTop+(sy<0?0:sy) ; } catch (e) {} 
+    try { if (evt.pageX) px=evt.pageX ; if (evt.pageY) py=evt.pageY ; } catch (e) {} 
+    var m = o.target && o.target!="_self" ? 0 : 1;
+
+    var l = "http://cr.naver.com/"+l+"?q=3932&f=jrdir&p="+page_uid+"&s="+session_id+"&m="+m+"&" + p + "&px=" + px + "&py=" + py + "&sx=" + sx + "&sy=" + sy;
+
+    if (m) o.href = l;
+    else if(document.images)(new Image()).src = l;  
+
+    return true;
+}
+function goSiteCR(a, p) {
+
+    vallist = p.split("&");
+    for( i=0; i<vallist.length; i++)
+    {
+	if( vallist[i].split("=")[0]=="i" )
+	{
+	    goSetKSCookie(vallist[i].split("=")[1]);
+	    break;
+	}
+    }
+    
+    return goCR(a, "rd", p);
+}
+function getCookie(name)
+{
+    if(document.cookie==""){ __thisCookie = ""; } else{ __thisCookie = document.cookie.split("; "); }
+    for(i=0; i<__thisCookie.length; i++){ if(__thisCookie[i].split("=")[0]==name) return unescape(__thisCookie[i].split("=")[1]); }
+}
+/////////// KidsSurfer start
+function goSetKSCookie(s)
+{
+    setKSCookie("_KidsSurfer_", s, 15);
+}
+
+function setKSCookie(name,value,expiredays)
+{
+    var todayDate = new Date();
+    todayDate.setDate( todayDate.getDate() + expiredays );
+
+    var KSCookie = unescape( getCookie(name) );
+    KSCookie = KSCookie.replace(value,"");
+    KSCookie = value + "|" + unescape(KSCookie);
+    var KSVal = KSCookie.split("|");
+    var max = 15;
+    for( var i = 0, j = 0, value=""; i < KSVal.length && j < max; i++ ) {
+	if( !isNaN(KSVal[i]) && KSVal[i] != "" )
+	{
+	    value = value + "|" + KSVal[i] ;
+	    j++;
+	}
+    }
+
+    document.cookie = name + "=" + escape(value) + "; domain=jrsearch.naver.com; path=/; expires=" + todayDate.toGMTString() + ";" ;
+}
+
+function search_jr(frm) {       
+	frm.action = '/jrsearch.naver'; 
+
+    frm.method = 'get';
+    frm.submit();
+}
+function Slide_Show(url) {
+    window.open(url, 'jrslide', 'toolbar=no, menubar=no, resizeable=yes, status=no, width=800, height=600, scrollbars=no');
+}
+function resize_image(f) {
+    var max_width= 100 ;
+    var max_height= 100 ;
+    if(f.width > max_width) { 
+	f.height = max_width * f.height / f.width ;
+	f.width = max_width ;
+    }
+    if (f.height > max_height) {
+	f.width = max_height * f.width / f.height ;
+	f.height = max_height ;
+    }
+}
+
+//-->
+</script>
+<link rel="shortcut icon" href="http://image.jr.naver.com/main_new/favicon/jr_favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div id="wrap" class="dir_wrap">
+	<!-- header -->
+	<div id="header">
+    	<a href="#content" class="blind">본문 바로가기</a>
+        <!-- 공통GNB -->
+        <iframe src='http://jr.naver.com/gnb/gnb.html?flexible=noLogo' width=100% height=37 frameborder=0 scrolling=no></iframe>
+        <!-- //공통GNB -->
+        <div class="sta">
+        	<h1><a href="http://jr.naver.com"><img src="http://image.jr.naver.com/jrsearch/common/logo_jrnaver_srch.gif" width="199" height="37" alt=""></a></h1>
+        	<!-- 자동완성 작업 부분 -->
+            <div class="srch">
+               <form id="sForm" action="/jrsearch.naver" onSubmit="search_jr(this);" method="GET">
+                    <fieldset>
+                        <legend>검색</legend>
+                        <span class="box_window">
+	                        <input type="hidden" name="ie" value="">
+	                        <input type="hidden" name="sm" value="tab_hty">
+	                        <input type="hidden" name="where" value="nexearch">
+													<input type="text" title="검색" name="query" id="query" maxlength="255" accesskey="s" value='' >
+                        </span>
+                        <input type="image" src="http://image.jr.naver.com/jrsearch/common/btn_srch.gif" alt="검색">
+                    </fieldset>
+                </form>
+ 
+                <a href="#" id="nautocomplete" class="btn_arr">자동완성 닫기</a>
+								
+								<!-- 자동완성 리스트 레이어 Iframe -->
+                <div class="atcmp" style="display:block;">
+									<iframe id="autoFrame" title="자동완성" src="/search/reatcmp.html" style="display:none;" frameborder="0" width="392" height="332" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true"></iframe>
+								</div>
+								<!-- 기본 텍스트 노출 레이어 -->
+								<div style="position:absolute; top:9px; left:12px; font-size: 14px; font-weight:bold;" id="atcDefaulttext"></div>
+				        </div>
+								<!-- // 자동완성 작업 부분 -->
+            </div>
+        </div>
+
+				<!-- //header -->
+				<div id="container">
+					<!-- content -->
+					<div id="content">
+						<!-- menu -->
+			    	<table width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:1px;border-bottom:1px solid #f7e791;background-color:#fffed2">
+			    		<tr>
+			        	<td class='p12' style="padding:6px 18px">
+									<a href=/ class='c p12 un'>쥬니버 디렉토리</a>
+																		&gt; <a href="/Entertainment_Arts/" class='c p12 un'>연예, 오락, 예술</a>
+																		&gt; <a href="/Entertainment_Arts/Humor_Jokes_and_Fun/" class='c p12 un'>유머, 우스개</a>
+																		&gt; <a href="/Entertainment_Arts/Humor_Jokes_and_Fun/Conundrum/" class='c p12 un'><b>수수께끼</b></a>
+																										</td>
+							</tr>
+						</table>
+			      <!-- //menu -->
+				<table width=100% height=100% cellspacing=0 cellpadding=0 border=0>
+				<!--050329_수정_width값수정 td 수정-->
+				
+				<tr>
+					<td width=10 nowrap></td>
+					<td width=240 height=15 nowrap><!--#LeftMenu--><img width=1 height=1></td>
+					<td width=10 nowrap><img width=1 height=1></td>
+					<td>
+						<!--#Contents-->
+						<table width=693 cellspacing=0 cellpadding=0 border=0><tr><td height=1></td></tr></table>
+					</td>
+					<td width=10 nowrap></td>
+				</tr>
+			
+				<tr valign=top>
+				<td></td>
+				<td height=100% bgcolor=#F6F6F5>
+				<!--@LeftMenu-->
+
+<!--050329_수정_width값수정-->
+	<table width=240 cellspacing=0 cellpadding=0 border=0>
+	<tr><td width=240 height=30 background=http://sstatic.naver.com/search/jrsearch/img1/rnd23_t_b_0329.gif colspan=3 class='b2' style='padding-top:4px'><img src=http://sstatic.naver.com/search/jrsearch/img1/ico_expoler.gif width=20 height=20 align=absmiddle style='margin:0 4 2 9'><img src=http://sstatic.naver.com/search/jrsearch/img1/str_jrnaverexploer.gif width=78 height=13 align=absmiddle></td></tr>
+	<tr valign=top>
+	<td bgcolor=#FFFFFF colspan=3 style='border-left:1px solid #BBE065;border-right:1px solid #BBE065'>
+		<table width=232 cellspacing=0 cellpadding=0 border=0 align=center>
+		<tr>
+		<td height=600>
+		<!--플래쉬탐색기영역-->
+				<script>
+		showFlash("http://sstatic.naver.com/search/jrsearch/folderViewer-20050419.swf?pageUrl=http://jrsearch.naver.com&xmlUrl=http://jrsearch.naver.com/jrdir/&dir=/Entertainment_Arts/Humor_Jokes_and_Fun/Conundrum/","folderViewer","232","600","transparent","","#ffffff");
+		<!--//플래쉬탐색기영역-->
+		</script>
+		</td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	<tr><!-- 418수정 -->
+	<td width=4><img src=http://sstatic.naver.com/search/jrsearch/img1/rnd23_bl.gif width=4 height=4></td>
+	<td width=234 bgcolor=#FFFFFF style='border-bottom:1px solid #BBE065'><img src=http://sstatic.naver.com/search/jrsearch/img1/dot_blank.gif width=1 height=1></td>
+	<td width=4><img src=http://sstatic.naver.com/search/jrsearch/img1/rnd23_br.gif width=4 height=4></td>
+	</tr>
+	</table>
+	<br><br><br><br>
+<!--//050329_수정_width값수정-->
+
+
+<!--//@LeftMenu-->
+</td>
+<td width=10></td>
+<td>
+<!--@Contents-->
+				<table height=8 cellspacing=0 cellpadding=0 border=0><tr><td></td></tr></table><!-- 418수정 -->
+	<table width=100% cellspacing=0 cellpadding=0 border=0>
+	<tr>
+	<td class='c01 p14 dm b'><img src=http://sstatic.naver.com/search/jrsearch/img1/ico_site.gif width=20 height=15 align=absmiddle style='margin:0 5 3 6'>사이트</td>
+	<td align=right>
+	    	    <a href='/jrdir/dir.naver?id=/Entertainment_Arts/Humor_Jokes_and_Fun/Conundrum/&st=jrank' class='c01 p12 un'>쥬니버랭킹</a><img src=http://sstatic.naver.com/search/jrsearch/img1/ico_arw_bottom.gif width=7 height=5 align=absmiddle style='margin:0 9 0 6'><img src=http://sstatic.naver.com/search/jrsearch/img1/ico_splitstick.gif width=1 height=10 align=absmiddle style='margin:0 11 3 0'>
+	    <a href='/jrdir/dir.naver?id=/Entertainment_Arts/Humor_Jokes_and_Fun/Conundrum/&st=pop' class='bl p12 un'>인기순</a><img src=http://sstatic.naver.com/search/jrsearch/img1/ico_arw_bottom01.gif width=7 height=5 align=absmiddle style='margin: 0 9 0 6'><img src=http://sstatic.naver.com/search/jrsearch/img1/ico_splitstick.gif width=1 height=10 align=absmiddle style='margin:0 11 3 0'>
+	    <a href='/jrdir/dir.naver?id=/Entertainment_Arts/Humor_Jokes_and_Fun/Conundrum/&st=date' class='bl p12 un'>등록순</a><img src=http://sstatic.naver.com/search/jrsearch/img1/ico_arw_bottom01.gif width=7 height=5 align=absmiddle style='margin: 0 7 0 6'>
+	    	</td>
+	</tr>
+	<tr><td height=5 colspan=2></td></tr>
+	<tr><td height=1 bgcolor=#EEC367 colspan=2></td></tr>
+	<tr><td height=2 bgcolor=#FCEDCE colspan=2></td></tr>
+	</table>
+	<table height=21 cellspacing=0 cellpadding=0 border=0><tr><td></td></tr></table>
+
+	
+
+			<table width=100% cellspacing=0 cellpadding=0 border=0>
+		<tr valign=top>
+		<td width=19 nowrap></td>
+		<td width=14 nowrap>1.&nbsp;</td>
+		<td class='lh13' style='padding-right:8px'>
+				    <a onclick='return goSiteCR(this, "i=160503&amp;u=http%3A%2F%2Fdosan.skku.ac.kr%2F%257Ehjkim%2Fpro1.html&amp;r=1&amp;a=site")' href='http://dosan.skku.ac.kr/%7Ehjkim/pro1.html' class='bl' target=_blank>강건너기 수수께끼</a>
+		    		    		    		    				    - 강건너기 수학 수수께끼와 해답 제공.				</td>
+		</tr>
+		</table>
+		<table height=15 cellspacing=0 cellpadding=0 border=0><tr><td></td></tr></table>
+				<table width=100% cellspacing=0 cellpadding=0 border=0>
+		<tr valign=top>
+		<td width=19 nowrap></td>
+		<td width=14 nowrap>2.&nbsp;</td>
+		<td class='lh13' style='padding-right:8px'>
+				    <a onclick='return goSiteCR(this, "i=160505&amp;u=http%3A%2F%2Fdosan.skku.ac.kr%2F%257Ehjkim%2Fpro3.html&amp;r=2&amp;a=site")' href='http://dosan.skku.ac.kr/%7Ehjkim/pro3.html' class='bl' target=_blank>밀림속의 아프리카 토인 수수께끼</a>
+		    		    		    		    				    - 밀림속의 아프리카 토인 수학 수수께끼와 해답 제공.				</td>
+		</tr>
+		</table>
+		<table height=15 cellspacing=0 cellpadding=0 border=0><tr><td></td></tr></table>
+				<table width=100% cellspacing=0 cellpadding=0 border=0>
+		<tr valign=top>
+		<td width=19 nowrap></td>
+		<td width=14 nowrap>3.&nbsp;</td>
+		<td class='lh13' style='padding-right:8px'>
+				    <a onclick='return goSiteCR(this, "i=35252&amp;u=http%3A%2F%2Fwww.gnedu.net%2Fcdrom%2F%25c3%25ca%25b5%25ee%2F%25b1%25b9%25be%25ee1-2%2F%25b0%25e6%25ba%25cf1%2Fguk05%2Fguk050100.html&amp;r=3&amp;a=site")' href='http://www.gnedu.net/cdrom/%c3%ca%b5%ee/%b1%b9%be%ee1-2/%b0%e6%ba%cf1/guk05/guk050100.html' class='bl' target=_blank>수수께끼 놀이 - 경남교수학습지원센터</a>
+		    		    		    		    				    - 수수께끼를 풀며 동화 읽기.				</td>
+		</tr>
+		</table>
+		<table height=15 cellspacing=0 cellpadding=0 border=0><tr><td></td></tr></table>
+				<table width=100% cellspacing=0 cellpadding=0 border=0>
+		<tr valign=top>
+		<td width=19 nowrap></td>
+		<td width=14 nowrap>4.&nbsp;</td>
+		<td class='lh13' style='padding-right:8px'>
+				    <a onclick='return goSiteCR(this, "i=34590&amp;u=http%3A%2F%2Fdosan.skku.ac.kr%2F%7Ehjkim%2Fpro.html&amp;r=4&amp;a=site")' href='http://dosan.skku.ac.kr/~hjkim/pro.html' class='bl' target=_blank>수수께끼 문제 도전</a>
+		    		    		    		    				    - 생각을 많이 해야 하는 수수께끼 모음 제공.				</td>
+		</tr>
+		</table>
+		<table height=15 cellspacing=0 cellpadding=0 border=0><tr><td></td></tr></table>
+				<table width=100% cellspacing=0 cellpadding=0 border=0>
+		<tr valign=top>
+		<td width=19 nowrap></td>
+		<td width=14 nowrap>5.&nbsp;</td>
+		<td class='lh13' style='padding-right:8px'>
+				    <a onclick='return goSiteCR(this, "i=160507&amp;u=http%3A%2F%2Fdosan.skku.ac.kr%2F%257Ehjkim%2Fpro6.html&amp;r=5&amp;a=site")' href='http://dosan.skku.ac.kr/%7Ehjkim/pro6.html' class='bl' target=_blank>숫자넣기 퍼즐 수수께끼</a>
+		    		    		    		    				    - 숫자넣기 퍼즐 수학 수수께끼와 해답 제공.				</td>
+		</tr>
+		</table>
+		<table height=15 cellspacing=0 cellpadding=0 border=0><tr><td></td></tr></table>
+				<table width=100% cellspacing=0 cellpadding=0 border=0>
+		<tr valign=top>
+		<td width=19 nowrap></td>
+		<td width=14 nowrap>6.&nbsp;</td>
+		<td class='lh13' style='padding-right:8px'>
+				    <a onclick='return goSiteCR(this, "i=34593&amp;u=http%3A%2F%2Fwww.yukyoung.com%2Fchild%2Friddle.asp&amp;r=6&amp;a=site")' href='http://www.yukyoung.com/child/riddle.asp' class='bl' target=_blank>육영닷컴 수수께끼</a>
+		    		    		    		    				    - 수수께끼 문제를 생각한 후 정답을 누르세요.				</td>
+		</tr>
+		</table>
+		<table height=15 cellspacing=0 cellpadding=0 border=0><tr><td></td></tr></table>
+				<table width=100% cellspacing=0 cellpadding=0 border=0>
+		<tr valign=top>
+		<td width=19 nowrap></td>
+		<td width=14 nowrap>7.&nbsp;</td>
+		<td class='lh13' style='padding-right:8px'>
+				    <a onclick='return goSiteCR(this, "i=160504&amp;u=http%3A%2F%2Fdosan.skku.ac.kr%2F%257Ehjkim%2Fpro2.html&amp;r=7&amp;a=site")' href='http://dosan.skku.ac.kr/%7Ehjkim/pro2.html' class='bl' target=_blank>토끼 계산 수수께끼</a>
+		    		    		    		    				    - 토끼 계산하기 수학 수수께끼와 해답 제공.				</td>
+		</tr>
+		</table>
+		<table height=15 cellspacing=0 cellpadding=0 border=0><tr><td></td></tr></table>
+				<table width=100% cellspacing=0 cellpadding=0 border=0>
+		<tr valign=top>
+		<td width=19 nowrap></td>
+		<td width=14 nowrap>8.&nbsp;</td>
+		<td class='lh13' style='padding-right:8px'>
+				    <a onclick='return goSiteCR(this, "i=160506&amp;u=http%3A%2F%2Fdosan.skku.ac.kr%2F%257Ehjkim%2Fpro4.html&amp;r=8&amp;a=site")' href='http://dosan.skku.ac.kr/%7Ehjkim/pro4.html' class='bl' target=_blank>피타고라스의 제제 수수께끼</a>
+		    		    		    		    				    - 피타고라스의 제자 수학 수수께끼와 해답 제공.				</td>
+		</tr>
+		</table>
+		<table height=15 cellspacing=0 cellpadding=0 border=0><tr><td></td></tr></table>
+			<br><br><br><br>
+<!--//@Contents-->
+</td>
+<td width=37></td>
+</tr>
+</table>
+<!-- #BODY -->
+		   			</td>
+		   			<td width=37></td>
+		   		</tr>
+		  	</table>
+			</div>
+			<!-- //content -->
+		  </div>
+		  
+		  <!-- footer -->
+		  <div id="footer">
+		      <div class="srch">
+		         <form id="search2" onSubmit='search_jr(this);' method="GET">
+				         <fieldset>
+		                <legend>검색</legend>
+		                	<span class="box_window">
+												<input type="hidden" name=where value="nexearch">
+												<input type="text" title="검색" name=query value='' maxlength=255>
+			      					</span>
+											<input type="image" src="http://image.jr.naver.com/jrsearch/common/btn_srch.gif" alt="검색">
+		                </fieldset>
+		          </form>
+		      </div>
+		      <ul>
+		      <li class="first"> <a href="http://help.jr.naver.com/renew/exSelf.jsp" target="_blank">도움말</a></li>
+		      <li> <a href="http://www.naver.com/rules/service.html" target="_blank">이용약관</a></li>
+		      <li> <a href="http://jr.naver.com/jrservice/jr_use.html" target="_blank">운영원칙</a></li>
+		      <li> <strong><a href="http://www.naver.com/rules/privacy.html" target="_blank">개인정보취급방침</a></strong> </li>
+		      <li> <a href="http://www.naver.com/rules/disclaimer.html" target="_blank">책임의 한계와 법적고지</a></li>
+		      <li> <a href="http://help.jr.naver.com/renew/exMain.jsp" target="_blank">고객센터</a></li>
+		      </ul>
+		      <address>Copyright &copy; <a href="http://nhncorp.com/" target="_blank">NAVER Corp.</a> All Rights Reserved.</address>
+		  </div>
+		  <!-- //footer -->
+		</div>
+	</div>
+</body>
+
+<!-- 자동완성 작업 부분  -->
+<script type="text/javascript" src="/js/jindo2.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/autocomplete.js" charset="utf-8"></script>
+<script type="text/javascript">
+var searchWord = '';
+var defaultSearchWord = "'쥬니버'를 검색하세요";
+if (searchWord != null || searchWord != "") {
+	defaultSearchWord = "";
+}
+
+var smartSearch = new nhn.AjaxSuggestUS(
+	"query", 																			// 검색 Input Element ID
+	"autoFrame", 																	// 자동완성 리스트 Iframe ID
+	{
+		url : 'http://10.24.28.130:10618/ac', 			// 검색 API 주소 
+		sFromName : "sForm",												// 검색 Form ID
+		triangleBtn : "nautocomplete",							// 자동완성 켜기 닫기 링크 ID
+		sListMaxLength: 44,													// 리스트 최대 글자수. 글자수를 넘으면 ... 처리
+		defaultTextEl : "atcDefaulttext",						// 기본 노출 텍스트 레이어 ID
+		defaultTextValue : defaultSearchWord,				// 기본 노출 텍스트 내용.
+		request_type : "jsonp",
+		request_data : {q:"{query}",st:"1",r_format:"json", r_tx:"1", q_enc:"UTF-8", r_enc:"UTF-8" , r_unicode:"0", r_escape:"1", t_koreng : "1", r_lt : "1"}
+	}).attach({
+		actSubmit : function(){
+			this.elForm.submit();
+		}
+	});
+</script>
+<!-- 자동완성 작업 부분 -->
+<script language=javascript src=/js/lcslog.js></script>
+<script type="text/javascript">lcs_do();</script> 
+
+</html>
+</center>
+<script language=javascript src=/js/lcslog.js></script>
+<script type="text/javascript">lcs_do();</script> 
+</body>
+</html>
+<!-- //#FOOTER-->

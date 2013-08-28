@@ -1,0 +1,957 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<!-- 192.168.1.90 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <!--[if lt IE 9]>
+      <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+      </script>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  <meta content="text/html;charset=iso-8859-1" http-equiv="content-type">
+    <title>Automotive Solutions</title>
+  <meta content='embedded, vertical market, industry solution, pervasive computing, telematics, netcom, internet appliance, consumer appliance, automotive, military, aerospace, QNX, RTOS, Microkernel, Neutrino, Reliable, Momentics, Eclipse, IDE, Embedded, Realtime, Service, Security, BSP, networking, kernel, multicore, automotive, industrial, networking, telecom, netcom, medical' name="Keywords">
+  <meta content='This page explains how QNX is suited for Automotive Telematics Market. The QNX Neutrino RTOS and the Momentics tools suite can help you successfully deploy your telematics and general embedded product. QNX realtime RTOS - Operating systems, development tools, realtime operating system software and services for connected embedded systems ' name="Description">
+  <meta name="verify-v1" content="u8OX6KP1awehX6NJTPTsWk+A+5luM4Y5HDOB7B5fsP4=" />
+  <meta name="language" scheme="ISO639-1" content="en">
+  <link href="/style/css/pagetabs.css" media="all" rel="stylesheet">
+  <link href="/style/css/facebox.css" media="all" rel="stylesheet">
+  <link rel="shortcut icon" href="/images/qnx_web_use_only_16x16_2.ico" />
+  <script language="JavaScript" type="text/javascript" src="/style/js/jquery.min.js"></script>
+  <script language="JavaScript" type="text/javascript" src="/style/js/jquery.ui.all.min.js" ></script>
+  <script language="JavaScript" type="text/javascript" src="/style/js/ui.tabs.js"></script>
+  <script language="JavaScript" type="text/javascript" src="/style/js/browser_detect.js"></script>
+  <script language="JavaScript" type="text/javascript" src="/style/js/facebox.js"></script>
+  <script language="JavaScript" type="text/javascript" src="/style/js/qnx.js"></script>
+  <script language="JavaScript" type="text/javascript" src="/style/js/gaTrackerCompressed.js"></script>
+ 
+  <link rel="stylesheet" href="/style/css/bootstrap.min.css?">
+  <link rel="stylesheet" href="/style/css/qnx.css?" media="all" rel="stylesheet">
+<!--[if IE]>
+    <link rel="stylesheet" href="/style/css/qnx2ie.css" media="all" rel="stylesheet">
+<![endif]-->
+
+<!--[if lt IE 8]>
+  <link rel="stylesheet" href="/style/css/qnx2ie7.css" media="all" rel="stylesheet">
+<![endif]-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27400275-1']);
+  _gaq.push(['_setDomainName', 'qnx.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</head>
+<body>
+<div id="mainPageContainer" class="container">
+  <div id="headerWrapper">
+    <section id="section-header">
+      <div class="row">
+	<div class="header">
+	  <div class="qnxlogo floatL"><a href="/"><img src="/style/images/bb_qnx_logo_web_14may13.gif"></a></div>
+	  <div class="qnxtagline floatL">Operating systems, development tools, and professional <br /> services  for connected embedded systems</div>
+	  <div class="qnxheaderActions floatR">
+	    <div class="qnxsearch floatR"><input class="searchInput" id="searchInput" class="span2" type="text" placeholder="Search" name="" value="Search" ><img class="SearchIcon" src="/style/images/search-icon.png"/></div>
+	    <div class="qnxlanguage floatR"><a href='?lang=jp'>&#26085;&#26412;&#35486;</a><a href='?lang=cn'>&#20013;&#25991;</a><a href='?lang=de'>Deutsch</a><a href='?lang=kr'>&#54620;&#44397;&#50612;</a></div>
+	  </div>
+	  <div class="login-container floatR"><a href="https://www.qnx.com/account/login.html">Login</a><span class="seperator"></span><a href="/company/contact/">Contact Us</a></div>
+	</div>
+      </div>
+    </section>
+
+    <section id="section-navigation">
+      <div class="row">
+	<div class="span16 navigationbar">
+	  <div class="navitems"><ul id="mainnav">
+
+			<li><a href="#" onclick="return false;">PRODUCTS</a>
+				<ul>
+					<li><a href="/products/neutrino-rtos/index.html">Operating Systems</a></li>
+					<li><a href="/products/multimedia/index.html">Acoustics + Multimedia</a></li>
+					<!--<li><a href="/products/hmi/index.html"></a></li> -->
+					<li><a href="/products/qnxcar/index.html">QNX CAR</a></li>
+					<li><a href="/products/tools/qnx-momentics.html">Tools</a></li>
+					<li><a href="/bsp_menu.html">BSP Directory</a></li>
+					<li><a href="/products/certifications.html" class="drop">Certifications</a></li>
+				</ul>
+			</li>
+
+
+
+			<li><a href="#" onclick="return false;">SERVICES</a>
+
+				<ul id="supportdrop">
+					<li><a href="/services/index.html">Professional Services</a></li>
+					<!-- <li><a href="/services/special_offers/index.html">Special Offers</a></li> -->
+					<li><a href="/services/training/">Training + Education</a></li>
+					<li><a href="/services/prof_services/">Consulting + Programs</a></li>
+					<li><a href="/services/auto_solutions_team.html">Automotive Services</a></li>
+				</ul>
+
+			</li>
+
+
+
+
+			<li><a href="#" onclick="return false;">MARKETS</a>
+				<ul>
+					<li><a href="/solutions/industries/automotive/">Automotive</a>
+									</li>
+					<li><a href="/solutions/industries/automation/">Industrial</a></li>
+					<li><a href="/solutions/industries/medical/">Medical</a></li>
+					<li><a href="/solutions/industries/netcom/">Networking + Telecoms</a></li>
+					<li><a href="/solutions/industries/defense.html">Security + Defense</a></li>
+
+			</ul>
+
+
+
+
+			</li>
+			<li><a href="#" onclick="return false;">PARTNERS</a>
+
+				<ul>
+					<li><a href="/partners/">Overview</a></li>
+					<li><a href="/partners/directory.html">Directory</a></li>
+					<li><a href="/partners/partner_network/">Program Benefits</a></li>
+					<li><a href="/partners/partner_network/why_join.html">QNX Partner Network</a></li>
+					<!--<li><a href="/partners/partner_network/join.html"></a></li>-->
+					<li><a href="/partners/partner_network/strategic/">Strategic Partners</a></li>
+					<li><a href="/partners/partner_developer.html">Product Download</a></li>
+
+				</ul>
+
+			</li>
+
+
+			<li><a href="#" onclick="return false;">COMMUNITY</a>
+
+				<ul>
+					<li><a href="http://community.qnx.com/">Foundry27</a></li>
+					<li><a href="http://community.qnx.com/sf/sfmain/do/listProjects">Projects</a></li>
+					<li><a href="/bsp_menu.html">BSP Directory</a></li>
+					<li><a href="/social_media/">Social Media</a></li>
+					<li><a href="/community/forums.html">Forums</a></li>
+					<li><a href="/community/newsletters.html">The Source Newsletter Archive</a></li>
+				</ul>
+
+			</li>
+
+
+
+			<li><a href="#" onclick="return false;">COMPANY</a>
+
+				<ul>
+					<li><a href="/company/">About QNX</a></li>
+					<li><a href="/company/careers/">Careers</a></li>
+                    <li><a href="/company/certifications.html">Certifications</a></li>
+                    <li><a href="/company/contact/">Contact Us</a></li>
+                    <li><a href="/company/customer_stories/">Customers</a></li>
+                    <li><a href="/company/distributors_resellers/index.html">Distributors</a></li>
+                    <li><a href="/company/bios.html">Executive Profiles</a></li>
+					<li><a href="/company/industry_awards.html">Industry Awards</a></li>
+					<li><a href="/news/">News + Events</a></li>
+					<li><a href="/company/education/">QNX-in-Education</a></li>                       					
+					
+				</ul>
+
+			</li>
+
+			
+			<li><a href="#" onclick="return false;">SUPPORT</a>
+
+				<ul id="supportdrop">
+					<li><a href="/support/index.html">Overview</a></li>
+					<li><a href="/support/support.html">Support Options</a></li>
+					<li><a href="/account/tslogin.html">Support Portal</a></li>
+					<li><a href="/support/knowledgebase.html">Knowledge Base</a></li>	<li><a href="http://community.qnx.com/">Foundry27</a></li>
+				</uL></li>
+			<li><a href="#" onclick="return false;">DOWNLOADS</a>
+			<ul>
+				<li><a href="/download/">All</a></li>
+				<li><a href="/products/evaluation/">QNX Product Evaluation</a></li>
+				<li><a href="/download/group.html?programid=20905">QNX Software Development Platform 6.5.x</a></li>
+				<li><a href="/bsp_menu.html">BSP directory</a></li>
+				<li><a href="/hw_db_menu.html">Hardware Database</a></li>
+				<li><a href="/download/group.html?programid=7993">QNX RTOS 4.x</a></li>
+				<li><a href="/products/reference-design/">Reference Designs + Demos</a></li>
+                <li><a href="/download/group.html?programid=21552">Whitepapers</a></li>
+                
+			</ul>
+		</li>
+        </ul>
+			
+<!--end navigation-->
+
+</div>
+	  <div class="navbar-social addthis_toolbox addthis_default_style">
+	    <a href="/social_media" class="connectWithUs">CONNECT WITH US</a>
+	  </div>
+	</div>
+      </div>
+    </section>
+  </div>
+
+<section id="section-breadcrumb"><dl class='crumbs'><dd><a href="http://www.qnx.com">Home</a></dd><dd><a href='http://www.qnx.com/solutions/industries/index.html'>Markets</a></dt></dl></section>
+<section id="section-leffnav">      <div class="sectionnav">
+
+	
+	<dl class="section_main_nav">
+	  <DT>Markets</dt>
+	  <dd><a href="/solutions/industries/automotive/">Automotive</a></dd>
+	  <dd><a href="/solutions/industries/automation/">Industrial</a></dd>
+	  <dd><a href="/solutions/industries/medical/">Medical</a></dd>
+	  <dd><a id="activesect" href="/solutions/industries/netcom/">Networking + Telecoms</a></dd>
+	  <dd><a href="/solutions/industries/defense.html">Security + Defense</a></dd>
+	</dl>
+	<dl>	
+	<dt id="resourcestitle">Relevant technologies</dt>
+		<dd><a href="/products/qnxcar/index.html" target="_blank">QNX CAR Application Platform</a></dd>
+		<dd><a href="/products/acoustic/index.html">QNX Aviage Acoustic Processing Suite</A></dd>
+		<dd><a href="/products/tools/qnx-momentics.html/">QNX Momentics Tool Suite</A></dd>
+		<dd><a href="/products/neutrino_rtos/">QNX Neutrino RTOS</A><br /><br /></dd>
+		
+	</dl>
+	
+</div>
+
+          </section><!--leftNavBar-->
+    <div id="titlearea" class="noBannerImage"> <h1>Automotive Solutions</h1></div>    <section id="section-rightsidebar">
+    
+<dl>
+       
+<dt class="blue">Product Highlight</dt>
+	<dd> <a href="/products/qnxcar/index.html">QNX CAR application platform</a>
+  </dd>
+  
+   
+ <dt class="grey">Webinar</dt>
+	<dd> <a href="/news/web_seminars/high_end_technologies.html">Squeezing high-end technologies into low-end infotainment systems</a></dd>
+
+ <dt class="grey">Customer Video</dt>
+	<dt class="photo"><img src="/images/sidebars/harman_video.jpg" width="150" height="56" ></dt>
+	<dd><a href="http://youtu.be/T90gZy9viOY" target="_blank">Harman International</a></dd>
+    
+     <dt class="grey">Whitepaper</dt>
+	<dd> <a href="http://www.qnx.com/download/feature.html?programid=22989">Why automakers (should) care about HTML5</a></dd>
+
+
+<dt class="grey">Blog</dt>
+	<!--<dt class="photo"><img src="/images/sidebars/team_auto.png" width="150" height="56" alt="QNX Team Auto Blog" /></dt> -->
+		<dd><a href="http://qnxauto.blogspot.com/" target="_blank">On the road with QNX</a>
+				
+		</dd>
+
+ 
+<dt class="grey">Service</dt>
+			<dd><a href="/solutions/industries/automotive/index.html#services">Automotive team</a></dd>
+
+
+		
+</dl>    </section><!--sidebar-->
+    <div id="textarea">
+     <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="534" height="199" id="ia_header" align="middle">
+ <param name="allowScriptAccess" value="sameDomain" />
+ <param name="allowFullScreen" value="false" />
+ <param name="movie" value="/style/_swf/automotive/auto_markets_header.swf" />
+<param name="wmode" value="transparent" />
+
+<param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /> <embed src="/style/_swf/automotive/auto_markets_header.swf" wmode="transparent" quality="high" bgcolor="#ffffff" width="534" height="199" name="auto_markets_header" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
+ </object>
+
+<div id="tabs" class="ui-tabs">
+
+    <ol class="ui-tabs-nav">
+    	<li><a id="first-tab" href="#home">Overview</a></li>
+		<li><a href="#solutions">Solutions</a></li>
+
+    	<li><a href="#technology">Technology</a></li>
+    	<li><a href="#ecosystem">Ecosystem</a></li>
+    	<li><a href="#services">Services</a></li>
+    	<li><a href="#customers">Customers</a></li>
+	</ol>
+
+
+<div id="home"><a name="home"></a>
+
+<h2>Build the advanced systems you need for less</h2>
+<p>With 30 years of experience under our belt, weve learned a thing or two about building reliable, compelling in-vehicle systems that are on-spec, on-budget, and on time. In fact, were the automotive industry leader with more vehicle models (200+) shipped than with all other platforms combined.  </p>
+
+<h2>Why customers choose QNX</h2>
+<p>We offer a unique production-proven automotive portfolio for quickly building high-quality, visually rich products that are the lowest cost to develop, deploy, and service. This portfolio contains an innovative and comprehensive family of technologies, solutions, and services:</p>
+
+<ul>
+	<li><b><a href="#" onclick="$('#tabs ol').tabs('select', 1); $('#tabs2 ol').tabs('select', 0); return false;">Solutions</a></b> &#8212; QNX CAR, a unique pre-integrated platform</li>
+
+<li><b><a href="#" onclick="$('#tabs ol').tabs('select', 2); return false;">Technology</a></b> &#8212; Awarding winning development tools, deployment technologies, and innovative middleware</li>
+
+	<li><b><a href="#" onclick="$('#tabs ol').tabs('select', 3); return false;">Ecosystem</a></b> &#8212; industry&#8217;s biggest and broadest with silicon, middleware, connectivity, tools, graphics, HMI technology, etc</li>
+	<li><b><a href="#" onclick="$('#tabs ol').tabs('select', 4); $('#tabs3 ol').tabs('select', 0); return false;">Services</a></b> &#8212; tiger teams, customized support, training, and more</li>
+</ul>
+
+<h2>Here's how youll benefit</h2>
+<ul>
+	<li>Dramatically reduce your development risks by partnering with the de facto automotive leader  QNX Software Systems has more production experience than any other supplier</li>
+
+<li>Measurably improve your bottom line by using a reliable and scalable application platform that provides the lowest costs to develop, deploy, and service advanced systems</li>
+
+<li>Build high quality, compelling products by drawing on the industrys biggest and broadest ecosystem of best-of-breed solutions</li>
+</ul>
+
+</div><!--home-->
+<div id="technology"><a name="technology"></a>
+<p>QNX technology is used in more vehicle models (200+) and by more automakers and suppliers than all other platforms combined. The reasons are simple: We strive for excellence in every line of code, we push to be the first to deliver value into our customers hands, and we deliver solutions that are the lowest cost to develop, deploy, and service. This gives customers a rock-solid platform and leading-edge middleware on which to build reliable, compelling in-vehicle systems that are on-spec, on-time, and on-budget.</p>
+<h2>Software architecture</h2>
+
+<p>The QNX car application platform provides a reusable software base that can be used in a variety of automotive applications. The common software architecture provided by QNX CAR is used by the infotainment and instrument cluster reference implementations.
+The software architecture addresses everything from hardware support (BSPs) to human machine interface technology and is complemented by development tools, professional services, a Foundry27 community portal, and an extensive partner ecosystem.
+</p>
+<div class="callout callout-full">
+
+	<div class="callout-title"><span>QNX automotive software stack</span></div>
+
+	<div class="callout-content">
+<table  border="0" cellpadding="1" cellspacing="0">
+
+
+	<tr>
+
+		<td align="left" valign="top">
+			<a rel="facebox" href="/images/automotive/stack/applications_lg.gif" ><img src="http://qnxsoft.vo.llnwd.net/o15/images/automotive/stack/applications.gif" border="0" alt="applications"></a>
+	</td></tr>
+
+	<tr>
+		<td align="left" valign="top">
+			<a rel="facebox" href="/images/automotive/stack/graphics-hmi-lg.gif" ><img src="http://qnxsoft.vo.llnwd.net/o15/images/automotive/stack/graphics-hmi.gif" border="0" alt="graphics hmni"></a></td>
+
+	</tr>
+	<tr>
+		<td align="left" valign="top">
+			<a rel="facebox" href="/images/automotive/stack/os-services-lg.gif" ><img src="http://qnxsoft.vo.llnwd.net/o15/images/automotive/stack/os-services.gif" border="0" alt="Core OS"></a></td>
+
+	</tr>
+	<tr>
+
+		<td align="left" valign="top">
+			<a rel="facebox" href="/images/automotive/stack/core-os-lg.gif" ><img src="http://qnxsoft.vo.llnwd.net/o15/images/automotive/stack/core-os.gif" border="0" alt="Hardware architectures"></a></td>
+
+	</tr>
+</table>
+</div> <!--callout-content-->
+<div class="callout-zoom"><a rel="facebox"  href="/images/automotive/stack/full.gif"><img src="http://qnxsoft.vo.llnwd.net/o15/images/nav/view_all.gif" border="0"></a></div>
+<!--<div class="callout callout-full">
+
+	<div class="callout-title"><span>QNX automotive software stack</span></div>
+
+	<div class="callout-content">
+
+
+
+		<a rel="facebox" href="/images/qnxcar/screenshots/architecture_lg.gif"><img src="/images/qnxcar/screenshots/architecture_sm.gif"  border="0" alt="QNX automotive software stack" /></a>
+
+
+		<p>The QNX automotive software architecture stack provides a reusable base that can be used in a variety of applications.
+
+</p>
+		<p align="right"> <a rel="facebox"  href="/images/qnxcar/screenshots/architecture_lg.gif"><img src="/images/nav/click.gif" border="0"></a></p>
+
+	</div> -->
+</div><!--callout-full-->
+<p><br>
+<b>Applications &mdash;</b>The QNX automotive software stack offers a complete solution with sample applications for Google local search, YouTube player, Pandora Internet radio, media player, phone, contacts, picture viewer, weather, games, application store, and more. <p>See also:  <a href="/products/qnxcar/">QNX CAR application platform</a>, <a href="/products/hmi/hmi.html">QNX Aviage HMI Suite</a> </p>
+
+<p><b>Graphics/HMI  &mdash;</b> The QNX automotive software stack provides an HMI layer using industry standard Adobe Flash for developing beautiful yet easily integrated HMIs. It extends the capabilities of Adobe Flash with a powerful framework and all the underlying graphics technologies required for rapidly building HMIs that look and perform as well as the latest consumer devices.
+ <p>See also:  <a href="/products/qnxcar/">QNX CAR application platform</a>, <a href="/products/hmi/hmi.html">QNX Aviage HMI Suite</a> </p>
+
+<p><b>OS services &mdash;</b> The QNX automotive software stack pre-integrates many of the key components (multimedia, hands-free, software update, speech recognition, and navigation) required for todays automotive projects, saving engineers from significant technical challenges in doing these components themselves.
+ <p>See also: <a href="/products/qnxcar/">QNX CAR application platform</a>,  <a href="/products/acoustic/index.html">QNX Aviage Acoustic Processing</a>, <a href="/products/hmi/hmi.html">QNX Aviage HMI Suite</a>, <a href="/products/neutrino_rtos/neutrino_rtos.html#technology">QNX Neutrino RTOS High Availability</a>, <a href="/products/neutrino_rtos/neutrino_rtos.html#technology">QNX Neutrino RTOS Adaptive Partitioning</a>, <a href="/products/neutrino_rtos/neutrino_rtos.html#technology">QNX Neutrino RTOS File Systems</a>,  <a href="/products/neutrino_rtos/neutrino_rtos.html#technology">QNX Neutrino RTOS Networking</a> (click on the appropriate technology tab)</p>
+
+<p><b>Core OS  &mdash;</b> The award-winning QNX Neutrino RTOS offers unparalleled reliability and scalability, and has been deployed in over 200 vehicle models.  It is complemented with extensive software components for high availability, fast boot, device connectivity, file systems, and networking.<p>See also: <a href="/products/qnxcar/">QNX CAR application platform</a>, <a href="/products/hmi/hmi.html">QNX Aviage HMI Suite</a>, <a href="/products/neutrino_rtos/neutrino-rtos.html">QNX Neutrino RTOS</a>, <a href="http://community.qnx.com/sf/wiki/do/viewPage/projects.bsp/wiki/BSPAndDrivers" target="_blank">BSP directory</a>, <a href="http://www.qnx.com/developers/hardware_support/" target="_blank">Supported hardware directory</a> </p>
+
+
+
+
+
+
+</p>
+
+
+</div><!--technology-->
+
+<div id="solutions"><a name="solutions"></a>
+<p>QNX automotive solutions are tailor made to reduce the cost of development and deployment.  We give you the technology needed to implement compelling in-vehicle systems, helping you simplify system design with customizable UI-rich middleware and components complete with low-level infrastructure.  Take your design from graphical prototype to final product without re-coding.
+</p>
+<P>
+QNX Software Systems brings industry-leading production experience and a 30-year track record of cutting-edge technology and innovative programs to our solutions. In fact, they have been created with hundreds of person-years of automotive specific development and integration behind them.
+</p>
+
+<div id="tabs2" class="ui-tabs">
+
+    <ol class="ui-tabs-nav">
+    	<li><a id="first-tab-2" href="#app_platform">Application platform</a></li>
+    	<li><a href="#clusters">Instrument cluster</a></li>
+    	<li><a href="#handsfree">Hands-free</a></li>
+    	</ol>
+ <div id="app_platform" style="display: block;">
+   <h2>Application platform</h2>
+   <p>The QNX CAR application platform is a pre-integrated
+     software stack that includes production-proven technology     from QNX Software Systems and dozens of ecosystem<br />
+     partners. Its reference implementations and reskinable
+     HMI allow development teams to easily create world-class
+     infotainment systems that include:</p>
+   <ul>
+     <li>Internet connectivity and browsing</li>
+     <li>Bluetooth and hands-free calling</li>
+     <li>rear-seat gaming and edutainment</li>
+     <li>vehicle monitoring and virtual mechanic support</li>
+     <li>media device connectivity</li>
+     <li>navigation with Google maps and local search</li>
+     <li>Pandora audio and streaming video</li>
+   </ul>
+   <p>See also: <a href="/products/qnxcar/" target="_blank">QNX CAR Application Platform</a></p><br />
+
+<h2>&nbsp;</h2>
+</div> <!-- app platform -->
+
+<div id="clusters">
+<h2>Instrument clusters</h2>
+
+<p>The digital instrument cluster is the new frontier for in-vehicle electronics. Its a place where safety-critical features meet compelling graphical environments. See why QNX Software Systems has all the right technologies that come together for a perfect fit in this up-and-coming space.</p>
+
+<h3>Business issues</h3>
+<p>A well-executed instrument cluster can bring a huge amount of prestige and attention to a vehicle.  But a poorly executed one can spell complete disaster, not only affecting sales but creating potential liability. QNX Software Systems can help meet robust and reliable demands while adding sizzle by:</p>
+<p><ul>
+<li>Building products to strict safety standards</li>
+<li>Leveraging development across multiple vehicle lines by reskinning cluster </li>
+<li>Maintaining rapid development pace despite introduction of new technologies</li>
+</ul>
+<h3>Development issues</h3>
+<p>Developing a digital instrument cluster requires retraining technical staff for a host of new technologies that arent in the analog space.  QNX Software Systems can help ease the transition by providing ready-made solutions:
+<ul>
+<li>Move from home-built OS to true RTOS, leveraging standards and the ability to use existing code</li>
+<li>Create system with instant boot speed to meet customer expectations on immediate cluster availability as soon as vehicle is started</li>
+<li>Use sophisticated 2D and 3D graphics to create rich compelling displays</li>
+<li>Use dozens of supported third party HMI tools for ease of development</li>
+</ul>
+<h3>Our solution </h3>
+<p>QNX Software Systems provides a digital instrument cluster solution that can handle the demanding reliability environment at the same time as providing beautiful, attractive cluster graphics with:
+<ul>
+<li>Standards based tools (Eclipse) and OS (POSIX) that enables rapid learning curve</li>
+<li>Component based architecture that promotes software reuse</li>
+<li>A reliable and certifiable RTOS, which makes safety critical designs possible</li>
+<li>Adobe Flash and OpenGL-ES based HMI for creating beautiful, compelling graphics</li>
+</uL></p>
+In addition, many third-party HMI tools (such as Elektrobit Guide, Altia Deep Screen, and Qt) are available through the QNX ecosystem. </div> <!-- clusters -->
+<div id="handsfree">
+<h2>Hands-free</h2>
+<p>The line between a simple hands-free system and a complete telematics system is blurring as OEMs continue to expand and add features to headless modules.  QNX Software Systems is a pioneer in the telematics industry, and has the technology and experience to help, no matter how complex the hands-free features become in a deployed system.</p>
+<p>
+In fact, as of 2010, QNX technology is shipping in over 75 percent of factory-installed Bluetooth hands-free systems in vehicles from Acura, Daimler Chrysler, Honda, Nissan, Saab, Toyota, and many others.  </p>
+<p>
+We are the recognized leader in this space not only because of our industry-leading real-time OS, but also because of the advanced technology in the QNX Aviage Acoustic Processing Suite. The same technology that companies have come to rely on for standalone hands-free systems is now pre-integrated into the QNX CAR Application Platform. The rare combination of acoustic technology and microkernel reliability allows us to help OEM and tier one suppliers meet a growing number of challenges.</p>
+<p>
+<h3>Business issues</h3>
+<p>Hands-free systems are morphing from offering simple Bluetooth calling to incorporating more and more telematics features, which drives up complexity. At the same time, escalating costs must be driven down.  Balancing these two opposing forces, while continually improving reliability, audio quality, and simplifying or eliminating the OEM tuning process are key to a successful hands-free system. QNX Software Systems understands the business issues driving hands-free systems, and helps solve these issues:</p>
+<p><ul>
+<li>Migrating simple hands-free systems into full gateways </li>
+<li>Maintaining hard real-time responsiveness and life-critical reliability</li>
+<li>Reducing cost through replacing hardware BOM with software capability</li>
+</ul>
+<h3>Development issues</h3>
+<p>Creating a flawless hands-free system is a complex endeavor and anything that can be done to make the developers life easier is welcome.  QNX Software Systems provides secure, reliable, upgradeable components for creating hands-free systems that:
+<ul>
+<li>Integrate with speech technologies for email text-to-speech and hands-free communication </li>
+<li>Handle noisy environments and double-talk</li>
+<li>Offer next-generation speech technologies using context-based natural language recognition</li>
+</ul>
+<h3>Our solution </h3>
+<p>QNX Software Systems has a repeatedly production-proven solution that improves user experience while making the system development simple with:
+<ul><li>Best-in-class audio quality for a hands-free solution </li>
+<li>Elimination of the need for an OEM to do expensive and time consuming tuning for each vehicle</li>
+<li>Removal of requirement for dedicated speech, AEC, or hands-free DSP</li>
+<li>Handling of telematics protocols and networking</li>
+</uL>
+
+
+</div> <!-- handsfree -->
+</div><!--solutions tabs-->
+</div><!--solutions-->
+
+<div id="ecosystem">
+<p>
+QNX Software Systems understands the value of providing complete, ready-to-use, pre-integrated solutions. Our production-proven automotive ecosystem is the industrys biggest and broadest, giving customers more options when creating best-in-class solutions.</p>
+<table>
+<tr valign="top"><td>
+<h2>Speech middleware</h2>
+    <ul>
+        <li>AT&T</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161677">Cambridge Silicon Radio (CSR)</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161678">Nuance Communications</a></li>
+        <li>VoiceBox Technologies</li>
+    </ul>
+
+<h2>Vehicle bus technologies</h2>
+    <ul>
+        <li>Averna</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161262">Bit Ctrl Systems</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161322">Danlaw Technologies</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161680">Dearborn Group</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161386">Electronic System Design</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161681">SMSC</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161287">STEINHOFF Automation</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161222">Vector Informatik</a></li>
+    </ul>
+
+<h2>Bluetooth technologies</h2>
+    <ul>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161677">Cambridge Silicon Radio</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161560">Clarinox</a></li>
+        <li>Cybercom Group</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161631">Mecel</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161685">Sybase / iAnywhere</a></li>
+    </ul>
+
+<h2>Web middleware</h2>
+    <ul>
+        <li>Access</li>
+        <li>Mozilla Firefox</li>
+        <li>Openwave</li>
+        <li>Webkit</li>
+    </ul>
+
+<h2>Connectivity solutions</h2>
+    <ul>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161281">Airbiquity</a></li>
+        <li>Arada Systems</li>
+        <li>Atheros Communications</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161352">Broadcom</a></li>
+        <li>Devicescape</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161720">Marvell</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161692">Red Bend Software</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161693">Thales Group</a></li>
+    </ul>
+
+<h2>Database technologies</h2>
+    <ul>
+        <li>Empress</li>
+        <li>Hitachi Data Systems</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161351">IBM</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161371">McObject</a></li>
+        <li>MySQL</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161617">Oracle</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161373">Raima</a></li>
+    </ul>
+
+<h2>Integrated applications</h2>
+    <ul>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161781">7Digital</a></li>
+        <li>Accuweather</li>
+        <li>Atlantic Records</li>
+        <li>Best Parking</li>
+        <li>Event Seekr</li>
+        <li>HearPlanet</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161704">Pandora</a></li>
+        <li>Parkopedia</li>
+        <li>Slacker</li>
+        <li>Soundtracker</li>
+        <li>TuneIn</li>
+        <li>The Weather Network</li>
+    </ul>
+
+<h2>Tools </h2>
+    <ul>
+        <li>Logix</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161351">IBM</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161271">Lauterbach</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161558">National Instruments</a></li>
+        <li>Sencha</li>
+    </ul>
+
+</td>
+<td width="5%"></td>
+<td>
+
+<h2>Multimedia technologies </h2>
+    <ul>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161700">Apple</a></li>
+        <li>DivX</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161703">Fraunhofer</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161349">Freescale Semiconductor</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161458">Gracenote</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161721">Microsoft</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161247">NVIDIA</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161783">PacketVideo</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161704">Pandora</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161202">Renesas Technology</a></li>
+        <li>Rovi</li>
+        <li>Sonic Solutions</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161227">Texas Instruments</a></li>
+    </ul>
+
+<h2>Graphics and HMI</h2>
+    <ul>
+        <li>Alt Software</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161410">Altia</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161597">Crank Software</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161754">Digia</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161314">Elektrobit</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161782">The Imagination Group</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161247">NVIDIA</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161785">Vivante</a></li>
+    </ul>
+
+<h2>System integrators</h2>
+    <ul>
+        <li>Akita Electronics Systems</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161750">Code Edge</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161314">Elektrobit</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161708">Lectronix</a></li>
+        <li>Patni Computer Systems</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161240">Systemic Realtime Design</a></li>
+        <li>Teleca</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161317">Wipro Technologies</a></li>
+    </ul>
+
+<h2>Navigation technologies </h2>
+    <ul>
+        <li>3DVU</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161314">Elektrobit</a></li>
+        <li>iGO</li>
+        <li>Navigon</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161709">NAVTEQ</a></li>
+        <li>Tele Atlas </li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161784">Telenav</a></li>
+        <li>Telecomsys</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161620">Trimble</a></li>
+    </ul>
+
+<h2>Java technologies</h2>
+    <ul>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161351">IBM</a></li>
+        <li>jQuery</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161342">ProSyst</a></li>
+    </ul>
+
+<h2>Services</h2>
+    <ul>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161641">BSquare</a></li>
+        <li>Symphony Teleca</li>
+    </ul>
+
+<h2>Silicon</h2>
+    <ul>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161349">Freescale Semiconductor</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161207">Fujitsu</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161391">Intel</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161720">Marvell</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161247">NVIDIA</a></li>
+        <li>NXP</li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161686">Qualcomm</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161202">Renesas Technology</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161227">Texas Instruments</a></li>
+        <li><a href="http://www.qnx.com/partners/partner.html?partnerid=161266">Xilinx</a></li>
+    </ul>
+
+
+
+</td></tr></table>
+</div><!--ecosystem-->
+
+<div id="services">
+<p>The complexity of today's vehicles is growing exponentially. Hardware and software must be properly integrated to ensure reliable operations of everything from the suspension to the CD player. With the addition of more consumer-electronics, location-based services, and off-board connectivity, this integration is increasingly crucial to the driver experience. It is this integration process, however, that often bogs down production and creates unwanted delays.
+</p>
+<p>QNX Automotive Solutions provides quality engineering support to help tier one system integrators and OEMs eliminate program delays and meet or exceed project milestones and start of production (SOP) commitments. Based on extensive hands-on experience in automotive development, support, and integration in all areas of the QNX product portfolio, our team of senior engineers applies field-proven engineering and project-management practices to ensure successful results. We currently have a 100 percent success rate helping customers meet their deadlines. </p>
+
+<p>See also: <a href="/support/">QNX Professional Services</a> </p>
+
+<div id="tabs2" class="ui-tabs">
+
+    <ol class="ui-tabs-nav">
+    	<li><a id="first-tab-2" href="#why">Why QNX?</a></li>
+    	<li><a href="#benefits">Benefits</a></li>
+    	<li><a href="#services1">Services</a></li>
+    	<li><a href="#process">Process</a></li>
+	</ol>
+
+
+<div id="why" style="display: block;">
+<p>The QNX Automotive Solutions team is uniquely qualified to help customers eliminate program delays and meet or exceed project milestones and start of production (SOP) commitments.</p>
+
+<b>EXPERTISE</b>
+<p>We have worked extensively in all areas of in-car computing, including:</p>
+<ul>
+
+	<li>low-latency audio systems
+	<li>multimedia
+	<li>graphics, displays, and rotating media (hard disks and CDs)
+	<li>file systems
+	<li>peripheral busses: USB, SPI, I2S, I2C
+</ul>
+
+<b>EXPERIENCE</b>
+<p>We have logged hundreds of person years of automotive development, support, and integration in all areas of the QNX product portfolio.</p>
+
+<b>SERVICE EXCELLENCE</b>
+<p>We currently have a 100 percent success rate helping customers meet their deadlines. </p>
+
+	</div><!--why-->
+	<div id="benefits">
+
+<b>COMPLETE PROJECTS ON TIME AND ON BUDGET</B>
+<p>With hundreds of person years in automotive development, support, and integration, the QNX Automotive Solutions team knows how to manage and deliver complex projects within tight timeframes and budgets.</p>
+
+<b>FOCUS ON ADDING VALUE</b>
+<p>By co-sourcing integration and development work with the QNX Automotive Solutions team, customers can focus more time on more important things  like adding high value features to products.</p>
+
+<b>CUT COSTS AND SPEED ROI</b>
+<p>Members of the QNX Automotive Solutions team have first-hand experience optimizing QNX-based software to perform optimally on partner hardware; we use this experience to help customers cut development costs and speed time-to-revenue.</p>
+	</div><!--benefits-->
+
+	<div id="services1">
+<p>QNX Automotive Solutions offers three engineering support options:</p>
+
+<b>AUTOMOTIVE PROJECT TEAM<br>
+<i>Dedicated team for long term support, development, and integration</i></b>
+<ul>
+	<li>Architecture reviews </li>
+	<li>Demonstration support</li>
+	<li>Technology prototyping</li>
+	<li>Driver development and optimization</li>
+	<li>System-level analysis</li>
+	<li>Prioritized enhancements and bug fixing</li>
+	<li>Target platform specific testing</li>
+	<li>Advanced system-level optimization (fast start up, system profiling, BOM cost reduction, mini-drivers, footprint)</li>
+</ul>
+<p>This team includes a project manager, senior developer, and development/test specialist, and is backed by a software development group of professionals focused
+on automotive-specific projects.</p>
+
+<b>AUTOMOTIVE TIGER TEAM <br>
+<i>Small, focused team for short-term, high-priority, time-critical requirements</i></b>
+
+<p>This team can be on-site on short notice to help troubleshoot and solve complex, unforeseen issues. It is supported by resources in the larger QNX Automotive
+Solutions and core QNX engineering teams. It has close ties with key suppliers of automotive software and hardware products, and services.
+</p>
+
+<b>AUTOMOTIVE DESIGN WORKSHOP SUPPORT<br>
+<i>Short or medium-term support and development option hosted at Phase Four, the QNX automotive engineering facility</i></b>
+
+<p>This service allows your engineering team to work hand-in-hand with members of the QNX Automotive Solutions team. We provide development and lab space for multiple team members, test equipment, prototype hardware, and, if required, the vehicle itself.</p>
+
+
+	</div><!--services1-->
+	<div id="process">
+<p>Customers who work with the QNX Automotive Solutions team know they are working with a team that has a successful formula to achieving results. The questions we ask when creating a customer plan include:</p>
+<ul>
+<li>What technology can we leverage to meet customer deliverables?
+<li>What BSP customizations are needed (custom hardware)?
+<li>What middleware customizations are needed?
+<li>What future roadmap or R&D work must be pulled into product?
+<li>What reference code can be leveraged but must be hardened?
+<li>What pieces are missing and must be created?
+<li>What is the division of responsibility between the customer and QNX Software Systems?
+<li>What is the schedule of work?
+</ul>
+	</div><!--process-->
+</div><!--services tabs-->
+
+</div><!--services-->
+
+<div id="customers">
+
+
+
+			<table>
+	<tr valign="top">
+				<td  valign="top" width="150"><img alt="Acura " src="http://qnxsoft.vo.llnwd.net/o15/images/logos/auto_logos/acura.jpg"  border="0"><br><img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/white/cpanel/world1.gif"> <a href="http://www.acura.com/HandsFreeLink.aspx" target="_blank">Web site</a>
+				</td>
+				<td valign="top"><h4>Acura </h4>
+
+					<p>HandsFreeLink, a Bluetooth-enabled, hands-free phone system, comes standard in all Acura and several Honda vehicles including the Accord, Odyssey, and Pilot. The system creates a wireless connection to mobile phones and allows drivers to make and receive calls without distracting them from the road.  The quality hands-free calling experience is provided by the QNX Aviage Acoustic Processing Suite.</P>
+				</td></tr>
+
+	</table>
+
+	<table>
+	<tr valign="top">
+				<td width="150"><img alt="Audi"  src="/images/logos/audi.jpg"  border="0"><p>  <img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/white/cpanel/world1.gif">
+				<a href="http://www.audi.ca/audi/ca/en2/experience/technology/driver_convenience.html" target="_blank">Web site</a><br> 
+                <img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/blog.png">
+				<a href="http://www.autoblog.com/2009/01/29/audi-details-new-mmi/" target="_blank">Blog entry</a><br> </td>
+				<td valign="top"><h4>Audi</h4>
+
+					<P>The QNX-based Audi Multi Media Interface showcases QNX graphics technology on top of the solid QNX Neutrino RTOS. The MMI system connects every advanced system in the Audi A8L, Q5, and A6 vehicles, allowing drivers to control everything from DVD based navigation, through Bluetooth communications, to CD audio and satellite radio.  </P>
+				</td></tr>
+
+	</table>
+
+	
+	<table>
+	<tr valign="top">
+				<td width="150"><img alt="BMW"src="http://qnxsoft.vo.llnwd.net/o15/images/logos/auto_logos/bmw.jpg"  border="0"><br><img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/white/cpanel/world1.gif"> <a href="http://www.bmw.com" target="_blank">Web site</a><br>
+				</td>
+				<td  valign="top"><h4>BMW</h4>
+
+					<P>Deployed in over ten BMW models (including the 7-series and M models), BMWs QNX-based infotainment system controls a number of in-vehicle functions such as navigation, audio, iPod and MP3 player connectivity, media management, and Bluetooth hands-free.</P>
+				</td></tr>
+
+	</table>
+
+
+	
+	<table>
+	<tr valign="top">
+				<td width="150"><img alt="Chrysler"src="http://qnxsoft.vo.llnwd.net/o15/images/logos/auto_logos/chrysler.jpg"  border="0"><br><br><img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/white/cpanel/world1.gif"> <a href="http://www.chrysler.com/en/2009/sebring/innovations/uconnect/" target="_blank">Web site</a><br>
+				</td>
+				<td  valign="top"><h4>Chrysler</h4>
+
+					<P>Using a combination of the QNX Neutrino RTOS and QNX Aviage Acoustic Processing, the Chrysler Pacifica UConnect offers an optional hands-free, in-vehicle communications system that places calls with Bluetooth phones and provides a clear, reliable calling experience. A microphone in the rear-view mirror accepts voice commands and allows drivers to keep their hands on the wheel and eyes on the road.</P>
+				</td></tr>
+
+	</table>
+
+	
+		<table>
+	<tr valign="top">
+				<td  valign="top" width="150"><img alt="Daewoo " src="http://qnxsoft.vo.llnwd.net/o15/images/logos/auto_logos/daewoo.jpg"  border="0"><br><img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/white/cpanel/world1.gif"> <a href="http://www.daewoo.com/english/index.jsp" target="_blank">Web site</a><br><img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/press_release.gif"> <a href="http://www.qnx.com/news/pr_854_1.html">Press release<a/>
+				</td>
+				<td valign="top"><h4>Daewoo </h4>
+
+					<p>Daewoos VisionJoy system is an integrated navigation and information unit that relies on the QNX Neutrino RTOS for its ultra-reliable operation. The system uses a touch screen interface and GPS-enabled communications to provide drivers with services such as traffic and congestion updates, automatic route selection, and detailed 'turn-by-turn" voice directions. It is available today in the Daewoo Statesman and Winstorm. </P>
+				</td></tr>
+
+	</table>
+
+	
+<table>
+	<tr valign="top">
+				<td width="150"><img alt="GM"src="http://qnxsoft.vo.llnwd.net/o15/images/logos/auto_logos/gm-logo.jpg"  border="0"><br><img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/white/cpanel/world1.gif"> <a href="http://www.onstar.com/us_english/jsp/index.jsp" target="_blank">Web site</a></td>
+				<td valign="top"><h4>GM</h4>
+
+					<P>OnStar is a subscription-based communications, monitoring, and tracking service provided by General Motors. As a standard feature in all GM vehicles for North America, it uses both the QNX&reg; Neutrino&reg; RTOS for guaranteed performance in emergency situations and the clear hands-free quality of the QNX Aviage&reg; Acoustic Processing Suite.  </P>
+				</td></tr>
+
+	</table>
+	
+		<table>
+	<tr valign="top">
+				<td  valign="top" width="150"><img alt="Hyundai "src="http://qnxsoft.vo.llnwd.net/o15/images/logos/auto_logos/hyundai.jpg"  border="0"><br><img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/white/cpanel/world1.gif"> <a href="http://www.hyundaicanada.com" target="_blank">Web site</a><br> <img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/press_release.gif"> <a href="http://www.qnx.com/news/pr_854_1.html">Press release<a/>
+				</td>
+				<td valign="top"><h4>Hyundai </h4>
+
+					<p>The Hyundai Mobis MTS-1 navigation system simultaneously manages navigation, a hands-free phone module, a rear-seat entertainment screen, media-rich applications, and user controls such as window lifts, seat adjusts, and HVAC through a single, multi-functional console.  The system is built on the QNX Neutrino RTOS and QNX graphics for a trouble-free user experience. </P>
+				</td></tr>
+
+	</table>
+
+		
+		<table>
+	<tr valign="top">
+				<td width="150"><img alt="Land Rover"  src="http://qnxsoft.vo.llnwd.net/o15/images/logos/auto_logos/landrover.jpg"  border="0"><br>
+				<img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/white/cpanel/world1.gif"> <a href="http://www.landrover.com/us/en/lr/#" target="_blank">Web site</a><br><img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/blog.png"> <a href="http://onqpl.blogspot.com/2009/08/pimp-my-digital-drive-2010-range-rover.html" target="_blank">Blog entry<a/><br><img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/press_release.gif"></a> <a href="http://www.qnx.com/news/pr_3655_1.html">Press release</a> </td>
+				<td valign="top"><h4>Land Rover Range Rover</h4>
+
+					<P>The Land Rovers digital instrument cluster presents driver information through virtual gauges and sophisticated graphics, made reliable by the QNX Neutrino RTOS. Dynamically reconfigured for the vehicles operating modes, the display is provided as a standard feature in all markets worldwide.</P>
+				</td></tr>
+
+	</table>
+
+		
+
+
+		<table>
+	<tr valign="top">
+				<td  valign="top" width="150"><img alt="Porsche" src="http://qnxsoft.vo.llnwd.net/o15/images/logos/auto_logos/porsche.jpg"  border="0"><br><img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/white/cpanel/world1.gif"> <a href="http://www.porsche.com/microsite/technology/default.aspx?pool=usa&ShowSingleTechterm=PTPCM&Category=&Model=&SearchedString=&SelectedVariant" target="_blank">Web site</a>
+				</td>
+				<td valign="top"><h4>Porsche</h4>
+
+					<p>The Porsche Communication Management system is a central control unit for audio, navigation and communications, featuring iPod, MP3, and USB memory stick playback, Bluetooth compatibility, GPS navigation, and more.  QNX-based technology coordinates the device connectivity of the PCM system, which is operated through voice control and a large touch-screen interface. </P>
+				</td></tr>
+
+	</table>
+
+				<table>
+	<tr valign="top">
+				<td  valign="top" width="150"><img alt="Saab" src="http://qnxsoft.vo.llnwd.net/o15/images/logos/auto_logos/saab.jpg"  border="0"><br><img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/white/cpanel/world1.gif"> <a href="http://www.saab.lv/main/GLOBAL/en/model/93_S/1/T/1/accessories_result.shtml" target="_blank">Web site</a>
+				</td>
+				<td valign="top"><h4>Saab </h4>
+
+					<p>The 9-3 line of Saab vehicles offers an infotainment system that combines Bluetooth, navigation and connection to MOST, provides full navigation and turn-by-turn driving display, and supports an RDS receiver, CD changer, and mobile phone. Saabs tier one supplier chose QNX Software Systems as the OS provider because of our reliable track record of in-vehicle installations.</P>
+				</td></tr>
+
+	</table>
+
+	
+
+
+			<table>
+	<tr valign="top">
+				<td  valign="top" width="150"><img alt="Renault Samsung "src="http://qnxsoft.vo.llnwd.net/o15/images/logos/auto_logos/renault_samsung_motors-logo.gif"  border="0"><br><img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/press_release.gif"> <a href="http://www.qnx.com/news/pr_1783_1.html">Press release<a/><br><img src="http://qnxsoft.vo.llnwd.net/o15/images/icons/white/cpanel/world1.gif"> <a href="http://www.renault.com/en/vehicules/pages/renault-samsung-motors-sm7.aspx" target="_blank">Web site</a>
+				</td>
+				<td valign="top"><h4>Renault Samsung </h4>
+
+					<p>The Renault-Samsung 3D infotainment system provides the SM7 with a variety of services, including navigation with traffic updates, air conditioning, car audio, gas mileage, engine control unit monitoring, DMB broadcast, MP3, WMA, and video playback, as well as rear-seat entertainment.  This amazing combination of capabilities is based on the QNX Neutrino RTOS.</P>
+				</td></tr>
+
+	</table>
+
+
+	
+
+
+	</div><!--customers-->
+</div>
+<p><!--tabs-->
+
+  
+<!-- start footer -->
+		
+</div> <!-- close textarea or widetext -->
+<div style="margin:0px;padding:0px;clear:both;height: 10px; overflow:hidden;">&nbsp;</div>
+
+<div class="footerwrapper">
+    <div class="footright">&copy;2013 QNX Software Systems Limited, a subsidiary of BlackBerry. &nbsp; <img src="/style/images/blackberry_logo_web.png" alt="BlackBerry Logo" /></div>
+    <div class="footleft">
+	<ul>
+	  <li><a href="/search/sitemap.html">Sitemap</a></li>
+	  <li><a href="/legal/web_terms.html">Legal</a></li>
+	  <li><a href="/legal/licensing/">Licensing</a></li>
+	  <li><a href="/legal/privacy_statement.html">Privacy</a></li>
+	  <li><a href="/company/contact/">Contact</a></li>
+	</ul>
+      </div>
+  </div>
+
+<SCRIPT TYPE='text/javascript' LANGUAGE='JavaScript' SRC='/elqNow/elqCfg.js'></SCRIPT>
+<SCRIPT TYPE='text/javascript' LANGUAGE='JavaScript' SRC='/elqNow/elqImg.js'></SCRIPT>
+<script type="text/javascript" language="javascript">
+    var gPageNavTitle = 'Automotive Solutions';
+
+  sz_lang_connectwithus = 'CONNECT WITH US';
+sz_lang_qnxsocialmedia = 'QNX SOCIAL MEDIA';
+</script>
+
+</body>
+</html>
+
+
+
+

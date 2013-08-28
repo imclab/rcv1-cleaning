@@ -1,0 +1,783 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Handheld Automotive Diagnostic Tool and Software for auto repair and car maintenance" /><meta name="keywords" content="Automotive diagnostic tool, check engine light, automotive repair, car maintenance, OBD2, automotive diagnostic software, consumer electronics gadget" /><meta name="Language" content="en-us" /><meta name="Abstract" content="CarMD.com is to empower consumers by providing them with the tools and information they need to make educated decisions about their vehicle’s health and maintenance." /><meta name="Copyright" content="© Copyright (c) 2012 CarMD Corp." /><meta name="Designer" content="CarMD Development Team" /><meta name="Author" content="CarMD Development Team" /><meta name="Revisit-After" content="30 Days" /><meta name="Distribution" content="Global" /><meta name="Robots" content="INDEX, FOLLOW" />
+    <!-- Google Merchant Center Site Verification Code -->
+    <meta name="google-site-verification" content="pc6pErleAAkewN5OdziHIY_UPlmpV-C0B13zYvYgyFI" /><meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0, minimum-scale=0, user-scalable=yes, width=1000" /><link rel="shortcut icon" href="/favicon.ico" /><title>
+	
+    
+    CarMD.com - Automotive diagnostic tools, vehicle maintenance, check engine light solutions, used car buying.
+
+
+</title>
+    <script language="javascript" type="text/javascript">
+        var hostName = window.location.hostname;
+        var query = window.location.search;
+
+        var domain = "mycarmd.ca";
+        var wwwdomain = "www.mycarmd.ca";
+
+        if (hostName == domain || hostName == wwwdomain) {
+            url = "http://www.carmd.com";
+        }
+
+        window.location.href = url;
+    </script>
+    <!--CSS-->
+    <link href="Content/CSS/jquery-ui-1.8.10.custom.css" rel="stylesheet" type="text/css" /><link href="Content/CSS/carmd.theme.css" rel="stylesheet" type="text/css" /><link href="Content/CSS/carmd.popup.css" rel="stylesheet" type="text/css" />
+    <!--script-->
+    <script type="text/javascript" src="http://www.carmd.com/Content/JavaScripts/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="http://www.carmd.com/Content/JavaScripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script type="text/javascript" src="http://www.carmd.com/Content/JavaScripts/jquery.metadata.js"></script>
+    <script type="text/javascript" src="http://www.carmd.com/Content/JavaScripts/jquery.validate-1.5.5.min.js"></script>
+    <script type="text/javascript" src="http://www.carmd.com/Content/JavaScripts/jquery.maskedinput-1.2.2.min.js"></script>
+    <script type="text/javascript" src="http://www.carmd.com/Content/JavaScripts/jquery.simplemodal.js"></script>
+    <script type="text/javascript" src="http://www.carmd.com/Content/JavaScripts/carmd.validate.js"></script>
+    <script type="text/javascript" src="http://www.carmd.com/Content/JavaScripts/JSBrowserDetect.js"></script>
+    <script type="text/javascript" src="http://www.carmd.com/Content/JavaScripts/jquery.slidemenu.js"></script>
+    
+    <script type="text/javascript">
+        var defaultSearchText = '';
+
+        function GotoUrl(url, target) {
+            window.location = url;
+        }
+        /*Param is pageId and rootMenuId. ex 12.3*/
+        function GetPage(param, hash) {
+            window.location = "/" + param + "/Article/" + hash.replace(/[^a-zA-Z 0-9]+/g, '');
+        }
+
+        $().ready(function () {
+            var validator = $("#loginForm").validate({
+                rules: {
+                    loginEmailAddress: { required: true },
+                    loginPassword: { required: true }
+                },
+                messages: {
+                    loginEmailAddress: "<br />Email cannot be left blank",
+                    loginPassword: "<br />Password cannot be left blank"
+                }
+            });
+
+            $("#keyword").keypress(function (e) {
+                if (e.which == 13) {
+                    WebsiteSearch();
+                }
+            });
+
+
+        });
+
+        function WebsiteSearch() {
+            var q = $.trim($('#keyword').val());
+            if (q != '' && q != undefined && q != defaultSearchText) {
+                window.location = '/Search?q=' + q;
+            }
+        }
+        function EnableSignInPopup() {
+            $("#popup-child").toggleClass("hide-menu");
+            var myClass = $("#menu-sign-in").attr("class");
+            $("#navigate .navigate-child-bottom ul li.active").removeClass("active");
+            $("#menu-sign-in").attr("class", myClass);
+            $("#menu-sign-in").toggleClass("active");
+        }
+
+        function InitMenu(menuId) {
+            $("#navigate .navigate-child-bottom ul li.active").removeClass("active");
+            $("#" + menuId).addClass("active");
+        }
+
+
+        function openIframeDialog(src, title, width, height) {
+            $("#iframe-dialog-modal iframe").attr("src", src);
+            $("#iframe-dialog-modal").dialog({
+                autoOpen: false,
+                bgiframe: true,
+                modal: true,
+                title: title,
+                width: width,
+                height: height
+            });
+            $("#iframe-dialog-modal").dialog("open");
+        }
+
+        function closeIframeDialog() {
+            $("#iframe-dialog-modal").dialog("close");
+        }
+    </script>
+    
+   
+</head>
+<body>
+    <div id="bodyContent">
+        <!-- Header -->
+        <div id="navigate">
+            <div class="container">
+                <div class="logo">
+                    <a href="/">
+                        <img src="http://www.carmd.com/Content/Images/Home/CarMD-logo.jpg" /></a>
+                </div>
+                <div class="navigate-child">
+                    <div class="navigate-child-top">
+                        
+                        <div class="menu-top">
+                            
+                            <a onclick="openIframeDialog('/Home/TellAFriend/', 'Tell A Friend', 500, 640);return false;"
+                                href="/Home/TellAFriend/" target="_blank">
+                                Tell A Friend</a>&nbsp;&nbsp;
+                            
+                            |&nbsp; <a href="http://blog.carmd.com/">
+                                CarMD Blog</a>&nbsp;&nbsp;
+                            
+                            |&nbsp; <a href="/Support/TechnicalSupport">
+                                Contact Us</a>
+                            
+                            |&nbsp; <a href="http://m.carmd.com">Mobile Version</a>&nbsp;&nbsp;
+                            
+                        </div>
+                        <div class="language">
+                            <a class="espanol" href="http://sp.carmd.com">Español</a>
+                        </div>
+                    </div>
+                    <div class="navigate-child-bottom">
+                        <ul>
+                            <li id="menu-product" class="product"><a href="/Shop/Products">
+                                products</a></li>
+                            <li id="menu-shop" class="shop"><a href="/tv-offer">
+                                shop</a></li>
+                            <li id="menu-support" class="support"><a href="/Setup">
+                                support</a></li>
+                            
+                            <li id="menu-sign-in" class="popup"><a href="#" onclick="EnableSignInPopup();">
+                                sign in / sign up</a>
+                                <div id="popup-child" class="popup-child hide-menu">
+                                    <a href="javascript:;" onclick="EnableSignInPopup();">
+                                        <img src="http://www.carmd.com/Content/Images/Home/btn-close.gif" class="x-close" />
+                                    </a>
+                                    <div class="left-popup">
+                                        <span class="title-18-white">
+                                            NOT A MEMBER YET?
+                                        </span>
+                                        <br />
+                                        <br />
+                                        You don't need to have a CarMD device<br />to become a member. Your<span class='white'><strong> FREE<br />membership</strong></span> provides you access to the<br />latest safety recall information, insider<br />tips, plus much more.
+                                        <br />
+                                        <br />
+                                        <a href="/Member/MemberRegistration/">
+                                            <img src="http://www.carmd.com/Content/Images/Home/btn-create-free-acct.jpg" align="absmiddle" /></a>
+                                    </div>
+                                    <div class="right-popup">
+                                        <span class="title-18-white">
+                                            LOG IN
+                                        </span>
+                                        <br />
+                                        <br />
+                                        <form id="loginForm" action="/Member/CheckLogin?returnUrl=" method="post">
+                                        <div>
+                                            <span class="white"><strong>
+                                                Username
+                                                /
+                                                Email</strong></span><br />
+                                            <input id="loginEmailAddress" name="loginEmailAddress" type="text" /><br />
+                                            <span class="white"><strong>
+                                                Password</strong></span><br />
+                                            <input id="loginPassword" name="loginPassword" type="password" /><br />
+                                            <div class="txt-right">
+                                                <a href="#">
+                                                    <input type="image" src="http://www.carmd.com/Content/Images/Home/btn-login.gif" style="width: 83px;
+                                                        height: 41px;" align="absmiddle" /></a><br />
+                                                <a href="/Member/RecoverPassword">
+                                                    Forgot Your Email Or Password?</a>
+                                            </div>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        <div class="search-box">
+                            <input type="text" id="keyword" name="keyword" class="txt-search" value="Search"
+                                onfocus="if (this.value == 'Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search';}" />
+                            <a href="javascript:;" onclick="WebsiteSearch();">
+                                <img src="http://www.carmd.com/Content/Images/Home/ico-search.gif" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of header -->
+        <!-- Content -->
+        
+   
+    <link type="text/css" rel="stylesheet" href="../../Content/CSS/light-box.css">
+<script type="text/javascript" src="/Content/JavaScripts/jquery.light-box.js"></script>
+<script>
+    $(document).ready(function () {
+        $("area[rel^='prettyPhoto']").prettyPhoto();
+        $(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000, autoplay_slideshow: true });
+        $(".gallery:gt(0) a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'fast', slideshow: 10000, hideflash: true });
+        $("#custom_content a[rel^='prettyPhoto']:first").prettyPhoto({
+            custom_markup: '<div id="map_canvas" style="width:260px; height:265px"></div>',
+            changepicturecallback: function () { initialize(); }
+        });
+        $("#custom_content a[rel^='prettyPhoto']:last").prettyPhoto({
+            custom_markup: '<div id="bsap_1259344" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div><div id="bsap_1237859" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6" style="height:260px"></div><div id="bsap_1251710" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div>',
+            changepicturecallback: function () { _bsap.exec(); }
+        });
+    });
+    
+</script>
+<div id="banner">
+    <div class="container">
+      <div class="us"> <img src="../../Content/Images/Home/bg-banner-us.jpg" border="0" usemap="#Map" />
+        <map name="Map" id="Map">
+          <area shape="rect" coords="276,290,901,383" href="/tv-offer" alt="ORDER NOW" />
+        </map>
+        <div class="gallery clearfix">
+          <div style="padding: 0; text-align: center;" class="gallery clearfix"> <a rel="prettyPhoto" title="What Is CarMD?" href="http://www.youtube.com/watch?v=MyzAX_eoniM&amp;rel=0"> <img src="../../Content/Images/home/watch-video.png" class="watch-video"> </a> </div>
+        </div>
+      </div>
+    </div>    
+</div>
+<div id="information">
+    <div class="container">
+        <a href="/40.5/Article/Check-Engine-Light-On?" style="text-decoration: none;">
+            <div class="left" onmouseover="EnableImages('btn-item-check-engine');" onmouseout="DisableImages('btn-item-check-engine');">
+                <img id="item-check-engine" src="../../Content/Images/home/item-check-engine.png"
+                    class="left" />
+                <div class="items-info-text" style="width: 240px;">
+                    <span>Check Engine Light On? </span>
+                    <hr style="width: 230px;" />
+                    CarMD Shows The Facts And When<br />
+                    To Be Concerned<br />
+                    <img id="btn-item-check-engine" src="../../Content/Images/home/btn-learn-more-grey.png"
+                        class="margin-top-5" />
+                </div>
+            </div>
+        </a><a href="/41.5/Article/Buying-A-Used-Car?" style="text-decoration: none;">
+            <div class="left" onmouseover="EnableImages('btn-item-used-car');" onmouseout="DisableImages('btn-item-used-car');">
+                <img id="item-used-car" src="../../Content/Images/home/item-used-car.png" class="left" />
+                <div class="items-info-text" style="width: 200px;">
+                    <span>Buying A Used Car? </span>
+                    <hr style="width: 190px;" />
+                    CarMD Shows How To Secure The
+                    <br />
+                    Best Deal<br />
+                    <img id="btn-item-used-car" src="../../Content/Images/home/btn-learn-more-grey.png"
+                        class="margin-top-5" />
+                </div>
+            </div>
+        </a><a href="/48.5/Article/Is-Your-Car-Safe?" style="text-decoration: none;">
+            <div class="left" onmouseover="EnableImages('btn-item-car-safe');" onmouseout="DisableImages('btn-item-car-safe');">
+                <img id="item-car-safe" src="../../Content/Images/home/item-car-safe.png" class="left" />
+                <div class="items-info-text" style="width: 190px;">
+                    <span>Is Your Car Safe? </span>
+                    <hr style="width: 190px;" />
+                    CarMD Shows The Common Tell<br />
+                    Tale Signs And What To Do
+                    <br />
+                    <img id="btn-item-car-safe" src="../../Content/Images/home/btn-learn-more-grey.png"
+                        class="margin-top-5" />
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div id="content">
+    <div class="container">
+        <div class="items-info">
+            <div class="left">
+                <img src="../../Content/Images/Home/info-car-not-running.jpg" class="left" />
+                <div class="items-info-text" style="width: 265px;">
+                    <span>Car Not Running Right? </span>
+                    <hr style="width: 230px;" />
+                    See What Are The Common<br />
+                    Symptoms & What You Need To
+                    <br />
+                    Watch For<br />
+                    <a href="/TechTip">
+                        <img src="../../Content/Images/Home/btn-start-now.gif" class="margin-top-10" /></a>
+                </div>
+            </div>
+            <div class="left">
+                <img src="../../Content/Images/Home/info-product-setup.jpg" class="left" />
+                <div class="items-info-text" style="width: 270px;">
+                    <span>Product Setup </span>
+                    <hr style="width: 270px;" />
+                    Click to install the latest CarMD&reg; software<br />
+                    <a href="/Setup">
+                        <img src="../../Content/Images/Home/btn-go.gif" class="margin-top-10" /></a>
+                </div>
+            </div>
+        </div>
+        
+
+<div class="items-info">
+    <div class="items-info-child" style="width: 330px;">
+        <span class="title-info">Car<strong>MD</strong>'s Latest Buzz </span>
+        <hr />
+        <ul class="ul-buzz">
+            
+            <li><strong>
+                CarMD offers free Vehicle Health ScoreCard™ for car owners and used car shoppers</strong>
+                , Apr. 8, 2013
+                <br />
+                ♦ <a href="http://scorecard.carmd.com/" target="_blank">
+                    Click to see your car’s reliability score</a> </li>
+            
+            <li><strong>
+                KABC-TV</strong>
+                (Dave Kunz), Mar. 15, 2013
+                <br />
+                ♦ <a href="http://abclocal.go.com/kabc/story?section=news/car_tips&id=9029888" target="_blank">
+                    Neglecting small car repairs can turn costly</a> </li>
+            
+            <li><strong>
+                Edmunds.com</strong>
+                (Phillip Reed), Feb. 11, 2013
+                <br />
+                ♦ <a href="http://www.edmunds.com/car-care/how-to-fix-your-cars-oxygen-sensor.html" target="_blank">
+                    How to Fix Your Car's  Oxygen Sensor</a> </li>
+            
+            <li><strong>
+                24/7 Wall Street</strong>
+                , Nov. 13, 2012
+                <br />
+                ♦ <a href="http://247wallst.com/keyword/carmd/" target="_blank">
+                    10 most reliable cars based on CarMD’s latest Vehicle Health Index</a> </li>
+            
+            <li class="view-more"><a href="/13.3.0/Article/CarMD-News-and-Reviews"><strong>View
+                More</strong></a></li>
+        </ul>
+    </div>
+    <div class="items-info-child" style="width: 330px; margin-right: 0;">
+        <span class="title-info">Car<strong>MD</strong> Resources </span>
+        <hr />
+        <ul class="ul-resources">
+            
+            <li>
+                
+                <a href="http://corp.carmd.com/carmd-press-center.htm" target="_blank">
+                    CarMD&reg; State Car Repair Cost Rankings: Where Does Your State Fall?</a>
+                
+            </li>
+            
+            <li>
+                
+                <a href="http://corp.carmd.com/" target="_blank">
+                    CarMD® Vehicle Health Index™ Results</a>
+                
+            </li>
+            
+            <li>
+                
+                <a href="http://corp.carmd.com/partner-programs.htm" target="_blank">
+                    CarMD® Affiliate Program Information</a>
+                
+            </li>
+            
+            <li>
+                
+                <a href="http://corp.carmd.com/" target="_blank">
+                    CarMD® Corporate Information</a>
+                
+            </li>
+            
+        </ul>
+    </div>
+    <div class="items-info-child" style="width: 270px; float: right; margin: 0;">
+        <span class="title-info">Car<strong>MD</strong> Blogs </span>
+        <hr />
+        <ul class="ul-resources">
+            
+            <li>
+                
+                <a href="http://blog.carmd.com/just-stay-home-not-really/" target="_blank">
+                    Just stay home? Not really.</a>
+                
+            </li>
+            
+            <li>
+                
+                <a href="http://blog.carmd.com/why-is-there-air/" target="_blank">
+                    Why Is There Air?</a>
+                
+            </li>
+            
+            <li>
+                
+                <a href="http://blog.carmd.com/nope-carmd-wont-void-your-warranty/" target="_blank">
+                    Nope, CarMD Won’t Void Your Warranty</a>
+                
+            </li>
+            
+            <li style="background: none;"><a href="http://blog.carmd.com/" target="_blank"><strong>
+                View More</strong></a></li>
+        </ul>
+    </div>
+</div>
+
+        <div class="hide">
+            <!-- Begin of euro tracking codes -->
+            <script type="text/javascript" src="https://pixel2.edgeadx.net/event/js?mt_id=102598&mt_adid=100457&v1=&v2=&v3=&s1=&s2=&s3="></script>
+            <!-- Start of DoubleClick Floodlight Tag: Please do not remove Activity name of this tag: CarMD Homepage URL of the webpage where the tag is expected to be placed: http://www.carmd.com This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag. Creation Date: 02/22/2011 -->
+            <script type="text/javascript">
+                var axel = Math.random() + "";
+                var a = axel * 10000000000000;
+                document.write('<iframe src="https://fls.doubleclick.net/activityi;src=3091064;type=carmd325;cat=carmd238;ord=' + a + '?" width="1" height="1" frameborder="0"></iframe>');
+            </script>
+            <noscript>
+                <iframe src="https://fls.doubleclick.net/activityi;src=3091064;type=carmd325;cat=carmd238;ord=1?"
+                    width="1" height="1" frameborder="0"></iframe>
+            </noscript>
+            <!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+            <!-- Google Code for Remarketing HP Remarketing List -->
+            <script type="text/javascript">
+            /* <![CDATA[ */
+            var google_conversion_id = 1024101366;
+            var google_conversion_language = "en";
+            var google_conversion_format = "3";
+            var google_conversion_color = "666666";
+            var google_conversion_label = "eviFCOLs-AEQ9peq6AM";
+            var google_conversion_value = 0;
+            /* ]]> */
+            </script>
+            <script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js">
+            </script>
+            <noscript>
+                <div style="display: inline;">
+                    <img height="1" width="1" style="border-style: none;" alt="" src="https://www.googleadservices.com/pagead/conversion/1024101366/?label=eviFCOLs-AEQ9peq6AM&amp;guid=ON&amp;script=0" />
+                </div>
+            </noscript>
+        </div>
+    </div>
+</div>
+
+    <script language="javascript" type="text/javascript">
+        var validator;
+        $().ready(function () {
+            validator = $("#frm-holiday").validate({
+                rules: {
+                    emailAddress: {
+                        required: true,
+                        email: true
+                    }
+                },
+ 
+                messages: {
+                    emailAddress: {
+                        required: "<br />An email address is required.  Please try again.",
+                        email: "<br />Invalid email"
+                    }
+                }
+            });
+ 
+        });
+ 
+        function SubmitForm() {
+            if ($("#frm-holiday").valid()) {
+                var email = $("#emailAddress").val();
+                $("#ModalContent").modal();
+                $.ajax({
+                    type: "Get",
+                    url: "/Holiday/SaveFreeMemberEmail?emailAddress=" + email + "&registedEvent=" + 1,
+                    dataType: "json",
+                    error: function () { /*could not load ajax*/
+                        $.modal.close();
+                        alert("Cannot submit the input email.");
+                    },
+                    success: function (jsonData) {
+                        $.modal.close();
+                        if (jsonData.Success) {
+                            alert("Your email was submitted successfully. Thank you!");
+                            $("#emailAddress").val("");
+                        }
+                        else {
+                            alert("Your email has already existed in the system. Please submit another email. Thank you!");
+                        }
+                    }
+                });
+            }
+            else {
+                $("#emailAddress").focus();
+            }
+        }
+ 
+        var leftBanner = "#banner-left-1";
+        var rightBanner = "#banner-right-1";
+        var rightHoverBanner = "#banner-right-1-active";
+ 
+        function EnableImages(image2) {
+            var item2 = image2;
+            var cImage2 = document.getElementById(item2);
+            cImage2.src = "http://www.carmd.com/Content/Images/Home/btn-learn-more-blue.png";
+        }
+ 
+        function DisableImages(image2) {
+            var item2 = image2;
+            var cImage2 = document.getElementById(item2);
+            cImage2.src = "http://www.carmd.com/Content/Images/Home/btn-learn-more-grey.png";
+        }
+        
+         /*countdown*/
+        var sURL = unescape(window.location.pathname);
+        var javascript_countdown = function () {
+            var time_left = 10; //number of seconds for countdown
+            var keep_counting = 1;
+            var no_time_left_message = 'Special Holiday is timeout!';
+            var _id;
+            function countdown() {
+                if (time_left < 2) {
+                    keep_counting = 0;
+                }
+                time_left = time_left - 1;
+            }
+            function add_leading_zero(n) {
+                if (n.toString().length < 2) {
+                    return '0' + n;
+                } else {
+                    return n;
+                }
+            }
+            function format_output() {
+                var hours, minutes, seconds;
+                seconds = time_left % 60;
+                minutes = Math.floor(time_left / 60) % 60;
+                hours = Math.floor(time_left / 3600);
+                seconds = add_leading_zero(seconds);
+                minutes = add_leading_zero(minutes);
+                hours = add_leading_zero(hours);
+                return hours + ':' + minutes + ':' + seconds;
+            }
+            function show_time_left() {
+                document.getElementById(_id).innerHTML = format_output(); //time_left;
+            }
+            function no_time_left() {
+                //document.getElementById(_id).innerHTML = no_time_left_message;
+                window.location.href = sURL;
+            }
+            return {
+                count: function () {
+                    countdown();
+                    show_time_left();
+                },
+                timer: function () {
+                    javascript_countdown.count();
+                    if (keep_counting) {
+                        setTimeout("javascript_countdown.timer();", 1000);
+                    } else {
+                        no_time_left();
+                    }
+                },
+                init: function (n, id) {
+                    _id = id;
+                    time_left = n;
+                    javascript_countdown.timer();
+                }
+            };
+        } ();
+        
+    </script>
+    
+
+        
+        <div id="content">
+            <div class="container">
+                
+    
+    
+
+                
+            </div>
+        </div>
+        
+        <!-- End Content -->
+        <!--start of Footer-->
+        
+<!--start of footer-->
+<div id="footer">
+    <div class="container">
+        <div class="footer-child">
+            <ul class="ul-footer">
+                <li>
+                    <img src="http://www.carmd.com/Content/Images/Home/txt-CarMD-product-information.gif">
+                    <ul>
+                        <li><a href="/Shop/Products">
+                            Shop Now For CarMD</a></li>
+                        <li><a href="/Shop/Products#p2100">
+                            CarMD&reg; Vehicle Health System<sup>TM</sup></a></li>
+                        <li><a href="/71.6/Article/What-Does-CarMD-Test?">
+                            What Does CarMD Test?</a></li>
+                        <li><a href="/Testimonials">
+                            CarMD Testimonials</a></li>
+                        <li><a href="/Shop/Products#phpa">
+                            CarMD&reg; Premium Vehicle Health Plan<sup>TM</sup></a></li>
+                        <li><a href="/Shop/Products#p2198">
+                            CarMD&reg; OBD2 Extension Cable</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <img src="http://www.carmd.com/Content/Images/Home/txt-CarMD-resources.gif">
+                    <ul>
+                        <li><a href="/40.5/Article/Check-Engine-Light-On?">
+                            CarMD Diagnoses Check Engine Light Problems</a></li>
+                        <li><a href="/41.5/Article/Buying-A-Used-Car?">
+                            CarMD Used Car Reviews & Rankings</a></li>
+                        <li><a href="/48.5/Article/Is-Your-Car-Safe?">
+                            CarMD Vehicle Safety Recalls & TSBs</a></li>
+                        <li><a href="/TechTip">
+                            CarMD Vehicle Maintenance Tips</a></li>
+                        <li><a href="/Setup">
+                            Product Setup</a></li>
+                        <li><a href="http://blog.carmd.com/">
+                            CarMD Blog Articles</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <img src="http://www.carmd.com/Content/Images/Home/txt-CarMD-customer-support.gif" />
+                    <ul>
+                        <li><a href="/Member/Login">
+                            CarMD Member Registration / Log In</a></li>
+                        <li><a href="/70.6/Article/Find-My-Car's-Connector">
+                            Where Does CarMD Plug In?</a></li>
+                        <li><a href="/Video/Watch/?v=2b4551d1-5051-41b1-b036-1e077f1ae946&amp;n=Complete of CarMD Handheld Demo">
+                            How Do I Use CarMD?</a></li>
+                        <li><a href="/33.6/Article/System-Requirements">
+                            CarMD Technical Requirements</a></li>
+                        <li><a href="/27.6/Article/CarMD-FAQs">
+                            CarMD Frequently Asked Questions</a></li>
+                        <li><a href="/Support/TechnicalSupport">
+                            Contact CarMD Support</a></li>
+                    </ul>
+                </li>
+                <li style="margin-right: 0;">
+                    <img src="http://www.carmd.com/Content/Images/Home/txt-CarMD-corporate-information.gif" /><br />
+                    
+                    <ul>
+                        <li><a href="http://corp.carmd.com" target="_blank">
+                            CarMD&reg; Vehicle Health Index<sup>TM</sup></a></li>
+                        <li><a href="http://corp.carmd.com/our-company.htm" target="_blank">
+                            About CarMD</a></li>
+                        <li><a href="http://corp.carmd.com/carmd-press-center.htm" target="_blank">
+                            CarMD Press Center</a></li>
+                        <li><a href="/13.3.0/Article/CarMD-News-and-Reviews">
+                            CarMD Latest News & Reviews</a></li>
+                        <li><a href="http://corp.carmd.com/partner-programs.htm" target="_blank">
+                            CarMD Affiliate Program</a></li>
+                        
+                        <li><a href="http://sp.carmd.com">
+                            CARMD® EN ESPAÑOL</a></li>
+                        
+                         
+                    </ul>
+                </li>
+            </ul>
+            <div class="footer-bottom">
+                <div class="follow-us">
+                    Get Connected With CarMD<br>
+                    <a href="http://www.youtube.com/carmd" target="_blank">
+                        <img src="http://www.carmd.com/Content/Images/Home/ico-youtube.png"></a><a href="http://www.facebook.com/carmd"
+                            target="_blank">
+                            <img src="http://www.carmd.com/Content/Images/Home/ico-facebook.png"></a><a href="http://twitter.com/carmd"
+                                target="_blank">
+                                <img src="http://www.carmd.com/Content/Images/Home/ico-twitter.png"></a><a href="http://blog.carmd.com/"
+                                    target="_blank">
+                                    <img src="http://www.carmd.com/Content/Images/Home/ico-feed.png"></a>
+                </div>
+                <div class="copyright">
+                    <a href="/78.6/Article/Terms_of_Use_-_Privacy_Policy">
+                        Terms & Conditions</a>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;<a href="/78.6/Article/Terms_of_Use_-_Privacy_Policy">Privacy</a>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;<a
+                            href="/77.7/Article/ReturnPolicy">Returns</a>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;<a
+                                href="/90.7/Article/Shipping-Information">Shipping Info</a>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;<a
+                                    href="/97.7/Article/Warranty-Information">Warranty</a>
+                    
+                    &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;<a href="http://roadside.carmd.com" target="_blank">Roadside Rescue</a>
+                    
+                    <br />
+                    <br />
+                    Copyright &copy;2006 - 2013 CarMD.com Corp. All rights reserved. | www.carmd.com | 1-888-MyCarMD (888.692.2763). U.S. Patents: #6,687,584; 6,941,203; 6,947,816; other patents pending.CarMD, CarMD.com and the tag design are registered trademarks of CarMD.com Corp.(v1.2.14.24)</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end of footer-->
+
+        <!--end of Footer-->
+        <div id="ModalContent" style="display: none; text-align: center">
+            <img style="padding-top: 5px;" src="http://www.carmd.com/Content/Images/ajax-loader.gif" alt="" />
+        </div>
+    </div>
+    
+    
+    
+
+    
+<script type="text/javascript">
+    var _sf_startpt = (new Date()).getTime();
+</script>
+<!-------------------------------------------------------------------------->
+<!--Chartbeat tracking code-->
+<!-------------------------------------------------------------------------->
+<script type="text/javascript">
+    var _sf_async_config = { uid: 14121, domain: "carmd.com" };
+    (function () {
+        function loadChartbeat() {
+            window._sf_endpt = (new Date()).getTime();
+            var e = document.createElement('script');
+            e.setAttribute('language', 'javascript');
+            e.setAttribute('type', 'text/javascript');
+            e.setAttribute('src', (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") + "static.chartbeat.com/js/chartbeat.js");
+            document.body.appendChild(e);
+        }
+        var oldonload = window.onload;
+        window.onload = (typeof window.onload != 'function') ?
+             loadChartbeat : function () { oldonload(); loadChartbeat(); };
+    })();
+</script>
+<!-------------------------------------------------------------------------->
+<!--Google tracking code-->
+<!-------------------------------------------------------------------------->
+<!-- GA Multiple domains and sub domains -->
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-8429048-1']);
+    _gaq.push(['_setDomainName', 'carmd.com']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!-------------------------------------------------------------------------->
+<!--Visual Website Optimizer Code-->
+<!-------------------------------------------------------------------------->
+<script type='text/javascript'>
+    var _vis_opt_account_id = 14894;
+    var _vis_opt_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+    document.write('<s' + 'cript src="' + _vis_opt_protocol +
+'dev.visualwebsiteoptimizer.com/deploy/js_visitor_settings.php?v=1&a=' + _vis_opt_account_id + '&url='
++ encodeURIComponent(document.URL) + '&random=' + Math.random() + '" type="text/javascript">' + '<\/s' + 'cript>');
+</script>
+<script type='text/javascript'>
+    if (typeof (_vis_opt_settings_loaded) == "boolean") {
+        document.write('<s' + 'cript src="' + _vis_opt_protocol +
+'d5phz18u4wuww.cloudfront.net/vis_opt.js" type="text/javascript">' + '<\/s' + 'cript>');
+    }
+    // if your site already has jQuery 1.4.2, replace vis_opt.js with vis_opt_no_jquery.js above
+</script>
+<script type='text/javascript'>
+    if (typeof (_vis_opt_settings_loaded) == "boolean" && typeof (_vis_opt_top_initialize) == "function") {
+        _vis_opt_top_initialize(); vwo_$(document).ready(function () { _vis_opt_bottom_initialize(); });
+    }
+</script>
+    <div id="iframe-dialog-modal" title="Modal Dialog" style="display: none;overflow: hidden;">
+        <iframe width="100%" height="100%" marginwidth="0" marginheight="0" scrolling="no"
+            title="Dialog Title" style="overflow: hidden; border: none;" frameborder="0"></iframe>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<!--[if IE 7]> <html class="lt-ie9"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="google-site-verification" content="wtgaXQuvduR_ynbFXYU1BBBEM-yaIh4zid2J5aq9r5Q" />
+
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Dlisted" />
+<meta property="og:title" content="Dlisted" />
+<meta property="og:url" content="http://dlisted.com" />
+<link rel="canonical" href="http://dlisted.com" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Be Very Afraid" />
+
+<title>Dlisted | Be Very Afraid</title><meta name="description" content="Dlisted | Be Very Afraid">  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+  if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+    var viewportmeta = document.querySelector('meta[name="viewport"]');
+    if (viewportmeta) {
+      viewportmeta.content = 'width=device-width, minimum-scale=1.0, maximum-scale=2.0, initial-scale=1.0';
+      document.body.addEventListener('gesturestart', function () {
+        viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.6';
+      }, false);
+    }
+  }
+  </script>
+  
+  <meta http-equiv="cleartype" content="on">
+
+
+<link rel="icon" href="http://i.dlisted.com/favicon.ico?v=1" type="image/x-icon">
+<link rel="shortcut icon" href="http://i.dlisted.com/favicon.ico?v=1" type="image/x-icon">
+
+<!--
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://dlisted.com/wp-content/themes/dlisted_44/img/favi144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://dlisted.com/wp-content/themes/dlisted_44/img/favi114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://dlisted.com/wp-content/themes/dlisted_44/img/favi72.png">
+  <link rel="apple-touch-icon-precomposed" href="http://dlisted.com/wp-content/themes/dlisted_44/img/favi57.png">
+  <link rel="shortcut icon" href="http://dlisted.com/wp-content/themes/dlisted_44/img/favi16.png">
+-->
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!--[if lte IE 7]>
+    <script src="http://dlisted.com/wp-content/themes/dlisted_44/lte-ie7.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="http://i.dlisted.com/wp-content/themes/dlisted_44/styles.css?v=1376552305">
+  <link rel="stylesheet" href="http://i.dlisted.com/wp-content/themes/dlisted_44/ico-style.css?v=1371144397">
+  <link rel="stylesheet" href="http://i.dlisted.com/wp-content/themes/dlisted_44/css/themes/base/jquery.ui.all.css?v=1371053631">
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="http://dlisted.com/wp-content/themes/dlisted_44/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="http://dlisted.com/wp-content/themes/dlisted_44/microfiche.js"></script>
+	<script>
+	    function setCookie(c_name,value,exdays)
+	    {
+		var exdate=new Date();
+		exdate.setDate(exdate.getDate() + exdays);
+		var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString())+'; path=/';
+		document.cookie=c_name + "=" + c_value;
+	    }
+
+	    function getCookie(c_name)
+	    {
+		var c_value = document.cookie;
+		var c_start = c_value.indexOf(" " + c_name + "=");
+		if (c_start == -1)
+	        {
+		  c_start = c_value.indexOf(c_name + "=");
+		}
+		if (c_start == -1)
+		{
+		  c_value = null;
+		}
+		else{
+		  c_start = c_value.indexOf("=", c_start) + 1;
+		  var c_end = c_value.indexOf(";", c_start);
+		  if (c_end == -1){
+		    c_end = c_value.length;
+		  }
+		  c_value = unescape(c_value.substring(c_start,c_end));
+		}
+		return c_value;
+	    }
+	    var full_site=getCookie("full_site");
+	    if (full_site==null || full_site==""){
+	        $('head').append('<link rel="stylesheet" href="http://i.dlisted.com/wp-content/themes/dlisted_44/mobile_styles.css?v=1375424202">');
+	    }
+	    var ba_is_mobile = false;
+
+	    var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+	    ba_is_mobile = width<768;
+    
+	    if(ba_is_mobile)
+	        ba_is_mobile = 1;
+	    else 
+	        ba_is_mobile = 0;
+
+	    $(document).ready(function(){
+		if (full_site==null || full_site==""){
+	    	    $('.header-box').append('<div class="full_site_version_container"><a href="#" id="full_site_version">Full site</a></div>');
+		}
+		else {
+		    $('footer > div.container').append('<div class="mobile_site_version_container"><a href="#" id="mobile_site_version">Mobile version</a></div>');
+		}
+		$('.full_site_version_container a').click(function(){
+		    setCookie('full_site','1',5*365);
+		    document.location="/";
+		    return false;
+		})
+		$('.mobile_site_version_container a').click(function(){
+		    setCookie('full_site','0',-1);
+		    document.location="/";
+		    return false;
+		})
+	    });
+	</script>
+
+	<script>window.ONSWIPE_USR = 'dlisted'</script> 
+	<script src="http://assets.onswipe.com/synapse/on.js?usr=dlisted" id="onswipe_synapse"></script> 
+</head>
+<body>
+<!-- BLOGADS SKIN ADZONE -->
+<script type='text/javascript'><!--//<![CDATA[
+   if (typeof(ba_is_mobile) !== 'undefined') {
+        var m3_u = (location.protocol=='https:'?'https://z.blogads.com/delivery/ajs.php':'http://z.blogads.com/delivery/ajs.php');
+        var m3_r = Math.floor(Math.random()*99999999999);
+        if (!document.MAX_used) document.MAX_used = ',';
+        document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+        document.write ("?zoneid=127");
+        document.write ('&amp;cb=' + m3_r);
+        if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+        document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+        document.write ("&amp;loc=" + escape(window.location));
+        if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+        if (document.context) document.write ("&context=" + escape(document.context));
+        if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+        document.write("&amp;is_mobile=" + ba_is_mobile);
+        document.write ("'><\/scr"+"ipt>");
+   }
+//]]>--></script>
+<noscript><a href='http://z.blogads.com/delivery/ck.php?n=a5d4546f&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://z.blogads.com/delivery/avw.php?zoneid=127&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a5d4546f' border='0' alt='' /></a></noscript>
+<!-- /BLOGADS SKIN ADZONE -->
+    
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-ejSXfyZMwcbnr"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-ejSXfyZMwcbnr.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+<header>
+	<div class="container">
+		<div class="header-box">
+
+		</div>
+	</div>
+	<div class="container">
+	<div class="menu clearfix">	
+		<ul id="menu-top" class="left"><li id="menu-item-106338" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-106338"><a href="/"><img src="http://i.dlisted.com/wp-content/themes/dlisted_44/img/dlisted.png" alt="Dlisted"></a></li>
+<li id="menu-item-106343" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-106343"><a href="/">Home</a></li>
+<li id="menu-item-106671" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106671"><a href="/about/">About</a></li>
+<li id="menu-item-106672" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106672"><a href="/archive/">Archives</a></li>
+<li id="menu-item-106673" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106673"><a href="/links/">Links</a></li>
+<li id="menu-item-106674" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106674"><a href="/contact/">Contact</a></li>
+</ul>		<ul class="right">
+			<li><a href="https://www.facebook.com/itsdlisted"><span aria-hidden="true" class="icon-facebook"></span></a></li>
+			<li><a href="https://www.twitter.com/itsdlisted"><span aria-hidden="true" class="icon-twitter"></span></a></li>
+			<li><a href="http://dlisted.com/feed/rdf/"><span aria-hidden="true" class="icon-feed"></span></a></li>
+			<li class="search">
+				<form method="get" action="/">
+					<input type="text" id="s" name="s" class="searchbox"/><input type="submit" id="" value="" name="" class="searchbtn"/>
+				</form>
+			</li>
+		</ul>
+	</div>
+	</div>
+
+	<div class="container">
+
+		<div class="head-carousel clearfix">
+				
+				
+					<div class="slide-set clearfix">				<a href="http://dlisted.com/2013/08/26/khloe-kardashian-and-lamar-odom-are-separated/" class="slide" style="position:relative;">
+					<img src="http://i.dlisted.com/wp-content/uploads/2013/08/khloelamarseparated.jpg" alt="Khloe Kardashian And Lamar Odom Are Separated " title="Khloe Kardashian And Lamar Odom Are Separated " />
+					<!--<div class="caption">Khloe Kardashian And Lamar Odom Are Separated </div>-->
+				</a>								
+												<a href="http://dlisted.com/2013/08/25/oh-god-why-am-i-starting-to-like-the-embarrassing-mess-that-is-miley-cyrus/" class="slide" style="position:relative;">
+					<img src="http://i.dlisted.com/wp-content/uploads/2013/08/mileyabsolutedisaster.jpg" alt="Oh God, Why Am I Starting To Like The Embarrassing Mess That Is Miley Cyrus?" title="Oh God, Why Am I Starting To Like The Embarrassing Mess That Is Miley Cyrus?" />
+					<!--<div class="caption">Oh God, Why Am I Starting To Like The Embarrassing Mess That Is Miley Cyrus?</div>-->
+				</a>								
+												<a href="http://dlisted.com/2013/08/25/the-n-sync-reunion-happened-at-the-vmas-tonight/" class="slide" style="position:relative;">
+					<img src="http://i.dlisted.com/wp-content/uploads/2013/08/nsyncreunites.jpg" alt="The 'N Sync Reunion Happened At The VMAs Tonight " title="The 'N Sync Reunion Happened At The VMAs Tonight " />
+					<!--<div class="caption">The 'N Sync Reunion Happened At The VMAs Tonight </div>-->
+				</a>								
+												<a href="http://dlisted.com/2013/08/25/of-course-lady-caca-copied-doctor-who-during-her-vmas-performance/" class="slide" style="position:relative;">
+					<img src="http://i.dlisted.com/wp-content/uploads/2013/08/cacavmas2013.jpg" alt="Of Course Lady CaCa Copied Doctor Who During Her VMAs Performance" title="Of Course Lady CaCa Copied Doctor Who During Her VMAs Performance" />
+					<!--<div class="caption">Of Course Lady CaCa Copied Doctor Who During Her VMAs Performance</div>-->
+				</a>								
+												<a href="http://dlisted.com/2013/08/25/open-post-hosted-by-the-true-star-of-the-vmas/" class="slide" style="position:relative;">
+					<img src="http://i.dlisted.com/wp-content/uploads/2013/08/oprichardsimmonsvmas.jpg" alt="Open Post: Hosted By The True Star Of The VMAs (And Katy Perry)" title="Open Post: Hosted By The True Star Of The VMAs (And Katy Perry)" />
+					<!--<div class="caption">Open Post: Hosted By The True Star Of The VMAs (And Katy Perry)</div>-->
+				</a>								
+												<a href="http://dlisted.com/2013/08/25/what-kind-of-grand-theft-auto-vice-city-shit-is-this/" class="slide" style="position:relative;">
+					<img src="http://i.dlisted.com/wp-content/uploads/2013/08/mileygrandtheftautobangerz.jpg" alt="What Kind Of Grand Theft Auto: Vice City Shit Is This? " title="What Kind Of Grand Theft Auto: Vice City Shit Is This? " />
+					<!--<div class="caption">What Kind Of Grand Theft Auto: Vice City Shit Is This? </div>-->
+				</a>								
+			</div>			
+		</div>		
+	</div>
+	
+	<div class="container">
+		<div class="advert-box">
+			<div class="ad728">
+						<!--<script type="text/javascript">bmQuery.bmLib.iab.write({siteIdentifier:"buz.dlisted",zone:"homepage",sizes:["728x90"],position:"728a"});</script><noscript><a href="http://ad.doubleclick.net/jump/buz.dlisted/homepage;pos=728a;tile=1;sz=728x90;ord=123456789?" target="_blank" ><img src="http://ad.doubleclick.net/ad/buz.dlisted/homepage;pos=728a;tile=1;sz=728x90;ord=123456789?" border="0" alt="" /></a></noscript>-->
+			<script type='text/javascript'><!--//<![CDATA[
+			   var m3_u = (location.protocol=='https:'?'https://z.blogads.com/delivery/ajs.php':'http://z.blogads.com/delivery/ajs.php');
+			   var m3_r = Math.floor(Math.random()*99999999999);
+			   if (!document.MAX_used) document.MAX_used = ',';
+			   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+			   document.write ("?zoneid=79");
+			   document.write ('&amp;cb=' + m3_r);
+			   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+			   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+			   document.write ("&amp;loc=" + escape(window.location));
+			   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+			   if (document.context) document.write ("&context=" + escape(document.context));
+			   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+			   document.write ("'><\/scr"+"ipt>");
+			//]]>--></script><noscript><a href='http://z.blogads.com/delivery/ck.php?n=a71f0ae8&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://z.blogads.com/delivery/avw.php?zoneid=79&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a71f0ae8' border='0' alt='' /></a></noscript>
+						</div>
+		</div>
+	</div>
+</header>
+
+<div class="container page-content minh clearfix">
+	<div class="left-col">
+		<div class="left-col-content">	
+			
+		
+												<article>
+				<h1><a href="http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/">Take Your Lemon Party Inside, You Two!</a></h1>
+				<div class="clearfix">
+					<div class="date">August 27, 2013 / Posted by: <a href="http://dlisted.com/author/michaelk/" rel="author">Michael K</a></div>
+					<div class="share">
+						<a href="http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/#comments"><span aria-hidden="true" class="icon-bubble"></span> 12</a>
+					</div>
+				</div>	
+				
+								<div class="main-img">
+										<img src="http://i.dlisted.com/wp-content/uploads/2013/08/alecbaldwinfightinganotherpap.jpg">
+				</div>
+								<div class="acontent">
+				<p><a href="http://dlisted.com/wp-content/uploads/2013/08/alecbaldwinfightinganotherpap.jpg"></a></p>
+<p>The never-ending sexual tension between <strong>Alec Baldwin</strong> and the paps once again reached a fever pitch today when he threw one on a car and took him right then and there in front of everyone.</p>
+<p>The <a href="http://www.nydailynews.com/entertainment/gossip/alec-baldwin-street-scuffle-new-york-photographer-article-1.1438362" target="_blank">NYDN</a> says that Alec and his wife <strong>Hilaria Baldwin</strong>, <a href="http://dlisted.com/2013/08/23/alec-baldwin-is-somebodys-father-again/" target="_blank">who gave birth to their daughter about three seconds ago</a>, were walking around in their neighborhood in Manhattan when a paparazzo started asking her a bunch of questions. Hilaria ran into a tea shop to get away from the pap and Alec did what he does best, go after that trick. The East Coast Kanye called the cops before grabbing and pinning the pap to the hood of a parked car. There they were, two grown men, huffing and puffing while one of them was bent over a car. Why is it when two grown men are dry humping on each other on the hood of a car in public, it&#8217;s never the two grown men I want to see dry humping on each other on the hood of a car in public?</p>
+<p>The police showed up and Alec told them his side and so did the pap. They both admitted to shoving each other, so nobody was arrested and no charges will be filed. They both went their separate ways knowing that one day soon they&#8217;ll finish what they started on the hood of that parked car.</p>
+
+		<div class="thumbcontainer" id="thumbcontainer_111877"><div class="prev"><a href="javascript:;" class="prevthumb"><img src="/wp-content/themes/dlisted_44/img/arrowleft.png" border="0" alt=""></a></div>
+	<div class="galthumbs" id="gallery_111877"><div><ul><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600393_001/' title='spl600393_001'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600393_001-150x150.jpg" class="attachment-thumbnail" alt="spl600393_001" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600393_002/' title='spl600393_002'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600393_002-150x150.jpg" class="attachment-thumbnail" alt="spl600393_002" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600393_003/' title='spl600393_003'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600393_003-150x150.jpg" class="attachment-thumbnail" alt="spl600393_003" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600393_005/' title='spl600393_005'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600393_005-150x150.jpg" class="attachment-thumbnail" alt="spl600393_005" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600481_001/' title='spl600481_001'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600481_001-150x150.jpg" class="attachment-thumbnail" alt="spl600481_001" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600481_017/' title='spl600481_017'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600481_017-150x150.jpg" class="attachment-thumbnail" alt="spl600481_017" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600481_023/' title='spl600481_023'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600481_023-150x150.jpg" class="attachment-thumbnail" alt="spl600481_023" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600481_024/' title='spl600481_024'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600481_024-150x150.jpg" class="attachment-thumbnail" alt="spl600481_024" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600814_009/' title='spl600814_009'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600814_009-150x150.jpg" class="attachment-thumbnail" alt="spl600814_009" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600814_011/' title='spl600814_011'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600814_011-150x150.jpg" class="attachment-thumbnail" alt="spl600814_011" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600814_014/' title='spl600814_014'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600814_014-150x150.jpg" class="attachment-thumbnail" alt="spl600814_014" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600814_024/' title='spl600814_024'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600814_024-150x150.jpg" class="attachment-thumbnail" alt="spl600814_024" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600814_038/' title='spl600814_038'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600814_038-150x150.jpg" class="attachment-thumbnail" alt="spl600814_038" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600829_002/' title='spl600829_002'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600829_002-150x150.jpg" class="attachment-thumbnail" alt="spl600829_002" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600829_009/' title='spl600829_009'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600829_009-150x150.jpg" class="attachment-thumbnail" alt="spl600829_009" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600829_023/' title='spl600829_023'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600829_023-150x150.jpg" class="attachment-thumbnail" alt="spl600829_023" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600829_028/' title='spl600829_028'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600829_028-150x150.jpg" class="attachment-thumbnail" alt="spl600829_028" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/spl600829_029/' title='spl600829_029'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl600829_029-150x150.jpg" class="attachment-thumbnail" alt="spl600829_029" /></a></li></ul></div></div><div class="next"><a href="javascript:;" class="nextthumb"><img src="/wp-content/themes/dlisted_44/img/arrowright.png" border="0" alt=""></a></div></div><script>
+	$(function(){
+		$("#gallery_111877").microfiche({ buttons: false,bullets: false });
+		
+		$("#thumbcontainer_111877 .prevthumb").click(function() {
+			$("#gallery_111877").microfiche({ slideByPages: -1 });
+		});
+		
+		$("#thumbcontainer_111877 .nextthumb").click(function() {
+			$("#gallery_111877").microfiche({ slideByPages: 1 });
+		});
+	});
+	</script>
+<p><strong>Pics</strong>: <a href="http://www.splashnewsonline.com" target="_blank">Splash</a></p>
+				</div>
+									
+				<div class="clearfix">			
+										<div class="tags">
+											<strong>Tags:</strong> <a href="http://dlisted.com/tag/alec_baldwin/" rel="tag">Alec Baldwin</a>, <a href="http://dlisted.com/tag/do_you_need_a_moment/" rel="tag">Do You Need A Moment?</a>					</div>
+						
+					
+					<div class="moreshare">
+							<div class="addthis_toolbox" addthis:url="http://dlisted.com/2013/08/27/take-your-lemon-party-inside-you-two/" addthis:title="Take Your Lemon Party Inside, You Two!" addthis:description="Take Your Lemon Party Inside, You Two!">
+								<span class="blue">SHARE </span>
+								<a class="addthis_button_facebook"><span aria-hidden="true" class="icon-facebook"></span></a>
+								<a class="addthis_button_twitter"><span aria-hidden="true" class="icon-twitter"></span></a>
+								<a class="addthis_button_google_plusone_share"><span aria-hidden="true" class="icon-google-plus"></span></a>
+								<a class="addthis_button_email"><span aria-hidden="true" class="icon-mail"></span></a>
+							</div>
+							<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51783d3863028e0c"></script>						
+					</div>
+				</div>	
+
+			</article>
+			
+		 
+				 
+<div class="adOuterContainer_for_mobile_ad_zone">
+<div class="adMainContainer_for_mobile_ad_zone">
+<script type='text/javascript'><!--//<![CDATA[
+   if (typeof(ba_is_mobile) !== 'undefined'){
+	var m3_u = (location.protocol=='https:'?'https://z.blogads.com/delivery/ajs.php':'http://z.blogads.com/delivery/ajs.php');
+	var m3_r = Math.floor(Math.random()*99999999999);
+	if (!document.MAX_used) document.MAX_used = ',';
+	document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+	document.write ("?zoneid=368");
+	document.write ('&amp;cb=' + m3_r);
+	if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+	document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+	document.write ("&amp;loc=" + escape(window.location));
+	if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+	if (document.context) document.write ("&context=" + escape(document.context));
+	if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+	document.write("&amp;is_mobile=" + ba_is_mobile);
+	document.write ("'><\/scr"+"ipt>");
+   }
+//]]>--></script><noscript><a href='http://z.blogads.com/delivery/ck.php?n=a1baec22&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://z.blogads.com/delivery/avw.php?zoneid=368&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a1baec22' border='0' alt='' /></a></noscript>
+</div>
+</div>
+												<article>
+				<h1><a href="http://dlisted.com/2013/08/27/cyndi-lauper-was-not-amused-by-mileys-ho-shit-antics/">Cyndi Lauper Was Not Amused By Miley&#8217;s Ho Shit Antics</a></h1>
+				<div class="clearfix">
+					<div class="date">August 27, 2013 / Posted by: <a href="http://dlisted.com/author/michaelk/" rel="author">Michael K</a></div>
+					<div class="share">
+						<a href="http://dlisted.com/2013/08/27/cyndi-lauper-was-not-amused-by-mileys-ho-shit-antics/#comments"><span aria-hidden="true" class="icon-bubble"></span> 155</a>
+					</div>
+				</div>	
+				
+								<div class="main-img">
+										<img src="http://i.dlisted.com/wp-content/uploads/2013/08/mileylongass.jpg">
+				</div>
+								<div class="acontent">
+				<p><a href="http://dlisted.com/wp-content/uploads/2013/08/mileylongass.jpg"></a></p>
+<p>Seen above sticking out her <a href="http://en.wikipedia.org/wiki/Naan" target="_blank">naan</a> ass (if you read that as &#8220;<em>non ass,</em>&#8221; that works too) in another <a href="https://twitter.com/MileyCyrus" target="_blank">Twitter</a> portrait, <strong>Miley Cyrus</strong> has been re-tweeting all the praise she&#8217;s been getting for her performance of <strong><em>Spring Breakers: The Musical</em> </strong>at the VMAs. But one ho who is not going to slow clap for that mess is <strong>Cyndi Lauper.</strong> Because we need to ask every single person for their thoughts on Miley looking like a rabid chipmunk in heat on that stage, Australian radio hosts <a href="http://www.gold1043.com.au/shows/breakfast/" target="_blank">Brig &amp; Lehmo </a>(via <a href="http://www.eonline.com/news/452692/miley-cyrus-vma-performance-cyndi-lauper-says-it-encourages-date-rape-while-adam-lambert-defends-her" target="_blank">E!</a>) asked Cyndi Lauper about it. Cyndi is all for girls just having fun as long as those girls don&#8217;t promote date rape while having fun. Cyndi put it like this:</p>
+<blockquote><p>&#8220;Now that was Girl Gone Wild. So sad, so sad. That was like Girls Gone Wild. She&#8217;s in a song that literally says that the blurred lines allowed you to—when a woman says no, that she means yes—and that is frightful because that&#8217;s date rape. It&#8217;s like, that&#8217;s okay, it&#8217;s cool. And there she is, a young twentysomething trying to prove she can hang with the big boys and girls, you know, basically simulating a Girl Gone Wild video onstage. And I just felt like it was so beneath her and really raunchy, really raunchy. It wasn&#8217;t even art. It was raunch. It&#8217;s so sad. I felt really sad for her. I know Gaga mooned everybody and I was laughing to my son, &#8216;<em>This is like the naked video awards</em>,&#8217; but at least it was in art. It was like art. The other one was like raunch.&#8221;</p></blockquote>
+<p>She says &#8220;<em>raunch</em>&#8221; like it&#8217;s a bad thing!</p>
+<p>Miley&#8217;s tragic back twerking made Cyndi sad and that makes me sad, but what is Cyndi going on about? Miley&#8217;s performance was a pro-date rape PSA and like something out of <em>Girls Gone Wild</em>?! Cyndi Lauper is the voice of everything, but she&#8217;s wrong about this. The most offensive part of that shit show was <strong>Robin Thicke&#8217;s</strong> Beetlejuice suit and the only things that performance promoted were tongue sedation, regular visits to the free clinic, laughing yourself into a coma and the dangers of twerking with no ass. I wouldn&#8217;t say that Miley promoted date rape. Sure, parts of that mess of a performance made me to want to roofie my eyeballs&#8230; Oh, wait&#8230;</p>
+				</div>
+									
+				<div class="clearfix">			
+										<div class="tags">
+											<strong>Tags:</strong> <a href="http://dlisted.com/tag/cyndi_lauper/" rel="tag">Cyndi Lauper</a>, <a href="http://dlisted.com/tag/i_dont_like_jokes/" rel="tag">I Don't Like Jokes</a>, <a href="http://dlisted.com/tag/miley-cyrus/" rel="tag">Miley Cyrus</a>, <a href="http://dlisted.com/tag/well_damn/" rel="tag">Well Damn</a>					</div>
+						
+					
+					<div class="moreshare">
+							<div class="addthis_toolbox" addthis:url="http://dlisted.com/2013/08/27/cyndi-lauper-was-not-amused-by-mileys-ho-shit-antics/" addthis:title="Cyndi Lauper Was Not Amused By Miley&#8217;s Ho Shit Antics" addthis:description="Cyndi Lauper Was Not Amused By Miley&#8217;s Ho Shit Antics">
+								<span class="blue">SHARE </span>
+								<a class="addthis_button_facebook"><span aria-hidden="true" class="icon-facebook"></span></a>
+								<a class="addthis_button_twitter"><span aria-hidden="true" class="icon-twitter"></span></a>
+								<a class="addthis_button_google_plusone_share"><span aria-hidden="true" class="icon-google-plus"></span></a>
+								<a class="addthis_button_email"><span aria-hidden="true" class="icon-mail"></span></a>
+							</div>
+							<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51783d3863028e0c"></script>						
+					</div>
+				</div>	
+
+			</article>
+			
+		 
+													<article>
+				<h1><a href="http://dlisted.com/2013/08/27/watch-out-world-cause-here-comes-pippi-longstockings-sex-tape/">Watch Out World Cause Here Comes Pippi Longstocking&#8217;s Sex Tape</a></h1>
+				<div class="clearfix">
+					<div class="date">August 27, 2013 / Posted by: <a href="http://dlisted.com/author/michaelk/" rel="author">Michael K</a></div>
+					<div class="share">
+						<a href="http://dlisted.com/2013/08/27/watch-out-world-cause-here-comes-pippi-longstockings-sex-tape/#comments"><span aria-hidden="true" class="icon-bubble"></span> 120</a>
+					</div>
+				</div>	
+				
+								<div class="main-img">
+										<img src="http://i.dlisted.com/wp-content/uploads/2013/08/pippilongstockingsextape.jpg">
+				</div>
+								<div class="acontent">
+				<p><a href="http://dlisted.com/wp-content/uploads/2013/08/pippilongstockingsextape.jpg"></a></p>
+<p>When I read the headline &#8220;P<em>ippi Longstocking Star Sex Tape Being Shopped,</em>&#8221; I thought they were talking about the <a href="http://en.wikipedia.org/wiki/Inger_Nilsson" target="_blank">original</a> <strong>Pippi Longstocking</strong> and the pile of gutter sludge in my head pictured a 50-something-year-old Swede in ginger pigtails getting down with a dude while her monkey friend, <strong>Mr. Nilsson</strong>, sits on her shoulder and cheers her on. But <a href="http://www.tmz.com/2013/08/27/pippi-longstocking-tami-erin-sex-tape/" target="_blank">TMZ&#8217;s</a> talking about the American Pippi Longstocking <strong>Tami Erin.</strong> So boo hoo to you Swedish MILF porn lovers.</p>
+<p>Tami Erin, who&#8217;s now 39 years old, played Pippi Longstocking in 1988&#8242;s <strong><em>New Adventures of Pippi Longstocking</em></strong>. After Pippi Longstocking, Erin&#8217;s career really didn&#8217;t go anywhere and everyone forgot she existed. But Tami Erin&#8217;s back and is letting all of us know that she&#8217;s all grown up by &#8220;<em>leaking</em>&#8221; a sex tape. TMZ says they&#8217;ve seen pieces of the tape and in it,  Pippi&#8217;s pussi (if she&#8217;s got pig tail pubes in her sex tape, I&#8217;m done) gets it on with an unidentified peen. The tape is currently being shopped around and is looking for the highest bidder. Tami foreshadowed this shit in an interview with <a href="http://www.dailyherald.com/article/20130402/entlife/704029912/" target="_blank">The Daily Herald</a> in April when she said that agents told her to do it Kim Kartrashian-style:</p>
+<blockquote><p>Is there anything Erin regrets. A mountain unclimbed? A challenge unmet? Anything?</p>
+<p>&#8220;Yes,&#8221; she said. &#8220;I wish I had more roles where I could be really sexy and reveal that side of myself.&#8221;</p>
+<p>Now, she may have the chance to do just that in her new quasi-autobiographical screenplay, &#8220;I Hope You Enjoy My Sex Tape.&#8221;</p>
+<p>She got the title idea from agents, the &#8220;honey-sweetie-baby-I-know-what-you-need&#8221; type.</p>
+<p>&#8220;I need a lead role in a studio movie that shows my emotional range!&#8221; she told them.</p>
+<p>&#8220;No,&#8221; the agents told her, &#8220;you need a sex tape!&#8221;</p>
+<p>&#8220;Whaaat? No!&#8221; Erin told us. &#8220;But that&#8217;s how people are getting famous these days, by making sex tapes. I don&#8217;t have a sex tape.&#8221;</p></blockquote>
+<p>Uh huh. Well, now that Pippi is on her way to being back on top (not really), she can finally get those &#8220;<em>sexy</em>&#8221; roles and I&#8217;m sure she&#8217;ll get a call from the producers of the public access original movie <strong><em>I Left My Cutlets On The Ho Stroll: The Phoebe Price Story</em></strong>.</p>
+<p>And I&#8217;m not ashamed to admit that this song is on my iPhone, but now the lyrics mean totally something different to me:</p>
+<p><iframe src="http://www.youtube.com/embed/86vUaEkA5ic?feature=player_embedded" height="360" width="500" allowfullscreen="" frameborder="0"></iframe></p>
+<p>And this masterpiece is also on my iPhone, and again, these lyrics also mean totally something different to me now:</p>
+<p><iframe src="http://www.youtube.com/embed/cWQXVOWixJU?feature=player_detailpage" height="360" width="500" allowfullscreen="" frameborder="0"></iframe></p>
+<p>It really is Scrubbing Day in more ways than one.</p>
+				</div>
+									
+				<div class="clearfix">			
+										<div class="tags">
+											<strong>Tags:</strong> <a href="http://dlisted.com/tag/get_it_girl/" rel="tag">Get It Girl</a>, <a href="http://dlisted.com/tag/i_dont_like_jokes/" rel="tag">I Don't Like Jokes</a>, <a href="http://dlisted.com/tag/sex_tapes/" rel="tag">Sex Tapes</a>, <a href="http://dlisted.com/tag/she_probably_cut_that_string_herself/" rel="tag">She Probably Cut That String Herself</a>					</div>
+						
+					
+					<div class="moreshare">
+							<div class="addthis_toolbox" addthis:url="http://dlisted.com/2013/08/27/watch-out-world-cause-here-comes-pippi-longstockings-sex-tape/" addthis:title="Watch Out World Cause Here Comes Pippi Longstocking&#8217;s Sex Tape" addthis:description="Watch Out World Cause Here Comes Pippi Longstocking&#8217;s Sex Tape">
+								<span class="blue">SHARE </span>
+								<a class="addthis_button_facebook"><span aria-hidden="true" class="icon-facebook"></span></a>
+								<a class="addthis_button_twitter"><span aria-hidden="true" class="icon-twitter"></span></a>
+								<a class="addthis_button_google_plusone_share"><span aria-hidden="true" class="icon-google-plus"></span></a>
+								<a class="addthis_button_email"><span aria-hidden="true" class="icon-mail"></span></a>
+							</div>
+							<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51783d3863028e0c"></script>						
+					</div>
+				</div>	
+
+			</article>
+			
+		 
+		 
+
+<div class="adOuterContainer">
+<div class="adMainContainer">
+
+<link rel="stylesheet" type="text/css" href="http://cache.blogads.com/740257986/feed.css" />
+<script language="javascript" src="http://cache.blogads.com/740257986/feed.js"></script>
+
+</div>
+</div>
+
+														<article>
+				<h1><a href="http://dlisted.com/2013/08/27/heres-a-drunken-alexander-skarsgard-cursing-at-people-at-a-soccer-match/">Alexander Skarsgård Is The Best Drunken Cheerleader Ever</a></h1>
+				<div class="clearfix">
+					<div class="date">August 27, 2013 / Posted by: <a href="http://dlisted.com/author/michaelk/" rel="author">Michael K</a></div>
+					<div class="share">
+						<a href="http://dlisted.com/2013/08/27/heres-a-drunken-alexander-skarsgard-cursing-at-people-at-a-soccer-match/#comments"><span aria-hidden="true" class="icon-bubble"></span> 61</a>
+					</div>
+				</div>	
+				
+								<div class="main-img">
+										<img src="http://i.dlisted.com/wp-content/uploads/2013/08/askarscursingatasoccermatch.jpg">
+				</div>
+								<div class="acontent">
+				<p><a href="http://dlisted.com/wp-content/uploads/2013/08/askarscursingatasoccermatch.jpg"></a></p>
+<p>And today&#8217;s panty pudding moment is brought to you by a drunken and doucheified <strong>ASkars</strong> doing a dude bro cheer for his team Hammarby Fotball at a football match in Sweden recently. This is like a scene out of <strong><em>Braveheart</em></strong> if Braveheart took place in modern day Sweden and the Medieval Scottish soldiers were replaced with drunken football fans and <strong>Mel Gibson</strong> was replaced with a hot, angry ASkars. Here&#8217;s the video and while you&#8217;re watching it, I&#8217;m going to add &#8220;<em>get drunk with ASkars and have him curse at me in Swedish</em>&#8221; to my cum bucket list.</p>
+<p><iframe src="http://www.youtube.com/embed/VHbtq2C2PEQ?feature=player_embedded" height="360" width="500" allowfullscreen="" frameborder="0"></iframe></p>
+<p>It really doesn&#8217;t matter what he&#8217;s screaming, because he could scream &#8220;<em>I LOVE CROCS</em>&#8221; and my nipples would still swoon, but if you need to know, here&#8217;s a translation from <a href="http://ohnotheydidnt.livejournal.com/80952158.html" target="_blank">ONTD</a> (via <a href="http://www.uproxx.com/tv/2013/08/lets-watch-a-drunk-alexander-skarsgard-get-really-angry-at-a-soccer-match/" target="_blank">Uproxx</a>):</p>
+<blockquote><p><strong>alex</strong>: all of you can go to hell, [some name on S I think] look at me you fucking pussy<br />
+<strong>random person</strong>: look at his magical fucking hairdo<br />
+<strong>alex</strong>: who’s the best team? (and then a couple of more similar questions that I can’t make out)<br />
+<strong>crowd</strong>: hammarby (the name of the team)<br />
+<strong>alex and crowd:</strong> we’re the hottest we’re the best we’re the ones who win the most…hammarby…clapping.</p></blockquote>
+<p>&#8220;<em>Look at me, you fucking pussy.</em>&#8221; If ASkars ever says that to you, you can pull down your panties, stare at him with your crotch and say that your Swedish is not so good and you thought you heard him say, &#8220;<em>Look at me with your fucking pussy.</em>&#8221;</p>
+<p>But something must&#8217;ve gotten lost in translation, because I think that random person is saying, <a href="http://dlisted.com/2013/08/19/hot-slut-of-the-day-65/" target="_blank">&#8220;look at his flaming vampire viking dick,&#8221;</a> instead of, <em>&#8220;look at his magical fucking hairdo.</em>&#8221; But &#8220;<em>magical fucking hairdo</em>&#8221; really is the greatest compliment you can give anyone.</p>
+<p>And let&#8217;s not forget the drunken ASkars video to end all drunken ASkars videos:</p>
+<p><iframe src="http://www.youtube.com/embed/oBybHKaNc8o?feature=player_detailpage" height="360" width="500" allowfullscreen="" frameborder="0"></iframe></p>
+				</div>
+									
+				<div class="clearfix">			
+										<div class="tags">
+											<strong>Tags:</strong> <a href="http://dlisted.com/tag/alexander_skarsgard/" rel="tag">Alexander Skarsgard</a>, <a href="http://dlisted.com/tag/drunks/" rel="tag">Drunks</a>, <a href="http://dlisted.com/tag/hotness/" rel="tag">Hotness</a>, <a href="http://dlisted.com/tag/panty_pudding/" rel="tag">Panty Pudding</a>					</div>
+						
+					
+					<div class="moreshare">
+							<div class="addthis_toolbox" addthis:url="http://dlisted.com/2013/08/27/heres-a-drunken-alexander-skarsgard-cursing-at-people-at-a-soccer-match/" addthis:title="Alexander Skarsgård Is The Best Drunken Cheerleader Ever" addthis:description="Alexander Skarsgård Is The Best Drunken Cheerleader Ever">
+								<span class="blue">SHARE </span>
+								<a class="addthis_button_facebook"><span aria-hidden="true" class="icon-facebook"></span></a>
+								<a class="addthis_button_twitter"><span aria-hidden="true" class="icon-twitter"></span></a>
+								<a class="addthis_button_google_plusone_share"><span aria-hidden="true" class="icon-google-plus"></span></a>
+								<a class="addthis_button_email"><span aria-hidden="true" class="icon-mail"></span></a>
+							</div>
+							<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51783d3863028e0c"></script>						
+					</div>
+				</div>	
+
+			</article>
+			
+		 
+													<article>
+				<h1><a href="http://dlisted.com/2013/08/27/the-caption-this-contest-for-august-26th/">The CAPTION THIS Contest WINNER For August 26th!</a></h1>
+				<div class="clearfix">
+					<div class="date">August 27, 2013 / Posted by: <a href="http://dlisted.com/author/michaelk/" rel="author">Michael K</a></div>
+					<div class="share">
+						<a href="http://dlisted.com/2013/08/27/the-caption-this-contest-for-august-26th/#comments"><span aria-hidden="true" class="icon-bubble"></span> 91</a>
+					</div>
+				</div>	
+				
+								<div class="main-img">
+										<img src="http://i.dlisted.com/wp-content/uploads/2013/08/caption082613.jpg">
+				</div>
+								<div class="acontent">
+				<p><a href="http://dlisted.com/wp-content/uploads/2013/08/caption082613.jpg"></a></p>
+<p>Wow, this new Find the Miley game is tough. &#8211; <strong>Manimal 5000 </strong></p>
+<p><strong>Runners-up:</strong></p>
+<p>Shelley Miscavige wasn&#8217;t missing, she was just hanging at the pool with the other CO$ wives. &#8211; <strong>OurMissC</strong></p>
+<p>Per his request, the Betty Ford Clinic did all they could to make Charlie Sheen&#8217;s stay as comfortable as possible. &#8211; <strong>H321</strong></p>
+<p>via <a href="http://www.break.com/pictures/wtf-inflatable-love-2510392" target="_blank">Break.com</a></p>
+				</div>
+									
+				<div class="clearfix">			
+										<div class="tags">
+											<strong>Tags:</strong> <a href="http://dlisted.com/tag/the_caption_this_contest/" rel="tag">The CAPTION THIS Contest</a>					</div>
+						
+					
+					<div class="moreshare">
+							<div class="addthis_toolbox" addthis:url="http://dlisted.com/2013/08/27/the-caption-this-contest-for-august-26th/" addthis:title="The CAPTION THIS Contest WINNER For August 26th!" addthis:description="The CAPTION THIS Contest WINNER For August 26th!">
+								<span class="blue">SHARE </span>
+								<a class="addthis_button_facebook"><span aria-hidden="true" class="icon-facebook"></span></a>
+								<a class="addthis_button_twitter"><span aria-hidden="true" class="icon-twitter"></span></a>
+								<a class="addthis_button_google_plusone_share"><span aria-hidden="true" class="icon-google-plus"></span></a>
+								<a class="addthis_button_email"><span aria-hidden="true" class="icon-mail"></span></a>
+							</div>
+							<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51783d3863028e0c"></script>						
+					</div>
+				</div>	
+
+			</article>
+			
+		 
+													<article>
+				<h1><a href="http://dlisted.com/2013/08/27/hot-slut-of-the-day-72/">Hot Slut Of The Day!</a></h1>
+				<div class="clearfix">
+					<div class="date">August 27, 2013 / Posted by: <a href="http://dlisted.com/author/michaelk/" rel="author">Michael K</a></div>
+					<div class="share">
+						<a href="http://dlisted.com/2013/08/27/hot-slut-of-the-day-72/#comments"><span aria-hidden="true" class="icon-bubble"></span> 28</a>
+					</div>
+				</div>	
+				
+								<div class="main-img">
+										<img src="http://i.dlisted.com/wp-content/uploads/2013/08/hsotdjudgejoebrown2013.jpg">
+				</div>
+								<div class="acontent">
+				<p><a href="http://dlisted.com/wp-content/uploads/2013/08/hsotdjudgejoebrown2013.jpg"></a></p>
+<p><strong><a href="http://en.wikipedia.org/wiki/Joe_Brown_%28judge%29" target="_blank">Judge Joe Brown!</a></strong></p>
+<p>Judge Joe Brown had a court show, which was produced by Judge Judy&#8217;s producers, for 15 seasons and it was canceled last year. So what has Judge Joe Brown&#8217;s ass been up to since then? In the video below taken by some of his fans, Judge Joe says that he&#8217;s been entertaining and making money. He&#8217;s not lying about the &#8220;<em>entertaining</em>&#8221; part, because he entertained me in this video.</p>
+<p>While putting the BOMB in Bombay Sapphire and getting daytime drunk in a hotel lobby, Judge Joe said that he doesn&#8217;t do that <em>&#8220;bullshit court show&#8221;</em> anymore and then he flirted with a couple of young ladies. (Side note: Judge Joe needs to permanently retire the flirt line, &#8220;<em>I want you to be my granddaughter.</em>&#8220;) But Judge Joe made it clear that he&#8217;s not trying to pick up any side pieces because he&#8217;s got a hot 50-year-old &#8220;<em>Patter Rican</em>&#8221; wife waiting for him at home.</p>
+<p>Living the life: Judge Joe Brown is and he&#8217;s doing it while looking like a lit up Siamese Cat. You know when Judge Joe Brown&#8217;s drunk as all hell, because his Andy Cohen eyes get extra Andy Coheny.</p>
+<p><iframe src="http://www.youtube.com/embed/l-vyO2tluuE?feature=player_detailpage" height="360" width="500" allowfullscreen="" frameborder="0"></iframe></p>
+<p>I hope <em>&#8220;Drunk TV Judges&#8221;</em> becomes a series, because I really want to see video of Judge Milian doing body shots off of a barback&#8217;s stomach at a Señor Frog’s in Myrtle Beach.</p>
+<p>via <a href="http://www.crunktastical.net/2013/08/26/judge-joe-brown-drunk/#disqus_thread" target="_blank">Crunk + Disorderly</a></p>
+				</div>
+									
+				<div class="clearfix">			
+										<div class="tags">
+											<strong>Tags:</strong> <a href="http://dlisted.com/tag/hot_slut_of_the_day/" rel="tag">Hot Slut of the Day</a>					</div>
+						
+					
+					<div class="moreshare">
+							<div class="addthis_toolbox" addthis:url="http://dlisted.com/2013/08/27/hot-slut-of-the-day-72/" addthis:title="Hot Slut Of The Day!" addthis:description="Hot Slut Of The Day!">
+								<span class="blue">SHARE </span>
+								<a class="addthis_button_facebook"><span aria-hidden="true" class="icon-facebook"></span></a>
+								<a class="addthis_button_twitter"><span aria-hidden="true" class="icon-twitter"></span></a>
+								<a class="addthis_button_google_plusone_share"><span aria-hidden="true" class="icon-google-plus"></span></a>
+								<a class="addthis_button_email"><span aria-hidden="true" class="icon-mail"></span></a>
+							</div>
+							<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51783d3863028e0c"></script>						
+					</div>
+				</div>	
+
+			</article>
+			
+		 
+													<article>
+				<h1><a href="http://dlisted.com/2013/08/27/birthday-sluts-102/">Birthday Sluts</a></h1>
+				<div class="clearfix">
+					<div class="date">August 27, 2013 / Posted by: <a href="http://dlisted.com/author/michaelk/" rel="author">Michael K</a></div>
+					<div class="share">
+						<a href="http://dlisted.com/2013/08/27/birthday-sluts-102/#comments"><span aria-hidden="true" class="icon-bubble"></span> 97</a>
+					</div>
+				</div>	
+				
+								<div class="main-img">
+										<img src="http://i.dlisted.com/wp-content/uploads/2013/08/aaronpaulbday2013.jpg">
+				</div>
+								<div class="acontent">
+				<p><a href="http://dlisted.com/wp-content/uploads/2013/08/aaronpaulbday2013.jpg"></a></p>
+<p><strong>Aaron Paul (34)</strong><br />
+Blake Jenner (21)<br />
+Alexa Vega (25)<br />
+Mario (27)<br />
+Mase (36)<br />
+Sarah Chalke (37)<br />
+Jonny Moseley (38)<br />
+Felix da Housecat (42)<br />
+Cesar Milan (44)<br />
+Chandra Wilson (44)<br />
+Bobo of Cypress Hill (45)<br />
+Yolanda Adams (52)<br />
+Tom Ford (52)<br />
+Downtown Julie Brown (54)<br />
+Diana Scarwid (58)<br />
+Peter Stormare (60)<br />
+Paul Reubens (61)<br />
+Barbara Bach (66)<br />
+Tuesday Weld (70)<br />
+Daryl Dragon (The Captain from Captain &amp; Tennille) (71)</p>
+				</div>
+									
+				<div class="clearfix">			
+										<div class="tags">
+											<strong>Tags:</strong> <a href="http://dlisted.com/tag/birthday_sluts/" rel="tag">Birthday Sluts</a>					</div>
+						
+					
+					<div class="moreshare">
+							<div class="addthis_toolbox" addthis:url="http://dlisted.com/2013/08/27/birthday-sluts-102/" addthis:title="Birthday Sluts" addthis:description="Birthday Sluts">
+								<span class="blue">SHARE </span>
+								<a class="addthis_button_facebook"><span aria-hidden="true" class="icon-facebook"></span></a>
+								<a class="addthis_button_twitter"><span aria-hidden="true" class="icon-twitter"></span></a>
+								<a class="addthis_button_google_plusone_share"><span aria-hidden="true" class="icon-google-plus"></span></a>
+								<a class="addthis_button_email"><span aria-hidden="true" class="icon-mail"></span></a>
+							</div>
+							<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51783d3863028e0c"></script>						
+					</div>
+				</div>	
+
+			</article>
+			
+		 
+													<article>
+				<h1><a href="http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/">Deena From Jersey Shore Keeps It Natural And Fresh As Always</a></h1>
+				<div class="clearfix">
+					<div class="date">August 26, 2013 / Posted by: <a href="http://dlisted.com/author/michaelk/" rel="author">Michael K</a></div>
+					<div class="share">
+						<a href="http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/#comments"><span aria-hidden="true" class="icon-bubble"></span> 92</a>
+					</div>
+				</div>	
+				
+								<div class="main-img">
+										<img src="http://i.dlisted.com/wp-content/uploads/2013/08/deenacortesemakeup.jpg">
+				</div>
+								<div class="acontent">
+				<p><a href="http://dlisted.com/wp-content/uploads/2013/08/deenacortesemakeup.jpg"></a></p>
+<p>While the has-beens and lessers were at something called the MTV VMAsomethings in Brooklyn, the real stars were at InTouch Weekly&#8217;s Icons &amp; Idols (read: the opposite of that)  party held in the back room of Dallas BBQ on 2nd Avenue in the East Village. No, it was held in some club.</p>
+<p>The pores on your face are probably hyperventilating and I&#8217;m sure your eyelids suddenly feel really heavy, like they&#8217;re holding up 40 pounds of tar-covered tarantulas.<strong><em> Jersey Shore</em> </strong>whore <strong>Deena Cortese</strong> and her natural beauty have that effect on most. A shortage of Bonne Bell foundation was issued in the Tri-state area and that&#8217;s because Deena wore every last bottle on her face. Bitch looks like an overused foundation sponge that somehow mutated into a living thing. I kind of want to stick my finger in her 7 layers of foundation and see how far it goes.</p>
+<p>She looks like a Danny DeVito wax figure at a really terrible wax museum that wasn&#8217;t really popular with visitors so it was re-purposed into a JLo wax figure.</p>
+<p>With all that said, she&#8217;s really not wearing enough make-up and a dark lip liner really would&#8217;ve completed the look.</p>
+
+		<div class="thumbcontainer" id="thumbcontainer_111818"><div class="prev"><a href="javascript:;" class="prevthumb"><img src="/wp-content/themes/dlisted_44/img/arrowleft.png" border="0" alt=""></a></div>
+	<div class="galthumbs" id="gallery_111818"><div><ul><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601493/' title='wenn20601493'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601493-150x150.jpg" class="attachment-thumbnail" alt="Deena Cortese at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/spl599749_026/' title='spl599749_026'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/spl599749_026-150x150.jpg" class="attachment-thumbnail" alt="Deena Cortese at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601494/' title='wenn20601494'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601494-150x150.jpg" class="attachment-thumbnail" alt="Deena Cortese at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600123/' title='wenn20600123'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600123-150x150.jpg" class="attachment-thumbnail" alt="Sammi Sweetheart at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601541/' title='wenn20601541'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601541-150x150.jpg" class="attachment-thumbnail" alt="Sammi Sweetheart at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601544/' title='wenn20601544'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601544-150x150.jpg" class="attachment-thumbnail" alt="Renee Graziano at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600127/' title='wenn20600127'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600127-150x150.jpg" class="attachment-thumbnail" alt="Renee Graziano at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600128/' title='wenn20600128'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600128-150x150.jpg" class="attachment-thumbnail" alt="Big Ang at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600130/' title='wenn20600130'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600130-150x150.jpg" class="attachment-thumbnail" alt="Big Ang at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600136/' title='wenn20600136'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600136-150x150.jpg" class="attachment-thumbnail" alt="Backdoor Farrah at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601568/' title='wenn20601568'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601568-150x150.jpg" class="attachment-thumbnail" alt="Backdoor Farrah at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600138/' title='wenn20600138'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600138-150x150.jpg" class="attachment-thumbnail" alt="Backdoor Farrah at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600140/' title='wenn20600140'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600140-150x150.jpg" class="attachment-thumbnail" alt="Ramona Singer at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600141/' title='wenn20600141'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600141-150x150.jpg" class="attachment-thumbnail" alt="Ramona Singer at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600147/' title='wenn20600147'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600147-150x150.jpg" class="attachment-thumbnail" alt="Jenny McCarthy at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601571/' title='wenn20601571'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601571-150x150.jpg" class="attachment-thumbnail" alt="Jenny McCarthy at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600149/' title='wenn20600149'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600149-150x150.jpg" class="attachment-thumbnail" alt="Jenny McCarthy at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601569/' title='wenn20601569'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601569-150x150.jpg" class="attachment-thumbnail" alt="Jenny McCarthy at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600178/' title='wenn20600178'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600178-150x150.jpg" class="attachment-thumbnail" alt="JWoww at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600179/' title='wenn20600179'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600179-150x150.jpg" class="attachment-thumbnail" alt="JWoww at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601560/' title='wenn20601560'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601560-150x150.jpg" class="attachment-thumbnail" alt="JWoww at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600189/' title='wenn20600189'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600189-150x150.jpg" class="attachment-thumbnail" alt="Nick Cannon at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600194/' title='wenn20600194'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600194-150x150.jpg" class="attachment-thumbnail" alt="Nick Cannon at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601565/' title='wenn20601565'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601565-150x150.jpg" class="attachment-thumbnail" alt="Nick Cannon at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600198/' title='wenn20600198'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600198-150x150.jpg" class="attachment-thumbnail" alt="Cuba Gooding Jr. at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20600199/' title='wenn20600199'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20600199-150x150.jpg" class="attachment-thumbnail" alt="Cuba Gooding Jr. at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601341/' title='wenn20601341'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601341-150x150.jpg" class="attachment-thumbnail" alt="John Norris (why the hell are you there?!) at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601467/' title='wenn20601467'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601467-150x150.jpg" class="attachment-thumbnail" alt="La Bruja&#039;s daughter at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601468/' title='wenn20601468'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601468-150x150.jpg" class="attachment-thumbnail" alt="La Bruja&#039;s daughter at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601469/' title='wenn20601469'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601469-150x150.jpg" class="attachment-thumbnail" alt="Alexia from The Real Housewives of Miami at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601471/' title='wenn20601471'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601471-150x150.jpg" class="attachment-thumbnail" alt="Alexia from Real Housewives of Miami at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601481/' title='wenn20601481'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601481-150x150.jpg" class="attachment-thumbnail" alt="Jonathon Cheban and his beard at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601482/' title='wenn20601482'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601482-150x150.jpg" class="attachment-thumbnail" alt="Travie McCoy at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601483/' title='wenn20601483'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601483-150x150.jpg" class="attachment-thumbnail" alt="Travie McCoy at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601498/' title='wenn20601498'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601498-150x150.jpg" class="attachment-thumbnail" alt="Diem Brown at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li><li><a target="_blank" href='http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/wenn20601500/' title='wenn20601500'><img   src="http://i.dlisted.com/wp-content/uploads/2013/08/wenn20601500-150x150.jpg" class="attachment-thumbnail" alt="Diem Brown at In Touch Weekly&#039;s ICONS &amp; IDOLS event at Finale in NYC on August 25, 2013" /></a></li></ul></div></div><div class="next"><a href="javascript:;" class="nextthumb"><img src="/wp-content/themes/dlisted_44/img/arrowright.png" border="0" alt=""></a></div></div><script>
+	$(function(){
+		$("#gallery_111818").microfiche({ buttons: false,bullets: false });
+		
+		$("#thumbcontainer_111818 .prevthumb").click(function() {
+			$("#gallery_111818").microfiche({ slideByPages: -1 });
+		});
+		
+		$("#thumbcontainer_111818 .nextthumb").click(function() {
+			$("#gallery_111818").microfiche({ slideByPages: 1 });
+		});
+	});
+	</script>
+<p><strong>Pics</strong>: <a href="http://wenn.com" target="_blank">Wenn.com</a></p>
+				</div>
+									
+				<div class="clearfix">			
+										<div class="tags">
+											<strong>Tags:</strong> <a href="http://dlisted.com/tag/big-ang/" rel="tag">Big Ang</a>, <a href="http://dlisted.com/tag/deena-cortese/" rel="tag">Deena Cortese</a>, <a href="http://dlisted.com/tag/excuse_my_beauty/" rel="tag">Excuse My Beauty</a>, <a href="http://dlisted.com/tag/jenny_mccarthy/" rel="tag">Jenny McCarthy</a>, <a href="http://dlisted.com/tag/jersey_shore/" rel="tag">Jersey Shore</a>, <a href="http://dlisted.com/tag/jwoww/" rel="tag">JWoww</a>, <a href="http://dlisted.com/tag/nick_cannon/" rel="tag">Nick Cannon</a>, <a href="http://dlisted.com/tag/plastic_surgery/" rel="tag">Plastic Surgery</a>, <a href="http://dlisted.com/tag/real_housewives_shit/" rel="tag">Real Housewives Shit</a>					</div>
+						
+					
+					<div class="moreshare">
+							<div class="addthis_toolbox" addthis:url="http://dlisted.com/2013/08/26/deena-from-jersey-shore-keeps-it-natural-and-fresh-as-always/" addthis:title="Deena From Jersey Shore Keeps It Natural And Fresh As Always" addthis:description="Deena From Jersey Shore Keeps It Natural And Fresh As Always">
+								<span class="blue">SHARE </span>
+								<a class="addthis_button_facebook"><span aria-hidden="true" class="icon-facebook"></span></a>
+								<a class="addthis_button_twitter"><span aria-hidden="true" class="icon-twitter"></span></a>
+								<a class="addthis_button_google_plusone_share"><span aria-hidden="true" class="icon-google-plus"></span></a>
+								<a class="addthis_button_email"><span aria-hidden="true" class="icon-mail"></span></a>
+							</div>
+							<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51783d3863028e0c"></script>						
+					</div>
+				</div>	
+
+			</article>
+			
+		 
+													<article>
+				<h1><a href="http://dlisted.com/2013/08/26/blind-items-i-guess-you-guess-7/">Blind Items: I Guess, You Guess</a></h1>
+				<div class="clearfix">
+					<div class="date">August 26, 2013 / Posted by: <a href="http://dlisted.com/author/michaelk/" rel="author">Michael K</a></div>
+					<div class="share">
+						<a href="http://dlisted.com/2013/08/26/blind-items-i-guess-you-guess-7/#comments"><span aria-hidden="true" class="icon-bubble"></span> 152</a>
+					</div>
+				</div>	
+				
+								<div class="main-img">
+										<img src="http://i.dlisted.com/wp-content/uploads/2013/08/blinditems082613.jpg">
+				</div>
+								<div class="acontent">
+				<p><a href="http://dlisted.com/wp-content/uploads/2013/08/blinditems082613.jpg"></a><br />
+We have two interesting stories about one very moody celebrity who was in attendance at the Video Music Awards last night.</p>
+<p>First, Moody showed little emotion whenever the cameras were on her… but she was dishing out some choice tidbits of nastiess when they weren’t! Her comments were directed specifically toward one young female Singer. While the Singer was on stage picking up an award, Moody was doing all kind of grousing. At one point she even turned around and told a young boy bander (who used to date the Singer), “Fuck that bitch! You can do better.” It wasn’t caught on camera, but those around them heard everything! BTW, the Boy Bander didn’t react other than to purse his lips, as if restraining himself from replying.</p>
+<p>Second, at one of the after-parties, Moody got friendly with a swirly male singer. By “friendly” we mean “sticking her tongue down his throat”. We can’t say we blame her. After all, a certain foodie found him to be a very tasty snack last year during one of her many extra marital hotel romps. Good thing that Moody’s churlish ex wasn’t in attendance. (<a href="http://blindgossip.com/?p=56184" target="_blank">Blind Gossip</a>)</p>
+<blockquote><p>My guess is that <strong>RiRi</strong> is Moody, Boy Bander is <strong>Harry Styles</strong>, the ex is <strong>Taylor Swift</strong> and the swirly male singer is Richard Simmons (or <strong>Drake</strong>). If RiRi told Harry to &#8220;<em>fuck that bitch</em>&#8221; and Taylor <a href="http://dlisted.com/2013/08/26/did-taylor-swift-tell-harry-styles-to-shut-the-eff-up/" target="_blank">told Harry to</a> &#8220;<em>shut the fuck up</em>,&#8221; then I guess everybody in the audience was telling each other to fuck off. Who knew that the VMAs was just like your family reunions.</p></blockquote>
+<p>When you are an A+ list reality star and celebrity and everything else and people love spreading gay rumors about you, the last thing you probably need to be doing is having one of the most expensive, well known gay escorts sitting in the back of your town car waiting for you when you emerged from dinner this weekend. (<a href="http://www.crazydaysandnights.net/2013/08/blind-item-2_26.html" target="_blank">CDAN</a>)</p>
+<blockquote><p><strong>Seacrest</strong>! Tell your paid whores to wait at the hotel!</p></blockquote>
+<p>That didn&#8217;t take long. This B list mostly television actress from a hit television show who would die if you cast in her a movie had a recent relationship end. It was not as strong of a relationship as she would lead you to believe and had basically already moved on. She is hanging out with her ex, quietly at his place almost every night. This will be revealed. (<a href="http://www.crazydaysandnights.net/2013/08/blind-item-1_25.html" target="_blank">CDAN</a>)</p>
+<blockquote><p><strong>Eva Longoria</strong> and <strong>George Clooney</strong>?</p></blockquote>
+<p>This current A list celebrity who will go back to B list when his song stops bombarding us daily spent part of the weekend engaging in what he called a little celebration. He always wanted a foursome and he got his wish this weekend. He seemed most excited that they allowed him to take photos and didn&#8217;t charge him. (<a href="http://www.crazydaysandnights.net/2013/08/blind-item-1_26.html" target="_blank">CDAN</a>)</p>
+<blockquote><p><strong>Robin Thicke</strong>? And his foursome was probably with three of Miley&#8217;s creepy back-up dancing pink bears.</p></blockquote>
+				</div>
+									
+				<div class="clearfix">			
+										<div class="tags">
+											<strong>Tags:</strong> <a href="http://dlisted.com/tag/blind_items/" rel="tag">Blind Items</a>					</div>
+						
+					
+					<div class="moreshare">
+							<div class="addthis_toolbox" addthis:url="http://dlisted.com/2013/08/26/blind-items-i-guess-you-guess-7/" addthis:title="Blind Items: I Guess, You Guess" addthis:description="Blind Items: I Guess, You Guess">
+								<span class="blue">SHARE </span>
+								<a class="addthis_button_facebook"><span aria-hidden="true" class="icon-facebook"></span></a>
+								<a class="addthis_button_twitter"><span aria-hidden="true" class="icon-twitter"></span></a>
+								<a class="addthis_button_google_plusone_share"><span aria-hidden="true" class="icon-google-plus"></span></a>
+								<a class="addthis_button_email"><span aria-hidden="true" class="icon-mail"></span></a>
+							</div>
+							<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51783d3863028e0c"></script>						
+					</div>
+				</div>	
+
+			</article>
+			
+		 
+													<article>
+				<h1><a href="http://dlisted.com/2013/08/26/afternoon-crumbs-40/">Afternoon Crumbs</a></h1>
+				<div class="clearfix">
+					<div class="date">August 26, 2013 / Posted by: <a href="http://dlisted.com/author/michaelk/" rel="author">Michael K</a></div>
+					<div class="share">
+						<a href="http://dlisted.com/2013/08/26/afternoon-crumbs-40/#comments"><span aria-hidden="true" class="icon-bubble"></span> 158</a>
+					</div>
+				</div>	
+				
+								<div class="main-img">
+										<img src="http://i.dlisted.com/wp-content/uploads/2013/08/rosecherylcolecrumbs.jpg">
+				</div>
+								<div class="acontent">
+				<p><a href="http://dlisted.com/wp-content/uploads/2013/08/rosecherylcolecrumbs.jpg"></a></p>
+<p>Thanks to this tasteful and delicate rose tattoo, <strong>Cheryl Cole</strong> has taken the title of England&#8217;s Finest Rose away from <strong>Jodie Marsh</strong>. Nothing is classier than shitting out of a rose garden tattoo &#8211; <a href="http://idly.craveonline.com/2013/08/cheryl-cole-ass-tattoo/#/slide/1" target="_blank">IDLYITW</a></p>
+<p>It was nice of <strong>Will Smith</strong> to let his kids borrow some of his old <strong><em>Fresh Prince of Bel Air</em> </strong>outfits for the VMAs -<a href="http://www.laineygossip.com/Willow-Smith-won-the-MTV-VMAs-2013/27860" target="_blank"> Lainey Gossip </a></p>
+<p><strong>Taylor Swift</strong> poses with her ex-piece, her rumored piece and a piece who is killing me with Blue Steel &#8211; <a href="http://theberry.com/2013/08/26/todays-celebrity-rundown-13-photos-64/" target="_blank">The Berry</a></p>
+<p>Things I do not want to see <strong>Gene Simmons&#8217;</strong> tongue on: <strong>Backdoor Farrah&#8217;s</strong> crotch -<a href="http://drunkenstepfather.com/2013/08/26/farrah-abraham-in-a-bikini-of-the-day#.UhvO7LzdgVA" target="_blank"> Drunken Stepfather</a></p>
+<p><strong>Catherine Zeta-Jones</strong> and <strong>Michael Douglas</strong> might be getting a divorce &#8211; <a href="http://www.celebitchy.com/318509/are_catherine_zeta-jones_michael_douglas_set_to_announce_their_divorce/" target="_blank">Celebitchy</a></p>
+<p>The Real Seat Fillers of the VMAs &#8211; <a href="http://www.realitytea.com/2013/08/26/photos-reality-tv-stars-turn-out-for-the-mtv-vmas-melissa-gorga-snooki-and-more/" target="_blank">Reality Tea</a></p>
+<p>Sorry, <strong>Vanessa Hudgens,</strong> but even though you did yourself up like a third-rate Yellow Pages Lisa Bonet impersonator, the young dude in the glasses behind you stole this shot -<a href="http://www.realitytea.com/2013/08/26/photos-reality-tv-stars-turn-out-for-the-mtv-vmas-melissa-gorga-snooki-and-more/" target="_blank"> Hollywood Tuna</a></p>
+<p><strong>Madge&#8217;s</strong> gold dentures are here to stay, thankyouverymuch &#8211; <a href="http://www.towleroad.com/2013/08/madonna-defends-grill-on-instagram-photo.html" target="_blank">Towleroad</a></p>
+<p>I was a little disappointed that <strong>Katy Perry</strong> didn&#8217;t shoot anything out of her tits during her performance &#8211; <a href="http://www.thesuperficial.com/katy-perry-vmas-bouncing-boob-gif-08-2013" target="_blank">The Superficial </a></p>
+<p>FOUND! The inspiration for <strong>Miley&#8217;s</strong> look -<a href="http://tosh.comedycentral.com/blog/2013/08/26/thats-what-you-asked-for-right" target="_blank"> Tosh.0</a></p>
+<p><strong>MiserAlba</strong> went to the grocery store, but I&#8217;m sure you&#8217;ve already read about this on CNN (I&#8217;m not joking) &#8211; <a href="http://www.popoholic.com/2013/08/26/jessica-alba-in-a-tiny-tanktop-yes-please/" target="_blank">Popoholic</a></p>
+<p>Sugar mama lets gold digger know that she&#8217;s got all the sugar &#8211; <a href="http://icydk.com/2013/08/23/jessica-simpson-brags-about-being-wealthy/" target="_blank">ICYDK</a></p>
+<p>This is who should&#8217;ve opened the <strong><em>VMAs</em></strong> last night &#8211; <a href="http://jezebel.com/this-lady-clogging-to-siouxsie-and-the-banshees-will-ma-1199359213" target="_blank">Jezebel</a></p>
+<p>Here&#8217;s the white people who will be on <strong><em>SNL</em></strong> next season &#8211; <a href="http://www.pajiba.com/trade_news/here-are-saturday-night-lives-next-four-featured-players-according-to-reports.php" target="_blank">Pajiba</a></p>
+<p>The King of the Home Wreckers and the Queen of the Gold Diggers are still in St. Tropez &#8211; <a href="http://www.popsugar.com/Simon-Cowell-Reunites-Pregnant-Lauren-Silverman-31283652" target="_blank">Popsugar</a></p>
+<p>Somebody bought <strong>Vin Diesel</strong> a star on the Hollywood Walk of Fame &#8211; <a href="http://www.justjared.com/2013/08/26/vin-diesel-hollywood-walk-of-fame-with-his-leading-ladies/" target="_blank">Just Jared</a></p>
+<p><strong>Miss Ellie&#8217;s </strong>ashes are rolling in their urn over this comparison &#8211; <a href="http://seriouslyomg.com/?p=36581" target="_blank">SOW</a></p>
+<p>How does <strong>Brit Brit</strong> always manage to look like she just glided off of a runway at a couture show in Paris? -<a href="http://imnotobsessed.com/2013/08/26/britney-spears-weekend/" target="_blank"> I&#8217;m Not Obsessed</a></p>
+				</div>
+									
+				<div class="clearfix">			
+										<div class="tags">
+											<strong>Tags:</strong> <a href="http://dlisted.com/tag/afternoon_crumbs/" rel="tag">Afternoon Crumbs</a>					</div>
+						
+					
+					<div class="moreshare">
+							<div class="addthis_toolbox" addthis:url="http://dlisted.com/2013/08/26/afternoon-crumbs-40/" addthis:title="Afternoon Crumbs" addthis:description="Afternoon Crumbs">
+								<span class="blue">SHARE </span>
+								<a class="addthis_button_facebook"><span aria-hidden="true" class="icon-facebook"></span></a>
+								<a class="addthis_button_twitter"><span aria-hidden="true" class="icon-twitter"></span></a>
+								<a class="addthis_button_google_plusone_share"><span aria-hidden="true" class="icon-google-plus"></span></a>
+								<a class="addthis_button_email"><span aria-hidden="true" class="icon-mail"></span></a>
+							</div>
+							<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51783d3863028e0c"></script>						
+					</div>
+				</div>	
+
+			</article>
+			
+		 
+							
+			<div class="articles-footer">
+				<div class='wp-pagenavi'>
+<span class='current'>1</span><a href='http://dlisted.com/page/2/' class='page larger'>2</a><a href='http://dlisted.com/page/3/' class='page larger'>3</a><a href='http://dlisted.com/page/4/' class='page larger'>4</a><a href='http://dlisted.com/page/5/' class='page larger'>5</a><span class='extend'>...</span><a href='http://dlisted.com/page/10/' class='larger page'>10</a><a href='http://dlisted.com/page/20/' class='larger page'>20</a><a href='http://dlisted.com/page/30/' class='larger page'>30</a><span class='extend'>...</span><a href='http://dlisted.com/page/2/' class='nextpostslink'><em>next</em></a><a href='http://dlisted.com/page/4507/' class='last'>Last »</a>
+</div>			</div>
+
+<div class="adOuterContainer_for_mobile_ad_zone">
+<div class="adMainContainer_for_mobile_ad_zone">
+<script type='text/javascript'><!--//<![CDATA[
+	if (typeof(ba_is_mobile) !== 'undefined'){
+		var m3_u = (location.protocol=='https:'?'https://z.blogads.com/delivery/ajs.php':'http://z.blogads.com/delivery/ajs.php');
+		var m3_r = Math.floor(Math.random()*99999999999);
+		if (!document.MAX_used) document.MAX_used = ',';
+		document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+		document.write ("?zoneid=369");
+		document.write ('&amp;cb=' + m3_r);
+		if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+		document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+		document.write ("&amp;loc=" + escape(window.location));
+		if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+		if (document.context) document.write ("&context=" + escape(document.context));
+		if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+		if (typeof(ba_is_mobile) !== 'undefined') document.write("&amp;is_mobile=" + ba_is_mobile);
+		document.write ("'><\/scr"+"ipt>");
+	}
+//]]>--></script><noscript><a href='http://z.blogads.com/delivery/ck.php?n=ab432951&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://z.blogads.com/delivery/avw.php?zoneid=369&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ab432951' border='0' alt='' /></a></noscript>
+</div>
+</div>
+
+		
+		</div>
+	</div>
+
+<div class="right-col">
+	
+<div class="ad300">
+			<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://z.blogads.com/delivery/ajs.php':'http://z.blogads.com/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=80");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a href='http://z.blogads.com/delivery/ck.php?n=a4d14ffc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://z.blogads.com/delivery/avw.php?zoneid=80&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a4d14ffc' border='0' alt='' /></a></noscript>
+
+			<!--<script type="text/javascript">bmQuery.bmLib.iab.write({siteIdentifier:"buz.dlisted",zone:"homepage",sizes:["300x250","300x600"],position:"300a"});</script><noscript><a href="http://ad.doubleclick.net/jump/buz.dlisted/homepage;pos=300a;tile=2;sz=300x250,300x600;ord=123456789?" target="_blank" ><img src="http://ad.doubleclick.net/ad/buz.dlisted/homepage;pos=300a;tile=2;sz=300x250,300x600;ord=123456789?" border="0" alt="" /></a></noscript>-->
+			</div>
+	
+	
+<div class="right-col-content">
+		<h3><span>Trending</span></h3>
+
+		<div class="trend-picker clearfix">
+			<a href="javascript:;" class="active" id="trending_mp">MOST DISCUSSED<span></span></a>
+			<a href="javascript:;" id="trending_mv">MOST VIEWED POSTS<span></span></a>
+		</div>
+		
+		<div id="trending_mp_cnt">
+		<ul class="side-list"><li>
+				<div class="clearfix">
+					<div class="image"><a href="http://dlisted.com/2013/08/21/open-post-hosted-by-the-most-graceful-and-classiest-wedding-march-youve-ever-seen/"><img src="http://dlisted.com/wp-content/themes/dlisted_44/img/placeholder.gif" alt="Open Post: Hosted By The Most Graceful And Classiest Wedding March You've Ever Seen" /></a></div>
+					<div class="title">
+						<a href="http://dlisted.com/2013/08/21/open-post-hosted-by-the-most-graceful-and-classiest-wedding-march-youve-ever-seen/">Open Post: Hosted By The Most Graceful And Classie...</a><br />
+						<div class="comments"><a href="http://dlisted.com/2013/08/21/open-post-hosted-by-the-most-graceful-and-classiest-wedding-march-youve-ever-seen/#comments">[678] comments</a></div>	
+					</div>		
+				</div>
+			</li><li>
+				<div class="clearfix">
+					<div class="image"><a href="http://dlisted.com/2013/08/25/open-post-hosted-by-the-true-star-of-the-vmas/"><img src="http://dlisted.com/wp-content/uploads/2013/08/oprichardsimmonsvmas.jpg" alt="Open Post: Hosted By The True Star Of The VMAs (And Katy Perry)" /></a></div>
+					<div class="title">
+						<a href="http://dlisted.com/2013/08/25/open-post-hosted-by-the-true-star-of-the-vmas/">Open Post: Hosted By The True Star Of The VMAs (An...</a><br />
+						<div class="comments"><a href="http://dlisted.com/2013/08/25/open-post-hosted-by-the-true-star-of-the-vmas/#comments">[660] comments</a></div>	
+					</div>		
+				</div>
+			</li><li>
+				<div class="clearfix">
+					<div class="image"><a href="http://dlisted.com/2013/08/25/oh-god-why-am-i-starting-to-like-the-embarrassing-mess-that-is-miley-cyrus/"><img src="http://dlisted.com/wp-content/uploads/2013/08/mileyabsolutedisaster.jpg" alt="Oh God, Why Am I Starting To Like The Embarrassing Mess That Is Miley Cyrus?" /></a></div>
+					<div class="title">
+						<a href="http://dlisted.com/2013/08/25/oh-god-why-am-i-starting-to-like-the-embarrassing-mess-that-is-miley-cyrus/">Oh God, Why Am I Starting To Like The Embarrassing...</a><br />
+						<div class="comments"><a href="http://dlisted.com/2013/08/25/oh-god-why-am-i-starting-to-like-the-embarrassing-mess-that-is-miley-cyrus/#comments">[600] comments</a></div>	
+					</div>		
+				</div>
+			</li><li>
+				<div class="clearfix">
+					<div class="image"><a href="http://dlisted.com/2013/08/23/open-post-hosted-by-the-demure-daisy-of-the-celebrity-big-brother-house/"><img src="http://dlisted.com/wp-content/uploads/2013/08/opcourtneystodden2013celebritybigbrother.jpg" alt="Open Post: Hosted By The Demure Daisy Of The Celebrity Big Brother House " /></a></div>
+					<div class="title">
+						<a href="http://dlisted.com/2013/08/23/open-post-hosted-by-the-demure-daisy-of-the-celebrity-big-brother-house/">Open Post: Hosted By The Demure Daisy Of The Celeb...</a><br />
+						<div class="comments"><a href="http://dlisted.com/2013/08/23/open-post-hosted-by-the-demure-daisy-of-the-celebrity-big-brother-house/#comments">[537] comments</a></div>	
+					</div>		
+				</div>
+			</li><li>
+				<div class="clearfix">
+					<div class="image"><a href="http://dlisted.com/2013/08/26/robin-thickes-mother-gloria-loring-doesnt-understand-what-mileys-trying-to-do/"><img src="http://dlisted.com/wp-content/uploads/2013/08/mileyvmaglorialoring2013.jpg" alt="Robin Thicke's Mother Gloria Loring Doesn't Understand What Miley's Trying To Do" /></a></div>
+					<div class="title">
+						<a href="http://dlisted.com/2013/08/26/robin-thickes-mother-gloria-loring-doesnt-understand-what-mileys-trying-to-do/">Robin Thicke's Mother Gloria Loring Doesn't Unders...</a><br />
+						<div class="comments"><a href="http://dlisted.com/2013/08/26/robin-thickes-mother-gloria-loring-doesnt-understand-what-mileys-trying-to-do/#comments">[518] comments</a></div>	
+					</div>		
+				</div>
+			</li></ul>
+		</div><div id="trending_mv_cnt" style="display:none;">
+		<ul class="side-list"><li>
+				<div class="clearfix">
+					<div class="image"><a href="http://dlisted.com/2013/08/22/jennifer-love-hewitt-is-definitely-pregnant/"><img src="http://dlisted.com/wp-content/uploads/2013/08/jlovepregnant2013.jpg" alt="Jennifer Love Hewitt Is Definitely Pregnant " /></a></div>
+					<div class="title">
+						<a href="http://dlisted.com/2013/08/22/jennifer-love-hewitt-is-definitely-pregnant/">Jennifer Love Hewitt Is Definitely Pregnant </a><br>
+					</div>					
+				</div>
+			</li><li>
+				<div class="clearfix">
+					<div class="image"><a href="http://dlisted.com/2013/08/22/oh-its-just-peter-dinklage-hula-hooping-in-a-gay-bar-in-canada/"><img src="http://dlisted.com/wp-content/uploads/2013/08/peterdinklagehulahooopgaybar.jpg" alt="Oh, It's Just Peter Dinklage Hula-Hooping In A Gay Bar In Canada " /></a></div>
+					<div class="title">
+						<a href="http://dlisted.com/2013/08/22/oh-its-just-peter-dinklage-hula-hooping-in-a-gay-bar-in-canada/">Oh, It's Just Peter Dinklage Hula-Hooping In A Gay Bar In Canada </a><br>
+					</div>					
+				</div>
+			</li><li>
+				<div class="clearfix">
+					<div class="image"><a href="http://dlisted.com/2013/08/23/behold-baby-north-west/"><img src="http://dlisted.com/wp-content/uploads/2013/08/babynorthwestkardashian.jpg" alt="Behold, Baby North West" /></a></div>
+					<div class="title">
+						<a href="http://dlisted.com/2013/08/23/behold-baby-north-west/">Behold, Baby North West</a><br>
+					</div>					
+				</div>
+			</li><li>
+				<div class="clearfix">
+					<div class="image"><a href="http://dlisted.com/2013/08/21/open-post-hosted-by-the-most-graceful-and-classiest-wedding-march-youve-ever-seen/"><img src="http://dlisted.com/wp-content/themes/dlisted_44/img/placeholder.gif" alt="Open Post: Hosted By The Most Graceful And Classiest Wedding March You've Ever Seen" /></a></div>
+					<div class="title">
+						<a href="http://dlisted.com/2013/08/21/open-post-hosted-by-the-most-graceful-and-classiest-wedding-march-youve-ever-seen/">Open Post: Hosted By The Most Graceful And Classiest Wedding Marc...</a><br>
+					</div>					
+				</div>
+			</li><li>
+				<div class="clearfix">
+					<div class="image"><a href="http://dlisted.com/2013/08/21/lindsay-lohan-has-really-cut-the-bad-friends-out-of-her-life/"><img src="http://dlisted.com/wp-content/uploads/2013/08/lilonopantsgoldshoes.jpg" alt="Lindsay Lohan Has Really Cut The &quot;Bad Friends&quot; Out Of Her Life " /></a></div>
+					<div class="title">
+						<a href="http://dlisted.com/2013/08/21/lindsay-lohan-has-really-cut-the-bad-friends-out-of-her-life/">Lindsay Lohan Has Really Cut The &quot;Bad Friends&quot; Out Of Her Life </a><br>
+					</div>					
+				</div>
+			</li></ul>
+		</div>
+	</div>
+<div class="ad300" style="margin-top:20px;text-align:center;">
+						<span name=KonaFilter>
+			<link rel="stylesheet" type="text/css" href="http://cache.blogads.com/652183286/feed.css" />
+			<script language="javascript" src="http://cache.blogads.com/652183286/feed.js"></script>
+			</span>
+			<span name=KonaFilter>
+			<link rel="stylesheet" type="text/css" href="http://cache.blogads.com/720663321/feed.css" />
+			<script language="javascript" src="http://cache.blogads.com/720663321/feed.js"></script>
+			</span>
+			</div>
+
+</div>
+</div>
+
+
+<footer>
+	<div class="container clearfix">
+
+
+
+		<!-- <div class="back-to-top mobile"><a href="#"  id="btt">BACK TO TOP</a></div> -->
+
+		<div class="footer-nav">
+		<ul id="menu-footer" class=""><li id="menu-item-106339" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-106339"><a href="/"><img src="http://i.dlisted.com/wp-content/themes/dlisted_44/img/dlistedbw.png" alt="Dlisted"></a></li>
+<li id="menu-item-106353" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-106353"><a href="/">Home</a></li>
+<li id="menu-item-106677" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106677"><a href="/about/">About</a></li>
+<li id="menu-item-106678" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106678"><a href="/archive/">Archives</a></li>
+<li id="menu-item-106679" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106679"><a href="/links/">Links</a></li>
+<li id="menu-item-106680" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106680"><a href="/contact/">Contact</a></li>
+<li id="menu-item-106681" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106681"><a href="/copyright/">Copyright</a></li>
+<li id="menu-item-106682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106682"><a href="/disclaimer/">Disclaimer</a></li>
+</ul>		</div>
+		<div class="footer-share">
+			<a href="https://www.facebook.com/itsdlisted"><span aria-hidden="true" class="icon-facebook"></span></a>
+			<a href="https://www.twitter.com/itsdlisted"><span aria-hidden="true" class="icon-twitter"></span></a>
+			<a href="/feed/"><span aria-hidden="true" class="icon-feed"></span></a>
+		</div>
+
+	</div>	
+</footer>
+
+
+
+<script src="http://i.dlisted.com/wp-content/themes/dlisted_44/jquery.cycle2.min.js"></script>
+<script src="http://i.dlisted.com/wp-content/themes/dlisted_44/scripts.js"></script>
+<script src="http://i.dlisted.com/wp-content/themes/dlisted_44/js/jquery.ui.core.min.js"></script>
+<script src="http://i.dlisted.com/wp-content/themes/dlisted_44/js/jquery.ui.widget.min.js"></script>
+<script src="http://i.dlisted.com/wp-content/themes/dlisted_44/js/jquery.ui.position.min.js"></script>
+<script src="http://i.dlisted.com/wp-content/themes/dlisted_44/js/jquery.ui.tooltip.min.js"></script>
+
+
+
+<script type="text/javascript">
+var sc_project=922697; 
+var sc_invisible=1; 
+var sc_security="f674ac4a"; 
+var sc_https=1; 
+var sc_remove_link=1; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost +
+"statcounter.com/counter/counter.js'></"+"script>");</script><p>
+<noscript><br />
+<div class="statcounter"><img class="statcounter"<br />
+src="https://c.statcounter.com/922697/0/f674ac4a/1/"<br />
+alt="drupal analytics" ></div>
+<p></noscript>
+<script type="text/javascript">
+$(function() {
+		$(".head-carousel").tooltip({
+			tooltipClass:"ui-tooltip1",
+			position: {
+			my: "center bottom-20",
+			at: "center top",
+			using: function( position, feedback ) {
+			$( this ).css( position );
+			$( "<div>" )
+			.addClass( "arrow" )
+			.appendTo( this );
+			}
+			}
+			});
+});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1853049-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
+

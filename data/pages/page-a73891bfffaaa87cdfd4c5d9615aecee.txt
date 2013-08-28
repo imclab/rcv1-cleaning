@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PkMotors.com: Buy used cars, sell used cars online in Pakistan. Cars website.</title>
+<link href="http://www.pkmotors.com/public/images/favicon.ico" rel="shortcut icon" type="image/x-icon" /><meta name="Description" content="car jeep truck motorcycle vehicle for sale, buy car jeep truck motorcycle vehicle in islamabad, lahore karachi rawalpindi peshawar pakistan"/>
+<meta name="Keywords" content="car,jeep,truck,motorcycle,vehicle,sale,buy,islamabad,lahore,karachi,rawalpindi,peshawar,pakistan"/>
+<meta name="Language" content="en" />
+<meta name="Classification" content="Pk motors, Swift way to Buy and Sell Motors in Pakistan, Motor Vehicles Cars Jeeps Trucks, Buy and Sell website" />
+<meta name="ROBOTS" content="index, follow" />
+<meta name="rating" content="General" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="revisit" content="10 days" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link rel="canonical" href="http://www.pkmotors.com/pakistan_cars.php" /><link href="http://www.pkmotors.com//public/css/style.css" rel="stylesheet" type="text/css" />
+<link href="http://www.pkmotors.com//public/css/redmond/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="http://www.pkmotors.com//public/css/bar.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://www.pkmotors.com//public/js/jquery-latest.js"></script>
+<script type="text/javascript" src="http://www.pkmotors.com//public/js/jquery-ui.js"></script>
+<script type="text/javascript" src="http://www.pkmotors.com//public/js/bar.js"></script>
+<script type="text/javascript"> 
+var base_url = 'http://www.pkmotors.com/';
+	function getMakes(){
+		$("#makes").html('wait...');
+		var category = $("#category").val();
+		var request = $.ajax({
+			url: base_url+"filter_criteria/filter_makes/"+category,
+			type: "POST",
+			dataType: "html"
+		});
+		
+		request.done(function(msg) {
+			$("#makes").html( msg );
+			getModels();
+		});
+	}
+	
+	/**********************************************/
+	function getModels(){
+		$("#models").html('wait...');
+		var category = $("#category").val();
+		var make = $("#make").val();
+		
+		var request = $.ajax({
+			url: base_url+"filter_criteria/filter_models/"+category+"/"+make,
+			type: "POST",
+			dataType: "html"
+		});
+		
+		request.done(function(msg) {
+			$("#models").html( msg );
+			getYears();
+		});
+	}
+	
+	/**********************************************/
+	function getYears(){
+		$("#years").html('wait...');
+		var category = $("#category").val();
+		var make = $("#make").val();
+		var model = $("#model").val();
+				
+		var request = $.ajax({
+			url: base_url+"filter_criteria/filter_years/"+category+"/"+make+"/"+model,
+			type: "POST",
+			dataType: "html"
+		});
+		
+		request.done(function(msg) {
+			$("#years").html( msg );
+			getLocations();
+		});
+	}
+	
+	/**********************************************/
+	function getLocations(){
+		$("#locations").html('wait...');
+		var category = $("#category").val();
+		var make = $("#make").val();
+		var model = $("#model").val();
+		var year = $("#year").val();
+		
+		var request = $.ajax({
+			url: base_url+"filter_criteria/filter_locations/"+category+"/"+make+"/"+model+"/"+year,
+			type: "POST",
+			dataType: "html"
+		});
+		
+		request.done(function(msg) {
+			$("#locations").html( msg );
+			submitForm();
+		});
+	}
+	
+	function submitForm(){
+		
+		var submit_form = $("#submit_form").val();			
+			if(submit_form == 1){
+				setTimeout(function(){ $('#set_post').submit();},200);
+			}
+	}
+</script></head>
+
+<body>
+<div id="fi_bar" style="display: none; ">
+    <div id="bar-content">
+        Don't miss a thing : Like us on Facebook! <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com/pkmotorspakistan&amp;send=false&amp;layout=standard&amp;width=338&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=25" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:348px; height:25px;"></iframe>&nbsp;&nbsp;<a href="http://facebook.com/pkmotorspakistan" style="text-align: center; color: #233458; font-size: 16px; font-family: Arial, Helvetica, sans-serif;" target="_blank">Visit our Facebook page</a>
+    </div>
+</div>
+<!--Main Wraper-->
+<div class="mainwraper">
+  <div class="container"> 
+    
+    <!--Header-->
+    <!--Header-->
+<div class="header">
+  <div class="logo left"><a href="http://www.pkmotors.com/" title="Used cars for sale Islamabad Lahore Karachi"><img src="http://www.pkmotors.com//public/images/logo.png" border="0" alt="Used Cars Pakistan" title="Used cars for sale Islamabad Lahore Karachi" /></a></div>
+  <div class="topnavbox right">
+    <ul class="mainnav">
+        <li><a href="http://www.pkmotors.com/dashboard" title="Post an advertisement for selling of used cars in Islamabad Lahore Karachi" class="posanAdd" rel="nofollow">Post an Ad</a></li>
+    </ul>
+        <div class="forgotPasstop right"><a href="http://www.pkmotors.com/recover-password" title="Recover password from pakistan motors" rel="nofollow">Forgot Password?</a></div>
+        <div class="topserch right">
+      <form action="http://www.pkmotors.com/login" method="post" accept-charset="utf-8" name="login_frm" id="login_frm">      <div class="loginbox left">
+        <input name="user_name" type="text" class="loginfield" value="Username" onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" />
+      </div>
+      <div class="loginbox left">
+        <input name="password" type="password" class="loginfield" value="Password" onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" />
+      </div>
+      <div class="loginbtnbox left">
+        <input name="submitbtn" type="submit" value="LOGIN" class="loginbtn" />
+      </div>
+      </form>            
+    </div>
+    
+    <div class="clear"></div>    
+  </div>
+  <div class="tagline right">
+    <h1><span>Buying</span> & <strong>Selling</strong> Used Cars in Pakistan....Made Simple</h1>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--/Header--> 
+
+<!--Search-->
+<div class="searchbox">
+<form action="http://www.pkmotors.com/set-full-search" method="post" accept-charset="utf-8" name="full_search_frm" id="full_search_frm">    <input name="full_search" id="full_search" type="text" class="srchfield left" value="Search by Keyword"  onfocus="if(this.value=='Search by Keyword')this.value=''" onblur="if(this.value=='')this.value='Search by Keyword'" />
+    <input name="full_search_btn" type="submit" value="Search" class="srchbtn left" />
+    <span class="searchBy left">
+    	<input type="radio" name="full_search_btn" id="for_sale" value="for_sale" checked="checked" /><label for="for_sale">For sale</label>
+    </span>
+    <span class="searchBy left">
+    	<input type="radio" name="full_search_btn" id="find_buyers" value="find_buyers" /><label for="find_buyers">Find buyers</label>
+    </span>
+</form>  <div class="clear"></div>
+</div>
+<!--/Search-->    <!--/Header--> 
+    
+     <!--Content Area-->
+      		<div class="detailpagewraper">     
+      		  <div class="salecarbox right">
+              <h2>COMMON CARS OF PAKISTAN</h2>
+              
+<div class="innerContent">
+
+<h5>COMMON CARS IN PAKISTAN:</h5>
+<p>
+If you want to buy cars online in Pakistan, then there is no need to meet car dealers in different cities because we can help you buy car online. At Pakistan cars we have an extensive database of online car dealers who can help you buy cars online as well as sell car online. When you buy a car online, it saves you from choosing something forcefully because online car dealers help you compare prices of cars online. Online car dealers also allow you to import cars as well step into business of exporting cars. Pakistan cars will help you find the best online car dealer so you may import car of your choice. Pakistani people import luxury cars, sports cars and other cars. Pakistan cars will help you find online auto dealers with suppliers as well. We also have a set of car buying tips on our website that will help car buyers inspect cars and aid online car sellers to create profile for their vehicle.
+<br />
+<br />
+To sell car quick in Pakistan, we also own website CARPAKISTAN.COM<br /><br />
+
+It becomes difficult for online car buyers to figure out which car dealer is offering best price. Pakistan cars help you here because we have all the top online car dealers registered where you can compare prices and bids. With the largest dealer-only database of cars for sale on the web we are constantly striving to offer more new and used car, truck, and SUV listings. Pakistan car models introduced by Suzuki, Honda and Nissan are quite popular locally. Pakistan cars also educate you about importing cars into Pakistan, Tariffs, import information, customs, advice, costs and shipping. Our website is dedicated to automobile industry in Pakistan where you can buy or sell cars or discuss about cars we even have list of hot cars in Pakistan. Popular cars in Pakistan include Honda, Kia, Nissan, Toyota and Suzuki. You can contact online car dealers and do business of exporting these cars as well as import cars in Pakistan. Our website also gives a detail analysis of process of importing cars and exporting cars from Pakistan. Our website is one stop if you want to buy car online or sell your car, looking for dealers and import export of cars in Pakistan.
+</p>
+
+
+
+<div class="clear"></div>
+</div>
+
+
+</div>
+
+  
+              
+<div class="addboxwrp left">
+<script type="text/javascript"><!--
+					google_ad_client = "ca-pub-9458785914131980";
+					/* pkmotors2 */
+					google_ad_slot = "1068250438";
+					google_ad_width = 120;
+					google_ad_height = 600;
+					//-->
+					</script>
+					<script type="text/javascript"
+					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+					</script>
+</div>
+              
+              
+              
+              
+              
+              
+              
+              <div class="clear"></div>
+       		</div>
+      <!--/Content Area-->
+          
+    <!--Footer-->
+    <!--Footer-->
+<div class="footewraper">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9452473232652432";
+/* pkmotors */
+google_ad_slot = "9884316289";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><br />
+<br />
+
+  <div><a href="http://www.pkmotors.com/" title="used cars for sale islamabad lahore karachi">Home</a> | <a href="http://www.pkmotors.com/add-wish-listing" title="search required cars in pakistan islamabad karachi rawalpindi">Looking For</a> | <a href="http://www.pkmotors.com/set-post" title="search used cars in karachi lahore islamabad rawalpindi">Search</a> | <a href="http://www.pkmotors.com/add-listing" title="sell used car">Sell a Car</a> | <a href="http://www.pkmotors.com/aboutus_car_sale.php" title="about pakistan motors">About Us</a> | <a href="http://www.pkmotors.com/contact-us" title="contact pakistan motors">Contact Us</a> | <a href="http://www.pkmotors.com/vehicle_buy_sell.php" title="sale purchase used vehicles in pakistan islamabad rawalpindi lahore karachi">How it Works</a> | <a href="http://www.pkmotors.com/car_financing_pakistan.php" title="car financing in pakistan">Car Financing</a> | <a href="http://www.pkmotors.com/bank_leasing_pakistan.php" title="car bank leasing in pakistan">Banking Leasing</a> | <a href="http://www.pkmotors.com/sold-vehicles" title="sold vehicles by pakistan motors">Sold Vehicles</a> | <br />
+    <a href="http://www.pkmotors.com/cars_dealers_pakistan.php" title="pakistan motors dealers">Dealers</a> | <a href="http://www.pkmotors.com/price_of_new_cars.php" title="prices of new cars in pakistan">New Car Prices</a> | <a href="http://www.pkmotors.com/free_tips_maintenance.php" title="car maintenance tips by pakistan motors">Maintenance Tips</a> | <a href="http://www.pkmotors.com/selling_tips.php" title="car selling tips by pakistan motors">Free Selling Tips</a> | <a href="http://www.pkmotors.com/used_cars_buying_tips.php" title="used cars buying tips by pakistan motors">Free Buying Tips</a> | <a href="http://www.pkmotors.com/buy_used_cars.php" title="buy used honda toyota suzuki cars in islamabad lahore karachi">Online</a> | <a href="http://www.pkmotors.com/pakistan_cars.php" title="cars in pakistan">Pakistan Cars</a></div>
+  <div class="poweredby left">Copyright &copy; Pakistan Motors 2013. All Rights Reserved.</div>
+  <div class="poweredby right">Powered by: <a href="http://www.medialinkers.com" target="_blank">MediaLinkers</a></div>
+  <div class="clear"></div>
+
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9458785914131980";
+/* pkmotors */
+google_ad_slot = "7114784038";
+google_ad_width = 728;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<!--/Footer-->
+    <!--/Footer--> 
+    
+  </div>
+</div>
+<!--/Main Wraper-->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4711903-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</html>

@@ -1,0 +1,995 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+<head>
+
+<title>Celebrity News - Entertainment News | Celebrity Gossip | Celebrity Pictures | Starpulse.com</title>
+<meta name="Keywords" content="entertainment, celebrity, celebrities, celebs, celebrity photo, celeb pics, actress, actors, actors and actress, music, movies, video games, television, tv shows" />
+<meta name="Description" content="Starpulse.com - Your Entertainment Destination" />
+<!-- Fackbook Open Graph Meta tags for "like" button-->
+<meta property="site_name" content="Starpulse"/>
+<meta property="og:type" content="article" />
+<meta property="description" content="Starpulse.com - Your Entertainment Destination" />
+<meta name="fb_app_id" content="121427711218707"/>
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="http://images.starpulse.com/favicon.ico" />
+<link rel='stylesheet' type='text/css' href='http://cdn.starpulse.com/css/spall.css?v=2013081200' />
+<link rel='stylesheet' type='text/css' href='http://cdn.starpulse.com/css/style.new_design.css?v=2013060400' />
+
+<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://cdn.starpulse.com/css/ie6_fixes.css" />
+<![endif]-->
+
+<link href="https://plus.google.com/114946410770698472140" rel="publisher" />
+
+<script type='text/javascript'>
+	/* <![CDATA[ */
+	PHP_SELF='http://www.starpulse.com/news/index.php?cat=1';
+	apparent_starpulseuserid=0;
+	/* ]]> */ 
+</script>
+<script type="text/javascript" src="http://cdn.starpulse.com/java/jquery/jquery.pack.js"></script>
+<script type='text/javascript' src='http://cdn.starpulse.com/java/jquery/jquery.spall.js?v=2013081400'></script>
+
+<!-- Google Adsense -->
+<script type="text/javascript" src="http://partner.googleadservices.com/gampad/google_service.js"></script>
+<script type="text/javascript">
+	GS_googleAddAdSenseService("ca-pub-9674942009345807");
+	GS_googleEnableAllServices();
+</script>
+<script type="text/javascript">
+	GA_googleAddSlot('ca-pub-9674942009345807', 'News-980');
+	GA_googleAddSlot('ca-pub-9674942009345807', 'News-728');
+	GA_googleAddSlot('ca-pub-9674942009345807', 'News-300');
+	GA_googleAddSlot('ca-pub-9674942009345807', 'News-300-Mid');
+	GA_googleAddSlot('ca-pub-9674942009345807', 'News-Sky');
+	GA_googleAddSlot('ca-pub-9674942009345807', 'News-SkinTop');
+	GA_googleAddSlot('ca-pub-9674942009345807', 'News-SkinLeft');
+	GA_googleAddSlot('ca-pub-9674942009345807', 'News-SkinRight');
+</script>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	GA_googleAddAttr("AdFilter","");
+	GA_googleAddAttr("Artist","");
+	GA_googleAddAttr("Genre","");
+	GA_googleAddAttr("Ring","News");
+	GA_googleAddAdSensePageAttr("hints", "Celebrity, Celebrities, Celebrity News, Entertainment, Entertainment News, Celebrity Gossip, Gossip, Celebrity Photos, Celebrity Pictures, Music, Music News, Music Photos, Music Pictures, Television, Television News, Television Photos, Television Pictures, TV, TV News, TV Photos, TV Pictures, Movies, Movie News, Movie Photos, Movie Pictures");
+	/* ]]> */
+</script>
+<script type="text/javascript">
+	// GA_googleUseSyncSRARendering();
+	GA_googleFetchAds();
+</script>
+
+<!-- Quantcast Tag, part 1 --> 
+<script type="text/javascript">
+  var _qevents =_qevents || [];
+  (function() {
+    var elem =document.createElement('script');
+    elem.src =(document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+    elem.async =true;
+    elem.type ="text/javascript";
+    var scpt =document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);  
+  })();
+</script>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2478988-1']);
+
+  /* if hostname doesn't match starpulse.com - this rule should be first  */
+  if (!window.location.hostname.match(/starpulse.com$/)) {
+    _gaq.push(['_trackPageview','/off-site-frame/' + window.location.hostname]);
+
+  /* truncate to ring level for topic channels */
+  } else if (window.location.pathname.match(/^\/(Actors|Actresses|Athletes|Celebrity|Movies|Music|Notables|Supermodels|Television)\/(.*?)\/(.*?)\//)) {
+    _gaq.push(['_trackPageview','/' + RegExp.$1 + '/' + RegExp.$2 + '/' + RegExp.$3 + '/']);
+
+  /* truncate to title for slideshows - dynamic pageviews are also tracked in slideshows javascript */
+  } else if (window.location.pathname.match(/^\/slideshows\/(.*?)\//)) {
+    _gaq.push(['_trackPageview','/slideshows/' + RegExp.$2 + '/']);
+
+  /* normalize to main gallery page 1 for event photos */
+  } else if (window.location.pathname.match(/^\/events\/([0-9]*?)\/0\/[0-9]*?\/(.*?)\//)) {
+    _gaq.push(['_trackPageview','/events/' + RegExp.$1 + '/0/1/' + RegExp.$2 + '/0/']);
+
+  /* normalize to main page for Photos */
+  } else if (window.location.pathname.match(/^\/Photos\//)) {
+    _gaq.push(['_trackPageview','/Photos/']);
+
+  /* remove query string on news - leave cat */
+  } else if (window.location.pathname.match(/^\/news\//)) {
+    var trackingURL =window.location.pathname;
+    if (window.location.search.match(/cat=([0-9]*)/)) {
+      trackingURL +='?cat=';
+      trackingURL +=RegExp.$1;
+    }
+    _gaq.push(['_trackPageview',trackingURL]);
+
+  /* lump all /search together */
+  } else if (window.location.pathname.match(/^\/search/)) {
+    _gaq.push(['_trackPageview','/search/']);
+
+  /* default to track the page normally */
+  } else {
+    _gaq.push(['_trackPageview']);
+  }
+
+  _gaq.push(['_trackPageLoadTime']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  (function (tos) {
+    window.setInterval(function () {
+      tos = (function (t) {
+        return t[0] == 50 ? (parseInt(t[1]) + 1) + ':00' : (t[1] || '0') + ':' + (parseInt(t[0]) + 10);
+      })(tos.split(':').reverse());
+      window.pageTracker ? pageTracker._trackEvent('Time', 'Log', tos) : _gaq.push(['_trackEvent', 'Time', 'Log', tos]);
+    }, 10000);
+  })('00');
+
+  function trackPageView(path) {
+    try {
+      _gaq.push(['_trackPageview',path]);
+      if (typeof(_qevents.push) == 'function') { _qevents.push({ qacct:"p-4cjg46u42920Y"}); }
+      if (typeof(_comscore.push) == 'function') { _comscore.push({ c1:"2",c2:"8555387"}); }
+    }catch(err){}
+    return true;
+  }
+
+  function trackOutboundLink(link,category) {
+    try {
+      if (typeof(category) == 'undefined') { category ='Outbound Link'; }
+      var urlParts =link.href.split('/');
+      var action =urlParts[2];
+      _gat._getTrackerByName()._trackEvent(category, action, link.href);
+    }catch(err){}
+    return true;
+  }
+
+  function trackGenericEvent(action,category,label) {
+    try {
+      if (typeof(action) == 'undefined') { action ='Unknown'; }
+      if (typeof(category) == 'undefined') { category ='Unknown'; }
+      if (typeof(label) == 'undefined') { label ='Unknown'; }
+      _gat._getTrackerByName()._trackEvent(category, action, label);
+    }catch(err){}
+    return true;
+  }
+
+  var pseudoLink =function(link_href) {
+    document.location.href =link_href;
+  }
+
+  $('document').ready( function() {
+    $('body').on('click', '.pseudo_link', function() {
+      if (typeof($(this).children('a').first().attr('href')) != 'undefined') {
+        pseudoLink($(this).children('a').first().attr('href'));
+        return false;
+      }
+      return true;
+    });
+  });
+</script>
+<link rel="alternate" type="application/rss+xml" href="http://feeds.starpulse.com/StarpulseEntertainmentNewsBlog" title="Starpulse Entertainment News" />
+<link rel="alternate" type="application/rss+xml" href="http://feeds.starpulse.com/StarpulseEntertainmentPhotos" title="Starpulse Photos" />
+<link rel="alternate" type="application/rss+xml" href="http://feeds.starpulse.com/StarpulseEntertainmentNewsBlog-CelebrityNews" title="Celebrity News" />
+<link rel="alternate" type="application/rss+xml" href="http://feeds.starpulse.com/StarpulseEntertainmentNewsBlog-MusicNews" title="Music News" />
+<link rel="alternate" type="application/rss+xml" href="http://feeds.starpulse.com/StarpulseEntertainmentNewsBlog-MovieNews" title="Movie News" />
+<link rel="alternate" type="application/rss+xml" href="http://feeds.starpulse.com/StarpulseEntertainmentNewsBlog-TvNews" title="TV News" />
+<link rel="alternate" type="application/rss+xml" href="http://feeds.starpulse.com/StarpulseEntertainmentNewsBlog-GamingNews" title="Gaming News" />
+<link rel="alternate" type="application/rss+xml" href="http://feeds.starpulse.com/StarpulseContests" title="Starpulse Contests" />
+
+</head>
+<body>
+
+	<div id='ad-row' style='z-index: 9000;'>
+		<div id='ad1'>
+		<center>
+
+<script type="text/javascript">GA_googleFillSlot("News-728");</script>
+
+		</center>
+		</div>
+	</div>
+
+<!-- Begin Facebook Connect -->
+<div id="fb-root"></div>
+<script type='text/javascript'>
+	var like_btn;
+
+	//session : null, // don't refetch the session when PHP already has it
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId		: '158308557541634',
+			status		: true, // check login status
+			cookie		: true, // enable cookies to allow the server to access the session
+			channelUrl	: "http://www.starpulse.com/channel.html", // facebook fb_fragment fix.
+			xfbml		: true, // parse XFBML
+			oauth		: true
+		});
+		FB.Event.subscribe('auth.login', function() {
+			window.location.reload();
+		});
+		FB.Event.subscribe('auth.logout', function(response) {
+			document.location.href = 'http://www.starpulse.com/members/logout.php';
+		});
+	};
+	(function() {
+		var e = document.createElement('script');
+		//e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		e.src = 'https://connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+	}());
+</script>
+<!-- End Facebook Connect -->
+
+
+<!-- Begin comScore Tag -->
+<script type='text/javascript'>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "8555387" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript><img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=8555387&amp;cv=2.0&amp;cj=1" alt="" /></noscript>
+<!-- End comScore Tag -->
+
+<div id='user_menu'></div>
+<div id='greyBoxOverlay'></div>
+<div id='sp_pm_div'></div>
+<div id='greyBox' style='z-index: 10000; display: none;'></div>
+<span id="webslice" class="hslice">
+	<span style="display: none;" class="entry-title">Starpulse News</span>
+	<span style="display: none;" class="ttl">600</span>
+	<a style="display: none;" rel="bookmark" href="http://www.starpulse.com/news/"></a>
+	<a style="display: none;" rel="entry-content" href="http://cdn.starpulse.com/Widgets/webslice.html"></a>
+</span>
+<div id='adSkins' style='position: absolute; top: 0px; left: 50%; margin-left: -491px; width: 982px;'>
+	<div style="position: absolute; top: 0px; left: 50%; margin-left: -491px; width: 982px; overflow: hidden;">
+		<script type='text/javascript'>GA_googleFillSlot('News-SkinTop');</script>
+	</div>
+	<div style="position: fixed; top: 0px; left: 50%; margin-left: -491px; width: 982px;">
+		<div style="position: absolute; left: -330px; height: 1200px; width: 330px;">
+			<script type='text/javascript'>GA_googleFillSlot('News-SkinLeft');</script>
+		</div>
+		<div style="position: absolute; left: 982px; height: 1200px; width: 329px;">
+			<script type='text/javascript'>GA_googleFillSlot('News-SkinRight');</script>
+		</div>
+	</div>
+</div>
+
+<div id="container">
+	
+<div id="header" class="clearfix">
+	<div id="logo">
+		<h1><a href="/"><span>Starpulse.com</span></a></h1>
+		<h2>Your Entertainment Destination</h2>
+	</div>
+	<div id='login_link'>
+<a href='/members/register.html?link_type=Global' target='_parent'>Register</a> &nbsp; | &nbsp; 
+<a href='/members/register.html?link_type=Global' target='_parent'>Login</a> &nbsp; | &nbsp; 
+<a href='/Company/signup.html' target='_parent'>Contribute</a>
+</div>
+
+	<div id='social_nav'>
+		<div id='social_bar'>
+
+
+			<a class="social_button_med sp_facebook" title="Facebook" href="http://www.facebook.com/pages/Starpulse/124877431305?v=wall" target="_blank"><span>Facebook</span></a>
+			<a class="social_button_med sp_twitter" title="Twitter" href="http://twitter.com/starpulse" target="_blank"><span>Twitter</span></a>
+			<a class="social_button_med sp_google" title="Google+" href="https://plus.google.com/114946410770698472140" target="_blank"><span>Google+</span></a>
+			<a class="social_button_med sp_pinterest" title="Pinterest" href="http://pinterest.com/starpulse/" target="_blank"><span>Pinterest</span></a>
+			<a class="social_button_med sp_rss" title="RSS Feeds" href="http://www.starpulse.com/rss/" target="_blank"><span>RSS</span></a>
+			<a class="social_button_med sp_mobile" title="Starpulse Mobile" href="http://m.starpulse.com/news/index.php?cat=1" target="_blank"><span>Starpulse Mobile</span></a>
+			<a class="social_button_med sp_email" title="Newsletter" href="http://www.starpulse.com/Newsletters/Entertainment-News.html" target="_blank"><span>Newsletter</span></a>
+		</div>
+
+
+	</div>
+	<div id="nav">
+		<a class='home_icon' href="/">&nbsp;</a>
+
+<a class='selected' href='/news/'>News</a>
+<a href='/Celebrity/'>Celebs</a>
+<a href='/Television/'>TV</a>
+<a href='/Movies/'>Movies</a>
+<a href='/Music/'>Music</a>
+<a href='/Photos/'>Photos</a>
+<a href='/Contests/'>Contests</a>
+<a href='/Videos/'>Video</a>
+
+		<div id="search">
+			<form action="http://www.starpulse.com/search/index.html" id="cse-search-box">
+				<input type="hidden" name="cx" value="partner-pub-9674942009345807:vbx9te5rox2" />
+				<input type="hidden" name="cof" value="FORID:11" />
+				<input type="hidden" name="ie" value="ISO-8859-1" />
+				<input type="hidden" name="sa" value="Search" />
+				<input type="text" name="q" id="query_field" size="16" />
+				<input type="image" src="http://images.starpulse.com/images/go.png" value="Search" />
+			</form>
+			<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+	<div id="sub-nav"></div>
+	<script type="text/javascript">bindSPNavMenu('nav','sub-nav');</script>
+	<div style="clear: both;"></div>
+</div>
+
+<div id='ad980'>
+	<center><script type='text/javascript'>GA_googleFillSlot('News-980');</script></center>
+</div>
+	<div id="main-col">
+
+		<div id="news-body">
+			<div class="module clearfix" style="background-color: #ffffff">
+<div class='content'>
+<div class='single_col  major_feature'>
+	<h1><a href='/news/Noelle_Talmon/2013/08/27/vin_diesel_surrounded_by_sexy_costars_'>Vin Diesel Surrounds Himself With Sexy Co-Stars &amp; Model Girlfriend At Hollywood Star Unveiling</a></h1>
+	<div class='toolbar'>
+		August 27th, 2013 3:00pm EDT
+	</div>
+	<div class='left_container'>
+		<img src="http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2013%2F08%2F26%2Fpreviews%2FVin%20Diesel-AES-105221.jpg&amp;fp=215x153&amp;target_height=300&amp;target_width=300" style='cursor: pointer; width:300px; height:300px;' alt="Vin Diesel" title="Vin Diesel" onclick='pseudoLink("/news/Noelle_Talmon/2013/08/27/vin_diesel_surrounded_by_sexy_costars_");' />
+	</div>
+	<div class='right_container'>
+	<div class='article_container'>
+		<div class='article_content'>
+			A bevy of beautiful women came out to support Vin Diesel at the unveiling of his Hollywood Walk of Fame star on Monday. The actor's "Fast & Furious" franchise co-stars Jordana Brewster and Michelle Rodriguez and his "Riddick" colleague Katee Sackhoff showed up to lend their support.<br /><br />Rodriguez told the crowd: "I love Vin Diesel. On top of just being one of my best friends... this man dares to dream when people forget to dream. This guy, he looks at the impossible and says, 'When do we start?'"<br /><br />Diesel's girlfriend, Mexican model Paloma Jimenez, and his 5-year-old daughter Hania Riley also a...
+		</div>
+		<div class='article_fader'></div>
+		<a class='sp_see_all' href='/news/Noelle_Talmon/2013/08/27/vin_diesel_surrounded_by_sexy_costars_'>READ MORE</a><br />
+	</div>
+	<div class='feature_topic_headlines'>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/Dave_Simpson/2013/08/26/vin_diesel_surrounded_by_female_costar", "Article Listing", "Feature Headlines"); pseudoLink("/news/Dave_Simpson/2013/08/26/vin_diesel_surrounded_by_female_costar");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2013%2F05%2F22%2Fpreviews%2FVin%20Diesel-AES-096875.jpg&amp;fp=0x0&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Vin Diesel surrounded by female co-stars at Hollywood star unveiling</p>
+<div style='clear: both;'></div>
+</div>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/Dave_Simpson/2013/08/12/vin_diesel_in_talks_for_guardians_of_t", "Article Listing", "Feature Headlines"); pseudoLink("/news/Dave_Simpson/2013/08/12/vin_diesel_in_talks_for_guardians_of_t");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2013%2F05%2F22%2Fpreviews%2FVin%20Diesel-AES-096873.jpg&amp;fp=214x128&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Vin Diesel in talks for Guardians of the Galaxy</p>
+<div style='clear: both;'></div>
+</div>
+</div>
+</div>
+<div class='related_topics' style='height: 1.3em; overflow: hidden;'>
+<span class='pseudo_link' onclick='trackGenericEvent("/Actors/Diesel,_Vin/", "Article Listing", "Related Topics"); pseudoLink("/Actors/Diesel,_Vin/");'>Vin Diesel</span>
+</div>
+</div>
+<div class='divider'></div>
+<div class='single_col  major_feature'>
+	<h1><a href='/news/Dave_Simpson/2013/08/27/tami_erin_in_sex_tape_mystery'>Tami Erin In 'Sex Tape' Mystery</a></h1>
+	<div class='toolbar'>
+		August 27th, 2013 2:33pm EDT
+	</div>
+	<div class='left_container'>
+		<img src="http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2011%2F03%2F26%2Fpreviews%2FTami%20Erin-TYG-011174.jpg&amp;fp=186x147&amp;target_height=300&amp;target_width=300" style='cursor: pointer; width:300px; height:300px;' alt="Tami Erin" title="Tami Erin" onclick='pseudoLink("/news/Dave_Simpson/2013/08/27/tami_erin_in_sex_tape_mystery");' />
+	</div>
+	<div class='right_container'>
+	<div class='article_container'>
+		<div class='article_content'>
+			Actress Tami Erin is under pressure to respond following reports suggesting a sex tape has surfaced featuring the star.<br /><br />Erin, best known for taking the title role in 1988 movie The New Adventures of Pippi Longstocking, was apparently filmed in a range of "sexual situations", according to TMZ.com.<br /><br />Editors at the website report the film is being offered for sale to adult video retailers in Los Angeles.
+		</div>
+		<div class='article_fader'></div>
+		<a class='sp_see_all' href='/news/Dave_Simpson/2013/08/27/tami_erin_in_sex_tape_mystery'>READ MORE</a><br />
+	</div>
+</div>
+<div class='related_topics' style='height: 1.3em; overflow: hidden;'>
+<span class='pseudo_link' onclick='trackGenericEvent("/Actresses/Erin,_Tami/", "Article Listing", "Related Topics"); pseudoLink("/Actresses/Erin,_Tami/");'>Tami Erin</span>
+</div>
+</div>
+<div class='divider'></div>
+<div class='single_col  major_feature'>
+	<h1><a href='/news/Dave_Simpson/2013/08/27/joshua_jackson_headed_back_to_tv_for_n'>Joshua Jackson Headed Back To TV For New Series</a></h1>
+	<div class='toolbar'>
+		August 27th, 2013 2:31pm EDT
+	</div>
+	<div class='left_container'>
+		<img src="http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2013%2F07%2F08%2Fpreviews%2FDiane%20Kruger%20and%20Joshua%20Jackson-DGG-042550.jpg&amp;fp=220x82&amp;target_height=300&amp;target_width=300" style='cursor: pointer; width:300px; height:300px;' alt="Joshua Jackson" title="Joshua Jackson" onclick='pseudoLink("/news/Dave_Simpson/2013/08/27/joshua_jackson_headed_back_to_tv_for_n");' />
+	</div>
+	<div class='right_container'>
+	<div class='article_container'>
+		<div class='article_content'>
+			Actor Joshua Jackson is heading back to TV for a new show. The former Dawson's Creek star has been cast in upcoming series The Affair as Cole, a cowboy who manages a Long Island, New York ranch that has been in his family for generations, according to The Hollywood Reporter. <br /><br />The show will centre around the wife of his character's infidelities with Noah, played by Dominic West. <br /><br />Ruth Wilson will play Jackson's wife and Maura Tierney has been cast as West's other half. <br /><br />Jackson's last TV show, Fringe, ended in January, after five seasons.
+		</div>
+		<div class='article_fader'></div>
+		<a class='sp_see_all' href='/news/Dave_Simpson/2013/08/27/joshua_jackson_headed_back_to_tv_for_n'>READ MORE</a><br />
+	</div>
+	<div class='feature_topic_headlines'>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/Dave_Simpson/2013/08/20/joshua_jackson_suffers_mystery_foot_in", "Article Listing", "Feature Headlines"); pseudoLink("/news/Dave_Simpson/2013/08/20/joshua_jackson_suffers_mystery_foot_in");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2013%2F03%2F20%2Fpreviews%2FDiane%20Kruger%20and%20Joshua%20Jackson-TYG-034343.jpg&amp;fp=0x0&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Joshua Jackson suffers mystery foot injury</p>
+<div style='clear: both;'></div>
+</div>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/Lucy_Hobson/2013/08/04/joshua_jackson_jealous_of_diane_kruger", "Article Listing", "Feature Headlines"); pseudoLink("/news/Lucy_Hobson/2013/08/04/joshua_jackson_jealous_of_diane_kruger");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2013%2F05%2F07%2Fpreviews%2FJoshua%20Jackson%20and%20Diane%20Kruger-20130507-92.jpg&amp;fp=282x132&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Joshua Jackson 'Jealous' Of Diane Kruger</p>
+<div style='clear: both;'></div>
+</div>
+</div>
+</div>
+<div class='related_topics' style='height: 1.3em; overflow: hidden;'>
+<span class='pseudo_link' onclick='trackGenericEvent("/Actors/Jackson,_Joshua/", "Article Listing", "Related Topics"); pseudoLink("/Actors/Jackson,_Joshua/");'>Joshua Jackson</span>
+</div>
+</div>
+<div class='divider'></div>
+<div class='single-col' style='text-align: center;'>
+<center><script type='text/javascript'>GA_googleFillSlot('News-300-Mid');</script></center>
+</div>
+<div class='divider'></div>
+<div class='single_col  major_feature'>
+	<h1><a href='/news/Lucy_Hobson/2013/08/27/lamar_odom_returns_home_after_six_days'>Lamar Odom Returns Home After Six Days Of Hiding</a></h1>
+	<div class='toolbar'>
+		August 27th, 2013 2:09pm EDT
+	</div>
+	<div class='left_container'>
+		<img src="http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2012%2F10%2F05%2Fpreviews%2FLamar%20Odom-SSO-002425.jpg&amp;fp=203x164&amp;target_height=300&amp;target_width=300" style='cursor: pointer; width:300px; height:300px;' alt="Lamar Odom" title="Lamar Odom" onclick='pseudoLink("/news/Lucy_Hobson/2013/08/27/lamar_odom_returns_home_after_six_days");' />
+	</div>
+	<div class='right_container'>
+	<div class='article_container'>
+		<div class='article_content'>
+			Lamar Odom has reportedly returned home after going into hiding for six days.<br /><br />The Los Angeles Clippers basketball player was spotted driving into the gated community where he and wife Khloe Kardashian-Odom share a home together, looking gaunt yesterday, after she kicked him out last week because he refused to enter rehab for his alleged crack cocaine addiction, according to TMZ.<br /><br />The 'Keeping Up with the Kardashians' star reportedly staged an intervention amid allegations he has a serious drug problem, but the meeting didn't go as planned and Lamar vanished, but was later tracked down to a...
+		</div>
+		<div class='article_fader'></div>
+		<a class='sp_see_all' href='/news/Lucy_Hobson/2013/08/27/lamar_odom_returns_home_after_six_days'>READ MORE</a><br />
+	</div>
+	<div class='feature_topic_headlines'>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/Noelle_Talmon/2013/08/26/khloe_kardashian_lashes_out_over_lamar", "Article Listing", "Feature Headlines"); pseudoLink("/news/Noelle_Talmon/2013/08/26/khloe_kardashian_lashes_out_over_lamar");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2012%2F04%2F24%2Fpreviews%2FKhloe%20Kardashian%20Lamar%20Odom-JTM-060564.jpg&amp;fp=160x84&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Khloe Kardashian Lashes Out Over Lamar Odom Drug &amp; Divorce Rumors</p>
+<div style='clear: both;'></div>
+</div>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/Kevin_Blair/2013/08/26/the_morning_roundup_mileys_raunchy_vma", "Article Listing", "Feature Headlines"); pseudoLink("/news/Kevin_Blair/2013/08/26/the_morning_roundup_mileys_raunchy_vma");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fnews%2Fbloggers%2F10%2Fblog_images%2Fmiley-cyrus-241.jpg&amp;fp=248x216&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>The Morning Roundup: Miley's Raunchy VMAs Performance, Red Carpet Fashion, Khloe and Lamar's Marriage Crisis</p>
+<div style='clear: both;'></div>
+</div>
+</div>
+</div>
+<div class='related_topics' style='height: 1.3em; overflow: hidden;'>
+<span class='pseudo_link' onclick='trackGenericEvent("/Actresses/Kardashian,_Khloe/", "Article Listing", "Related Topics"); pseudoLink("/Actresses/Kardashian,_Khloe/");'>Khloe Kardashian</span>, <span class='pseudo_link' onclick='trackGenericEvent("/Athletes/Odom,_Lamar/", "Article Listing", "Related Topics"); pseudoLink("/Athletes/Odom,_Lamar/");'>Lamar Odom</span>
+</div>
+</div>
+<div class='divider'></div>
+<div class='single_col  major_feature'>
+	<h1><a href='/news/Lucy_Hobson/2013/08/27/ricky_martin_confesses_to_bullying_gay'>Ricky Martin Admits To Bullying Gay Men</a></h1>
+	<div class='toolbar'>
+		August 27th, 2013 2:07pm EDT
+	</div>
+	<div class='left_container'>
+		<img src="http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2012%2F06%2F11%2Fpreviews%2FRicky%20Martin-CNO-006425.jpg&amp;fp=197x175&amp;target_height=300&amp;target_width=300" style='cursor: pointer; width:300px; height:300px;' alt="Ricky Martin" title="Ricky Martin" onclick='pseudoLink("/news/Lucy_Hobson/2013/08/27/ricky_martin_confesses_to_bullying_gay");' />
+	</div>
+	<div class='right_container'>
+	<div class='article_container'>
+		<div class='article_content'>
+			Ricky Martin used to bully gay men when he was younger. The 41-year-old singer - who announced he was homosexual in 2010 after struggling for years to accept his sexuality - admits he was homophobic in his teen years and early 20s because he didn't want to accept that he was attracted to men as it went against his religious beliefs as a Roman Catholic.<br /><br />Speaking to GQ Australia magazine, he said: "I was very angry, very rebellious. I used to look at gay men and think, 'I'm not like that, I don't want to be like that, that's not me.' I was ashamed.<br /><br />"When you're told you're wrong by everyone...
+		</div>
+		<div class='article_fader'></div>
+		<a class='sp_see_all' href='/news/Lucy_Hobson/2013/08/27/ricky_martin_confesses_to_bullying_gay'>READ MORE</a><br />
+	</div>
+	<div class='feature_topic_headlines'>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/Dave_Simpson/2013/08/27/ricky_martin_i_bullied_gay_people", "Article Listing", "Feature Headlines"); pseudoLink("/news/Dave_Simpson/2013/08/27/ricky_martin_i_bullied_gay_people");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2012%2F09%2F08%2Fpreviews%2FRicky%20Martin-BGO-002332.jpg&amp;fp=0x0&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Ricky Martin: 'I bullied gay people'</p>
+<div style='clear: both;'></div>
+</div>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/Dave_Simpson/2013/06/26/stars_celebrate_landmark_us_rulings_fo", "Article Listing", "Feature Headlines"); pseudoLink("/news/Dave_Simpson/2013/06/26/stars_celebrate_landmark_us_rulings_fo");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2013%2F05%2F01%2Fpreviews%2FBen%20Affleck-20130501-23.jpg&amp;fp=240x123&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Stars celebrate landmark U.S. rulings for gay rights</p>
+<div style='clear: both;'></div>
+</div>
+</div>
+</div>
+<div class='related_topics' style='height: 1.3em; overflow: hidden;'>
+<span class='pseudo_link' onclick='trackGenericEvent("/Music/Martin,_Ricky/", "Article Listing", "Related Topics"); pseudoLink("/Music/Martin,_Ricky/");'>Ricky Martin</span>
+</div>
+</div>
+<div class='divider'></div>
+<div class='single_col  major_feature'>
+	<h1><a href='/news/Kevin_Blair/2013/08/27/goodie_mob_returns_after_14_years_with'>Goodie Mob Returns After 14 Years With New Album, 'Age Against The Machine'</a></h1>
+	<div class='toolbar'>
+		August 27th, 2013 1:54pm EDT
+	</div>
+	<div class='left_container'>
+		<img src="http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fnews%2Fbloggers%2F10%2Fblog_images%2Fgoodie-mob-age-against-the-machine.jpg&amp;fp=235x94&amp;target_height=300&amp;target_width=300" style='cursor: pointer; width:300px; height:300px;' alt="Goodie Mob Age Against The Machine" title="Goodie Mob Age Against The Machine" onclick='pseudoLink("/news/Kevin_Blair/2013/08/27/goodie_mob_returns_after_14_years_with");' />
+	</div>
+	<div class='right_container'>
+	<div class='article_container'>
+		<div class='article_content'>
+			Cee Lo Green's Atlanta Hip-Hop group Goodie Mob is back together after a long hiatus, and the group released a new album, "Age Against The Machine", on Tuesday.<br /><br />The new disc is the first ablum from the band in nearly 14 years, and Green says it's well worth the wait.<br /><br />"I know it's exceptional," he tells USA Today. "Quality is imperative. Quartets are almost non-existent in hip-hop. Our collective understanding was to consolidate who we are and invest that energy back into us. We are earth, wind, fire and water."<br /><br />That message is clear in the cover art for the photo, which features all four...
+		</div>
+		<div class='article_fader'></div>
+		<a class='sp_see_all' href='/news/Kevin_Blair/2013/08/27/goodie_mob_returns_after_14_years_with'>READ MORE</a><br />
+	</div>
+	<div class='feature_topic_headlines'>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/Dave_Simpson/2013/08/08/cee_lo_green_andre_3000_suffers_from_s", "Article Listing", "Feature Headlines"); pseudoLink("/news/Dave_Simpson/2013/08/08/cee_lo_green_andre_3000_suffers_from_s");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2FPhotos%2Fpv%2FAndre%203000-9.jpg&amp;fp=0x0&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Cee Lo Green: 'Andre 3000 suffers from stage fright'</p>
+<div style='clear: both;'></div>
+</div>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/index.php/2013/05/30/celebrity_birthdays_may_30_2013", "Article Listing", "Feature Headlines"); pseudoLink("/news/index.php/2013/05/30/celebrity_birthdays_may_30_2013");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2011%2F07%2F22%2Fpreviews%2FCee%20Lo%20Green-KTM-003368.jpg&amp;fp=0x0&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Celebrity Birthdays - May 30, 2013</p>
+<div style='clear: both;'></div>
+</div>
+</div>
+</div>
+<div class='related_topics' style='height: 1.3em; overflow: hidden;'>
+<span class='pseudo_link' onclick='trackGenericEvent("/Music/Green,_Cee_Lo/", "Article Listing", "Related Topics"); pseudoLink("/Music/Green,_Cee_Lo/");'>Cee Lo Green</span>, <span class='pseudo_link' onclick='trackGenericEvent("/Music/Goodie_Mob/", "Article Listing", "Related Topics"); pseudoLink("/Music/Goodie_Mob/");'>Goodie Mob</span>
+</div>
+</div>
+<div class='divider'></div>
+<div class='single_col  major_feature'>
+	<h1><a href='/news/Joe_Bowers/2013/08/27/katherine_jackson_on_granddaughter_par'>Katherine Jackson On Granddaughter Paris' Recovery: 'She Is Doing Much Better'</a></h1>
+	<div class='toolbar'>
+		August 27th, 2013 1:49pm EDT
+	</div>
+	<div class='left_container'>
+		<img src="http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2013%2F06%2F30%2Fpreviews%2FKatherine%20Jackson-PRN-103366.jpg&amp;fp=200x223&amp;target_height=300&amp;target_width=300" style='cursor: pointer; width:300px; height:300px;' alt="Katherine Jackson" title="Katherine Jackson" onclick='pseudoLink("/news/Joe_Bowers/2013/08/27/katherine_jackson_on_granddaughter_par");' />
+	</div>
+	<div class='right_container'>
+	<div class='article_container'>
+		<div class='article_content'>
+			Michael Jackson's mom Katherine Jackson maintains the King of Pop's daughter Paris is "in a good place" as she battles her inner demons in a treatment facility. <br /><br />In June, the 15 year old was rushed to a Los Angeles hospital amid rumors of a suicide attempt, and after more than a month in the unit she was transferred to a secluded residential facility specializing in treating depressed teenagers. <br /><br />Her grandmother Katherine has now spoken out to reveal Paris, who kept a collage of photographs of her late father on her bedroom wall, is recovering well and is expected to return home by Decemb...
+		</div>
+		<div class='article_fader'></div>
+		<a class='sp_see_all' href='/news/Joe_Bowers/2013/08/27/katherine_jackson_on_granddaughter_par'>READ MORE</a><br />
+	</div>
+	<div class='feature_topic_headlines'>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/Noelle_Talmon/2013/08/16/debbie_rowe_says_daughter_paris_jackso", "Article Listing", "Feature Headlines"); pseudoLink("/news/Noelle_Talmon/2013/08/16/debbie_rowe_says_daughter_paris_jackso");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2012%2F10%2F12%2Fpreviews%2FParis%20Jackson-DGG-039270.jpg&amp;fp=125x211&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Debbie Rowe: Daughter Paris Jackson 'Has No Life' Following Father's Death</p>
+<div style='clear: both;'></div>
+</div>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/Dave_Simpson/2013/08/15/debbie_rowe_paris_jackson_has_had_no_l", "Article Listing", "Feature Headlines"); pseudoLink("/news/Dave_Simpson/2013/08/15/debbie_rowe_paris_jackson_has_had_no_l");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2011%2F05%2F02%2Fpreviews%2FMichaelJackson-0033-20110502-54.jpg&amp;fp=0x0&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Debbie Rowe: 'Paris Jackson has had no life since Michael's death'</p>
+<div style='clear: both;'></div>
+</div>
+</div>
+</div>
+<div class='related_topics' style='height: 1.3em; overflow: hidden;'>
+<span class='pseudo_link' onclick='trackGenericEvent("/Actresses/Jackson,_Katherine/", "Article Listing", "Related Topics"); pseudoLink("/Actresses/Jackson,_Katherine/");'>Katherine Jackson</span>, <span class='pseudo_link' onclick='trackGenericEvent("/Music/Jackson,_Michael/", "Article Listing", "Related Topics"); pseudoLink("/Music/Jackson,_Michael/");'>Michael Jackson</span>, <span class='pseudo_link' onclick='trackGenericEvent("/Notables/Jackson,_Paris/", "Article Listing", "Related Topics"); pseudoLink("/Notables/Jackson,_Paris/");'>Paris Jackson</span>
+</div>
+</div>
+<div class='divider'></div>
+<div class='single_col  major_feature'>
+	<h1><a href='/news/Joe_Bowers/2013/08/27/scott_eastwood_joins_the_cast_of_fury'>Scott Eastwood Joins The Cast Of 'Fury'</a></h1>
+	<div class='toolbar'>
+		August 27th, 2013 1:12pm EDT
+	</div>
+	<div class='left_container'>
+		<img src="http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2013%2F01%2F30%2Fpreviews%2FScott%20Eastwood-AES-087306.jpg&amp;fp=210x152&amp;target_height=300&amp;target_width=300" style='cursor: pointer; width:300px; height:300px;' alt="Scott Eastwood" title="Scott Eastwood" onclick='pseudoLink("/news/Joe_Bowers/2013/08/27/scott_eastwood_joins_the_cast_of_fury");' />
+	</div>
+	<div class='right_container'>
+	<div class='article_container'>
+		<div class='article_content'>
+			Scott Eastwood has been cast alongside Brad Pitt in World War II film Fury.<br /><br />The son of movie legend Clint Eastwood, is the latest addition to the David Ayer-directed war film, which will also star Shia LaBeouf and Logan Lerman, according to Deadline.<br /><br />The Sony Pictures production is the true story of an army commander, to be played by Pitt, and his crew members who go behind enemy lines in their tank just as Nazi Germany collapses at the end of the war in 1945.<br /><br />The 27 year-old actor has been cast in the role of Sergeant Miles, while Lerman will play a young, inexperienced crew member, Nor...
+		</div>
+		<div class='article_fader'></div>
+		<a class='sp_see_all' href='/news/Joe_Bowers/2013/08/27/scott_eastwood_joins_the_cast_of_fury'>READ MORE</a><br />
+	</div>
+</div>
+<div class='related_topics' style='height: 1.3em; overflow: hidden;'>
+<span class='pseudo_link' onclick='trackGenericEvent("/Actors/Eastwood,_Clint/", "Article Listing", "Related Topics"); pseudoLink("/Actors/Eastwood,_Clint/");'>Clint Eastwood</span>, <span class='pseudo_link' onclick='trackGenericEvent("/Actors/Eastwood,_Scott/", "Article Listing", "Related Topics"); pseudoLink("/Actors/Eastwood,_Scott/");'>Scott Eastwood</span>
+</div>
+</div>
+<div class='divider'></div>
+<div class='single_col  major_feature'>
+	<h1><a href='/news/Noelle_Talmon/2013/08/27/selena_gomez_pulls_a_miley_sticks_her_'>Selena Gomez Pulls A Miley, Sticks Her Tongue Out At 'Getaway' Premiere</a></h1>
+	<div class='toolbar'>
+		August 27th, 2013 1:00pm EDT
+	</div>
+	<div class='left_container'>
+		<img src="http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2013%2F08%2F27%2Fpreviews%2FSelena%20Gomez-DGG-042973.jpg&amp;fp=193x139&amp;target_height=300&amp;target_width=300" style='cursor: pointer; width:300px; height:300px;' alt="Selena Gomez" title="Selena Gomez" onclick='pseudoLink("/news/Noelle_Talmon/2013/08/27/selena_gomez_pulls_a_miley_sticks_her_");' />
+	</div>
+	<div class='right_container'>
+	<div class='article_container'>
+		<div class='article_content'>
+			Selena Gomez attended the Los Angeles premiere of "Getaway" on Monday and stuck her tongue out on the red carpet - just like Miley Cyrus did at the MTV Video Music Awards the night before.<br /><br />Cyrus made headlines and got tongues wagging after her provocative performance at the awards show, and Gomez obviously made her cheeky expression in response to the hullabaloo.<br /><br />Kelly Osbourne pointed out the absurdity of Cyrus' tongue action and commented on "Fashion Police": "Look Miley's my friend and I love her, and I have her back no matter what, but as her friend I'm going to tell her - put your f-...
+		</div>
+		<div class='article_fader'></div>
+		<a class='sp_see_all' href='/news/Noelle_Talmon/2013/08/27/selena_gomez_pulls_a_miley_sticks_her_'>READ MORE</a><br />
+	</div>
+	<div class='feature_topic_headlines'>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/RumorFix/2013/08/27/robin_thickes_racy_new_video_features_", "Article Listing", "Feature Headlines"); pseudoLink("/news/RumorFix/2013/08/27/robin_thickes_racy_new_video_features_");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fstatic.rumorfix.com%2Fwp-content%2Fuploads%2F2013%2F08%2Frobin.jpg&amp;fp=279x348&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Robin Thicke's Racy New Video Features Twerking &amp; Foam Fingers, But No Miley</p>
+<div style='clear: both;'></div>
+</div>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/Brent_Faulkner/2013/08/27/rant_miley_cyrus_vma_performance_nothi", "Article Listing", "Feature Headlines"); pseudoLink("/news/Brent_Faulkner/2013/08/27/rant_miley_cyrus_vma_performance_nothi");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2013%2F08%2F26%2Fpreviews%2FMiley%20Cyrus-JTM-065026.jpg&amp;fp=162x268&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Rant: Miley Cyrus’ VMA Performance Nothing Short Of A Hot Mess</p>
+<div style='clear: both;'></div>
+</div>
+</div>
+</div>
+<div class='related_topics' style='height: 1.3em; overflow: hidden;'>
+<span class='pseudo_link' onclick='trackGenericEvent("/Movies/Getaway/", "Article Listing", "Related Topics"); pseudoLink("/Movies/Getaway/");'>Getaway</span>, <span class='pseudo_link' onclick='trackGenericEvent("/Actresses/Cyrus,_Miley/", "Article Listing", "Related Topics"); pseudoLink("/Actresses/Cyrus,_Miley/");'>Miley Cyrus</span>, <span class='pseudo_link' onclick='trackGenericEvent("/Actresses/Gomez,_Selena/", "Article Listing", "Related Topics"); pseudoLink("/Actresses/Gomez,_Selena/");'>Selena Gomez</span>
+</div>
+</div>
+<div class='divider'></div>
+<div class='single_col  major_feature'>
+	<h1><a href='/news/Noelle_Talmon/2013/08/27/fans_mob_one_direction_at_nyc_premiere'>Fans Mob One Direction At NYC Premiere</a></h1>
+	<div class='toolbar'>
+		August 27th, 2013 11:00am EDT
+	</div>
+	<div class='left_container'>
+		<img src="http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2013%2F08%2F27%2Fpreviews%2FOne%20Direction6-20130827-5.jpg&amp;fp=217x76&amp;target_height=300&amp;target_width=300" style='cursor: pointer; width:300px; height:300px;' alt="One Direction NYC premiere" title="One Direction NYC premiere" onclick='pseudoLink("/news/Noelle_Talmon/2013/08/27/fans_mob_one_direction_at_nyc_premiere");' />
+	</div>
+	<div class='right_container'>
+	<div class='article_container'>
+		<div class='article_content'>
+			They may have been booed at the MTV Video Music Awards (VMAs) in Brooklyn, N.Y., on Sunday, but One Direction was greeted by cheers during the premiere of their new film "One Direction: This Is Us" in Manhattan on Monday.<br /><br />The group, consisting of Harry Styles, Niall Horan, Louis Tomlinson, Zayn Malik and Liam Payne, was mobbed by fans when they arrived at Times Square to promote their new documentary.<br /><br />Styles told Digital Spy: "It is very exciting, I think it's crazy we have a premiere in the first place, let alone in America."<br /><br />The film provides an intimate, all-access look at life on the...
+		</div>
+		<div class='article_fader'></div>
+		<a class='sp_see_all' href='/news/Noelle_Talmon/2013/08/27/fans_mob_one_direction_at_nyc_premiere'>READ MORE</a><br />
+	</div>
+	<div class='feature_topic_headlines'>
+<div class='sp_headline pseudo_link' onclick='trackGenericEvent("/news/Noelle_Talmon/2013/08/21/thousands_of_screaming_fans_attend_one", "Article Listing", "Feature Headlines"); pseudoLink("/news/Noelle_Talmon/2013/08/21/thousands_of_screaming_fans_attend_one");'>
+<img src='http://images.starpulse.com/news/resize_image.php?source_image_uri=http%3A%2F%2Fimages.starpulse.com%2Fpictures%2F2013%2F08%2F21%2Fpreviews%2FOne%20Direction2-20130821-3.jpg&amp;fp=253x90&amp;target_width=83&amp;target_height=83' alt='' />
+<p class='title'>Thousands Of Screaming Fans Attend One Direction Movie Premiere In London</p>
+<div style='clear: both;'></div>
+</div>
+</div>
+</div>
+<div class='related_topics' style='height: 1.3em; overflow: hidden;'>
+<span class='pseudo_link' onclick='trackGenericEvent("/Music/One_Direction/", "Article Listing", "Related Topics"); pseudoLink("/Music/One_Direction/");'>One Direction</span>, <span class='pseudo_link' onclick='trackGenericEvent("/Movies/One_Direction:_This_Is_Us/", "Article Listing", "Related Topics"); pseudoLink("/Movies/One_Direction:_This_Is_Us/");'>One Direction: This Is Us</span>
+</div>
+</div>
+<div class='divider'></div>
+<div class='pager large_text'>
+<a href='?paged=2&amp;cat=1'>NEXT &gt;</a>
+</div>
+
+					<br />
+					<br />
+					<br />
+				</div>
+				<div style='clear: both;'></div>
+			</div>
+		</div>
+	</div>
+	<div id="right-col">
+		<div id="ad2"><script type='text/javascript'>GA_googleFillSlot("News-300");</script>
+</div>
+		<div class='top-features'>
+<div class='content-box'>
+<h1 class='standout_2'>COOL CLICKS</h1>
+<div id='Toplevel1-feature-controls' class='feature-controls'>
+</div>
+<div id='Toplevel1-displaybox' class='display-box'>
+<ul><li><table>
+<tr>
+<th width="130px"></th><th width="130px"></th>
+</tr>
+
+<tr>
+
+<td style="text-align: center;" valign="top"><a onclick="trackOutboundLink(this);" href="http://www.starpulse.com/news/index.php/2013/06/02/hot_and_not_13_stars_who_can_look_insa"><img src="http://images.starpulse.com/cube/jlhhotnot.jpg" style="width:132px; height:100px; padding-left:2px; padding-top:10px; padding-right:5px" border="0" alt="" /><span style="color: #983816; font-weight: bold">One Day Hot, Next Day Not</span></a></td>
+
+<td style="text-align: center;" valign="top"><a onclick="trackOutboundLink(this);" href="http://www.starpulse.com/news/Neil_Turner/2013/08/19/20_best_songs_of_2013_so_far"><img src="http://images.starpulse.com/cube/macklemoresongs.jpg" style="width:132px; height:100px; padding-left:2px; padding-top:10px; padding-right:5px" border="0" alt="" /><span style="color: #983816; font-weight: bold">Best Songs Of 2013</span></a></td>
+
+</tr>
+<tr>
+
+<td style="text-align: center;" valign="top"><a onclick="trackOutboundLink(this);" href="http://www.starpulse.com/news/index.php?cat=789"><img src="http://images.starpulse.com/cube/scientravolta.jpg" style="width:132px; height:100px; padding-left:2px; padding-top:10px; padding-right:5px" border="0" alt="" /><span style="color: #983816; font-weight: bold">Scientology</span></a></td>
+
+<td style="text-align: center;" valign="top"><a onclick="trackOutboundLink(this);" href="http://www.starpulse.com/news/index.php/2012/07/20/best_actresses_under_25"><img src="http://images.starpulse.com/cube/under25moretz.jpg" style="width:132px; height:100px; padding-left:2px; padding-top:10px; padding-right:5px" border="0" alt="" /><span style="color: #983816; font-weight: bold">Best Actresses Under 25</span></a></td>
+
+</tr>
+<tr>
+
+<td style="text-align: center;" valign="top"><a onclick="trackOutboundLink(this);" href="http://www.starpulse.com/news/index.php?cat=597"><img src="http://images.starpulse.com/cube/twitpicnickjonas.jpg" style="width:132px; height:100px; padding-left:2px; padding-top:10px; padding-right:5px" border="0" alt="" /><span style="color: #983816; font-weight: bold">Celebrity Twitpics</span></a></td>
+
+
+<td style="text-align: center;" valign="top"><a onclick="trackOutboundLink(this);" href="http://www.starpulse.com/news/index.php?cat=678"><img src="http://images.starpulse.com/cube/dumbassmadonna.jpg" style="width:132px; height:100px; padding-left:2px; padding-top:10px; padding-right:5px" border="0" alt="" /><span style="color: #983816; font-weight: bold">Not Too Bright</span></a></td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: center;" valign="top"><a onclick="trackOutboundLink(this);" href="http://www.starpulse.com/Photos"><img src="http://images.starpulse.com/cube/newpicstaylor.jpg" style="width:132px; height:100px; padding-left:2px; padding-top:10px; padding-right:5px" border="0" alt="" /><span style="color: #983816; font-weight: bold">See Tons Of New Photos...</span></a></td>
+
+<td style="text-align: center;" valign="top"><a onclick="trackOutboundLink(this);" href="http://www.starpulse.com/news/Kevin_Blair/2013/02/21/celebrity_plastic_surgery_gone_bad"><img src="http://images.starpulse.com/cube/plastichatcher.jpg" style="width:132px; height:100px; padding-left:2px; padding-top:10px; padding-right:5px" border="0" alt="" /><span style="color: #983816; font-weight: bold">Plastic Surgery Nightmares</span></a></td>
+
+</tr>
+</table></li></ul></div>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _CI = _CI || {};
+(function() {
+var script = document.createElement('script');
+ref = document.getElementsByTagName('script')[0];
+_CI.counter = (_CI.counter) ? _CI.counter + 1 : 1;
+document.write('<div id="_CI_widget_');
+document.write(_CI.counter+'"></div>');
+script.type = 'text/javascript';
+script.src = 'http://widget.crowdignite.com/widgets/28596?_ci_wid=_CI_widget_'+_CI.counter;
+script.async = true;
+ref.parentNode.insertBefore(script, ref);
+})();
+/* ]]> */
+</script>
+</div>
+<div style='margin-bottom: 5px;'><center><script type='text/javascript'>GA_googleFillSlot('News-Sky');</script></center></div>
+<div class='content-box'>
+<h1 class='standout_2'><a href='/Contests/'>WIN STUFF!</a></h1>
+<div id='Contests1-feature-controls' class='feature-controls'>
+</div>
+<div id='Contests1-displaybox' class='display-box'>
+<div style='text-align:center; width:140px; padding:0 1px; float:left;'>
+<a onclick="trackOutboundLink(this);" href="http://www.starpulse.com/Contests/The_BlackBerry_Z10/8892/">
+<img src="http://images.starpulse.com/contestimages/8892-contestthumb_1377009239.jpg" style="width:132px; height:99px;" alt="" />
+<span style='color:#983816; font-weight:bold'>The BlackBerry Z10</span>
+</a>
+</div>
+<div style='text-align:center; width:140px; padding:0 1px; float:left;'>
+<a onclick="trackOutboundLink(this);" href="http://www.starpulse.com/Contests/Getaway_Prize_Pack/8886/">
+<img src="http://images.starpulse.com/contestimages/8886-contestthumb_1376590971.jpg" style="width:132px; height:99px;" alt="" />
+<span style='color:#983816; font-weight:bold'>"Getaway" Prize Pack</span>
+</a>
+</div>
+<div style='clear:both; margin-bottom:15px;'></div><div style='text-align:center; width:140px; padding:0 1px; float:left;'>
+<a onclick="trackOutboundLink(this);" href="http://www.starpulse.com/Contests/Eric_Clapton’s_Crossroads_Guitar_Festival_2013_Prize_Pack/8844/">
+<img src="http://images.starpulse.com/contestimages/8844-contestthumb_1375821753.jpg" style="width:132px; height:99px;" alt="" />
+<span style='color:#983816; font-weight:bold'>"Eric Clapton’s Crossroads Guitar Festival 2013" Prize Pack</span>
+</a>
+</div>
+<div style='text-align:center; width:140px; padding:0 1px; float:left;'>
+<a onclick="trackOutboundLink(this);" href="http://www.starpulse.com/Contests/The_Office:_Season_Nine_On_Blu-ray/8910/">
+<img src="http://images.starpulse.com/contestimages/8910-contestthumb_1377542481.jpg" style="width:132px; height:99px;" alt="" />
+<span style='color:#983816; font-weight:bold'>"The Office: Season Nine" On Blu-ray</span>
+</a>
+</div>
+<div style='clear:both; margin-bottom:15px;'></div><div class="feature-footer"><a href="/Contests/">See All Contests & Giveaways!</a></div></div>
+</div>
+<div class='content-box'>
+<h1 class='standout_2'>WRITERS</h1>
+<div id='PopularBloggers1-feature-controls' class='feature-controls'>
+</div>
+<div id='PopularBloggers1-displaybox' class='display-box'>
+<ul>
+<li style='clear: both;' class='author_bio'>
+<a href='/news/Kevin_Blair/' class='avatar_wrapper'><img class='avatar' src='http://images.starpulse.com/news/bloggers/10/blog_images/avatar_1376166889.jpg' alt="Kevin Blair" title="Kevin Blair" /></a>
+<a href='/news/Kevin_Blair/'><b>Kevin Blair</b></a><br />
+<span class='toolbar'>
+<a href='/news/Kevin_Blair/2013/08/26/miley_cyrus_gives_borderline_xrated_pe'>Miley Cyrus Gives Borderline X-Rated Performance With Robin Thicke At MTV VMAs (Watch It)</a>
+</span>
+</li>
+<li style='clear: both;' class='author_bio'>
+<a href='/news/Noelle_Talmon/' class='avatar_wrapper'><img class='avatar' src='http://img.photobucket.com/albums/v216/ntalmon/avatar-1.jpg' alt="Noelle Talmon" title="Noelle Talmon" /></a>
+<a href='/news/Noelle_Talmon/'><b>Noelle Talmon</b></a><br />
+<span class='toolbar'>
+<a href='/news/Noelle_Talmon/2013/08/26/sexy_vmas_fashion_selena_gomez_miley_c'>Hot &amp; Sexy VMAs Fashion: Selena Gomez, Miley Cyrus, Taylor Swift, More!</a>
+</span>
+</li>
+<li style='clear: both;' class='author_bio'>
+<a href='/news/Victor_Smith/' class='avatar_wrapper'><img class='avatar' src='http://images.starpulse.com/news/bloggers/922640/blog_images/avatar_1377136289.jpg' alt="Victor Smith" title="Victor Smith" /></a>
+<a href='/news/Victor_Smith/'><b>Victor Smith</b></a><br />
+<span class='toolbar'>
+<a href='/news/Victor_Smith/2013/08/25/selena_gomez_heats_up_the_air_canada_c'>Selena Gomez Heats Up The Air Canada Centre In A Belly-Baring Outfit During 'Stars Dance' Tour</a>
+</span>
+</li>
+<li style='clear: both;' class='author_bio'>
+<a href='/news/Casey_Johnson/' class='avatar_wrapper'><img class='avatar' src='https://lh5.googleusercontent.com/-g1HRnOjPGP0/AAAAAAAAAAI/AAAAAAAAAAA/oSScWRwK2xU/s49-c/photo.jpg' alt="Casey Johnson" title="Casey Johnson" /></a>
+<a href='/news/Casey_Johnson/'><b>Casey Johnson</b></a><br />
+<span class='toolbar'>
+<a href='/news/Casey_Johnson/2013/08/26/bryan_cranston_cast_as_lex_luthor_matt'>Bryan Cranston Cast As Lex Luthor, Matt Damon As Aquaman?!</a>
+</span>
+</li>
+<li style='clear: both;' class='author_bio'>
+<a href='/news/Brent_Faulkner/' class='avatar_wrapper'><img class='avatar' src='http://images.starpulse.com/news/bloggers/1194900/blog_images/avatar_1374805823.jpg' alt="Brent Faulkner" title="Brent Faulkner" /></a>
+<a href='/news/Brent_Faulkner/'><b>Brent Faulkner</b></a><br />
+<span class='toolbar'>
+<a href='/news/Brent_Faulkner/2013/08/26/opinion_did_robin_thicke_play_copycat_'>Opinion: Did Robin Thicke Play Copycat With “Blurred Lines”?</a>
+</span>
+</li>
+<li style='clear: both;' class='author_bio'>
+<a href='/news/Joe_Bowers/' class='avatar_wrapper'><img class='avatar' src='http://images.starpulse.com/news/bloggers/17629/blog_images/avatar_1373905603.jpg' alt="Joe Bowers" title="Joe Bowers" /></a>
+<a href='/news/Joe_Bowers/'><b>Joe Bowers</b></a><br />
+<span class='toolbar'>
+<a href='/news/Joe_Bowers/2013/08/26/parents_television_council_slams_mtv_o'>Parents Television Council Slams MTV Over 'Unacceptable' VMA Performances </a>
+</span>
+</li>
+<li style='clear: both;' class='author_bio'>
+<a href='/news/Jason_Coleman/' class='avatar_wrapper'><img class='avatar' src='http://images.starpulse.com/news/bloggers/747815/blog_images/avatar.jpg' alt="Jason Coleman" title="Jason Coleman" /></a>
+<a href='/news/Jason_Coleman/'><b>Jason Coleman</b></a><br />
+<span class='toolbar'>
+<a href='/news/Jason_Coleman/2013/08/26/five_reasons_fans_dont_want_ben_afflec'>Five Reasons FANS Don’t Want Ben Affleck As Batman</a>
+</span>
+</li>
+<li style='clear: both;' class='author_bio'>
+<a href='/news/Paul_Levinson/' class='avatar_wrapper'><img class='avatar' src='http://images.starpulse.com/news/bloggers/1224480/blog_images/avatar_1376597520.jpg' alt="Paul Levinson" title="Paul Levinson" /></a>
+<a href='/news/Paul_Levinson/'><b>Paul Levinson</b></a><br />
+<span class='toolbar'>
+<a href='/news/Paul_Levinson/2013/08/26/breaking_bad_final_episodes_3_'>Breaking Bad : Final Episodes #3 </a>
+</span>
+</li>
+<li style='clear: both;' class='author_bio'>
+<a href='/news/Samantha__Wilson/' class='avatar_wrapper'><img class='avatar' src='http://images.starpulse.com/news/bloggers/1067066/blog_images/avatar_1372293988.jpg' alt="Samantha  Wilson" title="Samantha  Wilson" /></a>
+<a href='/news/Samantha__Wilson/'><b>Samantha  Wilson</b></a><br />
+<span class='toolbar'>
+<a href='/news/Samantha__Wilson/2013/08/26/keeping_up_with_the_kardashians_recap_'>'Keeping Up With The Kardashians' Recap: Kardashians Chainsaw Massacre</a>
+</span>
+</li>
+</ul>
+<div class="feature-footer"><a href="/news/blogs/">More Starpulse bloggers &amp; articles</a></div></div>
+</div>
+</div>
+
+	</div>
+
+<div id='explore_more' class='sp_content_block' style='clear: both;'>
+<h1 class='standout_1'>EXPLORE MORE TOPICS</h1>
+<a class='sp_see_all white' href='/news/categories.php'>SEE ALL</a>
+
+		<div class='six_col'>
+			<h2><a href='/news/index.php?cat=1'>CELEBS</a></h2>
+			<p class='subdued'>
+				<a href='/news/index.php?cat=259'>Hookups</a><br />
+				<a href='/news/index.php?cat=241'>Breakups</a><br />
+				<a href='/news/index.php?cat=199'>Weddings</a><br />
+				<a href='/news/index.php?cat=345'>Interviews</a><br />
+				<a href='/news/index.php?cat=468'>GLBT</a>
+			</p>
+		</div>
+		<div class='six_col'>
+			<h2><a href='/news/index.php?cat=81'>FASHION</a></h2>
+			<p class='subdued'>
+				<a href='/news/index.php?cat=369'>Red Carpet</a><br />
+				<a href='/news/index.php?cat=79'>Hot or Not</a><br />
+				<a href='/news/index.php?cat=489'>Hairstyles</a><br />
+				<a href='/news/index.php?cat=624'>Fails</a><br />
+				<a href='/news/index.php?cat=582'>Plastic Surgery</a><br />
+				<a href='/news/index.php?cat=226'>Magazines</a>
+			</p>
+		</div>
+		<div class='six_col'>
+			<h2><a href='/news/index.php?cat=3'>MUSIC</a></h2>
+			<p class='subdued'>
+				<a href='/news/index.php?cat=166'>Reviews</a><br />
+				<a href='/news/index.php?cat=396'>Awards</a><br />
+				<a href='/news/index.php?cat=184'>Videos</a><br />
+				<a href='http://www.starpulse.com/Tickets/' target='_blank'>Tickets</a><br />
+			</p>
+		</div>
+		<div class='six_col'>
+			<h2><a href='/news/index.php?cat=15'>MOVIES</a></h2>
+			<p class='subdued'>
+				<a href='/news/index.php?cat=576'>Box Office</a><br />
+				<a href='/news/index.php?cat=208'>Reviews</a><br />
+				<a href='/news/index.php?cat=211'>Trailers</a><br />
+				<a href='/news/index.php?cat=39'>New On DVD</a><br />
+				<a href='/news/index.php?cat=366'>Awards</a>
+			</p>
+		</div>
+		<div class='six_col'>
+			<h2><a href='/news/index.php?cat=154'>TELEVISION</a></h2>
+			<p class='subdued'>
+				<a href='/news/index.php?cat=71'>Recaps</a><br />
+				<a href='/news/index.php?cat=280'>Reality Shows</a><br />
+				<a href='/news/index.php?cat=85'>Interviews</a><br />
+				<a href='/news/index.php?cat=363'>Awards</a><br />
+				<a href='/news/index.php?cat=40'>New On DVD</a>
+			</p>
+		</div>
+		<div class='six_col'>
+			<h2>WHAT'S HOT</h2>
+			<p class='subdued'>
+				<a href='/news/index.php?cat=621'>Bikinis</a><br />
+				<a href='/news/index.php?cat=220'>Scandals</a><br />
+				<a href='/news/index.php?cat=54'>Exclusives</a><br />
+				<a href='/news/index.php?cat=597'>Celeb Twitpics</a>
+			</p>
+		</div>
+		<div style='clear: both;'></div>
+
+		<p class='padded'><b>COLUMNS:</b> &nbsp; &nbsp; &nbsp; <span class='subdued'><a href="/news/index.php?cat=307">Weekend Movie Preview</a> &nbsp; &nbsp; &nbsp; <a href="/news/index.php?cat=399">Two Jews On Film</a> &nbsp; &nbsp; &nbsp; <a href="/news/index.php?cat=558">Forgotten Flicks</a> &nbsp; &nbsp; &nbsp; <a href="/news/index.php?cat=564">Rumor Patrol</a></span></p>
+
+</div>
+<div id='friends_footer' class='sp_content_block' style='clear: both;'>
+<h1>FRIENDS WITH BENEFITS</h1>
+<div class='six_col'>
+<h2><a href='http://toofab.com/' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"><img src='http://images.starpulse.com/images/3rdparty/100w_toofab.jpg' alt='TooFab' title='TooFab' /></a></h2>
+<a class='sp_friends_rss subdued' href='http://www.toofab.com/2013/08/27/ethan-hawke-selena-gomez-getaway-premiere-photos/
+        ' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')">Ethan Hawke Hits Red Carpet with Selena Gomez & Cute Kids!
+        </a>
+</div>
+<div class='six_col'>
+<h2><a href='http://thestir.cafemom.com/' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"><img src='http://images.starpulse.com/images/3rdparty/100w_thestir.jpg' alt='The Stir' title='The Stir' /></a></h2>
+<a class='sp_friends_rss subdued' href='http://feedproxy.google.com/~r/cafemom/thestir/entertainment/~3/YUveqpP06MA/glee_stars_say_filming_cory
+      ' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')">‘Glee’ Stars Say Filming Cory Monteith Memorial Episode Is ‘Terrible’ and ‘Tough’
+      </a>
+</div>
+<div class='six_col'>
+<h2><a href='http://www.thesuperficial.com/' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"><img src='http://images.starpulse.com/images/3rdparty/100w_thesuperficial.jpg' alt='The Superficial' title='The Superficial' /></a></h2>
+<a class='sp_friends_rss subdued' href='' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"></a>
+</div>
+<div class='six_col'>
+<h2><a href='http://www.thefrisky.com/' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"><img src='http://images.starpulse.com/images/3rdparty/100w_thefrisky.jpg' alt='The Frisky' title='The Frisky' /></a></h2>
+<a class='sp_friends_rss subdued' href='http://www.thefrisky.com/2013-08-27/34-aaron-paul-gifs-for-every-year-hes-been-on-earth/
+		' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')">34 Aaron Paul GIFs For Every Year He’s Been On Earth
+		</a>
+</div>
+<div class='six_col'>
+<h2><a href='http://www.etonline.com/' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"><img src='http://images.starpulse.com/images/3rdparty/100w_etonline.jpg' alt='Entertainment Tonight' title='Entertainment Tonight' /></a></h2>
+<a class='sp_friends_rss subdued' href='http://www.etonline.com/news/137724_Billy_Ray_Cyrus_Comments_on_Miley_Cyrus_MA_Performance/index.html
+            ' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')">Billy Ray on Miley: She's Still My Little Girl
+            </a>
+</div>
+<div class='six_col'>
+<h2><a href='http://www.fark.com/entertainment/' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"><img src='http://images.starpulse.com/images/3rdparty/100w_fark.jpg' alt='Fark' title='Fark' /></a></h2>
+<a class='sp_friends_rss subdued' href='http://www.fark.com/comments/7907455
+ ' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')">Anybody who watched the performance was thinking it, but it took Kelly Osbourne to come out and say it, Miley, please "put your f**king tongue back in your mouth" [Obvious]
+ </a>
+</div>
+<div style='clear: both;'></div>
+<p class='padded sp_friends_small'>
+<a href='http://thecelebritycafe.com/' style='background-image: url(http://images.starpulse.com/images/3rdparty/50w_thecelebritycafe.jpg)' title='TheCelebrityCafe.com' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"> </a><a href='http://www.sheknows.com/channels/entertainment/' style='background-image: url(http://images.starpulse.com/images/3rdparty/50w_sheknows.jpg)' title='SheKnows' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"> </a><a href='http://www.buzzfeed.com/' style='background-image: url(http://images.starpulse.com/images/3rdparty/50w_buzzfeed.jpg)' title='BuzzFeed' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"> </a><a href='http://www.nextmovie.com/' style='background-image: url(http://images.starpulse.com/images/3rdparty/50w_nextmovie.jpg)' title='NextMovie' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"> </a><a href='http://www.tmz.com/' style='background-image: url(http://images.starpulse.com/images/3rdparty/50w_tmz.jpg)' title='TMZ' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"> </a><a href='http://sportsillustrated.cnn.com/extramustard/' style='background-image: url(http://images.starpulse.com/images/3rdparty/50w_hotclicks.jpg)' title='Hot Clicks' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"> </a><a href='http://www.exposay.com/' style='background-image: url(http://images.starpulse.com/images/3rdparty/50w_exposay.jpg)' title='Exposay' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"> </a><a href='http://www.people.com/people/' style='background-image: url(http://images.starpulse.com/images/3rdparty/50w_people.jpg)' title='People' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"> </a><a href='http://www.pinkisthenewblog.com/' style='background-image: url(http://images.starpulse.com/images/3rdparty/50w_pinkisthenewblog.jpg)' title='Pink is the new blog' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"> </a><a href='http://www.evilbeetgossip.com/' style='background-image: url(http://images.starpulse.com/images/3rdparty/50w_evilbeetgossip.jpg)' title='Evil Beet Gossip' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"> </a><a href='http://www.cracked.com/' style='background-image: url(http://images.starpulse.com/images/3rdparty/50w_cracked.jpg)' title='Cracked' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"> </a><a href='http://collegecandy.com/' style='background-image: url(http://images.starpulse.com/images/3rdparty/50w_collegecandy.jpg)' title='College Candy' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"> </a><a href='http://theberry.com/' style='background-image: url(http://images.starpulse.com/images/3rdparty/50w_theberry.jpg)' title='The Berry' target='_blank' rel='nofollow' onclick="trackOutboundLink(this,'Friends with Benefits')"> </a></p>
+</div>
+
+	<div style="clear: both;"></div>
+	<div id="footer" class='sp_content_block'>
+		<ul id="footer-nav">
+			<li><a href="/news/">News</a></li>
+			<li><a href="/Celebrity/">Celebs</a></li>
+			<li><a href="/Television/">TV</a></li>
+			<li><a href="/Movies/">Movies</a></li>
+			<li><a href="/Music/">Music</a></li>
+			<li><a href="/Photos/">Photos</a></li>
+			<li><a href="/Videos/">Videos</a></li>
+			<li><a href="http://m.starpulse.com/news/index.php?cat=1">Mobile</a></li>
+			<li><a href="/Contests/">Win Stuff!</a></li>
+			<li><a href="/Company/contributing.html">Write For Us</a></li>
+			<li><a href="http://ringtones.starpulse.com/">Ringtones</a></li>
+			<li><a href="/Tickets/">Tickets</a></li>
+			<li><a href="/Newsletters/Entertainment-News.html">Newsletter</a></li>
+		</ul>
+		<ul id="footer-sub-nav">
+			<li><a href="/Company/index.html">About</a></li>
+			<li><a href="/Company/contact.html">Contact</a></li>
+			<li><a href="/Company/advertise.html">Advertising</a></li>
+			<li><a href="/rss/">RSS/XML</a></li>
+			<li><a href="/Company/privacy.html">Privacy</a></li>
+		</ul>
+	</div>
+
+<p id='footer-trademark'>
+<a href='/'><img src='http://images.starpulse.com/images/starpulse_logo_footer.png' alt='Starpulse.com' title='Starpulse.com' /></a><br />&copy; 1999-2013 Starpulse.com&trade;<br />In partnership with TMZ.com<br /></p><!-- Quantcast Tag, part 2 -->
+<script type='text/javascript'>_qevents.push( { qacct:'p-4cjg46u42920Y'} );</script>
+<noscript><div style='display: none;'><img src='http://pixel.quantserve.com/pixel/p-4cjg46u42920Y.gif' height='1' width='1' alt='Quantcast' /></div></noscript>
+<!-- trigger Google+1 (Place this tag after the last plusone tag) -->
+<script type='text/javascript'>(function() { var po =document.createElement('script'); po.type ='text/javascript'; po.async =true; po.src ='https://apis.google.com/js/plusone.js'; var s =document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();</script>
+<!-- trigger Disqus counters -->
+<script type='text/javascript'>var disqus_shortname ='spcomments'; (function () { var s =document.createElement('script'); s.async =true; s.type ='text/javascript'; s.src ='http://' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script>
+<!-- GumGum -->
+<script type='text/javascript'>ggv2id='starpuls';</script>
+<script type='text/javascript' src='http://g2.gumgum.com/javascripts/ggv2.js'></script>
+<script type='text/javascript' src='http://tag.crsspxl.com/s1.js?d=465'></script>
+
+</div>
+
+<div id='footer_bar'>
+    <b style='font-weight: normal;'>LIKE Starpulse.com on Facebook and Google, and share with your friends</b>
+    <div style='display: inline-block; vertical-align: middle; height: 20px; width: 90px; padding: 0px; margin-left: 20px;'><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.facebook.com/pages/Starpulse/124877431305?v=wall&amp;layout=button_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;font&amp;colorscheme=light&amp;height=20" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;"></iframe></div>
+    <div style='display: inline-block; vertical-align: middle; height: 20px; width: 90px; padding: 0px; margin-left: 10px;'><g:plusone size="medium" href="http://www.starpulse.com/"></g:plusone></div>
+    <div id='footer_bar_close' title='close' onclick='document.getElementById("footer_bar").style.display="none"; document.cookie="footer_bar_disabled=true;domain=.starpulse.com";'>x</div>
+</div>
+
+</body>
+</html>
