@@ -5,7 +5,6 @@
 import os
 import re
 from BeautifulSoup import BeautifulSoup
-import hashlib
 import chardet
 
 
@@ -45,6 +44,14 @@ def extract_visible_text(html):
 
     visible_texts = filter(visible, texts)
     visible_text = ' '.join(visible_texts)
+    visible_text = visible_text.replace('\n', '')
+    visible_text = visible_text.replace('\r', '')
+    visible_text = visible_text.replace('\t', '')
+    visible_text = visible_text.replace('&nbsp;', '')
+    visible_text = visible_text.replace('    ', ' ')
+    visible_text = visible_text.replace('   ', ' ')
+    visible_text = visible_text.replace('  ', ' ')
+    print repr(visible_text)
     return visible_text
 
 
