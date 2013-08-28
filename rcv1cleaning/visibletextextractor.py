@@ -2,25 +2,60 @@
 """
 
 """
+import os
 import re
-from urllib import urlopen
 from BeautifulSoup import BeautifulSoup
+import hashlib
+import chardet
 
-html = urlopen('http://gavinmh.github.io/6-and-12-site/').read()
-soup = BeautifulSoup(html)
-texts = soup.findAll(text=True)
 
-def visible(element):
-    if element.parent.name in ['style', 'script', '[document]', 'head', 'title']:
-        return False
-    elif re.match('<!--.*-->', str(element)):
-        return False
-    return True
+def main():
+    filenames = get_filename_list()
+    for filename in filenames:
+        print '** Starting file', filename
+        html = open_file(filename)
+        visible_text = extract_visible_text(html)
+        write_out(filename, visible_text)
 
-visible_texts = filter(visible, texts)
 
-out = ' '.join(visible_texts)
-out.replace('\n', ' ')
-out.replace('\t', ' ')
+def open_file(filename):
+    with open('/home/gavin/PycharmProjects/rcv1-cleaning/data/pages/%s' % filename) as f:
+        return f.read()
 
-print out
+
+def write_out(filename, visible_text):
+    encoding = chardet.detect(visible_text)['encoding']
+    if encoding is None:
+        encoding = 'utf-8'
+    # visible_text = visible_text.decode(encoding, 'ignore')
+    out = open('/home/gavin/PycharmProjects/rcv1-cleaning/data/documents/%s.txt' % filename, 'w')
+    out.write("%s" % visible_text.encode('utf-8', 'ignore'))
+
+
+def extract_visible_text(html):
+    soup = BeautifulSoup(html)
+    texts = soup.findAll(text=True)
+
+    def visible(element):
+        if element.parent.name in ['style', 'script', '[document]', 'head', 'title']:
+            return False
+        elif re.match('<!--.*-->', str(element)):
+            return False
+        return True
+
+    visible_texts = filter(visible, texts)
+    visible_text = ' '.join(visible_texts)
+    return visible_text
+
+
+def get_filename_list():
+    os.chdir("/home/gavin/PycharmProjects/rcv1-cleaning/data/pages")
+    files = []
+    for file in os.listdir("."):
+        if file.endswith(".txt"):
+            files.append(file)
+    return files
+
+
+if __name__ == '__main__':
+    main()
