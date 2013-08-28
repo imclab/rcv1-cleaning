@@ -13,8 +13,9 @@ def main():
     for filename in filenames:
         print '** Starting file', filename
         html = open_file(filename)
-        visible_text = extract_visible_text(html)
-        write_out(filename, visible_text)
+        visible_text = extract_visible_text(filename, html)
+        if visible_text is not None:
+            write_out(filename, visible_text)
 
 
 def open_file(filename):
@@ -31,28 +32,32 @@ def write_out(filename, visible_text):
     out.write("%s" % visible_text.encode('utf-8', 'ignore'))
 
 
-def extract_visible_text(html):
-    soup = BeautifulSoup(html)
-    texts = soup.findAll(text=True)
+def extract_visible_text(filename, html):
+    try:
+        soup = BeautifulSoup(html)
+        texts = soup.findAll(text=True)
 
-    def visible(element):
-        if element.parent.name in ['style', 'script', '[document]', 'head', 'title']:
-            return False
-        elif re.match('<!--.*-->', str(element)):
-            return False
-        return True
+        def visible(element):
+            if element.parent.name in ['style', 'script', '[document]', 'head', 'title']:
+                return False
+            elif re.match('<!--.*-->', str(element)):
+                return False
+            return True
 
-    visible_texts = filter(visible, texts)
-    visible_text = ' '.join(visible_texts)
-    visible_text = visible_text.replace('\n', '')
-    visible_text = visible_text.replace('\r', '')
-    visible_text = visible_text.replace('\t', '')
-    visible_text = visible_text.replace('&nbsp;', '')
-    visible_text = visible_text.replace('    ', ' ')
-    visible_text = visible_text.replace('   ', ' ')
-    visible_text = visible_text.replace('  ', ' ')
-    print repr(visible_text)
-    return visible_text
+        visible_texts = filter(visible, texts)
+        visible_text = ' '.join(visible_texts)
+        visible_text = visible_text.replace('\n', '')
+        visible_text = visible_text.replace('\r', '')
+        visible_text = visible_text.replace('\t', '')
+        visible_text = visible_text.replace('&nbsp;', '')
+        visible_text = visible_text.replace('    ', ' ')
+        visible_text = visible_text.replace('   ', ' ')
+        visible_text = visible_text.replace('  ', ' ')
+    except Exception:
+        print 'failed to parse page', filename
+        return None
+    else:
+        return visible_text
 
 
 def get_filename_list():
